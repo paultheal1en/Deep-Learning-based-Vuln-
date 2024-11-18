@@ -1,0 +1,47 @@
+static void init_parse_context(OptionParseContext *octx,
+
+                               const OptionGroupDef *groups)
+
+{
+
+    static const OptionGroupDef global_group = { "global" };
+
+    const OptionGroupDef *g = groups;
+
+    int i;
+
+
+
+    memset(octx, 0, sizeof(*octx));
+
+
+
+    while (g->name)
+
+        g++;
+
+    octx->nb_groups = g - groups;
+
+    octx->groups    = av_mallocz(sizeof(*octx->groups) * octx->nb_groups);
+
+    if (!octx->groups)
+
+        exit(1);
+
+
+
+    for (i = 0; i < octx->nb_groups; i++)
+
+        octx->groups[i].group_def = &groups[i];
+
+
+
+    octx->global_opts.group_def = &global_group;
+
+    octx->global_opts.arg       = "";
+
+
+
+    init_opts();
+
+}
