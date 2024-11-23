@@ -1,0 +1,286 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7609555	File	/home/p4ultr4n/workplace/ReVeal/raw_code/scsi_bus_legacy_add_drive_02_0.c								
+ANR	7609556	Function	scsi_bus_legacy_add_drive	1:0:0:1288							
+ANR	7609557	FunctionDef	"scsi_bus_legacy_add_drive (SCSIBus * bus , BlockDriverState * bdrv , int unit , bool removable , int bootindex , const char * serial , Error * * errp)"		7609556	0					
+ANR	7609558	CompoundStatement		7:0:230:1288	7609556	0					
+ANR	7609559	IdentifierDeclStatement	const char * driver ;	9:4:237:255	7609556	0	True				
+ANR	7609560	IdentifierDecl	* driver		7609556	0					
+ANR	7609561	IdentifierDeclType	const char *		7609556	0					
+ANR	7609562	Identifier	driver		7609556	1					
+ANR	7609563	IdentifierDeclStatement	DeviceState * dev ;	11:4:262:278	7609556	1	True				
+ANR	7609564	IdentifierDecl	* dev		7609556	0					
+ANR	7609565	IdentifierDeclType	DeviceState *		7609556	0					
+ANR	7609566	Identifier	dev		7609556	1					
+ANR	7609567	IdentifierDeclStatement	Error * err = NULL ;	13:4:285:302	7609556	2	True				
+ANR	7609568	IdentifierDecl	* err = NULL		7609556	0					
+ANR	7609569	IdentifierDeclType	Error *		7609556	0					
+ANR	7609570	Identifier	err		7609556	1					
+ANR	7609571	AssignmentExpression	* err = NULL		7609556	2		=			
+ANR	7609572	Identifier	NULL		7609556	0					
+ANR	7609573	Identifier	NULL		7609556	1					
+ANR	7609574	ExpressionStatement	"driver = bdrv_is_sg ( bdrv ) ? ""scsi-generic"" : ""scsi-disk"""	17:4:311:367	7609556	3	True				
+ANR	7609575	AssignmentExpression	"driver = bdrv_is_sg ( bdrv ) ? ""scsi-generic"" : ""scsi-disk"""		7609556	0		=			
+ANR	7609576	Identifier	driver		7609556	0					
+ANR	7609577	ConditionalExpression	"bdrv_is_sg ( bdrv ) ? ""scsi-generic"" : ""scsi-disk"""		7609556	1					
+ANR	7609578	Condition	bdrv_is_sg ( bdrv )		7609556	0					
+ANR	7609579	CallExpression	bdrv_is_sg ( bdrv )		7609556	0					
+ANR	7609580	Callee	bdrv_is_sg		7609556	0					
+ANR	7609581	Identifier	bdrv_is_sg		7609556	0					
+ANR	7609582	ArgumentList	bdrv		7609556	1					
+ANR	7609583	Argument	bdrv		7609556	0					
+ANR	7609584	Identifier	bdrv		7609556	0					
+ANR	7609585	PrimaryExpression	"""scsi-generic"""		7609556	1					
+ANR	7609586	PrimaryExpression	"""scsi-disk"""		7609556	2					
+ANR	7609587	ExpressionStatement	"dev = qdev_create ( & bus -> qbus , driver )"	19:4:374:411	7609556	4	True				
+ANR	7609588	AssignmentExpression	"dev = qdev_create ( & bus -> qbus , driver )"		7609556	0		=			
+ANR	7609589	Identifier	dev		7609556	0					
+ANR	7609590	CallExpression	"qdev_create ( & bus -> qbus , driver )"		7609556	1					
+ANR	7609591	Callee	qdev_create		7609556	0					
+ANR	7609592	Identifier	qdev_create		7609556	0					
+ANR	7609593	ArgumentList	& bus -> qbus		7609556	1					
+ANR	7609594	Argument	& bus -> qbus		7609556	0					
+ANR	7609595	UnaryOperationExpression	& bus -> qbus		7609556	0					
+ANR	7609596	UnaryOperator	&		7609556	0					
+ANR	7609597	PtrMemberAccess	bus -> qbus		7609556	1					
+ANR	7609598	Identifier	bus		7609556	0					
+ANR	7609599	Identifier	qbus		7609556	1					
+ANR	7609600	Argument	driver		7609556	1					
+ANR	7609601	Identifier	driver		7609556	0					
+ANR	7609602	ExpressionStatement	"qdev_prop_set_uint32 ( dev , ""scsi-id"" , unit )"	21:4:418:460	7609556	5	True				
+ANR	7609603	CallExpression	"qdev_prop_set_uint32 ( dev , ""scsi-id"" , unit )"		7609556	0					
+ANR	7609604	Callee	qdev_prop_set_uint32		7609556	0					
+ANR	7609605	Identifier	qdev_prop_set_uint32		7609556	0					
+ANR	7609606	ArgumentList	dev		7609556	1					
+ANR	7609607	Argument	dev		7609556	0					
+ANR	7609608	Identifier	dev		7609556	0					
+ANR	7609609	Argument	"""scsi-id"""		7609556	1					
+ANR	7609610	PrimaryExpression	"""scsi-id"""		7609556	0					
+ANR	7609611	Argument	unit		7609556	2					
+ANR	7609612	Identifier	unit		7609556	0					
+ANR	7609613	IfStatement	if ( bootindex >= 0 )		7609556	6					
+ANR	7609614	Condition	bootindex >= 0	23:8:471:484	7609556	0	True				
+ANR	7609615	RelationalExpression	bootindex >= 0		7609556	0		>=			
+ANR	7609616	Identifier	bootindex		7609556	0					
+ANR	7609617	PrimaryExpression	0		7609556	1					
+ANR	7609618	CompoundStatement		17:24:256:256	7609556	1					
+ANR	7609619	ExpressionStatement	"object_property_set_int ( OBJECT ( dev ) , bootindex , ""bootindex"" , & error_abort )"	25:8:498:605	7609556	0	True				
+ANR	7609620	CallExpression	"object_property_set_int ( OBJECT ( dev ) , bootindex , ""bootindex"" , & error_abort )"		7609556	0					
+ANR	7609621	Callee	object_property_set_int		7609556	0					
+ANR	7609622	Identifier	object_property_set_int		7609556	0					
+ANR	7609623	ArgumentList	OBJECT ( dev )		7609556	1					
+ANR	7609624	Argument	OBJECT ( dev )		7609556	0					
+ANR	7609625	CallExpression	OBJECT ( dev )		7609556	0					
+ANR	7609626	Callee	OBJECT		7609556	0					
+ANR	7609627	Identifier	OBJECT		7609556	0					
+ANR	7609628	ArgumentList	dev		7609556	1					
+ANR	7609629	Argument	dev		7609556	0					
+ANR	7609630	Identifier	dev		7609556	0					
+ANR	7609631	Argument	bootindex		7609556	1					
+ANR	7609632	Identifier	bootindex		7609556	0					
+ANR	7609633	Argument	"""bootindex"""		7609556	2					
+ANR	7609634	PrimaryExpression	"""bootindex"""		7609556	0					
+ANR	7609635	Argument	& error_abort		7609556	3					
+ANR	7609636	UnaryOperationExpression	& error_abort		7609556	0					
+ANR	7609637	UnaryOperator	&		7609556	0					
+ANR	7609638	Identifier	error_abort		7609556	1					
+ANR	7609639	IfStatement	"if ( object_property_find ( OBJECT ( dev ) , ""removable"" , NULL ) )"		7609556	7					
+ANR	7609640	Condition	"object_property_find ( OBJECT ( dev ) , ""removable"" , NULL )"	31:8:623:674	7609556	0	True				
+ANR	7609641	CallExpression	"object_property_find ( OBJECT ( dev ) , ""removable"" , NULL )"		7609556	0					
+ANR	7609642	Callee	object_property_find		7609556	0					
+ANR	7609643	Identifier	object_property_find		7609556	0					
+ANR	7609644	ArgumentList	OBJECT ( dev )		7609556	1					
+ANR	7609645	Argument	OBJECT ( dev )		7609556	0					
+ANR	7609646	CallExpression	OBJECT ( dev )		7609556	0					
+ANR	7609647	Callee	OBJECT		7609556	0					
+ANR	7609648	Identifier	OBJECT		7609556	0					
+ANR	7609649	ArgumentList	dev		7609556	1					
+ANR	7609650	Argument	dev		7609556	0					
+ANR	7609651	Identifier	dev		7609556	0					
+ANR	7609652	Argument	"""removable"""		7609556	1					
+ANR	7609653	PrimaryExpression	"""removable"""		7609556	0					
+ANR	7609654	Argument	NULL		7609556	2					
+ANR	7609655	Identifier	NULL		7609556	0					
+ANR	7609656	CompoundStatement		25:62:446:446	7609556	1					
+ANR	7609657	ExpressionStatement	"qdev_prop_set_bit ( dev , ""removable"" , removable )"	33:8:688:734	7609556	0	True				
+ANR	7609658	CallExpression	"qdev_prop_set_bit ( dev , ""removable"" , removable )"		7609556	0					
+ANR	7609659	Callee	qdev_prop_set_bit		7609556	0					
+ANR	7609660	Identifier	qdev_prop_set_bit		7609556	0					
+ANR	7609661	ArgumentList	dev		7609556	1					
+ANR	7609662	Argument	dev		7609556	0					
+ANR	7609663	Identifier	dev		7609556	0					
+ANR	7609664	Argument	"""removable"""		7609556	1					
+ANR	7609665	PrimaryExpression	"""removable"""		7609556	0					
+ANR	7609666	Argument	removable		7609556	2					
+ANR	7609667	Identifier	removable		7609556	0					
+ANR	7609668	IfStatement	"if ( serial && object_property_find ( OBJECT ( dev ) , ""serial"" , NULL ) )"		7609556	8					
+ANR	7609669	Condition	"serial && object_property_find ( OBJECT ( dev ) , ""serial"" , NULL )"	37:8:752:810	7609556	0	True				
+ANR	7609670	AndExpression	"serial && object_property_find ( OBJECT ( dev ) , ""serial"" , NULL )"		7609556	0		&&			
+ANR	7609671	Identifier	serial		7609556	0					
+ANR	7609672	CallExpression	"object_property_find ( OBJECT ( dev ) , ""serial"" , NULL )"		7609556	1					
+ANR	7609673	Callee	object_property_find		7609556	0					
+ANR	7609674	Identifier	object_property_find		7609556	0					
+ANR	7609675	ArgumentList	OBJECT ( dev )		7609556	1					
+ANR	7609676	Argument	OBJECT ( dev )		7609556	0					
+ANR	7609677	CallExpression	OBJECT ( dev )		7609556	0					
+ANR	7609678	Callee	OBJECT		7609556	0					
+ANR	7609679	Identifier	OBJECT		7609556	0					
+ANR	7609680	ArgumentList	dev		7609556	1					
+ANR	7609681	Argument	dev		7609556	0					
+ANR	7609682	Identifier	dev		7609556	0					
+ANR	7609683	Argument	"""serial"""		7609556	1					
+ANR	7609684	PrimaryExpression	"""serial"""		7609556	0					
+ANR	7609685	Argument	NULL		7609556	2					
+ANR	7609686	Identifier	NULL		7609556	0					
+ANR	7609687	CompoundStatement		31:69:582:582	7609556	1					
+ANR	7609688	ExpressionStatement	"qdev_prop_set_string ( dev , ""serial"" , serial )"	39:8:824:867	7609556	0	True				
+ANR	7609689	CallExpression	"qdev_prop_set_string ( dev , ""serial"" , serial )"		7609556	0					
+ANR	7609690	Callee	qdev_prop_set_string		7609556	0					
+ANR	7609691	Identifier	qdev_prop_set_string		7609556	0					
+ANR	7609692	ArgumentList	dev		7609556	1					
+ANR	7609693	Argument	dev		7609556	0					
+ANR	7609694	Identifier	dev		7609556	0					
+ANR	7609695	Argument	"""serial"""		7609556	1					
+ANR	7609696	PrimaryExpression	"""serial"""		7609556	0					
+ANR	7609697	Argument	serial		7609556	2					
+ANR	7609698	Identifier	serial		7609556	0					
+ANR	7609699	IfStatement	"if ( qdev_prop_set_drive ( dev , ""drive"" , bdrv ) < 0 )"		7609556	9					
+ANR	7609700	Condition	"qdev_prop_set_drive ( dev , ""drive"" , bdrv ) < 0"	43:8:885:927	7609556	0	True				
+ANR	7609701	RelationalExpression	"qdev_prop_set_drive ( dev , ""drive"" , bdrv ) < 0"		7609556	0		<			
+ANR	7609702	CallExpression	"qdev_prop_set_drive ( dev , ""drive"" , bdrv )"		7609556	0					
+ANR	7609703	Callee	qdev_prop_set_drive		7609556	0					
+ANR	7609704	Identifier	qdev_prop_set_drive		7609556	0					
+ANR	7609705	ArgumentList	dev		7609556	1					
+ANR	7609706	Argument	dev		7609556	0					
+ANR	7609707	Identifier	dev		7609556	0					
+ANR	7609708	Argument	"""drive"""		7609556	1					
+ANR	7609709	PrimaryExpression	"""drive"""		7609556	0					
+ANR	7609710	Argument	bdrv		7609556	2					
+ANR	7609711	Identifier	bdrv		7609556	0					
+ANR	7609712	PrimaryExpression	0		7609556	1					
+ANR	7609713	CompoundStatement		37:53:699:699	7609556	1					
+ANR	7609714	ExpressionStatement	"error_setg ( errp , ""Setting drive property failed"" )"	45:8:941:990	7609556	0	True				
+ANR	7609715	CallExpression	"error_setg ( errp , ""Setting drive property failed"" )"		7609556	0					
+ANR	7609716	Callee	error_setg		7609556	0					
+ANR	7609717	Identifier	error_setg		7609556	0					
+ANR	7609718	ArgumentList	errp		7609556	1					
+ANR	7609719	Argument	errp		7609556	0					
+ANR	7609720	Identifier	errp		7609556	0					
+ANR	7609721	Argument	"""Setting drive property failed"""		7609556	1					
+ANR	7609722	PrimaryExpression	"""Setting drive property failed"""		7609556	0					
+ANR	7609723	ExpressionStatement	object_unparent ( OBJECT ( dev ) )	47:8:1001:1029	7609556	1	True				
+ANR	7609724	CallExpression	object_unparent ( OBJECT ( dev ) )		7609556	0					
+ANR	7609725	Callee	object_unparent		7609556	0					
+ANR	7609726	Identifier	object_unparent		7609556	0					
+ANR	7609727	ArgumentList	OBJECT ( dev )		7609556	1					
+ANR	7609728	Argument	OBJECT ( dev )		7609556	0					
+ANR	7609729	CallExpression	OBJECT ( dev )		7609556	0					
+ANR	7609730	Callee	OBJECT		7609556	0					
+ANR	7609731	Identifier	OBJECT		7609556	0					
+ANR	7609732	ArgumentList	dev		7609556	1					
+ANR	7609733	Argument	dev		7609556	0					
+ANR	7609734	Identifier	dev		7609556	0					
+ANR	7609735	ReturnStatement	return NULL ;	49:8:1040:1051	7609556	2	True				
+ANR	7609736	Identifier	NULL		7609556	0					
+ANR	7609737	ExpressionStatement	"object_property_set_bool ( OBJECT ( dev ) , true , ""realized"" , & err )"	53:4:1065:1126	7609556	10	True				
+ANR	7609738	CallExpression	"object_property_set_bool ( OBJECT ( dev ) , true , ""realized"" , & err )"		7609556	0					
+ANR	7609739	Callee	object_property_set_bool		7609556	0					
+ANR	7609740	Identifier	object_property_set_bool		7609556	0					
+ANR	7609741	ArgumentList	OBJECT ( dev )		7609556	1					
+ANR	7609742	Argument	OBJECT ( dev )		7609556	0					
+ANR	7609743	CallExpression	OBJECT ( dev )		7609556	0					
+ANR	7609744	Callee	OBJECT		7609556	0					
+ANR	7609745	Identifier	OBJECT		7609556	0					
+ANR	7609746	ArgumentList	dev		7609556	1					
+ANR	7609747	Argument	dev		7609556	0					
+ANR	7609748	Identifier	dev		7609556	0					
+ANR	7609749	Argument	true		7609556	1					
+ANR	7609750	Identifier	true		7609556	0					
+ANR	7609751	Argument	"""realized"""		7609556	2					
+ANR	7609752	PrimaryExpression	"""realized"""		7609556	0					
+ANR	7609753	Argument	& err		7609556	3					
+ANR	7609754	UnaryOperationExpression	& err		7609556	0					
+ANR	7609755	UnaryOperator	&		7609556	0					
+ANR	7609756	Identifier	err		7609556	1					
+ANR	7609757	IfStatement	if ( err != NULL )		7609556	11					
+ANR	7609758	Condition	err != NULL	55:8:1137:1147	7609556	0	True				
+ANR	7609759	EqualityExpression	err != NULL		7609556	0		!=			
+ANR	7609760	Identifier	err		7609556	0					
+ANR	7609761	Identifier	NULL		7609556	1					
+ANR	7609762	CompoundStatement		49:21:919:919	7609556	1					
+ANR	7609763	ExpressionStatement	"error_propagate ( errp , err )"	57:8:1161:1187	7609556	0	True				
+ANR	7609764	CallExpression	"error_propagate ( errp , err )"		7609556	0					
+ANR	7609765	Callee	error_propagate		7609556	0					
+ANR	7609766	Identifier	error_propagate		7609556	0					
+ANR	7609767	ArgumentList	errp		7609556	1					
+ANR	7609768	Argument	errp		7609556	0					
+ANR	7609769	Identifier	errp		7609556	0					
+ANR	7609770	Argument	err		7609556	1					
+ANR	7609771	Identifier	err		7609556	0					
+ANR	7609772	ExpressionStatement	object_unparent ( OBJECT ( dev ) )	59:8:1198:1226	7609556	1	True				
+ANR	7609773	CallExpression	object_unparent ( OBJECT ( dev ) )		7609556	0					
+ANR	7609774	Callee	object_unparent		7609556	0					
+ANR	7609775	Identifier	object_unparent		7609556	0					
+ANR	7609776	ArgumentList	OBJECT ( dev )		7609556	1					
+ANR	7609777	Argument	OBJECT ( dev )		7609556	0					
+ANR	7609778	CallExpression	OBJECT ( dev )		7609556	0					
+ANR	7609779	Callee	OBJECT		7609556	0					
+ANR	7609780	Identifier	OBJECT		7609556	0					
+ANR	7609781	ArgumentList	dev		7609556	1					
+ANR	7609782	Argument	dev		7609556	0					
+ANR	7609783	Identifier	dev		7609556	0					
+ANR	7609784	ReturnStatement	return NULL ;	61:8:1237:1248	7609556	2	True				
+ANR	7609785	Identifier	NULL		7609556	0					
+ANR	7609786	ReturnStatement	return SCSI_DEVICE ( dev ) ;	65:4:1262:1285	7609556	12	True				
+ANR	7609787	CallExpression	SCSI_DEVICE ( dev )		7609556	0					
+ANR	7609788	Callee	SCSI_DEVICE		7609556	0					
+ANR	7609789	Identifier	SCSI_DEVICE		7609556	0					
+ANR	7609790	ArgumentList	dev		7609556	1					
+ANR	7609791	Argument	dev		7609556	0					
+ANR	7609792	Identifier	dev		7609556	0					
+ANR	7609793	ReturnType	SCSIDevice *		7609556	1					
+ANR	7609794	Identifier	scsi_bus_legacy_add_drive		7609556	2					
+ANR	7609795	ParameterList	"SCSIBus * bus , BlockDriverState * bdrv , int unit , bool removable , int bootindex , const char * serial , Error * * errp"		7609556	3					
+ANR	7609796	Parameter	SCSIBus * bus	1:38:38:49	7609556	0	True				
+ANR	7609797	ParameterType	SCSIBus *		7609556	0					
+ANR	7609798	Identifier	bus		7609556	1					
+ANR	7609799	Parameter	BlockDriverState * bdrv	1:52:52:73	7609556	1	True				
+ANR	7609800	ParameterType	BlockDriverState *		7609556	0					
+ANR	7609801	Identifier	bdrv		7609556	1					
+ANR	7609802	Parameter	int unit	3:38:115:122	7609556	2	True				
+ANR	7609803	ParameterType	int		7609556	0					
+ANR	7609804	Identifier	unit		7609556	1					
+ANR	7609805	Parameter	bool removable	3:48:125:138	7609556	3	True				
+ANR	7609806	ParameterType	bool		7609556	0					
+ANR	7609807	Identifier	removable		7609556	1					
+ANR	7609808	Parameter	int bootindex	3:64:141:153	7609556	4	True				
+ANR	7609809	ParameterType	int		7609556	0					
+ANR	7609810	Identifier	bootindex		7609556	1					
+ANR	7609811	Parameter	const char * serial	5:38:195:212	7609556	5	True				
+ANR	7609812	ParameterType	const char *		7609556	0					
+ANR	7609813	Identifier	serial		7609556	1					
+ANR	7609814	Parameter	Error * * errp	5:58:215:226	7609556	6	True				
+ANR	7609815	ParameterType	Error * *		7609556	0					
+ANR	7609816	Identifier	errp		7609556	1					
+ANR	7609817	CFGEntryNode	ENTRY		7609556		True				
+ANR	7609818	CFGExitNode	EXIT		7609556		True				
+ANR	7609819	Symbol	& bus -> qbus		7609556						
+ANR	7609820	Symbol	bus		7609556						
+ANR	7609821	Symbol	NULL		7609556						
+ANR	7609822	Symbol	errp		7609556						
+ANR	7609823	Symbol	err		7609556						
+ANR	7609824	Symbol	& error_abort		7609556						
+ANR	7609825	Symbol	bdrv_is_sg		7609556						
+ANR	7609826	Symbol	bdrv		7609556						
+ANR	7609827	Symbol	object_property_find		7609556						
+ANR	7609828	Symbol	OBJECT		7609556						
+ANR	7609829	Symbol	& err		7609556						
+ANR	7609830	Symbol	unit		7609556						
+ANR	7609831	Symbol	driver		7609556						
+ANR	7609832	Symbol	dev		7609556						
+ANR	7609833	Symbol	qdev_create		7609556						
+ANR	7609834	Symbol	bootindex		7609556						
+ANR	7609835	Symbol	serial		7609556						
+ANR	7609836	Symbol	removable		7609556						
+ANR	7609837	Symbol	true		7609556						
+ANR	7609838	Symbol	qdev_prop_set_drive		7609556						
+ANR	7609839	Symbol	SCSI_DEVICE		7609556						

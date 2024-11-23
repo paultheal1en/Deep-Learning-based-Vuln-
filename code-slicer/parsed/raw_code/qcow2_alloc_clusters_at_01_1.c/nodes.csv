@@ -1,0 +1,140 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6826912	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_alloc_clusters_at_01_1.c								
+ANR	6826913	Function	qcow2_alloc_clusters_at	1:0:0:689							
+ANR	6826914	FunctionDef	"qcow2_alloc_clusters_at (BlockDriverState * bs , uint64_t offset , int nb_clusters)"		6826913	0					
+ANR	6826915	CompoundStatement		3:0:88:689	6826913	0					
+ANR	6826916	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	4:4:94:123	6826913	0	True				
+ANR	6826917	IdentifierDecl	* s = bs -> opaque		6826913	0					
+ANR	6826918	IdentifierDeclType	BDRVQcowState *		6826913	0					
+ANR	6826919	Identifier	s		6826913	1					
+ANR	6826920	AssignmentExpression	* s = bs -> opaque		6826913	2		=			
+ANR	6826921	Identifier	s		6826913	0					
+ANR	6826922	PtrMemberAccess	bs -> opaque		6826913	1					
+ANR	6826923	Identifier	bs		6826913	0					
+ANR	6826924	Identifier	opaque		6826913	1					
+ANR	6826925	IdentifierDeclStatement	uint64_t cluster_index ;	5:4:129:151	6826913	1	True				
+ANR	6826926	IdentifierDecl	cluster_index		6826913	0					
+ANR	6826927	IdentifierDeclType	uint64_t		6826913	0					
+ANR	6826928	Identifier	cluster_index		6826913	1					
+ANR	6826929	IdentifierDeclStatement	uint64_t old_free_cluster_index ;	6:4:157:188	6826913	2	True				
+ANR	6826930	IdentifierDecl	old_free_cluster_index		6826913	0					
+ANR	6826931	IdentifierDeclType	uint64_t		6826913	0					
+ANR	6826932	Identifier	old_free_cluster_index		6826913	1					
+ANR	6826933	IdentifierDeclStatement	"int i , refcount , ret ;"	7:4:194:214	6826913	3	True				
+ANR	6826934	IdentifierDecl	i		6826913	0					
+ANR	6826935	IdentifierDeclType	int		6826913	0					
+ANR	6826936	Identifier	i		6826913	1					
+ANR	6826937	IdentifierDecl	refcount		6826913	1					
+ANR	6826938	IdentifierDeclType	int		6826913	0					
+ANR	6826939	Identifier	refcount		6826913	1					
+ANR	6826940	IdentifierDecl	ret		6826913	2					
+ANR	6826941	IdentifierDeclType	int		6826913	0					
+ANR	6826942	Identifier	ret		6826913	1					
+ANR	6826943	ExpressionStatement	cluster_index = offset >> s -> cluster_bits	9:4:269:310	6826913	4	True				
+ANR	6826944	AssignmentExpression	cluster_index = offset >> s -> cluster_bits		6826913	0		=			
+ANR	6826945	Identifier	cluster_index		6826913	0					
+ANR	6826946	ShiftExpression	offset >> s -> cluster_bits		6826913	1		>>			
+ANR	6826947	Identifier	offset		6826913	0					
+ANR	6826948	PtrMemberAccess	s -> cluster_bits		6826913	1					
+ANR	6826949	Identifier	s		6826913	0					
+ANR	6826950	Identifier	cluster_bits		6826913	1					
+ANR	6826951	ForStatement	for ( i = 0 ; i < nb_clusters ; i ++ )		6826913	5					
+ANR	6826952	ForInit	i = 0 ;	10:8:320:325	6826913	0	True				
+ANR	6826953	AssignmentExpression	i = 0		6826913	0		=			
+ANR	6826954	Identifier	i		6826913	0					
+ANR	6826955	PrimaryExpression	0		6826913	1					
+ANR	6826956	Condition	i < nb_clusters	10:15:327:341	6826913	1	True				
+ANR	6826957	RelationalExpression	i < nb_clusters		6826913	0		<			
+ANR	6826958	Identifier	i		6826913	0					
+ANR	6826959	Identifier	nb_clusters		6826913	1					
+ANR	6826960	PostIncDecOperationExpression	i ++	10:32:344:346	6826913	2	True				
+ANR	6826961	Identifier	i		6826913	0					
+ANR	6826962	IncDec	++		6826913	1					
+ANR	6826963	CompoundStatement		8:37:260:260	6826913	3					
+ANR	6826964	ExpressionStatement	"refcount = get_refcount ( bs , cluster_index ++ )"	11:8:359:403	6826913	0	True				
+ANR	6826965	AssignmentExpression	"refcount = get_refcount ( bs , cluster_index ++ )"		6826913	0		=			
+ANR	6826966	Identifier	refcount		6826913	0					
+ANR	6826967	CallExpression	"get_refcount ( bs , cluster_index ++ )"		6826913	1					
+ANR	6826968	Callee	get_refcount		6826913	0					
+ANR	6826969	Identifier	get_refcount		6826913	0					
+ANR	6826970	ArgumentList	bs		6826913	1					
+ANR	6826971	Argument	bs		6826913	0					
+ANR	6826972	Identifier	bs		6826913	0					
+ANR	6826973	Argument	cluster_index ++		6826913	1					
+ANR	6826974	PostIncDecOperationExpression	cluster_index ++		6826913	0					
+ANR	6826975	Identifier	cluster_index		6826913	0					
+ANR	6826976	IncDec	++		6826913	1					
+ANR	6826977	IfStatement	if ( refcount < 0 )		6826913	1					
+ANR	6826978	Condition	refcount < 0	12:12:417:428	6826913	0	True				
+ANR	6826979	RelationalExpression	refcount < 0		6826913	0		<			
+ANR	6826980	Identifier	refcount		6826913	0					
+ANR	6826981	PrimaryExpression	0		6826913	1					
+ANR	6826982	CompoundStatement		10:26:342:342	6826913	1					
+ANR	6826983	ReturnStatement	return refcount ;	13:12:445:460	6826913	0	True				
+ANR	6826984	Identifier	refcount		6826913	0					
+ANR	6826985	ElseStatement	else		6826913	0					
+ANR	6826986	IfStatement	if ( refcount != 0 )		6826913	0					
+ANR	6826987	Condition	refcount != 0	14:19:481:493	6826913	0	True				
+ANR	6826988	EqualityExpression	refcount != 0		6826913	0		!=			
+ANR	6826989	Identifier	refcount		6826913	0					
+ANR	6826990	PrimaryExpression	0		6826913	1					
+ANR	6826991	CompoundStatement		12:34:407:407	6826913	1					
+ANR	6826992	BreakStatement	break ;	15:12:510:515	6826913	0	True				
+ANR	6826993	ExpressionStatement	"ret = update_refcount ( bs , offset , i << s -> cluster_bits , 1 )"	19:4:570:628	6826913	6	True				
+ANR	6826994	AssignmentExpression	"ret = update_refcount ( bs , offset , i << s -> cluster_bits , 1 )"		6826913	0		=			
+ANR	6826995	Identifier	ret		6826913	0					
+ANR	6826996	CallExpression	"update_refcount ( bs , offset , i << s -> cluster_bits , 1 )"		6826913	1					
+ANR	6826997	Callee	update_refcount		6826913	0					
+ANR	6826998	Identifier	update_refcount		6826913	0					
+ANR	6826999	ArgumentList	bs		6826913	1					
+ANR	6827000	Argument	bs		6826913	0					
+ANR	6827001	Identifier	bs		6826913	0					
+ANR	6827002	Argument	offset		6826913	1					
+ANR	6827003	Identifier	offset		6826913	0					
+ANR	6827004	Argument	i << s -> cluster_bits		6826913	2					
+ANR	6827005	ShiftExpression	i << s -> cluster_bits		6826913	0		<<			
+ANR	6827006	Identifier	i		6826913	0					
+ANR	6827007	PtrMemberAccess	s -> cluster_bits		6826913	1					
+ANR	6827008	Identifier	s		6826913	0					
+ANR	6827009	Identifier	cluster_bits		6826913	1					
+ANR	6827010	Argument	1		6826913	3					
+ANR	6827011	PrimaryExpression	1		6826913	0					
+ANR	6827012	IfStatement	if ( ret < 0 )		6826913	7					
+ANR	6827013	Condition	ret < 0	20:8:638:644	6826913	0	True				
+ANR	6827014	RelationalExpression	ret < 0		6826913	0		<			
+ANR	6827015	Identifier	ret		6826913	0					
+ANR	6827016	PrimaryExpression	0		6826913	1					
+ANR	6827017	CompoundStatement		18:17:558:558	6826913	1					
+ANR	6827018	ReturnStatement	return ret ;	21:8:657:667	6826913	0	True				
+ANR	6827019	Identifier	ret		6826913	0					
+ANR	6827020	ReturnStatement	return i ;	23:4:679:687	6826913	8	True				
+ANR	6827021	Identifier	i		6826913	0					
+ANR	6827022	ReturnType	int		6826913	1					
+ANR	6827023	Identifier	qcow2_alloc_clusters_at		6826913	2					
+ANR	6827024	ParameterList	"BlockDriverState * bs , uint64_t offset , int nb_clusters"		6826913	3					
+ANR	6827025	Parameter	BlockDriverState * bs	1:28:28:47	6826913	0	True				
+ANR	6827026	ParameterType	BlockDriverState *		6826913	0					
+ANR	6827027	Identifier	bs		6826913	1					
+ANR	6827028	Parameter	uint64_t offset	1:50:50:64	6826913	1	True				
+ANR	6827029	ParameterType	uint64_t		6826913	0					
+ANR	6827030	Identifier	offset		6826913	1					
+ANR	6827031	Parameter	int nb_clusters	2:4:71:85	6826913	2	True				
+ANR	6827032	ParameterType	int		6826913	0					
+ANR	6827033	Identifier	nb_clusters		6826913	1					
+ANR	6827034	CFGEntryNode	ENTRY		6826913		True				
+ANR	6827035	CFGExitNode	EXIT		6826913		True				
+ANR	6827036	Symbol	ret		6826913						
+ANR	6827037	Symbol	offset		6826913						
+ANR	6827038	Symbol	bs -> opaque		6826913						
+ANR	6827039	Symbol	i		6826913						
+ANR	6827040	Symbol	nb_clusters		6826913						
+ANR	6827041	Symbol	refcount		6826913						
+ANR	6827042	Symbol	update_refcount		6826913						
+ANR	6827043	Symbol	old_free_cluster_index		6826913						
+ANR	6827044	Symbol	bs		6826913						
+ANR	6827045	Symbol	s -> cluster_bits		6826913						
+ANR	6827046	Symbol	s		6826913						
+ANR	6827047	Symbol	* bs		6826913						
+ANR	6827048	Symbol	get_refcount		6826913						
+ANR	6827049	Symbol	cluster_index		6826913						
+ANR	6827050	Symbol	* s		6826913						

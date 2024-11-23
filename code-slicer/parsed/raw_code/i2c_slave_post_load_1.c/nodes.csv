@@ -1,0 +1,116 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4753885	File	/home/p4ultr4n/workplace/ReVeal/raw_code/i2c_slave_post_load_1.c								
+ANR	4753886	Function	i2c_slave_post_load	1:0:0:415							
+ANR	4753887	FunctionDef	"i2c_slave_post_load (void * opaque , int version_id)"		4753886	0					
+ANR	4753888	CompoundStatement		3:0:62:415	4753886	0					
+ANR	4753889	IdentifierDeclStatement	I2CSlave * dev = opaque ;	5:4:69:91	4753886	0	True				
+ANR	4753890	IdentifierDecl	* dev = opaque		4753886	0					
+ANR	4753891	IdentifierDeclType	I2CSlave *		4753886	0					
+ANR	4753892	Identifier	dev		4753886	1					
+ANR	4753893	AssignmentExpression	* dev = opaque		4753886	2		=			
+ANR	4753894	Identifier	opaque		4753886	0					
+ANR	4753895	Identifier	opaque		4753886	1					
+ANR	4753896	IdentifierDeclStatement	I2CBus * bus ;	7:4:98:109	4753886	1	True				
+ANR	4753897	IdentifierDecl	* bus		4753886	0					
+ANR	4753898	IdentifierDeclType	I2CBus *		4753886	0					
+ANR	4753899	Identifier	bus		4753886	1					
+ANR	4753900	IdentifierDeclStatement	I2CNode * node ;	9:4:116:129	4753886	2	True				
+ANR	4753901	IdentifierDecl	* node		4753886	0					
+ANR	4753902	IdentifierDeclType	I2CNode *		4753886	0					
+ANR	4753903	Identifier	node		4753886	1					
+ANR	4753904	ExpressionStatement	bus = I2C_BUS ( qdev_get_parent_bus ( DEVICE ( dev ) ) )	13:4:138:185	4753886	3	True				
+ANR	4753905	AssignmentExpression	bus = I2C_BUS ( qdev_get_parent_bus ( DEVICE ( dev ) ) )		4753886	0		=			
+ANR	4753906	Identifier	bus		4753886	0					
+ANR	4753907	CallExpression	I2C_BUS ( qdev_get_parent_bus ( DEVICE ( dev ) ) )		4753886	1					
+ANR	4753908	Callee	I2C_BUS		4753886	0					
+ANR	4753909	Identifier	I2C_BUS		4753886	0					
+ANR	4753910	ArgumentList	qdev_get_parent_bus ( DEVICE ( dev ) )		4753886	1					
+ANR	4753911	Argument	qdev_get_parent_bus ( DEVICE ( dev ) )		4753886	0					
+ANR	4753912	CallExpression	qdev_get_parent_bus ( DEVICE ( dev ) )		4753886	0					
+ANR	4753913	Callee	qdev_get_parent_bus		4753886	0					
+ANR	4753914	Identifier	qdev_get_parent_bus		4753886	0					
+ANR	4753915	ArgumentList	DEVICE ( dev )		4753886	1					
+ANR	4753916	Argument	DEVICE ( dev )		4753886	0					
+ANR	4753917	CallExpression	DEVICE ( dev )		4753886	0					
+ANR	4753918	Callee	DEVICE		4753886	0					
+ANR	4753919	Identifier	DEVICE		4753886	0					
+ANR	4753920	ArgumentList	dev		4753886	1					
+ANR	4753921	Argument	dev		4753886	0					
+ANR	4753922	Identifier	dev		4753886	0					
+ANR	4753923	IfStatement	if ( ( bus -> saved_address == dev -> address ) || ( bus -> broadcast ) )		4753886	4					
+ANR	4753924	Condition	( bus -> saved_address == dev -> address ) || ( bus -> broadcast )	15:8:196:251	4753886	0	True				
+ANR	4753925	OrExpression	( bus -> saved_address == dev -> address ) || ( bus -> broadcast )		4753886	0		||			
+ANR	4753926	EqualityExpression	bus -> saved_address == dev -> address		4753886	0		==			
+ANR	4753927	PtrMemberAccess	bus -> saved_address		4753886	0					
+ANR	4753928	Identifier	bus		4753886	0					
+ANR	4753929	Identifier	saved_address		4753886	1					
+ANR	4753930	PtrMemberAccess	dev -> address		4753886	1					
+ANR	4753931	Identifier	dev		4753886	0					
+ANR	4753932	Identifier	address		4753886	1					
+ANR	4753933	PtrMemberAccess	bus -> broadcast		4753886	1					
+ANR	4753934	Identifier	bus		4753886	0					
+ANR	4753935	Identifier	broadcast		4753886	1					
+ANR	4753936	CompoundStatement		13:66:191:191	4753886	1					
+ANR	4753937	ExpressionStatement	node = g_malloc ( sizeof ( struct I2CNode ) )	17:8:265:304	4753886	0	True				
+ANR	4753938	AssignmentExpression	node = g_malloc ( sizeof ( struct I2CNode ) )		4753886	0		=			
+ANR	4753939	Identifier	node		4753886	0					
+ANR	4753940	CallExpression	g_malloc ( sizeof ( struct I2CNode ) )		4753886	1					
+ANR	4753941	Callee	g_malloc		4753886	0					
+ANR	4753942	Identifier	g_malloc		4753886	0					
+ANR	4753943	ArgumentList	sizeof ( struct I2CNode )		4753886	1					
+ANR	4753944	Argument	sizeof ( struct I2CNode )		4753886	0					
+ANR	4753945	SizeofExpression	sizeof ( struct I2CNode )		4753886	0					
+ANR	4753946	Sizeof	sizeof		4753886	0					
+ANR	4753947	SizeofOperand	struct I2CNode		4753886	1					
+ANR	4753948	ExpressionStatement	node -> elt = dev	19:8:315:330	4753886	1	True				
+ANR	4753949	AssignmentExpression	node -> elt = dev		4753886	0		=			
+ANR	4753950	PtrMemberAccess	node -> elt		4753886	0					
+ANR	4753951	Identifier	node		4753886	0					
+ANR	4753952	Identifier	elt		4753886	1					
+ANR	4753953	Identifier	dev		4753886	1					
+ANR	4753954	ExpressionStatement	"QLIST_INSERT_HEAD ( & bus -> current_devs , node , next )"	21:8:341:390	4753886	2	True				
+ANR	4753955	CallExpression	"QLIST_INSERT_HEAD ( & bus -> current_devs , node , next )"		4753886	0					
+ANR	4753956	Callee	QLIST_INSERT_HEAD		4753886	0					
+ANR	4753957	Identifier	QLIST_INSERT_HEAD		4753886	0					
+ANR	4753958	ArgumentList	& bus -> current_devs		4753886	1					
+ANR	4753959	Argument	& bus -> current_devs		4753886	0					
+ANR	4753960	UnaryOperationExpression	& bus -> current_devs		4753886	0					
+ANR	4753961	UnaryOperator	&		4753886	0					
+ANR	4753962	PtrMemberAccess	bus -> current_devs		4753886	1					
+ANR	4753963	Identifier	bus		4753886	0					
+ANR	4753964	Identifier	current_devs		4753886	1					
+ANR	4753965	Argument	node		4753886	1					
+ANR	4753966	Identifier	node		4753886	0					
+ANR	4753967	Argument	next		4753886	2					
+ANR	4753968	Identifier	next		4753886	0					
+ANR	4753969	ReturnStatement	return 0 ;	25:4:404:412	4753886	5	True				
+ANR	4753970	PrimaryExpression	0		4753886	0					
+ANR	4753971	ReturnType	static int		4753886	1					
+ANR	4753972	Identifier	i2c_slave_post_load		4753886	2					
+ANR	4753973	ParameterList	"void * opaque , int version_id"		4753886	3					
+ANR	4753974	Parameter	void * opaque	1:31:31:42	4753886	0	True				
+ANR	4753975	ParameterType	void *		4753886	0					
+ANR	4753976	Identifier	opaque		4753886	1					
+ANR	4753977	Parameter	int version_id	1:45:45:58	4753886	1	True				
+ANR	4753978	ParameterType	int		4753886	0					
+ANR	4753979	Identifier	version_id		4753886	1					
+ANR	4753980	CFGEntryNode	ENTRY		4753886		True				
+ANR	4753981	CFGExitNode	EXIT		4753886		True				
+ANR	4753982	Symbol	* dev		4753886						
+ANR	4753983	Symbol	next		4753886						
+ANR	4753984	Symbol	bus		4753886						
+ANR	4753985	Symbol	opaque		4753886						
+ANR	4753986	Symbol	node -> elt		4753886						
+ANR	4753987	Symbol	bus -> saved_address		4753886						
+ANR	4753988	Symbol	DEVICE		4753886						
+ANR	4753989	Symbol	version_id		4753886						
+ANR	4753990	Symbol	I2C_BUS		4753886						
+ANR	4753991	Symbol	node		4753886						
+ANR	4753992	Symbol	g_malloc		4753886						
+ANR	4753993	Symbol	dev		4753886						
+ANR	4753994	Symbol	* bus		4753886						
+ANR	4753995	Symbol	dev -> address		4753886						
+ANR	4753996	Symbol	qdev_get_parent_bus		4753886						
+ANR	4753997	Symbol	& bus -> current_devs		4753886						
+ANR	4753998	Symbol	* node		4753886						
+ANR	4753999	Symbol	bus -> broadcast		4753886						

@@ -1,0 +1,463 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5880380	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mxf_read_local_tags_01_1.c								
+ANR	5880381	Function	mxf_read_local_tags	1:0:0:2260							
+ANR	5880382	FunctionDef	"mxf_read_local_tags (MXFContext * mxf , KLVPacket * klv , MXFMetadataReadFunc * read_child , int ctx_size , enum MXFMetadataSetType type)"		5880381	0					
+ANR	5880383	CompoundStatement		3:0:142:2260	5880381	0					
+ANR	5880384	IdentifierDeclStatement	AVIOContext * pb = mxf -> fc -> pb ;	5:4:149:178	5880381	0	True				
+ANR	5880385	IdentifierDecl	* pb = mxf -> fc -> pb		5880381	0					
+ANR	5880386	IdentifierDeclType	AVIOContext *		5880381	0					
+ANR	5880387	Identifier	pb		5880381	1					
+ANR	5880388	AssignmentExpression	* pb = mxf -> fc -> pb		5880381	2		=			
+ANR	5880389	Identifier	pb		5880381	0					
+ANR	5880390	PtrMemberAccess	mxf -> fc -> pb		5880381	1					
+ANR	5880391	PtrMemberAccess	mxf -> fc		5880381	0					
+ANR	5880392	Identifier	mxf		5880381	0					
+ANR	5880393	Identifier	fc		5880381	1					
+ANR	5880394	Identifier	pb		5880381	1					
+ANR	5880395	IdentifierDeclStatement	MXFMetadataSet * ctx = ctx_size ? av_mallocz ( ctx_size ) : mxf ;	7:4:185:244	5880381	1	True				
+ANR	5880396	IdentifierDecl	* ctx = ctx_size ? av_mallocz ( ctx_size ) : mxf		5880381	0					
+ANR	5880397	IdentifierDeclType	MXFMetadataSet *		5880381	0					
+ANR	5880398	Identifier	ctx		5880381	1					
+ANR	5880399	AssignmentExpression	* ctx = ctx_size ? av_mallocz ( ctx_size ) : mxf		5880381	2		=			
+ANR	5880400	Identifier	ctx		5880381	0					
+ANR	5880401	ConditionalExpression	ctx_size ? av_mallocz ( ctx_size ) : mxf		5880381	1					
+ANR	5880402	Condition	ctx_size		5880381	0					
+ANR	5880403	Identifier	ctx_size		5880381	0					
+ANR	5880404	CallExpression	av_mallocz ( ctx_size )		5880381	1					
+ANR	5880405	Callee	av_mallocz		5880381	0					
+ANR	5880406	Identifier	av_mallocz		5880381	0					
+ANR	5880407	ArgumentList	ctx_size		5880381	1					
+ANR	5880408	Argument	ctx_size		5880381	0					
+ANR	5880409	Identifier	ctx_size		5880381	0					
+ANR	5880410	Identifier	mxf		5880381	2					
+ANR	5880411	IdentifierDeclStatement	uint64_t klv_end = avio_tell ( pb ) + klv -> length ;	9:4:251:297	5880381	2	True				
+ANR	5880412	IdentifierDecl	klv_end = avio_tell ( pb ) + klv -> length		5880381	0					
+ANR	5880413	IdentifierDeclType	uint64_t		5880381	0					
+ANR	5880414	Identifier	klv_end		5880381	1					
+ANR	5880415	AssignmentExpression	klv_end = avio_tell ( pb ) + klv -> length		5880381	2		=			
+ANR	5880416	Identifier	klv_end		5880381	0					
+ANR	5880417	AdditiveExpression	avio_tell ( pb ) + klv -> length		5880381	1		+			
+ANR	5880418	CallExpression	avio_tell ( pb )		5880381	0					
+ANR	5880419	Callee	avio_tell		5880381	0					
+ANR	5880420	Identifier	avio_tell		5880381	0					
+ANR	5880421	ArgumentList	pb		5880381	1					
+ANR	5880422	Argument	pb		5880381	0					
+ANR	5880423	Identifier	pb		5880381	0					
+ANR	5880424	PtrMemberAccess	klv -> length		5880381	1					
+ANR	5880425	Identifier	klv		5880381	0					
+ANR	5880426	Identifier	length		5880381	1					
+ANR	5880427	IfStatement	if ( ! ctx )		5880381	3					
+ANR	5880428	Condition	! ctx	13:8:310:313	5880381	0	True				
+ANR	5880429	UnaryOperationExpression	! ctx		5880381	0					
+ANR	5880430	UnaryOperator	!		5880381	0					
+ANR	5880431	Identifier	ctx		5880381	1					
+ANR	5880432	ReturnStatement	return AVERROR ( ENOMEM ) ;	15:8:325:347	5880381	1	True				
+ANR	5880433	CallExpression	AVERROR ( ENOMEM )		5880381	0					
+ANR	5880434	Callee	AVERROR		5880381	0					
+ANR	5880435	Identifier	AVERROR		5880381	0					
+ANR	5880436	ArgumentList	ENOMEM		5880381	1					
+ANR	5880437	Argument	ENOMEM		5880381	0					
+ANR	5880438	Identifier	ENOMEM		5880381	0					
+ANR	5880439	ExpressionStatement	"mxf_metadataset_init ( ctx , type )"	17:4:354:385	5880381	4	True				
+ANR	5880440	CallExpression	"mxf_metadataset_init ( ctx , type )"		5880381	0					
+ANR	5880441	Callee	mxf_metadataset_init		5880381	0					
+ANR	5880442	Identifier	mxf_metadataset_init		5880381	0					
+ANR	5880443	ArgumentList	ctx		5880381	1					
+ANR	5880444	Argument	ctx		5880381	0					
+ANR	5880445	Identifier	ctx		5880381	0					
+ANR	5880446	Argument	type		5880381	1					
+ANR	5880447	Identifier	type		5880381	0					
+ANR	5880448	WhileStatement	while ( avio_tell ( pb ) + 4 < klv_end && ! avio_feof ( pb ) )		5880381	5					
+ANR	5880449	Condition	avio_tell ( pb ) + 4 < klv_end && ! avio_feof ( pb )	19:11:399:443	5880381	0	True				
+ANR	5880450	AndExpression	avio_tell ( pb ) + 4 < klv_end && ! avio_feof ( pb )		5880381	0		&&			
+ANR	5880451	RelationalExpression	avio_tell ( pb ) + 4 < klv_end		5880381	0		<			
+ANR	5880452	AdditiveExpression	avio_tell ( pb ) + 4		5880381	0		+			
+ANR	5880453	CallExpression	avio_tell ( pb )		5880381	0					
+ANR	5880454	Callee	avio_tell		5880381	0					
+ANR	5880455	Identifier	avio_tell		5880381	0					
+ANR	5880456	ArgumentList	pb		5880381	1					
+ANR	5880457	Argument	pb		5880381	0					
+ANR	5880458	Identifier	pb		5880381	0					
+ANR	5880459	PrimaryExpression	4		5880381	1					
+ANR	5880460	Identifier	klv_end		5880381	1					
+ANR	5880461	UnaryOperationExpression	! avio_feof ( pb )		5880381	1					
+ANR	5880462	UnaryOperator	!		5880381	0					
+ANR	5880463	CallExpression	avio_feof ( pb )		5880381	1					
+ANR	5880464	Callee	avio_feof		5880381	0					
+ANR	5880465	Identifier	avio_feof		5880381	0					
+ANR	5880466	ArgumentList	pb		5880381	1					
+ANR	5880467	Argument	pb		5880381	0					
+ANR	5880468	Identifier	pb		5880381	0					
+ANR	5880469	CompoundStatement		27:8:476:489	5880381	1					
+ANR	5880470	IdentifierDeclStatement	int ret ;	21:8:457:464	5880381	0	True				
+ANR	5880471	IdentifierDecl	ret		5880381	0					
+ANR	5880472	IdentifierDeclType	int		5880381	0					
+ANR	5880473	Identifier	ret		5880381	1					
+ANR	5880474	IdentifierDeclStatement	int tag = avio_rb16 ( pb ) ;	23:8:475:498	5880381	1	True				
+ANR	5880475	IdentifierDecl	tag = avio_rb16 ( pb )		5880381	0					
+ANR	5880476	IdentifierDeclType	int		5880381	0					
+ANR	5880477	Identifier	tag		5880381	1					
+ANR	5880478	AssignmentExpression	tag = avio_rb16 ( pb )		5880381	2		=			
+ANR	5880479	Identifier	tag		5880381	0					
+ANR	5880480	CallExpression	avio_rb16 ( pb )		5880381	1					
+ANR	5880481	Callee	avio_rb16		5880381	0					
+ANR	5880482	Identifier	avio_rb16		5880381	0					
+ANR	5880483	ArgumentList	pb		5880381	1					
+ANR	5880484	Argument	pb		5880381	0					
+ANR	5880485	Identifier	pb		5880381	0					
+ANR	5880486	IdentifierDeclStatement	int size = avio_rb16 ( pb ) ;	25:8:509:533	5880381	2	True				
+ANR	5880487	IdentifierDecl	size = avio_rb16 ( pb )		5880381	0					
+ANR	5880488	IdentifierDeclType	int		5880381	0					
+ANR	5880489	Identifier	size		5880381	1					
+ANR	5880490	AssignmentExpression	size = avio_rb16 ( pb )		5880381	2		=			
+ANR	5880491	Identifier	size		5880381	0					
+ANR	5880492	CallExpression	avio_rb16 ( pb )		5880381	1					
+ANR	5880493	Callee	avio_rb16		5880381	0					
+ANR	5880494	Identifier	avio_rb16		5880381	0					
+ANR	5880495	ArgumentList	pb		5880381	1					
+ANR	5880496	Argument	pb		5880381	0					
+ANR	5880497	Identifier	pb		5880381	0					
+ANR	5880498	IdentifierDeclStatement	uint64_t next = avio_tell ( pb ) + size ;	27:8:572:608	5880381	3	True				
+ANR	5880499	IdentifierDecl	next = avio_tell ( pb ) + size		5880381	0					
+ANR	5880500	IdentifierDeclType	uint64_t		5880381	0					
+ANR	5880501	Identifier	next		5880381	1					
+ANR	5880502	AssignmentExpression	next = avio_tell ( pb ) + size		5880381	2		=			
+ANR	5880503	Identifier	next		5880381	0					
+ANR	5880504	AdditiveExpression	avio_tell ( pb ) + size		5880381	1		+			
+ANR	5880505	CallExpression	avio_tell ( pb )		5880381	0					
+ANR	5880506	Callee	avio_tell		5880381	0					
+ANR	5880507	Identifier	avio_tell		5880381	0					
+ANR	5880508	ArgumentList	pb		5880381	1					
+ANR	5880509	Argument	pb		5880381	0					
+ANR	5880510	Identifier	pb		5880381	0					
+ANR	5880511	Identifier	size		5880381	1					
+ANR	5880512	IdentifierDeclStatement	UID uid = { 0 } ;	29:8:619:632	5880381	4	True				
+ANR	5880513	IdentifierDecl	uid = { 0 }		5880381	0					
+ANR	5880514	IdentifierDeclType	UID		5880381	0					
+ANR	5880515	Identifier	uid		5880381	1					
+ANR	5880516	AssignmentExpression	uid = { 0 }		5880381	2		=			
+ANR	5880517	Identifier	uid		5880381	0					
+ANR	5880518	InitializerList	0		5880381	1					
+ANR	5880519	PrimaryExpression	0		5880381	0					
+ANR	5880520	ExpressionStatement	"av_dlog ( mxf -> fc , ""local tag %#04x size %d\\n"" , tag , size )"	33:8:645:701	5880381	5	True				
+ANR	5880521	CallExpression	"av_dlog ( mxf -> fc , ""local tag %#04x size %d\\n"" , tag , size )"		5880381	0					
+ANR	5880522	Callee	av_dlog		5880381	0					
+ANR	5880523	Identifier	av_dlog		5880381	0					
+ANR	5880524	ArgumentList	mxf -> fc		5880381	1					
+ANR	5880525	Argument	mxf -> fc		5880381	0					
+ANR	5880526	PtrMemberAccess	mxf -> fc		5880381	0					
+ANR	5880527	Identifier	mxf		5880381	0					
+ANR	5880528	Identifier	fc		5880381	1					
+ANR	5880529	Argument	"""local tag %#04x size %d\\n"""		5880381	1					
+ANR	5880530	PrimaryExpression	"""local tag %#04x size %d\\n"""		5880381	0					
+ANR	5880531	Argument	tag		5880381	2					
+ANR	5880532	Identifier	tag		5880381	0					
+ANR	5880533	Argument	size		5880381	3					
+ANR	5880534	Identifier	size		5880381	0					
+ANR	5880535	IfStatement	if ( ! size )		5880381	6					
+ANR	5880536	Condition	! size	35:12:716:720	5880381	0	True				
+ANR	5880537	UnaryOperationExpression	! size		5880381	0					
+ANR	5880538	UnaryOperator	!		5880381	0					
+ANR	5880539	Identifier	size		5880381	1					
+ANR	5880540	CompoundStatement		33:19:580:580	5880381	1					
+ANR	5880541	ExpressionStatement	"av_log ( mxf -> fc , AV_LOG_ERROR , ""local tag %#04x with 0 size\\n"" , tag )"	37:12:804:871	5880381	0	True				
+ANR	5880542	CallExpression	"av_log ( mxf -> fc , AV_LOG_ERROR , ""local tag %#04x with 0 size\\n"" , tag )"		5880381	0					
+ANR	5880543	Callee	av_log		5880381	0					
+ANR	5880544	Identifier	av_log		5880381	0					
+ANR	5880545	ArgumentList	mxf -> fc		5880381	1					
+ANR	5880546	Argument	mxf -> fc		5880381	0					
+ANR	5880547	PtrMemberAccess	mxf -> fc		5880381	0					
+ANR	5880548	Identifier	mxf		5880381	0					
+ANR	5880549	Identifier	fc		5880381	1					
+ANR	5880550	Argument	AV_LOG_ERROR		5880381	1					
+ANR	5880551	Identifier	AV_LOG_ERROR		5880381	0					
+ANR	5880552	Argument	"""local tag %#04x with 0 size\\n"""		5880381	2					
+ANR	5880553	PrimaryExpression	"""local tag %#04x with 0 size\\n"""		5880381	0					
+ANR	5880554	Argument	tag		5880381	3					
+ANR	5880555	Identifier	tag		5880381	0					
+ANR	5880556	ContinueStatement	continue ;	39:12:886:894	5880381	1	True				
+ANR	5880557	IfStatement	if ( tag > 0x7FFF )		5880381	7					
+ANR	5880558	Condition	tag > 0x7FFF	43:12:920:931	5880381	0	True				
+ANR	5880559	RelationalExpression	tag > 0x7FFF		5880381	0		>			
+ANR	5880560	Identifier	tag		5880381	0					
+ANR	5880561	PrimaryExpression	0x7FFF		5880381	1					
+ANR	5880562	CompoundStatement		43:12:824:829	5880381	1					
+ANR	5880563	IdentifierDeclStatement	int i ;	45:12:967:972	5880381	0	True				
+ANR	5880564	IdentifierDecl	i		5880381	0					
+ANR	5880565	IdentifierDeclType	int		5880381	0					
+ANR	5880566	Identifier	i		5880381	1					
+ANR	5880567	ForStatement	for ( i = 0 ; i < mxf -> local_tags_count ; i ++ )		5880381	1					
+ANR	5880568	ForInit	i = 0 ;	47:17:992:997	5880381	0	True				
+ANR	5880569	AssignmentExpression	i = 0		5880381	0		=			
+ANR	5880570	Identifier	i		5880381	0					
+ANR	5880571	PrimaryExpression	0		5880381	1					
+ANR	5880572	Condition	i < mxf -> local_tags_count	47:24:999:1023	5880381	1	True				
+ANR	5880573	RelationalExpression	i < mxf -> local_tags_count		5880381	0		<			
+ANR	5880574	Identifier	i		5880381	0					
+ANR	5880575	PtrMemberAccess	mxf -> local_tags_count		5880381	1					
+ANR	5880576	Identifier	mxf		5880381	0					
+ANR	5880577	Identifier	local_tags_count		5880381	1					
+ANR	5880578	PostIncDecOperationExpression	i ++	47:51:1026:1028	5880381	2	True				
+ANR	5880579	Identifier	i		5880381	0					
+ANR	5880580	IncDec	++		5880381	1					
+ANR	5880581	CompoundStatement		47:16:907:952	5880381	3					
+ANR	5880582	IdentifierDeclStatement	int local_tag = AV_RB16 ( mxf -> local_tags + i * 18 ) ;	49:16:1050:1095	5880381	0	True				
+ANR	5880583	IdentifierDecl	local_tag = AV_RB16 ( mxf -> local_tags + i * 18 )		5880381	0					
+ANR	5880584	IdentifierDeclType	int		5880381	0					
+ANR	5880585	Identifier	local_tag		5880381	1					
+ANR	5880586	AssignmentExpression	local_tag = AV_RB16 ( mxf -> local_tags + i * 18 )		5880381	2		=			
+ANR	5880587	Identifier	local_tag		5880381	0					
+ANR	5880588	CallExpression	AV_RB16 ( mxf -> local_tags + i * 18 )		5880381	1					
+ANR	5880589	Callee	AV_RB16		5880381	0					
+ANR	5880590	Identifier	AV_RB16		5880381	0					
+ANR	5880591	ArgumentList	mxf -> local_tags + i * 18		5880381	1					
+ANR	5880592	Argument	mxf -> local_tags + i * 18		5880381	0					
+ANR	5880593	AdditiveExpression	mxf -> local_tags + i * 18		5880381	0		+			
+ANR	5880594	PtrMemberAccess	mxf -> local_tags		5880381	0					
+ANR	5880595	Identifier	mxf		5880381	0					
+ANR	5880596	Identifier	local_tags		5880381	1					
+ANR	5880597	MultiplicativeExpression	i * 18		5880381	1		*			
+ANR	5880598	Identifier	i		5880381	0					
+ANR	5880599	PrimaryExpression	18		5880381	1					
+ANR	5880600	IfStatement	if ( local_tag == tag )		5880381	1					
+ANR	5880601	Condition	local_tag == tag	51:20:1118:1133	5880381	0	True				
+ANR	5880602	EqualityExpression	local_tag == tag		5880381	0		==			
+ANR	5880603	Identifier	local_tag		5880381	0					
+ANR	5880604	Identifier	tag		5880381	1					
+ANR	5880605	CompoundStatement		49:38:993:993	5880381	1					
+ANR	5880606	ExpressionStatement	"memcpy ( uid , mxf -> local_tags + i * 18 + 2 , 16 )"	53:20:1159:1198	5880381	0	True				
+ANR	5880607	CallExpression	"memcpy ( uid , mxf -> local_tags + i * 18 + 2 , 16 )"		5880381	0					
+ANR	5880608	Callee	memcpy		5880381	0					
+ANR	5880609	Identifier	memcpy		5880381	0					
+ANR	5880610	ArgumentList	uid		5880381	1					
+ANR	5880611	Argument	uid		5880381	0					
+ANR	5880612	Identifier	uid		5880381	0					
+ANR	5880613	Argument	mxf -> local_tags + i * 18 + 2		5880381	1					
+ANR	5880614	AdditiveExpression	mxf -> local_tags + i * 18 + 2		5880381	0		+			
+ANR	5880615	PtrMemberAccess	mxf -> local_tags		5880381	0					
+ANR	5880616	Identifier	mxf		5880381	0					
+ANR	5880617	Identifier	local_tags		5880381	1					
+ANR	5880618	AdditiveExpression	i * 18 + 2		5880381	1		+			
+ANR	5880619	MultiplicativeExpression	i * 18		5880381	0		*			
+ANR	5880620	Identifier	i		5880381	0					
+ANR	5880621	PrimaryExpression	18		5880381	1					
+ANR	5880622	PrimaryExpression	2		5880381	1					
+ANR	5880623	Argument	16		5880381	2					
+ANR	5880624	PrimaryExpression	16		5880381	0					
+ANR	5880625	ExpressionStatement	"av_dlog ( mxf -> fc , ""local tag %#04x\\n"" , local_tag )"	55:20:1221:1269	5880381	1	True				
+ANR	5880626	CallExpression	"av_dlog ( mxf -> fc , ""local tag %#04x\\n"" , local_tag )"		5880381	0					
+ANR	5880627	Callee	av_dlog		5880381	0					
+ANR	5880628	Identifier	av_dlog		5880381	0					
+ANR	5880629	ArgumentList	mxf -> fc		5880381	1					
+ANR	5880630	Argument	mxf -> fc		5880381	0					
+ANR	5880631	PtrMemberAccess	mxf -> fc		5880381	0					
+ANR	5880632	Identifier	mxf		5880381	0					
+ANR	5880633	Identifier	fc		5880381	1					
+ANR	5880634	Argument	"""local tag %#04x\\n"""		5880381	1					
+ANR	5880635	PrimaryExpression	"""local tag %#04x\\n"""		5880381	0					
+ANR	5880636	Argument	local_tag		5880381	2					
+ANR	5880637	Identifier	local_tag		5880381	0					
+ANR	5880638	ExpressionStatement	"PRINT_KEY ( mxf -> fc , ""uid"" , uid )"	57:20:1292:1322	5880381	2	True				
+ANR	5880639	CallExpression	"PRINT_KEY ( mxf -> fc , ""uid"" , uid )"		5880381	0					
+ANR	5880640	Callee	PRINT_KEY		5880381	0					
+ANR	5880641	Identifier	PRINT_KEY		5880381	0					
+ANR	5880642	ArgumentList	mxf -> fc		5880381	1					
+ANR	5880643	Argument	mxf -> fc		5880381	0					
+ANR	5880644	PtrMemberAccess	mxf -> fc		5880381	0					
+ANR	5880645	Identifier	mxf		5880381	0					
+ANR	5880646	Identifier	fc		5880381	1					
+ANR	5880647	Argument	"""uid"""		5880381	1					
+ANR	5880648	PrimaryExpression	"""uid"""		5880381	0					
+ANR	5880649	Argument	uid		5880381	2					
+ANR	5880650	Identifier	uid		5880381	0					
+ANR	5880651	IfStatement	if ( ctx_size && tag == 0x3C0A )		5880381	8					
+ANR	5880652	Condition	ctx_size && tag == 0x3C0A	65:12:1382:1406	5880381	0	True				
+ANR	5880653	AndExpression	ctx_size && tag == 0x3C0A		5880381	0		&&			
+ANR	5880654	Identifier	ctx_size		5880381	0					
+ANR	5880655	EqualityExpression	tag == 0x3C0A		5880381	1		==			
+ANR	5880656	Identifier	tag		5880381	0					
+ANR	5880657	PrimaryExpression	0x3C0A		5880381	1					
+ANR	5880658	ExpressionStatement	"avio_read ( pb , ctx -> uid , 16 )"	67:12:1422:1449	5880381	1	True				
+ANR	5880659	CallExpression	"avio_read ( pb , ctx -> uid , 16 )"		5880381	0					
+ANR	5880660	Callee	avio_read		5880381	0					
+ANR	5880661	Identifier	avio_read		5880381	0					
+ANR	5880662	ArgumentList	pb		5880381	1					
+ANR	5880663	Argument	pb		5880381	0					
+ANR	5880664	Identifier	pb		5880381	0					
+ANR	5880665	Argument	ctx -> uid		5880381	1					
+ANR	5880666	PtrMemberAccess	ctx -> uid		5880381	0					
+ANR	5880667	Identifier	ctx		5880381	0					
+ANR	5880668	Identifier	uid		5880381	1					
+ANR	5880669	Argument	16		5880381	2					
+ANR	5880670	PrimaryExpression	16		5880381	0					
+ANR	5880671	ElseStatement	else		5880381	0					
+ANR	5880672	IfStatement	"if ( ( ret = read_child ( ctx , pb , tag , size , uid , - 1 ) ) < 0 )"		5880381	0					
+ANR	5880673	Condition	"( ret = read_child ( ctx , pb , tag , size , uid , - 1 ) ) < 0"	69:17:1469:1519	5880381	0	True				
+ANR	5880674	RelationalExpression	"( ret = read_child ( ctx , pb , tag , size , uid , - 1 ) ) < 0"		5880381	0		<			
+ANR	5880675	AssignmentExpression	"ret = read_child ( ctx , pb , tag , size , uid , - 1 )"		5880381	0		=			
+ANR	5880676	Identifier	ret		5880381	0					
+ANR	5880677	CallExpression	"read_child ( ctx , pb , tag , size , uid , - 1 )"		5880381	1					
+ANR	5880678	Callee	read_child		5880381	0					
+ANR	5880679	Identifier	read_child		5880381	0					
+ANR	5880680	ArgumentList	ctx		5880381	1					
+ANR	5880681	Argument	ctx		5880381	0					
+ANR	5880682	Identifier	ctx		5880381	0					
+ANR	5880683	Argument	pb		5880381	1					
+ANR	5880684	Identifier	pb		5880381	0					
+ANR	5880685	Argument	tag		5880381	2					
+ANR	5880686	Identifier	tag		5880381	0					
+ANR	5880687	Argument	size		5880381	3					
+ANR	5880688	Identifier	size		5880381	0					
+ANR	5880689	Argument	uid		5880381	4					
+ANR	5880690	Identifier	uid		5880381	0					
+ANR	5880691	Argument	- 1		5880381	5					
+ANR	5880692	UnaryOperationExpression	- 1		5880381	0					
+ANR	5880693	UnaryOperator	-		5880381	0					
+ANR	5880694	PrimaryExpression	1		5880381	1					
+ANR	5880695	PrimaryExpression	0		5880381	1					
+ANR	5880696	ReturnStatement	return ret ;	71:12:1535:1545	5880381	1	True				
+ANR	5880697	Identifier	ret		5880381	0					
+ANR	5880698	IfStatement	if ( avio_tell ( pb ) > klv_end )		5880381	9					
+ANR	5880699	Condition	avio_tell ( pb ) > klv_end	79:12:1713:1735	5880381	0	True				
+ANR	5880700	RelationalExpression	avio_tell ( pb ) > klv_end		5880381	0		>			
+ANR	5880701	CallExpression	avio_tell ( pb )		5880381	0					
+ANR	5880702	Callee	avio_tell		5880381	0					
+ANR	5880703	Identifier	avio_tell		5880381	0					
+ANR	5880704	ArgumentList	pb		5880381	1					
+ANR	5880705	Argument	pb		5880381	0					
+ANR	5880706	Identifier	pb		5880381	0					
+ANR	5880707	Identifier	klv_end		5880381	1					
+ANR	5880708	CompoundStatement		77:37:1595:1595	5880381	1					
+ANR	5880709	IfStatement	if ( ctx_size )		5880381	0					
+ANR	5880710	Condition	ctx_size	81:16:1757:1764	5880381	0	True				
+ANR	5880711	Identifier	ctx_size		5880381	0					
+ANR	5880712	ExpressionStatement	av_free ( ctx )	83:16:1784:1796	5880381	1	True				
+ANR	5880713	CallExpression	av_free ( ctx )		5880381	0					
+ANR	5880714	Callee	av_free		5880381	0					
+ANR	5880715	Identifier	av_free		5880381	0					
+ANR	5880716	ArgumentList	ctx		5880381	1					
+ANR	5880717	Argument	ctx		5880381	0					
+ANR	5880718	Identifier	ctx		5880381	0					
+ANR	5880719	Statement	av_log	87:12:1813:1818	5880381	1	True				
+ANR	5880720	Statement	(	87:18:1819:1819	5880381	2	True				
+ANR	5880721	Statement	mxf	87:19:1820:1822	5880381	3	True				
+ANR	5880722	Statement	->	87:22:1823:1824	5880381	4	True				
+ANR	5880723	Statement	fc	87:24:1825:1826	5880381	5	True				
+ANR	5880724	Statement	","	87:26:1827:1827	5880381	6	True				
+ANR	5880725	Statement	AV_LOG_ERROR	87:28:1829:1840	5880381	7	True				
+ANR	5880726	Statement	","	87:40:1841:1841	5880381	8	True				
+ANR	5880727	Statement	"""local tag %#04x extends past end of local set @ %#"""	89:19:1863:1914	5880381	9	True				
+ANR	5880728	Statement	PRIx64	89:71:1915:1920	5880381	10	True				
+ANR	5880729	Statement	"""\\n"""	89:77:1921:1924	5880381	11	True				
+ANR	5880730	Statement	","	89:81:1925:1925	5880381	12	True				
+ANR	5880731	Statement	tag	91:19:1947:1949	5880381	13	True				
+ANR	5880732	Statement	","	91:22:1950:1950	5880381	14	True				
+ANR	5880733	Statement	klv	91:24:1952:1954	5880381	15	True				
+ANR	5880734	Statement	->	91:27:1955:1956	5880381	16	True				
+ANR	5880735	Statement	offset	91:29:1957:1962	5880381	17	True				
+ANR	5880736	Statement	)	91:35:1963:1963	5880381	18	True				
+ANR	5880737	ExpressionStatement		91:36:1964:1964	5880381	19	True				
+ANR	5880738	ReturnStatement	return AVERROR_INVALIDDATA ;	93:12:1979:2005	5880381	20	True				
+ANR	5880739	Identifier	AVERROR_INVALIDDATA		5880381	0					
+ANR	5880740	ElseStatement	else		5880381	0					
+ANR	5880741	IfStatement	if ( avio_tell ( pb ) <= next )		5880381	0					
+ANR	5880742	Condition	avio_tell ( pb ) <= next	95:19:2027:2047	5880381	0	True				
+ANR	5880743	RelationalExpression	avio_tell ( pb ) <= next		5880381	0		<=			
+ANR	5880744	CallExpression	avio_tell ( pb )		5880381	0					
+ANR	5880745	Callee	avio_tell		5880381	0					
+ANR	5880746	Identifier	avio_tell		5880381	0					
+ANR	5880747	ArgumentList	pb		5880381	1					
+ANR	5880748	Argument	pb		5880381	0					
+ANR	5880749	Identifier	pb		5880381	0					
+ANR	5880750	Identifier	next		5880381	1					
+ANR	5880751	ExpressionStatement	"avio_seek ( pb , next , SEEK_SET )"	97:12:2125:2154	5880381	1	True				
+ANR	5880752	CallExpression	"avio_seek ( pb , next , SEEK_SET )"		5880381	0					
+ANR	5880753	Callee	avio_seek		5880381	0					
+ANR	5880754	Identifier	avio_seek		5880381	0					
+ANR	5880755	ArgumentList	pb		5880381	1					
+ANR	5880756	Argument	pb		5880381	0					
+ANR	5880757	Identifier	pb		5880381	0					
+ANR	5880758	Argument	next		5880381	1					
+ANR	5880759	Identifier	next		5880381	0					
+ANR	5880760	Argument	SEEK_SET		5880381	2					
+ANR	5880761	Identifier	SEEK_SET		5880381	0					
+ANR	5880762	IfStatement	if ( ctx_size )		5880381	6					
+ANR	5880763	Condition	ctx_size	101:8:2172:2179	5880381	0	True				
+ANR	5880764	Identifier	ctx_size		5880381	0					
+ANR	5880765	ExpressionStatement	ctx -> type = type	101:18:2182:2198	5880381	1	True				
+ANR	5880766	AssignmentExpression	ctx -> type = type		5880381	0		=			
+ANR	5880767	PtrMemberAccess	ctx -> type		5880381	0					
+ANR	5880768	Identifier	ctx		5880381	0					
+ANR	5880769	Identifier	type		5880381	1					
+ANR	5880770	Identifier	type		5880381	1					
+ANR	5880771	ReturnStatement	"return ctx_size ? mxf_add_metadata_set ( mxf , ctx ) : 0 ;"	103:4:2205:2257	5880381	7	True				
+ANR	5880772	ConditionalExpression	"ctx_size ? mxf_add_metadata_set ( mxf , ctx ) : 0"		5880381	0					
+ANR	5880773	Condition	ctx_size		5880381	0					
+ANR	5880774	Identifier	ctx_size		5880381	0					
+ANR	5880775	CallExpression	"mxf_add_metadata_set ( mxf , ctx )"		5880381	1					
+ANR	5880776	Callee	mxf_add_metadata_set		5880381	0					
+ANR	5880777	Identifier	mxf_add_metadata_set		5880381	0					
+ANR	5880778	ArgumentList	mxf		5880381	1					
+ANR	5880779	Argument	mxf		5880381	0					
+ANR	5880780	Identifier	mxf		5880381	0					
+ANR	5880781	Argument	ctx		5880381	1					
+ANR	5880782	Identifier	ctx		5880381	0					
+ANR	5880783	PrimaryExpression	0		5880381	2					
+ANR	5880784	ReturnType	static int		5880381	1					
+ANR	5880785	Identifier	mxf_read_local_tags		5880381	2					
+ANR	5880786	ParameterList	"MXFContext * mxf , KLVPacket * klv , MXFMetadataReadFunc * read_child , int ctx_size , enum MXFMetadataSetType type"		5880381	3					
+ANR	5880787	Parameter	MXFContext * mxf	1:31:31:45	5880381	0	True				
+ANR	5880788	ParameterType	MXFContext *		5880381	0					
+ANR	5880789	Identifier	mxf		5880381	1					
+ANR	5880790	Parameter	KLVPacket * klv	1:48:48:61	5880381	1	True				
+ANR	5880791	ParameterType	KLVPacket *		5880381	0					
+ANR	5880792	Identifier	klv		5880381	1					
+ANR	5880793	Parameter	MXFMetadataReadFunc * read_child	1:64:64:94	5880381	2	True				
+ANR	5880794	ParameterType	MXFMetadataReadFunc *		5880381	0					
+ANR	5880795	Identifier	read_child		5880381	1					
+ANR	5880796	Parameter	int ctx_size	1:97:97:108	5880381	3	True				
+ANR	5880797	ParameterType	int		5880381	0					
+ANR	5880798	Identifier	ctx_size		5880381	1					
+ANR	5880799	Parameter	enum MXFMetadataSetType type	1:111:111:138	5880381	4	True				
+ANR	5880800	ParameterType	enum MXFMetadataSetType		5880381	0					
+ANR	5880801	Identifier	type		5880381	1					
+ANR	5880802	CFGEntryNode	ENTRY		5880381		True				
+ANR	5880803	CFGExitNode	EXIT		5880381		True				
+ANR	5880804	Symbol	* mxf -> fc		5880381						
+ANR	5880805	Symbol	next		5880381						
+ANR	5880806	Symbol	ENOMEM		5880381						
+ANR	5880807	Symbol	avio_feof		5880381						
+ANR	5880808	Symbol	ctx_size		5880381						
+ANR	5880809	Symbol	* mxf		5880381						
+ANR	5880810	Symbol	mxf -> local_tags		5880381						
+ANR	5880811	Symbol	read_child		5880381						
+ANR	5880812	Symbol	AV_RB16		5880381						
+ANR	5880813	Symbol	type		5880381						
+ANR	5880814	Symbol	uid		5880381						
+ANR	5880815	Symbol	avio_tell		5880381						
+ANR	5880816	Symbol	mxf		5880381						
+ANR	5880817	Symbol	mxf -> fc		5880381						
+ANR	5880818	Symbol	tag		5880381						
+ANR	5880819	Symbol	* klv		5880381						
+ANR	5880820	Symbol	klv_end		5880381						
+ANR	5880821	Symbol	ret		5880381						
+ANR	5880822	Symbol	SEEK_SET		5880381						
+ANR	5880823	Symbol	ctx -> type		5880381						
+ANR	5880824	Symbol	mxf -> fc -> pb		5880381						
+ANR	5880825	Symbol	AV_LOG_ERROR		5880381						
+ANR	5880826	Symbol	mxf -> local_tags_count		5880381						
+ANR	5880827	Symbol	ctx		5880381						
+ANR	5880828	Symbol	av_mallocz		5880381						
+ANR	5880829	Symbol	i		5880381						
+ANR	5880830	Symbol	local_tag		5880381						
+ANR	5880831	Symbol	* ctx		5880381						
+ANR	5880832	Symbol	* * mxf		5880381						
+ANR	5880833	Symbol	pb		5880381						
+ANR	5880834	Symbol	mxf_add_metadata_set		5880381						
+ANR	5880835	Symbol	klv		5880381						
+ANR	5880836	Symbol	size		5880381						
+ANR	5880837	Symbol	avio_rb16		5880381						
+ANR	5880838	Symbol	AVERROR_INVALIDDATA		5880381						
+ANR	5880839	Symbol	AVERROR		5880381						
+ANR	5880840	Symbol	ctx -> uid		5880381						
+ANR	5880841	Symbol	klv -> length		5880381						

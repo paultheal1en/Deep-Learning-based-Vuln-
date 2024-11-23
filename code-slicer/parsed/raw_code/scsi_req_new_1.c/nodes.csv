@@ -1,0 +1,428 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7642513	File	/home/p4ultr4n/workplace/ReVeal/raw_code/scsi_req_new_1.c								
+ANR	7642514	Function	scsi_req_new	1:0:0:1950							
+ANR	7642515	FunctionDef	"scsi_req_new (SCSIDevice * d , uint32_t tag , uint32_t lun , uint8_t * buf , void * hba_private)"		7642514	0					
+ANR	7642516	CompoundStatement		5:0:130:1950	7642514	0					
+ANR	7642517	IdentifierDeclStatement	"SCSIBus * bus = DO_UPCAST ( SCSIBus , qbus , d -> qdev . parent_bus ) ;"	7:4:137:196	7642514	0	True				
+ANR	7642518	IdentifierDecl	"* bus = DO_UPCAST ( SCSIBus , qbus , d -> qdev . parent_bus )"		7642514	0					
+ANR	7642519	IdentifierDeclType	SCSIBus *		7642514	0					
+ANR	7642520	Identifier	bus		7642514	1					
+ANR	7642521	AssignmentExpression	"* bus = DO_UPCAST ( SCSIBus , qbus , d -> qdev . parent_bus )"		7642514	2		=			
+ANR	7642522	Identifier	bus		7642514	0					
+ANR	7642523	CallExpression	"DO_UPCAST ( SCSIBus , qbus , d -> qdev . parent_bus )"		7642514	1					
+ANR	7642524	Callee	DO_UPCAST		7642514	0					
+ANR	7642525	Identifier	DO_UPCAST		7642514	0					
+ANR	7642526	ArgumentList	SCSIBus		7642514	1					
+ANR	7642527	Argument	SCSIBus		7642514	0					
+ANR	7642528	Identifier	SCSIBus		7642514	0					
+ANR	7642529	Argument	qbus		7642514	1					
+ANR	7642530	Identifier	qbus		7642514	0					
+ANR	7642531	Argument	d -> qdev . parent_bus		7642514	2					
+ANR	7642532	MemberAccess	d -> qdev . parent_bus		7642514	0					
+ANR	7642533	PtrMemberAccess	d -> qdev		7642514	0					
+ANR	7642534	Identifier	d		7642514	0					
+ANR	7642535	Identifier	qdev		7642514	1					
+ANR	7642536	Identifier	parent_bus		7642514	1					
+ANR	7642537	IdentifierDeclStatement	SCSIRequest * req ;	9:4:203:219	7642514	1	True				
+ANR	7642538	IdentifierDecl	* req		7642514	0					
+ANR	7642539	IdentifierDeclType	SCSIRequest *		7642514	0					
+ANR	7642540	Identifier	req		7642514	1					
+ANR	7642541	IdentifierDeclStatement	SCSICommand cmd ;	11:4:226:241	7642514	2	True				
+ANR	7642542	IdentifierDecl	cmd		7642514	0					
+ANR	7642543	IdentifierDeclType	SCSICommand		7642514	0					
+ANR	7642544	Identifier	cmd		7642514	1					
+ANR	7642545	IfStatement	"if ( scsi_req_parse ( & cmd , d , buf ) != 0 )"		7642514	3					
+ANR	7642546	Condition	"scsi_req_parse ( & cmd , d , buf ) != 0"	15:8:254:286	7642514	0	True				
+ANR	7642547	EqualityExpression	"scsi_req_parse ( & cmd , d , buf ) != 0"		7642514	0		!=			
+ANR	7642548	CallExpression	"scsi_req_parse ( & cmd , d , buf )"		7642514	0					
+ANR	7642549	Callee	scsi_req_parse		7642514	0					
+ANR	7642550	Identifier	scsi_req_parse		7642514	0					
+ANR	7642551	ArgumentList	& cmd		7642514	1					
+ANR	7642552	Argument	& cmd		7642514	0					
+ANR	7642553	UnaryOperationExpression	& cmd		7642514	0					
+ANR	7642554	UnaryOperator	&		7642514	0					
+ANR	7642555	Identifier	cmd		7642514	1					
+ANR	7642556	Argument	d		7642514	1					
+ANR	7642557	Identifier	d		7642514	0					
+ANR	7642558	Argument	buf		7642514	2					
+ANR	7642559	Identifier	buf		7642514	0					
+ANR	7642560	PrimaryExpression	0		7642514	1					
+ANR	7642561	CompoundStatement		11:43:158:158	7642514	1					
+ANR	7642562	ExpressionStatement	"trace_scsi_req_parse_bad ( d -> id , lun , tag , buf [ 0 ] )"	17:8:300:349	7642514	0	True				
+ANR	7642563	CallExpression	"trace_scsi_req_parse_bad ( d -> id , lun , tag , buf [ 0 ] )"		7642514	0					
+ANR	7642564	Callee	trace_scsi_req_parse_bad		7642514	0					
+ANR	7642565	Identifier	trace_scsi_req_parse_bad		7642514	0					
+ANR	7642566	ArgumentList	d -> id		7642514	1					
+ANR	7642567	Argument	d -> id		7642514	0					
+ANR	7642568	PtrMemberAccess	d -> id		7642514	0					
+ANR	7642569	Identifier	d		7642514	0					
+ANR	7642570	Identifier	id		7642514	1					
+ANR	7642571	Argument	lun		7642514	1					
+ANR	7642572	Identifier	lun		7642514	0					
+ANR	7642573	Argument	tag		7642514	2					
+ANR	7642574	Identifier	tag		7642514	0					
+ANR	7642575	Argument	buf [ 0 ]		7642514	3					
+ANR	7642576	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642577	Identifier	buf		7642514	0					
+ANR	7642578	PrimaryExpression	0		7642514	1					
+ANR	7642579	ExpressionStatement	"req = scsi_req_alloc ( & reqops_invalid_opcode , d , tag , lun , hba_private )"	19:8:360:430	7642514	1	True				
+ANR	7642580	AssignmentExpression	"req = scsi_req_alloc ( & reqops_invalid_opcode , d , tag , lun , hba_private )"		7642514	0		=			
+ANR	7642581	Identifier	req		7642514	0					
+ANR	7642582	CallExpression	"scsi_req_alloc ( & reqops_invalid_opcode , d , tag , lun , hba_private )"		7642514	1					
+ANR	7642583	Callee	scsi_req_alloc		7642514	0					
+ANR	7642584	Identifier	scsi_req_alloc		7642514	0					
+ANR	7642585	ArgumentList	& reqops_invalid_opcode		7642514	1					
+ANR	7642586	Argument	& reqops_invalid_opcode		7642514	0					
+ANR	7642587	UnaryOperationExpression	& reqops_invalid_opcode		7642514	0					
+ANR	7642588	UnaryOperator	&		7642514	0					
+ANR	7642589	Identifier	reqops_invalid_opcode		7642514	1					
+ANR	7642590	Argument	d		7642514	1					
+ANR	7642591	Identifier	d		7642514	0					
+ANR	7642592	Argument	tag		7642514	2					
+ANR	7642593	Identifier	tag		7642514	0					
+ANR	7642594	Argument	lun		7642514	3					
+ANR	7642595	Identifier	lun		7642514	0					
+ANR	7642596	Argument	hba_private		7642514	4					
+ANR	7642597	Identifier	hba_private		7642514	0					
+ANR	7642598	ElseStatement	else		7642514	0					
+ANR	7642599	CompoundStatement		17:11:313:313	7642514	0					
+ANR	7642600	ExpressionStatement	"trace_scsi_req_parsed ( d -> id , lun , tag , buf [ 0 ] , cmd . mode , cmd . xfer )"	23:8:455:552	7642514	0	True				
+ANR	7642601	CallExpression	"trace_scsi_req_parsed ( d -> id , lun , tag , buf [ 0 ] , cmd . mode , cmd . xfer )"		7642514	0					
+ANR	7642602	Callee	trace_scsi_req_parsed		7642514	0					
+ANR	7642603	Identifier	trace_scsi_req_parsed		7642514	0					
+ANR	7642604	ArgumentList	d -> id		7642514	1					
+ANR	7642605	Argument	d -> id		7642514	0					
+ANR	7642606	PtrMemberAccess	d -> id		7642514	0					
+ANR	7642607	Identifier	d		7642514	0					
+ANR	7642608	Identifier	id		7642514	1					
+ANR	7642609	Argument	lun		7642514	1					
+ANR	7642610	Identifier	lun		7642514	0					
+ANR	7642611	Argument	tag		7642514	2					
+ANR	7642612	Identifier	tag		7642514	0					
+ANR	7642613	Argument	buf [ 0 ]		7642514	3					
+ANR	7642614	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642615	Identifier	buf		7642514	0					
+ANR	7642616	PrimaryExpression	0		7642514	1					
+ANR	7642617	Argument	cmd . mode		7642514	4					
+ANR	7642618	MemberAccess	cmd . mode		7642514	0					
+ANR	7642619	Identifier	cmd		7642514	0					
+ANR	7642620	Identifier	mode		7642514	1					
+ANR	7642621	Argument	cmd . xfer		7642514	5					
+ANR	7642622	MemberAccess	cmd . xfer		7642514	0					
+ANR	7642623	Identifier	cmd		7642514	0					
+ANR	7642624	Identifier	xfer		7642514	1					
+ANR	7642625	IfStatement	if ( req -> cmd . lba != - 1 )		7642514	1					
+ANR	7642626	Condition	req -> cmd . lba != - 1	27:12:567:584	7642514	0	True				
+ANR	7642627	EqualityExpression	req -> cmd . lba != - 1		7642514	0		!=			
+ANR	7642628	MemberAccess	req -> cmd . lba		7642514	0					
+ANR	7642629	PtrMemberAccess	req -> cmd		7642514	0					
+ANR	7642630	Identifier	req		7642514	0					
+ANR	7642631	Identifier	cmd		7642514	1					
+ANR	7642632	Identifier	lba		7642514	1					
+ANR	7642633	UnaryOperationExpression	- 1		7642514	1					
+ANR	7642634	UnaryOperator	-		7642514	0					
+ANR	7642635	PrimaryExpression	1		7642514	1					
+ANR	7642636	CompoundStatement		23:32:456:456	7642514	1					
+ANR	7642637	ExpressionStatement	"trace_scsi_req_parsed_lba ( d -> id , lun , tag , buf [ 0 ] , cmd . lba )"	29:12:602:700	7642514	0	True				
+ANR	7642638	CallExpression	"trace_scsi_req_parsed_lba ( d -> id , lun , tag , buf [ 0 ] , cmd . lba )"		7642514	0					
+ANR	7642639	Callee	trace_scsi_req_parsed_lba		7642514	0					
+ANR	7642640	Identifier	trace_scsi_req_parsed_lba		7642514	0					
+ANR	7642641	ArgumentList	d -> id		7642514	1					
+ANR	7642642	Argument	d -> id		7642514	0					
+ANR	7642643	PtrMemberAccess	d -> id		7642514	0					
+ANR	7642644	Identifier	d		7642514	0					
+ANR	7642645	Identifier	id		7642514	1					
+ANR	7642646	Argument	lun		7642514	1					
+ANR	7642647	Identifier	lun		7642514	0					
+ANR	7642648	Argument	tag		7642514	2					
+ANR	7642649	Identifier	tag		7642514	0					
+ANR	7642650	Argument	buf [ 0 ]		7642514	3					
+ANR	7642651	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642652	Identifier	buf		7642514	0					
+ANR	7642653	PrimaryExpression	0		7642514	1					
+ANR	7642654	Argument	cmd . lba		7642514	4					
+ANR	7642655	MemberAccess	cmd . lba		7642514	0					
+ANR	7642656	Identifier	cmd		7642514	0					
+ANR	7642657	Identifier	lba		7642514	1					
+ANR	7642658	IfStatement	if ( ( d -> unit_attention . key == UNIT_ATTENTION || bus -> unit_attention . key == UNIT_ATTENTION ) && ( buf [ 0 ] != INQUIRY && buf [ 0 ] != REPORT_LUNS && buf [ 0 ] != GET_CONFIGURATION && buf [ 0 ] != GET_EVENT_STATUS_NOTIFICATION ) )		7642514	2					
+ANR	7642659	Condition	( d -> unit_attention . key == UNIT_ATTENTION || bus -> unit_attention . key == UNIT_ATTENTION ) && ( buf [ 0 ] != INQUIRY && buf [ 0 ] != REPORT_LUNS && buf [ 0 ] != GET_CONFIGURATION && buf [ 0 ] != GET_EVENT_STATUS_NOTIFICATION )	37:12:728:1004	7642514	0	True				
+ANR	7642660	AndExpression	( d -> unit_attention . key == UNIT_ATTENTION || bus -> unit_attention . key == UNIT_ATTENTION ) && ( buf [ 0 ] != INQUIRY && buf [ 0 ] != REPORT_LUNS && buf [ 0 ] != GET_CONFIGURATION && buf [ 0 ] != GET_EVENT_STATUS_NOTIFICATION )		7642514	0		&&			
+ANR	7642661	OrExpression	d -> unit_attention . key == UNIT_ATTENTION || bus -> unit_attention . key == UNIT_ATTENTION		7642514	0		||			
+ANR	7642662	EqualityExpression	d -> unit_attention . key == UNIT_ATTENTION		7642514	0		==			
+ANR	7642663	MemberAccess	d -> unit_attention . key		7642514	0					
+ANR	7642664	PtrMemberAccess	d -> unit_attention		7642514	0					
+ANR	7642665	Identifier	d		7642514	0					
+ANR	7642666	Identifier	unit_attention		7642514	1					
+ANR	7642667	Identifier	key		7642514	1					
+ANR	7642668	Identifier	UNIT_ATTENTION		7642514	1					
+ANR	7642669	EqualityExpression	bus -> unit_attention . key == UNIT_ATTENTION		7642514	1		==			
+ANR	7642670	MemberAccess	bus -> unit_attention . key		7642514	0					
+ANR	7642671	PtrMemberAccess	bus -> unit_attention		7642514	0					
+ANR	7642672	Identifier	bus		7642514	0					
+ANR	7642673	Identifier	unit_attention		7642514	1					
+ANR	7642674	Identifier	key		7642514	1					
+ANR	7642675	Identifier	UNIT_ATTENTION		7642514	1					
+ANR	7642676	AndExpression	buf [ 0 ] != INQUIRY && buf [ 0 ] != REPORT_LUNS && buf [ 0 ] != GET_CONFIGURATION && buf [ 0 ] != GET_EVENT_STATUS_NOTIFICATION		7642514	1		&&			
+ANR	7642677	EqualityExpression	buf [ 0 ] != INQUIRY		7642514	0		!=			
+ANR	7642678	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642679	Identifier	buf		7642514	0					
+ANR	7642680	PrimaryExpression	0		7642514	1					
+ANR	7642681	Identifier	INQUIRY		7642514	1					
+ANR	7642682	AndExpression	buf [ 0 ] != REPORT_LUNS && buf [ 0 ] != GET_CONFIGURATION && buf [ 0 ] != GET_EVENT_STATUS_NOTIFICATION		7642514	1		&&			
+ANR	7642683	EqualityExpression	buf [ 0 ] != REPORT_LUNS		7642514	0		!=			
+ANR	7642684	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642685	Identifier	buf		7642514	0					
+ANR	7642686	PrimaryExpression	0		7642514	1					
+ANR	7642687	Identifier	REPORT_LUNS		7642514	1					
+ANR	7642688	AndExpression	buf [ 0 ] != GET_CONFIGURATION && buf [ 0 ] != GET_EVENT_STATUS_NOTIFICATION		7642514	1		&&			
+ANR	7642689	EqualityExpression	buf [ 0 ] != GET_CONFIGURATION		7642514	0		!=			
+ANR	7642690	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642691	Identifier	buf		7642514	0					
+ANR	7642692	PrimaryExpression	0		7642514	1					
+ANR	7642693	Identifier	GET_CONFIGURATION		7642514	1					
+ANR	7642694	EqualityExpression	buf [ 0 ] != GET_EVENT_STATUS_NOTIFICATION		7642514	1		!=			
+ANR	7642695	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642696	Identifier	buf		7642514	0					
+ANR	7642697	PrimaryExpression	0		7642514	1					
+ANR	7642698	Identifier	GET_EVENT_STATUS_NOTIFICATION		7642514	1					
+ANR	7642699	CompoundStatement		43:55:876:876	7642514	1					
+ANR	7642700	ExpressionStatement	"req = scsi_req_alloc ( & reqops_unit_attention , d , tag , lun , hba_private )"	49:12:1022:1126	7642514	0	True				
+ANR	7642701	AssignmentExpression	"req = scsi_req_alloc ( & reqops_unit_attention , d , tag , lun , hba_private )"		7642514	0		=			
+ANR	7642702	Identifier	req		7642514	0					
+ANR	7642703	CallExpression	"scsi_req_alloc ( & reqops_unit_attention , d , tag , lun , hba_private )"		7642514	1					
+ANR	7642704	Callee	scsi_req_alloc		7642514	0					
+ANR	7642705	Identifier	scsi_req_alloc		7642514	0					
+ANR	7642706	ArgumentList	& reqops_unit_attention		7642514	1					
+ANR	7642707	Argument	& reqops_unit_attention		7642514	0					
+ANR	7642708	UnaryOperationExpression	& reqops_unit_attention		7642514	0					
+ANR	7642709	UnaryOperator	&		7642514	0					
+ANR	7642710	Identifier	reqops_unit_attention		7642514	1					
+ANR	7642711	Argument	d		7642514	1					
+ANR	7642712	Identifier	d		7642514	0					
+ANR	7642713	Argument	tag		7642514	2					
+ANR	7642714	Identifier	tag		7642514	0					
+ANR	7642715	Argument	lun		7642514	3					
+ANR	7642716	Identifier	lun		7642514	0					
+ANR	7642717	Argument	hba_private		7642514	4					
+ANR	7642718	Identifier	hba_private		7642514	0					
+ANR	7642719	ElseStatement	else		7642514	0					
+ANR	7642720	IfStatement	if ( lun != d -> lun || buf [ 0 ] == REPORT_LUNS || buf [ 0 ] == REQUEST_SENSE )		7642514	0					
+ANR	7642721	Condition	lun != d -> lun || buf [ 0 ] == REPORT_LUNS || buf [ 0 ] == REQUEST_SENSE	53:19:1148:1238	7642514	0	True				
+ANR	7642722	OrExpression	lun != d -> lun || buf [ 0 ] == REPORT_LUNS || buf [ 0 ] == REQUEST_SENSE		7642514	0		||			
+ANR	7642723	EqualityExpression	lun != d -> lun		7642514	0		!=			
+ANR	7642724	Identifier	lun		7642514	0					
+ANR	7642725	PtrMemberAccess	d -> lun		7642514	1					
+ANR	7642726	Identifier	d		7642514	0					
+ANR	7642727	Identifier	lun		7642514	1					
+ANR	7642728	OrExpression	buf [ 0 ] == REPORT_LUNS || buf [ 0 ] == REQUEST_SENSE		7642514	1		||			
+ANR	7642729	EqualityExpression	buf [ 0 ] == REPORT_LUNS		7642514	0		==			
+ANR	7642730	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642731	Identifier	buf		7642514	0					
+ANR	7642732	PrimaryExpression	0		7642514	1					
+ANR	7642733	Identifier	REPORT_LUNS		7642514	1					
+ANR	7642734	EqualityExpression	buf [ 0 ] == REQUEST_SENSE		7642514	1		==			
+ANR	7642735	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642736	Identifier	buf		7642514	0					
+ANR	7642737	PrimaryExpression	0		7642514	1					
+ANR	7642738	Identifier	REQUEST_SENSE		7642514	1					
+ANR	7642739	CompoundStatement		53:37:1110:1110	7642514	1					
+ANR	7642740	ExpressionStatement	"req = scsi_req_alloc ( & reqops_target_command , d , tag , lun , hba_private )"	59:12:1256:1360	7642514	0	True				
+ANR	7642741	AssignmentExpression	"req = scsi_req_alloc ( & reqops_target_command , d , tag , lun , hba_private )"		7642514	0		=			
+ANR	7642742	Identifier	req		7642514	0					
+ANR	7642743	CallExpression	"scsi_req_alloc ( & reqops_target_command , d , tag , lun , hba_private )"		7642514	1					
+ANR	7642744	Callee	scsi_req_alloc		7642514	0					
+ANR	7642745	Identifier	scsi_req_alloc		7642514	0					
+ANR	7642746	ArgumentList	& reqops_target_command		7642514	1					
+ANR	7642747	Argument	& reqops_target_command		7642514	0					
+ANR	7642748	UnaryOperationExpression	& reqops_target_command		7642514	0					
+ANR	7642749	UnaryOperator	&		7642514	0					
+ANR	7642750	Identifier	reqops_target_command		7642514	1					
+ANR	7642751	Argument	d		7642514	1					
+ANR	7642752	Identifier	d		7642514	0					
+ANR	7642753	Argument	tag		7642514	2					
+ANR	7642754	Identifier	tag		7642514	0					
+ANR	7642755	Argument	lun		7642514	3					
+ANR	7642756	Identifier	lun		7642514	0					
+ANR	7642757	Argument	hba_private		7642514	4					
+ANR	7642758	Identifier	hba_private		7642514	0					
+ANR	7642759	ElseStatement	else		7642514	0					
+ANR	7642760	CompoundStatement		59:15:1247:1247	7642514	0					
+ANR	7642761	ExpressionStatement	"req = d -> info -> alloc_req ( d , tag , lun , hba_private )"	65:12:1393:1443	7642514	0	True				
+ANR	7642762	AssignmentExpression	"req = d -> info -> alloc_req ( d , tag , lun , hba_private )"		7642514	0		=			
+ANR	7642763	Identifier	req		7642514	0					
+ANR	7642764	CallExpression	"d -> info -> alloc_req ( d , tag , lun , hba_private )"		7642514	1					
+ANR	7642765	Callee	d -> info -> alloc_req		7642514	0					
+ANR	7642766	PtrMemberAccess	d -> info -> alloc_req		7642514	0					
+ANR	7642767	PtrMemberAccess	d -> info		7642514	0					
+ANR	7642768	Identifier	d		7642514	0					
+ANR	7642769	Identifier	info		7642514	1					
+ANR	7642770	Identifier	alloc_req		7642514	1					
+ANR	7642771	ArgumentList	d		7642514	1					
+ANR	7642772	Argument	d		7642514	0					
+ANR	7642773	Identifier	d		7642514	0					
+ANR	7642774	Argument	tag		7642514	1					
+ANR	7642775	Identifier	tag		7642514	0					
+ANR	7642776	Argument	lun		7642514	2					
+ANR	7642777	Identifier	lun		7642514	0					
+ANR	7642778	Argument	hba_private		7642514	3					
+ANR	7642779	Identifier	hba_private		7642514	0					
+ANR	7642780	ExpressionStatement	req -> cmd = cmd	73:4:1470:1484	7642514	4	True				
+ANR	7642781	AssignmentExpression	req -> cmd = cmd		7642514	0		=			
+ANR	7642782	PtrMemberAccess	req -> cmd		7642514	0					
+ANR	7642783	Identifier	req		7642514	0					
+ANR	7642784	Identifier	cmd		7642514	1					
+ANR	7642785	Identifier	cmd		7642514	1					
+ANR	7642786	SwitchStatement	switch ( buf [ 0 ] )		7642514	5					
+ANR	7642787	Condition	buf [ 0 ]	75:12:1499:1504	7642514	0	True				
+ANR	7642788	ArrayIndexing	buf [ 0 ]		7642514	0					
+ANR	7642789	Identifier	buf		7642514	0					
+ANR	7642790	PrimaryExpression	0		7642514	1					
+ANR	7642791	CompoundStatement		71:20:1376:1376	7642514	1					
+ANR	7642792	Label	case INQUIRY :	77:4:1514:1526	7642514	0	True				
+ANR	7642793	Identifier	INQUIRY		7642514	0					
+ANR	7642794	ExpressionStatement	"trace_scsi_inquiry ( d -> id , lun , tag , cmd . buf [ 1 ] , cmd . buf [ 2 ] )"	79:8:1537:1596	7642514	1	True				
+ANR	7642795	CallExpression	"trace_scsi_inquiry ( d -> id , lun , tag , cmd . buf [ 1 ] , cmd . buf [ 2 ] )"		7642514	0					
+ANR	7642796	Callee	trace_scsi_inquiry		7642514	0					
+ANR	7642797	Identifier	trace_scsi_inquiry		7642514	0					
+ANR	7642798	ArgumentList	d -> id		7642514	1					
+ANR	7642799	Argument	d -> id		7642514	0					
+ANR	7642800	PtrMemberAccess	d -> id		7642514	0					
+ANR	7642801	Identifier	d		7642514	0					
+ANR	7642802	Identifier	id		7642514	1					
+ANR	7642803	Argument	lun		7642514	1					
+ANR	7642804	Identifier	lun		7642514	0					
+ANR	7642805	Argument	tag		7642514	2					
+ANR	7642806	Identifier	tag		7642514	0					
+ANR	7642807	Argument	cmd . buf [ 1 ]		7642514	3					
+ANR	7642808	ArrayIndexing	cmd . buf [ 1 ]		7642514	0					
+ANR	7642809	MemberAccess	cmd . buf		7642514	0					
+ANR	7642810	Identifier	cmd		7642514	0					
+ANR	7642811	Identifier	buf		7642514	1					
+ANR	7642812	PrimaryExpression	1		7642514	1					
+ANR	7642813	Argument	cmd . buf [ 2 ]		7642514	4					
+ANR	7642814	ArrayIndexing	cmd . buf [ 2 ]		7642514	0					
+ANR	7642815	MemberAccess	cmd . buf		7642514	0					
+ANR	7642816	Identifier	cmd		7642514	0					
+ANR	7642817	Identifier	buf		7642514	1					
+ANR	7642818	PrimaryExpression	2		7642514	1					
+ANR	7642819	BreakStatement	break ;	81:8:1607:1612	7642514	2	True				
+ANR	7642820	Label	case TEST_UNIT_READY :	83:4:1619:1639	7642514	3	True				
+ANR	7642821	Identifier	TEST_UNIT_READY		7642514	0					
+ANR	7642822	ExpressionStatement	"trace_scsi_test_unit_ready ( d -> id , lun , tag )"	85:8:1650:1693	7642514	4	True				
+ANR	7642823	CallExpression	"trace_scsi_test_unit_ready ( d -> id , lun , tag )"		7642514	0					
+ANR	7642824	Callee	trace_scsi_test_unit_ready		7642514	0					
+ANR	7642825	Identifier	trace_scsi_test_unit_ready		7642514	0					
+ANR	7642826	ArgumentList	d -> id		7642514	1					
+ANR	7642827	Argument	d -> id		7642514	0					
+ANR	7642828	PtrMemberAccess	d -> id		7642514	0					
+ANR	7642829	Identifier	d		7642514	0					
+ANR	7642830	Identifier	id		7642514	1					
+ANR	7642831	Argument	lun		7642514	1					
+ANR	7642832	Identifier	lun		7642514	0					
+ANR	7642833	Argument	tag		7642514	2					
+ANR	7642834	Identifier	tag		7642514	0					
+ANR	7642835	BreakStatement	break ;	87:8:1704:1709	7642514	5	True				
+ANR	7642836	Label	case REPORT_LUNS :	89:4:1716:1732	7642514	6	True				
+ANR	7642837	Identifier	REPORT_LUNS		7642514	0					
+ANR	7642838	ExpressionStatement	"trace_scsi_report_luns ( d -> id , lun , tag )"	91:8:1743:1782	7642514	7	True				
+ANR	7642839	CallExpression	"trace_scsi_report_luns ( d -> id , lun , tag )"		7642514	0					
+ANR	7642840	Callee	trace_scsi_report_luns		7642514	0					
+ANR	7642841	Identifier	trace_scsi_report_luns		7642514	0					
+ANR	7642842	ArgumentList	d -> id		7642514	1					
+ANR	7642843	Argument	d -> id		7642514	0					
+ANR	7642844	PtrMemberAccess	d -> id		7642514	0					
+ANR	7642845	Identifier	d		7642514	0					
+ANR	7642846	Identifier	id		7642514	1					
+ANR	7642847	Argument	lun		7642514	1					
+ANR	7642848	Identifier	lun		7642514	0					
+ANR	7642849	Argument	tag		7642514	2					
+ANR	7642850	Identifier	tag		7642514	0					
+ANR	7642851	BreakStatement	break ;	93:8:1793:1798	7642514	8	True				
+ANR	7642852	Label	case REQUEST_SENSE :	95:4:1805:1823	7642514	9	True				
+ANR	7642853	Identifier	REQUEST_SENSE		7642514	0					
+ANR	7642854	ExpressionStatement	"trace_scsi_request_sense ( d -> id , lun , tag )"	97:8:1834:1875	7642514	10	True				
+ANR	7642855	CallExpression	"trace_scsi_request_sense ( d -> id , lun , tag )"		7642514	0					
+ANR	7642856	Callee	trace_scsi_request_sense		7642514	0					
+ANR	7642857	Identifier	trace_scsi_request_sense		7642514	0					
+ANR	7642858	ArgumentList	d -> id		7642514	1					
+ANR	7642859	Argument	d -> id		7642514	0					
+ANR	7642860	PtrMemberAccess	d -> id		7642514	0					
+ANR	7642861	Identifier	d		7642514	0					
+ANR	7642862	Identifier	id		7642514	1					
+ANR	7642863	Argument	lun		7642514	1					
+ANR	7642864	Identifier	lun		7642514	0					
+ANR	7642865	Argument	tag		7642514	2					
+ANR	7642866	Identifier	tag		7642514	0					
+ANR	7642867	BreakStatement	break ;	99:8:1886:1891	7642514	11	True				
+ANR	7642868	Label	default :	101:4:1898:1905	7642514	12	True				
+ANR	7642869	Identifier	default		7642514	0					
+ANR	7642870	BreakStatement	break ;	103:8:1916:1921	7642514	13	True				
+ANR	7642871	ReturnStatement	return req ;	109:4:1937:1947	7642514	6	True				
+ANR	7642872	Identifier	req		7642514	0					
+ANR	7642873	ReturnType	SCSIRequest *		7642514	1					
+ANR	7642874	Identifier	scsi_req_new		7642514	2					
+ANR	7642875	ParameterList	"SCSIDevice * d , uint32_t tag , uint32_t lun , uint8_t * buf , void * hba_private"		7642514	3					
+ANR	7642876	Parameter	SCSIDevice * d	1:26:26:38	7642514	0	True				
+ANR	7642877	ParameterType	SCSIDevice *		7642514	0					
+ANR	7642878	Identifier	d		7642514	1					
+ANR	7642879	Parameter	uint32_t tag	1:41:41:52	7642514	1	True				
+ANR	7642880	ParameterType	uint32_t		7642514	0					
+ANR	7642881	Identifier	tag		7642514	1					
+ANR	7642882	Parameter	uint32_t lun	1:55:55:66	7642514	2	True				
+ANR	7642883	ParameterType	uint32_t		7642514	0					
+ANR	7642884	Identifier	lun		7642514	1					
+ANR	7642885	Parameter	uint8_t * buf	3:26:96:107	7642514	3	True				
+ANR	7642886	ParameterType	uint8_t *		7642514	0					
+ANR	7642887	Identifier	buf		7642514	1					
+ANR	7642888	Parameter	void * hba_private	3:40:110:126	7642514	4	True				
+ANR	7642889	ParameterType	void *		7642514	0					
+ANR	7642890	Identifier	hba_private		7642514	1					
+ANR	7642891	CFGEntryNode	ENTRY		7642514		True				
+ANR	7642892	CFGExitNode	EXIT		7642514		True				
+ANR	7642893	Symbol	bus		7642514						
+ANR	7642894	Symbol	d -> unit_attention		7642514						
+ANR	7642895	Symbol	UNIT_ATTENTION		7642514						
+ANR	7642896	Symbol	lun		7642514						
+ANR	7642897	Symbol	scsi_req_alloc		7642514						
+ANR	7642898	Symbol	* d -> info		7642514						
+ANR	7642899	Symbol	cmd . mode		7642514						
+ANR	7642900	Symbol	* req		7642514						
+ANR	7642901	Symbol	* cmd . buf		7642514						
+ANR	7642902	Symbol	d -> qdev		7642514						
+ANR	7642903	Symbol	d -> id		7642514						
+ANR	7642904	Symbol	bus -> unit_attention . key		7642514						
+ANR	7642905	Symbol	d -> lun		7642514						
+ANR	7642906	Symbol	* bus		7642514						
+ANR	7642907	Symbol	& reqops_target_command		7642514						
+ANR	7642908	Symbol	SCSIBus		7642514						
+ANR	7642909	Symbol	REQUEST_SENSE		7642514						
+ANR	7642910	Symbol	REPORT_LUNS		7642514						
+ANR	7642911	Symbol	tag		7642514						
+ANR	7642912	Symbol	qbus		7642514						
+ANR	7642913	Symbol	d -> info		7642514						
+ANR	7642914	Symbol	* cmd		7642514						
+ANR	7642915	Symbol	d -> unit_attention . key		7642514						
+ANR	7642916	Symbol	req		7642514						
+ANR	7642917	Symbol	& reqops_unit_attention		7642514						
+ANR	7642918	Symbol	* buf		7642514						
+ANR	7642919	Symbol	cmd . buf		7642514						
+ANR	7642920	Symbol	DO_UPCAST		7642514						
+ANR	7642921	Symbol	d		7642514						
+ANR	7642922	Symbol	GET_CONFIGURATION		7642514						
+ANR	7642923	Symbol	d -> info -> alloc_req		7642514						
+ANR	7642924	Symbol	d -> qdev . parent_bus		7642514						
+ANR	7642925	Symbol	& cmd		7642514						
+ANR	7642926	Symbol	* * d		7642514						
+ANR	7642927	Symbol	req -> cmd		7642514						
+ANR	7642928	Symbol	cmd . lba		7642514						
+ANR	7642929	Symbol	bus -> unit_attention		7642514						
+ANR	7642930	Symbol	* d		7642514						
+ANR	7642931	Symbol	& reqops_invalid_opcode		7642514						
+ANR	7642932	Symbol	hba_private		7642514						
+ANR	7642933	Symbol	GET_EVENT_STATUS_NOTIFICATION		7642514						
+ANR	7642934	Symbol	buf		7642514						
+ANR	7642935	Symbol	cmd . xfer		7642514						
+ANR	7642936	Symbol	scsi_req_parse		7642514						
+ANR	7642937	Symbol	req -> cmd . lba		7642514						
+ANR	7642938	Symbol	INQUIRY		7642514						
+ANR	7642939	Symbol	cmd		7642514						

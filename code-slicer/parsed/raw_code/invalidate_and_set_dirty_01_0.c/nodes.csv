@@ -1,0 +1,98 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4967379	File	/home/p4ultr4n/workplace/ReVeal/raw_code/invalidate_and_set_dirty_01_0.c								
+ANR	4967380	Function	invalidate_and_set_dirty	1:0:0:592							
+ANR	4967381	FunctionDef	"invalidate_and_set_dirty (MemoryRegion * mr , hwaddr addr , hwaddr length)"		4967380	0					
+ANR	4967382	CompoundStatement		5:0:122:592	4967380	0					
+ANR	4967383	IfStatement	"if ( cpu_physical_memory_range_includes_clean ( addr , length ) )"		4967380	0					
+ANR	4967384	Condition	"cpu_physical_memory_range_includes_clean ( addr , length )"	7:8:133:186	4967380	0	True				
+ANR	4967385	CallExpression	"cpu_physical_memory_range_includes_clean ( addr , length )"		4967380	0					
+ANR	4967386	Callee	cpu_physical_memory_range_includes_clean		4967380	0					
+ANR	4967387	Identifier	cpu_physical_memory_range_includes_clean		4967380	0					
+ANR	4967388	ArgumentList	addr		4967380	1					
+ANR	4967389	Argument	addr		4967380	0					
+ANR	4967390	Identifier	addr		4967380	0					
+ANR	4967391	Argument	length		4967380	1					
+ANR	4967392	Identifier	length		4967380	0					
+ANR	4967393	CompoundStatement		5:8:77:138	4967380	1					
+ANR	4967394	IdentifierDeclStatement	uint8_t dirty_log_mask = memory_region_get_dirty_log_mask ( mr ) ;	9:8:200:261	4967380	0	True				
+ANR	4967395	IdentifierDecl	dirty_log_mask = memory_region_get_dirty_log_mask ( mr )		4967380	0					
+ANR	4967396	IdentifierDeclType	uint8_t		4967380	0					
+ANR	4967397	Identifier	dirty_log_mask		4967380	1					
+ANR	4967398	AssignmentExpression	dirty_log_mask = memory_region_get_dirty_log_mask ( mr )		4967380	2		=			
+ANR	4967399	Identifier	dirty_log_mask		4967380	0					
+ANR	4967400	CallExpression	memory_region_get_dirty_log_mask ( mr )		4967380	1					
+ANR	4967401	Callee	memory_region_get_dirty_log_mask		4967380	0					
+ANR	4967402	Identifier	memory_region_get_dirty_log_mask		4967380	0					
+ANR	4967403	ArgumentList	mr		4967380	1					
+ANR	4967404	Argument	mr		4967380	0					
+ANR	4967405	Identifier	mr		4967380	0					
+ANR	4967406	IfStatement	if ( dirty_log_mask & ( 1 << DIRTY_MEMORY_CODE ) )		4967380	1					
+ANR	4967407	Condition	dirty_log_mask & ( 1 << DIRTY_MEMORY_CODE )	11:12:276:316	4967380	0	True				
+ANR	4967408	BitAndExpression	dirty_log_mask & ( 1 << DIRTY_MEMORY_CODE )		4967380	0		&			
+ANR	4967409	Identifier	dirty_log_mask		4967380	0					
+ANR	4967410	ShiftExpression	1 << DIRTY_MEMORY_CODE		4967380	1		<<			
+ANR	4967411	PrimaryExpression	1		4967380	0					
+ANR	4967412	Identifier	DIRTY_MEMORY_CODE		4967380	1					
+ANR	4967413	CompoundStatement		7:55:196:196	4967380	1					
+ANR	4967414	ExpressionStatement	"tb_invalidate_phys_range ( addr , addr + length )"	13:12:334:379	4967380	0	True				
+ANR	4967415	CallExpression	"tb_invalidate_phys_range ( addr , addr + length )"		4967380	0					
+ANR	4967416	Callee	tb_invalidate_phys_range		4967380	0					
+ANR	4967417	Identifier	tb_invalidate_phys_range		4967380	0					
+ANR	4967418	ArgumentList	addr		4967380	1					
+ANR	4967419	Argument	addr		4967380	0					
+ANR	4967420	Identifier	addr		4967380	0					
+ANR	4967421	Argument	addr + length		4967380	1					
+ANR	4967422	AdditiveExpression	addr + length		4967380	0		+			
+ANR	4967423	Identifier	addr		4967380	0					
+ANR	4967424	Identifier	length		4967380	1					
+ANR	4967425	ExpressionStatement	dirty_log_mask &= ~ ( 1 << DIRTY_MEMORY_CODE )	15:12:394:437	4967380	1	True				
+ANR	4967426	AssignmentExpression	dirty_log_mask &= ~ ( 1 << DIRTY_MEMORY_CODE )		4967380	0		&=			
+ANR	4967427	Identifier	dirty_log_mask		4967380	0					
+ANR	4967428	UnaryOperationExpression	~ ( 1 << DIRTY_MEMORY_CODE )		4967380	1					
+ANR	4967429	UnaryOperator	~		4967380	0					
+ANR	4967430	ShiftExpression	1 << DIRTY_MEMORY_CODE		4967380	1		<<			
+ANR	4967431	PrimaryExpression	1		4967380	0					
+ANR	4967432	Identifier	DIRTY_MEMORY_CODE		4967380	1					
+ANR	4967433	ExpressionStatement	"cpu_physical_memory_set_dirty_range ( addr , length , dirty_log_mask )"	19:8:459:524	4967380	2	True				
+ANR	4967434	CallExpression	"cpu_physical_memory_set_dirty_range ( addr , length , dirty_log_mask )"		4967380	0					
+ANR	4967435	Callee	cpu_physical_memory_set_dirty_range		4967380	0					
+ANR	4967436	Identifier	cpu_physical_memory_set_dirty_range		4967380	0					
+ANR	4967437	ArgumentList	addr		4967380	1					
+ANR	4967438	Argument	addr		4967380	0					
+ANR	4967439	Identifier	addr		4967380	0					
+ANR	4967440	Argument	length		4967380	1					
+ANR	4967441	Identifier	length		4967380	0					
+ANR	4967442	Argument	dirty_log_mask		4967380	2					
+ANR	4967443	Identifier	dirty_log_mask		4967380	0					
+ANR	4967444	ElseStatement	else		4967380	0					
+ANR	4967445	CompoundStatement		17:11:415:415	4967380	0					
+ANR	4967446	ExpressionStatement	"xen_modified_memory ( addr , length )"	23:8:549:582	4967380	0	True				
+ANR	4967447	CallExpression	"xen_modified_memory ( addr , length )"		4967380	0					
+ANR	4967448	Callee	xen_modified_memory		4967380	0					
+ANR	4967449	Identifier	xen_modified_memory		4967380	0					
+ANR	4967450	ArgumentList	addr		4967380	1					
+ANR	4967451	Argument	addr		4967380	0					
+ANR	4967452	Identifier	addr		4967380	0					
+ANR	4967453	Argument	length		4967380	1					
+ANR	4967454	Identifier	length		4967380	0					
+ANR	4967455	ReturnType	static void		4967380	1					
+ANR	4967456	Identifier	invalidate_and_set_dirty		4967380	2					
+ANR	4967457	ParameterList	"MemoryRegion * mr , hwaddr addr , hwaddr length"		4967380	3					
+ANR	4967458	Parameter	MemoryRegion * mr	1:37:37:52	4967380	0	True				
+ANR	4967459	ParameterType	MemoryRegion *		4967380	0					
+ANR	4967460	Identifier	mr		4967380	1					
+ANR	4967461	Parameter	hwaddr addr	1:55:55:65	4967380	1	True				
+ANR	4967462	ParameterType	hwaddr		4967380	0					
+ANR	4967463	Identifier	addr		4967380	1					
+ANR	4967464	Parameter	hwaddr length	3:37:106:118	4967380	2	True				
+ANR	4967465	ParameterType	hwaddr		4967380	0					
+ANR	4967466	Identifier	length		4967380	1					
+ANR	4967467	CFGEntryNode	ENTRY		4967380		True				
+ANR	4967468	CFGExitNode	EXIT		4967380		True				
+ANR	4967469	Symbol	DIRTY_MEMORY_CODE		4967380						
+ANR	4967470	Symbol	mr		4967380						
+ANR	4967471	Symbol	cpu_physical_memory_range_includes_clean		4967380						
+ANR	4967472	Symbol	length		4967380						
+ANR	4967473	Symbol	dirty_log_mask		4967380						
+ANR	4967474	Symbol	memory_region_get_dirty_log_mask		4967380						
+ANR	4967475	Symbol	addr		4967380						

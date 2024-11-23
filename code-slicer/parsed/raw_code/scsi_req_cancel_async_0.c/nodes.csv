@@ -1,0 +1,107 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7640176	File	/home/p4ultr4n/workplace/ReVeal/raw_code/scsi_req_cancel_async_0.c								
+ANR	7640177	Function	scsi_req_cancel_async	1:0:0:430							
+ANR	7640178	FunctionDef	"scsi_req_cancel_async (SCSIRequest * req , Notifier * notifier)"		7640177	0					
+ANR	7640179	CompoundStatement		3:0:66:430	7640177	0					
+ANR	7640180	ExpressionStatement	"trace_scsi_req_cancel ( req -> dev -> id , req -> lun , req -> tag )"	5:4:73:128	7640177	0	True				
+ANR	7640181	CallExpression	"trace_scsi_req_cancel ( req -> dev -> id , req -> lun , req -> tag )"		7640177	0					
+ANR	7640182	Callee	trace_scsi_req_cancel		7640177	0					
+ANR	7640183	Identifier	trace_scsi_req_cancel		7640177	0					
+ANR	7640184	ArgumentList	req -> dev -> id		7640177	1					
+ANR	7640185	Argument	req -> dev -> id		7640177	0					
+ANR	7640186	PtrMemberAccess	req -> dev -> id		7640177	0					
+ANR	7640187	PtrMemberAccess	req -> dev		7640177	0					
+ANR	7640188	Identifier	req		7640177	0					
+ANR	7640189	Identifier	dev		7640177	1					
+ANR	7640190	Identifier	id		7640177	1					
+ANR	7640191	Argument	req -> lun		7640177	1					
+ANR	7640192	PtrMemberAccess	req -> lun		7640177	0					
+ANR	7640193	Identifier	req		7640177	0					
+ANR	7640194	Identifier	lun		7640177	1					
+ANR	7640195	Argument	req -> tag		7640177	2					
+ANR	7640196	PtrMemberAccess	req -> tag		7640177	0					
+ANR	7640197	Identifier	req		7640177	0					
+ANR	7640198	Identifier	tag		7640177	1					
+ANR	7640199	IfStatement	if ( notifier )		7640177	1					
+ANR	7640200	Condition	notifier	7:8:139:146	7640177	0	True				
+ANR	7640201	Identifier	notifier		7640177	0					
+ANR	7640202	CompoundStatement		5:18:82:82	7640177	1					
+ANR	7640203	ExpressionStatement	"notifier_list_add ( & req -> cancel_notifiers , notifier )"	9:8:160:211	7640177	0	True				
+ANR	7640204	CallExpression	"notifier_list_add ( & req -> cancel_notifiers , notifier )"		7640177	0					
+ANR	7640205	Callee	notifier_list_add		7640177	0					
+ANR	7640206	Identifier	notifier_list_add		7640177	0					
+ANR	7640207	ArgumentList	& req -> cancel_notifiers		7640177	1					
+ANR	7640208	Argument	& req -> cancel_notifiers		7640177	0					
+ANR	7640209	UnaryOperationExpression	& req -> cancel_notifiers		7640177	0					
+ANR	7640210	UnaryOperator	&		7640177	0					
+ANR	7640211	PtrMemberAccess	req -> cancel_notifiers		7640177	1					
+ANR	7640212	Identifier	req		7640177	0					
+ANR	7640213	Identifier	cancel_notifiers		7640177	1					
+ANR	7640214	Argument	notifier		7640177	1					
+ANR	7640215	Identifier	notifier		7640177	0					
+ANR	7640216	IfStatement	if ( req -> io_canceled )		7640177	2					
+ANR	7640217	Condition	req -> io_canceled	13:8:229:244	7640177	0	True				
+ANR	7640218	PtrMemberAccess	req -> io_canceled		7640177	0					
+ANR	7640219	Identifier	req		7640177	0					
+ANR	7640220	Identifier	io_canceled		7640177	1					
+ANR	7640221	CompoundStatement		11:26:180:180	7640177	1					
+ANR	7640222	ReturnStatement	return ;	15:8:258:264	7640177	0	True				
+ANR	7640223	ExpressionStatement	scsi_req_ref ( req )	19:4:278:295	7640177	3	True				
+ANR	7640224	CallExpression	scsi_req_ref ( req )		7640177	0					
+ANR	7640225	Callee	scsi_req_ref		7640177	0					
+ANR	7640226	Identifier	scsi_req_ref		7640177	0					
+ANR	7640227	ArgumentList	req		7640177	1					
+ANR	7640228	Argument	req		7640177	0					
+ANR	7640229	Identifier	req		7640177	0					
+ANR	7640230	ExpressionStatement	scsi_req_dequeue ( req )	21:4:302:323	7640177	4	True				
+ANR	7640231	CallExpression	scsi_req_dequeue ( req )		7640177	0					
+ANR	7640232	Callee	scsi_req_dequeue		7640177	0					
+ANR	7640233	Identifier	scsi_req_dequeue		7640177	0					
+ANR	7640234	ArgumentList	req		7640177	1					
+ANR	7640235	Argument	req		7640177	0					
+ANR	7640236	Identifier	req		7640177	0					
+ANR	7640237	ExpressionStatement	req -> io_canceled = true	23:4:330:353	7640177	5	True				
+ANR	7640238	AssignmentExpression	req -> io_canceled = true		7640177	0		=			
+ANR	7640239	PtrMemberAccess	req -> io_canceled		7640177	0					
+ANR	7640240	Identifier	req		7640177	0					
+ANR	7640241	Identifier	io_canceled		7640177	1					
+ANR	7640242	Identifier	true		7640177	1					
+ANR	7640243	IfStatement	if ( req -> aiocb )		7640177	6					
+ANR	7640244	Condition	req -> aiocb	25:8:364:373	7640177	0	True				
+ANR	7640245	PtrMemberAccess	req -> aiocb		7640177	0					
+ANR	7640246	Identifier	req		7640177	0					
+ANR	7640247	Identifier	aiocb		7640177	1					
+ANR	7640248	CompoundStatement		23:20:309:309	7640177	1					
+ANR	7640249	ExpressionStatement	bdrv_aio_cancel_async ( req -> aiocb )	27:8:387:420	7640177	0	True				
+ANR	7640250	CallExpression	bdrv_aio_cancel_async ( req -> aiocb )		7640177	0					
+ANR	7640251	Callee	bdrv_aio_cancel_async		7640177	0					
+ANR	7640252	Identifier	bdrv_aio_cancel_async		7640177	0					
+ANR	7640253	ArgumentList	req -> aiocb		7640177	1					
+ANR	7640254	Argument	req -> aiocb		7640177	0					
+ANR	7640255	PtrMemberAccess	req -> aiocb		7640177	0					
+ANR	7640256	Identifier	req		7640177	0					
+ANR	7640257	Identifier	aiocb		7640177	1					
+ANR	7640258	ReturnType	void		7640177	1					
+ANR	7640259	Identifier	scsi_req_cancel_async		7640177	2					
+ANR	7640260	ParameterList	"SCSIRequest * req , Notifier * notifier"		7640177	3					
+ANR	7640261	Parameter	SCSIRequest * req	1:27:27:42	7640177	0	True				
+ANR	7640262	ParameterType	SCSIRequest *		7640177	0					
+ANR	7640263	Identifier	req		7640177	1					
+ANR	7640264	Parameter	Notifier * notifier	1:45:45:62	7640177	1	True				
+ANR	7640265	ParameterType	Notifier *		7640177	0					
+ANR	7640266	Identifier	notifier		7640177	1					
+ANR	7640267	CFGEntryNode	ENTRY		7640177		True				
+ANR	7640268	CFGExitNode	EXIT		7640177		True				
+ANR	7640269	Symbol	* req -> dev		7640177						
+ANR	7640270	Symbol	* req		7640177						
+ANR	7640271	Symbol	req -> tag		7640177						
+ANR	7640272	Symbol	req -> dev -> id		7640177						
+ANR	7640273	Symbol	req -> dev		7640177						
+ANR	7640274	Symbol	req -> io_canceled		7640177						
+ANR	7640275	Symbol	req -> aiocb		7640177						
+ANR	7640276	Symbol	* * req		7640177						
+ANR	7640277	Symbol	& req -> cancel_notifiers		7640177						
+ANR	7640278	Symbol	notifier		7640177						
+ANR	7640279	Symbol	true		7640177						
+ANR	7640280	Symbol	req -> lun		7640177						
+ANR	7640281	Symbol	req		7640177						

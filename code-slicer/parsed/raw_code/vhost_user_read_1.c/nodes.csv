@@ -1,0 +1,197 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9031620	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vhost_user_read_1.c								
+ANR	9031621	Function	vhost_user_read	1:0:0:1342							
+ANR	9031622	FunctionDef	"vhost_user_read (struct vhost_dev * dev , VhostUserMsg * msg)"		9031621	0					
+ANR	9031623	CompoundStatement		3:0:70:1342	9031621	0					
+ANR	9031624	IdentifierDeclStatement	CharDriverState * chr = dev -> opaque ;	5:4:77:111	9031621	0	True				
+ANR	9031625	IdentifierDecl	* chr = dev -> opaque		9031621	0					
+ANR	9031626	IdentifierDeclType	CharDriverState *		9031621	0					
+ANR	9031627	Identifier	chr		9031621	1					
+ANR	9031628	AssignmentExpression	* chr = dev -> opaque		9031621	2		=			
+ANR	9031629	Identifier	chr		9031621	0					
+ANR	9031630	PtrMemberAccess	dev -> opaque		9031621	1					
+ANR	9031631	Identifier	dev		9031621	0					
+ANR	9031632	Identifier	opaque		9031621	1					
+ANR	9031633	IdentifierDeclStatement	uint8_t * p = ( uint8_t * ) msg ;	7:4:118:146	9031621	1	True				
+ANR	9031634	IdentifierDecl	* p = ( uint8_t * ) msg		9031621	0					
+ANR	9031635	IdentifierDeclType	uint8_t *		9031621	0					
+ANR	9031636	Identifier	p		9031621	1					
+ANR	9031637	AssignmentExpression	* p = ( uint8_t * ) msg		9031621	2		=			
+ANR	9031638	Identifier	p		9031621	0					
+ANR	9031639	CastExpression	( uint8_t * ) msg		9031621	1					
+ANR	9031640	CastTarget	uint8_t *		9031621	0					
+ANR	9031641	Identifier	msg		9031621	1					
+ANR	9031642	IdentifierDeclStatement	"int r , size = VHOST_USER_HDR_SIZE ;"	9:4:153:186	9031621	2	True				
+ANR	9031643	IdentifierDecl	r		9031621	0					
+ANR	9031644	IdentifierDeclType	int		9031621	0					
+ANR	9031645	Identifier	r		9031621	1					
+ANR	9031646	IdentifierDecl	size = VHOST_USER_HDR_SIZE		9031621	1					
+ANR	9031647	IdentifierDeclType	int		9031621	0					
+ANR	9031648	Identifier	size		9031621	1					
+ANR	9031649	AssignmentExpression	size = VHOST_USER_HDR_SIZE		9031621	2		=			
+ANR	9031650	Identifier	VHOST_USER_HDR_SIZE		9031621	0					
+ANR	9031651	Identifier	VHOST_USER_HDR_SIZE		9031621	1					
+ANR	9031652	ExpressionStatement	"r = qemu_chr_fe_read_all ( chr , p , size )"	13:4:195:233	9031621	3	True				
+ANR	9031653	AssignmentExpression	"r = qemu_chr_fe_read_all ( chr , p , size )"		9031621	0		=			
+ANR	9031654	Identifier	r		9031621	0					
+ANR	9031655	CallExpression	"qemu_chr_fe_read_all ( chr , p , size )"		9031621	1					
+ANR	9031656	Callee	qemu_chr_fe_read_all		9031621	0					
+ANR	9031657	Identifier	qemu_chr_fe_read_all		9031621	0					
+ANR	9031658	ArgumentList	chr		9031621	1					
+ANR	9031659	Argument	chr		9031621	0					
+ANR	9031660	Identifier	chr		9031621	0					
+ANR	9031661	Argument	p		9031621	1					
+ANR	9031662	Identifier	p		9031621	0					
+ANR	9031663	Argument	size		9031621	2					
+ANR	9031664	Identifier	size		9031621	0					
+ANR	9031665	IfStatement	if ( r != size )		9031621	4					
+ANR	9031666	Condition	r != size	15:8:244:252	9031621	0	True				
+ANR	9031667	EqualityExpression	r != size		9031621	0		!=			
+ANR	9031668	Identifier	r		9031621	0					
+ANR	9031669	Identifier	size		9031621	1					
+ANR	9031670	CompoundStatement		13:19:184:184	9031621	1					
+ANR	9031671	ExpressionStatement	"error_report ( ""Failed to read msg header. Read %d instead of %d."" , r , size )"	17:8:266:357	9031621	0	True				
+ANR	9031672	CallExpression	"error_report ( ""Failed to read msg header. Read %d instead of %d."" , r , size )"		9031621	0					
+ANR	9031673	Callee	error_report		9031621	0					
+ANR	9031674	Identifier	error_report		9031621	0					
+ANR	9031675	ArgumentList	"""Failed to read msg header. Read %d instead of %d."""		9031621	1					
+ANR	9031676	Argument	"""Failed to read msg header. Read %d instead of %d."""		9031621	0					
+ANR	9031677	PrimaryExpression	"""Failed to read msg header. Read %d instead of %d."""		9031621	0					
+ANR	9031678	Argument	r		9031621	1					
+ANR	9031679	Identifier	r		9031621	0					
+ANR	9031680	Argument	size		9031621	2					
+ANR	9031681	Identifier	size		9031621	0					
+ANR	9031682	GotoStatement	goto fail ;	21:8:368:377	9031621	1	True				
+ANR	9031683	Identifier	fail		9031621	0					
+ANR	9031684	IfStatement	if ( msg -> flags != ( VHOST_USER_REPLY_MASK | VHOST_USER_VERSION ) )		9031621	5					
+ANR	9031685	Condition	msg -> flags != ( VHOST_USER_REPLY_MASK | VHOST_USER_VERSION )	29:8:432:489	9031621	0	True				
+ANR	9031686	EqualityExpression	msg -> flags != ( VHOST_USER_REPLY_MASK | VHOST_USER_VERSION )		9031621	0		!=			
+ANR	9031687	PtrMemberAccess	msg -> flags		9031621	0					
+ANR	9031688	Identifier	msg		9031621	0					
+ANR	9031689	Identifier	flags		9031621	1					
+ANR	9031690	InclusiveOrExpression	VHOST_USER_REPLY_MASK | VHOST_USER_VERSION		9031621	1		|			
+ANR	9031691	Identifier	VHOST_USER_REPLY_MASK		9031621	0					
+ANR	9031692	Identifier	VHOST_USER_VERSION		9031621	1					
+ANR	9031693	CompoundStatement		27:68:421:421	9031621	1					
+ANR	9031694	Statement	error_report	31:8:503:514	9031621	0	True				
+ANR	9031695	Statement	(	31:20:515:515	9031621	1	True				
+ANR	9031696	Statement	"""Failed to read msg header."""	31:21:516:543	9031621	2	True				
+ANR	9031697	Statement	""" Flags 0x%x instead of 0x%x."""	33:16:562:591	9031621	3	True				
+ANR	9031698	Statement	","	33:46:592:592	9031621	4	True				
+ANR	9031699	Statement	msg	33:48:594:596	9031621	5	True				
+ANR	9031700	Statement	->	33:51:597:598	9031621	6	True				
+ANR	9031701	Statement	flags	33:53:599:603	9031621	7	True				
+ANR	9031702	Statement	","	33:58:604:604	9031621	8	True				
+ANR	9031703	Statement	VHOST_USER_REPLY_MASK	35:16:623:643	9031621	9	True				
+ANR	9031704	Statement	|	35:38:645:645	9031621	10	True				
+ANR	9031705	Statement	VHOST_USER_VERSION	35:40:647:664	9031621	11	True				
+ANR	9031706	Statement	)	35:58:665:665	9031621	12	True				
+ANR	9031707	ExpressionStatement		35:59:666:666	9031621	13	True				
+ANR	9031708	GotoStatement	goto fail ;	37:8:677:686	9031621	14	True				
+ANR	9031709	Identifier	fail		9031621	0					
+ANR	9031710	IfStatement	if ( msg -> size > VHOST_USER_PAYLOAD_SIZE )		9031621	6					
+ANR	9031711	Condition	msg -> size > VHOST_USER_PAYLOAD_SIZE	45:8:747:781	9031621	0	True				
+ANR	9031712	RelationalExpression	msg -> size > VHOST_USER_PAYLOAD_SIZE		9031621	0		>			
+ANR	9031713	PtrMemberAccess	msg -> size		9031621	0					
+ANR	9031714	Identifier	msg		9031621	0					
+ANR	9031715	Identifier	size		9031621	1					
+ANR	9031716	Identifier	VHOST_USER_PAYLOAD_SIZE		9031621	1					
+ANR	9031717	CompoundStatement		43:45:713:713	9031621	1					
+ANR	9031718	Statement	error_report	47:8:795:806	9031621	0	True				
+ANR	9031719	Statement	(	47:20:807:807	9031621	1	True				
+ANR	9031720	Statement	"""Failed to read msg header."""	47:21:808:835	9031621	2	True				
+ANR	9031721	Statement	""" Size %d exceeds the maximum %zu."""	49:16:854:888	9031621	3	True				
+ANR	9031722	Statement	","	49:51:889:889	9031621	4	True				
+ANR	9031723	Statement	msg	49:53:891:893	9031621	5	True				
+ANR	9031724	Statement	->	49:56:894:895	9031621	6	True				
+ANR	9031725	Statement	size	49:58:896:899	9031621	7	True				
+ANR	9031726	Statement	","	49:62:900:900	9031621	8	True				
+ANR	9031727	Statement	VHOST_USER_PAYLOAD_SIZE	51:16:919:941	9031621	9	True				
+ANR	9031728	Statement	)	51:39:942:942	9031621	10	True				
+ANR	9031729	ExpressionStatement		51:40:943:943	9031621	11	True				
+ANR	9031730	GotoStatement	goto fail ;	53:8:954:963	9031621	12	True				
+ANR	9031731	Identifier	fail		9031621	0					
+ANR	9031732	IfStatement	if ( msg -> size )		9031621	7					
+ANR	9031733	Condition	msg -> size	59:8:983:991	9031621	0	True				
+ANR	9031734	PtrMemberAccess	msg -> size		9031621	0					
+ANR	9031735	Identifier	msg		9031621	0					
+ANR	9031736	Identifier	size		9031621	1					
+ANR	9031737	CompoundStatement		57:19:923:923	9031621	1					
+ANR	9031738	ExpressionStatement	p += VHOST_USER_HDR_SIZE	61:8:1005:1029	9031621	0	True				
+ANR	9031739	AssignmentExpression	p += VHOST_USER_HDR_SIZE		9031621	0		+=			
+ANR	9031740	Identifier	p		9031621	0					
+ANR	9031741	Identifier	VHOST_USER_HDR_SIZE		9031621	1					
+ANR	9031742	ExpressionStatement	size = msg -> size	63:8:1040:1056	9031621	1	True				
+ANR	9031743	AssignmentExpression	size = msg -> size		9031621	0		=			
+ANR	9031744	Identifier	size		9031621	0					
+ANR	9031745	PtrMemberAccess	msg -> size		9031621	1					
+ANR	9031746	Identifier	msg		9031621	0					
+ANR	9031747	Identifier	size		9031621	1					
+ANR	9031748	ExpressionStatement	"r = qemu_chr_fe_read_all ( chr , p , size )"	65:8:1067:1105	9031621	2	True				
+ANR	9031749	AssignmentExpression	"r = qemu_chr_fe_read_all ( chr , p , size )"		9031621	0		=			
+ANR	9031750	Identifier	r		9031621	0					
+ANR	9031751	CallExpression	"qemu_chr_fe_read_all ( chr , p , size )"		9031621	1					
+ANR	9031752	Callee	qemu_chr_fe_read_all		9031621	0					
+ANR	9031753	Identifier	qemu_chr_fe_read_all		9031621	0					
+ANR	9031754	ArgumentList	chr		9031621	1					
+ANR	9031755	Argument	chr		9031621	0					
+ANR	9031756	Identifier	chr		9031621	0					
+ANR	9031757	Argument	p		9031621	1					
+ANR	9031758	Identifier	p		9031621	0					
+ANR	9031759	Argument	size		9031621	2					
+ANR	9031760	Identifier	size		9031621	0					
+ANR	9031761	IfStatement	if ( r != size )		9031621	3					
+ANR	9031762	Condition	r != size	67:12:1120:1128	9031621	0	True				
+ANR	9031763	EqualityExpression	r != size		9031621	0		!=			
+ANR	9031764	Identifier	r		9031621	0					
+ANR	9031765	Identifier	size		9031621	1					
+ANR	9031766	CompoundStatement		65:23:1060:1060	9031621	1					
+ANR	9031767	Statement	error_report	69:12:1146:1157	9031621	0	True				
+ANR	9031768	Statement	(	69:24:1158:1158	9031621	1	True				
+ANR	9031769	Statement	"""Failed to read msg payload."""	69:25:1159:1187	9031621	2	True				
+ANR	9031770	Statement	""" Read %d instead of %d."""	71:25:1215:1239	9031621	3	True				
+ANR	9031771	Statement	","	71:50:1240:1240	9031621	4	True				
+ANR	9031772	Statement	r	71:52:1242:1242	9031621	5	True				
+ANR	9031773	Statement	","	71:53:1243:1243	9031621	6	True				
+ANR	9031774	Statement	msg	71:55:1245:1247	9031621	7	True				
+ANR	9031775	Statement	->	71:58:1248:1249	9031621	8	True				
+ANR	9031776	Statement	size	71:60:1250:1253	9031621	9	True				
+ANR	9031777	Statement	)	71:64:1254:1254	9031621	10	True				
+ANR	9031778	ExpressionStatement		71:65:1255:1255	9031621	11	True				
+ANR	9031779	GotoStatement	goto fail ;	73:12:1270:1279	9031621	12	True				
+ANR	9031780	Identifier	fail		9031621	0					
+ANR	9031781	ReturnStatement	return 0 ;	81:4:1306:1314	9031621	8	True				
+ANR	9031782	PrimaryExpression	0		9031621	0					
+ANR	9031783	Label	fail :	85:0:1319:1323	9031621	9	True				
+ANR	9031784	Identifier	fail		9031621	0					
+ANR	9031785	ReturnStatement	return - 1 ;	87:4:1330:1339	9031621	10	True				
+ANR	9031786	UnaryOperationExpression	- 1		9031621	0					
+ANR	9031787	UnaryOperator	-		9031621	0					
+ANR	9031788	PrimaryExpression	1		9031621	1					
+ANR	9031789	ReturnType	static int		9031621	1					
+ANR	9031790	Identifier	vhost_user_read		9031621	2					
+ANR	9031791	ParameterList	"struct vhost_dev * dev , VhostUserMsg * msg"		9031621	3					
+ANR	9031792	Parameter	struct vhost_dev * dev	1:27:27:47	9031621	0	True				
+ANR	9031793	ParameterType	struct vhost_dev *		9031621	0					
+ANR	9031794	Identifier	dev		9031621	1					
+ANR	9031795	Parameter	VhostUserMsg * msg	1:50:50:66	9031621	1	True				
+ANR	9031796	ParameterType	VhostUserMsg *		9031621	0					
+ANR	9031797	Identifier	msg		9031621	1					
+ANR	9031798	CFGEntryNode	ENTRY		9031621		True				
+ANR	9031799	CFGExitNode	EXIT		9031621		True				
+ANR	9031800	Symbol	msg		9031621						
+ANR	9031801	Symbol	* dev		9031621						
+ANR	9031802	Symbol	VHOST_USER_HDR_SIZE		9031621						
+ANR	9031803	Symbol	VHOST_USER_PAYLOAD_SIZE		9031621						
+ANR	9031804	Symbol	msg -> flags		9031621						
+ANR	9031805	Symbol	* msg		9031621						
+ANR	9031806	Symbol	chr		9031621						
+ANR	9031807	Symbol	qemu_chr_fe_read_all		9031621						
+ANR	9031808	Symbol	p		9031621						
+ANR	9031809	Symbol	dev -> opaque		9031621						
+ANR	9031810	Symbol	r		9031621						
+ANR	9031811	Symbol	dev		9031621						
+ANR	9031812	Symbol	size		9031621						
+ANR	9031813	Symbol	msg -> size		9031621						
+ANR	9031814	Symbol	VHOST_USER_VERSION		9031621						
+ANR	9031815	Symbol	VHOST_USER_REPLY_MASK		9031621						

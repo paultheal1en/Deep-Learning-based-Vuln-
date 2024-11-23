@@ -1,0 +1,160 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	512926	File	/home/p4ultr4n/workplace/ReVeal/raw_code/alloc_audio_output_buf_1.c								
+ANR	512927	Function	alloc_audio_output_buf	1:0:0:1055							
+ANR	512928	FunctionDef	"alloc_audio_output_buf (AVCodecContext * dec , AVCodecContext * enc , int nb_samples , int * buf_linesize)"		512927	0					
+ANR	512929	CompoundStatement		5:0:147:1055	512927	0					
+ANR	512930	IdentifierDeclStatement	int64_t audio_buf_samples ;	7:4:154:179	512927	0	True				
+ANR	512931	IdentifierDecl	audio_buf_samples		512927	0					
+ANR	512932	IdentifierDeclType	int64_t		512927	0					
+ANR	512933	Identifier	audio_buf_samples		512927	1					
+ANR	512934	IdentifierDeclStatement	int audio_buf_size ;	9:4:186:204	512927	1	True				
+ANR	512935	IdentifierDecl	audio_buf_size		512927	0					
+ANR	512936	IdentifierDeclType	int		512927	0					
+ANR	512937	Identifier	audio_buf_size		512927	1					
+ANR	512938	ExpressionStatement	audio_buf_samples = ( ( int64_t ) nb_samples * enc -> sample_rate + dec -> sample_rate ) / dec -> sample_rate	15:4:273:396	512927	2	True				
+ANR	512939	AssignmentExpression	audio_buf_samples = ( ( int64_t ) nb_samples * enc -> sample_rate + dec -> sample_rate ) / dec -> sample_rate		512927	0		=			
+ANR	512940	Identifier	audio_buf_samples		512927	0					
+ANR	512941	MultiplicativeExpression	( ( int64_t ) nb_samples * enc -> sample_rate + dec -> sample_rate ) / dec -> sample_rate		512927	1		/			
+ANR	512942	AdditiveExpression	( int64_t ) nb_samples * enc -> sample_rate + dec -> sample_rate		512927	0		+			
+ANR	512943	MultiplicativeExpression	( int64_t ) nb_samples * enc -> sample_rate		512927	0		*			
+ANR	512944	CastExpression	( int64_t ) nb_samples		512927	0					
+ANR	512945	CastTarget	int64_t		512927	0					
+ANR	512946	Identifier	nb_samples		512927	1					
+ANR	512947	PtrMemberAccess	enc -> sample_rate		512927	1					
+ANR	512948	Identifier	enc		512927	0					
+ANR	512949	Identifier	sample_rate		512927	1					
+ANR	512950	PtrMemberAccess	dec -> sample_rate		512927	1					
+ANR	512951	Identifier	dec		512927	0					
+ANR	512952	Identifier	sample_rate		512927	1					
+ANR	512953	PtrMemberAccess	dec -> sample_rate		512927	1					
+ANR	512954	Identifier	dec		512927	0					
+ANR	512955	Identifier	sample_rate		512927	1					
+ANR	512956	ExpressionStatement	audio_buf_samples = 4 * audio_buf_samples + 10000	19:4:403:452	512927	3	True				
+ANR	512957	AssignmentExpression	audio_buf_samples = 4 * audio_buf_samples + 10000		512927	0		=			
+ANR	512958	Identifier	audio_buf_samples		512927	0					
+ANR	512959	AdditiveExpression	4 * audio_buf_samples + 10000		512927	1		+			
+ANR	512960	MultiplicativeExpression	4 * audio_buf_samples		512927	0		*			
+ANR	512961	PrimaryExpression	4		512927	0					
+ANR	512962	Identifier	audio_buf_samples		512927	1					
+ANR	512963	PrimaryExpression	10000		512927	1					
+ANR	512964	ExpressionStatement	"audio_buf_samples = FFMAX ( audio_buf_samples , enc -> frame_size )"	21:4:492:553	512927	4	True				
+ANR	512965	AssignmentExpression	"audio_buf_samples = FFMAX ( audio_buf_samples , enc -> frame_size )"		512927	0		=			
+ANR	512966	Identifier	audio_buf_samples		512927	0					
+ANR	512967	CallExpression	"FFMAX ( audio_buf_samples , enc -> frame_size )"		512927	1					
+ANR	512968	Callee	FFMAX		512927	0					
+ANR	512969	Identifier	FFMAX		512927	0					
+ANR	512970	ArgumentList	audio_buf_samples		512927	1					
+ANR	512971	Argument	audio_buf_samples		512927	0					
+ANR	512972	Identifier	audio_buf_samples		512927	0					
+ANR	512973	Argument	enc -> frame_size		512927	1					
+ANR	512974	PtrMemberAccess	enc -> frame_size		512927	0					
+ANR	512975	Identifier	enc		512927	0					
+ANR	512976	Identifier	frame_size		512927	1					
+ANR	512977	IfStatement	if ( audio_buf_samples > INT_MAX )		512927	5					
+ANR	512978	Condition	audio_buf_samples > INT_MAX	23:8:564:590	512927	0	True				
+ANR	512979	RelationalExpression	audio_buf_samples > INT_MAX		512927	0		>			
+ANR	512980	Identifier	audio_buf_samples		512927	0					
+ANR	512981	Identifier	INT_MAX		512927	1					
+ANR	512982	ReturnStatement	return AVERROR ( EINVAL ) ;	25:8:602:624	512927	1	True				
+ANR	512983	CallExpression	AVERROR ( EINVAL )		512927	0					
+ANR	512984	Callee	AVERROR		512927	0					
+ANR	512985	Identifier	AVERROR		512927	0					
+ANR	512986	ArgumentList	EINVAL		512927	1					
+ANR	512987	Argument	EINVAL		512927	0					
+ANR	512988	Identifier	EINVAL		512927	0					
+ANR	512989	ExpressionStatement	"audio_buf_size = av_samples_get_buffer_size ( buf_linesize , enc -> channels , audio_buf_samples , enc -> sample_fmt , 0 )"	29:4:633:842	512927	6	True				
+ANR	512990	AssignmentExpression	"audio_buf_size = av_samples_get_buffer_size ( buf_linesize , enc -> channels , audio_buf_samples , enc -> sample_fmt , 0 )"		512927	0		=			
+ANR	512991	Identifier	audio_buf_size		512927	0					
+ANR	512992	CallExpression	"av_samples_get_buffer_size ( buf_linesize , enc -> channels , audio_buf_samples , enc -> sample_fmt , 0 )"		512927	1					
+ANR	512993	Callee	av_samples_get_buffer_size		512927	0					
+ANR	512994	Identifier	av_samples_get_buffer_size		512927	0					
+ANR	512995	ArgumentList	buf_linesize		512927	1					
+ANR	512996	Argument	buf_linesize		512927	0					
+ANR	512997	Identifier	buf_linesize		512927	0					
+ANR	512998	Argument	enc -> channels		512927	1					
+ANR	512999	PtrMemberAccess	enc -> channels		512927	0					
+ANR	513000	Identifier	enc		512927	0					
+ANR	513001	Identifier	channels		512927	1					
+ANR	513002	Argument	audio_buf_samples		512927	2					
+ANR	513003	Identifier	audio_buf_samples		512927	0					
+ANR	513004	Argument	enc -> sample_fmt		512927	3					
+ANR	513005	PtrMemberAccess	enc -> sample_fmt		512927	0					
+ANR	513006	Identifier	enc		512927	0					
+ANR	513007	Identifier	sample_fmt		512927	1					
+ANR	513008	Argument	0		512927	4					
+ANR	513009	PrimaryExpression	0		512927	0					
+ANR	513010	IfStatement	if ( audio_buf_size < 0 )		512927	7					
+ANR	513011	Condition	audio_buf_size < 0	35:8:853:870	512927	0	True				
+ANR	513012	RelationalExpression	audio_buf_size < 0		512927	0		<			
+ANR	513013	Identifier	audio_buf_size		512927	0					
+ANR	513014	PrimaryExpression	0		512927	1					
+ANR	513015	ReturnStatement	return audio_buf_size ;	37:8:882:903	512927	1	True				
+ANR	513016	Identifier	audio_buf_size		512927	0					
+ANR	513017	ExpressionStatement	"av_fast_malloc ( & audio_buf , & allocated_audio_buf_size , audio_buf_size )"	41:4:912:981	512927	8	True				
+ANR	513018	CallExpression	"av_fast_malloc ( & audio_buf , & allocated_audio_buf_size , audio_buf_size )"		512927	0					
+ANR	513019	Callee	av_fast_malloc		512927	0					
+ANR	513020	Identifier	av_fast_malloc		512927	0					
+ANR	513021	ArgumentList	& audio_buf		512927	1					
+ANR	513022	Argument	& audio_buf		512927	0					
+ANR	513023	UnaryOperationExpression	& audio_buf		512927	0					
+ANR	513024	UnaryOperator	&		512927	0					
+ANR	513025	Identifier	audio_buf		512927	1					
+ANR	513026	Argument	& allocated_audio_buf_size		512927	1					
+ANR	513027	UnaryOperationExpression	& allocated_audio_buf_size		512927	0					
+ANR	513028	UnaryOperator	&		512927	0					
+ANR	513029	Identifier	allocated_audio_buf_size		512927	1					
+ANR	513030	Argument	audio_buf_size		512927	2					
+ANR	513031	Identifier	audio_buf_size		512927	0					
+ANR	513032	IfStatement	if ( ! audio_buf )		512927	9					
+ANR	513033	Condition	! audio_buf	43:8:992:1001	512927	0	True				
+ANR	513034	UnaryOperationExpression	! audio_buf		512927	0					
+ANR	513035	UnaryOperator	!		512927	0					
+ANR	513036	Identifier	audio_buf		512927	1					
+ANR	513037	ReturnStatement	return AVERROR ( ENOMEM ) ;	45:8:1013:1035	512927	1	True				
+ANR	513038	CallExpression	AVERROR ( ENOMEM )		512927	0					
+ANR	513039	Callee	AVERROR		512927	0					
+ANR	513040	Identifier	AVERROR		512927	0					
+ANR	513041	ArgumentList	ENOMEM		512927	1					
+ANR	513042	Argument	ENOMEM		512927	0					
+ANR	513043	Identifier	ENOMEM		512927	0					
+ANR	513044	ReturnStatement	return 0 ;	49:4:1044:1052	512927	10	True				
+ANR	513045	PrimaryExpression	0		512927	0					
+ANR	513046	ReturnType	static int		512927	1					
+ANR	513047	Identifier	alloc_audio_output_buf		512927	2					
+ANR	513048	ParameterList	"AVCodecContext * dec , AVCodecContext * enc , int nb_samples , int * buf_linesize"		512927	3					
+ANR	513049	Parameter	AVCodecContext * dec	1:34:34:52	512927	0	True				
+ANR	513050	ParameterType	AVCodecContext *		512927	0					
+ANR	513051	Identifier	dec		512927	1					
+ANR	513052	Parameter	AVCodecContext * enc	1:55:55:73	512927	1	True				
+ANR	513053	ParameterType	AVCodecContext *		512927	0					
+ANR	513054	Identifier	enc		512927	1					
+ANR	513055	Parameter	int nb_samples	3:34:111:124	512927	2	True				
+ANR	513056	ParameterType	int		512927	0					
+ANR	513057	Identifier	nb_samples		512927	1					
+ANR	513058	Parameter	int * buf_linesize	3:50:127:143	512927	3	True				
+ANR	513059	ParameterType	int *		512927	0					
+ANR	513060	Identifier	buf_linesize		512927	1					
+ANR	513061	CFGEntryNode	ENTRY		512927		True				
+ANR	513062	CFGExitNode	EXIT		512927		True				
+ANR	513063	Symbol	dec -> sample_rate		512927						
+ANR	513064	Symbol	ENOMEM		512927						
+ANR	513065	Symbol	dec		512927						
+ANR	513066	Symbol	enc -> sample_rate		512927						
+ANR	513067	Symbol	nb_samples		512927						
+ANR	513068	Symbol	& audio_buf		512927						
+ANR	513069	Symbol	EINVAL		512927						
+ANR	513070	Symbol	audio_buf_size		512927						
+ANR	513071	Symbol	* dec		512927						
+ANR	513072	Symbol	enc -> frame_size		512927						
+ANR	513073	Symbol	enc -> channels		512927						
+ANR	513074	Symbol	& allocated_audio_buf_size		512927						
+ANR	513075	Symbol	enc -> sample_fmt		512927						
+ANR	513076	Symbol	audio_buf		512927						
+ANR	513077	Symbol	buf_linesize		512927						
+ANR	513078	Symbol	INT_MAX		512927						
+ANR	513079	Symbol	enc		512927						
+ANR	513080	Symbol	* enc		512927						
+ANR	513081	Symbol	AVERROR		512927						
+ANR	513082	Symbol	av_samples_get_buffer_size		512927						
+ANR	513083	Symbol	audio_buf_samples		512927						
+ANR	513084	Symbol	FFMAX		512927						

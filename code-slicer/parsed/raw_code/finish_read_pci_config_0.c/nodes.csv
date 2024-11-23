@@ -1,0 +1,167 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	3928614	File	/home/p4ultr4n/workplace/ReVeal/raw_code/finish_read_pci_config_0.c								
+ANR	3928615	Function	finish_read_pci_config	1:0:0:942							
+ANR	3928616	FunctionDef	"finish_read_pci_config (sPAPREnvironment * spapr , uint64_t buid , uint32_t addr , uint32_t size , target_ulong rets)"		3928615	0					
+ANR	3928617	CompoundStatement		7:0:197:942	3928615	0					
+ANR	3928618	IdentifierDeclStatement	PCIDevice * pci_dev ;	9:4:204:222	3928615	0	True				
+ANR	3928619	IdentifierDecl	* pci_dev		3928615	0					
+ANR	3928620	IdentifierDeclType	PCIDevice *		3928615	0					
+ANR	3928621	Identifier	pci_dev		3928615	1					
+ANR	3928622	IdentifierDeclStatement	uint32_t val ;	11:4:229:241	3928615	1	True				
+ANR	3928623	IdentifierDecl	val		3928615	0					
+ANR	3928624	IdentifierDeclType	uint32_t		3928615	0					
+ANR	3928625	Identifier	val		3928615	1					
+ANR	3928626	IfStatement	if ( ( size != 1 ) && ( size != 2 ) && ( size != 4 ) )		3928615	2					
+ANR	3928627	Condition	( size != 1 ) && ( size != 2 ) && ( size != 4 )	15:8:254:294	3928615	0	True				
+ANR	3928628	AndExpression	( size != 1 ) && ( size != 2 ) && ( size != 4 )		3928615	0		&&			
+ANR	3928629	EqualityExpression	size != 1		3928615	0		!=			
+ANR	3928630	Identifier	size		3928615	0					
+ANR	3928631	PrimaryExpression	1		3928615	1					
+ANR	3928632	AndExpression	( size != 2 ) && ( size != 4 )		3928615	1		&&			
+ANR	3928633	EqualityExpression	size != 2		3928615	0		!=			
+ANR	3928634	Identifier	size		3928615	0					
+ANR	3928635	PrimaryExpression	2		3928615	1					
+ANR	3928636	EqualityExpression	size != 4		3928615	1		!=			
+ANR	3928637	Identifier	size		3928615	0					
+ANR	3928638	PrimaryExpression	4		3928615	1					
+ANR	3928639	CompoundStatement		9:51:99:99	3928615	1					
+ANR	3928640	ExpressionStatement	"rtas_st ( rets , 0 , RTAS_OUT_HW_ERROR )"	19:8:354:389	3928615	0	True				
+ANR	3928641	CallExpression	"rtas_st ( rets , 0 , RTAS_OUT_HW_ERROR )"		3928615	0					
+ANR	3928642	Callee	rtas_st		3928615	0					
+ANR	3928643	Identifier	rtas_st		3928615	0					
+ANR	3928644	ArgumentList	rets		3928615	1					
+ANR	3928645	Argument	rets		3928615	0					
+ANR	3928646	Identifier	rets		3928615	0					
+ANR	3928647	Argument	0		3928615	1					
+ANR	3928648	PrimaryExpression	0		3928615	0					
+ANR	3928649	Argument	RTAS_OUT_HW_ERROR		3928615	2					
+ANR	3928650	Identifier	RTAS_OUT_HW_ERROR		3928615	0					
+ANR	3928651	ReturnStatement	return ;	21:8:400:406	3928615	1	True				
+ANR	3928652	ExpressionStatement	"pci_dev = find_dev ( spapr , buid , addr )"	27:4:422:459	3928615	3	True				
+ANR	3928653	AssignmentExpression	"pci_dev = find_dev ( spapr , buid , addr )"		3928615	0		=			
+ANR	3928654	Identifier	pci_dev		3928615	0					
+ANR	3928655	CallExpression	"find_dev ( spapr , buid , addr )"		3928615	1					
+ANR	3928656	Callee	find_dev		3928615	0					
+ANR	3928657	Identifier	find_dev		3928615	0					
+ANR	3928658	ArgumentList	spapr		3928615	1					
+ANR	3928659	Argument	spapr		3928615	0					
+ANR	3928660	Identifier	spapr		3928615	0					
+ANR	3928661	Argument	buid		3928615	1					
+ANR	3928662	Identifier	buid		3928615	0					
+ANR	3928663	Argument	addr		3928615	2					
+ANR	3928664	Identifier	addr		3928615	0					
+ANR	3928665	ExpressionStatement	addr = rtas_pci_cfgaddr ( addr )	29:4:466:495	3928615	4	True				
+ANR	3928666	AssignmentExpression	addr = rtas_pci_cfgaddr ( addr )		3928615	0		=			
+ANR	3928667	Identifier	addr		3928615	0					
+ANR	3928668	CallExpression	rtas_pci_cfgaddr ( addr )		3928615	1					
+ANR	3928669	Callee	rtas_pci_cfgaddr		3928615	0					
+ANR	3928670	Identifier	rtas_pci_cfgaddr		3928615	0					
+ANR	3928671	ArgumentList	addr		3928615	1					
+ANR	3928672	Argument	addr		3928615	0					
+ANR	3928673	Identifier	addr		3928615	0					
+ANR	3928674	IfStatement	if ( ! pci_dev || ( addr % size ) || ( addr >= pci_config_size ( pci_dev ) ) )		3928615	5					
+ANR	3928675	Condition	! pci_dev || ( addr % size ) || ( addr >= pci_config_size ( pci_dev ) )	33:8:508:570	3928615	0	True				
+ANR	3928676	OrExpression	! pci_dev || ( addr % size ) || ( addr >= pci_config_size ( pci_dev ) )		3928615	0		||			
+ANR	3928677	UnaryOperationExpression	! pci_dev		3928615	0					
+ANR	3928678	UnaryOperator	!		3928615	0					
+ANR	3928679	Identifier	pci_dev		3928615	1					
+ANR	3928680	OrExpression	( addr % size ) || ( addr >= pci_config_size ( pci_dev ) )		3928615	1		||			
+ANR	3928681	MultiplicativeExpression	addr % size		3928615	0		%			
+ANR	3928682	Identifier	addr		3928615	0					
+ANR	3928683	Identifier	size		3928615	1					
+ANR	3928684	RelationalExpression	addr >= pci_config_size ( pci_dev )		3928615	1		>=			
+ANR	3928685	Identifier	addr		3928615	0					
+ANR	3928686	CallExpression	pci_config_size ( pci_dev )		3928615	1					
+ANR	3928687	Callee	pci_config_size		3928615	0					
+ANR	3928688	Identifier	pci_config_size		3928615	0					
+ANR	3928689	ArgumentList	pci_dev		3928615	1					
+ANR	3928690	Argument	pci_dev		3928615	0					
+ANR	3928691	Identifier	pci_dev		3928615	0					
+ANR	3928692	CompoundStatement		27:73:375:375	3928615	1					
+ANR	3928693	ExpressionStatement	"rtas_st ( rets , 0 , RTAS_OUT_HW_ERROR )"	39:8:681:716	3928615	0	True				
+ANR	3928694	CallExpression	"rtas_st ( rets , 0 , RTAS_OUT_HW_ERROR )"		3928615	0					
+ANR	3928695	Callee	rtas_st		3928615	0					
+ANR	3928696	Identifier	rtas_st		3928615	0					
+ANR	3928697	ArgumentList	rets		3928615	1					
+ANR	3928698	Argument	rets		3928615	0					
+ANR	3928699	Identifier	rets		3928615	0					
+ANR	3928700	Argument	0		3928615	1					
+ANR	3928701	PrimaryExpression	0		3928615	0					
+ANR	3928702	Argument	RTAS_OUT_HW_ERROR		3928615	2					
+ANR	3928703	Identifier	RTAS_OUT_HW_ERROR		3928615	0					
+ANR	3928704	ReturnStatement	return ;	41:8:727:733	3928615	1	True				
+ANR	3928705	ExpressionStatement	"val = pci_host_config_read_common ( pci_dev , addr , pci_config_size ( pci_dev ) , size )"	47:4:749:868	3928615	6	True				
+ANR	3928706	AssignmentExpression	"val = pci_host_config_read_common ( pci_dev , addr , pci_config_size ( pci_dev ) , size )"		3928615	0		=			
+ANR	3928707	Identifier	val		3928615	0					
+ANR	3928708	CallExpression	"pci_host_config_read_common ( pci_dev , addr , pci_config_size ( pci_dev ) , size )"		3928615	1					
+ANR	3928709	Callee	pci_host_config_read_common		3928615	0					
+ANR	3928710	Identifier	pci_host_config_read_common		3928615	0					
+ANR	3928711	ArgumentList	pci_dev		3928615	1					
+ANR	3928712	Argument	pci_dev		3928615	0					
+ANR	3928713	Identifier	pci_dev		3928615	0					
+ANR	3928714	Argument	addr		3928615	1					
+ANR	3928715	Identifier	addr		3928615	0					
+ANR	3928716	Argument	pci_config_size ( pci_dev )		3928615	2					
+ANR	3928717	CallExpression	pci_config_size ( pci_dev )		3928615	0					
+ANR	3928718	Callee	pci_config_size		3928615	0					
+ANR	3928719	Identifier	pci_config_size		3928615	0					
+ANR	3928720	ArgumentList	pci_dev		3928615	1					
+ANR	3928721	Argument	pci_dev		3928615	0					
+ANR	3928722	Identifier	pci_dev		3928615	0					
+ANR	3928723	Argument	size		3928615	3					
+ANR	3928724	Identifier	size		3928615	0					
+ANR	3928725	ExpressionStatement	"rtas_st ( rets , 0 , RTAS_OUT_SUCCESS )"	53:4:877:911	3928615	7	True				
+ANR	3928726	CallExpression	"rtas_st ( rets , 0 , RTAS_OUT_SUCCESS )"		3928615	0					
+ANR	3928727	Callee	rtas_st		3928615	0					
+ANR	3928728	Identifier	rtas_st		3928615	0					
+ANR	3928729	ArgumentList	rets		3928615	1					
+ANR	3928730	Argument	rets		3928615	0					
+ANR	3928731	Identifier	rets		3928615	0					
+ANR	3928732	Argument	0		3928615	1					
+ANR	3928733	PrimaryExpression	0		3928615	0					
+ANR	3928734	Argument	RTAS_OUT_SUCCESS		3928615	2					
+ANR	3928735	Identifier	RTAS_OUT_SUCCESS		3928615	0					
+ANR	3928736	ExpressionStatement	"rtas_st ( rets , 1 , val )"	55:4:918:939	3928615	8	True				
+ANR	3928737	CallExpression	"rtas_st ( rets , 1 , val )"		3928615	0					
+ANR	3928738	Callee	rtas_st		3928615	0					
+ANR	3928739	Identifier	rtas_st		3928615	0					
+ANR	3928740	ArgumentList	rets		3928615	1					
+ANR	3928741	Argument	rets		3928615	0					
+ANR	3928742	Identifier	rets		3928615	0					
+ANR	3928743	Argument	1		3928615	1					
+ANR	3928744	PrimaryExpression	1		3928615	0					
+ANR	3928745	Argument	val		3928615	2					
+ANR	3928746	Identifier	val		3928615	0					
+ANR	3928747	ReturnType	static void		3928615	1					
+ANR	3928748	Identifier	finish_read_pci_config		3928615	2					
+ANR	3928749	ParameterList	"sPAPREnvironment * spapr , uint64_t buid , uint32_t addr , uint32_t size , target_ulong rets"		3928615	3					
+ANR	3928750	Parameter	sPAPREnvironment * spapr	1:35:35:57	3928615	0	True				
+ANR	3928751	ParameterType	sPAPREnvironment *		3928615	0					
+ANR	3928752	Identifier	spapr		3928615	1					
+ANR	3928753	Parameter	uint64_t buid	1:60:60:72	3928615	1	True				
+ANR	3928754	ParameterType	uint64_t		3928615	0					
+ANR	3928755	Identifier	buid		3928615	1					
+ANR	3928756	Parameter	uint32_t addr	3:35:111:123	3928615	2	True				
+ANR	3928757	ParameterType	uint32_t		3928615	0					
+ANR	3928758	Identifier	addr		3928615	1					
+ANR	3928759	Parameter	uint32_t size	3:50:126:138	3928615	3	True				
+ANR	3928760	ParameterType	uint32_t		3928615	0					
+ANR	3928761	Identifier	size		3928615	1					
+ANR	3928762	Parameter	target_ulong rets	5:35:177:193	3928615	4	True				
+ANR	3928763	ParameterType	target_ulong		3928615	0					
+ANR	3928764	Identifier	rets		3928615	1					
+ANR	3928765	CFGEntryNode	ENTRY		3928615		True				
+ANR	3928766	CFGExitNode	EXIT		3928615		True				
+ANR	3928767	Symbol	buid		3928615						
+ANR	3928768	Symbol	val		3928615						
+ANR	3928769	Symbol	find_dev		3928615						
+ANR	3928770	Symbol	rets		3928615						
+ANR	3928771	Symbol	pci_config_size		3928615						
+ANR	3928772	Symbol	RTAS_OUT_SUCCESS		3928615						
+ANR	3928773	Symbol	spapr		3928615						
+ANR	3928774	Symbol	RTAS_OUT_HW_ERROR		3928615						
+ANR	3928775	Symbol	pci_dev		3928615						
+ANR	3928776	Symbol	size		3928615						
+ANR	3928777	Symbol	rtas_pci_cfgaddr		3928615						
+ANR	3928778	Symbol	addr		3928615						
+ANR	3928779	Symbol	pci_host_config_read_common		3928615						

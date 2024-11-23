@@ -1,0 +1,159 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	939230	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_aio_write_1.c								
+ANR	939231	Function	bdrv_aio_write	1:0:0:853							
+ANR	939232	FunctionDef	"bdrv_aio_write (BlockDriverState * bs , int64_t sector_num , const uint8_t * buf , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque)"		939231	0					
+ANR	939233	CompoundStatement		7:0:225:853	939231	0					
+ANR	939234	IdentifierDeclStatement	BlockDriver * drv = bs -> drv ;	9:4:232:258	939231	0	True				
+ANR	939235	IdentifierDecl	* drv = bs -> drv		939231	0					
+ANR	939236	IdentifierDeclType	BlockDriver *		939231	0					
+ANR	939237	Identifier	drv		939231	1					
+ANR	939238	AssignmentExpression	* drv = bs -> drv		939231	2		=			
+ANR	939239	Identifier	drv		939231	0					
+ANR	939240	PtrMemberAccess	bs -> drv		939231	1					
+ANR	939241	Identifier	bs		939231	0					
+ANR	939242	Identifier	drv		939231	1					
+ANR	939243	IdentifierDeclStatement	BlockDriverAIOCB * ret ;	11:4:265:286	939231	1	True				
+ANR	939244	IdentifierDecl	* ret		939231	0					
+ANR	939245	IdentifierDeclType	BlockDriverAIOCB *		939231	0					
+ANR	939246	Identifier	ret		939231	1					
+ANR	939247	IfStatement	if ( ! drv )		939231	2					
+ANR	939248	Condition	! drv	15:8:299:302	939231	0	True				
+ANR	939249	UnaryOperationExpression	! drv		939231	0					
+ANR	939250	UnaryOperator	!		939231	0					
+ANR	939251	Identifier	drv		939231	1					
+ANR	939252	ReturnStatement	return NULL ;	17:8:314:325	939231	1	True				
+ANR	939253	Identifier	NULL		939231	0					
+ANR	939254	IfStatement	if ( bs -> read_only )		939231	3					
+ANR	939255	Condition	bs -> read_only	19:8:336:348	939231	0	True				
+ANR	939256	PtrMemberAccess	bs -> read_only		939231	0					
+ANR	939257	Identifier	bs		939231	0					
+ANR	939258	Identifier	read_only		939231	1					
+ANR	939259	ReturnStatement	return NULL ;	21:8:360:371	939231	1	True				
+ANR	939260	Identifier	NULL		939231	0					
+ANR	939261	IfStatement	"if ( bdrv_wr_badreq_sectors ( bs , sector_num , nb_sectors ) )"		939231	4					
+ANR	939262	Condition	"bdrv_wr_badreq_sectors ( bs , sector_num , nb_sectors )"	23:8:382:431	939231	0	True				
+ANR	939263	CallExpression	"bdrv_wr_badreq_sectors ( bs , sector_num , nb_sectors )"		939231	0					
+ANR	939264	Callee	bdrv_wr_badreq_sectors		939231	0					
+ANR	939265	Identifier	bdrv_wr_badreq_sectors		939231	0					
+ANR	939266	ArgumentList	bs		939231	1					
+ANR	939267	Argument	bs		939231	0					
+ANR	939268	Identifier	bs		939231	0					
+ANR	939269	Argument	sector_num		939231	1					
+ANR	939270	Identifier	sector_num		939231	0					
+ANR	939271	Argument	nb_sectors		939231	2					
+ANR	939272	Identifier	nb_sectors		939231	0					
+ANR	939273	ReturnStatement	return NULL ;	25:8:443:454	939231	1	True				
+ANR	939274	Identifier	NULL		939231	0					
+ANR	939275	IfStatement	if ( sector_num == 0 && bs -> boot_sector_enabled && nb_sectors > 0 )		939231	5					
+ANR	939276	Condition	sector_num == 0 && bs -> boot_sector_enabled && nb_sectors > 0	27:8:465:524	939231	0	True				
+ANR	939277	AndExpression	sector_num == 0 && bs -> boot_sector_enabled && nb_sectors > 0		939231	0		&&			
+ANR	939278	EqualityExpression	sector_num == 0		939231	0		==			
+ANR	939279	Identifier	sector_num		939231	0					
+ANR	939280	PrimaryExpression	0		939231	1					
+ANR	939281	AndExpression	bs -> boot_sector_enabled && nb_sectors > 0		939231	1		&&			
+ANR	939282	PtrMemberAccess	bs -> boot_sector_enabled		939231	0					
+ANR	939283	Identifier	bs		939231	0					
+ANR	939284	Identifier	boot_sector_enabled		939231	1					
+ANR	939285	RelationalExpression	nb_sectors > 0		939231	1		>			
+ANR	939286	Identifier	nb_sectors		939231	0					
+ANR	939287	PrimaryExpression	0		939231	1					
+ANR	939288	CompoundStatement		21:70:301:301	939231	1					
+ANR	939289	ExpressionStatement	"memcpy ( bs -> boot_sector_data , buf , 512 )"	29:8:538:576	939231	0	True				
+ANR	939290	CallExpression	"memcpy ( bs -> boot_sector_data , buf , 512 )"		939231	0					
+ANR	939291	Callee	memcpy		939231	0					
+ANR	939292	Identifier	memcpy		939231	0					
+ANR	939293	ArgumentList	bs -> boot_sector_data		939231	1					
+ANR	939294	Argument	bs -> boot_sector_data		939231	0					
+ANR	939295	PtrMemberAccess	bs -> boot_sector_data		939231	0					
+ANR	939296	Identifier	bs		939231	0					
+ANR	939297	Identifier	boot_sector_data		939231	1					
+ANR	939298	Argument	buf		939231	1					
+ANR	939299	Identifier	buf		939231	0					
+ANR	939300	Argument	512		939231	2					
+ANR	939301	PrimaryExpression	512		939231	0					
+ANR	939302	ExpressionStatement	"ret = drv -> bdrv_aio_write ( bs , sector_num , buf , nb_sectors , cb , opaque )"	35:4:592:662	939231	6	True				
+ANR	939303	AssignmentExpression	"ret = drv -> bdrv_aio_write ( bs , sector_num , buf , nb_sectors , cb , opaque )"		939231	0		=			
+ANR	939304	Identifier	ret		939231	0					
+ANR	939305	CallExpression	"drv -> bdrv_aio_write ( bs , sector_num , buf , nb_sectors , cb , opaque )"		939231	1					
+ANR	939306	Callee	drv -> bdrv_aio_write		939231	0					
+ANR	939307	PtrMemberAccess	drv -> bdrv_aio_write		939231	0					
+ANR	939308	Identifier	drv		939231	0					
+ANR	939309	Identifier	bdrv_aio_write		939231	1					
+ANR	939310	ArgumentList	bs		939231	1					
+ANR	939311	Argument	bs		939231	0					
+ANR	939312	Identifier	bs		939231	0					
+ANR	939313	Argument	sector_num		939231	1					
+ANR	939314	Identifier	sector_num		939231	0					
+ANR	939315	Argument	buf		939231	2					
+ANR	939316	Identifier	buf		939231	0					
+ANR	939317	Argument	nb_sectors		939231	3					
+ANR	939318	Identifier	nb_sectors		939231	0					
+ANR	939319	Argument	cb		939231	4					
+ANR	939320	Identifier	cb		939231	0					
+ANR	939321	Argument	opaque		939231	5					
+ANR	939322	Identifier	opaque		939231	0					
+ANR	939323	IfStatement	if ( ret )		939231	7					
+ANR	939324	Condition	ret	39:8:675:677	939231	0	True				
+ANR	939325	Identifier	ret		939231	0					
+ANR	939326	CompoundStatement		33:13:454:454	939231	1					
+ANR	939327	ExpressionStatement	bs -> wr_bytes += ( unsigned ) nb_sectors * SECTOR_SIZE	43:1:756:807	939231	0	True				
+ANR	939328	AssignmentExpression	bs -> wr_bytes += ( unsigned ) nb_sectors * SECTOR_SIZE		939231	0		+=			
+ANR	939329	PtrMemberAccess	bs -> wr_bytes		939231	0					
+ANR	939330	Identifier	bs		939231	0					
+ANR	939331	Identifier	wr_bytes		939231	1					
+ANR	939332	MultiplicativeExpression	( unsigned ) nb_sectors * SECTOR_SIZE		939231	1		*			
+ANR	939333	CastExpression	( unsigned ) nb_sectors		939231	0					
+ANR	939334	CastTarget	unsigned		939231	0					
+ANR	939335	Identifier	nb_sectors		939231	1					
+ANR	939336	Identifier	SECTOR_SIZE		939231	1					
+ANR	939337	ExpressionStatement	bs -> wr_ops ++	45:1:811:824	939231	1	True				
+ANR	939338	PostIncDecOperationExpression	bs -> wr_ops ++		939231	0					
+ANR	939339	PtrMemberAccess	bs -> wr_ops		939231	0					
+ANR	939340	Identifier	bs		939231	0					
+ANR	939341	Identifier	wr_ops		939231	1					
+ANR	939342	IncDec	++		939231	1					
+ANR	939343	ReturnStatement	return ret ;	51:4:840:850	939231	8	True				
+ANR	939344	Identifier	ret		939231	0					
+ANR	939345	ReturnType	BlockDriverAIOCB *		939231	1					
+ANR	939346	Identifier	bdrv_aio_write		939231	2					
+ANR	939347	ParameterList	"BlockDriverState * bs , int64_t sector_num , const uint8_t * buf , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque"		939231	3					
+ANR	939348	Parameter	BlockDriverState * bs	1:33:33:52	939231	0	True				
+ANR	939349	ParameterType	BlockDriverState *		939231	0					
+ANR	939350	Identifier	bs		939231	1					
+ANR	939351	Parameter	int64_t sector_num	1:55:55:72	939231	1	True				
+ANR	939352	ParameterType	int64_t		939231	0					
+ANR	939353	Identifier	sector_num		939231	1					
+ANR	939354	Parameter	const uint8_t * buf	3:33:109:126	939231	2	True				
+ANR	939355	ParameterType	const uint8_t *		939231	0					
+ANR	939356	Identifier	buf		939231	1					
+ANR	939357	Parameter	int nb_sectors	3:53:129:142	939231	3	True				
+ANR	939358	ParameterType	int		939231	0					
+ANR	939359	Identifier	nb_sectors		939231	1					
+ANR	939360	Parameter	BlockDriverCompletionFunc * cb	5:33:179:207	939231	4	True				
+ANR	939361	ParameterType	BlockDriverCompletionFunc *		939231	0					
+ANR	939362	Identifier	cb		939231	1					
+ANR	939363	Parameter	void * opaque	5:64:210:221	939231	5	True				
+ANR	939364	ParameterType	void *		939231	0					
+ANR	939365	Identifier	opaque		939231	1					
+ANR	939366	CFGEntryNode	ENTRY		939231		True				
+ANR	939367	CFGExitNode	EXIT		939231		True				
+ANR	939368	Symbol	ret		939231						
+ANR	939369	Symbol	nb_sectors		939231						
+ANR	939370	Symbol	SECTOR_SIZE		939231						
+ANR	939371	Symbol	opaque		939231						
+ANR	939372	Symbol	NULL		939231						
+ANR	939373	Symbol	bs -> boot_sector_data		939231						
+ANR	939374	Symbol	drv		939231						
+ANR	939375	Symbol	drv -> bdrv_aio_write		939231						
+ANR	939376	Symbol	bs -> wr_bytes		939231						
+ANR	939377	Symbol	bs -> wr_ops		939231						
+ANR	939378	Symbol	bs -> drv		939231						
+ANR	939379	Symbol	* drv		939231						
+ANR	939380	Symbol	bdrv_wr_badreq_sectors		939231						
+ANR	939381	Symbol	sector_num		939231						
+ANR	939382	Symbol	bs		939231						
+ANR	939383	Symbol	buf		939231						
+ANR	939384	Symbol	* bs		939231						
+ANR	939385	Symbol	bs -> read_only		939231						
+ANR	939386	Symbol	cb		939231						
+ANR	939387	Symbol	bs -> boot_sector_enabled		939231						

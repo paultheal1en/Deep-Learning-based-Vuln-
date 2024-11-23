@@ -1,0 +1,267 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4703958	File	/home/p4ultr4n/workplace/ReVeal/raw_code/hnm_decode_frame_01_1.c								
+ANR	4703959	Function	hnm_decode_frame	1:0:0:1756							
+ANR	4703960	FunctionDef	"hnm_decode_frame (AVCodecContext * avctx , void * data , int * got_frame , AVPacket * avpkt)"		4703959	0					
+ANR	4703961	CompoundStatement		3:0:124:1756	4703959	0					
+ANR	4703962	IdentifierDeclStatement	AVFrame * frame = data ;	4:4:130:151	4703959	0	True				
+ANR	4703963	IdentifierDecl	* frame = data		4703959	0					
+ANR	4703964	IdentifierDeclType	AVFrame *		4703959	0					
+ANR	4703965	Identifier	frame		4703959	1					
+ANR	4703966	AssignmentExpression	* frame = data		4703959	2		=			
+ANR	4703967	Identifier	data		4703959	0					
+ANR	4703968	Identifier	data		4703959	1					
+ANR	4703969	IdentifierDeclStatement	Hnm4VideoContext * hnm = avctx -> priv_data ;	5:4:157:197	4703959	1	True				
+ANR	4703970	IdentifierDecl	* hnm = avctx -> priv_data		4703959	0					
+ANR	4703971	IdentifierDeclType	Hnm4VideoContext *		4703959	0					
+ANR	4703972	Identifier	hnm		4703959	1					
+ANR	4703973	AssignmentExpression	* hnm = avctx -> priv_data		4703959	2		=			
+ANR	4703974	Identifier	hnm		4703959	0					
+ANR	4703975	PtrMemberAccess	avctx -> priv_data		4703959	1					
+ANR	4703976	Identifier	avctx		4703959	0					
+ANR	4703977	Identifier	priv_data		4703959	1					
+ANR	4703978	IdentifierDeclStatement	int ret ;	6:4:203:210	4703959	2	True				
+ANR	4703979	IdentifierDecl	ret		4703959	0					
+ANR	4703980	IdentifierDeclType	int		4703959	0					
+ANR	4703981	Identifier	ret		4703959	1					
+ANR	4703982	IdentifierDeclStatement	uint16_t chunk_id ;	7:4:216:233	4703959	3	True				
+ANR	4703983	IdentifierDecl	chunk_id		4703959	0					
+ANR	4703984	IdentifierDeclType	uint16_t		4703959	0					
+ANR	4703985	Identifier	chunk_id		4703959	1					
+ANR	4703986	IfStatement	"if ( ( ret = ff_get_buffer ( avctx , frame , 0 ) ) < 0 )"		4703959	4					
+ANR	4703987	Condition	"( ret = ff_get_buffer ( avctx , frame , 0 ) ) < 0"	8:8:243:284	4703959	0	True				
+ANR	4703988	RelationalExpression	"( ret = ff_get_buffer ( avctx , frame , 0 ) ) < 0"		4703959	0		<			
+ANR	4703989	AssignmentExpression	"ret = ff_get_buffer ( avctx , frame , 0 )"		4703959	0		=			
+ANR	4703990	Identifier	ret		4703959	0					
+ANR	4703991	CallExpression	"ff_get_buffer ( avctx , frame , 0 )"		4703959	1					
+ANR	4703992	Callee	ff_get_buffer		4703959	0					
+ANR	4703993	Identifier	ff_get_buffer		4703959	0					
+ANR	4703994	ArgumentList	avctx		4703959	1					
+ANR	4703995	Argument	avctx		4703959	0					
+ANR	4703996	Identifier	avctx		4703959	0					
+ANR	4703997	Argument	frame		4703959	1					
+ANR	4703998	Identifier	frame		4703959	0					
+ANR	4703999	Argument	0		4703959	2					
+ANR	4704000	PrimaryExpression	0		4703959	0					
+ANR	4704001	PrimaryExpression	0		4703959	1					
+ANR	4704002	ReturnStatement	return ret ;	9:8:295:305	4703959	1	True				
+ANR	4704003	Identifier	ret		4703959	0					
+ANR	4704004	ExpressionStatement	chunk_id = AV_RL16 ( avpkt -> data + 4 )	10:4:311:346	4703959	5	True				
+ANR	4704005	AssignmentExpression	chunk_id = AV_RL16 ( avpkt -> data + 4 )		4703959	0		=			
+ANR	4704006	Identifier	chunk_id		4703959	0					
+ANR	4704007	CallExpression	AV_RL16 ( avpkt -> data + 4 )		4703959	1					
+ANR	4704008	Callee	AV_RL16		4703959	0					
+ANR	4704009	Identifier	AV_RL16		4703959	0					
+ANR	4704010	ArgumentList	avpkt -> data + 4		4703959	1					
+ANR	4704011	Argument	avpkt -> data + 4		4703959	0					
+ANR	4704012	AdditiveExpression	avpkt -> data + 4		4703959	0		+			
+ANR	4704013	PtrMemberAccess	avpkt -> data		4703959	0					
+ANR	4704014	Identifier	avpkt		4703959	0					
+ANR	4704015	Identifier	data		4703959	1					
+ANR	4704016	PrimaryExpression	4		4703959	1					
+ANR	4704017	IfStatement	if ( chunk_id == HNM4_CHUNK_ID_PL )		4703959	6					
+ANR	4704018	Condition	chunk_id == HNM4_CHUNK_ID_PL	11:8:356:383	4703959	0	True				
+ANR	4704019	EqualityExpression	chunk_id == HNM4_CHUNK_ID_PL		4703959	0		==			
+ANR	4704020	Identifier	chunk_id		4703959	0					
+ANR	4704021	Identifier	HNM4_CHUNK_ID_PL		4703959	1					
+ANR	4704022	CompoundStatement		9:38:261:261	4703959	1					
+ANR	4704023	ExpressionStatement	"hnm_update_palette ( avctx , avpkt -> data , avpkt -> size )"	12:8:396:447	4703959	0	True				
+ANR	4704024	CallExpression	"hnm_update_palette ( avctx , avpkt -> data , avpkt -> size )"		4703959	0					
+ANR	4704025	Callee	hnm_update_palette		4703959	0					
+ANR	4704026	Identifier	hnm_update_palette		4703959	0					
+ANR	4704027	ArgumentList	avctx		4703959	1					
+ANR	4704028	Argument	avctx		4703959	0					
+ANR	4704029	Identifier	avctx		4703959	0					
+ANR	4704030	Argument	avpkt -> data		4703959	1					
+ANR	4704031	PtrMemberAccess	avpkt -> data		4703959	0					
+ANR	4704032	Identifier	avpkt		4703959	0					
+ANR	4704033	Identifier	data		4703959	1					
+ANR	4704034	Argument	avpkt -> size		4703959	2					
+ANR	4704035	PtrMemberAccess	avpkt -> size		4703959	0					
+ANR	4704036	Identifier	avpkt		4703959	0					
+ANR	4704037	Identifier	size		4703959	1					
+ANR	4704038	ExpressionStatement	frame -> palette_has_changed = 1	13:8:457:487	4703959	1	True				
+ANR	4704039	AssignmentExpression	frame -> palette_has_changed = 1		4703959	0		=			
+ANR	4704040	PtrMemberAccess	frame -> palette_has_changed		4703959	0					
+ANR	4704041	Identifier	frame		4703959	0					
+ANR	4704042	Identifier	palette_has_changed		4703959	1					
+ANR	4704043	PrimaryExpression	1		4703959	1					
+ANR	4704044	ElseStatement	else		4703959	0					
+ANR	4704045	IfStatement	if ( chunk_id == HNM4_CHUNK_ID_IZ )		4703959	0					
+ANR	4704046	Condition	chunk_id == HNM4_CHUNK_ID_IZ	14:15:504:531	4703959	0	True				
+ANR	4704047	EqualityExpression	chunk_id == HNM4_CHUNK_ID_IZ		4703959	0		==			
+ANR	4704048	Identifier	chunk_id		4703959	0					
+ANR	4704049	Identifier	HNM4_CHUNK_ID_IZ		4703959	1					
+ANR	4704050	CompoundStatement		12:45:409:409	4703959	1					
+ANR	4704051	ExpressionStatement	"unpack_intraframe ( avctx , avpkt -> data + 12 , avpkt -> size - 12 )"	15:8:544:604	4703959	0	True				
+ANR	4704052	CallExpression	"unpack_intraframe ( avctx , avpkt -> data + 12 , avpkt -> size - 12 )"		4703959	0					
+ANR	4704053	Callee	unpack_intraframe		4703959	0					
+ANR	4704054	Identifier	unpack_intraframe		4703959	0					
+ANR	4704055	ArgumentList	avctx		4703959	1					
+ANR	4704056	Argument	avctx		4703959	0					
+ANR	4704057	Identifier	avctx		4703959	0					
+ANR	4704058	Argument	avpkt -> data + 12		4703959	1					
+ANR	4704059	AdditiveExpression	avpkt -> data + 12		4703959	0		+			
+ANR	4704060	PtrMemberAccess	avpkt -> data		4703959	0					
+ANR	4704061	Identifier	avpkt		4703959	0					
+ANR	4704062	Identifier	data		4703959	1					
+ANR	4704063	PrimaryExpression	12		4703959	1					
+ANR	4704064	Argument	avpkt -> size - 12		4703959	2					
+ANR	4704065	AdditiveExpression	avpkt -> size - 12		4703959	0		-			
+ANR	4704066	PtrMemberAccess	avpkt -> size		4703959	0					
+ANR	4704067	Identifier	avpkt		4703959	0					
+ANR	4704068	Identifier	size		4703959	1					
+ANR	4704069	PrimaryExpression	12		4703959	1					
+ANR	4704070	ExpressionStatement	"memcpy ( hnm -> previous , hnm -> current , hnm -> width * hnm -> height )"	16:8:614:675	4703959	1	True				
+ANR	4704071	CallExpression	"memcpy ( hnm -> previous , hnm -> current , hnm -> width * hnm -> height )"		4703959	0					
+ANR	4704072	Callee	memcpy		4703959	0					
+ANR	4704073	Identifier	memcpy		4703959	0					
+ANR	4704074	ArgumentList	hnm -> previous		4703959	1					
+ANR	4704075	Argument	hnm -> previous		4703959	0					
+ANR	4704076	PtrMemberAccess	hnm -> previous		4703959	0					
+ANR	4704077	Identifier	hnm		4703959	0					
+ANR	4704078	Identifier	previous		4703959	1					
+ANR	4704079	Argument	hnm -> current		4703959	1					
+ANR	4704080	PtrMemberAccess	hnm -> current		4703959	0					
+ANR	4704081	Identifier	hnm		4703959	0					
+ANR	4704082	Identifier	current		4703959	1					
+ANR	4704083	Argument	hnm -> width * hnm -> height		4703959	2					
+ANR	4704084	MultiplicativeExpression	hnm -> width * hnm -> height		4703959	0		*			
+ANR	4704085	PtrMemberAccess	hnm -> width		4703959	0					
+ANR	4704086	Identifier	hnm		4703959	0					
+ANR	4704087	Identifier	width		4703959	1					
+ANR	4704088	PtrMemberAccess	hnm -> height		4703959	1					
+ANR	4704089	Identifier	hnm		4703959	0					
+ANR	4704090	Identifier	height		4703959	1					
+ANR	4704091	IfStatement	if ( hnm -> version == 0x4a )		4703959	2					
+ANR	4704092	Condition	hnm -> version == 0x4a	17:12:689:708	4703959	0	True				
+ANR	4704093	EqualityExpression	hnm -> version == 0x4a		4703959	0		==			
+ANR	4704094	PtrMemberAccess	hnm -> version		4703959	0					
+ANR	4704095	Identifier	hnm		4703959	0					
+ANR	4704096	Identifier	version		4703959	1					
+ANR	4704097	PrimaryExpression	0x4a		4703959	1					
+ANR	4704098	ExpressionStatement	"memcpy ( hnm -> processed , hnm -> current , hnm -> width * hnm -> height )"	18:12:723:785	4703959	1	True				
+ANR	4704099	CallExpression	"memcpy ( hnm -> processed , hnm -> current , hnm -> width * hnm -> height )"		4703959	0					
+ANR	4704100	Callee	memcpy		4703959	0					
+ANR	4704101	Identifier	memcpy		4703959	0					
+ANR	4704102	ArgumentList	hnm -> processed		4703959	1					
+ANR	4704103	Argument	hnm -> processed		4703959	0					
+ANR	4704104	PtrMemberAccess	hnm -> processed		4703959	0					
+ANR	4704105	Identifier	hnm		4703959	0					
+ANR	4704106	Identifier	processed		4703959	1					
+ANR	4704107	Argument	hnm -> current		4703959	1					
+ANR	4704108	PtrMemberAccess	hnm -> current		4703959	0					
+ANR	4704109	Identifier	hnm		4703959	0					
+ANR	4704110	Identifier	current		4703959	1					
+ANR	4704111	Argument	hnm -> width * hnm -> height		4703959	2					
+ANR	4704112	MultiplicativeExpression	hnm -> width * hnm -> height		4703959	0		*			
+ANR	4704113	PtrMemberAccess	hnm -> width		4703959	0					
+ANR	4704114	Identifier	hnm		4703959	0					
+ANR	4704115	Identifier	width		4703959	1					
+ANR	4704116	PtrMemberAccess	hnm -> height		4703959	1					
+ANR	4704117	Identifier	hnm		4703959	0					
+ANR	4704118	Identifier	height		4703959	1					
+ANR	4704119	ElseStatement	else		4703959	0					
+ANR	4704120	ExpressionStatement	postprocess_current_frame ( avctx )	20:12:812:844	4703959	0	True				
+ANR	4704121	CallExpression	postprocess_current_frame ( avctx )		4703959	0					
+ANR	4704122	Callee	postprocess_current_frame		4703959	0					
+ANR	4704123	Identifier	postprocess_current_frame		4703959	0					
+ANR	4704124	ArgumentList	avctx		4703959	1					
+ANR	4704125	Argument	avctx		4703959	0					
+ANR	4704126	Identifier	avctx		4703959	0					
+ANR	4704127	ExpressionStatement	"copy_processed_frame ( avctx , frame )"	21:8:854:888	4703959	3	True				
+ANR	4704128	CallExpression	"copy_processed_frame ( avctx , frame )"		4703959	0					
+ANR	4704129	Callee	copy_processed_frame		4703959	0					
+ANR	4704130	Identifier	copy_processed_frame		4703959	0					
+ANR	4704131	ArgumentList	avctx		4703959	1					
+ANR	4704132	Argument	avctx		4703959	0					
+ANR	4704133	Identifier	avctx		4703959	0					
+ANR	4704134	Argument	frame		4703959	1					
+ANR	4704135	Identifier	frame		4703959	0					
+ANR	4704136	ExpressionStatement	frame -> pict_type = AV_PICTURE_TYPE_I	22:8:898:934	4703959	4	True				
+ANR	4704137	AssignmentExpression	frame -> pict_type = AV_PICTURE_TYPE_I		4703959	0		=			
+ANR	4704138	PtrMemberAccess	frame -> pict_type		4703959	0					
+ANR	4704139	Identifier	frame		4703959	0					
+ANR	4704140	Identifier	pict_type		4703959	1					
+ANR	4704141	Identifier	AV_PICTURE_TYPE_I		4703959	1					
+ANR	4704142	ExpressionStatement	frame -> key_frame = 1	23:8:944:964	4703959	5	True				
+ANR	4704143	AssignmentExpression	frame -> key_frame = 1		4703959	0		=			
+ANR	4704144	PtrMemberAccess	frame -> key_frame		4703959	0					
+ANR	4704145	Identifier	frame		4703959	0					
+ANR	4704146	Identifier	key_frame		4703959	1					
+ANR	4704147	PrimaryExpression	1		4703959	1					
+ANR	4704148	ExpressionStatement	"memcpy ( frame -> data [ 1 ] , hnm -> palette , 256 * 4 )"	24:8:974:1019	4703959	6	True				
+ANR	4704149	CallExpression	"memcpy ( frame -> data [ 1 ] , hnm -> palette , 256 * 4 )"		4703959	0					
+ANR	4704150	Callee	memcpy		4703959	0					
+ANR	4704151	Identifier	memcpy		4703959	0					
+ANR	4704152	ArgumentList	frame -> data [ 1 ]		4703959	1					
+ANR	4704153	Argument	frame -> data [ 1 ]		4703959	0					
+ANR	4704154	ArrayIndexing	frame -> data [ 1 ]		4703959	0					
+ANR	4704155	PtrMemberAccess	frame -> data		4703959	0					
+ANR	4704156	Identifier	frame		4703959	0					
+ANR	4704157	Identifier	data		4703959	1					
+ANR	4704158	PrimaryExpression	1		4703959	1					
+ANR	4704159	Argument	hnm -> palette		4703959	1					
+ANR	4704160	PtrMemberAccess	hnm -> palette		4703959	0					
+ANR	4704161	Identifier	hnm		4703959	0					
+ANR	4704162	Identifier	palette		4703959	1					
+ANR	4704163	Argument	256 * 4		4703959	2					
+ANR	4704164	MultiplicativeExpression	256 * 4		4703959	0		*			
+ANR	4704165	PrimaryExpression	256		4703959	0					
+ANR	4704166	PrimaryExpression	4		4703959	1					
+ANR	4704167	ExpressionStatement	* got_frame = 1	25:8:1029:1043	4703959	7	True				
+ANR	4704168	AssignmentExpression	* got_frame = 1		4703959	0		=			
+ANR	4704169	UnaryOperationExpression	* got_frame		4703959	0					
+ANR	4704170	UnaryOperator	*		4703959	0					
+ANR	4704171	Identifier	got_frame		4703959	1					
+ANR	4704172	PrimaryExpression	1		4703959	1					
+ANR	4704173	ReturnType	static int		4703959	1					
+ANR	4704174	Identifier	hnm_decode_frame		4703959	2					
+ANR	4704175	ParameterList	"AVCodecContext * avctx , void * data , int * got_frame , AVPacket * avpkt"		4703959	3					
+ANR	4704176	Parameter	AVCodecContext * avctx	1:28:28:48	4703959	0	True				
+ANR	4704177	ParameterType	AVCodecContext *		4703959	0					
+ANR	4704178	Identifier	avctx		4703959	1					
+ANR	4704179	Parameter	void * data	1:51:51:60	4703959	1	True				
+ANR	4704180	ParameterType	void *		4703959	0					
+ANR	4704181	Identifier	data		4703959	1					
+ANR	4704182	Parameter	int * got_frame	2:28:91:104	4703959	2	True				
+ANR	4704183	ParameterType	int *		4703959	0					
+ANR	4704184	Identifier	got_frame		4703959	1					
+ANR	4704185	Parameter	AVPacket * avpkt	2:44:107:121	4703959	3	True				
+ANR	4704186	ParameterType	AVPacket *		4703959	0					
+ANR	4704187	Identifier	avpkt		4703959	1					
+ANR	4704188	CFGEntryNode	ENTRY		4703959		True				
+ANR	4704189	CFGExitNode	EXIT		4703959		True				
+ANR	4704190	Symbol	hnm -> previous		4703959						
+ANR	4704191	Symbol	* frame -> data		4703959						
+ANR	4704192	Symbol	hnm -> width		4703959						
+ANR	4704193	Symbol	data		4703959						
+ANR	4704194	Symbol	* frame		4703959						
+ANR	4704195	Symbol	hnm -> palette		4703959						
+ANR	4704196	Symbol	frame -> pict_type		4703959						
+ANR	4704197	Symbol	avpkt		4703959						
+ANR	4704198	Symbol	hnm -> current		4703959						
+ANR	4704199	Symbol	HNM4_CHUNK_ID_PL		4703959						
+ANR	4704200	Symbol	* * frame		4703959						
+ANR	4704201	Symbol	ff_get_buffer		4703959						
+ANR	4704202	Symbol	hnm -> height		4703959						
+ANR	4704203	Symbol	got_frame		4703959						
+ANR	4704204	Symbol	avpkt -> size		4703959						
+ANR	4704205	Symbol	AV_PICTURE_TYPE_I		4703959						
+ANR	4704206	Symbol	avctx		4703959						
+ANR	4704207	Symbol	hnm -> processed		4703959						
+ANR	4704208	Symbol	HNM4_CHUNK_ID_IZ		4703959						
+ANR	4704209	Symbol	frame -> data		4703959						
+ANR	4704210	Symbol	ret		4703959						
+ANR	4704211	Symbol	* avpkt		4703959						
+ANR	4704212	Symbol	frame -> key_frame		4703959						
+ANR	4704213	Symbol	* got_frame		4703959						
+ANR	4704214	Symbol	frame -> palette_has_changed		4703959						
+ANR	4704215	Symbol	hnm		4703959						
+ANR	4704216	Symbol	avctx -> priv_data		4703959						
+ANR	4704217	Symbol	chunk_id		4703959						
+ANR	4704218	Symbol	* hnm		4703959						
+ANR	4704219	Symbol	* avctx		4703959						
+ANR	4704220	Symbol	hnm -> version		4703959						
+ANR	4704221	Symbol	avpkt -> data		4703959						
+ANR	4704222	Symbol	frame		4703959						
+ANR	4704223	Symbol	AV_RL16		4703959						

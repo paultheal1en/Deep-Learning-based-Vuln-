@@ -1,0 +1,314 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	477200	File	/home/p4ultr4n/workplace/ReVeal/raw_code/ahci_populate_sglist_01_1.c								
+ANR	477201	Function	ahci_populate_sglist	1:0:0:1525							
+ANR	477202	FunctionDef	"ahci_populate_sglist (AHCIDevice * ad , QEMUSGList * sglist)"		477201	0					
+ANR	477203	CompoundStatement		3:0:69:1525	477201	0					
+ANR	477204	IdentifierDeclStatement	AHCICmdHdr * cmd = ad -> cur_cmd ;	5:4:76:105	477201	0	True				
+ANR	477205	IdentifierDecl	* cmd = ad -> cur_cmd		477201	0					
+ANR	477206	IdentifierDeclType	AHCICmdHdr *		477201	0					
+ANR	477207	Identifier	cmd		477201	1					
+ANR	477208	AssignmentExpression	* cmd = ad -> cur_cmd		477201	2		=			
+ANR	477209	Identifier	cmd		477201	0					
+ANR	477210	PtrMemberAccess	ad -> cur_cmd		477201	1					
+ANR	477211	Identifier	ad		477201	0					
+ANR	477212	Identifier	cur_cmd		477201	1					
+ANR	477213	IdentifierDeclStatement	uint32_t opts = le32_to_cpu ( cmd -> opts ) ;	7:4:112:150	477201	1	True				
+ANR	477214	IdentifierDecl	opts = le32_to_cpu ( cmd -> opts )		477201	0					
+ANR	477215	IdentifierDeclType	uint32_t		477201	0					
+ANR	477216	Identifier	opts		477201	1					
+ANR	477217	AssignmentExpression	opts = le32_to_cpu ( cmd -> opts )		477201	2		=			
+ANR	477218	Identifier	opts		477201	0					
+ANR	477219	CallExpression	le32_to_cpu ( cmd -> opts )		477201	1					
+ANR	477220	Callee	le32_to_cpu		477201	0					
+ANR	477221	Identifier	le32_to_cpu		477201	0					
+ANR	477222	ArgumentList	cmd -> opts		477201	1					
+ANR	477223	Argument	cmd -> opts		477201	0					
+ANR	477224	PtrMemberAccess	cmd -> opts		477201	0					
+ANR	477225	Identifier	cmd		477201	0					
+ANR	477226	Identifier	opts		477201	1					
+ANR	477227	IdentifierDeclStatement	uint64_t prdt_addr = le64_to_cpu ( cmd -> tbl_addr ) + 0x80 ;	9:4:157:211	477201	2	True				
+ANR	477228	IdentifierDecl	prdt_addr = le64_to_cpu ( cmd -> tbl_addr ) + 0x80		477201	0					
+ANR	477229	IdentifierDeclType	uint64_t		477201	0					
+ANR	477230	Identifier	prdt_addr		477201	1					
+ANR	477231	AssignmentExpression	prdt_addr = le64_to_cpu ( cmd -> tbl_addr ) + 0x80		477201	2		=			
+ANR	477232	Identifier	prdt_addr		477201	0					
+ANR	477233	AdditiveExpression	le64_to_cpu ( cmd -> tbl_addr ) + 0x80		477201	1		+			
+ANR	477234	CallExpression	le64_to_cpu ( cmd -> tbl_addr )		477201	0					
+ANR	477235	Callee	le64_to_cpu		477201	0					
+ANR	477236	Identifier	le64_to_cpu		477201	0					
+ANR	477237	ArgumentList	cmd -> tbl_addr		477201	1					
+ANR	477238	Argument	cmd -> tbl_addr		477201	0					
+ANR	477239	PtrMemberAccess	cmd -> tbl_addr		477201	0					
+ANR	477240	Identifier	cmd		477201	0					
+ANR	477241	Identifier	tbl_addr		477201	1					
+ANR	477242	PrimaryExpression	0x80		477201	1					
+ANR	477243	IdentifierDeclStatement	int sglist_alloc_hint = opts >> AHCI_CMD_HDR_PRDT_LEN ;	11:4:218:271	477201	3	True				
+ANR	477244	IdentifierDecl	sglist_alloc_hint = opts >> AHCI_CMD_HDR_PRDT_LEN		477201	0					
+ANR	477245	IdentifierDeclType	int		477201	0					
+ANR	477246	Identifier	sglist_alloc_hint		477201	1					
+ANR	477247	AssignmentExpression	sglist_alloc_hint = opts >> AHCI_CMD_HDR_PRDT_LEN		477201	2		=			
+ANR	477248	Identifier	sglist_alloc_hint		477201	0					
+ANR	477249	ShiftExpression	opts >> AHCI_CMD_HDR_PRDT_LEN		477201	1		>>			
+ANR	477250	Identifier	opts		477201	0					
+ANR	477251	Identifier	AHCI_CMD_HDR_PRDT_LEN		477201	1					
+ANR	477252	IdentifierDeclStatement	dma_addr_t prdt_len = ( sglist_alloc_hint * sizeof ( AHCI_SG ) ) ;	13:4:278:337	477201	4	True				
+ANR	477253	IdentifierDecl	prdt_len = ( sglist_alloc_hint * sizeof ( AHCI_SG ) )		477201	0					
+ANR	477254	IdentifierDeclType	dma_addr_t		477201	0					
+ANR	477255	Identifier	prdt_len		477201	1					
+ANR	477256	AssignmentExpression	prdt_len = ( sglist_alloc_hint * sizeof ( AHCI_SG ) )		477201	2		=			
+ANR	477257	Identifier	prdt_len		477201	0					
+ANR	477258	MultiplicativeExpression	sglist_alloc_hint * sizeof ( AHCI_SG )		477201	1		*			
+ANR	477259	Identifier	sglist_alloc_hint		477201	0					
+ANR	477260	SizeofExpression	sizeof ( AHCI_SG )		477201	1					
+ANR	477261	Sizeof	sizeof		477201	0					
+ANR	477262	SizeofOperand	AHCI_SG		477201	1					
+ANR	477263	IdentifierDeclStatement	dma_addr_t real_prdt_len = prdt_len ;	15:4:344:379	477201	5	True				
+ANR	477264	IdentifierDecl	real_prdt_len = prdt_len		477201	0					
+ANR	477265	IdentifierDeclType	dma_addr_t		477201	0					
+ANR	477266	Identifier	real_prdt_len		477201	1					
+ANR	477267	AssignmentExpression	real_prdt_len = prdt_len		477201	2		=			
+ANR	477268	Identifier	prdt_len		477201	0					
+ANR	477269	Identifier	prdt_len		477201	1					
+ANR	477270	IdentifierDeclStatement	uint8_t * prdt ;	17:4:386:399	477201	6	True				
+ANR	477271	IdentifierDecl	* prdt		477201	0					
+ANR	477272	IdentifierDeclType	uint8_t *		477201	0					
+ANR	477273	Identifier	prdt		477201	1					
+ANR	477274	IdentifierDeclStatement	int i ;	19:4:406:411	477201	7	True				
+ANR	477275	IdentifierDecl	i		477201	0					
+ANR	477276	IdentifierDeclType	int		477201	0					
+ANR	477277	Identifier	i		477201	1					
+ANR	477278	IdentifierDeclStatement	int r = 0 ;	21:4:418:427	477201	8	True				
+ANR	477279	IdentifierDecl	r = 0		477201	0					
+ANR	477280	IdentifierDeclType	int		477201	0					
+ANR	477281	Identifier	r		477201	1					
+ANR	477282	AssignmentExpression	r = 0		477201	2		=			
+ANR	477283	Identifier	r		477201	0					
+ANR	477284	PrimaryExpression	0		477201	1					
+ANR	477285	IfStatement	if ( ! sglist_alloc_hint )		477201	9					
+ANR	477286	Condition	! sglist_alloc_hint	25:8:440:457	477201	0	True				
+ANR	477287	UnaryOperationExpression	! sglist_alloc_hint		477201	0					
+ANR	477288	UnaryOperator	!		477201	0					
+ANR	477289	Identifier	sglist_alloc_hint		477201	1					
+ANR	477290	CompoundStatement		23:28:390:390	477201	1					
+ANR	477291	ExpressionStatement	"DPRINTF ( ad -> port_no , ""no sg list given by guest: 0x%08x\\n"" , opts )"	27:8:471:536	477201	0	True				
+ANR	477292	CallExpression	"DPRINTF ( ad -> port_no , ""no sg list given by guest: 0x%08x\\n"" , opts )"		477201	0					
+ANR	477293	Callee	DPRINTF		477201	0					
+ANR	477294	Identifier	DPRINTF		477201	0					
+ANR	477295	ArgumentList	ad -> port_no		477201	1					
+ANR	477296	Argument	ad -> port_no		477201	0					
+ANR	477297	PtrMemberAccess	ad -> port_no		477201	0					
+ANR	477298	Identifier	ad		477201	0					
+ANR	477299	Identifier	port_no		477201	1					
+ANR	477300	Argument	"""no sg list given by guest: 0x%08x\\n"""		477201	1					
+ANR	477301	PrimaryExpression	"""no sg list given by guest: 0x%08x\\n"""		477201	0					
+ANR	477302	Argument	opts		477201	2					
+ANR	477303	Identifier	opts		477201	0					
+ANR	477304	ReturnStatement	return - 1 ;	29:8:547:556	477201	1	True				
+ANR	477305	UnaryOperationExpression	- 1		477201	0					
+ANR	477306	UnaryOperator	-		477201	0					
+ANR	477307	PrimaryExpression	1		477201	1					
+ANR	477308	IfStatement	"if ( ! ( prdt = dma_memory_map ( ad -> hba -> dma , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE ) ) )"		477201	10					
+ANR	477309	Condition	"! ( prdt = dma_memory_map ( ad -> hba -> dma , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE ) )"	37:8:596:713	477201	0	True				
+ANR	477310	UnaryOperationExpression	"! ( prdt = dma_memory_map ( ad -> hba -> dma , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE ) )"		477201	0					
+ANR	477311	UnaryOperator	!		477201	0					
+ANR	477312	AssignmentExpression	"prdt = dma_memory_map ( ad -> hba -> dma , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE )"		477201	1		=			
+ANR	477313	Identifier	prdt		477201	0					
+ANR	477314	CallExpression	"dma_memory_map ( ad -> hba -> dma , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE )"		477201	1					
+ANR	477315	Callee	dma_memory_map		477201	0					
+ANR	477316	Identifier	dma_memory_map		477201	0					
+ANR	477317	ArgumentList	ad -> hba -> dma		477201	1					
+ANR	477318	Argument	ad -> hba -> dma		477201	0					
+ANR	477319	PtrMemberAccess	ad -> hba -> dma		477201	0					
+ANR	477320	PtrMemberAccess	ad -> hba		477201	0					
+ANR	477321	Identifier	ad		477201	0					
+ANR	477322	Identifier	hba		477201	1					
+ANR	477323	Identifier	dma		477201	1					
+ANR	477324	Argument	prdt_addr		477201	1					
+ANR	477325	Identifier	prdt_addr		477201	0					
+ANR	477326	Argument	& prdt_len		477201	2					
+ANR	477327	UnaryOperationExpression	& prdt_len		477201	0					
+ANR	477328	UnaryOperator	&		477201	0					
+ANR	477329	Identifier	prdt_len		477201	1					
+ANR	477330	Argument	DMA_DIRECTION_TO_DEVICE		477201	3					
+ANR	477331	Identifier	DMA_DIRECTION_TO_DEVICE		477201	0					
+ANR	477332	CompoundStatement		37:58:645:645	477201	1					
+ANR	477333	ExpressionStatement	"DPRINTF ( ad -> port_no , ""map failed\\n"" )"	41:8:726:762	477201	0	True				
+ANR	477334	CallExpression	"DPRINTF ( ad -> port_no , ""map failed\\n"" )"		477201	0					
+ANR	477335	Callee	DPRINTF		477201	0					
+ANR	477336	Identifier	DPRINTF		477201	0					
+ANR	477337	ArgumentList	ad -> port_no		477201	1					
+ANR	477338	Argument	ad -> port_no		477201	0					
+ANR	477339	PtrMemberAccess	ad -> port_no		477201	0					
+ANR	477340	Identifier	ad		477201	0					
+ANR	477341	Identifier	port_no		477201	1					
+ANR	477342	Argument	"""map failed\\n"""		477201	1					
+ANR	477343	PrimaryExpression	"""map failed\\n"""		477201	0					
+ANR	477344	ReturnStatement	return - 1 ;	43:8:773:782	477201	1	True				
+ANR	477345	UnaryOperationExpression	- 1		477201	0					
+ANR	477346	UnaryOperator	-		477201	0					
+ANR	477347	PrimaryExpression	1		477201	1					
+ANR	477348	IfStatement	if ( prdt_len < real_prdt_len )		477201	11					
+ANR	477349	Condition	prdt_len < real_prdt_len	49:8:802:825	477201	0	True				
+ANR	477350	RelationalExpression	prdt_len < real_prdt_len		477201	0		<			
+ANR	477351	Identifier	prdt_len		477201	0					
+ANR	477352	Identifier	real_prdt_len		477201	1					
+ANR	477353	CompoundStatement		47:34:758:758	477201	1					
+ANR	477354	ExpressionStatement	"DPRINTF ( ad -> port_no , ""mapped less than expected\\n"" )"	51:8:839:890	477201	0	True				
+ANR	477355	CallExpression	"DPRINTF ( ad -> port_no , ""mapped less than expected\\n"" )"		477201	0					
+ANR	477356	Callee	DPRINTF		477201	0					
+ANR	477357	Identifier	DPRINTF		477201	0					
+ANR	477358	ArgumentList	ad -> port_no		477201	1					
+ANR	477359	Argument	ad -> port_no		477201	0					
+ANR	477360	PtrMemberAccess	ad -> port_no		477201	0					
+ANR	477361	Identifier	ad		477201	0					
+ANR	477362	Identifier	port_no		477201	1					
+ANR	477363	Argument	"""mapped less than expected\\n"""		477201	1					
+ANR	477364	PrimaryExpression	"""mapped less than expected\\n"""		477201	0					
+ANR	477365	ExpressionStatement	r = - 1	53:8:901:907	477201	1	True				
+ANR	477366	AssignmentExpression	r = - 1		477201	0		=			
+ANR	477367	Identifier	r		477201	0					
+ANR	477368	UnaryOperationExpression	- 1		477201	1					
+ANR	477369	UnaryOperator	-		477201	0					
+ANR	477370	PrimaryExpression	1		477201	1					
+ANR	477371	GotoStatement	goto out ;	55:8:918:926	477201	2	True				
+ANR	477372	Identifier	out		477201	0					
+ANR	477373	IfStatement	if ( sglist_alloc_hint > 0 )		477201	12					
+ANR	477374	Condition	sglist_alloc_hint > 0	63:8:1013:1033	477201	0	True				
+ANR	477375	RelationalExpression	sglist_alloc_hint > 0		477201	0		>			
+ANR	477376	Identifier	sglist_alloc_hint		477201	0					
+ANR	477377	PrimaryExpression	0		477201	1					
+ANR	477378	CompoundStatement		63:8:977:1007	477201	1					
+ANR	477379	IdentifierDeclStatement	AHCI_SG * tbl = ( AHCI_SG * ) prdt ;	65:8:1047:1077	477201	0	True				
+ANR	477380	IdentifierDecl	* tbl = ( AHCI_SG * ) prdt		477201	0					
+ANR	477381	IdentifierDeclType	AHCI_SG *		477201	0					
+ANR	477382	Identifier	tbl		477201	1					
+ANR	477383	AssignmentExpression	* tbl = ( AHCI_SG * ) prdt		477201	2		=			
+ANR	477384	Identifier	tbl		477201	0					
+ANR	477385	CastExpression	( AHCI_SG * ) prdt		477201	1					
+ANR	477386	CastTarget	AHCI_SG *		477201	0					
+ANR	477387	Identifier	prdt		477201	1					
+ANR	477388	ExpressionStatement	"qemu_sglist_init ( sglist , sglist_alloc_hint , ad -> hba -> dma )"	69:8:1090:1147	477201	1	True				
+ANR	477389	CallExpression	"qemu_sglist_init ( sglist , sglist_alloc_hint , ad -> hba -> dma )"		477201	0					
+ANR	477390	Callee	qemu_sglist_init		477201	0					
+ANR	477391	Identifier	qemu_sglist_init		477201	0					
+ANR	477392	ArgumentList	sglist		477201	1					
+ANR	477393	Argument	sglist		477201	0					
+ANR	477394	Identifier	sglist		477201	0					
+ANR	477395	Argument	sglist_alloc_hint		477201	1					
+ANR	477396	Identifier	sglist_alloc_hint		477201	0					
+ANR	477397	Argument	ad -> hba -> dma		477201	2					
+ANR	477398	PtrMemberAccess	ad -> hba -> dma		477201	0					
+ANR	477399	PtrMemberAccess	ad -> hba		477201	0					
+ANR	477400	Identifier	ad		477201	0					
+ANR	477401	Identifier	hba		477201	1					
+ANR	477402	Identifier	dma		477201	1					
+ANR	477403	ForStatement	for ( i = 0 ; i < sglist_alloc_hint ; i ++ )		477201	2					
+ANR	477404	ForInit	i = 0 ;	71:13:1163:1168	477201	0	True				
+ANR	477405	AssignmentExpression	i = 0		477201	0		=			
+ANR	477406	Identifier	i		477201	0					
+ANR	477407	PrimaryExpression	0		477201	1					
+ANR	477408	Condition	i < sglist_alloc_hint	71:20:1170:1190	477201	1	True				
+ANR	477409	RelationalExpression	i < sglist_alloc_hint		477201	0		<			
+ANR	477410	Identifier	i		477201	0					
+ANR	477411	Identifier	sglist_alloc_hint		477201	1					
+ANR	477412	PostIncDecOperationExpression	i ++	71:43:1193:1195	477201	2	True				
+ANR	477413	Identifier	i		477201	0					
+ANR	477414	IncDec	++		477201	1					
+ANR	477415	CompoundStatement		69:48:1128:1128	477201	3					
+ANR	477416	ExpressionStatement	"qemu_sglist_add ( sglist , le64_to_cpu ( tbl [ i ] . addr ) , le32_to_cpu ( tbl [ i ] . flags_size ) + 1 )"	75:12:1257:1371	477201	0	True				
+ANR	477417	CallExpression	"qemu_sglist_add ( sglist , le64_to_cpu ( tbl [ i ] . addr ) , le32_to_cpu ( tbl [ i ] . flags_size ) + 1 )"		477201	0					
+ANR	477418	Callee	qemu_sglist_add		477201	0					
+ANR	477419	Identifier	qemu_sglist_add		477201	0					
+ANR	477420	ArgumentList	sglist		477201	1					
+ANR	477421	Argument	sglist		477201	0					
+ANR	477422	Identifier	sglist		477201	0					
+ANR	477423	Argument	le64_to_cpu ( tbl [ i ] . addr )		477201	1					
+ANR	477424	CallExpression	le64_to_cpu ( tbl [ i ] . addr )		477201	0					
+ANR	477425	Callee	le64_to_cpu		477201	0					
+ANR	477426	Identifier	le64_to_cpu		477201	0					
+ANR	477427	ArgumentList	tbl [ i ] . addr		477201	1					
+ANR	477428	Argument	tbl [ i ] . addr		477201	0					
+ANR	477429	MemberAccess	tbl [ i ] . addr		477201	0					
+ANR	477430	ArrayIndexing	tbl [ i ]		477201	0					
+ANR	477431	Identifier	tbl		477201	0					
+ANR	477432	Identifier	i		477201	1					
+ANR	477433	Identifier	addr		477201	1					
+ANR	477434	Argument	le32_to_cpu ( tbl [ i ] . flags_size ) + 1		477201	2					
+ANR	477435	AdditiveExpression	le32_to_cpu ( tbl [ i ] . flags_size ) + 1		477201	0		+			
+ANR	477436	CallExpression	le32_to_cpu ( tbl [ i ] . flags_size )		477201	0					
+ANR	477437	Callee	le32_to_cpu		477201	0					
+ANR	477438	Identifier	le32_to_cpu		477201	0					
+ANR	477439	ArgumentList	tbl [ i ] . flags_size		477201	1					
+ANR	477440	Argument	tbl [ i ] . flags_size		477201	0					
+ANR	477441	MemberAccess	tbl [ i ] . flags_size		477201	0					
+ANR	477442	ArrayIndexing	tbl [ i ]		477201	0					
+ANR	477443	Identifier	tbl		477201	0					
+ANR	477444	Identifier	i		477201	1					
+ANR	477445	Identifier	flags_size		477201	1					
+ANR	477446	PrimaryExpression	1		477201	1					
+ANR	477447	Label	out :	85:0:1394:1397	477201	13	True				
+ANR	477448	Identifier	out		477201	0					
+ANR	477449	ExpressionStatement	"dma_memory_unmap ( ad -> hba -> dma , prdt , prdt_len , DMA_DIRECTION_TO_DEVICE , prdt_len )"	87:4:1404:1507	477201	14	True				
+ANR	477450	CallExpression	"dma_memory_unmap ( ad -> hba -> dma , prdt , prdt_len , DMA_DIRECTION_TO_DEVICE , prdt_len )"		477201	0					
+ANR	477451	Callee	dma_memory_unmap		477201	0					
+ANR	477452	Identifier	dma_memory_unmap		477201	0					
+ANR	477453	ArgumentList	ad -> hba -> dma		477201	1					
+ANR	477454	Argument	ad -> hba -> dma		477201	0					
+ANR	477455	PtrMemberAccess	ad -> hba -> dma		477201	0					
+ANR	477456	PtrMemberAccess	ad -> hba		477201	0					
+ANR	477457	Identifier	ad		477201	0					
+ANR	477458	Identifier	hba		477201	1					
+ANR	477459	Identifier	dma		477201	1					
+ANR	477460	Argument	prdt		477201	1					
+ANR	477461	Identifier	prdt		477201	0					
+ANR	477462	Argument	prdt_len		477201	2					
+ANR	477463	Identifier	prdt_len		477201	0					
+ANR	477464	Argument	DMA_DIRECTION_TO_DEVICE		477201	3					
+ANR	477465	Identifier	DMA_DIRECTION_TO_DEVICE		477201	0					
+ANR	477466	Argument	prdt_len		477201	4					
+ANR	477467	Identifier	prdt_len		477201	0					
+ANR	477468	ReturnStatement	return r ;	91:4:1514:1522	477201	15	True				
+ANR	477469	Identifier	r		477201	0					
+ANR	477470	ReturnType	static int		477201	1					
+ANR	477471	Identifier	ahci_populate_sglist		477201	2					
+ANR	477472	ParameterList	"AHCIDevice * ad , QEMUSGList * sglist"		477201	3					
+ANR	477473	Parameter	AHCIDevice * ad	1:32:32:45	477201	0	True				
+ANR	477474	ParameterType	AHCIDevice *		477201	0					
+ANR	477475	Identifier	ad		477201	1					
+ANR	477476	Parameter	QEMUSGList * sglist	1:48:48:65	477201	1	True				
+ANR	477477	ParameterType	QEMUSGList *		477201	0					
+ANR	477478	Identifier	sglist		477201	1					
+ANR	477479	CFGEntryNode	ENTRY		477201		True				
+ANR	477480	CFGExitNode	EXIT		477201		True				
+ANR	477481	Symbol	DMA_DIRECTION_TO_DEVICE		477201						
+ANR	477482	Symbol	* ad		477201						
+ANR	477483	Symbol	ad -> hba -> dma		477201						
+ANR	477484	Symbol	ad -> cur_cmd		477201						
+ANR	477485	Symbol	* * ad		477201						
+ANR	477486	Symbol	ad -> port_no		477201						
+ANR	477487	Symbol	& prdt_len		477201						
+ANR	477488	Symbol	tbl [ i ] . addr		477201						
+ANR	477489	Symbol	opts		477201						
+ANR	477490	Symbol	AHCI_CMD_HDR_PRDT_LEN		477201						
+ANR	477491	Symbol	prdt_len		477201						
+ANR	477492	Symbol	le32_to_cpu		477201						
+ANR	477493	Symbol	cmd -> opts		477201						
+ANR	477494	Symbol	* cmd		477201						
+ANR	477495	Symbol	real_prdt_len		477201						
+ANR	477496	Symbol	sglist_alloc_hint		477201						
+ANR	477497	Symbol	le64_to_cpu		477201						
+ANR	477498	Symbol	ad		477201						
+ANR	477499	Symbol	prdt		477201						
+ANR	477500	Symbol	tbl [ i ] . flags_size		477201						
+ANR	477501	Symbol	* tbl		477201						
+ANR	477502	Symbol	sglist		477201						
+ANR	477503	Symbol	i		477201						
+ANR	477504	Symbol	cmd -> tbl_addr		477201						
+ANR	477505	Symbol	r		477201						
+ANR	477506	Symbol	* i		477201						
+ANR	477507	Symbol	dma_memory_map		477201						
+ANR	477508	Symbol	cmd		477201						
+ANR	477509	Symbol	ad -> hba		477201						
+ANR	477510	Symbol	* ad -> hba		477201						
+ANR	477511	Symbol	prdt_addr		477201						
+ANR	477512	Symbol	tbl		477201						

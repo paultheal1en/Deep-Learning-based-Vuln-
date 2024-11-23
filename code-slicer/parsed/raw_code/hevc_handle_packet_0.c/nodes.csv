@@ -1,0 +1,622 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4646501	File	/home/p4ultr4n/workplace/ReVeal/raw_code/hevc_handle_packet_0.c								
+ANR	4646502	Function	hevc_handle_packet	1:0:0:6453							
+ANR	4646503	FunctionDef	"hevc_handle_packet (AVFormatContext * ctx , PayloadContext * rtp_hevc_ctx , AVStream * st , AVPacket * pkt , uint32_t * timestamp , const uint8_t * buf , int len , uint16_t seq , int flags)"		4646502	0					
+ANR	4646504	CompoundStatement		9:0:280:6453	4646502	0					
+ANR	4646505	IdentifierDeclStatement	const uint8_t * rtp_pl = buf ;	11:4:287:314	4646502	0	True				
+ANR	4646506	IdentifierDecl	* rtp_pl = buf		4646502	0					
+ANR	4646507	IdentifierDeclType	const uint8_t *		4646502	0					
+ANR	4646508	Identifier	rtp_pl		4646502	1					
+ANR	4646509	AssignmentExpression	* rtp_pl = buf		4646502	2		=			
+ANR	4646510	Identifier	buf		4646502	0					
+ANR	4646511	Identifier	buf		4646502	1					
+ANR	4646512	IdentifierDeclStatement	"int tid , lid , nal_type ;"	13:4:321:343	4646502	1	True				
+ANR	4646513	IdentifierDecl	tid		4646502	0					
+ANR	4646514	IdentifierDeclType	int		4646502	0					
+ANR	4646515	Identifier	tid		4646502	1					
+ANR	4646516	IdentifierDecl	lid		4646502	1					
+ANR	4646517	IdentifierDeclType	int		4646502	0					
+ANR	4646518	Identifier	lid		4646502	1					
+ANR	4646519	IdentifierDecl	nal_type		4646502	2					
+ANR	4646520	IdentifierDeclType	int		4646502	0					
+ANR	4646521	Identifier	nal_type		4646502	1					
+ANR	4646522	IdentifierDeclStatement	"int first_fragment , last_fragment , fu_type ;"	15:4:350:392	4646502	2	True				
+ANR	4646523	IdentifierDecl	first_fragment		4646502	0					
+ANR	4646524	IdentifierDeclType	int		4646502	0					
+ANR	4646525	Identifier	first_fragment		4646502	1					
+ANR	4646526	IdentifierDecl	last_fragment		4646502	1					
+ANR	4646527	IdentifierDeclType	int		4646502	0					
+ANR	4646528	Identifier	last_fragment		4646502	1					
+ANR	4646529	IdentifierDecl	fu_type		4646502	2					
+ANR	4646530	IdentifierDeclType	int		4646502	0					
+ANR	4646531	Identifier	fu_type		4646502	1					
+ANR	4646532	IdentifierDeclStatement	uint8_t new_nal_header [ 2 ] ;	17:4:399:424	4646502	3	True				
+ANR	4646533	IdentifierDecl	new_nal_header [ 2 ]		4646502	0					
+ANR	4646534	IdentifierDeclType	uint8_t [ 2 ]		4646502	0					
+ANR	4646535	Identifier	new_nal_header		4646502	1					
+ANR	4646536	PrimaryExpression	2		4646502	2					
+ANR	4646537	IdentifierDeclStatement	int res = 0 ;	19:4:431:442	4646502	4	True				
+ANR	4646538	IdentifierDecl	res = 0		4646502	0					
+ANR	4646539	IdentifierDeclType	int		4646502	0					
+ANR	4646540	Identifier	res		4646502	1					
+ANR	4646541	AssignmentExpression	res = 0		4646502	2		=			
+ANR	4646542	Identifier	res		4646502	0					
+ANR	4646543	PrimaryExpression	0		4646502	1					
+ANR	4646544	IfStatement	if ( len < RTP_HEVC_PAYLOAD_HEADER_SIZE + 1 )		4646502	5					
+ANR	4646545	Condition	len < RTP_HEVC_PAYLOAD_HEADER_SIZE + 1	25:8:529:566	4646502	0	True				
+ANR	4646546	RelationalExpression	len < RTP_HEVC_PAYLOAD_HEADER_SIZE + 1		4646502	0		<			
+ANR	4646547	Identifier	len		4646502	0					
+ANR	4646548	AdditiveExpression	RTP_HEVC_PAYLOAD_HEADER_SIZE + 1		4646502	1		+			
+ANR	4646549	Identifier	RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	0					
+ANR	4646550	PrimaryExpression	1		4646502	1					
+ANR	4646551	CompoundStatement		17:48:288:288	4646502	1					
+ANR	4646552	ExpressionStatement	"av_log ( ctx , AV_LOG_ERROR , ""Too short RTP/HEVC packet, got %d bytes\\n"" , len )"	27:8:580:655	4646502	0	True				
+ANR	4646553	CallExpression	"av_log ( ctx , AV_LOG_ERROR , ""Too short RTP/HEVC packet, got %d bytes\\n"" , len )"		4646502	0					
+ANR	4646554	Callee	av_log		4646502	0					
+ANR	4646555	Identifier	av_log		4646502	0					
+ANR	4646556	ArgumentList	ctx		4646502	1					
+ANR	4646557	Argument	ctx		4646502	0					
+ANR	4646558	Identifier	ctx		4646502	0					
+ANR	4646559	Argument	AV_LOG_ERROR		4646502	1					
+ANR	4646560	Identifier	AV_LOG_ERROR		4646502	0					
+ANR	4646561	Argument	"""Too short RTP/HEVC packet, got %d bytes\\n"""		4646502	2					
+ANR	4646562	PrimaryExpression	"""Too short RTP/HEVC packet, got %d bytes\\n"""		4646502	0					
+ANR	4646563	Argument	len		4646502	3					
+ANR	4646564	Identifier	len		4646502	0					
+ANR	4646565	ReturnStatement	return AVERROR_INVALIDDATA ;	29:8:666:692	4646502	1	True				
+ANR	4646566	Identifier	AVERROR_INVALIDDATA		4646502	0					
+ANR	4646567	ExpressionStatement	nal_type = ( buf [ 0 ] >> 1 ) & 0x3f	63:4:1183:1215	4646502	6	True				
+ANR	4646568	AssignmentExpression	nal_type = ( buf [ 0 ] >> 1 ) & 0x3f		4646502	0		=			
+ANR	4646569	Identifier	nal_type		4646502	0					
+ANR	4646570	BitAndExpression	( buf [ 0 ] >> 1 ) & 0x3f		4646502	1		&			
+ANR	4646571	ShiftExpression	buf [ 0 ] >> 1		4646502	0		>>			
+ANR	4646572	ArrayIndexing	buf [ 0 ]		4646502	0					
+ANR	4646573	Identifier	buf		4646502	0					
+ANR	4646574	PrimaryExpression	0		4646502	1					
+ANR	4646575	PrimaryExpression	1		4646502	1					
+ANR	4646576	PrimaryExpression	0x3f		4646502	1					
+ANR	4646577	ExpressionStatement	lid = ( ( buf [ 0 ] << 5 ) & 0x20 ) | ( ( buf [ 1 ] >> 3 ) & 0x1f )	65:4:1222:1276	4646502	7	True				
+ANR	4646578	AssignmentExpression	lid = ( ( buf [ 0 ] << 5 ) & 0x20 ) | ( ( buf [ 1 ] >> 3 ) & 0x1f )		4646502	0		=			
+ANR	4646579	Identifier	lid		4646502	0					
+ANR	4646580	InclusiveOrExpression	( ( buf [ 0 ] << 5 ) & 0x20 ) | ( ( buf [ 1 ] >> 3 ) & 0x1f )		4646502	1		|			
+ANR	4646581	BitAndExpression	( buf [ 0 ] << 5 ) & 0x20		4646502	0		&			
+ANR	4646582	ShiftExpression	buf [ 0 ] << 5		4646502	0		<<			
+ANR	4646583	ArrayIndexing	buf [ 0 ]		4646502	0					
+ANR	4646584	Identifier	buf		4646502	0					
+ANR	4646585	PrimaryExpression	0		4646502	1					
+ANR	4646586	PrimaryExpression	5		4646502	1					
+ANR	4646587	PrimaryExpression	0x20		4646502	1					
+ANR	4646588	BitAndExpression	( buf [ 1 ] >> 3 ) & 0x1f		4646502	1		&			
+ANR	4646589	ShiftExpression	buf [ 1 ] >> 3		4646502	0		>>			
+ANR	4646590	ArrayIndexing	buf [ 1 ]		4646502	0					
+ANR	4646591	Identifier	buf		4646502	0					
+ANR	4646592	PrimaryExpression	1		4646502	1					
+ANR	4646593	PrimaryExpression	3		4646502	1					
+ANR	4646594	PrimaryExpression	0x1f		4646502	1					
+ANR	4646595	ExpressionStatement	tid = buf [ 1 ] & 0x07	67:4:1283:1305	4646502	8	True				
+ANR	4646596	AssignmentExpression	tid = buf [ 1 ] & 0x07		4646502	0		=			
+ANR	4646597	Identifier	tid		4646502	0					
+ANR	4646598	BitAndExpression	buf [ 1 ] & 0x07		4646502	1		&			
+ANR	4646599	ArrayIndexing	buf [ 1 ]		4646502	0					
+ANR	4646600	Identifier	buf		4646502	0					
+ANR	4646601	PrimaryExpression	1		4646502	1					
+ANR	4646602	PrimaryExpression	0x07		4646502	1					
+ANR	4646603	IfStatement	if ( lid )		4646502	9					
+ANR	4646604	Condition	lid	73:8:1363:1365	4646502	0	True				
+ANR	4646605	Identifier	lid		4646502	0					
+ANR	4646606	CompoundStatement		65:13:1087:1087	4646502	1					
+ANR	4646607	ExpressionStatement	"avpriv_report_missing_feature ( ctx , ""Multi-layer HEVC coding\\n"" )"	77:8:1440:1503	4646502	0	True				
+ANR	4646608	CallExpression	"avpriv_report_missing_feature ( ctx , ""Multi-layer HEVC coding\\n"" )"		4646502	0					
+ANR	4646609	Callee	avpriv_report_missing_feature		4646502	0					
+ANR	4646610	Identifier	avpriv_report_missing_feature		4646502	0					
+ANR	4646611	ArgumentList	ctx		4646502	1					
+ANR	4646612	Argument	ctx		4646502	0					
+ANR	4646613	Identifier	ctx		4646502	0					
+ANR	4646614	Argument	"""Multi-layer HEVC coding\\n"""		4646502	1					
+ANR	4646615	PrimaryExpression	"""Multi-layer HEVC coding\\n"""		4646502	0					
+ANR	4646616	ReturnStatement	return AVERROR_PATCHWELCOME ;	79:8:1514:1541	4646502	1	True				
+ANR	4646617	Identifier	AVERROR_PATCHWELCOME		4646502	0					
+ANR	4646618	IfStatement	if ( ! tid )		4646502	10					
+ANR	4646619	Condition	! tid	87:8:1609:1612	4646502	0	True				
+ANR	4646620	UnaryOperationExpression	! tid		4646502	0					
+ANR	4646621	UnaryOperator	!		4646502	0					
+ANR	4646622	Identifier	tid		4646502	1					
+ANR	4646623	CompoundStatement		79:14:1334:1334	4646502	1					
+ANR	4646624	ExpressionStatement	"av_log ( ctx , AV_LOG_ERROR , ""Illegal temporal ID in RTP/HEVC packet\\n"" )"	89:8:1626:1695	4646502	0	True				
+ANR	4646625	CallExpression	"av_log ( ctx , AV_LOG_ERROR , ""Illegal temporal ID in RTP/HEVC packet\\n"" )"		4646502	0					
+ANR	4646626	Callee	av_log		4646502	0					
+ANR	4646627	Identifier	av_log		4646502	0					
+ANR	4646628	ArgumentList	ctx		4646502	1					
+ANR	4646629	Argument	ctx		4646502	0					
+ANR	4646630	Identifier	ctx		4646502	0					
+ANR	4646631	Argument	AV_LOG_ERROR		4646502	1					
+ANR	4646632	Identifier	AV_LOG_ERROR		4646502	0					
+ANR	4646633	Argument	"""Illegal temporal ID in RTP/HEVC packet\\n"""		4646502	2					
+ANR	4646634	PrimaryExpression	"""Illegal temporal ID in RTP/HEVC packet\\n"""		4646502	0					
+ANR	4646635	ReturnStatement	return AVERROR_INVALIDDATA ;	91:8:1706:1732	4646502	1	True				
+ANR	4646636	Identifier	AVERROR_INVALIDDATA		4646502	0					
+ANR	4646637	IfStatement	if ( nal_type > 50 )		4646502	11					
+ANR	4646638	Condition	nal_type > 50	99:8:1802:1814	4646502	0	True				
+ANR	4646639	RelationalExpression	nal_type > 50		4646502	0		>			
+ANR	4646640	Identifier	nal_type		4646502	0					
+ANR	4646641	PrimaryExpression	50		4646502	1					
+ANR	4646642	CompoundStatement		91:23:1536:1536	4646502	1					
+ANR	4646643	ExpressionStatement	"av_log ( ctx , AV_LOG_ERROR , ""Unsupported (HEVC) NAL type (%d)\\n"" , nal_type )"	101:8:1828:1901	4646502	0	True				
+ANR	4646644	CallExpression	"av_log ( ctx , AV_LOG_ERROR , ""Unsupported (HEVC) NAL type (%d)\\n"" , nal_type )"		4646502	0					
+ANR	4646645	Callee	av_log		4646502	0					
+ANR	4646646	Identifier	av_log		4646502	0					
+ANR	4646647	ArgumentList	ctx		4646502	1					
+ANR	4646648	Argument	ctx		4646502	0					
+ANR	4646649	Identifier	ctx		4646502	0					
+ANR	4646650	Argument	AV_LOG_ERROR		4646502	1					
+ANR	4646651	Identifier	AV_LOG_ERROR		4646502	0					
+ANR	4646652	Argument	"""Unsupported (HEVC) NAL type (%d)\\n"""		4646502	2					
+ANR	4646653	PrimaryExpression	"""Unsupported (HEVC) NAL type (%d)\\n"""		4646502	0					
+ANR	4646654	Argument	nal_type		4646502	3					
+ANR	4646655	Identifier	nal_type		4646502	0					
+ANR	4646656	ReturnStatement	return AVERROR_INVALIDDATA ;	103:8:1912:1938	4646502	1	True				
+ANR	4646657	Identifier	AVERROR_INVALIDDATA		4646502	0					
+ANR	4646658	SwitchStatement	switch ( nal_type )		4646502	12					
+ANR	4646659	Condition	nal_type	109:12:1962:1969	4646502	0	True				
+ANR	4646660	Identifier	nal_type		4646502	0					
+ANR	4646661	CompoundStatement		101:22:1691:1691	4646502	1					
+ANR	4646662	Label	case 48 :	113:4:2014:2021	4646502	0	True				
+ANR	4646663	ExpressionStatement	buf += RTP_HEVC_PAYLOAD_HEADER_SIZE	117:8:2076:2111	4646502	1	True				
+ANR	4646664	AssignmentExpression	buf += RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	0		+=			
+ANR	4646665	Identifier	buf		4646502	0					
+ANR	4646666	Identifier	RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	1					
+ANR	4646667	ExpressionStatement	len -= RTP_HEVC_PAYLOAD_HEADER_SIZE	119:8:2122:2157	4646502	2	True				
+ANR	4646668	AssignmentExpression	len -= RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	0		-=			
+ANR	4646669	Identifier	len		4646502	0					
+ANR	4646670	Identifier	RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	1					
+ANR	4646671	IfStatement	if ( rtp_hevc_ctx -> using_donl_field )		4646502	3					
+ANR	4646672	Condition	rtp_hevc_ctx -> using_donl_field	125:12:2214:2243	4646502	0	True				
+ANR	4646673	PtrMemberAccess	rtp_hevc_ctx -> using_donl_field		4646502	0					
+ANR	4646674	Identifier	rtp_hevc_ctx		4646502	0					
+ANR	4646675	Identifier	using_donl_field		4646502	1					
+ANR	4646676	CompoundStatement		117:44:1965:1965	4646502	1					
+ANR	4646677	ExpressionStatement	buf += RTP_HEVC_DONL_FIELD_SIZE	127:12:2261:2292	4646502	0	True				
+ANR	4646678	AssignmentExpression	buf += RTP_HEVC_DONL_FIELD_SIZE		4646502	0		+=			
+ANR	4646679	Identifier	buf		4646502	0					
+ANR	4646680	Identifier	RTP_HEVC_DONL_FIELD_SIZE		4646502	1					
+ANR	4646681	ExpressionStatement	len -= RTP_HEVC_DONL_FIELD_SIZE	129:12:2307:2338	4646502	1	True				
+ANR	4646682	AssignmentExpression	len -= RTP_HEVC_DONL_FIELD_SIZE		4646502	0		-=			
+ANR	4646683	Identifier	len		4646502	0					
+ANR	4646684	Identifier	RTP_HEVC_DONL_FIELD_SIZE		4646502	1					
+ANR	4646685	Label	case 32 :	139:4:2423:2430	4646502	4	True				
+ANR	4646686	Label	case 33 :	143:4:2477:2484	4646502	5	True				
+ANR	4646687	Label	case 34 :	147:4:2530:2537	4646502	6	True				
+ANR	4646688	Label	case 39 :	151:4:2599:2606	4646502	7	True				
+ANR	4646689	Label	default :	155:4:2647:2654	4646502	8	True				
+ANR	4646690	Identifier	default		4646502	0					
+ANR	4646691	IfStatement	if ( len < 1 )		4646502	9					
+ANR	4646692	Condition	len < 1	159:12:2747:2753	4646502	0	True				
+ANR	4646693	RelationalExpression	len < 1		4646502	0		<			
+ANR	4646694	Identifier	len		4646502	0					
+ANR	4646695	PrimaryExpression	1		4646502	1					
+ANR	4646696	CompoundStatement		151:21:2475:2475	4646502	1					
+ANR	4646697	ExpressionStatement	"av_log ( ctx , AV_LOG_ERROR , ""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"" , len , nal_type )"	161:12:2771:2916	4646502	0	True				
+ANR	4646698	CallExpression	"av_log ( ctx , AV_LOG_ERROR , ""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"" , len , nal_type )"		4646502	0					
+ANR	4646699	Callee	av_log		4646502	0					
+ANR	4646700	Identifier	av_log		4646502	0					
+ANR	4646701	ArgumentList	ctx		4646502	1					
+ANR	4646702	Argument	ctx		4646502	0					
+ANR	4646703	Identifier	ctx		4646502	0					
+ANR	4646704	Argument	AV_LOG_ERROR		4646502	1					
+ANR	4646705	Identifier	AV_LOG_ERROR		4646502	0					
+ANR	4646706	Argument	"""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"""		4646502	2					
+ANR	4646707	PrimaryExpression	"""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"""		4646502	0					
+ANR	4646708	Argument	len		4646502	3					
+ANR	4646709	Identifier	len		4646502	0					
+ANR	4646710	Argument	nal_type		4646502	4					
+ANR	4646711	Identifier	nal_type		4646502	0					
+ANR	4646712	ReturnStatement	return AVERROR_INVALIDDATA ;	167:12:2931:2957	4646502	1	True				
+ANR	4646713	Identifier	AVERROR_INVALIDDATA		4646502	0					
+ANR	4646714	IfStatement	"if ( ( res = av_new_packet ( pkt , sizeof ( start_sequence ) + len ) ) < 0 )"		4646502	10					
+ANR	4646715	Condition	"( res = av_new_packet ( pkt , sizeof ( start_sequence ) + len ) ) < 0"	175:12:3018:3077	4646502	0	True				
+ANR	4646716	RelationalExpression	"( res = av_new_packet ( pkt , sizeof ( start_sequence ) + len ) ) < 0"		4646502	0		<			
+ANR	4646717	AssignmentExpression	"res = av_new_packet ( pkt , sizeof ( start_sequence ) + len )"		4646502	0		=			
+ANR	4646718	Identifier	res		4646502	0					
+ANR	4646719	CallExpression	"av_new_packet ( pkt , sizeof ( start_sequence ) + len )"		4646502	1					
+ANR	4646720	Callee	av_new_packet		4646502	0					
+ANR	4646721	Identifier	av_new_packet		4646502	0					
+ANR	4646722	ArgumentList	pkt		4646502	1					
+ANR	4646723	Argument	pkt		4646502	0					
+ANR	4646724	Identifier	pkt		4646502	0					
+ANR	4646725	Argument	sizeof ( start_sequence ) + len		4646502	1					
+ANR	4646726	AdditiveExpression	sizeof ( start_sequence ) + len		4646502	0		+			
+ANR	4646727	SizeofExpression	sizeof ( start_sequence )		4646502	0					
+ANR	4646728	Sizeof	sizeof		4646502	0					
+ANR	4646729	SizeofOperand	start_sequence		4646502	1					
+ANR	4646730	Identifier	len		4646502	1					
+ANR	4646731	PrimaryExpression	0		4646502	1					
+ANR	4646732	ReturnStatement	return res ;	177:12:3093:3103	4646502	1	True				
+ANR	4646733	Identifier	res		4646502	0					
+ANR	4646734	ExpressionStatement	"memcpy ( pkt -> data , start_sequence , sizeof ( start_sequence ) )"	181:8:3161:3218	4646502	11	True				
+ANR	4646735	CallExpression	"memcpy ( pkt -> data , start_sequence , sizeof ( start_sequence ) )"		4646502	0					
+ANR	4646736	Callee	memcpy		4646502	0					
+ANR	4646737	Identifier	memcpy		4646502	0					
+ANR	4646738	ArgumentList	pkt -> data		4646502	1					
+ANR	4646739	Argument	pkt -> data		4646502	0					
+ANR	4646740	PtrMemberAccess	pkt -> data		4646502	0					
+ANR	4646741	Identifier	pkt		4646502	0					
+ANR	4646742	Identifier	data		4646502	1					
+ANR	4646743	Argument	start_sequence		4646502	1					
+ANR	4646744	Identifier	start_sequence		4646502	0					
+ANR	4646745	Argument	sizeof ( start_sequence )		4646502	2					
+ANR	4646746	SizeofExpression	sizeof ( start_sequence )		4646502	0					
+ANR	4646747	Sizeof	sizeof		4646502	0					
+ANR	4646748	SizeofOperand	start_sequence		4646502	1					
+ANR	4646749	ExpressionStatement	"memcpy ( pkt -> data + sizeof ( start_sequence ) , buf , len )"	185:8:3275:3327	4646502	12	True				
+ANR	4646750	CallExpression	"memcpy ( pkt -> data + sizeof ( start_sequence ) , buf , len )"		4646502	0					
+ANR	4646751	Callee	memcpy		4646502	0					
+ANR	4646752	Identifier	memcpy		4646502	0					
+ANR	4646753	ArgumentList	pkt -> data + sizeof ( start_sequence )		4646502	1					
+ANR	4646754	Argument	pkt -> data + sizeof ( start_sequence )		4646502	0					
+ANR	4646755	AdditiveExpression	pkt -> data + sizeof ( start_sequence )		4646502	0		+			
+ANR	4646756	PtrMemberAccess	pkt -> data		4646502	0					
+ANR	4646757	Identifier	pkt		4646502	0					
+ANR	4646758	Identifier	data		4646502	1					
+ANR	4646759	SizeofExpression	sizeof ( start_sequence )		4646502	1					
+ANR	4646760	Sizeof	sizeof		4646502	0					
+ANR	4646761	SizeofOperand	start_sequence		4646502	1					
+ANR	4646762	Argument	buf		4646502	1					
+ANR	4646763	Identifier	buf		4646502	0					
+ANR	4646764	Argument	len		4646502	2					
+ANR	4646765	Identifier	len		4646502	0					
+ANR	4646766	BreakStatement	break ;	189:8:3340:3345	4646502	13	True				
+ANR	4646767	Label	case 49 :	193:4:3387:3394	4646502	14	True				
+ANR	4646768	ExpressionStatement	buf += RTP_HEVC_PAYLOAD_HEADER_SIZE	197:8:3449:3484	4646502	15	True				
+ANR	4646769	AssignmentExpression	buf += RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	0		+=			
+ANR	4646770	Identifier	buf		4646502	0					
+ANR	4646771	Identifier	RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	1					
+ANR	4646772	ExpressionStatement	len -= RTP_HEVC_PAYLOAD_HEADER_SIZE	199:8:3495:3530	4646502	16	True				
+ANR	4646773	AssignmentExpression	len -= RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	0		-=			
+ANR	4646774	Identifier	len		4646502	0					
+ANR	4646775	Identifier	RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502	1					
+ANR	4646776	IfStatement	if ( len < 1 )		4646502	17					
+ANR	4646777	Condition	len < 1	203:12:3547:3553	4646502	0	True				
+ANR	4646778	RelationalExpression	len < 1		4646502	0		<			
+ANR	4646779	Identifier	len		4646502	0					
+ANR	4646780	PrimaryExpression	1		4646502	1					
+ANR	4646781	ReturnStatement	return AVERROR_INVALIDDATA ;	205:12:3569:3595	4646502	1	True				
+ANR	4646782	Identifier	AVERROR_INVALIDDATA		4646502	0					
+ANR	4646783	ExpressionStatement	first_fragment = buf [ 0 ] & 0x80	231:8:3912:3942	4646502	18	True				
+ANR	4646784	AssignmentExpression	first_fragment = buf [ 0 ] & 0x80		4646502	0		=			
+ANR	4646785	Identifier	first_fragment		4646502	0					
+ANR	4646786	BitAndExpression	buf [ 0 ] & 0x80		4646502	1		&			
+ANR	4646787	ArrayIndexing	buf [ 0 ]		4646502	0					
+ANR	4646788	Identifier	buf		4646502	0					
+ANR	4646789	PrimaryExpression	0		4646502	1					
+ANR	4646790	PrimaryExpression	0x80		4646502	1					
+ANR	4646791	ExpressionStatement	last_fragment = buf [ 0 ] & 0x40	233:8:3953:3983	4646502	19	True				
+ANR	4646792	AssignmentExpression	last_fragment = buf [ 0 ] & 0x40		4646502	0		=			
+ANR	4646793	Identifier	last_fragment		4646502	0					
+ANR	4646794	BitAndExpression	buf [ 0 ] & 0x40		4646502	1		&			
+ANR	4646795	ArrayIndexing	buf [ 0 ]		4646502	0					
+ANR	4646796	Identifier	buf		4646502	0					
+ANR	4646797	PrimaryExpression	0		4646502	1					
+ANR	4646798	PrimaryExpression	0x40		4646502	1					
+ANR	4646799	ExpressionStatement	fu_type = buf [ 0 ] & 0x3f	235:8:3994:4024	4646502	20	True				
+ANR	4646800	AssignmentExpression	fu_type = buf [ 0 ] & 0x3f		4646502	0		=			
+ANR	4646801	Identifier	fu_type		4646502	0					
+ANR	4646802	BitAndExpression	buf [ 0 ] & 0x3f		4646502	1		&			
+ANR	4646803	ArrayIndexing	buf [ 0 ]		4646502	0					
+ANR	4646804	Identifier	buf		4646502	0					
+ANR	4646805	PrimaryExpression	0		4646502	1					
+ANR	4646806	PrimaryExpression	0x3f		4646502	1					
+ANR	4646807	ExpressionStatement	buf += RTP_HEVC_FU_HEADER_SIZE	241:8:4076:4106	4646502	21	True				
+ANR	4646808	AssignmentExpression	buf += RTP_HEVC_FU_HEADER_SIZE		4646502	0		+=			
+ANR	4646809	Identifier	buf		4646502	0					
+ANR	4646810	Identifier	RTP_HEVC_FU_HEADER_SIZE		4646502	1					
+ANR	4646811	ExpressionStatement	len -= RTP_HEVC_FU_HEADER_SIZE	243:8:4117:4147	4646502	22	True				
+ANR	4646812	AssignmentExpression	len -= RTP_HEVC_FU_HEADER_SIZE		4646502	0		-=			
+ANR	4646813	Identifier	len		4646502	0					
+ANR	4646814	Identifier	RTP_HEVC_FU_HEADER_SIZE		4646502	1					
+ANR	4646815	IfStatement	if ( rtp_hevc_ctx -> using_donl_field )		4646502	23					
+ANR	4646816	Condition	rtp_hevc_ctx -> using_donl_field	249:12:4204:4233	4646502	0	True				
+ANR	4646817	PtrMemberAccess	rtp_hevc_ctx -> using_donl_field		4646502	0					
+ANR	4646818	Identifier	rtp_hevc_ctx		4646502	0					
+ANR	4646819	Identifier	using_donl_field		4646502	1					
+ANR	4646820	CompoundStatement		241:44:3955:3955	4646502	1					
+ANR	4646821	ExpressionStatement	buf += RTP_HEVC_DONL_FIELD_SIZE	251:12:4251:4282	4646502	0	True				
+ANR	4646822	AssignmentExpression	buf += RTP_HEVC_DONL_FIELD_SIZE		4646502	0		+=			
+ANR	4646823	Identifier	buf		4646502	0					
+ANR	4646824	Identifier	RTP_HEVC_DONL_FIELD_SIZE		4646502	1					
+ANR	4646825	ExpressionStatement	len -= RTP_HEVC_DONL_FIELD_SIZE	253:12:4297:4328	4646502	1	True				
+ANR	4646826	AssignmentExpression	len -= RTP_HEVC_DONL_FIELD_SIZE		4646502	0		-=			
+ANR	4646827	Identifier	len		4646502	0					
+ANR	4646828	Identifier	RTP_HEVC_DONL_FIELD_SIZE		4646502	1					
+ANR	4646829	ExpressionStatement	"av_dlog ( ctx , "" FU type %d with %d bytes\\n"" , fu_type , len )"	259:8:4352:4409	4646502	24	True				
+ANR	4646830	CallExpression	"av_dlog ( ctx , "" FU type %d with %d bytes\\n"" , fu_type , len )"		4646502	0					
+ANR	4646831	Callee	av_dlog		4646502	0					
+ANR	4646832	Identifier	av_dlog		4646502	0					
+ANR	4646833	ArgumentList	ctx		4646502	1					
+ANR	4646834	Argument	ctx		4646502	0					
+ANR	4646835	Identifier	ctx		4646502	0					
+ANR	4646836	Argument	""" FU type %d with %d bytes\\n"""		4646502	1					
+ANR	4646837	PrimaryExpression	""" FU type %d with %d bytes\\n"""		4646502	0					
+ANR	4646838	Argument	fu_type		4646502	2					
+ANR	4646839	Identifier	fu_type		4646502	0					
+ANR	4646840	Argument	len		4646502	3					
+ANR	4646841	Identifier	len		4646502	0					
+ANR	4646842	IfStatement	if ( len > 0 )		4646502	25					
+ANR	4646843	Condition	len > 0	263:12:4426:4432	4646502	0	True				
+ANR	4646844	RelationalExpression	len > 0		4646502	0		>			
+ANR	4646845	Identifier	len		4646502	0					
+ANR	4646846	PrimaryExpression	0		4646502	1					
+ANR	4646847	CompoundStatement		255:21:4154:4154	4646502	1					
+ANR	4646848	ExpressionStatement	new_nal_header [ 0 ] = ( rtp_pl [ 0 ] & 0x81 ) | ( fu_type << 1 )	265:12:4450:4505	4646502	0	True				
+ANR	4646849	AssignmentExpression	new_nal_header [ 0 ] = ( rtp_pl [ 0 ] & 0x81 ) | ( fu_type << 1 )		4646502	0		=			
+ANR	4646850	ArrayIndexing	new_nal_header [ 0 ]		4646502	0					
+ANR	4646851	Identifier	new_nal_header		4646502	0					
+ANR	4646852	PrimaryExpression	0		4646502	1					
+ANR	4646853	InclusiveOrExpression	( rtp_pl [ 0 ] & 0x81 ) | ( fu_type << 1 )		4646502	1		|			
+ANR	4646854	BitAndExpression	rtp_pl [ 0 ] & 0x81		4646502	0		&			
+ANR	4646855	ArrayIndexing	rtp_pl [ 0 ]		4646502	0					
+ANR	4646856	Identifier	rtp_pl		4646502	0					
+ANR	4646857	PrimaryExpression	0		4646502	1					
+ANR	4646858	PrimaryExpression	0x81		4646502	1					
+ANR	4646859	ShiftExpression	fu_type << 1		4646502	1		<<			
+ANR	4646860	Identifier	fu_type		4646502	0					
+ANR	4646861	PrimaryExpression	1		4646502	1					
+ANR	4646862	ExpressionStatement	new_nal_header [ 1 ] = rtp_pl [ 1 ]	267:12:4520:4549	4646502	1	True				
+ANR	4646863	AssignmentExpression	new_nal_header [ 1 ] = rtp_pl [ 1 ]		4646502	0		=			
+ANR	4646864	ArrayIndexing	new_nal_header [ 1 ]		4646502	0					
+ANR	4646865	Identifier	new_nal_header		4646502	0					
+ANR	4646866	PrimaryExpression	1		4646502	1					
+ANR	4646867	ArrayIndexing	rtp_pl [ 1 ]		4646502	1					
+ANR	4646868	Identifier	rtp_pl		4646502	0					
+ANR	4646869	PrimaryExpression	1		4646502	1					
+ANR	4646870	IfStatement	if ( first_fragment )		4646502	2					
+ANR	4646871	Condition	first_fragment	273:16:4629:4642	4646502	0	True				
+ANR	4646872	Identifier	first_fragment		4646502	0					
+ANR	4646873	CompoundStatement		265:32:4364:4364	4646502	1					
+ANR	4646874	IfStatement	if ( ! last_fragment )		4646502	0					
+ANR	4646875	Condition	! last_fragment	275:20:4668:4681	4646502	0	True				
+ANR	4646876	UnaryOperationExpression	! last_fragment		4646502	0					
+ANR	4646877	UnaryOperator	!		4646502	0					
+ANR	4646878	Identifier	last_fragment		4646502	1					
+ANR	4646879	CompoundStatement		267:36:4403:4403	4646502	1					
+ANR	4646880	IfStatement	"if ( ( res = av_new_packet ( pkt , sizeof ( start_sequence ) + sizeof ( new_nal_header ) + len ) ) < 0 )"		4646502	0					
+ANR	4646881	Condition	"( res = av_new_packet ( pkt , sizeof ( start_sequence ) + sizeof ( new_nal_header ) + len ) ) < 0"	279:24:4776:4860	4646502	0	True				
+ANR	4646882	RelationalExpression	"( res = av_new_packet ( pkt , sizeof ( start_sequence ) + sizeof ( new_nal_header ) + len ) ) < 0"		4646502	0		<			
+ANR	4646883	AssignmentExpression	"res = av_new_packet ( pkt , sizeof ( start_sequence ) + sizeof ( new_nal_header ) + len )"		4646502	0		=			
+ANR	4646884	Identifier	res		4646502	0					
+ANR	4646885	CallExpression	"av_new_packet ( pkt , sizeof ( start_sequence ) + sizeof ( new_nal_header ) + len )"		4646502	1					
+ANR	4646886	Callee	av_new_packet		4646502	0					
+ANR	4646887	Identifier	av_new_packet		4646502	0					
+ANR	4646888	ArgumentList	pkt		4646502	1					
+ANR	4646889	Argument	pkt		4646502	0					
+ANR	4646890	Identifier	pkt		4646502	0					
+ANR	4646891	Argument	sizeof ( start_sequence ) + sizeof ( new_nal_header ) + len		4646502	1					
+ANR	4646892	AdditiveExpression	sizeof ( start_sequence ) + sizeof ( new_nal_header ) + len		4646502	0		+			
+ANR	4646893	SizeofExpression	sizeof ( start_sequence )		4646502	0					
+ANR	4646894	Sizeof	sizeof		4646502	0					
+ANR	4646895	SizeofOperand	start_sequence		4646502	1					
+ANR	4646896	AdditiveExpression	sizeof ( new_nal_header ) + len		4646502	1		+			
+ANR	4646897	SizeofExpression	sizeof ( new_nal_header )		4646502	0					
+ANR	4646898	Sizeof	sizeof		4646502	0					
+ANR	4646899	SizeofOperand	new_nal_header		4646502	1					
+ANR	4646900	Identifier	len		4646502	1					
+ANR	4646901	PrimaryExpression	0		4646502	1					
+ANR	4646902	ReturnStatement	return res ;	281:24:4888:4898	4646502	1	True				
+ANR	4646903	Identifier	res		4646502	0					
+ANR	4646904	ExpressionStatement	"memcpy ( pkt -> data , start_sequence , sizeof ( start_sequence ) )"	285:20:4980:5037	4646502	1	True				
+ANR	4646905	CallExpression	"memcpy ( pkt -> data , start_sequence , sizeof ( start_sequence ) )"		4646502	0					
+ANR	4646906	Callee	memcpy		4646502	0					
+ANR	4646907	Identifier	memcpy		4646502	0					
+ANR	4646908	ArgumentList	pkt -> data		4646502	1					
+ANR	4646909	Argument	pkt -> data		4646502	0					
+ANR	4646910	PtrMemberAccess	pkt -> data		4646502	0					
+ANR	4646911	Identifier	pkt		4646502	0					
+ANR	4646912	Identifier	data		4646502	1					
+ANR	4646913	Argument	start_sequence		4646502	1					
+ANR	4646914	Identifier	start_sequence		4646502	0					
+ANR	4646915	Argument	sizeof ( start_sequence )		4646502	2					
+ANR	4646916	SizeofExpression	sizeof ( start_sequence )		4646502	0					
+ANR	4646917	Sizeof	sizeof		4646502	0					
+ANR	4646918	SizeofOperand	start_sequence		4646502	1					
+ANR	4646919	ExpressionStatement	"memcpy ( pkt -> data + sizeof ( start_sequence ) , new_nal_header , sizeof ( new_nal_header ) )"	289:20:5119:5201	4646502	2	True				
+ANR	4646920	CallExpression	"memcpy ( pkt -> data + sizeof ( start_sequence ) , new_nal_header , sizeof ( new_nal_header ) )"		4646502	0					
+ANR	4646921	Callee	memcpy		4646502	0					
+ANR	4646922	Identifier	memcpy		4646502	0					
+ANR	4646923	ArgumentList	pkt -> data + sizeof ( start_sequence )		4646502	1					
+ANR	4646924	Argument	pkt -> data + sizeof ( start_sequence )		4646502	0					
+ANR	4646925	AdditiveExpression	pkt -> data + sizeof ( start_sequence )		4646502	0		+			
+ANR	4646926	PtrMemberAccess	pkt -> data		4646502	0					
+ANR	4646927	Identifier	pkt		4646502	0					
+ANR	4646928	Identifier	data		4646502	1					
+ANR	4646929	SizeofExpression	sizeof ( start_sequence )		4646502	1					
+ANR	4646930	Sizeof	sizeof		4646502	0					
+ANR	4646931	SizeofOperand	start_sequence		4646502	1					
+ANR	4646932	Argument	new_nal_header		4646502	1					
+ANR	4646933	Identifier	new_nal_header		4646502	0					
+ANR	4646934	Argument	sizeof ( new_nal_header )		4646502	2					
+ANR	4646935	SizeofExpression	sizeof ( new_nal_header )		4646502	0					
+ANR	4646936	Sizeof	sizeof		4646502	0					
+ANR	4646937	SizeofOperand	new_nal_header		4646502	1					
+ANR	4646938	ExpressionStatement	"memcpy ( pkt -> data + sizeof ( start_sequence ) + sizeof ( new_nal_header ) , buf , len )"	293:20:5282:5359	4646502	3	True				
+ANR	4646939	CallExpression	"memcpy ( pkt -> data + sizeof ( start_sequence ) + sizeof ( new_nal_header ) , buf , len )"		4646502	0					
+ANR	4646940	Callee	memcpy		4646502	0					
+ANR	4646941	Identifier	memcpy		4646502	0					
+ANR	4646942	ArgumentList	pkt -> data + sizeof ( start_sequence ) + sizeof ( new_nal_header )		4646502	1					
+ANR	4646943	Argument	pkt -> data + sizeof ( start_sequence ) + sizeof ( new_nal_header )		4646502	0					
+ANR	4646944	AdditiveExpression	pkt -> data + sizeof ( start_sequence ) + sizeof ( new_nal_header )		4646502	0		+			
+ANR	4646945	PtrMemberAccess	pkt -> data		4646502	0					
+ANR	4646946	Identifier	pkt		4646502	0					
+ANR	4646947	Identifier	data		4646502	1					
+ANR	4646948	AdditiveExpression	sizeof ( start_sequence ) + sizeof ( new_nal_header )		4646502	1		+			
+ANR	4646949	SizeofExpression	sizeof ( start_sequence )		4646502	0					
+ANR	4646950	Sizeof	sizeof		4646502	0					
+ANR	4646951	SizeofOperand	start_sequence		4646502	1					
+ANR	4646952	SizeofExpression	sizeof ( new_nal_header )		4646502	1					
+ANR	4646953	Sizeof	sizeof		4646502	0					
+ANR	4646954	SizeofOperand	new_nal_header		4646502	1					
+ANR	4646955	Argument	buf		4646502	1					
+ANR	4646956	Identifier	buf		4646502	0					
+ANR	4646957	Argument	len		4646502	2					
+ANR	4646958	Identifier	len		4646502	0					
+ANR	4646959	ElseStatement	else		4646502	0					
+ANR	4646960	CompoundStatement		287:23:5104:5104	4646502	0					
+ANR	4646961	ExpressionStatement	"av_log ( ctx , AV_LOG_ERROR , ""Illegal combination of S and E bit in RTP/HEVC packet\\n"" )"	297:20:5408:5492	4646502	0	True				
+ANR	4646962	CallExpression	"av_log ( ctx , AV_LOG_ERROR , ""Illegal combination of S and E bit in RTP/HEVC packet\\n"" )"		4646502	0					
+ANR	4646963	Callee	av_log		4646502	0					
+ANR	4646964	Identifier	av_log		4646502	0					
+ANR	4646965	ArgumentList	ctx		4646502	1					
+ANR	4646966	Argument	ctx		4646502	0					
+ANR	4646967	Identifier	ctx		4646502	0					
+ANR	4646968	Argument	AV_LOG_ERROR		4646502	1					
+ANR	4646969	Identifier	AV_LOG_ERROR		4646502	0					
+ANR	4646970	Argument	"""Illegal combination of S and E bit in RTP/HEVC packet\\n"""		4646502	2					
+ANR	4646971	PrimaryExpression	"""Illegal combination of S and E bit in RTP/HEVC packet\\n"""		4646502	0					
+ANR	4646972	ExpressionStatement	res = AVERROR_INVALIDDATA	299:20:5515:5540	4646502	1	True				
+ANR	4646973	AssignmentExpression	res = AVERROR_INVALIDDATA		4646502	0		=			
+ANR	4646974	Identifier	res		4646502	0					
+ANR	4646975	Identifier	AVERROR_INVALIDDATA		4646502	1					
+ANR	4646976	ElseStatement	else		4646502	0					
+ANR	4646977	CompoundStatement		295:19:5300:5300	4646502	0					
+ANR	4646978	IfStatement	"if ( ( res = av_new_packet ( pkt , len ) ) < 0 )"		4646502	0					
+ANR	4646979	Condition	"( res = av_new_packet ( pkt , len ) ) < 0"	307:20:5645:5679	4646502	0	True				
+ANR	4646980	RelationalExpression	"( res = av_new_packet ( pkt , len ) ) < 0"		4646502	0		<			
+ANR	4646981	AssignmentExpression	"res = av_new_packet ( pkt , len )"		4646502	0		=			
+ANR	4646982	Identifier	res		4646502	0					
+ANR	4646983	CallExpression	"av_new_packet ( pkt , len )"		4646502	1					
+ANR	4646984	Callee	av_new_packet		4646502	0					
+ANR	4646985	Identifier	av_new_packet		4646502	0					
+ANR	4646986	ArgumentList	pkt		4646502	1					
+ANR	4646987	Argument	pkt		4646502	0					
+ANR	4646988	Identifier	pkt		4646502	0					
+ANR	4646989	Argument	len		4646502	1					
+ANR	4646990	Identifier	len		4646502	0					
+ANR	4646991	PrimaryExpression	0		4646502	1					
+ANR	4646992	ReturnStatement	return res ;	309:20:5703:5713	4646502	1	True				
+ANR	4646993	Identifier	res		4646502	0					
+ANR	4646994	ExpressionStatement	"memcpy ( pkt -> data , buf , len )"	313:16:5786:5813	4646502	1	True				
+ANR	4646995	CallExpression	"memcpy ( pkt -> data , buf , len )"		4646502	0					
+ANR	4646996	Callee	memcpy		4646502	0					
+ANR	4646997	Identifier	memcpy		4646502	0					
+ANR	4646998	ArgumentList	pkt -> data		4646502	1					
+ANR	4646999	Argument	pkt -> data		4646502	0					
+ANR	4647000	PtrMemberAccess	pkt -> data		4646502	0					
+ANR	4647001	Identifier	pkt		4646502	0					
+ANR	4647002	Identifier	data		4646502	1					
+ANR	4647003	Argument	buf		4646502	1					
+ANR	4647004	Identifier	buf		4646502	0					
+ANR	4647005	Argument	len		4646502	2					
+ANR	4647006	Identifier	len		4646502	0					
+ANR	4647007	ElseStatement	else		4646502	0					
+ANR	4647008	CompoundStatement		309:15:5565:5565	4646502	0					
+ANR	4647009	ExpressionStatement	"av_log ( ctx , AV_LOG_ERROR , ""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"" , len , nal_type )"	321:12:5943:6088	4646502	0	True				
+ANR	4647010	CallExpression	"av_log ( ctx , AV_LOG_ERROR , ""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"" , len , nal_type )"		4646502	0					
+ANR	4647011	Callee	av_log		4646502	0					
+ANR	4647012	Identifier	av_log		4646502	0					
+ANR	4647013	ArgumentList	ctx		4646502	1					
+ANR	4647014	Argument	ctx		4646502	0					
+ANR	4647015	Identifier	ctx		4646502	0					
+ANR	4647016	Argument	AV_LOG_ERROR		4646502	1					
+ANR	4647017	Identifier	AV_LOG_ERROR		4646502	0					
+ANR	4647018	Argument	"""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"""		4646502	2					
+ANR	4647019	PrimaryExpression	"""Too short RTP/HEVC packet, got %d bytes of NAL unit type %d\\n"""		4646502	0					
+ANR	4647020	Argument	len		4646502	3					
+ANR	4647021	Identifier	len		4646502	0					
+ANR	4647022	Argument	nal_type		4646502	4					
+ANR	4647023	Identifier	nal_type		4646502	0					
+ANR	4647024	ExpressionStatement	res = AVERROR_INVALIDDATA	327:12:6103:6128	4646502	1	True				
+ANR	4647025	AssignmentExpression	res = AVERROR_INVALIDDATA		4646502	0		=			
+ANR	4647026	Identifier	res		4646502	0					
+ANR	4647027	Identifier	AVERROR_INVALIDDATA		4646502	1					
+ANR	4647028	BreakStatement	break ;	333:8:6152:6157	4646502	26	True				
+ANR	4647029	Label	case 50 :	337:4:6187:6194	4646502	27	True				
+ANR	4647030	ExpressionStatement	"avpriv_report_missing_feature ( ctx , ""PACI packets for RTP/HEVC\\n"" )"	341:8:6268:6333	4646502	28	True				
+ANR	4647031	CallExpression	"avpriv_report_missing_feature ( ctx , ""PACI packets for RTP/HEVC\\n"" )"		4646502	0					
+ANR	4647032	Callee	avpriv_report_missing_feature		4646502	0					
+ANR	4647033	Identifier	avpriv_report_missing_feature		4646502	0					
+ANR	4647034	ArgumentList	ctx		4646502	1					
+ANR	4647035	Argument	ctx		4646502	0					
+ANR	4647036	Identifier	ctx		4646502	0					
+ANR	4647037	Argument	"""PACI packets for RTP/HEVC\\n"""		4646502	1					
+ANR	4647038	PrimaryExpression	"""PACI packets for RTP/HEVC\\n"""		4646502	0					
+ANR	4647039	ExpressionStatement	res = AVERROR_PATCHWELCOME	343:8:6344:6370	4646502	29	True				
+ANR	4647040	AssignmentExpression	res = AVERROR_PATCHWELCOME		4646502	0		=			
+ANR	4647041	Identifier	res		4646502	0					
+ANR	4647042	Identifier	AVERROR_PATCHWELCOME		4646502	1					
+ANR	4647043	BreakStatement	break ;	345:8:6381:6386	4646502	30	True				
+ANR	4647044	ExpressionStatement	pkt -> stream_index = st -> index	351:4:6402:6431	4646502	13	True				
+ANR	4647045	AssignmentExpression	pkt -> stream_index = st -> index		4646502	0		=			
+ANR	4647046	PtrMemberAccess	pkt -> stream_index		4646502	0					
+ANR	4647047	Identifier	pkt		4646502	0					
+ANR	4647048	Identifier	stream_index		4646502	1					
+ANR	4647049	PtrMemberAccess	st -> index		4646502	1					
+ANR	4647050	Identifier	st		4646502	0					
+ANR	4647051	Identifier	index		4646502	1					
+ANR	4647052	ReturnStatement	return res ;	355:4:6440:6450	4646502	14	True				
+ANR	4647053	Identifier	res		4646502	0					
+ANR	4647054	ReturnType	static int		4646502	1					
+ANR	4647055	Identifier	hevc_handle_packet		4646502	2					
+ANR	4647056	ParameterList	"AVFormatContext * ctx , PayloadContext * rtp_hevc_ctx , AVStream * st , AVPacket * pkt , uint32_t * timestamp , const uint8_t * buf , int len , uint16_t seq , int flags"		4646502	3					
+ANR	4647057	Parameter	AVFormatContext * ctx	1:30:30:49	4646502	0	True				
+ANR	4647058	ParameterType	AVFormatContext *		4646502	0					
+ANR	4647059	Identifier	ctx		4646502	1					
+ANR	4647060	Parameter	PayloadContext * rtp_hevc_ctx	1:52:52:79	4646502	1	True				
+ANR	4647061	ParameterType	PayloadContext *		4646502	0					
+ANR	4647062	Identifier	rtp_hevc_ctx		4646502	1					
+ANR	4647063	Parameter	AVStream * st	3:30:113:124	4646502	2	True				
+ANR	4647064	ParameterType	AVStream *		4646502	0					
+ANR	4647065	Identifier	st		4646502	1					
+ANR	4647066	Parameter	AVPacket * pkt	3:44:127:139	4646502	3	True				
+ANR	4647067	ParameterType	AVPacket *		4646502	0					
+ANR	4647068	Identifier	pkt		4646502	1					
+ANR	4647069	Parameter	uint32_t * timestamp	3:59:142:160	4646502	4	True				
+ANR	4647070	ParameterType	uint32_t *		4646502	0					
+ANR	4647071	Identifier	timestamp		4646502	1					
+ANR	4647072	Parameter	const uint8_t * buf	5:30:194:211	4646502	5	True				
+ANR	4647073	ParameterType	const uint8_t *		4646502	0					
+ANR	4647074	Identifier	buf		4646502	1					
+ANR	4647075	Parameter	int len	5:50:214:220	4646502	6	True				
+ANR	4647076	ParameterType	int		4646502	0					
+ANR	4647077	Identifier	len		4646502	1					
+ANR	4647078	Parameter	uint16_t seq	5:59:223:234	4646502	7	True				
+ANR	4647079	ParameterType	uint16_t		4646502	0					
+ANR	4647080	Identifier	seq		4646502	1					
+ANR	4647081	Parameter	int flags	7:30:268:276	4646502	8	True				
+ANR	4647082	ParameterType	int		4646502	0					
+ANR	4647083	Identifier	flags		4646502	1					
+ANR	4647084	CFGEntryNode	ENTRY		4646502		True				
+ANR	4647085	CFGExitNode	EXIT		4646502		True				
+ANR	4647086	Symbol	* pkt		4646502						
+ANR	4647087	Symbol	RTP_HEVC_FU_HEADER_SIZE		4646502						
+ANR	4647088	Symbol	* new_nal_header		4646502						
+ANR	4647089	Symbol	* st		4646502						
+ANR	4647090	Symbol	lid		4646502						
+ANR	4647091	Symbol	flags		4646502						
+ANR	4647092	Symbol	rtp_hevc_ctx		4646502						
+ANR	4647093	Symbol	tid		4646502						
+ANR	4647094	Symbol	RTP_HEVC_DONL_FIELD_SIZE		4646502						
+ANR	4647095	Symbol	len		4646502						
+ANR	4647096	Symbol	pkt		4646502						
+ANR	4647097	Symbol	RTP_HEVC_PAYLOAD_HEADER_SIZE		4646502						
+ANR	4647098	Symbol	AVERROR_PATCHWELCOME		4646502						
+ANR	4647099	Symbol	nal_type		4646502						
+ANR	4647100	Symbol	seq		4646502						
+ANR	4647101	Symbol	timestamp		4646502						
+ANR	4647102	Symbol	st		4646502						
+ANR	4647103	Symbol	res		4646502						
+ANR	4647104	Symbol	new_nal_header		4646502						
+ANR	4647105	Symbol	* buf		4646502						
+ANR	4647106	Symbol	AV_LOG_ERROR		4646502						
+ANR	4647107	Symbol	av_new_packet		4646502						
+ANR	4647108	Symbol	ctx		4646502						
+ANR	4647109	Symbol	rtp_hevc_ctx -> using_donl_field		4646502						
+ANR	4647110	Symbol	* rtp_hevc_ctx		4646502						
+ANR	4647111	Symbol	pkt -> data		4646502						
+ANR	4647112	Symbol	pkt -> stream_index		4646502						
+ANR	4647113	Symbol	buf		4646502						
+ANR	4647114	Symbol	rtp_pl		4646502						
+ANR	4647115	Symbol	fu_type		4646502						
+ANR	4647116	Symbol	AVERROR_INVALIDDATA		4646502						
+ANR	4647117	Symbol	start_sequence		4646502						
+ANR	4647118	Symbol	last_fragment		4646502						
+ANR	4647119	Symbol	* rtp_pl		4646502						
+ANR	4647120	Symbol	first_fragment		4646502						
+ANR	4647121	Symbol	st -> index		4646502						

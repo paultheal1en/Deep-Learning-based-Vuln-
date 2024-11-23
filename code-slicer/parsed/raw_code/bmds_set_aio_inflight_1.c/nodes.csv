@@ -1,0 +1,135 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1096232	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bmds_set_aio_inflight_1.c								
+ANR	1096233	Function	bmds_set_aio_inflight	1:0:0:667							
+ANR	1096234	FunctionDef	"bmds_set_aio_inflight (BlkMigDevState * bmds , int64_t sector_num , int nb_sectors , int set)"		1096233	0					
+ANR	1096235	CompoundStatement		5:0:132:667	1096233	0					
+ANR	1096236	IdentifierDeclStatement	"int64_t start , end ;"	7:4:139:157	1096233	0	True				
+ANR	1096237	IdentifierDecl	start		1096233	0					
+ANR	1096238	IdentifierDeclType	int64_t		1096233	0					
+ANR	1096239	Identifier	start		1096233	1					
+ANR	1096240	IdentifierDecl	end		1096233	1					
+ANR	1096241	IdentifierDeclType	int64_t		1096233	0					
+ANR	1096242	Identifier	end		1096233	1					
+ANR	1096243	IdentifierDeclStatement	"unsigned long val , idx , bit ;"	9:4:164:191	1096233	1	True				
+ANR	1096244	IdentifierDecl	val		1096233	0					
+ANR	1096245	IdentifierDeclType	unsigned long		1096233	0					
+ANR	1096246	Identifier	val		1096233	1					
+ANR	1096247	IdentifierDecl	idx		1096233	1					
+ANR	1096248	IdentifierDeclType	unsigned long		1096233	0					
+ANR	1096249	Identifier	idx		1096233	1					
+ANR	1096250	IdentifierDecl	bit		1096233	2					
+ANR	1096251	IdentifierDeclType	unsigned long		1096233	0					
+ANR	1096252	Identifier	bit		1096233	1					
+ANR	1096253	ExpressionStatement	start = sector_num / BDRV_SECTORS_PER_DIRTY_CHUNK	13:4:200:249	1096233	2	True				
+ANR	1096254	AssignmentExpression	start = sector_num / BDRV_SECTORS_PER_DIRTY_CHUNK		1096233	0		=			
+ANR	1096255	Identifier	start		1096233	0					
+ANR	1096256	MultiplicativeExpression	sector_num / BDRV_SECTORS_PER_DIRTY_CHUNK		1096233	1		/			
+ANR	1096257	Identifier	sector_num		1096233	0					
+ANR	1096258	Identifier	BDRV_SECTORS_PER_DIRTY_CHUNK		1096233	1					
+ANR	1096259	ExpressionStatement	end = ( sector_num + nb_sectors - 1 ) / BDRV_SECTORS_PER_DIRTY_CHUNK	15:4:256:322	1096233	3	True				
+ANR	1096260	AssignmentExpression	end = ( sector_num + nb_sectors - 1 ) / BDRV_SECTORS_PER_DIRTY_CHUNK		1096233	0		=			
+ANR	1096261	Identifier	end		1096233	0					
+ANR	1096262	MultiplicativeExpression	( sector_num + nb_sectors - 1 ) / BDRV_SECTORS_PER_DIRTY_CHUNK		1096233	1		/			
+ANR	1096263	AdditiveExpression	sector_num + nb_sectors - 1		1096233	0		+			
+ANR	1096264	Identifier	sector_num		1096233	0					
+ANR	1096265	AdditiveExpression	nb_sectors - 1		1096233	1		-			
+ANR	1096266	Identifier	nb_sectors		1096233	0					
+ANR	1096267	PrimaryExpression	1		1096233	1					
+ANR	1096268	Identifier	BDRV_SECTORS_PER_DIRTY_CHUNK		1096233	1					
+ANR	1096269	ForStatement	for ( ; start <= end ; start ++ )		1096233	4					
+ANR	1096270	Condition	start <= end	19:11:338:349	1096233	0	True				
+ANR	1096271	RelationalExpression	start <= end		1096233	0		<=			
+ANR	1096272	Identifier	start		1096233	0					
+ANR	1096273	Identifier	end		1096233	1					
+ANR	1096274	PostIncDecOperationExpression	start ++	19:25:352:358	1096233	1	True				
+ANR	1096275	Identifier	start		1096233	0					
+ANR	1096276	IncDec	++		1096233	1					
+ANR	1096277	CompoundStatement		15:34:228:228	1096233	2					
+ANR	1096278	ExpressionStatement	idx = start / ( sizeof ( unsigned long ) * 8 )	21:8:372:413	1096233	0	True				
+ANR	1096279	AssignmentExpression	idx = start / ( sizeof ( unsigned long ) * 8 )		1096233	0		=			
+ANR	1096280	Identifier	idx		1096233	0					
+ANR	1096281	MultiplicativeExpression	start / ( sizeof ( unsigned long ) * 8 )		1096233	1		/			
+ANR	1096282	Identifier	start		1096233	0					
+ANR	1096283	MultiplicativeExpression	sizeof ( unsigned long ) * 8		1096233	1		*			
+ANR	1096284	SizeofExpression	sizeof ( unsigned long )		1096233	0					
+ANR	1096285	Sizeof	sizeof		1096233	0					
+ANR	1096286	SizeofOperand	unsigned long		1096233	1					
+ANR	1096287	PrimaryExpression	8		1096233	1					
+ANR	1096288	ExpressionStatement	bit = start % ( sizeof ( unsigned long ) * 8 )	23:8:424:465	1096233	1	True				
+ANR	1096289	AssignmentExpression	bit = start % ( sizeof ( unsigned long ) * 8 )		1096233	0		=			
+ANR	1096290	Identifier	bit		1096233	0					
+ANR	1096291	MultiplicativeExpression	start % ( sizeof ( unsigned long ) * 8 )		1096233	1		%			
+ANR	1096292	Identifier	start		1096233	0					
+ANR	1096293	MultiplicativeExpression	sizeof ( unsigned long ) * 8		1096233	1		*			
+ANR	1096294	SizeofExpression	sizeof ( unsigned long )		1096233	0					
+ANR	1096295	Sizeof	sizeof		1096233	0					
+ANR	1096296	SizeofOperand	unsigned long		1096233	1					
+ANR	1096297	PrimaryExpression	8		1096233	1					
+ANR	1096298	ExpressionStatement	val = bmds -> aio_bitmap [ idx ]	25:8:476:503	1096233	2	True				
+ANR	1096299	AssignmentExpression	val = bmds -> aio_bitmap [ idx ]		1096233	0		=			
+ANR	1096300	Identifier	val		1096233	0					
+ANR	1096301	ArrayIndexing	bmds -> aio_bitmap [ idx ]		1096233	1					
+ANR	1096302	PtrMemberAccess	bmds -> aio_bitmap		1096233	0					
+ANR	1096303	Identifier	bmds		1096233	0					
+ANR	1096304	Identifier	aio_bitmap		1096233	1					
+ANR	1096305	Identifier	idx		1096233	1					
+ANR	1096306	IfStatement	if ( set )		1096233	3					
+ANR	1096307	Condition	set	27:12:518:520	1096233	0	True				
+ANR	1096308	Identifier	set		1096233	0					
+ANR	1096309	CompoundStatement		23:17:390:390	1096233	1					
+ANR	1096310	ExpressionStatement	val |= 1UL << bit	29:12:538:555	1096233	0	True				
+ANR	1096311	AssignmentExpression	val |= 1UL << bit		1096233	0		|=			
+ANR	1096312	Identifier	val		1096233	0					
+ANR	1096313	ShiftExpression	1UL << bit		1096233	1		<<			
+ANR	1096314	PrimaryExpression	1UL		1096233	0					
+ANR	1096315	Identifier	bit		1096233	1					
+ANR	1096316	ElseStatement	else		1096233	0					
+ANR	1096317	CompoundStatement		27:15:440:440	1096233	0					
+ANR	1096318	ExpressionStatement	val &= ~ ( 1UL << bit )	33:12:588:608	1096233	0	True				
+ANR	1096319	AssignmentExpression	val &= ~ ( 1UL << bit )		1096233	0		&=			
+ANR	1096320	Identifier	val		1096233	0					
+ANR	1096321	UnaryOperationExpression	~ ( 1UL << bit )		1096233	1					
+ANR	1096322	UnaryOperator	~		1096233	0					
+ANR	1096323	ShiftExpression	1UL << bit		1096233	1		<<			
+ANR	1096324	PrimaryExpression	1UL		1096233	0					
+ANR	1096325	Identifier	bit		1096233	1					
+ANR	1096326	ExpressionStatement	bmds -> aio_bitmap [ idx ] = val	37:8:630:657	1096233	4	True				
+ANR	1096327	AssignmentExpression	bmds -> aio_bitmap [ idx ] = val		1096233	0		=			
+ANR	1096328	ArrayIndexing	bmds -> aio_bitmap [ idx ]		1096233	0					
+ANR	1096329	PtrMemberAccess	bmds -> aio_bitmap		1096233	0					
+ANR	1096330	Identifier	bmds		1096233	0					
+ANR	1096331	Identifier	aio_bitmap		1096233	1					
+ANR	1096332	Identifier	idx		1096233	1					
+ANR	1096333	Identifier	val		1096233	1					
+ANR	1096334	ReturnType	static void		1096233	1					
+ANR	1096335	Identifier	bmds_set_aio_inflight		1096233	2					
+ANR	1096336	ParameterList	"BlkMigDevState * bmds , int64_t sector_num , int nb_sectors , int set"		1096233	3					
+ANR	1096337	Parameter	BlkMigDevState * bmds	1:34:34:53	1096233	0	True				
+ANR	1096338	ParameterType	BlkMigDevState *		1096233	0					
+ANR	1096339	Identifier	bmds		1096233	1					
+ANR	1096340	Parameter	int64_t sector_num	1:56:56:73	1096233	1	True				
+ANR	1096341	ParameterType	int64_t		1096233	0					
+ANR	1096342	Identifier	sector_num		1096233	1					
+ANR	1096343	Parameter	int nb_sectors	3:29:106:119	1096233	2	True				
+ANR	1096344	ParameterType	int		1096233	0					
+ANR	1096345	Identifier	nb_sectors		1096233	1					
+ANR	1096346	Parameter	int set	3:45:122:128	1096233	3	True				
+ANR	1096347	ParameterType	int		1096233	0					
+ANR	1096348	Identifier	set		1096233	1					
+ANR	1096349	CFGEntryNode	ENTRY		1096233		True				
+ANR	1096350	CFGExitNode	EXIT		1096233		True				
+ANR	1096351	Symbol	val		1096233						
+ANR	1096352	Symbol	nb_sectors		1096233						
+ANR	1096353	Symbol	BDRV_SECTORS_PER_DIRTY_CHUNK		1096233						
+ANR	1096354	Symbol	set		1096233						
+ANR	1096355	Symbol	start		1096233						
+ANR	1096356	Symbol	bit		1096233						
+ANR	1096357	Symbol	* bmds		1096233						
+ANR	1096358	Symbol	sector_num		1096233						
+ANR	1096359	Symbol	* * bmds		1096233						
+ANR	1096360	Symbol	bmds		1096233						
+ANR	1096361	Symbol	bmds -> aio_bitmap		1096233						
+ANR	1096362	Symbol	* idx		1096233						
+ANR	1096363	Symbol	* bmds -> aio_bitmap		1096233						
+ANR	1096364	Symbol	end		1096233						
+ANR	1096365	Symbol	idx		1096233						

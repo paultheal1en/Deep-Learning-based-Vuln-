@@ -1,0 +1,339 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	923263	File	/home/p4ultr4n/workplace/ReVeal/raw_code/backup_run_incremental_0.c								
+ANR	923264	Function	backup_run_incremental	1:0:0:2200							
+ANR	923265	FunctionDef	backup_run_incremental (BackupBlockJob * job)		923264	0					
+ANR	923266	CompoundStatement		3:0:69:2200	923264	0					
+ANR	923267	IdentifierDeclStatement	bool error_is_read ;	5:4:76:94	923264	0	True				
+ANR	923268	IdentifierDecl	error_is_read		923264	0					
+ANR	923269	IdentifierDeclType	bool		923264	0					
+ANR	923270	Identifier	error_is_read		923264	1					
+ANR	923271	IdentifierDeclStatement	int ret = 0 ;	7:4:101:112	923264	1	True				
+ANR	923272	IdentifierDecl	ret = 0		923264	0					
+ANR	923273	IdentifierDeclType	int		923264	0					
+ANR	923274	Identifier	ret		923264	1					
+ANR	923275	AssignmentExpression	ret = 0		923264	2		=			
+ANR	923276	Identifier	ret		923264	0					
+ANR	923277	PrimaryExpression	0		923264	1					
+ANR	923278	IdentifierDeclStatement	int clusters_per_iter ;	9:4:119:140	923264	2	True				
+ANR	923279	IdentifierDecl	clusters_per_iter		923264	0					
+ANR	923280	IdentifierDeclType	int		923264	0					
+ANR	923281	Identifier	clusters_per_iter		923264	1					
+ANR	923282	IdentifierDeclStatement	uint32_t granularity ;	11:4:147:167	923264	3	True				
+ANR	923283	IdentifierDecl	granularity		923264	0					
+ANR	923284	IdentifierDeclType	uint32_t		923264	0					
+ANR	923285	Identifier	granularity		923264	1					
+ANR	923286	IdentifierDeclStatement	int64_t sector ;	13:4:174:188	923264	4	True				
+ANR	923287	IdentifierDecl	sector		923264	0					
+ANR	923288	IdentifierDeclType	int64_t		923264	0					
+ANR	923289	Identifier	sector		923264	1					
+ANR	923290	IdentifierDeclStatement	int64_t cluster ;	15:4:195:210	923264	5	True				
+ANR	923291	IdentifierDecl	cluster		923264	0					
+ANR	923292	IdentifierDeclType	int64_t		923264	0					
+ANR	923293	Identifier	cluster		923264	1					
+ANR	923294	IdentifierDeclStatement	int64_t end ;	17:4:217:228	923264	6	True				
+ANR	923295	IdentifierDecl	end		923264	0					
+ANR	923296	IdentifierDeclType	int64_t		923264	0					
+ANR	923297	Identifier	end		923264	1					
+ANR	923298	IdentifierDeclStatement	int64_t last_cluster = - 1 ;	19:4:235:260	923264	7	True				
+ANR	923299	IdentifierDecl	last_cluster = - 1		923264	0					
+ANR	923300	IdentifierDeclType	int64_t		923264	0					
+ANR	923301	Identifier	last_cluster		923264	1					
+ANR	923302	AssignmentExpression	last_cluster = - 1		923264	2		=			
+ANR	923303	Identifier	last_cluster		923264	0					
+ANR	923304	UnaryOperationExpression	- 1		923264	1					
+ANR	923305	UnaryOperator	-		923264	0					
+ANR	923306	PrimaryExpression	1		923264	1					
+ANR	923307	IdentifierDeclStatement	int64_t sectors_per_cluster = cluster_size_sectors ( job ) ;	21:4:267:322	923264	8	True				
+ANR	923308	IdentifierDecl	sectors_per_cluster = cluster_size_sectors ( job )		923264	0					
+ANR	923309	IdentifierDeclType	int64_t		923264	0					
+ANR	923310	Identifier	sectors_per_cluster		923264	1					
+ANR	923311	AssignmentExpression	sectors_per_cluster = cluster_size_sectors ( job )		923264	2		=			
+ANR	923312	Identifier	sectors_per_cluster		923264	0					
+ANR	923313	CallExpression	cluster_size_sectors ( job )		923264	1					
+ANR	923314	Callee	cluster_size_sectors		923264	0					
+ANR	923315	Identifier	cluster_size_sectors		923264	0					
+ANR	923316	ArgumentList	job		923264	1					
+ANR	923317	Argument	job		923264	0					
+ANR	923318	Identifier	job		923264	0					
+ANR	923319	IdentifierDeclStatement	BdrvDirtyBitmapIter * dbi ;	23:4:329:353	923264	9	True				
+ANR	923320	IdentifierDecl	* dbi		923264	0					
+ANR	923321	IdentifierDeclType	BdrvDirtyBitmapIter *		923264	0					
+ANR	923322	Identifier	dbi		923264	1					
+ANR	923323	ExpressionStatement	granularity = bdrv_dirty_bitmap_granularity ( job -> sync_bitmap )	27:4:362:423	923264	10	True				
+ANR	923324	AssignmentExpression	granularity = bdrv_dirty_bitmap_granularity ( job -> sync_bitmap )		923264	0		=			
+ANR	923325	Identifier	granularity		923264	0					
+ANR	923326	CallExpression	bdrv_dirty_bitmap_granularity ( job -> sync_bitmap )		923264	1					
+ANR	923327	Callee	bdrv_dirty_bitmap_granularity		923264	0					
+ANR	923328	Identifier	bdrv_dirty_bitmap_granularity		923264	0					
+ANR	923329	ArgumentList	job -> sync_bitmap		923264	1					
+ANR	923330	Argument	job -> sync_bitmap		923264	0					
+ANR	923331	PtrMemberAccess	job -> sync_bitmap		923264	0					
+ANR	923332	Identifier	job		923264	0					
+ANR	923333	Identifier	sync_bitmap		923264	1					
+ANR	923334	ExpressionStatement	"clusters_per_iter = MAX ( ( granularity / job -> cluster_size ) , 1 )"	29:4:430:491	923264	11	True				
+ANR	923335	AssignmentExpression	"clusters_per_iter = MAX ( ( granularity / job -> cluster_size ) , 1 )"		923264	0		=			
+ANR	923336	Identifier	clusters_per_iter		923264	0					
+ANR	923337	CallExpression	"MAX ( ( granularity / job -> cluster_size ) , 1 )"		923264	1					
+ANR	923338	Callee	MAX		923264	0					
+ANR	923339	Identifier	MAX		923264	0					
+ANR	923340	ArgumentList	granularity / job -> cluster_size		923264	1					
+ANR	923341	Argument	granularity / job -> cluster_size		923264	0					
+ANR	923342	MultiplicativeExpression	granularity / job -> cluster_size		923264	0		/			
+ANR	923343	Identifier	granularity		923264	0					
+ANR	923344	PtrMemberAccess	job -> cluster_size		923264	1					
+ANR	923345	Identifier	job		923264	0					
+ANR	923346	Identifier	cluster_size		923264	1					
+ANR	923347	Argument	1		923264	1					
+ANR	923348	PrimaryExpression	1		923264	0					
+ANR	923349	ExpressionStatement	"dbi = bdrv_dirty_iter_new ( job -> sync_bitmap , 0 )"	31:4:498:544	923264	12	True				
+ANR	923350	AssignmentExpression	"dbi = bdrv_dirty_iter_new ( job -> sync_bitmap , 0 )"		923264	0		=			
+ANR	923351	Identifier	dbi		923264	0					
+ANR	923352	CallExpression	"bdrv_dirty_iter_new ( job -> sync_bitmap , 0 )"		923264	1					
+ANR	923353	Callee	bdrv_dirty_iter_new		923264	0					
+ANR	923354	Identifier	bdrv_dirty_iter_new		923264	0					
+ANR	923355	ArgumentList	job -> sync_bitmap		923264	1					
+ANR	923356	Argument	job -> sync_bitmap		923264	0					
+ANR	923357	PtrMemberAccess	job -> sync_bitmap		923264	0					
+ANR	923358	Identifier	job		923264	0					
+ANR	923359	Identifier	sync_bitmap		923264	1					
+ANR	923360	Argument	0		923264	1					
+ANR	923361	PrimaryExpression	0		923264	0					
+ANR	923362	WhileStatement	while ( ( sector = bdrv_dirty_iter_next ( dbi ) ) != - 1 )		923264	13					
+ANR	923363	Condition	( sector = bdrv_dirty_iter_next ( dbi ) ) != - 1	37:11:601:642	923264	0	True				
+ANR	923364	EqualityExpression	( sector = bdrv_dirty_iter_next ( dbi ) ) != - 1		923264	0		!=			
+ANR	923365	AssignmentExpression	sector = bdrv_dirty_iter_next ( dbi )		923264	0		=			
+ANR	923366	Identifier	sector		923264	0					
+ANR	923367	CallExpression	bdrv_dirty_iter_next ( dbi )		923264	1					
+ANR	923368	Callee	bdrv_dirty_iter_next		923264	0					
+ANR	923369	Identifier	bdrv_dirty_iter_next		923264	0					
+ANR	923370	ArgumentList	dbi		923264	1					
+ANR	923371	Argument	dbi		923264	0					
+ANR	923372	Identifier	dbi		923264	0					
+ANR	923373	UnaryOperationExpression	- 1		923264	1					
+ANR	923374	UnaryOperator	-		923264	0					
+ANR	923375	PrimaryExpression	1		923264	1					
+ANR	923376	CompoundStatement		35:55:575:575	923264	1					
+ANR	923377	ExpressionStatement	cluster = sector / sectors_per_cluster	39:8:656:694	923264	0	True				
+ANR	923378	AssignmentExpression	cluster = sector / sectors_per_cluster		923264	0		=			
+ANR	923379	Identifier	cluster		923264	0					
+ANR	923380	MultiplicativeExpression	sector / sectors_per_cluster		923264	1		/			
+ANR	923381	Identifier	sector		923264	0					
+ANR	923382	Identifier	sectors_per_cluster		923264	1					
+ANR	923383	IfStatement	if ( cluster != last_cluster + 1 )		923264	1					
+ANR	923384	Condition	cluster != last_cluster + 1	45:12:776:802	923264	0	True				
+ANR	923385	EqualityExpression	cluster != last_cluster + 1		923264	0		!=			
+ANR	923386	Identifier	cluster		923264	0					
+ANR	923387	AdditiveExpression	last_cluster + 1		923264	1		+			
+ANR	923388	Identifier	last_cluster		923264	0					
+ANR	923389	PrimaryExpression	1		923264	1					
+ANR	923390	CompoundStatement		43:41:735:735	923264	1					
+ANR	923391	ExpressionStatement	job -> common . offset += ( ( cluster - last_cluster - 1 ) * job -> cluster_size )	47:12:820:928	923264	0	True				
+ANR	923392	AssignmentExpression	job -> common . offset += ( ( cluster - last_cluster - 1 ) * job -> cluster_size )		923264	0		+=			
+ANR	923393	MemberAccess	job -> common . offset		923264	0					
+ANR	923394	PtrMemberAccess	job -> common		923264	0					
+ANR	923395	Identifier	job		923264	0					
+ANR	923396	Identifier	common		923264	1					
+ANR	923397	Identifier	offset		923264	1					
+ANR	923398	MultiplicativeExpression	( cluster - last_cluster - 1 ) * job -> cluster_size		923264	1		*			
+ANR	923399	AdditiveExpression	cluster - last_cluster - 1		923264	0		-			
+ANR	923400	Identifier	cluster		923264	0					
+ANR	923401	AdditiveExpression	last_cluster - 1		923264	1		-			
+ANR	923402	Identifier	last_cluster		923264	0					
+ANR	923403	PrimaryExpression	1		923264	1					
+ANR	923404	PtrMemberAccess	job -> cluster_size		923264	1					
+ANR	923405	Identifier	job		923264	0					
+ANR	923406	Identifier	cluster_size		923264	1					
+ANR	923407	ForStatement	for ( end = cluster + clusters_per_iter ; cluster < end ; cluster ++ )		923264	2					
+ANR	923408	ForInit	end = cluster + clusters_per_iter ;	55:13:957:990	923264	0	True				
+ANR	923409	AssignmentExpression	end = cluster + clusters_per_iter		923264	0		=			
+ANR	923410	Identifier	end		923264	0					
+ANR	923411	AdditiveExpression	cluster + clusters_per_iter		923264	1		+			
+ANR	923412	Identifier	cluster		923264	0					
+ANR	923413	Identifier	clusters_per_iter		923264	1					
+ANR	923414	Condition	cluster < end	55:48:992:1004	923264	1	True				
+ANR	923415	RelationalExpression	cluster < end		923264	0		<			
+ANR	923416	Identifier	cluster		923264	0					
+ANR	923417	Identifier	end		923264	1					
+ANR	923418	PostIncDecOperationExpression	cluster ++	55:63:1007:1015	923264	2	True				
+ANR	923419	Identifier	cluster		923264	0					
+ANR	923420	IncDec	++		923264	1					
+ANR	923421	CompoundStatement		53:74:948:948	923264	3					
+ANR	923422	DoStatement	do		923264	0					
+ANR	923423	CompoundStatement		55:15:966:966	923264	0					
+ANR	923424	IfStatement	if ( yield_and_check ( job ) )		923264	0					
+ANR	923425	Condition	yield_and_check ( job )	59:20:1059:1078	923264	0	True				
+ANR	923426	CallExpression	yield_and_check ( job )		923264	0					
+ANR	923427	Callee	yield_and_check		923264	0					
+ANR	923428	Identifier	yield_and_check		923264	0					
+ANR	923429	ArgumentList	job		923264	1					
+ANR	923430	Argument	job		923264	0					
+ANR	923431	Identifier	job		923264	0					
+ANR	923432	CompoundStatement		57:42:1011:1011	923264	1					
+ANR	923433	GotoStatement	goto out ;	61:20:1104:1112	923264	0	True				
+ANR	923434	Identifier	out		923264	0					
+ANR	923435	ExpressionStatement	"ret = backup_do_cow ( job , cluster * job -> cluster_size , job -> cluster_size , & error_is_read , false )"	65:16:1150:1319	923264	1	True				
+ANR	923436	AssignmentExpression	"ret = backup_do_cow ( job , cluster * job -> cluster_size , job -> cluster_size , & error_is_read , false )"		923264	0		=			
+ANR	923437	Identifier	ret		923264	0					
+ANR	923438	CallExpression	"backup_do_cow ( job , cluster * job -> cluster_size , job -> cluster_size , & error_is_read , false )"		923264	1					
+ANR	923439	Callee	backup_do_cow		923264	0					
+ANR	923440	Identifier	backup_do_cow		923264	0					
+ANR	923441	ArgumentList	job		923264	1					
+ANR	923442	Argument	job		923264	0					
+ANR	923443	Identifier	job		923264	0					
+ANR	923444	Argument	cluster * job -> cluster_size		923264	1					
+ANR	923445	MultiplicativeExpression	cluster * job -> cluster_size		923264	0		*			
+ANR	923446	Identifier	cluster		923264	0					
+ANR	923447	PtrMemberAccess	job -> cluster_size		923264	1					
+ANR	923448	Identifier	job		923264	0					
+ANR	923449	Identifier	cluster_size		923264	1					
+ANR	923450	Argument	job -> cluster_size		923264	2					
+ANR	923451	PtrMemberAccess	job -> cluster_size		923264	0					
+ANR	923452	Identifier	job		923264	0					
+ANR	923453	Identifier	cluster_size		923264	1					
+ANR	923454	Argument	& error_is_read		923264	3					
+ANR	923455	UnaryOperationExpression	& error_is_read		923264	0					
+ANR	923456	UnaryOperator	&		923264	0					
+ANR	923457	Identifier	error_is_read		923264	1					
+ANR	923458	Argument	false		923264	4					
+ANR	923459	Identifier	false		923264	0					
+ANR	923460	IfStatement	"if ( ( ret < 0 ) && backup_error_action ( job , error_is_read , - ret ) == BLOCK_ERROR_ACTION_REPORT )"		923264	2					
+ANR	923461	Condition	"( ret < 0 ) && backup_error_action ( job , error_is_read , - ret ) == BLOCK_ERROR_ACTION_REPORT"	71:20:1342:1470	923264	0	True				
+ANR	923462	AndExpression	"( ret < 0 ) && backup_error_action ( job , error_is_read , - ret ) == BLOCK_ERROR_ACTION_REPORT"		923264	0		&&			
+ANR	923463	RelationalExpression	ret < 0		923264	0		<			
+ANR	923464	Identifier	ret		923264	0					
+ANR	923465	PrimaryExpression	0		923264	1					
+ANR	923466	EqualityExpression	"backup_error_action ( job , error_is_read , - ret ) == BLOCK_ERROR_ACTION_REPORT"		923264	1		==			
+ANR	923467	CallExpression	"backup_error_action ( job , error_is_read , - ret )"		923264	0					
+ANR	923468	Callee	backup_error_action		923264	0					
+ANR	923469	Identifier	backup_error_action		923264	0					
+ANR	923470	ArgumentList	job		923264	1					
+ANR	923471	Argument	job		923264	0					
+ANR	923472	Identifier	job		923264	0					
+ANR	923473	Argument	error_is_read		923264	1					
+ANR	923474	Identifier	error_is_read		923264	0					
+ANR	923475	Argument	- ret		923264	2					
+ANR	923476	UnaryOperationExpression	- ret		923264	0					
+ANR	923477	UnaryOperator	-		923264	0					
+ANR	923478	Identifier	ret		923264	1					
+ANR	923479	Identifier	BLOCK_ERROR_ACTION_REPORT		923264	1					
+ANR	923480	CompoundStatement		73:47:1403:1403	923264	1					
+ANR	923481	GotoStatement	goto out ;	77:20:1496:1504	923264	0	True				
+ANR	923482	Identifier	out		923264	0					
+ANR	923483	Condition	ret < 0	81:21:1547:1553	923264	1	True				
+ANR	923484	RelationalExpression	ret < 0		923264	0		<			
+ANR	923485	Identifier	ret		923264	0					
+ANR	923486	PrimaryExpression	0		923264	1					
+ANR	923487	IfStatement	if ( granularity < job -> cluster_size )		923264	3					
+ANR	923488	Condition	granularity < job -> cluster_size	91:12:1737:1767	923264	0	True				
+ANR	923489	RelationalExpression	granularity < job -> cluster_size		923264	0		<			
+ANR	923490	Identifier	granularity		923264	0					
+ANR	923491	PtrMemberAccess	job -> cluster_size		923264	1					
+ANR	923492	Identifier	job		923264	0					
+ANR	923493	Identifier	cluster_size		923264	1					
+ANR	923494	CompoundStatement		89:45:1700:1700	923264	1					
+ANR	923495	ExpressionStatement	"bdrv_set_dirty_iter ( dbi , cluster * sectors_per_cluster )"	93:12:1785:1840	923264	0	True				
+ANR	923496	CallExpression	"bdrv_set_dirty_iter ( dbi , cluster * sectors_per_cluster )"		923264	0					
+ANR	923497	Callee	bdrv_set_dirty_iter		923264	0					
+ANR	923498	Identifier	bdrv_set_dirty_iter		923264	0					
+ANR	923499	ArgumentList	dbi		923264	1					
+ANR	923500	Argument	dbi		923264	0					
+ANR	923501	Identifier	dbi		923264	0					
+ANR	923502	Argument	cluster * sectors_per_cluster		923264	1					
+ANR	923503	MultiplicativeExpression	cluster * sectors_per_cluster		923264	0		*			
+ANR	923504	Identifier	cluster		923264	0					
+ANR	923505	Identifier	sectors_per_cluster		923264	1					
+ANR	923506	ExpressionStatement	last_cluster = cluster - 1	99:8:1864:1890	923264	4	True				
+ANR	923507	AssignmentExpression	last_cluster = cluster - 1		923264	0		=			
+ANR	923508	Identifier	last_cluster		923264	0					
+ANR	923509	AdditiveExpression	cluster - 1		923264	1		-			
+ANR	923510	Identifier	cluster		923264	0					
+ANR	923511	PrimaryExpression	1		923264	1					
+ANR	923512	ExpressionStatement	"end = DIV_ROUND_UP ( job -> common . len , job -> cluster_size )"	107:4:1965:2019	923264	14	True				
+ANR	923513	AssignmentExpression	"end = DIV_ROUND_UP ( job -> common . len , job -> cluster_size )"		923264	0		=			
+ANR	923514	Identifier	end		923264	0					
+ANR	923515	CallExpression	"DIV_ROUND_UP ( job -> common . len , job -> cluster_size )"		923264	1					
+ANR	923516	Callee	DIV_ROUND_UP		923264	0					
+ANR	923517	Identifier	DIV_ROUND_UP		923264	0					
+ANR	923518	ArgumentList	job -> common . len		923264	1					
+ANR	923519	Argument	job -> common . len		923264	0					
+ANR	923520	MemberAccess	job -> common . len		923264	0					
+ANR	923521	PtrMemberAccess	job -> common		923264	0					
+ANR	923522	Identifier	job		923264	0					
+ANR	923523	Identifier	common		923264	1					
+ANR	923524	Identifier	len		923264	1					
+ANR	923525	Argument	job -> cluster_size		923264	1					
+ANR	923526	PtrMemberAccess	job -> cluster_size		923264	0					
+ANR	923527	Identifier	job		923264	0					
+ANR	923528	Identifier	cluster_size		923264	1					
+ANR	923529	IfStatement	if ( last_cluster + 1 < end )		923264	15					
+ANR	923530	Condition	last_cluster + 1 < end	109:8:2030:2051	923264	0	True				
+ANR	923531	RelationalExpression	last_cluster + 1 < end		923264	0		<			
+ANR	923532	AdditiveExpression	last_cluster + 1		923264	0		+			
+ANR	923533	Identifier	last_cluster		923264	0					
+ANR	923534	PrimaryExpression	1		923264	1					
+ANR	923535	Identifier	end		923264	1					
+ANR	923536	CompoundStatement		107:32:1984:1984	923264	1					
+ANR	923537	ExpressionStatement	job -> common . offset += ( ( end - last_cluster - 1 ) * job -> cluster_size )	111:8:2065:2133	923264	0	True				
+ANR	923538	AssignmentExpression	job -> common . offset += ( ( end - last_cluster - 1 ) * job -> cluster_size )		923264	0		+=			
+ANR	923539	MemberAccess	job -> common . offset		923264	0					
+ANR	923540	PtrMemberAccess	job -> common		923264	0					
+ANR	923541	Identifier	job		923264	0					
+ANR	923542	Identifier	common		923264	1					
+ANR	923543	Identifier	offset		923264	1					
+ANR	923544	MultiplicativeExpression	( end - last_cluster - 1 ) * job -> cluster_size		923264	1		*			
+ANR	923545	AdditiveExpression	end - last_cluster - 1		923264	0		-			
+ANR	923546	Identifier	end		923264	0					
+ANR	923547	AdditiveExpression	last_cluster - 1		923264	1		-			
+ANR	923548	Identifier	last_cluster		923264	0					
+ANR	923549	PrimaryExpression	1		923264	1					
+ANR	923550	PtrMemberAccess	job -> cluster_size		923264	1					
+ANR	923551	Identifier	job		923264	0					
+ANR	923552	Identifier	cluster_size		923264	1					
+ANR	923553	Label	out :	117:0:2145:2148	923264	16	True				
+ANR	923554	Identifier	out		923264	0					
+ANR	923555	ExpressionStatement	bdrv_dirty_iter_free ( dbi )	119:4:2155:2180	923264	17	True				
+ANR	923556	CallExpression	bdrv_dirty_iter_free ( dbi )		923264	0					
+ANR	923557	Callee	bdrv_dirty_iter_free		923264	0					
+ANR	923558	Identifier	bdrv_dirty_iter_free		923264	0					
+ANR	923559	ArgumentList	dbi		923264	1					
+ANR	923560	Argument	dbi		923264	0					
+ANR	923561	Identifier	dbi		923264	0					
+ANR	923562	ReturnStatement	return ret ;	121:4:2187:2197	923264	18	True				
+ANR	923563	Identifier	ret		923264	0					
+ANR	923564	ReturnType	static int coroutine_fn		923264	1					
+ANR	923565	Identifier	backup_run_incremental		923264	2					
+ANR	923566	ParameterList	BackupBlockJob * job		923264	3					
+ANR	923567	Parameter	BackupBlockJob * job	1:47:47:65	923264	0	True				
+ANR	923568	ParameterType	BackupBlockJob *		923264	0					
+ANR	923569	Identifier	job		923264	1					
+ANR	923570	CFGEntryNode	ENTRY		923264		True				
+ANR	923571	CFGExitNode	EXIT		923264		True				
+ANR	923572	Symbol	cluster		923264						
+ANR	923573	Symbol	MAX		923264						
+ANR	923574	Symbol	DIV_ROUND_UP		923264						
+ANR	923575	Symbol	job -> common . offset		923264						
+ANR	923576	Symbol	job -> common		923264						
+ANR	923577	Symbol	end		923264						
+ANR	923578	Symbol	job -> common . len		923264						
+ANR	923579	Symbol	sector		923264						
+ANR	923580	Symbol	job -> cluster_size		923264						
+ANR	923581	Symbol	ret		923264						
+ANR	923582	Symbol	clusters_per_iter		923264						
+ANR	923583	Symbol	backup_error_action		923264						
+ANR	923584	Symbol	bdrv_dirty_bitmap_granularity		923264						
+ANR	923585	Symbol	* job		923264						
+ANR	923586	Symbol	bdrv_dirty_iter_new		923264						
+ANR	923587	Symbol	false		923264						
+ANR	923588	Symbol	dbi		923264						
+ANR	923589	Symbol	yield_and_check		923264						
+ANR	923590	Symbol	cluster_size_sectors		923264						
+ANR	923591	Symbol	job -> sync_bitmap		923264						
+ANR	923592	Symbol	error_is_read		923264						
+ANR	923593	Symbol	last_cluster		923264						
+ANR	923594	Symbol	granularity		923264						
+ANR	923595	Symbol	& error_is_read		923264						
+ANR	923596	Symbol	backup_do_cow		923264						
+ANR	923597	Symbol	sectors_per_cluster		923264						
+ANR	923598	Symbol	job		923264						
+ANR	923599	Symbol	BLOCK_ERROR_ACTION_REPORT		923264						
+ANR	923600	Symbol	bdrv_dirty_iter_next		923264						

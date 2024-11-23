@@ -1,0 +1,150 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	3941835	File	/home/p4ultr4n/workplace/ReVeal/raw_code/flash_sync_area_0.c								
+ANR	3941836	Function	flash_sync_area	1:0:0:618							
+ANR	3941837	FunctionDef	"flash_sync_area (Flash * s , int64_t off , int64_t len)"		3941836	0					
+ANR	3941838	CompoundStatement		3:0:72:618	3941836	0					
+ANR	3941839	IdentifierDeclStatement	"int64_t start , end , nb_sectors ;"	5:4:79:109	3941836	0	True				
+ANR	3941840	IdentifierDecl	start		3941836	0					
+ANR	3941841	IdentifierDeclType	int64_t		3941836	0					
+ANR	3941842	Identifier	start		3941836	1					
+ANR	3941843	IdentifierDecl	end		3941836	1					
+ANR	3941844	IdentifierDeclType	int64_t		3941836	0					
+ANR	3941845	Identifier	end		3941836	1					
+ANR	3941846	IdentifierDecl	nb_sectors		3941836	2					
+ANR	3941847	IdentifierDeclType	int64_t		3941836	0					
+ANR	3941848	Identifier	nb_sectors		3941836	1					
+ANR	3941849	IdentifierDeclStatement	QEMUIOVector iov ;	7:4:116:132	3941836	1	True				
+ANR	3941850	IdentifierDecl	iov		3941836	0					
+ANR	3941851	IdentifierDeclType	QEMUIOVector		3941836	0					
+ANR	3941852	Identifier	iov		3941836	1					
+ANR	3941853	IfStatement	if ( ! s -> bdrv || bdrv_is_read_only ( s -> bdrv ) )		3941836	2					
+ANR	3941854	Condition	! s -> bdrv || bdrv_is_read_only ( s -> bdrv )	11:8:145:182	3941836	0	True				
+ANR	3941855	OrExpression	! s -> bdrv || bdrv_is_read_only ( s -> bdrv )		3941836	0		||			
+ANR	3941856	UnaryOperationExpression	! s -> bdrv		3941836	0					
+ANR	3941857	UnaryOperator	!		3941836	0					
+ANR	3941858	PtrMemberAccess	s -> bdrv		3941836	1					
+ANR	3941859	Identifier	s		3941836	0					
+ANR	3941860	Identifier	bdrv		3941836	1					
+ANR	3941861	CallExpression	bdrv_is_read_only ( s -> bdrv )		3941836	1					
+ANR	3941862	Callee	bdrv_is_read_only		3941836	0					
+ANR	3941863	Identifier	bdrv_is_read_only		3941836	0					
+ANR	3941864	ArgumentList	s -> bdrv		3941836	1					
+ANR	3941865	Argument	s -> bdrv		3941836	0					
+ANR	3941866	PtrMemberAccess	s -> bdrv		3941836	0					
+ANR	3941867	Identifier	s		3941836	0					
+ANR	3941868	Identifier	bdrv		3941836	1					
+ANR	3941869	CompoundStatement		9:48:112:112	3941836	1					
+ANR	3941870	ReturnStatement	return ;	13:8:196:202	3941836	0	True				
+ANR	3941871	ExpressionStatement	assert ( ! ( len % BDRV_SECTOR_SIZE ) )	19:4:218:251	3941836	3	True				
+ANR	3941872	CallExpression	assert ( ! ( len % BDRV_SECTOR_SIZE ) )		3941836	0					
+ANR	3941873	Callee	assert		3941836	0					
+ANR	3941874	Identifier	assert		3941836	0					
+ANR	3941875	ArgumentList	! ( len % BDRV_SECTOR_SIZE )		3941836	1					
+ANR	3941876	Argument	! ( len % BDRV_SECTOR_SIZE )		3941836	0					
+ANR	3941877	UnaryOperationExpression	! ( len % BDRV_SECTOR_SIZE )		3941836	0					
+ANR	3941878	UnaryOperator	!		3941836	0					
+ANR	3941879	MultiplicativeExpression	len % BDRV_SECTOR_SIZE		3941836	1		%			
+ANR	3941880	Identifier	len		3941836	0					
+ANR	3941881	Identifier	BDRV_SECTOR_SIZE		3941836	1					
+ANR	3941882	ExpressionStatement	start = off / BDRV_SECTOR_SIZE	21:4:258:288	3941836	4	True				
+ANR	3941883	AssignmentExpression	start = off / BDRV_SECTOR_SIZE		3941836	0		=			
+ANR	3941884	Identifier	start		3941836	0					
+ANR	3941885	MultiplicativeExpression	off / BDRV_SECTOR_SIZE		3941836	1		/			
+ANR	3941886	Identifier	off		3941836	0					
+ANR	3941887	Identifier	BDRV_SECTOR_SIZE		3941836	1					
+ANR	3941888	ExpressionStatement	end = ( off + len ) / BDRV_SECTOR_SIZE	23:4:295:331	3941836	5	True				
+ANR	3941889	AssignmentExpression	end = ( off + len ) / BDRV_SECTOR_SIZE		3941836	0		=			
+ANR	3941890	Identifier	end		3941836	0					
+ANR	3941891	MultiplicativeExpression	( off + len ) / BDRV_SECTOR_SIZE		3941836	1		/			
+ANR	3941892	AdditiveExpression	off + len		3941836	0		+			
+ANR	3941893	Identifier	off		3941836	0					
+ANR	3941894	Identifier	len		3941836	1					
+ANR	3941895	Identifier	BDRV_SECTOR_SIZE		3941836	1					
+ANR	3941896	ExpressionStatement	nb_sectors = end - start	25:4:338:362	3941836	6	True				
+ANR	3941897	AssignmentExpression	nb_sectors = end - start		3941836	0		=			
+ANR	3941898	Identifier	nb_sectors		3941836	0					
+ANR	3941899	AdditiveExpression	end - start		3941836	1		-			
+ANR	3941900	Identifier	end		3941836	0					
+ANR	3941901	Identifier	start		3941836	1					
+ANR	3941902	ExpressionStatement	"qemu_iovec_init ( & iov , 1 )"	27:4:369:393	3941836	7	True				
+ANR	3941903	CallExpression	"qemu_iovec_init ( & iov , 1 )"		3941836	0					
+ANR	3941904	Callee	qemu_iovec_init		3941836	0					
+ANR	3941905	Identifier	qemu_iovec_init		3941836	0					
+ANR	3941906	ArgumentList	& iov		3941836	1					
+ANR	3941907	Argument	& iov		3941836	0					
+ANR	3941908	UnaryOperationExpression	& iov		3941836	0					
+ANR	3941909	UnaryOperator	&		3941836	0					
+ANR	3941910	Identifier	iov		3941836	1					
+ANR	3941911	Argument	1		3941836	1					
+ANR	3941912	PrimaryExpression	1		3941836	0					
+ANR	3941913	ExpressionStatement	"qemu_iovec_add ( & iov , s -> storage + ( start * BDRV_SECTOR_SIZE ) , nb_sectors * BDRV_SECTOR_SIZE )"	29:4:400:533	3941836	8	True				
+ANR	3941914	CallExpression	"qemu_iovec_add ( & iov , s -> storage + ( start * BDRV_SECTOR_SIZE ) , nb_sectors * BDRV_SECTOR_SIZE )"		3941836	0					
+ANR	3941915	Callee	qemu_iovec_add		3941836	0					
+ANR	3941916	Identifier	qemu_iovec_add		3941836	0					
+ANR	3941917	ArgumentList	& iov		3941836	1					
+ANR	3941918	Argument	& iov		3941836	0					
+ANR	3941919	UnaryOperationExpression	& iov		3941836	0					
+ANR	3941920	UnaryOperator	&		3941836	0					
+ANR	3941921	Identifier	iov		3941836	1					
+ANR	3941922	Argument	s -> storage + ( start * BDRV_SECTOR_SIZE )		3941836	1					
+ANR	3941923	AdditiveExpression	s -> storage + ( start * BDRV_SECTOR_SIZE )		3941836	0		+			
+ANR	3941924	PtrMemberAccess	s -> storage		3941836	0					
+ANR	3941925	Identifier	s		3941836	0					
+ANR	3941926	Identifier	storage		3941836	1					
+ANR	3941927	MultiplicativeExpression	start * BDRV_SECTOR_SIZE		3941836	1		*			
+ANR	3941928	Identifier	start		3941836	0					
+ANR	3941929	Identifier	BDRV_SECTOR_SIZE		3941836	1					
+ANR	3941930	Argument	nb_sectors * BDRV_SECTOR_SIZE		3941836	2					
+ANR	3941931	MultiplicativeExpression	nb_sectors * BDRV_SECTOR_SIZE		3941836	0		*			
+ANR	3941932	Identifier	nb_sectors		3941836	0					
+ANR	3941933	Identifier	BDRV_SECTOR_SIZE		3941836	1					
+ANR	3941934	ExpressionStatement	"bdrv_aio_writev ( s -> bdrv , start , & iov , nb_sectors , bdrv_sync_complete , NULL )"	33:4:540:615	3941836	9	True				
+ANR	3941935	CallExpression	"bdrv_aio_writev ( s -> bdrv , start , & iov , nb_sectors , bdrv_sync_complete , NULL )"		3941836	0					
+ANR	3941936	Callee	bdrv_aio_writev		3941836	0					
+ANR	3941937	Identifier	bdrv_aio_writev		3941836	0					
+ANR	3941938	ArgumentList	s -> bdrv		3941836	1					
+ANR	3941939	Argument	s -> bdrv		3941836	0					
+ANR	3941940	PtrMemberAccess	s -> bdrv		3941836	0					
+ANR	3941941	Identifier	s		3941836	0					
+ANR	3941942	Identifier	bdrv		3941836	1					
+ANR	3941943	Argument	start		3941836	1					
+ANR	3941944	Identifier	start		3941836	0					
+ANR	3941945	Argument	& iov		3941836	2					
+ANR	3941946	UnaryOperationExpression	& iov		3941836	0					
+ANR	3941947	UnaryOperator	&		3941836	0					
+ANR	3941948	Identifier	iov		3941836	1					
+ANR	3941949	Argument	nb_sectors		3941836	3					
+ANR	3941950	Identifier	nb_sectors		3941836	0					
+ANR	3941951	Argument	bdrv_sync_complete		3941836	4					
+ANR	3941952	Identifier	bdrv_sync_complete		3941836	0					
+ANR	3941953	Argument	NULL		3941836	5					
+ANR	3941954	Identifier	NULL		3941836	0					
+ANR	3941955	ReturnType	static inline void		3941836	1					
+ANR	3941956	Identifier	flash_sync_area		3941836	2					
+ANR	3941957	ParameterList	"Flash * s , int64_t off , int64_t len"		3941836	3					
+ANR	3941958	Parameter	Flash * s	1:35:35:42	3941836	0	True				
+ANR	3941959	ParameterType	Flash *		3941836	0					
+ANR	3941960	Identifier	s		3941836	1					
+ANR	3941961	Parameter	int64_t off	1:45:45:55	3941836	1	True				
+ANR	3941962	ParameterType	int64_t		3941836	0					
+ANR	3941963	Identifier	off		3941836	1					
+ANR	3941964	Parameter	int64_t len	1:58:58:68	3941836	2	True				
+ANR	3941965	ParameterType	int64_t		3941836	0					
+ANR	3941966	Identifier	len		3941836	1					
+ANR	3941967	CFGEntryNode	ENTRY		3941836		True				
+ANR	3941968	CFGExitNode	EXIT		3941836		True				
+ANR	3941969	Symbol	nb_sectors		3941836						
+ANR	3941970	Symbol	NULL		3941836						
+ANR	3941971	Symbol	bdrv_sync_complete		3941836						
+ANR	3941972	Symbol	start		3941836						
+ANR	3941973	Symbol	s -> storage		3941836						
+ANR	3941974	Symbol	off		3941836						
+ANR	3941975	Symbol	iov		3941836						
+ANR	3941976	Symbol	s -> bdrv		3941836						
+ANR	3941977	Symbol	& iov		3941836						
+ANR	3941978	Symbol	bdrv_is_read_only		3941836						
+ANR	3941979	Symbol	s		3941836						
+ANR	3941980	Symbol	len		3941836						
+ANR	3941981	Symbol	BDRV_SECTOR_SIZE		3941836						
+ANR	3941982	Symbol	end		3941836						
+ANR	3941983	Symbol	* s		3941836						

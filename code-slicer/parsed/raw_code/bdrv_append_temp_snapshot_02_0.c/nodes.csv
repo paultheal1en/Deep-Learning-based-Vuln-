@@ -1,0 +1,347 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	945101	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_append_temp_snapshot_02_0.c								
+ANR	945102	Function	bdrv_append_temp_snapshot	1:0:0:2252							
+ANR	945103	FunctionDef	"bdrv_append_temp_snapshot (BlockDriverState * bs , Error * * errp)"		945102	0					
+ANR	945104	CompoundStatement		3:0:68:2252	945102	0					
+ANR	945105	IdentifierDeclStatement	char tmp_filename [ PATH_MAX + 1 ] ;	7:4:150:181	945102	0	True				
+ANR	945106	IdentifierDecl	tmp_filename [ PATH_MAX + 1 ]		945102	0					
+ANR	945107	IdentifierDeclType	char [ PATH_MAX + 1 ]		945102	0					
+ANR	945108	Identifier	tmp_filename		945102	1					
+ANR	945109	AdditiveExpression	PATH_MAX + 1		945102	2		+			
+ANR	945110	Identifier	PATH_MAX		945102	0					
+ANR	945111	PrimaryExpression	1		945102	1					
+ANR	945112	IdentifierDeclStatement	int64_t total_size ;	11:4:190:208	945102	1	True				
+ANR	945113	IdentifierDecl	total_size		945102	0					
+ANR	945114	IdentifierDeclType	int64_t		945102	0					
+ANR	945115	Identifier	total_size		945102	1					
+ANR	945116	IdentifierDeclStatement	BlockDriver * bdrv_qcow2 ;	13:4:215:238	945102	2	True				
+ANR	945117	IdentifierDecl	* bdrv_qcow2		945102	0					
+ANR	945118	IdentifierDeclType	BlockDriver *		945102	0					
+ANR	945119	Identifier	bdrv_qcow2		945102	1					
+ANR	945120	IdentifierDeclStatement	QEMUOptionParameter * create_options ;	15:4:245:280	945102	3	True				
+ANR	945121	IdentifierDecl	* create_options		945102	0					
+ANR	945122	IdentifierDeclType	QEMUOptionParameter *		945102	0					
+ANR	945123	Identifier	create_options		945102	1					
+ANR	945124	IdentifierDeclStatement	QDict * snapshot_options ;	17:4:287:310	945102	4	True				
+ANR	945125	IdentifierDecl	* snapshot_options		945102	0					
+ANR	945126	IdentifierDeclType	QDict *		945102	0					
+ANR	945127	Identifier	snapshot_options		945102	1					
+ANR	945128	IdentifierDeclStatement	BlockDriverState * bs_snapshot ;	19:4:317:346	945102	5	True				
+ANR	945129	IdentifierDecl	* bs_snapshot		945102	0					
+ANR	945130	IdentifierDeclType	BlockDriverState *		945102	0					
+ANR	945131	Identifier	bs_snapshot		945102	1					
+ANR	945132	IdentifierDeclStatement	Error * local_err ;	21:4:353:369	945102	6	True				
+ANR	945133	IdentifierDecl	* local_err		945102	0					
+ANR	945134	IdentifierDeclType	Error *		945102	0					
+ANR	945135	Identifier	local_err		945102	1					
+ANR	945136	IdentifierDeclStatement	int ret ;	23:4:376:383	945102	7	True				
+ANR	945137	IdentifierDecl	ret		945102	0					
+ANR	945138	IdentifierDeclType	int		945102	0					
+ANR	945139	Identifier	ret		945102	1					
+ANR	945140	ExpressionStatement	total_size = bdrv_getlength ( bs )	35:4:560:591	945102	8	True				
+ANR	945141	AssignmentExpression	total_size = bdrv_getlength ( bs )		945102	0		=			
+ANR	945142	Identifier	total_size		945102	0					
+ANR	945143	CallExpression	bdrv_getlength ( bs )		945102	1					
+ANR	945144	Callee	bdrv_getlength		945102	0					
+ANR	945145	Identifier	bdrv_getlength		945102	0					
+ANR	945146	ArgumentList	bs		945102	1					
+ANR	945147	Argument	bs		945102	0					
+ANR	945148	Identifier	bs		945102	0					
+ANR	945149	IfStatement	if ( total_size < 0 )		945102	9					
+ANR	945150	Condition	total_size < 0	37:8:602:615	945102	0	True				
+ANR	945151	RelationalExpression	total_size < 0		945102	0		<			
+ANR	945152	Identifier	total_size		945102	0					
+ANR	945153	PrimaryExpression	0		945102	1					
+ANR	945154	CompoundStatement		35:24:549:549	945102	1					
+ANR	945155	ExpressionStatement	"error_setg_errno ( errp , - total_size , ""Could not get image size"" )"	39:8:629:692	945102	0	True				
+ANR	945156	CallExpression	"error_setg_errno ( errp , - total_size , ""Could not get image size"" )"		945102	0					
+ANR	945157	Callee	error_setg_errno		945102	0					
+ANR	945158	Identifier	error_setg_errno		945102	0					
+ANR	945159	ArgumentList	errp		945102	1					
+ANR	945160	Argument	errp		945102	0					
+ANR	945161	Identifier	errp		945102	0					
+ANR	945162	Argument	- total_size		945102	1					
+ANR	945163	UnaryOperationExpression	- total_size		945102	0					
+ANR	945164	UnaryOperator	-		945102	0					
+ANR	945165	Identifier	total_size		945102	1					
+ANR	945166	Argument	"""Could not get image size"""		945102	2					
+ANR	945167	PrimaryExpression	"""Could not get image size"""		945102	0					
+ANR	945168	ReturnStatement	return ;	41:8:703:709	945102	1	True				
+ANR	945169	ExpressionStatement	total_size &= BDRV_SECTOR_MASK	45:4:723:753	945102	10	True				
+ANR	945170	AssignmentExpression	total_size &= BDRV_SECTOR_MASK		945102	0		&=			
+ANR	945171	Identifier	total_size		945102	0					
+ANR	945172	Identifier	BDRV_SECTOR_MASK		945102	1					
+ANR	945173	ExpressionStatement	"ret = get_tmp_filename ( tmp_filename , sizeof ( tmp_filename ) )"	51:4:800:858	945102	11	True				
+ANR	945174	AssignmentExpression	"ret = get_tmp_filename ( tmp_filename , sizeof ( tmp_filename ) )"		945102	0		=			
+ANR	945175	Identifier	ret		945102	0					
+ANR	945176	CallExpression	"get_tmp_filename ( tmp_filename , sizeof ( tmp_filename ) )"		945102	1					
+ANR	945177	Callee	get_tmp_filename		945102	0					
+ANR	945178	Identifier	get_tmp_filename		945102	0					
+ANR	945179	ArgumentList	tmp_filename		945102	1					
+ANR	945180	Argument	tmp_filename		945102	0					
+ANR	945181	Identifier	tmp_filename		945102	0					
+ANR	945182	Argument	sizeof ( tmp_filename )		945102	1					
+ANR	945183	SizeofExpression	sizeof ( tmp_filename )		945102	0					
+ANR	945184	Sizeof	sizeof		945102	0					
+ANR	945185	SizeofOperand	tmp_filename		945102	1					
+ANR	945186	IfStatement	if ( ret < 0 )		945102	12					
+ANR	945187	Condition	ret < 0	53:8:869:875	945102	0	True				
+ANR	945188	RelationalExpression	ret < 0		945102	0		<			
+ANR	945189	Identifier	ret		945102	0					
+ANR	945190	PrimaryExpression	0		945102	1					
+ANR	945191	CompoundStatement		51:17:809:809	945102	1					
+ANR	945192	ExpressionStatement	"error_setg_errno ( errp , - ret , ""Could not get temporary filename"" )"	55:8:889:953	945102	0	True				
+ANR	945193	CallExpression	"error_setg_errno ( errp , - ret , ""Could not get temporary filename"" )"		945102	0					
+ANR	945194	Callee	error_setg_errno		945102	0					
+ANR	945195	Identifier	error_setg_errno		945102	0					
+ANR	945196	ArgumentList	errp		945102	1					
+ANR	945197	Argument	errp		945102	0					
+ANR	945198	Identifier	errp		945102	0					
+ANR	945199	Argument	- ret		945102	1					
+ANR	945200	UnaryOperationExpression	- ret		945102	0					
+ANR	945201	UnaryOperator	-		945102	0					
+ANR	945202	Identifier	ret		945102	1					
+ANR	945203	Argument	"""Could not get temporary filename"""		945102	2					
+ANR	945204	PrimaryExpression	"""Could not get temporary filename"""		945102	0					
+ANR	945205	ReturnStatement	return ;	57:8:964:970	945102	1	True				
+ANR	945206	ExpressionStatement	"bdrv_qcow2 = bdrv_find_format ( ""qcow2"" )"	63:4:986:1024	945102	13	True				
+ANR	945207	AssignmentExpression	"bdrv_qcow2 = bdrv_find_format ( ""qcow2"" )"		945102	0		=			
+ANR	945208	Identifier	bdrv_qcow2		945102	0					
+ANR	945209	CallExpression	"bdrv_find_format ( ""qcow2"" )"		945102	1					
+ANR	945210	Callee	bdrv_find_format		945102	0					
+ANR	945211	Identifier	bdrv_find_format		945102	0					
+ANR	945212	ArgumentList	"""qcow2"""		945102	1					
+ANR	945213	Argument	"""qcow2"""		945102	0					
+ANR	945214	PrimaryExpression	"""qcow2"""		945102	0					
+ANR	945215	ExpressionStatement	"create_options = parse_option_parameters ( """" , bdrv_qcow2 -> create_options , NULL )"	65:4:1031:1155	945102	14	True				
+ANR	945216	AssignmentExpression	"create_options = parse_option_parameters ( """" , bdrv_qcow2 -> create_options , NULL )"		945102	0		=			
+ANR	945217	Identifier	create_options		945102	0					
+ANR	945218	CallExpression	"parse_option_parameters ( """" , bdrv_qcow2 -> create_options , NULL )"		945102	1					
+ANR	945219	Callee	parse_option_parameters		945102	0					
+ANR	945220	Identifier	parse_option_parameters		945102	0					
+ANR	945221	ArgumentList	""""""		945102	1					
+ANR	945222	Argument	""""""		945102	0					
+ANR	945223	PrimaryExpression	""""""		945102	0					
+ANR	945224	Argument	bdrv_qcow2 -> create_options		945102	1					
+ANR	945225	PtrMemberAccess	bdrv_qcow2 -> create_options		945102	0					
+ANR	945226	Identifier	bdrv_qcow2		945102	0					
+ANR	945227	Identifier	create_options		945102	1					
+ANR	945228	Argument	NULL		945102	2					
+ANR	945229	Identifier	NULL		945102	0					
+ANR	945230	ExpressionStatement	"set_option_parameter_int ( create_options , BLOCK_OPT_SIZE , total_size )"	71:4:1164:1232	945102	15	True				
+ANR	945231	CallExpression	"set_option_parameter_int ( create_options , BLOCK_OPT_SIZE , total_size )"		945102	0					
+ANR	945232	Callee	set_option_parameter_int		945102	0					
+ANR	945233	Identifier	set_option_parameter_int		945102	0					
+ANR	945234	ArgumentList	create_options		945102	1					
+ANR	945235	Argument	create_options		945102	0					
+ANR	945236	Identifier	create_options		945102	0					
+ANR	945237	Argument	BLOCK_OPT_SIZE		945102	1					
+ANR	945238	Identifier	BLOCK_OPT_SIZE		945102	0					
+ANR	945239	Argument	total_size		945102	2					
+ANR	945240	Identifier	total_size		945102	0					
+ANR	945241	ExpressionStatement	"ret = bdrv_create ( bdrv_qcow2 , tmp_filename , create_options , & local_err )"	75:4:1241:1312	945102	16	True				
+ANR	945242	AssignmentExpression	"ret = bdrv_create ( bdrv_qcow2 , tmp_filename , create_options , & local_err )"		945102	0		=			
+ANR	945243	Identifier	ret		945102	0					
+ANR	945244	CallExpression	"bdrv_create ( bdrv_qcow2 , tmp_filename , create_options , & local_err )"		945102	1					
+ANR	945245	Callee	bdrv_create		945102	0					
+ANR	945246	Identifier	bdrv_create		945102	0					
+ANR	945247	ArgumentList	bdrv_qcow2		945102	1					
+ANR	945248	Argument	bdrv_qcow2		945102	0					
+ANR	945249	Identifier	bdrv_qcow2		945102	0					
+ANR	945250	Argument	tmp_filename		945102	1					
+ANR	945251	Identifier	tmp_filename		945102	0					
+ANR	945252	Argument	create_options		945102	2					
+ANR	945253	Identifier	create_options		945102	0					
+ANR	945254	Argument	& local_err		945102	3					
+ANR	945255	UnaryOperationExpression	& local_err		945102	0					
+ANR	945256	UnaryOperator	&		945102	0					
+ANR	945257	Identifier	local_err		945102	1					
+ANR	945258	ExpressionStatement	free_option_parameters ( create_options )	77:4:1319:1357	945102	17	True				
+ANR	945259	CallExpression	free_option_parameters ( create_options )		945102	0					
+ANR	945260	Callee	free_option_parameters		945102	0					
+ANR	945261	Identifier	free_option_parameters		945102	0					
+ANR	945262	ArgumentList	create_options		945102	1					
+ANR	945263	Argument	create_options		945102	0					
+ANR	945264	Identifier	create_options		945102	0					
+ANR	945265	IfStatement	if ( ret < 0 )		945102	18					
+ANR	945266	Condition	ret < 0	79:8:1368:1374	945102	0	True				
+ANR	945267	RelationalExpression	ret < 0		945102	0		<			
+ANR	945268	Identifier	ret		945102	0					
+ANR	945269	PrimaryExpression	0		945102	1					
+ANR	945270	CompoundStatement		77:17:1308:1308	945102	1					
+ANR	945271	Statement	error_setg_errno	81:8:1388:1403	945102	0	True				
+ANR	945272	Statement	(	81:24:1404:1404	945102	1	True				
+ANR	945273	Statement	errp	81:25:1405:1408	945102	2	True				
+ANR	945274	Statement	","	81:29:1409:1409	945102	3	True				
+ANR	945275	Statement	-	81:31:1411:1411	945102	4	True				
+ANR	945276	Statement	ret	81:32:1412:1414	945102	5	True				
+ANR	945277	Statement	","	81:35:1415:1415	945102	6	True				
+ANR	945278	Statement	"""Could not create temporary overlay """	81:37:1417:1453	945102	7	True				
+ANR	945279	Statement	"""'%s': %s"""	83:25:1481:1490	945102	8	True				
+ANR	945280	Statement	","	83:35:1491:1491	945102	9	True				
+ANR	945281	Statement	tmp_filename	83:37:1493:1504	945102	10	True				
+ANR	945282	Statement	","	83:49:1505:1505	945102	11	True				
+ANR	945283	Statement	error_get_pretty	85:25:1533:1548	945102	12	True				
+ANR	945284	Statement	(	85:41:1549:1549	945102	13	True				
+ANR	945285	Statement	local_err	85:42:1550:1558	945102	14	True				
+ANR	945286	Statement	)	85:51:1559:1559	945102	15	True				
+ANR	945287	Statement	)	85:52:1560:1560	945102	16	True				
+ANR	945288	ExpressionStatement		85:53:1561:1561	945102	17	True				
+ANR	945289	ExpressionStatement	error_free ( local_err )	87:8:1572:1593	945102	18	True				
+ANR	945290	CallExpression	error_free ( local_err )		945102	0					
+ANR	945291	Callee	error_free		945102	0					
+ANR	945292	Identifier	error_free		945102	0					
+ANR	945293	ArgumentList	local_err		945102	1					
+ANR	945294	Argument	local_err		945102	0					
+ANR	945295	Identifier	local_err		945102	0					
+ANR	945296	ReturnStatement	return ;	89:8:1604:1610	945102	19	True				
+ANR	945297	ExpressionStatement	snapshot_options = qdict_new ( )	97:4:1688:1718	945102	19	True				
+ANR	945298	AssignmentExpression	snapshot_options = qdict_new ( )		945102	0		=			
+ANR	945299	Identifier	snapshot_options		945102	0					
+ANR	945300	CallExpression	qdict_new ( )		945102	1					
+ANR	945301	Callee	qdict_new		945102	0					
+ANR	945302	Identifier	qdict_new		945102	0					
+ANR	945303	ArgumentList			945102	1					
+ANR	945304	ExpressionStatement	"qdict_put ( snapshot_options , ""file.driver"" , qstring_from_str ( ""file"" ) )"	99:4:1725:1808	945102	20	True				
+ANR	945305	CallExpression	"qdict_put ( snapshot_options , ""file.driver"" , qstring_from_str ( ""file"" ) )"		945102	0					
+ANR	945306	Callee	qdict_put		945102	0					
+ANR	945307	Identifier	qdict_put		945102	0					
+ANR	945308	ArgumentList	snapshot_options		945102	1					
+ANR	945309	Argument	snapshot_options		945102	0					
+ANR	945310	Identifier	snapshot_options		945102	0					
+ANR	945311	Argument	"""file.driver"""		945102	1					
+ANR	945312	PrimaryExpression	"""file.driver"""		945102	0					
+ANR	945313	Argument	"qstring_from_str ( ""file"" )"		945102	2					
+ANR	945314	CallExpression	"qstring_from_str ( ""file"" )"		945102	0					
+ANR	945315	Callee	qstring_from_str		945102	0					
+ANR	945316	Identifier	qstring_from_str		945102	0					
+ANR	945317	ArgumentList	"""file"""		945102	1					
+ANR	945318	Argument	"""file"""		945102	0					
+ANR	945319	PrimaryExpression	"""file"""		945102	0					
+ANR	945320	ExpressionStatement	"qdict_put ( snapshot_options , ""file.filename"" , qstring_from_str ( tmp_filename ) )"	103:4:1815:1906	945102	21	True				
+ANR	945321	CallExpression	"qdict_put ( snapshot_options , ""file.filename"" , qstring_from_str ( tmp_filename ) )"		945102	0					
+ANR	945322	Callee	qdict_put		945102	0					
+ANR	945323	Identifier	qdict_put		945102	0					
+ANR	945324	ArgumentList	snapshot_options		945102	1					
+ANR	945325	Argument	snapshot_options		945102	0					
+ANR	945326	Identifier	snapshot_options		945102	0					
+ANR	945327	Argument	"""file.filename"""		945102	1					
+ANR	945328	PrimaryExpression	"""file.filename"""		945102	0					
+ANR	945329	Argument	qstring_from_str ( tmp_filename )		945102	2					
+ANR	945330	CallExpression	qstring_from_str ( tmp_filename )		945102	0					
+ANR	945331	Callee	qstring_from_str		945102	0					
+ANR	945332	Identifier	qstring_from_str		945102	0					
+ANR	945333	ArgumentList	tmp_filename		945102	1					
+ANR	945334	Argument	tmp_filename		945102	0					
+ANR	945335	Identifier	tmp_filename		945102	0					
+ANR	945336	ExpressionStatement	"bs_snapshot = bdrv_new ( """" )"	109:4:1915:1941	945102	22	True				
+ANR	945337	AssignmentExpression	"bs_snapshot = bdrv_new ( """" )"		945102	0		=			
+ANR	945338	Identifier	bs_snapshot		945102	0					
+ANR	945339	CallExpression	"bdrv_new ( """" )"		945102	1					
+ANR	945340	Callee	bdrv_new		945102	0					
+ANR	945341	Identifier	bdrv_new		945102	0					
+ANR	945342	ArgumentList	""""""		945102	1					
+ANR	945343	Argument	""""""		945102	0					
+ANR	945344	PrimaryExpression	""""""		945102	0					
+ANR	945345	ExpressionStatement	bs_snapshot -> is_temporary = 1	111:4:1948:1977	945102	23	True				
+ANR	945346	AssignmentExpression	bs_snapshot -> is_temporary = 1		945102	0		=			
+ANR	945347	PtrMemberAccess	bs_snapshot -> is_temporary		945102	0					
+ANR	945348	Identifier	bs_snapshot		945102	0					
+ANR	945349	Identifier	is_temporary		945102	1					
+ANR	945350	PrimaryExpression	1		945102	1					
+ANR	945351	ExpressionStatement	"ret = bdrv_open ( & bs_snapshot , NULL , NULL , snapshot_options , bs -> open_flags & ~BDRV_O_SNAPSHOT , bdrv_qcow2 , & local_err )"	115:4:1986:2125	945102	24	True				
+ANR	945352	AssignmentExpression	"ret = bdrv_open ( & bs_snapshot , NULL , NULL , snapshot_options , bs -> open_flags & ~BDRV_O_SNAPSHOT , bdrv_qcow2 , & local_err )"		945102	0		=			
+ANR	945353	Identifier	ret		945102	0					
+ANR	945354	CallExpression	"bdrv_open ( & bs_snapshot , NULL , NULL , snapshot_options , bs -> open_flags & ~BDRV_O_SNAPSHOT , bdrv_qcow2 , & local_err )"		945102	1					
+ANR	945355	Callee	bdrv_open		945102	0					
+ANR	945356	Identifier	bdrv_open		945102	0					
+ANR	945357	ArgumentList	& bs_snapshot		945102	1					
+ANR	945358	Argument	& bs_snapshot		945102	0					
+ANR	945359	UnaryOperationExpression	& bs_snapshot		945102	0					
+ANR	945360	UnaryOperator	&		945102	0					
+ANR	945361	Identifier	bs_snapshot		945102	1					
+ANR	945362	Argument	NULL		945102	1					
+ANR	945363	Identifier	NULL		945102	0					
+ANR	945364	Argument	NULL		945102	2					
+ANR	945365	Identifier	NULL		945102	0					
+ANR	945366	Argument	snapshot_options		945102	3					
+ANR	945367	Identifier	snapshot_options		945102	0					
+ANR	945368	Argument	bs -> open_flags & ~BDRV_O_SNAPSHOT		945102	4					
+ANR	945369	BitAndExpression	bs -> open_flags & ~BDRV_O_SNAPSHOT		945102	0		&			
+ANR	945370	PtrMemberAccess	bs -> open_flags		945102	0					
+ANR	945371	Identifier	bs		945102	0					
+ANR	945372	Identifier	open_flags		945102	1					
+ANR	945373	Identifier	~BDRV_O_SNAPSHOT		945102	1					
+ANR	945374	Argument	bdrv_qcow2		945102	5					
+ANR	945375	Identifier	bdrv_qcow2		945102	0					
+ANR	945376	Argument	& local_err		945102	6					
+ANR	945377	UnaryOperationExpression	& local_err		945102	0					
+ANR	945378	UnaryOperator	&		945102	0					
+ANR	945379	Identifier	local_err		945102	1					
+ANR	945380	IfStatement	if ( ret < 0 )		945102	25					
+ANR	945381	Condition	ret < 0	119:8:2136:2142	945102	0	True				
+ANR	945382	RelationalExpression	ret < 0		945102	0		<			
+ANR	945383	Identifier	ret		945102	0					
+ANR	945384	PrimaryExpression	0		945102	1					
+ANR	945385	CompoundStatement		117:17:2076:2076	945102	1					
+ANR	945386	ExpressionStatement	"error_propagate ( errp , local_err )"	121:8:2156:2188	945102	0	True				
+ANR	945387	CallExpression	"error_propagate ( errp , local_err )"		945102	0					
+ANR	945388	Callee	error_propagate		945102	0					
+ANR	945389	Identifier	error_propagate		945102	0					
+ANR	945390	ArgumentList	errp		945102	1					
+ANR	945391	Argument	errp		945102	0					
+ANR	945392	Identifier	errp		945102	0					
+ANR	945393	Argument	local_err		945102	1					
+ANR	945394	Identifier	local_err		945102	0					
+ANR	945395	ReturnStatement	return ;	123:8:2199:2205	945102	1	True				
+ANR	945396	ExpressionStatement	"bdrv_append ( bs_snapshot , bs )"	129:4:2221:2249	945102	26	True				
+ANR	945397	CallExpression	"bdrv_append ( bs_snapshot , bs )"		945102	0					
+ANR	945398	Callee	bdrv_append		945102	0					
+ANR	945399	Identifier	bdrv_append		945102	0					
+ANR	945400	ArgumentList	bs_snapshot		945102	1					
+ANR	945401	Argument	bs_snapshot		945102	0					
+ANR	945402	Identifier	bs_snapshot		945102	0					
+ANR	945403	Argument	bs		945102	1					
+ANR	945404	Identifier	bs		945102	0					
+ANR	945405	ReturnType	void		945102	1					
+ANR	945406	Identifier	bdrv_append_temp_snapshot		945102	2					
+ANR	945407	ParameterList	"BlockDriverState * bs , Error * * errp"		945102	3					
+ANR	945408	Parameter	BlockDriverState * bs	1:31:31:50	945102	0	True				
+ANR	945409	ParameterType	BlockDriverState *		945102	0					
+ANR	945410	Identifier	bs		945102	1					
+ANR	945411	Parameter	Error * * errp	1:53:53:64	945102	1	True				
+ANR	945412	ParameterType	Error * *		945102	0					
+ANR	945413	Identifier	errp		945102	1					
+ANR	945414	CFGEntryNode	ENTRY		945102		True				
+ANR	945415	CFGExitNode	EXIT		945102		True				
+ANR	945416	Symbol	get_tmp_filename		945102						
+ANR	945417	Symbol	bdrv_create		945102						
+ANR	945418	Symbol	errp		945102						
+ANR	945419	Symbol	bdrv_find_format		945102						
+ANR	945420	Symbol	* bdrv_qcow2		945102						
+ANR	945421	Symbol	qstring_from_str		945102						
+ANR	945422	Symbol	qdict_new		945102						
+ANR	945423	Symbol	bs		945102						
+ANR	945424	Symbol	* bs		945102						
+ANR	945425	Symbol	bs_snapshot		945102						
+ANR	945426	Symbol	BDRV_SECTOR_MASK		945102						
+ANR	945427	Symbol	& local_err		945102						
+ANR	945428	Symbol	bdrv_qcow2 -> create_options		945102						
+ANR	945429	Symbol	bdrv_open		945102						
+ANR	945430	Symbol	bdrv_getlength		945102						
+ANR	945431	Symbol	ret		945102						
+ANR	945432	Symbol	create_options		945102						
+ANR	945433	Symbol	* bs_snapshot		945102						
+ANR	945434	Symbol	NULL		945102						
+ANR	945435	Symbol	total_size		945102						
+ANR	945436	Symbol	& bs_snapshot		945102						
+ANR	945437	Symbol	parse_option_parameters		945102						
+ANR	945438	Symbol	bs -> open_flags		945102						
+ANR	945439	Symbol	BLOCK_OPT_SIZE		945102						
+ANR	945440	Symbol	bdrv_new		945102						
+ANR	945441	Symbol	snapshot_options		945102						
+ANR	945442	Symbol	tmp_filename		945102						
+ANR	945443	Symbol	~BDRV_O_SNAPSHOT		945102						
+ANR	945444	Symbol	bdrv_qcow2		945102						
+ANR	945445	Symbol	bs_snapshot -> is_temporary		945102						
+ANR	945446	Symbol	local_err		945102						

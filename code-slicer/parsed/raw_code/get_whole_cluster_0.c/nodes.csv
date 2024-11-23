@@ -1,0 +1,145 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4429360	File	/home/p4ultr4n/workplace/ReVeal/raw_code/get_whole_cluster_0.c								
+ANR	4429361	Function	get_whole_cluster	1:0:0:1070							
+ANR	4429362	FunctionDef	"get_whole_cluster (BlockDriverState * bs , VmdkExtent * extent , uint64_t cluster_offset , uint64_t offset , bool allocate)"		4429361	0					
+ANR	4429363	CompoundStatement		11:0:197:1070	4429361	0					
+ANR	4429364	IdentifierDeclStatement	uint8_t whole_grain [ extent -> cluster_sectors * 512 ] ;	15:4:262:313	4429361	0	True				
+ANR	4429365	IdentifierDecl	whole_grain [ extent -> cluster_sectors * 512 ]		4429361	0					
+ANR	4429366	IdentifierDeclType	uint8_t [ extent -> cluster_sectors * 512 ]		4429361	0					
+ANR	4429367	Identifier	whole_grain		4429361	1					
+ANR	4429368	MultiplicativeExpression	extent -> cluster_sectors * 512		4429361	2		*			
+ANR	4429369	PtrMemberAccess	extent -> cluster_sectors		4429361	0					
+ANR	4429370	Identifier	extent		4429361	0					
+ANR	4429371	Identifier	cluster_sectors		4429361	1					
+ANR	4429372	PrimaryExpression	512		4429361	1					
+ANR	4429373	IfStatement	if ( bs -> backing_hd )		4429361	1					
+ANR	4429374	Condition	bs -> backing_hd	23:8:450:463	4429361	0	True				
+ANR	4429375	PtrMemberAccess	bs -> backing_hd		4429361	0					
+ANR	4429376	Identifier	bs		4429361	0					
+ANR	4429377	Identifier	backing_hd		4429361	1					
+ANR	4429378	CompoundStatement		15:8:279:286	4429361	1					
+ANR	4429379	IdentifierDeclStatement	int ret ;	25:8:477:484	4429361	0	True				
+ANR	4429380	IdentifierDecl	ret		4429361	0					
+ANR	4429381	IdentifierDeclType	int		4429361	0					
+ANR	4429382	Identifier	ret		4429361	1					
+ANR	4429383	IfStatement	if ( ! vmdk_is_cid_valid ( bs ) )		4429361	1					
+ANR	4429384	Condition	! vmdk_is_cid_valid ( bs )	29:12:501:522	4429361	0	True				
+ANR	4429385	UnaryOperationExpression	! vmdk_is_cid_valid ( bs )		4429361	0					
+ANR	4429386	UnaryOperator	!		4429361	0					
+ANR	4429387	CallExpression	vmdk_is_cid_valid ( bs )		4429361	1					
+ANR	4429388	Callee	vmdk_is_cid_valid		4429361	0					
+ANR	4429389	Identifier	vmdk_is_cid_valid		4429361	0					
+ANR	4429390	ArgumentList	bs		4429361	1					
+ANR	4429391	Argument	bs		4429361	0					
+ANR	4429392	Identifier	bs		4429361	0					
+ANR	4429393	ReturnStatement	return - 1 ;	31:12:538:547	4429361	1	True				
+ANR	4429394	UnaryOperationExpression	- 1		4429361	0					
+ANR	4429395	UnaryOperator	-		4429361	0					
+ANR	4429396	PrimaryExpression	1		4429361	1					
+ANR	4429397	ExpressionStatement	offset -= offset % ( extent -> cluster_sectors * 512 )	37:8:599:649	4429361	2	True				
+ANR	4429398	AssignmentExpression	offset -= offset % ( extent -> cluster_sectors * 512 )		4429361	0		-=			
+ANR	4429399	Identifier	offset		4429361	0					
+ANR	4429400	MultiplicativeExpression	offset % ( extent -> cluster_sectors * 512 )		4429361	1		%			
+ANR	4429401	Identifier	offset		4429361	0					
+ANR	4429402	MultiplicativeExpression	extent -> cluster_sectors * 512		4429361	1		*			
+ANR	4429403	PtrMemberAccess	extent -> cluster_sectors		4429361	0					
+ANR	4429404	Identifier	extent		4429361	0					
+ANR	4429405	Identifier	cluster_sectors		4429361	1					
+ANR	4429406	PrimaryExpression	512		4429361	1					
+ANR	4429407	ExpressionStatement	"ret = bdrv_read ( bs -> backing_hd , offset >> 9 , whole_grain , extent -> cluster_sectors )"	39:8:660:759	4429361	3	True				
+ANR	4429408	AssignmentExpression	"ret = bdrv_read ( bs -> backing_hd , offset >> 9 , whole_grain , extent -> cluster_sectors )"		4429361	0		=			
+ANR	4429409	Identifier	ret		4429361	0					
+ANR	4429410	CallExpression	"bdrv_read ( bs -> backing_hd , offset >> 9 , whole_grain , extent -> cluster_sectors )"		4429361	1					
+ANR	4429411	Callee	bdrv_read		4429361	0					
+ANR	4429412	Identifier	bdrv_read		4429361	0					
+ANR	4429413	ArgumentList	bs -> backing_hd		4429361	1					
+ANR	4429414	Argument	bs -> backing_hd		4429361	0					
+ANR	4429415	PtrMemberAccess	bs -> backing_hd		4429361	0					
+ANR	4429416	Identifier	bs		4429361	0					
+ANR	4429417	Identifier	backing_hd		4429361	1					
+ANR	4429418	Argument	offset >> 9		4429361	1					
+ANR	4429419	ShiftExpression	offset >> 9		4429361	0		>>			
+ANR	4429420	Identifier	offset		4429361	0					
+ANR	4429421	PrimaryExpression	9		4429361	1					
+ANR	4429422	Argument	whole_grain		4429361	2					
+ANR	4429423	Identifier	whole_grain		4429361	0					
+ANR	4429424	Argument	extent -> cluster_sectors		4429361	3					
+ANR	4429425	PtrMemberAccess	extent -> cluster_sectors		4429361	0					
+ANR	4429426	Identifier	extent		4429361	0					
+ANR	4429427	Identifier	cluster_sectors		4429361	1					
+ANR	4429428	IfStatement	if ( ret < 0 )		4429361	4					
+ANR	4429429	Condition	ret < 0	43:12:774:780	4429361	0	True				
+ANR	4429430	RelationalExpression	ret < 0		4429361	0		<			
+ANR	4429431	Identifier	ret		4429361	0					
+ANR	4429432	PrimaryExpression	0		4429361	1					
+ANR	4429433	CompoundStatement		33:21:585:585	4429361	1					
+ANR	4429434	ReturnStatement	return - 1 ;	45:12:798:807	4429361	0	True				
+ANR	4429435	UnaryOperationExpression	- 1		4429361	0					
+ANR	4429436	UnaryOperator	-		4429361	0					
+ANR	4429437	PrimaryExpression	1		4429361	1					
+ANR	4429438	ExpressionStatement	"ret = bdrv_write ( extent -> file , cluster_offset , whole_grain , extent -> cluster_sectors )"	53:8:885:986	4429361	5	True				
+ANR	4429439	AssignmentExpression	"ret = bdrv_write ( extent -> file , cluster_offset , whole_grain , extent -> cluster_sectors )"		4429361	0		=			
+ANR	4429440	Identifier	ret		4429361	0					
+ANR	4429441	CallExpression	"bdrv_write ( extent -> file , cluster_offset , whole_grain , extent -> cluster_sectors )"		4429361	1					
+ANR	4429442	Callee	bdrv_write		4429361	0					
+ANR	4429443	Identifier	bdrv_write		4429361	0					
+ANR	4429444	ArgumentList	extent -> file		4429361	1					
+ANR	4429445	Argument	extent -> file		4429361	0					
+ANR	4429446	PtrMemberAccess	extent -> file		4429361	0					
+ANR	4429447	Identifier	extent		4429361	0					
+ANR	4429448	Identifier	file		4429361	1					
+ANR	4429449	Argument	cluster_offset		4429361	1					
+ANR	4429450	Identifier	cluster_offset		4429361	0					
+ANR	4429451	Argument	whole_grain		4429361	2					
+ANR	4429452	Identifier	whole_grain		4429361	0					
+ANR	4429453	Argument	extent -> cluster_sectors		4429361	3					
+ANR	4429454	PtrMemberAccess	extent -> cluster_sectors		4429361	0					
+ANR	4429455	Identifier	extent		4429361	0					
+ANR	4429456	Identifier	cluster_sectors		4429361	1					
+ANR	4429457	IfStatement	if ( ret < 0 )		4429361	6					
+ANR	4429458	Condition	ret < 0	57:12:1001:1007	4429361	0	True				
+ANR	4429459	RelationalExpression	ret < 0		4429361	0		<			
+ANR	4429460	Identifier	ret		4429361	0					
+ANR	4429461	PrimaryExpression	0		4429361	1					
+ANR	4429462	CompoundStatement		47:21:812:812	4429361	1					
+ANR	4429463	ReturnStatement	return - 1 ;	59:12:1025:1034	4429361	0	True				
+ANR	4429464	UnaryOperationExpression	- 1		4429361	0					
+ANR	4429465	UnaryOperator	-		4429361	0					
+ANR	4429466	PrimaryExpression	1		4429361	1					
+ANR	4429467	ReturnStatement	return 0 ;	65:4:1059:1067	4429361	2	True				
+ANR	4429468	PrimaryExpression	0		4429361	0					
+ANR	4429469	ReturnType	static int		4429361	1					
+ANR	4429470	Identifier	get_whole_cluster		4429361	2					
+ANR	4429471	ParameterList	"BlockDriverState * bs , VmdkExtent * extent , uint64_t cluster_offset , uint64_t offset , bool allocate"		4429361	3					
+ANR	4429472	Parameter	BlockDriverState * bs	1:29:29:48	4429361	0	True				
+ANR	4429473	ParameterType	BlockDriverState *		4429361	0					
+ANR	4429474	Identifier	bs		4429361	1					
+ANR	4429475	Parameter	VmdkExtent * extent	3:16:68:85	4429361	1	True				
+ANR	4429476	ParameterType	VmdkExtent *		4429361	0					
+ANR	4429477	Identifier	extent		4429361	1					
+ANR	4429478	Parameter	uint64_t cluster_offset	5:16:105:127	4429361	2	True				
+ANR	4429479	ParameterType	uint64_t		4429361	0					
+ANR	4429480	Identifier	cluster_offset		4429361	1					
+ANR	4429481	Parameter	uint64_t offset	7:16:147:161	4429361	3	True				
+ANR	4429482	ParameterType	uint64_t		4429361	0					
+ANR	4429483	Identifier	offset		4429361	1					
+ANR	4429484	Parameter	bool allocate	9:16:181:193	4429361	4	True				
+ANR	4429485	ParameterType	bool		4429361	0					
+ANR	4429486	Identifier	allocate		4429361	1					
+ANR	4429487	CFGEntryNode	ENTRY		4429361		True				
+ANR	4429488	CFGExitNode	EXIT		4429361		True				
+ANR	4429489	Symbol	extent		4429361						
+ANR	4429490	Symbol	ret		4429361						
+ANR	4429491	Symbol	* extent		4429361						
+ANR	4429492	Symbol	offset		4429361						
+ANR	4429493	Symbol	extent -> file		4429361						
+ANR	4429494	Symbol	bs -> backing_hd		4429361						
+ANR	4429495	Symbol	bs		4429361						
+ANR	4429496	Symbol	whole_grain		4429361						
+ANR	4429497	Symbol	vmdk_is_cid_valid		4429361						
+ANR	4429498	Symbol	allocate		4429361						
+ANR	4429499	Symbol	* bs		4429361						
+ANR	4429500	Symbol	cluster_offset		4429361						
+ANR	4429501	Symbol	bdrv_read		4429361						
+ANR	4429502	Symbol	bdrv_write		4429361						
+ANR	4429503	Symbol	extent -> cluster_sectors		4429361						

@@ -1,0 +1,204 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7234131	File	/home/p4ultr4n/workplace/ReVeal/raw_code/raw_aio_setup_0.c								
+ANR	7234132	Function	raw_aio_setup	1:0:0:849							
+ANR	7234133	FunctionDef	"raw_aio_setup (BlockDriverState * bs , int64_t sector_num , uint8_t * buf , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque)"		7234132	0					
+ANR	7234134	CompoundStatement		7:0:167:849	7234132	0					
+ANR	7234135	IdentifierDeclStatement	BDRVRawState * s = bs -> opaque ;	9:4:174:202	7234132	0	True				
+ANR	7234136	IdentifierDecl	* s = bs -> opaque		7234132	0					
+ANR	7234137	IdentifierDeclType	BDRVRawState *		7234132	0					
+ANR	7234138	Identifier	s		7234132	1					
+ANR	7234139	AssignmentExpression	* s = bs -> opaque		7234132	2		=			
+ANR	7234140	Identifier	s		7234132	0					
+ANR	7234141	PtrMemberAccess	bs -> opaque		7234132	1					
+ANR	7234142	Identifier	bs		7234132	0					
+ANR	7234143	Identifier	opaque		7234132	1					
+ANR	7234144	IdentifierDeclStatement	RawAIOCB * acb ;	11:4:209:222	7234132	1	True				
+ANR	7234145	IdentifierDecl	* acb		7234132	0					
+ANR	7234146	IdentifierDeclType	RawAIOCB *		7234132	0					
+ANR	7234147	Identifier	acb		7234132	1					
+ANR	7234148	IfStatement	if ( fd_open ( bs ) < 0 )		7234132	2					
+ANR	7234149	Condition	fd_open ( bs ) < 0	15:8:235:249	7234132	0	True				
+ANR	7234150	RelationalExpression	fd_open ( bs ) < 0		7234132	0		<			
+ANR	7234151	CallExpression	fd_open ( bs )		7234132	0					
+ANR	7234152	Callee	fd_open		7234132	0					
+ANR	7234153	Identifier	fd_open		7234132	0					
+ANR	7234154	ArgumentList	bs		7234132	1					
+ANR	7234155	Argument	bs		7234132	0					
+ANR	7234156	Identifier	bs		7234132	0					
+ANR	7234157	PrimaryExpression	0		7234132	1					
+ANR	7234158	ReturnStatement	return NULL ;	17:8:261:272	7234132	1	True				
+ANR	7234159	Identifier	NULL		7234132	0					
+ANR	7234160	ExpressionStatement	"acb = qemu_aio_get ( bs , cb , opaque )"	21:4:281:315	7234132	3	True				
+ANR	7234161	AssignmentExpression	"acb = qemu_aio_get ( bs , cb , opaque )"		7234132	0		=			
+ANR	7234162	Identifier	acb		7234132	0					
+ANR	7234163	CallExpression	"qemu_aio_get ( bs , cb , opaque )"		7234132	1					
+ANR	7234164	Callee	qemu_aio_get		7234132	0					
+ANR	7234165	Identifier	qemu_aio_get		7234132	0					
+ANR	7234166	ArgumentList	bs		7234132	1					
+ANR	7234167	Argument	bs		7234132	0					
+ANR	7234168	Identifier	bs		7234132	0					
+ANR	7234169	Argument	cb		7234132	1					
+ANR	7234170	Identifier	cb		7234132	0					
+ANR	7234171	Argument	opaque		7234132	2					
+ANR	7234172	Identifier	opaque		7234132	0					
+ANR	7234173	IfStatement	if ( ! acb )		7234132	4					
+ANR	7234174	Condition	! acb	23:8:326:329	7234132	0	True				
+ANR	7234175	UnaryOperationExpression	! acb		7234132	0					
+ANR	7234176	UnaryOperator	!		7234132	0					
+ANR	7234177	Identifier	acb		7234132	1					
+ANR	7234178	ReturnStatement	return NULL ;	25:8:341:352	7234132	1	True				
+ANR	7234179	Identifier	NULL		7234132	0					
+ANR	7234180	ExpressionStatement	acb -> fd = raw_fd_pool_get ( s )	27:4:359:387	7234132	5	True				
+ANR	7234181	AssignmentExpression	acb -> fd = raw_fd_pool_get ( s )		7234132	0		=			
+ANR	7234182	PtrMemberAccess	acb -> fd		7234132	0					
+ANR	7234183	Identifier	acb		7234132	0					
+ANR	7234184	Identifier	fd		7234132	1					
+ANR	7234185	CallExpression	raw_fd_pool_get ( s )		7234132	1					
+ANR	7234186	Callee	raw_fd_pool_get		7234132	0					
+ANR	7234187	Identifier	raw_fd_pool_get		7234132	0					
+ANR	7234188	ArgumentList	s		7234132	1					
+ANR	7234189	Argument	s		7234132	0					
+ANR	7234190	Identifier	s		7234132	0					
+ANR	7234191	ExpressionStatement	acb -> aiocb . aio_fildes = acb -> fd	29:4:394:425	7234132	6	True				
+ANR	7234192	AssignmentExpression	acb -> aiocb . aio_fildes = acb -> fd		7234132	0		=			
+ANR	7234193	MemberAccess	acb -> aiocb . aio_fildes		7234132	0					
+ANR	7234194	PtrMemberAccess	acb -> aiocb		7234132	0					
+ANR	7234195	Identifier	acb		7234132	0					
+ANR	7234196	Identifier	aiocb		7234132	1					
+ANR	7234197	Identifier	aio_fildes		7234132	1					
+ANR	7234198	PtrMemberAccess	acb -> fd		7234132	1					
+ANR	7234199	Identifier	acb		7234132	0					
+ANR	7234200	Identifier	fd		7234132	1					
+ANR	7234201	ExpressionStatement	acb -> aiocb . aio_sigevent . sigev_signo = SIGUSR2	31:4:432:477	7234132	7	True				
+ANR	7234202	AssignmentExpression	acb -> aiocb . aio_sigevent . sigev_signo = SIGUSR2		7234132	0		=			
+ANR	7234203	MemberAccess	acb -> aiocb . aio_sigevent . sigev_signo		7234132	0					
+ANR	7234204	MemberAccess	acb -> aiocb . aio_sigevent		7234132	0					
+ANR	7234205	PtrMemberAccess	acb -> aiocb		7234132	0					
+ANR	7234206	Identifier	acb		7234132	0					
+ANR	7234207	Identifier	aiocb		7234132	1					
+ANR	7234208	Identifier	aio_sigevent		7234132	1					
+ANR	7234209	Identifier	sigev_signo		7234132	1					
+ANR	7234210	Identifier	SIGUSR2		7234132	1					
+ANR	7234211	ExpressionStatement	acb -> aiocb . aio_sigevent . sigev_notify = SIGEV_SIGNAL	33:4:484:535	7234132	8	True				
+ANR	7234212	AssignmentExpression	acb -> aiocb . aio_sigevent . sigev_notify = SIGEV_SIGNAL		7234132	0		=			
+ANR	7234213	MemberAccess	acb -> aiocb . aio_sigevent . sigev_notify		7234132	0					
+ANR	7234214	MemberAccess	acb -> aiocb . aio_sigevent		7234132	0					
+ANR	7234215	PtrMemberAccess	acb -> aiocb		7234132	0					
+ANR	7234216	Identifier	acb		7234132	0					
+ANR	7234217	Identifier	aiocb		7234132	1					
+ANR	7234218	Identifier	aio_sigevent		7234132	1					
+ANR	7234219	Identifier	sigev_notify		7234132	1					
+ANR	7234220	Identifier	SIGEV_SIGNAL		7234132	1					
+ANR	7234221	ExpressionStatement	acb -> aiocb . aio_buf = buf	35:4:542:566	7234132	9	True				
+ANR	7234222	AssignmentExpression	acb -> aiocb . aio_buf = buf		7234132	0		=			
+ANR	7234223	MemberAccess	acb -> aiocb . aio_buf		7234132	0					
+ANR	7234224	PtrMemberAccess	acb -> aiocb		7234132	0					
+ANR	7234225	Identifier	acb		7234132	0					
+ANR	7234226	Identifier	aiocb		7234132	1					
+ANR	7234227	Identifier	aio_buf		7234132	1					
+ANR	7234228	Identifier	buf		7234132	1					
+ANR	7234229	IfStatement	if ( nb_sectors < 0 )		7234132	10					
+ANR	7234230	Condition	nb_sectors < 0	37:8:577:590	7234132	0	True				
+ANR	7234231	RelationalExpression	nb_sectors < 0		7234132	0		<			
+ANR	7234232	Identifier	nb_sectors		7234132	0					
+ANR	7234233	PrimaryExpression	0		7234132	1					
+ANR	7234234	ExpressionStatement	acb -> aiocb . aio_nbytes = - nb_sectors	39:8:602:637	7234132	1	True				
+ANR	7234235	AssignmentExpression	acb -> aiocb . aio_nbytes = - nb_sectors		7234132	0		=			
+ANR	7234236	MemberAccess	acb -> aiocb . aio_nbytes		7234132	0					
+ANR	7234237	PtrMemberAccess	acb -> aiocb		7234132	0					
+ANR	7234238	Identifier	acb		7234132	0					
+ANR	7234239	Identifier	aiocb		7234132	1					
+ANR	7234240	Identifier	aio_nbytes		7234132	1					
+ANR	7234241	UnaryOperationExpression	- nb_sectors		7234132	1					
+ANR	7234242	UnaryOperator	-		7234132	0					
+ANR	7234243	Identifier	nb_sectors		7234132	1					
+ANR	7234244	ElseStatement	else		7234132	0					
+ANR	7234245	ExpressionStatement	acb -> aiocb . aio_nbytes = nb_sectors * 512	43:8:658:698	7234132	0	True				
+ANR	7234246	AssignmentExpression	acb -> aiocb . aio_nbytes = nb_sectors * 512		7234132	0		=			
+ANR	7234247	MemberAccess	acb -> aiocb . aio_nbytes		7234132	0					
+ANR	7234248	PtrMemberAccess	acb -> aiocb		7234132	0					
+ANR	7234249	Identifier	acb		7234132	0					
+ANR	7234250	Identifier	aiocb		7234132	1					
+ANR	7234251	Identifier	aio_nbytes		7234132	1					
+ANR	7234252	MultiplicativeExpression	nb_sectors * 512		7234132	1		*			
+ANR	7234253	Identifier	nb_sectors		7234132	0					
+ANR	7234254	PrimaryExpression	512		7234132	1					
+ANR	7234255	ExpressionStatement	acb -> aiocb . aio_offset = sector_num * 512	45:4:705:745	7234132	11	True				
+ANR	7234256	AssignmentExpression	acb -> aiocb . aio_offset = sector_num * 512		7234132	0		=			
+ANR	7234257	MemberAccess	acb -> aiocb . aio_offset		7234132	0					
+ANR	7234258	PtrMemberAccess	acb -> aiocb		7234132	0					
+ANR	7234259	Identifier	acb		7234132	0					
+ANR	7234260	Identifier	aiocb		7234132	1					
+ANR	7234261	Identifier	aio_offset		7234132	1					
+ANR	7234262	MultiplicativeExpression	sector_num * 512		7234132	1		*			
+ANR	7234263	Identifier	sector_num		7234132	0					
+ANR	7234264	PrimaryExpression	512		7234132	1					
+ANR	7234265	ExpressionStatement	acb -> next = posix_aio_state -> first_aio	47:4:752:790	7234132	12	True				
+ANR	7234266	AssignmentExpression	acb -> next = posix_aio_state -> first_aio		7234132	0		=			
+ANR	7234267	PtrMemberAccess	acb -> next		7234132	0					
+ANR	7234268	Identifier	acb		7234132	0					
+ANR	7234269	Identifier	next		7234132	1					
+ANR	7234270	PtrMemberAccess	posix_aio_state -> first_aio		7234132	1					
+ANR	7234271	Identifier	posix_aio_state		7234132	0					
+ANR	7234272	Identifier	first_aio		7234132	1					
+ANR	7234273	ExpressionStatement	posix_aio_state -> first_aio = acb	49:4:797:829	7234132	13	True				
+ANR	7234274	AssignmentExpression	posix_aio_state -> first_aio = acb		7234132	0		=			
+ANR	7234275	PtrMemberAccess	posix_aio_state -> first_aio		7234132	0					
+ANR	7234276	Identifier	posix_aio_state		7234132	0					
+ANR	7234277	Identifier	first_aio		7234132	1					
+ANR	7234278	Identifier	acb		7234132	1					
+ANR	7234279	ReturnStatement	return acb ;	51:4:836:846	7234132	14	True				
+ANR	7234280	Identifier	acb		7234132	0					
+ANR	7234281	ReturnType	static RawAIOCB *		7234132	1					
+ANR	7234282	Identifier	raw_aio_setup		7234132	2					
+ANR	7234283	ParameterList	"BlockDriverState * bs , int64_t sector_num , uint8_t * buf , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque"		7234132	3					
+ANR	7234284	Parameter	BlockDriverState * bs	1:31:31:50	7234132	0	True				
+ANR	7234285	ParameterType	BlockDriverState *		7234132	0					
+ANR	7234286	Identifier	bs		7234132	1					
+ANR	7234287	Parameter	int64_t sector_num	3:8:62:79	7234132	1	True				
+ANR	7234288	ParameterType	int64_t		7234132	0					
+ANR	7234289	Identifier	sector_num		7234132	1					
+ANR	7234290	Parameter	uint8_t * buf	3:28:82:93	7234132	2	True				
+ANR	7234291	ParameterType	uint8_t *		7234132	0					
+ANR	7234292	Identifier	buf		7234132	1					
+ANR	7234293	Parameter	int nb_sectors	3:42:96:109	7234132	3	True				
+ANR	7234294	ParameterType	int		7234132	0					
+ANR	7234295	Identifier	nb_sectors		7234132	1					
+ANR	7234296	Parameter	BlockDriverCompletionFunc * cb	5:8:121:149	7234132	4	True				
+ANR	7234297	ParameterType	BlockDriverCompletionFunc *		7234132	0					
+ANR	7234298	Identifier	cb		7234132	1					
+ANR	7234299	Parameter	void * opaque	5:39:152:163	7234132	5	True				
+ANR	7234300	ParameterType	void *		7234132	0					
+ANR	7234301	Identifier	opaque		7234132	1					
+ANR	7234302	CFGEntryNode	ENTRY		7234132		True				
+ANR	7234303	CFGExitNode	EXIT		7234132		True				
+ANR	7234304	Symbol	acb		7234132						
+ANR	7234305	Symbol	nb_sectors		7234132						
+ANR	7234306	Symbol	acb -> next		7234132						
+ANR	7234307	Symbol	posix_aio_state		7234132						
+ANR	7234308	Symbol	acb -> aiocb . aio_nbytes		7234132						
+ANR	7234309	Symbol	bs		7234132						
+ANR	7234310	Symbol	acb -> aiocb . aio_buf		7234132						
+ANR	7234311	Symbol	* posix_aio_state		7234132						
+ANR	7234312	Symbol	* bs		7234132						
+ANR	7234313	Symbol	* acb		7234132						
+ANR	7234314	Symbol	SIGEV_SIGNAL		7234132						
+ANR	7234315	Symbol	raw_fd_pool_get		7234132						
+ANR	7234316	Symbol	cb		7234132						
+ANR	7234317	Symbol	posix_aio_state -> first_aio		7234132						
+ANR	7234318	Symbol	acb -> aiocb . aio_sigevent . sigev_notify		7234132						
+ANR	7234319	Symbol	opaque		7234132						
+ANR	7234320	Symbol	NULL		7234132						
+ANR	7234321	Symbol	bs -> opaque		7234132						
+ANR	7234322	Symbol	fd_open		7234132						
+ANR	7234323	Symbol	acb -> aiocb . aio_offset		7234132						
+ANR	7234324	Symbol	SIGUSR2		7234132						
+ANR	7234325	Symbol	qemu_aio_get		7234132						
+ANR	7234326	Symbol	sector_num		7234132						
+ANR	7234327	Symbol	acb -> aiocb . aio_fildes		7234132						
+ANR	7234328	Symbol	acb -> aiocb . aio_sigevent . sigev_signo		7234132						
+ANR	7234329	Symbol	acb -> aiocb		7234132						
+ANR	7234330	Symbol	buf		7234132						
+ANR	7234331	Symbol	s		7234132						
+ANR	7234332	Symbol	acb -> aiocb . aio_sigevent		7234132						
+ANR	7234333	Symbol	acb -> fd		7234132						

@@ -1,0 +1,131 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	762502	File	/home/p4ultr4n/workplace/ReVeal/raw_code/av_thread_message_queue_recv_locked_1.c								
+ANR	762503	Function	av_thread_message_queue_recv_locked	1:0:0:601							
+ANR	762504	FunctionDef	"av_thread_message_queue_recv_locked (AVThreadMessageQueue * mq , void * msg , unsigned flags)"		762503	0					
+ANR	762505	CompoundStatement		7:0:197:601	762503	0					
+ANR	762506	WhileStatement	while ( ! mq -> err_recv && av_fifo_size ( mq -> fifo ) < mq -> elsize )		762503	0					
+ANR	762507	Condition	! mq -> err_recv && av_fifo_size ( mq -> fifo ) < mq -> elsize	9:11:211:262	762503	0	True				
+ANR	762508	AndExpression	! mq -> err_recv && av_fifo_size ( mq -> fifo ) < mq -> elsize		762503	0		&&			
+ANR	762509	UnaryOperationExpression	! mq -> err_recv		762503	0					
+ANR	762510	UnaryOperator	!		762503	0					
+ANR	762511	PtrMemberAccess	mq -> err_recv		762503	1					
+ANR	762512	Identifier	mq		762503	0					
+ANR	762513	Identifier	err_recv		762503	1					
+ANR	762514	RelationalExpression	av_fifo_size ( mq -> fifo ) < mq -> elsize		762503	1		<			
+ANR	762515	CallExpression	av_fifo_size ( mq -> fifo )		762503	0					
+ANR	762516	Callee	av_fifo_size		762503	0					
+ANR	762517	Identifier	av_fifo_size		762503	0					
+ANR	762518	ArgumentList	mq -> fifo		762503	1					
+ANR	762519	Argument	mq -> fifo		762503	0					
+ANR	762520	PtrMemberAccess	mq -> fifo		762503	0					
+ANR	762521	Identifier	mq		762503	0					
+ANR	762522	Identifier	fifo		762503	1					
+ANR	762523	PtrMemberAccess	mq -> elsize		762503	1					
+ANR	762524	Identifier	mq		762503	0					
+ANR	762525	Identifier	elsize		762503	1					
+ANR	762526	CompoundStatement		3:65:67:67	762503	1					
+ANR	762527	IfStatement	if ( ( flags & AV_THREAD_MESSAGE_NONBLOCK ) )		762503	0					
+ANR	762528	Condition	flags & AV_THREAD_MESSAGE_NONBLOCK	11:12:280:315	762503	0	True				
+ANR	762529	BitAndExpression	flags & AV_THREAD_MESSAGE_NONBLOCK		762503	0		&			
+ANR	762530	Identifier	flags		762503	0					
+ANR	762531	Identifier	AV_THREAD_MESSAGE_NONBLOCK		762503	1					
+ANR	762532	ReturnStatement	return AVERROR ( EAGAIN ) ;	13:12:331:353	762503	1	True				
+ANR	762533	CallExpression	AVERROR ( EAGAIN )		762503	0					
+ANR	762534	Callee	AVERROR		762503	0					
+ANR	762535	Identifier	AVERROR		762503	0					
+ANR	762536	ArgumentList	EAGAIN		762503	1					
+ANR	762537	Argument	EAGAIN		762503	0					
+ANR	762538	Identifier	EAGAIN		762503	0					
+ANR	762539	ExpressionStatement	"pthread_cond_wait ( & mq -> cond , & mq -> lock )"	15:8:364:403	762503	1	True				
+ANR	762540	CallExpression	"pthread_cond_wait ( & mq -> cond , & mq -> lock )"		762503	0					
+ANR	762541	Callee	pthread_cond_wait		762503	0					
+ANR	762542	Identifier	pthread_cond_wait		762503	0					
+ANR	762543	ArgumentList	& mq -> cond		762503	1					
+ANR	762544	Argument	& mq -> cond		762503	0					
+ANR	762545	UnaryOperationExpression	& mq -> cond		762503	0					
+ANR	762546	UnaryOperator	&		762503	0					
+ANR	762547	PtrMemberAccess	mq -> cond		762503	1					
+ANR	762548	Identifier	mq		762503	0					
+ANR	762549	Identifier	cond		762503	1					
+ANR	762550	Argument	& mq -> lock		762503	1					
+ANR	762551	UnaryOperationExpression	& mq -> lock		762503	0					
+ANR	762552	UnaryOperator	&		762503	0					
+ANR	762553	PtrMemberAccess	mq -> lock		762503	1					
+ANR	762554	Identifier	mq		762503	0					
+ANR	762555	Identifier	lock		762503	1					
+ANR	762556	IfStatement	if ( av_fifo_size ( mq -> fifo ) < mq -> elsize )		762503	1					
+ANR	762557	Condition	av_fifo_size ( mq -> fifo ) < mq -> elsize	19:8:421:455	762503	0	True				
+ANR	762558	RelationalExpression	av_fifo_size ( mq -> fifo ) < mq -> elsize		762503	0		<			
+ANR	762559	CallExpression	av_fifo_size ( mq -> fifo )		762503	0					
+ANR	762560	Callee	av_fifo_size		762503	0					
+ANR	762561	Identifier	av_fifo_size		762503	0					
+ANR	762562	ArgumentList	mq -> fifo		762503	1					
+ANR	762563	Argument	mq -> fifo		762503	0					
+ANR	762564	PtrMemberAccess	mq -> fifo		762503	0					
+ANR	762565	Identifier	mq		762503	0					
+ANR	762566	Identifier	fifo		762503	1					
+ANR	762567	PtrMemberAccess	mq -> elsize		762503	1					
+ANR	762568	Identifier	mq		762503	0					
+ANR	762569	Identifier	elsize		762503	1					
+ANR	762570	ReturnStatement	return mq -> err_recv ;	21:8:467:486	762503	1	True				
+ANR	762571	PtrMemberAccess	mq -> err_recv		762503	0					
+ANR	762572	Identifier	mq		762503	0					
+ANR	762573	Identifier	err_recv		762503	1					
+ANR	762574	ExpressionStatement	"av_fifo_generic_read ( mq -> fifo , msg , mq -> elsize , NULL )"	23:4:493:546	762503	2	True				
+ANR	762575	CallExpression	"av_fifo_generic_read ( mq -> fifo , msg , mq -> elsize , NULL )"		762503	0					
+ANR	762576	Callee	av_fifo_generic_read		762503	0					
+ANR	762577	Identifier	av_fifo_generic_read		762503	0					
+ANR	762578	ArgumentList	mq -> fifo		762503	1					
+ANR	762579	Argument	mq -> fifo		762503	0					
+ANR	762580	PtrMemberAccess	mq -> fifo		762503	0					
+ANR	762581	Identifier	mq		762503	0					
+ANR	762582	Identifier	fifo		762503	1					
+ANR	762583	Argument	msg		762503	1					
+ANR	762584	Identifier	msg		762503	0					
+ANR	762585	Argument	mq -> elsize		762503	2					
+ANR	762586	PtrMemberAccess	mq -> elsize		762503	0					
+ANR	762587	Identifier	mq		762503	0					
+ANR	762588	Identifier	elsize		762503	1					
+ANR	762589	Argument	NULL		762503	3					
+ANR	762590	Identifier	NULL		762503	0					
+ANR	762591	ExpressionStatement	pthread_cond_signal ( & mq -> cond )	25:4:553:583	762503	3	True				
+ANR	762592	CallExpression	pthread_cond_signal ( & mq -> cond )		762503	0					
+ANR	762593	Callee	pthread_cond_signal		762503	0					
+ANR	762594	Identifier	pthread_cond_signal		762503	0					
+ANR	762595	ArgumentList	& mq -> cond		762503	1					
+ANR	762596	Argument	& mq -> cond		762503	0					
+ANR	762597	UnaryOperationExpression	& mq -> cond		762503	0					
+ANR	762598	UnaryOperator	&		762503	0					
+ANR	762599	PtrMemberAccess	mq -> cond		762503	1					
+ANR	762600	Identifier	mq		762503	0					
+ANR	762601	Identifier	cond		762503	1					
+ANR	762602	ReturnStatement	return 0 ;	27:4:590:598	762503	4	True				
+ANR	762603	PrimaryExpression	0		762503	0					
+ANR	762604	ReturnType	static int		762503	1					
+ANR	762605	Identifier	av_thread_message_queue_recv_locked		762503	2					
+ANR	762606	ParameterList	"AVThreadMessageQueue * mq , void * msg , unsigned flags"		762503	3					
+ANR	762607	Parameter	AVThreadMessageQueue * mq	1:47:47:70	762503	0	True				
+ANR	762608	ParameterType	AVThreadMessageQueue *		762503	0					
+ANR	762609	Identifier	mq		762503	1					
+ANR	762610	Parameter	void * msg	3:47:121:129	762503	1	True				
+ANR	762611	ParameterType	void *		762503	0					
+ANR	762612	Identifier	msg		762503	1					
+ANR	762613	Parameter	unsigned flags	5:47:180:193	762503	2	True				
+ANR	762614	ParameterType	unsigned		762503	0					
+ANR	762615	Identifier	flags		762503	1					
+ANR	762616	CFGEntryNode	ENTRY		762503		True				
+ANR	762617	CFGExitNode	EXIT		762503		True				
+ANR	762618	Symbol	msg		762503						
+ANR	762619	Symbol	NULL		762503						
+ANR	762620	Symbol	mq		762503						
+ANR	762621	Symbol	& mq -> cond		762503						
+ANR	762622	Symbol	mq -> elsize		762503						
+ANR	762623	Symbol	flags		762503						
+ANR	762624	Symbol	mq -> fifo		762503						
+ANR	762625	Symbol	EAGAIN		762503						
+ANR	762626	Symbol	* mq		762503						
+ANR	762627	Symbol	mq -> err_recv		762503						
+ANR	762628	Symbol	AV_THREAD_MESSAGE_NONBLOCK		762503						
+ANR	762629	Symbol	& mq -> lock		762503						
+ANR	762630	Symbol	av_fifo_size		762503						
+ANR	762631	Symbol	AVERROR		762503						

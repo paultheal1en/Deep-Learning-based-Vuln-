@@ -1,0 +1,396 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9414819	File	/home/p4ultr4n/workplace/ReVeal/raw_code/win32_aio_submit_0.c								
+ANR	9414820	Function	win32_aio_submit	1:0:0:1637							
+ANR	9414821	FunctionDef	"win32_aio_submit (BlockDriverState * bs , QEMUWin32AIOState * aio , HANDLE hfile , int64_t sector_num , QEMUIOVector * qiov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int type)"		9414820	0					
+ANR	9414822	CompoundStatement		9:0:234:1637	9414820	0					
+ANR	9414823	IdentifierDeclStatement	struct QEMUWin32AIOCB * waiocb ;	11:4:241:270	9414820	0	True				
+ANR	9414824	IdentifierDecl	* waiocb		9414820	0					
+ANR	9414825	IdentifierDeclType	struct QEMUWin32AIOCB *		9414820	0					
+ANR	9414826	Identifier	waiocb		9414820	1					
+ANR	9414827	IdentifierDeclStatement	uint64_t offset = sector_num * 512 ;	13:4:277:311	9414820	1	True				
+ANR	9414828	IdentifierDecl	offset = sector_num * 512		9414820	0					
+ANR	9414829	IdentifierDeclType	uint64_t		9414820	0					
+ANR	9414830	Identifier	offset		9414820	1					
+ANR	9414831	AssignmentExpression	offset = sector_num * 512		9414820	2		=			
+ANR	9414832	Identifier	offset		9414820	0					
+ANR	9414833	MultiplicativeExpression	sector_num * 512		9414820	1		*			
+ANR	9414834	Identifier	sector_num		9414820	0					
+ANR	9414835	PrimaryExpression	512		9414820	1					
+ANR	9414836	IdentifierDeclStatement	DWORD rc ;	15:4:318:326	9414820	2	True				
+ANR	9414837	IdentifierDecl	rc		9414820	0					
+ANR	9414838	IdentifierDeclType	DWORD		9414820	0					
+ANR	9414839	Identifier	rc		9414820	1					
+ANR	9414840	ExpressionStatement	"waiocb = qemu_aio_get ( & win32_aio_pool , bs , cb , opaque )"	19:4:335:389	9414820	3	True				
+ANR	9414841	AssignmentExpression	"waiocb = qemu_aio_get ( & win32_aio_pool , bs , cb , opaque )"		9414820	0		=			
+ANR	9414842	Identifier	waiocb		9414820	0					
+ANR	9414843	CallExpression	"qemu_aio_get ( & win32_aio_pool , bs , cb , opaque )"		9414820	1					
+ANR	9414844	Callee	qemu_aio_get		9414820	0					
+ANR	9414845	Identifier	qemu_aio_get		9414820	0					
+ANR	9414846	ArgumentList	& win32_aio_pool		9414820	1					
+ANR	9414847	Argument	& win32_aio_pool		9414820	0					
+ANR	9414848	UnaryOperationExpression	& win32_aio_pool		9414820	0					
+ANR	9414849	UnaryOperator	&		9414820	0					
+ANR	9414850	Identifier	win32_aio_pool		9414820	1					
+ANR	9414851	Argument	bs		9414820	1					
+ANR	9414852	Identifier	bs		9414820	0					
+ANR	9414853	Argument	cb		9414820	2					
+ANR	9414854	Identifier	cb		9414820	0					
+ANR	9414855	Argument	opaque		9414820	3					
+ANR	9414856	Identifier	opaque		9414820	0					
+ANR	9414857	ExpressionStatement	waiocb -> nbytes = nb_sectors * 512	21:4:396:429	9414820	4	True				
+ANR	9414858	AssignmentExpression	waiocb -> nbytes = nb_sectors * 512		9414820	0		=			
+ANR	9414859	PtrMemberAccess	waiocb -> nbytes		9414820	0					
+ANR	9414860	Identifier	waiocb		9414820	0					
+ANR	9414861	Identifier	nbytes		9414820	1					
+ANR	9414862	MultiplicativeExpression	nb_sectors * 512		9414820	1		*			
+ANR	9414863	Identifier	nb_sectors		9414820	0					
+ANR	9414864	PrimaryExpression	512		9414820	1					
+ANR	9414865	ExpressionStatement	waiocb -> qiov = qiov	23:4:436:455	9414820	5	True				
+ANR	9414866	AssignmentExpression	waiocb -> qiov = qiov		9414820	0		=			
+ANR	9414867	PtrMemberAccess	waiocb -> qiov		9414820	0					
+ANR	9414868	Identifier	waiocb		9414820	0					
+ANR	9414869	Identifier	qiov		9414820	1					
+ANR	9414870	Identifier	qiov		9414820	1					
+ANR	9414871	ExpressionStatement	waiocb -> is_read = ( type == QEMU_AIO_READ )	25:4:462:503	9414820	6	True				
+ANR	9414872	AssignmentExpression	waiocb -> is_read = ( type == QEMU_AIO_READ )		9414820	0		=			
+ANR	9414873	PtrMemberAccess	waiocb -> is_read		9414820	0					
+ANR	9414874	Identifier	waiocb		9414820	0					
+ANR	9414875	Identifier	is_read		9414820	1					
+ANR	9414876	EqualityExpression	type == QEMU_AIO_READ		9414820	1		==			
+ANR	9414877	Identifier	type		9414820	0					
+ANR	9414878	Identifier	QEMU_AIO_READ		9414820	1					
+ANR	9414879	IfStatement	if ( qiov -> niov > 1 )		9414820	7					
+ANR	9414880	Condition	qiov -> niov > 1	29:8:516:529	9414820	0	True				
+ANR	9414881	RelationalExpression	qiov -> niov > 1		9414820	0		>			
+ANR	9414882	PtrMemberAccess	qiov -> niov		9414820	0					
+ANR	9414883	Identifier	qiov		9414820	0					
+ANR	9414884	Identifier	niov		9414820	1					
+ANR	9414885	PrimaryExpression	1		9414820	1					
+ANR	9414886	CompoundStatement		21:24:297:297	9414820	1					
+ANR	9414887	ExpressionStatement	"waiocb -> buf = qemu_blockalign ( bs , qiov -> size )"	31:8:543:588	9414820	0	True				
+ANR	9414888	AssignmentExpression	"waiocb -> buf = qemu_blockalign ( bs , qiov -> size )"		9414820	0		=			
+ANR	9414889	PtrMemberAccess	waiocb -> buf		9414820	0					
+ANR	9414890	Identifier	waiocb		9414820	0					
+ANR	9414891	Identifier	buf		9414820	1					
+ANR	9414892	CallExpression	"qemu_blockalign ( bs , qiov -> size )"		9414820	1					
+ANR	9414893	Callee	qemu_blockalign		9414820	0					
+ANR	9414894	Identifier	qemu_blockalign		9414820	0					
+ANR	9414895	ArgumentList	bs		9414820	1					
+ANR	9414896	Argument	bs		9414820	0					
+ANR	9414897	Identifier	bs		9414820	0					
+ANR	9414898	Argument	qiov -> size		9414820	1					
+ANR	9414899	PtrMemberAccess	qiov -> size		9414820	0					
+ANR	9414900	Identifier	qiov		9414820	0					
+ANR	9414901	Identifier	size		9414820	1					
+ANR	9414902	IfStatement	if ( type & QEMU_AIO_WRITE )		9414820	1					
+ANR	9414903	Condition	type & QEMU_AIO_WRITE	33:12:603:623	9414820	0	True				
+ANR	9414904	BitAndExpression	type & QEMU_AIO_WRITE		9414820	0		&			
+ANR	9414905	Identifier	type		9414820	0					
+ANR	9414906	Identifier	QEMU_AIO_WRITE		9414820	1					
+ANR	9414907	CompoundStatement		29:12:442:447	9414820	1					
+ANR	9414908	IdentifierDeclStatement	char * p = waiocb -> buf ;	35:12:641:662	9414820	0	True				
+ANR	9414909	IdentifierDecl	* p = waiocb -> buf		9414820	0					
+ANR	9414910	IdentifierDeclType	char *		9414820	0					
+ANR	9414911	Identifier	p		9414820	1					
+ANR	9414912	AssignmentExpression	* p = waiocb -> buf		9414820	2		=			
+ANR	9414913	Identifier	p		9414820	0					
+ANR	9414914	PtrMemberAccess	waiocb -> buf		9414820	1					
+ANR	9414915	Identifier	waiocb		9414820	0					
+ANR	9414916	Identifier	buf		9414820	1					
+ANR	9414917	IdentifierDeclStatement	int i ;	37:12:677:682	9414820	1	True				
+ANR	9414918	IdentifierDecl	i		9414820	0					
+ANR	9414919	IdentifierDeclType	int		9414820	0					
+ANR	9414920	Identifier	i		9414820	1					
+ANR	9414921	ForStatement	for ( i = 0 ; i < qiov -> niov ; ++ i )		9414820	2					
+ANR	9414922	ForInit	i = 0 ;	41:17:704:709	9414820	0	True				
+ANR	9414923	AssignmentExpression	i = 0		9414820	0		=			
+ANR	9414924	Identifier	i		9414820	0					
+ANR	9414925	PrimaryExpression	0		9414820	1					
+ANR	9414926	Condition	i < qiov -> niov	41:24:711:724	9414820	1	True				
+ANR	9414927	RelationalExpression	i < qiov -> niov		9414820	0		<			
+ANR	9414928	Identifier	i		9414820	0					
+ANR	9414929	PtrMemberAccess	qiov -> niov		9414820	1					
+ANR	9414930	Identifier	qiov		9414820	0					
+ANR	9414931	Identifier	niov		9414820	1					
+ANR	9414932	UnaryExpression	++ i	41:40:727:729	9414820	2	True				
+ANR	9414933	IncDec	++		9414820	0					
+ANR	9414934	Identifier	i		9414820	1					
+ANR	9414935	CompoundStatement		33:45:497:497	9414820	3					
+ANR	9414936	ExpressionStatement	"memcpy ( p , qiov -> iov [ i ] . iov_base , qiov -> iov [ i ] . iov_len )"	43:16:751:805	9414820	0	True				
+ANR	9414937	CallExpression	"memcpy ( p , qiov -> iov [ i ] . iov_base , qiov -> iov [ i ] . iov_len )"		9414820	0					
+ANR	9414938	Callee	memcpy		9414820	0					
+ANR	9414939	Identifier	memcpy		9414820	0					
+ANR	9414940	ArgumentList	p		9414820	1					
+ANR	9414941	Argument	p		9414820	0					
+ANR	9414942	Identifier	p		9414820	0					
+ANR	9414943	Argument	qiov -> iov [ i ] . iov_base		9414820	1					
+ANR	9414944	MemberAccess	qiov -> iov [ i ] . iov_base		9414820	0					
+ANR	9414945	ArrayIndexing	qiov -> iov [ i ]		9414820	0					
+ANR	9414946	PtrMemberAccess	qiov -> iov		9414820	0					
+ANR	9414947	Identifier	qiov		9414820	0					
+ANR	9414948	Identifier	iov		9414820	1					
+ANR	9414949	Identifier	i		9414820	1					
+ANR	9414950	Identifier	iov_base		9414820	1					
+ANR	9414951	Argument	qiov -> iov [ i ] . iov_len		9414820	2					
+ANR	9414952	MemberAccess	qiov -> iov [ i ] . iov_len		9414820	0					
+ANR	9414953	ArrayIndexing	qiov -> iov [ i ]		9414820	0					
+ANR	9414954	PtrMemberAccess	qiov -> iov		9414820	0					
+ANR	9414955	Identifier	qiov		9414820	0					
+ANR	9414956	Identifier	iov		9414820	1					
+ANR	9414957	Identifier	i		9414820	1					
+ANR	9414958	Identifier	iov_len		9414820	1					
+ANR	9414959	ExpressionStatement	p += qiov -> iov [ i ] . iov_len	45:16:824:849	9414820	1	True				
+ANR	9414960	AssignmentExpression	p += qiov -> iov [ i ] . iov_len		9414820	0		+=			
+ANR	9414961	Identifier	p		9414820	0					
+ANR	9414962	MemberAccess	qiov -> iov [ i ] . iov_len		9414820	1					
+ANR	9414963	ArrayIndexing	qiov -> iov [ i ]		9414820	0					
+ANR	9414964	PtrMemberAccess	qiov -> iov		9414820	0					
+ANR	9414965	Identifier	qiov		9414820	0					
+ANR	9414966	Identifier	iov		9414820	1					
+ANR	9414967	Identifier	i		9414820	1					
+ANR	9414968	Identifier	iov_len		9414820	1					
+ANR	9414969	ExpressionStatement	waiocb -> is_linear = false	51:8:886:911	9414820	2	True				
+ANR	9414970	AssignmentExpression	waiocb -> is_linear = false		9414820	0		=			
+ANR	9414971	PtrMemberAccess	waiocb -> is_linear		9414820	0					
+ANR	9414972	Identifier	waiocb		9414820	0					
+ANR	9414973	Identifier	is_linear		9414820	1					
+ANR	9414974	Identifier	false		9414820	1					
+ANR	9414975	ElseStatement	else		9414820	0					
+ANR	9414976	CompoundStatement		45:11:690:690	9414820	0					
+ANR	9414977	ExpressionStatement	waiocb -> buf = qiov -> iov [ 0 ] . iov_base	55:8:936:971	9414820	0	True				
+ANR	9414978	AssignmentExpression	waiocb -> buf = qiov -> iov [ 0 ] . iov_base		9414820	0		=			
+ANR	9414979	PtrMemberAccess	waiocb -> buf		9414820	0					
+ANR	9414980	Identifier	waiocb		9414820	0					
+ANR	9414981	Identifier	buf		9414820	1					
+ANR	9414982	MemberAccess	qiov -> iov [ 0 ] . iov_base		9414820	1					
+ANR	9414983	ArrayIndexing	qiov -> iov [ 0 ]		9414820	0					
+ANR	9414984	PtrMemberAccess	qiov -> iov		9414820	0					
+ANR	9414985	Identifier	qiov		9414820	0					
+ANR	9414986	Identifier	iov		9414820	1					
+ANR	9414987	PrimaryExpression	0		9414820	1					
+ANR	9414988	Identifier	iov_base		9414820	1					
+ANR	9414989	ExpressionStatement	waiocb -> is_linear = true	57:8:982:1006	9414820	1	True				
+ANR	9414990	AssignmentExpression	waiocb -> is_linear = true		9414820	0		=			
+ANR	9414991	PtrMemberAccess	waiocb -> is_linear		9414820	0					
+ANR	9414992	Identifier	waiocb		9414820	0					
+ANR	9414993	Identifier	is_linear		9414820	1					
+ANR	9414994	Identifier	true		9414820	1					
+ANR	9414995	Statement	waiocb	63:4:1022:1027	9414820	8	True				
+ANR	9414996	Statement	->	63:10:1028:1029	9414820	9	True				
+ANR	9414997	Statement	ov	63:12:1030:1031	9414820	10	True				
+ANR	9414998	Statement	=	63:15:1033:1033	9414820	11	True				
+ANR	9414999	Statement	(	63:17:1035:1035	9414820	12	True				
+ANR	9415000	Statement	OVERLAPPED	63:18:1036:1045	9414820	13	True				
+ANR	9415001	Statement	)	63:28:1046:1046	9414820	14	True				
+ANR	9415002	CompoundStatement		55:30:813:813	9414820	15					
+ANR	9415003	Statement	.	65:8:1059:1059	9414820	0	True				
+ANR	9415004	Statement	Offset	65:9:1060:1065	9414820	1	True				
+ANR	9415005	Statement	=	65:16:1067:1067	9414820	2	True				
+ANR	9415006	Statement	(	65:18:1069:1069	9414820	3	True				
+ANR	9415007	Statement	DWORD	65:19:1070:1074	9414820	4	True				
+ANR	9415008	Statement	)	65:24:1075:1075	9414820	5	True				
+ANR	9415009	Statement	offset	65:26:1077:1082	9414820	6	True				
+ANR	9415010	Statement	","	65:32:1083:1083	9414820	7	True				
+ANR	9415011	Statement	.	67:8:1094:1094	9414820	8	True				
+ANR	9415012	Statement	OffsetHigh	67:9:1095:1104	9414820	9	True				
+ANR	9415013	Statement	=	67:20:1106:1106	9414820	10	True				
+ANR	9415014	Statement	(	67:22:1108:1108	9414820	11	True				
+ANR	9415015	Statement	DWORD	67:23:1109:1113	9414820	12	True				
+ANR	9415016	Statement	)	67:28:1114:1114	9414820	13	True				
+ANR	9415017	Statement	(	67:30:1116:1116	9414820	14	True				
+ANR	9415018	Statement	offset	67:31:1117:1122	9414820	15	True				
+ANR	9415019	Statement	>>	67:38:1124:1125	9414820	16	True				
+ANR	9415020	Statement	32	67:41:1127:1128	9414820	17	True				
+ANR	9415021	Statement	)	67:43:1129:1129	9414820	18	True				
+ANR	9415022	Statement	","	67:44:1130:1130	9414820	19	True				
+ANR	9415023	Statement	.	69:8:1141:1141	9414820	20	True				
+ANR	9415024	Statement	hEvent	69:9:1142:1147	9414820	21	True				
+ANR	9415025	Statement	=	69:16:1149:1149	9414820	22	True				
+ANR	9415026	Statement	event_notifier_get_handle	69:18:1151:1175	9414820	23	True				
+ANR	9415027	Statement	(	69:43:1176:1176	9414820	24	True				
+ANR	9415028	Statement	&	69:44:1177:1177	9414820	25	True				
+ANR	9415029	Statement	aio	69:45:1178:1180	9414820	26	True				
+ANR	9415030	Statement	->	69:48:1181:1182	9414820	27	True				
+ANR	9415031	Statement	e	69:50:1183:1183	9414820	28	True				
+ANR	9415032	Statement	)	69:51:1184:1184	9414820	29	True				
+ANR	9415033	ExpressionStatement		71:5:1192:1192	9414820	16	True				
+ANR	9415034	ExpressionStatement	aio -> count ++	73:4:1199:1211	9414820	17	True				
+ANR	9415035	PostIncDecOperationExpression	aio -> count ++		9414820	0					
+ANR	9415036	PtrMemberAccess	aio -> count		9414820	0					
+ANR	9415037	Identifier	aio		9414820	0					
+ANR	9415038	Identifier	count		9414820	1					
+ANR	9415039	IncDec	++		9414820	1					
+ANR	9415040	IfStatement	if ( type & QEMU_AIO_READ )		9414820	18					
+ANR	9415041	Condition	type & QEMU_AIO_READ	77:8:1224:1243	9414820	0	True				
+ANR	9415042	BitAndExpression	type & QEMU_AIO_READ		9414820	0		&			
+ANR	9415043	Identifier	type		9414820	0					
+ANR	9415044	Identifier	QEMU_AIO_READ		9414820	1					
+ANR	9415045	CompoundStatement		69:30:1011:1011	9414820	1					
+ANR	9415046	ExpressionStatement	"rc = ReadFile ( hfile , waiocb -> buf , waiocb -> nbytes , NULL , & waiocb -> ov )"	79:8:1257:1325	9414820	0	True				
+ANR	9415047	AssignmentExpression	"rc = ReadFile ( hfile , waiocb -> buf , waiocb -> nbytes , NULL , & waiocb -> ov )"		9414820	0		=			
+ANR	9415048	Identifier	rc		9414820	0					
+ANR	9415049	CallExpression	"ReadFile ( hfile , waiocb -> buf , waiocb -> nbytes , NULL , & waiocb -> ov )"		9414820	1					
+ANR	9415050	Callee	ReadFile		9414820	0					
+ANR	9415051	Identifier	ReadFile		9414820	0					
+ANR	9415052	ArgumentList	hfile		9414820	1					
+ANR	9415053	Argument	hfile		9414820	0					
+ANR	9415054	Identifier	hfile		9414820	0					
+ANR	9415055	Argument	waiocb -> buf		9414820	1					
+ANR	9415056	PtrMemberAccess	waiocb -> buf		9414820	0					
+ANR	9415057	Identifier	waiocb		9414820	0					
+ANR	9415058	Identifier	buf		9414820	1					
+ANR	9415059	Argument	waiocb -> nbytes		9414820	2					
+ANR	9415060	PtrMemberAccess	waiocb -> nbytes		9414820	0					
+ANR	9415061	Identifier	waiocb		9414820	0					
+ANR	9415062	Identifier	nbytes		9414820	1					
+ANR	9415063	Argument	NULL		9414820	3					
+ANR	9415064	Identifier	NULL		9414820	0					
+ANR	9415065	Argument	& waiocb -> ov		9414820	4					
+ANR	9415066	UnaryOperationExpression	& waiocb -> ov		9414820	0					
+ANR	9415067	UnaryOperator	&		9414820	0					
+ANR	9415068	PtrMemberAccess	waiocb -> ov		9414820	1					
+ANR	9415069	Identifier	waiocb		9414820	0					
+ANR	9415070	Identifier	ov		9414820	1					
+ANR	9415071	ElseStatement	else		9414820	0					
+ANR	9415072	CompoundStatement		73:11:1104:1104	9414820	0					
+ANR	9415073	ExpressionStatement	"rc = WriteFile ( hfile , waiocb -> buf , waiocb -> nbytes , NULL , & waiocb -> ov )"	83:8:1350:1419	9414820	0	True				
+ANR	9415074	AssignmentExpression	"rc = WriteFile ( hfile , waiocb -> buf , waiocb -> nbytes , NULL , & waiocb -> ov )"		9414820	0		=			
+ANR	9415075	Identifier	rc		9414820	0					
+ANR	9415076	CallExpression	"WriteFile ( hfile , waiocb -> buf , waiocb -> nbytes , NULL , & waiocb -> ov )"		9414820	1					
+ANR	9415077	Callee	WriteFile		9414820	0					
+ANR	9415078	Identifier	WriteFile		9414820	0					
+ANR	9415079	ArgumentList	hfile		9414820	1					
+ANR	9415080	Argument	hfile		9414820	0					
+ANR	9415081	Identifier	hfile		9414820	0					
+ANR	9415082	Argument	waiocb -> buf		9414820	1					
+ANR	9415083	PtrMemberAccess	waiocb -> buf		9414820	0					
+ANR	9415084	Identifier	waiocb		9414820	0					
+ANR	9415085	Identifier	buf		9414820	1					
+ANR	9415086	Argument	waiocb -> nbytes		9414820	2					
+ANR	9415087	PtrMemberAccess	waiocb -> nbytes		9414820	0					
+ANR	9415088	Identifier	waiocb		9414820	0					
+ANR	9415089	Identifier	nbytes		9414820	1					
+ANR	9415090	Argument	NULL		9414820	3					
+ANR	9415091	Identifier	NULL		9414820	0					
+ANR	9415092	Argument	& waiocb -> ov		9414820	4					
+ANR	9415093	UnaryOperationExpression	& waiocb -> ov		9414820	0					
+ANR	9415094	UnaryOperator	&		9414820	0					
+ANR	9415095	PtrMemberAccess	waiocb -> ov		9414820	1					
+ANR	9415096	Identifier	waiocb		9414820	0					
+ANR	9415097	Identifier	ov		9414820	1					
+ANR	9415098	IfStatement	if ( rc == 0 && GetLastError ( ) != ERROR_IO_PENDING )		9414820	19					
+ANR	9415099	Condition	rc == 0 && GetLastError ( ) != ERROR_IO_PENDING	87:7:1436:1480	9414820	0	True				
+ANR	9415100	AndExpression	rc == 0 && GetLastError ( ) != ERROR_IO_PENDING		9414820	0		&&			
+ANR	9415101	EqualityExpression	rc == 0		9414820	0		==			
+ANR	9415102	Identifier	rc		9414820	0					
+ANR	9415103	PrimaryExpression	0		9414820	1					
+ANR	9415104	EqualityExpression	GetLastError ( ) != ERROR_IO_PENDING		9414820	1		!=			
+ANR	9415105	CallExpression	GetLastError ( )		9414820	0					
+ANR	9415106	Callee	GetLastError		9414820	0					
+ANR	9415107	Identifier	GetLastError		9414820	0					
+ANR	9415108	ArgumentList			9414820	1					
+ANR	9415109	Identifier	ERROR_IO_PENDING		9414820	1					
+ANR	9415110	CompoundStatement		79:54:1248:1248	9414820	1					
+ANR	9415111	GotoStatement	goto out_dec_count ;	89:8:1494:1512	9414820	0	True				
+ANR	9415112	Identifier	out_dec_count		9414820	0					
+ANR	9415113	ReturnStatement	return & waiocb -> common ;	93:4:1526:1548	9414820	20	True				
+ANR	9415114	UnaryOperationExpression	& waiocb -> common		9414820	0					
+ANR	9415115	UnaryOperator	&		9414820	0					
+ANR	9415116	PtrMemberAccess	waiocb -> common		9414820	1					
+ANR	9415117	Identifier	waiocb		9414820	0					
+ANR	9415118	Identifier	common		9414820	1					
+ANR	9415119	Label	out_dec_count :	97:0:1553:1566	9414820	21	True				
+ANR	9415120	Identifier	out_dec_count		9414820	0					
+ANR	9415121	ExpressionStatement	aio -> count --	99:4:1573:1585	9414820	22	True				
+ANR	9415122	PostIncDecOperationExpression	aio -> count --		9414820	0					
+ANR	9415123	PtrMemberAccess	aio -> count		9414820	0					
+ANR	9415124	Identifier	aio		9414820	0					
+ANR	9415125	Identifier	count		9414820	1					
+ANR	9415126	IncDec	--		9414820	1					
+ANR	9415127	ExpressionStatement	qemu_aio_release ( waiocb )	101:4:1592:1616	9414820	23	True				
+ANR	9415128	CallExpression	qemu_aio_release ( waiocb )		9414820	0					
+ANR	9415129	Callee	qemu_aio_release		9414820	0					
+ANR	9415130	Identifier	qemu_aio_release		9414820	0					
+ANR	9415131	ArgumentList	waiocb		9414820	1					
+ANR	9415132	Argument	waiocb		9414820	0					
+ANR	9415133	Identifier	waiocb		9414820	0					
+ANR	9415134	ReturnStatement	return NULL ;	103:4:1623:1634	9414820	24	True				
+ANR	9415135	Identifier	NULL		9414820	0					
+ANR	9415136	ReturnType	BlockDriverAIOCB *		9414820	1					
+ANR	9415137	Identifier	win32_aio_submit		9414820	2					
+ANR	9415138	ParameterList	"BlockDriverState * bs , QEMUWin32AIOState * aio , HANDLE hfile , int64_t sector_num , QEMUIOVector * qiov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int type"		9414820	3					
+ANR	9415139	Parameter	BlockDriverState * bs	1:35:35:54	9414820	0	True				
+ANR	9415140	ParameterType	BlockDriverState *		9414820	0					
+ANR	9415141	Identifier	bs		9414820	1					
+ANR	9415142	Parameter	QEMUWin32AIOState * aio	3:8:66:87	9414820	1	True				
+ANR	9415143	ParameterType	QEMUWin32AIOState *		9414820	0					
+ANR	9415144	Identifier	aio		9414820	1					
+ANR	9415145	Parameter	HANDLE hfile	3:32:90:101	9414820	2	True				
+ANR	9415146	ParameterType	HANDLE		9414820	0					
+ANR	9415147	Identifier	hfile		9414820	1					
+ANR	9415148	Parameter	int64_t sector_num	5:8:113:130	9414820	3	True				
+ANR	9415149	ParameterType	int64_t		9414820	0					
+ANR	9415150	Identifier	sector_num		9414820	1					
+ANR	9415151	Parameter	QEMUIOVector * qiov	5:28:133:150	9414820	4	True				
+ANR	9415152	ParameterType	QEMUIOVector *		9414820	0					
+ANR	9415153	Identifier	qiov		9414820	1					
+ANR	9415154	Parameter	int nb_sectors	5:48:153:166	9414820	5	True				
+ANR	9415155	ParameterType	int		9414820	0					
+ANR	9415156	Identifier	nb_sectors		9414820	1					
+ANR	9415157	Parameter	BlockDriverCompletionFunc * cb	7:8:178:206	9414820	6	True				
+ANR	9415158	ParameterType	BlockDriverCompletionFunc *		9414820	0					
+ANR	9415159	Identifier	cb		9414820	1					
+ANR	9415160	Parameter	void * opaque	7:39:209:220	9414820	7	True				
+ANR	9415161	ParameterType	void *		9414820	0					
+ANR	9415162	Identifier	opaque		9414820	1					
+ANR	9415163	Parameter	int type	7:53:223:230	9414820	8	True				
+ANR	9415164	ParameterType	int		9414820	0					
+ANR	9415165	Identifier	type		9414820	1					
+ANR	9415166	CFGEntryNode	ENTRY		9414820		True				
+ANR	9415167	CFGExitNode	EXIT		9414820		True				
+ANR	9415168	Symbol	qemu_blockalign		9414820						
+ANR	9415169	Symbol	nb_sectors		9414820						
+ANR	9415170	Symbol	WriteFile		9414820						
+ANR	9415171	Symbol	& waiocb -> common		9414820						
+ANR	9415172	Symbol	aio -> count		9414820						
+ANR	9415173	Symbol	aio		9414820						
+ANR	9415174	Symbol	ERROR_IO_PENDING		9414820						
+ANR	9415175	Symbol	qiov		9414820						
+ANR	9415176	Symbol	type		9414820						
+ANR	9415177	Symbol	ReadFile		9414820						
+ANR	9415178	Symbol	hfile		9414820						
+ANR	9415179	Symbol	* aio		9414820						
+ANR	9415180	Symbol	bs		9414820						
+ANR	9415181	Symbol	qiov -> size		9414820						
+ANR	9415182	Symbol	* waiocb		9414820						
+ANR	9415183	Symbol	waiocb		9414820						
+ANR	9415184	Symbol	* qiov		9414820						
+ANR	9415185	Symbol	waiocb -> is_linear		9414820						
+ANR	9415186	Symbol	cb		9414820						
+ANR	9415187	Symbol	opaque		9414820						
+ANR	9415188	Symbol	& waiocb -> ov		9414820						
+ANR	9415189	Symbol	NULL		9414820						
+ANR	9415190	Symbol	offset		9414820						
+ANR	9415191	Symbol	* qiov -> iov		9414820						
+ANR	9415192	Symbol	waiocb -> buf		9414820						
+ANR	9415193	Symbol	false		9414820						
+ANR	9415194	Symbol	qemu_aio_get		9414820						
+ANR	9415195	Symbol	waiocb -> is_read		9414820						
+ANR	9415196	Symbol	i		9414820						
+ANR	9415197	Symbol	waiocb -> nbytes		9414820						
+ANR	9415198	Symbol	qiov -> iov [ i ] . iov_len		9414820						
+ANR	9415199	Symbol	qiov -> niov		9414820						
+ANR	9415200	Symbol	sector_num		9414820						
+ANR	9415201	Symbol	QEMU_AIO_WRITE		9414820						
+ANR	9415202	Symbol	p		9414820						
+ANR	9415203	Symbol	rc		9414820						
+ANR	9415204	Symbol	qiov -> iov [ 0 ] . iov_base		9414820						
+ANR	9415205	Symbol	* i		9414820						
+ANR	9415206	Symbol	qiov -> iov [ i ] . iov_base		9414820						
+ANR	9415207	Symbol	& win32_aio_pool		9414820						
+ANR	9415208	Symbol	qiov -> iov		9414820						
+ANR	9415209	Symbol	GetLastError		9414820						
+ANR	9415210	Symbol	* * qiov		9414820						
+ANR	9415211	Symbol	true		9414820						
+ANR	9415212	Symbol	QEMU_AIO_READ		9414820						
+ANR	9415213	Symbol	waiocb -> qiov		9414820						

@@ -1,0 +1,173 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	943512	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_all_create_snapshot_1.c								
+ANR	943513	Function	bdrv_all_create_snapshot	1:0:0:880							
+ANR	943514	FunctionDef	"bdrv_all_create_snapshot (QEMUSnapshotInfo * sn , BlockDriverState * vm_state_bs , uint64_t vm_state_size , BlockDriverState * * first_bad_bs)"		943513	0					
+ANR	943515	CompoundStatement		9:0:230:880	943513	0					
+ANR	943516	IdentifierDeclStatement	int err = 0 ;	11:4:237:248	943513	0	True				
+ANR	943517	IdentifierDecl	err = 0		943513	0					
+ANR	943518	IdentifierDeclType	int		943513	0					
+ANR	943519	Identifier	err		943513	1					
+ANR	943520	AssignmentExpression	err = 0		943513	2		=			
+ANR	943521	Identifier	err		943513	0					
+ANR	943522	PrimaryExpression	0		943513	1					
+ANR	943523	IdentifierDeclStatement	BlockDriverState * bs ;	13:4:255:275	943513	1	True				
+ANR	943524	IdentifierDecl	* bs		943513	0					
+ANR	943525	IdentifierDeclType	BlockDriverState *		943513	0					
+ANR	943526	Identifier	bs		943513	1					
+ANR	943527	IdentifierDeclStatement	BdrvNextIterator it ;	15:4:282:301	943513	2	True				
+ANR	943528	IdentifierDecl	it		943513	0					
+ANR	943529	IdentifierDeclType	BdrvNextIterator		943513	0					
+ANR	943530	Identifier	it		943513	1					
+ANR	943531	ForStatement	for ( bs = bdrv_first ( & it ) ; bs ; bs = bdrv_next ( & it ) )		943513	3					
+ANR	943532	ForInit	bs = bdrv_first ( & it ) ;	19:9:315:335	943513	0	True				
+ANR	943533	AssignmentExpression	bs = bdrv_first ( & it )		943513	0		=			
+ANR	943534	Identifier	bs		943513	0					
+ANR	943535	CallExpression	bdrv_first ( & it )		943513	1					
+ANR	943536	Callee	bdrv_first		943513	0					
+ANR	943537	Identifier	bdrv_first		943513	0					
+ANR	943538	ArgumentList	& it		943513	1					
+ANR	943539	Argument	& it		943513	0					
+ANR	943540	UnaryOperationExpression	& it		943513	0					
+ANR	943541	UnaryOperator	&		943513	0					
+ANR	943542	Identifier	it		943513	1					
+ANR	943543	Condition	bs	19:31:337:338	943513	1	True				
+ANR	943544	Identifier	bs		943513	0					
+ANR	943545	AssignmentExpression	bs = bdrv_next ( & it )	19:35:341:359	943513	2	True	=			
+ANR	943546	Identifier	bs		943513	0					
+ANR	943547	CallExpression	bdrv_next ( & it )		943513	1					
+ANR	943548	Callee	bdrv_next		943513	0					
+ANR	943549	Identifier	bdrv_next		943513	0					
+ANR	943550	ArgumentList	& it		943513	1					
+ANR	943551	Argument	& it		943513	0					
+ANR	943552	UnaryOperationExpression	& it		943513	0					
+ANR	943553	UnaryOperator	&		943513	0					
+ANR	943554	Identifier	it		943513	1					
+ANR	943555	CompoundStatement		13:8:142:184	943513	3					
+ANR	943556	IdentifierDeclStatement	AioContext * ctx = bdrv_get_aio_context ( bs ) ;	21:8:373:415	943513	0	True				
+ANR	943557	IdentifierDecl	* ctx = bdrv_get_aio_context ( bs )		943513	0					
+ANR	943558	IdentifierDeclType	AioContext *		943513	0					
+ANR	943559	Identifier	ctx		943513	1					
+ANR	943560	AssignmentExpression	* ctx = bdrv_get_aio_context ( bs )		943513	2		=			
+ANR	943561	Identifier	ctx		943513	0					
+ANR	943562	CallExpression	bdrv_get_aio_context ( bs )		943513	1					
+ANR	943563	Callee	bdrv_get_aio_context		943513	0					
+ANR	943564	Identifier	bdrv_get_aio_context		943513	0					
+ANR	943565	ArgumentList	bs		943513	1					
+ANR	943566	Argument	bs		943513	0					
+ANR	943567	Identifier	bs		943513	0					
+ANR	943568	ExpressionStatement	aio_context_acquire ( ctx )	25:8:428:452	943513	1	True				
+ANR	943569	CallExpression	aio_context_acquire ( ctx )		943513	0					
+ANR	943570	Callee	aio_context_acquire		943513	0					
+ANR	943571	Identifier	aio_context_acquire		943513	0					
+ANR	943572	ArgumentList	ctx		943513	1					
+ANR	943573	Argument	ctx		943513	0					
+ANR	943574	Identifier	ctx		943513	0					
+ANR	943575	IfStatement	if ( bs == vm_state_bs )		943513	2					
+ANR	943576	Condition	bs == vm_state_bs	27:12:467:483	943513	0	True				
+ANR	943577	EqualityExpression	bs == vm_state_bs		943513	0		==			
+ANR	943578	Identifier	bs		943513	0					
+ANR	943579	Identifier	vm_state_bs		943513	1					
+ANR	943580	CompoundStatement		19:31:255:255	943513	1					
+ANR	943581	ExpressionStatement	sn -> vm_state_size = vm_state_size	29:12:501:534	943513	0	True				
+ANR	943582	AssignmentExpression	sn -> vm_state_size = vm_state_size		943513	0		=			
+ANR	943583	PtrMemberAccess	sn -> vm_state_size		943513	0					
+ANR	943584	Identifier	sn		943513	0					
+ANR	943585	Identifier	vm_state_size		943513	1					
+ANR	943586	Identifier	vm_state_size		943513	1					
+ANR	943587	ExpressionStatement	"err = bdrv_snapshot_create ( bs , sn )"	31:12:549:583	943513	1	True				
+ANR	943588	AssignmentExpression	"err = bdrv_snapshot_create ( bs , sn )"		943513	0		=			
+ANR	943589	Identifier	err		943513	0					
+ANR	943590	CallExpression	"bdrv_snapshot_create ( bs , sn )"		943513	1					
+ANR	943591	Callee	bdrv_snapshot_create		943513	0					
+ANR	943592	Identifier	bdrv_snapshot_create		943513	0					
+ANR	943593	ArgumentList	bs		943513	1					
+ANR	943594	Argument	bs		943513	0					
+ANR	943595	Identifier	bs		943513	0					
+ANR	943596	Argument	sn		943513	1					
+ANR	943597	Identifier	sn		943513	0					
+ANR	943598	ElseStatement	else		943513	0					
+ANR	943599	IfStatement	if ( bdrv_can_snapshot ( bs ) )		943513	0					
+ANR	943600	Condition	bdrv_can_snapshot ( bs )	33:19:605:625	943513	0	True				
+ANR	943601	CallExpression	bdrv_can_snapshot ( bs )		943513	0					
+ANR	943602	Callee	bdrv_can_snapshot		943513	0					
+ANR	943603	Identifier	bdrv_can_snapshot		943513	0					
+ANR	943604	ArgumentList	bs		943513	1					
+ANR	943605	Argument	bs		943513	0					
+ANR	943606	Identifier	bs		943513	0					
+ANR	943607	CompoundStatement		25:42:397:397	943513	1					
+ANR	943608	ExpressionStatement	sn -> vm_state_size = 0	35:12:643:664	943513	0	True				
+ANR	943609	AssignmentExpression	sn -> vm_state_size = 0		943513	0		=			
+ANR	943610	PtrMemberAccess	sn -> vm_state_size		943513	0					
+ANR	943611	Identifier	sn		943513	0					
+ANR	943612	Identifier	vm_state_size		943513	1					
+ANR	943613	PrimaryExpression	0		943513	1					
+ANR	943614	ExpressionStatement	"err = bdrv_snapshot_create ( bs , sn )"	37:12:679:713	943513	1	True				
+ANR	943615	AssignmentExpression	"err = bdrv_snapshot_create ( bs , sn )"		943513	0		=			
+ANR	943616	Identifier	err		943513	0					
+ANR	943617	CallExpression	"bdrv_snapshot_create ( bs , sn )"		943513	1					
+ANR	943618	Callee	bdrv_snapshot_create		943513	0					
+ANR	943619	Identifier	bdrv_snapshot_create		943513	0					
+ANR	943620	ArgumentList	bs		943513	1					
+ANR	943621	Argument	bs		943513	0					
+ANR	943622	Identifier	bs		943513	0					
+ANR	943623	Argument	sn		943513	1					
+ANR	943624	Identifier	sn		943513	0					
+ANR	943625	ExpressionStatement	aio_context_release ( ctx )	41:8:735:759	943513	3	True				
+ANR	943626	CallExpression	aio_context_release ( ctx )		943513	0					
+ANR	943627	Callee	aio_context_release		943513	0					
+ANR	943628	Identifier	aio_context_release		943513	0					
+ANR	943629	ArgumentList	ctx		943513	1					
+ANR	943630	Argument	ctx		943513	0					
+ANR	943631	Identifier	ctx		943513	0					
+ANR	943632	IfStatement	if ( err < 0 )		943513	4					
+ANR	943633	Condition	err < 0	43:12:774:780	943513	0	True				
+ANR	943634	RelationalExpression	err < 0		943513	0		<			
+ANR	943635	Identifier	err		943513	0					
+ANR	943636	PrimaryExpression	0		943513	1					
+ANR	943637	CompoundStatement		35:21:552:552	943513	1					
+ANR	943638	GotoStatement	goto fail ;	46:12:799:808	943513	0	True				
+ANR	943639	Identifier	fail		943513	0					
+ANR	943640	Label	fail :	54:0:831:835	943513	4	True				
+ANR	943641	Identifier	fail		943513	0					
+ANR	943642	ExpressionStatement	* first_bad_bs = bs	56:4:842:860	943513	5	True				
+ANR	943643	AssignmentExpression	* first_bad_bs = bs		943513	0		=			
+ANR	943644	UnaryOperationExpression	* first_bad_bs		943513	0					
+ANR	943645	UnaryOperator	*		943513	0					
+ANR	943646	Identifier	first_bad_bs		943513	1					
+ANR	943647	Identifier	bs		943513	1					
+ANR	943648	ReturnStatement	return err ;	58:4:867:877	943513	6	True				
+ANR	943649	Identifier	err		943513	0					
+ANR	943650	ReturnType	int		943513	1					
+ANR	943651	Identifier	bdrv_all_create_snapshot		943513	2					
+ANR	943652	ParameterList	"QEMUSnapshotInfo * sn , BlockDriverState * vm_state_bs , uint64_t vm_state_size , BlockDriverState * * first_bad_bs"		943513	3					
+ANR	943653	Parameter	QEMUSnapshotInfo * sn	1:29:29:48	943513	0	True				
+ANR	943654	ParameterType	QEMUSnapshotInfo *		943513	0					
+ANR	943655	Identifier	sn		943513	1					
+ANR	943656	Parameter	BlockDriverState * vm_state_bs	3:29:81:109	943513	1	True				
+ANR	943657	ParameterType	BlockDriverState *		943513	0					
+ANR	943658	Identifier	vm_state_bs		943513	1					
+ANR	943659	Parameter	uint64_t vm_state_size	5:29:142:163	943513	2	True				
+ANR	943660	ParameterType	uint64_t		943513	0					
+ANR	943661	Identifier	vm_state_size		943513	1					
+ANR	943662	Parameter	BlockDriverState * * first_bad_bs	7:29:196:226	943513	3	True				
+ANR	943663	ParameterType	BlockDriverState * *		943513	0					
+ANR	943664	Identifier	first_bad_bs		943513	1					
+ANR	943665	CFGEntryNode	ENTRY		943513		True				
+ANR	943666	CFGExitNode	EXIT		943513		True				
+ANR	943667	Symbol	bdrv_snapshot_create		943513						
+ANR	943668	Symbol	vm_state_bs		943513						
+ANR	943669	Symbol	bdrv_get_aio_context		943513						
+ANR	943670	Symbol	vm_state_size		943513						
+ANR	943671	Symbol	* sn		943513						
+ANR	943672	Symbol	err		943513						
+ANR	943673	Symbol	ctx		943513						
+ANR	943674	Symbol	sn -> vm_state_size		943513						
+ANR	943675	Symbol	it		943513						
+ANR	943676	Symbol	bs		943513						
+ANR	943677	Symbol	& it		943513						
+ANR	943678	Symbol	bdrv_next		943513						
+ANR	943679	Symbol	* first_bad_bs		943513						
+ANR	943680	Symbol	bdrv_can_snapshot		943513						
+ANR	943681	Symbol	first_bad_bs		943513						
+ANR	943682	Symbol	sn		943513						
+ANR	943683	Symbol	bdrv_first		943513						

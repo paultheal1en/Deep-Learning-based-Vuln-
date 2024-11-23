@@ -1,0 +1,353 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1537735	File	/home/p4ultr4n/workplace/ReVeal/raw_code/create_dynamic_disk_0.c								
+ANR	1537736	Function	create_dynamic_disk	1:0:0:1832							
+ANR	1537737	FunctionDef	"create_dynamic_disk (int fd , uint8_t * buf , int64_t total_sectors)"		1537736	0					
+ANR	1537738	CompoundStatement		3:0:77:1832	1537736	0					
+ANR	1537739	IdentifierDeclStatement	VHDDynDiskHeader * dyndisk_header = ( VHDDynDiskHeader * ) buf ;	5:4:84:152	1537736	0	True				
+ANR	1537740	IdentifierDecl	* dyndisk_header = ( VHDDynDiskHeader * ) buf		1537736	0					
+ANR	1537741	IdentifierDeclType	VHDDynDiskHeader *		1537736	0					
+ANR	1537742	Identifier	dyndisk_header		1537736	1					
+ANR	1537743	AssignmentExpression	* dyndisk_header = ( VHDDynDiskHeader * ) buf		1537736	2		=			
+ANR	1537744	Identifier	dyndisk_header		1537736	0					
+ANR	1537745	CastExpression	( VHDDynDiskHeader * ) buf		1537736	1					
+ANR	1537746	CastTarget	VHDDynDiskHeader *		1537736	0					
+ANR	1537747	Identifier	buf		1537736	1					
+ANR	1537748	IdentifierDeclStatement	"size_t block_size , num_bat_entries ;"	9:4:159:193	1537736	1	True				
+ANR	1537749	IdentifierDecl	block_size		1537736	0					
+ANR	1537750	IdentifierDeclType	size_t		1537736	0					
+ANR	1537751	Identifier	block_size		1537736	1					
+ANR	1537752	IdentifierDecl	num_bat_entries		1537736	1					
+ANR	1537753	IdentifierDeclType	size_t		1537736	0					
+ANR	1537754	Identifier	num_bat_entries		1537736	1					
+ANR	1537755	IdentifierDeclStatement	int i ;	11:4:200:205	1537736	2	True				
+ANR	1537756	IdentifierDecl	i		1537736	0					
+ANR	1537757	IdentifierDeclType	int		1537736	0					
+ANR	1537758	Identifier	i		1537736	1					
+ANR	1537759	IdentifierDeclStatement	int ret = - EIO ;	13:4:212:226	1537736	3	True				
+ANR	1537760	IdentifierDecl	ret = - EIO		1537736	0					
+ANR	1537761	IdentifierDeclType	int		1537736	0					
+ANR	1537762	Identifier	ret		1537736	1					
+ANR	1537763	AssignmentExpression	ret = - EIO		1537736	2		=			
+ANR	1537764	Identifier	ret		1537736	0					
+ANR	1537765	UnaryOperationExpression	- EIO		1537736	1					
+ANR	1537766	UnaryOperator	-		1537736	0					
+ANR	1537767	Identifier	EIO		1537736	1					
+ANR	1537768	ExpressionStatement	block_size = 0x200000	19:4:301:322	1537736	4	True				
+ANR	1537769	AssignmentExpression	block_size = 0x200000		1537736	0		=			
+ANR	1537770	Identifier	block_size		1537736	0					
+ANR	1537771	PrimaryExpression	0x200000		1537736	1					
+ANR	1537772	ExpressionStatement	num_bat_entries = ( total_sectors + block_size / 512 ) / ( block_size / 512 )	21:4:329:402	1537736	5	True				
+ANR	1537773	AssignmentExpression	num_bat_entries = ( total_sectors + block_size / 512 ) / ( block_size / 512 )		1537736	0		=			
+ANR	1537774	Identifier	num_bat_entries		1537736	0					
+ANR	1537775	MultiplicativeExpression	( total_sectors + block_size / 512 ) / ( block_size / 512 )		1537736	1		/			
+ANR	1537776	AdditiveExpression	total_sectors + block_size / 512		1537736	0		+			
+ANR	1537777	Identifier	total_sectors		1537736	0					
+ANR	1537778	MultiplicativeExpression	block_size / 512		1537736	1		/			
+ANR	1537779	Identifier	block_size		1537736	0					
+ANR	1537780	PrimaryExpression	512		1537736	1					
+ANR	1537781	MultiplicativeExpression	block_size / 512		1537736	1		/			
+ANR	1537782	Identifier	block_size		1537736	0					
+ANR	1537783	PrimaryExpression	512		1537736	1					
+ANR	1537784	IfStatement	"if ( write ( fd , buf , HEADER_SIZE ) != HEADER_SIZE )"		1537736	6					
+ANR	1537785	Condition	"write ( fd , buf , HEADER_SIZE ) != HEADER_SIZE"	25:8:415:456	1537736	0	True				
+ANR	1537786	EqualityExpression	"write ( fd , buf , HEADER_SIZE ) != HEADER_SIZE"		1537736	0		!=			
+ANR	1537787	CallExpression	"write ( fd , buf , HEADER_SIZE )"		1537736	0					
+ANR	1537788	Callee	write		1537736	0					
+ANR	1537789	Identifier	write		1537736	0					
+ANR	1537790	ArgumentList	fd		1537736	1					
+ANR	1537791	Argument	fd		1537736	0					
+ANR	1537792	Identifier	fd		1537736	0					
+ANR	1537793	Argument	buf		1537736	1					
+ANR	1537794	Identifier	buf		1537736	0					
+ANR	1537795	Argument	HEADER_SIZE		1537736	2					
+ANR	1537796	Identifier	HEADER_SIZE		1537736	0					
+ANR	1537797	Identifier	HEADER_SIZE		1537736	1					
+ANR	1537798	CompoundStatement		23:52:381:381	1537736	1					
+ANR	1537799	GotoStatement	goto fail ;	27:8:470:479	1537736	0	True				
+ANR	1537800	Identifier	fail		1537736	0					
+ANR	1537801	IfStatement	"if ( lseek ( fd , 1536 + ( ( num_bat_entries * 4 + 511 ) & ~511 ) , SEEK_SET ) < 0 )"		1537736	7					
+ANR	1537802	Condition	"lseek ( fd , 1536 + ( ( num_bat_entries * 4 + 511 ) & ~511 ) , SEEK_SET ) < 0"	33:8:499:566	1537736	0	True				
+ANR	1537803	RelationalExpression	"lseek ( fd , 1536 + ( ( num_bat_entries * 4 + 511 ) & ~511 ) , SEEK_SET ) < 0"		1537736	0		<			
+ANR	1537804	CallExpression	"lseek ( fd , 1536 + ( ( num_bat_entries * 4 + 511 ) & ~511 ) , SEEK_SET )"		1537736	0					
+ANR	1537805	Callee	lseek		1537736	0					
+ANR	1537806	Identifier	lseek		1537736	0					
+ANR	1537807	ArgumentList	fd		1537736	1					
+ANR	1537808	Argument	fd		1537736	0					
+ANR	1537809	Identifier	fd		1537736	0					
+ANR	1537810	Argument	1536 + ( ( num_bat_entries * 4 + 511 ) & ~511 )		1537736	1					
+ANR	1537811	AdditiveExpression	1536 + ( ( num_bat_entries * 4 + 511 ) & ~511 )		1537736	0		+			
+ANR	1537812	PrimaryExpression	1536		1537736	0					
+ANR	1537813	BitAndExpression	( num_bat_entries * 4 + 511 ) & ~511		1537736	1		&			
+ANR	1537814	AdditiveExpression	num_bat_entries * 4 + 511		1537736	0		+			
+ANR	1537815	MultiplicativeExpression	num_bat_entries * 4		1537736	0		*			
+ANR	1537816	Identifier	num_bat_entries		1537736	0					
+ANR	1537817	PrimaryExpression	4		1537736	1					
+ANR	1537818	PrimaryExpression	511		1537736	1					
+ANR	1537819	Identifier	~511		1537736	1					
+ANR	1537820	Argument	SEEK_SET		1537736	2					
+ANR	1537821	Identifier	SEEK_SET		1537736	0					
+ANR	1537822	PrimaryExpression	0		1537736	1					
+ANR	1537823	CompoundStatement		31:78:491:491	1537736	1					
+ANR	1537824	GotoStatement	goto fail ;	35:8:580:589	1537736	0	True				
+ANR	1537825	Identifier	fail		1537736	0					
+ANR	1537826	IfStatement	"if ( write ( fd , buf , HEADER_SIZE ) != HEADER_SIZE )"		1537736	8					
+ANR	1537827	Condition	"write ( fd , buf , HEADER_SIZE ) != HEADER_SIZE"	39:8:607:648	1537736	0	True				
+ANR	1537828	EqualityExpression	"write ( fd , buf , HEADER_SIZE ) != HEADER_SIZE"		1537736	0		!=			
+ANR	1537829	CallExpression	"write ( fd , buf , HEADER_SIZE )"		1537736	0					
+ANR	1537830	Callee	write		1537736	0					
+ANR	1537831	Identifier	write		1537736	0					
+ANR	1537832	ArgumentList	fd		1537736	1					
+ANR	1537833	Argument	fd		1537736	0					
+ANR	1537834	Identifier	fd		1537736	0					
+ANR	1537835	Argument	buf		1537736	1					
+ANR	1537836	Identifier	buf		1537736	0					
+ANR	1537837	Argument	HEADER_SIZE		1537736	2					
+ANR	1537838	Identifier	HEADER_SIZE		1537736	0					
+ANR	1537839	Identifier	HEADER_SIZE		1537736	1					
+ANR	1537840	CompoundStatement		37:52:573:573	1537736	1					
+ANR	1537841	GotoStatement	goto fail ;	41:8:662:671	1537736	0	True				
+ANR	1537842	Identifier	fail		1537736	0					
+ANR	1537843	IfStatement	"if ( lseek ( fd , 3 * 512 , SEEK_SET ) < 0 )"		1537736	9					
+ANR	1537844	Condition	"lseek ( fd , 3 * 512 , SEEK_SET ) < 0"	49:8:721:752	1537736	0	True				
+ANR	1537845	RelationalExpression	"lseek ( fd , 3 * 512 , SEEK_SET ) < 0"		1537736	0		<			
+ANR	1537846	CallExpression	"lseek ( fd , 3 * 512 , SEEK_SET )"		1537736	0					
+ANR	1537847	Callee	lseek		1537736	0					
+ANR	1537848	Identifier	lseek		1537736	0					
+ANR	1537849	ArgumentList	fd		1537736	1					
+ANR	1537850	Argument	fd		1537736	0					
+ANR	1537851	Identifier	fd		1537736	0					
+ANR	1537852	Argument	3 * 512		1537736	1					
+ANR	1537853	MultiplicativeExpression	3 * 512		1537736	0		*			
+ANR	1537854	PrimaryExpression	3		1537736	0					
+ANR	1537855	PrimaryExpression	512		1537736	1					
+ANR	1537856	Argument	SEEK_SET		1537736	2					
+ANR	1537857	Identifier	SEEK_SET		1537736	0					
+ANR	1537858	PrimaryExpression	0		1537736	1					
+ANR	1537859	CompoundStatement		47:42:677:677	1537736	1					
+ANR	1537860	GotoStatement	goto fail ;	51:8:766:775	1537736	0	True				
+ANR	1537861	Identifier	fail		1537736	0					
+ANR	1537862	ExpressionStatement	"memset ( buf , 0xFF , 512 )"	57:4:791:813	1537736	10	True				
+ANR	1537863	CallExpression	"memset ( buf , 0xFF , 512 )"		1537736	0					
+ANR	1537864	Callee	memset		1537736	0					
+ANR	1537865	Identifier	memset		1537736	0					
+ANR	1537866	ArgumentList	buf		1537736	1					
+ANR	1537867	Argument	buf		1537736	0					
+ANR	1537868	Identifier	buf		1537736	0					
+ANR	1537869	Argument	0xFF		1537736	1					
+ANR	1537870	PrimaryExpression	0xFF		1537736	0					
+ANR	1537871	Argument	512		1537736	2					
+ANR	1537872	PrimaryExpression	512		1537736	0					
+ANR	1537873	ForStatement	for ( i = 0 ; i < ( num_bat_entries * 4 + 511 ) / 512 ; i ++ )		1537736	11					
+ANR	1537874	ForInit	i = 0 ;	59:9:825:830	1537736	0	True				
+ANR	1537875	AssignmentExpression	i = 0		1537736	0		=			
+ANR	1537876	Identifier	i		1537736	0					
+ANR	1537877	PrimaryExpression	0		1537736	1					
+ANR	1537878	Condition	i < ( num_bat_entries * 4 + 511 ) / 512	59:16:832:868	1537736	1	True				
+ANR	1537879	RelationalExpression	i < ( num_bat_entries * 4 + 511 ) / 512		1537736	0		<			
+ANR	1537880	Identifier	i		1537736	0					
+ANR	1537881	MultiplicativeExpression	( num_bat_entries * 4 + 511 ) / 512		1537736	1		/			
+ANR	1537882	AdditiveExpression	num_bat_entries * 4 + 511		1537736	0		+			
+ANR	1537883	MultiplicativeExpression	num_bat_entries * 4		1537736	0		*			
+ANR	1537884	Identifier	num_bat_entries		1537736	0					
+ANR	1537885	PrimaryExpression	4		1537736	1					
+ANR	1537886	PrimaryExpression	511		1537736	1					
+ANR	1537887	PrimaryExpression	512		1537736	1					
+ANR	1537888	PostIncDecOperationExpression	i ++	59:55:871:873	1537736	2	True				
+ANR	1537889	Identifier	i		1537736	0					
+ANR	1537890	IncDec	++		1537736	1					
+ANR	1537891	CompoundStatement		57:60:798:798	1537736	3					
+ANR	1537892	IfStatement	"if ( write ( fd , buf , 512 ) != 512 )"		1537736	0					
+ANR	1537893	Condition	"write ( fd , buf , 512 ) != 512"	61:12:891:916	1537736	0	True				
+ANR	1537894	EqualityExpression	"write ( fd , buf , 512 ) != 512"		1537736	0		!=			
+ANR	1537895	CallExpression	"write ( fd , buf , 512 )"		1537736	0					
+ANR	1537896	Callee	write		1537736	0					
+ANR	1537897	Identifier	write		1537736	0					
+ANR	1537898	ArgumentList	fd		1537736	1					
+ANR	1537899	Argument	fd		1537736	0					
+ANR	1537900	Identifier	fd		1537736	0					
+ANR	1537901	Argument	buf		1537736	1					
+ANR	1537902	Identifier	buf		1537736	0					
+ANR	1537903	Argument	512		1537736	2					
+ANR	1537904	PrimaryExpression	512		1537736	0					
+ANR	1537905	PrimaryExpression	512		1537736	1					
+ANR	1537906	CompoundStatement		59:40:841:841	1537736	1					
+ANR	1537907	GotoStatement	goto fail ;	63:12:934:943	1537736	0	True				
+ANR	1537908	Identifier	fail		1537736	0					
+ANR	1537909	ExpressionStatement	"memset ( buf , 0 , 1024 )"	73:4:1010:1030	1537736	12	True				
+ANR	1537910	CallExpression	"memset ( buf , 0 , 1024 )"		1537736	0					
+ANR	1537911	Callee	memset		1537736	0					
+ANR	1537912	Identifier	memset		1537736	0					
+ANR	1537913	ArgumentList	buf		1537736	1					
+ANR	1537914	Argument	buf		1537736	0					
+ANR	1537915	Identifier	buf		1537736	0					
+ANR	1537916	Argument	0		1537736	1					
+ANR	1537917	PrimaryExpression	0		1537736	0					
+ANR	1537918	Argument	1024		1537736	2					
+ANR	1537919	PrimaryExpression	1024		1537736	0					
+ANR	1537920	ExpressionStatement	"memcpy ( dyndisk_header -> magic , ""cxsparse"" , 8 )"	77:4:1039:1083	1537736	13	True				
+ANR	1537921	CallExpression	"memcpy ( dyndisk_header -> magic , ""cxsparse"" , 8 )"		1537736	0					
+ANR	1537922	Callee	memcpy		1537736	0					
+ANR	1537923	Identifier	memcpy		1537736	0					
+ANR	1537924	ArgumentList	dyndisk_header -> magic		1537736	1					
+ANR	1537925	Argument	dyndisk_header -> magic		1537736	0					
+ANR	1537926	PtrMemberAccess	dyndisk_header -> magic		1537736	0					
+ANR	1537927	Identifier	dyndisk_header		1537736	0					
+ANR	1537928	Identifier	magic		1537736	1					
+ANR	1537929	Argument	"""cxsparse"""		1537736	1					
+ANR	1537930	PrimaryExpression	"""cxsparse"""		1537736	0					
+ANR	1537931	Argument	8		1537736	2					
+ANR	1537932	PrimaryExpression	8		1537736	0					
+ANR	1537933	Statement	dyndisk_header	89:4:1243:1256	1537736	14	True				
+ANR	1537934	Statement	->	89:18:1257:1258	1537736	15	True				
+ANR	1537935	Statement	data_offset	89:20:1259:1269	1537736	16	True				
+ANR	1537936	Statement	=	89:32:1271:1271	1537736	17	True				
+ANR	1537937	Statement	be64_to_cpu	89:34:1273:1283	1537736	18	True				
+ANR	1537938	Statement	(	89:45:1284:1284	1537736	19	True				
+ANR	1537939	Statement	0xFFFFFFFFFFFFFFFFUL	89:46:1285:1304	1537736	20	True				
+ANR	1537940	Statement	L	89:66:1305:1305	1537736	21	True				
+ANR	1537941	Statement	)	89:67:1306:1306	1537736	22	True				
+ANR	1537942	ExpressionStatement		89:68:1307:1307	1537736	23	True				
+ANR	1537943	ExpressionStatement	dyndisk_header -> table_offset = be64_to_cpu ( 3 * 512 )	91:4:1314:1365	1537736	24	True				
+ANR	1537944	AssignmentExpression	dyndisk_header -> table_offset = be64_to_cpu ( 3 * 512 )		1537736	0		=			
+ANR	1537945	PtrMemberAccess	dyndisk_header -> table_offset		1537736	0					
+ANR	1537946	Identifier	dyndisk_header		1537736	0					
+ANR	1537947	Identifier	table_offset		1537736	1					
+ANR	1537948	CallExpression	be64_to_cpu ( 3 * 512 )		1537736	1					
+ANR	1537949	Callee	be64_to_cpu		1537736	0					
+ANR	1537950	Identifier	be64_to_cpu		1537736	0					
+ANR	1537951	ArgumentList	3 * 512		1537736	1					
+ANR	1537952	Argument	3 * 512		1537736	0					
+ANR	1537953	MultiplicativeExpression	3 * 512		1537736	0		*			
+ANR	1537954	PrimaryExpression	3		1537736	0					
+ANR	1537955	PrimaryExpression	512		1537736	1					
+ANR	1537956	ExpressionStatement	dyndisk_header -> version = be32_to_cpu ( 0x00010000 )	93:4:1372:1421	1537736	25	True				
+ANR	1537957	AssignmentExpression	dyndisk_header -> version = be32_to_cpu ( 0x00010000 )		1537736	0		=			
+ANR	1537958	PtrMemberAccess	dyndisk_header -> version		1537736	0					
+ANR	1537959	Identifier	dyndisk_header		1537736	0					
+ANR	1537960	Identifier	version		1537736	1					
+ANR	1537961	CallExpression	be32_to_cpu ( 0x00010000 )		1537736	1					
+ANR	1537962	Callee	be32_to_cpu		1537736	0					
+ANR	1537963	Identifier	be32_to_cpu		1537736	0					
+ANR	1537964	ArgumentList	0x00010000		1537736	1					
+ANR	1537965	Argument	0x00010000		1537736	0					
+ANR	1537966	PrimaryExpression	0x00010000		1537736	0					
+ANR	1537967	ExpressionStatement	dyndisk_header -> block_size = be32_to_cpu ( block_size )	95:4:1428:1480	1537736	26	True				
+ANR	1537968	AssignmentExpression	dyndisk_header -> block_size = be32_to_cpu ( block_size )		1537736	0		=			
+ANR	1537969	PtrMemberAccess	dyndisk_header -> block_size		1537736	0					
+ANR	1537970	Identifier	dyndisk_header		1537736	0					
+ANR	1537971	Identifier	block_size		1537736	1					
+ANR	1537972	CallExpression	be32_to_cpu ( block_size )		1537736	1					
+ANR	1537973	Callee	be32_to_cpu		1537736	0					
+ANR	1537974	Identifier	be32_to_cpu		1537736	0					
+ANR	1537975	ArgumentList	block_size		1537736	1					
+ANR	1537976	Argument	block_size		1537736	0					
+ANR	1537977	Identifier	block_size		1537736	0					
+ANR	1537978	ExpressionStatement	dyndisk_header -> max_table_entries = be32_to_cpu ( num_bat_entries )	97:4:1487:1551	1537736	27	True				
+ANR	1537979	AssignmentExpression	dyndisk_header -> max_table_entries = be32_to_cpu ( num_bat_entries )		1537736	0		=			
+ANR	1537980	PtrMemberAccess	dyndisk_header -> max_table_entries		1537736	0					
+ANR	1537981	Identifier	dyndisk_header		1537736	0					
+ANR	1537982	Identifier	max_table_entries		1537736	1					
+ANR	1537983	CallExpression	be32_to_cpu ( num_bat_entries )		1537736	1					
+ANR	1537984	Callee	be32_to_cpu		1537736	0					
+ANR	1537985	Identifier	be32_to_cpu		1537736	0					
+ANR	1537986	ArgumentList	num_bat_entries		1537736	1					
+ANR	1537987	Argument	num_bat_entries		1537736	0					
+ANR	1537988	Identifier	num_bat_entries		1537736	0					
+ANR	1537989	ExpressionStatement	"dyndisk_header -> checksum = be32_to_cpu ( vpc_checksum ( buf , 1024 ) )"	101:4:1560:1623	1537736	28	True				
+ANR	1537990	AssignmentExpression	"dyndisk_header -> checksum = be32_to_cpu ( vpc_checksum ( buf , 1024 ) )"		1537736	0		=			
+ANR	1537991	PtrMemberAccess	dyndisk_header -> checksum		1537736	0					
+ANR	1537992	Identifier	dyndisk_header		1537736	0					
+ANR	1537993	Identifier	checksum		1537736	1					
+ANR	1537994	CallExpression	"be32_to_cpu ( vpc_checksum ( buf , 1024 ) )"		1537736	1					
+ANR	1537995	Callee	be32_to_cpu		1537736	0					
+ANR	1537996	Identifier	be32_to_cpu		1537736	0					
+ANR	1537997	ArgumentList	"vpc_checksum ( buf , 1024 )"		1537736	1					
+ANR	1537998	Argument	"vpc_checksum ( buf , 1024 )"		1537736	0					
+ANR	1537999	CallExpression	"vpc_checksum ( buf , 1024 )"		1537736	0					
+ANR	1538000	Callee	vpc_checksum		1537736	0					
+ANR	1538001	Identifier	vpc_checksum		1537736	0					
+ANR	1538002	ArgumentList	buf		1537736	1					
+ANR	1538003	Argument	buf		1537736	0					
+ANR	1538004	Identifier	buf		1537736	0					
+ANR	1538005	Argument	1024		1537736	1					
+ANR	1538006	PrimaryExpression	1024		1537736	0					
+ANR	1538007	IfStatement	"if ( lseek ( fd , 512 , SEEK_SET ) < 0 )"		1537736	29					
+ANR	1538008	Condition	"lseek ( fd , 512 , SEEK_SET ) < 0"	107:8:1661:1688	1537736	0	True				
+ANR	1538009	RelationalExpression	"lseek ( fd , 512 , SEEK_SET ) < 0"		1537736	0		<			
+ANR	1538010	CallExpression	"lseek ( fd , 512 , SEEK_SET )"		1537736	0					
+ANR	1538011	Callee	lseek		1537736	0					
+ANR	1538012	Identifier	lseek		1537736	0					
+ANR	1538013	ArgumentList	fd		1537736	1					
+ANR	1538014	Argument	fd		1537736	0					
+ANR	1538015	Identifier	fd		1537736	0					
+ANR	1538016	Argument	512		1537736	1					
+ANR	1538017	PrimaryExpression	512		1537736	0					
+ANR	1538018	Argument	SEEK_SET		1537736	2					
+ANR	1538019	Identifier	SEEK_SET		1537736	0					
+ANR	1538020	PrimaryExpression	0		1537736	1					
+ANR	1538021	CompoundStatement		105:38:1613:1613	1537736	1					
+ANR	1538022	GotoStatement	goto fail ;	109:8:1702:1711	1537736	0	True				
+ANR	1538023	Identifier	fail		1537736	0					
+ANR	1538024	IfStatement	"if ( write ( fd , buf , 1024 ) != 1024 )"		1537736	30					
+ANR	1538025	Condition	"write ( fd , buf , 1024 ) != 1024"	115:8:1731:1758	1537736	0	True				
+ANR	1538026	EqualityExpression	"write ( fd , buf , 1024 ) != 1024"		1537736	0		!=			
+ANR	1538027	CallExpression	"write ( fd , buf , 1024 )"		1537736	0					
+ANR	1538028	Callee	write		1537736	0					
+ANR	1538029	Identifier	write		1537736	0					
+ANR	1538030	ArgumentList	fd		1537736	1					
+ANR	1538031	Argument	fd		1537736	0					
+ANR	1538032	Identifier	fd		1537736	0					
+ANR	1538033	Argument	buf		1537736	1					
+ANR	1538034	Identifier	buf		1537736	0					
+ANR	1538035	Argument	1024		1537736	2					
+ANR	1538036	PrimaryExpression	1024		1537736	0					
+ANR	1538037	PrimaryExpression	1024		1537736	1					
+ANR	1538038	CompoundStatement		113:38:1683:1683	1537736	1					
+ANR	1538039	GotoStatement	goto fail ;	117:8:1772:1781	1537736	0	True				
+ANR	1538040	Identifier	fail		1537736	0					
+ANR	1538041	ExpressionStatement	ret = 0	121:4:1795:1802	1537736	31	True				
+ANR	1538042	AssignmentExpression	ret = 0		1537736	0		=			
+ANR	1538043	Identifier	ret		1537736	0					
+ANR	1538044	PrimaryExpression	0		1537736	1					
+ANR	1538045	Label	fail :	125:1:1808:1812	1537736	32	True				
+ANR	1538046	Identifier	fail		1537736	0					
+ANR	1538047	ReturnStatement	return ret ;	127:4:1819:1829	1537736	33	True				
+ANR	1538048	Identifier	ret		1537736	0					
+ANR	1538049	ReturnType	static int		1537736	1					
+ANR	1538050	Identifier	create_dynamic_disk		1537736	2					
+ANR	1538051	ParameterList	"int fd , uint8_t * buf , int64_t total_sectors"		1537736	3					
+ANR	1538052	Parameter	int fd	1:31:31:36	1537736	0	True				
+ANR	1538053	ParameterType	int		1537736	0					
+ANR	1538054	Identifier	fd		1537736	1					
+ANR	1538055	Parameter	uint8_t * buf	1:39:39:50	1537736	1	True				
+ANR	1538056	ParameterType	uint8_t *		1537736	0					
+ANR	1538057	Identifier	buf		1537736	1					
+ANR	1538058	Parameter	int64_t total_sectors	1:53:53:73	1537736	2	True				
+ANR	1538059	ParameterType	int64_t		1537736	0					
+ANR	1538060	Identifier	total_sectors		1537736	1					
+ANR	1538061	CFGEntryNode	ENTRY		1537736		True				
+ANR	1538062	CFGExitNode	EXIT		1537736		True				
+ANR	1538063	Symbol	ret		1537736						
+ANR	1538064	Symbol	SEEK_SET		1537736						
+ANR	1538065	Symbol	num_bat_entries		1537736						
+ANR	1538066	Symbol	dyndisk_header -> checksum		1537736						
+ANR	1538067	Symbol	lseek		1537736						
+ANR	1538068	Symbol	i		1537736						
+ANR	1538069	Symbol	total_sectors		1537736						
+ANR	1538070	Symbol	EIO		1537736						
+ANR	1538071	Symbol	dyndisk_header -> block_size		1537736						
+ANR	1538072	Symbol	be32_to_cpu		1537736						
+ANR	1538073	Symbol	dyndisk_header -> version		1537736						
+ANR	1538074	Symbol	dyndisk_header		1537736						
+ANR	1538075	Symbol	~511		1537736						
+ANR	1538076	Symbol	vpc_checksum		1537736						
+ANR	1538077	Symbol	buf		1537736						
+ANR	1538078	Symbol	dyndisk_header -> magic		1537736						
+ANR	1538079	Symbol	dyndisk_header -> table_offset		1537736						
+ANR	1538080	Symbol	dyndisk_header -> max_table_entries		1537736						
+ANR	1538081	Symbol	HEADER_SIZE		1537736						
+ANR	1538082	Symbol	* dyndisk_header		1537736						
+ANR	1538083	Symbol	block_size		1537736						
+ANR	1538084	Symbol	write		1537736						
+ANR	1538085	Symbol	fd		1537736						
+ANR	1538086	Symbol	be64_to_cpu		1537736						

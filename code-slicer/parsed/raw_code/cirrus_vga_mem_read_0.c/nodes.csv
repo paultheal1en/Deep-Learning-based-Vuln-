@@ -1,0 +1,246 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1314729	File	/home/p4ultr4n/workplace/ReVeal/raw_code/cirrus_vga_mem_read_0.c								
+ANR	1314730	Function	cirrus_vga_mem_read	1:0:0:1198							
+ANR	1314731	FunctionDef	"cirrus_vga_mem_read (void * opaque , target_phys_addr_t addr , uint32_t size)"		1314730	0					
+ANR	1314732	CompoundStatement		7:0:165:1198	1314730	0					
+ANR	1314733	IdentifierDeclStatement	CirrusVGAState * s = opaque ;	9:4:172:198	1314730	0	True				
+ANR	1314734	IdentifierDecl	* s = opaque		1314730	0					
+ANR	1314735	IdentifierDeclType	CirrusVGAState *		1314730	0					
+ANR	1314736	Identifier	s		1314730	1					
+ANR	1314737	AssignmentExpression	* s = opaque		1314730	2		=			
+ANR	1314738	Identifier	opaque		1314730	0					
+ANR	1314739	Identifier	opaque		1314730	1					
+ANR	1314740	IdentifierDeclStatement	unsigned bank_index ;	11:4:205:224	1314730	1	True				
+ANR	1314741	IdentifierDecl	bank_index		1314730	0					
+ANR	1314742	IdentifierDeclType	unsigned		1314730	0					
+ANR	1314743	Identifier	bank_index		1314730	1					
+ANR	1314744	IdentifierDeclStatement	unsigned bank_offset ;	13:4:231:251	1314730	2	True				
+ANR	1314745	IdentifierDecl	bank_offset		1314730	0					
+ANR	1314746	IdentifierDeclType	unsigned		1314730	0					
+ANR	1314747	Identifier	bank_offset		1314730	1					
+ANR	1314748	IdentifierDeclStatement	uint32_t val ;	15:4:258:270	1314730	3	True				
+ANR	1314749	IdentifierDecl	val		1314730	0					
+ANR	1314750	IdentifierDeclType	uint32_t		1314730	0					
+ANR	1314751	Identifier	val		1314730	1					
+ANR	1314752	IfStatement	if ( ( s -> vga . sr [ 0x07 ] & 0x01 ) == 0 )		1314730	4					
+ANR	1314753	Condition	( s -> vga . sr [ 0x07 ] & 0x01 ) == 0	19:8:283:311	1314730	0	True				
+ANR	1314754	EqualityExpression	( s -> vga . sr [ 0x07 ] & 0x01 ) == 0		1314730	0		==			
+ANR	1314755	BitAndExpression	s -> vga . sr [ 0x07 ] & 0x01		1314730	0		&			
+ANR	1314756	ArrayIndexing	s -> vga . sr [ 0x07 ]		1314730	0					
+ANR	1314757	MemberAccess	s -> vga . sr		1314730	0					
+ANR	1314758	PtrMemberAccess	s -> vga		1314730	0					
+ANR	1314759	Identifier	s		1314730	0					
+ANR	1314760	Identifier	vga		1314730	1					
+ANR	1314761	Identifier	sr		1314730	1					
+ANR	1314762	PrimaryExpression	0x07		1314730	1					
+ANR	1314763	PrimaryExpression	0x01		1314730	1					
+ANR	1314764	PrimaryExpression	0		1314730	1					
+ANR	1314765	CompoundStatement		13:39:148:148	1314730	1					
+ANR	1314766	ReturnStatement	"return vga_mem_readb ( & s -> vga , addr ) ;"	21:8:325:360	1314730	0	True				
+ANR	1314767	CallExpression	"vga_mem_readb ( & s -> vga , addr )"		1314730	0					
+ANR	1314768	Callee	vga_mem_readb		1314730	0					
+ANR	1314769	Identifier	vga_mem_readb		1314730	0					
+ANR	1314770	ArgumentList	& s -> vga		1314730	1					
+ANR	1314771	Argument	& s -> vga		1314730	0					
+ANR	1314772	UnaryOperationExpression	& s -> vga		1314730	0					
+ANR	1314773	UnaryOperator	&		1314730	0					
+ANR	1314774	PtrMemberAccess	s -> vga		1314730	1					
+ANR	1314775	Identifier	s		1314730	0					
+ANR	1314776	Identifier	vga		1314730	1					
+ANR	1314777	Argument	addr		1314730	1					
+ANR	1314778	Identifier	addr		1314730	0					
+ANR	1314779	IfStatement	if ( addr < 0x10000 )		1314730	5					
+ANR	1314780	Condition	addr < 0x10000	27:8:380:393	1314730	0	True				
+ANR	1314781	RelationalExpression	addr < 0x10000		1314730	0		<			
+ANR	1314782	Identifier	addr		1314730	0					
+ANR	1314783	PrimaryExpression	0x10000		1314730	1					
+ANR	1314784	CompoundStatement		21:24:230:230	1314730	1					
+ANR	1314785	ExpressionStatement	bank_index = addr >> 15	33:1:447:470	1314730	0	True				
+ANR	1314786	AssignmentExpression	bank_index = addr >> 15		1314730	0		=			
+ANR	1314787	Identifier	bank_index		1314730	0					
+ANR	1314788	ShiftExpression	addr >> 15		1314730	1		>>			
+ANR	1314789	Identifier	addr		1314730	0					
+ANR	1314790	PrimaryExpression	15		1314730	1					
+ANR	1314791	ExpressionStatement	bank_offset = addr & 0x7fff	35:1:474:501	1314730	1	True				
+ANR	1314792	AssignmentExpression	bank_offset = addr & 0x7fff		1314730	0		=			
+ANR	1314793	Identifier	bank_offset		1314730	0					
+ANR	1314794	BitAndExpression	addr & 0x7fff		1314730	1		&			
+ANR	1314795	Identifier	addr		1314730	0					
+ANR	1314796	PrimaryExpression	0x7fff		1314730	1					
+ANR	1314797	IfStatement	if ( bank_offset < s -> cirrus_bank_limit [ bank_index ] )		1314730	2					
+ANR	1314798	Condition	bank_offset < s -> cirrus_bank_limit [ bank_index ]	37:5:509:554	1314730	0	True				
+ANR	1314799	RelationalExpression	bank_offset < s -> cirrus_bank_limit [ bank_index ]		1314730	0		<			
+ANR	1314800	Identifier	bank_offset		1314730	0					
+ANR	1314801	ArrayIndexing	s -> cirrus_bank_limit [ bank_index ]		1314730	1					
+ANR	1314802	PtrMemberAccess	s -> cirrus_bank_limit		1314730	0					
+ANR	1314803	Identifier	s		1314730	0					
+ANR	1314804	Identifier	cirrus_bank_limit		1314730	1					
+ANR	1314805	Identifier	bank_index		1314730	1					
+ANR	1314806	CompoundStatement		31:53:391:391	1314730	1					
+ANR	1314807	ExpressionStatement	bank_offset += s -> cirrus_bank_base [ bank_index ]	39:5:565:611	1314730	0	True				
+ANR	1314808	AssignmentExpression	bank_offset += s -> cirrus_bank_base [ bank_index ]		1314730	0		+=			
+ANR	1314809	Identifier	bank_offset		1314730	0					
+ANR	1314810	ArrayIndexing	s -> cirrus_bank_base [ bank_index ]		1314730	1					
+ANR	1314811	PtrMemberAccess	s -> cirrus_bank_base		1314730	0					
+ANR	1314812	Identifier	s		1314730	0					
+ANR	1314813	Identifier	cirrus_bank_base		1314730	1					
+ANR	1314814	Identifier	bank_index		1314730	1					
+ANR	1314815	IfStatement	if ( ( s -> vga . gr [ 0x0B ] & 0x14 ) == 0x14 )		1314730	1					
+ANR	1314816	Condition	( s -> vga . gr [ 0x0B ] & 0x14 ) == 0x14	41:9:623:654	1314730	0	True				
+ANR	1314817	EqualityExpression	( s -> vga . gr [ 0x0B ] & 0x14 ) == 0x14		1314730	0		==			
+ANR	1314818	BitAndExpression	s -> vga . gr [ 0x0B ] & 0x14		1314730	0		&			
+ANR	1314819	ArrayIndexing	s -> vga . gr [ 0x0B ]		1314730	0					
+ANR	1314820	MemberAccess	s -> vga . gr		1314730	0					
+ANR	1314821	PtrMemberAccess	s -> vga		1314730	0					
+ANR	1314822	Identifier	s		1314730	0					
+ANR	1314823	Identifier	vga		1314730	1					
+ANR	1314824	Identifier	gr		1314730	1					
+ANR	1314825	PrimaryExpression	0x0B		1314730	1					
+ANR	1314826	PrimaryExpression	0x14		1314730	1					
+ANR	1314827	PrimaryExpression	0x14		1314730	1					
+ANR	1314828	CompoundStatement		35:43:491:491	1314730	1					
+ANR	1314829	ExpressionStatement	bank_offset <<= 4	43:2:662:679	1314730	0	True				
+ANR	1314830	AssignmentExpression	bank_offset <<= 4		1314730	0		<<=			
+ANR	1314831	Identifier	bank_offset		1314730	0					
+ANR	1314832	PrimaryExpression	4		1314730	1					
+ANR	1314833	ElseStatement	else		1314730	0					
+ANR	1314834	IfStatement	if ( s -> vga . gr [ 0x0B ] & 0x02 )		1314730	0					
+ANR	1314835	Condition	s -> vga . gr [ 0x0B ] & 0x02	45:16:698:719	1314730	0	True				
+ANR	1314836	BitAndExpression	s -> vga . gr [ 0x0B ] & 0x02		1314730	0		&			
+ANR	1314837	ArrayIndexing	s -> vga . gr [ 0x0B ]		1314730	0					
+ANR	1314838	MemberAccess	s -> vga . gr		1314730	0					
+ANR	1314839	PtrMemberAccess	s -> vga		1314730	0					
+ANR	1314840	Identifier	s		1314730	0					
+ANR	1314841	Identifier	vga		1314730	1					
+ANR	1314842	Identifier	gr		1314730	1					
+ANR	1314843	PrimaryExpression	0x0B		1314730	1					
+ANR	1314844	PrimaryExpression	0x02		1314730	1					
+ANR	1314845	CompoundStatement		39:40:556:556	1314730	1					
+ANR	1314846	ExpressionStatement	bank_offset <<= 3	47:2:727:744	1314730	0	True				
+ANR	1314847	AssignmentExpression	bank_offset <<= 3		1314730	0		<<=			
+ANR	1314848	Identifier	bank_offset		1314730	0					
+ANR	1314849	PrimaryExpression	3		1314730	1					
+ANR	1314850	ExpressionStatement	bank_offset &= s -> cirrus_addr_mask	51:5:760:794	1314730	2	True				
+ANR	1314851	AssignmentExpression	bank_offset &= s -> cirrus_addr_mask		1314730	0		&=			
+ANR	1314852	Identifier	bank_offset		1314730	0					
+ANR	1314853	PtrMemberAccess	s -> cirrus_addr_mask		1314730	1					
+ANR	1314854	Identifier	s		1314730	0					
+ANR	1314855	Identifier	cirrus_addr_mask		1314730	1					
+ANR	1314856	ExpressionStatement	val = * ( s -> vga . vram_ptr + bank_offset )	53:5:802:840	1314730	3	True				
+ANR	1314857	AssignmentExpression	val = * ( s -> vga . vram_ptr + bank_offset )		1314730	0		=			
+ANR	1314858	Identifier	val		1314730	0					
+ANR	1314859	UnaryOperationExpression	* ( s -> vga . vram_ptr + bank_offset )		1314730	1					
+ANR	1314860	UnaryOperator	*		1314730	0					
+ANR	1314861	AdditiveExpression	s -> vga . vram_ptr + bank_offset		1314730	1		+			
+ANR	1314862	MemberAccess	s -> vga . vram_ptr		1314730	0					
+ANR	1314863	PtrMemberAccess	s -> vga		1314730	0					
+ANR	1314864	Identifier	s		1314730	0					
+ANR	1314865	Identifier	vga		1314730	1					
+ANR	1314866	Identifier	vram_ptr		1314730	1					
+ANR	1314867	Identifier	bank_offset		1314730	1					
+ANR	1314868	ElseStatement	else		1314730	0					
+ANR	1314869	ExpressionStatement	val = 0xff	57:5:857:867	1314730	0	True				
+ANR	1314870	AssignmentExpression	val = 0xff		1314730	0		=			
+ANR	1314871	Identifier	val		1314730	0					
+ANR	1314872	PrimaryExpression	0xff		1314730	1					
+ANR	1314873	ElseStatement	else		1314730	0					
+ANR	1314874	IfStatement	if ( addr >= 0x18000 && addr < 0x18100 )		1314730	0					
+ANR	1314875	Condition	addr >= 0x18000 && addr < 0x18100	59:15:885:917	1314730	0	True				
+ANR	1314876	AndExpression	addr >= 0x18000 && addr < 0x18100		1314730	0		&&			
+ANR	1314877	RelationalExpression	addr >= 0x18000		1314730	0		>=			
+ANR	1314878	Identifier	addr		1314730	0					
+ANR	1314879	PrimaryExpression	0x18000		1314730	1					
+ANR	1314880	RelationalExpression	addr < 0x18100		1314730	1		<			
+ANR	1314881	Identifier	addr		1314730	0					
+ANR	1314882	PrimaryExpression	0x18100		1314730	1					
+ANR	1314883	CompoundStatement		53:50:754:754	1314730	1					
+ANR	1314884	ExpressionStatement	val = 0xff	63:1:950:960	1314730	0	True				
+ANR	1314885	AssignmentExpression	val = 0xff		1314730	0		=			
+ANR	1314886	Identifier	val		1314730	0					
+ANR	1314887	PrimaryExpression	0xff		1314730	1					
+ANR	1314888	IfStatement	if ( ( s -> vga . sr [ 0x17 ] & 0x44 ) == 0x04 )		1314730	1					
+ANR	1314889	Condition	( s -> vga . sr [ 0x17 ] & 0x44 ) == 0x04	65:5:968:999	1314730	0	True				
+ANR	1314890	EqualityExpression	( s -> vga . sr [ 0x17 ] & 0x44 ) == 0x04		1314730	0		==			
+ANR	1314891	BitAndExpression	s -> vga . sr [ 0x17 ] & 0x44		1314730	0		&			
+ANR	1314892	ArrayIndexing	s -> vga . sr [ 0x17 ]		1314730	0					
+ANR	1314893	MemberAccess	s -> vga . sr		1314730	0					
+ANR	1314894	PtrMemberAccess	s -> vga		1314730	0					
+ANR	1314895	Identifier	s		1314730	0					
+ANR	1314896	Identifier	vga		1314730	1					
+ANR	1314897	Identifier	sr		1314730	1					
+ANR	1314898	PrimaryExpression	0x17		1314730	1					
+ANR	1314899	PrimaryExpression	0x44		1314730	1					
+ANR	1314900	PrimaryExpression	0x04		1314730	1					
+ANR	1314901	CompoundStatement		59:39:836:836	1314730	1					
+ANR	1314902	ExpressionStatement	"val = cirrus_mmio_blt_read ( s , addr & 0xff )"	67:5:1010:1052	1314730	0	True				
+ANR	1314903	AssignmentExpression	"val = cirrus_mmio_blt_read ( s , addr & 0xff )"		1314730	0		=			
+ANR	1314904	Identifier	val		1314730	0					
+ANR	1314905	CallExpression	"cirrus_mmio_blt_read ( s , addr & 0xff )"		1314730	1					
+ANR	1314906	Callee	cirrus_mmio_blt_read		1314730	0					
+ANR	1314907	Identifier	cirrus_mmio_blt_read		1314730	0					
+ANR	1314908	ArgumentList	s		1314730	1					
+ANR	1314909	Argument	s		1314730	0					
+ANR	1314910	Identifier	s		1314730	0					
+ANR	1314911	Argument	addr & 0xff		1314730	1					
+ANR	1314912	BitAndExpression	addr & 0xff		1314730	0		&			
+ANR	1314913	Identifier	addr		1314730	0					
+ANR	1314914	PrimaryExpression	0xff		1314730	1					
+ANR	1314915	ElseStatement	else		1314730	0					
+ANR	1314916	CompoundStatement		65:11:904:904	1314730	0					
+ANR	1314917	ExpressionStatement	val = 0xff	73:1:1074:1084	1314730	0	True				
+ANR	1314918	AssignmentExpression	val = 0xff		1314730	0		=			
+ANR	1314919	Identifier	val		1314730	0					
+ANR	1314920	PrimaryExpression	0xff		1314730	1					
+ANR	1314921	Statement	printf	77:1:1109:1114	1314730	1	True				
+ANR	1314922	Statement	(	77:7:1115:1115	1314730	2	True				
+ANR	1314923	Statement	"""cirrus: mem_readb """	77:8:1116:1135	1314730	3	True				
+ANR	1314924	Statement	TARGET_FMT_plx	77:29:1137:1150	1314730	4	True				
+ANR	1314925	Statement	"""\\n"""	77:44:1152:1155	1314730	5	True				
+ANR	1314926	Statement	","	77:48:1156:1156	1314730	6	True				
+ANR	1314927	Statement	addr	77:50:1158:1161	1314730	7	True				
+ANR	1314928	Statement	)	77:54:1162:1162	1314730	8	True				
+ANR	1314929	ExpressionStatement		77:55:1163:1163	1314730	9	True				
+ANR	1314930	ReturnStatement	return val ;	83:4:1185:1195	1314730	6	True				
+ANR	1314931	Identifier	val		1314730	0					
+ANR	1314932	ReturnType	static uint64_t		1314730	1					
+ANR	1314933	Identifier	cirrus_vga_mem_read		1314730	2					
+ANR	1314934	ParameterList	"void * opaque , target_phys_addr_t addr , uint32_t size"		1314730	3					
+ANR	1314935	Parameter	void * opaque	1:36:36:47	1314730	0	True				
+ANR	1314936	ParameterType	void *		1314730	0					
+ANR	1314937	Identifier	opaque		1314730	1					
+ANR	1314938	Parameter	target_phys_addr_t addr	3:36:87:109	1314730	1	True				
+ANR	1314939	ParameterType	target_phys_addr_t		1314730	0					
+ANR	1314940	Identifier	addr		1314730	1					
+ANR	1314941	Parameter	uint32_t size	5:36:149:161	1314730	2	True				
+ANR	1314942	ParameterType	uint32_t		1314730	0					
+ANR	1314943	Identifier	size		1314730	1					
+ANR	1314944	CFGEntryNode	ENTRY		1314730		True				
+ANR	1314945	CFGExitNode	EXIT		1314730		True				
+ANR	1314946	Symbol	* bank_offset		1314730						
+ANR	1314947	Symbol	s -> cirrus_bank_limit		1314730						
+ANR	1314948	Symbol	* s -> vga . gr		1314730						
+ANR	1314949	Symbol	* s -> cirrus_bank_limit		1314730						
+ANR	1314950	Symbol	s -> cirrus_bank_base		1314730						
+ANR	1314951	Symbol	s -> cirrus_addr_mask		1314730						
+ANR	1314952	Symbol	& s -> vga		1314730						
+ANR	1314953	Symbol	bank_index		1314730						
+ANR	1314954	Symbol	* s -> vga . sr		1314730						
+ANR	1314955	Symbol	* s -> vga . vram_ptr		1314730						
+ANR	1314956	Symbol	* s -> cirrus_bank_base		1314730						
+ANR	1314957	Symbol	* * s		1314730						
+ANR	1314958	Symbol	addr		1314730						
+ANR	1314959	Symbol	s -> vga		1314730						
+ANR	1314960	Symbol	* bank_index		1314730						
+ANR	1314961	Symbol	val		1314730						
+ANR	1314962	Symbol	* ( s -> vga . vram_ptr + bank_offset )		1314730						
+ANR	1314963	Symbol	opaque		1314730						
+ANR	1314964	Symbol	cirrus_mmio_blt_read		1314730						
+ANR	1314965	Symbol	s -> vga . sr		1314730						
+ANR	1314966	Symbol	* s -> vga		1314730						
+ANR	1314967	Symbol	vga_mem_readb		1314730						
+ANR	1314968	Symbol	s -> vga . gr		1314730						
+ANR	1314969	Symbol	s		1314730						
+ANR	1314970	Symbol	size		1314730						
+ANR	1314971	Symbol	bank_offset		1314730						
+ANR	1314972	Symbol	s -> vga . vram_ptr		1314730						
+ANR	1314973	Symbol	* s		1314730						

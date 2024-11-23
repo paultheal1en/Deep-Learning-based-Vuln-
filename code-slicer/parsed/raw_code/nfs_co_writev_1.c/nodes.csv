@@ -1,0 +1,198 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6033750	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nfs_co_writev_1.c								
+ANR	6033751	Function	nfs_co_writev	1:0:0:984							
+ANR	6033752	FunctionDef	"nfs_co_writev (BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * iov)"		6033751	0					
+ANR	6033753	CompoundStatement		7:0:198:984	6033751	0					
+ANR	6033754	IdentifierDeclStatement	NFSClient * client = bs -> opaque ;	9:4:205:235	6033751	0	True				
+ANR	6033755	IdentifierDecl	* client = bs -> opaque		6033751	0					
+ANR	6033756	IdentifierDeclType	NFSClient *		6033751	0					
+ANR	6033757	Identifier	client		6033751	1					
+ANR	6033758	AssignmentExpression	* client = bs -> opaque		6033751	2		=			
+ANR	6033759	Identifier	client		6033751	0					
+ANR	6033760	PtrMemberAccess	bs -> opaque		6033751	1					
+ANR	6033761	Identifier	bs		6033751	0					
+ANR	6033762	Identifier	opaque		6033751	1					
+ANR	6033763	IdentifierDeclStatement	NFSRPC task ;	11:4:242:253	6033751	1	True				
+ANR	6033764	IdentifierDecl	task		6033751	0					
+ANR	6033765	IdentifierDeclType	NFSRPC		6033751	0					
+ANR	6033766	Identifier	task		6033751	1					
+ANR	6033767	IdentifierDeclStatement	char * buf = NULL ;	13:4:260:276	6033751	2	True				
+ANR	6033768	IdentifierDecl	* buf = NULL		6033751	0					
+ANR	6033769	IdentifierDeclType	char *		6033751	0					
+ANR	6033770	Identifier	buf		6033751	1					
+ANR	6033771	AssignmentExpression	* buf = NULL		6033751	2		=			
+ANR	6033772	Identifier	NULL		6033751	0					
+ANR	6033773	Identifier	NULL		6033751	1					
+ANR	6033774	ExpressionStatement	"nfs_co_init_task ( client , & task )"	17:4:285:316	6033751	3	True				
+ANR	6033775	CallExpression	"nfs_co_init_task ( client , & task )"		6033751	0					
+ANR	6033776	Callee	nfs_co_init_task		6033751	0					
+ANR	6033777	Identifier	nfs_co_init_task		6033751	0					
+ANR	6033778	ArgumentList	client		6033751	1					
+ANR	6033779	Argument	client		6033751	0					
+ANR	6033780	Identifier	client		6033751	0					
+ANR	6033781	Argument	& task		6033751	1					
+ANR	6033782	UnaryOperationExpression	& task		6033751	0					
+ANR	6033783	UnaryOperator	&		6033751	0					
+ANR	6033784	Identifier	task		6033751	1					
+ANR	6033785	ExpressionStatement	buf = g_malloc ( nb_sectors * BDRV_SECTOR_SIZE )	21:4:325:370	6033751	4	True				
+ANR	6033786	AssignmentExpression	buf = g_malloc ( nb_sectors * BDRV_SECTOR_SIZE )		6033751	0		=			
+ANR	6033787	Identifier	buf		6033751	0					
+ANR	6033788	CallExpression	g_malloc ( nb_sectors * BDRV_SECTOR_SIZE )		6033751	1					
+ANR	6033789	Callee	g_malloc		6033751	0					
+ANR	6033790	Identifier	g_malloc		6033751	0					
+ANR	6033791	ArgumentList	nb_sectors * BDRV_SECTOR_SIZE		6033751	1					
+ANR	6033792	Argument	nb_sectors * BDRV_SECTOR_SIZE		6033751	0					
+ANR	6033793	MultiplicativeExpression	nb_sectors * BDRV_SECTOR_SIZE		6033751	0		*			
+ANR	6033794	Identifier	nb_sectors		6033751	0					
+ANR	6033795	Identifier	BDRV_SECTOR_SIZE		6033751	1					
+ANR	6033796	ExpressionStatement	"qemu_iovec_to_buf ( iov , 0 , buf , nb_sectors * BDRV_SECTOR_SIZE )"	23:4:377:438	6033751	5	True				
+ANR	6033797	CallExpression	"qemu_iovec_to_buf ( iov , 0 , buf , nb_sectors * BDRV_SECTOR_SIZE )"		6033751	0					
+ANR	6033798	Callee	qemu_iovec_to_buf		6033751	0					
+ANR	6033799	Identifier	qemu_iovec_to_buf		6033751	0					
+ANR	6033800	ArgumentList	iov		6033751	1					
+ANR	6033801	Argument	iov		6033751	0					
+ANR	6033802	Identifier	iov		6033751	0					
+ANR	6033803	Argument	0		6033751	1					
+ANR	6033804	PrimaryExpression	0		6033751	0					
+ANR	6033805	Argument	buf		6033751	2					
+ANR	6033806	Identifier	buf		6033751	0					
+ANR	6033807	Argument	nb_sectors * BDRV_SECTOR_SIZE		6033751	3					
+ANR	6033808	MultiplicativeExpression	nb_sectors * BDRV_SECTOR_SIZE		6033751	0		*			
+ANR	6033809	Identifier	nb_sectors		6033751	0					
+ANR	6033810	Identifier	BDRV_SECTOR_SIZE		6033751	1					
+ANR	6033811	IfStatement	"if ( nfs_pwrite_async ( client -> context , client -> fh , sector_num * BDRV_SECTOR_SIZE , nb_sectors * BDRV_SECTOR_SIZE , buf , nfs_co_generic_cb , & task ) != 0 )"		6033751	6					
+ANR	6033812	Condition	"nfs_pwrite_async ( client -> context , client -> fh , sector_num * BDRV_SECTOR_SIZE , nb_sectors * BDRV_SECTOR_SIZE , buf , nfs_co_generic_cb , & task ) != 0"	27:8:451:671	6033751	0	True				
+ANR	6033813	EqualityExpression	"nfs_pwrite_async ( client -> context , client -> fh , sector_num * BDRV_SECTOR_SIZE , nb_sectors * BDRV_SECTOR_SIZE , buf , nfs_co_generic_cb , & task ) != 0"		6033751	0		!=			
+ANR	6033814	CallExpression	"nfs_pwrite_async ( client -> context , client -> fh , sector_num * BDRV_SECTOR_SIZE , nb_sectors * BDRV_SECTOR_SIZE , buf , nfs_co_generic_cb , & task )"		6033751	0					
+ANR	6033815	Callee	nfs_pwrite_async		6033751	0					
+ANR	6033816	Identifier	nfs_pwrite_async		6033751	0					
+ANR	6033817	ArgumentList	client -> context		6033751	1					
+ANR	6033818	Argument	client -> context		6033751	0					
+ANR	6033819	PtrMemberAccess	client -> context		6033751	0					
+ANR	6033820	Identifier	client		6033751	0					
+ANR	6033821	Identifier	context		6033751	1					
+ANR	6033822	Argument	client -> fh		6033751	1					
+ANR	6033823	PtrMemberAccess	client -> fh		6033751	0					
+ANR	6033824	Identifier	client		6033751	0					
+ANR	6033825	Identifier	fh		6033751	1					
+ANR	6033826	Argument	sector_num * BDRV_SECTOR_SIZE		6033751	2					
+ANR	6033827	MultiplicativeExpression	sector_num * BDRV_SECTOR_SIZE		6033751	0		*			
+ANR	6033828	Identifier	sector_num		6033751	0					
+ANR	6033829	Identifier	BDRV_SECTOR_SIZE		6033751	1					
+ANR	6033830	Argument	nb_sectors * BDRV_SECTOR_SIZE		6033751	3					
+ANR	6033831	MultiplicativeExpression	nb_sectors * BDRV_SECTOR_SIZE		6033751	0		*			
+ANR	6033832	Identifier	nb_sectors		6033751	0					
+ANR	6033833	Identifier	BDRV_SECTOR_SIZE		6033751	1					
+ANR	6033834	Argument	buf		6033751	4					
+ANR	6033835	Identifier	buf		6033751	0					
+ANR	6033836	Argument	nfs_co_generic_cb		6033751	5					
+ANR	6033837	Identifier	nfs_co_generic_cb		6033751	0					
+ANR	6033838	Argument	& task		6033751	6					
+ANR	6033839	UnaryOperationExpression	& task		6033751	0					
+ANR	6033840	UnaryOperator	&		6033751	0					
+ANR	6033841	Identifier	task		6033751	1					
+ANR	6033842	PrimaryExpression	0		6033751	1					
+ANR	6033843	CompoundStatement		27:62:475:475	6033751	1					
+ANR	6033844	ExpressionStatement	g_free ( buf )	35:8:685:696	6033751	0	True				
+ANR	6033845	CallExpression	g_free ( buf )		6033751	0					
+ANR	6033846	Callee	g_free		6033751	0					
+ANR	6033847	Identifier	g_free		6033751	0					
+ANR	6033848	ArgumentList	buf		6033751	1					
+ANR	6033849	Argument	buf		6033751	0					
+ANR	6033850	Identifier	buf		6033751	0					
+ANR	6033851	ReturnStatement	return - ENOMEM ;	37:8:707:721	6033751	1	True				
+ANR	6033852	UnaryOperationExpression	- ENOMEM		6033751	0					
+ANR	6033853	UnaryOperator	-		6033751	0					
+ANR	6033854	Identifier	ENOMEM		6033751	1					
+ANR	6033855	WhileStatement	while ( ! task . complete )		6033751	7					
+ANR	6033856	Condition	! task . complete	43:11:744:757	6033751	0	True				
+ANR	6033857	UnaryOperationExpression	! task . complete		6033751	0					
+ANR	6033858	UnaryOperator	!		6033751	0					
+ANR	6033859	MemberAccess	task . complete		6033751	1					
+ANR	6033860	Identifier	task		6033751	0					
+ANR	6033861	Identifier	complete		6033751	1					
+ANR	6033862	CompoundStatement		37:27:561:561	6033751	1					
+ANR	6033863	ExpressionStatement	nfs_set_events ( client )	45:8:771:793	6033751	0	True				
+ANR	6033864	CallExpression	nfs_set_events ( client )		6033751	0					
+ANR	6033865	Callee	nfs_set_events		6033751	0					
+ANR	6033866	Identifier	nfs_set_events		6033751	0					
+ANR	6033867	ArgumentList	client		6033751	1					
+ANR	6033868	Argument	client		6033751	0					
+ANR	6033869	Identifier	client		6033751	0					
+ANR	6033870	ExpressionStatement	qemu_coroutine_yield ( )	47:8:804:826	6033751	1	True				
+ANR	6033871	CallExpression	qemu_coroutine_yield ( )		6033751	0					
+ANR	6033872	Callee	qemu_coroutine_yield		6033751	0					
+ANR	6033873	Identifier	qemu_coroutine_yield		6033751	0					
+ANR	6033874	ArgumentList			6033751	1					
+ANR	6033875	ExpressionStatement	g_free ( buf )	53:4:842:853	6033751	8	True				
+ANR	6033876	CallExpression	g_free ( buf )		6033751	0					
+ANR	6033877	Callee	g_free		6033751	0					
+ANR	6033878	Identifier	g_free		6033751	0					
+ANR	6033879	ArgumentList	buf		6033751	1					
+ANR	6033880	Argument	buf		6033751	0					
+ANR	6033881	Identifier	buf		6033751	0					
+ANR	6033882	IfStatement	if ( task . ret != nb_sectors * BDRV_SECTOR_SIZE )		6033751	9					
+ANR	6033883	Condition	task . ret != nb_sectors * BDRV_SECTOR_SIZE	57:8:866:906	6033751	0	True				
+ANR	6033884	EqualityExpression	task . ret != nb_sectors * BDRV_SECTOR_SIZE		6033751	0		!=			
+ANR	6033885	MemberAccess	task . ret		6033751	0					
+ANR	6033886	Identifier	task		6033751	0					
+ANR	6033887	Identifier	ret		6033751	1					
+ANR	6033888	MultiplicativeExpression	nb_sectors * BDRV_SECTOR_SIZE		6033751	1		*			
+ANR	6033889	Identifier	nb_sectors		6033751	0					
+ANR	6033890	Identifier	BDRV_SECTOR_SIZE		6033751	1					
+ANR	6033891	CompoundStatement		51:51:710:710	6033751	1					
+ANR	6033892	ReturnStatement	return task . ret < 0 ? task . ret : - EIO ;	59:8:920:957	6033751	0	True				
+ANR	6033893	ConditionalExpression	task . ret < 0 ? task . ret : - EIO		6033751	0					
+ANR	6033894	Condition	task . ret < 0		6033751	0					
+ANR	6033895	RelationalExpression	task . ret < 0		6033751	0		<			
+ANR	6033896	MemberAccess	task . ret		6033751	0					
+ANR	6033897	Identifier	task		6033751	0					
+ANR	6033898	Identifier	ret		6033751	1					
+ANR	6033899	PrimaryExpression	0		6033751	1					
+ANR	6033900	MemberAccess	task . ret		6033751	1					
+ANR	6033901	Identifier	task		6033751	0					
+ANR	6033902	Identifier	ret		6033751	1					
+ANR	6033903	UnaryOperationExpression	- EIO		6033751	2					
+ANR	6033904	UnaryOperator	-		6033751	0					
+ANR	6033905	Identifier	EIO		6033751	1					
+ANR	6033906	ReturnStatement	return 0 ;	65:4:973:981	6033751	10	True				
+ANR	6033907	PrimaryExpression	0		6033751	0					
+ANR	6033908	ReturnType	static int coroutine_fn		6033751	1					
+ANR	6033909	Identifier	nfs_co_writev		6033751	2					
+ANR	6033910	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * iov"		6033751	3					
+ANR	6033911	Parameter	BlockDriverState * bs	1:38:38:57	6033751	0	True				
+ANR	6033912	ParameterType	BlockDriverState *		6033751	0					
+ANR	6033913	Identifier	bs		6033751	1					
+ANR	6033914	Parameter	int64_t sector_num	3:40:101:118	6033751	1	True				
+ANR	6033915	ParameterType	int64_t		6033751	0					
+ANR	6033916	Identifier	sector_num		6033751	1					
+ANR	6033917	Parameter	int nb_sectors	3:60:121:134	6033751	2	True				
+ANR	6033918	ParameterType	int		6033751	0					
+ANR	6033919	Identifier	nb_sectors		6033751	1					
+ANR	6033920	Parameter	QEMUIOVector * iov	5:40:178:194	6033751	3	True				
+ANR	6033921	ParameterType	QEMUIOVector *		6033751	0					
+ANR	6033922	Identifier	iov		6033751	1					
+ANR	6033923	CFGEntryNode	ENTRY		6033751		True				
+ANR	6033924	CFGExitNode	EXIT		6033751		True				
+ANR	6033925	Symbol	client -> context		6033751						
+ANR	6033926	Symbol	ENOMEM		6033751						
+ANR	6033927	Symbol	nb_sectors		6033751						
+ANR	6033928	Symbol	NULL		6033751						
+ANR	6033929	Symbol	bs -> opaque		6033751						
+ANR	6033930	Symbol	* client		6033751						
+ANR	6033931	Symbol	EIO		6033751						
+ANR	6033932	Symbol	task . complete		6033751						
+ANR	6033933	Symbol	& task		6033751						
+ANR	6033934	Symbol	sector_num		6033751						
+ANR	6033935	Symbol	client -> fh		6033751						
+ANR	6033936	Symbol	bs		6033751						
+ANR	6033937	Symbol	iov		6033751						
+ANR	6033938	Symbol	buf		6033751						
+ANR	6033939	Symbol	g_malloc		6033751						
+ANR	6033940	Symbol	task		6033751						
+ANR	6033941	Symbol	* bs		6033751						
+ANR	6033942	Symbol	BDRV_SECTOR_SIZE		6033751						
+ANR	6033943	Symbol	client		6033751						
+ANR	6033944	Symbol	nfs_co_generic_cb		6033751						
+ANR	6033945	Symbol	task . ret		6033751						
+ANR	6033946	Symbol	nfs_pwrite_async		6033751						

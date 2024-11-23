@@ -1,0 +1,307 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1469936	File	/home/p4ultr4n/workplace/ReVeal/raw_code/cpu_inject_x86_mce_1.c								
+ANR	1469937	Function	cpu_inject_x86_mce	1:0:0:1859							
+ANR	1469938	FunctionDef	"cpu_inject_x86_mce (CPUState * cenv , int bank , uint64_t status , uint64_t mcg_status , uint64_t addr , uint64_t misc)"		1469937	0					
+ANR	1469939	CompoundStatement		5:0:144:1859	1469937	0					
+ANR	1469940	IdentifierDeclStatement	uint64_t mcg_cap = cenv -> mcg_cap ;	7:4:151:183	1469937	0	True				
+ANR	1469941	IdentifierDecl	mcg_cap = cenv -> mcg_cap		1469937	0					
+ANR	1469942	IdentifierDeclType	uint64_t		1469937	0					
+ANR	1469943	Identifier	mcg_cap		1469937	1					
+ANR	1469944	AssignmentExpression	mcg_cap = cenv -> mcg_cap		1469937	2		=			
+ANR	1469945	Identifier	mcg_cap		1469937	0					
+ANR	1469946	PtrMemberAccess	cenv -> mcg_cap		1469937	1					
+ANR	1469947	Identifier	cenv		1469937	0					
+ANR	1469948	Identifier	mcg_cap		1469937	1					
+ANR	1469949	IdentifierDeclStatement	unsigned bank_num = mcg_cap & 0xff ;	9:4:190:224	1469937	1	True				
+ANR	1469950	IdentifierDecl	bank_num = mcg_cap & 0xff		1469937	0					
+ANR	1469951	IdentifierDeclType	unsigned		1469937	0					
+ANR	1469952	Identifier	bank_num		1469937	1					
+ANR	1469953	AssignmentExpression	bank_num = mcg_cap & 0xff		1469937	2		=			
+ANR	1469954	Identifier	bank_num		1469937	0					
+ANR	1469955	BitAndExpression	mcg_cap & 0xff		1469937	1		&			
+ANR	1469956	Identifier	mcg_cap		1469937	0					
+ANR	1469957	PrimaryExpression	0xff		1469937	1					
+ANR	1469958	IdentifierDeclStatement	uint64_t * banks = cenv -> mce_banks ;	11:4:231:264	1469937	2	True				
+ANR	1469959	IdentifierDecl	* banks = cenv -> mce_banks		1469937	0					
+ANR	1469960	IdentifierDeclType	uint64_t *		1469937	0					
+ANR	1469961	Identifier	banks		1469937	1					
+ANR	1469962	AssignmentExpression	* banks = cenv -> mce_banks		1469937	2		=			
+ANR	1469963	Identifier	banks		1469937	0					
+ANR	1469964	PtrMemberAccess	cenv -> mce_banks		1469937	1					
+ANR	1469965	Identifier	cenv		1469937	0					
+ANR	1469966	Identifier	mce_banks		1469937	1					
+ANR	1469967	IfStatement	if ( bank >= bank_num || ! ( status & MCI_STATUS_VAL ) )		1469937	3					
+ANR	1469968	Condition	bank >= bank_num || ! ( status & MCI_STATUS_VAL )	15:8:277:322	1469937	0	True				
+ANR	1469969	OrExpression	bank >= bank_num || ! ( status & MCI_STATUS_VAL )		1469937	0		||			
+ANR	1469970	RelationalExpression	bank >= bank_num		1469937	0		>=			
+ANR	1469971	Identifier	bank		1469937	0					
+ANR	1469972	Identifier	bank_num		1469937	1					
+ANR	1469973	UnaryOperationExpression	! ( status & MCI_STATUS_VAL )		1469937	1					
+ANR	1469974	UnaryOperator	!		1469937	0					
+ANR	1469975	BitAndExpression	status & MCI_STATUS_VAL		1469937	1		&			
+ANR	1469976	Identifier	status		1469937	0					
+ANR	1469977	Identifier	MCI_STATUS_VAL		1469937	1					
+ANR	1469978	ReturnStatement	return ;	17:8:334:340	1469937	1	True				
+ANR	1469979	IfStatement	if ( kvm_enabled ( ) )		1469937	4					
+ANR	1469980	Condition	kvm_enabled ( )	21:8:353:365	1469937	0	True				
+ANR	1469981	CallExpression	kvm_enabled ( )		1469937	0					
+ANR	1469982	Callee	kvm_enabled		1469937	0					
+ANR	1469983	Identifier	kvm_enabled		1469937	0					
+ANR	1469984	ArgumentList			1469937	1					
+ANR	1469985	CompoundStatement		17:23:223:223	1469937	1					
+ANR	1469986	ExpressionStatement	"kvm_inject_x86_mce ( cenv , bank , status , mcg_status , addr , misc )"	23:8:379:441	1469937	0	True				
+ANR	1469987	CallExpression	"kvm_inject_x86_mce ( cenv , bank , status , mcg_status , addr , misc )"		1469937	0					
+ANR	1469988	Callee	kvm_inject_x86_mce		1469937	0					
+ANR	1469989	Identifier	kvm_inject_x86_mce		1469937	0					
+ANR	1469990	ArgumentList	cenv		1469937	1					
+ANR	1469991	Argument	cenv		1469937	0					
+ANR	1469992	Identifier	cenv		1469937	0					
+ANR	1469993	Argument	bank		1469937	1					
+ANR	1469994	Identifier	bank		1469937	0					
+ANR	1469995	Argument	status		1469937	2					
+ANR	1469996	Identifier	status		1469937	0					
+ANR	1469997	Argument	mcg_status		1469937	3					
+ANR	1469998	Identifier	mcg_status		1469937	0					
+ANR	1469999	Argument	addr		1469937	4					
+ANR	1470000	Identifier	addr		1469937	0					
+ANR	1470001	Argument	misc		1469937	5					
+ANR	1470002	Identifier	misc		1469937	0					
+ANR	1470003	ReturnStatement	return ;	25:8:452:458	1469937	1	True				
+ANR	1470004	IfStatement	if ( ( status & MCI_STATUS_UC ) && ( mcg_cap & MCG_CTL_P ) && cenv -> mcg_ctl != ~ ( uint64_t ) 0 )		1469937	5					
+ANR	1470005	Condition	( status & MCI_STATUS_UC ) && ( mcg_cap & MCG_CTL_P ) && cenv -> mcg_ctl != ~ ( uint64_t ) 0	39:8:585:675	1469937	0	True				
+ANR	1470006	AndExpression	( status & MCI_STATUS_UC ) && ( mcg_cap & MCG_CTL_P ) && cenv -> mcg_ctl != ~ ( uint64_t ) 0		1469937	0		&&			
+ANR	1470007	BitAndExpression	status & MCI_STATUS_UC		1469937	0		&			
+ANR	1470008	Identifier	status		1469937	0					
+ANR	1470009	Identifier	MCI_STATUS_UC		1469937	1					
+ANR	1470010	AndExpression	( mcg_cap & MCG_CTL_P ) && cenv -> mcg_ctl != ~ ( uint64_t ) 0		1469937	1		&&			
+ANR	1470011	BitAndExpression	mcg_cap & MCG_CTL_P		1469937	0		&			
+ANR	1470012	Identifier	mcg_cap		1469937	0					
+ANR	1470013	Identifier	MCG_CTL_P		1469937	1					
+ANR	1470014	EqualityExpression	cenv -> mcg_ctl != ~ ( uint64_t ) 0		1469937	1		!=			
+ANR	1470015	PtrMemberAccess	cenv -> mcg_ctl		1469937	0					
+ANR	1470016	Identifier	cenv		1469937	0					
+ANR	1470017	Identifier	mcg_ctl		1469937	1					
+ANR	1470018	UnaryOperationExpression	~ ( uint64_t ) 0		1469937	1					
+ANR	1470019	UnaryOperator	~		1469937	0					
+ANR	1470020	CastExpression	( uint64_t ) 0		1469937	1					
+ANR	1470021	CastTarget	uint64_t		1469937	0					
+ANR	1470022	PrimaryExpression	0		1469937	1					
+ANR	1470023	ReturnStatement	return ;	43:8:687:693	1469937	1	True				
+ANR	1470024	ExpressionStatement	banks += 4 * bank	45:4:700:717	1469937	6	True				
+ANR	1470025	AssignmentExpression	banks += 4 * bank		1469937	0		+=			
+ANR	1470026	Identifier	banks		1469937	0					
+ANR	1470027	MultiplicativeExpression	4 * bank		1469937	1		*			
+ANR	1470028	PrimaryExpression	4		1469937	0					
+ANR	1470029	Identifier	bank		1469937	1					
+ANR	1470030	IfStatement	if ( ( status & MCI_STATUS_UC ) && banks [ 0 ] != ~ ( uint64_t ) 0 )		1469937	7					
+ANR	1470031	Condition	( status & MCI_STATUS_UC ) && banks [ 0 ] != ~ ( uint64_t ) 0	55:8:848:899	1469937	0	True				
+ANR	1470032	AndExpression	( status & MCI_STATUS_UC ) && banks [ 0 ] != ~ ( uint64_t ) 0		1469937	0		&&			
+ANR	1470033	BitAndExpression	status & MCI_STATUS_UC		1469937	0		&			
+ANR	1470034	Identifier	status		1469937	0					
+ANR	1470035	Identifier	MCI_STATUS_UC		1469937	1					
+ANR	1470036	EqualityExpression	banks [ 0 ] != ~ ( uint64_t ) 0		1469937	1		!=			
+ANR	1470037	ArrayIndexing	banks [ 0 ]		1469937	0					
+ANR	1470038	Identifier	banks		1469937	0					
+ANR	1470039	PrimaryExpression	0		1469937	1					
+ANR	1470040	UnaryOperationExpression	~ ( uint64_t ) 0		1469937	1					
+ANR	1470041	UnaryOperator	~		1469937	0					
+ANR	1470042	CastExpression	( uint64_t ) 0		1469937	1					
+ANR	1470043	CastTarget	uint64_t		1469937	0					
+ANR	1470044	PrimaryExpression	0		1469937	1					
+ANR	1470045	ReturnStatement	return ;	57:8:911:917	1469937	1	True				
+ANR	1470046	IfStatement	if ( status & MCI_STATUS_UC )		1469937	8					
+ANR	1470047	Condition	status & MCI_STATUS_UC	59:8:928:949	1469937	0	True				
+ANR	1470048	BitAndExpression	status & MCI_STATUS_UC		1469937	0		&			
+ANR	1470049	Identifier	status		1469937	0					
+ANR	1470050	Identifier	MCI_STATUS_UC		1469937	1					
+ANR	1470051	CompoundStatement		55:32:807:807	1469937	1					
+ANR	1470052	IfStatement	if ( ( cenv -> mcg_status & MCG_STATUS_MCIP ) || ! ( cenv -> cr [ 4 ] & CR4_MCE_MASK ) )		1469937	0					
+ANR	1470053	Condition	( cenv -> mcg_status & MCG_STATUS_MCIP ) || ! ( cenv -> cr [ 4 ] & CR4_MCE_MASK )	61:12:967:1048	1469937	0	True				
+ANR	1470054	OrExpression	( cenv -> mcg_status & MCG_STATUS_MCIP ) || ! ( cenv -> cr [ 4 ] & CR4_MCE_MASK )		1469937	0		||			
+ANR	1470055	BitAndExpression	cenv -> mcg_status & MCG_STATUS_MCIP		1469937	0		&			
+ANR	1470056	PtrMemberAccess	cenv -> mcg_status		1469937	0					
+ANR	1470057	Identifier	cenv		1469937	0					
+ANR	1470058	Identifier	mcg_status		1469937	1					
+ANR	1470059	Identifier	MCG_STATUS_MCIP		1469937	1					
+ANR	1470060	UnaryOperationExpression	! ( cenv -> cr [ 4 ] & CR4_MCE_MASK )		1469937	1					
+ANR	1470061	UnaryOperator	!		1469937	0					
+ANR	1470062	BitAndExpression	cenv -> cr [ 4 ] & CR4_MCE_MASK		1469937	1		&			
+ANR	1470063	ArrayIndexing	cenv -> cr [ 4 ]		1469937	0					
+ANR	1470064	PtrMemberAccess	cenv -> cr		1469937	0					
+ANR	1470065	Identifier	cenv		1469937	0					
+ANR	1470066	Identifier	cr		1469937	1					
+ANR	1470067	PrimaryExpression	4		1469937	1					
+ANR	1470068	Identifier	CR4_MCE_MASK		1469937	1					
+ANR	1470069	CompoundStatement		59:43:906:906	1469937	1					
+ANR	1470070	Statement	fprintf	65:12:1066:1072	1469937	0	True				
+ANR	1470071	Statement	(	65:19:1073:1073	1469937	1	True				
+ANR	1470072	Statement	stderr	65:20:1074:1079	1469937	2	True				
+ANR	1470073	Statement	","	65:26:1080:1080	1469937	3	True				
+ANR	1470074	Statement	"""injects mce exception while previous """	65:28:1082:1120	1469937	4	True				
+ANR	1470075	Statement	"""one is in progress!\\n"""	67:20:1143:1165	1469937	5	True				
+ANR	1470076	Statement	)	67:43:1166:1166	1469937	6	True				
+ANR	1470077	ExpressionStatement		67:44:1167:1167	1469937	7	True				
+ANR	1470078	ExpressionStatement	"qemu_log_mask ( CPU_LOG_RESET , ""Triple fault\\n"" )"	69:12:1182:1228	1469937	8	True				
+ANR	1470079	CallExpression	"qemu_log_mask ( CPU_LOG_RESET , ""Triple fault\\n"" )"		1469937	0					
+ANR	1470080	Callee	qemu_log_mask		1469937	0					
+ANR	1470081	Identifier	qemu_log_mask		1469937	0					
+ANR	1470082	ArgumentList	CPU_LOG_RESET		1469937	1					
+ANR	1470083	Argument	CPU_LOG_RESET		1469937	0					
+ANR	1470084	Identifier	CPU_LOG_RESET		1469937	0					
+ANR	1470085	Argument	"""Triple fault\\n"""		1469937	1					
+ANR	1470086	PrimaryExpression	"""Triple fault\\n"""		1469937	0					
+ANR	1470087	ExpressionStatement	qemu_system_reset_request ( )	71:12:1243:1270	1469937	9	True				
+ANR	1470088	CallExpression	qemu_system_reset_request ( )		1469937	0					
+ANR	1470089	Callee	qemu_system_reset_request		1469937	0					
+ANR	1470090	Identifier	qemu_system_reset_request		1469937	0					
+ANR	1470091	ArgumentList			1469937	1					
+ANR	1470092	ReturnStatement	return ;	73:12:1285:1291	1469937	10	True				
+ANR	1470093	IfStatement	if ( banks [ 1 ] & MCI_STATUS_VAL )		1469937	1					
+ANR	1470094	Condition	banks [ 1 ] & MCI_STATUS_VAL	77:12:1317:1341	1469937	0	True				
+ANR	1470095	BitAndExpression	banks [ 1 ] & MCI_STATUS_VAL		1469937	0		&			
+ANR	1470096	ArrayIndexing	banks [ 1 ]		1469937	0					
+ANR	1470097	Identifier	banks		1469937	0					
+ANR	1470098	PrimaryExpression	1		1469937	1					
+ANR	1470099	Identifier	MCI_STATUS_VAL		1469937	1					
+ANR	1470100	ExpressionStatement	status |= MCI_STATUS_OVER	79:12:1357:1382	1469937	1	True				
+ANR	1470101	AssignmentExpression	status |= MCI_STATUS_OVER		1469937	0		|=			
+ANR	1470102	Identifier	status		1469937	0					
+ANR	1470103	Identifier	MCI_STATUS_OVER		1469937	1					
+ANR	1470104	ExpressionStatement	banks [ 2 ] = addr	81:8:1393:1408	1469937	2	True				
+ANR	1470105	AssignmentExpression	banks [ 2 ] = addr		1469937	0		=			
+ANR	1470106	ArrayIndexing	banks [ 2 ]		1469937	0					
+ANR	1470107	Identifier	banks		1469937	0					
+ANR	1470108	PrimaryExpression	2		1469937	1					
+ANR	1470109	Identifier	addr		1469937	1					
+ANR	1470110	ExpressionStatement	banks [ 3 ] = misc	83:8:1419:1434	1469937	3	True				
+ANR	1470111	AssignmentExpression	banks [ 3 ] = misc		1469937	0		=			
+ANR	1470112	ArrayIndexing	banks [ 3 ]		1469937	0					
+ANR	1470113	Identifier	banks		1469937	0					
+ANR	1470114	PrimaryExpression	3		1469937	1					
+ANR	1470115	Identifier	misc		1469937	1					
+ANR	1470116	ExpressionStatement	cenv -> mcg_status = mcg_status	85:8:1445:1474	1469937	4	True				
+ANR	1470117	AssignmentExpression	cenv -> mcg_status = mcg_status		1469937	0		=			
+ANR	1470118	PtrMemberAccess	cenv -> mcg_status		1469937	0					
+ANR	1470119	Identifier	cenv		1469937	0					
+ANR	1470120	Identifier	mcg_status		1469937	1					
+ANR	1470121	Identifier	mcg_status		1469937	1					
+ANR	1470122	ExpressionStatement	banks [ 1 ] = status	87:8:1485:1502	1469937	5	True				
+ANR	1470123	AssignmentExpression	banks [ 1 ] = status		1469937	0		=			
+ANR	1470124	ArrayIndexing	banks [ 1 ]		1469937	0					
+ANR	1470125	Identifier	banks		1469937	0					
+ANR	1470126	PrimaryExpression	1		1469937	1					
+ANR	1470127	Identifier	status		1469937	1					
+ANR	1470128	ExpressionStatement	"cpu_interrupt ( cenv , CPU_INTERRUPT_MCE )"	89:8:1513:1551	1469937	6	True				
+ANR	1470129	CallExpression	"cpu_interrupt ( cenv , CPU_INTERRUPT_MCE )"		1469937	0					
+ANR	1470130	Callee	cpu_interrupt		1469937	0					
+ANR	1470131	Identifier	cpu_interrupt		1469937	0					
+ANR	1470132	ArgumentList	cenv		1469937	1					
+ANR	1470133	Argument	cenv		1469937	0					
+ANR	1470134	Identifier	cenv		1469937	0					
+ANR	1470135	Argument	CPU_INTERRUPT_MCE		1469937	1					
+ANR	1470136	Identifier	CPU_INTERRUPT_MCE		1469937	0					
+ANR	1470137	ElseStatement	else		1469937	0					
+ANR	1470138	IfStatement	if ( ! ( banks [ 1 ] & MCI_STATUS_VAL ) || ! ( banks [ 1 ] & MCI_STATUS_UC ) )		1469937	0					
+ANR	1470139	Condition	! ( banks [ 1 ] & MCI_STATUS_VAL ) || ! ( banks [ 1 ] & MCI_STATUS_UC )	91:15:1569:1643	1469937	0	True				
+ANR	1470140	OrExpression	! ( banks [ 1 ] & MCI_STATUS_VAL ) || ! ( banks [ 1 ] & MCI_STATUS_UC )		1469937	0		||			
+ANR	1470141	UnaryOperationExpression	! ( banks [ 1 ] & MCI_STATUS_VAL )		1469937	0					
+ANR	1470142	UnaryOperator	!		1469937	0					
+ANR	1470143	BitAndExpression	banks [ 1 ] & MCI_STATUS_VAL		1469937	1		&			
+ANR	1470144	ArrayIndexing	banks [ 1 ]		1469937	0					
+ANR	1470145	Identifier	banks		1469937	0					
+ANR	1470146	PrimaryExpression	1		1469937	1					
+ANR	1470147	Identifier	MCI_STATUS_VAL		1469937	1					
+ANR	1470148	UnaryOperationExpression	! ( banks [ 1 ] & MCI_STATUS_UC )		1469937	1					
+ANR	1470149	UnaryOperator	!		1469937	0					
+ANR	1470150	BitAndExpression	banks [ 1 ] & MCI_STATUS_UC		1469937	1		&			
+ANR	1470151	ArrayIndexing	banks [ 1 ]		1469937	0					
+ANR	1470152	Identifier	banks		1469937	0					
+ANR	1470153	PrimaryExpression	1		1469937	1					
+ANR	1470154	Identifier	MCI_STATUS_UC		1469937	1					
+ANR	1470155	CompoundStatement		89:47:1501:1501	1469937	1					
+ANR	1470156	IfStatement	if ( banks [ 1 ] & MCI_STATUS_VAL )		1469937	0					
+ANR	1470157	Condition	banks [ 1 ] & MCI_STATUS_VAL	95:12:1661:1685	1469937	0	True				
+ANR	1470158	BitAndExpression	banks [ 1 ] & MCI_STATUS_VAL		1469937	0		&			
+ANR	1470159	ArrayIndexing	banks [ 1 ]		1469937	0					
+ANR	1470160	Identifier	banks		1469937	0					
+ANR	1470161	PrimaryExpression	1		1469937	1					
+ANR	1470162	Identifier	MCI_STATUS_VAL		1469937	1					
+ANR	1470163	ExpressionStatement	status |= MCI_STATUS_OVER	97:12:1701:1726	1469937	1	True				
+ANR	1470164	AssignmentExpression	status |= MCI_STATUS_OVER		1469937	0		|=			
+ANR	1470165	Identifier	status		1469937	0					
+ANR	1470166	Identifier	MCI_STATUS_OVER		1469937	1					
+ANR	1470167	ExpressionStatement	banks [ 2 ] = addr	99:8:1737:1752	1469937	1	True				
+ANR	1470168	AssignmentExpression	banks [ 2 ] = addr		1469937	0		=			
+ANR	1470169	ArrayIndexing	banks [ 2 ]		1469937	0					
+ANR	1470170	Identifier	banks		1469937	0					
+ANR	1470171	PrimaryExpression	2		1469937	1					
+ANR	1470172	Identifier	addr		1469937	1					
+ANR	1470173	ExpressionStatement	banks [ 3 ] = misc	101:8:1763:1778	1469937	2	True				
+ANR	1470174	AssignmentExpression	banks [ 3 ] = misc		1469937	0		=			
+ANR	1470175	ArrayIndexing	banks [ 3 ]		1469937	0					
+ANR	1470176	Identifier	banks		1469937	0					
+ANR	1470177	PrimaryExpression	3		1469937	1					
+ANR	1470178	Identifier	misc		1469937	1					
+ANR	1470179	ExpressionStatement	banks [ 1 ] = status	103:8:1789:1806	1469937	3	True				
+ANR	1470180	AssignmentExpression	banks [ 1 ] = status		1469937	0		=			
+ANR	1470181	ArrayIndexing	banks [ 1 ]		1469937	0					
+ANR	1470182	Identifier	banks		1469937	0					
+ANR	1470183	PrimaryExpression	1		1469937	1					
+ANR	1470184	Identifier	status		1469937	1					
+ANR	1470185	ElseStatement	else		1469937	0					
+ANR	1470186	ExpressionStatement	banks [ 1 ] |= MCI_STATUS_OVER	107:8:1829:1856	1469937	0	True				
+ANR	1470187	AssignmentExpression	banks [ 1 ] |= MCI_STATUS_OVER		1469937	0		|=			
+ANR	1470188	ArrayIndexing	banks [ 1 ]		1469937	0					
+ANR	1470189	Identifier	banks		1469937	0					
+ANR	1470190	PrimaryExpression	1		1469937	1					
+ANR	1470191	Identifier	MCI_STATUS_OVER		1469937	1					
+ANR	1470192	ReturnType	void		1469937	1					
+ANR	1470193	Identifier	cpu_inject_x86_mce		1469937	2					
+ANR	1470194	ParameterList	"CPUState * cenv , int bank , uint64_t status , uint64_t mcg_status , uint64_t addr , uint64_t misc"		1469937	3					
+ANR	1470195	Parameter	CPUState * cenv	1:24:24:37	1469937	0	True				
+ANR	1470196	ParameterType	CPUState *		1469937	0					
+ANR	1470197	Identifier	cenv		1469937	1					
+ANR	1470198	Parameter	int bank	1:40:40:47	1469937	1	True				
+ANR	1470199	ParameterType	int		1469937	0					
+ANR	1470200	Identifier	bank		1469937	1					
+ANR	1470201	Parameter	uint64_t status	1:50:50:64	1469937	2	True				
+ANR	1470202	ParameterType	uint64_t		1469937	0					
+ANR	1470203	Identifier	status		1469937	1					
+ANR	1470204	Parameter	uint64_t mcg_status	3:24:92:110	1469937	3	True				
+ANR	1470205	ParameterType	uint64_t		1469937	0					
+ANR	1470206	Identifier	mcg_status		1469937	1					
+ANR	1470207	Parameter	uint64_t addr	3:45:113:125	1469937	4	True				
+ANR	1470208	ParameterType	uint64_t		1469937	0					
+ANR	1470209	Identifier	addr		1469937	1					
+ANR	1470210	Parameter	uint64_t misc	3:60:128:140	1469937	5	True				
+ANR	1470211	ParameterType	uint64_t		1469937	0					
+ANR	1470212	Identifier	misc		1469937	1					
+ANR	1470213	CFGEntryNode	ENTRY		1469937		True				
+ANR	1470214	CFGExitNode	EXIT		1469937		True				
+ANR	1470215	Symbol	* * cenv		1469937						
+ANR	1470216	Symbol	cenv		1469937						
+ANR	1470217	Symbol	cenv -> mcg_status		1469937						
+ANR	1470218	Symbol	* cenv -> cr		1469937						
+ANR	1470219	Symbol	MCI_STATUS_VAL		1469937						
+ANR	1470220	Symbol	bank		1469937						
+ANR	1470221	Symbol	kvm_enabled		1469937						
+ANR	1470222	Symbol	addr		1469937						
+ANR	1470223	Symbol	MCG_STATUS_MCIP		1469937						
+ANR	1470224	Symbol	misc		1469937						
+ANR	1470225	Symbol	cenv -> mcg_ctl		1469937						
+ANR	1470226	Symbol	banks		1469937						
+ANR	1470227	Symbol	cenv -> mce_banks		1469937						
+ANR	1470228	Symbol	mcg_cap		1469937						
+ANR	1470229	Symbol	MCG_CTL_P		1469937						
+ANR	1470230	Symbol	CPU_INTERRUPT_MCE		1469937						
+ANR	1470231	Symbol	cenv -> cr		1469937						
+ANR	1470232	Symbol	mcg_status		1469937						
+ANR	1470233	Symbol	* banks		1469937						
+ANR	1470234	Symbol	bank_num		1469937						
+ANR	1470235	Symbol	CPU_LOG_RESET		1469937						
+ANR	1470236	Symbol	cenv -> mcg_cap		1469937						
+ANR	1470237	Symbol	MCI_STATUS_OVER		1469937						
+ANR	1470238	Symbol	* cenv		1469937						
+ANR	1470239	Symbol	MCI_STATUS_UC		1469937						
+ANR	1470240	Symbol	CR4_MCE_MASK		1469937						
+ANR	1470241	Symbol	status		1469937						

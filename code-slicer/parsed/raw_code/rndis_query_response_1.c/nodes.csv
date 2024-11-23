@@ -1,0 +1,298 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7440783	File	/home/p4ultr4n/workplace/ReVeal/raw_code/rndis_query_response_1.c								
+ANR	7440784	Function	rndis_query_response	1:0:0:1632							
+ANR	7440785	FunctionDef	"rndis_query_response (USBNetState * s , rndis_query_msg_type * buf , unsigned int length)"		7440784	0					
+ANR	7440786	CompoundStatement		5:0:114:1632	7440784	0					
+ANR	7440787	IdentifierDeclStatement	rndis_query_cmplt_type * resp ;	7:4:121:149	7440784	0	True				
+ANR	7440788	IdentifierDecl	* resp		7440784	0					
+ANR	7440789	IdentifierDeclType	rndis_query_cmplt_type *		7440784	0					
+ANR	7440790	Identifier	resp		7440784	1					
+ANR	7440791	IdentifierDeclStatement	uint8_t infobuf [ sizeof ( oid_supported_list ) ] ;	11:4:212:255	7440784	1	True				
+ANR	7440792	IdentifierDecl	infobuf [ sizeof ( oid_supported_list ) ]		7440784	0					
+ANR	7440793	IdentifierDeclType	uint8_t [ sizeof ( oid_supported_list ) ]		7440784	0					
+ANR	7440794	Identifier	infobuf		7440784	1					
+ANR	7440795	SizeofExpression	sizeof ( oid_supported_list )		7440784	2					
+ANR	7440796	Sizeof	sizeof		7440784	0					
+ANR	7440797	SizeofOperand	oid_supported_list		7440784	1					
+ANR	7440798	IdentifierDeclStatement	"uint32_t bufoffs , buflen ;"	13:4:262:286	7440784	2	True				
+ANR	7440799	IdentifierDecl	bufoffs		7440784	0					
+ANR	7440800	IdentifierDeclType	uint32_t		7440784	0					
+ANR	7440801	Identifier	bufoffs		7440784	1					
+ANR	7440802	IdentifierDecl	buflen		7440784	1					
+ANR	7440803	IdentifierDeclType	uint32_t		7440784	0					
+ANR	7440804	Identifier	buflen		7440784	1					
+ANR	7440805	IdentifierDeclStatement	int infobuflen ;	15:4:293:307	7440784	3	True				
+ANR	7440806	IdentifierDecl	infobuflen		7440784	0					
+ANR	7440807	IdentifierDeclType	int		7440784	0					
+ANR	7440808	Identifier	infobuflen		7440784	1					
+ANR	7440809	IdentifierDeclStatement	unsigned int resplen ;	17:4:314:334	7440784	4	True				
+ANR	7440810	IdentifierDecl	resplen		7440784	0					
+ANR	7440811	IdentifierDeclType	unsigned int		7440784	0					
+ANR	7440812	Identifier	resplen		7440784	1					
+ANR	7440813	ExpressionStatement	bufoffs = le32_to_cpu ( buf -> InformationBufferOffset ) + 8	21:4:343:398	7440784	5	True				
+ANR	7440814	AssignmentExpression	bufoffs = le32_to_cpu ( buf -> InformationBufferOffset ) + 8		7440784	0		=			
+ANR	7440815	Identifier	bufoffs		7440784	0					
+ANR	7440816	AdditiveExpression	le32_to_cpu ( buf -> InformationBufferOffset ) + 8		7440784	1		+			
+ANR	7440817	CallExpression	le32_to_cpu ( buf -> InformationBufferOffset )		7440784	0					
+ANR	7440818	Callee	le32_to_cpu		7440784	0					
+ANR	7440819	Identifier	le32_to_cpu		7440784	0					
+ANR	7440820	ArgumentList	buf -> InformationBufferOffset		7440784	1					
+ANR	7440821	Argument	buf -> InformationBufferOffset		7440784	0					
+ANR	7440822	PtrMemberAccess	buf -> InformationBufferOffset		7440784	0					
+ANR	7440823	Identifier	buf		7440784	0					
+ANR	7440824	Identifier	InformationBufferOffset		7440784	1					
+ANR	7440825	PrimaryExpression	8		7440784	1					
+ANR	7440826	ExpressionStatement	buflen = le32_to_cpu ( buf -> InformationBufferLength )	23:4:405:455	7440784	6	True				
+ANR	7440827	AssignmentExpression	buflen = le32_to_cpu ( buf -> InformationBufferLength )		7440784	0		=			
+ANR	7440828	Identifier	buflen		7440784	0					
+ANR	7440829	CallExpression	le32_to_cpu ( buf -> InformationBufferLength )		7440784	1					
+ANR	7440830	Callee	le32_to_cpu		7440784	0					
+ANR	7440831	Identifier	le32_to_cpu		7440784	0					
+ANR	7440832	ArgumentList	buf -> InformationBufferLength		7440784	1					
+ANR	7440833	Argument	buf -> InformationBufferLength		7440784	0					
+ANR	7440834	PtrMemberAccess	buf -> InformationBufferLength		7440784	0					
+ANR	7440835	Identifier	buf		7440784	0					
+ANR	7440836	Identifier	InformationBufferLength		7440784	1					
+ANR	7440837	IfStatement	if ( bufoffs + buflen > length )		7440784	7					
+ANR	7440838	Condition	bufoffs + buflen > length	25:8:466:490	7440784	0	True				
+ANR	7440839	RelationalExpression	bufoffs + buflen > length		7440784	0		>			
+ANR	7440840	AdditiveExpression	bufoffs + buflen		7440784	0		+			
+ANR	7440841	Identifier	bufoffs		7440784	0					
+ANR	7440842	Identifier	buflen		7440784	1					
+ANR	7440843	Identifier	length		7440784	1					
+ANR	7440844	ReturnStatement	return USB_RET_STALL ;	27:8:502:522	7440784	1	True				
+ANR	7440845	Identifier	USB_RET_STALL		7440784	0					
+ANR	7440846	ExpressionStatement	"infobuflen = ndis_query ( s , le32_to_cpu ( buf -> OID ) , bufoffs + ( uint8_t * ) buf , buflen , infobuf , sizeof ( infobuf ) )"	31:4:531:699	7440784	8	True				
+ANR	7440847	AssignmentExpression	"infobuflen = ndis_query ( s , le32_to_cpu ( buf -> OID ) , bufoffs + ( uint8_t * ) buf , buflen , infobuf , sizeof ( infobuf ) )"		7440784	0		=			
+ANR	7440848	Identifier	infobuflen		7440784	0					
+ANR	7440849	CallExpression	"ndis_query ( s , le32_to_cpu ( buf -> OID ) , bufoffs + ( uint8_t * ) buf , buflen , infobuf , sizeof ( infobuf ) )"		7440784	1					
+ANR	7440850	Callee	ndis_query		7440784	0					
+ANR	7440851	Identifier	ndis_query		7440784	0					
+ANR	7440852	ArgumentList	s		7440784	1					
+ANR	7440853	Argument	s		7440784	0					
+ANR	7440854	Identifier	s		7440784	0					
+ANR	7440855	Argument	le32_to_cpu ( buf -> OID )		7440784	1					
+ANR	7440856	CallExpression	le32_to_cpu ( buf -> OID )		7440784	0					
+ANR	7440857	Callee	le32_to_cpu		7440784	0					
+ANR	7440858	Identifier	le32_to_cpu		7440784	0					
+ANR	7440859	ArgumentList	buf -> OID		7440784	1					
+ANR	7440860	Argument	buf -> OID		7440784	0					
+ANR	7440861	PtrMemberAccess	buf -> OID		7440784	0					
+ANR	7440862	Identifier	buf		7440784	0					
+ANR	7440863	Identifier	OID		7440784	1					
+ANR	7440864	Argument	bufoffs + ( uint8_t * ) buf		7440784	2					
+ANR	7440865	AdditiveExpression	bufoffs + ( uint8_t * ) buf		7440784	0		+			
+ANR	7440866	Identifier	bufoffs		7440784	0					
+ANR	7440867	CastExpression	( uint8_t * ) buf		7440784	1					
+ANR	7440868	CastTarget	uint8_t *		7440784	0					
+ANR	7440869	Identifier	buf		7440784	1					
+ANR	7440870	Argument	buflen		7440784	3					
+ANR	7440871	Identifier	buflen		7440784	0					
+ANR	7440872	Argument	infobuf		7440784	4					
+ANR	7440873	Identifier	infobuf		7440784	0					
+ANR	7440874	Argument	sizeof ( infobuf )		7440784	5					
+ANR	7440875	SizeofExpression	sizeof ( infobuf )		7440784	0					
+ANR	7440876	Sizeof	sizeof		7440784	0					
+ANR	7440877	SizeofOperand	infobuf		7440784	1					
+ANR	7440878	ExpressionStatement	resplen = sizeof ( rndis_query_cmplt_type ) + ( ( infobuflen < 0 ) ? 0 : infobuflen )	37:4:706:797	7440784	9	True				
+ANR	7440879	AssignmentExpression	resplen = sizeof ( rndis_query_cmplt_type ) + ( ( infobuflen < 0 ) ? 0 : infobuflen )		7440784	0		=			
+ANR	7440880	Identifier	resplen		7440784	0					
+ANR	7440881	AdditiveExpression	sizeof ( rndis_query_cmplt_type ) + ( ( infobuflen < 0 ) ? 0 : infobuflen )		7440784	1		+			
+ANR	7440882	SizeofExpression	sizeof ( rndis_query_cmplt_type )		7440784	0					
+ANR	7440883	Sizeof	sizeof		7440784	0					
+ANR	7440884	SizeofOperand	rndis_query_cmplt_type		7440784	1					
+ANR	7440885	ConditionalExpression	( infobuflen < 0 ) ? 0 : infobuflen		7440784	1					
+ANR	7440886	Condition	infobuflen < 0		7440784	0					
+ANR	7440887	RelationalExpression	infobuflen < 0		7440784	0		<			
+ANR	7440888	Identifier	infobuflen		7440784	0					
+ANR	7440889	PrimaryExpression	0		7440784	1					
+ANR	7440890	PrimaryExpression	0		7440784	1					
+ANR	7440891	Identifier	infobuflen		7440784	2					
+ANR	7440892	ExpressionStatement	"resp = rndis_queue_response ( s , resplen )"	41:4:804:843	7440784	10	True				
+ANR	7440893	AssignmentExpression	"resp = rndis_queue_response ( s , resplen )"		7440784	0		=			
+ANR	7440894	Identifier	resp		7440784	0					
+ANR	7440895	CallExpression	"rndis_queue_response ( s , resplen )"		7440784	1					
+ANR	7440896	Callee	rndis_queue_response		7440784	0					
+ANR	7440897	Identifier	rndis_queue_response		7440784	0					
+ANR	7440898	ArgumentList	s		7440784	1					
+ANR	7440899	Argument	s		7440784	0					
+ANR	7440900	Identifier	s		7440784	0					
+ANR	7440901	Argument	resplen		7440784	1					
+ANR	7440902	Identifier	resplen		7440784	0					
+ANR	7440903	IfStatement	if ( ! resp )		7440784	11					
+ANR	7440904	Condition	! resp	43:8:854:858	7440784	0	True				
+ANR	7440905	UnaryOperationExpression	! resp		7440784	0					
+ANR	7440906	UnaryOperator	!		7440784	0					
+ANR	7440907	Identifier	resp		7440784	1					
+ANR	7440908	ReturnStatement	return USB_RET_STALL ;	45:8:870:890	7440784	1	True				
+ANR	7440909	Identifier	USB_RET_STALL		7440784	0					
+ANR	7440910	ExpressionStatement	resp -> MessageType = cpu_to_le32 ( RNDIS_QUERY_CMPLT )	49:4:899:949	7440784	12	True				
+ANR	7440911	AssignmentExpression	resp -> MessageType = cpu_to_le32 ( RNDIS_QUERY_CMPLT )		7440784	0		=			
+ANR	7440912	PtrMemberAccess	resp -> MessageType		7440784	0					
+ANR	7440913	Identifier	resp		7440784	0					
+ANR	7440914	Identifier	MessageType		7440784	1					
+ANR	7440915	CallExpression	cpu_to_le32 ( RNDIS_QUERY_CMPLT )		7440784	1					
+ANR	7440916	Callee	cpu_to_le32		7440784	0					
+ANR	7440917	Identifier	cpu_to_le32		7440784	0					
+ANR	7440918	ArgumentList	RNDIS_QUERY_CMPLT		7440784	1					
+ANR	7440919	Argument	RNDIS_QUERY_CMPLT		7440784	0					
+ANR	7440920	Identifier	RNDIS_QUERY_CMPLT		7440784	0					
+ANR	7440921	ExpressionStatement	resp -> RequestID = buf -> RequestID	51:4:956:988	7440784	13	True				
+ANR	7440922	AssignmentExpression	resp -> RequestID = buf -> RequestID		7440784	0		=			
+ANR	7440923	PtrMemberAccess	resp -> RequestID		7440784	0					
+ANR	7440924	Identifier	resp		7440784	0					
+ANR	7440925	Identifier	RequestID		7440784	1					
+ANR	7440926	PtrMemberAccess	buf -> RequestID		7440784	1					
+ANR	7440927	Identifier	buf		7440784	0					
+ANR	7440928	Identifier	RequestID		7440784	1					
+ANR	7440929	ExpressionStatement	resp -> MessageLength = cpu_to_le32 ( resplen )	53:4:1024:1066	7440784	14	True				
+ANR	7440930	AssignmentExpression	resp -> MessageLength = cpu_to_le32 ( resplen )		7440784	0		=			
+ANR	7440931	PtrMemberAccess	resp -> MessageLength		7440784	0					
+ANR	7440932	Identifier	resp		7440784	0					
+ANR	7440933	Identifier	MessageLength		7440784	1					
+ANR	7440934	CallExpression	cpu_to_le32 ( resplen )		7440784	1					
+ANR	7440935	Callee	cpu_to_le32		7440784	0					
+ANR	7440936	Identifier	cpu_to_le32		7440784	0					
+ANR	7440937	ArgumentList	resplen		7440784	1					
+ANR	7440938	Argument	resplen		7440784	0					
+ANR	7440939	Identifier	resplen		7440784	0					
+ANR	7440940	IfStatement	if ( infobuflen < 0 )		7440784	15					
+ANR	7440941	Condition	infobuflen < 0	57:8:1079:1092	7440784	0	True				
+ANR	7440942	RelationalExpression	infobuflen < 0		7440784	0		<			
+ANR	7440943	Identifier	infobuflen		7440784	0					
+ANR	7440944	PrimaryExpression	0		7440784	1					
+ANR	7440945	CompoundStatement		53:24:980:980	7440784	1					
+ANR	7440946	ExpressionStatement	resp -> Status = cpu_to_le32 ( RNDIS_STATUS_NOT_SUPPORTED )	61:8:1139:1193	7440784	0	True				
+ANR	7440947	AssignmentExpression	resp -> Status = cpu_to_le32 ( RNDIS_STATUS_NOT_SUPPORTED )		7440784	0		=			
+ANR	7440948	PtrMemberAccess	resp -> Status		7440784	0					
+ANR	7440949	Identifier	resp		7440784	0					
+ANR	7440950	Identifier	Status		7440784	1					
+ANR	7440951	CallExpression	cpu_to_le32 ( RNDIS_STATUS_NOT_SUPPORTED )		7440784	1					
+ANR	7440952	Callee	cpu_to_le32		7440784	0					
+ANR	7440953	Identifier	cpu_to_le32		7440784	0					
+ANR	7440954	ArgumentList	RNDIS_STATUS_NOT_SUPPORTED		7440784	1					
+ANR	7440955	Argument	RNDIS_STATUS_NOT_SUPPORTED		7440784	0					
+ANR	7440956	Identifier	RNDIS_STATUS_NOT_SUPPORTED		7440784	0					
+ANR	7440957	ExpressionStatement	resp -> InformationBufferLength = cpu_to_le32 ( 0 )	63:8:1204:1250	7440784	1	True				
+ANR	7440958	AssignmentExpression	resp -> InformationBufferLength = cpu_to_le32 ( 0 )		7440784	0		=			
+ANR	7440959	PtrMemberAccess	resp -> InformationBufferLength		7440784	0					
+ANR	7440960	Identifier	resp		7440784	0					
+ANR	7440961	Identifier	InformationBufferLength		7440784	1					
+ANR	7440962	CallExpression	cpu_to_le32 ( 0 )		7440784	1					
+ANR	7440963	Callee	cpu_to_le32		7440784	0					
+ANR	7440964	Identifier	cpu_to_le32		7440784	0					
+ANR	7440965	ArgumentList	0		7440784	1					
+ANR	7440966	Argument	0		7440784	0					
+ANR	7440967	PrimaryExpression	0		7440784	0					
+ANR	7440968	ExpressionStatement	resp -> InformationBufferOffset = cpu_to_le32 ( 0 )	65:8:1261:1307	7440784	2	True				
+ANR	7440969	AssignmentExpression	resp -> InformationBufferOffset = cpu_to_le32 ( 0 )		7440784	0		=			
+ANR	7440970	PtrMemberAccess	resp -> InformationBufferOffset		7440784	0					
+ANR	7440971	Identifier	resp		7440784	0					
+ANR	7440972	Identifier	InformationBufferOffset		7440784	1					
+ANR	7440973	CallExpression	cpu_to_le32 ( 0 )		7440784	1					
+ANR	7440974	Callee	cpu_to_le32		7440784	0					
+ANR	7440975	Identifier	cpu_to_le32		7440784	0					
+ANR	7440976	ArgumentList	0		7440784	1					
+ANR	7440977	Argument	0		7440784	0					
+ANR	7440978	PrimaryExpression	0		7440784	0					
+ANR	7440979	ReturnStatement	return 0 ;	67:8:1318:1326	7440784	3	True				
+ANR	7440980	PrimaryExpression	0		7440784	0					
+ANR	7440981	ExpressionStatement	resp -> Status = cpu_to_le32 ( RNDIS_STATUS_SUCCESS )	73:4:1342:1390	7440784	16	True				
+ANR	7440982	AssignmentExpression	resp -> Status = cpu_to_le32 ( RNDIS_STATUS_SUCCESS )		7440784	0		=			
+ANR	7440983	PtrMemberAccess	resp -> Status		7440784	0					
+ANR	7440984	Identifier	resp		7440784	0					
+ANR	7440985	Identifier	Status		7440784	1					
+ANR	7440986	CallExpression	cpu_to_le32 ( RNDIS_STATUS_SUCCESS )		7440784	1					
+ANR	7440987	Callee	cpu_to_le32		7440784	0					
+ANR	7440988	Identifier	cpu_to_le32		7440784	0					
+ANR	7440989	ArgumentList	RNDIS_STATUS_SUCCESS		7440784	1					
+ANR	7440990	Argument	RNDIS_STATUS_SUCCESS		7440784	0					
+ANR	7440991	Identifier	RNDIS_STATUS_SUCCESS		7440784	0					
+ANR	7440992	ExpressionStatement	resp -> InformationBufferOffset = cpu_to_le32 ( infobuflen ? sizeof ( rndis_query_cmplt_type ) - 8 : 0 )	75:4:1397:1506	7440784	17	True				
+ANR	7440993	AssignmentExpression	resp -> InformationBufferOffset = cpu_to_le32 ( infobuflen ? sizeof ( rndis_query_cmplt_type ) - 8 : 0 )		7440784	0		=			
+ANR	7440994	PtrMemberAccess	resp -> InformationBufferOffset		7440784	0					
+ANR	7440995	Identifier	resp		7440784	0					
+ANR	7440996	Identifier	InformationBufferOffset		7440784	1					
+ANR	7440997	CallExpression	cpu_to_le32 ( infobuflen ? sizeof ( rndis_query_cmplt_type ) - 8 : 0 )		7440784	1					
+ANR	7440998	Callee	cpu_to_le32		7440784	0					
+ANR	7440999	Identifier	cpu_to_le32		7440784	0					
+ANR	7441000	ArgumentList	infobuflen ? sizeof ( rndis_query_cmplt_type ) - 8 : 0		7440784	1					
+ANR	7441001	Argument	infobuflen ? sizeof ( rndis_query_cmplt_type ) - 8 : 0		7440784	0					
+ANR	7441002	ConditionalExpression	infobuflen ? sizeof ( rndis_query_cmplt_type ) - 8 : 0		7440784	0					
+ANR	7441003	Condition	infobuflen		7440784	0					
+ANR	7441004	Identifier	infobuflen		7440784	0					
+ANR	7441005	AdditiveExpression	sizeof ( rndis_query_cmplt_type ) - 8		7440784	1		-			
+ANR	7441006	SizeofExpression	sizeof ( rndis_query_cmplt_type )		7440784	0					
+ANR	7441007	Sizeof	sizeof		7440784	0					
+ANR	7441008	SizeofOperand	rndis_query_cmplt_type		7440784	1					
+ANR	7441009	PrimaryExpression	8		7440784	1					
+ANR	7441010	PrimaryExpression	0		7440784	2					
+ANR	7441011	ExpressionStatement	resp -> InformationBufferLength = cpu_to_le32 ( infobuflen )	79:4:1513:1568	7440784	18	True				
+ANR	7441012	AssignmentExpression	resp -> InformationBufferLength = cpu_to_le32 ( infobuflen )		7440784	0		=			
+ANR	7441013	PtrMemberAccess	resp -> InformationBufferLength		7440784	0					
+ANR	7441014	Identifier	resp		7440784	0					
+ANR	7441015	Identifier	InformationBufferLength		7440784	1					
+ANR	7441016	CallExpression	cpu_to_le32 ( infobuflen )		7440784	1					
+ANR	7441017	Callee	cpu_to_le32		7440784	0					
+ANR	7441018	Identifier	cpu_to_le32		7440784	0					
+ANR	7441019	ArgumentList	infobuflen		7440784	1					
+ANR	7441020	Argument	infobuflen		7440784	0					
+ANR	7441021	Identifier	infobuflen		7440784	0					
+ANR	7441022	ExpressionStatement	"memcpy ( resp + 1 , infobuf , infobuflen )"	81:4:1575:1612	7440784	19	True				
+ANR	7441023	CallExpression	"memcpy ( resp + 1 , infobuf , infobuflen )"		7440784	0					
+ANR	7441024	Callee	memcpy		7440784	0					
+ANR	7441025	Identifier	memcpy		7440784	0					
+ANR	7441026	ArgumentList	resp + 1		7440784	1					
+ANR	7441027	Argument	resp + 1		7440784	0					
+ANR	7441028	AdditiveExpression	resp + 1		7440784	0		+			
+ANR	7441029	Identifier	resp		7440784	0					
+ANR	7441030	PrimaryExpression	1		7440784	1					
+ANR	7441031	Argument	infobuf		7440784	1					
+ANR	7441032	Identifier	infobuf		7440784	0					
+ANR	7441033	Argument	infobuflen		7440784	2					
+ANR	7441034	Identifier	infobuflen		7440784	0					
+ANR	7441035	ReturnStatement	return 0 ;	85:4:1621:1629	7440784	20	True				
+ANR	7441036	PrimaryExpression	0		7440784	0					
+ANR	7441037	ReturnType	static int		7440784	1					
+ANR	7441038	Identifier	rndis_query_response		7440784	2					
+ANR	7441039	ParameterList	"USBNetState * s , rndis_query_msg_type * buf , unsigned int length"		7440784	3					
+ANR	7441040	Parameter	USBNetState * s	1:32:32:45	7440784	0	True				
+ANR	7441041	ParameterType	USBNetState *		7440784	0					
+ANR	7441042	Identifier	s		7440784	1					
+ANR	7441043	Parameter	rndis_query_msg_type * buf	3:16:65:89	7440784	1	True				
+ANR	7441044	ParameterType	rndis_query_msg_type *		7440784	0					
+ANR	7441045	Identifier	buf		7440784	1					
+ANR	7441046	Parameter	unsigned int length	3:43:92:110	7440784	2	True				
+ANR	7441047	ParameterType	unsigned int		7440784	0					
+ANR	7441048	Identifier	length		7440784	1					
+ANR	7441049	CFGEntryNode	ENTRY		7440784		True				
+ANR	7441050	CFGExitNode	EXIT		7440784		True				
+ANR	7441051	Symbol	bufoffs		7440784						
+ANR	7441052	Symbol	resp -> InformationBufferOffset		7440784						
+ANR	7441053	Symbol	RNDIS_STATUS_SUCCESS		7440784						
+ANR	7441054	Symbol	cpu_to_le32		7440784						
+ANR	7441055	Symbol	le32_to_cpu		7440784						
+ANR	7441056	Symbol	resp -> MessageLength		7440784						
+ANR	7441057	Symbol	resp -> Status		7440784						
+ANR	7441058	Symbol	buflen		7440784						
+ANR	7441059	Symbol	infobuflen		7440784						
+ANR	7441060	Symbol	RNDIS_STATUS_NOT_SUPPORTED		7440784						
+ANR	7441061	Symbol	RNDIS_QUERY_CMPLT		7440784						
+ANR	7441062	Symbol	buf -> RequestID		7440784						
+ANR	7441063	Symbol	rndis_queue_response		7440784						
+ANR	7441064	Symbol	* buf		7440784						
+ANR	7441065	Symbol	resp -> MessageType		7440784						
+ANR	7441066	Symbol	resp		7440784						
+ANR	7441067	Symbol	* resp		7440784						
+ANR	7441068	Symbol	length		7440784						
+ANR	7441069	Symbol	buf -> InformationBufferOffset		7440784						
+ANR	7441070	Symbol	USB_RET_STALL		7440784						
+ANR	7441071	Symbol	resplen		7440784						
+ANR	7441072	Symbol	buf -> OID		7440784						
+ANR	7441073	Symbol	resp -> RequestID		7440784						
+ANR	7441074	Symbol	infobuf		7440784						
+ANR	7441075	Symbol	buf		7440784						
+ANR	7441076	Symbol	s		7440784						
+ANR	7441077	Symbol	ndis_query		7440784						
+ANR	7441078	Symbol	resp -> InformationBufferLength		7440784						
+ANR	7441079	Symbol	buf -> InformationBufferLength		7440784						

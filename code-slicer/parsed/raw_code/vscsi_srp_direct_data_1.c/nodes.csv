@@ -1,0 +1,164 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9358489	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vscsi_srp_direct_data_1.c								
+ANR	9358490	Function	vscsi_srp_direct_data	1:0:0:748							
+ANR	9358491	FunctionDef	"vscsi_srp_direct_data (VSCSIState * s , vscsi_req * req , uint8_t * buf , uint32_t len)"		9358490	0					
+ANR	9358492	CompoundStatement		5:0:127:748	9358490	0					
+ANR	9358493	IdentifierDeclStatement	struct srp_direct_buf * md = req -> cur_desc ;	7:4:134:175	9358490	0	True				
+ANR	9358494	IdentifierDecl	* md = req -> cur_desc		9358490	0					
+ANR	9358495	IdentifierDeclType	struct srp_direct_buf *		9358490	0					
+ANR	9358496	Identifier	md		9358490	1					
+ANR	9358497	AssignmentExpression	* md = req -> cur_desc		9358490	2		=			
+ANR	9358498	Identifier	md		9358490	0					
+ANR	9358499	PtrMemberAccess	req -> cur_desc		9358490	1					
+ANR	9358500	Identifier	req		9358490	0					
+ANR	9358501	Identifier	cur_desc		9358490	1					
+ANR	9358502	IdentifierDeclStatement	uint32_t llen ;	9:4:182:195	9358490	1	True				
+ANR	9358503	IdentifierDecl	llen		9358490	0					
+ANR	9358504	IdentifierDeclType	uint32_t		9358490	0					
+ANR	9358505	Identifier	llen		9358490	1					
+ANR	9358506	IdentifierDeclStatement	int rc ;	11:4:202:208	9358490	2	True				
+ANR	9358507	IdentifierDecl	rc		9358490	0					
+ANR	9358508	IdentifierDeclType	int		9358490	0					
+ANR	9358509	Identifier	rc		9358490	1					
+ANR	9358510	ExpressionStatement	"dprintf ( ""VSCSI: direct segment 0x%x bytes, va=0x%llx desc len=0x%x\\n"" , len , ( unsigned long long ) md -> va , md -> len )"	15:4:217:342	9358490	3	True				
+ANR	9358511	CallExpression	"dprintf ( ""VSCSI: direct segment 0x%x bytes, va=0x%llx desc len=0x%x\\n"" , len , ( unsigned long long ) md -> va , md -> len )"		9358490	0					
+ANR	9358512	Callee	dprintf		9358490	0					
+ANR	9358513	Identifier	dprintf		9358490	0					
+ANR	9358514	ArgumentList	"""VSCSI: direct segment 0x%x bytes, va=0x%llx desc len=0x%x\\n"""		9358490	1					
+ANR	9358515	Argument	"""VSCSI: direct segment 0x%x bytes, va=0x%llx desc len=0x%x\\n"""		9358490	0					
+ANR	9358516	PrimaryExpression	"""VSCSI: direct segment 0x%x bytes, va=0x%llx desc len=0x%x\\n"""		9358490	0					
+ANR	9358517	Argument	len		9358490	1					
+ANR	9358518	Identifier	len		9358490	0					
+ANR	9358519	Argument	( unsigned long long ) md -> va		9358490	2					
+ANR	9358520	CastExpression	( unsigned long long ) md -> va		9358490	0					
+ANR	9358521	CastTarget	unsigned long long		9358490	0					
+ANR	9358522	PtrMemberAccess	md -> va		9358490	1					
+ANR	9358523	Identifier	md		9358490	0					
+ANR	9358524	Identifier	va		9358490	1					
+ANR	9358525	Argument	md -> len		9358490	3					
+ANR	9358526	PtrMemberAccess	md -> len		9358490	0					
+ANR	9358527	Identifier	md		9358490	0					
+ANR	9358528	Identifier	len		9358490	1					
+ANR	9358529	ExpressionStatement	"llen = MIN ( len , md -> len )"	21:4:351:375	9358490	4	True				
+ANR	9358530	AssignmentExpression	"llen = MIN ( len , md -> len )"		9358490	0		=			
+ANR	9358531	Identifier	llen		9358490	0					
+ANR	9358532	CallExpression	"MIN ( len , md -> len )"		9358490	1					
+ANR	9358533	Callee	MIN		9358490	0					
+ANR	9358534	Identifier	MIN		9358490	0					
+ANR	9358535	ArgumentList	len		9358490	1					
+ANR	9358536	Argument	len		9358490	0					
+ANR	9358537	Identifier	len		9358490	0					
+ANR	9358538	Argument	md -> len		9358490	1					
+ANR	9358539	PtrMemberAccess	md -> len		9358490	0					
+ANR	9358540	Identifier	md		9358490	0					
+ANR	9358541	Identifier	len		9358490	1					
+ANR	9358542	IfStatement	if ( llen )		9358490	5					
+ANR	9358543	Condition	llen	23:8:386:389	9358490	0	True				
+ANR	9358544	Identifier	llen		9358490	0					
+ANR	9358545	CompoundStatement		19:14:264:264	9358490	1					
+ANR	9358546	IfStatement	if ( req -> writing )		9358490	0					
+ANR	9358547	Condition	req -> writing	25:12:407:418	9358490	0	True				
+ANR	9358548	PtrMemberAccess	req -> writing		9358490	0					
+ANR	9358549	Identifier	req		9358490	0					
+ANR	9358550	Identifier	writing		9358490	1					
+ANR	9358551	CompoundStatement		21:26:293:293	9358490	1					
+ANR	9358552	ExpressionStatement	"rc = spapr_tce_dma_read ( & s -> vdev , md -> va , buf , llen )"	27:12:484:536	9358490	0	True				
+ANR	9358553	AssignmentExpression	"rc = spapr_tce_dma_read ( & s -> vdev , md -> va , buf , llen )"		9358490	0		=			
+ANR	9358554	Identifier	rc		9358490	0					
+ANR	9358555	CallExpression	"spapr_tce_dma_read ( & s -> vdev , md -> va , buf , llen )"		9358490	1					
+ANR	9358556	Callee	spapr_tce_dma_read		9358490	0					
+ANR	9358557	Identifier	spapr_tce_dma_read		9358490	0					
+ANR	9358558	ArgumentList	& s -> vdev		9358490	1					
+ANR	9358559	Argument	& s -> vdev		9358490	0					
+ANR	9358560	UnaryOperationExpression	& s -> vdev		9358490	0					
+ANR	9358561	UnaryOperator	&		9358490	0					
+ANR	9358562	PtrMemberAccess	s -> vdev		9358490	1					
+ANR	9358563	Identifier	s		9358490	0					
+ANR	9358564	Identifier	vdev		9358490	1					
+ANR	9358565	Argument	md -> va		9358490	1					
+ANR	9358566	PtrMemberAccess	md -> va		9358490	0					
+ANR	9358567	Identifier	md		9358490	0					
+ANR	9358568	Identifier	va		9358490	1					
+ANR	9358569	Argument	buf		9358490	2					
+ANR	9358570	Identifier	buf		9358490	0					
+ANR	9358571	Argument	llen		9358490	3					
+ANR	9358572	Identifier	llen		9358490	0					
+ANR	9358573	ElseStatement	else		9358490	0					
+ANR	9358574	CompoundStatement		25:15:426:426	9358490	0					
+ANR	9358575	ExpressionStatement	"rc = spapr_tce_dma_write ( & s -> vdev , md -> va , buf , llen )"	31:12:569:622	9358490	0	True				
+ANR	9358576	AssignmentExpression	"rc = spapr_tce_dma_write ( & s -> vdev , md -> va , buf , llen )"		9358490	0		=			
+ANR	9358577	Identifier	rc		9358490	0					
+ANR	9358578	CallExpression	"spapr_tce_dma_write ( & s -> vdev , md -> va , buf , llen )"		9358490	1					
+ANR	9358579	Callee	spapr_tce_dma_write		9358490	0					
+ANR	9358580	Identifier	spapr_tce_dma_write		9358490	0					
+ANR	9358581	ArgumentList	& s -> vdev		9358490	1					
+ANR	9358582	Argument	& s -> vdev		9358490	0					
+ANR	9358583	UnaryOperationExpression	& s -> vdev		9358490	0					
+ANR	9358584	UnaryOperator	&		9358490	0					
+ANR	9358585	PtrMemberAccess	s -> vdev		9358490	1					
+ANR	9358586	Identifier	s		9358490	0					
+ANR	9358587	Identifier	vdev		9358490	1					
+ANR	9358588	Argument	md -> va		9358490	1					
+ANR	9358589	PtrMemberAccess	md -> va		9358490	0					
+ANR	9358590	Identifier	md		9358490	0					
+ANR	9358591	Identifier	va		9358490	1					
+ANR	9358592	Argument	buf		9358490	2					
+ANR	9358593	Identifier	buf		9358490	0					
+ANR	9358594	Argument	llen		9358490	3					
+ANR	9358595	Identifier	llen		9358490	0					
+ANR	9358596	ExpressionStatement	md -> len -= llen	37:4:647:662	9358490	6	True				
+ANR	9358597	AssignmentExpression	md -> len -= llen		9358490	0		-=			
+ANR	9358598	PtrMemberAccess	md -> len		9358490	0					
+ANR	9358599	Identifier	md		9358490	0					
+ANR	9358600	Identifier	len		9358490	1					
+ANR	9358601	Identifier	llen		9358490	1					
+ANR	9358602	ExpressionStatement	md -> va += llen	39:4:669:683	9358490	7	True				
+ANR	9358603	AssignmentExpression	md -> va += llen		9358490	0		+=			
+ANR	9358604	PtrMemberAccess	md -> va		9358490	0					
+ANR	9358605	Identifier	md		9358490	0					
+ANR	9358606	Identifier	va		9358490	1					
+ANR	9358607	Identifier	llen		9358490	1					
+ANR	9358608	IfStatement	if ( rc )		9358490	8					
+ANR	9358609	Condition	rc	43:8:696:697	9358490	0	True				
+ANR	9358610	Identifier	rc		9358490	0					
+ANR	9358611	CompoundStatement		39:12:572:572	9358490	1					
+ANR	9358612	ReturnStatement	return - 1 ;	45:8:711:720	9358490	0	True				
+ANR	9358613	UnaryOperationExpression	- 1		9358490	0					
+ANR	9358614	UnaryOperator	-		9358490	0					
+ANR	9358615	PrimaryExpression	1		9358490	1					
+ANR	9358616	ReturnStatement	return llen ;	49:4:734:745	9358490	9	True				
+ANR	9358617	Identifier	llen		9358490	0					
+ANR	9358618	ReturnType	static int		9358490	1					
+ANR	9358619	Identifier	vscsi_srp_direct_data		9358490	2					
+ANR	9358620	ParameterList	"VSCSIState * s , vscsi_req * req , uint8_t * buf , uint32_t len"		9358490	3					
+ANR	9358621	Parameter	VSCSIState * s	1:33:33:45	9358490	0	True				
+ANR	9358622	ParameterType	VSCSIState *		9358490	0					
+ANR	9358623	Identifier	s		9358490	1					
+ANR	9358624	Parameter	vscsi_req * req	1:48:48:61	9358490	1	True				
+ANR	9358625	ParameterType	vscsi_req *		9358490	0					
+ANR	9358626	Identifier	req		9358490	1					
+ANR	9358627	Parameter	uint8_t * buf	3:33:98:109	9358490	2	True				
+ANR	9358628	ParameterType	uint8_t *		9358490	0					
+ANR	9358629	Identifier	buf		9358490	1					
+ANR	9358630	Parameter	uint32_t len	3:47:112:123	9358490	3	True				
+ANR	9358631	ParameterType	uint32_t		9358490	0					
+ANR	9358632	Identifier	len		9358490	1					
+ANR	9358633	CFGEntryNode	ENTRY		9358490		True				
+ANR	9358634	CFGExitNode	EXIT		9358490		True				
+ANR	9358635	Symbol	& s -> vdev		9358490						
+ANR	9358636	Symbol	spapr_tce_dma_write		9358490						
+ANR	9358637	Symbol	* req		9358490						
+ANR	9358638	Symbol	md -> len		9358490						
+ANR	9358639	Symbol	req -> writing		9358490						
+ANR	9358640	Symbol	md -> va		9358490						
+ANR	9358641	Symbol	rc		9358490						
+ANR	9358642	Symbol	buf		9358490						
+ANR	9358643	Symbol	s		9358490						
+ANR	9358644	Symbol	MIN		9358490						
+ANR	9358645	Symbol	len		9358490						
+ANR	9358646	Symbol	md		9358490						
+ANR	9358647	Symbol	req -> cur_desc		9358490						
+ANR	9358648	Symbol	llen		9358490						
+ANR	9358649	Symbol	spapr_tce_dma_read		9358490						
+ANR	9358650	Symbol	* md		9358490						
+ANR	9358651	Symbol	req		9358490						

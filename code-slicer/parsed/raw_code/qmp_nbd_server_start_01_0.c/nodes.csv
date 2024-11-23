@@ -1,0 +1,207 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7120230	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qmp_nbd_server_start_01_0.c								
+ANR	7120231	Function	qmp_nbd_server_start	1:0:0:1315							
+ANR	7120232	FunctionDef	"qmp_nbd_server_start (SocketAddressLegacy * addr , bool has_tls_creds , const char * tls_creds , Error * * errp)"		7120231	0					
+ANR	7120233	CompoundStatement		7:0:165:1315	7120231	0					
+ANR	7120234	IfStatement	if ( nbd_server )		7120231	0					
+ANR	7120235	Condition	nbd_server	9:8:176:185	7120231	0	True				
+ANR	7120236	Identifier	nbd_server		7120231	0					
+ANR	7120237	CompoundStatement		3:20:22:22	7120231	1					
+ANR	7120238	ExpressionStatement	"error_setg ( errp , ""NBD server already running"" )"	11:8:199:245	7120231	0	True				
+ANR	7120239	CallExpression	"error_setg ( errp , ""NBD server already running"" )"		7120231	0					
+ANR	7120240	Callee	error_setg		7120231	0					
+ANR	7120241	Identifier	error_setg		7120231	0					
+ANR	7120242	ArgumentList	errp		7120231	1					
+ANR	7120243	Argument	errp		7120231	0					
+ANR	7120244	Identifier	errp		7120231	0					
+ANR	7120245	Argument	"""NBD server already running"""		7120231	1					
+ANR	7120246	PrimaryExpression	"""NBD server already running"""		7120231	0					
+ANR	7120247	ReturnStatement	return ;	13:8:256:262	7120231	1	True				
+ANR	7120248	ExpressionStatement	"nbd_server = g_new0 ( NBDServerData , 1 )"	19:4:278:315	7120231	1	True				
+ANR	7120249	AssignmentExpression	"nbd_server = g_new0 ( NBDServerData , 1 )"		7120231	0		=			
+ANR	7120250	Identifier	nbd_server		7120231	0					
+ANR	7120251	CallExpression	"g_new0 ( NBDServerData , 1 )"		7120231	1					
+ANR	7120252	Callee	g_new0		7120231	0					
+ANR	7120253	Identifier	g_new0		7120231	0					
+ANR	7120254	ArgumentList	NBDServerData		7120231	1					
+ANR	7120255	Argument	NBDServerData		7120231	0					
+ANR	7120256	Identifier	NBDServerData		7120231	0					
+ANR	7120257	Argument	1		7120231	1					
+ANR	7120258	PrimaryExpression	1		7120231	0					
+ANR	7120259	ExpressionStatement	nbd_server -> watch = - 1	21:4:322:344	7120231	2	True				
+ANR	7120260	AssignmentExpression	nbd_server -> watch = - 1		7120231	0		=			
+ANR	7120261	PtrMemberAccess	nbd_server -> watch		7120231	0					
+ANR	7120262	Identifier	nbd_server		7120231	0					
+ANR	7120263	Identifier	watch		7120231	1					
+ANR	7120264	UnaryOperationExpression	- 1		7120231	1					
+ANR	7120265	UnaryOperator	-		7120231	0					
+ANR	7120266	PrimaryExpression	1		7120231	1					
+ANR	7120267	ExpressionStatement	nbd_server -> listen_ioc = qio_channel_socket_new ( )	23:4:351:400	7120231	3	True				
+ANR	7120268	AssignmentExpression	nbd_server -> listen_ioc = qio_channel_socket_new ( )		7120231	0		=			
+ANR	7120269	PtrMemberAccess	nbd_server -> listen_ioc		7120231	0					
+ANR	7120270	Identifier	nbd_server		7120231	0					
+ANR	7120271	Identifier	listen_ioc		7120231	1					
+ANR	7120272	CallExpression	qio_channel_socket_new ( )		7120231	1					
+ANR	7120273	Callee	qio_channel_socket_new		7120231	0					
+ANR	7120274	Identifier	qio_channel_socket_new		7120231	0					
+ANR	7120275	ArgumentList			7120231	1					
+ANR	7120276	ExpressionStatement	"qio_channel_set_name ( QIO_CHANNEL ( nbd_server -> listen_ioc ) , ""nbd-listener"" )"	25:4:407:506	7120231	4	True				
+ANR	7120277	CallExpression	"qio_channel_set_name ( QIO_CHANNEL ( nbd_server -> listen_ioc ) , ""nbd-listener"" )"		7120231	0					
+ANR	7120278	Callee	qio_channel_set_name		7120231	0					
+ANR	7120279	Identifier	qio_channel_set_name		7120231	0					
+ANR	7120280	ArgumentList	QIO_CHANNEL ( nbd_server -> listen_ioc )		7120231	1					
+ANR	7120281	Argument	QIO_CHANNEL ( nbd_server -> listen_ioc )		7120231	0					
+ANR	7120282	CallExpression	QIO_CHANNEL ( nbd_server -> listen_ioc )		7120231	0					
+ANR	7120283	Callee	QIO_CHANNEL		7120231	0					
+ANR	7120284	Identifier	QIO_CHANNEL		7120231	0					
+ANR	7120285	ArgumentList	nbd_server -> listen_ioc		7120231	1					
+ANR	7120286	Argument	nbd_server -> listen_ioc		7120231	0					
+ANR	7120287	PtrMemberAccess	nbd_server -> listen_ioc		7120231	0					
+ANR	7120288	Identifier	nbd_server		7120231	0					
+ANR	7120289	Identifier	listen_ioc		7120231	1					
+ANR	7120290	Argument	"""nbd-listener"""		7120231	1					
+ANR	7120291	PrimaryExpression	"""nbd-listener"""		7120231	0					
+ANR	7120292	IfStatement	"if ( qio_channel_socket_listen_sync ( nbd_server -> listen_ioc , addr , errp ) < 0 )"		7120231	5					
+ANR	7120293	Condition	"qio_channel_socket_listen_sync ( nbd_server -> listen_ioc , addr , errp ) < 0"	29:8:517:600	7120231	0	True				
+ANR	7120294	RelationalExpression	"qio_channel_socket_listen_sync ( nbd_server -> listen_ioc , addr , errp ) < 0"		7120231	0		<			
+ANR	7120295	CallExpression	"qio_channel_socket_listen_sync ( nbd_server -> listen_ioc , addr , errp )"		7120231	0					
+ANR	7120296	Callee	qio_channel_socket_listen_sync		7120231	0					
+ANR	7120297	Identifier	qio_channel_socket_listen_sync		7120231	0					
+ANR	7120298	ArgumentList	nbd_server -> listen_ioc		7120231	1					
+ANR	7120299	Argument	nbd_server -> listen_ioc		7120231	0					
+ANR	7120300	PtrMemberAccess	nbd_server -> listen_ioc		7120231	0					
+ANR	7120301	Identifier	nbd_server		7120231	0					
+ANR	7120302	Identifier	listen_ioc		7120231	1					
+ANR	7120303	Argument	addr		7120231	1					
+ANR	7120304	Identifier	addr		7120231	0					
+ANR	7120305	Argument	errp		7120231	2					
+ANR	7120306	Identifier	errp		7120231	0					
+ANR	7120307	PrimaryExpression	0		7120231	1					
+ANR	7120308	CompoundStatement		25:53:437:437	7120231	1					
+ANR	7120309	GotoStatement	goto error ;	33:8:614:624	7120231	0	True				
+ANR	7120310	Identifier	error		7120231	0					
+ANR	7120311	IfStatement	if ( has_tls_creds )		7120231	6					
+ANR	7120312	Condition	has_tls_creds	39:8:644:656	7120231	0	True				
+ANR	7120313	Identifier	has_tls_creds		7120231	0					
+ANR	7120314	CompoundStatement		33:23:493:493	7120231	1					
+ANR	7120315	ExpressionStatement	"nbd_server -> tlscreds = nbd_get_tls_creds ( tls_creds , errp )"	41:8:670:727	7120231	0	True				
+ANR	7120316	AssignmentExpression	"nbd_server -> tlscreds = nbd_get_tls_creds ( tls_creds , errp )"		7120231	0		=			
+ANR	7120317	PtrMemberAccess	nbd_server -> tlscreds		7120231	0					
+ANR	7120318	Identifier	nbd_server		7120231	0					
+ANR	7120319	Identifier	tlscreds		7120231	1					
+ANR	7120320	CallExpression	"nbd_get_tls_creds ( tls_creds , errp )"		7120231	1					
+ANR	7120321	Callee	nbd_get_tls_creds		7120231	0					
+ANR	7120322	Identifier	nbd_get_tls_creds		7120231	0					
+ANR	7120323	ArgumentList	tls_creds		7120231	1					
+ANR	7120324	Argument	tls_creds		7120231	0					
+ANR	7120325	Identifier	tls_creds		7120231	0					
+ANR	7120326	Argument	errp		7120231	1					
+ANR	7120327	Identifier	errp		7120231	0					
+ANR	7120328	IfStatement	if ( ! nbd_server -> tlscreds )		7120231	1					
+ANR	7120329	Condition	! nbd_server -> tlscreds	43:12:742:762	7120231	0	True				
+ANR	7120330	UnaryOperationExpression	! nbd_server -> tlscreds		7120231	0					
+ANR	7120331	UnaryOperator	!		7120231	0					
+ANR	7120332	PtrMemberAccess	nbd_server -> tlscreds		7120231	1					
+ANR	7120333	Identifier	nbd_server		7120231	0					
+ANR	7120334	Identifier	tlscreds		7120231	1					
+ANR	7120335	CompoundStatement		37:35:599:599	7120231	1					
+ANR	7120336	GotoStatement	goto error ;	45:12:780:790	7120231	0	True				
+ANR	7120337	Identifier	error		7120231	0					
+ANR	7120338	IfStatement	if ( addr -> type != SOCKET_ADDRESS_LEGACY_KIND_INET )		7120231	2					
+ANR	7120339	Condition	addr -> type != SOCKET_ADDRESS_LEGACY_KIND_INET	53:12:901:945	7120231	0	True				
+ANR	7120340	EqualityExpression	addr -> type != SOCKET_ADDRESS_LEGACY_KIND_INET		7120231	0		!=			
+ANR	7120341	PtrMemberAccess	addr -> type		7120231	0					
+ANR	7120342	Identifier	addr		7120231	0					
+ANR	7120343	Identifier	type		7120231	1					
+ANR	7120344	Identifier	SOCKET_ADDRESS_LEGACY_KIND_INET		7120231	1					
+ANR	7120345	CompoundStatement		47:59:782:782	7120231	1					
+ANR	7120346	ExpressionStatement	"error_setg ( errp , ""TLS is only supported with IPv4/IPv6"" )"	55:12:963:1019	7120231	0	True				
+ANR	7120347	CallExpression	"error_setg ( errp , ""TLS is only supported with IPv4/IPv6"" )"		7120231	0					
+ANR	7120348	Callee	error_setg		7120231	0					
+ANR	7120349	Identifier	error_setg		7120231	0					
+ANR	7120350	ArgumentList	errp		7120231	1					
+ANR	7120351	Argument	errp		7120231	0					
+ANR	7120352	Identifier	errp		7120231	0					
+ANR	7120353	Argument	"""TLS is only supported with IPv4/IPv6"""		7120231	1					
+ANR	7120354	PrimaryExpression	"""TLS is only supported with IPv4/IPv6"""		7120231	0					
+ANR	7120355	GotoStatement	goto error ;	57:12:1034:1044	7120231	1	True				
+ANR	7120356	Identifier	error		7120231	0					
+ANR	7120357	ExpressionStatement	"nbd_server -> watch = qio_channel_add_watch ( QIO_CHANNEL ( nbd_server -> listen_ioc ) , G_IO_IN , nbd_accept , NULL , NULL )"	65:4:1071:1228	7120231	7	True				
+ANR	7120358	AssignmentExpression	"nbd_server -> watch = qio_channel_add_watch ( QIO_CHANNEL ( nbd_server -> listen_ioc ) , G_IO_IN , nbd_accept , NULL , NULL )"		7120231	0		=			
+ANR	7120359	PtrMemberAccess	nbd_server -> watch		7120231	0					
+ANR	7120360	Identifier	nbd_server		7120231	0					
+ANR	7120361	Identifier	watch		7120231	1					
+ANR	7120362	CallExpression	"qio_channel_add_watch ( QIO_CHANNEL ( nbd_server -> listen_ioc ) , G_IO_IN , nbd_accept , NULL , NULL )"		7120231	1					
+ANR	7120363	Callee	qio_channel_add_watch		7120231	0					
+ANR	7120364	Identifier	qio_channel_add_watch		7120231	0					
+ANR	7120365	ArgumentList	QIO_CHANNEL ( nbd_server -> listen_ioc )		7120231	1					
+ANR	7120366	Argument	QIO_CHANNEL ( nbd_server -> listen_ioc )		7120231	0					
+ANR	7120367	CallExpression	QIO_CHANNEL ( nbd_server -> listen_ioc )		7120231	0					
+ANR	7120368	Callee	QIO_CHANNEL		7120231	0					
+ANR	7120369	Identifier	QIO_CHANNEL		7120231	0					
+ANR	7120370	ArgumentList	nbd_server -> listen_ioc		7120231	1					
+ANR	7120371	Argument	nbd_server -> listen_ioc		7120231	0					
+ANR	7120372	PtrMemberAccess	nbd_server -> listen_ioc		7120231	0					
+ANR	7120373	Identifier	nbd_server		7120231	0					
+ANR	7120374	Identifier	listen_ioc		7120231	1					
+ANR	7120375	Argument	G_IO_IN		7120231	1					
+ANR	7120376	Identifier	G_IO_IN		7120231	0					
+ANR	7120377	Argument	nbd_accept		7120231	2					
+ANR	7120378	Identifier	nbd_accept		7120231	0					
+ANR	7120379	Argument	NULL		7120231	3					
+ANR	7120380	Identifier	NULL		7120231	0					
+ANR	7120381	Argument	NULL		7120231	4					
+ANR	7120382	Identifier	NULL		7120231	0					
+ANR	7120383	ReturnStatement	return ;	79:4:1237:1243	7120231	8	True				
+ANR	7120384	Label	error :	83:1:1249:1254	7120231	9	True				
+ANR	7120385	Identifier	error		7120231	0					
+ANR	7120386	ExpressionStatement	nbd_server_free ( nbd_server )	85:4:1261:1288	7120231	10	True				
+ANR	7120387	CallExpression	nbd_server_free ( nbd_server )		7120231	0					
+ANR	7120388	Callee	nbd_server_free		7120231	0					
+ANR	7120389	Identifier	nbd_server_free		7120231	0					
+ANR	7120390	ArgumentList	nbd_server		7120231	1					
+ANR	7120391	Argument	nbd_server		7120231	0					
+ANR	7120392	Identifier	nbd_server		7120231	0					
+ANR	7120393	ExpressionStatement	nbd_server = NULL	87:4:1295:1312	7120231	11	True				
+ANR	7120394	AssignmentExpression	nbd_server = NULL		7120231	0		=			
+ANR	7120395	Identifier	nbd_server		7120231	0					
+ANR	7120396	Identifier	NULL		7120231	1					
+ANR	7120397	ReturnType	void		7120231	1					
+ANR	7120398	Identifier	qmp_nbd_server_start		7120231	2					
+ANR	7120399	ParameterList	"SocketAddressLegacy * addr , bool has_tls_creds , const char * tls_creds , Error * * errp"		7120231	3					
+ANR	7120400	Parameter	SocketAddressLegacy * addr	1:26:26:50	7120231	0	True				
+ANR	7120401	ParameterType	SocketAddressLegacy *		7120231	0					
+ANR	7120402	Identifier	addr		7120231	1					
+ANR	7120403	Parameter	bool has_tls_creds	3:26:80:97	7120231	1	True				
+ANR	7120404	ParameterType	bool		7120231	0					
+ANR	7120405	Identifier	has_tls_creds		7120231	1					
+ANR	7120406	Parameter	const char * tls_creds	3:46:100:120	7120231	2	True				
+ANR	7120407	ParameterType	const char *		7120231	0					
+ANR	7120408	Identifier	tls_creds		7120231	1					
+ANR	7120409	Parameter	Error * * errp	5:26:150:161	7120231	3	True				
+ANR	7120410	ParameterType	Error * *		7120231	0					
+ANR	7120411	Identifier	errp		7120231	1					
+ANR	7120412	CFGEntryNode	ENTRY		7120231		True				
+ANR	7120413	CFGExitNode	EXIT		7120231		True				
+ANR	7120414	Symbol	qio_channel_socket_listen_sync		7120231						
+ANR	7120415	Symbol	NULL		7120231						
+ANR	7120416	Symbol	errp		7120231						
+ANR	7120417	Symbol	has_tls_creds		7120231						
+ANR	7120418	Symbol	G_IO_IN		7120231						
+ANR	7120419	Symbol	nbd_server -> tlscreds		7120231						
+ANR	7120420	Symbol	QIO_CHANNEL		7120231						
+ANR	7120421	Symbol	addr -> type		7120231						
+ANR	7120422	Symbol	qio_channel_socket_new		7120231						
+ANR	7120423	Symbol	* nbd_server		7120231						
+ANR	7120424	Symbol	nbd_server -> watch		7120231						
+ANR	7120425	Symbol	SOCKET_ADDRESS_LEGACY_KIND_INET		7120231						
+ANR	7120426	Symbol	NBDServerData		7120231						
+ANR	7120427	Symbol	tls_creds		7120231						
+ANR	7120428	Symbol	nbd_get_tls_creds		7120231						
+ANR	7120429	Symbol	nbd_server -> listen_ioc		7120231						
+ANR	7120430	Symbol	g_new0		7120231						
+ANR	7120431	Symbol	nbd_accept		7120231						
+ANR	7120432	Symbol	qio_channel_add_watch		7120231						
+ANR	7120433	Symbol	nbd_server		7120231						
+ANR	7120434	Symbol	* addr		7120231						
+ANR	7120435	Symbol	addr		7120231						

@@ -1,0 +1,149 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	518288	File	/home/p4ultr4n/workplace/ReVeal/raw_code/alloc_clusters_noref_1.c								
+ANR	518289	Function	alloc_clusters_noref	1:0:0:769							
+ANR	518290	FunctionDef	"alloc_clusters_noref (BlockDriverState * bs , int64_t size)"		518289	0					
+ANR	518291	CompoundStatement		3:0:73:769	518289	0					
+ANR	518292	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	5:4:80:109	518289	0	True				
+ANR	518293	IdentifierDecl	* s = bs -> opaque		518289	0					
+ANR	518294	IdentifierDeclType	BDRVQcowState *		518289	0					
+ANR	518295	Identifier	s		518289	1					
+ANR	518296	AssignmentExpression	* s = bs -> opaque		518289	2		=			
+ANR	518297	Identifier	s		518289	0					
+ANR	518298	PtrMemberAccess	bs -> opaque		518289	1					
+ANR	518299	Identifier	bs		518289	0					
+ANR	518300	Identifier	opaque		518289	1					
+ANR	518301	IdentifierDeclStatement	"int i , nb_clusters , refcount ;"	7:4:116:144	518289	1	True				
+ANR	518302	IdentifierDecl	i		518289	0					
+ANR	518303	IdentifierDeclType	int		518289	0					
+ANR	518304	Identifier	i		518289	1					
+ANR	518305	IdentifierDecl	nb_clusters		518289	1					
+ANR	518306	IdentifierDeclType	int		518289	0					
+ANR	518307	Identifier	nb_clusters		518289	1					
+ANR	518308	IdentifierDecl	refcount		518289	2					
+ANR	518309	IdentifierDeclType	int		518289	0					
+ANR	518310	Identifier	refcount		518289	1					
+ANR	518311	ExpressionStatement	"nb_clusters = size_to_clusters ( s , size )"	11:4:153:192	518289	2	True				
+ANR	518312	AssignmentExpression	"nb_clusters = size_to_clusters ( s , size )"		518289	0		=			
+ANR	518313	Identifier	nb_clusters		518289	0					
+ANR	518314	CallExpression	"size_to_clusters ( s , size )"		518289	1					
+ANR	518315	Callee	size_to_clusters		518289	0					
+ANR	518316	Identifier	size_to_clusters		518289	0					
+ANR	518317	ArgumentList	s		518289	1					
+ANR	518318	Argument	s		518289	0					
+ANR	518319	Identifier	s		518289	0					
+ANR	518320	Argument	size		518289	1					
+ANR	518321	Identifier	size		518289	0					
+ANR	518322	Label	retry :	13:0:195:200	518289	3	True				
+ANR	518323	Identifier	retry		518289	0					
+ANR	518324	ForStatement	for ( i = 0 ; i < nb_clusters ; i ++ )		518289	4					
+ANR	518325	ForInit	i = 0 ;	15:8:211:216	518289	0	True				
+ANR	518326	AssignmentExpression	i = 0		518289	0		=			
+ANR	518327	Identifier	i		518289	0					
+ANR	518328	PrimaryExpression	0		518289	1					
+ANR	518329	Condition	i < nb_clusters	15:15:218:232	518289	1	True				
+ANR	518330	RelationalExpression	i < nb_clusters		518289	0		<			
+ANR	518331	Identifier	i		518289	0					
+ANR	518332	Identifier	nb_clusters		518289	1					
+ANR	518333	PostIncDecOperationExpression	i ++	15:32:235:237	518289	2	True				
+ANR	518334	Identifier	i		518289	0					
+ANR	518335	IncDec	++		518289	1					
+ANR	518336	CompoundStatement		15:8:177:229	518289	3					
+ANR	518337	IdentifierDeclStatement	int64_t next_cluster_index = s -> free_cluster_index ++ ;	17:8:251:303	518289	0	True				
+ANR	518338	IdentifierDecl	next_cluster_index = s -> free_cluster_index ++		518289	0					
+ANR	518339	IdentifierDeclType	int64_t		518289	0					
+ANR	518340	Identifier	next_cluster_index		518289	1					
+ANR	518341	AssignmentExpression	next_cluster_index = s -> free_cluster_index ++		518289	2		=			
+ANR	518342	Identifier	next_cluster_index		518289	0					
+ANR	518343	PostIncDecOperationExpression	s -> free_cluster_index ++		518289	1					
+ANR	518344	PtrMemberAccess	s -> free_cluster_index		518289	0					
+ANR	518345	Identifier	s		518289	0					
+ANR	518346	Identifier	free_cluster_index		518289	1					
+ANR	518347	IncDec	++		518289	1					
+ANR	518348	ExpressionStatement	"refcount = get_refcount ( bs , next_cluster_index )"	19:8:314:361	518289	1	True				
+ANR	518349	AssignmentExpression	"refcount = get_refcount ( bs , next_cluster_index )"		518289	0		=			
+ANR	518350	Identifier	refcount		518289	0					
+ANR	518351	CallExpression	"get_refcount ( bs , next_cluster_index )"		518289	1					
+ANR	518352	Callee	get_refcount		518289	0					
+ANR	518353	Identifier	get_refcount		518289	0					
+ANR	518354	ArgumentList	bs		518289	1					
+ANR	518355	Argument	bs		518289	0					
+ANR	518356	Identifier	bs		518289	0					
+ANR	518357	Argument	next_cluster_index		518289	1					
+ANR	518358	Identifier	next_cluster_index		518289	0					
+ANR	518359	IfStatement	if ( refcount < 0 )		518289	2					
+ANR	518360	Condition	refcount < 0	23:12:378:389	518289	0	True				
+ANR	518361	RelationalExpression	refcount < 0		518289	0		<			
+ANR	518362	Identifier	refcount		518289	0					
+ANR	518363	PrimaryExpression	0		518289	1					
+ANR	518364	CompoundStatement		21:26:318:318	518289	1					
+ANR	518365	ReturnStatement	return refcount ;	25:12:407:422	518289	0	True				
+ANR	518366	Identifier	refcount		518289	0					
+ANR	518367	ElseStatement	else		518289	0					
+ANR	518368	IfStatement	if ( refcount != 0 )		518289	0					
+ANR	518369	Condition	refcount != 0	27:19:444:456	518289	0	True				
+ANR	518370	EqualityExpression	refcount != 0		518289	0		!=			
+ANR	518371	Identifier	refcount		518289	0					
+ANR	518372	PrimaryExpression	0		518289	1					
+ANR	518373	CompoundStatement		25:34:385:385	518289	1					
+ANR	518374	GotoStatement	goto retry ;	29:12:474:484	518289	0	True				
+ANR	518375	Identifier	retry		518289	0					
+ANR	518376	Statement	fprintf	37:4:530:536	518289	5	True				
+ANR	518377	Statement	(	37:11:537:537	518289	6	True				
+ANR	518378	Statement	stderr	37:12:538:543	518289	7	True				
+ANR	518379	Statement	","	37:18:544:544	518289	8	True				
+ANR	518380	Statement	"""alloc_clusters: size=%"""	37:20:546:569	518289	9	True				
+ANR	518381	Statement	PRId64	37:45:571:576	518289	10	True				
+ANR	518382	Statement	""" -> %"""	37:52:578:584	518289	11	True				
+ANR	518383	Statement	PRId64	37:60:586:591	518289	12	True				
+ANR	518384	Statement	"""\\n"""	37:67:593:596	518289	13	True				
+ANR	518385	Statement	","	37:71:597:597	518289	14	True				
+ANR	518386	Statement	size	39:12:612:615	518289	15	True				
+ANR	518387	Statement	","	39:16:616:616	518289	16	True				
+ANR	518388	Statement	(	41:12:631:631	518289	17	True				
+ANR	518389	Statement	s	41:13:632:632	518289	18	True				
+ANR	518390	Statement	->	41:14:633:634	518289	19	True				
+ANR	518391	Statement	free_cluster_index	41:16:635:652	518289	20	True				
+ANR	518392	Statement	-	41:35:654:654	518289	21	True				
+ANR	518393	Statement	nb_clusters	41:37:656:666	518289	22	True				
+ANR	518394	Statement	)	41:48:667:667	518289	23	True				
+ANR	518395	Statement	<<	41:50:669:670	518289	24	True				
+ANR	518396	Statement	s	41:53:672:672	518289	25	True				
+ANR	518397	Statement	->	41:54:673:674	518289	26	True				
+ANR	518398	Statement	cluster_bits	41:56:675:686	518289	27	True				
+ANR	518399	Statement	)	41:68:687:687	518289	28	True				
+ANR	518400	ExpressionStatement		41:69:688:688	518289	29	True				
+ANR	518401	ReturnStatement	return ( s -> free_cluster_index - nb_clusters ) << s -> cluster_bits ;	45:4:703:766	518289	30	True				
+ANR	518402	ShiftExpression	( s -> free_cluster_index - nb_clusters ) << s -> cluster_bits		518289	0		<<			
+ANR	518403	AdditiveExpression	s -> free_cluster_index - nb_clusters		518289	0		-			
+ANR	518404	PtrMemberAccess	s -> free_cluster_index		518289	0					
+ANR	518405	Identifier	s		518289	0					
+ANR	518406	Identifier	free_cluster_index		518289	1					
+ANR	518407	Identifier	nb_clusters		518289	1					
+ANR	518408	PtrMemberAccess	s -> cluster_bits		518289	1					
+ANR	518409	Identifier	s		518289	0					
+ANR	518410	Identifier	cluster_bits		518289	1					
+ANR	518411	ReturnType	static int64_t		518289	1					
+ANR	518412	Identifier	alloc_clusters_noref		518289	2					
+ANR	518413	ParameterList	"BlockDriverState * bs , int64_t size"		518289	3					
+ANR	518414	Parameter	BlockDriverState * bs	1:36:36:55	518289	0	True				
+ANR	518415	ParameterType	BlockDriverState *		518289	0					
+ANR	518416	Identifier	bs		518289	1					
+ANR	518417	Parameter	int64_t size	1:58:58:69	518289	1	True				
+ANR	518418	ParameterType	int64_t		518289	0					
+ANR	518419	Identifier	size		518289	1					
+ANR	518420	CFGEntryNode	ENTRY		518289		True				
+ANR	518421	CFGExitNode	EXIT		518289		True				
+ANR	518422	Symbol	bs -> opaque		518289						
+ANR	518423	Symbol	next_cluster_index		518289						
+ANR	518424	Symbol	size_to_clusters		518289						
+ANR	518425	Symbol	i		518289						
+ANR	518426	Symbol	nb_clusters		518289						
+ANR	518427	Symbol	refcount		518289						
+ANR	518428	Symbol	bs		518289						
+ANR	518429	Symbol	s -> cluster_bits		518289						
+ANR	518430	Symbol	s		518289						
+ANR	518431	Symbol	size		518289						
+ANR	518432	Symbol	* bs		518289						
+ANR	518433	Symbol	s -> free_cluster_index		518289						
+ANR	518434	Symbol	get_refcount		518289						
+ANR	518435	Symbol	* s		518289						

@@ -1,0 +1,350 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7609206	File	/home/p4ultr4n/workplace/ReVeal/raw_code/scsi_bus_legacy_add_drive_01_1.c								
+ANR	7609207	Function	scsi_bus_legacy_add_drive	1:0:0:1508							
+ANR	7609208	FunctionDef	"scsi_bus_legacy_add_drive (SCSIBus * bus , BlockBackend * blk , int unit , bool removable , int bootindex , const char * serial , Error * * errp)"		7609207	0					
+ANR	7609209	CompoundStatement		7:0:225:1508	7609207	0					
+ANR	7609210	IdentifierDeclStatement	const char * driver ;	9:4:232:250	7609207	0	True				
+ANR	7609211	IdentifierDecl	* driver		7609207	0					
+ANR	7609212	IdentifierDeclType	const char *		7609207	0					
+ANR	7609213	Identifier	driver		7609207	1					
+ANR	7609214	IdentifierDeclStatement	char * name ;	11:4:257:267	7609207	1	True				
+ANR	7609215	IdentifierDecl	* name		7609207	0					
+ANR	7609216	IdentifierDeclType	char *		7609207	0					
+ANR	7609217	Identifier	name		7609207	1					
+ANR	7609218	IdentifierDeclStatement	DeviceState * dev ;	13:4:274:290	7609207	2	True				
+ANR	7609219	IdentifierDecl	* dev		7609207	0					
+ANR	7609220	IdentifierDeclType	DeviceState *		7609207	0					
+ANR	7609221	Identifier	dev		7609207	1					
+ANR	7609222	IdentifierDeclStatement	Error * err = NULL ;	15:4:297:314	7609207	3	True				
+ANR	7609223	IdentifierDecl	* err = NULL		7609207	0					
+ANR	7609224	IdentifierDeclType	Error *		7609207	0					
+ANR	7609225	Identifier	err		7609207	1					
+ANR	7609226	AssignmentExpression	* err = NULL		7609207	2		=			
+ANR	7609227	Identifier	NULL		7609207	0					
+ANR	7609228	Identifier	NULL		7609207	1					
+ANR	7609229	ExpressionStatement	"driver = blk_is_sg ( blk ) ? ""scsi-generic"" : ""scsi-disk"""	19:4:323:377	7609207	4	True				
+ANR	7609230	AssignmentExpression	"driver = blk_is_sg ( blk ) ? ""scsi-generic"" : ""scsi-disk"""		7609207	0		=			
+ANR	7609231	Identifier	driver		7609207	0					
+ANR	7609232	ConditionalExpression	"blk_is_sg ( blk ) ? ""scsi-generic"" : ""scsi-disk"""		7609207	1					
+ANR	7609233	Condition	blk_is_sg ( blk )		7609207	0					
+ANR	7609234	CallExpression	blk_is_sg ( blk )		7609207	0					
+ANR	7609235	Callee	blk_is_sg		7609207	0					
+ANR	7609236	Identifier	blk_is_sg		7609207	0					
+ANR	7609237	ArgumentList	blk		7609207	1					
+ANR	7609238	Argument	blk		7609207	0					
+ANR	7609239	Identifier	blk		7609207	0					
+ANR	7609240	PrimaryExpression	"""scsi-generic"""		7609207	1					
+ANR	7609241	PrimaryExpression	"""scsi-disk"""		7609207	2					
+ANR	7609242	ExpressionStatement	"dev = qdev_create ( & bus -> qbus , driver )"	21:4:384:421	7609207	5	True				
+ANR	7609243	AssignmentExpression	"dev = qdev_create ( & bus -> qbus , driver )"		7609207	0		=			
+ANR	7609244	Identifier	dev		7609207	0					
+ANR	7609245	CallExpression	"qdev_create ( & bus -> qbus , driver )"		7609207	1					
+ANR	7609246	Callee	qdev_create		7609207	0					
+ANR	7609247	Identifier	qdev_create		7609207	0					
+ANR	7609248	ArgumentList	& bus -> qbus		7609207	1					
+ANR	7609249	Argument	& bus -> qbus		7609207	0					
+ANR	7609250	UnaryOperationExpression	& bus -> qbus		7609207	0					
+ANR	7609251	UnaryOperator	&		7609207	0					
+ANR	7609252	PtrMemberAccess	bus -> qbus		7609207	1					
+ANR	7609253	Identifier	bus		7609207	0					
+ANR	7609254	Identifier	qbus		7609207	1					
+ANR	7609255	Argument	driver		7609207	1					
+ANR	7609256	Identifier	driver		7609207	0					
+ANR	7609257	ExpressionStatement	"name = g_strdup_printf ( ""legacy[%d]"" , unit )"	23:4:428:470	7609207	6	True				
+ANR	7609258	AssignmentExpression	"name = g_strdup_printf ( ""legacy[%d]"" , unit )"		7609207	0		=			
+ANR	7609259	Identifier	name		7609207	0					
+ANR	7609260	CallExpression	"g_strdup_printf ( ""legacy[%d]"" , unit )"		7609207	1					
+ANR	7609261	Callee	g_strdup_printf		7609207	0					
+ANR	7609262	Identifier	g_strdup_printf		7609207	0					
+ANR	7609263	ArgumentList	"""legacy[%d]"""		7609207	1					
+ANR	7609264	Argument	"""legacy[%d]"""		7609207	0					
+ANR	7609265	PrimaryExpression	"""legacy[%d]"""		7609207	0					
+ANR	7609266	Argument	unit		7609207	1					
+ANR	7609267	Identifier	unit		7609207	0					
+ANR	7609268	ExpressionStatement	"object_property_add_child ( OBJECT ( bus ) , name , OBJECT ( dev ) , NULL )"	25:4:477:540	7609207	7	True				
+ANR	7609269	CallExpression	"object_property_add_child ( OBJECT ( bus ) , name , OBJECT ( dev ) , NULL )"		7609207	0					
+ANR	7609270	Callee	object_property_add_child		7609207	0					
+ANR	7609271	Identifier	object_property_add_child		7609207	0					
+ANR	7609272	ArgumentList	OBJECT ( bus )		7609207	1					
+ANR	7609273	Argument	OBJECT ( bus )		7609207	0					
+ANR	7609274	CallExpression	OBJECT ( bus )		7609207	0					
+ANR	7609275	Callee	OBJECT		7609207	0					
+ANR	7609276	Identifier	OBJECT		7609207	0					
+ANR	7609277	ArgumentList	bus		7609207	1					
+ANR	7609278	Argument	bus		7609207	0					
+ANR	7609279	Identifier	bus		7609207	0					
+ANR	7609280	Argument	name		7609207	1					
+ANR	7609281	Identifier	name		7609207	0					
+ANR	7609282	Argument	OBJECT ( dev )		7609207	2					
+ANR	7609283	CallExpression	OBJECT ( dev )		7609207	0					
+ANR	7609284	Callee	OBJECT		7609207	0					
+ANR	7609285	Identifier	OBJECT		7609207	0					
+ANR	7609286	ArgumentList	dev		7609207	1					
+ANR	7609287	Argument	dev		7609207	0					
+ANR	7609288	Identifier	dev		7609207	0					
+ANR	7609289	Argument	NULL		7609207	3					
+ANR	7609290	Identifier	NULL		7609207	0					
+ANR	7609291	ExpressionStatement	g_free ( name )	27:4:547:559	7609207	8	True				
+ANR	7609292	CallExpression	g_free ( name )		7609207	0					
+ANR	7609293	Callee	g_free		7609207	0					
+ANR	7609294	Identifier	g_free		7609207	0					
+ANR	7609295	ArgumentList	name		7609207	1					
+ANR	7609296	Argument	name		7609207	0					
+ANR	7609297	Identifier	name		7609207	0					
+ANR	7609298	ExpressionStatement	"qdev_prop_set_uint32 ( dev , ""scsi-id"" , unit )"	31:4:568:610	7609207	9	True				
+ANR	7609299	CallExpression	"qdev_prop_set_uint32 ( dev , ""scsi-id"" , unit )"		7609207	0					
+ANR	7609300	Callee	qdev_prop_set_uint32		7609207	0					
+ANR	7609301	Identifier	qdev_prop_set_uint32		7609207	0					
+ANR	7609302	ArgumentList	dev		7609207	1					
+ANR	7609303	Argument	dev		7609207	0					
+ANR	7609304	Identifier	dev		7609207	0					
+ANR	7609305	Argument	"""scsi-id"""		7609207	1					
+ANR	7609306	PrimaryExpression	"""scsi-id"""		7609207	0					
+ANR	7609307	Argument	unit		7609207	2					
+ANR	7609308	Identifier	unit		7609207	0					
+ANR	7609309	IfStatement	if ( bootindex >= 0 )		7609207	10					
+ANR	7609310	Condition	bootindex >= 0	33:8:621:634	7609207	0	True				
+ANR	7609311	RelationalExpression	bootindex >= 0		7609207	0		>=			
+ANR	7609312	Identifier	bootindex		7609207	0					
+ANR	7609313	PrimaryExpression	0		7609207	1					
+ANR	7609314	CompoundStatement		27:24:411:411	7609207	1					
+ANR	7609315	ExpressionStatement	"object_property_set_int ( OBJECT ( dev ) , bootindex , ""bootindex"" , & error_abort )"	35:8:648:755	7609207	0	True				
+ANR	7609316	CallExpression	"object_property_set_int ( OBJECT ( dev ) , bootindex , ""bootindex"" , & error_abort )"		7609207	0					
+ANR	7609317	Callee	object_property_set_int		7609207	0					
+ANR	7609318	Identifier	object_property_set_int		7609207	0					
+ANR	7609319	ArgumentList	OBJECT ( dev )		7609207	1					
+ANR	7609320	Argument	OBJECT ( dev )		7609207	0					
+ANR	7609321	CallExpression	OBJECT ( dev )		7609207	0					
+ANR	7609322	Callee	OBJECT		7609207	0					
+ANR	7609323	Identifier	OBJECT		7609207	0					
+ANR	7609324	ArgumentList	dev		7609207	1					
+ANR	7609325	Argument	dev		7609207	0					
+ANR	7609326	Identifier	dev		7609207	0					
+ANR	7609327	Argument	bootindex		7609207	1					
+ANR	7609328	Identifier	bootindex		7609207	0					
+ANR	7609329	Argument	"""bootindex"""		7609207	2					
+ANR	7609330	PrimaryExpression	"""bootindex"""		7609207	0					
+ANR	7609331	Argument	& error_abort		7609207	3					
+ANR	7609332	UnaryOperationExpression	& error_abort		7609207	0					
+ANR	7609333	UnaryOperator	&		7609207	0					
+ANR	7609334	Identifier	error_abort		7609207	1					
+ANR	7609335	IfStatement	"if ( object_property_find ( OBJECT ( dev ) , ""removable"" , NULL ) )"		7609207	11					
+ANR	7609336	Condition	"object_property_find ( OBJECT ( dev ) , ""removable"" , NULL )"	41:8:773:824	7609207	0	True				
+ANR	7609337	CallExpression	"object_property_find ( OBJECT ( dev ) , ""removable"" , NULL )"		7609207	0					
+ANR	7609338	Callee	object_property_find		7609207	0					
+ANR	7609339	Identifier	object_property_find		7609207	0					
+ANR	7609340	ArgumentList	OBJECT ( dev )		7609207	1					
+ANR	7609341	Argument	OBJECT ( dev )		7609207	0					
+ANR	7609342	CallExpression	OBJECT ( dev )		7609207	0					
+ANR	7609343	Callee	OBJECT		7609207	0					
+ANR	7609344	Identifier	OBJECT		7609207	0					
+ANR	7609345	ArgumentList	dev		7609207	1					
+ANR	7609346	Argument	dev		7609207	0					
+ANR	7609347	Identifier	dev		7609207	0					
+ANR	7609348	Argument	"""removable"""		7609207	1					
+ANR	7609349	PrimaryExpression	"""removable"""		7609207	0					
+ANR	7609350	Argument	NULL		7609207	2					
+ANR	7609351	Identifier	NULL		7609207	0					
+ANR	7609352	CompoundStatement		35:62:601:601	7609207	1					
+ANR	7609353	ExpressionStatement	"qdev_prop_set_bit ( dev , ""removable"" , removable )"	43:8:838:884	7609207	0	True				
+ANR	7609354	CallExpression	"qdev_prop_set_bit ( dev , ""removable"" , removable )"		7609207	0					
+ANR	7609355	Callee	qdev_prop_set_bit		7609207	0					
+ANR	7609356	Identifier	qdev_prop_set_bit		7609207	0					
+ANR	7609357	ArgumentList	dev		7609207	1					
+ANR	7609358	Argument	dev		7609207	0					
+ANR	7609359	Identifier	dev		7609207	0					
+ANR	7609360	Argument	"""removable"""		7609207	1					
+ANR	7609361	PrimaryExpression	"""removable"""		7609207	0					
+ANR	7609362	Argument	removable		7609207	2					
+ANR	7609363	Identifier	removable		7609207	0					
+ANR	7609364	IfStatement	"if ( serial && object_property_find ( OBJECT ( dev ) , ""serial"" , NULL ) )"		7609207	12					
+ANR	7609365	Condition	"serial && object_property_find ( OBJECT ( dev ) , ""serial"" , NULL )"	47:8:902:960	7609207	0	True				
+ANR	7609366	AndExpression	"serial && object_property_find ( OBJECT ( dev ) , ""serial"" , NULL )"		7609207	0		&&			
+ANR	7609367	Identifier	serial		7609207	0					
+ANR	7609368	CallExpression	"object_property_find ( OBJECT ( dev ) , ""serial"" , NULL )"		7609207	1					
+ANR	7609369	Callee	object_property_find		7609207	0					
+ANR	7609370	Identifier	object_property_find		7609207	0					
+ANR	7609371	ArgumentList	OBJECT ( dev )		7609207	1					
+ANR	7609372	Argument	OBJECT ( dev )		7609207	0					
+ANR	7609373	CallExpression	OBJECT ( dev )		7609207	0					
+ANR	7609374	Callee	OBJECT		7609207	0					
+ANR	7609375	Identifier	OBJECT		7609207	0					
+ANR	7609376	ArgumentList	dev		7609207	1					
+ANR	7609377	Argument	dev		7609207	0					
+ANR	7609378	Identifier	dev		7609207	0					
+ANR	7609379	Argument	"""serial"""		7609207	1					
+ANR	7609380	PrimaryExpression	"""serial"""		7609207	0					
+ANR	7609381	Argument	NULL		7609207	2					
+ANR	7609382	Identifier	NULL		7609207	0					
+ANR	7609383	CompoundStatement		41:69:737:737	7609207	1					
+ANR	7609384	ExpressionStatement	"qdev_prop_set_string ( dev , ""serial"" , serial )"	49:8:974:1017	7609207	0	True				
+ANR	7609385	CallExpression	"qdev_prop_set_string ( dev , ""serial"" , serial )"		7609207	0					
+ANR	7609386	Callee	qdev_prop_set_string		7609207	0					
+ANR	7609387	Identifier	qdev_prop_set_string		7609207	0					
+ANR	7609388	ArgumentList	dev		7609207	1					
+ANR	7609389	Argument	dev		7609207	0					
+ANR	7609390	Identifier	dev		7609207	0					
+ANR	7609391	Argument	"""serial"""		7609207	1					
+ANR	7609392	PrimaryExpression	"""serial"""		7609207	0					
+ANR	7609393	Argument	serial		7609207	2					
+ANR	7609394	Identifier	serial		7609207	0					
+ANR	7609395	ExpressionStatement	"qdev_prop_set_drive ( dev , ""drive"" , blk , & err )"	53:4:1031:1075	7609207	13	True				
+ANR	7609396	CallExpression	"qdev_prop_set_drive ( dev , ""drive"" , blk , & err )"		7609207	0					
+ANR	7609397	Callee	qdev_prop_set_drive		7609207	0					
+ANR	7609398	Identifier	qdev_prop_set_drive		7609207	0					
+ANR	7609399	ArgumentList	dev		7609207	1					
+ANR	7609400	Argument	dev		7609207	0					
+ANR	7609401	Identifier	dev		7609207	0					
+ANR	7609402	Argument	"""drive"""		7609207	1					
+ANR	7609403	PrimaryExpression	"""drive"""		7609207	0					
+ANR	7609404	Argument	blk		7609207	2					
+ANR	7609405	Identifier	blk		7609207	0					
+ANR	7609406	Argument	& err		7609207	3					
+ANR	7609407	UnaryOperationExpression	& err		7609207	0					
+ANR	7609408	UnaryOperator	&		7609207	0					
+ANR	7609409	Identifier	err		7609207	1					
+ANR	7609410	IfStatement	if ( err )		7609207	14					
+ANR	7609411	Condition	err	55:8:1086:1088	7609207	0	True				
+ANR	7609412	Identifier	err		7609207	0					
+ANR	7609413	CompoundStatement		49:13:865:865	7609207	1					
+ANR	7609414	ExpressionStatement	qerror_report_err ( err )	57:8:1102:1124	7609207	0	True				
+ANR	7609415	CallExpression	qerror_report_err ( err )		7609207	0					
+ANR	7609416	Callee	qerror_report_err		7609207	0					
+ANR	7609417	Identifier	qerror_report_err		7609207	0					
+ANR	7609418	ArgumentList	err		7609207	1					
+ANR	7609419	Argument	err		7609207	0					
+ANR	7609420	Identifier	err		7609207	0					
+ANR	7609421	ExpressionStatement	error_free ( err )	59:8:1135:1150	7609207	1	True				
+ANR	7609422	CallExpression	error_free ( err )		7609207	0					
+ANR	7609423	Callee	error_free		7609207	0					
+ANR	7609424	Identifier	error_free		7609207	0					
+ANR	7609425	ArgumentList	err		7609207	1					
+ANR	7609426	Argument	err		7609207	0					
+ANR	7609427	Identifier	err		7609207	0					
+ANR	7609428	ExpressionStatement	"error_setg ( errp , ""Setting drive property failed"" )"	61:8:1161:1210	7609207	2	True				
+ANR	7609429	CallExpression	"error_setg ( errp , ""Setting drive property failed"" )"		7609207	0					
+ANR	7609430	Callee	error_setg		7609207	0					
+ANR	7609431	Identifier	error_setg		7609207	0					
+ANR	7609432	ArgumentList	errp		7609207	1					
+ANR	7609433	Argument	errp		7609207	0					
+ANR	7609434	Identifier	errp		7609207	0					
+ANR	7609435	Argument	"""Setting drive property failed"""		7609207	1					
+ANR	7609436	PrimaryExpression	"""Setting drive property failed"""		7609207	0					
+ANR	7609437	ExpressionStatement	object_unparent ( OBJECT ( dev ) )	63:8:1221:1249	7609207	3	True				
+ANR	7609438	CallExpression	object_unparent ( OBJECT ( dev ) )		7609207	0					
+ANR	7609439	Callee	object_unparent		7609207	0					
+ANR	7609440	Identifier	object_unparent		7609207	0					
+ANR	7609441	ArgumentList	OBJECT ( dev )		7609207	1					
+ANR	7609442	Argument	OBJECT ( dev )		7609207	0					
+ANR	7609443	CallExpression	OBJECT ( dev )		7609207	0					
+ANR	7609444	Callee	OBJECT		7609207	0					
+ANR	7609445	Identifier	OBJECT		7609207	0					
+ANR	7609446	ArgumentList	dev		7609207	1					
+ANR	7609447	Argument	dev		7609207	0					
+ANR	7609448	Identifier	dev		7609207	0					
+ANR	7609449	ReturnStatement	return NULL ;	65:8:1260:1271	7609207	4	True				
+ANR	7609450	Identifier	NULL		7609207	0					
+ANR	7609451	ExpressionStatement	"object_property_set_bool ( OBJECT ( dev ) , true , ""realized"" , & err )"	69:4:1285:1346	7609207	15	True				
+ANR	7609452	CallExpression	"object_property_set_bool ( OBJECT ( dev ) , true , ""realized"" , & err )"		7609207	0					
+ANR	7609453	Callee	object_property_set_bool		7609207	0					
+ANR	7609454	Identifier	object_property_set_bool		7609207	0					
+ANR	7609455	ArgumentList	OBJECT ( dev )		7609207	1					
+ANR	7609456	Argument	OBJECT ( dev )		7609207	0					
+ANR	7609457	CallExpression	OBJECT ( dev )		7609207	0					
+ANR	7609458	Callee	OBJECT		7609207	0					
+ANR	7609459	Identifier	OBJECT		7609207	0					
+ANR	7609460	ArgumentList	dev		7609207	1					
+ANR	7609461	Argument	dev		7609207	0					
+ANR	7609462	Identifier	dev		7609207	0					
+ANR	7609463	Argument	true		7609207	1					
+ANR	7609464	Identifier	true		7609207	0					
+ANR	7609465	Argument	"""realized"""		7609207	2					
+ANR	7609466	PrimaryExpression	"""realized"""		7609207	0					
+ANR	7609467	Argument	& err		7609207	3					
+ANR	7609468	UnaryOperationExpression	& err		7609207	0					
+ANR	7609469	UnaryOperator	&		7609207	0					
+ANR	7609470	Identifier	err		7609207	1					
+ANR	7609471	IfStatement	if ( err != NULL )		7609207	16					
+ANR	7609472	Condition	err != NULL	71:8:1357:1367	7609207	0	True				
+ANR	7609473	EqualityExpression	err != NULL		7609207	0		!=			
+ANR	7609474	Identifier	err		7609207	0					
+ANR	7609475	Identifier	NULL		7609207	1					
+ANR	7609476	CompoundStatement		65:21:1144:1144	7609207	1					
+ANR	7609477	ExpressionStatement	"error_propagate ( errp , err )"	73:8:1381:1407	7609207	0	True				
+ANR	7609478	CallExpression	"error_propagate ( errp , err )"		7609207	0					
+ANR	7609479	Callee	error_propagate		7609207	0					
+ANR	7609480	Identifier	error_propagate		7609207	0					
+ANR	7609481	ArgumentList	errp		7609207	1					
+ANR	7609482	Argument	errp		7609207	0					
+ANR	7609483	Identifier	errp		7609207	0					
+ANR	7609484	Argument	err		7609207	1					
+ANR	7609485	Identifier	err		7609207	0					
+ANR	7609486	ExpressionStatement	object_unparent ( OBJECT ( dev ) )	75:8:1418:1446	7609207	1	True				
+ANR	7609487	CallExpression	object_unparent ( OBJECT ( dev ) )		7609207	0					
+ANR	7609488	Callee	object_unparent		7609207	0					
+ANR	7609489	Identifier	object_unparent		7609207	0					
+ANR	7609490	ArgumentList	OBJECT ( dev )		7609207	1					
+ANR	7609491	Argument	OBJECT ( dev )		7609207	0					
+ANR	7609492	CallExpression	OBJECT ( dev )		7609207	0					
+ANR	7609493	Callee	OBJECT		7609207	0					
+ANR	7609494	Identifier	OBJECT		7609207	0					
+ANR	7609495	ArgumentList	dev		7609207	1					
+ANR	7609496	Argument	dev		7609207	0					
+ANR	7609497	Identifier	dev		7609207	0					
+ANR	7609498	ReturnStatement	return NULL ;	77:8:1457:1468	7609207	2	True				
+ANR	7609499	Identifier	NULL		7609207	0					
+ANR	7609500	ReturnStatement	return SCSI_DEVICE ( dev ) ;	81:4:1482:1505	7609207	17	True				
+ANR	7609501	CallExpression	SCSI_DEVICE ( dev )		7609207	0					
+ANR	7609502	Callee	SCSI_DEVICE		7609207	0					
+ANR	7609503	Identifier	SCSI_DEVICE		7609207	0					
+ANR	7609504	ArgumentList	dev		7609207	1					
+ANR	7609505	Argument	dev		7609207	0					
+ANR	7609506	Identifier	dev		7609207	0					
+ANR	7609507	ReturnType	SCSIDevice *		7609207	1					
+ANR	7609508	Identifier	scsi_bus_legacy_add_drive		7609207	2					
+ANR	7609509	ParameterList	"SCSIBus * bus , BlockBackend * blk , int unit , bool removable , int bootindex , const char * serial , Error * * errp"		7609207	3					
+ANR	7609510	Parameter	SCSIBus * bus	1:38:38:49	7609207	0	True				
+ANR	7609511	ParameterType	SCSIBus *		7609207	0					
+ANR	7609512	Identifier	bus		7609207	1					
+ANR	7609513	Parameter	BlockBackend * blk	1:52:52:68	7609207	1	True				
+ANR	7609514	ParameterType	BlockBackend *		7609207	0					
+ANR	7609515	Identifier	blk		7609207	1					
+ANR	7609516	Parameter	int unit	3:38:110:117	7609207	2	True				
+ANR	7609517	ParameterType	int		7609207	0					
+ANR	7609518	Identifier	unit		7609207	1					
+ANR	7609519	Parameter	bool removable	3:48:120:133	7609207	3	True				
+ANR	7609520	ParameterType	bool		7609207	0					
+ANR	7609521	Identifier	removable		7609207	1					
+ANR	7609522	Parameter	int bootindex	3:64:136:148	7609207	4	True				
+ANR	7609523	ParameterType	int		7609207	0					
+ANR	7609524	Identifier	bootindex		7609207	1					
+ANR	7609525	Parameter	const char * serial	5:38:190:207	7609207	5	True				
+ANR	7609526	ParameterType	const char *		7609207	0					
+ANR	7609527	Identifier	serial		7609207	1					
+ANR	7609528	Parameter	Error * * errp	5:58:210:221	7609207	6	True				
+ANR	7609529	ParameterType	Error * *		7609207	0					
+ANR	7609530	Identifier	errp		7609207	1					
+ANR	7609531	CFGEntryNode	ENTRY		7609207		True				
+ANR	7609532	CFGExitNode	EXIT		7609207		True				
+ANR	7609533	Symbol	blk		7609207						
+ANR	7609534	Symbol	& bus -> qbus		7609207						
+ANR	7609535	Symbol	bus		7609207						
+ANR	7609536	Symbol	NULL		7609207						
+ANR	7609537	Symbol	errp		7609207						
+ANR	7609538	Symbol	err		7609207						
+ANR	7609539	Symbol	& error_abort		7609207						
+ANR	7609540	Symbol	object_property_find		7609207						
+ANR	7609541	Symbol	OBJECT		7609207						
+ANR	7609542	Symbol	& err		7609207						
+ANR	7609543	Symbol	blk_is_sg		7609207						
+ANR	7609544	Symbol	unit		7609207						
+ANR	7609545	Symbol	driver		7609207						
+ANR	7609546	Symbol	dev		7609207						
+ANR	7609547	Symbol	qdev_create		7609207						
+ANR	7609548	Symbol	bootindex		7609207						
+ANR	7609549	Symbol	serial		7609207						
+ANR	7609550	Symbol	removable		7609207						
+ANR	7609551	Symbol	name		7609207						
+ANR	7609552	Symbol	true		7609207						
+ANR	7609553	Symbol	g_strdup_printf		7609207						
+ANR	7609554	Symbol	SCSI_DEVICE		7609207						

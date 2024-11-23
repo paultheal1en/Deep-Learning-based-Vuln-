@@ -1,0 +1,349 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5992076	File	/home/p4ultr4n/workplace/ReVeal/raw_code/net_rx_packet_0.c								
+ANR	5992077	Function	net_rx_packet	1:0:0:1582							
+ANR	5992078	FunctionDef	"net_rx_packet (NetClientState * nc , const uint8_t * buf , size_t size)"		5992077	0					
+ANR	5992079	CompoundStatement		3:0:83:1582	5992077	0					
+ANR	5992080	IdentifierDeclStatement	struct XenNetDev * netdev = qemu_get_nic_opaque ( nc ) ;	5:4:90:140	5992077	0	True				
+ANR	5992081	IdentifierDecl	* netdev = qemu_get_nic_opaque ( nc )		5992077	0					
+ANR	5992082	IdentifierDeclType	struct XenNetDev *		5992077	0					
+ANR	5992083	Identifier	netdev		5992077	1					
+ANR	5992084	AssignmentExpression	* netdev = qemu_get_nic_opaque ( nc )		5992077	2		=			
+ANR	5992085	Identifier	netdev		5992077	0					
+ANR	5992086	CallExpression	qemu_get_nic_opaque ( nc )		5992077	1					
+ANR	5992087	Callee	qemu_get_nic_opaque		5992077	0					
+ANR	5992088	Identifier	qemu_get_nic_opaque		5992077	0					
+ANR	5992089	ArgumentList	nc		5992077	1					
+ANR	5992090	Argument	nc		5992077	0					
+ANR	5992091	Identifier	nc		5992077	0					
+ANR	5992092	IdentifierDeclStatement	netif_rx_request_t rxreq ;	7:4:147:171	5992077	1	True				
+ANR	5992093	IdentifierDecl	rxreq		5992077	0					
+ANR	5992094	IdentifierDeclType	netif_rx_request_t		5992077	0					
+ANR	5992095	Identifier	rxreq		5992077	1					
+ANR	5992096	IdentifierDeclStatement	"RING_IDX rc , rp ;"	9:4:178:193	5992077	2	True				
+ANR	5992097	IdentifierDecl	rc		5992077	0					
+ANR	5992098	IdentifierDeclType	RING_IDX		5992077	0					
+ANR	5992099	Identifier	rc		5992077	1					
+ANR	5992100	IdentifierDecl	rp		5992077	1					
+ANR	5992101	IdentifierDeclType	RING_IDX		5992077	0					
+ANR	5992102	Identifier	rp		5992077	1					
+ANR	5992103	IdentifierDeclStatement	void * page ;	11:4:200:210	5992077	3	True				
+ANR	5992104	IdentifierDecl	* page		5992077	0					
+ANR	5992105	IdentifierDeclType	void *		5992077	0					
+ANR	5992106	Identifier	page		5992077	1					
+ANR	5992107	IfStatement	if ( netdev -> xendev . be_state != XenbusStateConnected )		5992077	4					
+ANR	5992108	Condition	netdev -> xendev . be_state != XenbusStateConnected	15:8:223:269	5992077	0	True				
+ANR	5992109	EqualityExpression	netdev -> xendev . be_state != XenbusStateConnected		5992077	0		!=			
+ANR	5992110	MemberAccess	netdev -> xendev . be_state		5992077	0					
+ANR	5992111	PtrMemberAccess	netdev -> xendev		5992077	0					
+ANR	5992112	Identifier	netdev		5992077	0					
+ANR	5992113	Identifier	xendev		5992077	1					
+ANR	5992114	Identifier	be_state		5992077	1					
+ANR	5992115	Identifier	XenbusStateConnected		5992077	1					
+ANR	5992116	CompoundStatement		13:57:188:188	5992077	1					
+ANR	5992117	ReturnStatement	return - 1 ;	17:8:283:292	5992077	0	True				
+ANR	5992118	UnaryOperationExpression	- 1		5992077	0					
+ANR	5992119	UnaryOperator	-		5992077	0					
+ANR	5992120	PrimaryExpression	1		5992077	1					
+ANR	5992121	ExpressionStatement	rc = netdev -> rx_ring . req_cons	23:4:308:337	5992077	5	True				
+ANR	5992122	AssignmentExpression	rc = netdev -> rx_ring . req_cons		5992077	0		=			
+ANR	5992123	Identifier	rc		5992077	0					
+ANR	5992124	MemberAccess	netdev -> rx_ring . req_cons		5992077	1					
+ANR	5992125	PtrMemberAccess	netdev -> rx_ring		5992077	0					
+ANR	5992126	Identifier	netdev		5992077	0					
+ANR	5992127	Identifier	rx_ring		5992077	1					
+ANR	5992128	Identifier	req_cons		5992077	1					
+ANR	5992129	ExpressionStatement	rp = netdev -> rx_ring . sring -> req_prod	25:4:344:380	5992077	6	True				
+ANR	5992130	AssignmentExpression	rp = netdev -> rx_ring . sring -> req_prod		5992077	0		=			
+ANR	5992131	Identifier	rp		5992077	0					
+ANR	5992132	PtrMemberAccess	netdev -> rx_ring . sring -> req_prod		5992077	1					
+ANR	5992133	MemberAccess	netdev -> rx_ring . sring		5992077	0					
+ANR	5992134	PtrMemberAccess	netdev -> rx_ring		5992077	0					
+ANR	5992135	Identifier	netdev		5992077	0					
+ANR	5992136	Identifier	rx_ring		5992077	1					
+ANR	5992137	Identifier	sring		5992077	1					
+ANR	5992138	Identifier	req_prod		5992077	1					
+ANR	5992139	ExpressionStatement	xen_rmb ( )	27:4:387:396	5992077	7	True				
+ANR	5992140	CallExpression	xen_rmb ( )		5992077	0					
+ANR	5992141	Callee	xen_rmb		5992077	0					
+ANR	5992142	Identifier	xen_rmb		5992077	0					
+ANR	5992143	ArgumentList			5992077	1					
+ANR	5992144	IfStatement	"if ( rc == rp || RING_REQUEST_CONS_OVERFLOW ( & netdev -> rx_ring , rc ) )"		5992077	8					
+ANR	5992145	Condition	"rc == rp || RING_REQUEST_CONS_OVERFLOW ( & netdev -> rx_ring , rc )"	31:8:457:516	5992077	0	True				
+ANR	5992146	OrExpression	"rc == rp || RING_REQUEST_CONS_OVERFLOW ( & netdev -> rx_ring , rc )"		5992077	0		||			
+ANR	5992147	EqualityExpression	rc == rp		5992077	0		==			
+ANR	5992148	Identifier	rc		5992077	0					
+ANR	5992149	Identifier	rp		5992077	1					
+ANR	5992150	CallExpression	"RING_REQUEST_CONS_OVERFLOW ( & netdev -> rx_ring , rc )"		5992077	1					
+ANR	5992151	Callee	RING_REQUEST_CONS_OVERFLOW		5992077	0					
+ANR	5992152	Identifier	RING_REQUEST_CONS_OVERFLOW		5992077	0					
+ANR	5992153	ArgumentList	& netdev -> rx_ring		5992077	1					
+ANR	5992154	Argument	& netdev -> rx_ring		5992077	0					
+ANR	5992155	UnaryOperationExpression	& netdev -> rx_ring		5992077	0					
+ANR	5992156	UnaryOperator	&		5992077	0					
+ANR	5992157	PtrMemberAccess	netdev -> rx_ring		5992077	1					
+ANR	5992158	Identifier	netdev		5992077	0					
+ANR	5992159	Identifier	rx_ring		5992077	1					
+ANR	5992160	Argument	rc		5992077	1					
+ANR	5992161	Identifier	rc		5992077	0					
+ANR	5992162	CompoundStatement		29:70:435:435	5992077	1					
+ANR	5992163	ExpressionStatement	"xen_be_printf ( & netdev -> xendev , 2 , ""no buffer, drop packet\\n"" )"	33:8:530:591	5992077	0	True				
+ANR	5992164	CallExpression	"xen_be_printf ( & netdev -> xendev , 2 , ""no buffer, drop packet\\n"" )"		5992077	0					
+ANR	5992165	Callee	xen_be_printf		5992077	0					
+ANR	5992166	Identifier	xen_be_printf		5992077	0					
+ANR	5992167	ArgumentList	& netdev -> xendev		5992077	1					
+ANR	5992168	Argument	& netdev -> xendev		5992077	0					
+ANR	5992169	UnaryOperationExpression	& netdev -> xendev		5992077	0					
+ANR	5992170	UnaryOperator	&		5992077	0					
+ANR	5992171	PtrMemberAccess	netdev -> xendev		5992077	1					
+ANR	5992172	Identifier	netdev		5992077	0					
+ANR	5992173	Identifier	xendev		5992077	1					
+ANR	5992174	Argument	2		5992077	1					
+ANR	5992175	PrimaryExpression	2		5992077	0					
+ANR	5992176	Argument	"""no buffer, drop packet\\n"""		5992077	2					
+ANR	5992177	PrimaryExpression	"""no buffer, drop packet\\n"""		5992077	0					
+ANR	5992178	ReturnStatement	return - 1 ;	35:8:602:611	5992077	1	True				
+ANR	5992179	UnaryOperationExpression	- 1		5992077	0					
+ANR	5992180	UnaryOperator	-		5992077	0					
+ANR	5992181	PrimaryExpression	1		5992077	1					
+ANR	5992182	IfStatement	if ( size > XC_PAGE_SIZE - NET_IP_ALIGN )		5992077	9					
+ANR	5992183	Condition	size > XC_PAGE_SIZE - NET_IP_ALIGN	39:8:629:662	5992077	0	True				
+ANR	5992184	RelationalExpression	size > XC_PAGE_SIZE - NET_IP_ALIGN		5992077	0		>			
+ANR	5992185	Identifier	size		5992077	0					
+ANR	5992186	AdditiveExpression	XC_PAGE_SIZE - NET_IP_ALIGN		5992077	1		-			
+ANR	5992187	Identifier	XC_PAGE_SIZE		5992077	0					
+ANR	5992188	Identifier	NET_IP_ALIGN		5992077	1					
+ANR	5992189	CompoundStatement		37:44:581:581	5992077	1					
+ANR	5992190	ExpressionStatement	"xen_be_printf ( & netdev -> xendev , 0 , ""packet too big (%lu > %ld)"" , ( unsigned long ) size , XC_PAGE_SIZE - NET_IP_ALIGN )"	41:8:676:812	5992077	0	True				
+ANR	5992191	CallExpression	"xen_be_printf ( & netdev -> xendev , 0 , ""packet too big (%lu > %ld)"" , ( unsigned long ) size , XC_PAGE_SIZE - NET_IP_ALIGN )"		5992077	0					
+ANR	5992192	Callee	xen_be_printf		5992077	0					
+ANR	5992193	Identifier	xen_be_printf		5992077	0					
+ANR	5992194	ArgumentList	& netdev -> xendev		5992077	1					
+ANR	5992195	Argument	& netdev -> xendev		5992077	0					
+ANR	5992196	UnaryOperationExpression	& netdev -> xendev		5992077	0					
+ANR	5992197	UnaryOperator	&		5992077	0					
+ANR	5992198	PtrMemberAccess	netdev -> xendev		5992077	1					
+ANR	5992199	Identifier	netdev		5992077	0					
+ANR	5992200	Identifier	xendev		5992077	1					
+ANR	5992201	Argument	0		5992077	1					
+ANR	5992202	PrimaryExpression	0		5992077	0					
+ANR	5992203	Argument	"""packet too big (%lu > %ld)"""		5992077	2					
+ANR	5992204	PrimaryExpression	"""packet too big (%lu > %ld)"""		5992077	0					
+ANR	5992205	Argument	( unsigned long ) size		5992077	3					
+ANR	5992206	CastExpression	( unsigned long ) size		5992077	0					
+ANR	5992207	CastTarget	unsigned long		5992077	0					
+ANR	5992208	Identifier	size		5992077	1					
+ANR	5992209	Argument	XC_PAGE_SIZE - NET_IP_ALIGN		5992077	4					
+ANR	5992210	AdditiveExpression	XC_PAGE_SIZE - NET_IP_ALIGN		5992077	0		-			
+ANR	5992211	Identifier	XC_PAGE_SIZE		5992077	0					
+ANR	5992212	Identifier	NET_IP_ALIGN		5992077	1					
+ANR	5992213	ReturnStatement	return - 1 ;	45:8:823:832	5992077	1	True				
+ANR	5992214	UnaryOperationExpression	- 1		5992077	0					
+ANR	5992215	UnaryOperator	-		5992077	0					
+ANR	5992216	PrimaryExpression	1		5992077	1					
+ANR	5992217	ExpressionStatement	"memcpy ( & rxreq , RING_GET_REQUEST ( & netdev -> rx_ring , rc ) , sizeof ( rxreq ) )"	51:4:848:917	5992077	10	True				
+ANR	5992218	CallExpression	"memcpy ( & rxreq , RING_GET_REQUEST ( & netdev -> rx_ring , rc ) , sizeof ( rxreq ) )"		5992077	0					
+ANR	5992219	Callee	memcpy		5992077	0					
+ANR	5992220	Identifier	memcpy		5992077	0					
+ANR	5992221	ArgumentList	& rxreq		5992077	1					
+ANR	5992222	Argument	& rxreq		5992077	0					
+ANR	5992223	UnaryOperationExpression	& rxreq		5992077	0					
+ANR	5992224	UnaryOperator	&		5992077	0					
+ANR	5992225	Identifier	rxreq		5992077	1					
+ANR	5992226	Argument	"RING_GET_REQUEST ( & netdev -> rx_ring , rc )"		5992077	1					
+ANR	5992227	CallExpression	"RING_GET_REQUEST ( & netdev -> rx_ring , rc )"		5992077	0					
+ANR	5992228	Callee	RING_GET_REQUEST		5992077	0					
+ANR	5992229	Identifier	RING_GET_REQUEST		5992077	0					
+ANR	5992230	ArgumentList	& netdev -> rx_ring		5992077	1					
+ANR	5992231	Argument	& netdev -> rx_ring		5992077	0					
+ANR	5992232	UnaryOperationExpression	& netdev -> rx_ring		5992077	0					
+ANR	5992233	UnaryOperator	&		5992077	0					
+ANR	5992234	PtrMemberAccess	netdev -> rx_ring		5992077	1					
+ANR	5992235	Identifier	netdev		5992077	0					
+ANR	5992236	Identifier	rx_ring		5992077	1					
+ANR	5992237	Argument	rc		5992077	1					
+ANR	5992238	Identifier	rc		5992077	0					
+ANR	5992239	Argument	sizeof ( rxreq )		5992077	2					
+ANR	5992240	SizeofExpression	sizeof ( rxreq )		5992077	0					
+ANR	5992241	Sizeof	sizeof		5992077	0					
+ANR	5992242	SizeofOperand	rxreq		5992077	1					
+ANR	5992243	ExpressionStatement	netdev -> rx_ring . req_cons = ++ rc	53:4:924:955	5992077	11	True				
+ANR	5992244	AssignmentExpression	netdev -> rx_ring . req_cons = ++ rc		5992077	0		=			
+ANR	5992245	MemberAccess	netdev -> rx_ring . req_cons		5992077	0					
+ANR	5992246	PtrMemberAccess	netdev -> rx_ring		5992077	0					
+ANR	5992247	Identifier	netdev		5992077	0					
+ANR	5992248	Identifier	rx_ring		5992077	1					
+ANR	5992249	Identifier	req_cons		5992077	1					
+ANR	5992250	UnaryExpression	++ rc		5992077	1					
+ANR	5992251	IncDec	++		5992077	0					
+ANR	5992252	Identifier	rc		5992077	1					
+ANR	5992253	ExpressionStatement	"page = xc_gnttab_map_grant_ref ( netdev -> xendev . gnttabdev , netdev -> xendev . dom , rxreq . gref , PROT_WRITE )"	57:4:964:1136	5992077	12	True				
+ANR	5992254	AssignmentExpression	"page = xc_gnttab_map_grant_ref ( netdev -> xendev . gnttabdev , netdev -> xendev . dom , rxreq . gref , PROT_WRITE )"		5992077	0		=			
+ANR	5992255	Identifier	page		5992077	0					
+ANR	5992256	CallExpression	"xc_gnttab_map_grant_ref ( netdev -> xendev . gnttabdev , netdev -> xendev . dom , rxreq . gref , PROT_WRITE )"		5992077	1					
+ANR	5992257	Callee	xc_gnttab_map_grant_ref		5992077	0					
+ANR	5992258	Identifier	xc_gnttab_map_grant_ref		5992077	0					
+ANR	5992259	ArgumentList	netdev -> xendev . gnttabdev		5992077	1					
+ANR	5992260	Argument	netdev -> xendev . gnttabdev		5992077	0					
+ANR	5992261	MemberAccess	netdev -> xendev . gnttabdev		5992077	0					
+ANR	5992262	PtrMemberAccess	netdev -> xendev		5992077	0					
+ANR	5992263	Identifier	netdev		5992077	0					
+ANR	5992264	Identifier	xendev		5992077	1					
+ANR	5992265	Identifier	gnttabdev		5992077	1					
+ANR	5992266	Argument	netdev -> xendev . dom		5992077	1					
+ANR	5992267	MemberAccess	netdev -> xendev . dom		5992077	0					
+ANR	5992268	PtrMemberAccess	netdev -> xendev		5992077	0					
+ANR	5992269	Identifier	netdev		5992077	0					
+ANR	5992270	Identifier	xendev		5992077	1					
+ANR	5992271	Identifier	dom		5992077	1					
+ANR	5992272	Argument	rxreq . gref		5992077	2					
+ANR	5992273	MemberAccess	rxreq . gref		5992077	0					
+ANR	5992274	Identifier	rxreq		5992077	0					
+ANR	5992275	Identifier	gref		5992077	1					
+ANR	5992276	Argument	PROT_WRITE		5992077	3					
+ANR	5992277	Identifier	PROT_WRITE		5992077	0					
+ANR	5992278	IfStatement	if ( page == NULL )		5992077	13					
+ANR	5992279	Condition	page == NULL	63:8:1147:1158	5992077	0	True				
+ANR	5992280	EqualityExpression	page == NULL		5992077	0		==			
+ANR	5992281	Identifier	page		5992077	0					
+ANR	5992282	Identifier	NULL		5992077	1					
+ANR	5992283	CompoundStatement		61:22:1077:1077	5992077	1					
+ANR	5992284	ExpressionStatement	"xen_be_printf ( & netdev -> xendev , 0 , ""error: rx gref dereference failed (%d)\\n"" , rxreq . gref )"	65:8:1172:1284	5992077	0	True				
+ANR	5992285	CallExpression	"xen_be_printf ( & netdev -> xendev , 0 , ""error: rx gref dereference failed (%d)\\n"" , rxreq . gref )"		5992077	0					
+ANR	5992286	Callee	xen_be_printf		5992077	0					
+ANR	5992287	Identifier	xen_be_printf		5992077	0					
+ANR	5992288	ArgumentList	& netdev -> xendev		5992077	1					
+ANR	5992289	Argument	& netdev -> xendev		5992077	0					
+ANR	5992290	UnaryOperationExpression	& netdev -> xendev		5992077	0					
+ANR	5992291	UnaryOperator	&		5992077	0					
+ANR	5992292	PtrMemberAccess	netdev -> xendev		5992077	1					
+ANR	5992293	Identifier	netdev		5992077	0					
+ANR	5992294	Identifier	xendev		5992077	1					
+ANR	5992295	Argument	0		5992077	1					
+ANR	5992296	PrimaryExpression	0		5992077	0					
+ANR	5992297	Argument	"""error: rx gref dereference failed (%d)\\n"""		5992077	2					
+ANR	5992298	PrimaryExpression	"""error: rx gref dereference failed (%d)\\n"""		5992077	0					
+ANR	5992299	Argument	rxreq . gref		5992077	3					
+ANR	5992300	MemberAccess	rxreq . gref		5992077	0					
+ANR	5992301	Identifier	rxreq		5992077	0					
+ANR	5992302	Identifier	gref		5992077	1					
+ANR	5992303	ExpressionStatement	"net_rx_response ( netdev , & rxreq , NETIF_RSP_ERROR , 0 , 0 , 0 )"	69:8:1295:1352	5992077	1	True				
+ANR	5992304	CallExpression	"net_rx_response ( netdev , & rxreq , NETIF_RSP_ERROR , 0 , 0 , 0 )"		5992077	0					
+ANR	5992305	Callee	net_rx_response		5992077	0					
+ANR	5992306	Identifier	net_rx_response		5992077	0					
+ANR	5992307	ArgumentList	netdev		5992077	1					
+ANR	5992308	Argument	netdev		5992077	0					
+ANR	5992309	Identifier	netdev		5992077	0					
+ANR	5992310	Argument	& rxreq		5992077	1					
+ANR	5992311	UnaryOperationExpression	& rxreq		5992077	0					
+ANR	5992312	UnaryOperator	&		5992077	0					
+ANR	5992313	Identifier	rxreq		5992077	1					
+ANR	5992314	Argument	NETIF_RSP_ERROR		5992077	2					
+ANR	5992315	Identifier	NETIF_RSP_ERROR		5992077	0					
+ANR	5992316	Argument	0		5992077	3					
+ANR	5992317	PrimaryExpression	0		5992077	0					
+ANR	5992318	Argument	0		5992077	4					
+ANR	5992319	PrimaryExpression	0		5992077	0					
+ANR	5992320	Argument	0		5992077	5					
+ANR	5992321	PrimaryExpression	0		5992077	0					
+ANR	5992322	ReturnStatement	return - 1 ;	71:8:1363:1372	5992077	2	True				
+ANR	5992323	UnaryOperationExpression	- 1		5992077	0					
+ANR	5992324	UnaryOperator	-		5992077	0					
+ANR	5992325	PrimaryExpression	1		5992077	1					
+ANR	5992326	ExpressionStatement	"memcpy ( page + NET_IP_ALIGN , buf , size )"	75:4:1386:1424	5992077	14	True				
+ANR	5992327	CallExpression	"memcpy ( page + NET_IP_ALIGN , buf , size )"		5992077	0					
+ANR	5992328	Callee	memcpy		5992077	0					
+ANR	5992329	Identifier	memcpy		5992077	0					
+ANR	5992330	ArgumentList	page + NET_IP_ALIGN		5992077	1					
+ANR	5992331	Argument	page + NET_IP_ALIGN		5992077	0					
+ANR	5992332	AdditiveExpression	page + NET_IP_ALIGN		5992077	0		+			
+ANR	5992333	Identifier	page		5992077	0					
+ANR	5992334	Identifier	NET_IP_ALIGN		5992077	1					
+ANR	5992335	Argument	buf		5992077	1					
+ANR	5992336	Identifier	buf		5992077	0					
+ANR	5992337	Argument	size		5992077	2					
+ANR	5992338	Identifier	size		5992077	0					
+ANR	5992339	ExpressionStatement	"xc_gnttab_munmap ( netdev -> xendev . gnttabdev , page , 1 )"	77:4:1431:1482	5992077	15	True				
+ANR	5992340	CallExpression	"xc_gnttab_munmap ( netdev -> xendev . gnttabdev , page , 1 )"		5992077	0					
+ANR	5992341	Callee	xc_gnttab_munmap		5992077	0					
+ANR	5992342	Identifier	xc_gnttab_munmap		5992077	0					
+ANR	5992343	ArgumentList	netdev -> xendev . gnttabdev		5992077	1					
+ANR	5992344	Argument	netdev -> xendev . gnttabdev		5992077	0					
+ANR	5992345	MemberAccess	netdev -> xendev . gnttabdev		5992077	0					
+ANR	5992346	PtrMemberAccess	netdev -> xendev		5992077	0					
+ANR	5992347	Identifier	netdev		5992077	0					
+ANR	5992348	Identifier	xendev		5992077	1					
+ANR	5992349	Identifier	gnttabdev		5992077	1					
+ANR	5992350	Argument	page		5992077	1					
+ANR	5992351	Identifier	page		5992077	0					
+ANR	5992352	Argument	1		5992077	2					
+ANR	5992353	PrimaryExpression	1		5992077	0					
+ANR	5992354	ExpressionStatement	"net_rx_response ( netdev , & rxreq , NETIF_RSP_OKAY , NET_IP_ALIGN , size , 0 )"	79:4:1489:1559	5992077	16	True				
+ANR	5992355	CallExpression	"net_rx_response ( netdev , & rxreq , NETIF_RSP_OKAY , NET_IP_ALIGN , size , 0 )"		5992077	0					
+ANR	5992356	Callee	net_rx_response		5992077	0					
+ANR	5992357	Identifier	net_rx_response		5992077	0					
+ANR	5992358	ArgumentList	netdev		5992077	1					
+ANR	5992359	Argument	netdev		5992077	0					
+ANR	5992360	Identifier	netdev		5992077	0					
+ANR	5992361	Argument	& rxreq		5992077	1					
+ANR	5992362	UnaryOperationExpression	& rxreq		5992077	0					
+ANR	5992363	UnaryOperator	&		5992077	0					
+ANR	5992364	Identifier	rxreq		5992077	1					
+ANR	5992365	Argument	NETIF_RSP_OKAY		5992077	2					
+ANR	5992366	Identifier	NETIF_RSP_OKAY		5992077	0					
+ANR	5992367	Argument	NET_IP_ALIGN		5992077	3					
+ANR	5992368	Identifier	NET_IP_ALIGN		5992077	0					
+ANR	5992369	Argument	size		5992077	4					
+ANR	5992370	Identifier	size		5992077	0					
+ANR	5992371	Argument	0		5992077	5					
+ANR	5992372	PrimaryExpression	0		5992077	0					
+ANR	5992373	ReturnStatement	return size ;	83:4:1568:1579	5992077	17	True				
+ANR	5992374	Identifier	size		5992077	0					
+ANR	5992375	ReturnType	static ssize_t		5992077	1					
+ANR	5992376	Identifier	net_rx_packet		5992077	2					
+ANR	5992377	ParameterList	"NetClientState * nc , const uint8_t * buf , size_t size"		5992077	3					
+ANR	5992378	Parameter	NetClientState * nc	1:29:29:46	5992077	0	True				
+ANR	5992379	ParameterType	NetClientState *		5992077	0					
+ANR	5992380	Identifier	nc		5992077	1					
+ANR	5992381	Parameter	const uint8_t * buf	1:49:49:66	5992077	1	True				
+ANR	5992382	ParameterType	const uint8_t *		5992077	0					
+ANR	5992383	Identifier	buf		5992077	1					
+ANR	5992384	Parameter	size_t size	1:69:69:79	5992077	2	True				
+ANR	5992385	ParameterType	size_t		5992077	0					
+ANR	5992386	Identifier	size		5992077	1					
+ANR	5992387	CFGEntryNode	ENTRY		5992077		True				
+ANR	5992388	CFGExitNode	EXIT		5992077		True				
+ANR	5992389	Symbol	xc_gnttab_map_grant_ref		5992077						
+ANR	5992390	Symbol	netdev -> rx_ring		5992077						
+ANR	5992391	Symbol	* * netdev		5992077						
+ANR	5992392	Symbol	& netdev -> xendev		5992077						
+ANR	5992393	Symbol	& netdev -> rx_ring		5992077						
+ANR	5992394	Symbol	PROT_WRITE		5992077						
+ANR	5992395	Symbol	& rxreq		5992077						
+ANR	5992396	Symbol	XenbusStateConnected		5992077						
+ANR	5992397	Symbol	netdev -> xendev		5992077						
+ANR	5992398	Symbol	NETIF_RSP_OKAY		5992077						
+ANR	5992399	Symbol	netdev		5992077						
+ANR	5992400	Symbol	netdev -> xendev . gnttabdev		5992077						
+ANR	5992401	Symbol	NULL		5992077						
+ANR	5992402	Symbol	rxreq . gref		5992077						
+ANR	5992403	Symbol	netdev -> xendev . be_state		5992077						
+ANR	5992404	Symbol	rxreq		5992077						
+ANR	5992405	Symbol	netdev -> rx_ring . sring -> req_prod		5992077						
+ANR	5992406	Symbol	XC_PAGE_SIZE		5992077						
+ANR	5992407	Symbol	netdev -> xendev . dom		5992077						
+ANR	5992408	Symbol	RING_GET_REQUEST		5992077						
+ANR	5992409	Symbol	NET_IP_ALIGN		5992077						
+ANR	5992410	Symbol	rc		5992077						
+ANR	5992411	Symbol	buf		5992077						
+ANR	5992412	Symbol	netdev -> rx_ring . req_cons		5992077						
+ANR	5992413	Symbol	NETIF_RSP_ERROR		5992077						
+ANR	5992414	Symbol	size		5992077						
+ANR	5992415	Symbol	nc		5992077						
+ANR	5992416	Symbol	netdev -> rx_ring . sring		5992077						
+ANR	5992417	Symbol	qemu_get_nic_opaque		5992077						
+ANR	5992418	Symbol	page		5992077						
+ANR	5992419	Symbol	* netdev -> rx_ring		5992077						
+ANR	5992420	Symbol	* netdev		5992077						
+ANR	5992421	Symbol	RING_REQUEST_CONS_OVERFLOW		5992077						
+ANR	5992422	Symbol	rp		5992077						
+ANR	5992423	Symbol	* netdev -> rx_ring . sring		5992077						

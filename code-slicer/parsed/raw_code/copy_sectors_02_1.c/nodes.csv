@@ -1,0 +1,309 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1435179	File	/home/p4ultr4n/workplace/ReVeal/raw_code/copy_sectors_02_1.c								
+ANR	1435180	Function	copy_sectors	1:0:0:1653							
+ANR	1435181	FunctionDef	"copy_sectors (BlockDriverState * bs , uint64_t start_sect , uint64_t cluster_offset , int n_start , int n_end)"		1435180	0					
+ANR	1435182	CompoundStatement		9:0:244:1653	1435180	0					
+ANR	1435183	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	11:4:251:280	1435180	0	True				
+ANR	1435184	IdentifierDecl	* s = bs -> opaque		1435180	0					
+ANR	1435185	IdentifierDeclType	BDRVQcowState *		1435180	0					
+ANR	1435186	Identifier	s		1435180	1					
+ANR	1435187	AssignmentExpression	* s = bs -> opaque		1435180	2		=			
+ANR	1435188	Identifier	s		1435180	0					
+ANR	1435189	PtrMemberAccess	bs -> opaque		1435180	1					
+ANR	1435190	Identifier	bs		1435180	0					
+ANR	1435191	Identifier	opaque		1435180	1					
+ANR	1435192	IdentifierDeclStatement	QEMUIOVector qiov ;	13:4:287:304	1435180	1	True				
+ANR	1435193	IdentifierDecl	qiov		1435180	0					
+ANR	1435194	IdentifierDeclType	QEMUIOVector		1435180	0					
+ANR	1435195	Identifier	qiov		1435180	1					
+ANR	1435196	IdentifierDeclStatement	struct iovec iov ;	15:4:311:327	1435180	2	True				
+ANR	1435197	IdentifierDecl	iov		1435180	0					
+ANR	1435198	IdentifierDeclType	struct iovec		1435180	0					
+ANR	1435199	Identifier	iov		1435180	1					
+ANR	1435200	IdentifierDeclStatement	"int n , ret ;"	17:4:334:344	1435180	3	True				
+ANR	1435201	IdentifierDecl	n		1435180	0					
+ANR	1435202	IdentifierDeclType	int		1435180	0					
+ANR	1435203	Identifier	n		1435180	1					
+ANR	1435204	IdentifierDecl	ret		1435180	1					
+ANR	1435205	IdentifierDeclType	int		1435180	0					
+ANR	1435206	Identifier	ret		1435180	1					
+ANR	1435207	ExpressionStatement	n = n_end - n_start	21:4:353:372	1435180	4	True				
+ANR	1435208	AssignmentExpression	n = n_end - n_start		1435180	0		=			
+ANR	1435209	Identifier	n		1435180	0					
+ANR	1435210	AdditiveExpression	n_end - n_start		1435180	1		-			
+ANR	1435211	Identifier	n_end		1435180	0					
+ANR	1435212	Identifier	n_start		1435180	1					
+ANR	1435213	IfStatement	if ( n <= 0 )		1435180	5					
+ANR	1435214	Condition	n <= 0	23:8:383:388	1435180	0	True				
+ANR	1435215	RelationalExpression	n <= 0		1435180	0		<=			
+ANR	1435216	Identifier	n		1435180	0					
+ANR	1435217	PrimaryExpression	0		1435180	1					
+ANR	1435218	CompoundStatement		15:16:146:146	1435180	1					
+ANR	1435219	ReturnStatement	return 0 ;	25:8:402:410	1435180	0	True				
+ANR	1435220	PrimaryExpression	0		1435180	0					
+ANR	1435221	ExpressionStatement	iov . iov_len = n * BDRV_SECTOR_SIZE	31:4:426:460	1435180	6	True				
+ANR	1435222	AssignmentExpression	iov . iov_len = n * BDRV_SECTOR_SIZE		1435180	0		=			
+ANR	1435223	MemberAccess	iov . iov_len		1435180	0					
+ANR	1435224	Identifier	iov		1435180	0					
+ANR	1435225	Identifier	iov_len		1435180	1					
+ANR	1435226	MultiplicativeExpression	n * BDRV_SECTOR_SIZE		1435180	1		*			
+ANR	1435227	Identifier	n		1435180	0					
+ANR	1435228	Identifier	BDRV_SECTOR_SIZE		1435180	1					
+ANR	1435229	ExpressionStatement	"iov . iov_base = qemu_blockalign ( bs , iov . iov_len )"	33:4:467:514	1435180	7	True				
+ANR	1435230	AssignmentExpression	"iov . iov_base = qemu_blockalign ( bs , iov . iov_len )"		1435180	0		=			
+ANR	1435231	MemberAccess	iov . iov_base		1435180	0					
+ANR	1435232	Identifier	iov		1435180	0					
+ANR	1435233	Identifier	iov_base		1435180	1					
+ANR	1435234	CallExpression	"qemu_blockalign ( bs , iov . iov_len )"		1435180	1					
+ANR	1435235	Callee	qemu_blockalign		1435180	0					
+ANR	1435236	Identifier	qemu_blockalign		1435180	0					
+ANR	1435237	ArgumentList	bs		1435180	1					
+ANR	1435238	Argument	bs		1435180	0					
+ANR	1435239	Identifier	bs		1435180	0					
+ANR	1435240	Argument	iov . iov_len		1435180	1					
+ANR	1435241	MemberAccess	iov . iov_len		1435180	0					
+ANR	1435242	Identifier	iov		1435180	0					
+ANR	1435243	Identifier	iov_len		1435180	1					
+ANR	1435244	ExpressionStatement	"qemu_iovec_init_external ( & qiov , & iov , 1 )"	37:4:523:563	1435180	8	True				
+ANR	1435245	CallExpression	"qemu_iovec_init_external ( & qiov , & iov , 1 )"		1435180	0					
+ANR	1435246	Callee	qemu_iovec_init_external		1435180	0					
+ANR	1435247	Identifier	qemu_iovec_init_external		1435180	0					
+ANR	1435248	ArgumentList	& qiov		1435180	1					
+ANR	1435249	Argument	& qiov		1435180	0					
+ANR	1435250	UnaryOperationExpression	& qiov		1435180	0					
+ANR	1435251	UnaryOperator	&		1435180	0					
+ANR	1435252	Identifier	qiov		1435180	1					
+ANR	1435253	Argument	& iov		1435180	1					
+ANR	1435254	UnaryOperationExpression	& iov		1435180	0					
+ANR	1435255	UnaryOperator	&		1435180	0					
+ANR	1435256	Identifier	iov		1435180	1					
+ANR	1435257	Argument	1		1435180	2					
+ANR	1435258	PrimaryExpression	1		1435180	0					
+ANR	1435259	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_READ )"	41:4:572:611	1435180	9	True				
+ANR	1435260	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_READ )"		1435180	0					
+ANR	1435261	Callee	BLKDBG_EVENT		1435180	0					
+ANR	1435262	Identifier	BLKDBG_EVENT		1435180	0					
+ANR	1435263	ArgumentList	bs -> file		1435180	1					
+ANR	1435264	Argument	bs -> file		1435180	0					
+ANR	1435265	PtrMemberAccess	bs -> file		1435180	0					
+ANR	1435266	Identifier	bs		1435180	0					
+ANR	1435267	Identifier	file		1435180	1					
+ANR	1435268	Argument	BLKDBG_COW_READ		1435180	1					
+ANR	1435269	Identifier	BLKDBG_COW_READ		1435180	0					
+ANR	1435270	IfStatement	if ( ! bs -> drv )		1435180	10					
+ANR	1435271	Condition	! bs -> drv	45:8:624:631	1435180	0	True				
+ANR	1435272	UnaryOperationExpression	! bs -> drv		1435180	0					
+ANR	1435273	UnaryOperator	!		1435180	0					
+ANR	1435274	PtrMemberAccess	bs -> drv		1435180	1					
+ANR	1435275	Identifier	bs		1435180	0					
+ANR	1435276	Identifier	drv		1435180	1					
+ANR	1435277	CompoundStatement		37:18:389:389	1435180	1					
+ANR	1435278	ReturnStatement	return - ENOMEDIUM ;	47:8:645:662	1435180	0	True				
+ANR	1435279	UnaryOperationExpression	- ENOMEDIUM		1435180	0					
+ANR	1435280	UnaryOperator	-		1435180	0					
+ANR	1435281	Identifier	ENOMEDIUM		1435180	1					
+ANR	1435282	ExpressionStatement	"ret = bs -> drv -> bdrv_co_readv ( bs , start_sect + n_start , n , & qiov )"	61:4:919:983	1435180	11	True				
+ANR	1435283	AssignmentExpression	"ret = bs -> drv -> bdrv_co_readv ( bs , start_sect + n_start , n , & qiov )"		1435180	0		=			
+ANR	1435284	Identifier	ret		1435180	0					
+ANR	1435285	CallExpression	"bs -> drv -> bdrv_co_readv ( bs , start_sect + n_start , n , & qiov )"		1435180	1					
+ANR	1435286	Callee	bs -> drv -> bdrv_co_readv		1435180	0					
+ANR	1435287	PtrMemberAccess	bs -> drv -> bdrv_co_readv		1435180	0					
+ANR	1435288	PtrMemberAccess	bs -> drv		1435180	0					
+ANR	1435289	Identifier	bs		1435180	0					
+ANR	1435290	Identifier	drv		1435180	1					
+ANR	1435291	Identifier	bdrv_co_readv		1435180	1					
+ANR	1435292	ArgumentList	bs		1435180	1					
+ANR	1435293	Argument	bs		1435180	0					
+ANR	1435294	Identifier	bs		1435180	0					
+ANR	1435295	Argument	start_sect + n_start		1435180	1					
+ANR	1435296	AdditiveExpression	start_sect + n_start		1435180	0		+			
+ANR	1435297	Identifier	start_sect		1435180	0					
+ANR	1435298	Identifier	n_start		1435180	1					
+ANR	1435299	Argument	n		1435180	2					
+ANR	1435300	Identifier	n		1435180	0					
+ANR	1435301	Argument	& qiov		1435180	3					
+ANR	1435302	UnaryOperationExpression	& qiov		1435180	0					
+ANR	1435303	UnaryOperator	&		1435180	0					
+ANR	1435304	Identifier	qiov		1435180	1					
+ANR	1435305	IfStatement	if ( ret < 0 )		1435180	12					
+ANR	1435306	Condition	ret < 0	63:8:994:1000	1435180	0	True				
+ANR	1435307	RelationalExpression	ret < 0		1435180	0		<			
+ANR	1435308	Identifier	ret		1435180	0					
+ANR	1435309	PrimaryExpression	0		1435180	1					
+ANR	1435310	CompoundStatement		55:17:758:758	1435180	1					
+ANR	1435311	GotoStatement	goto out ;	65:8:1014:1022	1435180	0	True				
+ANR	1435312	Identifier	out		1435180	0					
+ANR	1435313	IfStatement	if ( s -> crypt_method )		1435180	13					
+ANR	1435314	Condition	s -> crypt_method	71:8:1042:1056	1435180	0	True				
+ANR	1435315	PtrMemberAccess	s -> crypt_method		1435180	0					
+ANR	1435316	Identifier	s		1435180	0					
+ANR	1435317	Identifier	crypt_method		1435180	1					
+ANR	1435318	CompoundStatement		63:25:814:814	1435180	1					
+ANR	1435319	ExpressionStatement	"qcow2_encrypt_sectors ( s , start_sect + n_start , iov . iov_base , iov . iov_base , n , 1 , & s -> aes_encrypt_key )"	73:8:1070:1221	1435180	0	True				
+ANR	1435320	CallExpression	"qcow2_encrypt_sectors ( s , start_sect + n_start , iov . iov_base , iov . iov_base , n , 1 , & s -> aes_encrypt_key )"		1435180	0					
+ANR	1435321	Callee	qcow2_encrypt_sectors		1435180	0					
+ANR	1435322	Identifier	qcow2_encrypt_sectors		1435180	0					
+ANR	1435323	ArgumentList	s		1435180	1					
+ANR	1435324	Argument	s		1435180	0					
+ANR	1435325	Identifier	s		1435180	0					
+ANR	1435326	Argument	start_sect + n_start		1435180	1					
+ANR	1435327	AdditiveExpression	start_sect + n_start		1435180	0		+			
+ANR	1435328	Identifier	start_sect		1435180	0					
+ANR	1435329	Identifier	n_start		1435180	1					
+ANR	1435330	Argument	iov . iov_base		1435180	2					
+ANR	1435331	MemberAccess	iov . iov_base		1435180	0					
+ANR	1435332	Identifier	iov		1435180	0					
+ANR	1435333	Identifier	iov_base		1435180	1					
+ANR	1435334	Argument	iov . iov_base		1435180	3					
+ANR	1435335	MemberAccess	iov . iov_base		1435180	0					
+ANR	1435336	Identifier	iov		1435180	0					
+ANR	1435337	Identifier	iov_base		1435180	1					
+ANR	1435338	Argument	n		1435180	4					
+ANR	1435339	Identifier	n		1435180	0					
+ANR	1435340	Argument	1		1435180	5					
+ANR	1435341	PrimaryExpression	1		1435180	0					
+ANR	1435342	Argument	& s -> aes_encrypt_key		1435180	6					
+ANR	1435343	UnaryOperationExpression	& s -> aes_encrypt_key		1435180	0					
+ANR	1435344	UnaryOperator	&		1435180	0					
+ANR	1435345	PtrMemberAccess	s -> aes_encrypt_key		1435180	1					
+ANR	1435346	Identifier	s		1435180	0					
+ANR	1435347	Identifier	aes_encrypt_key		1435180	1					
+ANR	1435348	ExpressionStatement	"ret = qcow2_pre_write_overlap_check ( bs , 0 , cluster_offset + n_start * BDRV_SECTOR_SIZE , n * BDRV_SECTOR_SIZE )"	83:4:1237:1359	1435180	14	True				
+ANR	1435349	AssignmentExpression	"ret = qcow2_pre_write_overlap_check ( bs , 0 , cluster_offset + n_start * BDRV_SECTOR_SIZE , n * BDRV_SECTOR_SIZE )"		1435180	0		=			
+ANR	1435350	Identifier	ret		1435180	0					
+ANR	1435351	CallExpression	"qcow2_pre_write_overlap_check ( bs , 0 , cluster_offset + n_start * BDRV_SECTOR_SIZE , n * BDRV_SECTOR_SIZE )"		1435180	1					
+ANR	1435352	Callee	qcow2_pre_write_overlap_check		1435180	0					
+ANR	1435353	Identifier	qcow2_pre_write_overlap_check		1435180	0					
+ANR	1435354	ArgumentList	bs		1435180	1					
+ANR	1435355	Argument	bs		1435180	0					
+ANR	1435356	Identifier	bs		1435180	0					
+ANR	1435357	Argument	0		1435180	1					
+ANR	1435358	PrimaryExpression	0		1435180	0					
+ANR	1435359	Argument	cluster_offset + n_start * BDRV_SECTOR_SIZE		1435180	2					
+ANR	1435360	AdditiveExpression	cluster_offset + n_start * BDRV_SECTOR_SIZE		1435180	0		+			
+ANR	1435361	Identifier	cluster_offset		1435180	0					
+ANR	1435362	MultiplicativeExpression	n_start * BDRV_SECTOR_SIZE		1435180	1		*			
+ANR	1435363	Identifier	n_start		1435180	0					
+ANR	1435364	Identifier	BDRV_SECTOR_SIZE		1435180	1					
+ANR	1435365	Argument	n * BDRV_SECTOR_SIZE		1435180	3					
+ANR	1435366	MultiplicativeExpression	n * BDRV_SECTOR_SIZE		1435180	0		*			
+ANR	1435367	Identifier	n		1435180	0					
+ANR	1435368	Identifier	BDRV_SECTOR_SIZE		1435180	1					
+ANR	1435369	IfStatement	if ( ret < 0 )		1435180	15					
+ANR	1435370	Condition	ret < 0	87:8:1370:1376	1435180	0	True				
+ANR	1435371	RelationalExpression	ret < 0		1435180	0		<			
+ANR	1435372	Identifier	ret		1435180	0					
+ANR	1435373	PrimaryExpression	0		1435180	1					
+ANR	1435374	CompoundStatement		79:17:1134:1134	1435180	1					
+ANR	1435375	GotoStatement	goto out ;	89:8:1390:1398	1435180	0	True				
+ANR	1435376	Identifier	out		1435180	0					
+ANR	1435377	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_WRITE )"	95:4:1414:1454	1435180	16	True				
+ANR	1435378	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_WRITE )"		1435180	0					
+ANR	1435379	Callee	BLKDBG_EVENT		1435180	0					
+ANR	1435380	Identifier	BLKDBG_EVENT		1435180	0					
+ANR	1435381	ArgumentList	bs -> file		1435180	1					
+ANR	1435382	Argument	bs -> file		1435180	0					
+ANR	1435383	PtrMemberAccess	bs -> file		1435180	0					
+ANR	1435384	Identifier	bs		1435180	0					
+ANR	1435385	Identifier	file		1435180	1					
+ANR	1435386	Argument	BLKDBG_COW_WRITE		1435180	1					
+ANR	1435387	Identifier	BLKDBG_COW_WRITE		1435180	0					
+ANR	1435388	ExpressionStatement	"ret = bdrv_co_writev ( bs -> file , ( cluster_offset >> 9 ) + n_start , n , & qiov )"	97:4:1461:1534	1435180	17	True				
+ANR	1435389	AssignmentExpression	"ret = bdrv_co_writev ( bs -> file , ( cluster_offset >> 9 ) + n_start , n , & qiov )"		1435180	0		=			
+ANR	1435390	Identifier	ret		1435180	0					
+ANR	1435391	CallExpression	"bdrv_co_writev ( bs -> file , ( cluster_offset >> 9 ) + n_start , n , & qiov )"		1435180	1					
+ANR	1435392	Callee	bdrv_co_writev		1435180	0					
+ANR	1435393	Identifier	bdrv_co_writev		1435180	0					
+ANR	1435394	ArgumentList	bs -> file		1435180	1					
+ANR	1435395	Argument	bs -> file		1435180	0					
+ANR	1435396	PtrMemberAccess	bs -> file		1435180	0					
+ANR	1435397	Identifier	bs		1435180	0					
+ANR	1435398	Identifier	file		1435180	1					
+ANR	1435399	Argument	( cluster_offset >> 9 ) + n_start		1435180	1					
+ANR	1435400	AdditiveExpression	( cluster_offset >> 9 ) + n_start		1435180	0		+			
+ANR	1435401	ShiftExpression	cluster_offset >> 9		1435180	0		>>			
+ANR	1435402	Identifier	cluster_offset		1435180	0					
+ANR	1435403	PrimaryExpression	9		1435180	1					
+ANR	1435404	Identifier	n_start		1435180	1					
+ANR	1435405	Argument	n		1435180	2					
+ANR	1435406	Identifier	n		1435180	0					
+ANR	1435407	Argument	& qiov		1435180	3					
+ANR	1435408	UnaryOperationExpression	& qiov		1435180	0					
+ANR	1435409	UnaryOperator	&		1435180	0					
+ANR	1435410	Identifier	qiov		1435180	1					
+ANR	1435411	IfStatement	if ( ret < 0 )		1435180	18					
+ANR	1435412	Condition	ret < 0	99:8:1545:1551	1435180	0	True				
+ANR	1435413	RelationalExpression	ret < 0		1435180	0		<			
+ANR	1435414	Identifier	ret		1435180	0					
+ANR	1435415	PrimaryExpression	0		1435180	1					
+ANR	1435416	CompoundStatement		91:17:1309:1309	1435180	1					
+ANR	1435417	GotoStatement	goto out ;	101:8:1565:1573	1435180	0	True				
+ANR	1435418	Identifier	out		1435180	0					
+ANR	1435419	ExpressionStatement	ret = 0	107:4:1589:1596	1435180	19	True				
+ANR	1435420	AssignmentExpression	ret = 0		1435180	0		=			
+ANR	1435421	Identifier	ret		1435180	0					
+ANR	1435422	PrimaryExpression	0		1435180	1					
+ANR	1435423	Label	out :	109:0:1599:1602	1435180	20	True				
+ANR	1435424	Identifier	out		1435180	0					
+ANR	1435425	ExpressionStatement	qemu_vfree ( iov . iov_base )	111:4:1609:1633	1435180	21	True				
+ANR	1435426	CallExpression	qemu_vfree ( iov . iov_base )		1435180	0					
+ANR	1435427	Callee	qemu_vfree		1435180	0					
+ANR	1435428	Identifier	qemu_vfree		1435180	0					
+ANR	1435429	ArgumentList	iov . iov_base		1435180	1					
+ANR	1435430	Argument	iov . iov_base		1435180	0					
+ANR	1435431	MemberAccess	iov . iov_base		1435180	0					
+ANR	1435432	Identifier	iov		1435180	0					
+ANR	1435433	Identifier	iov_base		1435180	1					
+ANR	1435434	ReturnStatement	return ret ;	113:4:1640:1650	1435180	22	True				
+ANR	1435435	Identifier	ret		1435180	0					
+ANR	1435436	ReturnType	static int coroutine_fn		1435180	1					
+ANR	1435437	Identifier	copy_sectors		1435180	2					
+ANR	1435438	ParameterList	"BlockDriverState * bs , uint64_t start_sect , uint64_t cluster_offset , int n_start , int n_end"		1435180	3					
+ANR	1435439	Parameter	BlockDriverState * bs	1:37:37:56	1435180	0	True				
+ANR	1435440	ParameterType	BlockDriverState *		1435180	0					
+ANR	1435441	Identifier	bs		1435180	1					
+ANR	1435442	Parameter	uint64_t start_sect	3:37:97:115	1435180	1	True				
+ANR	1435443	ParameterType	uint64_t		1435180	0					
+ANR	1435444	Identifier	start_sect		1435180	1					
+ANR	1435445	Parameter	uint64_t cluster_offset	5:37:156:178	1435180	2	True				
+ANR	1435446	ParameterType	uint64_t		1435180	0					
+ANR	1435447	Identifier	cluster_offset		1435180	1					
+ANR	1435448	Parameter	int n_start	7:37:219:229	1435180	3	True				
+ANR	1435449	ParameterType	int		1435180	0					
+ANR	1435450	Identifier	n_start		1435180	1					
+ANR	1435451	Parameter	int n_end	7:50:232:240	1435180	4	True				
+ANR	1435452	ParameterType	int		1435180	0					
+ANR	1435453	Identifier	n_end		1435180	1					
+ANR	1435454	CFGEntryNode	ENTRY		1435180		True				
+ANR	1435455	CFGExitNode	EXIT		1435180		True				
+ANR	1435456	Symbol	qemu_blockalign		1435180						
+ANR	1435457	Symbol	& s -> aes_encrypt_key		1435180						
+ANR	1435458	Symbol	bs -> file		1435180						
+ANR	1435459	Symbol	qcow2_pre_write_overlap_check		1435180						
+ANR	1435460	Symbol	n_start		1435180						
+ANR	1435461	Symbol	qiov		1435180						
+ANR	1435462	Symbol	bs -> drv		1435180						
+ANR	1435463	Symbol	ENOMEDIUM		1435180						
+ANR	1435464	Symbol	bs		1435180						
+ANR	1435465	Symbol	iov		1435180						
+ANR	1435466	Symbol	iov . iov_base		1435180						
+ANR	1435467	Symbol	* bs		1435180						
+ANR	1435468	Symbol	cluster_offset		1435180						
+ANR	1435469	Symbol	s -> crypt_method		1435180						
+ANR	1435470	Symbol	bdrv_co_writev		1435180						
+ANR	1435471	Symbol	ret		1435180						
+ANR	1435472	Symbol	bs -> opaque		1435180						
+ANR	1435473	Symbol	BLKDBG_COW_READ		1435180						
+ANR	1435474	Symbol	BLKDBG_COW_WRITE		1435180						
+ANR	1435475	Symbol	& qiov		1435180						
+ANR	1435476	Symbol	* bs -> drv		1435180						
+ANR	1435477	Symbol	n		1435180						
+ANR	1435478	Symbol	bs -> drv -> bdrv_co_readv		1435180						
+ANR	1435479	Symbol	n_end		1435180						
+ANR	1435480	Symbol	& iov		1435180						
+ANR	1435481	Symbol	s		1435180						
+ANR	1435482	Symbol	BDRV_SECTOR_SIZE		1435180						
+ANR	1435483	Symbol	iov . iov_len		1435180						
+ANR	1435484	Symbol	start_sect		1435180						
+ANR	1435485	Symbol	* s		1435180						
+ANR	1435486	Symbol	* * bs		1435180						

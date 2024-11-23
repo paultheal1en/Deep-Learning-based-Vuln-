@@ -1,0 +1,120 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5431826	File	/home/p4ultr4n/workplace/ReVeal/raw_code/memory_region_iommu_replay_0.c								
+ANR	5431827	Function	memory_region_iommu_replay	1:0:0:656							
+ANR	5431828	FunctionDef	"memory_region_iommu_replay (MemoryRegion * mr , Notifier * n , bool is_write)"		5431827	0					
+ANR	5431829	CompoundStatement		3:0:79:656	5431827	0					
+ANR	5431830	IdentifierDeclStatement	"hwaddr addr , granularity ;"	5:4:86:110	5431827	0	True				
+ANR	5431831	IdentifierDecl	addr		5431827	0					
+ANR	5431832	IdentifierDeclType	hwaddr		5431827	0					
+ANR	5431833	Identifier	addr		5431827	1					
+ANR	5431834	IdentifierDecl	granularity		5431827	1					
+ANR	5431835	IdentifierDeclType	hwaddr		5431827	0					
+ANR	5431836	Identifier	granularity		5431827	1					
+ANR	5431837	IdentifierDeclStatement	IOMMUTLBEntry iotlb ;	7:4:117:136	5431827	1	True				
+ANR	5431838	IdentifierDecl	iotlb		5431827	0					
+ANR	5431839	IdentifierDeclType	IOMMUTLBEntry		5431827	0					
+ANR	5431840	Identifier	iotlb		5431827	1					
+ANR	5431841	ExpressionStatement	granularity = memory_region_iommu_get_min_page_size ( mr )	11:4:145:200	5431827	2	True				
+ANR	5431842	AssignmentExpression	granularity = memory_region_iommu_get_min_page_size ( mr )		5431827	0		=			
+ANR	5431843	Identifier	granularity		5431827	0					
+ANR	5431844	CallExpression	memory_region_iommu_get_min_page_size ( mr )		5431827	1					
+ANR	5431845	Callee	memory_region_iommu_get_min_page_size		5431827	0					
+ANR	5431846	Identifier	memory_region_iommu_get_min_page_size		5431827	0					
+ANR	5431847	ArgumentList	mr		5431827	1					
+ANR	5431848	Argument	mr		5431827	0					
+ANR	5431849	Identifier	mr		5431827	0					
+ANR	5431850	ForStatement	for ( addr = 0 ; addr < memory_region_size ( mr ) ; addr += granularity )		5431827	3					
+ANR	5431851	ForInit	addr = 0 ;	15:9:214:222	5431827	0	True				
+ANR	5431852	AssignmentExpression	addr = 0		5431827	0		=			
+ANR	5431853	Identifier	addr		5431827	0					
+ANR	5431854	PrimaryExpression	0		5431827	1					
+ANR	5431855	Condition	addr < memory_region_size ( mr )	15:19:224:252	5431827	1	True				
+ANR	5431856	RelationalExpression	addr < memory_region_size ( mr )		5431827	0		<			
+ANR	5431857	Identifier	addr		5431827	0					
+ANR	5431858	CallExpression	memory_region_size ( mr )		5431827	1					
+ANR	5431859	Callee	memory_region_size		5431827	0					
+ANR	5431860	Identifier	memory_region_size		5431827	0					
+ANR	5431861	ArgumentList	mr		5431827	1					
+ANR	5431862	Argument	mr		5431827	0					
+ANR	5431863	Identifier	mr		5431827	0					
+ANR	5431864	AssignmentExpression	addr += granularity	15:50:255:273	5431827	2	True	+=			
+ANR	5431865	Identifier	addr		5431827	0					
+ANR	5431866	Identifier	granularity		5431827	1					
+ANR	5431867	CompoundStatement		13:71:196:196	5431827	3					
+ANR	5431868	ExpressionStatement	"iotlb = mr -> iommu_ops -> translate ( mr , addr , is_write )"	17:8:287:339	5431827	0	True				
+ANR	5431869	AssignmentExpression	"iotlb = mr -> iommu_ops -> translate ( mr , addr , is_write )"		5431827	0		=			
+ANR	5431870	Identifier	iotlb		5431827	0					
+ANR	5431871	CallExpression	"mr -> iommu_ops -> translate ( mr , addr , is_write )"		5431827	1					
+ANR	5431872	Callee	mr -> iommu_ops -> translate		5431827	0					
+ANR	5431873	PtrMemberAccess	mr -> iommu_ops -> translate		5431827	0					
+ANR	5431874	PtrMemberAccess	mr -> iommu_ops		5431827	0					
+ANR	5431875	Identifier	mr		5431827	0					
+ANR	5431876	Identifier	iommu_ops		5431827	1					
+ANR	5431877	Identifier	translate		5431827	1					
+ANR	5431878	ArgumentList	mr		5431827	1					
+ANR	5431879	Argument	mr		5431827	0					
+ANR	5431880	Identifier	mr		5431827	0					
+ANR	5431881	Argument	addr		5431827	1					
+ANR	5431882	Identifier	addr		5431827	0					
+ANR	5431883	Argument	is_write		5431827	2					
+ANR	5431884	Identifier	is_write		5431827	0					
+ANR	5431885	IfStatement	if ( iotlb . perm != IOMMU_NONE )		5431827	1					
+ANR	5431886	Condition	iotlb . perm != IOMMU_NONE	19:12:354:377	5431827	0	True				
+ANR	5431887	EqualityExpression	iotlb . perm != IOMMU_NONE		5431827	0		!=			
+ANR	5431888	MemberAccess	iotlb . perm		5431827	0					
+ANR	5431889	Identifier	iotlb		5431827	0					
+ANR	5431890	Identifier	perm		5431827	1					
+ANR	5431891	Identifier	IOMMU_NONE		5431827	1					
+ANR	5431892	CompoundStatement		17:38:300:300	5431827	1					
+ANR	5431893	ExpressionStatement	"n -> notify ( n , & iotlb )"	21:12:395:415	5431827	0	True				
+ANR	5431894	CallExpression	"n -> notify ( n , & iotlb )"		5431827	0					
+ANR	5431895	Callee	n -> notify		5431827	0					
+ANR	5431896	PtrMemberAccess	n -> notify		5431827	0					
+ANR	5431897	Identifier	n		5431827	0					
+ANR	5431898	Identifier	notify		5431827	1					
+ANR	5431899	ArgumentList	n		5431827	1					
+ANR	5431900	Argument	n		5431827	0					
+ANR	5431901	Identifier	n		5431827	0					
+ANR	5431902	Argument	& iotlb		5431827	1					
+ANR	5431903	UnaryOperationExpression	& iotlb		5431827	0					
+ANR	5431904	UnaryOperator	&		5431827	0					
+ANR	5431905	Identifier	iotlb		5431827	1					
+ANR	5431906	IfStatement	if ( ( addr + granularity ) < addr )		5431827	2					
+ANR	5431907	Condition	( addr + granularity ) < addr	31:12:586:612	5431827	0	True				
+ANR	5431908	RelationalExpression	( addr + granularity ) < addr		5431827	0		<			
+ANR	5431909	AdditiveExpression	addr + granularity		5431827	0		+			
+ANR	5431910	Identifier	addr		5431827	0					
+ANR	5431911	Identifier	granularity		5431827	1					
+ANR	5431912	Identifier	addr		5431827	1					
+ANR	5431913	CompoundStatement		29:41:535:535	5431827	1					
+ANR	5431914	BreakStatement	break ;	33:12:630:635	5431827	0	True				
+ANR	5431915	ReturnType	void		5431827	1					
+ANR	5431916	Identifier	memory_region_iommu_replay		5431827	2					
+ANR	5431917	ParameterList	"MemoryRegion * mr , Notifier * n , bool is_write"		5431827	3					
+ANR	5431918	Parameter	MemoryRegion * mr	1:32:32:47	5431827	0	True				
+ANR	5431919	ParameterType	MemoryRegion *		5431827	0					
+ANR	5431920	Identifier	mr		5431827	1					
+ANR	5431921	Parameter	Notifier * n	1:50:50:60	5431827	1	True				
+ANR	5431922	ParameterType	Notifier *		5431827	0					
+ANR	5431923	Identifier	n		5431827	1					
+ANR	5431924	Parameter	bool is_write	1:63:63:75	5431827	2	True				
+ANR	5431925	ParameterType	bool		5431827	0					
+ANR	5431926	Identifier	is_write		5431827	1					
+ANR	5431927	CFGEntryNode	ENTRY		5431827		True				
+ANR	5431928	CFGExitNode	EXIT		5431827		True				
+ANR	5431929	Symbol	memory_region_size		5431827						
+ANR	5431930	Symbol	iotlb . perm		5431827						
+ANR	5431931	Symbol	mr		5431827						
+ANR	5431932	Symbol	mr -> iommu_ops -> translate		5431827						
+ANR	5431933	Symbol	* mr		5431827						
+ANR	5431934	Symbol	& iotlb		5431827						
+ANR	5431935	Symbol	is_write		5431827						
+ANR	5431936	Symbol	n		5431827						
+ANR	5431937	Symbol	* * mr		5431827						
+ANR	5431938	Symbol	granularity		5431827						
+ANR	5431939	Symbol	* mr -> iommu_ops		5431827						
+ANR	5431940	Symbol	mr -> iommu_ops		5431827						
+ANR	5431941	Symbol	addr		5431827						
+ANR	5431942	Symbol	memory_region_iommu_get_min_page_size		5431827						
+ANR	5431943	Symbol	IOMMU_NONE		5431827						
+ANR	5431944	Symbol	iotlb		5431827						

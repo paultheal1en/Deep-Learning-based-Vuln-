@@ -1,0 +1,170 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6783104	File	/home/p4ultr4n/workplace/ReVeal/raw_code/pvscsi_command_complete_0.c								
+ANR	6783105	Function	pvscsi_command_complete	1:0:0:904							
+ANR	6783106	FunctionDef	"pvscsi_command_complete (SCSIRequest * req , uint32_t status , size_t resid)"		6783105	0					
+ANR	6783107	CompoundStatement		3:0:74:904	6783105	0					
+ANR	6783108	IdentifierDeclStatement	PVSCSIRequest * pvscsi_req = req -> hba_private ;	5:4:81:125	6783105	0	True				
+ANR	6783109	IdentifierDecl	* pvscsi_req = req -> hba_private		6783105	0					
+ANR	6783110	IdentifierDeclType	PVSCSIRequest *		6783105	0					
+ANR	6783111	Identifier	pvscsi_req		6783105	1					
+ANR	6783112	AssignmentExpression	* pvscsi_req = req -> hba_private		6783105	2		=			
+ANR	6783113	Identifier	pvscsi_req		6783105	0					
+ANR	6783114	PtrMemberAccess	req -> hba_private		6783105	1					
+ANR	6783115	Identifier	req		6783105	0					
+ANR	6783116	Identifier	hba_private		6783105	1					
+ANR	6783117	IdentifierDeclStatement	PVSCSIState * s = pvscsi_req -> dev ;	7:4:132:164	6783105	1	True				
+ANR	6783118	IdentifierDecl	* s = pvscsi_req -> dev		6783105	0					
+ANR	6783119	IdentifierDeclType	PVSCSIState *		6783105	0					
+ANR	6783120	Identifier	s		6783105	1					
+ANR	6783121	AssignmentExpression	* s = pvscsi_req -> dev		6783105	2		=			
+ANR	6783122	Identifier	s		6783105	0					
+ANR	6783123	PtrMemberAccess	pvscsi_req -> dev		6783105	1					
+ANR	6783124	Identifier	pvscsi_req		6783105	0					
+ANR	6783125	Identifier	dev		6783105	1					
+ANR	6783126	IfStatement	if ( ! pvscsi_req )		6783105	2					
+ANR	6783127	Condition	! pvscsi_req	11:8:177:187	6783105	0	True				
+ANR	6783128	UnaryOperationExpression	! pvscsi_req		6783105	0					
+ANR	6783129	UnaryOperator	!		6783105	0					
+ANR	6783130	Identifier	pvscsi_req		6783105	1					
+ANR	6783131	CompoundStatement		9:21:115:115	6783105	1					
+ANR	6783132	ExpressionStatement	trace_pvscsi_command_complete_not_found ( req -> tag )	13:8:201:250	6783105	0	True				
+ANR	6783133	CallExpression	trace_pvscsi_command_complete_not_found ( req -> tag )		6783105	0					
+ANR	6783134	Callee	trace_pvscsi_command_complete_not_found		6783105	0					
+ANR	6783135	Identifier	trace_pvscsi_command_complete_not_found		6783105	0					
+ANR	6783136	ArgumentList	req -> tag		6783105	1					
+ANR	6783137	Argument	req -> tag		6783105	0					
+ANR	6783138	PtrMemberAccess	req -> tag		6783105	0					
+ANR	6783139	Identifier	req		6783105	0					
+ANR	6783140	Identifier	tag		6783105	1					
+ANR	6783141	ReturnStatement	return ;	15:8:261:267	6783105	1	True				
+ANR	6783142	IfStatement	if ( resid )		6783105	3					
+ANR	6783143	Condition	resid	21:8:287:291	6783105	0	True				
+ANR	6783144	Identifier	resid		6783105	0					
+ANR	6783145	CompoundStatement		19:15:219:219	6783105	1					
+ANR	6783146	ExpressionStatement	trace_pvscsi_command_complete_data_run ( )	25:8:337:377	6783105	0	True				
+ANR	6783147	CallExpression	trace_pvscsi_command_complete_data_run ( )		6783105	0					
+ANR	6783148	Callee	trace_pvscsi_command_complete_data_run		6783105	0					
+ANR	6783149	Identifier	trace_pvscsi_command_complete_data_run		6783105	0					
+ANR	6783150	ArgumentList			6783105	1					
+ANR	6783151	ExpressionStatement	pvscsi_req -> cmp . hostStatus = BTSTAT_DATARUN	27:8:388:431	6783105	1	True				
+ANR	6783152	AssignmentExpression	pvscsi_req -> cmp . hostStatus = BTSTAT_DATARUN		6783105	0		=			
+ANR	6783153	MemberAccess	pvscsi_req -> cmp . hostStatus		6783105	0					
+ANR	6783154	PtrMemberAccess	pvscsi_req -> cmp		6783105	0					
+ANR	6783155	Identifier	pvscsi_req		6783105	0					
+ANR	6783156	Identifier	cmp		6783105	1					
+ANR	6783157	Identifier	hostStatus		6783105	1					
+ANR	6783158	Identifier	BTSTAT_DATARUN		6783105	1					
+ANR	6783159	ExpressionStatement	pvscsi_req -> cmp . scsiStatus = status	33:4:447:482	6783105	4	True				
+ANR	6783160	AssignmentExpression	pvscsi_req -> cmp . scsiStatus = status		6783105	0		=			
+ANR	6783161	MemberAccess	pvscsi_req -> cmp . scsiStatus		6783105	0					
+ANR	6783162	PtrMemberAccess	pvscsi_req -> cmp		6783105	0					
+ANR	6783163	Identifier	pvscsi_req		6783105	0					
+ANR	6783164	Identifier	cmp		6783105	1					
+ANR	6783165	Identifier	scsiStatus		6783105	1					
+ANR	6783166	Identifier	status		6783105	1					
+ANR	6783167	IfStatement	if ( pvscsi_req -> cmp . scsiStatus == CHECK_CONDITION )		6783105	5					
+ANR	6783168	Condition	pvscsi_req -> cmp . scsiStatus == CHECK_CONDITION	35:8:493:537	6783105	0	True				
+ANR	6783169	EqualityExpression	pvscsi_req -> cmp . scsiStatus == CHECK_CONDITION		6783105	0		==			
+ANR	6783170	MemberAccess	pvscsi_req -> cmp . scsiStatus		6783105	0					
+ANR	6783171	PtrMemberAccess	pvscsi_req -> cmp		6783105	0					
+ANR	6783172	Identifier	pvscsi_req		6783105	0					
+ANR	6783173	Identifier	cmp		6783105	1					
+ANR	6783174	Identifier	scsiStatus		6783105	1					
+ANR	6783175	Identifier	CHECK_CONDITION		6783105	1					
+ANR	6783176	CompoundStatement		37:8:521:608	6783105	1					
+ANR	6783177	IdentifierDeclStatement	uint8_t sense [ SCSI_SENSE_BUF_SIZE ] ;	37:8:551:585	6783105	0	True				
+ANR	6783178	IdentifierDecl	sense [ SCSI_SENSE_BUF_SIZE ]		6783105	0					
+ANR	6783179	IdentifierDeclType	uint8_t [ SCSI_SENSE_BUF_SIZE ]		6783105	0					
+ANR	6783180	Identifier	sense		6783105	1					
+ANR	6783181	Identifier	SCSI_SENSE_BUF_SIZE		6783105	2					
+ANR	6783182	IdentifierDeclStatement	"int sense_len = scsi_req_get_sense ( pvscsi_req -> sreq , sense , sizeof ( sense ) ) ;"	39:8:596:683	6783105	1	True				
+ANR	6783183	IdentifierDecl	"sense_len = scsi_req_get_sense ( pvscsi_req -> sreq , sense , sizeof ( sense ) )"		6783105	0					
+ANR	6783184	IdentifierDeclType	int		6783105	0					
+ANR	6783185	Identifier	sense_len		6783105	1					
+ANR	6783186	AssignmentExpression	"sense_len = scsi_req_get_sense ( pvscsi_req -> sreq , sense , sizeof ( sense ) )"		6783105	2		=			
+ANR	6783187	Identifier	sense_len		6783105	0					
+ANR	6783188	CallExpression	"scsi_req_get_sense ( pvscsi_req -> sreq , sense , sizeof ( sense ) )"		6783105	1					
+ANR	6783189	Callee	scsi_req_get_sense		6783105	0					
+ANR	6783190	Identifier	scsi_req_get_sense		6783105	0					
+ANR	6783191	ArgumentList	pvscsi_req -> sreq		6783105	1					
+ANR	6783192	Argument	pvscsi_req -> sreq		6783105	0					
+ANR	6783193	PtrMemberAccess	pvscsi_req -> sreq		6783105	0					
+ANR	6783194	Identifier	pvscsi_req		6783105	0					
+ANR	6783195	Identifier	sreq		6783105	1					
+ANR	6783196	Argument	sense		6783105	1					
+ANR	6783197	Identifier	sense		6783105	0					
+ANR	6783198	Argument	sizeof ( sense )		6783105	2					
+ANR	6783199	SizeofExpression	sizeof ( sense )		6783105	0					
+ANR	6783200	Sizeof	sizeof		6783105	0					
+ANR	6783201	SizeofOperand	sense		6783105	1					
+ANR	6783202	ExpressionStatement	trace_pvscsi_command_complete_sense_len ( sense_len )	45:8:696:746	6783105	2	True				
+ANR	6783203	CallExpression	trace_pvscsi_command_complete_sense_len ( sense_len )		6783105	0					
+ANR	6783204	Callee	trace_pvscsi_command_complete_sense_len		6783105	0					
+ANR	6783205	Identifier	trace_pvscsi_command_complete_sense_len		6783105	0					
+ANR	6783206	ArgumentList	sense_len		6783105	1					
+ANR	6783207	Argument	sense_len		6783105	0					
+ANR	6783208	Identifier	sense_len		6783105	0					
+ANR	6783209	ExpressionStatement	"pvscsi_write_sense ( pvscsi_req , sense , sense_len )"	47:8:757:805	6783105	3	True				
+ANR	6783210	CallExpression	"pvscsi_write_sense ( pvscsi_req , sense , sense_len )"		6783105	0					
+ANR	6783211	Callee	pvscsi_write_sense		6783105	0					
+ANR	6783212	Identifier	pvscsi_write_sense		6783105	0					
+ANR	6783213	ArgumentList	pvscsi_req		6783105	1					
+ANR	6783214	Argument	pvscsi_req		6783105	0					
+ANR	6783215	Identifier	pvscsi_req		6783105	0					
+ANR	6783216	Argument	sense		6783105	1					
+ANR	6783217	Identifier	sense		6783105	0					
+ANR	6783218	Argument	sense_len		6783105	2					
+ANR	6783219	Identifier	sense_len		6783105	0					
+ANR	6783220	ExpressionStatement	qemu_sglist_destroy ( & pvscsi_req -> sgl )	51:4:819:856	6783105	6	True				
+ANR	6783221	CallExpression	qemu_sglist_destroy ( & pvscsi_req -> sgl )		6783105	0					
+ANR	6783222	Callee	qemu_sglist_destroy		6783105	0					
+ANR	6783223	Identifier	qemu_sglist_destroy		6783105	0					
+ANR	6783224	ArgumentList	& pvscsi_req -> sgl		6783105	1					
+ANR	6783225	Argument	& pvscsi_req -> sgl		6783105	0					
+ANR	6783226	UnaryOperationExpression	& pvscsi_req -> sgl		6783105	0					
+ANR	6783227	UnaryOperator	&		6783105	0					
+ANR	6783228	PtrMemberAccess	pvscsi_req -> sgl		6783105	1					
+ANR	6783229	Identifier	pvscsi_req		6783105	0					
+ANR	6783230	Identifier	sgl		6783105	1					
+ANR	6783231	ExpressionStatement	"pvscsi_complete_request ( s , pvscsi_req )"	53:4:863:901	6783105	7	True				
+ANR	6783232	CallExpression	"pvscsi_complete_request ( s , pvscsi_req )"		6783105	0					
+ANR	6783233	Callee	pvscsi_complete_request		6783105	0					
+ANR	6783234	Identifier	pvscsi_complete_request		6783105	0					
+ANR	6783235	ArgumentList	s		6783105	1					
+ANR	6783236	Argument	s		6783105	0					
+ANR	6783237	Identifier	s		6783105	0					
+ANR	6783238	Argument	pvscsi_req		6783105	1					
+ANR	6783239	Identifier	pvscsi_req		6783105	0					
+ANR	6783240	Identifier	pvscsi_command_complete		6783105	1					
+ANR	6783241	ParameterList	"SCSIRequest * req , uint32_t status , size_t resid"		6783105	2					
+ANR	6783242	Parameter	SCSIRequest * req	1:24:24:39	6783105	0	True				
+ANR	6783243	ParameterType	SCSIRequest *		6783105	0					
+ANR	6783244	Identifier	req		6783105	1					
+ANR	6783245	Parameter	uint32_t status	1:42:42:56	6783105	1	True				
+ANR	6783246	ParameterType	uint32_t		6783105	0					
+ANR	6783247	Identifier	status		6783105	1					
+ANR	6783248	Parameter	size_t resid	1:59:59:70	6783105	2	True				
+ANR	6783249	ParameterType	size_t		6783105	0					
+ANR	6783250	Identifier	resid		6783105	1					
+ANR	6783251	CFGEntryNode	ENTRY		6783105		True				
+ANR	6783252	CFGExitNode	EXIT		6783105		True				
+ANR	6783253	Symbol	& pvscsi_req -> sgl		6783105						
+ANR	6783254	Symbol	req -> hba_private		6783105						
+ANR	6783255	Symbol	BTSTAT_DATARUN		6783105						
+ANR	6783256	Symbol	pvscsi_req -> cmp . scsiStatus		6783105						
+ANR	6783257	Symbol	pvscsi_req		6783105						
+ANR	6783258	Symbol	pvscsi_req -> dev		6783105						
+ANR	6783259	Symbol	* req		6783105						
+ANR	6783260	Symbol	req -> tag		6783105						
+ANR	6783261	Symbol	scsi_req_get_sense		6783105						
+ANR	6783262	Symbol	sense		6783105						
+ANR	6783263	Symbol	* pvscsi_req		6783105						
+ANR	6783264	Symbol	pvscsi_req -> cmp . hostStatus		6783105						
+ANR	6783265	Symbol	resid		6783105						
+ANR	6783266	Symbol	pvscsi_req -> sreq		6783105						
+ANR	6783267	Symbol	pvscsi_req -> cmp		6783105						
+ANR	6783268	Symbol	s		6783105						
+ANR	6783269	Symbol	CHECK_CONDITION		6783105						
+ANR	6783270	Symbol	req		6783105						
+ANR	6783271	Symbol	status		6783105						
+ANR	6783272	Symbol	sense_len		6783105						

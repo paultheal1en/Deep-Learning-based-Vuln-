@@ -1,0 +1,225 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	973266	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_driver_preadv_1.c								
+ANR	973267	Function	bdrv_driver_preadv	1:0:0:1189							
+ANR	973268	FunctionDef	"bdrv_driver_preadv (BlockDriverState * bs , uint64_t offset , uint64_t bytes , QEMUIOVector * qiov , int flags)"		973267	0					
+ANR	973269	CompoundStatement		4:0:215:1189	973267	0					
+ANR	973270	IdentifierDeclStatement	BlockDriver * drv = bs -> drv ;	5:4:221:247	973267	0	True				
+ANR	973271	IdentifierDecl	* drv = bs -> drv		973267	0					
+ANR	973272	IdentifierDeclType	BlockDriver *		973267	0					
+ANR	973273	Identifier	drv		973267	1					
+ANR	973274	AssignmentExpression	* drv = bs -> drv		973267	2		=			
+ANR	973275	Identifier	drv		973267	0					
+ANR	973276	PtrMemberAccess	bs -> drv		973267	1					
+ANR	973277	Identifier	bs		973267	0					
+ANR	973278	Identifier	drv		973267	1					
+ANR	973279	IdentifierDeclStatement	int64_t sector_num ;	6:4:253:271	973267	1	True				
+ANR	973280	IdentifierDecl	sector_num		973267	0					
+ANR	973281	IdentifierDeclType	int64_t		973267	0					
+ANR	973282	Identifier	sector_num		973267	1					
+ANR	973283	IdentifierDeclStatement	unsigned int nb_sectors ;	7:4:277:300	973267	2	True				
+ANR	973284	IdentifierDecl	nb_sectors		973267	0					
+ANR	973285	IdentifierDeclType	unsigned int		973267	0					
+ANR	973286	Identifier	nb_sectors		973267	1					
+ANR	973287	IfStatement	if ( drv -> bdrv_co_preadv )		973267	3					
+ANR	973288	Condition	drv -> bdrv_co_preadv	8:8:310:328	973267	0	True				
+ANR	973289	PtrMemberAccess	drv -> bdrv_co_preadv		973267	0					
+ANR	973290	Identifier	drv		973267	0					
+ANR	973291	Identifier	bdrv_co_preadv		973267	1					
+ANR	973292	CompoundStatement		5:29:115:115	973267	1					
+ANR	973293	ReturnStatement	"return drv -> bdrv_co_preadv ( bs , offset , bytes , qiov , flags ) ;"	9:8:341:399	973267	0	True				
+ANR	973294	CallExpression	"drv -> bdrv_co_preadv ( bs , offset , bytes , qiov , flags )"		973267	0					
+ANR	973295	Callee	drv -> bdrv_co_preadv		973267	0					
+ANR	973296	PtrMemberAccess	drv -> bdrv_co_preadv		973267	0					
+ANR	973297	Identifier	drv		973267	0					
+ANR	973298	Identifier	bdrv_co_preadv		973267	1					
+ANR	973299	ArgumentList	bs		973267	1					
+ANR	973300	Argument	bs		973267	0					
+ANR	973301	Identifier	bs		973267	0					
+ANR	973302	Argument	offset		973267	1					
+ANR	973303	Identifier	offset		973267	0					
+ANR	973304	Argument	bytes		973267	2					
+ANR	973305	Identifier	bytes		973267	0					
+ANR	973306	Argument	qiov		973267	3					
+ANR	973307	Identifier	qiov		973267	0					
+ANR	973308	Argument	flags		973267	4					
+ANR	973309	Identifier	flags		973267	0					
+ANR	973310	ExpressionStatement	sector_num = offset >> BDRV_SECTOR_BITS	11:4:411:450	973267	4	True				
+ANR	973311	AssignmentExpression	sector_num = offset >> BDRV_SECTOR_BITS		973267	0		=			
+ANR	973312	Identifier	sector_num		973267	0					
+ANR	973313	ShiftExpression	offset >> BDRV_SECTOR_BITS		973267	1		>>			
+ANR	973314	Identifier	offset		973267	0					
+ANR	973315	Identifier	BDRV_SECTOR_BITS		973267	1					
+ANR	973316	ExpressionStatement	nb_sectors = bytes >> BDRV_SECTOR_BITS	12:4:456:494	973267	5	True				
+ANR	973317	AssignmentExpression	nb_sectors = bytes >> BDRV_SECTOR_BITS		973267	0		=			
+ANR	973318	Identifier	nb_sectors		973267	0					
+ANR	973319	ShiftExpression	bytes >> BDRV_SECTOR_BITS		973267	1		>>			
+ANR	973320	Identifier	bytes		973267	0					
+ANR	973321	Identifier	BDRV_SECTOR_BITS		973267	1					
+ANR	973322	ExpressionStatement	assert ( ( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )	13:4:500:546	973267	6	True				
+ANR	973323	CallExpression	assert ( ( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )		973267	0					
+ANR	973324	Callee	assert		973267	0					
+ANR	973325	Identifier	assert		973267	0					
+ANR	973326	ArgumentList	( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		973267	1					
+ANR	973327	Argument	( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		973267	0					
+ANR	973328	EqualityExpression	( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		973267	0		==			
+ANR	973329	BitAndExpression	offset & ( BDRV_SECTOR_SIZE - 1 )		973267	0		&			
+ANR	973330	Identifier	offset		973267	0					
+ANR	973331	AdditiveExpression	BDRV_SECTOR_SIZE - 1		973267	1		-			
+ANR	973332	Identifier	BDRV_SECTOR_SIZE		973267	0					
+ANR	973333	PrimaryExpression	1		973267	1					
+ANR	973334	PrimaryExpression	0		973267	1					
+ANR	973335	ExpressionStatement	assert ( ( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )	14:4:552:597	973267	7	True				
+ANR	973336	CallExpression	assert ( ( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )		973267	0					
+ANR	973337	Callee	assert		973267	0					
+ANR	973338	Identifier	assert		973267	0					
+ANR	973339	ArgumentList	( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		973267	1					
+ANR	973340	Argument	( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		973267	0					
+ANR	973341	EqualityExpression	( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		973267	0		==			
+ANR	973342	BitAndExpression	bytes & ( BDRV_SECTOR_SIZE - 1 )		973267	0		&			
+ANR	973343	Identifier	bytes		973267	0					
+ANR	973344	AdditiveExpression	BDRV_SECTOR_SIZE - 1		973267	1		-			
+ANR	973345	Identifier	BDRV_SECTOR_SIZE		973267	0					
+ANR	973346	PrimaryExpression	1		973267	1					
+ANR	973347	PrimaryExpression	0		973267	1					
+ANR	973348	ExpressionStatement	assert ( ( bytes >> BDRV_SECTOR_BITS ) <= BDRV_REQUEST_MAX_SECTORS )	15:4:603:666	973267	8	True				
+ANR	973349	CallExpression	assert ( ( bytes >> BDRV_SECTOR_BITS ) <= BDRV_REQUEST_MAX_SECTORS )		973267	0					
+ANR	973350	Callee	assert		973267	0					
+ANR	973351	Identifier	assert		973267	0					
+ANR	973352	ArgumentList	( bytes >> BDRV_SECTOR_BITS ) <= BDRV_REQUEST_MAX_SECTORS		973267	1					
+ANR	973353	Argument	( bytes >> BDRV_SECTOR_BITS ) <= BDRV_REQUEST_MAX_SECTORS		973267	0					
+ANR	973354	RelationalExpression	( bytes >> BDRV_SECTOR_BITS ) <= BDRV_REQUEST_MAX_SECTORS		973267	0		<=			
+ANR	973355	ShiftExpression	bytes >> BDRV_SECTOR_BITS		973267	0		>>			
+ANR	973356	Identifier	bytes		973267	0					
+ANR	973357	Identifier	BDRV_SECTOR_BITS		973267	1					
+ANR	973358	Identifier	BDRV_REQUEST_MAX_SECTORS		973267	1					
+ANR	973359	IfStatement	if ( drv -> bdrv_co_readv )		973267	9					
+ANR	973360	Condition	drv -> bdrv_co_readv	16:8:676:693	973267	0	True				
+ANR	973361	PtrMemberAccess	drv -> bdrv_co_readv		973267	0					
+ANR	973362	Identifier	drv		973267	0					
+ANR	973363	Identifier	bdrv_co_readv		973267	1					
+ANR	973364	CompoundStatement		13:28:480:480	973267	1					
+ANR	973365	ReturnStatement	"return drv -> bdrv_co_readv ( bs , sector_num , nb_sectors , qiov ) ;"	17:8:706:765	973267	0	True				
+ANR	973366	CallExpression	"drv -> bdrv_co_readv ( bs , sector_num , nb_sectors , qiov )"		973267	0					
+ANR	973367	Callee	drv -> bdrv_co_readv		973267	0					
+ANR	973368	PtrMemberAccess	drv -> bdrv_co_readv		973267	0					
+ANR	973369	Identifier	drv		973267	0					
+ANR	973370	Identifier	bdrv_co_readv		973267	1					
+ANR	973371	ArgumentList	bs		973267	1					
+ANR	973372	Argument	bs		973267	0					
+ANR	973373	Identifier	bs		973267	0					
+ANR	973374	Argument	sector_num		973267	1					
+ANR	973375	Identifier	sector_num		973267	0					
+ANR	973376	Argument	nb_sectors		973267	2					
+ANR	973377	Identifier	nb_sectors		973267	0					
+ANR	973378	Argument	qiov		973267	3					
+ANR	973379	Identifier	qiov		973267	0					
+ANR	973380	ElseStatement	else		973267	0					
+ANR	973381	CompoundStatement		16:8:572:587	973267	0					
+ANR	973382	IdentifierDeclStatement	BlockAIOCB * acb ;	19:8:788:803	973267	0	True				
+ANR	973383	IdentifierDecl	* acb		973267	0					
+ANR	973384	IdentifierDeclType	BlockAIOCB *		973267	0					
+ANR	973385	Identifier	acb		973267	1					
+ANR	973386	Statement	CoroutineIOCompletion	20:8:813:833	973267	1	True				
+ANR	973387	Statement	co	20:30:835:836	973267	2	True				
+ANR	973388	Statement	=	20:33:838:838	973267	3	True				
+ANR	973389	CompoundStatement		17:35:624:624	973267	4					
+ANR	973390	Statement	.	21:12:854:854	973267	0	True				
+ANR	973391	Statement	coroutine	21:13:855:863	973267	1	True				
+ANR	973392	Statement	=	21:23:865:865	973267	2	True				
+ANR	973393	Statement	qemu_coroutine_self	21:25:867:885	973267	3	True				
+ANR	973394	Statement	(	21:44:886:886	973267	4	True				
+ANR	973395	Statement	)	21:45:887:887	973267	5	True				
+ANR	973396	Statement	","	21:46:888:888	973267	6	True				
+ANR	973397	ExpressionStatement		22:9:899:899	973267	5	True				
+ANR	973398	ExpressionStatement	"acb = bs -> drv -> bdrv_aio_readv ( bs , sector_num , qiov , nb_sectors , bdrv_co_io_em_complete , & co )"	23:8:909:1039	973267	6	True				
+ANR	973399	AssignmentExpression	"acb = bs -> drv -> bdrv_aio_readv ( bs , sector_num , qiov , nb_sectors , bdrv_co_io_em_complete , & co )"		973267	0		=			
+ANR	973400	Identifier	acb		973267	0					
+ANR	973401	CallExpression	"bs -> drv -> bdrv_aio_readv ( bs , sector_num , qiov , nb_sectors , bdrv_co_io_em_complete , & co )"		973267	1					
+ANR	973402	Callee	bs -> drv -> bdrv_aio_readv		973267	0					
+ANR	973403	PtrMemberAccess	bs -> drv -> bdrv_aio_readv		973267	0					
+ANR	973404	PtrMemberAccess	bs -> drv		973267	0					
+ANR	973405	Identifier	bs		973267	0					
+ANR	973406	Identifier	drv		973267	1					
+ANR	973407	Identifier	bdrv_aio_readv		973267	1					
+ANR	973408	ArgumentList	bs		973267	1					
+ANR	973409	Argument	bs		973267	0					
+ANR	973410	Identifier	bs		973267	0					
+ANR	973411	Argument	sector_num		973267	1					
+ANR	973412	Identifier	sector_num		973267	0					
+ANR	973413	Argument	qiov		973267	2					
+ANR	973414	Identifier	qiov		973267	0					
+ANR	973415	Argument	nb_sectors		973267	3					
+ANR	973416	Identifier	nb_sectors		973267	0					
+ANR	973417	Argument	bdrv_co_io_em_complete		973267	4					
+ANR	973418	Identifier	bdrv_co_io_em_complete		973267	0					
+ANR	973419	Argument	& co		973267	5					
+ANR	973420	UnaryOperationExpression	& co		973267	0					
+ANR	973421	UnaryOperator	&		973267	0					
+ANR	973422	Identifier	co		973267	1					
+ANR	973423	IfStatement	if ( acb == NULL )		973267	7					
+ANR	973424	Condition	acb == NULL	25:12:1053:1063	973267	0	True				
+ANR	973425	EqualityExpression	acb == NULL		973267	0		==			
+ANR	973426	Identifier	acb		973267	0					
+ANR	973427	Identifier	NULL		973267	1					
+ANR	973428	CompoundStatement		22:25:850:850	973267	1					
+ANR	973429	ReturnStatement	return - EIO ;	26:12:1080:1091	973267	0	True				
+ANR	973430	UnaryOperationExpression	- EIO		973267	0					
+ANR	973431	UnaryOperator	-		973267	0					
+ANR	973432	Identifier	EIO		973267	1					
+ANR	973433	ElseStatement	else		973267	0					
+ANR	973434	CompoundStatement		24:15:892:892	973267	0					
+ANR	973435	ExpressionStatement	qemu_coroutine_yield ( )	28:12:1122:1144	973267	0	True				
+ANR	973436	CallExpression	qemu_coroutine_yield ( )		973267	0					
+ANR	973437	Callee	qemu_coroutine_yield		973267	0					
+ANR	973438	Identifier	qemu_coroutine_yield		973267	0					
+ANR	973439	ArgumentList			973267	1					
+ANR	973440	ReturnStatement	return co . ret ;	29:12:1158:1171	973267	1	True				
+ANR	973441	MemberAccess	co . ret		973267	0					
+ANR	973442	Identifier	co		973267	0					
+ANR	973443	Identifier	ret		973267	1					
+ANR	973444	ReturnType	static int coroutine_fn		973267	1					
+ANR	973445	Identifier	bdrv_driver_preadv		973267	2					
+ANR	973446	ParameterList	"BlockDriverState * bs , uint64_t offset , uint64_t bytes , QEMUIOVector * qiov , int flags"		973267	3					
+ANR	973447	Parameter	BlockDriverState * bs	1:43:43:62	973267	0	True				
+ANR	973448	ParameterType	BlockDriverState *		973267	0					
+ANR	973449	Identifier	bs		973267	1					
+ANR	973450	Parameter	uint64_t offset	2:43:108:122	973267	1	True				
+ANR	973451	ParameterType	uint64_t		973267	0					
+ANR	973452	Identifier	offset		973267	1					
+ANR	973453	Parameter	uint64_t bytes	2:60:125:138	973267	2	True				
+ANR	973454	ParameterType	uint64_t		973267	0					
+ANR	973455	Identifier	bytes		973267	1					
+ANR	973456	Parameter	QEMUIOVector * qiov	3:43:184:201	973267	3	True				
+ANR	973457	ParameterType	QEMUIOVector *		973267	0					
+ANR	973458	Identifier	qiov		973267	1					
+ANR	973459	Parameter	int flags	3:63:204:212	973267	4	True				
+ANR	973460	ParameterType	int		973267	0					
+ANR	973461	Identifier	flags		973267	1					
+ANR	973462	CFGEntryNode	ENTRY		973267		True				
+ANR	973463	CFGExitNode	EXIT		973267		True				
+ANR	973464	Symbol	acb		973267						
+ANR	973465	Symbol	nb_sectors		973267						
+ANR	973466	Symbol	flags		973267						
+ANR	973467	Symbol	qiov		973267						
+ANR	973468	Symbol	bs -> drv		973267						
+ANR	973469	Symbol	BDRV_REQUEST_MAX_SECTORS		973267						
+ANR	973470	Symbol	bs		973267						
+ANR	973471	Symbol	* bs		973267						
+ANR	973472	Symbol	drv -> bdrv_co_readv		973267						
+ANR	973473	Symbol	co . ret		973267						
+ANR	973474	Symbol	NULL		973267						
+ANR	973475	Symbol	offset		973267						
+ANR	973476	Symbol	drv		973267						
+ANR	973477	Symbol	BDRV_SECTOR_BITS		973267						
+ANR	973478	Symbol	* bs -> drv		973267						
+ANR	973479	Symbol	EIO		973267						
+ANR	973480	Symbol	co		973267						
+ANR	973481	Symbol	* drv		973267						
+ANR	973482	Symbol	sector_num		973267						
+ANR	973483	Symbol	drv -> bdrv_co_preadv		973267						
+ANR	973484	Symbol	bs -> drv -> bdrv_aio_readv		973267						
+ANR	973485	Symbol	bytes		973267						
+ANR	973486	Symbol	BDRV_SECTOR_SIZE		973267						
+ANR	973487	Symbol	& co		973267						
+ANR	973488	Symbol	bdrv_co_io_em_complete		973267						
+ANR	973489	Symbol	* * bs		973267						

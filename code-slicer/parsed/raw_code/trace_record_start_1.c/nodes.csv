@@ -1,0 +1,244 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	8476119	File	/home/p4ultr4n/workplace/ReVeal/raw_code/trace_record_start_1.c								
+ANR	8476120	Function	trace_record_start	1:0:0:1127							
+ANR	8476121	FunctionDef	"trace_record_start (TraceBufferRecord * rec , TraceEventID event , size_t datasize)"		8476120	0					
+ANR	8476122	CompoundStatement		3:0:85:1127	8476120	0					
+ANR	8476123	IdentifierDeclStatement	"unsigned int idx , rec_off , old_idx , new_idx ;"	5:4:92:135	8476120	0	True				
+ANR	8476124	IdentifierDecl	idx		8476120	0					
+ANR	8476125	IdentifierDeclType	unsigned int		8476120	0					
+ANR	8476126	Identifier	idx		8476120	1					
+ANR	8476127	IdentifierDecl	rec_off		8476120	1					
+ANR	8476128	IdentifierDeclType	unsigned int		8476120	0					
+ANR	8476129	Identifier	rec_off		8476120	1					
+ANR	8476130	IdentifierDecl	old_idx		8476120	2					
+ANR	8476131	IdentifierDeclType	unsigned int		8476120	0					
+ANR	8476132	Identifier	old_idx		8476120	1					
+ANR	8476133	IdentifierDecl	new_idx		8476120	3					
+ANR	8476134	IdentifierDeclType	unsigned int		8476120	0					
+ANR	8476135	Identifier	new_idx		8476120	1					
+ANR	8476136	IdentifierDeclStatement	uint32_t rec_len = sizeof ( TraceRecord ) + datasize ;	7:4:142:191	8476120	1	True				
+ANR	8476137	IdentifierDecl	rec_len = sizeof ( TraceRecord ) + datasize		8476120	0					
+ANR	8476138	IdentifierDeclType	uint32_t		8476120	0					
+ANR	8476139	Identifier	rec_len		8476120	1					
+ANR	8476140	AssignmentExpression	rec_len = sizeof ( TraceRecord ) + datasize		8476120	2		=			
+ANR	8476141	Identifier	rec_len		8476120	0					
+ANR	8476142	AdditiveExpression	sizeof ( TraceRecord ) + datasize		8476120	1		+			
+ANR	8476143	SizeofExpression	sizeof ( TraceRecord )		8476120	0					
+ANR	8476144	Sizeof	sizeof		8476120	0					
+ANR	8476145	SizeofOperand	TraceRecord		8476120	1					
+ANR	8476146	Identifier	datasize		8476120	1					
+ANR	8476147	IdentifierDeclStatement	uint64_t event_u64 = event ;	9:4:198:224	8476120	2	True				
+ANR	8476148	IdentifierDecl	event_u64 = event		8476120	0					
+ANR	8476149	IdentifierDeclType	uint64_t		8476120	0					
+ANR	8476150	Identifier	event_u64		8476120	1					
+ANR	8476151	AssignmentExpression	event_u64 = event		8476120	2		=			
+ANR	8476152	Identifier	event		8476120	0					
+ANR	8476153	Identifier	event		8476120	1					
+ANR	8476154	IdentifierDeclStatement	uint64_t timestamp_ns = get_clock ( ) ;	11:4:231:266	8476120	3	True				
+ANR	8476155	IdentifierDecl	timestamp_ns = get_clock ( )		8476120	0					
+ANR	8476156	IdentifierDeclType	uint64_t		8476120	0					
+ANR	8476157	Identifier	timestamp_ns		8476120	1					
+ANR	8476158	AssignmentExpression	timestamp_ns = get_clock ( )		8476120	2		=			
+ANR	8476159	Identifier	timestamp_ns		8476120	0					
+ANR	8476160	CallExpression	get_clock ( )		8476120	1					
+ANR	8476161	Callee	get_clock		8476120	0					
+ANR	8476162	Identifier	get_clock		8476120	0					
+ANR	8476163	ArgumentList			8476120	1					
+ANR	8476164	DoStatement	do		8476120	4					
+ANR	8476165	CompoundStatement		13:7:192:192	8476120	0					
+ANR	8476166	ExpressionStatement	old_idx = g_atomic_int_get ( & trace_idx )	17:8:289:327	8476120	0	True				
+ANR	8476167	AssignmentExpression	old_idx = g_atomic_int_get ( & trace_idx )		8476120	0		=			
+ANR	8476168	Identifier	old_idx		8476120	0					
+ANR	8476169	CallExpression	g_atomic_int_get ( & trace_idx )		8476120	1					
+ANR	8476170	Callee	g_atomic_int_get		8476120	0					
+ANR	8476171	Identifier	g_atomic_int_get		8476120	0					
+ANR	8476172	ArgumentList	& trace_idx		8476120	1					
+ANR	8476173	Argument	& trace_idx		8476120	0					
+ANR	8476174	UnaryOperationExpression	& trace_idx		8476120	0					
+ANR	8476175	UnaryOperator	&		8476120	0					
+ANR	8476176	Identifier	trace_idx		8476120	1					
+ANR	8476177	ExpressionStatement	smp_rmb ( )	19:8:338:347	8476120	1	True				
+ANR	8476178	CallExpression	smp_rmb ( )		8476120	0					
+ANR	8476179	Callee	smp_rmb		8476120	0					
+ANR	8476180	Identifier	smp_rmb		8476120	0					
+ANR	8476181	ArgumentList			8476120	1					
+ANR	8476182	ExpressionStatement	new_idx = old_idx + rec_len	21:8:358:385	8476120	2	True				
+ANR	8476183	AssignmentExpression	new_idx = old_idx + rec_len		8476120	0		=			
+ANR	8476184	Identifier	new_idx		8476120	0					
+ANR	8476185	AdditiveExpression	old_idx + rec_len		8476120	1		+			
+ANR	8476186	Identifier	old_idx		8476120	0					
+ANR	8476187	Identifier	rec_len		8476120	1					
+ANR	8476188	IfStatement	if ( new_idx - writeout_idx > TRACE_BUF_LEN )		8476120	3					
+ANR	8476189	Condition	new_idx - writeout_idx > TRACE_BUF_LEN	25:12:402:439	8476120	0	True				
+ANR	8476190	RelationalExpression	new_idx - writeout_idx > TRACE_BUF_LEN		8476120	0		>			
+ANR	8476191	AdditiveExpression	new_idx - writeout_idx		8476120	0		-			
+ANR	8476192	Identifier	new_idx		8476120	0					
+ANR	8476193	Identifier	writeout_idx		8476120	1					
+ANR	8476194	Identifier	TRACE_BUF_LEN		8476120	1					
+ANR	8476195	CompoundStatement		23:52:356:356	8476120	1					
+ANR	8476196	ExpressionStatement	g_atomic_int_inc ( & dropped_events )	29:12:511:544	8476120	0	True				
+ANR	8476197	CallExpression	g_atomic_int_inc ( & dropped_events )		8476120	0					
+ANR	8476198	Callee	g_atomic_int_inc		8476120	0					
+ANR	8476199	Identifier	g_atomic_int_inc		8476120	0					
+ANR	8476200	ArgumentList	& dropped_events		8476120	1					
+ANR	8476201	Argument	& dropped_events		8476120	0					
+ANR	8476202	UnaryOperationExpression	& dropped_events		8476120	0					
+ANR	8476203	UnaryOperator	&		8476120	0					
+ANR	8476204	Identifier	dropped_events		8476120	1					
+ANR	8476205	ReturnStatement	return - ENOSPC ;	31:12:559:573	8476120	1	True				
+ANR	8476206	UnaryOperationExpression	- ENOSPC		8476120	0					
+ANR	8476207	UnaryOperator	-		8476120	0					
+ANR	8476208	Identifier	ENOSPC		8476120	1					
+ANR	8476209	Condition	"! g_atomic_int_compare_and_exchange ( & trace_idx , old_idx , new_idx )"	35:13:600:663	8476120	1	True				
+ANR	8476210	UnaryOperationExpression	"! g_atomic_int_compare_and_exchange ( & trace_idx , old_idx , new_idx )"		8476120	0					
+ANR	8476211	UnaryOperator	!		8476120	0					
+ANR	8476212	CallExpression	"g_atomic_int_compare_and_exchange ( & trace_idx , old_idx , new_idx )"		8476120	1					
+ANR	8476213	Callee	g_atomic_int_compare_and_exchange		8476120	0					
+ANR	8476214	Identifier	g_atomic_int_compare_and_exchange		8476120	0					
+ANR	8476215	ArgumentList	& trace_idx		8476120	1					
+ANR	8476216	Argument	& trace_idx		8476120	0					
+ANR	8476217	UnaryOperationExpression	& trace_idx		8476120	0					
+ANR	8476218	UnaryOperator	&		8476120	0					
+ANR	8476219	Identifier	trace_idx		8476120	1					
+ANR	8476220	Argument	old_idx		8476120	1					
+ANR	8476221	Identifier	old_idx		8476120	0					
+ANR	8476222	Argument	new_idx		8476120	2					
+ANR	8476223	Identifier	new_idx		8476120	0					
+ANR	8476224	ExpressionStatement	idx = old_idx % TRACE_BUF_LEN	39:4:674:703	8476120	5	True				
+ANR	8476225	AssignmentExpression	idx = old_idx % TRACE_BUF_LEN		8476120	0		=			
+ANR	8476226	Identifier	idx		8476120	0					
+ANR	8476227	MultiplicativeExpression	old_idx % TRACE_BUF_LEN		8476120	1		%			
+ANR	8476228	Identifier	old_idx		8476120	0					
+ANR	8476229	Identifier	TRACE_BUF_LEN		8476120	1					
+ANR	8476230	ExpressionStatement	rec_off = idx	43:4:712:725	8476120	6	True				
+ANR	8476231	AssignmentExpression	rec_off = idx		8476120	0		=			
+ANR	8476232	Identifier	rec_off		8476120	0					
+ANR	8476233	Identifier	idx		8476120	1					
+ANR	8476234	ExpressionStatement	"rec_off = write_to_buffer ( rec_off , & event_u64 , sizeof ( event_u64 ) )"	45:4:732:797	8476120	7	True				
+ANR	8476235	AssignmentExpression	"rec_off = write_to_buffer ( rec_off , & event_u64 , sizeof ( event_u64 ) )"		8476120	0		=			
+ANR	8476236	Identifier	rec_off		8476120	0					
+ANR	8476237	CallExpression	"write_to_buffer ( rec_off , & event_u64 , sizeof ( event_u64 ) )"		8476120	1					
+ANR	8476238	Callee	write_to_buffer		8476120	0					
+ANR	8476239	Identifier	write_to_buffer		8476120	0					
+ANR	8476240	ArgumentList	rec_off		8476120	1					
+ANR	8476241	Argument	rec_off		8476120	0					
+ANR	8476242	Identifier	rec_off		8476120	0					
+ANR	8476243	Argument	& event_u64		8476120	1					
+ANR	8476244	UnaryOperationExpression	& event_u64		8476120	0					
+ANR	8476245	UnaryOperator	&		8476120	0					
+ANR	8476246	Identifier	event_u64		8476120	1					
+ANR	8476247	Argument	sizeof ( event_u64 )		8476120	2					
+ANR	8476248	SizeofExpression	sizeof ( event_u64 )		8476120	0					
+ANR	8476249	Sizeof	sizeof		8476120	0					
+ANR	8476250	SizeofOperand	event_u64		8476120	1					
+ANR	8476251	ExpressionStatement	"rec_off = write_to_buffer ( rec_off , & timestamp_ns , sizeof ( timestamp_ns ) )"	47:4:804:875	8476120	8	True				
+ANR	8476252	AssignmentExpression	"rec_off = write_to_buffer ( rec_off , & timestamp_ns , sizeof ( timestamp_ns ) )"		8476120	0		=			
+ANR	8476253	Identifier	rec_off		8476120	0					
+ANR	8476254	CallExpression	"write_to_buffer ( rec_off , & timestamp_ns , sizeof ( timestamp_ns ) )"		8476120	1					
+ANR	8476255	Callee	write_to_buffer		8476120	0					
+ANR	8476256	Identifier	write_to_buffer		8476120	0					
+ANR	8476257	ArgumentList	rec_off		8476120	1					
+ANR	8476258	Argument	rec_off		8476120	0					
+ANR	8476259	Identifier	rec_off		8476120	0					
+ANR	8476260	Argument	& timestamp_ns		8476120	1					
+ANR	8476261	UnaryOperationExpression	& timestamp_ns		8476120	0					
+ANR	8476262	UnaryOperator	&		8476120	0					
+ANR	8476263	Identifier	timestamp_ns		8476120	1					
+ANR	8476264	Argument	sizeof ( timestamp_ns )		8476120	2					
+ANR	8476265	SizeofExpression	sizeof ( timestamp_ns )		8476120	0					
+ANR	8476266	Sizeof	sizeof		8476120	0					
+ANR	8476267	SizeofOperand	timestamp_ns		8476120	1					
+ANR	8476268	ExpressionStatement	"rec_off = write_to_buffer ( rec_off , & rec_len , sizeof ( rec_len ) )"	49:4:882:943	8476120	9	True				
+ANR	8476269	AssignmentExpression	"rec_off = write_to_buffer ( rec_off , & rec_len , sizeof ( rec_len ) )"		8476120	0		=			
+ANR	8476270	Identifier	rec_off		8476120	0					
+ANR	8476271	CallExpression	"write_to_buffer ( rec_off , & rec_len , sizeof ( rec_len ) )"		8476120	1					
+ANR	8476272	Callee	write_to_buffer		8476120	0					
+ANR	8476273	Identifier	write_to_buffer		8476120	0					
+ANR	8476274	ArgumentList	rec_off		8476120	1					
+ANR	8476275	Argument	rec_off		8476120	0					
+ANR	8476276	Identifier	rec_off		8476120	0					
+ANR	8476277	Argument	& rec_len		8476120	1					
+ANR	8476278	UnaryOperationExpression	& rec_len		8476120	0					
+ANR	8476279	UnaryOperator	&		8476120	0					
+ANR	8476280	Identifier	rec_len		8476120	1					
+ANR	8476281	Argument	sizeof ( rec_len )		8476120	2					
+ANR	8476282	SizeofExpression	sizeof ( rec_len )		8476120	0					
+ANR	8476283	Sizeof	sizeof		8476120	0					
+ANR	8476284	SizeofOperand	rec_len		8476120	1					
+ANR	8476285	ExpressionStatement	"rec_off = write_to_buffer ( rec_off , & trace_pid , sizeof ( trace_pid ) )"	51:4:950:1015	8476120	10	True				
+ANR	8476286	AssignmentExpression	"rec_off = write_to_buffer ( rec_off , & trace_pid , sizeof ( trace_pid ) )"		8476120	0		=			
+ANR	8476287	Identifier	rec_off		8476120	0					
+ANR	8476288	CallExpression	"write_to_buffer ( rec_off , & trace_pid , sizeof ( trace_pid ) )"		8476120	1					
+ANR	8476289	Callee	write_to_buffer		8476120	0					
+ANR	8476290	Identifier	write_to_buffer		8476120	0					
+ANR	8476291	ArgumentList	rec_off		8476120	1					
+ANR	8476292	Argument	rec_off		8476120	0					
+ANR	8476293	Identifier	rec_off		8476120	0					
+ANR	8476294	Argument	& trace_pid		8476120	1					
+ANR	8476295	UnaryOperationExpression	& trace_pid		8476120	0					
+ANR	8476296	UnaryOperator	&		8476120	0					
+ANR	8476297	Identifier	trace_pid		8476120	1					
+ANR	8476298	Argument	sizeof ( trace_pid )		8476120	2					
+ANR	8476299	SizeofExpression	sizeof ( trace_pid )		8476120	0					
+ANR	8476300	Sizeof	sizeof		8476120	0					
+ANR	8476301	SizeofOperand	trace_pid		8476120	1					
+ANR	8476302	ExpressionStatement	rec -> tbuf_idx = idx	55:4:1024:1043	8476120	11	True				
+ANR	8476303	AssignmentExpression	rec -> tbuf_idx = idx		8476120	0		=			
+ANR	8476304	PtrMemberAccess	rec -> tbuf_idx		8476120	0					
+ANR	8476305	Identifier	rec		8476120	0					
+ANR	8476306	Identifier	tbuf_idx		8476120	1					
+ANR	8476307	Identifier	idx		8476120	1					
+ANR	8476308	ExpressionStatement	rec -> rec_off = ( idx + sizeof ( TraceRecord ) ) % TRACE_BUF_LEN	57:4:1050:1109	8476120	12	True				
+ANR	8476309	AssignmentExpression	rec -> rec_off = ( idx + sizeof ( TraceRecord ) ) % TRACE_BUF_LEN		8476120	0		=			
+ANR	8476310	PtrMemberAccess	rec -> rec_off		8476120	0					
+ANR	8476311	Identifier	rec		8476120	0					
+ANR	8476312	Identifier	rec_off		8476120	1					
+ANR	8476313	MultiplicativeExpression	( idx + sizeof ( TraceRecord ) ) % TRACE_BUF_LEN		8476120	1		%			
+ANR	8476314	AdditiveExpression	idx + sizeof ( TraceRecord )		8476120	0		+			
+ANR	8476315	Identifier	idx		8476120	0					
+ANR	8476316	SizeofExpression	sizeof ( TraceRecord )		8476120	1					
+ANR	8476317	Sizeof	sizeof		8476120	0					
+ANR	8476318	SizeofOperand	TraceRecord		8476120	1					
+ANR	8476319	Identifier	TRACE_BUF_LEN		8476120	1					
+ANR	8476320	ReturnStatement	return 0 ;	59:4:1116:1124	8476120	13	True				
+ANR	8476321	PrimaryExpression	0		8476120	0					
+ANR	8476322	ReturnType	int		8476120	1					
+ANR	8476323	Identifier	trace_record_start		8476120	2					
+ANR	8476324	ParameterList	"TraceBufferRecord * rec , TraceEventID event , size_t datasize"		8476120	3					
+ANR	8476325	Parameter	TraceBufferRecord * rec	1:23:23:44	8476120	0	True				
+ANR	8476326	ParameterType	TraceBufferRecord *		8476120	0					
+ANR	8476327	Identifier	rec		8476120	1					
+ANR	8476328	Parameter	TraceEventID event	1:47:47:64	8476120	1	True				
+ANR	8476329	ParameterType	TraceEventID		8476120	0					
+ANR	8476330	Identifier	event		8476120	1					
+ANR	8476331	Parameter	size_t datasize	1:67:67:81	8476120	2	True				
+ANR	8476332	ParameterType	size_t		8476120	0					
+ANR	8476333	Identifier	datasize		8476120	1					
+ANR	8476334	CFGEntryNode	ENTRY		8476120		True				
+ANR	8476335	CFGExitNode	EXIT		8476120		True				
+ANR	8476336	Symbol	rec -> tbuf_idx		8476120						
+ANR	8476337	Symbol	& dropped_events		8476120						
+ANR	8476338	Symbol	& trace_pid		8476120						
+ANR	8476339	Symbol	timestamp_ns		8476120						
+ANR	8476340	Symbol	g_atomic_int_get		8476120						
+ANR	8476341	Symbol	write_to_buffer		8476120						
+ANR	8476342	Symbol	rec		8476120						
+ANR	8476343	Symbol	get_clock		8476120						
+ANR	8476344	Symbol	& event_u64		8476120						
+ANR	8476345	Symbol	& trace_idx		8476120						
+ANR	8476346	Symbol	rec_len		8476120						
+ANR	8476347	Symbol	& timestamp_ns		8476120						
+ANR	8476348	Symbol	datasize		8476120						
+ANR	8476349	Symbol	event		8476120						
+ANR	8476350	Symbol	new_idx		8476120						
+ANR	8476351	Symbol	writeout_idx		8476120						
+ANR	8476352	Symbol	& rec_len		8476120						
+ANR	8476353	Symbol	g_atomic_int_compare_and_exchange		8476120						
+ANR	8476354	Symbol	old_idx		8476120						
+ANR	8476355	Symbol	event_u64		8476120						
+ANR	8476356	Symbol	ENOSPC		8476120						
+ANR	8476357	Symbol	TRACE_BUF_LEN		8476120						
+ANR	8476358	Symbol	* rec		8476120						
+ANR	8476359	Symbol	idx		8476120						
+ANR	8476360	Symbol	rec -> rec_off		8476120						
+ANR	8476361	Symbol	rec_off		8476120						

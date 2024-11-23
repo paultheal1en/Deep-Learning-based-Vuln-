@@ -1,0 +1,129 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1121928	File	/home/p4ultr4n/workplace/ReVeal/raw_code/breakpoint_invalidate_01_0.c								
+ANR	1121929	Function	breakpoint_invalidate	1:0:0:588							
+ANR	1121930	FunctionDef	"breakpoint_invalidate (CPUArchState * env , target_ulong pc)"		1121929	0					
+ANR	1121931	CompoundStatement		3:0:71:588	1121929	0					
+ANR	1121932	IdentifierDeclStatement	target_phys_addr_t addr ;	5:4:78:101	1121929	0	True				
+ANR	1121933	IdentifierDecl	addr		1121929	0					
+ANR	1121934	IdentifierDeclType	target_phys_addr_t		1121929	0					
+ANR	1121935	Identifier	addr		1121929	1					
+ANR	1121936	IdentifierDeclStatement	ram_addr_t ram_addr ;	7:4:108:127	1121929	1	True				
+ANR	1121937	IdentifierDecl	ram_addr		1121929	0					
+ANR	1121938	IdentifierDeclType	ram_addr_t		1121929	0					
+ANR	1121939	Identifier	ram_addr		1121929	1					
+ANR	1121940	IdentifierDeclStatement	MemoryRegionSection * section ;	9:4:134:162	1121929	2	True				
+ANR	1121941	IdentifierDecl	* section		1121929	0					
+ANR	1121942	IdentifierDeclType	MemoryRegionSection *		1121929	0					
+ANR	1121943	Identifier	section		1121929	1					
+ANR	1121944	ExpressionStatement	"addr = cpu_get_phys_page_debug ( env , pc )"	13:4:171:210	1121929	3	True				
+ANR	1121945	AssignmentExpression	"addr = cpu_get_phys_page_debug ( env , pc )"		1121929	0		=			
+ANR	1121946	Identifier	addr		1121929	0					
+ANR	1121947	CallExpression	"cpu_get_phys_page_debug ( env , pc )"		1121929	1					
+ANR	1121948	Callee	cpu_get_phys_page_debug		1121929	0					
+ANR	1121949	Identifier	cpu_get_phys_page_debug		1121929	0					
+ANR	1121950	ArgumentList	env		1121929	1					
+ANR	1121951	Argument	env		1121929	0					
+ANR	1121952	Identifier	env		1121929	0					
+ANR	1121953	Argument	pc		1121929	1					
+ANR	1121954	Identifier	pc		1121929	0					
+ANR	1121955	ExpressionStatement	section = phys_page_find ( addr >> TARGET_PAGE_BITS )	15:4:217:267	1121929	4	True				
+ANR	1121956	AssignmentExpression	section = phys_page_find ( addr >> TARGET_PAGE_BITS )		1121929	0		=			
+ANR	1121957	Identifier	section		1121929	0					
+ANR	1121958	CallExpression	phys_page_find ( addr >> TARGET_PAGE_BITS )		1121929	1					
+ANR	1121959	Callee	phys_page_find		1121929	0					
+ANR	1121960	Identifier	phys_page_find		1121929	0					
+ANR	1121961	ArgumentList	addr >> TARGET_PAGE_BITS		1121929	1					
+ANR	1121962	Argument	addr >> TARGET_PAGE_BITS		1121929	0					
+ANR	1121963	ShiftExpression	addr >> TARGET_PAGE_BITS		1121929	0		>>			
+ANR	1121964	Identifier	addr		1121929	0					
+ANR	1121965	Identifier	TARGET_PAGE_BITS		1121929	1					
+ANR	1121966	IfStatement	if ( ! ( memory_region_is_ram ( section -> mr ) || ( section -> mr -> rom_device && section -> mr -> readable ) ) )		1121929	5					
+ANR	1121967	Condition	! ( memory_region_is_ram ( section -> mr ) || ( section -> mr -> rom_device && section -> mr -> readable ) )	17:8:278:378	1121929	0	True				
+ANR	1121968	UnaryOperationExpression	! ( memory_region_is_ram ( section -> mr ) || ( section -> mr -> rom_device && section -> mr -> readable ) )		1121929	0					
+ANR	1121969	UnaryOperator	!		1121929	0					
+ANR	1121970	OrExpression	memory_region_is_ram ( section -> mr ) || ( section -> mr -> rom_device && section -> mr -> readable )		1121929	1		||			
+ANR	1121971	CallExpression	memory_region_is_ram ( section -> mr )		1121929	0					
+ANR	1121972	Callee	memory_region_is_ram		1121929	0					
+ANR	1121973	Identifier	memory_region_is_ram		1121929	0					
+ANR	1121974	ArgumentList	section -> mr		1121929	1					
+ANR	1121975	Argument	section -> mr		1121929	0					
+ANR	1121976	PtrMemberAccess	section -> mr		1121929	0					
+ANR	1121977	Identifier	section		1121929	0					
+ANR	1121978	Identifier	mr		1121929	1					
+ANR	1121979	AndExpression	section -> mr -> rom_device && section -> mr -> readable		1121929	1		&&			
+ANR	1121980	PtrMemberAccess	section -> mr -> rom_device		1121929	0					
+ANR	1121981	PtrMemberAccess	section -> mr		1121929	0					
+ANR	1121982	Identifier	section		1121929	0					
+ANR	1121983	Identifier	mr		1121929	1					
+ANR	1121984	Identifier	rom_device		1121929	1					
+ANR	1121985	PtrMemberAccess	section -> mr -> readable		1121929	1					
+ANR	1121986	PtrMemberAccess	section -> mr		1121929	0					
+ANR	1121987	Identifier	section		1121929	0					
+ANR	1121988	Identifier	mr		1121929	1					
+ANR	1121989	Identifier	readable		1121929	1					
+ANR	1121990	CompoundStatement		17:66:309:309	1121929	1					
+ANR	1121991	ReturnStatement	return ;	21:8:392:398	1121929	0	True				
+ANR	1121992	ExpressionStatement	"ram_addr = ( memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK ) + section_addr ( section , addr )"	25:4:412:522	1121929	6	True				
+ANR	1121993	AssignmentExpression	"ram_addr = ( memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK ) + section_addr ( section , addr )"		1121929	0		=			
+ANR	1121994	Identifier	ram_addr		1121929	0					
+ANR	1121995	AdditiveExpression	"( memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK ) + section_addr ( section , addr )"		1121929	1		+			
+ANR	1121996	BitAndExpression	memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK		1121929	0		&			
+ANR	1121997	CallExpression	memory_region_get_ram_addr ( section -> mr )		1121929	0					
+ANR	1121998	Callee	memory_region_get_ram_addr		1121929	0					
+ANR	1121999	Identifier	memory_region_get_ram_addr		1121929	0					
+ANR	1122000	ArgumentList	section -> mr		1121929	1					
+ANR	1122001	Argument	section -> mr		1121929	0					
+ANR	1122002	PtrMemberAccess	section -> mr		1121929	0					
+ANR	1122003	Identifier	section		1121929	0					
+ANR	1122004	Identifier	mr		1121929	1					
+ANR	1122005	Identifier	TARGET_PAGE_MASK		1121929	1					
+ANR	1122006	CallExpression	"section_addr ( section , addr )"		1121929	1					
+ANR	1122007	Callee	section_addr		1121929	0					
+ANR	1122008	Identifier	section_addr		1121929	0					
+ANR	1122009	ArgumentList	section		1121929	1					
+ANR	1122010	Argument	section		1121929	0					
+ANR	1122011	Identifier	section		1121929	0					
+ANR	1122012	Argument	addr		1121929	1					
+ANR	1122013	Identifier	addr		1121929	0					
+ANR	1122014	ExpressionStatement	"tb_invalidate_phys_page_range ( ram_addr , ram_addr + 1 , 0 )"	29:4:529:585	1121929	7	True				
+ANR	1122015	CallExpression	"tb_invalidate_phys_page_range ( ram_addr , ram_addr + 1 , 0 )"		1121929	0					
+ANR	1122016	Callee	tb_invalidate_phys_page_range		1121929	0					
+ANR	1122017	Identifier	tb_invalidate_phys_page_range		1121929	0					
+ANR	1122018	ArgumentList	ram_addr		1121929	1					
+ANR	1122019	Argument	ram_addr		1121929	0					
+ANR	1122020	Identifier	ram_addr		1121929	0					
+ANR	1122021	Argument	ram_addr + 1		1121929	1					
+ANR	1122022	AdditiveExpression	ram_addr + 1		1121929	0		+			
+ANR	1122023	Identifier	ram_addr		1121929	0					
+ANR	1122024	PrimaryExpression	1		1121929	1					
+ANR	1122025	Argument	0		1121929	2					
+ANR	1122026	PrimaryExpression	0		1121929	0					
+ANR	1122027	ReturnType	static void		1121929	1					
+ANR	1122028	Identifier	breakpoint_invalidate		1121929	2					
+ANR	1122029	ParameterList	"CPUArchState * env , target_ulong pc"		1121929	3					
+ANR	1122030	Parameter	CPUArchState * env	1:34:34:50	1121929	0	True				
+ANR	1122031	ParameterType	CPUArchState *		1121929	0					
+ANR	1122032	Identifier	env		1121929	1					
+ANR	1122033	Parameter	target_ulong pc	1:53:53:67	1121929	1	True				
+ANR	1122034	ParameterType	target_ulong		1121929	0					
+ANR	1122035	Identifier	pc		1121929	1					
+ANR	1122036	CFGEntryNode	ENTRY		1121929		True				
+ANR	1122037	CFGExitNode	EXIT		1121929		True				
+ANR	1122038	Symbol	* section		1121929						
+ANR	1122039	Symbol	phys_page_find		1121929						
+ANR	1122040	Symbol	section -> mr		1121929						
+ANR	1122041	Symbol	cpu_get_phys_page_debug		1121929						
+ANR	1122042	Symbol	TARGET_PAGE_MASK		1121929						
+ANR	1122043	Symbol	section		1121929						
+ANR	1122044	Symbol	TARGET_PAGE_BITS		1121929						
+ANR	1122045	Symbol	env		1121929						
+ANR	1122046	Symbol	section -> mr -> rom_device		1121929						
+ANR	1122047	Symbol	memory_region_is_ram		1121929						
+ANR	1122048	Symbol	pc		1121929						
+ANR	1122049	Symbol	* section -> mr		1121929						
+ANR	1122050	Symbol	section_addr		1121929						
+ANR	1122051	Symbol	memory_region_get_ram_addr		1121929						
+ANR	1122052	Symbol	ram_addr		1121929						
+ANR	1122053	Symbol	* * section		1121929						
+ANR	1122054	Symbol	addr		1121929						
+ANR	1122055	Symbol	section -> mr -> readable		1121929						

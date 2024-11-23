@@ -1,0 +1,794 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5497606	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mirror_start_job_04_0.c								
+ANR	5497607	Function	mirror_start_job	1:0:0:6968							
+ANR	5497608	FunctionDef	"mirror_start_job (const char * job_id , BlockDriverState * bs , int creation_flags , BlockDriverState * target , const char * replaces , int64_t speed , uint32_t granularity , int64_t buf_size , BlockMirrorBackingMode backing_mode , BlockdevOnError on_source_error , BlockdevOnError on_target_error , bool unmap , BlockCompletionFunc * cb , void * opaque , const BlockJobDriver * driver , bool is_none_mode , BlockDriverState * base , bool auto_complete , const char * filter_node_name , bool is_mirror , Error * * errp)"		5497607	0					
+ANR	5497609	CompoundStatement		31:0:922:6968	5497607	0					
+ANR	5497610	IdentifierDeclStatement	MirrorBlockJob * s ;	33:4:929:946	5497607	0	True				
+ANR	5497611	IdentifierDecl	* s		5497607	0					
+ANR	5497612	IdentifierDeclType	MirrorBlockJob *		5497607	0					
+ANR	5497613	Identifier	s		5497607	1					
+ANR	5497614	IdentifierDeclStatement	BlockDriverState * mirror_top_bs ;	35:4:953:984	5497607	1	True				
+ANR	5497615	IdentifierDecl	* mirror_top_bs		5497607	0					
+ANR	5497616	IdentifierDeclType	BlockDriverState *		5497607	0					
+ANR	5497617	Identifier	mirror_top_bs		5497607	1					
+ANR	5497618	IdentifierDeclStatement	bool target_graph_mod ;	37:4:991:1012	5497607	2	True				
+ANR	5497619	IdentifierDecl	target_graph_mod		5497607	0					
+ANR	5497620	IdentifierDeclType	bool		5497607	0					
+ANR	5497621	Identifier	target_graph_mod		5497607	1					
+ANR	5497622	IdentifierDeclStatement	bool target_is_backing ;	39:4:1019:1041	5497607	3	True				
+ANR	5497623	IdentifierDecl	target_is_backing		5497607	0					
+ANR	5497624	IdentifierDeclType	bool		5497607	0					
+ANR	5497625	Identifier	target_is_backing		5497607	1					
+ANR	5497626	IdentifierDeclStatement	Error * local_err = NULL ;	41:4:1048:1071	5497607	4	True				
+ANR	5497627	IdentifierDecl	* local_err = NULL		5497607	0					
+ANR	5497628	IdentifierDeclType	Error *		5497607	0					
+ANR	5497629	Identifier	local_err		5497607	1					
+ANR	5497630	AssignmentExpression	* local_err = NULL		5497607	2		=			
+ANR	5497631	Identifier	NULL		5497607	0					
+ANR	5497632	Identifier	NULL		5497607	1					
+ANR	5497633	IdentifierDeclStatement	int ret ;	43:4:1078:1085	5497607	5	True				
+ANR	5497634	IdentifierDecl	ret		5497607	0					
+ANR	5497635	IdentifierDeclType	int		5497607	0					
+ANR	5497636	Identifier	ret		5497607	1					
+ANR	5497637	IfStatement	if ( granularity == 0 )		5497607	6					
+ANR	5497638	Condition	granularity == 0	47:8:1098:1113	5497607	0	True				
+ANR	5497639	EqualityExpression	granularity == 0		5497607	0		==			
+ANR	5497640	Identifier	granularity		5497607	0					
+ANR	5497641	PrimaryExpression	0		5497607	1					
+ANR	5497642	CompoundStatement		17:26:193:193	5497607	1					
+ANR	5497643	ExpressionStatement	granularity = bdrv_get_default_bitmap_granularity ( target )	49:8:1127:1184	5497607	0	True				
+ANR	5497644	AssignmentExpression	granularity = bdrv_get_default_bitmap_granularity ( target )		5497607	0		=			
+ANR	5497645	Identifier	granularity		5497607	0					
+ANR	5497646	CallExpression	bdrv_get_default_bitmap_granularity ( target )		5497607	1					
+ANR	5497647	Callee	bdrv_get_default_bitmap_granularity		5497607	0					
+ANR	5497648	Identifier	bdrv_get_default_bitmap_granularity		5497607	0					
+ANR	5497649	ArgumentList	target		5497607	1					
+ANR	5497650	Argument	target		5497607	0					
+ANR	5497651	Identifier	target		5497607	0					
+ANR	5497652	ExpressionStatement	assert ( ( granularity & ( granularity - 1 ) ) == 0 )	55:4:1200:1247	5497607	7	True				
+ANR	5497653	CallExpression	assert ( ( granularity & ( granularity - 1 ) ) == 0 )		5497607	0					
+ANR	5497654	Callee	assert		5497607	0					
+ANR	5497655	Identifier	assert		5497607	0					
+ANR	5497656	ArgumentList	( granularity & ( granularity - 1 ) ) == 0		5497607	1					
+ANR	5497657	Argument	( granularity & ( granularity - 1 ) ) == 0		5497607	0					
+ANR	5497658	EqualityExpression	( granularity & ( granularity - 1 ) ) == 0		5497607	0		==			
+ANR	5497659	BitAndExpression	granularity & ( granularity - 1 )		5497607	0		&			
+ANR	5497660	Identifier	granularity		5497607	0					
+ANR	5497661	AdditiveExpression	granularity - 1		5497607	1		-			
+ANR	5497662	Identifier	granularity		5497607	0					
+ANR	5497663	PrimaryExpression	1		5497607	1					
+ANR	5497664	PrimaryExpression	0		5497607	1					
+ANR	5497665	ExpressionStatement	assert ( granularity >= BDRV_SECTOR_SIZE )	59:4:1328:1367	5497607	8	True				
+ANR	5497666	CallExpression	assert ( granularity >= BDRV_SECTOR_SIZE )		5497607	0					
+ANR	5497667	Callee	assert		5497607	0					
+ANR	5497668	Identifier	assert		5497607	0					
+ANR	5497669	ArgumentList	granularity >= BDRV_SECTOR_SIZE		5497607	1					
+ANR	5497670	Argument	granularity >= BDRV_SECTOR_SIZE		5497607	0					
+ANR	5497671	RelationalExpression	granularity >= BDRV_SECTOR_SIZE		5497607	0		>=			
+ANR	5497672	Identifier	granularity		5497607	0					
+ANR	5497673	Identifier	BDRV_SECTOR_SIZE		5497607	1					
+ANR	5497674	IfStatement	if ( buf_size < 0 )		5497607	9					
+ANR	5497675	Condition	buf_size < 0	63:8:1380:1391	5497607	0	True				
+ANR	5497676	RelationalExpression	buf_size < 0		5497607	0		<			
+ANR	5497677	Identifier	buf_size		5497607	0					
+ANR	5497678	PrimaryExpression	0		5497607	1					
+ANR	5497679	CompoundStatement		33:22:471:471	5497607	1					
+ANR	5497680	ExpressionStatement	"error_setg ( errp , ""Invalid parameter 'buf-size'"" )"	65:8:1405:1453	5497607	0	True				
+ANR	5497681	CallExpression	"error_setg ( errp , ""Invalid parameter 'buf-size'"" )"		5497607	0					
+ANR	5497682	Callee	error_setg		5497607	0					
+ANR	5497683	Identifier	error_setg		5497607	0					
+ANR	5497684	ArgumentList	errp		5497607	1					
+ANR	5497685	Argument	errp		5497607	0					
+ANR	5497686	Identifier	errp		5497607	0					
+ANR	5497687	Argument	"""Invalid parameter 'buf-size'"""		5497607	1					
+ANR	5497688	PrimaryExpression	"""Invalid parameter 'buf-size'"""		5497607	0					
+ANR	5497689	ReturnStatement	return ;	67:8:1464:1470	5497607	1	True				
+ANR	5497690	IfStatement	if ( buf_size == 0 )		5497607	10					
+ANR	5497691	Condition	buf_size == 0	73:8:1490:1502	5497607	0	True				
+ANR	5497692	EqualityExpression	buf_size == 0		5497607	0		==			
+ANR	5497693	Identifier	buf_size		5497607	0					
+ANR	5497694	PrimaryExpression	0		5497607	1					
+ANR	5497695	CompoundStatement		43:23:582:582	5497607	1					
+ANR	5497696	ExpressionStatement	buf_size = DEFAULT_MIRROR_BUF_SIZE	75:8:1516:1550	5497607	0	True				
+ANR	5497697	AssignmentExpression	buf_size = DEFAULT_MIRROR_BUF_SIZE		5497607	0		=			
+ANR	5497698	Identifier	buf_size		5497607	0					
+ANR	5497699	Identifier	DEFAULT_MIRROR_BUF_SIZE		5497607	1					
+ANR	5497700	ExpressionStatement	"mirror_top_bs = bdrv_new_open_driver ( & bdrv_mirror_top , filter_node_name , BDRV_O_RDWR , errp )"	87:4:1763:1896	5497607	11	True				
+ANR	5497701	AssignmentExpression	"mirror_top_bs = bdrv_new_open_driver ( & bdrv_mirror_top , filter_node_name , BDRV_O_RDWR , errp )"		5497607	0		=			
+ANR	5497702	Identifier	mirror_top_bs		5497607	0					
+ANR	5497703	CallExpression	"bdrv_new_open_driver ( & bdrv_mirror_top , filter_node_name , BDRV_O_RDWR , errp )"		5497607	1					
+ANR	5497704	Callee	bdrv_new_open_driver		5497607	0					
+ANR	5497705	Identifier	bdrv_new_open_driver		5497607	0					
+ANR	5497706	ArgumentList	& bdrv_mirror_top		5497607	1					
+ANR	5497707	Argument	& bdrv_mirror_top		5497607	0					
+ANR	5497708	UnaryOperationExpression	& bdrv_mirror_top		5497607	0					
+ANR	5497709	UnaryOperator	&		5497607	0					
+ANR	5497710	Identifier	bdrv_mirror_top		5497607	1					
+ANR	5497711	Argument	filter_node_name		5497607	1					
+ANR	5497712	Identifier	filter_node_name		5497607	0					
+ANR	5497713	Argument	BDRV_O_RDWR		5497607	2					
+ANR	5497714	Identifier	BDRV_O_RDWR		5497607	0					
+ANR	5497715	Argument	errp		5497607	3					
+ANR	5497716	Identifier	errp		5497607	0					
+ANR	5497717	IfStatement	if ( mirror_top_bs == NULL )		5497607	12					
+ANR	5497718	Condition	mirror_top_bs == NULL	91:8:1907:1927	5497607	0	True				
+ANR	5497719	EqualityExpression	mirror_top_bs == NULL		5497607	0		==			
+ANR	5497720	Identifier	mirror_top_bs		5497607	0					
+ANR	5497721	Identifier	NULL		5497607	1					
+ANR	5497722	CompoundStatement		61:31:1007:1007	5497607	1					
+ANR	5497723	ReturnStatement	return ;	93:8:1941:1947	5497607	0	True				
+ANR	5497724	IfStatement	if ( ! filter_node_name )		5497607	13					
+ANR	5497725	Condition	! filter_node_name	97:8:1965:1981	5497607	0	True				
+ANR	5497726	UnaryOperationExpression	! filter_node_name		5497607	0					
+ANR	5497727	UnaryOperator	!		5497607	0					
+ANR	5497728	Identifier	filter_node_name		5497607	1					
+ANR	5497729	CompoundStatement		67:27:1061:1061	5497607	1					
+ANR	5497730	ExpressionStatement	mirror_top_bs -> implicit = true	99:8:1995:2025	5497607	0	True				
+ANR	5497731	AssignmentExpression	mirror_top_bs -> implicit = true		5497607	0		=			
+ANR	5497732	PtrMemberAccess	mirror_top_bs -> implicit		5497607	0					
+ANR	5497733	Identifier	mirror_top_bs		5497607	0					
+ANR	5497734	Identifier	implicit		5497607	1					
+ANR	5497735	Identifier	true		5497607	1					
+ANR	5497736	ExpressionStatement	mirror_top_bs -> total_sectors = bs -> total_sectors	103:4:2039:2087	5497607	14	True				
+ANR	5497737	AssignmentExpression	mirror_top_bs -> total_sectors = bs -> total_sectors		5497607	0		=			
+ANR	5497738	PtrMemberAccess	mirror_top_bs -> total_sectors		5497607	0					
+ANR	5497739	Identifier	mirror_top_bs		5497607	0					
+ANR	5497740	Identifier	total_sectors		5497607	1					
+ANR	5497741	PtrMemberAccess	bs -> total_sectors		5497607	1					
+ANR	5497742	Identifier	bs		5497607	0					
+ANR	5497743	Identifier	total_sectors		5497607	1					
+ANR	5497744	ExpressionStatement	"bdrv_set_aio_context ( mirror_top_bs , bdrv_get_aio_context ( bs ) )"	105:4:2094:2155	5497607	15	True				
+ANR	5497745	CallExpression	"bdrv_set_aio_context ( mirror_top_bs , bdrv_get_aio_context ( bs ) )"		5497607	0					
+ANR	5497746	Callee	bdrv_set_aio_context		5497607	0					
+ANR	5497747	Identifier	bdrv_set_aio_context		5497607	0					
+ANR	5497748	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5497749	Argument	mirror_top_bs		5497607	0					
+ANR	5497750	Identifier	mirror_top_bs		5497607	0					
+ANR	5497751	Argument	bdrv_get_aio_context ( bs )		5497607	1					
+ANR	5497752	CallExpression	bdrv_get_aio_context ( bs )		5497607	0					
+ANR	5497753	Callee	bdrv_get_aio_context		5497607	0					
+ANR	5497754	Identifier	bdrv_get_aio_context		5497607	0					
+ANR	5497755	ArgumentList	bs		5497607	1					
+ANR	5497756	Argument	bs		5497607	0					
+ANR	5497757	Identifier	bs		5497607	0					
+ANR	5497758	ExpressionStatement	bdrv_ref ( mirror_top_bs )	113:4:2325:2348	5497607	16	True				
+ANR	5497759	CallExpression	bdrv_ref ( mirror_top_bs )		5497607	0					
+ANR	5497760	Callee	bdrv_ref		5497607	0					
+ANR	5497761	Identifier	bdrv_ref		5497607	0					
+ANR	5497762	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5497763	Argument	mirror_top_bs		5497607	0					
+ANR	5497764	Identifier	mirror_top_bs		5497607	0					
+ANR	5497765	ExpressionStatement	bdrv_drained_begin ( bs )	115:4:2355:2377	5497607	17	True				
+ANR	5497766	CallExpression	bdrv_drained_begin ( bs )		5497607	0					
+ANR	5497767	Callee	bdrv_drained_begin		5497607	0					
+ANR	5497768	Identifier	bdrv_drained_begin		5497607	0					
+ANR	5497769	ArgumentList	bs		5497607	1					
+ANR	5497770	Argument	bs		5497607	0					
+ANR	5497771	Identifier	bs		5497607	0					
+ANR	5497772	ExpressionStatement	"bdrv_append ( mirror_top_bs , bs , & local_err )"	117:4:2384:2426	5497607	18	True				
+ANR	5497773	CallExpression	"bdrv_append ( mirror_top_bs , bs , & local_err )"		5497607	0					
+ANR	5497774	Callee	bdrv_append		5497607	0					
+ANR	5497775	Identifier	bdrv_append		5497607	0					
+ANR	5497776	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5497777	Argument	mirror_top_bs		5497607	0					
+ANR	5497778	Identifier	mirror_top_bs		5497607	0					
+ANR	5497779	Argument	bs		5497607	1					
+ANR	5497780	Identifier	bs		5497607	0					
+ANR	5497781	Argument	& local_err		5497607	2					
+ANR	5497782	UnaryOperationExpression	& local_err		5497607	0					
+ANR	5497783	UnaryOperator	&		5497607	0					
+ANR	5497784	Identifier	local_err		5497607	1					
+ANR	5497785	ExpressionStatement	bdrv_drained_end ( bs )	119:4:2433:2453	5497607	19	True				
+ANR	5497786	CallExpression	bdrv_drained_end ( bs )		5497607	0					
+ANR	5497787	Callee	bdrv_drained_end		5497607	0					
+ANR	5497788	Identifier	bdrv_drained_end		5497607	0					
+ANR	5497789	ArgumentList	bs		5497607	1					
+ANR	5497790	Argument	bs		5497607	0					
+ANR	5497791	Identifier	bs		5497607	0					
+ANR	5497792	IfStatement	if ( local_err )		5497607	20					
+ANR	5497793	Condition	local_err	123:8:2466:2474	5497607	0	True				
+ANR	5497794	Identifier	local_err		5497607	0					
+ANR	5497795	CompoundStatement		93:19:1554:1554	5497607	1					
+ANR	5497796	ExpressionStatement	bdrv_unref ( mirror_top_bs )	125:8:2488:2513	5497607	0	True				
+ANR	5497797	CallExpression	bdrv_unref ( mirror_top_bs )		5497607	0					
+ANR	5497798	Callee	bdrv_unref		5497607	0					
+ANR	5497799	Identifier	bdrv_unref		5497607	0					
+ANR	5497800	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5497801	Argument	mirror_top_bs		5497607	0					
+ANR	5497802	Identifier	mirror_top_bs		5497607	0					
+ANR	5497803	ExpressionStatement	"error_propagate ( errp , local_err )"	127:8:2524:2556	5497607	1	True				
+ANR	5497804	CallExpression	"error_propagate ( errp , local_err )"		5497607	0					
+ANR	5497805	Callee	error_propagate		5497607	0					
+ANR	5497806	Identifier	error_propagate		5497607	0					
+ANR	5497807	ArgumentList	errp		5497607	1					
+ANR	5497808	Argument	errp		5497607	0					
+ANR	5497809	Identifier	errp		5497607	0					
+ANR	5497810	Argument	local_err		5497607	1					
+ANR	5497811	Identifier	local_err		5497607	0					
+ANR	5497812	ReturnStatement	return ;	129:8:2567:2573	5497607	2	True				
+ANR	5497813	ExpressionStatement	"s = block_job_create ( job_id , driver , mirror_top_bs , BLK_PERM_CONSISTENT_READ , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD , speed , creation_flags , cb , opaque , errp )"	137:4:2666:2979	5497607	21	True				
+ANR	5497814	AssignmentExpression	"s = block_job_create ( job_id , driver , mirror_top_bs , BLK_PERM_CONSISTENT_READ , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD , speed , creation_flags , cb , opaque , errp )"		5497607	0		=			
+ANR	5497815	Identifier	s		5497607	0					
+ANR	5497816	CallExpression	"block_job_create ( job_id , driver , mirror_top_bs , BLK_PERM_CONSISTENT_READ , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD , speed , creation_flags , cb , opaque , errp )"		5497607	1					
+ANR	5497817	Callee	block_job_create		5497607	0					
+ANR	5497818	Identifier	block_job_create		5497607	0					
+ANR	5497819	ArgumentList	job_id		5497607	1					
+ANR	5497820	Argument	job_id		5497607	0					
+ANR	5497821	Identifier	job_id		5497607	0					
+ANR	5497822	Argument	driver		5497607	1					
+ANR	5497823	Identifier	driver		5497607	0					
+ANR	5497824	Argument	mirror_top_bs		5497607	2					
+ANR	5497825	Identifier	mirror_top_bs		5497607	0					
+ANR	5497826	Argument	BLK_PERM_CONSISTENT_READ		5497607	3					
+ANR	5497827	Identifier	BLK_PERM_CONSISTENT_READ		5497607	0					
+ANR	5497828	Argument	BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD		5497607	4					
+ANR	5497829	InclusiveOrExpression	BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD		5497607	0		|			
+ANR	5497830	Identifier	BLK_PERM_CONSISTENT_READ		5497607	0					
+ANR	5497831	InclusiveOrExpression	BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD		5497607	1		|			
+ANR	5497832	Identifier	BLK_PERM_WRITE_UNCHANGED		5497607	0					
+ANR	5497833	InclusiveOrExpression	BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD		5497607	1		|			
+ANR	5497834	Identifier	BLK_PERM_WRITE		5497607	0					
+ANR	5497835	Identifier	BLK_PERM_GRAPH_MOD		5497607	1					
+ANR	5497836	Argument	speed		5497607	5					
+ANR	5497837	Identifier	speed		5497607	0					
+ANR	5497838	Argument	creation_flags		5497607	6					
+ANR	5497839	Identifier	creation_flags		5497607	0					
+ANR	5497840	Argument	cb		5497607	7					
+ANR	5497841	Identifier	cb		5497607	0					
+ANR	5497842	Argument	opaque		5497607	8					
+ANR	5497843	Identifier	opaque		5497607	0					
+ANR	5497844	Argument	errp		5497607	9					
+ANR	5497845	Identifier	errp		5497607	0					
+ANR	5497846	IfStatement	if ( ! s )		5497607	22					
+ANR	5497847	Condition	! s	147:8:2990:2991	5497607	0	True				
+ANR	5497848	UnaryOperationExpression	! s		5497607	0					
+ANR	5497849	UnaryOperator	!		5497607	0					
+ANR	5497850	Identifier	s		5497607	1					
+ANR	5497851	CompoundStatement		117:12:2071:2071	5497607	1					
+ANR	5497852	GotoStatement	goto fail ;	149:8:3005:3014	5497607	0	True				
+ANR	5497853	Identifier	fail		5497607	0					
+ANR	5497854	ExpressionStatement	bdrv_unref ( mirror_top_bs )	155:4:3086:3111	5497607	23	True				
+ANR	5497855	CallExpression	bdrv_unref ( mirror_top_bs )		5497607	0					
+ANR	5497856	Callee	bdrv_unref		5497607	0					
+ANR	5497857	Identifier	bdrv_unref		5497607	0					
+ANR	5497858	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5497859	Argument	mirror_top_bs		5497607	0					
+ANR	5497860	Identifier	mirror_top_bs		5497607	0					
+ANR	5497861	ExpressionStatement	s -> source = bs	159:4:3120:3134	5497607	24	True				
+ANR	5497862	AssignmentExpression	s -> source = bs		5497607	0		=			
+ANR	5497863	PtrMemberAccess	s -> source		5497607	0					
+ANR	5497864	Identifier	s		5497607	0					
+ANR	5497865	Identifier	source		5497607	1					
+ANR	5497866	Identifier	bs		5497607	1					
+ANR	5497867	ExpressionStatement	s -> mirror_top_bs = mirror_top_bs	161:4:3141:3173	5497607	25	True				
+ANR	5497868	AssignmentExpression	s -> mirror_top_bs = mirror_top_bs		5497607	0		=			
+ANR	5497869	PtrMemberAccess	s -> mirror_top_bs		5497607	0					
+ANR	5497870	Identifier	s		5497607	0					
+ANR	5497871	Identifier	mirror_top_bs		5497607	1					
+ANR	5497872	Identifier	mirror_top_bs		5497607	1					
+ANR	5497873	ExpressionStatement	"target_is_backing = bdrv_chain_contains ( bs , target )"	181:4:3685:3736	5497607	26	True				
+ANR	5497874	AssignmentExpression	"target_is_backing = bdrv_chain_contains ( bs , target )"		5497607	0		=			
+ANR	5497875	Identifier	target_is_backing		5497607	0					
+ANR	5497876	CallExpression	"bdrv_chain_contains ( bs , target )"		5497607	1					
+ANR	5497877	Callee	bdrv_chain_contains		5497607	0					
+ANR	5497878	Identifier	bdrv_chain_contains		5497607	0					
+ANR	5497879	ArgumentList	bs		5497607	1					
+ANR	5497880	Argument	bs		5497607	0					
+ANR	5497881	Identifier	bs		5497607	0					
+ANR	5497882	Argument	target		5497607	1					
+ANR	5497883	Identifier	target		5497607	0					
+ANR	5497884	ExpressionStatement	target_graph_mod = ( backing_mode != MIRROR_LEAVE_BACKING_CHAIN )	183:4:3743:3806	5497607	27	True				
+ANR	5497885	AssignmentExpression	target_graph_mod = ( backing_mode != MIRROR_LEAVE_BACKING_CHAIN )		5497607	0		=			
+ANR	5497886	Identifier	target_graph_mod		5497607	0					
+ANR	5497887	EqualityExpression	backing_mode != MIRROR_LEAVE_BACKING_CHAIN		5497607	1		!=			
+ANR	5497888	Identifier	backing_mode		5497607	0					
+ANR	5497889	Identifier	MIRROR_LEAVE_BACKING_CHAIN		5497607	1					
+ANR	5497890	ExpressionStatement	"s -> target = blk_new ( BLK_PERM_WRITE | BLK_PERM_RESIZE | ( target_graph_mod ? BLK_PERM_GRAPH_MOD : 0 ) , BLK_PERM_WRITE_UNCHANGED | ( target_is_backing ? BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD : 0 ) )"	185:4:3813:4196	5497607	28	True				
+ANR	5497891	AssignmentExpression	"s -> target = blk_new ( BLK_PERM_WRITE | BLK_PERM_RESIZE | ( target_graph_mod ? BLK_PERM_GRAPH_MOD : 0 ) , BLK_PERM_WRITE_UNCHANGED | ( target_is_backing ? BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD : 0 ) )"		5497607	0		=			
+ANR	5497892	PtrMemberAccess	s -> target		5497607	0					
+ANR	5497893	Identifier	s		5497607	0					
+ANR	5497894	Identifier	target		5497607	1					
+ANR	5497895	CallExpression	"blk_new ( BLK_PERM_WRITE | BLK_PERM_RESIZE | ( target_graph_mod ? BLK_PERM_GRAPH_MOD : 0 ) , BLK_PERM_WRITE_UNCHANGED | ( target_is_backing ? BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD : 0 ) )"		5497607	1					
+ANR	5497896	Callee	blk_new		5497607	0					
+ANR	5497897	Identifier	blk_new		5497607	0					
+ANR	5497898	ArgumentList	BLK_PERM_WRITE | BLK_PERM_RESIZE | ( target_graph_mod ? BLK_PERM_GRAPH_MOD : 0 )		5497607	1					
+ANR	5497899	Argument	BLK_PERM_WRITE | BLK_PERM_RESIZE | ( target_graph_mod ? BLK_PERM_GRAPH_MOD : 0 )		5497607	0					
+ANR	5497900	InclusiveOrExpression	BLK_PERM_WRITE | BLK_PERM_RESIZE | ( target_graph_mod ? BLK_PERM_GRAPH_MOD : 0 )		5497607	0		|			
+ANR	5497901	Identifier	BLK_PERM_WRITE		5497607	0					
+ANR	5497902	InclusiveOrExpression	BLK_PERM_RESIZE | ( target_graph_mod ? BLK_PERM_GRAPH_MOD : 0 )		5497607	1		|			
+ANR	5497903	Identifier	BLK_PERM_RESIZE		5497607	0					
+ANR	5497904	ConditionalExpression	target_graph_mod ? BLK_PERM_GRAPH_MOD : 0		5497607	1					
+ANR	5497905	Condition	target_graph_mod		5497607	0					
+ANR	5497906	Identifier	target_graph_mod		5497607	0					
+ANR	5497907	Identifier	BLK_PERM_GRAPH_MOD		5497607	1					
+ANR	5497908	PrimaryExpression	0		5497607	2					
+ANR	5497909	Argument	BLK_PERM_WRITE_UNCHANGED | ( target_is_backing ? BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD : 0 )		5497607	1					
+ANR	5497910	InclusiveOrExpression	BLK_PERM_WRITE_UNCHANGED | ( target_is_backing ? BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD : 0 )		5497607	0		|			
+ANR	5497911	Identifier	BLK_PERM_WRITE_UNCHANGED		5497607	0					
+ANR	5497912	ConditionalExpression	target_is_backing ? BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD : 0		5497607	1					
+ANR	5497913	Condition	target_is_backing		5497607	0					
+ANR	5497914	Identifier	target_is_backing		5497607	0					
+ANR	5497915	InclusiveOrExpression	BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD		5497607	1		|			
+ANR	5497916	Identifier	BLK_PERM_CONSISTENT_READ		5497607	0					
+ANR	5497917	InclusiveOrExpression	BLK_PERM_WRITE | BLK_PERM_GRAPH_MOD		5497607	1		|			
+ANR	5497918	Identifier	BLK_PERM_WRITE		5497607	0					
+ANR	5497919	Identifier	BLK_PERM_GRAPH_MOD		5497607	1					
+ANR	5497920	PrimaryExpression	0		5497607	2					
+ANR	5497921	ExpressionStatement	"ret = blk_insert_bs ( s -> target , target , errp )"	197:4:4203:4247	5497607	29	True				
+ANR	5497922	AssignmentExpression	"ret = blk_insert_bs ( s -> target , target , errp )"		5497607	0		=			
+ANR	5497923	Identifier	ret		5497607	0					
+ANR	5497924	CallExpression	"blk_insert_bs ( s -> target , target , errp )"		5497607	1					
+ANR	5497925	Callee	blk_insert_bs		5497607	0					
+ANR	5497926	Identifier	blk_insert_bs		5497607	0					
+ANR	5497927	ArgumentList	s -> target		5497607	1					
+ANR	5497928	Argument	s -> target		5497607	0					
+ANR	5497929	PtrMemberAccess	s -> target		5497607	0					
+ANR	5497930	Identifier	s		5497607	0					
+ANR	5497931	Identifier	target		5497607	1					
+ANR	5497932	Argument	target		5497607	1					
+ANR	5497933	Identifier	target		5497607	0					
+ANR	5497934	Argument	errp		5497607	2					
+ANR	5497935	Identifier	errp		5497607	0					
+ANR	5497936	IfStatement	if ( ret < 0 )		5497607	30					
+ANR	5497937	Condition	ret < 0	199:8:4258:4264	5497607	0	True				
+ANR	5497938	RelationalExpression	ret < 0		5497607	0		<			
+ANR	5497939	Identifier	ret		5497607	0					
+ANR	5497940	PrimaryExpression	0		5497607	1					
+ANR	5497941	CompoundStatement		169:17:3344:3344	5497607	1					
+ANR	5497942	GotoStatement	goto fail ;	201:8:4278:4287	5497607	0	True				
+ANR	5497943	Identifier	fail		5497607	0					
+ANR	5497944	IfStatement	if ( is_mirror )		5497607	31					
+ANR	5497945	Condition	is_mirror	205:8:4305:4313	5497607	0	True				
+ANR	5497946	Identifier	is_mirror		5497607	0					
+ANR	5497947	CompoundStatement		175:19:3393:3393	5497607	1					
+ANR	5497948	ExpressionStatement	blk_set_force_allow_inactivate ( s -> target )	219:8:4747:4788	5497607	0	True				
+ANR	5497949	CallExpression	blk_set_force_allow_inactivate ( s -> target )		5497607	0					
+ANR	5497950	Callee	blk_set_force_allow_inactivate		5497607	0					
+ANR	5497951	Identifier	blk_set_force_allow_inactivate		5497607	0					
+ANR	5497952	ArgumentList	s -> target		5497607	1					
+ANR	5497953	Argument	s -> target		5497607	0					
+ANR	5497954	PtrMemberAccess	s -> target		5497607	0					
+ANR	5497955	Identifier	s		5497607	0					
+ANR	5497956	Identifier	target		5497607	1					
+ANR	5497957	ExpressionStatement	s -> replaces = g_strdup ( replaces )	225:4:4804:4836	5497607	32	True				
+ANR	5497958	AssignmentExpression	s -> replaces = g_strdup ( replaces )		5497607	0		=			
+ANR	5497959	PtrMemberAccess	s -> replaces		5497607	0					
+ANR	5497960	Identifier	s		5497607	0					
+ANR	5497961	Identifier	replaces		5497607	1					
+ANR	5497962	CallExpression	g_strdup ( replaces )		5497607	1					
+ANR	5497963	Callee	g_strdup		5497607	0					
+ANR	5497964	Identifier	g_strdup		5497607	0					
+ANR	5497965	ArgumentList	replaces		5497607	1					
+ANR	5497966	Argument	replaces		5497607	0					
+ANR	5497967	Identifier	replaces		5497607	0					
+ANR	5497968	ExpressionStatement	s -> on_source_error = on_source_error	227:4:4843:4879	5497607	33	True				
+ANR	5497969	AssignmentExpression	s -> on_source_error = on_source_error		5497607	0		=			
+ANR	5497970	PtrMemberAccess	s -> on_source_error		5497607	0					
+ANR	5497971	Identifier	s		5497607	0					
+ANR	5497972	Identifier	on_source_error		5497607	1					
+ANR	5497973	Identifier	on_source_error		5497607	1					
+ANR	5497974	ExpressionStatement	s -> on_target_error = on_target_error	229:4:4886:4922	5497607	34	True				
+ANR	5497975	AssignmentExpression	s -> on_target_error = on_target_error		5497607	0		=			
+ANR	5497976	PtrMemberAccess	s -> on_target_error		5497607	0					
+ANR	5497977	Identifier	s		5497607	0					
+ANR	5497978	Identifier	on_target_error		5497607	1					
+ANR	5497979	Identifier	on_target_error		5497607	1					
+ANR	5497980	ExpressionStatement	s -> is_none_mode = is_none_mode	231:4:4929:4959	5497607	35	True				
+ANR	5497981	AssignmentExpression	s -> is_none_mode = is_none_mode		5497607	0		=			
+ANR	5497982	PtrMemberAccess	s -> is_none_mode		5497607	0					
+ANR	5497983	Identifier	s		5497607	0					
+ANR	5497984	Identifier	is_none_mode		5497607	1					
+ANR	5497985	Identifier	is_none_mode		5497607	1					
+ANR	5497986	ExpressionStatement	s -> backing_mode = backing_mode	233:4:4966:4996	5497607	36	True				
+ANR	5497987	AssignmentExpression	s -> backing_mode = backing_mode		5497607	0		=			
+ANR	5497988	PtrMemberAccess	s -> backing_mode		5497607	0					
+ANR	5497989	Identifier	s		5497607	0					
+ANR	5497990	Identifier	backing_mode		5497607	1					
+ANR	5497991	Identifier	backing_mode		5497607	1					
+ANR	5497992	ExpressionStatement	s -> base = base	235:4:5003:5017	5497607	37	True				
+ANR	5497993	AssignmentExpression	s -> base = base		5497607	0		=			
+ANR	5497994	PtrMemberAccess	s -> base		5497607	0					
+ANR	5497995	Identifier	s		5497607	0					
+ANR	5497996	Identifier	base		5497607	1					
+ANR	5497997	Identifier	base		5497607	1					
+ANR	5497998	ExpressionStatement	s -> granularity = granularity	237:4:5024:5052	5497607	38	True				
+ANR	5497999	AssignmentExpression	s -> granularity = granularity		5497607	0		=			
+ANR	5498000	PtrMemberAccess	s -> granularity		5497607	0					
+ANR	5498001	Identifier	s		5497607	0					
+ANR	5498002	Identifier	granularity		5497607	1					
+ANR	5498003	Identifier	granularity		5497607	1					
+ANR	5498004	ExpressionStatement	"s -> buf_size = ROUND_UP ( buf_size , granularity )"	239:4:5059:5104	5497607	39	True				
+ANR	5498005	AssignmentExpression	"s -> buf_size = ROUND_UP ( buf_size , granularity )"		5497607	0		=			
+ANR	5498006	PtrMemberAccess	s -> buf_size		5497607	0					
+ANR	5498007	Identifier	s		5497607	0					
+ANR	5498008	Identifier	buf_size		5497607	1					
+ANR	5498009	CallExpression	"ROUND_UP ( buf_size , granularity )"		5497607	1					
+ANR	5498010	Callee	ROUND_UP		5497607	0					
+ANR	5498011	Identifier	ROUND_UP		5497607	0					
+ANR	5498012	ArgumentList	buf_size		5497607	1					
+ANR	5498013	Argument	buf_size		5497607	0					
+ANR	5498014	Identifier	buf_size		5497607	0					
+ANR	5498015	Argument	granularity		5497607	1					
+ANR	5498016	Identifier	granularity		5497607	0					
+ANR	5498017	ExpressionStatement	s -> unmap = unmap	241:4:5111:5127	5497607	40	True				
+ANR	5498018	AssignmentExpression	s -> unmap = unmap		5497607	0		=			
+ANR	5498019	PtrMemberAccess	s -> unmap		5497607	0					
+ANR	5498020	Identifier	s		5497607	0					
+ANR	5498021	Identifier	unmap		5497607	1					
+ANR	5498022	Identifier	unmap		5497607	1					
+ANR	5498023	IfStatement	if ( auto_complete )		5497607	41					
+ANR	5498024	Condition	auto_complete	243:8:5138:5150	5497607	0	True				
+ANR	5498025	Identifier	auto_complete		5497607	0					
+ANR	5498026	CompoundStatement		213:23:4230:4230	5497607	1					
+ANR	5498027	ExpressionStatement	s -> should_complete = true	245:8:5164:5189	5497607	0	True				
+ANR	5498028	AssignmentExpression	s -> should_complete = true		5497607	0		=			
+ANR	5498029	PtrMemberAccess	s -> should_complete		5497607	0					
+ANR	5498030	Identifier	s		5497607	0					
+ANR	5498031	Identifier	should_complete		5497607	1					
+ANR	5498032	Identifier	true		5497607	1					
+ANR	5498033	ExpressionStatement	"s -> dirty_bitmap = bdrv_create_dirty_bitmap ( bs , granularity , NULL , errp )"	251:4:5205:5276	5497607	42	True				
+ANR	5498034	AssignmentExpression	"s -> dirty_bitmap = bdrv_create_dirty_bitmap ( bs , granularity , NULL , errp )"		5497607	0		=			
+ANR	5498035	PtrMemberAccess	s -> dirty_bitmap		5497607	0					
+ANR	5498036	Identifier	s		5497607	0					
+ANR	5498037	Identifier	dirty_bitmap		5497607	1					
+ANR	5498038	CallExpression	"bdrv_create_dirty_bitmap ( bs , granularity , NULL , errp )"		5497607	1					
+ANR	5498039	Callee	bdrv_create_dirty_bitmap		5497607	0					
+ANR	5498040	Identifier	bdrv_create_dirty_bitmap		5497607	0					
+ANR	5498041	ArgumentList	bs		5497607	1					
+ANR	5498042	Argument	bs		5497607	0					
+ANR	5498043	Identifier	bs		5497607	0					
+ANR	5498044	Argument	granularity		5497607	1					
+ANR	5498045	Identifier	granularity		5497607	0					
+ANR	5498046	Argument	NULL		5497607	2					
+ANR	5498047	Identifier	NULL		5497607	0					
+ANR	5498048	Argument	errp		5497607	3					
+ANR	5498049	Identifier	errp		5497607	0					
+ANR	5498050	IfStatement	if ( ! s -> dirty_bitmap )		5497607	43					
+ANR	5498051	Condition	! s -> dirty_bitmap	253:8:5287:5302	5497607	0	True				
+ANR	5498052	UnaryOperationExpression	! s -> dirty_bitmap		5497607	0					
+ANR	5498053	UnaryOperator	!		5497607	0					
+ANR	5498054	PtrMemberAccess	s -> dirty_bitmap		5497607	1					
+ANR	5498055	Identifier	s		5497607	0					
+ANR	5498056	Identifier	dirty_bitmap		5497607	1					
+ANR	5498057	CompoundStatement		223:26:4382:4382	5497607	1					
+ANR	5498058	GotoStatement	goto fail ;	255:8:5316:5325	5497607	0	True				
+ANR	5498059	Identifier	fail		5497607	0					
+ANR	5498060	ExpressionStatement	"block_job_add_bdrv ( & s -> common , ""target"" , target , 0 , BLK_PERM_ALL , & error_abort )"	263:4:5406:5509	5497607	44	True				
+ANR	5498061	CallExpression	"block_job_add_bdrv ( & s -> common , ""target"" , target , 0 , BLK_PERM_ALL , & error_abort )"		5497607	0					
+ANR	5498062	Callee	block_job_add_bdrv		5497607	0					
+ANR	5498063	Identifier	block_job_add_bdrv		5497607	0					
+ANR	5498064	ArgumentList	& s -> common		5497607	1					
+ANR	5498065	Argument	& s -> common		5497607	0					
+ANR	5498066	UnaryOperationExpression	& s -> common		5497607	0					
+ANR	5498067	UnaryOperator	&		5497607	0					
+ANR	5498068	PtrMemberAccess	s -> common		5497607	1					
+ANR	5498069	Identifier	s		5497607	0					
+ANR	5498070	Identifier	common		5497607	1					
+ANR	5498071	Argument	"""target"""		5497607	1					
+ANR	5498072	PrimaryExpression	"""target"""		5497607	0					
+ANR	5498073	Argument	target		5497607	2					
+ANR	5498074	Identifier	target		5497607	0					
+ANR	5498075	Argument	0		5497607	3					
+ANR	5498076	PrimaryExpression	0		5497607	0					
+ANR	5498077	Argument	BLK_PERM_ALL		5497607	4					
+ANR	5498078	Identifier	BLK_PERM_ALL		5497607	0					
+ANR	5498079	Argument	& error_abort		5497607	5					
+ANR	5498080	UnaryOperationExpression	& error_abort		5497607	0					
+ANR	5498081	UnaryOperator	&		5497607	0					
+ANR	5498082	Identifier	error_abort		5497607	1					
+ANR	5498083	IfStatement	if ( target_is_backing )		5497607	45					
+ANR	5498084	Condition	target_is_backing	273:8:5636:5652	5497607	0	True				
+ANR	5498085	Identifier	target_is_backing		5497607	0					
+ANR	5498086	CompoundStatement		245:8:4743:4765	5497607	1					
+ANR	5498087	IdentifierDeclStatement	BlockDriverState * iter ;	275:8:5666:5688	5497607	0	True				
+ANR	5498088	IdentifierDecl	* iter		5497607	0					
+ANR	5498089	IdentifierDeclType	BlockDriverState *		5497607	0					
+ANR	5498090	Identifier	iter		5497607	1					
+ANR	5498091	ForStatement	for ( iter = backing_bs ( bs ) ; iter != target ; iter = backing_bs ( iter ) )		5497607	1					
+ANR	5498092	ForInit	iter = backing_bs ( bs ) ;	277:13:5704:5725	5497607	0	True				
+ANR	5498093	AssignmentExpression	iter = backing_bs ( bs )		5497607	0		=			
+ANR	5498094	Identifier	iter		5497607	0					
+ANR	5498095	CallExpression	backing_bs ( bs )		5497607	1					
+ANR	5498096	Callee	backing_bs		5497607	0					
+ANR	5498097	Identifier	backing_bs		5497607	0					
+ANR	5498098	ArgumentList	bs		5497607	1					
+ANR	5498099	Argument	bs		5497607	0					
+ANR	5498100	Identifier	bs		5497607	0					
+ANR	5498101	Condition	iter != target	277:36:5727:5740	5497607	1	True				
+ANR	5498102	EqualityExpression	iter != target		5497607	0		!=			
+ANR	5498103	Identifier	iter		5497607	0					
+ANR	5498104	Identifier	target		5497607	1					
+ANR	5498105	AssignmentExpression	iter = backing_bs ( iter )	277:52:5743:5765	5497607	2	True	=			
+ANR	5498106	Identifier	iter		5497607	0					
+ANR	5498107	CallExpression	backing_bs ( iter )		5497607	1					
+ANR	5498108	Callee	backing_bs		5497607	0					
+ANR	5498109	Identifier	backing_bs		5497607	0					
+ANR	5498110	ArgumentList	iter		5497607	1					
+ANR	5498111	Argument	iter		5497607	0					
+ANR	5498112	Identifier	iter		5497607	0					
+ANR	5498113	CompoundStatement		247:77:4845:4845	5497607	3					
+ANR	5498114	ExpressionStatement	"ret = block_job_add_bdrv ( & s -> common , ""intermediate node"" , iter , 0 , BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE , errp )"	287:12:6085:6276	5497607	0	True				
+ANR	5498115	AssignmentExpression	"ret = block_job_add_bdrv ( & s -> common , ""intermediate node"" , iter , 0 , BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE , errp )"		5497607	0		=			
+ANR	5498116	Identifier	ret		5497607	0					
+ANR	5498117	CallExpression	"block_job_add_bdrv ( & s -> common , ""intermediate node"" , iter , 0 , BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE , errp )"		5497607	1					
+ANR	5498118	Callee	block_job_add_bdrv		5497607	0					
+ANR	5498119	Identifier	block_job_add_bdrv		5497607	0					
+ANR	5498120	ArgumentList	& s -> common		5497607	1					
+ANR	5498121	Argument	& s -> common		5497607	0					
+ANR	5498122	UnaryOperationExpression	& s -> common		5497607	0					
+ANR	5498123	UnaryOperator	&		5497607	0					
+ANR	5498124	PtrMemberAccess	s -> common		5497607	1					
+ANR	5498125	Identifier	s		5497607	0					
+ANR	5498126	Identifier	common		5497607	1					
+ANR	5498127	Argument	"""intermediate node"""		5497607	1					
+ANR	5498128	PrimaryExpression	"""intermediate node"""		5497607	0					
+ANR	5498129	Argument	iter		5497607	2					
+ANR	5498130	Identifier	iter		5497607	0					
+ANR	5498131	Argument	0		5497607	3					
+ANR	5498132	PrimaryExpression	0		5497607	0					
+ANR	5498133	Argument	BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE		5497607	4					
+ANR	5498134	InclusiveOrExpression	BLK_PERM_WRITE_UNCHANGED | BLK_PERM_WRITE		5497607	0		|			
+ANR	5498135	Identifier	BLK_PERM_WRITE_UNCHANGED		5497607	0					
+ANR	5498136	Identifier	BLK_PERM_WRITE		5497607	1					
+ANR	5498137	Argument	errp		5497607	5					
+ANR	5498138	Identifier	errp		5497607	0					
+ANR	5498139	IfStatement	if ( ret < 0 )		5497607	1					
+ANR	5498140	Condition	ret < 0	293:16:6295:6301	5497607	0	True				
+ANR	5498141	RelationalExpression	ret < 0		5497607	0		<			
+ANR	5498142	Identifier	ret		5497607	0					
+ANR	5498143	PrimaryExpression	0		5497607	1					
+ANR	5498144	CompoundStatement		263:25:5381:5381	5497607	1					
+ANR	5498145	GotoStatement	goto fail ;	295:16:6323:6332	5497607	0	True				
+ANR	5498146	Identifier	fail		5497607	0					
+ANR	5498147	ExpressionStatement	"trace_mirror_start ( bs , s , opaque )"	305:4:6374:6407	5497607	46	True				
+ANR	5498148	CallExpression	"trace_mirror_start ( bs , s , opaque )"		5497607	0					
+ANR	5498149	Callee	trace_mirror_start		5497607	0					
+ANR	5498150	Identifier	trace_mirror_start		5497607	0					
+ANR	5498151	ArgumentList	bs		5497607	1					
+ANR	5498152	Argument	bs		5497607	0					
+ANR	5498153	Identifier	bs		5497607	0					
+ANR	5498154	Argument	s		5497607	1					
+ANR	5498155	Identifier	s		5497607	0					
+ANR	5498156	Argument	opaque		5497607	2					
+ANR	5498157	Identifier	opaque		5497607	0					
+ANR	5498158	ExpressionStatement	block_job_start ( & s -> common )	307:4:6414:6441	5497607	47	True				
+ANR	5498159	CallExpression	block_job_start ( & s -> common )		5497607	0					
+ANR	5498160	Callee	block_job_start		5497607	0					
+ANR	5498161	Identifier	block_job_start		5497607	0					
+ANR	5498162	ArgumentList	& s -> common		5497607	1					
+ANR	5498163	Argument	& s -> common		5497607	0					
+ANR	5498164	UnaryOperationExpression	& s -> common		5497607	0					
+ANR	5498165	UnaryOperator	&		5497607	0					
+ANR	5498166	PtrMemberAccess	s -> common		5497607	1					
+ANR	5498167	Identifier	s		5497607	0					
+ANR	5498168	Identifier	common		5497607	1					
+ANR	5498169	ReturnStatement	return ;	309:4:6448:6454	5497607	48	True				
+ANR	5498170	Label	fail :	313:0:6459:6463	5497607	49	True				
+ANR	5498171	Identifier	fail		5497607	0					
+ANR	5498172	IfStatement	if ( s )		5497607	50					
+ANR	5498173	Condition	s	315:8:6474:6474	5497607	0	True				
+ANR	5498174	Identifier	s		5497607	0					
+ANR	5498175	CompoundStatement		285:11:5554:5554	5497607	1					
+ANR	5498176	ExpressionStatement	bdrv_ref ( mirror_top_bs )	321:8:6599:6622	5497607	0	True				
+ANR	5498177	CallExpression	bdrv_ref ( mirror_top_bs )		5497607	0					
+ANR	5498178	Callee	bdrv_ref		5497607	0					
+ANR	5498179	Identifier	bdrv_ref		5497607	0					
+ANR	5498180	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5498181	Argument	mirror_top_bs		5497607	0					
+ANR	5498182	Identifier	mirror_top_bs		5497607	0					
+ANR	5498183	ExpressionStatement	g_free ( s -> replaces )	325:8:6635:6654	5497607	1	True				
+ANR	5498184	CallExpression	g_free ( s -> replaces )		5497607	0					
+ANR	5498185	Callee	g_free		5497607	0					
+ANR	5498186	Identifier	g_free		5497607	0					
+ANR	5498187	ArgumentList	s -> replaces		5497607	1					
+ANR	5498188	Argument	s -> replaces		5497607	0					
+ANR	5498189	PtrMemberAccess	s -> replaces		5497607	0					
+ANR	5498190	Identifier	s		5497607	0					
+ANR	5498191	Identifier	replaces		5497607	1					
+ANR	5498192	ExpressionStatement	blk_unref ( s -> target )	327:8:6665:6685	5497607	2	True				
+ANR	5498193	CallExpression	blk_unref ( s -> target )		5497607	0					
+ANR	5498194	Callee	blk_unref		5497607	0					
+ANR	5498195	Identifier	blk_unref		5497607	0					
+ANR	5498196	ArgumentList	s -> target		5497607	1					
+ANR	5498197	Argument	s -> target		5497607	0					
+ANR	5498198	PtrMemberAccess	s -> target		5497607	0					
+ANR	5498199	Identifier	s		5497607	0					
+ANR	5498200	Identifier	target		5497607	1					
+ANR	5498201	ExpressionStatement	block_job_early_fail ( & s -> common )	329:8:6696:6728	5497607	3	True				
+ANR	5498202	CallExpression	block_job_early_fail ( & s -> common )		5497607	0					
+ANR	5498203	Callee	block_job_early_fail		5497607	0					
+ANR	5498204	Identifier	block_job_early_fail		5497607	0					
+ANR	5498205	ArgumentList	& s -> common		5497607	1					
+ANR	5498206	Argument	& s -> common		5497607	0					
+ANR	5498207	UnaryOperationExpression	& s -> common		5497607	0					
+ANR	5498208	UnaryOperator	&		5497607	0					
+ANR	5498209	PtrMemberAccess	s -> common		5497607	1					
+ANR	5498210	Identifier	s		5497607	0					
+ANR	5498211	Identifier	common		5497607	1					
+ANR	5498212	ExpressionStatement	"bdrv_child_try_set_perm ( mirror_top_bs -> backing , 0 , BLK_PERM_ALL , & error_abort )"	335:4:6744:6851	5497607	51	True				
+ANR	5498213	CallExpression	"bdrv_child_try_set_perm ( mirror_top_bs -> backing , 0 , BLK_PERM_ALL , & error_abort )"		5497607	0					
+ANR	5498214	Callee	bdrv_child_try_set_perm		5497607	0					
+ANR	5498215	Identifier	bdrv_child_try_set_perm		5497607	0					
+ANR	5498216	ArgumentList	mirror_top_bs -> backing		5497607	1					
+ANR	5498217	Argument	mirror_top_bs -> backing		5497607	0					
+ANR	5498218	PtrMemberAccess	mirror_top_bs -> backing		5497607	0					
+ANR	5498219	Identifier	mirror_top_bs		5497607	0					
+ANR	5498220	Identifier	backing		5497607	1					
+ANR	5498221	Argument	0		5497607	1					
+ANR	5498222	PrimaryExpression	0		5497607	0					
+ANR	5498223	Argument	BLK_PERM_ALL		5497607	2					
+ANR	5498224	Identifier	BLK_PERM_ALL		5497607	0					
+ANR	5498225	Argument	& error_abort		5497607	3					
+ANR	5498226	UnaryOperationExpression	& error_abort		5497607	0					
+ANR	5498227	UnaryOperator	&		5497607	0					
+ANR	5498228	Identifier	error_abort		5497607	1					
+ANR	5498229	ExpressionStatement	"bdrv_replace_node ( mirror_top_bs , backing_bs ( mirror_top_bs ) , & error_abort )"	339:4:6858:6931	5497607	52	True				
+ANR	5498230	CallExpression	"bdrv_replace_node ( mirror_top_bs , backing_bs ( mirror_top_bs ) , & error_abort )"		5497607	0					
+ANR	5498231	Callee	bdrv_replace_node		5497607	0					
+ANR	5498232	Identifier	bdrv_replace_node		5497607	0					
+ANR	5498233	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5498234	Argument	mirror_top_bs		5497607	0					
+ANR	5498235	Identifier	mirror_top_bs		5497607	0					
+ANR	5498236	Argument	backing_bs ( mirror_top_bs )		5497607	1					
+ANR	5498237	CallExpression	backing_bs ( mirror_top_bs )		5497607	0					
+ANR	5498238	Callee	backing_bs		5497607	0					
+ANR	5498239	Identifier	backing_bs		5497607	0					
+ANR	5498240	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5498241	Argument	mirror_top_bs		5497607	0					
+ANR	5498242	Identifier	mirror_top_bs		5497607	0					
+ANR	5498243	Argument	& error_abort		5497607	2					
+ANR	5498244	UnaryOperationExpression	& error_abort		5497607	0					
+ANR	5498245	UnaryOperator	&		5497607	0					
+ANR	5498246	Identifier	error_abort		5497607	1					
+ANR	5498247	ExpressionStatement	bdrv_unref ( mirror_top_bs )	343:4:6940:6965	5497607	53	True				
+ANR	5498248	CallExpression	bdrv_unref ( mirror_top_bs )		5497607	0					
+ANR	5498249	Callee	bdrv_unref		5497607	0					
+ANR	5498250	Identifier	bdrv_unref		5497607	0					
+ANR	5498251	ArgumentList	mirror_top_bs		5497607	1					
+ANR	5498252	Argument	mirror_top_bs		5497607	0					
+ANR	5498253	Identifier	mirror_top_bs		5497607	0					
+ANR	5498254	ReturnType	static void		5497607	1					
+ANR	5498255	Identifier	mirror_start_job		5497607	2					
+ANR	5498256	ParameterList	"const char * job_id , BlockDriverState * bs , int creation_flags , BlockDriverState * target , const char * replaces , int64_t speed , uint32_t granularity , int64_t buf_size , BlockMirrorBackingMode backing_mode , BlockdevOnError on_source_error , BlockdevOnError on_target_error , bool unmap , BlockCompletionFunc * cb , void * opaque , const BlockJobDriver * driver , bool is_none_mode , BlockDriverState * base , bool auto_complete , const char * filter_node_name , bool is_mirror , Error * * errp"		5497607	3					
+ANR	5498257	Parameter	const char * job_id	1:29:29:46	5497607	0	True				
+ANR	5498258	ParameterType	const char *		5497607	0					
+ANR	5498259	Identifier	job_id		5497607	1					
+ANR	5498260	Parameter	BlockDriverState * bs	1:49:49:68	5497607	1	True				
+ANR	5498261	ParameterType	BlockDriverState *		5497607	0					
+ANR	5498262	Identifier	bs		5497607	1					
+ANR	5498263	Parameter	int creation_flags	3:29:101:118	5497607	2	True				
+ANR	5498264	ParameterType	int		5497607	0					
+ANR	5498265	Identifier	creation_flags		5497607	1					
+ANR	5498266	Parameter	BlockDriverState * target	3:49:121:144	5497607	3	True				
+ANR	5498267	ParameterType	BlockDriverState *		5497607	0					
+ANR	5498268	Identifier	target		5497607	1					
+ANR	5498269	Parameter	const char * replaces	5:29:177:196	5497607	4	True				
+ANR	5498270	ParameterType	const char *		5497607	0					
+ANR	5498271	Identifier	replaces		5497607	1					
+ANR	5498272	Parameter	int64_t speed	5:51:199:211	5497607	5	True				
+ANR	5498273	ParameterType	int64_t		5497607	0					
+ANR	5498274	Identifier	speed		5497607	1					
+ANR	5498275	Parameter	uint32_t granularity	7:29:244:263	5497607	6	True				
+ANR	5498276	ParameterType	uint32_t		5497607	0					
+ANR	5498277	Identifier	granularity		5497607	1					
+ANR	5498278	Parameter	int64_t buf_size	7:51:266:281	5497607	7	True				
+ANR	5498279	ParameterType	int64_t		5497607	0					
+ANR	5498280	Identifier	buf_size		5497607	1					
+ANR	5498281	Parameter	BlockMirrorBackingMode backing_mode	9:29:314:348	5497607	8	True				
+ANR	5498282	ParameterType	BlockMirrorBackingMode		5497607	0					
+ANR	5498283	Identifier	backing_mode		5497607	1					
+ANR	5498284	Parameter	BlockdevOnError on_source_error	11:29:381:411	5497607	9	True				
+ANR	5498285	ParameterType	BlockdevOnError		5497607	0					
+ANR	5498286	Identifier	on_source_error		5497607	1					
+ANR	5498287	Parameter	BlockdevOnError on_target_error	13:29:444:474	5497607	10	True				
+ANR	5498288	ParameterType	BlockdevOnError		5497607	0					
+ANR	5498289	Identifier	on_target_error		5497607	1					
+ANR	5498290	Parameter	bool unmap	15:29:507:516	5497607	11	True				
+ANR	5498291	ParameterType	bool		5497607	0					
+ANR	5498292	Identifier	unmap		5497607	1					
+ANR	5498293	Parameter	BlockCompletionFunc * cb	17:29:549:571	5497607	12	True				
+ANR	5498294	ParameterType	BlockCompletionFunc *		5497607	0					
+ANR	5498295	Identifier	cb		5497607	1					
+ANR	5498296	Parameter	void * opaque	19:29:604:615	5497607	13	True				
+ANR	5498297	ParameterType	void *		5497607	0					
+ANR	5498298	Identifier	opaque		5497607	1					
+ANR	5498299	Parameter	const BlockJobDriver * driver	21:29:648:675	5497607	14	True				
+ANR	5498300	ParameterType	const BlockJobDriver *		5497607	0					
+ANR	5498301	Identifier	driver		5497607	1					
+ANR	5498302	Parameter	bool is_none_mode	23:29:708:724	5497607	15	True				
+ANR	5498303	ParameterType	bool		5497607	0					
+ANR	5498304	Identifier	is_none_mode		5497607	1					
+ANR	5498305	Parameter	BlockDriverState * base	23:48:727:748	5497607	16	True				
+ANR	5498306	ParameterType	BlockDriverState *		5497607	0					
+ANR	5498307	Identifier	base		5497607	1					
+ANR	5498308	Parameter	bool auto_complete	25:29:781:798	5497607	17	True				
+ANR	5498309	ParameterType	bool		5497607	0					
+ANR	5498310	Identifier	auto_complete		5497607	1					
+ANR	5498311	Parameter	const char * filter_node_name	25:49:801:828	5497607	18	True				
+ANR	5498312	ParameterType	const char *		5497607	0					
+ANR	5498313	Identifier	filter_node_name		5497607	1					
+ANR	5498314	Parameter	bool is_mirror	27:29:861:874	5497607	19	True				
+ANR	5498315	ParameterType	bool		5497607	0					
+ANR	5498316	Identifier	is_mirror		5497607	1					
+ANR	5498317	Parameter	Error * * errp	29:29:907:918	5497607	20	True				
+ANR	5498318	ParameterType	Error * *		5497607	0					
+ANR	5498319	Identifier	errp		5497607	1					
+ANR	5498320	CFGEntryNode	ENTRY		5497607		True				
+ANR	5498321	CFGExitNode	EXIT		5497607		True				
+ANR	5498322	Symbol	errp		5497607						
+ANR	5498323	Symbol	unmap		5497607						
+ANR	5498324	Symbol	target_is_backing		5497607						
+ANR	5498325	Symbol	* bs		5497607						
+ANR	5498326	Symbol	* mirror_top_bs		5497607						
+ANR	5498327	Symbol	creation_flags		5497607						
+ANR	5498328	Symbol	BLK_PERM_RESIZE		5497607						
+ANR	5498329	Symbol	& bdrv_mirror_top		5497607						
+ANR	5498330	Symbol	s -> on_target_error		5497607						
+ANR	5498331	Symbol	s -> is_none_mode		5497607						
+ANR	5498332	Symbol	BLK_PERM_WRITE_UNCHANGED		5497607						
+ANR	5498333	Symbol	on_source_error		5497607						
+ANR	5498334	Symbol	DEFAULT_MIRROR_BUF_SIZE		5497607						
+ANR	5498335	Symbol	ret		5497607						
+ANR	5498336	Symbol	bdrv_get_aio_context		5497607						
+ANR	5498337	Symbol	BLK_PERM_WRITE		5497607						
+ANR	5498338	Symbol	NULL		5497607						
+ANR	5498339	Symbol	s -> unmap		5497607						
+ANR	5498340	Symbol	bdrv_create_dirty_bitmap		5497607						
+ANR	5498341	Symbol	bs -> total_sectors		5497607						
+ANR	5498342	Symbol	buf_size		5497607						
+ANR	5498343	Symbol	s -> should_complete		5497607						
+ANR	5498344	Symbol	ROUND_UP		5497607						
+ANR	5498345	Symbol	s -> buf_size		5497607						
+ANR	5498346	Symbol	iter		5497607						
+ANR	5498347	Symbol	s -> base		5497607						
+ANR	5498348	Symbol	mirror_top_bs -> backing		5497607						
+ANR	5498349	Symbol	mirror_top_bs		5497607						
+ANR	5498350	Symbol	s -> dirty_bitmap		5497607						
+ANR	5498351	Symbol	BLK_PERM_ALL		5497607						
+ANR	5498352	Symbol	s -> source		5497607						
+ANR	5498353	Symbol	auto_complete		5497607						
+ANR	5498354	Symbol	backing_bs		5497607						
+ANR	5498355	Symbol	s -> target		5497607						
+ANR	5498356	Symbol	driver		5497607						
+ANR	5498357	Symbol	granularity		5497607						
+ANR	5498358	Symbol	true		5497607						
+ANR	5498359	Symbol	blk_new		5497607						
+ANR	5498360	Symbol	blk_insert_bs		5497607						
+ANR	5498361	Symbol	local_err		5497607						
+ANR	5498362	Symbol	s -> mirror_top_bs		5497607						
+ANR	5498363	Symbol	on_target_error		5497607						
+ANR	5498364	Symbol	block_job_create		5497607						
+ANR	5498365	Symbol	MIRROR_LEAVE_BACKING_CHAIN		5497607						
+ANR	5498366	Symbol	speed		5497607						
+ANR	5498367	Symbol	bs		5497607						
+ANR	5498368	Symbol	is_mirror		5497607						
+ANR	5498369	Symbol	mirror_top_bs -> implicit		5497607						
+ANR	5498370	Symbol	s -> replaces		5497607						
+ANR	5498371	Symbol	mirror_top_bs -> total_sectors		5497607						
+ANR	5498372	Symbol	& local_err		5497607						
+ANR	5498373	Symbol	g_strdup		5497607						
+ANR	5498374	Symbol	target_graph_mod		5497607						
+ANR	5498375	Symbol	filter_node_name		5497607						
+ANR	5498376	Symbol	cb		5497607						
+ANR	5498377	Symbol	BLK_PERM_CONSISTENT_READ		5497607						
+ANR	5498378	Symbol	backing_mode		5497607						
+ANR	5498379	Symbol	opaque		5497607						
+ANR	5498380	Symbol	bdrv_get_default_bitmap_granularity		5497607						
+ANR	5498381	Symbol	& error_abort		5497607						
+ANR	5498382	Symbol	replaces		5497607						
+ANR	5498383	Symbol	is_none_mode		5497607						
+ANR	5498384	Symbol	target		5497607						
+ANR	5498385	Symbol	block_job_add_bdrv		5497607						
+ANR	5498386	Symbol	s		5497607						
+ANR	5498387	Symbol	s -> granularity		5497607						
+ANR	5498388	Symbol	job_id		5497607						
+ANR	5498389	Symbol	BDRV_SECTOR_SIZE		5497607						
+ANR	5498390	Symbol	bdrv_chain_contains		5497607						
+ANR	5498391	Symbol	BLK_PERM_GRAPH_MOD		5497607						
+ANR	5498392	Symbol	& s -> common		5497607						
+ANR	5498393	Symbol	s -> on_source_error		5497607						
+ANR	5498394	Symbol	* s		5497607						
+ANR	5498395	Symbol	bdrv_new_open_driver		5497607						
+ANR	5498396	Symbol	BDRV_O_RDWR		5497607						
+ANR	5498397	Symbol	s -> backing_mode		5497607						
+ANR	5498398	Symbol	base		5497607						

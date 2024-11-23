@@ -1,0 +1,269 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5015364	File	/home/p4ultr4n/workplace/ReVeal/raw_code/iscsi_inquiry_cb_1.c								
+ANR	5015365	Function	iscsi_inquiry_cb	1:0:0:1659							
+ANR	5015366	FunctionDef	"iscsi_inquiry_cb (struct iscsi_context * iscsi , int status , void * command_data , void * opaque)"		5015365	0					
+ANR	5015367	CompoundStatement		5:0:111:1659	5015365	0					
+ANR	5015368	IdentifierDeclStatement	struct IscsiTask * itask = opaque ;	7:4:118:150	5015365	0	True				
+ANR	5015369	IdentifierDecl	* itask = opaque		5015365	0					
+ANR	5015370	IdentifierDeclType	struct IscsiTask *		5015365	0					
+ANR	5015371	Identifier	itask		5015365	1					
+ANR	5015372	AssignmentExpression	* itask = opaque		5015365	2		=			
+ANR	5015373	Identifier	opaque		5015365	0					
+ANR	5015374	Identifier	opaque		5015365	1					
+ANR	5015375	IdentifierDeclStatement	struct scsi_task * task = command_data ;	9:4:157:194	5015365	1	True				
+ANR	5015376	IdentifierDecl	* task = command_data		5015365	0					
+ANR	5015377	IdentifierDeclType	struct scsi_task *		5015365	0					
+ANR	5015378	Identifier	task		5015365	1					
+ANR	5015379	AssignmentExpression	* task = command_data		5015365	2		=			
+ANR	5015380	Identifier	command_data		5015365	0					
+ANR	5015381	Identifier	command_data		5015365	1					
+ANR	5015382	IdentifierDeclStatement	struct scsi_inquiry_standard * inq ;	11:4:201:234	5015365	2	True				
+ANR	5015383	IdentifierDecl	* inq		5015365	0					
+ANR	5015384	IdentifierDeclType	struct scsi_inquiry_standard *		5015365	0					
+ANR	5015385	Identifier	inq		5015365	1					
+ANR	5015386	IfStatement	if ( status != 0 )		5015365	3					
+ANR	5015387	Condition	status != 0	15:8:247:257	5015365	0	True				
+ANR	5015388	EqualityExpression	status != 0		5015365	0		!=			
+ANR	5015389	Identifier	status		5015365	0					
+ANR	5015390	PrimaryExpression	0		5015365	1					
+ANR	5015391	CompoundStatement		11:21:148:148	5015365	1					
+ANR	5015392	ExpressionStatement	itask -> status = 1	17:8:271:290	5015365	0	True				
+ANR	5015393	AssignmentExpression	itask -> status = 1		5015365	0		=			
+ANR	5015394	PtrMemberAccess	itask -> status		5015365	0					
+ANR	5015395	Identifier	itask		5015365	0					
+ANR	5015396	Identifier	status		5015365	1					
+ANR	5015397	PrimaryExpression	1		5015365	1					
+ANR	5015398	ExpressionStatement	itask -> complete = 1	19:8:301:320	5015365	1	True				
+ANR	5015399	AssignmentExpression	itask -> complete = 1		5015365	0		=			
+ANR	5015400	PtrMemberAccess	itask -> complete		5015365	0					
+ANR	5015401	Identifier	itask		5015365	0					
+ANR	5015402	Identifier	complete		5015365	1					
+ANR	5015403	PrimaryExpression	1		5015365	1					
+ANR	5015404	ExpressionStatement	scsi_free_scsi_task ( task )	21:8:331:356	5015365	2	True				
+ANR	5015405	CallExpression	scsi_free_scsi_task ( task )		5015365	0					
+ANR	5015406	Callee	scsi_free_scsi_task		5015365	0					
+ANR	5015407	Identifier	scsi_free_scsi_task		5015365	0					
+ANR	5015408	ArgumentList	task		5015365	1					
+ANR	5015409	Argument	task		5015365	0					
+ANR	5015410	Identifier	task		5015365	0					
+ANR	5015411	ReturnStatement	return ;	23:8:367:373	5015365	3	True				
+ANR	5015412	ExpressionStatement	inq = scsi_datain_unmarshall ( task )	29:4:389:423	5015365	4	True				
+ANR	5015413	AssignmentExpression	inq = scsi_datain_unmarshall ( task )		5015365	0		=			
+ANR	5015414	Identifier	inq		5015365	0					
+ANR	5015415	CallExpression	scsi_datain_unmarshall ( task )		5015365	1					
+ANR	5015416	Callee	scsi_datain_unmarshall		5015365	0					
+ANR	5015417	Identifier	scsi_datain_unmarshall		5015365	0					
+ANR	5015418	ArgumentList	task		5015365	1					
+ANR	5015419	Argument	task		5015365	0					
+ANR	5015420	Identifier	task		5015365	0					
+ANR	5015421	IfStatement	if ( inq == NULL )		5015365	5					
+ANR	5015422	Condition	inq == NULL	31:8:434:444	5015365	0	True				
+ANR	5015423	EqualityExpression	inq == NULL		5015365	0		==			
+ANR	5015424	Identifier	inq		5015365	0					
+ANR	5015425	Identifier	NULL		5015365	1					
+ANR	5015426	CompoundStatement		27:21:335:335	5015365	1					
+ANR	5015427	ExpressionStatement	"error_report ( ""iSCSI: Failed to unmarshall inquiry data."" )"	33:8:458:515	5015365	0	True				
+ANR	5015428	CallExpression	"error_report ( ""iSCSI: Failed to unmarshall inquiry data."" )"		5015365	0					
+ANR	5015429	Callee	error_report		5015365	0					
+ANR	5015430	Identifier	error_report		5015365	0					
+ANR	5015431	ArgumentList	"""iSCSI: Failed to unmarshall inquiry data."""		5015365	1					
+ANR	5015432	Argument	"""iSCSI: Failed to unmarshall inquiry data."""		5015365	0					
+ANR	5015433	PrimaryExpression	"""iSCSI: Failed to unmarshall inquiry data."""		5015365	0					
+ANR	5015434	ExpressionStatement	itask -> status = 1	35:8:526:545	5015365	1	True				
+ANR	5015435	AssignmentExpression	itask -> status = 1		5015365	0		=			
+ANR	5015436	PtrMemberAccess	itask -> status		5015365	0					
+ANR	5015437	Identifier	itask		5015365	0					
+ANR	5015438	Identifier	status		5015365	1					
+ANR	5015439	PrimaryExpression	1		5015365	1					
+ANR	5015440	ExpressionStatement	itask -> complete = 1	37:8:556:575	5015365	2	True				
+ANR	5015441	AssignmentExpression	itask -> complete = 1		5015365	0		=			
+ANR	5015442	PtrMemberAccess	itask -> complete		5015365	0					
+ANR	5015443	Identifier	itask		5015365	0					
+ANR	5015444	Identifier	complete		5015365	1					
+ANR	5015445	PrimaryExpression	1		5015365	1					
+ANR	5015446	ExpressionStatement	scsi_free_scsi_task ( task )	39:8:586:611	5015365	3	True				
+ANR	5015447	CallExpression	scsi_free_scsi_task ( task )		5015365	0					
+ANR	5015448	Callee	scsi_free_scsi_task		5015365	0					
+ANR	5015449	Identifier	scsi_free_scsi_task		5015365	0					
+ANR	5015450	ArgumentList	task		5015365	1					
+ANR	5015451	Argument	task		5015365	0					
+ANR	5015452	Identifier	task		5015365	0					
+ANR	5015453	ReturnStatement	return ;	41:8:622:628	5015365	4	True				
+ANR	5015454	ExpressionStatement	itask -> iscsilun -> type = inq -> periperal_device_type	47:4:644:694	5015365	6	True				
+ANR	5015455	AssignmentExpression	itask -> iscsilun -> type = inq -> periperal_device_type		5015365	0		=			
+ANR	5015456	PtrMemberAccess	itask -> iscsilun -> type		5015365	0					
+ANR	5015457	PtrMemberAccess	itask -> iscsilun		5015365	0					
+ANR	5015458	Identifier	itask		5015365	0					
+ANR	5015459	Identifier	iscsilun		5015365	1					
+ANR	5015460	Identifier	type		5015365	1					
+ANR	5015461	PtrMemberAccess	inq -> periperal_device_type		5015365	1					
+ANR	5015462	Identifier	inq		5015365	0					
+ANR	5015463	Identifier	periperal_device_type		5015365	1					
+ANR	5015464	ExpressionStatement	scsi_free_scsi_task ( task )	51:4:703:728	5015365	7	True				
+ANR	5015465	CallExpression	scsi_free_scsi_task ( task )		5015365	0					
+ANR	5015466	Callee	scsi_free_scsi_task		5015365	0					
+ANR	5015467	Identifier	scsi_free_scsi_task		5015365	0					
+ANR	5015468	ArgumentList	task		5015365	1					
+ANR	5015469	Argument	task		5015365	0					
+ANR	5015470	Identifier	task		5015365	0					
+ANR	5015471	SwitchStatement	switch ( itask -> iscsilun -> type )		5015365	8					
+ANR	5015472	Condition	itask -> iscsilun -> type	55:12:745:765	5015365	0	True				
+ANR	5015473	PtrMemberAccess	itask -> iscsilun -> type		5015365	0					
+ANR	5015474	PtrMemberAccess	itask -> iscsilun		5015365	0					
+ANR	5015475	Identifier	itask		5015365	0					
+ANR	5015476	Identifier	iscsilun		5015365	1					
+ANR	5015477	Identifier	type		5015365	1					
+ANR	5015478	CompoundStatement		51:35:656:656	5015365	1					
+ANR	5015479	Label	case TYPE_DISK :	57:4:775:789	5015365	0	True				
+ANR	5015480	Identifier	TYPE_DISK		5015365	0					
+ANR	5015481	ExpressionStatement	"task = iscsi_readcapacity16_task ( iscsi , itask -> iscsilun -> lun , iscsi_readcapacity16_cb , opaque )"	59:8:800:930	5015365	1	True				
+ANR	5015482	AssignmentExpression	"task = iscsi_readcapacity16_task ( iscsi , itask -> iscsilun -> lun , iscsi_readcapacity16_cb , opaque )"		5015365	0		=			
+ANR	5015483	Identifier	task		5015365	0					
+ANR	5015484	CallExpression	"iscsi_readcapacity16_task ( iscsi , itask -> iscsilun -> lun , iscsi_readcapacity16_cb , opaque )"		5015365	1					
+ANR	5015485	Callee	iscsi_readcapacity16_task		5015365	0					
+ANR	5015486	Identifier	iscsi_readcapacity16_task		5015365	0					
+ANR	5015487	ArgumentList	iscsi		5015365	1					
+ANR	5015488	Argument	iscsi		5015365	0					
+ANR	5015489	Identifier	iscsi		5015365	0					
+ANR	5015490	Argument	itask -> iscsilun -> lun		5015365	1					
+ANR	5015491	PtrMemberAccess	itask -> iscsilun -> lun		5015365	0					
+ANR	5015492	PtrMemberAccess	itask -> iscsilun		5015365	0					
+ANR	5015493	Identifier	itask		5015365	0					
+ANR	5015494	Identifier	iscsilun		5015365	1					
+ANR	5015495	Identifier	lun		5015365	1					
+ANR	5015496	Argument	iscsi_readcapacity16_cb		5015365	2					
+ANR	5015497	Identifier	iscsi_readcapacity16_cb		5015365	0					
+ANR	5015498	Argument	opaque		5015365	3					
+ANR	5015499	Identifier	opaque		5015365	0					
+ANR	5015500	IfStatement	if ( task == NULL )		5015365	2					
+ANR	5015501	Condition	task == NULL	63:12:945:956	5015365	0	True				
+ANR	5015502	EqualityExpression	task == NULL		5015365	0		==			
+ANR	5015503	Identifier	task		5015365	0					
+ANR	5015504	Identifier	NULL		5015365	1					
+ANR	5015505	CompoundStatement		59:26:847:847	5015365	1					
+ANR	5015506	ExpressionStatement	"error_report ( ""iSCSI: failed to send readcapacity16 command."" )"	65:12:974:1035	5015365	0	True				
+ANR	5015507	CallExpression	"error_report ( ""iSCSI: failed to send readcapacity16 command."" )"		5015365	0					
+ANR	5015508	Callee	error_report		5015365	0					
+ANR	5015509	Identifier	error_report		5015365	0					
+ANR	5015510	ArgumentList	"""iSCSI: failed to send readcapacity16 command."""		5015365	1					
+ANR	5015511	Argument	"""iSCSI: failed to send readcapacity16 command."""		5015365	0					
+ANR	5015512	PrimaryExpression	"""iSCSI: failed to send readcapacity16 command."""		5015365	0					
+ANR	5015513	ExpressionStatement	itask -> status = 1	67:12:1050:1069	5015365	1	True				
+ANR	5015514	AssignmentExpression	itask -> status = 1		5015365	0		=			
+ANR	5015515	PtrMemberAccess	itask -> status		5015365	0					
+ANR	5015516	Identifier	itask		5015365	0					
+ANR	5015517	Identifier	status		5015365	1					
+ANR	5015518	PrimaryExpression	1		5015365	1					
+ANR	5015519	ExpressionStatement	itask -> complete = 1	69:12:1084:1103	5015365	2	True				
+ANR	5015520	AssignmentExpression	itask -> complete = 1		5015365	0		=			
+ANR	5015521	PtrMemberAccess	itask -> complete		5015365	0					
+ANR	5015522	Identifier	itask		5015365	0					
+ANR	5015523	Identifier	complete		5015365	1					
+ANR	5015524	PrimaryExpression	1		5015365	1					
+ANR	5015525	ReturnStatement	return ;	71:12:1118:1124	5015365	3	True				
+ANR	5015526	BreakStatement	break ;	75:8:1146:1151	5015365	3	True				
+ANR	5015527	Label	case TYPE_ROM :	77:4:1158:1171	5015365	4	True				
+ANR	5015528	Identifier	TYPE_ROM		5015365	0					
+ANR	5015529	ExpressionStatement	"task = iscsi_readcapacity10_task ( iscsi , itask -> iscsilun -> lun , 0 , 0 , iscsi_readcapacity10_cb , opaque )"	79:8:1182:1354	5015365	5	True				
+ANR	5015530	AssignmentExpression	"task = iscsi_readcapacity10_task ( iscsi , itask -> iscsilun -> lun , 0 , 0 , iscsi_readcapacity10_cb , opaque )"		5015365	0		=			
+ANR	5015531	Identifier	task		5015365	0					
+ANR	5015532	CallExpression	"iscsi_readcapacity10_task ( iscsi , itask -> iscsilun -> lun , 0 , 0 , iscsi_readcapacity10_cb , opaque )"		5015365	1					
+ANR	5015533	Callee	iscsi_readcapacity10_task		5015365	0					
+ANR	5015534	Identifier	iscsi_readcapacity10_task		5015365	0					
+ANR	5015535	ArgumentList	iscsi		5015365	1					
+ANR	5015536	Argument	iscsi		5015365	0					
+ANR	5015537	Identifier	iscsi		5015365	0					
+ANR	5015538	Argument	itask -> iscsilun -> lun		5015365	1					
+ANR	5015539	PtrMemberAccess	itask -> iscsilun -> lun		5015365	0					
+ANR	5015540	PtrMemberAccess	itask -> iscsilun		5015365	0					
+ANR	5015541	Identifier	itask		5015365	0					
+ANR	5015542	Identifier	iscsilun		5015365	1					
+ANR	5015543	Identifier	lun		5015365	1					
+ANR	5015544	Argument	0		5015365	2					
+ANR	5015545	PrimaryExpression	0		5015365	0					
+ANR	5015546	Argument	0		5015365	3					
+ANR	5015547	PrimaryExpression	0		5015365	0					
+ANR	5015548	Argument	iscsi_readcapacity10_cb		5015365	4					
+ANR	5015549	Identifier	iscsi_readcapacity10_cb		5015365	0					
+ANR	5015550	Argument	opaque		5015365	5					
+ANR	5015551	Identifier	opaque		5015365	0					
+ANR	5015552	IfStatement	if ( task == NULL )		5015365	6					
+ANR	5015553	Condition	task == NULL	85:12:1369:1380	5015365	0	True				
+ANR	5015554	EqualityExpression	task == NULL		5015365	0		==			
+ANR	5015555	Identifier	task		5015365	0					
+ANR	5015556	Identifier	NULL		5015365	1					
+ANR	5015557	CompoundStatement		81:26:1271:1271	5015365	1					
+ANR	5015558	ExpressionStatement	"error_report ( ""iSCSI: failed to send readcapacity16 command."" )"	87:12:1398:1459	5015365	0	True				
+ANR	5015559	CallExpression	"error_report ( ""iSCSI: failed to send readcapacity16 command."" )"		5015365	0					
+ANR	5015560	Callee	error_report		5015365	0					
+ANR	5015561	Identifier	error_report		5015365	0					
+ANR	5015562	ArgumentList	"""iSCSI: failed to send readcapacity16 command."""		5015365	1					
+ANR	5015563	Argument	"""iSCSI: failed to send readcapacity16 command."""		5015365	0					
+ANR	5015564	PrimaryExpression	"""iSCSI: failed to send readcapacity16 command."""		5015365	0					
+ANR	5015565	ExpressionStatement	itask -> status = 1	89:12:1474:1493	5015365	1	True				
+ANR	5015566	AssignmentExpression	itask -> status = 1		5015365	0		=			
+ANR	5015567	PtrMemberAccess	itask -> status		5015365	0					
+ANR	5015568	Identifier	itask		5015365	0					
+ANR	5015569	Identifier	status		5015365	1					
+ANR	5015570	PrimaryExpression	1		5015365	1					
+ANR	5015571	ExpressionStatement	itask -> complete = 1	91:12:1508:1527	5015365	2	True				
+ANR	5015572	AssignmentExpression	itask -> complete = 1		5015365	0		=			
+ANR	5015573	PtrMemberAccess	itask -> complete		5015365	0					
+ANR	5015574	Identifier	itask		5015365	0					
+ANR	5015575	Identifier	complete		5015365	1					
+ANR	5015576	PrimaryExpression	1		5015365	1					
+ANR	5015577	ReturnStatement	return ;	93:12:1542:1548	5015365	3	True				
+ANR	5015578	BreakStatement	break ;	97:8:1570:1575	5015365	7	True				
+ANR	5015579	Label	default :	99:4:1582:1589	5015365	8	True				
+ANR	5015580	Identifier	default		5015365	0					
+ANR	5015581	ExpressionStatement	itask -> status = 0	101:8:1600:1619	5015365	9	True				
+ANR	5015582	AssignmentExpression	itask -> status = 0		5015365	0		=			
+ANR	5015583	PtrMemberAccess	itask -> status		5015365	0					
+ANR	5015584	Identifier	itask		5015365	0					
+ANR	5015585	Identifier	status		5015365	1					
+ANR	5015586	PrimaryExpression	0		5015365	1					
+ANR	5015587	ExpressionStatement	itask -> complete = 1	103:8:1630:1649	5015365	10	True				
+ANR	5015588	AssignmentExpression	itask -> complete = 1		5015365	0		=			
+ANR	5015589	PtrMemberAccess	itask -> complete		5015365	0					
+ANR	5015590	Identifier	itask		5015365	0					
+ANR	5015591	Identifier	complete		5015365	1					
+ANR	5015592	PrimaryExpression	1		5015365	1					
+ANR	5015593	Identifier	iscsi_inquiry_cb		5015365	1					
+ANR	5015594	ParameterList	"struct iscsi_context * iscsi , int status , void * command_data , void * opaque"		5015365	2					
+ANR	5015595	Parameter	struct iscsi_context * iscsi	1:17:17:43	5015365	0	True				
+ANR	5015596	ParameterType	struct iscsi_context *		5015365	0					
+ANR	5015597	Identifier	iscsi		5015365	1					
+ANR	5015598	Parameter	int status	1:46:46:55	5015365	1	True				
+ANR	5015599	ParameterType	int		5015365	0					
+ANR	5015600	Identifier	status		5015365	1					
+ANR	5015601	Parameter	void * command_data	1:58:58:75	5015365	2	True				
+ANR	5015602	ParameterType	void *		5015365	0					
+ANR	5015603	Identifier	command_data		5015365	1					
+ANR	5015604	Parameter	void * opaque	3:17:96:107	5015365	3	True				
+ANR	5015605	ParameterType	void *		5015365	0					
+ANR	5015606	Identifier	opaque		5015365	1					
+ANR	5015607	CFGEntryNode	ENTRY		5015365		True				
+ANR	5015608	CFGExitNode	EXIT		5015365		True				
+ANR	5015609	Symbol	opaque		5015365						
+ANR	5015610	Symbol	NULL		5015365						
+ANR	5015611	Symbol	iscsi_readcapacity10_task		5015365						
+ANR	5015612	Symbol	scsi_datain_unmarshall		5015365						
+ANR	5015613	Symbol	* itask		5015365						
+ANR	5015614	Symbol	itask -> complete		5015365						
+ANR	5015615	Symbol	* itask -> iscsilun		5015365						
+ANR	5015616	Symbol	* inq		5015365						
+ANR	5015617	Symbol	itask -> iscsilun -> lun		5015365						
+ANR	5015618	Symbol	command_data		5015365						
+ANR	5015619	Symbol	inq		5015365						
+ANR	5015620	Symbol	iscsi		5015365						
+ANR	5015621	Symbol	itask		5015365						
+ANR	5015622	Symbol	task		5015365						
+ANR	5015623	Symbol	iscsi_readcapacity16_cb		5015365						
+ANR	5015624	Symbol	itask -> status		5015365						
+ANR	5015625	Symbol	itask -> iscsilun -> type		5015365						
+ANR	5015626	Symbol	iscsi_readcapacity10_cb		5015365						
+ANR	5015627	Symbol	inq -> periperal_device_type		5015365						
+ANR	5015628	Symbol	itask -> iscsilun		5015365						
+ANR	5015629	Symbol	* * itask		5015365						
+ANR	5015630	Symbol	iscsi_readcapacity16_task		5015365						
+ANR	5015631	Symbol	status		5015365						

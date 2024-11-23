@@ -1,0 +1,279 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9562007	File	/home/p4ultr4n/workplace/ReVeal/raw_code/xhci_reset_ep_1.c								
+ANR	9562008	Function	xhci_reset_ep	1:0:0:1369							
+ANR	9562009	FunctionDef	"xhci_reset_ep (XHCIState * xhci , unsigned int slotid , unsigned int epid)"		9562008	0					
+ANR	9562010	CompoundStatement		5:0:119:1369	9562008	0					
+ANR	9562011	IdentifierDeclStatement	XHCISlot * slot ;	7:4:126:140	9562008	0	True				
+ANR	9562012	IdentifierDecl	* slot		9562008	0					
+ANR	9562013	IdentifierDeclType	XHCISlot *		9562008	0					
+ANR	9562014	Identifier	slot		9562008	1					
+ANR	9562015	IdentifierDeclStatement	XHCIEPContext * epctx ;	9:4:147:167	9562008	1	True				
+ANR	9562016	IdentifierDecl	* epctx		9562008	0					
+ANR	9562017	IdentifierDeclType	XHCIEPContext *		9562008	0					
+ANR	9562018	Identifier	epctx		9562008	1					
+ANR	9562019	IdentifierDeclStatement	USBDevice * dev ;	11:4:174:188	9562008	2	True				
+ANR	9562020	IdentifierDecl	* dev		9562008	0					
+ANR	9562021	IdentifierDeclType	USBDevice *		9562008	0					
+ANR	9562022	Identifier	dev		9562008	1					
+ANR	9562023	ExpressionStatement	"trace_usb_xhci_ep_reset ( slotid , epid )"	15:4:197:234	9562008	3	True				
+ANR	9562024	CallExpression	"trace_usb_xhci_ep_reset ( slotid , epid )"		9562008	0					
+ANR	9562025	Callee	trace_usb_xhci_ep_reset		9562008	0					
+ANR	9562026	Identifier	trace_usb_xhci_ep_reset		9562008	0					
+ANR	9562027	ArgumentList	slotid		9562008	1					
+ANR	9562028	Argument	slotid		9562008	0					
+ANR	9562029	Identifier	slotid		9562008	0					
+ANR	9562030	Argument	epid		9562008	1					
+ANR	9562031	Identifier	epid		9562008	0					
+ANR	9562032	ExpressionStatement	assert ( slotid >= 1 && slotid <= xhci -> numslots )	17:4:241:288	9562008	4	True				
+ANR	9562033	CallExpression	assert ( slotid >= 1 && slotid <= xhci -> numslots )		9562008	0					
+ANR	9562034	Callee	assert		9562008	0					
+ANR	9562035	Identifier	assert		9562008	0					
+ANR	9562036	ArgumentList	slotid >= 1 && slotid <= xhci -> numslots		9562008	1					
+ANR	9562037	Argument	slotid >= 1 && slotid <= xhci -> numslots		9562008	0					
+ANR	9562038	AndExpression	slotid >= 1 && slotid <= xhci -> numslots		9562008	0		&&			
+ANR	9562039	RelationalExpression	slotid >= 1		9562008	0		>=			
+ANR	9562040	Identifier	slotid		9562008	0					
+ANR	9562041	PrimaryExpression	1		9562008	1					
+ANR	9562042	RelationalExpression	slotid <= xhci -> numslots		9562008	1		<=			
+ANR	9562043	Identifier	slotid		9562008	0					
+ANR	9562044	PtrMemberAccess	xhci -> numslots		9562008	1					
+ANR	9562045	Identifier	xhci		9562008	0					
+ANR	9562046	Identifier	numslots		9562008	1					
+ANR	9562047	IfStatement	if ( epid < 1 || epid > 31 )		9562008	5					
+ANR	9562048	Condition	epid < 1 || epid > 31	21:8:301:321	9562008	0	True				
+ANR	9562049	OrExpression	epid < 1 || epid > 31		9562008	0		||			
+ANR	9562050	RelationalExpression	epid < 1		9562008	0		<			
+ANR	9562051	Identifier	epid		9562008	0					
+ANR	9562052	PrimaryExpression	1		9562008	1					
+ANR	9562053	RelationalExpression	epid > 31		9562008	1		>			
+ANR	9562054	Identifier	epid		9562008	0					
+ANR	9562055	PrimaryExpression	31		9562008	1					
+ANR	9562056	CompoundStatement		17:31:204:204	9562008	1					
+ANR	9562057	ExpressionStatement	"fprintf ( stderr , ""xhci: bad ep %d\\n"" , epid )"	23:8:335:377	9562008	0	True				
+ANR	9562058	CallExpression	"fprintf ( stderr , ""xhci: bad ep %d\\n"" , epid )"		9562008	0					
+ANR	9562059	Callee	fprintf		9562008	0					
+ANR	9562060	Identifier	fprintf		9562008	0					
+ANR	9562061	ArgumentList	stderr		9562008	1					
+ANR	9562062	Argument	stderr		9562008	0					
+ANR	9562063	Identifier	stderr		9562008	0					
+ANR	9562064	Argument	"""xhci: bad ep %d\\n"""		9562008	1					
+ANR	9562065	PrimaryExpression	"""xhci: bad ep %d\\n"""		9562008	0					
+ANR	9562066	Argument	epid		9562008	2					
+ANR	9562067	Identifier	epid		9562008	0					
+ANR	9562068	ReturnStatement	return CC_TRB_ERROR ;	25:8:388:407	9562008	1	True				
+ANR	9562069	Identifier	CC_TRB_ERROR		9562008	0					
+ANR	9562070	ExpressionStatement	slot = & xhci -> slots [ slotid - 1 ]	31:4:423:452	9562008	6	True				
+ANR	9562071	AssignmentExpression	slot = & xhci -> slots [ slotid - 1 ]		9562008	0		=			
+ANR	9562072	Identifier	slot		9562008	0					
+ANR	9562073	UnaryOperationExpression	& xhci -> slots [ slotid - 1 ]		9562008	1					
+ANR	9562074	UnaryOperator	&		9562008	0					
+ANR	9562075	ArrayIndexing	xhci -> slots [ slotid - 1 ]		9562008	1					
+ANR	9562076	PtrMemberAccess	xhci -> slots		9562008	0					
+ANR	9562077	Identifier	xhci		9562008	0					
+ANR	9562078	Identifier	slots		9562008	1					
+ANR	9562079	AdditiveExpression	slotid - 1		9562008	1		-			
+ANR	9562080	Identifier	slotid		9562008	0					
+ANR	9562081	PrimaryExpression	1		9562008	1					
+ANR	9562082	IfStatement	if ( ! slot -> eps [ epid - 1 ] )		9562008	7					
+ANR	9562083	Condition	! slot -> eps [ epid - 1 ]	35:8:465:482	9562008	0	True				
+ANR	9562084	UnaryOperationExpression	! slot -> eps [ epid - 1 ]		9562008	0					
+ANR	9562085	UnaryOperator	!		9562008	0					
+ANR	9562086	ArrayIndexing	slot -> eps [ epid - 1 ]		9562008	1					
+ANR	9562087	PtrMemberAccess	slot -> eps		9562008	0					
+ANR	9562088	Identifier	slot		9562008	0					
+ANR	9562089	Identifier	eps		9562008	1					
+ANR	9562090	AdditiveExpression	epid - 1		9562008	1		-			
+ANR	9562091	Identifier	epid		9562008	0					
+ANR	9562092	PrimaryExpression	1		9562008	1					
+ANR	9562093	CompoundStatement		31:28:365:365	9562008	1					
+ANR	9562094	ExpressionStatement	"DPRINTF ( ""xhci: slot %d ep %d not enabled\\n"" , slotid , epid )"	37:8:496:554	9562008	0	True				
+ANR	9562095	CallExpression	"DPRINTF ( ""xhci: slot %d ep %d not enabled\\n"" , slotid , epid )"		9562008	0					
+ANR	9562096	Callee	DPRINTF		9562008	0					
+ANR	9562097	Identifier	DPRINTF		9562008	0					
+ANR	9562098	ArgumentList	"""xhci: slot %d ep %d not enabled\\n"""		9562008	1					
+ANR	9562099	Argument	"""xhci: slot %d ep %d not enabled\\n"""		9562008	0					
+ANR	9562100	PrimaryExpression	"""xhci: slot %d ep %d not enabled\\n"""		9562008	0					
+ANR	9562101	Argument	slotid		9562008	1					
+ANR	9562102	Identifier	slotid		9562008	0					
+ANR	9562103	Argument	epid		9562008	2					
+ANR	9562104	Identifier	epid		9562008	0					
+ANR	9562105	ReturnStatement	return CC_EP_NOT_ENABLED_ERROR ;	39:8:565:595	9562008	1	True				
+ANR	9562106	Identifier	CC_EP_NOT_ENABLED_ERROR		9562008	0					
+ANR	9562107	ExpressionStatement	epctx = slot -> eps [ epid - 1 ]	45:4:611:636	9562008	8	True				
+ANR	9562108	AssignmentExpression	epctx = slot -> eps [ epid - 1 ]		9562008	0		=			
+ANR	9562109	Identifier	epctx		9562008	0					
+ANR	9562110	ArrayIndexing	slot -> eps [ epid - 1 ]		9562008	1					
+ANR	9562111	PtrMemberAccess	slot -> eps		9562008	0					
+ANR	9562112	Identifier	slot		9562008	0					
+ANR	9562113	Identifier	eps		9562008	1					
+ANR	9562114	AdditiveExpression	epid - 1		9562008	1		-			
+ANR	9562115	Identifier	epid		9562008	0					
+ANR	9562116	PrimaryExpression	1		9562008	1					
+ANR	9562117	IfStatement	if ( epctx -> state != EP_HALTED )		9562008	9					
+ANR	9562118	Condition	epctx -> state != EP_HALTED	49:8:649:673	9562008	0	True				
+ANR	9562119	EqualityExpression	epctx -> state != EP_HALTED		9562008	0		!=			
+ANR	9562120	PtrMemberAccess	epctx -> state		9562008	0					
+ANR	9562121	Identifier	epctx		9562008	0					
+ANR	9562122	Identifier	state		9562008	1					
+ANR	9562123	Identifier	EP_HALTED		9562008	1					
+ANR	9562124	CompoundStatement		45:35:556:556	9562008	1					
+ANR	9562125	ExpressionStatement	"fprintf ( stderr , ""xhci: reset EP while EP %d not halted (%d)\\n"" , epid , epctx -> state )"	51:8:687:787	9562008	0	True				
+ANR	9562126	CallExpression	"fprintf ( stderr , ""xhci: reset EP while EP %d not halted (%d)\\n"" , epid , epctx -> state )"		9562008	0					
+ANR	9562127	Callee	fprintf		9562008	0					
+ANR	9562128	Identifier	fprintf		9562008	0					
+ANR	9562129	ArgumentList	stderr		9562008	1					
+ANR	9562130	Argument	stderr		9562008	0					
+ANR	9562131	Identifier	stderr		9562008	0					
+ANR	9562132	Argument	"""xhci: reset EP while EP %d not halted (%d)\\n"""		9562008	1					
+ANR	9562133	PrimaryExpression	"""xhci: reset EP while EP %d not halted (%d)\\n"""		9562008	0					
+ANR	9562134	Argument	epid		9562008	2					
+ANR	9562135	Identifier	epid		9562008	0					
+ANR	9562136	Argument	epctx -> state		9562008	3					
+ANR	9562137	PtrMemberAccess	epctx -> state		9562008	0					
+ANR	9562138	Identifier	epctx		9562008	0					
+ANR	9562139	Identifier	state		9562008	1					
+ANR	9562140	ReturnStatement	return CC_CONTEXT_STATE_ERROR ;	55:8:798:827	9562008	1	True				
+ANR	9562141	Identifier	CC_CONTEXT_STATE_ERROR		9562008	0					
+ANR	9562142	IfStatement	"if ( xhci_ep_nuke_xfers ( xhci , slotid , epid ) > 0 )"		9562008	10					
+ANR	9562143	Condition	"xhci_ep_nuke_xfers ( xhci , slotid , epid ) > 0"	61:8:847:888	9562008	0	True				
+ANR	9562144	RelationalExpression	"xhci_ep_nuke_xfers ( xhci , slotid , epid ) > 0"		9562008	0		>			
+ANR	9562145	CallExpression	"xhci_ep_nuke_xfers ( xhci , slotid , epid )"		9562008	0					
+ANR	9562146	Callee	xhci_ep_nuke_xfers		9562008	0					
+ANR	9562147	Identifier	xhci_ep_nuke_xfers		9562008	0					
+ANR	9562148	ArgumentList	xhci		9562008	1					
+ANR	9562149	Argument	xhci		9562008	0					
+ANR	9562150	Identifier	xhci		9562008	0					
+ANR	9562151	Argument	slotid		9562008	1					
+ANR	9562152	Identifier	slotid		9562008	0					
+ANR	9562153	Argument	epid		9562008	2					
+ANR	9562154	Identifier	epid		9562008	0					
+ANR	9562155	PrimaryExpression	0		9562008	1					
+ANR	9562156	CompoundStatement		57:52:771:771	9562008	1					
+ANR	9562157	Statement	fprintf	63:8:902:908	9562008	0	True				
+ANR	9562158	Statement	(	63:15:909:909	9562008	1	True				
+ANR	9562159	Statement	stderr	63:16:910:915	9562008	2	True				
+ANR	9562160	Statement	","	63:22:916:916	9562008	3	True				
+ANR	9562161	Statement	"""xhci: FIXME: endpoint reset w/ xfers running, """	63:24:918:965	9562008	4	True				
+ANR	9562162	Statement	"""data might be lost\\n"""	65:16:984:1005	9562008	5	True				
+ANR	9562163	Statement	)	65:38:1006:1006	9562008	6	True				
+ANR	9562164	ExpressionStatement		65:39:1007:1007	9562008	7	True				
+ANR	9562165	IdentifierDeclStatement	uint8_t ep = epid >> 1 ;	71:4:1023:1043	9562008	11	True				
+ANR	9562166	IdentifierDecl	ep = epid >> 1		9562008	0					
+ANR	9562167	IdentifierDeclType	uint8_t		9562008	0					
+ANR	9562168	Identifier	ep		9562008	1					
+ANR	9562169	AssignmentExpression	ep = epid >> 1		9562008	2		=			
+ANR	9562170	Identifier	ep		9562008	0					
+ANR	9562171	ShiftExpression	epid >> 1		9562008	1		>>			
+ANR	9562172	Identifier	epid		9562008	0					
+ANR	9562173	PrimaryExpression	1		9562008	1					
+ANR	9562174	IfStatement	if ( epid & 1 )		9562008	12					
+ANR	9562175	Condition	epid & 1	75:8:1056:1063	9562008	0	True				
+ANR	9562176	BitAndExpression	epid & 1		9562008	0		&			
+ANR	9562177	Identifier	epid		9562008	0					
+ANR	9562178	PrimaryExpression	1		9562008	1					
+ANR	9562179	CompoundStatement		71:18:946:946	9562008	1					
+ANR	9562180	ExpressionStatement	ep |= 0x80	77:8:1077:1087	9562008	0	True				
+ANR	9562181	AssignmentExpression	ep |= 0x80		9562008	0		|=			
+ANR	9562182	Identifier	ep		9562008	0					
+ANR	9562183	PrimaryExpression	0x80		9562008	1					
+ANR	9562184	ExpressionStatement	dev = xhci -> slots [ slotid - 1 ] . uport -> dev	83:4:1103:1141	9562008	13	True				
+ANR	9562185	AssignmentExpression	dev = xhci -> slots [ slotid - 1 ] . uport -> dev		9562008	0		=			
+ANR	9562186	Identifier	dev		9562008	0					
+ANR	9562187	PtrMemberAccess	xhci -> slots [ slotid - 1 ] . uport -> dev		9562008	1					
+ANR	9562188	MemberAccess	xhci -> slots [ slotid - 1 ] . uport		9562008	0					
+ANR	9562189	ArrayIndexing	xhci -> slots [ slotid - 1 ]		9562008	0					
+ANR	9562190	PtrMemberAccess	xhci -> slots		9562008	0					
+ANR	9562191	Identifier	xhci		9562008	0					
+ANR	9562192	Identifier	slots		9562008	1					
+ANR	9562193	AdditiveExpression	slotid - 1		9562008	1		-			
+ANR	9562194	Identifier	slotid		9562008	0					
+ANR	9562195	PrimaryExpression	1		9562008	1					
+ANR	9562196	Identifier	uport		9562008	1					
+ANR	9562197	Identifier	dev		9562008	1					
+ANR	9562198	IfStatement	if ( ! dev )		9562008	14					
+ANR	9562199	Condition	! dev	85:8:1152:1155	9562008	0	True				
+ANR	9562200	UnaryOperationExpression	! dev		9562008	0					
+ANR	9562201	UnaryOperator	!		9562008	0					
+ANR	9562202	Identifier	dev		9562008	1					
+ANR	9562203	CompoundStatement		81:14:1038:1038	9562008	1					
+ANR	9562204	ReturnStatement	return CC_USB_TRANSACTION_ERROR ;	87:8:1169:1200	9562008	0	True				
+ANR	9562205	Identifier	CC_USB_TRANSACTION_ERROR		9562008	0					
+ANR	9562206	ExpressionStatement	"xhci_set_ep_state ( xhci , epctx , NULL , EP_STOPPED )"	93:4:1216:1264	9562008	15	True				
+ANR	9562207	CallExpression	"xhci_set_ep_state ( xhci , epctx , NULL , EP_STOPPED )"		9562008	0					
+ANR	9562208	Callee	xhci_set_ep_state		9562008	0					
+ANR	9562209	Identifier	xhci_set_ep_state		9562008	0					
+ANR	9562210	ArgumentList	xhci		9562008	1					
+ANR	9562211	Argument	xhci		9562008	0					
+ANR	9562212	Identifier	xhci		9562008	0					
+ANR	9562213	Argument	epctx		9562008	1					
+ANR	9562214	Identifier	epctx		9562008	0					
+ANR	9562215	Argument	NULL		9562008	2					
+ANR	9562216	Identifier	NULL		9562008	0					
+ANR	9562217	Argument	EP_STOPPED		9562008	3					
+ANR	9562218	Identifier	EP_STOPPED		9562008	0					
+ANR	9562219	IfStatement	if ( epctx -> nr_pstreams )		9562008	16					
+ANR	9562220	Condition	epctx -> nr_pstreams	97:8:1277:1294	9562008	0	True				
+ANR	9562221	PtrMemberAccess	epctx -> nr_pstreams		9562008	0					
+ANR	9562222	Identifier	epctx		9562008	0					
+ANR	9562223	Identifier	nr_pstreams		9562008	1					
+ANR	9562224	CompoundStatement		93:28:1177:1177	9562008	1					
+ANR	9562225	ExpressionStatement	xhci_reset_streams ( epctx )	99:8:1308:1333	9562008	0	True				
+ANR	9562226	CallExpression	xhci_reset_streams ( epctx )		9562008	0					
+ANR	9562227	Callee	xhci_reset_streams		9562008	0					
+ANR	9562228	Identifier	xhci_reset_streams		9562008	0					
+ANR	9562229	ArgumentList	epctx		9562008	1					
+ANR	9562230	Argument	epctx		9562008	0					
+ANR	9562231	Identifier	epctx		9562008	0					
+ANR	9562232	ReturnStatement	return CC_SUCCESS ;	105:4:1349:1366	9562008	17	True				
+ANR	9562233	Identifier	CC_SUCCESS		9562008	0					
+ANR	9562234	ReturnType	static TRBCCode		9562008	1					
+ANR	9562235	Identifier	xhci_reset_ep		9562008	2					
+ANR	9562236	ParameterList	"XHCIState * xhci , unsigned int slotid , unsigned int epid"		9562008	3					
+ANR	9562237	Parameter	XHCIState * xhci	1:30:30:44	9562008	0	True				
+ANR	9562238	ParameterType	XHCIState *		9562008	0					
+ANR	9562239	Identifier	xhci		9562008	1					
+ANR	9562240	Parameter	unsigned int slotid	1:47:47:65	9562008	1	True				
+ANR	9562241	ParameterType	unsigned int		9562008	0					
+ANR	9562242	Identifier	slotid		9562008	1					
+ANR	9562243	Parameter	unsigned int epid	3:30:99:115	9562008	2	True				
+ANR	9562244	ParameterType	unsigned int		9562008	0					
+ANR	9562245	Identifier	epid		9562008	1					
+ANR	9562246	CFGEntryNode	ENTRY		9562008		True				
+ANR	9562247	CFGExitNode	EXIT		9562008		True				
+ANR	9562248	Symbol	* * * xhci		9562008						
+ANR	9562249	Symbol	* epctx		9562008						
+ANR	9562250	Symbol	epctx -> nr_pstreams		9562008						
+ANR	9562251	Symbol	slot		9562008						
+ANR	9562252	Symbol	* slot -> eps		9562008						
+ANR	9562253	Symbol	* slot		9562008						
+ANR	9562254	Symbol	xhci -> slots [ slotid - 1 ] . uport		9562008						
+ANR	9562255	Symbol	CC_EP_NOT_ENABLED_ERROR		9562008						
+ANR	9562256	Symbol	* slotid		9562008						
+ANR	9562257	Symbol	dev		9562008						
+ANR	9562258	Symbol	xhci_ep_nuke_xfers		9562008						
+ANR	9562259	Symbol	CC_TRB_ERROR		9562008						
+ANR	9562260	Symbol	* * xhci		9562008						
+ANR	9562261	Symbol	epctx		9562008						
+ANR	9562262	Symbol	EP_HALTED		9562008						
+ANR	9562263	Symbol	EP_STOPPED		9562008						
+ANR	9562264	Symbol	* epid		9562008						
+ANR	9562265	Symbol	NULL		9562008						
+ANR	9562266	Symbol	* xhci -> slots [ slotid - 1 ] . uport		9562008						
+ANR	9562267	Symbol	* * xhci -> slots		9562008						
+ANR	9562268	Symbol	xhci -> slots [ slotid - 1 ] . uport -> dev		9562008						
+ANR	9562269	Symbol	epid		9562008						
+ANR	9562270	Symbol	* xhci		9562008						
+ANR	9562271	Symbol	ep		9562008						
+ANR	9562272	Symbol	stderr		9562008						
+ANR	9562273	Symbol	slot -> eps		9562008						
+ANR	9562274	Symbol	xhci		9562008						
+ANR	9562275	Symbol	xhci -> numslots		9562008						
+ANR	9562276	Symbol	* * slotid		9562008						
+ANR	9562277	Symbol	CC_SUCCESS		9562008						
+ANR	9562278	Symbol	* * slot		9562008						
+ANR	9562279	Symbol	CC_CONTEXT_STATE_ERROR		9562008						
+ANR	9562280	Symbol	CC_USB_TRANSACTION_ERROR		9562008						
+ANR	9562281	Symbol	epctx -> state		9562008						
+ANR	9562282	Symbol	slotid		9562008						
+ANR	9562283	Symbol	* xhci -> slots		9562008						
+ANR	9562284	Symbol	xhci -> slots		9562008						

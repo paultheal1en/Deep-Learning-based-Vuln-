@@ -1,0 +1,798 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6821106	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_aio_read_cb_1.c								
+ANR	6821107	Function	qcow2_aio_read_cb	1:0:0:4656							
+ANR	6821108	FunctionDef	"qcow2_aio_read_cb (void * opaque , int ret)"		6821107	0					
+ANR	6821109	CompoundStatement		3:0:54:4656	6821107	0					
+ANR	6821110	IdentifierDeclStatement	QCowAIOCB * acb = opaque ;	5:4:61:84	6821107	0	True				
+ANR	6821111	IdentifierDecl	* acb = opaque		6821107	0					
+ANR	6821112	IdentifierDeclType	QCowAIOCB *		6821107	0					
+ANR	6821113	Identifier	acb		6821107	1					
+ANR	6821114	AssignmentExpression	* acb = opaque		6821107	2		=			
+ANR	6821115	Identifier	opaque		6821107	0					
+ANR	6821116	Identifier	opaque		6821107	1					
+ANR	6821117	IdentifierDeclStatement	BlockDriverState * bs = acb -> common . bs ;	7:4:91:128	6821107	1	True				
+ANR	6821118	IdentifierDecl	* bs = acb -> common . bs		6821107	0					
+ANR	6821119	IdentifierDeclType	BlockDriverState *		6821107	0					
+ANR	6821120	Identifier	bs		6821107	1					
+ANR	6821121	AssignmentExpression	* bs = acb -> common . bs		6821107	2		=			
+ANR	6821122	Identifier	bs		6821107	0					
+ANR	6821123	MemberAccess	acb -> common . bs		6821107	1					
+ANR	6821124	PtrMemberAccess	acb -> common		6821107	0					
+ANR	6821125	Identifier	acb		6821107	0					
+ANR	6821126	Identifier	common		6821107	1					
+ANR	6821127	Identifier	bs		6821107	1					
+ANR	6821128	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	9:4:135:164	6821107	2	True				
+ANR	6821129	IdentifierDecl	* s = bs -> opaque		6821107	0					
+ANR	6821130	IdentifierDeclType	BDRVQcowState *		6821107	0					
+ANR	6821131	Identifier	s		6821107	1					
+ANR	6821132	AssignmentExpression	* s = bs -> opaque		6821107	2		=			
+ANR	6821133	Identifier	s		6821107	0					
+ANR	6821134	PtrMemberAccess	bs -> opaque		6821107	1					
+ANR	6821135	Identifier	bs		6821107	0					
+ANR	6821136	Identifier	opaque		6821107	1					
+ANR	6821137	IdentifierDeclStatement	"int index_in_cluster , n1 ;"	11:4:171:195	6821107	3	True				
+ANR	6821138	IdentifierDecl	index_in_cluster		6821107	0					
+ANR	6821139	IdentifierDeclType	int		6821107	0					
+ANR	6821140	Identifier	index_in_cluster		6821107	1					
+ANR	6821141	IdentifierDecl	n1		6821107	1					
+ANR	6821142	IdentifierDeclType	int		6821107	0					
+ANR	6821143	Identifier	n1		6821107	1					
+ANR	6821144	ExpressionStatement	acb -> hd_aiocb = NULL	15:4:204:224	6821107	4	True				
+ANR	6821145	AssignmentExpression	acb -> hd_aiocb = NULL		6821107	0		=			
+ANR	6821146	PtrMemberAccess	acb -> hd_aiocb		6821107	0					
+ANR	6821147	Identifier	acb		6821107	0					
+ANR	6821148	Identifier	hd_aiocb		6821107	1					
+ANR	6821149	Identifier	NULL		6821107	1					
+ANR	6821150	IfStatement	if ( ret < 0 )		6821107	5					
+ANR	6821151	Condition	ret < 0	17:8:235:241	6821107	0	True				
+ANR	6821152	RelationalExpression	ret < 0		6821107	0		<			
+ANR	6821153	Identifier	ret		6821107	0					
+ANR	6821154	PrimaryExpression	0		6821107	1					
+ANR	6821155	GotoStatement	goto done ;	19:8:253:262	6821107	1	True				
+ANR	6821156	Identifier	done		6821107	0					
+ANR	6821157	IfStatement	if ( ! acb -> cluster_offset )		6821107	6					
+ANR	6821158	Condition	! acb -> cluster_offset	25:8:315:334	6821107	0	True				
+ANR	6821159	UnaryOperationExpression	! acb -> cluster_offset		6821107	0					
+ANR	6821160	UnaryOperator	!		6821107	0					
+ANR	6821161	PtrMemberAccess	acb -> cluster_offset		6821107	1					
+ANR	6821162	Identifier	acb		6821107	0					
+ANR	6821163	Identifier	cluster_offset		6821107	1					
+ANR	6821164	CompoundStatement		23:30:282:282	6821107	1					
+ANR	6821165	ElseStatement	else		6821107	0					
+ANR	6821166	IfStatement	if ( acb -> cluster_offset & QCOW_OFLAG_COMPRESSED )		6821107	0					
+ANR	6821167	Condition	acb -> cluster_offset & QCOW_OFLAG_COMPRESSED	29:15:384:426	6821107	0	True				
+ANR	6821168	BitAndExpression	acb -> cluster_offset & QCOW_OFLAG_COMPRESSED		6821107	0		&			
+ANR	6821169	PtrMemberAccess	acb -> cluster_offset		6821107	0					
+ANR	6821170	Identifier	acb		6821107	0					
+ANR	6821171	Identifier	cluster_offset		6821107	1					
+ANR	6821172	Identifier	QCOW_OFLAG_COMPRESSED		6821107	1					
+ANR	6821173	CompoundStatement		27:60:374:374	6821107	1					
+ANR	6821174	ElseStatement	else		6821107	0					
+ANR	6821175	CompoundStatement		31:11:417:417	6821107	0					
+ANR	6821176	IfStatement	if ( s -> crypt_method )		6821107	0					
+ANR	6821177	Condition	s -> crypt_method	35:12:487:501	6821107	0	True				
+ANR	6821178	PtrMemberAccess	s -> crypt_method		6821107	0					
+ANR	6821179	Identifier	s		6821107	0					
+ANR	6821180	Identifier	crypt_method		6821107	1					
+ANR	6821181	CompoundStatement		33:29:449:449	6821107	1					
+ANR	6821182	ExpressionStatement	"qcow2_encrypt_sectors ( s , acb -> sector_num , acb -> cluster_data , acb -> cluster_data , acb -> cur_nr_sectors , 0 , & s -> aes_decrypt_key )"	37:12:519:661	6821107	0	True				
+ANR	6821183	CallExpression	"qcow2_encrypt_sectors ( s , acb -> sector_num , acb -> cluster_data , acb -> cluster_data , acb -> cur_nr_sectors , 0 , & s -> aes_decrypt_key )"		6821107	0					
+ANR	6821184	Callee	qcow2_encrypt_sectors		6821107	0					
+ANR	6821185	Identifier	qcow2_encrypt_sectors		6821107	0					
+ANR	6821186	ArgumentList	s		6821107	1					
+ANR	6821187	Argument	s		6821107	0					
+ANR	6821188	Identifier	s		6821107	0					
+ANR	6821189	Argument	acb -> sector_num		6821107	1					
+ANR	6821190	PtrMemberAccess	acb -> sector_num		6821107	0					
+ANR	6821191	Identifier	acb		6821107	0					
+ANR	6821192	Identifier	sector_num		6821107	1					
+ANR	6821193	Argument	acb -> cluster_data		6821107	2					
+ANR	6821194	PtrMemberAccess	acb -> cluster_data		6821107	0					
+ANR	6821195	Identifier	acb		6821107	0					
+ANR	6821196	Identifier	cluster_data		6821107	1					
+ANR	6821197	Argument	acb -> cluster_data		6821107	3					
+ANR	6821198	PtrMemberAccess	acb -> cluster_data		6821107	0					
+ANR	6821199	Identifier	acb		6821107	0					
+ANR	6821200	Identifier	cluster_data		6821107	1					
+ANR	6821201	Argument	acb -> cur_nr_sectors		6821107	4					
+ANR	6821202	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821203	Identifier	acb		6821107	0					
+ANR	6821204	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821205	Argument	0		6821107	5					
+ANR	6821206	PrimaryExpression	0		6821107	0					
+ANR	6821207	Argument	& s -> aes_decrypt_key		6821107	6					
+ANR	6821208	UnaryOperationExpression	& s -> aes_decrypt_key		6821107	0					
+ANR	6821209	UnaryOperator	&		6821107	0					
+ANR	6821210	PtrMemberAccess	s -> aes_decrypt_key		6821107	1					
+ANR	6821211	Identifier	s		6821107	0					
+ANR	6821212	Identifier	aes_decrypt_key		6821107	1					
+ANR	6821213	ExpressionStatement	qemu_iovec_reset ( & acb -> hd_qiov )	41:12:676:707	6821107	1	True				
+ANR	6821214	CallExpression	qemu_iovec_reset ( & acb -> hd_qiov )		6821107	0					
+ANR	6821215	Callee	qemu_iovec_reset		6821107	0					
+ANR	6821216	Identifier	qemu_iovec_reset		6821107	0					
+ANR	6821217	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821218	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821219	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821220	UnaryOperator	&		6821107	0					
+ANR	6821221	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821222	Identifier	acb		6821107	0					
+ANR	6821223	Identifier	hd_qiov		6821107	1					
+ANR	6821224	ExpressionStatement	"qemu_iovec_copy ( & acb -> hd_qiov , acb -> qiov , acb -> bytes_done , acb -> cur_nr_sectors * 512 )"	43:12:722:824	6821107	2	True				
+ANR	6821225	CallExpression	"qemu_iovec_copy ( & acb -> hd_qiov , acb -> qiov , acb -> bytes_done , acb -> cur_nr_sectors * 512 )"		6821107	0					
+ANR	6821226	Callee	qemu_iovec_copy		6821107	0					
+ANR	6821227	Identifier	qemu_iovec_copy		6821107	0					
+ANR	6821228	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821229	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821230	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821231	UnaryOperator	&		6821107	0					
+ANR	6821232	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821233	Identifier	acb		6821107	0					
+ANR	6821234	Identifier	hd_qiov		6821107	1					
+ANR	6821235	Argument	acb -> qiov		6821107	1					
+ANR	6821236	PtrMemberAccess	acb -> qiov		6821107	0					
+ANR	6821237	Identifier	acb		6821107	0					
+ANR	6821238	Identifier	qiov		6821107	1					
+ANR	6821239	Argument	acb -> bytes_done		6821107	2					
+ANR	6821240	PtrMemberAccess	acb -> bytes_done		6821107	0					
+ANR	6821241	Identifier	acb		6821107	0					
+ANR	6821242	Identifier	bytes_done		6821107	1					
+ANR	6821243	Argument	acb -> cur_nr_sectors * 512		6821107	3					
+ANR	6821244	MultiplicativeExpression	acb -> cur_nr_sectors * 512		6821107	0		*			
+ANR	6821245	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821246	Identifier	acb		6821107	0					
+ANR	6821247	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821248	PrimaryExpression	512		6821107	1					
+ANR	6821249	ExpressionStatement	"qemu_iovec_from_buffer ( & acb -> hd_qiov , acb -> cluster_data , 512 * acb -> cur_nr_sectors )"	47:12:839:939	6821107	3	True				
+ANR	6821250	CallExpression	"qemu_iovec_from_buffer ( & acb -> hd_qiov , acb -> cluster_data , 512 * acb -> cur_nr_sectors )"		6821107	0					
+ANR	6821251	Callee	qemu_iovec_from_buffer		6821107	0					
+ANR	6821252	Identifier	qemu_iovec_from_buffer		6821107	0					
+ANR	6821253	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821254	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821255	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821256	UnaryOperator	&		6821107	0					
+ANR	6821257	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821258	Identifier	acb		6821107	0					
+ANR	6821259	Identifier	hd_qiov		6821107	1					
+ANR	6821260	Argument	acb -> cluster_data		6821107	1					
+ANR	6821261	PtrMemberAccess	acb -> cluster_data		6821107	0					
+ANR	6821262	Identifier	acb		6821107	0					
+ANR	6821263	Identifier	cluster_data		6821107	1					
+ANR	6821264	Argument	512 * acb -> cur_nr_sectors		6821107	2					
+ANR	6821265	MultiplicativeExpression	512 * acb -> cur_nr_sectors		6821107	0		*			
+ANR	6821266	PrimaryExpression	512		6821107	0					
+ANR	6821267	PtrMemberAccess	acb -> cur_nr_sectors		6821107	1					
+ANR	6821268	Identifier	acb		6821107	0					
+ANR	6821269	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821270	ExpressionStatement	acb -> remaining_sectors -= acb -> cur_nr_sectors	57:4:966:1011	6821107	7	True				
+ANR	6821271	AssignmentExpression	acb -> remaining_sectors -= acb -> cur_nr_sectors		6821107	0		-=			
+ANR	6821272	PtrMemberAccess	acb -> remaining_sectors		6821107	0					
+ANR	6821273	Identifier	acb		6821107	0					
+ANR	6821274	Identifier	remaining_sectors		6821107	1					
+ANR	6821275	PtrMemberAccess	acb -> cur_nr_sectors		6821107	1					
+ANR	6821276	Identifier	acb		6821107	0					
+ANR	6821277	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821278	ExpressionStatement	acb -> sector_num += acb -> cur_nr_sectors	59:4:1018:1056	6821107	8	True				
+ANR	6821279	AssignmentExpression	acb -> sector_num += acb -> cur_nr_sectors		6821107	0		+=			
+ANR	6821280	PtrMemberAccess	acb -> sector_num		6821107	0					
+ANR	6821281	Identifier	acb		6821107	0					
+ANR	6821282	Identifier	sector_num		6821107	1					
+ANR	6821283	PtrMemberAccess	acb -> cur_nr_sectors		6821107	1					
+ANR	6821284	Identifier	acb		6821107	0					
+ANR	6821285	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821286	ExpressionStatement	acb -> bytes_done += acb -> cur_nr_sectors * 512	61:4:1063:1107	6821107	9	True				
+ANR	6821287	AssignmentExpression	acb -> bytes_done += acb -> cur_nr_sectors * 512		6821107	0		+=			
+ANR	6821288	PtrMemberAccess	acb -> bytes_done		6821107	0					
+ANR	6821289	Identifier	acb		6821107	0					
+ANR	6821290	Identifier	bytes_done		6821107	1					
+ANR	6821291	MultiplicativeExpression	acb -> cur_nr_sectors * 512		6821107	1		*			
+ANR	6821292	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821293	Identifier	acb		6821107	0					
+ANR	6821294	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821295	PrimaryExpression	512		6821107	1					
+ANR	6821296	IfStatement	if ( acb -> remaining_sectors == 0 )		6821107	10					
+ANR	6821297	Condition	acb -> remaining_sectors == 0	65:8:1120:1146	6821107	0	True				
+ANR	6821298	EqualityExpression	acb -> remaining_sectors == 0		6821107	0		==			
+ANR	6821299	PtrMemberAccess	acb -> remaining_sectors		6821107	0					
+ANR	6821300	Identifier	acb		6821107	0					
+ANR	6821301	Identifier	remaining_sectors		6821107	1					
+ANR	6821302	PrimaryExpression	0		6821107	1					
+ANR	6821303	CompoundStatement		63:37:1094:1094	6821107	1					
+ANR	6821304	ExpressionStatement	ret = 0	69:8:1193:1200	6821107	0	True				
+ANR	6821305	AssignmentExpression	ret = 0		6821107	0		=			
+ANR	6821306	Identifier	ret		6821107	0					
+ANR	6821307	PrimaryExpression	0		6821107	1					
+ANR	6821308	GotoStatement	goto done ;	71:8:1211:1220	6821107	1	True				
+ANR	6821309	Identifier	done		6821107	0					
+ANR	6821310	ExpressionStatement	acb -> cur_nr_sectors = acb -> remaining_sectors	79:4:1272:1316	6821107	11	True				
+ANR	6821311	AssignmentExpression	acb -> cur_nr_sectors = acb -> remaining_sectors		6821107	0		=			
+ANR	6821312	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821313	Identifier	acb		6821107	0					
+ANR	6821314	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821315	PtrMemberAccess	acb -> remaining_sectors		6821107	1					
+ANR	6821316	Identifier	acb		6821107	0					
+ANR	6821317	Identifier	remaining_sectors		6821107	1					
+ANR	6821318	IfStatement	if ( s -> crypt_method )		6821107	12					
+ANR	6821319	Condition	s -> crypt_method	81:8:1327:1341	6821107	0	True				
+ANR	6821320	PtrMemberAccess	s -> crypt_method		6821107	0					
+ANR	6821321	Identifier	s		6821107	0					
+ANR	6821322	Identifier	crypt_method		6821107	1					
+ANR	6821323	CompoundStatement		79:25:1289:1289	6821107	1					
+ANR	6821324	ExpressionStatement	"acb -> cur_nr_sectors = MIN ( acb -> cur_nr_sectors , QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors )"	83:8:1355:1460	6821107	0	True				
+ANR	6821325	AssignmentExpression	"acb -> cur_nr_sectors = MIN ( acb -> cur_nr_sectors , QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors )"		6821107	0		=			
+ANR	6821326	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821327	Identifier	acb		6821107	0					
+ANR	6821328	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821329	CallExpression	"MIN ( acb -> cur_nr_sectors , QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors )"		6821107	1					
+ANR	6821330	Callee	MIN		6821107	0					
+ANR	6821331	Identifier	MIN		6821107	0					
+ANR	6821332	ArgumentList	acb -> cur_nr_sectors		6821107	1					
+ANR	6821333	Argument	acb -> cur_nr_sectors		6821107	0					
+ANR	6821334	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821335	Identifier	acb		6821107	0					
+ANR	6821336	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821337	Argument	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6821107	1					
+ANR	6821338	MultiplicativeExpression	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6821107	0		*			
+ANR	6821339	Identifier	QCOW_MAX_CRYPT_CLUSTERS		6821107	0					
+ANR	6821340	PtrMemberAccess	s -> cluster_sectors		6821107	1					
+ANR	6821341	Identifier	s		6821107	0					
+ANR	6821342	Identifier	cluster_sectors		6821107	1					
+ANR	6821343	ExpressionStatement	"ret = qcow2_get_cluster_offset ( bs , acb -> sector_num << 9 , & acb -> cur_nr_sectors , & acb -> cluster_offset )"	91:4:1476:1585	6821107	13	True				
+ANR	6821344	AssignmentExpression	"ret = qcow2_get_cluster_offset ( bs , acb -> sector_num << 9 , & acb -> cur_nr_sectors , & acb -> cluster_offset )"		6821107	0		=			
+ANR	6821345	Identifier	ret		6821107	0					
+ANR	6821346	CallExpression	"qcow2_get_cluster_offset ( bs , acb -> sector_num << 9 , & acb -> cur_nr_sectors , & acb -> cluster_offset )"		6821107	1					
+ANR	6821347	Callee	qcow2_get_cluster_offset		6821107	0					
+ANR	6821348	Identifier	qcow2_get_cluster_offset		6821107	0					
+ANR	6821349	ArgumentList	bs		6821107	1					
+ANR	6821350	Argument	bs		6821107	0					
+ANR	6821351	Identifier	bs		6821107	0					
+ANR	6821352	Argument	acb -> sector_num << 9		6821107	1					
+ANR	6821353	ShiftExpression	acb -> sector_num << 9		6821107	0		<<			
+ANR	6821354	PtrMemberAccess	acb -> sector_num		6821107	0					
+ANR	6821355	Identifier	acb		6821107	0					
+ANR	6821356	Identifier	sector_num		6821107	1					
+ANR	6821357	PrimaryExpression	9		6821107	1					
+ANR	6821358	Argument	& acb -> cur_nr_sectors		6821107	2					
+ANR	6821359	UnaryOperationExpression	& acb -> cur_nr_sectors		6821107	0					
+ANR	6821360	UnaryOperator	&		6821107	0					
+ANR	6821361	PtrMemberAccess	acb -> cur_nr_sectors		6821107	1					
+ANR	6821362	Identifier	acb		6821107	0					
+ANR	6821363	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821364	Argument	& acb -> cluster_offset		6821107	3					
+ANR	6821365	UnaryOperationExpression	& acb -> cluster_offset		6821107	0					
+ANR	6821366	UnaryOperator	&		6821107	0					
+ANR	6821367	PtrMemberAccess	acb -> cluster_offset		6821107	1					
+ANR	6821368	Identifier	acb		6821107	0					
+ANR	6821369	Identifier	cluster_offset		6821107	1					
+ANR	6821370	IfStatement	if ( ret < 0 )		6821107	14					
+ANR	6821371	Condition	ret < 0	95:8:1596:1602	6821107	0	True				
+ANR	6821372	RelationalExpression	ret < 0		6821107	0		<			
+ANR	6821373	Identifier	ret		6821107	0					
+ANR	6821374	PrimaryExpression	0		6821107	1					
+ANR	6821375	CompoundStatement		93:17:1550:1550	6821107	1					
+ANR	6821376	GotoStatement	goto done ;	97:8:1616:1625	6821107	0	True				
+ANR	6821377	Identifier	done		6821107	0					
+ANR	6821378	ExpressionStatement	index_in_cluster = acb -> sector_num & ( s -> cluster_sectors - 1 )	103:4:1641:1702	6821107	15	True				
+ANR	6821379	AssignmentExpression	index_in_cluster = acb -> sector_num & ( s -> cluster_sectors - 1 )		6821107	0		=			
+ANR	6821380	Identifier	index_in_cluster		6821107	0					
+ANR	6821381	BitAndExpression	acb -> sector_num & ( s -> cluster_sectors - 1 )		6821107	1		&			
+ANR	6821382	PtrMemberAccess	acb -> sector_num		6821107	0					
+ANR	6821383	Identifier	acb		6821107	0					
+ANR	6821384	Identifier	sector_num		6821107	1					
+ANR	6821385	AdditiveExpression	s -> cluster_sectors - 1		6821107	1		-			
+ANR	6821386	PtrMemberAccess	s -> cluster_sectors		6821107	0					
+ANR	6821387	Identifier	s		6821107	0					
+ANR	6821388	Identifier	cluster_sectors		6821107	1					
+ANR	6821389	PrimaryExpression	1		6821107	1					
+ANR	6821390	ExpressionStatement	qemu_iovec_reset ( & acb -> hd_qiov )	107:4:1711:1742	6821107	16	True				
+ANR	6821391	CallExpression	qemu_iovec_reset ( & acb -> hd_qiov )		6821107	0					
+ANR	6821392	Callee	qemu_iovec_reset		6821107	0					
+ANR	6821393	Identifier	qemu_iovec_reset		6821107	0					
+ANR	6821394	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821395	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821396	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821397	UnaryOperator	&		6821107	0					
+ANR	6821398	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821399	Identifier	acb		6821107	0					
+ANR	6821400	Identifier	hd_qiov		6821107	1					
+ANR	6821401	ExpressionStatement	"qemu_iovec_copy ( & acb -> hd_qiov , acb -> qiov , acb -> bytes_done , acb -> cur_nr_sectors * 512 )"	109:4:1749:1843	6821107	17	True				
+ANR	6821402	CallExpression	"qemu_iovec_copy ( & acb -> hd_qiov , acb -> qiov , acb -> bytes_done , acb -> cur_nr_sectors * 512 )"		6821107	0					
+ANR	6821403	Callee	qemu_iovec_copy		6821107	0					
+ANR	6821404	Identifier	qemu_iovec_copy		6821107	0					
+ANR	6821405	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821406	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821407	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821408	UnaryOperator	&		6821107	0					
+ANR	6821409	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821410	Identifier	acb		6821107	0					
+ANR	6821411	Identifier	hd_qiov		6821107	1					
+ANR	6821412	Argument	acb -> qiov		6821107	1					
+ANR	6821413	PtrMemberAccess	acb -> qiov		6821107	0					
+ANR	6821414	Identifier	acb		6821107	0					
+ANR	6821415	Identifier	qiov		6821107	1					
+ANR	6821416	Argument	acb -> bytes_done		6821107	2					
+ANR	6821417	PtrMemberAccess	acb -> bytes_done		6821107	0					
+ANR	6821418	Identifier	acb		6821107	0					
+ANR	6821419	Identifier	bytes_done		6821107	1					
+ANR	6821420	Argument	acb -> cur_nr_sectors * 512		6821107	3					
+ANR	6821421	MultiplicativeExpression	acb -> cur_nr_sectors * 512		6821107	0		*			
+ANR	6821422	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821423	Identifier	acb		6821107	0					
+ANR	6821424	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821425	PrimaryExpression	512		6821107	1					
+ANR	6821426	IfStatement	if ( ! acb -> cluster_offset )		6821107	18					
+ANR	6821427	Condition	! acb -> cluster_offset	115:8:1856:1875	6821107	0	True				
+ANR	6821428	UnaryOperationExpression	! acb -> cluster_offset		6821107	0					
+ANR	6821429	UnaryOperator	!		6821107	0					
+ANR	6821430	PtrMemberAccess	acb -> cluster_offset		6821107	1					
+ANR	6821431	Identifier	acb		6821107	0					
+ANR	6821432	Identifier	cluster_offset		6821107	1					
+ANR	6821433	CompoundStatement		113:30:1823:1823	6821107	1					
+ANR	6821434	IfStatement	if ( bs -> backing_hd )		6821107	0					
+ANR	6821435	Condition	bs -> backing_hd	119:12:1895:1908	6821107	0	True				
+ANR	6821436	PtrMemberAccess	bs -> backing_hd		6821107	0					
+ANR	6821437	Identifier	bs		6821107	0					
+ANR	6821438	Identifier	backing_hd		6821107	1					
+ANR	6821439	CompoundStatement		117:28:1856:1856	6821107	1					
+ANR	6821440	ExpressionStatement	"n1 = qcow2_backing_read1 ( bs -> backing_hd , & acb -> hd_qiov , acb -> sector_num , acb -> cur_nr_sectors )"	123:12:1970:2080	6821107	0	True				
+ANR	6821441	AssignmentExpression	"n1 = qcow2_backing_read1 ( bs -> backing_hd , & acb -> hd_qiov , acb -> sector_num , acb -> cur_nr_sectors )"		6821107	0		=			
+ANR	6821442	Identifier	n1		6821107	0					
+ANR	6821443	CallExpression	"qcow2_backing_read1 ( bs -> backing_hd , & acb -> hd_qiov , acb -> sector_num , acb -> cur_nr_sectors )"		6821107	1					
+ANR	6821444	Callee	qcow2_backing_read1		6821107	0					
+ANR	6821445	Identifier	qcow2_backing_read1		6821107	0					
+ANR	6821446	ArgumentList	bs -> backing_hd		6821107	1					
+ANR	6821447	Argument	bs -> backing_hd		6821107	0					
+ANR	6821448	PtrMemberAccess	bs -> backing_hd		6821107	0					
+ANR	6821449	Identifier	bs		6821107	0					
+ANR	6821450	Identifier	backing_hd		6821107	1					
+ANR	6821451	Argument	& acb -> hd_qiov		6821107	1					
+ANR	6821452	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821453	UnaryOperator	&		6821107	0					
+ANR	6821454	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821455	Identifier	acb		6821107	0					
+ANR	6821456	Identifier	hd_qiov		6821107	1					
+ANR	6821457	Argument	acb -> sector_num		6821107	2					
+ANR	6821458	PtrMemberAccess	acb -> sector_num		6821107	0					
+ANR	6821459	Identifier	acb		6821107	0					
+ANR	6821460	Identifier	sector_num		6821107	1					
+ANR	6821461	Argument	acb -> cur_nr_sectors		6821107	3					
+ANR	6821462	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821463	Identifier	acb		6821107	0					
+ANR	6821464	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821465	IfStatement	if ( n1 > 0 )		6821107	1					
+ANR	6821466	Condition	n1 > 0	127:16:2099:2104	6821107	0	True				
+ANR	6821467	RelationalExpression	n1 > 0		6821107	0		>			
+ANR	6821468	Identifier	n1		6821107	0					
+ANR	6821469	PrimaryExpression	0		6821107	1					
+ANR	6821470	CompoundStatement		125:24:2052:2052	6821107	1					
+ANR	6821471	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_READ_BACKING_AIO )"	129:16:2126:2173	6821107	0	True				
+ANR	6821472	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_READ_BACKING_AIO )"		6821107	0					
+ANR	6821473	Callee	BLKDBG_EVENT		6821107	0					
+ANR	6821474	Identifier	BLKDBG_EVENT		6821107	0					
+ANR	6821475	ArgumentList	bs -> file		6821107	1					
+ANR	6821476	Argument	bs -> file		6821107	0					
+ANR	6821477	PtrMemberAccess	bs -> file		6821107	0					
+ANR	6821478	Identifier	bs		6821107	0					
+ANR	6821479	Identifier	file		6821107	1					
+ANR	6821480	Argument	BLKDBG_READ_BACKING_AIO		6821107	1					
+ANR	6821481	Identifier	BLKDBG_READ_BACKING_AIO		6821107	0					
+ANR	6821482	ExpressionStatement	"acb -> hd_aiocb = bdrv_aio_readv ( bs -> backing_hd , acb -> sector_num , & acb -> hd_qiov , acb -> cur_nr_sectors , qcow2_aio_read_cb , acb )"	131:16:2192:2361	6821107	1	True				
+ANR	6821483	AssignmentExpression	"acb -> hd_aiocb = bdrv_aio_readv ( bs -> backing_hd , acb -> sector_num , & acb -> hd_qiov , acb -> cur_nr_sectors , qcow2_aio_read_cb , acb )"		6821107	0		=			
+ANR	6821484	PtrMemberAccess	acb -> hd_aiocb		6821107	0					
+ANR	6821485	Identifier	acb		6821107	0					
+ANR	6821486	Identifier	hd_aiocb		6821107	1					
+ANR	6821487	CallExpression	"bdrv_aio_readv ( bs -> backing_hd , acb -> sector_num , & acb -> hd_qiov , acb -> cur_nr_sectors , qcow2_aio_read_cb , acb )"		6821107	1					
+ANR	6821488	Callee	bdrv_aio_readv		6821107	0					
+ANR	6821489	Identifier	bdrv_aio_readv		6821107	0					
+ANR	6821490	ArgumentList	bs -> backing_hd		6821107	1					
+ANR	6821491	Argument	bs -> backing_hd		6821107	0					
+ANR	6821492	PtrMemberAccess	bs -> backing_hd		6821107	0					
+ANR	6821493	Identifier	bs		6821107	0					
+ANR	6821494	Identifier	backing_hd		6821107	1					
+ANR	6821495	Argument	acb -> sector_num		6821107	1					
+ANR	6821496	PtrMemberAccess	acb -> sector_num		6821107	0					
+ANR	6821497	Identifier	acb		6821107	0					
+ANR	6821498	Identifier	sector_num		6821107	1					
+ANR	6821499	Argument	& acb -> hd_qiov		6821107	2					
+ANR	6821500	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821501	UnaryOperator	&		6821107	0					
+ANR	6821502	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821503	Identifier	acb		6821107	0					
+ANR	6821504	Identifier	hd_qiov		6821107	1					
+ANR	6821505	Argument	acb -> cur_nr_sectors		6821107	3					
+ANR	6821506	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821507	Identifier	acb		6821107	0					
+ANR	6821508	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821509	Argument	qcow2_aio_read_cb		6821107	4					
+ANR	6821510	Identifier	qcow2_aio_read_cb		6821107	0					
+ANR	6821511	Argument	acb		6821107	5					
+ANR	6821512	Identifier	acb		6821107	0					
+ANR	6821513	IfStatement	if ( acb -> hd_aiocb == NULL )		6821107	2					
+ANR	6821514	Condition	acb -> hd_aiocb == NULL	137:20:2384:2404	6821107	0	True				
+ANR	6821515	EqualityExpression	acb -> hd_aiocb == NULL		6821107	0		==			
+ANR	6821516	PtrMemberAccess	acb -> hd_aiocb		6821107	0					
+ANR	6821517	Identifier	acb		6821107	0					
+ANR	6821518	Identifier	hd_aiocb		6821107	1					
+ANR	6821519	Identifier	NULL		6821107	1					
+ANR	6821520	GotoStatement	goto done ;	139:20:2428:2437	6821107	1	True				
+ANR	6821521	Identifier	done		6821107	0					
+ANR	6821522	ElseStatement	else		6821107	0					
+ANR	6821523	CompoundStatement		139:19:2404:2404	6821107	0					
+ANR	6821524	ExpressionStatement	"ret = qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"	143:16:2478:2525	6821107	0	True				
+ANR	6821525	AssignmentExpression	"ret = qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"		6821107	0		=			
+ANR	6821526	Identifier	ret		6821107	0					
+ANR	6821527	CallExpression	"qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"		6821107	1					
+ANR	6821528	Callee	qcow2_schedule_bh		6821107	0					
+ANR	6821529	Identifier	qcow2_schedule_bh		6821107	0					
+ANR	6821530	ArgumentList	qcow2_aio_read_bh		6821107	1					
+ANR	6821531	Argument	qcow2_aio_read_bh		6821107	0					
+ANR	6821532	Identifier	qcow2_aio_read_bh		6821107	0					
+ANR	6821533	Argument	acb		6821107	1					
+ANR	6821534	Identifier	acb		6821107	0					
+ANR	6821535	IfStatement	if ( ret < 0 )		6821107	1					
+ANR	6821536	Condition	ret < 0	145:20:2548:2554	6821107	0	True				
+ANR	6821537	RelationalExpression	ret < 0		6821107	0		<			
+ANR	6821538	Identifier	ret		6821107	0					
+ANR	6821539	PrimaryExpression	0		6821107	1					
+ANR	6821540	GotoStatement	goto done ;	147:20:2578:2587	6821107	1	True				
+ANR	6821541	Identifier	done		6821107	0					
+ANR	6821542	ElseStatement	else		6821107	0					
+ANR	6821543	CompoundStatement		149:15:2565:2565	6821107	0					
+ANR	6821544	ExpressionStatement	"qemu_iovec_memset ( & acb -> hd_qiov , 0 , 512 * acb -> cur_nr_sectors )"	155:12:2690:2752	6821107	0	True				
+ANR	6821545	CallExpression	"qemu_iovec_memset ( & acb -> hd_qiov , 0 , 512 * acb -> cur_nr_sectors )"		6821107	0					
+ANR	6821546	Callee	qemu_iovec_memset		6821107	0					
+ANR	6821547	Identifier	qemu_iovec_memset		6821107	0					
+ANR	6821548	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821549	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821550	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821551	UnaryOperator	&		6821107	0					
+ANR	6821552	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821553	Identifier	acb		6821107	0					
+ANR	6821554	Identifier	hd_qiov		6821107	1					
+ANR	6821555	Argument	0		6821107	1					
+ANR	6821556	PrimaryExpression	0		6821107	0					
+ANR	6821557	Argument	512 * acb -> cur_nr_sectors		6821107	2					
+ANR	6821558	MultiplicativeExpression	512 * acb -> cur_nr_sectors		6821107	0		*			
+ANR	6821559	PrimaryExpression	512		6821107	0					
+ANR	6821560	PtrMemberAccess	acb -> cur_nr_sectors		6821107	1					
+ANR	6821561	Identifier	acb		6821107	0					
+ANR	6821562	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821563	ExpressionStatement	"ret = qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"	157:12:2767:2814	6821107	1	True				
+ANR	6821564	AssignmentExpression	"ret = qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"		6821107	0		=			
+ANR	6821565	Identifier	ret		6821107	0					
+ANR	6821566	CallExpression	"qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"		6821107	1					
+ANR	6821567	Callee	qcow2_schedule_bh		6821107	0					
+ANR	6821568	Identifier	qcow2_schedule_bh		6821107	0					
+ANR	6821569	ArgumentList	qcow2_aio_read_bh		6821107	1					
+ANR	6821570	Argument	qcow2_aio_read_bh		6821107	0					
+ANR	6821571	Identifier	qcow2_aio_read_bh		6821107	0					
+ANR	6821572	Argument	acb		6821107	1					
+ANR	6821573	Identifier	acb		6821107	0					
+ANR	6821574	IfStatement	if ( ret < 0 )		6821107	2					
+ANR	6821575	Condition	ret < 0	159:16:2833:2839	6821107	0	True				
+ANR	6821576	RelationalExpression	ret < 0		6821107	0		<			
+ANR	6821577	Identifier	ret		6821107	0					
+ANR	6821578	PrimaryExpression	0		6821107	1					
+ANR	6821579	GotoStatement	goto done ;	161:16:2859:2868	6821107	1	True				
+ANR	6821580	Identifier	done		6821107	0					
+ANR	6821581	ElseStatement	else		6821107	0					
+ANR	6821582	IfStatement	if ( acb -> cluster_offset & QCOW_OFLAG_COMPRESSED )		6821107	0					
+ANR	6821583	Condition	acb -> cluster_offset & QCOW_OFLAG_COMPRESSED	165:15:2897:2939	6821107	0	True				
+ANR	6821584	BitAndExpression	acb -> cluster_offset & QCOW_OFLAG_COMPRESSED		6821107	0		&			
+ANR	6821585	PtrMemberAccess	acb -> cluster_offset		6821107	0					
+ANR	6821586	Identifier	acb		6821107	0					
+ANR	6821587	Identifier	cluster_offset		6821107	1					
+ANR	6821588	Identifier	QCOW_OFLAG_COMPRESSED		6821107	1					
+ANR	6821589	CompoundStatement		163:60:2887:2887	6821107	1					
+ANR	6821590	IfStatement	"if ( qcow2_decompress_cluster ( bs , acb -> cluster_offset ) < 0 )"		6821107	0					
+ANR	6821591	Condition	"qcow2_decompress_cluster ( bs , acb -> cluster_offset ) < 0"	169:12:3012:3064	6821107	0	True				
+ANR	6821592	RelationalExpression	"qcow2_decompress_cluster ( bs , acb -> cluster_offset ) < 0"		6821107	0		<			
+ANR	6821593	CallExpression	"qcow2_decompress_cluster ( bs , acb -> cluster_offset )"		6821107	0					
+ANR	6821594	Callee	qcow2_decompress_cluster		6821107	0					
+ANR	6821595	Identifier	qcow2_decompress_cluster		6821107	0					
+ANR	6821596	ArgumentList	bs		6821107	1					
+ANR	6821597	Argument	bs		6821107	0					
+ANR	6821598	Identifier	bs		6821107	0					
+ANR	6821599	Argument	acb -> cluster_offset		6821107	1					
+ANR	6821600	PtrMemberAccess	acb -> cluster_offset		6821107	0					
+ANR	6821601	Identifier	acb		6821107	0					
+ANR	6821602	Identifier	cluster_offset		6821107	1					
+ANR	6821603	PrimaryExpression	0		6821107	1					
+ANR	6821604	GotoStatement	goto done ;	171:12:3080:3089	6821107	1	True				
+ANR	6821605	Identifier	done		6821107	0					
+ANR	6821606	ExpressionStatement	"qemu_iovec_from_buffer ( & acb -> hd_qiov , s -> cluster_cache + index_in_cluster * 512 , 512 * acb -> cur_nr_sectors )"	175:8:3102:3235	6821107	1	True				
+ANR	6821607	CallExpression	"qemu_iovec_from_buffer ( & acb -> hd_qiov , s -> cluster_cache + index_in_cluster * 512 , 512 * acb -> cur_nr_sectors )"		6821107	0					
+ANR	6821608	Callee	qemu_iovec_from_buffer		6821107	0					
+ANR	6821609	Identifier	qemu_iovec_from_buffer		6821107	0					
+ANR	6821610	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821611	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821612	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821613	UnaryOperator	&		6821107	0					
+ANR	6821614	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821615	Identifier	acb		6821107	0					
+ANR	6821616	Identifier	hd_qiov		6821107	1					
+ANR	6821617	Argument	s -> cluster_cache + index_in_cluster * 512		6821107	1					
+ANR	6821618	AdditiveExpression	s -> cluster_cache + index_in_cluster * 512		6821107	0		+			
+ANR	6821619	PtrMemberAccess	s -> cluster_cache		6821107	0					
+ANR	6821620	Identifier	s		6821107	0					
+ANR	6821621	Identifier	cluster_cache		6821107	1					
+ANR	6821622	MultiplicativeExpression	index_in_cluster * 512		6821107	1		*			
+ANR	6821623	Identifier	index_in_cluster		6821107	0					
+ANR	6821624	PrimaryExpression	512		6821107	1					
+ANR	6821625	Argument	512 * acb -> cur_nr_sectors		6821107	2					
+ANR	6821626	MultiplicativeExpression	512 * acb -> cur_nr_sectors		6821107	0		*			
+ANR	6821627	PrimaryExpression	512		6821107	0					
+ANR	6821628	PtrMemberAccess	acb -> cur_nr_sectors		6821107	1					
+ANR	6821629	Identifier	acb		6821107	0					
+ANR	6821630	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821631	ExpressionStatement	"ret = qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"	183:8:3248:3295	6821107	2	True				
+ANR	6821632	AssignmentExpression	"ret = qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"		6821107	0		=			
+ANR	6821633	Identifier	ret		6821107	0					
+ANR	6821634	CallExpression	"qcow2_schedule_bh ( qcow2_aio_read_bh , acb )"		6821107	1					
+ANR	6821635	Callee	qcow2_schedule_bh		6821107	0					
+ANR	6821636	Identifier	qcow2_schedule_bh		6821107	0					
+ANR	6821637	ArgumentList	qcow2_aio_read_bh		6821107	1					
+ANR	6821638	Argument	qcow2_aio_read_bh		6821107	0					
+ANR	6821639	Identifier	qcow2_aio_read_bh		6821107	0					
+ANR	6821640	Argument	acb		6821107	1					
+ANR	6821641	Identifier	acb		6821107	0					
+ANR	6821642	IfStatement	if ( ret < 0 )		6821107	3					
+ANR	6821643	Condition	ret < 0	185:12:3310:3316	6821107	0	True				
+ANR	6821644	RelationalExpression	ret < 0		6821107	0		<			
+ANR	6821645	Identifier	ret		6821107	0					
+ANR	6821646	PrimaryExpression	0		6821107	1					
+ANR	6821647	GotoStatement	goto done ;	187:12:3332:3341	6821107	1	True				
+ANR	6821648	Identifier	done		6821107	0					
+ANR	6821649	ElseStatement	else		6821107	0					
+ANR	6821650	CompoundStatement		187:11:3300:3300	6821107	0					
+ANR	6821651	IfStatement	if ( ( acb -> cluster_offset & 511 ) != 0 )		6821107	0					
+ANR	6821652	Condition	( acb -> cluster_offset & 511 ) != 0	191:12:3370:3401	6821107	0	True				
+ANR	6821653	EqualityExpression	( acb -> cluster_offset & 511 ) != 0		6821107	0		!=			
+ANR	6821654	BitAndExpression	acb -> cluster_offset & 511		6821107	0		&			
+ANR	6821655	PtrMemberAccess	acb -> cluster_offset		6821107	0					
+ANR	6821656	Identifier	acb		6821107	0					
+ANR	6821657	Identifier	cluster_offset		6821107	1					
+ANR	6821658	PrimaryExpression	511		6821107	1					
+ANR	6821659	PrimaryExpression	0		6821107	1					
+ANR	6821660	CompoundStatement		189:46:3349:3349	6821107	1					
+ANR	6821661	ExpressionStatement	ret = - EIO	193:12:3419:3429	6821107	0	True				
+ANR	6821662	AssignmentExpression	ret = - EIO		6821107	0		=			
+ANR	6821663	Identifier	ret		6821107	0					
+ANR	6821664	UnaryOperationExpression	- EIO		6821107	1					
+ANR	6821665	UnaryOperator	-		6821107	0					
+ANR	6821666	Identifier	EIO		6821107	1					
+ANR	6821667	GotoStatement	goto done ;	195:12:3444:3453	6821107	1	True				
+ANR	6821668	Identifier	done		6821107	0					
+ANR	6821669	IfStatement	if ( s -> crypt_method )		6821107	1					
+ANR	6821670	Condition	s -> crypt_method	201:12:3481:3495	6821107	0	True				
+ANR	6821671	PtrMemberAccess	s -> crypt_method		6821107	0					
+ANR	6821672	Identifier	s		6821107	0					
+ANR	6821673	Identifier	crypt_method		6821107	1					
+ANR	6821674	CompoundStatement		199:29:3443:3443	6821107	1					
+ANR	6821675	IfStatement	if ( ! acb -> cluster_data )		6821107	0					
+ANR	6821676	Condition	! acb -> cluster_data	211:16:3692:3709	6821107	0	True				
+ANR	6821677	UnaryOperationExpression	! acb -> cluster_data		6821107	0					
+ANR	6821678	UnaryOperator	!		6821107	0					
+ANR	6821679	PtrMemberAccess	acb -> cluster_data		6821107	1					
+ANR	6821680	Identifier	acb		6821107	0					
+ANR	6821681	Identifier	cluster_data		6821107	1					
+ANR	6821682	CompoundStatement		209:36:3657:3657	6821107	1					
+ANR	6821683	ExpressionStatement	acb -> cluster_data = qemu_mallocz ( QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_size )	213:16:3731:3827	6821107	0	True				
+ANR	6821684	AssignmentExpression	acb -> cluster_data = qemu_mallocz ( QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_size )		6821107	0		=			
+ANR	6821685	PtrMemberAccess	acb -> cluster_data		6821107	0					
+ANR	6821686	Identifier	acb		6821107	0					
+ANR	6821687	Identifier	cluster_data		6821107	1					
+ANR	6821688	CallExpression	qemu_mallocz ( QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_size )		6821107	1					
+ANR	6821689	Callee	qemu_mallocz		6821107	0					
+ANR	6821690	Identifier	qemu_mallocz		6821107	0					
+ANR	6821691	ArgumentList	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_size		6821107	1					
+ANR	6821692	Argument	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_size		6821107	0					
+ANR	6821693	MultiplicativeExpression	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_size		6821107	0		*			
+ANR	6821694	Identifier	QCOW_MAX_CRYPT_CLUSTERS		6821107	0					
+ANR	6821695	PtrMemberAccess	s -> cluster_size		6821107	1					
+ANR	6821696	Identifier	s		6821107	0					
+ANR	6821697	Identifier	cluster_size		6821107	1					
+ANR	6821698	ExpressionStatement	assert ( acb -> cur_nr_sectors <= QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors )	221:12:3859:3951	6821107	1	True				
+ANR	6821699	CallExpression	assert ( acb -> cur_nr_sectors <= QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors )		6821107	0					
+ANR	6821700	Callee	assert		6821107	0					
+ANR	6821701	Identifier	assert		6821107	0					
+ANR	6821702	ArgumentList	acb -> cur_nr_sectors <= QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6821107	1					
+ANR	6821703	Argument	acb -> cur_nr_sectors <= QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6821107	0					
+ANR	6821704	RelationalExpression	acb -> cur_nr_sectors <= QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6821107	0		<=			
+ANR	6821705	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821706	Identifier	acb		6821107	0					
+ANR	6821707	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821708	MultiplicativeExpression	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6821107	1		*			
+ANR	6821709	Identifier	QCOW_MAX_CRYPT_CLUSTERS		6821107	0					
+ANR	6821710	PtrMemberAccess	s -> cluster_sectors		6821107	1					
+ANR	6821711	Identifier	s		6821107	0					
+ANR	6821712	Identifier	cluster_sectors		6821107	1					
+ANR	6821713	ExpressionStatement	qemu_iovec_reset ( & acb -> hd_qiov )	225:12:3966:3997	6821107	2	True				
+ANR	6821714	CallExpression	qemu_iovec_reset ( & acb -> hd_qiov )		6821107	0					
+ANR	6821715	Callee	qemu_iovec_reset		6821107	0					
+ANR	6821716	Identifier	qemu_iovec_reset		6821107	0					
+ANR	6821717	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821718	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821719	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821720	UnaryOperator	&		6821107	0					
+ANR	6821721	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821722	Identifier	acb		6821107	0					
+ANR	6821723	Identifier	hd_qiov		6821107	1					
+ANR	6821724	ExpressionStatement	"qemu_iovec_add ( & acb -> hd_qiov , acb -> cluster_data , 512 * acb -> cur_nr_sectors )"	227:12:4012:4104	6821107	3	True				
+ANR	6821725	CallExpression	"qemu_iovec_add ( & acb -> hd_qiov , acb -> cluster_data , 512 * acb -> cur_nr_sectors )"		6821107	0					
+ANR	6821726	Callee	qemu_iovec_add		6821107	0					
+ANR	6821727	Identifier	qemu_iovec_add		6821107	0					
+ANR	6821728	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821729	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821730	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821731	UnaryOperator	&		6821107	0					
+ANR	6821732	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821733	Identifier	acb		6821107	0					
+ANR	6821734	Identifier	hd_qiov		6821107	1					
+ANR	6821735	Argument	acb -> cluster_data		6821107	1					
+ANR	6821736	PtrMemberAccess	acb -> cluster_data		6821107	0					
+ANR	6821737	Identifier	acb		6821107	0					
+ANR	6821738	Identifier	cluster_data		6821107	1					
+ANR	6821739	Argument	512 * acb -> cur_nr_sectors		6821107	2					
+ANR	6821740	MultiplicativeExpression	512 * acb -> cur_nr_sectors		6821107	0		*			
+ANR	6821741	PrimaryExpression	512		6821107	0					
+ANR	6821742	PtrMemberAccess	acb -> cur_nr_sectors		6821107	1					
+ANR	6821743	Identifier	acb		6821107	0					
+ANR	6821744	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821745	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_READ_AIO )"	235:8:4128:4167	6821107	2	True				
+ANR	6821746	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_READ_AIO )"		6821107	0					
+ANR	6821747	Callee	BLKDBG_EVENT		6821107	0					
+ANR	6821748	Identifier	BLKDBG_EVENT		6821107	0					
+ANR	6821749	ArgumentList	bs -> file		6821107	1					
+ANR	6821750	Argument	bs -> file		6821107	0					
+ANR	6821751	PtrMemberAccess	bs -> file		6821107	0					
+ANR	6821752	Identifier	bs		6821107	0					
+ANR	6821753	Identifier	file		6821107	1					
+ANR	6821754	Argument	BLKDBG_READ_AIO		6821107	1					
+ANR	6821755	Identifier	BLKDBG_READ_AIO		6821107	0					
+ANR	6821756	ExpressionStatement	"acb -> hd_aiocb = bdrv_aio_readv ( bs -> file , ( acb -> cluster_offset >> 9 ) + index_in_cluster , & acb -> hd_qiov , acb -> cur_nr_sectors , qcow2_aio_read_cb , acb )"	237:8:4178:4412	6821107	3	True				
+ANR	6821757	AssignmentExpression	"acb -> hd_aiocb = bdrv_aio_readv ( bs -> file , ( acb -> cluster_offset >> 9 ) + index_in_cluster , & acb -> hd_qiov , acb -> cur_nr_sectors , qcow2_aio_read_cb , acb )"		6821107	0		=			
+ANR	6821758	PtrMemberAccess	acb -> hd_aiocb		6821107	0					
+ANR	6821759	Identifier	acb		6821107	0					
+ANR	6821760	Identifier	hd_aiocb		6821107	1					
+ANR	6821761	CallExpression	"bdrv_aio_readv ( bs -> file , ( acb -> cluster_offset >> 9 ) + index_in_cluster , & acb -> hd_qiov , acb -> cur_nr_sectors , qcow2_aio_read_cb , acb )"		6821107	1					
+ANR	6821762	Callee	bdrv_aio_readv		6821107	0					
+ANR	6821763	Identifier	bdrv_aio_readv		6821107	0					
+ANR	6821764	ArgumentList	bs -> file		6821107	1					
+ANR	6821765	Argument	bs -> file		6821107	0					
+ANR	6821766	PtrMemberAccess	bs -> file		6821107	0					
+ANR	6821767	Identifier	bs		6821107	0					
+ANR	6821768	Identifier	file		6821107	1					
+ANR	6821769	Argument	( acb -> cluster_offset >> 9 ) + index_in_cluster		6821107	1					
+ANR	6821770	AdditiveExpression	( acb -> cluster_offset >> 9 ) + index_in_cluster		6821107	0		+			
+ANR	6821771	ShiftExpression	acb -> cluster_offset >> 9		6821107	0		>>			
+ANR	6821772	PtrMemberAccess	acb -> cluster_offset		6821107	0					
+ANR	6821773	Identifier	acb		6821107	0					
+ANR	6821774	Identifier	cluster_offset		6821107	1					
+ANR	6821775	PrimaryExpression	9		6821107	1					
+ANR	6821776	Identifier	index_in_cluster		6821107	1					
+ANR	6821777	Argument	& acb -> hd_qiov		6821107	2					
+ANR	6821778	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821779	UnaryOperator	&		6821107	0					
+ANR	6821780	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821781	Identifier	acb		6821107	0					
+ANR	6821782	Identifier	hd_qiov		6821107	1					
+ANR	6821783	Argument	acb -> cur_nr_sectors		6821107	3					
+ANR	6821784	PtrMemberAccess	acb -> cur_nr_sectors		6821107	0					
+ANR	6821785	Identifier	acb		6821107	0					
+ANR	6821786	Identifier	cur_nr_sectors		6821107	1					
+ANR	6821787	Argument	qcow2_aio_read_cb		6821107	4					
+ANR	6821788	Identifier	qcow2_aio_read_cb		6821107	0					
+ANR	6821789	Argument	acb		6821107	5					
+ANR	6821790	Identifier	acb		6821107	0					
+ANR	6821791	IfStatement	if ( acb -> hd_aiocb == NULL )		6821107	4					
+ANR	6821792	Condition	acb -> hd_aiocb == NULL	245:12:4427:4447	6821107	0	True				
+ANR	6821793	EqualityExpression	acb -> hd_aiocb == NULL		6821107	0		==			
+ANR	6821794	PtrMemberAccess	acb -> hd_aiocb		6821107	0					
+ANR	6821795	Identifier	acb		6821107	0					
+ANR	6821796	Identifier	hd_aiocb		6821107	1					
+ANR	6821797	Identifier	NULL		6821107	1					
+ANR	6821798	CompoundStatement		243:35:4395:4395	6821107	1					
+ANR	6821799	ExpressionStatement	ret = - EIO	247:12:4465:4475	6821107	0	True				
+ANR	6821800	AssignmentExpression	ret = - EIO		6821107	0		=			
+ANR	6821801	Identifier	ret		6821107	0					
+ANR	6821802	UnaryOperationExpression	- EIO		6821107	1					
+ANR	6821803	UnaryOperator	-		6821107	0					
+ANR	6821804	Identifier	EIO		6821107	1					
+ANR	6821805	GotoStatement	goto done ;	249:12:4490:4499	6821107	1	True				
+ANR	6821806	Identifier	done		6821107	0					
+ANR	6821807	ReturnStatement	return ;	257:4:4526:4532	6821107	19	True				
+ANR	6821808	Label	done :	259:0:4535:4539	6821107	20	True				
+ANR	6821809	Identifier	done		6821107	0					
+ANR	6821810	ExpressionStatement	"acb -> common . cb ( acb -> common . opaque , ret )"	261:4:4546:4585	6821107	21	True				
+ANR	6821811	CallExpression	"acb -> common . cb ( acb -> common . opaque , ret )"		6821107	0					
+ANR	6821812	Callee	acb -> common . cb		6821107	0					
+ANR	6821813	MemberAccess	acb -> common . cb		6821107	0					
+ANR	6821814	PtrMemberAccess	acb -> common		6821107	0					
+ANR	6821815	Identifier	acb		6821107	0					
+ANR	6821816	Identifier	common		6821107	1					
+ANR	6821817	Identifier	cb		6821107	1					
+ANR	6821818	ArgumentList	acb -> common . opaque		6821107	1					
+ANR	6821819	Argument	acb -> common . opaque		6821107	0					
+ANR	6821820	MemberAccess	acb -> common . opaque		6821107	0					
+ANR	6821821	PtrMemberAccess	acb -> common		6821107	0					
+ANR	6821822	Identifier	acb		6821107	0					
+ANR	6821823	Identifier	common		6821107	1					
+ANR	6821824	Identifier	opaque		6821107	1					
+ANR	6821825	Argument	ret		6821107	1					
+ANR	6821826	Identifier	ret		6821107	0					
+ANR	6821827	ExpressionStatement	qemu_iovec_destroy ( & acb -> hd_qiov )	263:4:4592:4625	6821107	22	True				
+ANR	6821828	CallExpression	qemu_iovec_destroy ( & acb -> hd_qiov )		6821107	0					
+ANR	6821829	Callee	qemu_iovec_destroy		6821107	0					
+ANR	6821830	Identifier	qemu_iovec_destroy		6821107	0					
+ANR	6821831	ArgumentList	& acb -> hd_qiov		6821107	1					
+ANR	6821832	Argument	& acb -> hd_qiov		6821107	0					
+ANR	6821833	UnaryOperationExpression	& acb -> hd_qiov		6821107	0					
+ANR	6821834	UnaryOperator	&		6821107	0					
+ANR	6821835	PtrMemberAccess	acb -> hd_qiov		6821107	1					
+ANR	6821836	Identifier	acb		6821107	0					
+ANR	6821837	Identifier	hd_qiov		6821107	1					
+ANR	6821838	ExpressionStatement	qemu_aio_release ( acb )	265:4:4632:4653	6821107	23	True				
+ANR	6821839	CallExpression	qemu_aio_release ( acb )		6821107	0					
+ANR	6821840	Callee	qemu_aio_release		6821107	0					
+ANR	6821841	Identifier	qemu_aio_release		6821107	0					
+ANR	6821842	ArgumentList	acb		6821107	1					
+ANR	6821843	Argument	acb		6821107	0					
+ANR	6821844	Identifier	acb		6821107	0					
+ANR	6821845	ReturnType	static void		6821107	1					
+ANR	6821846	Identifier	qcow2_aio_read_cb		6821107	2					
+ANR	6821847	ParameterList	"void * opaque , int ret"		6821107	3					
+ANR	6821848	Parameter	void * opaque	1:30:30:41	6821107	0	True				
+ANR	6821849	ParameterType	void *		6821107	0					
+ANR	6821850	Identifier	opaque		6821107	1					
+ANR	6821851	Parameter	int ret	1:44:44:50	6821107	1	True				
+ANR	6821852	ParameterType	int		6821107	0					
+ANR	6821853	Identifier	ret		6821107	1					
+ANR	6821854	CFGEntryNode	ENTRY		6821107		True				
+ANR	6821855	CFGExitNode	EXIT		6821107		True				
+ANR	6821856	Symbol	acb		6821107						
+ANR	6821857	Symbol	n1		6821107						
+ANR	6821858	Symbol	bs -> file		6821107						
+ANR	6821859	Symbol	qcow2_schedule_bh		6821107						
+ANR	6821860	Symbol	index_in_cluster		6821107						
+ANR	6821861	Symbol	acb -> hd_aiocb		6821107						
+ANR	6821862	Symbol	acb -> cluster_data		6821107						
+ANR	6821863	Symbol	BLKDBG_READ_AIO		6821107						
+ANR	6821864	Symbol	acb -> qiov		6821107						
+ANR	6821865	Symbol	s -> cluster_size		6821107						
+ANR	6821866	Symbol	acb -> remaining_sectors		6821107						
+ANR	6821867	Symbol	qcow2_backing_read1		6821107						
+ANR	6821868	Symbol	bs		6821107						
+ANR	6821869	Symbol	& acb -> hd_qiov		6821107						
+ANR	6821870	Symbol	* bs		6821107						
+ANR	6821871	Symbol	* acb		6821107						
+ANR	6821872	Symbol	s -> crypt_method		6821107						
+ANR	6821873	Symbol	s -> cluster_sectors		6821107						
+ANR	6821874	Symbol	acb -> common . opaque		6821107						
+ANR	6821875	Symbol	acb -> bytes_done		6821107						
+ANR	6821876	Symbol	s -> cluster_cache		6821107						
+ANR	6821877	Symbol	qcow2_get_cluster_offset		6821107						
+ANR	6821878	Symbol	qcow2_aio_read_bh		6821107						
+ANR	6821879	Symbol	BLKDBG_READ_BACKING_AIO		6821107						
+ANR	6821880	Symbol	acb -> common . bs		6821107						
+ANR	6821881	Symbol	ret		6821107						
+ANR	6821882	Symbol	& s -> aes_decrypt_key		6821107						
+ANR	6821883	Symbol	qcow2_aio_read_cb		6821107						
+ANR	6821884	Symbol	opaque		6821107						
+ANR	6821885	Symbol	NULL		6821107						
+ANR	6821886	Symbol	bdrv_aio_readv		6821107						
+ANR	6821887	Symbol	bs -> opaque		6821107						
+ANR	6821888	Symbol	acb -> cur_nr_sectors		6821107						
+ANR	6821889	Symbol	EIO		6821107						
+ANR	6821890	Symbol	bs -> backing_hd		6821107						
+ANR	6821891	Symbol	acb -> cluster_offset		6821107						
+ANR	6821892	Symbol	qcow2_decompress_cluster		6821107						
+ANR	6821893	Symbol	QCOW_MAX_CRYPT_CLUSTERS		6821107						
+ANR	6821894	Symbol	QCOW_OFLAG_COMPRESSED		6821107						
+ANR	6821895	Symbol	acb -> common		6821107						
+ANR	6821896	Symbol	s		6821107						
+ANR	6821897	Symbol	MIN		6821107						
+ANR	6821898	Symbol	& acb -> cluster_offset		6821107						
+ANR	6821899	Symbol	acb -> sector_num		6821107						
+ANR	6821900	Symbol	* s		6821107						
+ANR	6821901	Symbol	qemu_mallocz		6821107						
+ANR	6821902	Symbol	& acb -> cur_nr_sectors		6821107						

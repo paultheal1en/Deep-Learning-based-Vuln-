@@ -1,0 +1,191 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7665366	File	/home/p4ultr4n/workplace/ReVeal/raw_code/sd_co_writev_0.c								
+ANR	7665367	Function	sd_co_writev	1:0:0:827							
+ANR	7665368	FunctionDef	"sd_co_writev (BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov)"		7665367	0					
+ANR	7665369	CompoundStatement		5:0:141:827	7665367	0					
+ANR	7665370	IdentifierDeclStatement	SheepdogAIOCB acb ;	7:4:148:165	7665367	0	True				
+ANR	7665371	IdentifierDecl	acb		7665367	0					
+ANR	7665372	IdentifierDeclType	SheepdogAIOCB		7665367	0					
+ANR	7665373	Identifier	acb		7665367	1					
+ANR	7665374	IdentifierDeclStatement	int ret ;	9:4:172:179	7665367	1	True				
+ANR	7665375	IdentifierDecl	ret		7665367	0					
+ANR	7665376	IdentifierDeclType	int		7665367	0					
+ANR	7665377	Identifier	ret		7665367	1					
+ANR	7665378	IdentifierDeclStatement	int64_t offset = ( sector_num + nb_sectors ) * BDRV_SECTOR_SIZE ;	11:4:186:247	7665367	2	True				
+ANR	7665379	IdentifierDecl	offset = ( sector_num + nb_sectors ) * BDRV_SECTOR_SIZE		7665367	0					
+ANR	7665380	IdentifierDeclType	int64_t		7665367	0					
+ANR	7665381	Identifier	offset		7665367	1					
+ANR	7665382	AssignmentExpression	offset = ( sector_num + nb_sectors ) * BDRV_SECTOR_SIZE		7665367	2		=			
+ANR	7665383	Identifier	offset		7665367	0					
+ANR	7665384	MultiplicativeExpression	( sector_num + nb_sectors ) * BDRV_SECTOR_SIZE		7665367	1		*			
+ANR	7665385	AdditiveExpression	sector_num + nb_sectors		7665367	0		+			
+ANR	7665386	Identifier	sector_num		7665367	0					
+ANR	7665387	Identifier	nb_sectors		7665367	1					
+ANR	7665388	Identifier	BDRV_SECTOR_SIZE		7665367	1					
+ANR	7665389	IdentifierDeclStatement	BDRVSheepdogState * s = bs -> opaque ;	13:4:254:287	7665367	3	True				
+ANR	7665390	IdentifierDecl	* s = bs -> opaque		7665367	0					
+ANR	7665391	IdentifierDeclType	BDRVSheepdogState *		7665367	0					
+ANR	7665392	Identifier	s		7665367	1					
+ANR	7665393	AssignmentExpression	* s = bs -> opaque		7665367	2		=			
+ANR	7665394	Identifier	s		7665367	0					
+ANR	7665395	PtrMemberAccess	bs -> opaque		7665367	1					
+ANR	7665396	Identifier	bs		7665367	0					
+ANR	7665397	Identifier	opaque		7665367	1					
+ANR	7665398	IfStatement	if ( offset > s -> inode . vdi_size )		7665367	4					
+ANR	7665399	Condition	offset > s -> inode . vdi_size	17:8:300:325	7665367	0	True				
+ANR	7665400	RelationalExpression	offset > s -> inode . vdi_size		7665367	0		>			
+ANR	7665401	Identifier	offset		7665367	0					
+ANR	7665402	MemberAccess	s -> inode . vdi_size		7665367	1					
+ANR	7665403	PtrMemberAccess	s -> inode		7665367	0					
+ANR	7665404	Identifier	s		7665367	0					
+ANR	7665405	Identifier	inode		7665367	1					
+ANR	7665406	Identifier	vdi_size		7665367	1					
+ANR	7665407	CompoundStatement		13:36:186:186	7665367	1					
+ANR	7665408	ExpressionStatement	"ret = sd_truncate ( bs , offset )"	19:8:339:368	7665367	0	True				
+ANR	7665409	AssignmentExpression	"ret = sd_truncate ( bs , offset )"		7665367	0		=			
+ANR	7665410	Identifier	ret		7665367	0					
+ANR	7665411	CallExpression	"sd_truncate ( bs , offset )"		7665367	1					
+ANR	7665412	Callee	sd_truncate		7665367	0					
+ANR	7665413	Identifier	sd_truncate		7665367	0					
+ANR	7665414	ArgumentList	bs		7665367	1					
+ANR	7665415	Argument	bs		7665367	0					
+ANR	7665416	Identifier	bs		7665367	0					
+ANR	7665417	Argument	offset		7665367	1					
+ANR	7665418	Identifier	offset		7665367	0					
+ANR	7665419	IfStatement	if ( ret < 0 )		7665367	1					
+ANR	7665420	Condition	ret < 0	21:12:383:389	7665367	0	True				
+ANR	7665421	RelationalExpression	ret < 0		7665367	0		<			
+ANR	7665422	Identifier	ret		7665367	0					
+ANR	7665423	PrimaryExpression	0		7665367	1					
+ANR	7665424	CompoundStatement		17:21:250:250	7665367	1					
+ANR	7665425	ReturnStatement	return ret ;	23:12:407:417	7665367	0	True				
+ANR	7665426	Identifier	ret		7665367	0					
+ANR	7665427	ExpressionStatement	"sd_aio_setup ( & acb , s , qiov , sector_num , nb_sectors , AIOCB_WRITE_UDATA )"	31:4:444:514	7665367	5	True				
+ANR	7665428	CallExpression	"sd_aio_setup ( & acb , s , qiov , sector_num , nb_sectors , AIOCB_WRITE_UDATA )"		7665367	0					
+ANR	7665429	Callee	sd_aio_setup		7665367	0					
+ANR	7665430	Identifier	sd_aio_setup		7665367	0					
+ANR	7665431	ArgumentList	& acb		7665367	1					
+ANR	7665432	Argument	& acb		7665367	0					
+ANR	7665433	UnaryOperationExpression	& acb		7665367	0					
+ANR	7665434	UnaryOperator	&		7665367	0					
+ANR	7665435	Identifier	acb		7665367	1					
+ANR	7665436	Argument	s		7665367	1					
+ANR	7665437	Identifier	s		7665367	0					
+ANR	7665438	Argument	qiov		7665367	2					
+ANR	7665439	Identifier	qiov		7665367	0					
+ANR	7665440	Argument	sector_num		7665367	3					
+ANR	7665441	Identifier	sector_num		7665367	0					
+ANR	7665442	Argument	nb_sectors		7665367	4					
+ANR	7665443	Identifier	nb_sectors		7665367	0					
+ANR	7665444	Argument	AIOCB_WRITE_UDATA		7665367	5					
+ANR	7665445	Identifier	AIOCB_WRITE_UDATA		7665367	0					
+ANR	7665446	Label	retry :	35:0:519:524	7665367	6	True				
+ANR	7665447	Identifier	retry		7665367	0					
+ANR	7665448	IfStatement	"if ( check_overlapping_aiocb ( s , & acb ) )"		7665367	7					
+ANR	7665449	Condition	"check_overlapping_aiocb ( s , & acb )"	37:8:535:566	7665367	0	True				
+ANR	7665450	CallExpression	"check_overlapping_aiocb ( s , & acb )"		7665367	0					
+ANR	7665451	Callee	check_overlapping_aiocb		7665367	0					
+ANR	7665452	Identifier	check_overlapping_aiocb		7665367	0					
+ANR	7665453	ArgumentList	s		7665367	1					
+ANR	7665454	Argument	s		7665367	0					
+ANR	7665455	Identifier	s		7665367	0					
+ANR	7665456	Argument	& acb		7665367	1					
+ANR	7665457	UnaryOperationExpression	& acb		7665367	0					
+ANR	7665458	UnaryOperator	&		7665367	0					
+ANR	7665459	Identifier	acb		7665367	1					
+ANR	7665460	CompoundStatement		33:42:427:427	7665367	1					
+ANR	7665461	ExpressionStatement	qemu_co_queue_wait ( & s -> overlapping_queue )	39:8:580:621	7665367	0	True				
+ANR	7665462	CallExpression	qemu_co_queue_wait ( & s -> overlapping_queue )		7665367	0					
+ANR	7665463	Callee	qemu_co_queue_wait		7665367	0					
+ANR	7665464	Identifier	qemu_co_queue_wait		7665367	0					
+ANR	7665465	ArgumentList	& s -> overlapping_queue		7665367	1					
+ANR	7665466	Argument	& s -> overlapping_queue		7665367	0					
+ANR	7665467	UnaryOperationExpression	& s -> overlapping_queue		7665367	0					
+ANR	7665468	UnaryOperator	&		7665367	0					
+ANR	7665469	PtrMemberAccess	s -> overlapping_queue		7665367	1					
+ANR	7665470	Identifier	s		7665367	0					
+ANR	7665471	Identifier	overlapping_queue		7665367	1					
+ANR	7665472	GotoStatement	goto retry ;	41:8:632:642	7665367	1	True				
+ANR	7665473	Identifier	retry		7665367	0					
+ANR	7665474	ExpressionStatement	sd_co_rw_vector ( & acb )	47:4:658:679	7665367	8	True				
+ANR	7665475	CallExpression	sd_co_rw_vector ( & acb )		7665367	0					
+ANR	7665476	Callee	sd_co_rw_vector		7665367	0					
+ANR	7665477	Identifier	sd_co_rw_vector		7665367	0					
+ANR	7665478	ArgumentList	& acb		7665367	1					
+ANR	7665479	Argument	& acb		7665367	0					
+ANR	7665480	UnaryOperationExpression	& acb		7665367	0					
+ANR	7665481	UnaryOperator	&		7665367	0					
+ANR	7665482	Identifier	acb		7665367	1					
+ANR	7665483	ExpressionStatement	sd_write_done ( & acb )	49:4:686:705	7665367	9	True				
+ANR	7665484	CallExpression	sd_write_done ( & acb )		7665367	0					
+ANR	7665485	Callee	sd_write_done		7665367	0					
+ANR	7665486	Identifier	sd_write_done		7665367	0					
+ANR	7665487	ArgumentList	& acb		7665367	1					
+ANR	7665488	Argument	& acb		7665367	0					
+ANR	7665489	UnaryOperationExpression	& acb		7665367	0					
+ANR	7665490	UnaryOperator	&		7665367	0					
+ANR	7665491	Identifier	acb		7665367	1					
+ANR	7665492	ExpressionStatement	"QLIST_REMOVE ( & acb , aiocb_siblings )"	53:4:714:748	7665367	10	True				
+ANR	7665493	CallExpression	"QLIST_REMOVE ( & acb , aiocb_siblings )"		7665367	0					
+ANR	7665494	Callee	QLIST_REMOVE		7665367	0					
+ANR	7665495	Identifier	QLIST_REMOVE		7665367	0					
+ANR	7665496	ArgumentList	& acb		7665367	1					
+ANR	7665497	Argument	& acb		7665367	0					
+ANR	7665498	UnaryOperationExpression	& acb		7665367	0					
+ANR	7665499	UnaryOperator	&		7665367	0					
+ANR	7665500	Identifier	acb		7665367	1					
+ANR	7665501	Argument	aiocb_siblings		7665367	1					
+ANR	7665502	Identifier	aiocb_siblings		7665367	0					
+ANR	7665503	ExpressionStatement	qemu_co_queue_restart_all ( & s -> overlapping_queue )	55:4:755:803	7665367	11	True				
+ANR	7665504	CallExpression	qemu_co_queue_restart_all ( & s -> overlapping_queue )		7665367	0					
+ANR	7665505	Callee	qemu_co_queue_restart_all		7665367	0					
+ANR	7665506	Identifier	qemu_co_queue_restart_all		7665367	0					
+ANR	7665507	ArgumentList	& s -> overlapping_queue		7665367	1					
+ANR	7665508	Argument	& s -> overlapping_queue		7665367	0					
+ANR	7665509	UnaryOperationExpression	& s -> overlapping_queue		7665367	0					
+ANR	7665510	UnaryOperator	&		7665367	0					
+ANR	7665511	PtrMemberAccess	s -> overlapping_queue		7665367	1					
+ANR	7665512	Identifier	s		7665367	0					
+ANR	7665513	Identifier	overlapping_queue		7665367	1					
+ANR	7665514	ReturnStatement	return acb . ret ;	57:4:810:824	7665367	12	True				
+ANR	7665515	MemberAccess	acb . ret		7665367	0					
+ANR	7665516	Identifier	acb		7665367	0					
+ANR	7665517	Identifier	ret		7665367	1					
+ANR	7665518	ReturnType	static coroutine_fn int		7665367	1					
+ANR	7665519	Identifier	sd_co_writev		7665367	2					
+ANR	7665520	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov"		7665367	3					
+ANR	7665521	Parameter	BlockDriverState * bs	1:37:37:56	7665367	0	True				
+ANR	7665522	ParameterType	BlockDriverState *		7665367	0					
+ANR	7665523	Identifier	bs		7665367	1					
+ANR	7665524	Parameter	int64_t sector_num	1:59:59:76	7665367	1	True				
+ANR	7665525	ParameterType	int64_t		7665367	0					
+ANR	7665526	Identifier	sector_num		7665367	1					
+ANR	7665527	Parameter	int nb_sectors	3:24:104:117	7665367	2	True				
+ANR	7665528	ParameterType	int		7665367	0					
+ANR	7665529	Identifier	nb_sectors		7665367	1					
+ANR	7665530	Parameter	QEMUIOVector * qiov	3:40:120:137	7665367	3	True				
+ANR	7665531	ParameterType	QEMUIOVector *		7665367	0					
+ANR	7665532	Identifier	qiov		7665367	1					
+ANR	7665533	CFGEntryNode	ENTRY		7665367		True				
+ANR	7665534	CFGExitNode	EXIT		7665367		True				
+ANR	7665535	Symbol	ret		7665367						
+ANR	7665536	Symbol	acb		7665367						
+ANR	7665537	Symbol	& acb		7665367						
+ANR	7665538	Symbol	nb_sectors		7665367						
+ANR	7665539	Symbol	s -> inode . vdi_size		7665367						
+ANR	7665540	Symbol	offset		7665367						
+ANR	7665541	Symbol	bs -> opaque		7665367						
+ANR	7665542	Symbol	AIOCB_WRITE_UDATA		7665367						
+ANR	7665543	Symbol	qiov		7665367						
+ANR	7665544	Symbol	check_overlapping_aiocb		7665367						
+ANR	7665545	Symbol	sector_num		7665367						
+ANR	7665546	Symbol	s -> inode		7665367						
+ANR	7665547	Symbol	bs		7665367						
+ANR	7665548	Symbol	s		7665367						
+ANR	7665549	Symbol	& s -> overlapping_queue		7665367						
+ANR	7665550	Symbol	* bs		7665367						
+ANR	7665551	Symbol	BDRV_SECTOR_SIZE		7665367						
+ANR	7665552	Symbol	sd_truncate		7665367						
+ANR	7665553	Symbol	acb . ret		7665367						
+ANR	7665554	Symbol	* s		7665367						
+ANR	7665555	Symbol	aiocb_siblings		7665367						

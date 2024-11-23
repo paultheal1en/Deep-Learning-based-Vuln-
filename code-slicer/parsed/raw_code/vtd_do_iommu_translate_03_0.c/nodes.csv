@@ -1,0 +1,636 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9364302	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vtd_do_iommu_translate_03_0.c								
+ANR	9364303	Function	vtd_do_iommu_translate	1:0:0:4437							
+ANR	9364304	FunctionDef	"vtd_do_iommu_translate (VTDAddressSpace * vtd_as , uint8_t bus_num , uint8_t devfn , hwaddr addr , bool is_write , IOMMUTLBEntry * entry)"		9364303	0					
+ANR	9364305	CompoundStatement		7:0:215:4437	9364303	0					
+ANR	9364306	IdentifierDeclStatement	IntelIOMMUState * s = vtd_as -> iommu_state ;	9:4:222:262	9364303	0	True				
+ANR	9364307	IdentifierDecl	* s = vtd_as -> iommu_state		9364303	0					
+ANR	9364308	IdentifierDeclType	IntelIOMMUState *		9364303	0					
+ANR	9364309	Identifier	s		9364303	1					
+ANR	9364310	AssignmentExpression	* s = vtd_as -> iommu_state		9364303	2		=			
+ANR	9364311	Identifier	s		9364303	0					
+ANR	9364312	PtrMemberAccess	vtd_as -> iommu_state		9364303	1					
+ANR	9364313	Identifier	vtd_as		9364303	0					
+ANR	9364314	Identifier	iommu_state		9364303	1					
+ANR	9364315	IdentifierDeclStatement	VTDContextEntry ce ;	11:4:269:287	9364303	1	True				
+ANR	9364316	IdentifierDecl	ce		9364303	0					
+ANR	9364317	IdentifierDeclType	VTDContextEntry		9364303	0					
+ANR	9364318	Identifier	ce		9364303	1					
+ANR	9364319	IdentifierDeclStatement	VTDContextCacheEntry * cc_entry = & vtd_as -> context_cache_entry ;	13:4:294:355	9364303	2	True				
+ANR	9364320	IdentifierDecl	* cc_entry = & vtd_as -> context_cache_entry		9364303	0					
+ANR	9364321	IdentifierDeclType	VTDContextCacheEntry *		9364303	0					
+ANR	9364322	Identifier	cc_entry		9364303	1					
+ANR	9364323	AssignmentExpression	* cc_entry = & vtd_as -> context_cache_entry		9364303	2		=			
+ANR	9364324	Identifier	cc_entry		9364303	0					
+ANR	9364325	UnaryOperationExpression	& vtd_as -> context_cache_entry		9364303	1					
+ANR	9364326	UnaryOperator	&		9364303	0					
+ANR	9364327	PtrMemberAccess	vtd_as -> context_cache_entry		9364303	1					
+ANR	9364328	Identifier	vtd_as		9364303	0					
+ANR	9364329	Identifier	context_cache_entry		9364303	1					
+ANR	9364330	IdentifierDeclStatement	uint64_t slpte ;	15:4:362:376	9364303	3	True				
+ANR	9364331	IdentifierDecl	slpte		9364303	0					
+ANR	9364332	IdentifierDeclType	uint64_t		9364303	0					
+ANR	9364333	Identifier	slpte		9364303	1					
+ANR	9364334	IdentifierDeclStatement	uint32_t level ;	17:4:383:397	9364303	4	True				
+ANR	9364335	IdentifierDecl	level		9364303	0					
+ANR	9364336	IdentifierDeclType	uint32_t		9364303	0					
+ANR	9364337	Identifier	level		9364303	1					
+ANR	9364338	IdentifierDeclStatement	"uint16_t source_id = vtd_make_source_id ( bus_num , devfn ) ;"	19:4:404:459	9364303	5	True				
+ANR	9364339	IdentifierDecl	"source_id = vtd_make_source_id ( bus_num , devfn )"		9364303	0					
+ANR	9364340	IdentifierDeclType	uint16_t		9364303	0					
+ANR	9364341	Identifier	source_id		9364303	1					
+ANR	9364342	AssignmentExpression	"source_id = vtd_make_source_id ( bus_num , devfn )"		9364303	2		=			
+ANR	9364343	Identifier	source_id		9364303	0					
+ANR	9364344	CallExpression	"vtd_make_source_id ( bus_num , devfn )"		9364303	1					
+ANR	9364345	Callee	vtd_make_source_id		9364303	0					
+ANR	9364346	Identifier	vtd_make_source_id		9364303	0					
+ANR	9364347	ArgumentList	bus_num		9364303	1					
+ANR	9364348	Argument	bus_num		9364303	0					
+ANR	9364349	Identifier	bus_num		9364303	0					
+ANR	9364350	Argument	devfn		9364303	1					
+ANR	9364351	Identifier	devfn		9364303	0					
+ANR	9364352	IdentifierDeclStatement	int ret_fr ;	21:4:466:476	9364303	6	True				
+ANR	9364353	IdentifierDecl	ret_fr		9364303	0					
+ANR	9364354	IdentifierDeclType	int		9364303	0					
+ANR	9364355	Identifier	ret_fr		9364303	1					
+ANR	9364356	IdentifierDeclStatement	bool is_fpd_set = false ;	23:4:483:506	9364303	7	True				
+ANR	9364357	IdentifierDecl	is_fpd_set = false		9364303	0					
+ANR	9364358	IdentifierDeclType	bool		9364303	0					
+ANR	9364359	Identifier	is_fpd_set		9364303	1					
+ANR	9364360	AssignmentExpression	is_fpd_set = false		9364303	2		=			
+ANR	9364361	Identifier	false		9364303	0					
+ANR	9364362	Identifier	false		9364303	1					
+ANR	9364363	IdentifierDeclStatement	bool reads = true ;	25:4:513:530	9364303	8	True				
+ANR	9364364	IdentifierDecl	reads = true		9364303	0					
+ANR	9364365	IdentifierDeclType	bool		9364303	0					
+ANR	9364366	Identifier	reads		9364303	1					
+ANR	9364367	AssignmentExpression	reads = true		9364303	2		=			
+ANR	9364368	Identifier	true		9364303	0					
+ANR	9364369	Identifier	true		9364303	1					
+ANR	9364370	IdentifierDeclStatement	bool writes = true ;	27:4:537:555	9364303	9	True				
+ANR	9364371	IdentifierDecl	writes = true		9364303	0					
+ANR	9364372	IdentifierDeclType	bool		9364303	0					
+ANR	9364373	Identifier	writes		9364303	1					
+ANR	9364374	AssignmentExpression	writes = true		9364303	2		=			
+ANR	9364375	Identifier	true		9364303	0					
+ANR	9364376	Identifier	true		9364303	1					
+ANR	9364377	IdentifierDeclStatement	VTDIOTLBEntry * iotlb_entry ;	29:4:562:588	9364303	10	True				
+ANR	9364378	IdentifierDecl	* iotlb_entry		9364303	0					
+ANR	9364379	IdentifierDeclType	VTDIOTLBEntry *		9364303	0					
+ANR	9364380	Identifier	iotlb_entry		9364303	1					
+ANR	9364381	IfStatement	if ( vtd_is_interrupt_addr ( addr ) )		9364303	11					
+ANR	9364382	Condition	vtd_is_interrupt_addr ( addr )	35:8:663:689	9364303	0	True				
+ANR	9364383	CallExpression	vtd_is_interrupt_addr ( addr )		9364303	0					
+ANR	9364384	Callee	vtd_is_interrupt_addr		9364303	0					
+ANR	9364385	Identifier	vtd_is_interrupt_addr		9364303	0					
+ANR	9364386	ArgumentList	addr		9364303	1					
+ANR	9364387	Argument	addr		9364303	0					
+ANR	9364388	Identifier	addr		9364303	0					
+ANR	9364389	CompoundStatement		29:37:476:476	9364303	1					
+ANR	9364390	IfStatement	if ( is_write )		9364303	0					
+ANR	9364391	Condition	is_write	37:12:707:714	9364303	0	True				
+ANR	9364392	Identifier	is_write		9364303	0					
+ANR	9364393	CompoundStatement		31:22:501:501	9364303	1					
+ANR	9364394	Statement	VTD_DPRINTF	49:12:1016:1026	9364303	0	True				
+ANR	9364395	Statement	(	49:23:1027:1027	9364303	1	True				
+ANR	9364396	Statement	MMU	49:24:1028:1030	9364303	2	True				
+ANR	9364397	Statement	","	49:27:1031:1031	9364303	3	True				
+ANR	9364398	Statement	"""write request to interrupt address """	49:29:1033:1069	9364303	4	True				
+ANR	9364399	Statement	"""gpa 0x%"""	51:24:1096:1104	9364303	5	True				
+ANR	9364400	Statement	PRIx64	51:33:1105:1110	9364303	6	True				
+ANR	9364401	Statement	","	51:39:1111:1111	9364303	7	True				
+ANR	9364402	Statement	addr	51:41:1113:1116	9364303	8	True				
+ANR	9364403	Statement	)	51:45:1117:1117	9364303	9	True				
+ANR	9364404	ExpressionStatement		51:46:1118:1118	9364303	10	True				
+ANR	9364405	ExpressionStatement	entry -> iova = addr & VTD_PAGE_MASK_4K	53:12:1133:1170	9364303	11	True				
+ANR	9364406	AssignmentExpression	entry -> iova = addr & VTD_PAGE_MASK_4K		9364303	0		=			
+ANR	9364407	PtrMemberAccess	entry -> iova		9364303	0					
+ANR	9364408	Identifier	entry		9364303	0					
+ANR	9364409	Identifier	iova		9364303	1					
+ANR	9364410	BitAndExpression	addr & VTD_PAGE_MASK_4K		9364303	1		&			
+ANR	9364411	Identifier	addr		9364303	0					
+ANR	9364412	Identifier	VTD_PAGE_MASK_4K		9364303	1					
+ANR	9364413	ExpressionStatement	entry -> translated_addr = addr & VTD_PAGE_MASK_4K	55:12:1185:1233	9364303	12	True				
+ANR	9364414	AssignmentExpression	entry -> translated_addr = addr & VTD_PAGE_MASK_4K		9364303	0		=			
+ANR	9364415	PtrMemberAccess	entry -> translated_addr		9364303	0					
+ANR	9364416	Identifier	entry		9364303	0					
+ANR	9364417	Identifier	translated_addr		9364303	1					
+ANR	9364418	BitAndExpression	addr & VTD_PAGE_MASK_4K		9364303	1		&			
+ANR	9364419	Identifier	addr		9364303	0					
+ANR	9364420	Identifier	VTD_PAGE_MASK_4K		9364303	1					
+ANR	9364421	ExpressionStatement	entry -> addr_mask = ~VTD_PAGE_MASK_4K	57:12:1248:1284	9364303	13	True				
+ANR	9364422	AssignmentExpression	entry -> addr_mask = ~VTD_PAGE_MASK_4K		9364303	0		=			
+ANR	9364423	PtrMemberAccess	entry -> addr_mask		9364303	0					
+ANR	9364424	Identifier	entry		9364303	0					
+ANR	9364425	Identifier	addr_mask		9364303	1					
+ANR	9364426	Identifier	~VTD_PAGE_MASK_4K		9364303	1					
+ANR	9364427	ExpressionStatement	entry -> perm = IOMMU_WO	59:12:1299:1321	9364303	14	True				
+ANR	9364428	AssignmentExpression	entry -> perm = IOMMU_WO		9364303	0		=			
+ANR	9364429	PtrMemberAccess	entry -> perm		9364303	0					
+ANR	9364430	Identifier	entry		9364303	0					
+ANR	9364431	Identifier	perm		9364303	1					
+ANR	9364432	Identifier	IOMMU_WO		9364303	1					
+ANR	9364433	ReturnStatement	return ;	61:12:1336:1342	9364303	15	True				
+ANR	9364434	ElseStatement	else		9364303	0					
+ANR	9364435	CompoundStatement		57:15:1144:1144	9364303	0					
+ANR	9364436	Statement	VTD_DPRINTF	65:12:1375:1385	9364303	0	True				
+ANR	9364437	Statement	(	65:23:1386:1386	9364303	1	True				
+ANR	9364438	Statement	GENERAL	65:24:1387:1393	9364303	2	True				
+ANR	9364439	Statement	","	65:31:1394:1394	9364303	3	True				
+ANR	9364440	Statement	"""error: read request from interrupt address """	65:33:1396:1440	9364303	4	True				
+ANR	9364441	Statement	"""gpa 0x%"""	67:24:1467:1475	9364303	5	True				
+ANR	9364442	Statement	PRIx64	67:33:1476:1481	9364303	6	True				
+ANR	9364443	Statement	","	67:39:1482:1482	9364303	7	True				
+ANR	9364444	Statement	addr	67:41:1484:1487	9364303	8	True				
+ANR	9364445	Statement	)	67:45:1488:1488	9364303	9	True				
+ANR	9364446	ExpressionStatement		67:46:1489:1489	9364303	10	True				
+ANR	9364447	ExpressionStatement	"vtd_report_dmar_fault ( s , source_id , addr , VTD_FR_READ , is_write )"	69:12:1504:1568	9364303	11	True				
+ANR	9364448	CallExpression	"vtd_report_dmar_fault ( s , source_id , addr , VTD_FR_READ , is_write )"		9364303	0					
+ANR	9364449	Callee	vtd_report_dmar_fault		9364303	0					
+ANR	9364450	Identifier	vtd_report_dmar_fault		9364303	0					
+ANR	9364451	ArgumentList	s		9364303	1					
+ANR	9364452	Argument	s		9364303	0					
+ANR	9364453	Identifier	s		9364303	0					
+ANR	9364454	Argument	source_id		9364303	1					
+ANR	9364455	Identifier	source_id		9364303	0					
+ANR	9364456	Argument	addr		9364303	2					
+ANR	9364457	Identifier	addr		9364303	0					
+ANR	9364458	Argument	VTD_FR_READ		9364303	3					
+ANR	9364459	Identifier	VTD_FR_READ		9364303	0					
+ANR	9364460	Argument	is_write		9364303	4					
+ANR	9364461	Identifier	is_write		9364303	0					
+ANR	9364462	ReturnStatement	return ;	71:12:1583:1589	9364303	12	True				
+ANR	9364463	ExpressionStatement	"iotlb_entry = vtd_lookup_iotlb ( s , source_id , addr )"	79:4:1655:1705	9364303	12	True				
+ANR	9364464	AssignmentExpression	"iotlb_entry = vtd_lookup_iotlb ( s , source_id , addr )"		9364303	0		=			
+ANR	9364465	Identifier	iotlb_entry		9364303	0					
+ANR	9364466	CallExpression	"vtd_lookup_iotlb ( s , source_id , addr )"		9364303	1					
+ANR	9364467	Callee	vtd_lookup_iotlb		9364303	0					
+ANR	9364468	Identifier	vtd_lookup_iotlb		9364303	0					
+ANR	9364469	ArgumentList	s		9364303	1					
+ANR	9364470	Argument	s		9364303	0					
+ANR	9364471	Identifier	s		9364303	0					
+ANR	9364472	Argument	source_id		9364303	1					
+ANR	9364473	Identifier	source_id		9364303	0					
+ANR	9364474	Argument	addr		9364303	2					
+ANR	9364475	Identifier	addr		9364303	0					
+ANR	9364476	IfStatement	if ( iotlb_entry )		9364303	13					
+ANR	9364477	Condition	iotlb_entry	81:8:1716:1726	9364303	0	True				
+ANR	9364478	Identifier	iotlb_entry		9364303	0					
+ANR	9364479	CompoundStatement		75:21:1513:1513	9364303	1					
+ANR	9364480	Statement	VTD_DPRINTF	83:8:1740:1750	9364303	0	True				
+ANR	9364481	Statement	(	83:19:1751:1751	9364303	1	True				
+ANR	9364482	Statement	CACHE	83:20:1752:1756	9364303	2	True				
+ANR	9364483	Statement	","	83:25:1757:1757	9364303	3	True				
+ANR	9364484	Statement	"""hit iotlb sid 0x%"""	83:27:1759:1777	9364303	4	True				
+ANR	9364485	Statement	PRIx16	83:46:1778:1783	9364303	5	True				
+ANR	9364486	Statement	""" gpa 0x%"""	83:53:1785:1794	9364303	6	True				
+ANR	9364487	Statement	PRIx64	83:63:1795:1800	9364303	7	True				
+ANR	9364488	Statement	""" slpte 0x%"""	85:20:1823:1834	9364303	8	True				
+ANR	9364489	Statement	PRIx64	85:32:1835:1840	9364303	9	True				
+ANR	9364490	Statement	""" did 0x%"""	85:39:1842:1851	9364303	10	True				
+ANR	9364491	Statement	PRIx16	85:49:1852:1857	9364303	11	True				
+ANR	9364492	Statement	","	85:55:1858:1858	9364303	12	True				
+ANR	9364493	Statement	source_id	85:57:1860:1868	9364303	13	True				
+ANR	9364494	Statement	","	85:66:1869:1869	9364303	14	True				
+ANR	9364495	Statement	addr	85:68:1871:1874	9364303	15	True				
+ANR	9364496	Statement	","	85:72:1875:1875	9364303	16	True				
+ANR	9364497	Statement	iotlb_entry	87:20:1898:1908	9364303	17	True				
+ANR	9364498	Statement	->	87:31:1909:1910	9364303	18	True				
+ANR	9364499	Statement	slpte	87:33:1911:1915	9364303	19	True				
+ANR	9364500	Statement	","	87:38:1916:1916	9364303	20	True				
+ANR	9364501	Statement	iotlb_entry	87:40:1918:1928	9364303	21	True				
+ANR	9364502	Statement	->	87:51:1929:1930	9364303	22	True				
+ANR	9364503	Statement	domain_id	87:53:1931:1939	9364303	23	True				
+ANR	9364504	Statement	)	87:62:1940:1940	9364303	24	True				
+ANR	9364505	ExpressionStatement		87:63:1941:1941	9364303	25	True				
+ANR	9364506	ExpressionStatement	slpte = iotlb_entry -> slpte	89:8:1952:1978	9364303	26	True				
+ANR	9364507	AssignmentExpression	slpte = iotlb_entry -> slpte		9364303	0		=			
+ANR	9364508	Identifier	slpte		9364303	0					
+ANR	9364509	PtrMemberAccess	iotlb_entry -> slpte		9364303	1					
+ANR	9364510	Identifier	iotlb_entry		9364303	0					
+ANR	9364511	Identifier	slpte		9364303	1					
+ANR	9364512	ExpressionStatement	reads = iotlb_entry -> read_flags	91:8:1989:2020	9364303	27	True				
+ANR	9364513	AssignmentExpression	reads = iotlb_entry -> read_flags		9364303	0		=			
+ANR	9364514	Identifier	reads		9364303	0					
+ANR	9364515	PtrMemberAccess	iotlb_entry -> read_flags		9364303	1					
+ANR	9364516	Identifier	iotlb_entry		9364303	0					
+ANR	9364517	Identifier	read_flags		9364303	1					
+ANR	9364518	ExpressionStatement	writes = iotlb_entry -> write_flags	93:8:2031:2064	9364303	28	True				
+ANR	9364519	AssignmentExpression	writes = iotlb_entry -> write_flags		9364303	0		=			
+ANR	9364520	Identifier	writes		9364303	0					
+ANR	9364521	PtrMemberAccess	iotlb_entry -> write_flags		9364303	1					
+ANR	9364522	Identifier	iotlb_entry		9364303	0					
+ANR	9364523	Identifier	write_flags		9364303	1					
+ANR	9364524	GotoStatement	goto out ;	95:8:2075:2083	9364303	29	True				
+ANR	9364525	Identifier	out		9364303	0					
+ANR	9364526	IfStatement	if ( cc_entry -> context_cache_gen == s -> context_cache_gen )		9364303	14					
+ANR	9364527	Condition	cc_entry -> context_cache_gen == s -> context_cache_gen	101:8:2156:2206	9364303	0	True				
+ANR	9364528	EqualityExpression	cc_entry -> context_cache_gen == s -> context_cache_gen		9364303	0		==			
+ANR	9364529	PtrMemberAccess	cc_entry -> context_cache_gen		9364303	0					
+ANR	9364530	Identifier	cc_entry		9364303	0					
+ANR	9364531	Identifier	context_cache_gen		9364303	1					
+ANR	9364532	PtrMemberAccess	s -> context_cache_gen		9364303	1					
+ANR	9364533	Identifier	s		9364303	0					
+ANR	9364534	Identifier	context_cache_gen		9364303	1					
+ANR	9364535	CompoundStatement		95:61:1993:1993	9364303	1					
+ANR	9364536	Statement	VTD_DPRINTF	103:8:2220:2230	9364303	0	True				
+ANR	9364537	Statement	(	103:19:2231:2231	9364303	1	True				
+ANR	9364538	Statement	CACHE	103:20:2232:2236	9364303	2	True				
+ANR	9364539	Statement	","	103:25:2237:2237	9364303	3	True				
+ANR	9364540	Statement	"""hit context-cache bus %d devfn %d """	103:27:2239:2274	9364303	4	True				
+ANR	9364541	Statement	"""(hi %"""	105:20:2297:2303	9364303	5	True				
+ANR	9364542	Statement	PRIx64	105:27:2304:2309	9364303	6	True				
+ANR	9364543	Statement	""" lo %"""	105:34:2311:2317	9364303	7	True				
+ANR	9364544	Statement	PRIx64	105:41:2318:2323	9364303	8	True				
+ANR	9364545	Statement	""" gen %"""	105:48:2325:2332	9364303	9	True				
+ANR	9364546	Statement	PRIu32	105:56:2333:2338	9364303	10	True				
+ANR	9364547	Statement	""")"""	105:63:2340:2342	9364303	11	True				
+ANR	9364548	Statement	","	105:66:2343:2343	9364303	12	True				
+ANR	9364549	Statement	bus_num	107:20:2366:2372	9364303	13	True				
+ANR	9364550	Statement	","	107:27:2373:2373	9364303	14	True				
+ANR	9364551	Statement	devfn	107:29:2375:2379	9364303	15	True				
+ANR	9364552	Statement	","	107:34:2380:2380	9364303	16	True				
+ANR	9364553	Statement	cc_entry	107:36:2382:2389	9364303	17	True				
+ANR	9364554	Statement	->	107:44:2390:2391	9364303	18	True				
+ANR	9364555	Statement	context_entry	107:46:2392:2404	9364303	19	True				
+ANR	9364556	Statement	.	107:59:2405:2405	9364303	20	True				
+ANR	9364557	Statement	hi	107:60:2406:2407	9364303	21	True				
+ANR	9364558	Statement	","	107:62:2408:2408	9364303	22	True				
+ANR	9364559	Statement	cc_entry	109:20:2431:2438	9364303	23	True				
+ANR	9364560	Statement	->	109:28:2439:2440	9364303	24	True				
+ANR	9364561	Statement	context_entry	109:30:2441:2453	9364303	25	True				
+ANR	9364562	Statement	.	109:43:2454:2454	9364303	26	True				
+ANR	9364563	Statement	lo	109:44:2455:2456	9364303	27	True				
+ANR	9364564	Statement	","	109:46:2457:2457	9364303	28	True				
+ANR	9364565	Statement	cc_entry	109:48:2459:2466	9364303	29	True				
+ANR	9364566	Statement	->	109:56:2467:2468	9364303	30	True				
+ANR	9364567	Statement	context_cache_gen	109:58:2469:2485	9364303	31	True				
+ANR	9364568	Statement	)	109:75:2486:2486	9364303	32	True				
+ANR	9364569	ExpressionStatement		109:76:2487:2487	9364303	33	True				
+ANR	9364570	ExpressionStatement	ce = cc_entry -> context_entry	111:8:2498:2526	9364303	34	True				
+ANR	9364571	AssignmentExpression	ce = cc_entry -> context_entry		9364303	0		=			
+ANR	9364572	Identifier	ce		9364303	0					
+ANR	9364573	PtrMemberAccess	cc_entry -> context_entry		9364303	1					
+ANR	9364574	Identifier	cc_entry		9364303	0					
+ANR	9364575	Identifier	context_entry		9364303	1					
+ANR	9364576	ExpressionStatement	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD	113:8:2537:2579	9364303	35	True				
+ANR	9364577	AssignmentExpression	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD		9364303	0		=			
+ANR	9364578	Identifier	is_fpd_set		9364303	0					
+ANR	9364579	BitAndExpression	ce . lo & VTD_CONTEXT_ENTRY_FPD		9364303	1		&			
+ANR	9364580	MemberAccess	ce . lo		9364303	0					
+ANR	9364581	Identifier	ce		9364303	0					
+ANR	9364582	Identifier	lo		9364303	1					
+ANR	9364583	Identifier	VTD_CONTEXT_ENTRY_FPD		9364303	1					
+ANR	9364584	ElseStatement	else		9364303	0					
+ANR	9364585	CompoundStatement		109:11:2377:2377	9364303	0					
+ANR	9364586	ExpressionStatement	"ret_fr = vtd_dev_to_context_entry ( s , bus_num , devfn , & ce )"	117:8:2604:2661	9364303	0	True				
+ANR	9364587	AssignmentExpression	"ret_fr = vtd_dev_to_context_entry ( s , bus_num , devfn , & ce )"		9364303	0		=			
+ANR	9364588	Identifier	ret_fr		9364303	0					
+ANR	9364589	CallExpression	"vtd_dev_to_context_entry ( s , bus_num , devfn , & ce )"		9364303	1					
+ANR	9364590	Callee	vtd_dev_to_context_entry		9364303	0					
+ANR	9364591	Identifier	vtd_dev_to_context_entry		9364303	0					
+ANR	9364592	ArgumentList	s		9364303	1					
+ANR	9364593	Argument	s		9364303	0					
+ANR	9364594	Identifier	s		9364303	0					
+ANR	9364595	Argument	bus_num		9364303	1					
+ANR	9364596	Identifier	bus_num		9364303	0					
+ANR	9364597	Argument	devfn		9364303	2					
+ANR	9364598	Identifier	devfn		9364303	0					
+ANR	9364599	Argument	& ce		9364303	3					
+ANR	9364600	UnaryOperationExpression	& ce		9364303	0					
+ANR	9364601	UnaryOperator	&		9364303	0					
+ANR	9364602	Identifier	ce		9364303	1					
+ANR	9364603	ExpressionStatement	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD	119:8:2672:2714	9364303	1	True				
+ANR	9364604	AssignmentExpression	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD		9364303	0		=			
+ANR	9364605	Identifier	is_fpd_set		9364303	0					
+ANR	9364606	BitAndExpression	ce . lo & VTD_CONTEXT_ENTRY_FPD		9364303	1		&			
+ANR	9364607	MemberAccess	ce . lo		9364303	0					
+ANR	9364608	Identifier	ce		9364303	0					
+ANR	9364609	Identifier	lo		9364303	1					
+ANR	9364610	Identifier	VTD_CONTEXT_ENTRY_FPD		9364303	1					
+ANR	9364611	IfStatement	if ( ret_fr )		9364303	2					
+ANR	9364612	Condition	ret_fr	121:12:2729:2734	9364303	0	True				
+ANR	9364613	Identifier	ret_fr		9364303	0					
+ANR	9364614	CompoundStatement		115:20:2521:2521	9364303	1					
+ANR	9364615	ExpressionStatement	ret_fr = - ret_fr	123:12:2752:2768	9364303	0	True				
+ANR	9364616	AssignmentExpression	ret_fr = - ret_fr		9364303	0		=			
+ANR	9364617	Identifier	ret_fr		9364303	0					
+ANR	9364618	UnaryOperationExpression	- ret_fr		9364303	1					
+ANR	9364619	UnaryOperator	-		9364303	0					
+ANR	9364620	Identifier	ret_fr		9364303	1					
+ANR	9364621	IfStatement	if ( is_fpd_set && vtd_is_qualified_fault ( ret_fr ) )		9364303	1					
+ANR	9364622	Condition	is_fpd_set && vtd_is_qualified_fault ( ret_fr )	125:16:2787:2830	9364303	0	True				
+ANR	9364623	AndExpression	is_fpd_set && vtd_is_qualified_fault ( ret_fr )		9364303	0		&&			
+ANR	9364624	Identifier	is_fpd_set		9364303	0					
+ANR	9364625	CallExpression	vtd_is_qualified_fault ( ret_fr )		9364303	1					
+ANR	9364626	Callee	vtd_is_qualified_fault		9364303	0					
+ANR	9364627	Identifier	vtd_is_qualified_fault		9364303	0					
+ANR	9364628	ArgumentList	ret_fr		9364303	1					
+ANR	9364629	Argument	ret_fr		9364303	0					
+ANR	9364630	Identifier	ret_fr		9364303	0					
+ANR	9364631	CompoundStatement		119:62:2617:2617	9364303	1					
+ANR	9364632	Statement	VTD_DPRINTF	127:16:2852:2862	9364303	0	True				
+ANR	9364633	Statement	(	127:27:2863:2863	9364303	1	True				
+ANR	9364634	Statement	FLOG	127:28:2864:2867	9364303	2	True				
+ANR	9364635	Statement	","	127:32:2868:2868	9364303	3	True				
+ANR	9364636	Statement	"""fault processing is disabled for DMA """	127:34:2870:2908	9364303	4	True				
+ANR	9364637	Statement	"""requests through this context-entry """	129:28:2939:2976	9364303	5	True				
+ANR	9364638	Statement	"""(with FPD Set)"""	131:28:3007:3022	9364303	6	True				
+ANR	9364639	Statement	)	131:44:3023:3023	9364303	7	True				
+ANR	9364640	ExpressionStatement		131:45:3024:3024	9364303	8	True				
+ANR	9364641	ElseStatement	else		9364303	0					
+ANR	9364642	CompoundStatement		127:19:2830:2830	9364303	0					
+ANR	9364643	ExpressionStatement	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"	135:16:3065:3124	9364303	0	True				
+ANR	9364644	CallExpression	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"		9364303	0					
+ANR	9364645	Callee	vtd_report_dmar_fault		9364303	0					
+ANR	9364646	Identifier	vtd_report_dmar_fault		9364303	0					
+ANR	9364647	ArgumentList	s		9364303	1					
+ANR	9364648	Argument	s		9364303	0					
+ANR	9364649	Identifier	s		9364303	0					
+ANR	9364650	Argument	source_id		9364303	1					
+ANR	9364651	Identifier	source_id		9364303	0					
+ANR	9364652	Argument	addr		9364303	2					
+ANR	9364653	Identifier	addr		9364303	0					
+ANR	9364654	Argument	ret_fr		9364303	3					
+ANR	9364655	Identifier	ret_fr		9364303	0					
+ANR	9364656	Argument	is_write		9364303	4					
+ANR	9364657	Identifier	is_write		9364303	0					
+ANR	9364658	ReturnStatement	return ;	139:12:3154:3160	9364303	2	True				
+ANR	9364659	Statement	VTD_DPRINTF	145:8:3218:3228	9364303	3	True				
+ANR	9364660	Statement	(	145:19:3229:3229	9364303	4	True				
+ANR	9364661	Statement	CACHE	145:20:3230:3234	9364303	5	True				
+ANR	9364662	Statement	","	145:25:3235:3235	9364303	6	True				
+ANR	9364663	Statement	"""update context-cache bus %d devfn %d """	145:27:3237:3275	9364303	7	True				
+ANR	9364664	Statement	"""(hi %"""	147:20:3298:3304	9364303	8	True				
+ANR	9364665	Statement	PRIx64	147:27:3305:3310	9364303	9	True				
+ANR	9364666	Statement	""" lo %"""	147:34:3312:3318	9364303	10	True				
+ANR	9364667	Statement	PRIx64	147:41:3319:3324	9364303	11	True				
+ANR	9364668	Statement	""" gen %"""	147:48:3326:3333	9364303	12	True				
+ANR	9364669	Statement	PRIu32	147:56:3334:3339	9364303	13	True				
+ANR	9364670	Statement	"""->%"""	147:63:3341:3345	9364303	14	True				
+ANR	9364671	Statement	PRIu32	147:68:3346:3351	9364303	15	True				
+ANR	9364672	Statement	""")"""	147:75:3353:3355	9364303	16	True				
+ANR	9364673	Statement	","	147:78:3356:3356	9364303	17	True				
+ANR	9364674	Statement	bus_num	149:20:3379:3385	9364303	18	True				
+ANR	9364675	Statement	","	149:27:3386:3386	9364303	19	True				
+ANR	9364676	Statement	devfn	149:29:3388:3392	9364303	20	True				
+ANR	9364677	Statement	","	149:34:3393:3393	9364303	21	True				
+ANR	9364678	Statement	ce	149:36:3395:3396	9364303	22	True				
+ANR	9364679	Statement	.	149:38:3397:3397	9364303	23	True				
+ANR	9364680	Statement	hi	149:39:3398:3399	9364303	24	True				
+ANR	9364681	Statement	","	149:41:3400:3400	9364303	25	True				
+ANR	9364682	Statement	ce	149:43:3402:3403	9364303	26	True				
+ANR	9364683	Statement	.	149:45:3404:3404	9364303	27	True				
+ANR	9364684	Statement	lo	149:46:3405:3406	9364303	28	True				
+ANR	9364685	Statement	","	149:48:3407:3407	9364303	29	True				
+ANR	9364686	Statement	cc_entry	151:20:3430:3437	9364303	30	True				
+ANR	9364687	Statement	->	151:28:3438:3439	9364303	31	True				
+ANR	9364688	Statement	context_cache_gen	151:30:3440:3456	9364303	32	True				
+ANR	9364689	Statement	","	151:47:3457:3457	9364303	33	True				
+ANR	9364690	Statement	s	151:49:3459:3459	9364303	34	True				
+ANR	9364691	Statement	->	151:50:3460:3461	9364303	35	True				
+ANR	9364692	Statement	context_cache_gen	151:52:3462:3478	9364303	36	True				
+ANR	9364693	Statement	)	151:69:3479:3479	9364303	37	True				
+ANR	9364694	ExpressionStatement		151:70:3480:3480	9364303	38	True				
+ANR	9364695	ExpressionStatement	cc_entry -> context_entry = ce	153:8:3491:3519	9364303	39	True				
+ANR	9364696	AssignmentExpression	cc_entry -> context_entry = ce		9364303	0		=			
+ANR	9364697	PtrMemberAccess	cc_entry -> context_entry		9364303	0					
+ANR	9364698	Identifier	cc_entry		9364303	0					
+ANR	9364699	Identifier	context_entry		9364303	1					
+ANR	9364700	Identifier	ce		9364303	1					
+ANR	9364701	ExpressionStatement	cc_entry -> context_cache_gen = s -> context_cache_gen	155:8:3530:3580	9364303	40	True				
+ANR	9364702	AssignmentExpression	cc_entry -> context_cache_gen = s -> context_cache_gen		9364303	0		=			
+ANR	9364703	PtrMemberAccess	cc_entry -> context_cache_gen		9364303	0					
+ANR	9364704	Identifier	cc_entry		9364303	0					
+ANR	9364705	Identifier	context_cache_gen		9364303	1					
+ANR	9364706	PtrMemberAccess	s -> context_cache_gen		9364303	1					
+ANR	9364707	Identifier	s		9364303	0					
+ANR	9364708	Identifier	context_cache_gen		9364303	1					
+ANR	9364709	ExpressionStatement	"ret_fr = vtd_gpa_to_slpte ( & ce , addr , is_write , & slpte , & level , & reads , & writes )"	161:4:3596:3706	9364303	15	True				
+ANR	9364710	AssignmentExpression	"ret_fr = vtd_gpa_to_slpte ( & ce , addr , is_write , & slpte , & level , & reads , & writes )"		9364303	0		=			
+ANR	9364711	Identifier	ret_fr		9364303	0					
+ANR	9364712	CallExpression	"vtd_gpa_to_slpte ( & ce , addr , is_write , & slpte , & level , & reads , & writes )"		9364303	1					
+ANR	9364713	Callee	vtd_gpa_to_slpte		9364303	0					
+ANR	9364714	Identifier	vtd_gpa_to_slpte		9364303	0					
+ANR	9364715	ArgumentList	& ce		9364303	1					
+ANR	9364716	Argument	& ce		9364303	0					
+ANR	9364717	UnaryOperationExpression	& ce		9364303	0					
+ANR	9364718	UnaryOperator	&		9364303	0					
+ANR	9364719	Identifier	ce		9364303	1					
+ANR	9364720	Argument	addr		9364303	1					
+ANR	9364721	Identifier	addr		9364303	0					
+ANR	9364722	Argument	is_write		9364303	2					
+ANR	9364723	Identifier	is_write		9364303	0					
+ANR	9364724	Argument	& slpte		9364303	3					
+ANR	9364725	UnaryOperationExpression	& slpte		9364303	0					
+ANR	9364726	UnaryOperator	&		9364303	0					
+ANR	9364727	Identifier	slpte		9364303	1					
+ANR	9364728	Argument	& level		9364303	4					
+ANR	9364729	UnaryOperationExpression	& level		9364303	0					
+ANR	9364730	UnaryOperator	&		9364303	0					
+ANR	9364731	Identifier	level		9364303	1					
+ANR	9364732	Argument	& reads		9364303	5					
+ANR	9364733	UnaryOperationExpression	& reads		9364303	0					
+ANR	9364734	UnaryOperator	&		9364303	0					
+ANR	9364735	Identifier	reads		9364303	1					
+ANR	9364736	Argument	& writes		9364303	6					
+ANR	9364737	UnaryOperationExpression	& writes		9364303	0					
+ANR	9364738	UnaryOperator	&		9364303	0					
+ANR	9364739	Identifier	writes		9364303	1					
+ANR	9364740	IfStatement	if ( ret_fr )		9364303	16					
+ANR	9364741	Condition	ret_fr	165:8:3717:3722	9364303	0	True				
+ANR	9364742	Identifier	ret_fr		9364303	0					
+ANR	9364743	CompoundStatement		159:16:3509:3509	9364303	1					
+ANR	9364744	ExpressionStatement	ret_fr = - ret_fr	167:8:3736:3752	9364303	0	True				
+ANR	9364745	AssignmentExpression	ret_fr = - ret_fr		9364303	0		=			
+ANR	9364746	Identifier	ret_fr		9364303	0					
+ANR	9364747	UnaryOperationExpression	- ret_fr		9364303	1					
+ANR	9364748	UnaryOperator	-		9364303	0					
+ANR	9364749	Identifier	ret_fr		9364303	1					
+ANR	9364750	IfStatement	if ( is_fpd_set && vtd_is_qualified_fault ( ret_fr ) )		9364303	1					
+ANR	9364751	Condition	is_fpd_set && vtd_is_qualified_fault ( ret_fr )	169:12:3767:3810	9364303	0	True				
+ANR	9364752	AndExpression	is_fpd_set && vtd_is_qualified_fault ( ret_fr )		9364303	0		&&			
+ANR	9364753	Identifier	is_fpd_set		9364303	0					
+ANR	9364754	CallExpression	vtd_is_qualified_fault ( ret_fr )		9364303	1					
+ANR	9364755	Callee	vtd_is_qualified_fault		9364303	0					
+ANR	9364756	Identifier	vtd_is_qualified_fault		9364303	0					
+ANR	9364757	ArgumentList	ret_fr		9364303	1					
+ANR	9364758	Argument	ret_fr		9364303	0					
+ANR	9364759	Identifier	ret_fr		9364303	0					
+ANR	9364760	CompoundStatement		163:58:3597:3597	9364303	1					
+ANR	9364761	Statement	VTD_DPRINTF	171:12:3828:3838	9364303	0	True				
+ANR	9364762	Statement	(	171:23:3839:3839	9364303	1	True				
+ANR	9364763	Statement	FLOG	171:24:3840:3843	9364303	2	True				
+ANR	9364764	Statement	","	171:28:3844:3844	9364303	3	True				
+ANR	9364765	Statement	"""fault processing is disabled for DMA requests """	171:30:3846:3893	9364303	4	True				
+ANR	9364766	Statement	"""through this context-entry (with FPD Set)"""	173:24:3920:3962	9364303	5	True				
+ANR	9364767	Statement	)	173:67:3963:3963	9364303	6	True				
+ANR	9364768	ExpressionStatement		173:68:3964:3964	9364303	7	True				
+ANR	9364769	ElseStatement	else		9364303	0					
+ANR	9364770	CompoundStatement		169:15:3766:3766	9364303	0					
+ANR	9364771	ExpressionStatement	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"	177:12:3997:4056	9364303	0	True				
+ANR	9364772	CallExpression	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"		9364303	0					
+ANR	9364773	Callee	vtd_report_dmar_fault		9364303	0					
+ANR	9364774	Identifier	vtd_report_dmar_fault		9364303	0					
+ANR	9364775	ArgumentList	s		9364303	1					
+ANR	9364776	Argument	s		9364303	0					
+ANR	9364777	Identifier	s		9364303	0					
+ANR	9364778	Argument	source_id		9364303	1					
+ANR	9364779	Identifier	source_id		9364303	0					
+ANR	9364780	Argument	addr		9364303	2					
+ANR	9364781	Identifier	addr		9364303	0					
+ANR	9364782	Argument	ret_fr		9364303	3					
+ANR	9364783	Identifier	ret_fr		9364303	0					
+ANR	9364784	Argument	is_write		9364303	4					
+ANR	9364785	Identifier	is_write		9364303	0					
+ANR	9364786	ReturnStatement	return ;	181:8:4078:4084	9364303	2	True				
+ANR	9364787	ExpressionStatement	"vtd_update_iotlb ( s , source_id , VTD_CONTEXT_ENTRY_DID ( ce . hi ) , addr , slpte , reads , writes )"	187:4:4100:4210	9364303	17	True				
+ANR	9364788	CallExpression	"vtd_update_iotlb ( s , source_id , VTD_CONTEXT_ENTRY_DID ( ce . hi ) , addr , slpte , reads , writes )"		9364303	0					
+ANR	9364789	Callee	vtd_update_iotlb		9364303	0					
+ANR	9364790	Identifier	vtd_update_iotlb		9364303	0					
+ANR	9364791	ArgumentList	s		9364303	1					
+ANR	9364792	Argument	s		9364303	0					
+ANR	9364793	Identifier	s		9364303	0					
+ANR	9364794	Argument	source_id		9364303	1					
+ANR	9364795	Identifier	source_id		9364303	0					
+ANR	9364796	Argument	VTD_CONTEXT_ENTRY_DID ( ce . hi )		9364303	2					
+ANR	9364797	CallExpression	VTD_CONTEXT_ENTRY_DID ( ce . hi )		9364303	0					
+ANR	9364798	Callee	VTD_CONTEXT_ENTRY_DID		9364303	0					
+ANR	9364799	Identifier	VTD_CONTEXT_ENTRY_DID		9364303	0					
+ANR	9364800	ArgumentList	ce . hi		9364303	1					
+ANR	9364801	Argument	ce . hi		9364303	0					
+ANR	9364802	MemberAccess	ce . hi		9364303	0					
+ANR	9364803	Identifier	ce		9364303	0					
+ANR	9364804	Identifier	hi		9364303	1					
+ANR	9364805	Argument	addr		9364303	3					
+ANR	9364806	Identifier	addr		9364303	0					
+ANR	9364807	Argument	slpte		9364303	4					
+ANR	9364808	Identifier	slpte		9364303	0					
+ANR	9364809	Argument	reads		9364303	5					
+ANR	9364810	Identifier	reads		9364303	0					
+ANR	9364811	Argument	writes		9364303	6					
+ANR	9364812	Identifier	writes		9364303	0					
+ANR	9364813	Label	out :	191:0:4213:4216	9364303	18	True				
+ANR	9364814	Identifier	out		9364303	0					
+ANR	9364815	ExpressionStatement	entry -> iova = addr & VTD_PAGE_MASK_4K	193:4:4223:4260	9364303	19	True				
+ANR	9364816	AssignmentExpression	entry -> iova = addr & VTD_PAGE_MASK_4K		9364303	0		=			
+ANR	9364817	PtrMemberAccess	entry -> iova		9364303	0					
+ANR	9364818	Identifier	entry		9364303	0					
+ANR	9364819	Identifier	iova		9364303	1					
+ANR	9364820	BitAndExpression	addr & VTD_PAGE_MASK_4K		9364303	1		&			
+ANR	9364821	Identifier	addr		9364303	0					
+ANR	9364822	Identifier	VTD_PAGE_MASK_4K		9364303	1					
+ANR	9364823	ExpressionStatement	entry -> translated_addr = vtd_get_slpte_addr ( slpte ) & VTD_PAGE_MASK_4K	195:4:4267:4336	9364303	20	True				
+ANR	9364824	AssignmentExpression	entry -> translated_addr = vtd_get_slpte_addr ( slpte ) & VTD_PAGE_MASK_4K		9364303	0		=			
+ANR	9364825	PtrMemberAccess	entry -> translated_addr		9364303	0					
+ANR	9364826	Identifier	entry		9364303	0					
+ANR	9364827	Identifier	translated_addr		9364303	1					
+ANR	9364828	BitAndExpression	vtd_get_slpte_addr ( slpte ) & VTD_PAGE_MASK_4K		9364303	1		&			
+ANR	9364829	CallExpression	vtd_get_slpte_addr ( slpte )		9364303	0					
+ANR	9364830	Callee	vtd_get_slpte_addr		9364303	0					
+ANR	9364831	Identifier	vtd_get_slpte_addr		9364303	0					
+ANR	9364832	ArgumentList	slpte		9364303	1					
+ANR	9364833	Argument	slpte		9364303	0					
+ANR	9364834	Identifier	slpte		9364303	0					
+ANR	9364835	Identifier	VTD_PAGE_MASK_4K		9364303	1					
+ANR	9364836	ExpressionStatement	entry -> addr_mask = ~VTD_PAGE_MASK_4K	197:4:4343:4379	9364303	21	True				
+ANR	9364837	AssignmentExpression	entry -> addr_mask = ~VTD_PAGE_MASK_4K		9364303	0		=			
+ANR	9364838	PtrMemberAccess	entry -> addr_mask		9364303	0					
+ANR	9364839	Identifier	entry		9364303	0					
+ANR	9364840	Identifier	addr_mask		9364303	1					
+ANR	9364841	Identifier	~VTD_PAGE_MASK_4K		9364303	1					
+ANR	9364842	ExpressionStatement	entry -> perm = ( writes ? 2 : 0 ) + ( reads ? 1 : 0 )	199:4:4386:4434	9364303	22	True				
+ANR	9364843	AssignmentExpression	entry -> perm = ( writes ? 2 : 0 ) + ( reads ? 1 : 0 )		9364303	0		=			
+ANR	9364844	PtrMemberAccess	entry -> perm		9364303	0					
+ANR	9364845	Identifier	entry		9364303	0					
+ANR	9364846	Identifier	perm		9364303	1					
+ANR	9364847	AdditiveExpression	( writes ? 2 : 0 ) + ( reads ? 1 : 0 )		9364303	1		+			
+ANR	9364848	ConditionalExpression	writes ? 2 : 0		9364303	0					
+ANR	9364849	Condition	writes		9364303	0					
+ANR	9364850	Identifier	writes		9364303	0					
+ANR	9364851	PrimaryExpression	2		9364303	1					
+ANR	9364852	PrimaryExpression	0		9364303	2					
+ANR	9364853	ConditionalExpression	reads ? 1 : 0		9364303	1					
+ANR	9364854	Condition	reads		9364303	0					
+ANR	9364855	Identifier	reads		9364303	0					
+ANR	9364856	PrimaryExpression	1		9364303	1					
+ANR	9364857	PrimaryExpression	0		9364303	2					
+ANR	9364858	ReturnType	static void		9364303	1					
+ANR	9364859	Identifier	vtd_do_iommu_translate		9364303	2					
+ANR	9364860	ParameterList	"VTDAddressSpace * vtd_as , uint8_t bus_num , uint8_t devfn , hwaddr addr , bool is_write , IOMMUTLBEntry * entry"		9364303	3					
+ANR	9364861	Parameter	VTDAddressSpace * vtd_as	1:35:35:57	9364303	0	True				
+ANR	9364862	ParameterType	VTDAddressSpace *		9364303	0					
+ANR	9364863	Identifier	vtd_as		9364303	1					
+ANR	9364864	Parameter	uint8_t bus_num	1:60:60:74	9364303	1	True				
+ANR	9364865	ParameterType	uint8_t		9364303	0					
+ANR	9364866	Identifier	bus_num		9364303	1					
+ANR	9364867	Parameter	uint8_t devfn	3:35:113:125	9364303	2	True				
+ANR	9364868	ParameterType	uint8_t		9364303	0					
+ANR	9364869	Identifier	devfn		9364303	1					
+ANR	9364870	Parameter	hwaddr addr	3:50:128:138	9364303	3	True				
+ANR	9364871	ParameterType	hwaddr		9364303	0					
+ANR	9364872	Identifier	addr		9364303	1					
+ANR	9364873	Parameter	bool is_write	3:63:141:153	9364303	4	True				
+ANR	9364874	ParameterType	bool		9364303	0					
+ANR	9364875	Identifier	is_write		9364303	1					
+ANR	9364876	Parameter	IOMMUTLBEntry * entry	5:35:192:211	9364303	5	True				
+ANR	9364877	ParameterType	IOMMUTLBEntry *		9364303	0					
+ANR	9364878	Identifier	entry		9364303	1					
+ANR	9364879	CFGEntryNode	ENTRY		9364303		True				
+ANR	9364880	CFGExitNode	EXIT		9364303		True				
+ANR	9364881	Symbol	~VTD_PAGE_MASK_4K		9364303						
+ANR	9364882	Symbol	ce . lo		9364303						
+ANR	9364883	Symbol	vtd_lookup_iotlb		9364303						
+ANR	9364884	Symbol	ce . hi		9364303						
+ANR	9364885	Symbol	bus_num		9364303						
+ANR	9364886	Symbol	& ce		9364303						
+ANR	9364887	Symbol	vtd_gpa_to_slpte		9364303						
+ANR	9364888	Symbol	& writes		9364303						
+ANR	9364889	Symbol	entry -> translated_addr		9364303						
+ANR	9364890	Symbol	vtd_make_source_id		9364303						
+ANR	9364891	Symbol	entry -> addr_mask		9364303						
+ANR	9364892	Symbol	is_fpd_set		9364303						
+ANR	9364893	Symbol	* cc_entry		9364303						
+ANR	9364894	Symbol	& reads		9364303						
+ANR	9364895	Symbol	entry -> iova		9364303						
+ANR	9364896	Symbol	& slpte		9364303						
+ANR	9364897	Symbol	VTD_CONTEXT_ENTRY_FPD		9364303						
+ANR	9364898	Symbol	level		9364303						
+ANR	9364899	Symbol	iotlb_entry -> write_flags		9364303						
+ANR	9364900	Symbol	vtd_as -> iommu_state		9364303						
+ANR	9364901	Symbol	is_write		9364303						
+ANR	9364902	Symbol	devfn		9364303						
+ANR	9364903	Symbol	VTD_PAGE_MASK_4K		9364303						
+ANR	9364904	Symbol	cc_entry		9364303						
+ANR	9364905	Symbol	entry		9364303						
+ANR	9364906	Symbol	vtd_dev_to_context_entry		9364303						
+ANR	9364907	Symbol	vtd_get_slpte_addr		9364303						
+ANR	9364908	Symbol	true		9364303						
+ANR	9364909	Symbol	vtd_is_interrupt_addr		9364303						
+ANR	9364910	Symbol	iotlb_entry -> read_flags		9364303						
+ANR	9364911	Symbol	IOMMU_WO		9364303						
+ANR	9364912	Symbol	vtd_as		9364303						
+ANR	9364913	Symbol	* vtd_as		9364303						
+ANR	9364914	Symbol	entry -> perm		9364303						
+ANR	9364915	Symbol	VTD_CONTEXT_ENTRY_DID		9364303						
+ANR	9364916	Symbol	s -> context_cache_gen		9364303						
+ANR	9364917	Symbol	addr		9364303						
+ANR	9364918	Symbol	VTD_FR_READ		9364303						
+ANR	9364919	Symbol	* iotlb_entry		9364303						
+ANR	9364920	Symbol	iotlb_entry		9364303						
+ANR	9364921	Symbol	* entry		9364303						
+ANR	9364922	Symbol	ce		9364303						
+ANR	9364923	Symbol	& vtd_as -> context_cache_entry		9364303						
+ANR	9364924	Symbol	& level		9364303						
+ANR	9364925	Symbol	ret_fr		9364303						
+ANR	9364926	Symbol	false		9364303						
+ANR	9364927	Symbol	reads		9364303						
+ANR	9364928	Symbol	iotlb_entry -> slpte		9364303						
+ANR	9364929	Symbol	vtd_is_qualified_fault		9364303						
+ANR	9364930	Symbol	cc_entry -> context_entry		9364303						
+ANR	9364931	Symbol	slpte		9364303						
+ANR	9364932	Symbol	s		9364303						
+ANR	9364933	Symbol	cc_entry -> context_cache_gen		9364303						
+ANR	9364934	Symbol	source_id		9364303						
+ANR	9364935	Symbol	writes		9364303						
+ANR	9364936	Symbol	* s		9364303						

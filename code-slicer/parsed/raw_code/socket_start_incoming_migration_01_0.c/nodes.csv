@@ -1,0 +1,114 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7883304	File	/home/p4ultr4n/workplace/ReVeal/raw_code/socket_start_incoming_migration_01_0.c								
+ANR	7883305	Function	socket_start_incoming_migration	1:0:0:785							
+ANR	7883306	FunctionDef	"socket_start_incoming_migration (SocketAddressLegacy * saddr , Error * * errp)"		7883305	0					
+ANR	7883307	CompoundStatement		5:0:132:785	7883305	0					
+ANR	7883308	IdentifierDeclStatement	QIOChannelSocket * listen_ioc = qio_channel_socket_new ( ) ;	7:4:139:194	7883305	0	True				
+ANR	7883309	IdentifierDecl	* listen_ioc = qio_channel_socket_new ( )		7883305	0					
+ANR	7883310	IdentifierDeclType	QIOChannelSocket *		7883305	0					
+ANR	7883311	Identifier	listen_ioc		7883305	1					
+ANR	7883312	AssignmentExpression	* listen_ioc = qio_channel_socket_new ( )		7883305	2		=			
+ANR	7883313	Identifier	listen_ioc		7883305	0					
+ANR	7883314	CallExpression	qio_channel_socket_new ( )		7883305	1					
+ANR	7883315	Callee	qio_channel_socket_new		7883305	0					
+ANR	7883316	Identifier	qio_channel_socket_new		7883305	0					
+ANR	7883317	ArgumentList			7883305	1					
+ANR	7883318	ExpressionStatement	"qio_channel_set_name ( QIO_CHANNEL ( listen_ioc ) , ""migration-socket-listener"" )"	11:4:203:303	7883305	1	True				
+ANR	7883319	CallExpression	"qio_channel_set_name ( QIO_CHANNEL ( listen_ioc ) , ""migration-socket-listener"" )"		7883305	0					
+ANR	7883320	Callee	qio_channel_set_name		7883305	0					
+ANR	7883321	Identifier	qio_channel_set_name		7883305	0					
+ANR	7883322	ArgumentList	QIO_CHANNEL ( listen_ioc )		7883305	1					
+ANR	7883323	Argument	QIO_CHANNEL ( listen_ioc )		7883305	0					
+ANR	7883324	CallExpression	QIO_CHANNEL ( listen_ioc )		7883305	0					
+ANR	7883325	Callee	QIO_CHANNEL		7883305	0					
+ANR	7883326	Identifier	QIO_CHANNEL		7883305	0					
+ANR	7883327	ArgumentList	listen_ioc		7883305	1					
+ANR	7883328	Argument	listen_ioc		7883305	0					
+ANR	7883329	Identifier	listen_ioc		7883305	0					
+ANR	7883330	Argument	"""migration-socket-listener"""		7883305	1					
+ANR	7883331	PrimaryExpression	"""migration-socket-listener"""		7883305	0					
+ANR	7883332	IfStatement	"if ( qio_channel_socket_listen_sync ( listen_ioc , saddr , errp ) < 0 )"		7883305	2					
+ANR	7883333	Condition	"qio_channel_socket_listen_sync ( listen_ioc , saddr , errp ) < 0"	17:8:316:374	7883305	0	True				
+ANR	7883334	RelationalExpression	"qio_channel_socket_listen_sync ( listen_ioc , saddr , errp ) < 0"		7883305	0		<			
+ANR	7883335	CallExpression	"qio_channel_socket_listen_sync ( listen_ioc , saddr , errp )"		7883305	0					
+ANR	7883336	Callee	qio_channel_socket_listen_sync		7883305	0					
+ANR	7883337	Identifier	qio_channel_socket_listen_sync		7883305	0					
+ANR	7883338	ArgumentList	listen_ioc		7883305	1					
+ANR	7883339	Argument	listen_ioc		7883305	0					
+ANR	7883340	Identifier	listen_ioc		7883305	0					
+ANR	7883341	Argument	saddr		7883305	1					
+ANR	7883342	Identifier	saddr		7883305	0					
+ANR	7883343	Argument	errp		7883305	2					
+ANR	7883344	Identifier	errp		7883305	0					
+ANR	7883345	PrimaryExpression	0		7883305	1					
+ANR	7883346	CompoundStatement		13:69:244:244	7883305	1					
+ANR	7883347	ExpressionStatement	object_unref ( OBJECT ( listen_ioc ) )	19:8:388:420	7883305	0	True				
+ANR	7883348	CallExpression	object_unref ( OBJECT ( listen_ioc ) )		7883305	0					
+ANR	7883349	Callee	object_unref		7883305	0					
+ANR	7883350	Identifier	object_unref		7883305	0					
+ANR	7883351	ArgumentList	OBJECT ( listen_ioc )		7883305	1					
+ANR	7883352	Argument	OBJECT ( listen_ioc )		7883305	0					
+ANR	7883353	CallExpression	OBJECT ( listen_ioc )		7883305	0					
+ANR	7883354	Callee	OBJECT		7883305	0					
+ANR	7883355	Identifier	OBJECT		7883305	0					
+ANR	7883356	ArgumentList	listen_ioc		7883305	1					
+ANR	7883357	Argument	listen_ioc		7883305	0					
+ANR	7883358	Identifier	listen_ioc		7883305	0					
+ANR	7883359	ExpressionStatement	qapi_free_SocketAddressLegacy ( saddr )	21:8:431:467	7883305	1	True				
+ANR	7883360	CallExpression	qapi_free_SocketAddressLegacy ( saddr )		7883305	0					
+ANR	7883361	Callee	qapi_free_SocketAddressLegacy		7883305	0					
+ANR	7883362	Identifier	qapi_free_SocketAddressLegacy		7883305	0					
+ANR	7883363	ArgumentList	saddr		7883305	1					
+ANR	7883364	Argument	saddr		7883305	0					
+ANR	7883365	Identifier	saddr		7883305	0					
+ANR	7883366	ReturnStatement	return ;	23:8:478:484	7883305	2	True				
+ANR	7883367	ExpressionStatement	"qio_channel_add_watch ( QIO_CHANNEL ( listen_ioc ) , G_IO_IN , socket_accept_incoming_migration , listen_ioc , ( GDestroyNotify ) object_unref )"	29:4:500:739	7883305	3	True				
+ANR	7883368	CallExpression	"qio_channel_add_watch ( QIO_CHANNEL ( listen_ioc ) , G_IO_IN , socket_accept_incoming_migration , listen_ioc , ( GDestroyNotify ) object_unref )"		7883305	0					
+ANR	7883369	Callee	qio_channel_add_watch		7883305	0					
+ANR	7883370	Identifier	qio_channel_add_watch		7883305	0					
+ANR	7883371	ArgumentList	QIO_CHANNEL ( listen_ioc )		7883305	1					
+ANR	7883372	Argument	QIO_CHANNEL ( listen_ioc )		7883305	0					
+ANR	7883373	CallExpression	QIO_CHANNEL ( listen_ioc )		7883305	0					
+ANR	7883374	Callee	QIO_CHANNEL		7883305	0					
+ANR	7883375	Identifier	QIO_CHANNEL		7883305	0					
+ANR	7883376	ArgumentList	listen_ioc		7883305	1					
+ANR	7883377	Argument	listen_ioc		7883305	0					
+ANR	7883378	Identifier	listen_ioc		7883305	0					
+ANR	7883379	Argument	G_IO_IN		7883305	1					
+ANR	7883380	Identifier	G_IO_IN		7883305	0					
+ANR	7883381	Argument	socket_accept_incoming_migration		7883305	2					
+ANR	7883382	Identifier	socket_accept_incoming_migration		7883305	0					
+ANR	7883383	Argument	listen_ioc		7883305	3					
+ANR	7883384	Identifier	listen_ioc		7883305	0					
+ANR	7883385	Argument	( GDestroyNotify ) object_unref		7883305	4					
+ANR	7883386	CastExpression	( GDestroyNotify ) object_unref		7883305	0					
+ANR	7883387	CastTarget	GDestroyNotify		7883305	0					
+ANR	7883388	Identifier	object_unref		7883305	1					
+ANR	7883389	ExpressionStatement	qapi_free_SocketAddressLegacy ( saddr )	39:4:746:782	7883305	4	True				
+ANR	7883390	CallExpression	qapi_free_SocketAddressLegacy ( saddr )		7883305	0					
+ANR	7883391	Callee	qapi_free_SocketAddressLegacy		7883305	0					
+ANR	7883392	Identifier	qapi_free_SocketAddressLegacy		7883305	0					
+ANR	7883393	ArgumentList	saddr		7883305	1					
+ANR	7883394	Argument	saddr		7883305	0					
+ANR	7883395	Identifier	saddr		7883305	0					
+ANR	7883396	ReturnType	static void		7883305	1					
+ANR	7883397	Identifier	socket_start_incoming_migration		7883305	2					
+ANR	7883398	ParameterList	"SocketAddressLegacy * saddr , Error * * errp"		7883305	3					
+ANR	7883399	Parameter	SocketAddressLegacy * saddr	1:44:44:69	7883305	0	True				
+ANR	7883400	ParameterType	SocketAddressLegacy *		7883305	0					
+ANR	7883401	Identifier	saddr		7883305	1					
+ANR	7883402	Parameter	Error * * errp	3:44:117:128	7883305	1	True				
+ANR	7883403	ParameterType	Error * *		7883305	0					
+ANR	7883404	Identifier	errp		7883305	1					
+ANR	7883405	CFGEntryNode	ENTRY		7883305		True				
+ANR	7883406	CFGExitNode	EXIT		7883305		True				
+ANR	7883407	Symbol	qio_channel_socket_listen_sync		7883305						
+ANR	7883408	Symbol	errp		7883305						
+ANR	7883409	Symbol	saddr		7883305						
+ANR	7883410	Symbol	G_IO_IN		7883305						
+ANR	7883411	Symbol	QIO_CHANNEL		7883305						
+ANR	7883412	Symbol	object_unref		7883305						
+ANR	7883413	Symbol	qio_channel_socket_new		7883305						
+ANR	7883414	Symbol	OBJECT		7883305						
+ANR	7883415	Symbol	listen_ioc		7883305						
+ANR	7883416	Symbol	socket_accept_incoming_migration		7883305						

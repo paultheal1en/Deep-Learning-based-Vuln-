@@ -1,0 +1,325 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6002976	File	/home/p4ultr4n/workplace/ReVeal/raw_code/net_socket_fd_init_dgram_02_1.c								
+ANR	6002977	Function	net_socket_fd_init_dgram	1:0:0:2185							
+ANR	6002978	FunctionDef	"net_socket_fd_init_dgram (NetClientState * peer , const char * model , const char * name , int fd , int is_connected , const char * mcast , Error * * errp)"		6002977	0					
+ANR	6002979	CompoundStatement		13:0:412:2185	6002977	0					
+ANR	6002980	IdentifierDeclStatement	struct sockaddr_in saddr ;	15:4:419:443	6002977	0	True				
+ANR	6002981	IdentifierDecl	saddr		6002977	0					
+ANR	6002982	IdentifierDeclType	struct sockaddr_in		6002977	0					
+ANR	6002983	Identifier	saddr		6002977	1					
+ANR	6002984	IdentifierDeclStatement	int newfd ;	17:4:450:459	6002977	1	True				
+ANR	6002985	IdentifierDecl	newfd		6002977	0					
+ANR	6002986	IdentifierDeclType	int		6002977	0					
+ANR	6002987	Identifier	newfd		6002977	1					
+ANR	6002988	IdentifierDeclStatement	NetClientState * nc ;	19:4:466:484	6002977	2	True				
+ANR	6002989	IdentifierDecl	* nc		6002977	0					
+ANR	6002990	IdentifierDeclType	NetClientState *		6002977	0					
+ANR	6002991	Identifier	nc		6002977	1					
+ANR	6002992	IdentifierDeclStatement	NetSocketState * s ;	21:4:491:508	6002977	3	True				
+ANR	6002993	IdentifierDecl	* s		6002977	0					
+ANR	6002994	IdentifierDeclType	NetSocketState *		6002977	0					
+ANR	6002995	Identifier	s		6002977	1					
+ANR	6002996	IfStatement	if ( is_connected && mcast != NULL )		6002977	4					
+ANR	6002997	Condition	is_connected && mcast != NULL	35:8:783:811	6002977	0	True				
+ANR	6002998	AndExpression	is_connected && mcast != NULL		6002977	0		&&			
+ANR	6002999	Identifier	is_connected		6002977	0					
+ANR	6003000	EqualityExpression	mcast != NULL		6002977	1		!=			
+ANR	6003001	Identifier	mcast		6002977	0					
+ANR	6003002	Identifier	NULL		6002977	1					
+ANR	6003003	CompoundStatement		23:39:401:401	6002977	1					
+ANR	6003004	IfStatement	"if ( parse_host_port ( & saddr , mcast , errp ) < 0 )"		6002977	0					
+ANR	6003005	Condition	"parse_host_port ( & saddr , mcast , errp ) < 0"	37:16:833:872	6002977	0	True				
+ANR	6003006	RelationalExpression	"parse_host_port ( & saddr , mcast , errp ) < 0"		6002977	0		<			
+ANR	6003007	CallExpression	"parse_host_port ( & saddr , mcast , errp )"		6002977	0					
+ANR	6003008	Callee	parse_host_port		6002977	0					
+ANR	6003009	Identifier	parse_host_port		6002977	0					
+ANR	6003010	ArgumentList	& saddr		6002977	1					
+ANR	6003011	Argument	& saddr		6002977	0					
+ANR	6003012	UnaryOperationExpression	& saddr		6002977	0					
+ANR	6003013	UnaryOperator	&		6002977	0					
+ANR	6003014	Identifier	saddr		6002977	1					
+ANR	6003015	Argument	mcast		6002977	1					
+ANR	6003016	Identifier	mcast		6002977	0					
+ANR	6003017	Argument	errp		6002977	2					
+ANR	6003018	Identifier	errp		6002977	0					
+ANR	6003019	PrimaryExpression	0		6002977	1					
+ANR	6003020	CompoundStatement		25:58:462:462	6002977	1					
+ANR	6003021	GotoStatement	goto err ;	39:16:894:902	6002977	0	True				
+ANR	6003022	Identifier	err		6002977	0					
+ANR	6003023	IfStatement	if ( saddr . sin_addr . s_addr == 0 )		6002977	1					
+ANR	6003024	Condition	saddr . sin_addr . s_addr == 0	45:16:969:994	6002977	0	True				
+ANR	6003025	EqualityExpression	saddr . sin_addr . s_addr == 0		6002977	0		==			
+ANR	6003026	MemberAccess	saddr . sin_addr . s_addr		6002977	0					
+ANR	6003027	MemberAccess	saddr . sin_addr		6002977	0					
+ANR	6003028	Identifier	saddr		6002977	0					
+ANR	6003029	Identifier	sin_addr		6002977	1					
+ANR	6003030	Identifier	s_addr		6002977	1					
+ANR	6003031	PrimaryExpression	0		6002977	1					
+ANR	6003032	CompoundStatement		33:44:584:584	6002977	1					
+ANR	6003033	ExpressionStatement	"error_setg ( errp , ""can't setup multicast destination address"" )"	47:16:1016:1077	6002977	0	True				
+ANR	6003034	CallExpression	"error_setg ( errp , ""can't setup multicast destination address"" )"		6002977	0					
+ANR	6003035	Callee	error_setg		6002977	0					
+ANR	6003036	Identifier	error_setg		6002977	0					
+ANR	6003037	ArgumentList	errp		6002977	1					
+ANR	6003038	Argument	errp		6002977	0					
+ANR	6003039	Identifier	errp		6002977	0					
+ANR	6003040	Argument	"""can't setup multicast destination address"""		6002977	1					
+ANR	6003041	PrimaryExpression	"""can't setup multicast destination address"""		6002977	0					
+ANR	6003042	GotoStatement	goto err ;	49:16:1096:1104	6002977	1	True				
+ANR	6003043	Identifier	err		6002977	0					
+ANR	6003044	ExpressionStatement	"newfd = net_socket_mcast_create ( & saddr , NULL , errp )"	55:12:1172:1223	6002977	2	True				
+ANR	6003045	AssignmentExpression	"newfd = net_socket_mcast_create ( & saddr , NULL , errp )"		6002977	0		=			
+ANR	6003046	Identifier	newfd		6002977	0					
+ANR	6003047	CallExpression	"net_socket_mcast_create ( & saddr , NULL , errp )"		6002977	1					
+ANR	6003048	Callee	net_socket_mcast_create		6002977	0					
+ANR	6003049	Identifier	net_socket_mcast_create		6002977	0					
+ANR	6003050	ArgumentList	& saddr		6002977	1					
+ANR	6003051	Argument	& saddr		6002977	0					
+ANR	6003052	UnaryOperationExpression	& saddr		6002977	0					
+ANR	6003053	UnaryOperator	&		6002977	0					
+ANR	6003054	Identifier	saddr		6002977	1					
+ANR	6003055	Argument	NULL		6002977	1					
+ANR	6003056	Identifier	NULL		6002977	0					
+ANR	6003057	Argument	errp		6002977	2					
+ANR	6003058	Identifier	errp		6002977	0					
+ANR	6003059	IfStatement	if ( newfd < 0 )		6002977	3					
+ANR	6003060	Condition	newfd < 0	57:16:1242:1250	6002977	0	True				
+ANR	6003061	RelationalExpression	newfd < 0		6002977	0		<			
+ANR	6003062	Identifier	newfd		6002977	0					
+ANR	6003063	PrimaryExpression	0		6002977	1					
+ANR	6003064	CompoundStatement		45:27:840:840	6002977	1					
+ANR	6003065	GotoStatement	goto err ;	59:16:1272:1280	6002977	0	True				
+ANR	6003066	Identifier	err		6002977	0					
+ANR	6003067	ExpressionStatement	"dup2 ( newfd , fd )"	65:12:1360:1375	6002977	4	True				
+ANR	6003068	CallExpression	"dup2 ( newfd , fd )"		6002977	0					
+ANR	6003069	Callee	dup2		6002977	0					
+ANR	6003070	Identifier	dup2		6002977	0					
+ANR	6003071	ArgumentList	newfd		6002977	1					
+ANR	6003072	Argument	newfd		6002977	0					
+ANR	6003073	Identifier	newfd		6002977	0					
+ANR	6003074	Argument	fd		6002977	1					
+ANR	6003075	Identifier	fd		6002977	0					
+ANR	6003076	ExpressionStatement	close ( newfd )	67:12:1390:1402	6002977	5	True				
+ANR	6003077	CallExpression	close ( newfd )		6002977	0					
+ANR	6003078	Callee	close		6002977	0					
+ANR	6003079	Identifier	close		6002977	0					
+ANR	6003080	ArgumentList	newfd		6002977	1					
+ANR	6003081	Argument	newfd		6002977	0					
+ANR	6003082	Identifier	newfd		6002977	0					
+ANR	6003083	ExpressionStatement	"nc = qemu_new_net_client ( & net_dgram_socket_info , peer , model , name )"	75:4:1420:1487	6002977	5	True				
+ANR	6003084	AssignmentExpression	"nc = qemu_new_net_client ( & net_dgram_socket_info , peer , model , name )"		6002977	0		=			
+ANR	6003085	Identifier	nc		6002977	0					
+ANR	6003086	CallExpression	"qemu_new_net_client ( & net_dgram_socket_info , peer , model , name )"		6002977	1					
+ANR	6003087	Callee	qemu_new_net_client		6002977	0					
+ANR	6003088	Identifier	qemu_new_net_client		6002977	0					
+ANR	6003089	ArgumentList	& net_dgram_socket_info		6002977	1					
+ANR	6003090	Argument	& net_dgram_socket_info		6002977	0					
+ANR	6003091	UnaryOperationExpression	& net_dgram_socket_info		6002977	0					
+ANR	6003092	UnaryOperator	&		6002977	0					
+ANR	6003093	Identifier	net_dgram_socket_info		6002977	1					
+ANR	6003094	Argument	peer		6002977	1					
+ANR	6003095	Identifier	peer		6002977	0					
+ANR	6003096	Argument	model		6002977	2					
+ANR	6003097	Identifier	model		6002977	0					
+ANR	6003098	Argument	name		6002977	3					
+ANR	6003099	Identifier	name		6002977	0					
+ANR	6003100	ExpressionStatement	"s = DO_UPCAST ( NetSocketState , nc , nc )"	79:4:1496:1533	6002977	6	True				
+ANR	6003101	AssignmentExpression	"s = DO_UPCAST ( NetSocketState , nc , nc )"		6002977	0		=			
+ANR	6003102	Identifier	s		6002977	0					
+ANR	6003103	CallExpression	"DO_UPCAST ( NetSocketState , nc , nc )"		6002977	1					
+ANR	6003104	Callee	DO_UPCAST		6002977	0					
+ANR	6003105	Identifier	DO_UPCAST		6002977	0					
+ANR	6003106	ArgumentList	NetSocketState		6002977	1					
+ANR	6003107	Argument	NetSocketState		6002977	0					
+ANR	6003108	Identifier	NetSocketState		6002977	0					
+ANR	6003109	Argument	nc		6002977	1					
+ANR	6003110	Identifier	nc		6002977	0					
+ANR	6003111	Argument	nc		6002977	2					
+ANR	6003112	Identifier	nc		6002977	0					
+ANR	6003113	ExpressionStatement	s -> fd = fd	83:4:1542:1552	6002977	7	True				
+ANR	6003114	AssignmentExpression	s -> fd = fd		6002977	0		=			
+ANR	6003115	PtrMemberAccess	s -> fd		6002977	0					
+ANR	6003116	Identifier	s		6002977	0					
+ANR	6003117	Identifier	fd		6002977	1					
+ANR	6003118	Identifier	fd		6002977	1					
+ANR	6003119	ExpressionStatement	s -> listen_fd = - 1	85:4:1559:1576	6002977	8	True				
+ANR	6003120	AssignmentExpression	s -> listen_fd = - 1		6002977	0		=			
+ANR	6003121	PtrMemberAccess	s -> listen_fd		6002977	0					
+ANR	6003122	Identifier	s		6002977	0					
+ANR	6003123	Identifier	listen_fd		6002977	1					
+ANR	6003124	UnaryOperationExpression	- 1		6002977	1					
+ANR	6003125	UnaryOperator	-		6002977	0					
+ANR	6003126	PrimaryExpression	1		6002977	1					
+ANR	6003127	ExpressionStatement	s -> send_fn = net_socket_send_dgram	87:4:1583:1617	6002977	9	True				
+ANR	6003128	AssignmentExpression	s -> send_fn = net_socket_send_dgram		6002977	0		=			
+ANR	6003129	PtrMemberAccess	s -> send_fn		6002977	0					
+ANR	6003130	Identifier	s		6002977	0					
+ANR	6003131	Identifier	send_fn		6002977	1					
+ANR	6003132	Identifier	net_socket_send_dgram		6002977	1					
+ANR	6003133	ExpressionStatement	"net_socket_rs_init ( & s -> rs , net_socket_rs_finalize , false )"	89:4:1624:1681	6002977	10	True				
+ANR	6003134	CallExpression	"net_socket_rs_init ( & s -> rs , net_socket_rs_finalize , false )"		6002977	0					
+ANR	6003135	Callee	net_socket_rs_init		6002977	0					
+ANR	6003136	Identifier	net_socket_rs_init		6002977	0					
+ANR	6003137	ArgumentList	& s -> rs		6002977	1					
+ANR	6003138	Argument	& s -> rs		6002977	0					
+ANR	6003139	UnaryOperationExpression	& s -> rs		6002977	0					
+ANR	6003140	UnaryOperator	&		6002977	0					
+ANR	6003141	PtrMemberAccess	s -> rs		6002977	1					
+ANR	6003142	Identifier	s		6002977	0					
+ANR	6003143	Identifier	rs		6002977	1					
+ANR	6003144	Argument	net_socket_rs_finalize		6002977	1					
+ANR	6003145	Identifier	net_socket_rs_finalize		6002977	0					
+ANR	6003146	Argument	false		6002977	2					
+ANR	6003147	Identifier	false		6002977	0					
+ANR	6003148	ExpressionStatement	"net_socket_read_poll ( s , true )"	91:4:1688:1717	6002977	11	True				
+ANR	6003149	CallExpression	"net_socket_read_poll ( s , true )"		6002977	0					
+ANR	6003150	Callee	net_socket_read_poll		6002977	0					
+ANR	6003151	Identifier	net_socket_read_poll		6002977	0					
+ANR	6003152	ArgumentList	s		6002977	1					
+ANR	6003153	Argument	s		6002977	0					
+ANR	6003154	Identifier	s		6002977	0					
+ANR	6003155	Argument	true		6002977	1					
+ANR	6003156	Identifier	true		6002977	0					
+ANR	6003157	IfStatement	if ( is_connected )		6002977	12					
+ANR	6003158	Condition	is_connected	97:8:1774:1785	6002977	0	True				
+ANR	6003159	Identifier	is_connected		6002977	0					
+ANR	6003160	CompoundStatement		85:22:1375:1375	6002977	1					
+ANR	6003161	ExpressionStatement	s -> dgram_dst = saddr	99:8:1799:1819	6002977	0	True				
+ANR	6003162	AssignmentExpression	s -> dgram_dst = saddr		6002977	0		=			
+ANR	6003163	PtrMemberAccess	s -> dgram_dst		6002977	0					
+ANR	6003164	Identifier	s		6002977	0					
+ANR	6003165	Identifier	dgram_dst		6002977	1					
+ANR	6003166	Identifier	saddr		6002977	1					
+ANR	6003167	ExpressionStatement	"snprintf ( nc -> info_str , sizeof ( nc -> info_str ) , ""socket: fd=%d (cloned mcast=%s:%d)"" , fd , inet_ntoa ( saddr . sin_addr ) , ntohs ( saddr . sin_port ) )"	101:8:1830:2002	6002977	1	True				
+ANR	6003168	CallExpression	"snprintf ( nc -> info_str , sizeof ( nc -> info_str ) , ""socket: fd=%d (cloned mcast=%s:%d)"" , fd , inet_ntoa ( saddr . sin_addr ) , ntohs ( saddr . sin_port ) )"		6002977	0					
+ANR	6003169	Callee	snprintf		6002977	0					
+ANR	6003170	Identifier	snprintf		6002977	0					
+ANR	6003171	ArgumentList	nc -> info_str		6002977	1					
+ANR	6003172	Argument	nc -> info_str		6002977	0					
+ANR	6003173	PtrMemberAccess	nc -> info_str		6002977	0					
+ANR	6003174	Identifier	nc		6002977	0					
+ANR	6003175	Identifier	info_str		6002977	1					
+ANR	6003176	Argument	sizeof ( nc -> info_str )		6002977	1					
+ANR	6003177	SizeofExpression	sizeof ( nc -> info_str )		6002977	0					
+ANR	6003178	Sizeof	sizeof		6002977	0					
+ANR	6003179	PtrMemberAccess	nc -> info_str		6002977	1					
+ANR	6003180	Identifier	nc		6002977	0					
+ANR	6003181	Identifier	info_str		6002977	1					
+ANR	6003182	Argument	"""socket: fd=%d (cloned mcast=%s:%d)"""		6002977	2					
+ANR	6003183	PrimaryExpression	"""socket: fd=%d (cloned mcast=%s:%d)"""		6002977	0					
+ANR	6003184	Argument	fd		6002977	3					
+ANR	6003185	Identifier	fd		6002977	0					
+ANR	6003186	Argument	inet_ntoa ( saddr . sin_addr )		6002977	4					
+ANR	6003187	CallExpression	inet_ntoa ( saddr . sin_addr )		6002977	0					
+ANR	6003188	Callee	inet_ntoa		6002977	0					
+ANR	6003189	Identifier	inet_ntoa		6002977	0					
+ANR	6003190	ArgumentList	saddr . sin_addr		6002977	1					
+ANR	6003191	Argument	saddr . sin_addr		6002977	0					
+ANR	6003192	MemberAccess	saddr . sin_addr		6002977	0					
+ANR	6003193	Identifier	saddr		6002977	0					
+ANR	6003194	Identifier	sin_addr		6002977	1					
+ANR	6003195	Argument	ntohs ( saddr . sin_port )		6002977	5					
+ANR	6003196	CallExpression	ntohs ( saddr . sin_port )		6002977	0					
+ANR	6003197	Callee	ntohs		6002977	0					
+ANR	6003198	Identifier	ntohs		6002977	0					
+ANR	6003199	ArgumentList	saddr . sin_port		6002977	1					
+ANR	6003200	Argument	saddr . sin_port		6002977	0					
+ANR	6003201	MemberAccess	saddr . sin_port		6002977	0					
+ANR	6003202	Identifier	saddr		6002977	0					
+ANR	6003203	Identifier	sin_port		6002977	1					
+ANR	6003204	ElseStatement	else		6002977	0					
+ANR	6003205	CompoundStatement		95:11:1603:1603	6002977	0					
+ANR	6003206	ExpressionStatement	"snprintf ( nc -> info_str , sizeof ( nc -> info_str ) , ""socket: fd=%d"" , fd )"	109:8:2027:2110	6002977	0	True				
+ANR	6003207	CallExpression	"snprintf ( nc -> info_str , sizeof ( nc -> info_str ) , ""socket: fd=%d"" , fd )"		6002977	0					
+ANR	6003208	Callee	snprintf		6002977	0					
+ANR	6003209	Identifier	snprintf		6002977	0					
+ANR	6003210	ArgumentList	nc -> info_str		6002977	1					
+ANR	6003211	Argument	nc -> info_str		6002977	0					
+ANR	6003212	PtrMemberAccess	nc -> info_str		6002977	0					
+ANR	6003213	Identifier	nc		6002977	0					
+ANR	6003214	Identifier	info_str		6002977	1					
+ANR	6003215	Argument	sizeof ( nc -> info_str )		6002977	1					
+ANR	6003216	SizeofExpression	sizeof ( nc -> info_str )		6002977	0					
+ANR	6003217	Sizeof	sizeof		6002977	0					
+ANR	6003218	PtrMemberAccess	nc -> info_str		6002977	1					
+ANR	6003219	Identifier	nc		6002977	0					
+ANR	6003220	Identifier	info_str		6002977	1					
+ANR	6003221	Argument	"""socket: fd=%d"""		6002977	2					
+ANR	6003222	PrimaryExpression	"""socket: fd=%d"""		6002977	0					
+ANR	6003223	Argument	fd		6002977	3					
+ANR	6003224	Identifier	fd		6002977	0					
+ANR	6003225	ReturnStatement	return s ;	117:4:2126:2134	6002977	13	True				
+ANR	6003226	Identifier	s		6002977	0					
+ANR	6003227	Label	err :	121:0:2139:2142	6002977	14	True				
+ANR	6003228	Identifier	err		6002977	0					
+ANR	6003229	ExpressionStatement	closesocket ( fd )	123:4:2149:2164	6002977	15	True				
+ANR	6003230	CallExpression	closesocket ( fd )		6002977	0					
+ANR	6003231	Callee	closesocket		6002977	0					
+ANR	6003232	Identifier	closesocket		6002977	0					
+ANR	6003233	ArgumentList	fd		6002977	1					
+ANR	6003234	Argument	fd		6002977	0					
+ANR	6003235	Identifier	fd		6002977	0					
+ANR	6003236	ReturnStatement	return NULL ;	125:4:2171:2182	6002977	16	True				
+ANR	6003237	Identifier	NULL		6002977	0					
+ANR	6003238	ReturnType	static NetSocketState *		6002977	1					
+ANR	6003239	Identifier	net_socket_fd_init_dgram		6002977	2					
+ANR	6003240	ParameterList	"NetClientState * peer , const char * model , const char * name , int fd , int is_connected , const char * mcast , Error * * errp"		6002977	3					
+ANR	6003241	Parameter	NetClientState * peer	1:48:48:67	6002977	0	True				
+ANR	6003242	ParameterType	NetClientState *		6002977	0					
+ANR	6003243	Identifier	peer		6002977	1					
+ANR	6003244	Parameter	const char * model	3:48:119:135	6002977	1	True				
+ANR	6003245	ParameterType	const char *		6002977	0					
+ANR	6003246	Identifier	model		6002977	1					
+ANR	6003247	Parameter	const char * name	5:48:187:202	6002977	2	True				
+ANR	6003248	ParameterType	const char *		6002977	0					
+ANR	6003249	Identifier	name		6002977	1					
+ANR	6003250	Parameter	int fd	7:48:254:259	6002977	3	True				
+ANR	6003251	ParameterType	int		6002977	0					
+ANR	6003252	Identifier	fd		6002977	1					
+ANR	6003253	Parameter	int is_connected	7:56:262:277	6002977	4	True				
+ANR	6003254	ParameterType	int		6002977	0					
+ANR	6003255	Identifier	is_connected		6002977	1					
+ANR	6003256	Parameter	const char * mcast	9:48:329:345	6002977	5	True				
+ANR	6003257	ParameterType	const char *		6002977	0					
+ANR	6003258	Identifier	mcast		6002977	1					
+ANR	6003259	Parameter	Error * * errp	11:48:397:408	6002977	6	True				
+ANR	6003260	ParameterType	Error * *		6002977	0					
+ANR	6003261	Identifier	errp		6002977	1					
+ANR	6003262	CFGEntryNode	ENTRY		6002977		True				
+ANR	6003263	CFGExitNode	EXIT		6002977		True				
+ANR	6003264	Symbol	& net_dgram_socket_info		6002977						
+ANR	6003265	Symbol	mcast		6002977						
+ANR	6003266	Symbol	errp		6002977						
+ANR	6003267	Symbol	NetSocketState		6002977						
+ANR	6003268	Symbol	s -> dgram_dst		6002977						
+ANR	6003269	Symbol	& s -> rs		6002977						
+ANR	6003270	Symbol	saddr . sin_addr		6002977						
+ANR	6003271	Symbol	parse_host_port		6002977						
+ANR	6003272	Symbol	net_socket_mcast_create		6002977						
+ANR	6003273	Symbol	saddr . sin_port		6002977						
+ANR	6003274	Symbol	nc -> info_str		6002977						
+ANR	6003275	Symbol	peer		6002977						
+ANR	6003276	Symbol	model		6002977						
+ANR	6003277	Symbol	is_connected		6002977						
+ANR	6003278	Symbol	& saddr		6002977						
+ANR	6003279	Symbol	newfd		6002977						
+ANR	6003280	Symbol	NULL		6002977						
+ANR	6003281	Symbol	DO_UPCAST		6002977						
+ANR	6003282	Symbol	net_socket_rs_finalize		6002977						
+ANR	6003283	Symbol	saddr		6002977						
+ANR	6003284	Symbol	false		6002977						
+ANR	6003285	Symbol	inet_ntoa		6002977						
+ANR	6003286	Symbol	ntohs		6002977						
+ANR	6003287	Symbol	s		6002977						
+ANR	6003288	Symbol	nc		6002977						
+ANR	6003289	Symbol	s -> send_fn		6002977						
+ANR	6003290	Symbol	name		6002977						
+ANR	6003291	Symbol	qemu_new_net_client		6002977						
+ANR	6003292	Symbol	true		6002977						
+ANR	6003293	Symbol	* nc		6002977						
+ANR	6003294	Symbol	saddr . sin_addr . s_addr		6002977						
+ANR	6003295	Symbol	* s		6002977						
+ANR	6003296	Symbol	s -> listen_fd		6002977						
+ANR	6003297	Symbol	fd		6002977						
+ANR	6003298	Symbol	s -> fd		6002977						
+ANR	6003299	Symbol	net_socket_send_dgram		6002977						

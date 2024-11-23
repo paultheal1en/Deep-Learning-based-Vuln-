@@ -1,0 +1,382 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7186888	File	/home/p4ultr4n/workplace/ReVeal/raw_code/queue_signal_1.c								
+ANR	7186889	Function	queue_signal	1:0:0:2585							
+ANR	7186890	FunctionDef	"queue_signal (CPUArchState * env , int sig , target_siginfo_t * info)"		7186889	0					
+ANR	7186891	CompoundStatement		3:0:70:2585	7186889	0					
+ANR	7186892	IdentifierDeclStatement	CPUState * cpu = ENV_GET_CPU ( env ) ;	5:4:77:109	7186889	0	True				
+ANR	7186893	IdentifierDecl	* cpu = ENV_GET_CPU ( env )		7186889	0					
+ANR	7186894	IdentifierDeclType	CPUState *		7186889	0					
+ANR	7186895	Identifier	cpu		7186889	1					
+ANR	7186896	AssignmentExpression	* cpu = ENV_GET_CPU ( env )		7186889	2		=			
+ANR	7186897	Identifier	cpu		7186889	0					
+ANR	7186898	CallExpression	ENV_GET_CPU ( env )		7186889	1					
+ANR	7186899	Callee	ENV_GET_CPU		7186889	0					
+ANR	7186900	Identifier	ENV_GET_CPU		7186889	0					
+ANR	7186901	ArgumentList	env		7186889	1					
+ANR	7186902	Argument	env		7186889	0					
+ANR	7186903	Identifier	env		7186889	0					
+ANR	7186904	IdentifierDeclStatement	TaskState * ts = cpu -> opaque ;	7:4:116:143	7186889	1	True				
+ANR	7186905	IdentifierDecl	* ts = cpu -> opaque		7186889	0					
+ANR	7186906	IdentifierDeclType	TaskState *		7186889	0					
+ANR	7186907	Identifier	ts		7186889	1					
+ANR	7186908	AssignmentExpression	* ts = cpu -> opaque		7186889	2		=			
+ANR	7186909	Identifier	ts		7186889	0					
+ANR	7186910	PtrMemberAccess	cpu -> opaque		7186889	1					
+ANR	7186911	Identifier	cpu		7186889	0					
+ANR	7186912	Identifier	opaque		7186889	1					
+ANR	7186913	IdentifierDeclStatement	struct emulated_sigtable * k ;	9:4:150:177	7186889	2	True				
+ANR	7186914	IdentifierDecl	* k		7186889	0					
+ANR	7186915	IdentifierDeclType	struct emulated_sigtable *		7186889	0					
+ANR	7186916	Identifier	k		7186889	1					
+ANR	7186917	IdentifierDeclStatement	"struct sigqueue * q , * * pq ;"	11:4:184:208	7186889	3	True				
+ANR	7186918	IdentifierDecl	* q		7186889	0					
+ANR	7186919	IdentifierDeclType	struct sigqueue *		7186889	0					
+ANR	7186920	Identifier	q		7186889	1					
+ANR	7186921	IdentifierDecl	* * pq		7186889	1					
+ANR	7186922	IdentifierDeclType	struct sigqueue * *		7186889	0					
+ANR	7186923	Identifier	pq		7186889	1					
+ANR	7186924	IdentifierDeclStatement	abi_ulong handler ;	13:4:215:232	7186889	4	True				
+ANR	7186925	IdentifierDecl	handler		7186889	0					
+ANR	7186926	IdentifierDeclType	abi_ulong		7186889	0					
+ANR	7186927	Identifier	handler		7186889	1					
+ANR	7186928	IdentifierDeclStatement	int queue ;	15:4:239:248	7186889	5	True				
+ANR	7186929	IdentifierDecl	queue		7186889	0					
+ANR	7186930	IdentifierDeclType	int		7186889	0					
+ANR	7186931	Identifier	queue		7186889	1					
+ANR	7186932	ExpressionStatement	"trace_user_queue_signal ( env , sig )"	19:4:257:290	7186889	6	True				
+ANR	7186933	CallExpression	"trace_user_queue_signal ( env , sig )"		7186889	0					
+ANR	7186934	Callee	trace_user_queue_signal		7186889	0					
+ANR	7186935	Identifier	trace_user_queue_signal		7186889	0					
+ANR	7186936	ArgumentList	env		7186889	1					
+ANR	7186937	Argument	env		7186889	0					
+ANR	7186938	Identifier	env		7186889	0					
+ANR	7186939	Argument	sig		7186889	1					
+ANR	7186940	Identifier	sig		7186889	0					
+ANR	7186941	ExpressionStatement	k = & ts -> sigtab [ sig - 1 ]	21:4:297:321	7186889	7	True				
+ANR	7186942	AssignmentExpression	k = & ts -> sigtab [ sig - 1 ]		7186889	0		=			
+ANR	7186943	Identifier	k		7186889	0					
+ANR	7186944	UnaryOperationExpression	& ts -> sigtab [ sig - 1 ]		7186889	1					
+ANR	7186945	UnaryOperator	&		7186889	0					
+ANR	7186946	ArrayIndexing	ts -> sigtab [ sig - 1 ]		7186889	1					
+ANR	7186947	PtrMemberAccess	ts -> sigtab		7186889	0					
+ANR	7186948	Identifier	ts		7186889	0					
+ANR	7186949	Identifier	sigtab		7186889	1					
+ANR	7186950	AdditiveExpression	sig - 1		7186889	1		-			
+ANR	7186951	Identifier	sig		7186889	0					
+ANR	7186952	PrimaryExpression	1		7186889	1					
+ANR	7186953	ExpressionStatement	queue = gdb_queuesig ( )	23:4:328:351	7186889	8	True				
+ANR	7186954	AssignmentExpression	queue = gdb_queuesig ( )		7186889	0		=			
+ANR	7186955	Identifier	queue		7186889	0					
+ANR	7186956	CallExpression	gdb_queuesig ( )		7186889	1					
+ANR	7186957	Callee	gdb_queuesig		7186889	0					
+ANR	7186958	Identifier	gdb_queuesig		7186889	0					
+ANR	7186959	ArgumentList			7186889	1					
+ANR	7186960	ExpressionStatement	handler = sigact_table [ sig - 1 ] . _sa_handler	25:4:358:401	7186889	9	True				
+ANR	7186961	AssignmentExpression	handler = sigact_table [ sig - 1 ] . _sa_handler		7186889	0		=			
+ANR	7186962	Identifier	handler		7186889	0					
+ANR	7186963	MemberAccess	sigact_table [ sig - 1 ] . _sa_handler		7186889	1					
+ANR	7186964	ArrayIndexing	sigact_table [ sig - 1 ]		7186889	0					
+ANR	7186965	Identifier	sigact_table		7186889	0					
+ANR	7186966	AdditiveExpression	sig - 1		7186889	1		-			
+ANR	7186967	Identifier	sig		7186889	0					
+ANR	7186968	PrimaryExpression	1		7186889	1					
+ANR	7186969	Identifier	_sa_handler		7186889	1					
+ANR	7186970	IfStatement	if ( ts -> sigsegv_blocked && sig == TARGET_SIGSEGV )		7186889	10					
+ANR	7186971	Condition	ts -> sigsegv_blocked && sig == TARGET_SIGSEGV	29:8:414:457	7186889	0	True				
+ANR	7186972	AndExpression	ts -> sigsegv_blocked && sig == TARGET_SIGSEGV		7186889	0		&&			
+ANR	7186973	PtrMemberAccess	ts -> sigsegv_blocked		7186889	0					
+ANR	7186974	Identifier	ts		7186889	0					
+ANR	7186975	Identifier	sigsegv_blocked		7186889	1					
+ANR	7186976	EqualityExpression	sig == TARGET_SIGSEGV		7186889	1		==			
+ANR	7186977	Identifier	sig		7186889	0					
+ANR	7186978	Identifier	TARGET_SIGSEGV		7186889	1					
+ANR	7186979	CompoundStatement		27:54:389:389	7186889	1					
+ANR	7186980	ExpressionStatement	handler = TARGET_SIG_DFL	47:8:977:1001	7186889	0	True				
+ANR	7186981	AssignmentExpression	handler = TARGET_SIG_DFL		7186889	0		=			
+ANR	7186982	Identifier	handler		7186889	0					
+ANR	7186983	Identifier	TARGET_SIG_DFL		7186889	1					
+ANR	7186984	IfStatement	if ( ! queue && handler == TARGET_SIG_DFL )		7186889	11					
+ANR	7186985	Condition	! queue && handler == TARGET_SIG_DFL	53:8:1021:1055	7186889	0	True				
+ANR	7186986	AndExpression	! queue && handler == TARGET_SIG_DFL		7186889	0		&&			
+ANR	7186987	UnaryOperationExpression	! queue		7186889	0					
+ANR	7186988	UnaryOperator	!		7186889	0					
+ANR	7186989	Identifier	queue		7186889	1					
+ANR	7186990	EqualityExpression	handler == TARGET_SIG_DFL		7186889	1		==			
+ANR	7186991	Identifier	handler		7186889	0					
+ANR	7186992	Identifier	TARGET_SIG_DFL		7186889	1					
+ANR	7186993	CompoundStatement		51:45:987:987	7186889	1					
+ANR	7186994	IfStatement	if ( sig == TARGET_SIGTSTP || sig == TARGET_SIGTTIN || sig == TARGET_SIGTTOU )		7186889	0					
+ANR	7186995	Condition	sig == TARGET_SIGTSTP || sig == TARGET_SIGTTIN || sig == TARGET_SIGTTOU	55:12:1073:1143	7186889	0	True				
+ANR	7186996	OrExpression	sig == TARGET_SIGTSTP || sig == TARGET_SIGTTIN || sig == TARGET_SIGTTOU		7186889	0		||			
+ANR	7186997	EqualityExpression	sig == TARGET_SIGTSTP		7186889	0		==			
+ANR	7186998	Identifier	sig		7186889	0					
+ANR	7186999	Identifier	TARGET_SIGTSTP		7186889	1					
+ANR	7187000	OrExpression	sig == TARGET_SIGTTIN || sig == TARGET_SIGTTOU		7186889	1		||			
+ANR	7187001	EqualityExpression	sig == TARGET_SIGTTIN		7186889	0		==			
+ANR	7187002	Identifier	sig		7186889	0					
+ANR	7187003	Identifier	TARGET_SIGTTIN		7186889	1					
+ANR	7187004	EqualityExpression	sig == TARGET_SIGTTOU		7186889	1		==			
+ANR	7187005	Identifier	sig		7186889	0					
+ANR	7187006	Identifier	TARGET_SIGTTOU		7186889	1					
+ANR	7187007	CompoundStatement		53:85:1075:1075	7186889	1					
+ANR	7187008	ExpressionStatement	"kill ( getpid ( ) , SIGSTOP )"	57:12:1161:1183	7186889	0	True				
+ANR	7187009	CallExpression	"kill ( getpid ( ) , SIGSTOP )"		7186889	0					
+ANR	7187010	Callee	kill		7186889	0					
+ANR	7187011	Identifier	kill		7186889	0					
+ANR	7187012	ArgumentList	getpid ( )		7186889	1					
+ANR	7187013	Argument	getpid ( )		7186889	0					
+ANR	7187014	CallExpression	getpid ( )		7186889	0					
+ANR	7187015	Callee	getpid		7186889	0					
+ANR	7187016	Identifier	getpid		7186889	0					
+ANR	7187017	ArgumentList			7186889	1					
+ANR	7187018	Argument	SIGSTOP		7186889	1					
+ANR	7187019	Identifier	SIGSTOP		7186889	0					
+ANR	7187020	ReturnStatement	return 0 ;	59:12:1198:1206	7186889	1	True				
+ANR	7187021	PrimaryExpression	0		7186889	0					
+ANR	7187022	ElseStatement	else		7186889	0					
+ANR	7187023	IfStatement	if ( sig != TARGET_SIGCHLD && sig != TARGET_SIGURG && sig != TARGET_SIGWINCH && sig != TARGET_SIGCONT )		7186889	0					
+ANR	7187024	Condition	sig != TARGET_SIGCHLD && sig != TARGET_SIGURG && sig != TARGET_SIGWINCH && sig != TARGET_SIGCONT	65:12:1310:1444	7186889	0	True				
+ANR	7187025	AndExpression	sig != TARGET_SIGCHLD && sig != TARGET_SIGURG && sig != TARGET_SIGWINCH && sig != TARGET_SIGCONT		7186889	0		&&			
+ANR	7187026	EqualityExpression	sig != TARGET_SIGCHLD		7186889	0		!=			
+ANR	7187027	Identifier	sig		7186889	0					
+ANR	7187028	Identifier	TARGET_SIGCHLD		7186889	1					
+ANR	7187029	AndExpression	sig != TARGET_SIGURG && sig != TARGET_SIGWINCH && sig != TARGET_SIGCONT		7186889	1		&&			
+ANR	7187030	EqualityExpression	sig != TARGET_SIGURG		7186889	0		!=			
+ANR	7187031	Identifier	sig		7186889	0					
+ANR	7187032	Identifier	TARGET_SIGURG		7186889	1					
+ANR	7187033	AndExpression	sig != TARGET_SIGWINCH && sig != TARGET_SIGCONT		7186889	1		&&			
+ANR	7187034	EqualityExpression	sig != TARGET_SIGWINCH		7186889	0		!=			
+ANR	7187035	Identifier	sig		7186889	0					
+ANR	7187036	Identifier	TARGET_SIGWINCH		7186889	1					
+ANR	7187037	EqualityExpression	sig != TARGET_SIGCONT		7186889	1		!=			
+ANR	7187038	Identifier	sig		7186889	0					
+ANR	7187039	Identifier	TARGET_SIGCONT		7186889	1					
+ANR	7187040	CompoundStatement		69:35:1376:1376	7186889	1					
+ANR	7187041	ExpressionStatement	force_sig ( sig )	73:12:1462:1476	7186889	0	True				
+ANR	7187042	CallExpression	force_sig ( sig )		7186889	0					
+ANR	7187043	Callee	force_sig		7186889	0					
+ANR	7187044	Identifier	force_sig		7186889	0					
+ANR	7187045	ArgumentList	sig		7186889	1					
+ANR	7187046	Argument	sig		7186889	0					
+ANR	7187047	Identifier	sig		7186889	0					
+ANR	7187048	ElseStatement	else		7186889	0					
+ANR	7187049	CompoundStatement		73:15:1423:1423	7186889	0					
+ANR	7187050	ReturnStatement	return 0 ;	77:12:1509:1517	7186889	0	True				
+ANR	7187051	PrimaryExpression	0		7186889	0					
+ANR	7187052	ElseStatement	else		7186889	0					
+ANR	7187053	IfStatement	if ( ! queue && handler == TARGET_SIG_IGN )		7186889	0					
+ANR	7187054	Condition	! queue && handler == TARGET_SIG_IGN	81:15:1569:1603	7186889	0	True				
+ANR	7187055	AndExpression	! queue && handler == TARGET_SIG_IGN		7186889	0		&&			
+ANR	7187056	UnaryOperationExpression	! queue		7186889	0					
+ANR	7187057	UnaryOperator	!		7186889	0					
+ANR	7187058	Identifier	queue		7186889	1					
+ANR	7187059	EqualityExpression	handler == TARGET_SIG_IGN		7186889	1		==			
+ANR	7187060	Identifier	handler		7186889	0					
+ANR	7187061	Identifier	TARGET_SIG_IGN		7186889	1					
+ANR	7187062	CompoundStatement		79:52:1535:1535	7186889	1					
+ANR	7187063	ReturnStatement	return 0 ;	85:8:1646:1654	7186889	0	True				
+ANR	7187064	PrimaryExpression	0		7186889	0					
+ANR	7187065	ElseStatement	else		7186889	0					
+ANR	7187066	IfStatement	if ( ! queue && handler == TARGET_SIG_ERR )		7186889	0					
+ANR	7187067	Condition	! queue && handler == TARGET_SIG_ERR	87:15:1672:1706	7186889	0	True				
+ANR	7187068	AndExpression	! queue && handler == TARGET_SIG_ERR		7186889	0		&&			
+ANR	7187069	UnaryOperationExpression	! queue		7186889	0					
+ANR	7187070	UnaryOperator	!		7186889	0					
+ANR	7187071	Identifier	queue		7186889	1					
+ANR	7187072	EqualityExpression	handler == TARGET_SIG_ERR		7186889	1		==			
+ANR	7187073	Identifier	handler		7186889	0					
+ANR	7187074	Identifier	TARGET_SIG_ERR		7186889	1					
+ANR	7187075	CompoundStatement		85:52:1638:1638	7186889	1					
+ANR	7187076	ExpressionStatement	force_sig ( sig )	89:8:1720:1734	7186889	0	True				
+ANR	7187077	CallExpression	force_sig ( sig )		7186889	0					
+ANR	7187078	Callee	force_sig		7186889	0					
+ANR	7187079	Identifier	force_sig		7186889	0					
+ANR	7187080	ArgumentList	sig		7186889	1					
+ANR	7187081	Argument	sig		7186889	0					
+ANR	7187082	Identifier	sig		7186889	0					
+ANR	7187083	ElseStatement	else		7186889	0					
+ANR	7187084	CompoundStatement		89:11:1677:1677	7186889	0					
+ANR	7187085	ExpressionStatement	pq = & k -> first	93:8:1759:1773	7186889	0	True				
+ANR	7187086	AssignmentExpression	pq = & k -> first		7186889	0		=			
+ANR	7187087	Identifier	pq		7186889	0					
+ANR	7187088	UnaryOperationExpression	& k -> first		7186889	1					
+ANR	7187089	UnaryOperator	&		7186889	0					
+ANR	7187090	PtrMemberAccess	k -> first		7186889	1					
+ANR	7187091	Identifier	k		7186889	0					
+ANR	7187092	Identifier	first		7186889	1					
+ANR	7187093	IfStatement	if ( sig < TARGET_SIGRTMIN )		7186889	1					
+ANR	7187094	Condition	sig < TARGET_SIGRTMIN	95:12:1788:1808	7186889	0	True				
+ANR	7187095	RelationalExpression	sig < TARGET_SIGRTMIN		7186889	0		<			
+ANR	7187096	Identifier	sig		7186889	0					
+ANR	7187097	Identifier	TARGET_SIGRTMIN		7186889	1					
+ANR	7187098	CompoundStatement		93:35:1740:1740	7186889	1					
+ANR	7187099	IfStatement	if ( ! k -> pending )		7186889	0					
+ANR	7187100	Condition	! k -> pending	99:16:1902:1912	7186889	0	True				
+ANR	7187101	UnaryOperationExpression	! k -> pending		7186889	0					
+ANR	7187102	UnaryOperator	!		7186889	0					
+ANR	7187103	PtrMemberAccess	k -> pending		7186889	1					
+ANR	7187104	Identifier	k		7186889	0					
+ANR	7187105	Identifier	pending		7186889	1					
+ANR	7187106	ExpressionStatement	q = & k -> info	101:16:1932:1944	7186889	1	True				
+ANR	7187107	AssignmentExpression	q = & k -> info		7186889	0		=			
+ANR	7187108	Identifier	q		7186889	0					
+ANR	7187109	UnaryOperationExpression	& k -> info		7186889	1					
+ANR	7187110	UnaryOperator	&		7186889	0					
+ANR	7187111	PtrMemberAccess	k -> info		7186889	1					
+ANR	7187112	Identifier	k		7186889	0					
+ANR	7187113	Identifier	info		7186889	1					
+ANR	7187114	ElseStatement	else		7186889	0					
+ANR	7187115	ReturnStatement	return 0 ;	105:16:1981:1989	7186889	0	True				
+ANR	7187116	PrimaryExpression	0		7186889	0					
+ANR	7187117	ElseStatement	else		7186889	0					
+ANR	7187118	CompoundStatement		105:15:1936:1936	7186889	0					
+ANR	7187119	IfStatement	if ( ! k -> pending )		7186889	0					
+ANR	7187120	Condition	! k -> pending	109:16:2026:2036	7186889	0	True				
+ANR	7187121	UnaryOperationExpression	! k -> pending		7186889	0					
+ANR	7187122	UnaryOperator	!		7186889	0					
+ANR	7187123	PtrMemberAccess	k -> pending		7186889	1					
+ANR	7187124	Identifier	k		7186889	0					
+ANR	7187125	Identifier	pending		7186889	1					
+ANR	7187126	CompoundStatement		107:29:1968:1968	7186889	1					
+ANR	7187127	ExpressionStatement	q = & k -> info	113:16:2094:2106	7186889	0	True				
+ANR	7187128	AssignmentExpression	q = & k -> info		7186889	0		=			
+ANR	7187129	Identifier	q		7186889	0					
+ANR	7187130	UnaryOperationExpression	& k -> info		7186889	1					
+ANR	7187131	UnaryOperator	&		7186889	0					
+ANR	7187132	PtrMemberAccess	k -> info		7186889	1					
+ANR	7187133	Identifier	k		7186889	0					
+ANR	7187134	Identifier	info		7186889	1					
+ANR	7187135	ElseStatement	else		7186889	0					
+ANR	7187136	CompoundStatement		113:19:2057:2057	7186889	0					
+ANR	7187137	ExpressionStatement	q = alloc_sigqueue ( env )	117:16:2147:2170	7186889	0	True				
+ANR	7187138	AssignmentExpression	q = alloc_sigqueue ( env )		7186889	0		=			
+ANR	7187139	Identifier	q		7186889	0					
+ANR	7187140	CallExpression	alloc_sigqueue ( env )		7186889	1					
+ANR	7187141	Callee	alloc_sigqueue		7186889	0					
+ANR	7187142	Identifier	alloc_sigqueue		7186889	0					
+ANR	7187143	ArgumentList	env		7186889	1					
+ANR	7187144	Argument	env		7186889	0					
+ANR	7187145	Identifier	env		7186889	0					
+ANR	7187146	IfStatement	if ( ! q )		7186889	1					
+ANR	7187147	Condition	! q	119:20:2193:2194	7186889	0	True				
+ANR	7187148	UnaryOperationExpression	! q		7186889	0					
+ANR	7187149	UnaryOperator	!		7186889	0					
+ANR	7187150	Identifier	q		7186889	1					
+ANR	7187151	ReturnStatement	return - EAGAIN ;	121:20:2218:2232	7186889	1	True				
+ANR	7187152	UnaryOperationExpression	- EAGAIN		7186889	0					
+ANR	7187153	UnaryOperator	-		7186889	0					
+ANR	7187154	Identifier	EAGAIN		7186889	1					
+ANR	7187155	WhileStatement	while ( * pq != NULL )		7186889	2					
+ANR	7187156	Condition	* pq != NULL	123:23:2258:2268	7186889	0	True				
+ANR	7187157	EqualityExpression	* pq != NULL		7186889	0		!=			
+ANR	7187158	UnaryOperationExpression	* pq		7186889	0					
+ANR	7187159	UnaryOperator	*		7186889	0					
+ANR	7187160	Identifier	pq		7186889	1					
+ANR	7187161	Identifier	NULL		7186889	1					
+ANR	7187162	ExpressionStatement	pq = & ( * pq ) -> next	125:20:2292:2309	7186889	1	True				
+ANR	7187163	AssignmentExpression	pq = & ( * pq ) -> next		7186889	0		=			
+ANR	7187164	Identifier	pq		7186889	0					
+ANR	7187165	UnaryOperationExpression	& ( * pq ) -> next		7186889	1					
+ANR	7187166	UnaryOperator	&		7186889	0					
+ANR	7187167	PtrMemberAccess	( * pq ) -> next		7186889	1					
+ANR	7187168	UnaryOperationExpression	* pq		7186889	0					
+ANR	7187169	UnaryOperator	*		7186889	0					
+ANR	7187170	Identifier	pq		7186889	1					
+ANR	7187171	Identifier	next		7186889	1					
+ANR	7187172	ExpressionStatement	* pq = q	131:8:2346:2353	7186889	2	True				
+ANR	7187173	AssignmentExpression	* pq = q		7186889	0		=			
+ANR	7187174	UnaryOperationExpression	* pq		7186889	0					
+ANR	7187175	UnaryOperator	*		7186889	0					
+ANR	7187176	Identifier	pq		7186889	1					
+ANR	7187177	Identifier	q		7186889	1					
+ANR	7187178	ExpressionStatement	q -> info = * info	133:8:2364:2379	7186889	3	True				
+ANR	7187179	AssignmentExpression	q -> info = * info		7186889	0		=			
+ANR	7187180	PtrMemberAccess	q -> info		7186889	0					
+ANR	7187181	Identifier	q		7186889	0					
+ANR	7187182	Identifier	info		7186889	1					
+ANR	7187183	UnaryOperationExpression	* info		7186889	1					
+ANR	7187184	UnaryOperator	*		7186889	0					
+ANR	7187185	Identifier	info		7186889	1					
+ANR	7187186	ExpressionStatement	q -> next = NULL	135:8:2390:2404	7186889	4	True				
+ANR	7187187	AssignmentExpression	q -> next = NULL		7186889	0		=			
+ANR	7187188	PtrMemberAccess	q -> next		7186889	0					
+ANR	7187189	Identifier	q		7186889	0					
+ANR	7187190	Identifier	next		7186889	1					
+ANR	7187191	Identifier	NULL		7186889	1					
+ANR	7187192	ExpressionStatement	k -> pending = 1	137:8:2415:2429	7186889	5	True				
+ANR	7187193	AssignmentExpression	k -> pending = 1		7186889	0		=			
+ANR	7187194	PtrMemberAccess	k -> pending		7186889	0					
+ANR	7187195	Identifier	k		7186889	0					
+ANR	7187196	Identifier	pending		7186889	1					
+ANR	7187197	PrimaryExpression	1		7186889	1					
+ANR	7187198	ExpressionStatement	ts -> signal_pending = 1	141:8:2491:2513	7186889	6	True				
+ANR	7187199	AssignmentExpression	ts -> signal_pending = 1		7186889	0		=			
+ANR	7187200	PtrMemberAccess	ts -> signal_pending		7186889	0					
+ANR	7187201	Identifier	ts		7186889	0					
+ANR	7187202	Identifier	signal_pending		7186889	1					
+ANR	7187203	PrimaryExpression	1		7186889	1					
+ANR	7187204	ReturnStatement	return 1 ;	143:8:2524:2532	7186889	7	True				
+ANR	7187205	PrimaryExpression	1		7186889	0					
+ANR	7187206	ReturnType	int		7186889	1					
+ANR	7187207	Identifier	queue_signal		7186889	2					
+ANR	7187208	ParameterList	"CPUArchState * env , int sig , target_siginfo_t * info"		7186889	3					
+ANR	7187209	Parameter	CPUArchState * env	1:17:17:33	7186889	0	True				
+ANR	7187210	ParameterType	CPUArchState *		7186889	0					
+ANR	7187211	Identifier	env		7186889	1					
+ANR	7187212	Parameter	int sig	1:36:36:42	7186889	1	True				
+ANR	7187213	ParameterType	int		7186889	0					
+ANR	7187214	Identifier	sig		7186889	1					
+ANR	7187215	Parameter	target_siginfo_t * info	1:45:45:66	7186889	2	True				
+ANR	7187216	ParameterType	target_siginfo_t *		7186889	0					
+ANR	7187217	Identifier	info		7186889	1					
+ANR	7187218	CFGEntryNode	ENTRY		7186889		True				
+ANR	7187219	CFGExitNode	EXIT		7186889		True				
+ANR	7187220	Symbol	pq		7186889						
+ANR	7187221	Symbol	handler		7186889						
+ANR	7187222	Symbol	ts -> signal_pending		7186889						
+ANR	7187223	Symbol	* sigact_table		7186889						
+ANR	7187224	Symbol	sigact_table [ sig - 1 ] . _sa_handler		7186889						
+ANR	7187225	Symbol	gdb_queuesig		7186889						
+ANR	7187226	Symbol	TARGET_SIGWINCH		7186889						
+ANR	7187227	Symbol	& k -> info		7186889						
+ANR	7187228	Symbol	sigact_table		7186889						
+ANR	7187229	Symbol	& ( * pq ) -> next		7186889						
+ANR	7187230	Symbol	TARGET_SIGTTOU		7186889						
+ANR	7187231	Symbol	q -> info		7186889						
+ANR	7187232	Symbol	info		7186889						
+ANR	7187233	Symbol	TARGET_SIGURG		7186889						
+ANR	7187234	Symbol	NULL		7186889						
+ANR	7187235	Symbol	TARGET_SIGRTMIN		7186889						
+ANR	7187236	Symbol	* pq		7186889						
+ANR	7187237	Symbol	* ts		7186889						
+ANR	7187238	Symbol	& k -> first		7186889						
+ANR	7187239	Symbol	cpu		7186889						
+ANR	7187240	Symbol	TARGET_SIGSEGV		7186889						
+ANR	7187241	Symbol	TARGET_SIG_DFL		7186889						
+ANR	7187242	Symbol	k -> pending		7186889						
+ANR	7187243	Symbol	* sig		7186889						
+ANR	7187244	Symbol	q -> next		7186889						
+ANR	7187245	Symbol	cpu -> opaque		7186889						
+ANR	7187246	Symbol	TARGET_SIGTSTP		7186889						
+ANR	7187247	Symbol	TARGET_SIGCHLD		7186889						
+ANR	7187248	Symbol	TARGET_SIG_IGN		7186889						
+ANR	7187249	Symbol	sig		7186889						
+ANR	7187250	Symbol	alloc_sigqueue		7186889						
+ANR	7187251	Symbol	TARGET_SIGCONT		7186889						
+ANR	7187252	Symbol	TARGET_SIGTTIN		7186889						
+ANR	7187253	Symbol	ts -> sigtab		7186889						
+ANR	7187254	Symbol	EAGAIN		7186889						
+ANR	7187255	Symbol	ts -> sigsegv_blocked		7186889						
+ANR	7187256	Symbol	k		7186889						
+ANR	7187257	Symbol	env		7186889						
+ANR	7187258	Symbol	* cpu		7186889						
+ANR	7187259	Symbol	q		7186889						
+ANR	7187260	Symbol	TARGET_SIG_ERR		7186889						
+ANR	7187261	Symbol	SIGSTOP		7186889						
+ANR	7187262	Symbol	* k		7186889						
+ANR	7187263	Symbol	ENV_GET_CPU		7186889						
+ANR	7187264	Symbol	* info		7186889						
+ANR	7187265	Symbol	* q		7186889						
+ANR	7187266	Symbol	getpid		7186889						
+ANR	7187267	Symbol	queue		7186889						
+ANR	7187268	Symbol	ts		7186889						

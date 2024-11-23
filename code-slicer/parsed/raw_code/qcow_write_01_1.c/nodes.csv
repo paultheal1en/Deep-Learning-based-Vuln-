@@ -1,0 +1,261 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6903746	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow_write_01_1.c								
+ANR	6903747	Function	qcow_write	1:0:0:1435							
+ANR	6903748	FunctionDef	"qcow_write (BlockDriverState * bs , int64_t sector_num , const uint8_t * buf , int nb_sectors)"		6903747	0					
+ANR	6903749	CompoundStatement		5:0:123:1435	6903747	0					
+ANR	6903750	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	7:4:130:159	6903747	0	True				
+ANR	6903751	IdentifierDecl	* s = bs -> opaque		6903747	0					
+ANR	6903752	IdentifierDeclType	BDRVQcowState *		6903747	0					
+ANR	6903753	Identifier	s		6903747	1					
+ANR	6903754	AssignmentExpression	* s = bs -> opaque		6903747	2		=			
+ANR	6903755	Identifier	s		6903747	0					
+ANR	6903756	PtrMemberAccess	bs -> opaque		6903747	1					
+ANR	6903757	Identifier	bs		6903747	0					
+ANR	6903758	Identifier	opaque		6903747	1					
+ANR	6903759	IdentifierDeclStatement	"int ret , index_in_cluster , n ;"	9:4:166:194	6903747	1	True				
+ANR	6903760	IdentifierDecl	ret		6903747	0					
+ANR	6903761	IdentifierDeclType	int		6903747	0					
+ANR	6903762	Identifier	ret		6903747	1					
+ANR	6903763	IdentifierDecl	index_in_cluster		6903747	1					
+ANR	6903764	IdentifierDeclType	int		6903747	0					
+ANR	6903765	Identifier	index_in_cluster		6903747	1					
+ANR	6903766	IdentifierDecl	n		6903747	2					
+ANR	6903767	IdentifierDeclType	int		6903747	0					
+ANR	6903768	Identifier	n		6903747	1					
+ANR	6903769	IdentifierDeclStatement	uint64_t cluster_offset ;	11:4:201:224	6903747	2	True				
+ANR	6903770	IdentifierDecl	cluster_offset		6903747	0					
+ANR	6903771	IdentifierDeclType	uint64_t		6903747	0					
+ANR	6903772	Identifier	cluster_offset		6903747	1					
+ANR	6903773	IdentifierDeclStatement	int n_end ;	13:4:231:240	6903747	3	True				
+ANR	6903774	IdentifierDecl	n_end		6903747	0					
+ANR	6903775	IdentifierDeclType	int		6903747	0					
+ANR	6903776	Identifier	n_end		6903747	1					
+ANR	6903777	WhileStatement	while ( nb_sectors > 0 )		6903747	4					
+ANR	6903778	Condition	nb_sectors > 0	17:11:256:269	6903747	0	True				
+ANR	6903779	RelationalExpression	nb_sectors > 0		6903747	0		>			
+ANR	6903780	Identifier	nb_sectors		6903747	0					
+ANR	6903781	PrimaryExpression	0		6903747	1					
+ANR	6903782	CompoundStatement		13:27:148:148	6903747	1					
+ANR	6903783	ExpressionStatement	index_in_cluster = sector_num & ( s -> cluster_sectors - 1 )	19:8:283:339	6903747	0	True				
+ANR	6903784	AssignmentExpression	index_in_cluster = sector_num & ( s -> cluster_sectors - 1 )		6903747	0		=			
+ANR	6903785	Identifier	index_in_cluster		6903747	0					
+ANR	6903786	BitAndExpression	sector_num & ( s -> cluster_sectors - 1 )		6903747	1		&			
+ANR	6903787	Identifier	sector_num		6903747	0					
+ANR	6903788	AdditiveExpression	s -> cluster_sectors - 1		6903747	1		-			
+ANR	6903789	PtrMemberAccess	s -> cluster_sectors		6903747	0					
+ANR	6903790	Identifier	s		6903747	0					
+ANR	6903791	Identifier	cluster_sectors		6903747	1					
+ANR	6903792	PrimaryExpression	1		6903747	1					
+ANR	6903793	ExpressionStatement	n_end = index_in_cluster + nb_sectors	21:8:350:387	6903747	1	True				
+ANR	6903794	AssignmentExpression	n_end = index_in_cluster + nb_sectors		6903747	0		=			
+ANR	6903795	Identifier	n_end		6903747	0					
+ANR	6903796	AdditiveExpression	index_in_cluster + nb_sectors		6903747	1		+			
+ANR	6903797	Identifier	index_in_cluster		6903747	0					
+ANR	6903798	Identifier	nb_sectors		6903747	1					
+ANR	6903799	IfStatement	if ( s -> crypt_method && n_end > QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors )		6903747	2					
+ANR	6903800	Condition	s -> crypt_method && n_end > QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors	23:12:402:485	6903747	0	True				
+ANR	6903801	AndExpression	s -> crypt_method && n_end > QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6903747	0		&&			
+ANR	6903802	PtrMemberAccess	s -> crypt_method		6903747	0					
+ANR	6903803	Identifier	s		6903747	0					
+ANR	6903804	Identifier	crypt_method		6903747	1					
+ANR	6903805	RelationalExpression	n_end > QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6903747	1		>			
+ANR	6903806	Identifier	n_end		6903747	0					
+ANR	6903807	MultiplicativeExpression	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6903747	1		*			
+ANR	6903808	Identifier	QCOW_MAX_CRYPT_CLUSTERS		6903747	0					
+ANR	6903809	PtrMemberAccess	s -> cluster_sectors		6903747	1					
+ANR	6903810	Identifier	s		6903747	0					
+ANR	6903811	Identifier	cluster_sectors		6903747	1					
+ANR	6903812	ExpressionStatement	n_end = QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors	27:12:501:553	6903747	1	True				
+ANR	6903813	AssignmentExpression	n_end = QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6903747	0		=			
+ANR	6903814	Identifier	n_end		6903747	0					
+ANR	6903815	MultiplicativeExpression	QCOW_MAX_CRYPT_CLUSTERS * s -> cluster_sectors		6903747	1		*			
+ANR	6903816	Identifier	QCOW_MAX_CRYPT_CLUSTERS		6903747	0					
+ANR	6903817	PtrMemberAccess	s -> cluster_sectors		6903747	1					
+ANR	6903818	Identifier	s		6903747	0					
+ANR	6903819	Identifier	cluster_sectors		6903747	1					
+ANR	6903820	ExpressionStatement	"cluster_offset = alloc_cluster_offset ( bs , sector_num << 9 , index_in_cluster , n_end , & n )"	29:8:564:745	6903747	3	True				
+ANR	6903821	AssignmentExpression	"cluster_offset = alloc_cluster_offset ( bs , sector_num << 9 , index_in_cluster , n_end , & n )"		6903747	0		=			
+ANR	6903822	Identifier	cluster_offset		6903747	0					
+ANR	6903823	CallExpression	"alloc_cluster_offset ( bs , sector_num << 9 , index_in_cluster , n_end , & n )"		6903747	1					
+ANR	6903824	Callee	alloc_cluster_offset		6903747	0					
+ANR	6903825	Identifier	alloc_cluster_offset		6903747	0					
+ANR	6903826	ArgumentList	bs		6903747	1					
+ANR	6903827	Argument	bs		6903747	0					
+ANR	6903828	Identifier	bs		6903747	0					
+ANR	6903829	Argument	sector_num << 9		6903747	1					
+ANR	6903830	ShiftExpression	sector_num << 9		6903747	0		<<			
+ANR	6903831	Identifier	sector_num		6903747	0					
+ANR	6903832	PrimaryExpression	9		6903747	1					
+ANR	6903833	Argument	index_in_cluster		6903747	2					
+ANR	6903834	Identifier	index_in_cluster		6903747	0					
+ANR	6903835	Argument	n_end		6903747	3					
+ANR	6903836	Identifier	n_end		6903747	0					
+ANR	6903837	Argument	& n		6903747	4					
+ANR	6903838	UnaryOperationExpression	& n		6903747	0					
+ANR	6903839	UnaryOperator	&		6903747	0					
+ANR	6903840	Identifier	n		6903747	1					
+ANR	6903841	IfStatement	if ( ! cluster_offset )		6903747	4					
+ANR	6903842	Condition	! cluster_offset	35:12:760:774	6903747	0	True				
+ANR	6903843	UnaryOperationExpression	! cluster_offset		6903747	0					
+ANR	6903844	UnaryOperator	!		6903747	0					
+ANR	6903845	Identifier	cluster_offset		6903747	1					
+ANR	6903846	ReturnStatement	return - 1 ;	37:12:790:799	6903747	1	True				
+ANR	6903847	UnaryOperationExpression	- 1		6903747	0					
+ANR	6903848	UnaryOperator	-		6903747	0					
+ANR	6903849	PrimaryExpression	1		6903747	1					
+ANR	6903850	IfStatement	if ( s -> crypt_method )		6903747	5					
+ANR	6903851	Condition	s -> crypt_method	39:12:814:828	6903747	0	True				
+ANR	6903852	PtrMemberAccess	s -> crypt_method		6903747	0					
+ANR	6903853	Identifier	s		6903747	0					
+ANR	6903854	Identifier	crypt_method		6903747	1					
+ANR	6903855	CompoundStatement		35:29:707:707	6903747	1					
+ANR	6903856	ExpressionStatement	"encrypt_sectors ( s , sector_num , s -> cluster_data , buf , n , 1 , & s -> aes_encrypt_key )"	41:12:846:954	6903747	0	True				
+ANR	6903857	CallExpression	"encrypt_sectors ( s , sector_num , s -> cluster_data , buf , n , 1 , & s -> aes_encrypt_key )"		6903747	0					
+ANR	6903858	Callee	encrypt_sectors		6903747	0					
+ANR	6903859	Identifier	encrypt_sectors		6903747	0					
+ANR	6903860	ArgumentList	s		6903747	1					
+ANR	6903861	Argument	s		6903747	0					
+ANR	6903862	Identifier	s		6903747	0					
+ANR	6903863	Argument	sector_num		6903747	1					
+ANR	6903864	Identifier	sector_num		6903747	0					
+ANR	6903865	Argument	s -> cluster_data		6903747	2					
+ANR	6903866	PtrMemberAccess	s -> cluster_data		6903747	0					
+ANR	6903867	Identifier	s		6903747	0					
+ANR	6903868	Identifier	cluster_data		6903747	1					
+ANR	6903869	Argument	buf		6903747	3					
+ANR	6903870	Identifier	buf		6903747	0					
+ANR	6903871	Argument	n		6903747	4					
+ANR	6903872	Identifier	n		6903747	0					
+ANR	6903873	Argument	1		6903747	5					
+ANR	6903874	PrimaryExpression	1		6903747	0					
+ANR	6903875	Argument	& s -> aes_encrypt_key		6903747	6					
+ANR	6903876	UnaryOperationExpression	& s -> aes_encrypt_key		6903747	0					
+ANR	6903877	UnaryOperator	&		6903747	0					
+ANR	6903878	PtrMemberAccess	s -> aes_encrypt_key		6903747	1					
+ANR	6903879	Identifier	s		6903747	0					
+ANR	6903880	Identifier	aes_encrypt_key		6903747	1					
+ANR	6903881	ExpressionStatement	"ret = bdrv_pwrite ( s -> hd , cluster_offset + index_in_cluster * 512 , s -> cluster_data , n * 512 )"	45:12:969:1091	6903747	1	True				
+ANR	6903882	AssignmentExpression	"ret = bdrv_pwrite ( s -> hd , cluster_offset + index_in_cluster * 512 , s -> cluster_data , n * 512 )"		6903747	0		=			
+ANR	6903883	Identifier	ret		6903747	0					
+ANR	6903884	CallExpression	"bdrv_pwrite ( s -> hd , cluster_offset + index_in_cluster * 512 , s -> cluster_data , n * 512 )"		6903747	1					
+ANR	6903885	Callee	bdrv_pwrite		6903747	0					
+ANR	6903886	Identifier	bdrv_pwrite		6903747	0					
+ANR	6903887	ArgumentList	s -> hd		6903747	1					
+ANR	6903888	Argument	s -> hd		6903747	0					
+ANR	6903889	PtrMemberAccess	s -> hd		6903747	0					
+ANR	6903890	Identifier	s		6903747	0					
+ANR	6903891	Identifier	hd		6903747	1					
+ANR	6903892	Argument	cluster_offset + index_in_cluster * 512		6903747	1					
+ANR	6903893	AdditiveExpression	cluster_offset + index_in_cluster * 512		6903747	0		+			
+ANR	6903894	Identifier	cluster_offset		6903747	0					
+ANR	6903895	MultiplicativeExpression	index_in_cluster * 512		6903747	1		*			
+ANR	6903896	Identifier	index_in_cluster		6903747	0					
+ANR	6903897	PrimaryExpression	512		6903747	1					
+ANR	6903898	Argument	s -> cluster_data		6903747	2					
+ANR	6903899	PtrMemberAccess	s -> cluster_data		6903747	0					
+ANR	6903900	Identifier	s		6903747	0					
+ANR	6903901	Identifier	cluster_data		6903747	1					
+ANR	6903902	Argument	n * 512		6903747	3					
+ANR	6903903	MultiplicativeExpression	n * 512		6903747	0		*			
+ANR	6903904	Identifier	n		6903747	0					
+ANR	6903905	PrimaryExpression	512		6903747	1					
+ANR	6903906	ElseStatement	else		6903747	0					
+ANR	6903907	CompoundStatement		45:15:985:985	6903747	0					
+ANR	6903908	ExpressionStatement	"ret = bdrv_pwrite ( s -> hd , cluster_offset + index_in_cluster * 512 , buf , n * 512 )"	51:12:1124:1203	6903747	0	True				
+ANR	6903909	AssignmentExpression	"ret = bdrv_pwrite ( s -> hd , cluster_offset + index_in_cluster * 512 , buf , n * 512 )"		6903747	0		=			
+ANR	6903910	Identifier	ret		6903747	0					
+ANR	6903911	CallExpression	"bdrv_pwrite ( s -> hd , cluster_offset + index_in_cluster * 512 , buf , n * 512 )"		6903747	1					
+ANR	6903912	Callee	bdrv_pwrite		6903747	0					
+ANR	6903913	Identifier	bdrv_pwrite		6903747	0					
+ANR	6903914	ArgumentList	s -> hd		6903747	1					
+ANR	6903915	Argument	s -> hd		6903747	0					
+ANR	6903916	PtrMemberAccess	s -> hd		6903747	0					
+ANR	6903917	Identifier	s		6903747	0					
+ANR	6903918	Identifier	hd		6903747	1					
+ANR	6903919	Argument	cluster_offset + index_in_cluster * 512		6903747	1					
+ANR	6903920	AdditiveExpression	cluster_offset + index_in_cluster * 512		6903747	0		+			
+ANR	6903921	Identifier	cluster_offset		6903747	0					
+ANR	6903922	MultiplicativeExpression	index_in_cluster * 512		6903747	1		*			
+ANR	6903923	Identifier	index_in_cluster		6903747	0					
+ANR	6903924	PrimaryExpression	512		6903747	1					
+ANR	6903925	Argument	buf		6903747	2					
+ANR	6903926	Identifier	buf		6903747	0					
+ANR	6903927	Argument	n * 512		6903747	3					
+ANR	6903928	MultiplicativeExpression	n * 512		6903747	0		*			
+ANR	6903929	Identifier	n		6903747	0					
+ANR	6903930	PrimaryExpression	512		6903747	1					
+ANR	6903931	IfStatement	if ( ret != n * 512 )		6903747	6					
+ANR	6903932	Condition	ret != n * 512	55:12:1229:1242	6903747	0	True				
+ANR	6903933	EqualityExpression	ret != n * 512		6903747	0		!=			
+ANR	6903934	Identifier	ret		6903747	0					
+ANR	6903935	MultiplicativeExpression	n * 512		6903747	1		*			
+ANR	6903936	Identifier	n		6903747	0					
+ANR	6903937	PrimaryExpression	512		6903747	1					
+ANR	6903938	ReturnStatement	return - 1 ;	57:12:1258:1267	6903747	1	True				
+ANR	6903939	UnaryOperationExpression	- 1		6903747	0					
+ANR	6903940	UnaryOperator	-		6903747	0					
+ANR	6903941	PrimaryExpression	1		6903747	1					
+ANR	6903942	ExpressionStatement	nb_sectors -= n	59:8:1278:1293	6903747	7	True				
+ANR	6903943	AssignmentExpression	nb_sectors -= n		6903747	0		-=			
+ANR	6903944	Identifier	nb_sectors		6903747	0					
+ANR	6903945	Identifier	n		6903747	1					
+ANR	6903946	ExpressionStatement	sector_num += n	61:8:1304:1319	6903747	8	True				
+ANR	6903947	AssignmentExpression	sector_num += n		6903747	0		+=			
+ANR	6903948	Identifier	sector_num		6903747	0					
+ANR	6903949	Identifier	n		6903747	1					
+ANR	6903950	ExpressionStatement	buf += n * 512	63:8:1330:1344	6903747	9	True				
+ANR	6903951	AssignmentExpression	buf += n * 512		6903747	0		+=			
+ANR	6903952	Identifier	buf		6903747	0					
+ANR	6903953	MultiplicativeExpression	n * 512		6903747	1		*			
+ANR	6903954	Identifier	n		6903747	0					
+ANR	6903955	PrimaryExpression	512		6903747	1					
+ANR	6903956	ExpressionStatement	s -> cluster_cache_offset = - 1	67:4:1358:1386	6903747	5	True				
+ANR	6903957	AssignmentExpression	s -> cluster_cache_offset = - 1		6903747	0		=			
+ANR	6903958	PtrMemberAccess	s -> cluster_cache_offset		6903747	0					
+ANR	6903959	Identifier	s		6903747	0					
+ANR	6903960	Identifier	cluster_cache_offset		6903747	1					
+ANR	6903961	UnaryOperationExpression	- 1		6903747	1					
+ANR	6903962	UnaryOperator	-		6903747	0					
+ANR	6903963	PrimaryExpression	1		6903747	1					
+ANR	6903964	ReturnStatement	return 0 ;	69:4:1424:1432	6903747	6	True				
+ANR	6903965	PrimaryExpression	0		6903747	0					
+ANR	6903966	ReturnType	static int		6903747	1					
+ANR	6903967	Identifier	qcow_write		6903747	2					
+ANR	6903968	ParameterList	"BlockDriverState * bs , int64_t sector_num , const uint8_t * buf , int nb_sectors"		6903747	3					
+ANR	6903969	Parameter	BlockDriverState * bs	1:22:22:41	6903747	0	True				
+ANR	6903970	ParameterType	BlockDriverState *		6903747	0					
+ANR	6903971	Identifier	bs		6903747	1					
+ANR	6903972	Parameter	int64_t sector_num	1:44:44:61	6903747	1	True				
+ANR	6903973	ParameterType	int64_t		6903747	0					
+ANR	6903974	Identifier	sector_num		6903747	1					
+ANR	6903975	Parameter	const uint8_t * buf	3:21:86:103	6903747	2	True				
+ANR	6903976	ParameterType	const uint8_t *		6903747	0					
+ANR	6903977	Identifier	buf		6903747	1					
+ANR	6903978	Parameter	int nb_sectors	3:41:106:119	6903747	3	True				
+ANR	6903979	ParameterType	int		6903747	0					
+ANR	6903980	Identifier	nb_sectors		6903747	1					
+ANR	6903981	CFGEntryNode	ENTRY		6903747		True				
+ANR	6903982	CFGExitNode	EXIT		6903747		True				
+ANR	6903983	Symbol	ret		6903747						
+ANR	6903984	Symbol	s -> hd		6903747						
+ANR	6903985	Symbol	nb_sectors		6903747						
+ANR	6903986	Symbol	& s -> aes_encrypt_key		6903747						
+ANR	6903987	Symbol	bs -> opaque		6903747						
+ANR	6903988	Symbol	index_in_cluster		6903747						
+ANR	6903989	Symbol	alloc_cluster_offset		6903747						
+ANR	6903990	Symbol	n		6903747						
+ANR	6903991	Symbol	sector_num		6903747						
+ANR	6903992	Symbol	n_end		6903747						
+ANR	6903993	Symbol	bs		6903747						
+ANR	6903994	Symbol	QCOW_MAX_CRYPT_CLUSTERS		6903747						
+ANR	6903995	Symbol	s -> cluster_data		6903747						
+ANR	6903996	Symbol	buf		6903747						
+ANR	6903997	Symbol	s		6903747						
+ANR	6903998	Symbol	* bs		6903747						
+ANR	6903999	Symbol	& n		6903747						
+ANR	6904000	Symbol	cluster_offset		6903747						
+ANR	6904001	Symbol	s -> cluster_sectors		6903747						
+ANR	6904002	Symbol	s -> crypt_method		6903747						
+ANR	6904003	Symbol	bdrv_pwrite		6903747						
+ANR	6904004	Symbol	* s		6903747						
+ANR	6904005	Symbol	s -> cluster_cache_offset		6903747						

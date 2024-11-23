@@ -1,0 +1,166 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	3083674	File	/home/p4ultr4n/workplace/ReVeal/raw_code/eth_setup_ip4_fragmentation_0.c								
+ANR	3083675	Function	eth_setup_ip4_fragmentation	1:0:0:882							
+ANR	3083676	FunctionDef	"eth_setup_ip4_fragmentation (const void * l2hdr , size_t l2hdr_len , void * l3hdr , size_t l3hdr_len , size_t l3payload_len , size_t frag_offset , bool more_frags)"		3083675	0					
+ANR	3083677	CompoundStatement		9:0:243:882	3083675	0					
+ANR	3083678	IfStatement	"if ( eth_get_l3_proto ( l2hdr , l2hdr_len ) == ETH_P_IP )"		3083675	0					
+ANR	3083679	Condition	"eth_get_l3_proto ( l2hdr , l2hdr_len ) == ETH_P_IP"	11:8:254:299	3083675	0	True				
+ANR	3083680	EqualityExpression	"eth_get_l3_proto ( l2hdr , l2hdr_len ) == ETH_P_IP"		3083675	0		==			
+ANR	3083681	CallExpression	"eth_get_l3_proto ( l2hdr , l2hdr_len )"		3083675	0					
+ANR	3083682	Callee	eth_get_l3_proto		3083675	0					
+ANR	3083683	Identifier	eth_get_l3_proto		3083675	0					
+ANR	3083684	ArgumentList	l2hdr		3083675	1					
+ANR	3083685	Argument	l2hdr		3083675	0					
+ANR	3083686	Identifier	l2hdr		3083675	0					
+ANR	3083687	Argument	l2hdr_len		3083675	1					
+ANR	3083688	Identifier	l2hdr_len		3083675	0					
+ANR	3083689	Identifier	ETH_P_IP		3083675	1					
+ANR	3083690	CompoundStatement		11:8:230:249	3083675	1					
+ANR	3083691	IdentifierDeclStatement	uint16_t orig_flags ;	13:8:313:332	3083675	0	True				
+ANR	3083692	IdentifierDecl	orig_flags		3083675	0					
+ANR	3083693	IdentifierDeclType	uint16_t		3083675	0					
+ANR	3083694	Identifier	orig_flags		3083675	1					
+ANR	3083695	IdentifierDeclStatement	struct ip_header * iphdr = ( struct ip_header * ) l3hdr ;	15:8:343:395	3083675	1	True				
+ANR	3083696	IdentifierDecl	* iphdr = ( struct ip_header * ) l3hdr		3083675	0					
+ANR	3083697	IdentifierDeclType	struct ip_header *		3083675	0					
+ANR	3083698	Identifier	iphdr		3083675	1					
+ANR	3083699	AssignmentExpression	* iphdr = ( struct ip_header * ) l3hdr		3083675	2		=			
+ANR	3083700	Identifier	iphdr		3083675	0					
+ANR	3083701	CastExpression	( struct ip_header * ) l3hdr		3083675	1					
+ANR	3083702	CastTarget	struct ip_header *		3083675	0					
+ANR	3083703	Identifier	l3hdr		3083675	1					
+ANR	3083704	IdentifierDeclStatement	uint16_t frag_off_units = frag_offset / IP_FRAG_UNIT_SIZE ;	17:8:406:463	3083675	2	True				
+ANR	3083705	IdentifierDecl	frag_off_units = frag_offset / IP_FRAG_UNIT_SIZE		3083675	0					
+ANR	3083706	IdentifierDeclType	uint16_t		3083675	0					
+ANR	3083707	Identifier	frag_off_units		3083675	1					
+ANR	3083708	AssignmentExpression	frag_off_units = frag_offset / IP_FRAG_UNIT_SIZE		3083675	2		=			
+ANR	3083709	Identifier	frag_off_units		3083675	0					
+ANR	3083710	MultiplicativeExpression	frag_offset / IP_FRAG_UNIT_SIZE		3083675	1		/			
+ANR	3083711	Identifier	frag_offset		3083675	0					
+ANR	3083712	Identifier	IP_FRAG_UNIT_SIZE		3083675	1					
+ANR	3083713	IdentifierDeclStatement	uint16_t new_ip_off ;	19:8:474:493	3083675	3	True				
+ANR	3083714	IdentifierDecl	new_ip_off		3083675	0					
+ANR	3083715	IdentifierDeclType	uint16_t		3083675	0					
+ANR	3083716	Identifier	new_ip_off		3083675	1					
+ANR	3083717	ExpressionStatement	assert ( frag_offset % IP_FRAG_UNIT_SIZE == 0 )	23:8:506:550	3083675	4	True				
+ANR	3083718	CallExpression	assert ( frag_offset % IP_FRAG_UNIT_SIZE == 0 )		3083675	0					
+ANR	3083719	Callee	assert		3083675	0					
+ANR	3083720	Identifier	assert		3083675	0					
+ANR	3083721	ArgumentList	frag_offset % IP_FRAG_UNIT_SIZE == 0		3083675	1					
+ANR	3083722	Argument	frag_offset % IP_FRAG_UNIT_SIZE == 0		3083675	0					
+ANR	3083723	EqualityExpression	frag_offset % IP_FRAG_UNIT_SIZE == 0		3083675	0		==			
+ANR	3083724	MultiplicativeExpression	frag_offset % IP_FRAG_UNIT_SIZE		3083675	0		%			
+ANR	3083725	Identifier	frag_offset		3083675	0					
+ANR	3083726	Identifier	IP_FRAG_UNIT_SIZE		3083675	1					
+ANR	3083727	PrimaryExpression	0		3083675	1					
+ANR	3083728	ExpressionStatement	assert ( ( frag_off_units & ~IP_OFFMASK ) == 0 )	25:8:561:604	3083675	5	True				
+ANR	3083729	CallExpression	assert ( ( frag_off_units & ~IP_OFFMASK ) == 0 )		3083675	0					
+ANR	3083730	Callee	assert		3083675	0					
+ANR	3083731	Identifier	assert		3083675	0					
+ANR	3083732	ArgumentList	( frag_off_units & ~IP_OFFMASK ) == 0		3083675	1					
+ANR	3083733	Argument	( frag_off_units & ~IP_OFFMASK ) == 0		3083675	0					
+ANR	3083734	EqualityExpression	( frag_off_units & ~IP_OFFMASK ) == 0		3083675	0		==			
+ANR	3083735	BitAndExpression	frag_off_units & ~IP_OFFMASK		3083675	0		&			
+ANR	3083736	Identifier	frag_off_units		3083675	0					
+ANR	3083737	Identifier	~IP_OFFMASK		3083675	1					
+ANR	3083738	PrimaryExpression	0		3083675	1					
+ANR	3083739	ExpressionStatement	orig_flags = be16_to_cpu ( iphdr -> ip_off ) & ~ ( IP_OFFMASK | IP_MF )	29:8:617:678	3083675	6	True				
+ANR	3083740	AssignmentExpression	orig_flags = be16_to_cpu ( iphdr -> ip_off ) & ~ ( IP_OFFMASK | IP_MF )		3083675	0		=			
+ANR	3083741	Identifier	orig_flags		3083675	0					
+ANR	3083742	BitAndExpression	be16_to_cpu ( iphdr -> ip_off ) & ~ ( IP_OFFMASK | IP_MF )		3083675	1		&			
+ANR	3083743	CallExpression	be16_to_cpu ( iphdr -> ip_off )		3083675	0					
+ANR	3083744	Callee	be16_to_cpu		3083675	0					
+ANR	3083745	Identifier	be16_to_cpu		3083675	0					
+ANR	3083746	ArgumentList	iphdr -> ip_off		3083675	1					
+ANR	3083747	Argument	iphdr -> ip_off		3083675	0					
+ANR	3083748	PtrMemberAccess	iphdr -> ip_off		3083675	0					
+ANR	3083749	Identifier	iphdr		3083675	0					
+ANR	3083750	Identifier	ip_off		3083675	1					
+ANR	3083751	UnaryOperationExpression	~ ( IP_OFFMASK | IP_MF )		3083675	1					
+ANR	3083752	UnaryOperator	~		3083675	0					
+ANR	3083753	InclusiveOrExpression	IP_OFFMASK | IP_MF		3083675	1		|			
+ANR	3083754	Identifier	IP_OFFMASK		3083675	0					
+ANR	3083755	Identifier	IP_MF		3083675	1					
+ANR	3083756	ExpressionStatement	new_ip_off = frag_off_units | orig_flags | ( more_frags ? IP_MF : 0 )	31:8:689:757	3083675	7	True				
+ANR	3083757	AssignmentExpression	new_ip_off = frag_off_units | orig_flags | ( more_frags ? IP_MF : 0 )		3083675	0		=			
+ANR	3083758	Identifier	new_ip_off		3083675	0					
+ANR	3083759	InclusiveOrExpression	frag_off_units | orig_flags | ( more_frags ? IP_MF : 0 )		3083675	1		|			
+ANR	3083760	Identifier	frag_off_units		3083675	0					
+ANR	3083761	InclusiveOrExpression	orig_flags | ( more_frags ? IP_MF : 0 )		3083675	1		|			
+ANR	3083762	Identifier	orig_flags		3083675	0					
+ANR	3083763	ConditionalExpression	more_frags ? IP_MF : 0		3083675	1					
+ANR	3083764	Condition	more_frags		3083675	0					
+ANR	3083765	Identifier	more_frags		3083675	0					
+ANR	3083766	Identifier	IP_MF		3083675	1					
+ANR	3083767	PrimaryExpression	0		3083675	2					
+ANR	3083768	ExpressionStatement	iphdr -> ip_off = cpu_to_be16 ( new_ip_off )	33:8:768:807	3083675	8	True				
+ANR	3083769	AssignmentExpression	iphdr -> ip_off = cpu_to_be16 ( new_ip_off )		3083675	0		=			
+ANR	3083770	PtrMemberAccess	iphdr -> ip_off		3083675	0					
+ANR	3083771	Identifier	iphdr		3083675	0					
+ANR	3083772	Identifier	ip_off		3083675	1					
+ANR	3083773	CallExpression	cpu_to_be16 ( new_ip_off )		3083675	1					
+ANR	3083774	Callee	cpu_to_be16		3083675	0					
+ANR	3083775	Identifier	cpu_to_be16		3083675	0					
+ANR	3083776	ArgumentList	new_ip_off		3083675	1					
+ANR	3083777	Argument	new_ip_off		3083675	0					
+ANR	3083778	Identifier	new_ip_off		3083675	0					
+ANR	3083779	ExpressionStatement	iphdr -> ip_len = cpu_to_be16 ( l3payload_len + l3hdr_len )	35:8:818:872	3083675	9	True				
+ANR	3083780	AssignmentExpression	iphdr -> ip_len = cpu_to_be16 ( l3payload_len + l3hdr_len )		3083675	0		=			
+ANR	3083781	PtrMemberAccess	iphdr -> ip_len		3083675	0					
+ANR	3083782	Identifier	iphdr		3083675	0					
+ANR	3083783	Identifier	ip_len		3083675	1					
+ANR	3083784	CallExpression	cpu_to_be16 ( l3payload_len + l3hdr_len )		3083675	1					
+ANR	3083785	Callee	cpu_to_be16		3083675	0					
+ANR	3083786	Identifier	cpu_to_be16		3083675	0					
+ANR	3083787	ArgumentList	l3payload_len + l3hdr_len		3083675	1					
+ANR	3083788	Argument	l3payload_len + l3hdr_len		3083675	0					
+ANR	3083789	AdditiveExpression	l3payload_len + l3hdr_len		3083675	0		+			
+ANR	3083790	Identifier	l3payload_len		3083675	0					
+ANR	3083791	Identifier	l3hdr_len		3083675	1					
+ANR	3083792	Identifier	eth_setup_ip4_fragmentation		3083675	1					
+ANR	3083793	ParameterList	"const void * l2hdr , size_t l2hdr_len , void * l3hdr , size_t l3hdr_len , size_t l3payload_len , size_t frag_offset , bool more_frags"		3083675	2					
+ANR	3083794	Parameter	const void * l2hdr	1:28:28:44	3083675	0	True				
+ANR	3083795	ParameterType	const void *		3083675	0					
+ANR	3083796	Identifier	l2hdr		3083675	1					
+ANR	3083797	Parameter	size_t l2hdr_len	1:47:47:62	3083675	1	True				
+ANR	3083798	ParameterType	size_t		3083675	0					
+ANR	3083799	Identifier	l2hdr_len		3083675	1					
+ANR	3083800	Parameter	void * l3hdr	3:28:94:104	3083675	2	True				
+ANR	3083801	ParameterType	void *		3083675	0					
+ANR	3083802	Identifier	l3hdr		3083675	1					
+ANR	3083803	Parameter	size_t l3hdr_len	3:41:107:122	3083675	3	True				
+ANR	3083804	ParameterType	size_t		3083675	0					
+ANR	3083805	Identifier	l3hdr_len		3083675	1					
+ANR	3083806	Parameter	size_t l3payload_len	5:28:154:173	3083675	4	True				
+ANR	3083807	ParameterType	size_t		3083675	0					
+ANR	3083808	Identifier	l3payload_len		3083675	1					
+ANR	3083809	Parameter	size_t frag_offset	7:28:205:222	3083675	5	True				
+ANR	3083810	ParameterType	size_t		3083675	0					
+ANR	3083811	Identifier	frag_offset		3083675	1					
+ANR	3083812	Parameter	bool more_frags	7:48:225:239	3083675	6	True				
+ANR	3083813	ParameterType	bool		3083675	0					
+ANR	3083814	Identifier	more_frags		3083675	1					
+ANR	3083815	CFGEntryNode	ENTRY		3083675		True				
+ANR	3083816	CFGExitNode	EXIT		3083675		True				
+ANR	3083817	Symbol	frag_offset		3083675						
+ANR	3083818	Symbol	IP_OFFMASK		3083675						
+ANR	3083819	Symbol	l3hdr		3083675						
+ANR	3083820	Symbol	ETH_P_IP		3083675						
+ANR	3083821	Symbol	* iphdr		3083675						
+ANR	3083822	Symbol	IP_FRAG_UNIT_SIZE		3083675						
+ANR	3083823	Symbol	more_frags		3083675						
+ANR	3083824	Symbol	~IP_OFFMASK		3083675						
+ANR	3083825	Symbol	orig_flags		3083675						
+ANR	3083826	Symbol	iphdr -> ip_off		3083675						
+ANR	3083827	Symbol	be16_to_cpu		3083675						
+ANR	3083828	Symbol	iphdr		3083675						
+ANR	3083829	Symbol	eth_get_l3_proto		3083675						
+ANR	3083830	Symbol	l3payload_len		3083675						
+ANR	3083831	Symbol	new_ip_off		3083675						
+ANR	3083832	Symbol	l2hdr		3083675						
+ANR	3083833	Symbol	IP_MF		3083675						
+ANR	3083834	Symbol	cpu_to_be16		3083675						
+ANR	3083835	Symbol	iphdr -> ip_len		3083675						
+ANR	3083836	Symbol	frag_off_units		3083675						
+ANR	3083837	Symbol	l2hdr_len		3083675						
+ANR	3083838	Symbol	l3hdr_len		3083675						

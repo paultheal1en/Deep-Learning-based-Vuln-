@@ -1,0 +1,204 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5085332	File	/home/p4ultr4n/workplace/ReVeal/raw_code/kvm_arch_fixup_msi_route_1.c								
+ANR	5085333	Function	kvm_arch_fixup_msi_route	1:0:0:902							
+ANR	5085334	FunctionDef	"kvm_arch_fixup_msi_route (struct kvm_irq_routing_entry * route , uint64_t address , uint32_t data , PCIDevice * dev)"		5085333	0					
+ANR	5085335	CompoundStatement		5:0:146:902	5085333	0					
+ANR	5085336	IdentifierDeclStatement	S390PCIBusDevice * pbdev ;	7:4:153:176	5085333	0	True				
+ANR	5085337	IdentifierDecl	* pbdev		5085333	0					
+ANR	5085338	IdentifierDeclType	S390PCIBusDevice *		5085333	0					
+ANR	5085339	Identifier	pbdev		5085333	1					
+ANR	5085340	IdentifierDeclStatement	uint32_t fid = data >> ZPCI_MSI_VEC_BITS ;	9:4:183:223	5085333	1	True				
+ANR	5085341	IdentifierDecl	fid = data >> ZPCI_MSI_VEC_BITS		5085333	0					
+ANR	5085342	IdentifierDeclType	uint32_t		5085333	0					
+ANR	5085343	Identifier	fid		5085333	1					
+ANR	5085344	AssignmentExpression	fid = data >> ZPCI_MSI_VEC_BITS		5085333	2		=			
+ANR	5085345	Identifier	fid		5085333	0					
+ANR	5085346	ShiftExpression	data >> ZPCI_MSI_VEC_BITS		5085333	1		>>			
+ANR	5085347	Identifier	data		5085333	0					
+ANR	5085348	Identifier	ZPCI_MSI_VEC_BITS		5085333	1					
+ANR	5085349	IdentifierDeclStatement	uint32_t vec = data & ZPCI_MSI_VEC_MASK ;	11:4:230:269	5085333	2	True				
+ANR	5085350	IdentifierDecl	vec = data & ZPCI_MSI_VEC_MASK		5085333	0					
+ANR	5085351	IdentifierDeclType	uint32_t		5085333	0					
+ANR	5085352	Identifier	vec		5085333	1					
+ANR	5085353	AssignmentExpression	vec = data & ZPCI_MSI_VEC_MASK		5085333	2		=			
+ANR	5085354	Identifier	vec		5085333	0					
+ANR	5085355	BitAndExpression	data & ZPCI_MSI_VEC_MASK		5085333	1		&			
+ANR	5085356	Identifier	data		5085333	0					
+ANR	5085357	Identifier	ZPCI_MSI_VEC_MASK		5085333	1					
+ANR	5085358	ExpressionStatement	pbdev = s390_pci_find_dev_by_fid ( fid )	15:4:278:315	5085333	3	True				
+ANR	5085359	AssignmentExpression	pbdev = s390_pci_find_dev_by_fid ( fid )		5085333	0		=			
+ANR	5085360	Identifier	pbdev		5085333	0					
+ANR	5085361	CallExpression	s390_pci_find_dev_by_fid ( fid )		5085333	1					
+ANR	5085362	Callee	s390_pci_find_dev_by_fid		5085333	0					
+ANR	5085363	Identifier	s390_pci_find_dev_by_fid		5085333	0					
+ANR	5085364	ArgumentList	fid		5085333	1					
+ANR	5085365	Argument	fid		5085333	0					
+ANR	5085366	Identifier	fid		5085333	0					
+ANR	5085367	IfStatement	if ( ! pbdev )		5085333	4					
+ANR	5085368	Condition	! pbdev	17:8:326:331	5085333	0	True				
+ANR	5085369	UnaryOperationExpression	! pbdev		5085333	0					
+ANR	5085370	UnaryOperator	!		5085333	0					
+ANR	5085371	Identifier	pbdev		5085333	1					
+ANR	5085372	CompoundStatement		13:16:187:187	5085333	1					
+ANR	5085373	ExpressionStatement	"DPRINTF ( ""add_msi_route no dev\\n"" )"	19:8:345:378	5085333	0	True				
+ANR	5085374	CallExpression	"DPRINTF ( ""add_msi_route no dev\\n"" )"		5085333	0					
+ANR	5085375	Callee	DPRINTF		5085333	0					
+ANR	5085376	Identifier	DPRINTF		5085333	0					
+ANR	5085377	ArgumentList	"""add_msi_route no dev\\n"""		5085333	1					
+ANR	5085378	Argument	"""add_msi_route no dev\\n"""		5085333	0					
+ANR	5085379	PrimaryExpression	"""add_msi_route no dev\\n"""		5085333	0					
+ANR	5085380	ReturnStatement	return - ENODEV ;	21:8:389:403	5085333	1	True				
+ANR	5085381	UnaryOperationExpression	- ENODEV		5085333	0					
+ANR	5085382	UnaryOperator	-		5085333	0					
+ANR	5085383	Identifier	ENODEV		5085333	1					
+ANR	5085384	ExpressionStatement	pbdev -> routes . adapter . ind_offset = vec	27:4:419:457	5085333	5	True				
+ANR	5085385	AssignmentExpression	pbdev -> routes . adapter . ind_offset = vec		5085333	0		=			
+ANR	5085386	MemberAccess	pbdev -> routes . adapter . ind_offset		5085333	0					
+ANR	5085387	MemberAccess	pbdev -> routes . adapter		5085333	0					
+ANR	5085388	PtrMemberAccess	pbdev -> routes		5085333	0					
+ANR	5085389	Identifier	pbdev		5085333	0					
+ANR	5085390	Identifier	routes		5085333	1					
+ANR	5085391	Identifier	adapter		5085333	1					
+ANR	5085392	Identifier	ind_offset		5085333	1					
+ANR	5085393	Identifier	vec		5085333	1					
+ANR	5085394	ExpressionStatement	route -> type = KVM_IRQ_ROUTING_S390_ADAPTER	31:4:466:508	5085333	6	True				
+ANR	5085395	AssignmentExpression	route -> type = KVM_IRQ_ROUTING_S390_ADAPTER		5085333	0		=			
+ANR	5085396	PtrMemberAccess	route -> type		5085333	0					
+ANR	5085397	Identifier	route		5085333	0					
+ANR	5085398	Identifier	type		5085333	1					
+ANR	5085399	Identifier	KVM_IRQ_ROUTING_S390_ADAPTER		5085333	1					
+ANR	5085400	ExpressionStatement	route -> flags = 0	33:4:515:531	5085333	7	True				
+ANR	5085401	AssignmentExpression	route -> flags = 0		5085333	0		=			
+ANR	5085402	PtrMemberAccess	route -> flags		5085333	0					
+ANR	5085403	Identifier	route		5085333	0					
+ANR	5085404	Identifier	flags		5085333	1					
+ANR	5085405	PrimaryExpression	0		5085333	1					
+ANR	5085406	ExpressionStatement	route -> u . adapter . summary_addr = pbdev -> routes . adapter . summary_addr	35:4:538:604	5085333	8	True				
+ANR	5085407	AssignmentExpression	route -> u . adapter . summary_addr = pbdev -> routes . adapter . summary_addr		5085333	0		=			
+ANR	5085408	MemberAccess	route -> u . adapter . summary_addr		5085333	0					
+ANR	5085409	MemberAccess	route -> u . adapter		5085333	0					
+ANR	5085410	PtrMemberAccess	route -> u		5085333	0					
+ANR	5085411	Identifier	route		5085333	0					
+ANR	5085412	Identifier	u		5085333	1					
+ANR	5085413	Identifier	adapter		5085333	1					
+ANR	5085414	Identifier	summary_addr		5085333	1					
+ANR	5085415	MemberAccess	pbdev -> routes . adapter . summary_addr		5085333	1					
+ANR	5085416	MemberAccess	pbdev -> routes . adapter		5085333	0					
+ANR	5085417	PtrMemberAccess	pbdev -> routes		5085333	0					
+ANR	5085418	Identifier	pbdev		5085333	0					
+ANR	5085419	Identifier	routes		5085333	1					
+ANR	5085420	Identifier	adapter		5085333	1					
+ANR	5085421	Identifier	summary_addr		5085333	1					
+ANR	5085422	ExpressionStatement	route -> u . adapter . ind_addr = pbdev -> routes . adapter . ind_addr	37:4:611:669	5085333	9	True				
+ANR	5085423	AssignmentExpression	route -> u . adapter . ind_addr = pbdev -> routes . adapter . ind_addr		5085333	0		=			
+ANR	5085424	MemberAccess	route -> u . adapter . ind_addr		5085333	0					
+ANR	5085425	MemberAccess	route -> u . adapter		5085333	0					
+ANR	5085426	PtrMemberAccess	route -> u		5085333	0					
+ANR	5085427	Identifier	route		5085333	0					
+ANR	5085428	Identifier	u		5085333	1					
+ANR	5085429	Identifier	adapter		5085333	1					
+ANR	5085430	Identifier	ind_addr		5085333	1					
+ANR	5085431	MemberAccess	pbdev -> routes . adapter . ind_addr		5085333	1					
+ANR	5085432	MemberAccess	pbdev -> routes . adapter		5085333	0					
+ANR	5085433	PtrMemberAccess	pbdev -> routes		5085333	0					
+ANR	5085434	Identifier	pbdev		5085333	0					
+ANR	5085435	Identifier	routes		5085333	1					
+ANR	5085436	Identifier	adapter		5085333	1					
+ANR	5085437	Identifier	ind_addr		5085333	1					
+ANR	5085438	ExpressionStatement	route -> u . adapter . summary_offset = pbdev -> routes . adapter . summary_offset	39:4:676:746	5085333	10	True				
+ANR	5085439	AssignmentExpression	route -> u . adapter . summary_offset = pbdev -> routes . adapter . summary_offset		5085333	0		=			
+ANR	5085440	MemberAccess	route -> u . adapter . summary_offset		5085333	0					
+ANR	5085441	MemberAccess	route -> u . adapter		5085333	0					
+ANR	5085442	PtrMemberAccess	route -> u		5085333	0					
+ANR	5085443	Identifier	route		5085333	0					
+ANR	5085444	Identifier	u		5085333	1					
+ANR	5085445	Identifier	adapter		5085333	1					
+ANR	5085446	Identifier	summary_offset		5085333	1					
+ANR	5085447	MemberAccess	pbdev -> routes . adapter . summary_offset		5085333	1					
+ANR	5085448	MemberAccess	pbdev -> routes . adapter		5085333	0					
+ANR	5085449	PtrMemberAccess	pbdev -> routes		5085333	0					
+ANR	5085450	Identifier	pbdev		5085333	0					
+ANR	5085451	Identifier	routes		5085333	1					
+ANR	5085452	Identifier	adapter		5085333	1					
+ANR	5085453	Identifier	summary_offset		5085333	1					
+ANR	5085454	ExpressionStatement	route -> u . adapter . ind_offset = pbdev -> routes . adapter . ind_offset	41:4:753:815	5085333	11	True				
+ANR	5085455	AssignmentExpression	route -> u . adapter . ind_offset = pbdev -> routes . adapter . ind_offset		5085333	0		=			
+ANR	5085456	MemberAccess	route -> u . adapter . ind_offset		5085333	0					
+ANR	5085457	MemberAccess	route -> u . adapter		5085333	0					
+ANR	5085458	PtrMemberAccess	route -> u		5085333	0					
+ANR	5085459	Identifier	route		5085333	0					
+ANR	5085460	Identifier	u		5085333	1					
+ANR	5085461	Identifier	adapter		5085333	1					
+ANR	5085462	Identifier	ind_offset		5085333	1					
+ANR	5085463	MemberAccess	pbdev -> routes . adapter . ind_offset		5085333	1					
+ANR	5085464	MemberAccess	pbdev -> routes . adapter		5085333	0					
+ANR	5085465	PtrMemberAccess	pbdev -> routes		5085333	0					
+ANR	5085466	Identifier	pbdev		5085333	0					
+ANR	5085467	Identifier	routes		5085333	1					
+ANR	5085468	Identifier	adapter		5085333	1					
+ANR	5085469	Identifier	ind_offset		5085333	1					
+ANR	5085470	ExpressionStatement	route -> u . adapter . adapter_id = pbdev -> routes . adapter . adapter_id	43:4:822:884	5085333	12	True				
+ANR	5085471	AssignmentExpression	route -> u . adapter . adapter_id = pbdev -> routes . adapter . adapter_id		5085333	0		=			
+ANR	5085472	MemberAccess	route -> u . adapter . adapter_id		5085333	0					
+ANR	5085473	MemberAccess	route -> u . adapter		5085333	0					
+ANR	5085474	PtrMemberAccess	route -> u		5085333	0					
+ANR	5085475	Identifier	route		5085333	0					
+ANR	5085476	Identifier	u		5085333	1					
+ANR	5085477	Identifier	adapter		5085333	1					
+ANR	5085478	Identifier	adapter_id		5085333	1					
+ANR	5085479	MemberAccess	pbdev -> routes . adapter . adapter_id		5085333	1					
+ANR	5085480	MemberAccess	pbdev -> routes . adapter		5085333	0					
+ANR	5085481	PtrMemberAccess	pbdev -> routes		5085333	0					
+ANR	5085482	Identifier	pbdev		5085333	0					
+ANR	5085483	Identifier	routes		5085333	1					
+ANR	5085484	Identifier	adapter		5085333	1					
+ANR	5085485	Identifier	adapter_id		5085333	1					
+ANR	5085486	ReturnStatement	return 0 ;	45:4:891:899	5085333	13	True				
+ANR	5085487	PrimaryExpression	0		5085333	0					
+ANR	5085488	ReturnType	int		5085333	1					
+ANR	5085489	Identifier	kvm_arch_fixup_msi_route		5085333	2					
+ANR	5085490	ParameterList	"struct kvm_irq_routing_entry * route , uint64_t address , uint32_t data , PCIDevice * dev"		5085333	3					
+ANR	5085491	Parameter	struct kvm_irq_routing_entry * route	1:29:29:63	5085333	0	True				
+ANR	5085492	ParameterType	struct kvm_irq_routing_entry *		5085333	0					
+ANR	5085493	Identifier	route		5085333	1					
+ANR	5085494	Parameter	uint64_t address	3:29:96:111	5085333	1	True				
+ANR	5085495	ParameterType	uint64_t		5085333	0					
+ANR	5085496	Identifier	address		5085333	1					
+ANR	5085497	Parameter	uint32_t data	3:47:114:126	5085333	2	True				
+ANR	5085498	ParameterType	uint32_t		5085333	0					
+ANR	5085499	Identifier	data		5085333	1					
+ANR	5085500	Parameter	PCIDevice * dev	3:62:129:142	5085333	3	True				
+ANR	5085501	ParameterType	PCIDevice *		5085333	0					
+ANR	5085502	Identifier	dev		5085333	1					
+ANR	5085503	CFGEntryNode	ENTRY		5085333		True				
+ANR	5085504	CFGExitNode	EXIT		5085333		True				
+ANR	5085505	Symbol	fid		5085333						
+ANR	5085506	Symbol	ENODEV		5085333						
+ANR	5085507	Symbol	KVM_IRQ_ROUTING_S390_ADAPTER		5085333						
+ANR	5085508	Symbol	data		5085333						
+ANR	5085509	Symbol	* route		5085333						
+ANR	5085510	Symbol	pbdev -> routes . adapter . summary_offset		5085333						
+ANR	5085511	Symbol	route -> u . adapter . summary_addr		5085333						
+ANR	5085512	Symbol	s390_pci_find_dev_by_fid		5085333						
+ANR	5085513	Symbol	dev		5085333						
+ANR	5085514	Symbol	* pbdev		5085333						
+ANR	5085515	Symbol	vec		5085333						
+ANR	5085516	Symbol	pbdev -> routes . adapter		5085333						
+ANR	5085517	Symbol	pbdev -> routes . adapter . ind_addr		5085333						
+ANR	5085518	Symbol	route -> u . adapter . ind_addr		5085333						
+ANR	5085519	Symbol	ZPCI_MSI_VEC_MASK		5085333						
+ANR	5085520	Symbol	route -> flags		5085333						
+ANR	5085521	Symbol	route -> type		5085333						
+ANR	5085522	Symbol	address		5085333						
+ANR	5085523	Symbol	pbdev -> routes . adapter . ind_offset		5085333						
+ANR	5085524	Symbol	route -> u . adapter . ind_offset		5085333						
+ANR	5085525	Symbol	pbdev -> routes . adapter . summary_addr		5085333						
+ANR	5085526	Symbol	pbdev -> routes		5085333						
+ANR	5085527	Symbol	route -> u . adapter . summary_offset		5085333						
+ANR	5085528	Symbol	route		5085333						
+ANR	5085529	Symbol	route -> u		5085333						
+ANR	5085530	Symbol	pbdev -> routes . adapter . adapter_id		5085333						
+ANR	5085531	Symbol	ZPCI_MSI_VEC_BITS		5085333						
+ANR	5085532	Symbol	route -> u . adapter		5085333						
+ANR	5085533	Symbol	route -> u . adapter . adapter_id		5085333						
+ANR	5085534	Symbol	pbdev		5085333						

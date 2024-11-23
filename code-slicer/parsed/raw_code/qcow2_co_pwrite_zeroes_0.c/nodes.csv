@@ -1,0 +1,347 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6839854	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_co_pwrite_zeroes_0.c								
+ANR	6839855	Function	qcow2_co_pwrite_zeroes	1:0:0:1931							
+ANR	6839856	FunctionDef	"qcow2_co_pwrite_zeroes (BlockDriverState * bs , int64_t offset , int count , BdrvRequestFlags flags)"		6839855	0					
+ANR	6839857	CompoundStatement		5:0:126:1931	6839855	0					
+ANR	6839858	IdentifierDeclStatement	int ret ;	7:4:133:140	6839855	0	True				
+ANR	6839859	IdentifierDecl	ret		6839855	0					
+ANR	6839860	IdentifierDeclType	int		6839855	0					
+ANR	6839861	Identifier	ret		6839855	1					
+ANR	6839862	IdentifierDeclStatement	BDRVQcow2State * s = bs -> opaque ;	9:4:147:177	6839855	1	True				
+ANR	6839863	IdentifierDecl	* s = bs -> opaque		6839855	0					
+ANR	6839864	IdentifierDeclType	BDRVQcow2State *		6839855	0					
+ANR	6839865	Identifier	s		6839855	1					
+ANR	6839866	AssignmentExpression	* s = bs -> opaque		6839855	2		=			
+ANR	6839867	Identifier	s		6839855	0					
+ANR	6839868	PtrMemberAccess	bs -> opaque		6839855	1					
+ANR	6839869	Identifier	bs		6839855	0					
+ANR	6839870	Identifier	opaque		6839855	1					
+ANR	6839871	IdentifierDeclStatement	uint32_t head = offset % s -> cluster_size ;	13:4:186:226	6839855	2	True				
+ANR	6839872	IdentifierDecl	head = offset % s -> cluster_size		6839855	0					
+ANR	6839873	IdentifierDeclType	uint32_t		6839855	0					
+ANR	6839874	Identifier	head		6839855	1					
+ANR	6839875	AssignmentExpression	head = offset % s -> cluster_size		6839855	2		=			
+ANR	6839876	Identifier	head		6839855	0					
+ANR	6839877	MultiplicativeExpression	offset % s -> cluster_size		6839855	1		%			
+ANR	6839878	Identifier	offset		6839855	0					
+ANR	6839879	PtrMemberAccess	s -> cluster_size		6839855	1					
+ANR	6839880	Identifier	s		6839855	0					
+ANR	6839881	Identifier	cluster_size		6839855	1					
+ANR	6839882	IdentifierDeclStatement	uint32_t tail = ( offset + count ) % s -> cluster_size ;	15:4:233:283	6839855	3	True				
+ANR	6839883	IdentifierDecl	tail = ( offset + count ) % s -> cluster_size		6839855	0					
+ANR	6839884	IdentifierDeclType	uint32_t		6839855	0					
+ANR	6839885	Identifier	tail		6839855	1					
+ANR	6839886	AssignmentExpression	tail = ( offset + count ) % s -> cluster_size		6839855	2		=			
+ANR	6839887	Identifier	tail		6839855	0					
+ANR	6839888	MultiplicativeExpression	( offset + count ) % s -> cluster_size		6839855	1		%			
+ANR	6839889	AdditiveExpression	offset + count		6839855	0		+			
+ANR	6839890	Identifier	offset		6839855	0					
+ANR	6839891	Identifier	count		6839855	1					
+ANR	6839892	PtrMemberAccess	s -> cluster_size		6839855	1					
+ANR	6839893	Identifier	s		6839855	0					
+ANR	6839894	Identifier	cluster_size		6839855	1					
+ANR	6839895	ExpressionStatement	"trace_qcow2_pwrite_zeroes_start_req ( qemu_coroutine_self ( ) , offset , count )"	19:4:292:365	6839855	4	True				
+ANR	6839896	CallExpression	"trace_qcow2_pwrite_zeroes_start_req ( qemu_coroutine_self ( ) , offset , count )"		6839855	0					
+ANR	6839897	Callee	trace_qcow2_pwrite_zeroes_start_req		6839855	0					
+ANR	6839898	Identifier	trace_qcow2_pwrite_zeroes_start_req		6839855	0					
+ANR	6839899	ArgumentList	qemu_coroutine_self ( )		6839855	1					
+ANR	6839900	Argument	qemu_coroutine_self ( )		6839855	0					
+ANR	6839901	CallExpression	qemu_coroutine_self ( )		6839855	0					
+ANR	6839902	Callee	qemu_coroutine_self		6839855	0					
+ANR	6839903	Identifier	qemu_coroutine_self		6839855	0					
+ANR	6839904	ArgumentList			6839855	1					
+ANR	6839905	Argument	offset		6839855	1					
+ANR	6839906	Identifier	offset		6839855	0					
+ANR	6839907	Argument	count		6839855	2					
+ANR	6839908	Identifier	count		6839855	0					
+ANR	6839909	IfStatement	if ( offset + count == bs -> total_sectors * BDRV_SECTOR_SIZE )		6839855	5					
+ANR	6839910	Condition	offset + count == bs -> total_sectors * BDRV_SECTOR_SIZE	21:8:376:429	6839855	0	True				
+ANR	6839911	EqualityExpression	offset + count == bs -> total_sectors * BDRV_SECTOR_SIZE		6839855	0		==			
+ANR	6839912	AdditiveExpression	offset + count		6839855	0		+			
+ANR	6839913	Identifier	offset		6839855	0					
+ANR	6839914	Identifier	count		6839855	1					
+ANR	6839915	MultiplicativeExpression	bs -> total_sectors * BDRV_SECTOR_SIZE		6839855	1		*			
+ANR	6839916	PtrMemberAccess	bs -> total_sectors		6839855	0					
+ANR	6839917	Identifier	bs		6839855	0					
+ANR	6839918	Identifier	total_sectors		6839855	1					
+ANR	6839919	Identifier	BDRV_SECTOR_SIZE		6839855	1					
+ANR	6839920	CompoundStatement		17:64:305:305	6839855	1					
+ANR	6839921	ExpressionStatement	tail = 0	23:8:443:451	6839855	0	True				
+ANR	6839922	AssignmentExpression	tail = 0		6839855	0		=			
+ANR	6839923	Identifier	tail		6839855	0					
+ANR	6839924	PrimaryExpression	0		6839855	1					
+ANR	6839925	IfStatement	if ( head || tail )		6839855	6					
+ANR	6839926	Condition	head || tail	29:8:471:482	6839855	0	True				
+ANR	6839927	OrExpression	head || tail		6839855	0		||			
+ANR	6839928	Identifier	head		6839855	0					
+ANR	6839929	Identifier	tail		6839855	1					
+ANR	6839930	CompoundStatement		31:8:457:472	6839855	1					
+ANR	6839931	IdentifierDeclStatement	int64_t cl_start = ( offset - head ) >> BDRV_SECTOR_BITS ;	31:8:496:550	6839855	0	True				
+ANR	6839932	IdentifierDecl	cl_start = ( offset - head ) >> BDRV_SECTOR_BITS		6839855	0					
+ANR	6839933	IdentifierDeclType	int64_t		6839855	0					
+ANR	6839934	Identifier	cl_start		6839855	1					
+ANR	6839935	AssignmentExpression	cl_start = ( offset - head ) >> BDRV_SECTOR_BITS		6839855	2		=			
+ANR	6839936	Identifier	cl_start		6839855	0					
+ANR	6839937	ShiftExpression	( offset - head ) >> BDRV_SECTOR_BITS		6839855	1		>>			
+ANR	6839938	AdditiveExpression	offset - head		6839855	0		-			
+ANR	6839939	Identifier	offset		6839855	0					
+ANR	6839940	Identifier	head		6839855	1					
+ANR	6839941	Identifier	BDRV_SECTOR_BITS		6839855	1					
+ANR	6839942	IdentifierDeclStatement	uint64_t off ;	33:8:561:573	6839855	1	True				
+ANR	6839943	IdentifierDecl	off		6839855	0					
+ANR	6839944	IdentifierDeclType	uint64_t		6839855	0					
+ANR	6839945	Identifier	off		6839855	1					
+ANR	6839946	IdentifierDeclStatement	unsigned int nr ;	35:8:584:599	6839855	2	True				
+ANR	6839947	IdentifierDecl	nr		6839855	0					
+ANR	6839948	IdentifierDeclType	unsigned int		6839855	0					
+ANR	6839949	Identifier	nr		6839855	1					
+ANR	6839950	ExpressionStatement	assert ( head + count <= s -> cluster_size )	39:8:612:651	6839855	3	True				
+ANR	6839951	CallExpression	assert ( head + count <= s -> cluster_size )		6839855	0					
+ANR	6839952	Callee	assert		6839855	0					
+ANR	6839953	Identifier	assert		6839855	0					
+ANR	6839954	ArgumentList	head + count <= s -> cluster_size		6839855	1					
+ANR	6839955	Argument	head + count <= s -> cluster_size		6839855	0					
+ANR	6839956	RelationalExpression	head + count <= s -> cluster_size		6839855	0		<=			
+ANR	6839957	AdditiveExpression	head + count		6839855	0		+			
+ANR	6839958	Identifier	head		6839855	0					
+ANR	6839959	Identifier	count		6839855	1					
+ANR	6839960	PtrMemberAccess	s -> cluster_size		6839855	1					
+ANR	6839961	Identifier	s		6839855	0					
+ANR	6839962	Identifier	cluster_size		6839855	1					
+ANR	6839963	IfStatement	"if ( ! ( is_zero_sectors ( bs , cl_start , DIV_ROUND_UP ( head , BDRV_SECTOR_SIZE ) ) && is_zero_sectors ( bs , ( offset + count ) >> BDRV_SECTOR_BITS , DIV_ROUND_UP ( - tail & ( s -> cluster_size - 1 ) , BDRV_SECTOR_SIZE ) ) ) )"		6839855	4					
+ANR	6839964	Condition	"! ( is_zero_sectors ( bs , cl_start , DIV_ROUND_UP ( head , BDRV_SECTOR_SIZE ) ) && is_zero_sectors ( bs , ( offset + count ) >> BDRV_SECTOR_BITS , DIV_ROUND_UP ( - tail & ( s -> cluster_size - 1 ) , BDRV_SECTOR_SIZE ) ) )"	45:12:740:1054	6839855	0	True				
+ANR	6839965	UnaryOperationExpression	"! ( is_zero_sectors ( bs , cl_start , DIV_ROUND_UP ( head , BDRV_SECTOR_SIZE ) ) && is_zero_sectors ( bs , ( offset + count ) >> BDRV_SECTOR_BITS , DIV_ROUND_UP ( - tail & ( s -> cluster_size - 1 ) , BDRV_SECTOR_SIZE ) ) )"		6839855	0					
+ANR	6839966	UnaryOperator	!		6839855	0					
+ANR	6839967	AndExpression	"is_zero_sectors ( bs , cl_start , DIV_ROUND_UP ( head , BDRV_SECTOR_SIZE ) ) && is_zero_sectors ( bs , ( offset + count ) >> BDRV_SECTOR_BITS , DIV_ROUND_UP ( - tail & ( s -> cluster_size - 1 ) , BDRV_SECTOR_SIZE ) )"		6839855	1		&&			
+ANR	6839968	CallExpression	"is_zero_sectors ( bs , cl_start , DIV_ROUND_UP ( head , BDRV_SECTOR_SIZE ) )"		6839855	0					
+ANR	6839969	Callee	is_zero_sectors		6839855	0					
+ANR	6839970	Identifier	is_zero_sectors		6839855	0					
+ANR	6839971	ArgumentList	bs		6839855	1					
+ANR	6839972	Argument	bs		6839855	0					
+ANR	6839973	Identifier	bs		6839855	0					
+ANR	6839974	Argument	cl_start		6839855	1					
+ANR	6839975	Identifier	cl_start		6839855	0					
+ANR	6839976	Argument	"DIV_ROUND_UP ( head , BDRV_SECTOR_SIZE )"		6839855	2					
+ANR	6839977	CallExpression	"DIV_ROUND_UP ( head , BDRV_SECTOR_SIZE )"		6839855	0					
+ANR	6839978	Callee	DIV_ROUND_UP		6839855	0					
+ANR	6839979	Identifier	DIV_ROUND_UP		6839855	0					
+ANR	6839980	ArgumentList	head		6839855	1					
+ANR	6839981	Argument	head		6839855	0					
+ANR	6839982	Identifier	head		6839855	0					
+ANR	6839983	Argument	BDRV_SECTOR_SIZE		6839855	1					
+ANR	6839984	Identifier	BDRV_SECTOR_SIZE		6839855	0					
+ANR	6839985	CallExpression	"is_zero_sectors ( bs , ( offset + count ) >> BDRV_SECTOR_BITS , DIV_ROUND_UP ( - tail & ( s -> cluster_size - 1 ) , BDRV_SECTOR_SIZE ) )"		6839855	1					
+ANR	6839986	Callee	is_zero_sectors		6839855	0					
+ANR	6839987	Identifier	is_zero_sectors		6839855	0					
+ANR	6839988	ArgumentList	bs		6839855	1					
+ANR	6839989	Argument	bs		6839855	0					
+ANR	6839990	Identifier	bs		6839855	0					
+ANR	6839991	Argument	( offset + count ) >> BDRV_SECTOR_BITS		6839855	1					
+ANR	6839992	ShiftExpression	( offset + count ) >> BDRV_SECTOR_BITS		6839855	0		>>			
+ANR	6839993	AdditiveExpression	offset + count		6839855	0		+			
+ANR	6839994	Identifier	offset		6839855	0					
+ANR	6839995	Identifier	count		6839855	1					
+ANR	6839996	Identifier	BDRV_SECTOR_BITS		6839855	1					
+ANR	6839997	Argument	"DIV_ROUND_UP ( - tail & ( s -> cluster_size - 1 ) , BDRV_SECTOR_SIZE )"		6839855	2					
+ANR	6839998	CallExpression	"DIV_ROUND_UP ( - tail & ( s -> cluster_size - 1 ) , BDRV_SECTOR_SIZE )"		6839855	0					
+ANR	6839999	Callee	DIV_ROUND_UP		6839855	0					
+ANR	6840000	Identifier	DIV_ROUND_UP		6839855	0					
+ANR	6840001	ArgumentList	- tail & ( s -> cluster_size - 1 )		6839855	1					
+ANR	6840002	Argument	- tail & ( s -> cluster_size - 1 )		6839855	0					
+ANR	6840003	BitAndExpression	- tail & ( s -> cluster_size - 1 )		6839855	0		&			
+ANR	6840004	UnaryOperationExpression	- tail		6839855	0					
+ANR	6840005	UnaryOperator	-		6839855	0					
+ANR	6840006	Identifier	tail		6839855	1					
+ANR	6840007	AdditiveExpression	s -> cluster_size - 1		6839855	1		-			
+ANR	6840008	PtrMemberAccess	s -> cluster_size		6839855	0					
+ANR	6840009	Identifier	s		6839855	0					
+ANR	6840010	Identifier	cluster_size		6839855	1					
+ANR	6840011	PrimaryExpression	1		6839855	1					
+ANR	6840012	Argument	BDRV_SECTOR_SIZE		6839855	1					
+ANR	6840013	Identifier	BDRV_SECTOR_SIZE		6839855	0					
+ANR	6840014	CompoundStatement		49:64:930:930	6839855	1					
+ANR	6840015	ReturnStatement	return - ENOTSUP ;	55:12:1072:1087	6839855	0	True				
+ANR	6840016	UnaryOperationExpression	- ENOTSUP		6839855	0					
+ANR	6840017	UnaryOperator	-		6839855	0					
+ANR	6840018	Identifier	ENOTSUP		6839855	1					
+ANR	6840019	ExpressionStatement	qemu_co_mutex_lock ( & s -> lock )	61:8:1111:1139	6839855	5	True				
+ANR	6840020	CallExpression	qemu_co_mutex_lock ( & s -> lock )		6839855	0					
+ANR	6840021	Callee	qemu_co_mutex_lock		6839855	0					
+ANR	6840022	Identifier	qemu_co_mutex_lock		6839855	0					
+ANR	6840023	ArgumentList	& s -> lock		6839855	1					
+ANR	6840024	Argument	& s -> lock		6839855	0					
+ANR	6840025	UnaryOperationExpression	& s -> lock		6839855	0					
+ANR	6840026	UnaryOperator	&		6839855	0					
+ANR	6840027	PtrMemberAccess	s -> lock		6839855	1					
+ANR	6840028	Identifier	s		6839855	0					
+ANR	6840029	Identifier	lock		6839855	1					
+ANR	6840030	ExpressionStatement	offset = cl_start << BDRV_SECTOR_BITS	65:8:1208:1245	6839855	6	True				
+ANR	6840031	AssignmentExpression	offset = cl_start << BDRV_SECTOR_BITS		6839855	0		=			
+ANR	6840032	Identifier	offset		6839855	0					
+ANR	6840033	ShiftExpression	cl_start << BDRV_SECTOR_BITS		6839855	1		<<			
+ANR	6840034	Identifier	cl_start		6839855	0					
+ANR	6840035	Identifier	BDRV_SECTOR_BITS		6839855	1					
+ANR	6840036	ExpressionStatement	count = s -> cluster_size	67:8:1256:1279	6839855	7	True				
+ANR	6840037	AssignmentExpression	count = s -> cluster_size		6839855	0		=			
+ANR	6840038	Identifier	count		6839855	0					
+ANR	6840039	PtrMemberAccess	s -> cluster_size		6839855	1					
+ANR	6840040	Identifier	s		6839855	0					
+ANR	6840041	Identifier	cluster_size		6839855	1					
+ANR	6840042	ExpressionStatement	nr = s -> cluster_size	69:8:1290:1310	6839855	8	True				
+ANR	6840043	AssignmentExpression	nr = s -> cluster_size		6839855	0		=			
+ANR	6840044	Identifier	nr		6839855	0					
+ANR	6840045	PtrMemberAccess	s -> cluster_size		6839855	1					
+ANR	6840046	Identifier	s		6839855	0					
+ANR	6840047	Identifier	cluster_size		6839855	1					
+ANR	6840048	ExpressionStatement	"ret = qcow2_get_cluster_offset ( bs , offset , & nr , & off )"	71:8:1321:1374	6839855	9	True				
+ANR	6840049	AssignmentExpression	"ret = qcow2_get_cluster_offset ( bs , offset , & nr , & off )"		6839855	0		=			
+ANR	6840050	Identifier	ret		6839855	0					
+ANR	6840051	CallExpression	"qcow2_get_cluster_offset ( bs , offset , & nr , & off )"		6839855	1					
+ANR	6840052	Callee	qcow2_get_cluster_offset		6839855	0					
+ANR	6840053	Identifier	qcow2_get_cluster_offset		6839855	0					
+ANR	6840054	ArgumentList	bs		6839855	1					
+ANR	6840055	Argument	bs		6839855	0					
+ANR	6840056	Identifier	bs		6839855	0					
+ANR	6840057	Argument	offset		6839855	1					
+ANR	6840058	Identifier	offset		6839855	0					
+ANR	6840059	Argument	& nr		6839855	2					
+ANR	6840060	UnaryOperationExpression	& nr		6839855	0					
+ANR	6840061	UnaryOperator	&		6839855	0					
+ANR	6840062	Identifier	nr		6839855	1					
+ANR	6840063	Argument	& off		6839855	3					
+ANR	6840064	UnaryOperationExpression	& off		6839855	0					
+ANR	6840065	UnaryOperator	&		6839855	0					
+ANR	6840066	Identifier	off		6839855	1					
+ANR	6840067	IfStatement	if ( ret != QCOW2_CLUSTER_UNALLOCATED && ret != QCOW2_CLUSTER_ZERO_PLAIN && ret != QCOW2_CLUSTER_ZERO_ALLOC )		6839855	10					
+ANR	6840068	Condition	ret != QCOW2_CLUSTER_UNALLOCATED && ret != QCOW2_CLUSTER_ZERO_PLAIN && ret != QCOW2_CLUSTER_ZERO_ALLOC	73:12:1389:1516	6839855	0	True				
+ANR	6840069	AndExpression	ret != QCOW2_CLUSTER_UNALLOCATED && ret != QCOW2_CLUSTER_ZERO_PLAIN && ret != QCOW2_CLUSTER_ZERO_ALLOC		6839855	0		&&			
+ANR	6840070	EqualityExpression	ret != QCOW2_CLUSTER_UNALLOCATED		6839855	0		!=			
+ANR	6840071	Identifier	ret		6839855	0					
+ANR	6840072	Identifier	QCOW2_CLUSTER_UNALLOCATED		6839855	1					
+ANR	6840073	AndExpression	ret != QCOW2_CLUSTER_ZERO_PLAIN && ret != QCOW2_CLUSTER_ZERO_ALLOC		6839855	1		&&			
+ANR	6840074	EqualityExpression	ret != QCOW2_CLUSTER_ZERO_PLAIN		6839855	0		!=			
+ANR	6840075	Identifier	ret		6839855	0					
+ANR	6840076	Identifier	QCOW2_CLUSTER_ZERO_PLAIN		6839855	1					
+ANR	6840077	EqualityExpression	ret != QCOW2_CLUSTER_ZERO_ALLOC		6839855	1		!=			
+ANR	6840078	Identifier	ret		6839855	0					
+ANR	6840079	Identifier	QCOW2_CLUSTER_ZERO_ALLOC		6839855	1					
+ANR	6840080	CompoundStatement		73:45:1392:1392	6839855	1					
+ANR	6840081	ExpressionStatement	qemu_co_mutex_unlock ( & s -> lock )	79:12:1534:1564	6839855	0	True				
+ANR	6840082	CallExpression	qemu_co_mutex_unlock ( & s -> lock )		6839855	0					
+ANR	6840083	Callee	qemu_co_mutex_unlock		6839855	0					
+ANR	6840084	Identifier	qemu_co_mutex_unlock		6839855	0					
+ANR	6840085	ArgumentList	& s -> lock		6839855	1					
+ANR	6840086	Argument	& s -> lock		6839855	0					
+ANR	6840087	UnaryOperationExpression	& s -> lock		6839855	0					
+ANR	6840088	UnaryOperator	&		6839855	0					
+ANR	6840089	PtrMemberAccess	s -> lock		6839855	1					
+ANR	6840090	Identifier	s		6839855	0					
+ANR	6840091	Identifier	lock		6839855	1					
+ANR	6840092	ReturnStatement	return - ENOTSUP ;	81:12:1579:1594	6839855	1	True				
+ANR	6840093	UnaryOperationExpression	- ENOTSUP		6839855	0					
+ANR	6840094	UnaryOperator	-		6839855	0					
+ANR	6840095	Identifier	ENOTSUP		6839855	1					
+ANR	6840096	ElseStatement	else		6839855	0					
+ANR	6840097	CompoundStatement		81:11:1492:1492	6839855	0					
+ANR	6840098	ExpressionStatement	qemu_co_mutex_lock ( & s -> lock )	87:8:1630:1658	6839855	0	True				
+ANR	6840099	CallExpression	qemu_co_mutex_lock ( & s -> lock )		6839855	0					
+ANR	6840100	Callee	qemu_co_mutex_lock		6839855	0					
+ANR	6840101	Identifier	qemu_co_mutex_lock		6839855	0					
+ANR	6840102	ArgumentList	& s -> lock		6839855	1					
+ANR	6840103	Argument	& s -> lock		6839855	0					
+ANR	6840104	UnaryOperationExpression	& s -> lock		6839855	0					
+ANR	6840105	UnaryOperator	&		6839855	0					
+ANR	6840106	PtrMemberAccess	s -> lock		6839855	1					
+ANR	6840107	Identifier	s		6839855	0					
+ANR	6840108	Identifier	lock		6839855	1					
+ANR	6840109	ExpressionStatement	"trace_qcow2_pwrite_zeroes ( qemu_coroutine_self ( ) , offset , count )"	93:4:1674:1737	6839855	7	True				
+ANR	6840110	CallExpression	"trace_qcow2_pwrite_zeroes ( qemu_coroutine_self ( ) , offset , count )"		6839855	0					
+ANR	6840111	Callee	trace_qcow2_pwrite_zeroes		6839855	0					
+ANR	6840112	Identifier	trace_qcow2_pwrite_zeroes		6839855	0					
+ANR	6840113	ArgumentList	qemu_coroutine_self ( )		6839855	1					
+ANR	6840114	Argument	qemu_coroutine_self ( )		6839855	0					
+ANR	6840115	CallExpression	qemu_coroutine_self ( )		6839855	0					
+ANR	6840116	Callee	qemu_coroutine_self		6839855	0					
+ANR	6840117	Identifier	qemu_coroutine_self		6839855	0					
+ANR	6840118	ArgumentList			6839855	1					
+ANR	6840119	Argument	offset		6839855	1					
+ANR	6840120	Identifier	offset		6839855	0					
+ANR	6840121	Argument	count		6839855	2					
+ANR	6840122	Identifier	count		6839855	0					
+ANR	6840123	ExpressionStatement	"ret = qcow2_zero_clusters ( bs , offset , count >> BDRV_SECTOR_BITS , flags )"	99:4:1801:1872	6839855	8	True				
+ANR	6840124	AssignmentExpression	"ret = qcow2_zero_clusters ( bs , offset , count >> BDRV_SECTOR_BITS , flags )"		6839855	0		=			
+ANR	6840125	Identifier	ret		6839855	0					
+ANR	6840126	CallExpression	"qcow2_zero_clusters ( bs , offset , count >> BDRV_SECTOR_BITS , flags )"		6839855	1					
+ANR	6840127	Callee	qcow2_zero_clusters		6839855	0					
+ANR	6840128	Identifier	qcow2_zero_clusters		6839855	0					
+ANR	6840129	ArgumentList	bs		6839855	1					
+ANR	6840130	Argument	bs		6839855	0					
+ANR	6840131	Identifier	bs		6839855	0					
+ANR	6840132	Argument	offset		6839855	1					
+ANR	6840133	Identifier	offset		6839855	0					
+ANR	6840134	Argument	count >> BDRV_SECTOR_BITS		6839855	2					
+ANR	6840135	ShiftExpression	count >> BDRV_SECTOR_BITS		6839855	0		>>			
+ANR	6840136	Identifier	count		6839855	0					
+ANR	6840137	Identifier	BDRV_SECTOR_BITS		6839855	1					
+ANR	6840138	Argument	flags		6839855	3					
+ANR	6840139	Identifier	flags		6839855	0					
+ANR	6840140	ExpressionStatement	qemu_co_mutex_unlock ( & s -> lock )	101:4:1879:1909	6839855	9	True				
+ANR	6840141	CallExpression	qemu_co_mutex_unlock ( & s -> lock )		6839855	0					
+ANR	6840142	Callee	qemu_co_mutex_unlock		6839855	0					
+ANR	6840143	Identifier	qemu_co_mutex_unlock		6839855	0					
+ANR	6840144	ArgumentList	& s -> lock		6839855	1					
+ANR	6840145	Argument	& s -> lock		6839855	0					
+ANR	6840146	UnaryOperationExpression	& s -> lock		6839855	0					
+ANR	6840147	UnaryOperator	&		6839855	0					
+ANR	6840148	PtrMemberAccess	s -> lock		6839855	1					
+ANR	6840149	Identifier	s		6839855	0					
+ANR	6840150	Identifier	lock		6839855	1					
+ANR	6840151	ReturnStatement	return ret ;	105:4:1918:1928	6839855	10	True				
+ANR	6840152	Identifier	ret		6839855	0					
+ANR	6840153	ReturnType	static coroutine_fn int		6839855	1					
+ANR	6840154	Identifier	qcow2_co_pwrite_zeroes		6839855	2					
+ANR	6840155	ParameterList	"BlockDriverState * bs , int64_t offset , int count , BdrvRequestFlags flags"		6839855	3					
+ANR	6840156	Parameter	BlockDriverState * bs	1:47:47:66	6839855	0	True				
+ANR	6840157	ParameterType	BlockDriverState *		6839855	0					
+ANR	6840158	Identifier	bs		6839855	1					
+ANR	6840159	Parameter	int64_t offset	3:4:74:87	6839855	1	True				
+ANR	6840160	ParameterType	int64_t		6839855	0					
+ANR	6840161	Identifier	offset		6839855	1					
+ANR	6840162	Parameter	int count	3:20:90:98	6839855	2	True				
+ANR	6840163	ParameterType	int		6839855	0					
+ANR	6840164	Identifier	count		6839855	1					
+ANR	6840165	Parameter	BdrvRequestFlags flags	3:31:101:122	6839855	3	True				
+ANR	6840166	ParameterType	BdrvRequestFlags		6839855	0					
+ANR	6840167	Identifier	flags		6839855	1					
+ANR	6840168	CFGEntryNode	ENTRY		6839855		True				
+ANR	6840169	CFGExitNode	EXIT		6839855		True				
+ANR	6840170	Symbol	nr		6839855						
+ANR	6840171	Symbol	DIV_ROUND_UP		6839855						
+ANR	6840172	Symbol	flags		6839855						
+ANR	6840173	Symbol	ENOTSUP		6839855						
+ANR	6840174	Symbol	QCOW2_CLUSTER_ZERO_PLAIN		6839855						
+ANR	6840175	Symbol	s -> cluster_size		6839855						
+ANR	6840176	Symbol	head		6839855						
+ANR	6840177	Symbol	cl_start		6839855						
+ANR	6840178	Symbol	bs		6839855						
+ANR	6840179	Symbol	& off		6839855						
+ANR	6840180	Symbol	* bs		6839855						
+ANR	6840181	Symbol	qemu_coroutine_self		6839855						
+ANR	6840182	Symbol	qcow2_get_cluster_offset		6839855						
+ANR	6840183	Symbol	ret		6839855						
+ANR	6840184	Symbol	QCOW2_CLUSTER_UNALLOCATED		6839855						
+ANR	6840185	Symbol	offset		6839855						
+ANR	6840186	Symbol	bs -> opaque		6839855						
+ANR	6840187	Symbol	bs -> total_sectors		6839855						
+ANR	6840188	Symbol	tail		6839855						
+ANR	6840189	Symbol	count		6839855						
+ANR	6840190	Symbol	BDRV_SECTOR_BITS		6839855						
+ANR	6840191	Symbol	is_zero_sectors		6839855						
+ANR	6840192	Symbol	qcow2_zero_clusters		6839855						
+ANR	6840193	Symbol	& s -> lock		6839855						
+ANR	6840194	Symbol	off		6839855						
+ANR	6840195	Symbol	& nr		6839855						
+ANR	6840196	Symbol	s		6839855						
+ANR	6840197	Symbol	QCOW2_CLUSTER_ZERO_ALLOC		6839855						
+ANR	6840198	Symbol	BDRV_SECTOR_SIZE		6839855						
+ANR	6840199	Symbol	* s		6839855						

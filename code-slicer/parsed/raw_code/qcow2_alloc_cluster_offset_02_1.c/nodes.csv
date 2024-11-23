@@ -1,0 +1,378 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6825131	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_alloc_cluster_offset_02_1.c								
+ANR	6825132	Function	qcow2_alloc_cluster_offset	1:0:0:3452							
+ANR	6825133	FunctionDef	"qcow2_alloc_cluster_offset (BlockDriverState * bs , uint64_t offset , int * num , uint64_t * host_offset , QCowL2Meta * * m)"		6825132	0					
+ANR	6825134	CompoundStatement		5:0:125:3452	6825132	0					
+ANR	6825135	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	7:4:132:161	6825132	0	True				
+ANR	6825136	IdentifierDecl	* s = bs -> opaque		6825132	0					
+ANR	6825137	IdentifierDeclType	BDRVQcowState *		6825132	0					
+ANR	6825138	Identifier	s		6825132	1					
+ANR	6825139	AssignmentExpression	* s = bs -> opaque		6825132	2		=			
+ANR	6825140	Identifier	s		6825132	0					
+ANR	6825141	PtrMemberAccess	bs -> opaque		6825132	1					
+ANR	6825142	Identifier	bs		6825132	0					
+ANR	6825143	Identifier	opaque		6825132	1					
+ANR	6825144	IdentifierDeclStatement	"uint64_t start , remaining ;"	9:4:168:193	6825132	1	True				
+ANR	6825145	IdentifierDecl	start		6825132	0					
+ANR	6825146	IdentifierDeclType	uint64_t		6825132	0					
+ANR	6825147	Identifier	start		6825132	1					
+ANR	6825148	IdentifierDecl	remaining		6825132	1					
+ANR	6825149	IdentifierDeclType	uint64_t		6825132	0					
+ANR	6825150	Identifier	remaining		6825132	1					
+ANR	6825151	IdentifierDeclStatement	uint64_t cluster_offset ;	11:4:200:223	6825132	2	True				
+ANR	6825152	IdentifierDecl	cluster_offset		6825132	0					
+ANR	6825153	IdentifierDeclType	uint64_t		6825132	0					
+ANR	6825154	Identifier	cluster_offset		6825132	1					
+ANR	6825155	IdentifierDeclStatement	uint64_t cur_bytes ;	13:4:230:248	6825132	3	True				
+ANR	6825156	IdentifierDecl	cur_bytes		6825132	0					
+ANR	6825157	IdentifierDeclType	uint64_t		6825132	0					
+ANR	6825158	Identifier	cur_bytes		6825132	1					
+ANR	6825159	IdentifierDeclStatement	int ret ;	15:4:255:262	6825132	4	True				
+ANR	6825160	IdentifierDecl	ret		6825132	0					
+ANR	6825161	IdentifierDeclType	int		6825132	0					
+ANR	6825162	Identifier	ret		6825132	1					
+ANR	6825163	ExpressionStatement	"trace_qcow2_alloc_clusters_offset ( qemu_coroutine_self ( ) , offset , * num )"	19:4:271:341	6825132	5	True				
+ANR	6825164	CallExpression	"trace_qcow2_alloc_clusters_offset ( qemu_coroutine_self ( ) , offset , * num )"		6825132	0					
+ANR	6825165	Callee	trace_qcow2_alloc_clusters_offset		6825132	0					
+ANR	6825166	Identifier	trace_qcow2_alloc_clusters_offset		6825132	0					
+ANR	6825167	ArgumentList	qemu_coroutine_self ( )		6825132	1					
+ANR	6825168	Argument	qemu_coroutine_self ( )		6825132	0					
+ANR	6825169	CallExpression	qemu_coroutine_self ( )		6825132	0					
+ANR	6825170	Callee	qemu_coroutine_self		6825132	0					
+ANR	6825171	Identifier	qemu_coroutine_self		6825132	0					
+ANR	6825172	ArgumentList			6825132	1					
+ANR	6825173	Argument	offset		6825132	1					
+ANR	6825174	Identifier	offset		6825132	0					
+ANR	6825175	Argument	* num		6825132	2					
+ANR	6825176	UnaryOperationExpression	* num		6825132	0					
+ANR	6825177	UnaryOperator	*		6825132	0					
+ANR	6825178	Identifier	num		6825132	1					
+ANR	6825179	ExpressionStatement	assert ( ( offset & ~BDRV_SECTOR_MASK ) == 0 )	23:4:350:391	6825132	6	True				
+ANR	6825180	CallExpression	assert ( ( offset & ~BDRV_SECTOR_MASK ) == 0 )		6825132	0					
+ANR	6825181	Callee	assert		6825132	0					
+ANR	6825182	Identifier	assert		6825132	0					
+ANR	6825183	ArgumentList	( offset & ~BDRV_SECTOR_MASK ) == 0		6825132	1					
+ANR	6825184	Argument	( offset & ~BDRV_SECTOR_MASK ) == 0		6825132	0					
+ANR	6825185	EqualityExpression	( offset & ~BDRV_SECTOR_MASK ) == 0		6825132	0		==			
+ANR	6825186	BitAndExpression	offset & ~BDRV_SECTOR_MASK		6825132	0		&			
+ANR	6825187	Identifier	offset		6825132	0					
+ANR	6825188	Identifier	~BDRV_SECTOR_MASK		6825132	1					
+ANR	6825189	PrimaryExpression	0		6825132	1					
+ANR	6825190	Label	again :	27:0:396:401	6825132	7	True				
+ANR	6825191	Identifier	again		6825132	0					
+ANR	6825192	ExpressionStatement	start = offset	29:4:408:422	6825132	8	True				
+ANR	6825193	AssignmentExpression	start = offset		6825132	0		=			
+ANR	6825194	Identifier	start		6825132	0					
+ANR	6825195	Identifier	offset		6825132	1					
+ANR	6825196	ExpressionStatement	remaining = * num << BDRV_SECTOR_BITS	31:4:429:465	6825132	9	True				
+ANR	6825197	AssignmentExpression	remaining = * num << BDRV_SECTOR_BITS		6825132	0		=			
+ANR	6825198	Identifier	remaining		6825132	0					
+ANR	6825199	ShiftExpression	* num << BDRV_SECTOR_BITS		6825132	1		<<			
+ANR	6825200	UnaryOperationExpression	* num		6825132	0					
+ANR	6825201	UnaryOperator	*		6825132	0					
+ANR	6825202	Identifier	num		6825132	1					
+ANR	6825203	Identifier	BDRV_SECTOR_BITS		6825132	1					
+ANR	6825204	ExpressionStatement	cluster_offset = 0	33:4:472:490	6825132	10	True				
+ANR	6825205	AssignmentExpression	cluster_offset = 0		6825132	0		=			
+ANR	6825206	Identifier	cluster_offset		6825132	0					
+ANR	6825207	PrimaryExpression	0		6825132	1					
+ANR	6825208	ExpressionStatement	* host_offset = 0	35:4:497:513	6825132	11	True				
+ANR	6825209	AssignmentExpression	* host_offset = 0		6825132	0		=			
+ANR	6825210	UnaryOperationExpression	* host_offset		6825132	0					
+ANR	6825211	UnaryOperator	*		6825132	0					
+ANR	6825212	Identifier	host_offset		6825132	1					
+ANR	6825213	PrimaryExpression	0		6825132	1					
+ANR	6825214	ExpressionStatement	cur_bytes = 0	37:4:520:533	6825132	12	True				
+ANR	6825215	AssignmentExpression	cur_bytes = 0		6825132	0		=			
+ANR	6825216	Identifier	cur_bytes		6825132	0					
+ANR	6825217	PrimaryExpression	0		6825132	1					
+ANR	6825218	ExpressionStatement	* m = NULL	39:4:540:549	6825132	13	True				
+ANR	6825219	AssignmentExpression	* m = NULL		6825132	0		=			
+ANR	6825220	UnaryOperationExpression	* m		6825132	0					
+ANR	6825221	UnaryOperator	*		6825132	0					
+ANR	6825222	Identifier	m		6825132	1					
+ANR	6825223	Identifier	NULL		6825132	1					
+ANR	6825224	WhileStatement	while ( true )		6825132	14					
+ANR	6825225	Condition	true	43:11:565:568	6825132	0	True				
+ANR	6825226	Identifier	true		6825132	0					
+ANR	6825227	CompoundStatement		39:17:445:445	6825132	1					
+ANR	6825228	IfStatement	if ( ! * host_offset )		6825132	0					
+ANR	6825229	Condition	! * host_offset	47:12:588:600	6825132	0	True				
+ANR	6825230	UnaryOperationExpression	! * host_offset		6825132	0					
+ANR	6825231	UnaryOperator	!		6825132	0					
+ANR	6825232	UnaryOperationExpression	* host_offset		6825132	1					
+ANR	6825233	UnaryOperator	*		6825132	0					
+ANR	6825234	Identifier	host_offset		6825132	1					
+ANR	6825235	CompoundStatement		43:27:477:477	6825132	1					
+ANR	6825236	ExpressionStatement	"* host_offset = start_of_cluster ( s , cluster_offset )"	49:12:618:668	6825132	0	True				
+ANR	6825237	AssignmentExpression	"* host_offset = start_of_cluster ( s , cluster_offset )"		6825132	0		=			
+ANR	6825238	UnaryOperationExpression	* host_offset		6825132	0					
+ANR	6825239	UnaryOperator	*		6825132	0					
+ANR	6825240	Identifier	host_offset		6825132	1					
+ANR	6825241	CallExpression	"start_of_cluster ( s , cluster_offset )"		6825132	1					
+ANR	6825242	Callee	start_of_cluster		6825132	0					
+ANR	6825243	Identifier	start_of_cluster		6825132	0					
+ANR	6825244	ArgumentList	s		6825132	1					
+ANR	6825245	Argument	s		6825132	0					
+ANR	6825246	Identifier	s		6825132	0					
+ANR	6825247	Argument	cluster_offset		6825132	1					
+ANR	6825248	Identifier	cluster_offset		6825132	0					
+ANR	6825249	ExpressionStatement	assert ( remaining >= cur_bytes )	55:8:692:722	6825132	1	True				
+ANR	6825250	CallExpression	assert ( remaining >= cur_bytes )		6825132	0					
+ANR	6825251	Callee	assert		6825132	0					
+ANR	6825252	Identifier	assert		6825132	0					
+ANR	6825253	ArgumentList	remaining >= cur_bytes		6825132	1					
+ANR	6825254	Argument	remaining >= cur_bytes		6825132	0					
+ANR	6825255	RelationalExpression	remaining >= cur_bytes		6825132	0		>=			
+ANR	6825256	Identifier	remaining		6825132	0					
+ANR	6825257	Identifier	cur_bytes		6825132	1					
+ANR	6825258	ExpressionStatement	start += cur_bytes	59:8:735:763	6825132	2	True				
+ANR	6825259	AssignmentExpression	start += cur_bytes		6825132	0		+=			
+ANR	6825260	Identifier	start		6825132	0					
+ANR	6825261	Identifier	cur_bytes		6825132	1					
+ANR	6825262	ExpressionStatement	remaining -= cur_bytes	61:8:774:802	6825132	3	True				
+ANR	6825263	AssignmentExpression	remaining -= cur_bytes		6825132	0		-=			
+ANR	6825264	Identifier	remaining		6825132	0					
+ANR	6825265	Identifier	cur_bytes		6825132	1					
+ANR	6825266	ExpressionStatement	cluster_offset += cur_bytes	63:8:813:841	6825132	4	True				
+ANR	6825267	AssignmentExpression	cluster_offset += cur_bytes		6825132	0		+=			
+ANR	6825268	Identifier	cluster_offset		6825132	0					
+ANR	6825269	Identifier	cur_bytes		6825132	1					
+ANR	6825270	IfStatement	if ( remaining == 0 )		6825132	5					
+ANR	6825271	Condition	remaining == 0	67:12:858:871	6825132	0	True				
+ANR	6825272	EqualityExpression	remaining == 0		6825132	0		==			
+ANR	6825273	Identifier	remaining		6825132	0					
+ANR	6825274	PrimaryExpression	0		6825132	1					
+ANR	6825275	CompoundStatement		63:28:748:748	6825132	1					
+ANR	6825276	BreakStatement	break ;	69:12:889:894	6825132	0	True				
+ANR	6825277	ExpressionStatement	cur_bytes = remaining	75:8:918:939	6825132	6	True				
+ANR	6825278	AssignmentExpression	cur_bytes = remaining		6825132	0		=			
+ANR	6825279	Identifier	cur_bytes		6825132	0					
+ANR	6825280	Identifier	remaining		6825132	1					
+ANR	6825281	ExpressionStatement	"ret = handle_dependencies ( bs , start , & cur_bytes , m )"	115:8:1872:1923	6825132	7	True				
+ANR	6825282	AssignmentExpression	"ret = handle_dependencies ( bs , start , & cur_bytes , m )"		6825132	0		=			
+ANR	6825283	Identifier	ret		6825132	0					
+ANR	6825284	CallExpression	"handle_dependencies ( bs , start , & cur_bytes , m )"		6825132	1					
+ANR	6825285	Callee	handle_dependencies		6825132	0					
+ANR	6825286	Identifier	handle_dependencies		6825132	0					
+ANR	6825287	ArgumentList	bs		6825132	1					
+ANR	6825288	Argument	bs		6825132	0					
+ANR	6825289	Identifier	bs		6825132	0					
+ANR	6825290	Argument	start		6825132	1					
+ANR	6825291	Identifier	start		6825132	0					
+ANR	6825292	Argument	& cur_bytes		6825132	2					
+ANR	6825293	UnaryOperationExpression	& cur_bytes		6825132	0					
+ANR	6825294	UnaryOperator	&		6825132	0					
+ANR	6825295	Identifier	cur_bytes		6825132	1					
+ANR	6825296	Argument	m		6825132	3					
+ANR	6825297	Identifier	m		6825132	0					
+ANR	6825298	IfStatement	if ( ret == - EAGAIN )		6825132	8					
+ANR	6825299	Condition	ret == - EAGAIN	117:12:1938:1951	6825132	0	True				
+ANR	6825300	EqualityExpression	ret == - EAGAIN		6825132	0		==			
+ANR	6825301	Identifier	ret		6825132	0					
+ANR	6825302	UnaryOperationExpression	- EAGAIN		6825132	1					
+ANR	6825303	UnaryOperator	-		6825132	0					
+ANR	6825304	Identifier	EAGAIN		6825132	1					
+ANR	6825305	CompoundStatement		113:28:1828:1828	6825132	1					
+ANR	6825306	ExpressionStatement	assert ( * m == NULL )	125:12:2177:2195	6825132	0	True				
+ANR	6825307	CallExpression	assert ( * m == NULL )		6825132	0					
+ANR	6825308	Callee	assert		6825132	0					
+ANR	6825309	Identifier	assert		6825132	0					
+ANR	6825310	ArgumentList	* m == NULL		6825132	1					
+ANR	6825311	Argument	* m == NULL		6825132	0					
+ANR	6825312	EqualityExpression	* m == NULL		6825132	0		==			
+ANR	6825313	UnaryOperationExpression	* m		6825132	0					
+ANR	6825314	UnaryOperator	*		6825132	0					
+ANR	6825315	Identifier	m		6825132	1					
+ANR	6825316	Identifier	NULL		6825132	1					
+ANR	6825317	GotoStatement	goto again ;	127:12:2210:2220	6825132	1	True				
+ANR	6825318	Identifier	again		6825132	0					
+ANR	6825319	ElseStatement	else		6825132	0					
+ANR	6825320	IfStatement	if ( ret < 0 )		6825132	0					
+ANR	6825321	Condition	ret < 0	129:19:2242:2248	6825132	0	True				
+ANR	6825322	RelationalExpression	ret < 0		6825132	0		<			
+ANR	6825323	Identifier	ret		6825132	0					
+ANR	6825324	PrimaryExpression	0		6825132	1					
+ANR	6825325	CompoundStatement		125:28:2125:2125	6825132	1					
+ANR	6825326	ReturnStatement	return ret ;	131:12:2266:2276	6825132	0	True				
+ANR	6825327	Identifier	ret		6825132	0					
+ANR	6825328	ElseStatement	else		6825132	0					
+ANR	6825329	IfStatement	if ( cur_bytes == 0 )		6825132	0					
+ANR	6825330	Condition	cur_bytes == 0	133:19:2298:2311	6825132	0	True				
+ANR	6825331	EqualityExpression	cur_bytes == 0		6825132	0		==			
+ANR	6825332	Identifier	cur_bytes		6825132	0					
+ANR	6825333	PrimaryExpression	0		6825132	1					
+ANR	6825334	CompoundStatement		129:35:2188:2188	6825132	1					
+ANR	6825335	BreakStatement	break ;	135:12:2329:2334	6825132	0	True				
+ANR	6825336	ElseStatement	else		6825132	0					
+ANR	6825337	CompoundStatement		133:15:2226:2226	6825132	0					
+ANR	6825338	ExpressionStatement	"ret = handle_copied ( bs , start , & cluster_offset , & cur_bytes , m )"	155:8:2669:2731	6825132	9	True				
+ANR	6825339	AssignmentExpression	"ret = handle_copied ( bs , start , & cluster_offset , & cur_bytes , m )"		6825132	0		=			
+ANR	6825340	Identifier	ret		6825132	0					
+ANR	6825341	CallExpression	"handle_copied ( bs , start , & cluster_offset , & cur_bytes , m )"		6825132	1					
+ANR	6825342	Callee	handle_copied		6825132	0					
+ANR	6825343	Identifier	handle_copied		6825132	0					
+ANR	6825344	ArgumentList	bs		6825132	1					
+ANR	6825345	Argument	bs		6825132	0					
+ANR	6825346	Identifier	bs		6825132	0					
+ANR	6825347	Argument	start		6825132	1					
+ANR	6825348	Identifier	start		6825132	0					
+ANR	6825349	Argument	& cluster_offset		6825132	2					
+ANR	6825350	UnaryOperationExpression	& cluster_offset		6825132	0					
+ANR	6825351	UnaryOperator	&		6825132	0					
+ANR	6825352	Identifier	cluster_offset		6825132	1					
+ANR	6825353	Argument	& cur_bytes		6825132	3					
+ANR	6825354	UnaryOperationExpression	& cur_bytes		6825132	0					
+ANR	6825355	UnaryOperator	&		6825132	0					
+ANR	6825356	Identifier	cur_bytes		6825132	1					
+ANR	6825357	Argument	m		6825132	4					
+ANR	6825358	Identifier	m		6825132	0					
+ANR	6825359	IfStatement	if ( ret < 0 )		6825132	10					
+ANR	6825360	Condition	ret < 0	157:12:2746:2752	6825132	0	True				
+ANR	6825361	RelationalExpression	ret < 0		6825132	0		<			
+ANR	6825362	Identifier	ret		6825132	0					
+ANR	6825363	PrimaryExpression	0		6825132	1					
+ANR	6825364	CompoundStatement		153:21:2629:2629	6825132	1					
+ANR	6825365	ReturnStatement	return ret ;	159:12:2770:2780	6825132	0	True				
+ANR	6825366	Identifier	ret		6825132	0					
+ANR	6825367	ElseStatement	else		6825132	0					
+ANR	6825368	IfStatement	if ( ret )		6825132	0					
+ANR	6825369	Condition	ret	161:19:2802:2804	6825132	0	True				
+ANR	6825370	Identifier	ret		6825132	0					
+ANR	6825371	CompoundStatement		157:24:2681:2681	6825132	1					
+ANR	6825372	ContinueStatement	continue ;	163:12:2822:2830	6825132	0	True				
+ANR	6825373	ElseStatement	else		6825132	0					
+ANR	6825374	IfStatement	if ( cur_bytes == 0 )		6825132	0					
+ANR	6825375	Condition	cur_bytes == 0	165:19:2852:2865	6825132	0	True				
+ANR	6825376	EqualityExpression	cur_bytes == 0		6825132	0		==			
+ANR	6825377	Identifier	cur_bytes		6825132	0					
+ANR	6825378	PrimaryExpression	0		6825132	1					
+ANR	6825379	CompoundStatement		161:35:2742:2742	6825132	1					
+ANR	6825380	BreakStatement	break ;	167:12:2883:2888	6825132	0	True				
+ANR	6825381	ExpressionStatement	"ret = handle_alloc ( bs , start , & cluster_offset , & cur_bytes , m )"	181:8:3078:3139	6825132	11	True				
+ANR	6825382	AssignmentExpression	"ret = handle_alloc ( bs , start , & cluster_offset , & cur_bytes , m )"		6825132	0		=			
+ANR	6825383	Identifier	ret		6825132	0					
+ANR	6825384	CallExpression	"handle_alloc ( bs , start , & cluster_offset , & cur_bytes , m )"		6825132	1					
+ANR	6825385	Callee	handle_alloc		6825132	0					
+ANR	6825386	Identifier	handle_alloc		6825132	0					
+ANR	6825387	ArgumentList	bs		6825132	1					
+ANR	6825388	Argument	bs		6825132	0					
+ANR	6825389	Identifier	bs		6825132	0					
+ANR	6825390	Argument	start		6825132	1					
+ANR	6825391	Identifier	start		6825132	0					
+ANR	6825392	Argument	& cluster_offset		6825132	2					
+ANR	6825393	UnaryOperationExpression	& cluster_offset		6825132	0					
+ANR	6825394	UnaryOperator	&		6825132	0					
+ANR	6825395	Identifier	cluster_offset		6825132	1					
+ANR	6825396	Argument	& cur_bytes		6825132	3					
+ANR	6825397	UnaryOperationExpression	& cur_bytes		6825132	0					
+ANR	6825398	UnaryOperator	&		6825132	0					
+ANR	6825399	Identifier	cur_bytes		6825132	1					
+ANR	6825400	Argument	m		6825132	4					
+ANR	6825401	Identifier	m		6825132	0					
+ANR	6825402	IfStatement	if ( ret < 0 )		6825132	12					
+ANR	6825403	Condition	ret < 0	183:12:3154:3160	6825132	0	True				
+ANR	6825404	RelationalExpression	ret < 0		6825132	0		<			
+ANR	6825405	Identifier	ret		6825132	0					
+ANR	6825406	PrimaryExpression	0		6825132	1					
+ANR	6825407	CompoundStatement		179:21:3037:3037	6825132	1					
+ANR	6825408	ReturnStatement	return ret ;	185:12:3178:3188	6825132	0	True				
+ANR	6825409	Identifier	ret		6825132	0					
+ANR	6825410	ElseStatement	else		6825132	0					
+ANR	6825411	IfStatement	if ( ret )		6825132	0					
+ANR	6825412	Condition	ret	187:19:3210:3212	6825132	0	True				
+ANR	6825413	Identifier	ret		6825132	0					
+ANR	6825414	CompoundStatement		183:24:3089:3089	6825132	1					
+ANR	6825415	ContinueStatement	continue ;	189:12:3230:3238	6825132	0	True				
+ANR	6825416	ElseStatement	else		6825132	0					
+ANR	6825417	CompoundStatement		187:15:3130:3130	6825132	0					
+ANR	6825418	ExpressionStatement	assert ( cur_bytes == 0 )	193:12:3271:3293	6825132	0	True				
+ANR	6825419	CallExpression	assert ( cur_bytes == 0 )		6825132	0					
+ANR	6825420	Callee	assert		6825132	0					
+ANR	6825421	Identifier	assert		6825132	0					
+ANR	6825422	ArgumentList	cur_bytes == 0		6825132	1					
+ANR	6825423	Argument	cur_bytes == 0		6825132	0					
+ANR	6825424	EqualityExpression	cur_bytes == 0		6825132	0		==			
+ANR	6825425	Identifier	cur_bytes		6825132	0					
+ANR	6825426	PrimaryExpression	0		6825132	1					
+ANR	6825427	BreakStatement	break ;	195:12:3308:3313	6825132	1	True				
+ANR	6825428	ExpressionStatement	* num -= remaining >> BDRV_SECTOR_BITS	203:4:3340:3377	6825132	15	True				
+ANR	6825429	AssignmentExpression	* num -= remaining >> BDRV_SECTOR_BITS		6825132	0		-=			
+ANR	6825430	UnaryOperationExpression	* num		6825132	0					
+ANR	6825431	UnaryOperator	*		6825132	0					
+ANR	6825432	Identifier	num		6825132	1					
+ANR	6825433	ShiftExpression	remaining >> BDRV_SECTOR_BITS		6825132	1		>>			
+ANR	6825434	Identifier	remaining		6825132	0					
+ANR	6825435	Identifier	BDRV_SECTOR_BITS		6825132	1					
+ANR	6825436	ExpressionStatement	assert ( * num > 0 )	205:4:3384:3400	6825132	16	True				
+ANR	6825437	CallExpression	assert ( * num > 0 )		6825132	0					
+ANR	6825438	Callee	assert		6825132	0					
+ANR	6825439	Identifier	assert		6825132	0					
+ANR	6825440	ArgumentList	* num > 0		6825132	1					
+ANR	6825441	Argument	* num > 0		6825132	0					
+ANR	6825442	RelationalExpression	* num > 0		6825132	0		>			
+ANR	6825443	UnaryOperationExpression	* num		6825132	0					
+ANR	6825444	UnaryOperator	*		6825132	0					
+ANR	6825445	Identifier	num		6825132	1					
+ANR	6825446	PrimaryExpression	0		6825132	1					
+ANR	6825447	ExpressionStatement	assert ( * host_offset != 0 )	207:4:3407:3432	6825132	17	True				
+ANR	6825448	CallExpression	assert ( * host_offset != 0 )		6825132	0					
+ANR	6825449	Callee	assert		6825132	0					
+ANR	6825450	Identifier	assert		6825132	0					
+ANR	6825451	ArgumentList	* host_offset != 0		6825132	1					
+ANR	6825452	Argument	* host_offset != 0		6825132	0					
+ANR	6825453	EqualityExpression	* host_offset != 0		6825132	0		!=			
+ANR	6825454	UnaryOperationExpression	* host_offset		6825132	0					
+ANR	6825455	UnaryOperator	*		6825132	0					
+ANR	6825456	Identifier	host_offset		6825132	1					
+ANR	6825457	PrimaryExpression	0		6825132	1					
+ANR	6825458	ReturnStatement	return 0 ;	211:4:3441:3449	6825132	18	True				
+ANR	6825459	PrimaryExpression	0		6825132	0					
+ANR	6825460	ReturnType	int		6825132	1					
+ANR	6825461	Identifier	qcow2_alloc_cluster_offset		6825132	2					
+ANR	6825462	ParameterList	"BlockDriverState * bs , uint64_t offset , int * num , uint64_t * host_offset , QCowL2Meta * * m"		6825132	3					
+ANR	6825463	Parameter	BlockDriverState * bs	1:31:31:50	6825132	0	True				
+ANR	6825464	ParameterType	BlockDriverState *		6825132	0					
+ANR	6825465	Identifier	bs		6825132	1					
+ANR	6825466	Parameter	uint64_t offset	1:53:53:67	6825132	1	True				
+ANR	6825467	ParameterType	uint64_t		6825132	0					
+ANR	6825468	Identifier	offset		6825132	1					
+ANR	6825469	Parameter	int * num	3:4:75:82	6825132	2	True				
+ANR	6825470	ParameterType	int *		6825132	0					
+ANR	6825471	Identifier	num		6825132	1					
+ANR	6825472	Parameter	uint64_t * host_offset	3:14:85:105	6825132	3	True				
+ANR	6825473	ParameterType	uint64_t *		6825132	0					
+ANR	6825474	Identifier	host_offset		6825132	1					
+ANR	6825475	Parameter	QCowL2Meta * * m	3:37:108:121	6825132	4	True				
+ANR	6825476	ParameterType	QCowL2Meta * *		6825132	0					
+ANR	6825477	Identifier	m		6825132	1					
+ANR	6825478	CFGEntryNode	ENTRY		6825132		True				
+ANR	6825479	CFGExitNode	EXIT		6825132		True				
+ANR	6825480	Symbol	num		6825132						
+ANR	6825481	Symbol	handle_alloc		6825132						
+ANR	6825482	Symbol	cur_bytes		6825132						
+ANR	6825483	Symbol	handle_dependencies		6825132						
+ANR	6825484	Symbol	bs		6825132						
+ANR	6825485	Symbol	* bs		6825132						
+ANR	6825486	Symbol	cluster_offset		6825132						
+ANR	6825487	Symbol	start_of_cluster		6825132						
+ANR	6825488	Symbol	qemu_coroutine_self		6825132						
+ANR	6825489	Symbol	handle_copied		6825132						
+ANR	6825490	Symbol	ret		6825132						
+ANR	6825491	Symbol	NULL		6825132						
+ANR	6825492	Symbol	offset		6825132						
+ANR	6825493	Symbol	host_offset		6825132						
+ANR	6825494	Symbol	bs -> opaque		6825132						
+ANR	6825495	Symbol	~BDRV_SECTOR_MASK		6825132						
+ANR	6825496	Symbol	start		6825132						
+ANR	6825497	Symbol	EAGAIN		6825132						
+ANR	6825498	Symbol	BDRV_SECTOR_BITS		6825132						
+ANR	6825499	Symbol	m		6825132						
+ANR	6825500	Symbol	remaining		6825132						
+ANR	6825501	Symbol	* num		6825132						
+ANR	6825502	Symbol	s		6825132						
+ANR	6825503	Symbol	& cur_bytes		6825132						
+ANR	6825504	Symbol	& cluster_offset		6825132						
+ANR	6825505	Symbol	* host_offset		6825132						
+ANR	6825506	Symbol	* m		6825132						
+ANR	6825507	Symbol	true		6825132						

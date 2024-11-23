@@ -1,0 +1,263 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9179728	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vmdk_read_01_1.c								
+ANR	9179729	Function	vmdk_read	1:0:0:1570							
+ANR	9179730	FunctionDef	"vmdk_read (BlockDriverState * bs , int64_t sector_num , uint8_t * buf , int nb_sectors)"		9179729	0					
+ANR	9179731	CompoundStatement		5:0:115:1570	9179729	0					
+ANR	9179732	IdentifierDeclStatement	BDRVVmdkState * s = bs -> opaque ;	7:4:122:151	9179729	0	True				
+ANR	9179733	IdentifierDecl	* s = bs -> opaque		9179729	0					
+ANR	9179734	IdentifierDeclType	BDRVVmdkState *		9179729	0					
+ANR	9179735	Identifier	s		9179729	1					
+ANR	9179736	AssignmentExpression	* s = bs -> opaque		9179729	2		=			
+ANR	9179737	Identifier	s		9179729	0					
+ANR	9179738	PtrMemberAccess	bs -> opaque		9179729	1					
+ANR	9179739	Identifier	bs		9179729	0					
+ANR	9179740	Identifier	opaque		9179729	1					
+ANR	9179741	IdentifierDeclStatement	int ret ;	9:4:158:165	9179729	1	True				
+ANR	9179742	IdentifierDecl	ret		9179729	0					
+ANR	9179743	IdentifierDeclType	int		9179729	0					
+ANR	9179744	Identifier	ret		9179729	1					
+ANR	9179745	IdentifierDeclStatement	"uint64_t n , index_in_cluster ;"	11:4:172:200	9179729	2	True				
+ANR	9179746	IdentifierDecl	n		9179729	0					
+ANR	9179747	IdentifierDeclType	uint64_t		9179729	0					
+ANR	9179748	Identifier	n		9179729	1					
+ANR	9179749	IdentifierDecl	index_in_cluster		9179729	1					
+ANR	9179750	IdentifierDeclType	uint64_t		9179729	0					
+ANR	9179751	Identifier	index_in_cluster		9179729	1					
+ANR	9179752	IdentifierDeclStatement	VmdkExtent * extent = NULL ;	13:4:207:232	9179729	3	True				
+ANR	9179753	IdentifierDecl	* extent = NULL		9179729	0					
+ANR	9179754	IdentifierDeclType	VmdkExtent *		9179729	0					
+ANR	9179755	Identifier	extent		9179729	1					
+ANR	9179756	AssignmentExpression	* extent = NULL		9179729	2		=			
+ANR	9179757	Identifier	NULL		9179729	0					
+ANR	9179758	Identifier	NULL		9179729	1					
+ANR	9179759	IdentifierDeclStatement	uint64_t cluster_offset ;	15:4:239:262	9179729	4	True				
+ANR	9179760	IdentifierDecl	cluster_offset		9179729	0					
+ANR	9179761	IdentifierDeclType	uint64_t		9179729	0					
+ANR	9179762	Identifier	cluster_offset		9179729	1					
+ANR	9179763	WhileStatement	while ( nb_sectors > 0 )		9179729	5					
+ANR	9179764	Condition	nb_sectors > 0	19:11:278:291	9179729	0	True				
+ANR	9179765	RelationalExpression	nb_sectors > 0		9179729	0		>			
+ANR	9179766	Identifier	nb_sectors		9179729	0					
+ANR	9179767	PrimaryExpression	0		9179729	1					
+ANR	9179768	CompoundStatement		15:27:178:178	9179729	1					
+ANR	9179769	ExpressionStatement	"extent = find_extent ( s , sector_num , extent )"	21:8:305:348	9179729	0	True				
+ANR	9179770	AssignmentExpression	"extent = find_extent ( s , sector_num , extent )"		9179729	0		=			
+ANR	9179771	Identifier	extent		9179729	0					
+ANR	9179772	CallExpression	"find_extent ( s , sector_num , extent )"		9179729	1					
+ANR	9179773	Callee	find_extent		9179729	0					
+ANR	9179774	Identifier	find_extent		9179729	0					
+ANR	9179775	ArgumentList	s		9179729	1					
+ANR	9179776	Argument	s		9179729	0					
+ANR	9179777	Identifier	s		9179729	0					
+ANR	9179778	Argument	sector_num		9179729	1					
+ANR	9179779	Identifier	sector_num		9179729	0					
+ANR	9179780	Argument	extent		9179729	2					
+ANR	9179781	Identifier	extent		9179729	0					
+ANR	9179782	IfStatement	if ( ! extent )		9179729	1					
+ANR	9179783	Condition	! extent	23:12:363:369	9179729	0	True				
+ANR	9179784	UnaryOperationExpression	! extent		9179729	0					
+ANR	9179785	UnaryOperator	!		9179729	0					
+ANR	9179786	Identifier	extent		9179729	1					
+ANR	9179787	CompoundStatement		19:21:256:256	9179729	1					
+ANR	9179788	ReturnStatement	return - EIO ;	25:12:387:398	9179729	0	True				
+ANR	9179789	UnaryOperationExpression	- EIO		9179729	0					
+ANR	9179790	UnaryOperator	-		9179729	0					
+ANR	9179791	Identifier	EIO		9179729	1					
+ANR	9179792	ExpressionStatement	"ret = get_cluster_offset ( bs , extent , NULL , sector_num << 9 , 0 , & cluster_offset )"	29:8:420:558	9179729	2	True				
+ANR	9179793	AssignmentExpression	"ret = get_cluster_offset ( bs , extent , NULL , sector_num << 9 , 0 , & cluster_offset )"		9179729	0		=			
+ANR	9179794	Identifier	ret		9179729	0					
+ANR	9179795	CallExpression	"get_cluster_offset ( bs , extent , NULL , sector_num << 9 , 0 , & cluster_offset )"		9179729	1					
+ANR	9179796	Callee	get_cluster_offset		9179729	0					
+ANR	9179797	Identifier	get_cluster_offset		9179729	0					
+ANR	9179798	ArgumentList	bs		9179729	1					
+ANR	9179799	Argument	bs		9179729	0					
+ANR	9179800	Identifier	bs		9179729	0					
+ANR	9179801	Argument	extent		9179729	1					
+ANR	9179802	Identifier	extent		9179729	0					
+ANR	9179803	Argument	NULL		9179729	2					
+ANR	9179804	Identifier	NULL		9179729	0					
+ANR	9179805	Argument	sector_num << 9		9179729	3					
+ANR	9179806	ShiftExpression	sector_num << 9		9179729	0		<<			
+ANR	9179807	Identifier	sector_num		9179729	0					
+ANR	9179808	PrimaryExpression	9		9179729	1					
+ANR	9179809	Argument	0		9179729	4					
+ANR	9179810	PrimaryExpression	0		9179729	0					
+ANR	9179811	Argument	& cluster_offset		9179729	5					
+ANR	9179812	UnaryOperationExpression	& cluster_offset		9179729	0					
+ANR	9179813	UnaryOperator	&		9179729	0					
+ANR	9179814	Identifier	cluster_offset		9179729	1					
+ANR	9179815	ExpressionStatement	index_in_cluster = sector_num % extent -> cluster_sectors	35:8:569:624	9179729	3	True				
+ANR	9179816	AssignmentExpression	index_in_cluster = sector_num % extent -> cluster_sectors		9179729	0		=			
+ANR	9179817	Identifier	index_in_cluster		9179729	0					
+ANR	9179818	MultiplicativeExpression	sector_num % extent -> cluster_sectors		9179729	1		%			
+ANR	9179819	Identifier	sector_num		9179729	0					
+ANR	9179820	PtrMemberAccess	extent -> cluster_sectors		9179729	1					
+ANR	9179821	Identifier	extent		9179729	0					
+ANR	9179822	Identifier	cluster_sectors		9179729	1					
+ANR	9179823	ExpressionStatement	n = extent -> cluster_sectors - index_in_cluster	37:8:635:681	9179729	4	True				
+ANR	9179824	AssignmentExpression	n = extent -> cluster_sectors - index_in_cluster		9179729	0		=			
+ANR	9179825	Identifier	n		9179729	0					
+ANR	9179826	AdditiveExpression	extent -> cluster_sectors - index_in_cluster		9179729	1		-			
+ANR	9179827	PtrMemberAccess	extent -> cluster_sectors		9179729	0					
+ANR	9179828	Identifier	extent		9179729	0					
+ANR	9179829	Identifier	cluster_sectors		9179729	1					
+ANR	9179830	Identifier	index_in_cluster		9179729	1					
+ANR	9179831	IfStatement	if ( n > nb_sectors )		9179729	5					
+ANR	9179832	Condition	n > nb_sectors	39:12:696:709	9179729	0	True				
+ANR	9179833	RelationalExpression	n > nb_sectors		9179729	0		>			
+ANR	9179834	Identifier	n		9179729	0					
+ANR	9179835	Identifier	nb_sectors		9179729	1					
+ANR	9179836	CompoundStatement		35:28:596:596	9179729	1					
+ANR	9179837	ExpressionStatement	n = nb_sectors	41:12:727:741	9179729	0	True				
+ANR	9179838	AssignmentExpression	n = nb_sectors		9179729	0		=			
+ANR	9179839	Identifier	n		9179729	0					
+ANR	9179840	Identifier	nb_sectors		9179729	1					
+ANR	9179841	IfStatement	if ( ret )		9179729	6					
+ANR	9179842	Condition	ret	45:12:767:769	9179729	0	True				
+ANR	9179843	Identifier	ret		9179729	0					
+ANR	9179844	CompoundStatement		41:17:656:656	9179729	1					
+ANR	9179845	IfStatement	if ( bs -> backing_hd )		9179729	0					
+ANR	9179846	Condition	bs -> backing_hd	49:16:868:881	9179729	0	True				
+ANR	9179847	PtrMemberAccess	bs -> backing_hd		9179729	0					
+ANR	9179848	Identifier	bs		9179729	0					
+ANR	9179849	Identifier	backing_hd		9179729	1					
+ANR	9179850	CompoundStatement		45:32:768:768	9179729	1					
+ANR	9179851	IfStatement	if ( ! vmdk_is_cid_valid ( bs ) )		9179729	0					
+ANR	9179852	Condition	! vmdk_is_cid_valid ( bs )	51:20:907:928	9179729	0	True				
+ANR	9179853	UnaryOperationExpression	! vmdk_is_cid_valid ( bs )		9179729	0					
+ANR	9179854	UnaryOperator	!		9179729	0					
+ANR	9179855	CallExpression	vmdk_is_cid_valid ( bs )		9179729	1					
+ANR	9179856	Callee	vmdk_is_cid_valid		9179729	0					
+ANR	9179857	Identifier	vmdk_is_cid_valid		9179729	0					
+ANR	9179858	ArgumentList	bs		9179729	1					
+ANR	9179859	Argument	bs		9179729	0					
+ANR	9179860	Identifier	bs		9179729	0					
+ANR	9179861	CompoundStatement		47:44:815:815	9179729	1					
+ANR	9179862	ReturnStatement	return - EINVAL ;	53:20:954:968	9179729	0	True				
+ANR	9179863	UnaryOperationExpression	- EINVAL		9179729	0					
+ANR	9179864	UnaryOperator	-		9179729	0					
+ANR	9179865	Identifier	EINVAL		9179729	1					
+ANR	9179866	ExpressionStatement	"ret = bdrv_read ( bs -> backing_hd , sector_num , buf , n )"	57:16:1006:1057	9179729	1	True				
+ANR	9179867	AssignmentExpression	"ret = bdrv_read ( bs -> backing_hd , sector_num , buf , n )"		9179729	0		=			
+ANR	9179868	Identifier	ret		9179729	0					
+ANR	9179869	CallExpression	"bdrv_read ( bs -> backing_hd , sector_num , buf , n )"		9179729	1					
+ANR	9179870	Callee	bdrv_read		9179729	0					
+ANR	9179871	Identifier	bdrv_read		9179729	0					
+ANR	9179872	ArgumentList	bs -> backing_hd		9179729	1					
+ANR	9179873	Argument	bs -> backing_hd		9179729	0					
+ANR	9179874	PtrMemberAccess	bs -> backing_hd		9179729	0					
+ANR	9179875	Identifier	bs		9179729	0					
+ANR	9179876	Identifier	backing_hd		9179729	1					
+ANR	9179877	Argument	sector_num		9179729	1					
+ANR	9179878	Identifier	sector_num		9179729	0					
+ANR	9179879	Argument	buf		9179729	2					
+ANR	9179880	Identifier	buf		9179729	0					
+ANR	9179881	Argument	n		9179729	3					
+ANR	9179882	Identifier	n		9179729	0					
+ANR	9179883	IfStatement	if ( ret < 0 )		9179729	2					
+ANR	9179884	Condition	ret < 0	59:20:1080:1086	9179729	0	True				
+ANR	9179885	RelationalExpression	ret < 0		9179729	0		<			
+ANR	9179886	Identifier	ret		9179729	0					
+ANR	9179887	PrimaryExpression	0		9179729	1					
+ANR	9179888	CompoundStatement		55:29:973:973	9179729	1					
+ANR	9179889	ReturnStatement	return ret ;	61:20:1112:1122	9179729	0	True				
+ANR	9179890	Identifier	ret		9179729	0					
+ANR	9179891	ElseStatement	else		9179729	0					
+ANR	9179892	CompoundStatement		61:19:1047:1047	9179729	0					
+ANR	9179893	ExpressionStatement	"memset ( buf , 0 , 512 * n )"	67:16:1182:1205	9179729	0	True				
+ANR	9179894	CallExpression	"memset ( buf , 0 , 512 * n )"		9179729	0					
+ANR	9179895	Callee	memset		9179729	0					
+ANR	9179896	Identifier	memset		9179729	0					
+ANR	9179897	ArgumentList	buf		9179729	1					
+ANR	9179898	Argument	buf		9179729	0					
+ANR	9179899	Identifier	buf		9179729	0					
+ANR	9179900	Argument	0		9179729	1					
+ANR	9179901	PrimaryExpression	0		9179729	0					
+ANR	9179902	Argument	512 * n		9179729	2					
+ANR	9179903	MultiplicativeExpression	512 * n		9179729	0		*			
+ANR	9179904	PrimaryExpression	512		9179729	0					
+ANR	9179905	Identifier	n		9179729	1					
+ANR	9179906	ElseStatement	else		9179729	0					
+ANR	9179907	CompoundStatement		67:15:1122:1122	9179729	0					
+ANR	9179908	ExpressionStatement	"ret = vmdk_read_extent ( extent , cluster_offset , index_in_cluster * 512 , buf , n )"	73:12:1253:1389	9179729	0	True				
+ANR	9179909	AssignmentExpression	"ret = vmdk_read_extent ( extent , cluster_offset , index_in_cluster * 512 , buf , n )"		9179729	0		=			
+ANR	9179910	Identifier	ret		9179729	0					
+ANR	9179911	CallExpression	"vmdk_read_extent ( extent , cluster_offset , index_in_cluster * 512 , buf , n )"		9179729	1					
+ANR	9179912	Callee	vmdk_read_extent		9179729	0					
+ANR	9179913	Identifier	vmdk_read_extent		9179729	0					
+ANR	9179914	ArgumentList	extent		9179729	1					
+ANR	9179915	Argument	extent		9179729	0					
+ANR	9179916	Identifier	extent		9179729	0					
+ANR	9179917	Argument	cluster_offset		9179729	1					
+ANR	9179918	Identifier	cluster_offset		9179729	0					
+ANR	9179919	Argument	index_in_cluster * 512		9179729	2					
+ANR	9179920	MultiplicativeExpression	index_in_cluster * 512		9179729	0		*			
+ANR	9179921	Identifier	index_in_cluster		9179729	0					
+ANR	9179922	PrimaryExpression	512		9179729	1					
+ANR	9179923	Argument	buf		9179729	3					
+ANR	9179924	Identifier	buf		9179729	0					
+ANR	9179925	Argument	n		9179729	4					
+ANR	9179926	Identifier	n		9179729	0					
+ANR	9179927	IfStatement	if ( ret )		9179729	1					
+ANR	9179928	Condition	ret	79:16:1408:1410	9179729	0	True				
+ANR	9179929	Identifier	ret		9179729	0					
+ANR	9179930	CompoundStatement		75:21:1297:1297	9179729	1					
+ANR	9179931	ReturnStatement	return ret ;	81:16:1432:1442	9179729	0	True				
+ANR	9179932	Identifier	ret		9179729	0					
+ANR	9179933	ExpressionStatement	nb_sectors -= n	87:8:1479:1494	9179729	7	True				
+ANR	9179934	AssignmentExpression	nb_sectors -= n		9179729	0		-=			
+ANR	9179935	Identifier	nb_sectors		9179729	0					
+ANR	9179936	Identifier	n		9179729	1					
+ANR	9179937	ExpressionStatement	sector_num += n	89:8:1505:1520	9179729	8	True				
+ANR	9179938	AssignmentExpression	sector_num += n		9179729	0		+=			
+ANR	9179939	Identifier	sector_num		9179729	0					
+ANR	9179940	Identifier	n		9179729	1					
+ANR	9179941	ExpressionStatement	buf += n * 512	91:8:1531:1545	9179729	9	True				
+ANR	9179942	AssignmentExpression	buf += n * 512		9179729	0		+=			
+ANR	9179943	Identifier	buf		9179729	0					
+ANR	9179944	MultiplicativeExpression	n * 512		9179729	1		*			
+ANR	9179945	Identifier	n		9179729	0					
+ANR	9179946	PrimaryExpression	512		9179729	1					
+ANR	9179947	ReturnStatement	return 0 ;	95:4:1559:1567	9179729	6	True				
+ANR	9179948	PrimaryExpression	0		9179729	0					
+ANR	9179949	ReturnType	static int		9179729	1					
+ANR	9179950	Identifier	vmdk_read		9179729	2					
+ANR	9179951	ParameterList	"BlockDriverState * bs , int64_t sector_num , uint8_t * buf , int nb_sectors"		9179729	3					
+ANR	9179952	Parameter	BlockDriverState * bs	1:21:21:40	9179729	0	True				
+ANR	9179953	ParameterType	BlockDriverState *		9179729	0					
+ANR	9179954	Identifier	bs		9179729	1					
+ANR	9179955	Parameter	int64_t sector_num	1:43:43:60	9179729	1	True				
+ANR	9179956	ParameterType	int64_t		9179729	0					
+ANR	9179957	Identifier	sector_num		9179729	1					
+ANR	9179958	Parameter	uint8_t * buf	3:20:84:95	9179729	2	True				
+ANR	9179959	ParameterType	uint8_t *		9179729	0					
+ANR	9179960	Identifier	buf		9179729	1					
+ANR	9179961	Parameter	int nb_sectors	3:34:98:111	9179729	3	True				
+ANR	9179962	ParameterType	int		9179729	0					
+ANR	9179963	Identifier	nb_sectors		9179729	1					
+ANR	9179964	CFGEntryNode	ENTRY		9179729		True				
+ANR	9179965	CFGExitNode	EXIT		9179729		True				
+ANR	9179966	Symbol	ret		9179729						
+ANR	9179967	Symbol	extent		9179729						
+ANR	9179968	Symbol	nb_sectors		9179729						
+ANR	9179969	Symbol	NULL		9179729						
+ANR	9179970	Symbol	* extent		9179729						
+ANR	9179971	Symbol	bs -> opaque		9179729						
+ANR	9179972	Symbol	find_extent		9179729						
+ANR	9179973	Symbol	index_in_cluster		9179729						
+ANR	9179974	Symbol	get_cluster_offset		9179729						
+ANR	9179975	Symbol	EIO		9179729						
+ANR	9179976	Symbol	bs -> backing_hd		9179729						
+ANR	9179977	Symbol	n		9179729						
+ANR	9179978	Symbol	sector_num		9179729						
+ANR	9179979	Symbol	EINVAL		9179729						
+ANR	9179980	Symbol	bs		9179729						
+ANR	9179981	Symbol	buf		9179729						
+ANR	9179982	Symbol	s		9179729						
+ANR	9179983	Symbol	& cluster_offset		9179729						
+ANR	9179984	Symbol	vmdk_is_cid_valid		9179729						
+ANR	9179985	Symbol	* bs		9179729						
+ANR	9179986	Symbol	cluster_offset		9179729						
+ANR	9179987	Symbol	bdrv_read		9179729						
+ANR	9179988	Symbol	vmdk_read_extent		9179729						
+ANR	9179989	Symbol	extent -> cluster_sectors		9179729						

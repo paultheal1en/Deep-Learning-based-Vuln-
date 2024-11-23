@@ -1,0 +1,388 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5496364	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mirror_start_job_02_0.c								
+ANR	5496365	Function	mirror_start_job	1:0:0:2079							
+ANR	5496366	FunctionDef	"mirror_start_job (const char * job_id , BlockDriverState * bs , BlockDriverState * target , const char * replaces , int64_t speed , uint32_t granularity , int64_t buf_size , BlockMirrorBackingMode backing_mode , BlockdevOnError on_source_error , BlockdevOnError on_target_error , bool unmap , BlockCompletionFunc * cb , void * opaque , Error * * errp , const BlockJobDriver * driver , bool is_none_mode , BlockDriverState * base)"		5496365	0					
+ANR	5496367	CompoundStatement		25:0:746:2079	5496365	0					
+ANR	5496368	IdentifierDeclStatement	MirrorBlockJob * s ;	27:4:753:770	5496365	0	True				
+ANR	5496369	IdentifierDecl	* s		5496365	0					
+ANR	5496370	IdentifierDeclType	MirrorBlockJob *		5496365	0					
+ANR	5496371	Identifier	s		5496365	1					
+ANR	5496372	IfStatement	if ( granularity == 0 )		5496365	1					
+ANR	5496373	Condition	granularity == 0	31:8:783:798	5496365	0	True				
+ANR	5496374	EqualityExpression	granularity == 0		5496365	0		==			
+ANR	5496375	Identifier	granularity		5496365	0					
+ANR	5496376	PrimaryExpression	0		5496365	1					
+ANR	5496377	CompoundStatement		7:26:54:54	5496365	1					
+ANR	5496378	ExpressionStatement	granularity = bdrv_get_default_bitmap_granularity ( target )	33:8:812:869	5496365	0	True				
+ANR	5496379	AssignmentExpression	granularity = bdrv_get_default_bitmap_granularity ( target )		5496365	0		=			
+ANR	5496380	Identifier	granularity		5496365	0					
+ANR	5496381	CallExpression	bdrv_get_default_bitmap_granularity ( target )		5496365	1					
+ANR	5496382	Callee	bdrv_get_default_bitmap_granularity		5496365	0					
+ANR	5496383	Identifier	bdrv_get_default_bitmap_granularity		5496365	0					
+ANR	5496384	ArgumentList	target		5496365	1					
+ANR	5496385	Argument	target		5496365	0					
+ANR	5496386	Identifier	target		5496365	0					
+ANR	5496387	ExpressionStatement	assert ( ( granularity & ( granularity - 1 ) ) == 0 )	39:4:885:932	5496365	2	True				
+ANR	5496388	CallExpression	assert ( ( granularity & ( granularity - 1 ) ) == 0 )		5496365	0					
+ANR	5496389	Callee	assert		5496365	0					
+ANR	5496390	Identifier	assert		5496365	0					
+ANR	5496391	ArgumentList	( granularity & ( granularity - 1 ) ) == 0		5496365	1					
+ANR	5496392	Argument	( granularity & ( granularity - 1 ) ) == 0		5496365	0					
+ANR	5496393	EqualityExpression	( granularity & ( granularity - 1 ) ) == 0		5496365	0		==			
+ANR	5496394	BitAndExpression	granularity & ( granularity - 1 )		5496365	0		&			
+ANR	5496395	Identifier	granularity		5496365	0					
+ANR	5496396	AdditiveExpression	granularity - 1		5496365	1		-			
+ANR	5496397	Identifier	granularity		5496365	0					
+ANR	5496398	PrimaryExpression	1		5496365	1					
+ANR	5496399	PrimaryExpression	0		5496365	1					
+ANR	5496400	IfStatement	if ( buf_size < 0 )		5496365	3					
+ANR	5496401	Condition	buf_size < 0	43:8:945:956	5496365	0	True				
+ANR	5496402	RelationalExpression	buf_size < 0		5496365	0		<			
+ANR	5496403	Identifier	buf_size		5496365	0					
+ANR	5496404	PrimaryExpression	0		5496365	1					
+ANR	5496405	CompoundStatement		19:22:212:212	5496365	1					
+ANR	5496406	ExpressionStatement	"error_setg ( errp , ""Invalid parameter 'buf-size'"" )"	45:8:970:1018	5496365	0	True				
+ANR	5496407	CallExpression	"error_setg ( errp , ""Invalid parameter 'buf-size'"" )"		5496365	0					
+ANR	5496408	Callee	error_setg		5496365	0					
+ANR	5496409	Identifier	error_setg		5496365	0					
+ANR	5496410	ArgumentList	errp		5496365	1					
+ANR	5496411	Argument	errp		5496365	0					
+ANR	5496412	Identifier	errp		5496365	0					
+ANR	5496413	Argument	"""Invalid parameter 'buf-size'"""		5496365	1					
+ANR	5496414	PrimaryExpression	"""Invalid parameter 'buf-size'"""		5496365	0					
+ANR	5496415	ReturnStatement	return ;	47:8:1029:1035	5496365	1	True				
+ANR	5496416	IfStatement	if ( buf_size == 0 )		5496365	4					
+ANR	5496417	Condition	buf_size == 0	53:8:1055:1067	5496365	0	True				
+ANR	5496418	EqualityExpression	buf_size == 0		5496365	0		==			
+ANR	5496419	Identifier	buf_size		5496365	0					
+ANR	5496420	PrimaryExpression	0		5496365	1					
+ANR	5496421	CompoundStatement		29:23:323:323	5496365	1					
+ANR	5496422	ExpressionStatement	buf_size = DEFAULT_MIRROR_BUF_SIZE	55:8:1081:1115	5496365	0	True				
+ANR	5496423	AssignmentExpression	buf_size = DEFAULT_MIRROR_BUF_SIZE		5496365	0		=			
+ANR	5496424	Identifier	buf_size		5496365	0					
+ANR	5496425	Identifier	DEFAULT_MIRROR_BUF_SIZE		5496365	1					
+ANR	5496426	ExpressionStatement	"s = block_job_create ( job_id , driver , bs , speed , cb , opaque , errp )"	61:4:1131:1196	5496365	5	True				
+ANR	5496427	AssignmentExpression	"s = block_job_create ( job_id , driver , bs , speed , cb , opaque , errp )"		5496365	0		=			
+ANR	5496428	Identifier	s		5496365	0					
+ANR	5496429	CallExpression	"block_job_create ( job_id , driver , bs , speed , cb , opaque , errp )"		5496365	1					
+ANR	5496430	Callee	block_job_create		5496365	0					
+ANR	5496431	Identifier	block_job_create		5496365	0					
+ANR	5496432	ArgumentList	job_id		5496365	1					
+ANR	5496433	Argument	job_id		5496365	0					
+ANR	5496434	Identifier	job_id		5496365	0					
+ANR	5496435	Argument	driver		5496365	1					
+ANR	5496436	Identifier	driver		5496365	0					
+ANR	5496437	Argument	bs		5496365	2					
+ANR	5496438	Identifier	bs		5496365	0					
+ANR	5496439	Argument	speed		5496365	3					
+ANR	5496440	Identifier	speed		5496365	0					
+ANR	5496441	Argument	cb		5496365	4					
+ANR	5496442	Identifier	cb		5496365	0					
+ANR	5496443	Argument	opaque		5496365	5					
+ANR	5496444	Identifier	opaque		5496365	0					
+ANR	5496445	Argument	errp		5496365	6					
+ANR	5496446	Identifier	errp		5496365	0					
+ANR	5496447	IfStatement	if ( ! s )		5496365	6					
+ANR	5496448	Condition	! s	63:8:1207:1208	5496365	0	True				
+ANR	5496449	UnaryOperationExpression	! s		5496365	0					
+ANR	5496450	UnaryOperator	!		5496365	0					
+ANR	5496451	Identifier	s		5496365	1					
+ANR	5496452	CompoundStatement		39:12:464:464	5496365	1					
+ANR	5496453	ReturnStatement	return ;	65:8:1222:1228	5496365	0	True				
+ANR	5496454	ExpressionStatement	s -> target = blk_new ( )	71:4:1244:1265	5496365	7	True				
+ANR	5496455	AssignmentExpression	s -> target = blk_new ( )		5496365	0		=			
+ANR	5496456	PtrMemberAccess	s -> target		5496365	0					
+ANR	5496457	Identifier	s		5496365	0					
+ANR	5496458	Identifier	target		5496365	1					
+ANR	5496459	CallExpression	blk_new ( )		5496365	1					
+ANR	5496460	Callee	blk_new		5496365	0					
+ANR	5496461	Identifier	blk_new		5496365	0					
+ANR	5496462	ArgumentList			5496365	1					
+ANR	5496463	ExpressionStatement	"blk_insert_bs ( s -> target , target )"	73:4:1272:1304	5496365	8	True				
+ANR	5496464	CallExpression	"blk_insert_bs ( s -> target , target )"		5496365	0					
+ANR	5496465	Callee	blk_insert_bs		5496365	0					
+ANR	5496466	Identifier	blk_insert_bs		5496365	0					
+ANR	5496467	ArgumentList	s -> target		5496365	1					
+ANR	5496468	Argument	s -> target		5496365	0					
+ANR	5496469	PtrMemberAccess	s -> target		5496365	0					
+ANR	5496470	Identifier	s		5496365	0					
+ANR	5496471	Identifier	target		5496365	1					
+ANR	5496472	Argument	target		5496365	1					
+ANR	5496473	Identifier	target		5496365	0					
+ANR	5496474	ExpressionStatement	s -> replaces = g_strdup ( replaces )	77:4:1313:1345	5496365	9	True				
+ANR	5496475	AssignmentExpression	s -> replaces = g_strdup ( replaces )		5496365	0		=			
+ANR	5496476	PtrMemberAccess	s -> replaces		5496365	0					
+ANR	5496477	Identifier	s		5496365	0					
+ANR	5496478	Identifier	replaces		5496365	1					
+ANR	5496479	CallExpression	g_strdup ( replaces )		5496365	1					
+ANR	5496480	Callee	g_strdup		5496365	0					
+ANR	5496481	Identifier	g_strdup		5496365	0					
+ANR	5496482	ArgumentList	replaces		5496365	1					
+ANR	5496483	Argument	replaces		5496365	0					
+ANR	5496484	Identifier	replaces		5496365	0					
+ANR	5496485	ExpressionStatement	s -> on_source_error = on_source_error	79:4:1352:1388	5496365	10	True				
+ANR	5496486	AssignmentExpression	s -> on_source_error = on_source_error		5496365	0		=			
+ANR	5496487	PtrMemberAccess	s -> on_source_error		5496365	0					
+ANR	5496488	Identifier	s		5496365	0					
+ANR	5496489	Identifier	on_source_error		5496365	1					
+ANR	5496490	Identifier	on_source_error		5496365	1					
+ANR	5496491	ExpressionStatement	s -> on_target_error = on_target_error	81:4:1395:1431	5496365	11	True				
+ANR	5496492	AssignmentExpression	s -> on_target_error = on_target_error		5496365	0		=			
+ANR	5496493	PtrMemberAccess	s -> on_target_error		5496365	0					
+ANR	5496494	Identifier	s		5496365	0					
+ANR	5496495	Identifier	on_target_error		5496365	1					
+ANR	5496496	Identifier	on_target_error		5496365	1					
+ANR	5496497	ExpressionStatement	s -> is_none_mode = is_none_mode	83:4:1438:1468	5496365	12	True				
+ANR	5496498	AssignmentExpression	s -> is_none_mode = is_none_mode		5496365	0		=			
+ANR	5496499	PtrMemberAccess	s -> is_none_mode		5496365	0					
+ANR	5496500	Identifier	s		5496365	0					
+ANR	5496501	Identifier	is_none_mode		5496365	1					
+ANR	5496502	Identifier	is_none_mode		5496365	1					
+ANR	5496503	ExpressionStatement	s -> backing_mode = backing_mode	85:4:1475:1505	5496365	13	True				
+ANR	5496504	AssignmentExpression	s -> backing_mode = backing_mode		5496365	0		=			
+ANR	5496505	PtrMemberAccess	s -> backing_mode		5496365	0					
+ANR	5496506	Identifier	s		5496365	0					
+ANR	5496507	Identifier	backing_mode		5496365	1					
+ANR	5496508	Identifier	backing_mode		5496365	1					
+ANR	5496509	ExpressionStatement	s -> base = base	87:4:1512:1526	5496365	14	True				
+ANR	5496510	AssignmentExpression	s -> base = base		5496365	0		=			
+ANR	5496511	PtrMemberAccess	s -> base		5496365	0					
+ANR	5496512	Identifier	s		5496365	0					
+ANR	5496513	Identifier	base		5496365	1					
+ANR	5496514	Identifier	base		5496365	1					
+ANR	5496515	ExpressionStatement	s -> granularity = granularity	89:4:1533:1561	5496365	15	True				
+ANR	5496516	AssignmentExpression	s -> granularity = granularity		5496365	0		=			
+ANR	5496517	PtrMemberAccess	s -> granularity		5496365	0					
+ANR	5496518	Identifier	s		5496365	0					
+ANR	5496519	Identifier	granularity		5496365	1					
+ANR	5496520	Identifier	granularity		5496365	1					
+ANR	5496521	ExpressionStatement	"s -> buf_size = ROUND_UP ( buf_size , granularity )"	91:4:1568:1613	5496365	16	True				
+ANR	5496522	AssignmentExpression	"s -> buf_size = ROUND_UP ( buf_size , granularity )"		5496365	0		=			
+ANR	5496523	PtrMemberAccess	s -> buf_size		5496365	0					
+ANR	5496524	Identifier	s		5496365	0					
+ANR	5496525	Identifier	buf_size		5496365	1					
+ANR	5496526	CallExpression	"ROUND_UP ( buf_size , granularity )"		5496365	1					
+ANR	5496527	Callee	ROUND_UP		5496365	0					
+ANR	5496528	Identifier	ROUND_UP		5496365	0					
+ANR	5496529	ArgumentList	buf_size		5496365	1					
+ANR	5496530	Argument	buf_size		5496365	0					
+ANR	5496531	Identifier	buf_size		5496365	0					
+ANR	5496532	Argument	granularity		5496365	1					
+ANR	5496533	Identifier	granularity		5496365	0					
+ANR	5496534	ExpressionStatement	s -> unmap = unmap	93:4:1620:1636	5496365	17	True				
+ANR	5496535	AssignmentExpression	s -> unmap = unmap		5496365	0		=			
+ANR	5496536	PtrMemberAccess	s -> unmap		5496365	0					
+ANR	5496537	Identifier	s		5496365	0					
+ANR	5496538	Identifier	unmap		5496365	1					
+ANR	5496539	Identifier	unmap		5496365	1					
+ANR	5496540	ExpressionStatement	"s -> dirty_bitmap = bdrv_create_dirty_bitmap ( bs , granularity , NULL , errp )"	97:4:1645:1716	5496365	18	True				
+ANR	5496541	AssignmentExpression	"s -> dirty_bitmap = bdrv_create_dirty_bitmap ( bs , granularity , NULL , errp )"		5496365	0		=			
+ANR	5496542	PtrMemberAccess	s -> dirty_bitmap		5496365	0					
+ANR	5496543	Identifier	s		5496365	0					
+ANR	5496544	Identifier	dirty_bitmap		5496365	1					
+ANR	5496545	CallExpression	"bdrv_create_dirty_bitmap ( bs , granularity , NULL , errp )"		5496365	1					
+ANR	5496546	Callee	bdrv_create_dirty_bitmap		5496365	0					
+ANR	5496547	Identifier	bdrv_create_dirty_bitmap		5496365	0					
+ANR	5496548	ArgumentList	bs		5496365	1					
+ANR	5496549	Argument	bs		5496365	0					
+ANR	5496550	Identifier	bs		5496365	0					
+ANR	5496551	Argument	granularity		5496365	1					
+ANR	5496552	Identifier	granularity		5496365	0					
+ANR	5496553	Argument	NULL		5496365	2					
+ANR	5496554	Identifier	NULL		5496365	0					
+ANR	5496555	Argument	errp		5496365	3					
+ANR	5496556	Identifier	errp		5496365	0					
+ANR	5496557	IfStatement	if ( ! s -> dirty_bitmap )		5496365	19					
+ANR	5496558	Condition	! s -> dirty_bitmap	99:8:1727:1742	5496365	0	True				
+ANR	5496559	UnaryOperationExpression	! s -> dirty_bitmap		5496365	0					
+ANR	5496560	UnaryOperator	!		5496365	0					
+ANR	5496561	PtrMemberAccess	s -> dirty_bitmap		5496365	1					
+ANR	5496562	Identifier	s		5496365	0					
+ANR	5496563	Identifier	dirty_bitmap		5496365	1					
+ANR	5496564	CompoundStatement		75:26:998:998	5496365	1					
+ANR	5496565	ExpressionStatement	g_free ( s -> replaces )	101:8:1756:1775	5496365	0	True				
+ANR	5496566	CallExpression	g_free ( s -> replaces )		5496365	0					
+ANR	5496567	Callee	g_free		5496365	0					
+ANR	5496568	Identifier	g_free		5496365	0					
+ANR	5496569	ArgumentList	s -> replaces		5496365	1					
+ANR	5496570	Argument	s -> replaces		5496365	0					
+ANR	5496571	PtrMemberAccess	s -> replaces		5496365	0					
+ANR	5496572	Identifier	s		5496365	0					
+ANR	5496573	Identifier	replaces		5496365	1					
+ANR	5496574	ExpressionStatement	blk_unref ( s -> target )	103:8:1786:1806	5496365	1	True				
+ANR	5496575	CallExpression	blk_unref ( s -> target )		5496365	0					
+ANR	5496576	Callee	blk_unref		5496365	0					
+ANR	5496577	Identifier	blk_unref		5496365	0					
+ANR	5496578	ArgumentList	s -> target		5496365	1					
+ANR	5496579	Argument	s -> target		5496365	0					
+ANR	5496580	PtrMemberAccess	s -> target		5496365	0					
+ANR	5496581	Identifier	s		5496365	0					
+ANR	5496582	Identifier	target		5496365	1					
+ANR	5496583	ExpressionStatement	block_job_unref ( & s -> common )	105:8:1817:1844	5496365	2	True				
+ANR	5496584	CallExpression	block_job_unref ( & s -> common )		5496365	0					
+ANR	5496585	Callee	block_job_unref		5496365	0					
+ANR	5496586	Identifier	block_job_unref		5496365	0					
+ANR	5496587	ArgumentList	& s -> common		5496365	1					
+ANR	5496588	Argument	& s -> common		5496365	0					
+ANR	5496589	UnaryOperationExpression	& s -> common		5496365	0					
+ANR	5496590	UnaryOperator	&		5496365	0					
+ANR	5496591	PtrMemberAccess	s -> common		5496365	1					
+ANR	5496592	Identifier	s		5496365	0					
+ANR	5496593	Identifier	common		5496365	1					
+ANR	5496594	ReturnStatement	return ;	107:8:1855:1861	5496365	3	True				
+ANR	5496595	ExpressionStatement	"bdrv_op_block_all ( target , s -> common . blocker )"	113:4:1877:1921	5496365	20	True				
+ANR	5496596	CallExpression	"bdrv_op_block_all ( target , s -> common . blocker )"		5496365	0					
+ANR	5496597	Callee	bdrv_op_block_all		5496365	0					
+ANR	5496598	Identifier	bdrv_op_block_all		5496365	0					
+ANR	5496599	ArgumentList	target		5496365	1					
+ANR	5496600	Argument	target		5496365	0					
+ANR	5496601	Identifier	target		5496365	0					
+ANR	5496602	Argument	s -> common . blocker		5496365	1					
+ANR	5496603	MemberAccess	s -> common . blocker		5496365	0					
+ANR	5496604	PtrMemberAccess	s -> common		5496365	0					
+ANR	5496605	Identifier	s		5496365	0					
+ANR	5496606	Identifier	common		5496365	1					
+ANR	5496607	Identifier	blocker		5496365	1					
+ANR	5496608	ExpressionStatement	"s -> common . co = qemu_coroutine_create ( mirror_run , s )"	117:4:1930:1981	5496365	21	True				
+ANR	5496609	AssignmentExpression	"s -> common . co = qemu_coroutine_create ( mirror_run , s )"		5496365	0		=			
+ANR	5496610	MemberAccess	s -> common . co		5496365	0					
+ANR	5496611	PtrMemberAccess	s -> common		5496365	0					
+ANR	5496612	Identifier	s		5496365	0					
+ANR	5496613	Identifier	common		5496365	1					
+ANR	5496614	Identifier	co		5496365	1					
+ANR	5496615	CallExpression	"qemu_coroutine_create ( mirror_run , s )"		5496365	1					
+ANR	5496616	Callee	qemu_coroutine_create		5496365	0					
+ANR	5496617	Identifier	qemu_coroutine_create		5496365	0					
+ANR	5496618	ArgumentList	mirror_run		5496365	1					
+ANR	5496619	Argument	mirror_run		5496365	0					
+ANR	5496620	Identifier	mirror_run		5496365	0					
+ANR	5496621	Argument	s		5496365	1					
+ANR	5496622	Identifier	s		5496365	0					
+ANR	5496623	ExpressionStatement	"trace_mirror_start ( bs , s , s -> common . co , opaque )"	119:4:1988:2035	5496365	22	True				
+ANR	5496624	CallExpression	"trace_mirror_start ( bs , s , s -> common . co , opaque )"		5496365	0					
+ANR	5496625	Callee	trace_mirror_start		5496365	0					
+ANR	5496626	Identifier	trace_mirror_start		5496365	0					
+ANR	5496627	ArgumentList	bs		5496365	1					
+ANR	5496628	Argument	bs		5496365	0					
+ANR	5496629	Identifier	bs		5496365	0					
+ANR	5496630	Argument	s		5496365	1					
+ANR	5496631	Identifier	s		5496365	0					
+ANR	5496632	Argument	s -> common . co		5496365	2					
+ANR	5496633	MemberAccess	s -> common . co		5496365	0					
+ANR	5496634	PtrMemberAccess	s -> common		5496365	0					
+ANR	5496635	Identifier	s		5496365	0					
+ANR	5496636	Identifier	common		5496365	1					
+ANR	5496637	Identifier	co		5496365	1					
+ANR	5496638	Argument	opaque		5496365	3					
+ANR	5496639	Identifier	opaque		5496365	0					
+ANR	5496640	ExpressionStatement	qemu_coroutine_enter ( s -> common . co )	121:4:2042:2076	5496365	23	True				
+ANR	5496641	CallExpression	qemu_coroutine_enter ( s -> common . co )		5496365	0					
+ANR	5496642	Callee	qemu_coroutine_enter		5496365	0					
+ANR	5496643	Identifier	qemu_coroutine_enter		5496365	0					
+ANR	5496644	ArgumentList	s -> common . co		5496365	1					
+ANR	5496645	Argument	s -> common . co		5496365	0					
+ANR	5496646	MemberAccess	s -> common . co		5496365	0					
+ANR	5496647	PtrMemberAccess	s -> common		5496365	0					
+ANR	5496648	Identifier	s		5496365	0					
+ANR	5496649	Identifier	common		5496365	1					
+ANR	5496650	Identifier	co		5496365	1					
+ANR	5496651	ReturnType	static void		5496365	1					
+ANR	5496652	Identifier	mirror_start_job		5496365	2					
+ANR	5496653	ParameterList	"const char * job_id , BlockDriverState * bs , BlockDriverState * target , const char * replaces , int64_t speed , uint32_t granularity , int64_t buf_size , BlockMirrorBackingMode backing_mode , BlockdevOnError on_source_error , BlockdevOnError on_target_error , bool unmap , BlockCompletionFunc * cb , void * opaque , Error * * errp , const BlockJobDriver * driver , bool is_none_mode , BlockDriverState * base"		5496365	3					
+ANR	5496654	Parameter	const char * job_id	1:29:29:46	5496365	0	True				
+ANR	5496655	ParameterType	const char *		5496365	0					
+ANR	5496656	Identifier	job_id		5496365	1					
+ANR	5496657	Parameter	BlockDriverState * bs	1:49:49:68	5496365	1	True				
+ANR	5496658	ParameterType	BlockDriverState *		5496365	0					
+ANR	5496659	Identifier	bs		5496365	1					
+ANR	5496660	Parameter	BlockDriverState * target	3:29:101:124	5496365	2	True				
+ANR	5496661	ParameterType	BlockDriverState *		5496365	0					
+ANR	5496662	Identifier	target		5496365	1					
+ANR	5496663	Parameter	const char * replaces	3:55:127:146	5496365	3	True				
+ANR	5496664	ParameterType	const char *		5496365	0					
+ANR	5496665	Identifier	replaces		5496365	1					
+ANR	5496666	Parameter	int64_t speed	5:29:179:191	5496365	4	True				
+ANR	5496667	ParameterType	int64_t		5496365	0					
+ANR	5496668	Identifier	speed		5496365	1					
+ANR	5496669	Parameter	uint32_t granularity	5:44:194:213	5496365	5	True				
+ANR	5496670	ParameterType	uint32_t		5496365	0					
+ANR	5496671	Identifier	granularity		5496365	1					
+ANR	5496672	Parameter	int64_t buf_size	7:29:246:261	5496365	6	True				
+ANR	5496673	ParameterType	int64_t		5496365	0					
+ANR	5496674	Identifier	buf_size		5496365	1					
+ANR	5496675	Parameter	BlockMirrorBackingMode backing_mode	9:29:294:328	5496365	7	True				
+ANR	5496676	ParameterType	BlockMirrorBackingMode		5496365	0					
+ANR	5496677	Identifier	backing_mode		5496365	1					
+ANR	5496678	Parameter	BlockdevOnError on_source_error	11:29:361:391	5496365	8	True				
+ANR	5496679	ParameterType	BlockdevOnError		5496365	0					
+ANR	5496680	Identifier	on_source_error		5496365	1					
+ANR	5496681	Parameter	BlockdevOnError on_target_error	13:29:424:454	5496365	9	True				
+ANR	5496682	ParameterType	BlockdevOnError		5496365	0					
+ANR	5496683	Identifier	on_target_error		5496365	1					
+ANR	5496684	Parameter	bool unmap	15:29:487:496	5496365	10	True				
+ANR	5496685	ParameterType	bool		5496365	0					
+ANR	5496686	Identifier	unmap		5496365	1					
+ANR	5496687	Parameter	BlockCompletionFunc * cb	17:29:529:551	5496365	11	True				
+ANR	5496688	ParameterType	BlockCompletionFunc *		5496365	0					
+ANR	5496689	Identifier	cb		5496365	1					
+ANR	5496690	Parameter	void * opaque	19:29:584:595	5496365	12	True				
+ANR	5496691	ParameterType	void *		5496365	0					
+ANR	5496692	Identifier	opaque		5496365	1					
+ANR	5496693	Parameter	Error * * errp	19:43:598:609	5496365	13	True				
+ANR	5496694	ParameterType	Error * *		5496365	0					
+ANR	5496695	Identifier	errp		5496365	1					
+ANR	5496696	Parameter	const BlockJobDriver * driver	21:29:642:669	5496365	14	True				
+ANR	5496697	ParameterType	const BlockJobDriver *		5496365	0					
+ANR	5496698	Identifier	driver		5496365	1					
+ANR	5496699	Parameter	bool is_none_mode	23:29:702:718	5496365	15	True				
+ANR	5496700	ParameterType	bool		5496365	0					
+ANR	5496701	Identifier	is_none_mode		5496365	1					
+ANR	5496702	Parameter	BlockDriverState * base	23:48:721:742	5496365	16	True				
+ANR	5496703	ParameterType	BlockDriverState *		5496365	0					
+ANR	5496704	Identifier	base		5496365	1					
+ANR	5496705	CFGEntryNode	ENTRY		5496365		True				
+ANR	5496706	CFGExitNode	EXIT		5496365		True				
+ANR	5496707	Symbol	errp		5496365						
+ANR	5496708	Symbol	on_target_error		5496365						
+ANR	5496709	Symbol	unmap		5496365						
+ANR	5496710	Symbol	block_job_create		5496365						
+ANR	5496711	Symbol	mirror_run		5496365						
+ANR	5496712	Symbol	s -> common		5496365						
+ANR	5496713	Symbol	speed		5496365						
+ANR	5496714	Symbol	bs		5496365						
+ANR	5496715	Symbol	s -> replaces		5496365						
+ANR	5496716	Symbol	g_strdup		5496365						
+ANR	5496717	Symbol	s -> on_target_error		5496365						
+ANR	5496718	Symbol	s -> is_none_mode		5496365						
+ANR	5496719	Symbol	on_source_error		5496365						
+ANR	5496720	Symbol	DEFAULT_MIRROR_BUF_SIZE		5496365						
+ANR	5496721	Symbol	cb		5496365						
+ANR	5496722	Symbol	s -> common . co		5496365						
+ANR	5496723	Symbol	backing_mode		5496365						
+ANR	5496724	Symbol	opaque		5496365						
+ANR	5496725	Symbol	s -> unmap		5496365						
+ANR	5496726	Symbol	NULL		5496365						
+ANR	5496727	Symbol	bdrv_create_dirty_bitmap		5496365						
+ANR	5496728	Symbol	bdrv_get_default_bitmap_granularity		5496365						
+ANR	5496729	Symbol	qemu_coroutine_create		5496365						
+ANR	5496730	Symbol	replaces		5496365						
+ANR	5496731	Symbol	buf_size		5496365						
+ANR	5496732	Symbol	ROUND_UP		5496365						
+ANR	5496733	Symbol	s -> common . blocker		5496365						
+ANR	5496734	Symbol	s -> buf_size		5496365						
+ANR	5496735	Symbol	s -> base		5496365						
+ANR	5496736	Symbol	is_none_mode		5496365						
+ANR	5496737	Symbol	s -> dirty_bitmap		5496365						
+ANR	5496738	Symbol	target		5496365						
+ANR	5496739	Symbol	s		5496365						
+ANR	5496740	Symbol	s -> target		5496365						
+ANR	5496741	Symbol	driver		5496365						
+ANR	5496742	Symbol	s -> granularity		5496365						
+ANR	5496743	Symbol	job_id		5496365						
+ANR	5496744	Symbol	granularity		5496365						
+ANR	5496745	Symbol	& s -> common		5496365						
+ANR	5496746	Symbol	blk_new		5496365						
+ANR	5496747	Symbol	s -> on_source_error		5496365						
+ANR	5496748	Symbol	* s		5496365						
+ANR	5496749	Symbol	s -> backing_mode		5496365						
+ANR	5496750	Symbol	base		5496365						

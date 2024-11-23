@@ -1,0 +1,1538 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	616598	File	/home/p4ultr4n/workplace/ReVeal/raw_code/asf_parse_packet_1.c								
+ANR	616599	Function	asf_parse_packet	1:0:0:10006							
+ANR	616600	FunctionDef	"asf_parse_packet (AVFormatContext * s , AVIOContext * pb , AVPacket * pkt)"		616599	0					
+ANR	616601	CompoundStatement		3:0:81:10006	616599	0					
+ANR	616602	IdentifierDeclStatement	ASFContext * asf = s -> priv_data ;	5:4:88:120	616599	0	True				
+ANR	616603	IdentifierDecl	* asf = s -> priv_data		616599	0					
+ANR	616604	IdentifierDeclType	ASFContext *		616599	0					
+ANR	616605	Identifier	asf		616599	1					
+ANR	616606	AssignmentExpression	* asf = s -> priv_data		616599	2		=			
+ANR	616607	Identifier	asf		616599	0					
+ANR	616608	PtrMemberAccess	s -> priv_data		616599	1					
+ANR	616609	Identifier	s		616599	0					
+ANR	616610	Identifier	priv_data		616599	1					
+ANR	616611	IdentifierDeclStatement	ASFStream * asf_st = 0 ;	7:4:127:148	616599	1	True				
+ANR	616612	IdentifierDecl	* asf_st = 0		616599	0					
+ANR	616613	IdentifierDeclType	ASFStream *		616599	0					
+ANR	616614	Identifier	asf_st		616599	1					
+ANR	616615	AssignmentExpression	* asf_st = 0		616599	2		=			
+ANR	616616	Identifier	asf_st		616599	0					
+ANR	616617	PrimaryExpression	0		616599	1					
+ANR	616618	ForStatement	for ( ; ; )		616599	2					
+ANR	616619	CompoundStatement		9:8:93:100	616599	0					
+ANR	616620	IdentifierDeclStatement	int ret ;	11:8:175:182	616599	0	True				
+ANR	616621	IdentifierDecl	ret		616599	0					
+ANR	616622	IdentifierDeclType	int		616599	0					
+ANR	616623	Identifier	ret		616599	1					
+ANR	616624	IfStatement	if ( url_feof ( pb ) )		616599	1					
+ANR	616625	Condition	url_feof ( pb )	13:12:197:208	616599	0	True				
+ANR	616626	CallExpression	url_feof ( pb )		616599	0					
+ANR	616627	Callee	url_feof		616599	0					
+ANR	616628	Identifier	url_feof		616599	0					
+ANR	616629	ArgumentList	pb		616599	1					
+ANR	616630	Argument	pb		616599	0					
+ANR	616631	Identifier	pb		616599	0					
+ANR	616632	ReturnStatement	return AVERROR_EOF ;	15:12:224:242	616599	1	True				
+ANR	616633	Identifier	AVERROR_EOF		616599	0					
+ANR	616634	IfStatement	if ( asf -> packet_size_left < FRAME_HEADER_SIZE )		616599	2					
+ANR	616635	Condition	asf -> packet_size_left < FRAME_HEADER_SIZE	19:12:259:299	616599	0	True				
+ANR	616636	RelationalExpression	asf -> packet_size_left < FRAME_HEADER_SIZE		616599	0		<			
+ANR	616637	PtrMemberAccess	asf -> packet_size_left		616599	0					
+ANR	616638	Identifier	asf		616599	0					
+ANR	616639	Identifier	packet_size_left		616599	1					
+ANR	616640	Identifier	FRAME_HEADER_SIZE		616599	1					
+ANR	616641	CompoundStatement		19:12:235:288	616599	1					
+ANR	616642	IdentifierDeclStatement	int ret = asf -> packet_size_left + asf -> packet_padsize ;	21:12:317:370	616599	0	True				
+ANR	616643	IdentifierDecl	ret = asf -> packet_size_left + asf -> packet_padsize		616599	0					
+ANR	616644	IdentifierDeclType	int		616599	0					
+ANR	616645	Identifier	ret		616599	1					
+ANR	616646	AssignmentExpression	ret = asf -> packet_size_left + asf -> packet_padsize		616599	2		=			
+ANR	616647	Identifier	ret		616599	0					
+ANR	616648	AdditiveExpression	asf -> packet_size_left + asf -> packet_padsize		616599	1		+			
+ANR	616649	PtrMemberAccess	asf -> packet_size_left		616599	0					
+ANR	616650	Identifier	asf		616599	0					
+ANR	616651	Identifier	packet_size_left		616599	1					
+ANR	616652	PtrMemberAccess	asf -> packet_padsize		616599	1					
+ANR	616653	Identifier	asf		616599	0					
+ANR	616654	Identifier	packet_padsize		616599	1					
+ANR	616655	ExpressionStatement	assert ( ret >= 0 )	25:12:387:403	616599	1	True				
+ANR	616656	CallExpression	assert ( ret >= 0 )		616599	0					
+ANR	616657	Callee	assert		616599	0					
+ANR	616658	Identifier	assert		616599	0					
+ANR	616659	ArgumentList	ret >= 0		616599	1					
+ANR	616660	Argument	ret >= 0		616599	0					
+ANR	616661	RelationalExpression	ret >= 0		616599	0		>=			
+ANR	616662	Identifier	ret		616599	0					
+ANR	616663	PrimaryExpression	0		616599	1					
+ANR	616664	ExpressionStatement	"avio_skip ( pb , ret )"	29:12:447:465	616599	2	True				
+ANR	616665	CallExpression	"avio_skip ( pb , ret )"		616599	0					
+ANR	616666	Callee	avio_skip		616599	0					
+ANR	616667	Identifier	avio_skip		616599	0					
+ANR	616668	ArgumentList	pb		616599	1					
+ANR	616669	Argument	pb		616599	0					
+ANR	616670	Identifier	pb		616599	0					
+ANR	616671	Argument	ret		616599	1					
+ANR	616672	Identifier	ret		616599	0					
+ANR	616673	ExpressionStatement	asf -> packet_pos = avio_tell ( pb )	33:12:482:513	616599	3	True				
+ANR	616674	AssignmentExpression	asf -> packet_pos = avio_tell ( pb )		616599	0		=			
+ANR	616675	PtrMemberAccess	asf -> packet_pos		616599	0					
+ANR	616676	Identifier	asf		616599	0					
+ANR	616677	Identifier	packet_pos		616599	1					
+ANR	616678	CallExpression	avio_tell ( pb )		616599	1					
+ANR	616679	Callee	avio_tell		616599	0					
+ANR	616680	Identifier	avio_tell		616599	0					
+ANR	616681	ArgumentList	pb		616599	1					
+ANR	616682	Argument	pb		616599	0					
+ANR	616683	Identifier	pb		616599	0					
+ANR	616684	IfStatement	if ( asf -> data_object_size != ( uint64_t ) - 1 && ( asf -> packet_pos - asf -> data_object_offset >= asf -> data_object_size ) )		616599	4					
+ANR	616685	Condition	asf -> data_object_size != ( uint64_t ) - 1 && ( asf -> packet_pos - asf -> data_object_offset >= asf -> data_object_size )	35:16:532:657	616599	0	True				
+ANR	616686	AndExpression	asf -> data_object_size != ( uint64_t ) - 1 && ( asf -> packet_pos - asf -> data_object_offset >= asf -> data_object_size )		616599	0		&&			
+ANR	616687	EqualityExpression	asf -> data_object_size != ( uint64_t ) - 1		616599	0		!=			
+ANR	616688	PtrMemberAccess	asf -> data_object_size		616599	0					
+ANR	616689	Identifier	asf		616599	0					
+ANR	616690	Identifier	data_object_size		616599	1					
+ANR	616691	CastExpression	( uint64_t ) - 1		616599	1					
+ANR	616692	CastTarget	uint64_t		616599	0					
+ANR	616693	UnaryOperationExpression	- 1		616599	1					
+ANR	616694	UnaryOperator	-		616599	0					
+ANR	616695	PrimaryExpression	1		616599	1					
+ANR	616696	RelationalExpression	asf -> packet_pos - asf -> data_object_offset >= asf -> data_object_size		616599	1		>=			
+ANR	616697	AdditiveExpression	asf -> packet_pos - asf -> data_object_offset		616599	0		-			
+ANR	616698	PtrMemberAccess	asf -> packet_pos		616599	0					
+ANR	616699	Identifier	asf		616599	0					
+ANR	616700	Identifier	packet_pos		616599	1					
+ANR	616701	PtrMemberAccess	asf -> data_object_offset		616599	1					
+ANR	616702	Identifier	asf		616599	0					
+ANR	616703	Identifier	data_object_offset		616599	1					
+ANR	616704	PtrMemberAccess	asf -> data_object_size		616599	1					
+ANR	616705	Identifier	asf		616599	0					
+ANR	616706	Identifier	data_object_size		616599	1					
+ANR	616707	ReturnStatement	return AVERROR_EOF ;	39:16:677:695	616599	1	True				
+ANR	616708	Identifier	AVERROR_EOF		616599	0					
+ANR	616709	ReturnStatement	return 1 ;	41:12:759:767	616599	5	True				
+ANR	616710	PrimaryExpression	1		616599	0					
+ANR	616711	IfStatement	if ( asf -> packet_time_start == 0 )		616599	3					
+ANR	616712	Condition	asf -> packet_time_start == 0	45:12:793:819	616599	0	True				
+ANR	616713	EqualityExpression	asf -> packet_time_start == 0		616599	0		==			
+ANR	616714	PtrMemberAccess	asf -> packet_time_start		616599	0					
+ANR	616715	Identifier	asf		616599	0					
+ANR	616716	Identifier	packet_time_start		616599	1					
+ANR	616717	PrimaryExpression	0		616599	1					
+ANR	616718	CompoundStatement		43:41:740:740	616599	1					
+ANR	616719	IfStatement	"if ( asf_read_frame_header ( s , pb ) < 0 )"		616599	0					
+ANR	616720	Condition	"asf_read_frame_header ( s , pb ) < 0"	47:16:841:872	616599	0	True				
+ANR	616721	RelationalExpression	"asf_read_frame_header ( s , pb ) < 0"		616599	0		<			
+ANR	616722	CallExpression	"asf_read_frame_header ( s , pb )"		616599	0					
+ANR	616723	Callee	asf_read_frame_header		616599	0					
+ANR	616724	Identifier	asf_read_frame_header		616599	0					
+ANR	616725	ArgumentList	s		616599	1					
+ANR	616726	Argument	s		616599	0					
+ANR	616727	Identifier	s		616599	0					
+ANR	616728	Argument	pb		616599	1					
+ANR	616729	Identifier	pb		616599	0					
+ANR	616730	PrimaryExpression	0		616599	1					
+ANR	616731	CompoundStatement		45:50:793:793	616599	1					
+ANR	616732	ExpressionStatement	asf -> packet_time_start = asf -> packet_segments = 0	49:16:894:943	616599	0	True				
+ANR	616733	AssignmentExpression	asf -> packet_time_start = asf -> packet_segments = 0		616599	0		=			
+ANR	616734	PtrMemberAccess	asf -> packet_time_start		616599	0					
+ANR	616735	Identifier	asf		616599	0					
+ANR	616736	Identifier	packet_time_start		616599	1					
+ANR	616737	AssignmentExpression	asf -> packet_segments = 0		616599	1		=			
+ANR	616738	PtrMemberAccess	asf -> packet_segments		616599	0					
+ANR	616739	Identifier	asf		616599	0					
+ANR	616740	Identifier	packet_segments		616599	1					
+ANR	616741	PrimaryExpression	0		616599	1					
+ANR	616742	ContinueStatement	continue ;	51:16:962:970	616599	1	True				
+ANR	616743	IfStatement	if ( asf -> stream_index < 0 || s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_ALL || ( ! asf -> packet_key_frame && ( s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_NONKEY || asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key ) ) )		616599	1					
+ANR	616744	Condition	asf -> stream_index < 0 || s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_ALL || ( ! asf -> packet_key_frame && ( s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_NONKEY || asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key ) )	55:16:1004:1290	616599	0	True				
+ANR	616745	OrExpression	asf -> stream_index < 0 || s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_ALL || ( ! asf -> packet_key_frame && ( s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_NONKEY || asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key ) )		616599	0		||			
+ANR	616746	RelationalExpression	asf -> stream_index < 0		616599	0		<			
+ANR	616747	PtrMemberAccess	asf -> stream_index		616599	0					
+ANR	616748	Identifier	asf		616599	0					
+ANR	616749	Identifier	stream_index		616599	1					
+ANR	616750	PrimaryExpression	0		616599	1					
+ANR	616751	OrExpression	s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_ALL || ( ! asf -> packet_key_frame && ( s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_NONKEY || asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key ) )		616599	1		||			
+ANR	616752	RelationalExpression	s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_ALL		616599	0		>=			
+ANR	616753	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> discard		616599	0					
+ANR	616754	ArrayIndexing	s -> streams [ asf -> stream_index ]		616599	0					
+ANR	616755	PtrMemberAccess	s -> streams		616599	0					
+ANR	616756	Identifier	s		616599	0					
+ANR	616757	Identifier	streams		616599	1					
+ANR	616758	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	616759	Identifier	asf		616599	0					
+ANR	616760	Identifier	stream_index		616599	1					
+ANR	616761	Identifier	discard		616599	1					
+ANR	616762	Identifier	AVDISCARD_ALL		616599	1					
+ANR	616763	AndExpression	! asf -> packet_key_frame && ( s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_NONKEY || asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key )		616599	1		&&			
+ANR	616764	UnaryOperationExpression	! asf -> packet_key_frame		616599	0					
+ANR	616765	UnaryOperator	!		616599	0					
+ANR	616766	PtrMemberAccess	asf -> packet_key_frame		616599	1					
+ANR	616767	Identifier	asf		616599	0					
+ANR	616768	Identifier	packet_key_frame		616599	1					
+ANR	616769	OrExpression	s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_NONKEY || asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key		616599	1		||			
+ANR	616770	RelationalExpression	s -> streams [ asf -> stream_index ] -> discard >= AVDISCARD_NONKEY		616599	0		>=			
+ANR	616771	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> discard		616599	0					
+ANR	616772	ArrayIndexing	s -> streams [ asf -> stream_index ]		616599	0					
+ANR	616773	PtrMemberAccess	s -> streams		616599	0					
+ANR	616774	Identifier	s		616599	0					
+ANR	616775	Identifier	streams		616599	1					
+ANR	616776	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	616777	Identifier	asf		616599	0					
+ANR	616778	Identifier	stream_index		616599	1					
+ANR	616779	Identifier	discard		616599	1					
+ANR	616780	Identifier	AVDISCARD_NONKEY		616599	1					
+ANR	616781	MemberAccess	asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key		616599	1					
+ANR	616782	ArrayIndexing	asf -> streams [ s -> streams [ asf -> stream_index ] -> id ]		616599	0					
+ANR	616783	PtrMemberAccess	asf -> streams		616599	0					
+ANR	616784	Identifier	asf		616599	0					
+ANR	616785	Identifier	streams		616599	1					
+ANR	616786	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> id		616599	1					
+ANR	616787	ArrayIndexing	s -> streams [ asf -> stream_index ]		616599	0					
+ANR	616788	PtrMemberAccess	s -> streams		616599	0					
+ANR	616789	Identifier	s		616599	0					
+ANR	616790	Identifier	streams		616599	1					
+ANR	616791	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	616792	Identifier	asf		616599	0					
+ANR	616793	Identifier	stream_index		616599	1					
+ANR	616794	Identifier	id		616599	1					
+ANR	616795	Identifier	skip_to_key		616599	1					
+ANR	616796	CompoundStatement		59:143:1211:1211	616599	1					
+ANR	616797	ExpressionStatement	asf -> packet_time_start = 0	63:16:1312:1338	616599	0	True				
+ANR	616798	AssignmentExpression	asf -> packet_time_start = 0		616599	0		=			
+ANR	616799	PtrMemberAccess	asf -> packet_time_start		616599	0					
+ANR	616800	Identifier	asf		616599	0					
+ANR	616801	Identifier	packet_time_start		616599	1					
+ANR	616802	PrimaryExpression	0		616599	1					
+ANR	616803	ExpressionStatement	"avio_skip ( pb , asf -> packet_frag_size )"	67:16:1417:1453	616599	1	True				
+ANR	616804	CallExpression	"avio_skip ( pb , asf -> packet_frag_size )"		616599	0					
+ANR	616805	Callee	avio_skip		616599	0					
+ANR	616806	Identifier	avio_skip		616599	0					
+ANR	616807	ArgumentList	pb		616599	1					
+ANR	616808	Argument	pb		616599	0					
+ANR	616809	Identifier	pb		616599	0					
+ANR	616810	Argument	asf -> packet_frag_size		616599	1					
+ANR	616811	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	616812	Identifier	asf		616599	0					
+ANR	616813	Identifier	packet_frag_size		616599	1					
+ANR	616814	ExpressionStatement	asf -> packet_size_left -= asf -> packet_frag_size	69:16:1472:1518	616599	2	True				
+ANR	616815	AssignmentExpression	asf -> packet_size_left -= asf -> packet_frag_size		616599	0		-=			
+ANR	616816	PtrMemberAccess	asf -> packet_size_left		616599	0					
+ANR	616817	Identifier	asf		616599	0					
+ANR	616818	Identifier	packet_size_left		616599	1					
+ANR	616819	PtrMemberAccess	asf -> packet_frag_size		616599	1					
+ANR	616820	Identifier	asf		616599	0					
+ANR	616821	Identifier	packet_frag_size		616599	1					
+ANR	616822	IfStatement	if ( asf -> stream_index < 0 )		616599	3					
+ANR	616823	Condition	asf -> stream_index < 0	71:20:1541:1561	616599	0	True				
+ANR	616824	RelationalExpression	asf -> stream_index < 0		616599	0		<			
+ANR	616825	PtrMemberAccess	asf -> stream_index		616599	0					
+ANR	616826	Identifier	asf		616599	0					
+ANR	616827	Identifier	stream_index		616599	1					
+ANR	616828	PrimaryExpression	0		616599	1					
+ANR	616829	ExpressionStatement	"av_log ( s , AV_LOG_ERROR , ""ff asf skip %d (unknown stream)\\n"" , asf -> packet_frag_size )"	73:20:1585:1696	616599	1	True				
+ANR	616830	CallExpression	"av_log ( s , AV_LOG_ERROR , ""ff asf skip %d (unknown stream)\\n"" , asf -> packet_frag_size )"		616599	0					
+ANR	616831	Callee	av_log		616599	0					
+ANR	616832	Identifier	av_log		616599	0					
+ANR	616833	ArgumentList	s		616599	1					
+ANR	616834	Argument	s		616599	0					
+ANR	616835	Identifier	s		616599	0					
+ANR	616836	Argument	AV_LOG_ERROR		616599	1					
+ANR	616837	Identifier	AV_LOG_ERROR		616599	0					
+ANR	616838	Argument	"""ff asf skip %d (unknown stream)\\n"""		616599	2					
+ANR	616839	PrimaryExpression	"""ff asf skip %d (unknown stream)\\n"""		616599	0					
+ANR	616840	Argument	asf -> packet_frag_size		616599	3					
+ANR	616841	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	616842	Identifier	asf		616599	0					
+ANR	616843	Identifier	packet_frag_size		616599	1					
+ANR	616844	ContinueStatement	continue ;	77:16:1715:1723	616599	4	True				
+ANR	616845	ExpressionStatement	asf -> asf_st = & asf -> streams [ s -> streams [ asf -> stream_index ] -> id ]	81:12:1753:1815	616599	2	True				
+ANR	616846	AssignmentExpression	asf -> asf_st = & asf -> streams [ s -> streams [ asf -> stream_index ] -> id ]		616599	0		=			
+ANR	616847	PtrMemberAccess	asf -> asf_st		616599	0					
+ANR	616848	Identifier	asf		616599	0					
+ANR	616849	Identifier	asf_st		616599	1					
+ANR	616850	UnaryOperationExpression	& asf -> streams [ s -> streams [ asf -> stream_index ] -> id ]		616599	1					
+ANR	616851	UnaryOperator	&		616599	0					
+ANR	616852	ArrayIndexing	asf -> streams [ s -> streams [ asf -> stream_index ] -> id ]		616599	1					
+ANR	616853	PtrMemberAccess	asf -> streams		616599	0					
+ANR	616854	Identifier	asf		616599	0					
+ANR	616855	Identifier	streams		616599	1					
+ANR	616856	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> id		616599	1					
+ANR	616857	ArrayIndexing	s -> streams [ asf -> stream_index ]		616599	0					
+ANR	616858	PtrMemberAccess	s -> streams		616599	0					
+ANR	616859	Identifier	s		616599	0					
+ANR	616860	Identifier	streams		616599	1					
+ANR	616861	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	616862	Identifier	asf		616599	0					
+ANR	616863	Identifier	stream_index		616599	1					
+ANR	616864	Identifier	id		616599	1					
+ANR	616865	ExpressionStatement	asf -> asf_st -> skip_to_key = 0	83:12:1830:1858	616599	3	True				
+ANR	616866	AssignmentExpression	asf -> asf_st -> skip_to_key = 0		616599	0		=			
+ANR	616867	PtrMemberAccess	asf -> asf_st -> skip_to_key		616599	0					
+ANR	616868	PtrMemberAccess	asf -> asf_st		616599	0					
+ANR	616869	Identifier	asf		616599	0					
+ANR	616870	Identifier	asf_st		616599	1					
+ANR	616871	Identifier	skip_to_key		616599	1					
+ANR	616872	PrimaryExpression	0		616599	1					
+ANR	616873	ExpressionStatement	asf_st = asf -> asf_st	87:8:1880:1900	616599	4	True				
+ANR	616874	AssignmentExpression	asf_st = asf -> asf_st		616599	0		=			
+ANR	616875	Identifier	asf_st		616599	0					
+ANR	616876	PtrMemberAccess	asf -> asf_st		616599	1					
+ANR	616877	Identifier	asf		616599	0					
+ANR	616878	Identifier	asf_st		616599	1					
+ANR	616879	ExpressionStatement	av_assert0 ( asf_st )	89:8:1911:1929	616599	5	True				
+ANR	616880	CallExpression	av_assert0 ( asf_st )		616599	0					
+ANR	616881	Callee	av_assert0		616599	0					
+ANR	616882	Identifier	av_assert0		616599	0					
+ANR	616883	ArgumentList	asf_st		616599	1					
+ANR	616884	Argument	asf_st		616599	0					
+ANR	616885	Identifier	asf_st		616599	0					
+ANR	616886	IfStatement	if ( asf -> packet_replic_size == 1 )		616599	6					
+ANR	616887	Condition	asf -> packet_replic_size == 1	93:12:1946:1973	616599	0	True				
+ANR	616888	EqualityExpression	asf -> packet_replic_size == 1		616599	0		==			
+ANR	616889	PtrMemberAccess	asf -> packet_replic_size		616599	0					
+ANR	616890	Identifier	asf		616599	0					
+ANR	616891	Identifier	packet_replic_size		616599	1					
+ANR	616892	PrimaryExpression	1		616599	1					
+ANR	616893	CompoundStatement		91:42:1894:1894	616599	1					
+ANR	616894	ExpressionStatement	asf -> packet_frag_timestamp = asf -> packet_time_start	97:12:2059:2110	616599	0	True				
+ANR	616895	AssignmentExpression	asf -> packet_frag_timestamp = asf -> packet_time_start		616599	0		=			
+ANR	616896	PtrMemberAccess	asf -> packet_frag_timestamp		616599	0					
+ANR	616897	Identifier	asf		616599	0					
+ANR	616898	Identifier	packet_frag_timestamp		616599	1					
+ANR	616899	PtrMemberAccess	asf -> packet_time_start		616599	1					
+ANR	616900	Identifier	asf		616599	0					
+ANR	616901	Identifier	packet_time_start		616599	1					
+ANR	616902	ExpressionStatement	asf -> packet_time_start += asf -> packet_time_delta	99:12:2125:2176	616599	1	True				
+ANR	616903	AssignmentExpression	asf -> packet_time_start += asf -> packet_time_delta		616599	0		+=			
+ANR	616904	PtrMemberAccess	asf -> packet_time_start		616599	0					
+ANR	616905	Identifier	asf		616599	0					
+ANR	616906	Identifier	packet_time_start		616599	1					
+ANR	616907	PtrMemberAccess	asf -> packet_time_delta		616599	1					
+ANR	616908	Identifier	asf		616599	0					
+ANR	616909	Identifier	packet_time_delta		616599	1					
+ANR	616910	ExpressionStatement	asf_st -> packet_obj_size = asf -> packet_frag_size = avio_r8 ( pb )	101:12:2191:2255	616599	2	True				
+ANR	616911	AssignmentExpression	asf_st -> packet_obj_size = asf -> packet_frag_size = avio_r8 ( pb )		616599	0		=			
+ANR	616912	PtrMemberAccess	asf_st -> packet_obj_size		616599	0					
+ANR	616913	Identifier	asf_st		616599	0					
+ANR	616914	Identifier	packet_obj_size		616599	1					
+ANR	616915	AssignmentExpression	asf -> packet_frag_size = avio_r8 ( pb )		616599	1		=			
+ANR	616916	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	616917	Identifier	asf		616599	0					
+ANR	616918	Identifier	packet_frag_size		616599	1					
+ANR	616919	CallExpression	avio_r8 ( pb )		616599	1					
+ANR	616920	Callee	avio_r8		616599	0					
+ANR	616921	Identifier	avio_r8		616599	0					
+ANR	616922	ArgumentList	pb		616599	1					
+ANR	616923	Argument	pb		616599	0					
+ANR	616924	Identifier	pb		616599	0					
+ANR	616925	ExpressionStatement	asf -> packet_size_left --	103:12:2270:2293	616599	3	True				
+ANR	616926	PostIncDecOperationExpression	asf -> packet_size_left --		616599	0					
+ANR	616927	PtrMemberAccess	asf -> packet_size_left		616599	0					
+ANR	616928	Identifier	asf		616599	0					
+ANR	616929	Identifier	packet_size_left		616599	1					
+ANR	616930	IncDec	--		616599	1					
+ANR	616931	ExpressionStatement	asf -> packet_multi_size --	105:12:2308:2332	616599	4	True				
+ANR	616932	PostIncDecOperationExpression	asf -> packet_multi_size --		616599	0					
+ANR	616933	PtrMemberAccess	asf -> packet_multi_size		616599	0					
+ANR	616934	Identifier	asf		616599	0					
+ANR	616935	Identifier	packet_multi_size		616599	1					
+ANR	616936	IncDec	--		616599	1					
+ANR	616937	IfStatement	if ( asf -> packet_multi_size < asf_st -> packet_obj_size )		616599	5					
+ANR	616938	Condition	asf -> packet_multi_size < asf_st -> packet_obj_size	107:16:2351:2398	616599	0	True				
+ANR	616939	RelationalExpression	asf -> packet_multi_size < asf_st -> packet_obj_size		616599	0		<			
+ANR	616940	PtrMemberAccess	asf -> packet_multi_size		616599	0					
+ANR	616941	Identifier	asf		616599	0					
+ANR	616942	Identifier	packet_multi_size		616599	1					
+ANR	616943	PtrMemberAccess	asf_st -> packet_obj_size		616599	1					
+ANR	616944	Identifier	asf_st		616599	0					
+ANR	616945	Identifier	packet_obj_size		616599	1					
+ANR	616946	CompoundStatement		105:66:2319:2319	616599	1					
+ANR	616947	ExpressionStatement	asf -> packet_time_start = 0	109:16:2420:2446	616599	0	True				
+ANR	616948	AssignmentExpression	asf -> packet_time_start = 0		616599	0		=			
+ANR	616949	PtrMemberAccess	asf -> packet_time_start		616599	0					
+ANR	616950	Identifier	asf		616599	0					
+ANR	616951	Identifier	packet_time_start		616599	1					
+ANR	616952	PrimaryExpression	0		616599	1					
+ANR	616953	ExpressionStatement	"avio_skip ( pb , asf -> packet_multi_size )"	111:16:2465:2502	616599	1	True				
+ANR	616954	CallExpression	"avio_skip ( pb , asf -> packet_multi_size )"		616599	0					
+ANR	616955	Callee	avio_skip		616599	0					
+ANR	616956	Identifier	avio_skip		616599	0					
+ANR	616957	ArgumentList	pb		616599	1					
+ANR	616958	Argument	pb		616599	0					
+ANR	616959	Identifier	pb		616599	0					
+ANR	616960	Argument	asf -> packet_multi_size		616599	1					
+ANR	616961	PtrMemberAccess	asf -> packet_multi_size		616599	0					
+ANR	616962	Identifier	asf		616599	0					
+ANR	616963	Identifier	packet_multi_size		616599	1					
+ANR	616964	ExpressionStatement	asf -> packet_size_left -= asf -> packet_multi_size	113:16:2521:2568	616599	2	True				
+ANR	616965	AssignmentExpression	asf -> packet_size_left -= asf -> packet_multi_size		616599	0		-=			
+ANR	616966	PtrMemberAccess	asf -> packet_size_left		616599	0					
+ANR	616967	Identifier	asf		616599	0					
+ANR	616968	Identifier	packet_size_left		616599	1					
+ANR	616969	PtrMemberAccess	asf -> packet_multi_size		616599	1					
+ANR	616970	Identifier	asf		616599	0					
+ANR	616971	Identifier	packet_multi_size		616599	1					
+ANR	616972	ContinueStatement	continue ;	115:16:2587:2595	616599	3	True				
+ANR	616973	ExpressionStatement	asf -> packet_multi_size -= asf_st -> packet_obj_size	119:12:2625:2674	616599	6	True				
+ANR	616974	AssignmentExpression	asf -> packet_multi_size -= asf_st -> packet_obj_size		616599	0		-=			
+ANR	616975	PtrMemberAccess	asf -> packet_multi_size		616599	0					
+ANR	616976	Identifier	asf		616599	0					
+ANR	616977	Identifier	packet_multi_size		616599	1					
+ANR	616978	PtrMemberAccess	asf_st -> packet_obj_size		616599	1					
+ANR	616979	Identifier	asf_st		616599	0					
+ANR	616980	Identifier	packet_obj_size		616599	1					
+ANR	616981	IfStatement	if ( asf_st -> pkt . size != asf_st -> packet_obj_size || asf_st -> frag_offset + asf -> packet_frag_size > asf_st -> pkt . size )		616599	7					
+ANR	616982	Condition	asf_st -> pkt . size != asf_st -> packet_obj_size || asf_st -> frag_offset + asf -> packet_frag_size > asf_st -> pkt . size	125:12:2702:2875	616599	0	True				
+ANR	616983	OrExpression	asf_st -> pkt . size != asf_st -> packet_obj_size || asf_st -> frag_offset + asf -> packet_frag_size > asf_st -> pkt . size		616599	0		||			
+ANR	616984	EqualityExpression	asf_st -> pkt . size != asf_st -> packet_obj_size		616599	0		!=			
+ANR	616985	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	616986	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	616987	Identifier	asf_st		616599	0					
+ANR	616988	Identifier	pkt		616599	1					
+ANR	616989	Identifier	size		616599	1					
+ANR	616990	PtrMemberAccess	asf_st -> packet_obj_size		616599	1					
+ANR	616991	Identifier	asf_st		616599	0					
+ANR	616992	Identifier	packet_obj_size		616599	1					
+ANR	616993	RelationalExpression	asf_st -> frag_offset + asf -> packet_frag_size > asf_st -> pkt . size		616599	1		>			
+ANR	616994	AdditiveExpression	asf_st -> frag_offset + asf -> packet_frag_size		616599	0		+			
+ANR	616995	PtrMemberAccess	asf_st -> frag_offset		616599	0					
+ANR	616996	Identifier	asf_st		616599	0					
+ANR	616997	Identifier	frag_offset		616599	1					
+ANR	616998	PtrMemberAccess	asf -> packet_frag_size		616599	1					
+ANR	616999	Identifier	asf		616599	0					
+ANR	617000	Identifier	packet_frag_size		616599	1					
+ANR	617001	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617002	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617003	Identifier	asf_st		616599	0					
+ANR	617004	Identifier	pkt		616599	1					
+ANR	617005	Identifier	size		616599	1					
+ANR	617006	CompoundStatement		127:76:2796:2796	616599	1					
+ANR	617007	IfStatement	if ( asf_st -> pkt . data )		616599	0					
+ANR	617008	Condition	asf_st -> pkt . data	131:16:2897:2912	616599	0	True				
+ANR	617009	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617010	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617011	Identifier	asf_st		616599	0					
+ANR	617012	Identifier	pkt		616599	1					
+ANR	617013	Identifier	data		616599	1					
+ANR	617014	CompoundStatement		129:34:2833:2833	616599	1					
+ANR	617015	ExpressionStatement	"av_log ( s , AV_LOG_INFO , ""freeing incomplete packet size %d, new %d\\n"" , asf_st -> pkt . size , asf_st -> packet_obj_size )"	133:16:2934:3094	616599	0	True				
+ANR	617016	CallExpression	"av_log ( s , AV_LOG_INFO , ""freeing incomplete packet size %d, new %d\\n"" , asf_st -> pkt . size , asf_st -> packet_obj_size )"		616599	0					
+ANR	617017	Callee	av_log		616599	0					
+ANR	617018	Identifier	av_log		616599	0					
+ANR	617019	ArgumentList	s		616599	1					
+ANR	617020	Argument	s		616599	0					
+ANR	617021	Identifier	s		616599	0					
+ANR	617022	Argument	AV_LOG_INFO		616599	1					
+ANR	617023	Identifier	AV_LOG_INFO		616599	0					
+ANR	617024	Argument	"""freeing incomplete packet size %d, new %d\\n"""		616599	2					
+ANR	617025	PrimaryExpression	"""freeing incomplete packet size %d, new %d\\n"""		616599	0					
+ANR	617026	Argument	asf_st -> pkt . size		616599	3					
+ANR	617027	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617028	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617029	Identifier	asf_st		616599	0					
+ANR	617030	Identifier	pkt		616599	1					
+ANR	617031	Identifier	size		616599	1					
+ANR	617032	Argument	asf_st -> packet_obj_size		616599	4					
+ANR	617033	PtrMemberAccess	asf_st -> packet_obj_size		616599	0					
+ANR	617034	Identifier	asf_st		616599	0					
+ANR	617035	Identifier	packet_obj_size		616599	1					
+ANR	617036	ExpressionStatement	asf_st -> frag_offset = 0	139:16:3113:3136	616599	1	True				
+ANR	617037	AssignmentExpression	asf_st -> frag_offset = 0		616599	0		=			
+ANR	617038	PtrMemberAccess	asf_st -> frag_offset		616599	0					
+ANR	617039	Identifier	asf_st		616599	0					
+ANR	617040	Identifier	frag_offset		616599	1					
+ANR	617041	PrimaryExpression	0		616599	1					
+ANR	617042	ExpressionStatement	av_free_packet ( & asf_st -> pkt )	141:16:3155:3183	616599	2	True				
+ANR	617043	CallExpression	av_free_packet ( & asf_st -> pkt )		616599	0					
+ANR	617044	Callee	av_free_packet		616599	0					
+ANR	617045	Identifier	av_free_packet		616599	0					
+ANR	617046	ArgumentList	& asf_st -> pkt		616599	1					
+ANR	617047	Argument	& asf_st -> pkt		616599	0					
+ANR	617048	UnaryOperationExpression	& asf_st -> pkt		616599	0					
+ANR	617049	UnaryOperator	&		616599	0					
+ANR	617050	PtrMemberAccess	asf_st -> pkt		616599	1					
+ANR	617051	Identifier	asf_st		616599	0					
+ANR	617052	Identifier	pkt		616599	1					
+ANR	617053	ExpressionStatement	"av_new_packet ( & asf_st -> pkt , asf_st -> packet_obj_size )"	147:12:3243:3295	616599	1	True				
+ANR	617054	CallExpression	"av_new_packet ( & asf_st -> pkt , asf_st -> packet_obj_size )"		616599	0					
+ANR	617055	Callee	av_new_packet		616599	0					
+ANR	617056	Identifier	av_new_packet		616599	0					
+ANR	617057	ArgumentList	& asf_st -> pkt		616599	1					
+ANR	617058	Argument	& asf_st -> pkt		616599	0					
+ANR	617059	UnaryOperationExpression	& asf_st -> pkt		616599	0					
+ANR	617060	UnaryOperator	&		616599	0					
+ANR	617061	PtrMemberAccess	asf_st -> pkt		616599	1					
+ANR	617062	Identifier	asf_st		616599	0					
+ANR	617063	Identifier	pkt		616599	1					
+ANR	617064	Argument	asf_st -> packet_obj_size		616599	1					
+ANR	617065	PtrMemberAccess	asf_st -> packet_obj_size		616599	0					
+ANR	617066	Identifier	asf_st		616599	0					
+ANR	617067	Identifier	packet_obj_size		616599	1					
+ANR	617068	ExpressionStatement	asf_st -> seq = asf -> packet_seq	149:12:3310:3352	616599	2	True				
+ANR	617069	AssignmentExpression	asf_st -> seq = asf -> packet_seq		616599	0		=			
+ANR	617070	PtrMemberAccess	asf_st -> seq		616599	0					
+ANR	617071	Identifier	asf_st		616599	0					
+ANR	617072	Identifier	seq		616599	1					
+ANR	617073	PtrMemberAccess	asf -> packet_seq		616599	1					
+ANR	617074	Identifier	asf		616599	0					
+ANR	617075	Identifier	packet_seq		616599	1					
+ANR	617076	ExpressionStatement	asf_st -> pkt . dts = asf -> packet_frag_timestamp - asf -> hdr . preroll	151:12:3367:3439	616599	3	True				
+ANR	617077	AssignmentExpression	asf_st -> pkt . dts = asf -> packet_frag_timestamp - asf -> hdr . preroll		616599	0		=			
+ANR	617078	MemberAccess	asf_st -> pkt . dts		616599	0					
+ANR	617079	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617080	Identifier	asf_st		616599	0					
+ANR	617081	Identifier	pkt		616599	1					
+ANR	617082	Identifier	dts		616599	1					
+ANR	617083	AdditiveExpression	asf -> packet_frag_timestamp - asf -> hdr . preroll		616599	1		-			
+ANR	617084	PtrMemberAccess	asf -> packet_frag_timestamp		616599	0					
+ANR	617085	Identifier	asf		616599	0					
+ANR	617086	Identifier	packet_frag_timestamp		616599	1					
+ANR	617087	MemberAccess	asf -> hdr . preroll		616599	1					
+ANR	617088	PtrMemberAccess	asf -> hdr		616599	0					
+ANR	617089	Identifier	asf		616599	0					
+ANR	617090	Identifier	hdr		616599	1					
+ANR	617091	Identifier	preroll		616599	1					
+ANR	617092	ExpressionStatement	asf_st -> pkt . stream_index = asf -> stream_index	153:12:3454:3498	616599	4	True				
+ANR	617093	AssignmentExpression	asf_st -> pkt . stream_index = asf -> stream_index		616599	0		=			
+ANR	617094	MemberAccess	asf_st -> pkt . stream_index		616599	0					
+ANR	617095	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617096	Identifier	asf_st		616599	0					
+ANR	617097	Identifier	pkt		616599	1					
+ANR	617098	Identifier	stream_index		616599	1					
+ANR	617099	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	617100	Identifier	asf		616599	0					
+ANR	617101	Identifier	stream_index		616599	1					
+ANR	617102	ExpressionStatement	asf_st -> pkt . pos = asf_st -> packet_pos = asf -> packet_pos	155:12:3513:3576	616599	5	True				
+ANR	617103	AssignmentExpression	asf_st -> pkt . pos = asf_st -> packet_pos = asf -> packet_pos		616599	0		=			
+ANR	617104	MemberAccess	asf_st -> pkt . pos		616599	0					
+ANR	617105	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617106	Identifier	asf_st		616599	0					
+ANR	617107	Identifier	pkt		616599	1					
+ANR	617108	Identifier	pos		616599	1					
+ANR	617109	AssignmentExpression	asf_st -> packet_pos = asf -> packet_pos		616599	1		=			
+ANR	617110	PtrMemberAccess	asf_st -> packet_pos		616599	0					
+ANR	617111	Identifier	asf_st		616599	0					
+ANR	617112	Identifier	packet_pos		616599	1					
+ANR	617113	PtrMemberAccess	asf -> packet_pos		616599	1					
+ANR	617114	Identifier	asf		616599	0					
+ANR	617115	Identifier	packet_pos		616599	1					
+ANR	617116	IfStatement	if ( asf_st -> pkt . data && asf_st -> palette_changed )		616599	6					
+ANR	617117	Condition	asf_st -> pkt . data && asf_st -> palette_changed	160:16:3598:3640	616599	0	True				
+ANR	617118	AndExpression	asf_st -> pkt . data && asf_st -> palette_changed		616599	0		&&			
+ANR	617119	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617120	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617121	Identifier	asf_st		616599	0					
+ANR	617122	Identifier	pkt		616599	1					
+ANR	617123	Identifier	data		616599	1					
+ANR	617124	PtrMemberAccess	asf_st -> palette_changed		616599	1					
+ANR	617125	Identifier	asf_st		616599	0					
+ANR	617126	Identifier	palette_changed		616599	1					
+ANR	617127	CompoundStatement		160:16:3580:3592	616599	1					
+ANR	617128	IdentifierDeclStatement	uint8_t * pal ;	162:16:3662:3674	616599	0	True				
+ANR	617129	IdentifierDecl	* pal		616599	0					
+ANR	617130	IdentifierDeclType	uint8_t *		616599	0					
+ANR	617131	Identifier	pal		616599	1					
+ANR	617132	ExpressionStatement	"pal = av_packet_new_side_data ( & asf_st -> pkt , AV_PKT_DATA_PALETTE , AVPALETTE_SIZE )"	164:16:3693:3820	616599	1	True				
+ANR	617133	AssignmentExpression	"pal = av_packet_new_side_data ( & asf_st -> pkt , AV_PKT_DATA_PALETTE , AVPALETTE_SIZE )"		616599	0		=			
+ANR	617134	Identifier	pal		616599	0					
+ANR	617135	CallExpression	"av_packet_new_side_data ( & asf_st -> pkt , AV_PKT_DATA_PALETTE , AVPALETTE_SIZE )"		616599	1					
+ANR	617136	Callee	av_packet_new_side_data		616599	0					
+ANR	617137	Identifier	av_packet_new_side_data		616599	0					
+ANR	617138	ArgumentList	& asf_st -> pkt		616599	1					
+ANR	617139	Argument	& asf_st -> pkt		616599	0					
+ANR	617140	UnaryOperationExpression	& asf_st -> pkt		616599	0					
+ANR	617141	UnaryOperator	&		616599	0					
+ANR	617142	PtrMemberAccess	asf_st -> pkt		616599	1					
+ANR	617143	Identifier	asf_st		616599	0					
+ANR	617144	Identifier	pkt		616599	1					
+ANR	617145	Argument	AV_PKT_DATA_PALETTE		616599	1					
+ANR	617146	Identifier	AV_PKT_DATA_PALETTE		616599	0					
+ANR	617147	Argument	AVPALETTE_SIZE		616599	2					
+ANR	617148	Identifier	AVPALETTE_SIZE		616599	0					
+ANR	617149	IfStatement	if ( ! pal )		616599	2					
+ANR	617150	Condition	! pal	168:20:3843:3846	616599	0	True				
+ANR	617151	UnaryOperationExpression	! pal		616599	0					
+ANR	617152	UnaryOperator	!		616599	0					
+ANR	617153	Identifier	pal		616599	1					
+ANR	617154	CompoundStatement		166:26:3767:3767	616599	1					
+ANR	617155	ExpressionStatement	"av_log ( s , AV_LOG_ERROR , ""Cannot append palette to packet\\n"" )"	170:20:3872:3932	616599	0	True				
+ANR	617156	CallExpression	"av_log ( s , AV_LOG_ERROR , ""Cannot append palette to packet\\n"" )"		616599	0					
+ANR	617157	Callee	av_log		616599	0					
+ANR	617158	Identifier	av_log		616599	0					
+ANR	617159	ArgumentList	s		616599	1					
+ANR	617160	Argument	s		616599	0					
+ANR	617161	Identifier	s		616599	0					
+ANR	617162	Argument	AV_LOG_ERROR		616599	1					
+ANR	617163	Identifier	AV_LOG_ERROR		616599	0					
+ANR	617164	Argument	"""Cannot append palette to packet\\n"""		616599	2					
+ANR	617165	PrimaryExpression	"""Cannot append palette to packet\\n"""		616599	0					
+ANR	617166	ElseStatement	else		616599	0					
+ANR	617167	CompoundStatement		170:23:3876:3876	616599	0					
+ANR	617168	ExpressionStatement	"memcpy ( pal , asf_st -> palette , AVPALETTE_SIZE )"	174:20:3981:4025	616599	0	True				
+ANR	617169	CallExpression	"memcpy ( pal , asf_st -> palette , AVPALETTE_SIZE )"		616599	0					
+ANR	617170	Callee	memcpy		616599	0					
+ANR	617171	Identifier	memcpy		616599	0					
+ANR	617172	ArgumentList	pal		616599	1					
+ANR	617173	Argument	pal		616599	0					
+ANR	617174	Identifier	pal		616599	0					
+ANR	617175	Argument	asf_st -> palette		616599	1					
+ANR	617176	PtrMemberAccess	asf_st -> palette		616599	0					
+ANR	617177	Identifier	asf_st		616599	0					
+ANR	617178	Identifier	palette		616599	1					
+ANR	617179	Argument	AVPALETTE_SIZE		616599	2					
+ANR	617180	Identifier	AVPALETTE_SIZE		616599	0					
+ANR	617181	ExpressionStatement	asf_st -> palette_changed = 0	176:20:4048:4075	616599	1	True				
+ANR	617182	AssignmentExpression	asf_st -> palette_changed = 0		616599	0		=			
+ANR	617183	PtrMemberAccess	asf_st -> palette_changed		616599	0					
+ANR	617184	Identifier	asf_st		616599	0					
+ANR	617185	Identifier	palette_changed		616599	1					
+ANR	617186	PrimaryExpression	0		616599	1					
+ANR	617187	ExpressionStatement	"av_dlog ( asf , ""new packet: stream:%d key:%d packet_key:%d audio:%d size:%d\\n"" , asf -> stream_index , asf -> packet_key_frame , asf_st -> pkt . flags & AV_PKT_FLAG_KEY , s -> streams [ asf -> stream_index ] -> codec -> codec_type == AVMEDIA_TYPE_AUDIO , asf_st -> packet_obj_size )"	182:12:4124:4461	616599	7	True				
+ANR	617188	CallExpression	"av_dlog ( asf , ""new packet: stream:%d key:%d packet_key:%d audio:%d size:%d\\n"" , asf -> stream_index , asf -> packet_key_frame , asf_st -> pkt . flags & AV_PKT_FLAG_KEY , s -> streams [ asf -> stream_index ] -> codec -> codec_type == AVMEDIA_TYPE_AUDIO , asf_st -> packet_obj_size )"		616599	0					
+ANR	617189	Callee	av_dlog		616599	0					
+ANR	617190	Identifier	av_dlog		616599	0					
+ANR	617191	ArgumentList	asf		616599	1					
+ANR	617192	Argument	asf		616599	0					
+ANR	617193	Identifier	asf		616599	0					
+ANR	617194	Argument	"""new packet: stream:%d key:%d packet_key:%d audio:%d size:%d\\n"""		616599	1					
+ANR	617195	PrimaryExpression	"""new packet: stream:%d key:%d packet_key:%d audio:%d size:%d\\n"""		616599	0					
+ANR	617196	Argument	asf -> stream_index		616599	2					
+ANR	617197	PtrMemberAccess	asf -> stream_index		616599	0					
+ANR	617198	Identifier	asf		616599	0					
+ANR	617199	Identifier	stream_index		616599	1					
+ANR	617200	Argument	asf -> packet_key_frame		616599	3					
+ANR	617201	PtrMemberAccess	asf -> packet_key_frame		616599	0					
+ANR	617202	Identifier	asf		616599	0					
+ANR	617203	Identifier	packet_key_frame		616599	1					
+ANR	617204	Argument	asf_st -> pkt . flags & AV_PKT_FLAG_KEY		616599	4					
+ANR	617205	BitAndExpression	asf_st -> pkt . flags & AV_PKT_FLAG_KEY		616599	0		&			
+ANR	617206	MemberAccess	asf_st -> pkt . flags		616599	0					
+ANR	617207	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617208	Identifier	asf_st		616599	0					
+ANR	617209	Identifier	pkt		616599	1					
+ANR	617210	Identifier	flags		616599	1					
+ANR	617211	Identifier	AV_PKT_FLAG_KEY		616599	1					
+ANR	617212	Argument	s -> streams [ asf -> stream_index ] -> codec -> codec_type == AVMEDIA_TYPE_AUDIO		616599	5					
+ANR	617213	EqualityExpression	s -> streams [ asf -> stream_index ] -> codec -> codec_type == AVMEDIA_TYPE_AUDIO		616599	0		==			
+ANR	617214	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> codec -> codec_type		616599	0					
+ANR	617215	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> codec		616599	0					
+ANR	617216	ArrayIndexing	s -> streams [ asf -> stream_index ]		616599	0					
+ANR	617217	PtrMemberAccess	s -> streams		616599	0					
+ANR	617218	Identifier	s		616599	0					
+ANR	617219	Identifier	streams		616599	1					
+ANR	617220	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	617221	Identifier	asf		616599	0					
+ANR	617222	Identifier	stream_index		616599	1					
+ANR	617223	Identifier	codec		616599	1					
+ANR	617224	Identifier	codec_type		616599	1					
+ANR	617225	Identifier	AVMEDIA_TYPE_AUDIO		616599	1					
+ANR	617226	Argument	asf_st -> packet_obj_size		616599	6					
+ANR	617227	PtrMemberAccess	asf_st -> packet_obj_size		616599	0					
+ANR	617228	Identifier	asf_st		616599	0					
+ANR	617229	Identifier	packet_obj_size		616599	1					
+ANR	617230	IfStatement	if ( s -> streams [ asf -> stream_index ] -> codec -> codec_type == AVMEDIA_TYPE_AUDIO )		616599	8					
+ANR	617231	Condition	s -> streams [ asf -> stream_index ] -> codec -> codec_type == AVMEDIA_TYPE_AUDIO	192:16:4480:4549	616599	0	True				
+ANR	617232	EqualityExpression	s -> streams [ asf -> stream_index ] -> codec -> codec_type == AVMEDIA_TYPE_AUDIO		616599	0		==			
+ANR	617233	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> codec -> codec_type		616599	0					
+ANR	617234	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> codec		616599	0					
+ANR	617235	ArrayIndexing	s -> streams [ asf -> stream_index ]		616599	0					
+ANR	617236	PtrMemberAccess	s -> streams		616599	0					
+ANR	617237	Identifier	s		616599	0					
+ANR	617238	Identifier	streams		616599	1					
+ANR	617239	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	617240	Identifier	asf		616599	0					
+ANR	617241	Identifier	stream_index		616599	1					
+ANR	617242	Identifier	codec		616599	1					
+ANR	617243	Identifier	codec_type		616599	1					
+ANR	617244	Identifier	AVMEDIA_TYPE_AUDIO		616599	1					
+ANR	617245	ExpressionStatement	asf -> packet_key_frame = 1	194:16:4569:4594	616599	1	True				
+ANR	617246	AssignmentExpression	asf -> packet_key_frame = 1		616599	0		=			
+ANR	617247	PtrMemberAccess	asf -> packet_key_frame		616599	0					
+ANR	617248	Identifier	asf		616599	0					
+ANR	617249	Identifier	packet_key_frame		616599	1					
+ANR	617250	PrimaryExpression	1		616599	1					
+ANR	617251	IfStatement	if ( asf -> packet_key_frame )		616599	9					
+ANR	617252	Condition	asf -> packet_key_frame	196:16:4613:4633	616599	0	True				
+ANR	617253	PtrMemberAccess	asf -> packet_key_frame		616599	0					
+ANR	617254	Identifier	asf		616599	0					
+ANR	617255	Identifier	packet_key_frame		616599	1					
+ANR	617256	ExpressionStatement	asf_st -> pkt . flags |= AV_PKT_FLAG_KEY	198:16:4653:4689	616599	1	True				
+ANR	617257	AssignmentExpression	asf_st -> pkt . flags |= AV_PKT_FLAG_KEY		616599	0		|=			
+ANR	617258	MemberAccess	asf_st -> pkt . flags		616599	0					
+ANR	617259	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617260	Identifier	asf_st		616599	0					
+ANR	617261	Identifier	pkt		616599	1					
+ANR	617262	Identifier	flags		616599	1					
+ANR	617263	Identifier	AV_PKT_FLAG_KEY		616599	1					
+ANR	617264	ExpressionStatement	"av_dlog ( asf , ""READ PACKET s:%d  os:%d  o:%d,%d  l:%d   DATA:%p\\n"" , s -> packet_size , asf_st -> pkt . size , asf -> packet_frag_offset , asf_st -> frag_offset , asf -> packet_frag_size , asf_st -> pkt . data )"	206:8:4738:4959	616599	8	True				
+ANR	617265	CallExpression	"av_dlog ( asf , ""READ PACKET s:%d  os:%d  o:%d,%d  l:%d   DATA:%p\\n"" , s -> packet_size , asf_st -> pkt . size , asf -> packet_frag_offset , asf_st -> frag_offset , asf -> packet_frag_size , asf_st -> pkt . data )"		616599	0					
+ANR	617266	Callee	av_dlog		616599	0					
+ANR	617267	Identifier	av_dlog		616599	0					
+ANR	617268	ArgumentList	asf		616599	1					
+ANR	617269	Argument	asf		616599	0					
+ANR	617270	Identifier	asf		616599	0					
+ANR	617271	Argument	"""READ PACKET s:%d  os:%d  o:%d,%d  l:%d   DATA:%p\\n"""		616599	1					
+ANR	617272	PrimaryExpression	"""READ PACKET s:%d  os:%d  o:%d,%d  l:%d   DATA:%p\\n"""		616599	0					
+ANR	617273	Argument	s -> packet_size		616599	2					
+ANR	617274	PtrMemberAccess	s -> packet_size		616599	0					
+ANR	617275	Identifier	s		616599	0					
+ANR	617276	Identifier	packet_size		616599	1					
+ANR	617277	Argument	asf_st -> pkt . size		616599	3					
+ANR	617278	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617279	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617280	Identifier	asf_st		616599	0					
+ANR	617281	Identifier	pkt		616599	1					
+ANR	617282	Identifier	size		616599	1					
+ANR	617283	Argument	asf -> packet_frag_offset		616599	4					
+ANR	617284	PtrMemberAccess	asf -> packet_frag_offset		616599	0					
+ANR	617285	Identifier	asf		616599	0					
+ANR	617286	Identifier	packet_frag_offset		616599	1					
+ANR	617287	Argument	asf_st -> frag_offset		616599	5					
+ANR	617288	PtrMemberAccess	asf_st -> frag_offset		616599	0					
+ANR	617289	Identifier	asf_st		616599	0					
+ANR	617290	Identifier	frag_offset		616599	1					
+ANR	617291	Argument	asf -> packet_frag_size		616599	6					
+ANR	617292	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	617293	Identifier	asf		616599	0					
+ANR	617294	Identifier	packet_frag_size		616599	1					
+ANR	617295	Argument	asf_st -> pkt . data		616599	7					
+ANR	617296	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617297	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617298	Identifier	asf_st		616599	0					
+ANR	617299	Identifier	pkt		616599	1					
+ANR	617300	Identifier	data		616599	1					
+ANR	617301	ExpressionStatement	asf -> packet_size_left -= asf -> packet_frag_size	212:8:4970:5016	616599	9	True				
+ANR	617302	AssignmentExpression	asf -> packet_size_left -= asf -> packet_frag_size		616599	0		-=			
+ANR	617303	PtrMemberAccess	asf -> packet_size_left		616599	0					
+ANR	617304	Identifier	asf		616599	0					
+ANR	617305	Identifier	packet_size_left		616599	1					
+ANR	617306	PtrMemberAccess	asf -> packet_frag_size		616599	1					
+ANR	617307	Identifier	asf		616599	0					
+ANR	617308	Identifier	packet_frag_size		616599	1					
+ANR	617309	IfStatement	if ( asf -> packet_size_left < 0 )		616599	10					
+ANR	617310	Condition	asf -> packet_size_left < 0	214:12:5031:5055	616599	0	True				
+ANR	617311	RelationalExpression	asf -> packet_size_left < 0		616599	0		<			
+ANR	617312	PtrMemberAccess	asf -> packet_size_left		616599	0					
+ANR	617313	Identifier	asf		616599	0					
+ANR	617314	Identifier	packet_size_left		616599	1					
+ANR	617315	PrimaryExpression	0		616599	1					
+ANR	617316	ContinueStatement	continue ;	216:12:5071:5079	616599	1	True				
+ANR	617317	IfStatement	if ( asf -> packet_frag_offset >= asf_st -> pkt . size || asf -> packet_frag_size > asf_st -> pkt . size - asf -> packet_frag_offset )		616599	11					
+ANR	617318	Condition	asf -> packet_frag_offset >= asf_st -> pkt . size || asf -> packet_frag_size > asf_st -> pkt . size - asf -> packet_frag_offset	220:12:5096:5221	616599	0	True				
+ANR	617319	OrExpression	asf -> packet_frag_offset >= asf_st -> pkt . size || asf -> packet_frag_size > asf_st -> pkt . size - asf -> packet_frag_offset		616599	0		||			
+ANR	617320	RelationalExpression	asf -> packet_frag_offset >= asf_st -> pkt . size		616599	0		>=			
+ANR	617321	PtrMemberAccess	asf -> packet_frag_offset		616599	0					
+ANR	617322	Identifier	asf		616599	0					
+ANR	617323	Identifier	packet_frag_offset		616599	1					
+ANR	617324	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617325	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617326	Identifier	asf_st		616599	0					
+ANR	617327	Identifier	pkt		616599	1					
+ANR	617328	Identifier	size		616599	1					
+ANR	617329	RelationalExpression	asf -> packet_frag_size > asf_st -> pkt . size - asf -> packet_frag_offset		616599	1		>			
+ANR	617330	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	617331	Identifier	asf		616599	0					
+ANR	617332	Identifier	packet_frag_size		616599	1					
+ANR	617333	AdditiveExpression	asf_st -> pkt . size - asf -> packet_frag_offset		616599	1		-			
+ANR	617334	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617335	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617336	Identifier	asf_st		616599	0					
+ANR	617337	Identifier	pkt		616599	1					
+ANR	617338	Identifier	size		616599	1					
+ANR	617339	PtrMemberAccess	asf -> packet_frag_offset		616599	1					
+ANR	617340	Identifier	asf		616599	0					
+ANR	617341	Identifier	packet_frag_offset		616599	1					
+ANR	617342	CompoundStatement		220:80:5142:5142	616599	1					
+ANR	617343	ExpressionStatement	"av_log ( s , AV_LOG_ERROR , ""packet fragment position invalid %u,%u not in %u\\n"" , asf -> packet_frag_offset , asf -> packet_frag_size , asf_st -> pkt . size )"	224:12:5239:5442	616599	0	True				
+ANR	617344	CallExpression	"av_log ( s , AV_LOG_ERROR , ""packet fragment position invalid %u,%u not in %u\\n"" , asf -> packet_frag_offset , asf -> packet_frag_size , asf_st -> pkt . size )"		616599	0					
+ANR	617345	Callee	av_log		616599	0					
+ANR	617346	Identifier	av_log		616599	0					
+ANR	617347	ArgumentList	s		616599	1					
+ANR	617348	Argument	s		616599	0					
+ANR	617349	Identifier	s		616599	0					
+ANR	617350	Argument	AV_LOG_ERROR		616599	1					
+ANR	617351	Identifier	AV_LOG_ERROR		616599	0					
+ANR	617352	Argument	"""packet fragment position invalid %u,%u not in %u\\n"""		616599	2					
+ANR	617353	PrimaryExpression	"""packet fragment position invalid %u,%u not in %u\\n"""		616599	0					
+ANR	617354	Argument	asf -> packet_frag_offset		616599	3					
+ANR	617355	PtrMemberAccess	asf -> packet_frag_offset		616599	0					
+ANR	617356	Identifier	asf		616599	0					
+ANR	617357	Identifier	packet_frag_offset		616599	1					
+ANR	617358	Argument	asf -> packet_frag_size		616599	4					
+ANR	617359	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	617360	Identifier	asf		616599	0					
+ANR	617361	Identifier	packet_frag_size		616599	1					
+ANR	617362	Argument	asf_st -> pkt . size		616599	5					
+ANR	617363	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617364	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617365	Identifier	asf_st		616599	0					
+ANR	617366	Identifier	pkt		616599	1					
+ANR	617367	Identifier	size		616599	1					
+ANR	617368	ContinueStatement	continue ;	232:12:5457:5465	616599	1	True				
+ANR	617369	IfStatement	if ( asf -> packet_frag_offset != asf_st -> frag_offset && ! asf_st -> pkt_clean )		616599	12					
+ANR	617370	Condition	asf -> packet_frag_offset != asf_st -> frag_offset && ! asf_st -> pkt_clean	238:12:5493:5560	616599	0	True				
+ANR	617371	AndExpression	asf -> packet_frag_offset != asf_st -> frag_offset && ! asf_st -> pkt_clean		616599	0		&&			
+ANR	617372	EqualityExpression	asf -> packet_frag_offset != asf_st -> frag_offset		616599	0		!=			
+ANR	617373	PtrMemberAccess	asf -> packet_frag_offset		616599	0					
+ANR	617374	Identifier	asf		616599	0					
+ANR	617375	Identifier	packet_frag_offset		616599	1					
+ANR	617376	PtrMemberAccess	asf_st -> frag_offset		616599	1					
+ANR	617377	Identifier	asf_st		616599	0					
+ANR	617378	Identifier	frag_offset		616599	1					
+ANR	617379	UnaryOperationExpression	! asf_st -> pkt_clean		616599	1					
+ANR	617380	UnaryOperator	!		616599	0					
+ANR	617381	PtrMemberAccess	asf_st -> pkt_clean		616599	1					
+ANR	617382	Identifier	asf_st		616599	0					
+ANR	617383	Identifier	pkt_clean		616599	1					
+ANR	617384	CompoundStatement		236:82:5481:5481	616599	1					
+ANR	617385	ExpressionStatement	"memset ( asf_st -> pkt . data + asf_st -> frag_offset , 0 , asf_st -> pkt . size - asf_st -> frag_offset )"	240:12:5578:5667	616599	0	True				
+ANR	617386	CallExpression	"memset ( asf_st -> pkt . data + asf_st -> frag_offset , 0 , asf_st -> pkt . size - asf_st -> frag_offset )"		616599	0					
+ANR	617387	Callee	memset		616599	0					
+ANR	617388	Identifier	memset		616599	0					
+ANR	617389	ArgumentList	asf_st -> pkt . data + asf_st -> frag_offset		616599	1					
+ANR	617390	Argument	asf_st -> pkt . data + asf_st -> frag_offset		616599	0					
+ANR	617391	AdditiveExpression	asf_st -> pkt . data + asf_st -> frag_offset		616599	0		+			
+ANR	617392	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617393	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617394	Identifier	asf_st		616599	0					
+ANR	617395	Identifier	pkt		616599	1					
+ANR	617396	Identifier	data		616599	1					
+ANR	617397	PtrMemberAccess	asf_st -> frag_offset		616599	1					
+ANR	617398	Identifier	asf_st		616599	0					
+ANR	617399	Identifier	frag_offset		616599	1					
+ANR	617400	Argument	0		616599	1					
+ANR	617401	PrimaryExpression	0		616599	0					
+ANR	617402	Argument	asf_st -> pkt . size - asf_st -> frag_offset		616599	2					
+ANR	617403	AdditiveExpression	asf_st -> pkt . size - asf_st -> frag_offset		616599	0		-			
+ANR	617404	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617405	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617406	Identifier	asf_st		616599	0					
+ANR	617407	Identifier	pkt		616599	1					
+ANR	617408	Identifier	size		616599	1					
+ANR	617409	PtrMemberAccess	asf_st -> frag_offset		616599	1					
+ANR	617410	Identifier	asf_st		616599	0					
+ANR	617411	Identifier	frag_offset		616599	1					
+ANR	617412	ExpressionStatement	asf_st -> pkt_clean = 1	242:12:5682:5703	616599	1	True				
+ANR	617413	AssignmentExpression	asf_st -> pkt_clean = 1		616599	0		=			
+ANR	617414	PtrMemberAccess	asf_st -> pkt_clean		616599	0					
+ANR	617415	Identifier	asf_st		616599	0					
+ANR	617416	Identifier	pkt_clean		616599	1					
+ANR	617417	PrimaryExpression	1		616599	1					
+ANR	617418	ExpressionStatement	"ret = avio_read ( pb , asf_st -> pkt . data + asf -> packet_frag_offset , asf -> packet_frag_size )"	248:8:5727:5838	616599	13	True				
+ANR	617419	AssignmentExpression	"ret = avio_read ( pb , asf_st -> pkt . data + asf -> packet_frag_offset , asf -> packet_frag_size )"		616599	0		=			
+ANR	617420	Identifier	ret		616599	0					
+ANR	617421	CallExpression	"avio_read ( pb , asf_st -> pkt . data + asf -> packet_frag_offset , asf -> packet_frag_size )"		616599	1					
+ANR	617422	Callee	avio_read		616599	0					
+ANR	617423	Identifier	avio_read		616599	0					
+ANR	617424	ArgumentList	pb		616599	1					
+ANR	617425	Argument	pb		616599	0					
+ANR	617426	Identifier	pb		616599	0					
+ANR	617427	Argument	asf_st -> pkt . data + asf -> packet_frag_offset		616599	1					
+ANR	617428	AdditiveExpression	asf_st -> pkt . data + asf -> packet_frag_offset		616599	0		+			
+ANR	617429	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617430	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617431	Identifier	asf_st		616599	0					
+ANR	617432	Identifier	pkt		616599	1					
+ANR	617433	Identifier	data		616599	1					
+ANR	617434	PtrMemberAccess	asf -> packet_frag_offset		616599	1					
+ANR	617435	Identifier	asf		616599	0					
+ANR	617436	Identifier	packet_frag_offset		616599	1					
+ANR	617437	Argument	asf -> packet_frag_size		616599	2					
+ANR	617438	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	617439	Identifier	asf		616599	0					
+ANR	617440	Identifier	packet_frag_size		616599	1					
+ANR	617441	IfStatement	if ( ret != asf -> packet_frag_size )		616599	14					
+ANR	617442	Condition	ret != asf -> packet_frag_size	252:12:5853:5880	616599	0	True				
+ANR	617443	EqualityExpression	ret != asf -> packet_frag_size		616599	0		!=			
+ANR	617444	Identifier	ret		616599	0					
+ANR	617445	PtrMemberAccess	asf -> packet_frag_size		616599	1					
+ANR	617446	Identifier	asf		616599	0					
+ANR	617447	Identifier	packet_frag_size		616599	1					
+ANR	617448	CompoundStatement		250:42:5801:5801	616599	1					
+ANR	617449	IfStatement	if ( ret < 0 || asf -> packet_frag_offset + ret == 0 )		616599	0					
+ANR	617450	Condition	ret < 0 || asf -> packet_frag_offset + ret == 0	254:16:5902:5946	616599	0	True				
+ANR	617451	OrExpression	ret < 0 || asf -> packet_frag_offset + ret == 0		616599	0		||			
+ANR	617452	RelationalExpression	ret < 0		616599	0		<			
+ANR	617453	Identifier	ret		616599	0					
+ANR	617454	PrimaryExpression	0		616599	1					
+ANR	617455	EqualityExpression	asf -> packet_frag_offset + ret == 0		616599	1		==			
+ANR	617456	AdditiveExpression	asf -> packet_frag_offset + ret		616599	0		+			
+ANR	617457	PtrMemberAccess	asf -> packet_frag_offset		616599	0					
+ANR	617458	Identifier	asf		616599	0					
+ANR	617459	Identifier	packet_frag_offset		616599	1					
+ANR	617460	Identifier	ret		616599	1					
+ANR	617461	PrimaryExpression	0		616599	1					
+ANR	617462	ReturnStatement	return ret < 0 ? ret : AVERROR_EOF ;	256:16:5966:6000	616599	1	True				
+ANR	617463	ConditionalExpression	ret < 0 ? ret : AVERROR_EOF		616599	0					
+ANR	617464	Condition	ret < 0		616599	0					
+ANR	617465	RelationalExpression	ret < 0		616599	0		<			
+ANR	617466	Identifier	ret		616599	0					
+ANR	617467	PrimaryExpression	0		616599	1					
+ANR	617468	Identifier	ret		616599	1					
+ANR	617469	Identifier	AVERROR_EOF		616599	2					
+ANR	617470	IfStatement	if ( asf_st -> ds_span > 1 )		616599	1					
+ANR	617471	Condition	asf_st -> ds_span > 1	260:16:6021:6039	616599	0	True				
+ANR	617472	RelationalExpression	asf_st -> ds_span > 1		616599	0		>			
+ANR	617473	PtrMemberAccess	asf_st -> ds_span		616599	0					
+ANR	617474	Identifier	asf_st		616599	0					
+ANR	617475	Identifier	ds_span		616599	1					
+ANR	617476	PrimaryExpression	1		616599	1					
+ANR	617477	CompoundStatement		258:37:5960:5960	616599	1					
+ANR	617478	ExpressionStatement	"memset ( asf_st -> pkt . data + asf -> packet_frag_offset + ret , 0 , asf -> packet_frag_size - ret )"	268:16:6264:6376	616599	0	True				
+ANR	617479	CallExpression	"memset ( asf_st -> pkt . data + asf -> packet_frag_offset + ret , 0 , asf -> packet_frag_size - ret )"		616599	0					
+ANR	617480	Callee	memset		616599	0					
+ANR	617481	Identifier	memset		616599	0					
+ANR	617482	ArgumentList	asf_st -> pkt . data + asf -> packet_frag_offset + ret		616599	1					
+ANR	617483	Argument	asf_st -> pkt . data + asf -> packet_frag_offset + ret		616599	0					
+ANR	617484	AdditiveExpression	asf_st -> pkt . data + asf -> packet_frag_offset + ret		616599	0		+			
+ANR	617485	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617486	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617487	Identifier	asf_st		616599	0					
+ANR	617488	Identifier	pkt		616599	1					
+ANR	617489	Identifier	data		616599	1					
+ANR	617490	AdditiveExpression	asf -> packet_frag_offset + ret		616599	1		+			
+ANR	617491	PtrMemberAccess	asf -> packet_frag_offset		616599	0					
+ANR	617492	Identifier	asf		616599	0					
+ANR	617493	Identifier	packet_frag_offset		616599	1					
+ANR	617494	Identifier	ret		616599	1					
+ANR	617495	Argument	0		616599	1					
+ANR	617496	PrimaryExpression	0		616599	0					
+ANR	617497	Argument	asf -> packet_frag_size - ret		616599	2					
+ANR	617498	AdditiveExpression	asf -> packet_frag_size - ret		616599	0		-			
+ANR	617499	PtrMemberAccess	asf -> packet_frag_size		616599	0					
+ANR	617500	Identifier	asf		616599	0					
+ANR	617501	Identifier	packet_frag_size		616599	1					
+ANR	617502	Identifier	ret		616599	1					
+ANR	617503	ExpressionStatement	ret = asf -> packet_frag_size	272:16:6395:6422	616599	1	True				
+ANR	617504	AssignmentExpression	ret = asf -> packet_frag_size		616599	0		=			
+ANR	617505	Identifier	ret		616599	0					
+ANR	617506	PtrMemberAccess	asf -> packet_frag_size		616599	1					
+ANR	617507	Identifier	asf		616599	0					
+ANR	617508	Identifier	packet_frag_size		616599	1					
+ANR	617509	ElseStatement	else		616599	0					
+ANR	617510	CompoundStatement		272:19:6362:6362	616599	0					
+ANR	617511	ExpressionStatement	"av_shrink_packet ( & asf_st -> pkt , asf -> packet_frag_offset + ret )"	278:16:6531:6592	616599	0	True				
+ANR	617512	CallExpression	"av_shrink_packet ( & asf_st -> pkt , asf -> packet_frag_offset + ret )"		616599	0					
+ANR	617513	Callee	av_shrink_packet		616599	0					
+ANR	617514	Identifier	av_shrink_packet		616599	0					
+ANR	617515	ArgumentList	& asf_st -> pkt		616599	1					
+ANR	617516	Argument	& asf_st -> pkt		616599	0					
+ANR	617517	UnaryOperationExpression	& asf_st -> pkt		616599	0					
+ANR	617518	UnaryOperator	&		616599	0					
+ANR	617519	PtrMemberAccess	asf_st -> pkt		616599	1					
+ANR	617520	Identifier	asf_st		616599	0					
+ANR	617521	Identifier	pkt		616599	1					
+ANR	617522	Argument	asf -> packet_frag_offset + ret		616599	1					
+ANR	617523	AdditiveExpression	asf -> packet_frag_offset + ret		616599	0		+			
+ANR	617524	PtrMemberAccess	asf -> packet_frag_offset		616599	0					
+ANR	617525	Identifier	asf		616599	0					
+ANR	617526	Identifier	packet_frag_offset		616599	1					
+ANR	617527	Identifier	ret		616599	1					
+ANR	617528	IfStatement	if ( s -> key && s -> keylen == 20 )		616599	15					
+ANR	617529	Condition	s -> key && s -> keylen == 20	284:12:6633:6657	616599	0	True				
+ANR	617530	AndExpression	s -> key && s -> keylen == 20		616599	0		&&			
+ANR	617531	PtrMemberAccess	s -> key		616599	0					
+ANR	617532	Identifier	s		616599	0					
+ANR	617533	Identifier	key		616599	1					
+ANR	617534	EqualityExpression	s -> keylen == 20		616599	1		==			
+ANR	617535	PtrMemberAccess	s -> keylen		616599	0					
+ANR	617536	Identifier	s		616599	0					
+ANR	617537	Identifier	keylen		616599	1					
+ANR	617538	PrimaryExpression	20		616599	1					
+ANR	617539	ExpressionStatement	"ff_asfcrypt_dec ( s -> key , asf_st -> pkt . data + asf -> packet_frag_offset , ret )"	286:12:6673:6774	616599	1	True				
+ANR	617540	CallExpression	"ff_asfcrypt_dec ( s -> key , asf_st -> pkt . data + asf -> packet_frag_offset , ret )"		616599	0					
+ANR	617541	Callee	ff_asfcrypt_dec		616599	0					
+ANR	617542	Identifier	ff_asfcrypt_dec		616599	0					
+ANR	617543	ArgumentList	s -> key		616599	1					
+ANR	617544	Argument	s -> key		616599	0					
+ANR	617545	PtrMemberAccess	s -> key		616599	0					
+ANR	617546	Identifier	s		616599	0					
+ANR	617547	Identifier	key		616599	1					
+ANR	617548	Argument	asf_st -> pkt . data + asf -> packet_frag_offset		616599	1					
+ANR	617549	AdditiveExpression	asf_st -> pkt . data + asf -> packet_frag_offset		616599	0		+			
+ANR	617550	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617551	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617552	Identifier	asf_st		616599	0					
+ANR	617553	Identifier	pkt		616599	1					
+ANR	617554	Identifier	data		616599	1					
+ANR	617555	PtrMemberAccess	asf -> packet_frag_offset		616599	1					
+ANR	617556	Identifier	asf		616599	0					
+ANR	617557	Identifier	packet_frag_offset		616599	1					
+ANR	617558	Argument	ret		616599	2					
+ANR	617559	Identifier	ret		616599	0					
+ANR	617560	ExpressionStatement	asf_st -> frag_offset += ret	290:8:6785:6811	616599	16	True				
+ANR	617561	AssignmentExpression	asf_st -> frag_offset += ret		616599	0		+=			
+ANR	617562	PtrMemberAccess	asf_st -> frag_offset		616599	0					
+ANR	617563	Identifier	asf_st		616599	0					
+ANR	617564	Identifier	frag_offset		616599	1					
+ANR	617565	Identifier	ret		616599	1					
+ANR	617566	IfStatement	if ( asf_st -> frag_offset == asf_st -> pkt . size )		616599	17					
+ANR	617567	Condition	asf_st -> frag_offset == asf_st -> pkt . size	294:12:6870:6908	616599	0	True				
+ANR	617568	EqualityExpression	asf_st -> frag_offset == asf_st -> pkt . size		616599	0		==			
+ANR	617569	PtrMemberAccess	asf_st -> frag_offset		616599	0					
+ANR	617570	Identifier	asf_st		616599	0					
+ANR	617571	Identifier	frag_offset		616599	1					
+ANR	617572	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617573	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617574	Identifier	asf_st		616599	0					
+ANR	617575	Identifier	pkt		616599	1					
+ANR	617576	Identifier	size		616599	1					
+ANR	617577	CompoundStatement		292:53:6829:6829	616599	1					
+ANR	617578	IfStatement	if ( s -> streams [ asf -> stream_index ] -> codec -> codec_id == AV_CODEC_ID_MPEG2VIDEO && asf_st -> pkt . size > 100 )		616599	0					
+ANR	617579	Condition	s -> streams [ asf -> stream_index ] -> codec -> codec_id == AV_CODEC_ID_MPEG2VIDEO && asf_st -> pkt . size > 100	298:16:6990:7104	616599	0	True				
+ANR	617580	AndExpression	s -> streams [ asf -> stream_index ] -> codec -> codec_id == AV_CODEC_ID_MPEG2VIDEO && asf_st -> pkt . size > 100		616599	0		&&			
+ANR	617581	EqualityExpression	s -> streams [ asf -> stream_index ] -> codec -> codec_id == AV_CODEC_ID_MPEG2VIDEO		616599	0		==			
+ANR	617582	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> codec -> codec_id		616599	0					
+ANR	617583	PtrMemberAccess	s -> streams [ asf -> stream_index ] -> codec		616599	0					
+ANR	617584	ArrayIndexing	s -> streams [ asf -> stream_index ]		616599	0					
+ANR	617585	PtrMemberAccess	s -> streams		616599	0					
+ANR	617586	Identifier	s		616599	0					
+ANR	617587	Identifier	streams		616599	1					
+ANR	617588	PtrMemberAccess	asf -> stream_index		616599	1					
+ANR	617589	Identifier	asf		616599	0					
+ANR	617590	Identifier	stream_index		616599	1					
+ANR	617591	Identifier	codec		616599	1					
+ANR	617592	Identifier	codec_id		616599	1					
+ANR	617593	Identifier	AV_CODEC_ID_MPEG2VIDEO		616599	1					
+ANR	617594	RelationalExpression	asf_st -> pkt . size > 100		616599	1		>			
+ANR	617595	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617596	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617597	Identifier	asf_st		616599	0					
+ANR	617598	Identifier	pkt		616599	1					
+ANR	617599	Identifier	size		616599	1					
+ANR	617600	PrimaryExpression	100		616599	1					
+ANR	617601	CompoundStatement		300:16:7044:7049	616599	1					
+ANR	617602	IdentifierDeclStatement	int i ;	302:16:7126:7131	616599	0	True				
+ANR	617603	IdentifierDecl	i		616599	0					
+ANR	617604	IdentifierDeclType	int		616599	0					
+ANR	617605	Identifier	i		616599	1					
+ANR	617606	ForStatement	for ( i = 0 ; i < asf_st -> pkt . size && ! asf_st -> pkt . data [ i ] ; i ++ )		616599	1					
+ANR	617607	ForInit	i = 0 ;	304:21:7155:7160	616599	0	True				
+ANR	617608	AssignmentExpression	i = 0		616599	0		=			
+ANR	617609	Identifier	i		616599	0					
+ANR	617610	PrimaryExpression	0		616599	1					
+ANR	617611	Condition	i < asf_st -> pkt . size && ! asf_st -> pkt . data [ i ]	304:28:7162:7205	616599	1	True				
+ANR	617612	AndExpression	i < asf_st -> pkt . size && ! asf_st -> pkt . data [ i ]		616599	0		&&			
+ANR	617613	RelationalExpression	i < asf_st -> pkt . size		616599	0		<			
+ANR	617614	Identifier	i		616599	0					
+ANR	617615	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617616	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617617	Identifier	asf_st		616599	0					
+ANR	617618	Identifier	pkt		616599	1					
+ANR	617619	Identifier	size		616599	1					
+ANR	617620	UnaryOperationExpression	! asf_st -> pkt . data [ i ]		616599	1					
+ANR	617621	UnaryOperator	!		616599	0					
+ANR	617622	ArrayIndexing	asf_st -> pkt . data [ i ]		616599	1					
+ANR	617623	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617624	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617625	Identifier	asf_st		616599	0					
+ANR	617626	Identifier	pkt		616599	1					
+ANR	617627	Identifier	data		616599	1					
+ANR	617628	Identifier	i		616599	1					
+ANR	617629	PostIncDecOperationExpression	i ++	304:74:7208:7210	616599	2	True				
+ANR	617630	Identifier	i		616599	0					
+ANR	617631	IncDec	++		616599	1					
+ANR	617632	ExpressionStatement		306:20:7234:7234	616599	3	True				
+ANR	617633	IfStatement	if ( i == asf_st -> pkt . size )		616599	2					
+ANR	617634	Condition	i == asf_st -> pkt . size	308:20:7257:7277	616599	0	True				
+ANR	617635	EqualityExpression	i == asf_st -> pkt . size		616599	0		==			
+ANR	617636	Identifier	i		616599	0					
+ANR	617637	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617638	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617639	Identifier	asf_st		616599	0					
+ANR	617640	Identifier	pkt		616599	1					
+ANR	617641	Identifier	size		616599	1					
+ANR	617642	CompoundStatement		306:43:7198:7198	616599	1					
+ANR	617643	ExpressionStatement	"av_log ( s , AV_LOG_DEBUG , ""discarding ms fart\\n"" )"	310:20:7303:7350	616599	0	True				
+ANR	617644	CallExpression	"av_log ( s , AV_LOG_DEBUG , ""discarding ms fart\\n"" )"		616599	0					
+ANR	617645	Callee	av_log		616599	0					
+ANR	617646	Identifier	av_log		616599	0					
+ANR	617647	ArgumentList	s		616599	1					
+ANR	617648	Argument	s		616599	0					
+ANR	617649	Identifier	s		616599	0					
+ANR	617650	Argument	AV_LOG_DEBUG		616599	1					
+ANR	617651	Identifier	AV_LOG_DEBUG		616599	0					
+ANR	617652	Argument	"""discarding ms fart\\n"""		616599	2					
+ANR	617653	PrimaryExpression	"""discarding ms fart\\n"""		616599	0					
+ANR	617654	ExpressionStatement	asf_st -> frag_offset = 0	312:20:7373:7396	616599	1	True				
+ANR	617655	AssignmentExpression	asf_st -> frag_offset = 0		616599	0		=			
+ANR	617656	PtrMemberAccess	asf_st -> frag_offset		616599	0					
+ANR	617657	Identifier	asf_st		616599	0					
+ANR	617658	Identifier	frag_offset		616599	1					
+ANR	617659	PrimaryExpression	0		616599	1					
+ANR	617660	ExpressionStatement	av_free_packet ( & asf_st -> pkt )	314:20:7419:7447	616599	2	True				
+ANR	617661	CallExpression	av_free_packet ( & asf_st -> pkt )		616599	0					
+ANR	617662	Callee	av_free_packet		616599	0					
+ANR	617663	Identifier	av_free_packet		616599	0					
+ANR	617664	ArgumentList	& asf_st -> pkt		616599	1					
+ANR	617665	Argument	& asf_st -> pkt		616599	0					
+ANR	617666	UnaryOperationExpression	& asf_st -> pkt		616599	0					
+ANR	617667	UnaryOperator	&		616599	0					
+ANR	617668	PtrMemberAccess	asf_st -> pkt		616599	1					
+ANR	617669	Identifier	asf_st		616599	0					
+ANR	617670	Identifier	pkt		616599	1					
+ANR	617671	ContinueStatement	continue ;	316:20:7470:7478	616599	3	True				
+ANR	617672	IfStatement	if ( asf_st -> ds_span > 1 )		616599	1					
+ANR	617673	Condition	asf_st -> ds_span > 1	326:16:7566:7584	616599	0	True				
+ANR	617674	RelationalExpression	asf_st -> ds_span > 1		616599	0		>			
+ANR	617675	PtrMemberAccess	asf_st -> ds_span		616599	0					
+ANR	617676	Identifier	asf_st		616599	0					
+ANR	617677	Identifier	ds_span		616599	1					
+ANR	617678	PrimaryExpression	1		616599	1					
+ANR	617679	CompoundStatement		324:37:7505:7505	616599	1					
+ANR	617680	IfStatement	if ( asf_st -> pkt . size != asf_st -> ds_packet_size * asf_st -> ds_span )		616599	0					
+ANR	617681	Condition	asf_st -> pkt . size != asf_st -> ds_packet_size * asf_st -> ds_span	328:20:7610:7669	616599	0	True				
+ANR	617682	EqualityExpression	asf_st -> pkt . size != asf_st -> ds_packet_size * asf_st -> ds_span		616599	0		!=			
+ANR	617683	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617684	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617685	Identifier	asf_st		616599	0					
+ANR	617686	Identifier	pkt		616599	1					
+ANR	617687	Identifier	size		616599	1					
+ANR	617688	MultiplicativeExpression	asf_st -> ds_packet_size * asf_st -> ds_span		616599	1		*			
+ANR	617689	PtrMemberAccess	asf_st -> ds_packet_size		616599	0					
+ANR	617690	Identifier	asf_st		616599	0					
+ANR	617691	Identifier	ds_packet_size		616599	1					
+ANR	617692	PtrMemberAccess	asf_st -> ds_span		616599	1					
+ANR	617693	Identifier	asf_st		616599	0					
+ANR	617694	Identifier	ds_span		616599	1					
+ANR	617695	CompoundStatement		326:82:7590:7590	616599	1					
+ANR	617696	ExpressionStatement	"av_log ( s , AV_LOG_ERROR , ""pkt.size != ds_packet_size * ds_span (%d %d %d)\\n"" , asf_st -> pkt . size , asf_st -> ds_packet_size , asf_st -> ds_span )"	330:20:7695:7914	616599	0	True				
+ANR	617697	CallExpression	"av_log ( s , AV_LOG_ERROR , ""pkt.size != ds_packet_size * ds_span (%d %d %d)\\n"" , asf_st -> pkt . size , asf_st -> ds_packet_size , asf_st -> ds_span )"		616599	0					
+ANR	617698	Callee	av_log		616599	0					
+ANR	617699	Identifier	av_log		616599	0					
+ANR	617700	ArgumentList	s		616599	1					
+ANR	617701	Argument	s		616599	0					
+ANR	617702	Identifier	s		616599	0					
+ANR	617703	Argument	AV_LOG_ERROR		616599	1					
+ANR	617704	Identifier	AV_LOG_ERROR		616599	0					
+ANR	617705	Argument	"""pkt.size != ds_packet_size * ds_span (%d %d %d)\\n"""		616599	2					
+ANR	617706	PrimaryExpression	"""pkt.size != ds_packet_size * ds_span (%d %d %d)\\n"""		616599	0					
+ANR	617707	Argument	asf_st -> pkt . size		616599	3					
+ANR	617708	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617709	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617710	Identifier	asf_st		616599	0					
+ANR	617711	Identifier	pkt		616599	1					
+ANR	617712	Identifier	size		616599	1					
+ANR	617713	Argument	asf_st -> ds_packet_size		616599	4					
+ANR	617714	PtrMemberAccess	asf_st -> ds_packet_size		616599	0					
+ANR	617715	Identifier	asf_st		616599	0					
+ANR	617716	Identifier	ds_packet_size		616599	1					
+ANR	617717	Argument	asf_st -> ds_span		616599	5					
+ANR	617718	PtrMemberAccess	asf_st -> ds_span		616599	0					
+ANR	617719	Identifier	asf_st		616599	0					
+ANR	617720	Identifier	ds_span		616599	1					
+ANR	617721	ElseStatement	else		616599	0					
+ANR	617722	CompoundStatement		340:20:7928:8067	616599	0					
+ANR	617723	IdentifierDeclStatement	AVBufferRef * buf = av_buffer_alloc ( asf_st -> pkt . size + FF_INPUT_BUFFER_PADDING_SIZE ) ;	342:20:8010:8149	616599	0	True				
+ANR	617724	IdentifierDecl	* buf = av_buffer_alloc ( asf_st -> pkt . size + FF_INPUT_BUFFER_PADDING_SIZE )		616599	0					
+ANR	617725	IdentifierDeclType	AVBufferRef *		616599	0					
+ANR	617726	Identifier	buf		616599	1					
+ANR	617727	AssignmentExpression	* buf = av_buffer_alloc ( asf_st -> pkt . size + FF_INPUT_BUFFER_PADDING_SIZE )		616599	2		=			
+ANR	617728	Identifier	buf		616599	0					
+ANR	617729	CallExpression	av_buffer_alloc ( asf_st -> pkt . size + FF_INPUT_BUFFER_PADDING_SIZE )		616599	1					
+ANR	617730	Callee	av_buffer_alloc		616599	0					
+ANR	617731	Identifier	av_buffer_alloc		616599	0					
+ANR	617732	ArgumentList	asf_st -> pkt . size + FF_INPUT_BUFFER_PADDING_SIZE		616599	1					
+ANR	617733	Argument	asf_st -> pkt . size + FF_INPUT_BUFFER_PADDING_SIZE		616599	0					
+ANR	617734	AdditiveExpression	asf_st -> pkt . size + FF_INPUT_BUFFER_PADDING_SIZE		616599	0		+			
+ANR	617735	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617736	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617737	Identifier	asf_st		616599	0					
+ANR	617738	Identifier	pkt		616599	1					
+ANR	617739	Identifier	size		616599	1					
+ANR	617740	Identifier	FF_INPUT_BUFFER_PADDING_SIZE		616599	1					
+ANR	617741	IfStatement	if ( buf )		616599	1					
+ANR	617742	Condition	buf	346:24:8176:8178	616599	0	True				
+ANR	617743	Identifier	buf		616599	0					
+ANR	617744	CompoundStatement		348:24:8181:8195	616599	1					
+ANR	617745	IdentifierDeclStatement	uint8_t * newdata = buf -> data ;	348:24:8208:8236	616599	0	True				
+ANR	617746	IdentifierDecl	* newdata = buf -> data		616599	0					
+ANR	617747	IdentifierDeclType	uint8_t *		616599	0					
+ANR	617748	Identifier	newdata		616599	1					
+ANR	617749	AssignmentExpression	* newdata = buf -> data		616599	2		=			
+ANR	617750	Identifier	newdata		616599	0					
+ANR	617751	PtrMemberAccess	buf -> data		616599	1					
+ANR	617752	Identifier	buf		616599	0					
+ANR	617753	Identifier	data		616599	1					
+ANR	617754	IdentifierDeclStatement	int offset = 0 ;	350:24:8263:8277	616599	1	True				
+ANR	617755	IdentifierDecl	offset = 0		616599	0					
+ANR	617756	IdentifierDeclType	int		616599	0					
+ANR	617757	Identifier	offset		616599	1					
+ANR	617758	AssignmentExpression	offset = 0		616599	2		=			
+ANR	617759	Identifier	offset		616599	0					
+ANR	617760	PrimaryExpression	0		616599	1					
+ANR	617761	ExpressionStatement	"memset ( newdata + asf_st -> pkt . size , 0 , FF_INPUT_BUFFER_PADDING_SIZE )"	352:24:8304:8403	616599	2	True				
+ANR	617762	CallExpression	"memset ( newdata + asf_st -> pkt . size , 0 , FF_INPUT_BUFFER_PADDING_SIZE )"		616599	0					
+ANR	617763	Callee	memset		616599	0					
+ANR	617764	Identifier	memset		616599	0					
+ANR	617765	ArgumentList	newdata + asf_st -> pkt . size		616599	1					
+ANR	617766	Argument	newdata + asf_st -> pkt . size		616599	0					
+ANR	617767	AdditiveExpression	newdata + asf_st -> pkt . size		616599	0		+			
+ANR	617768	Identifier	newdata		616599	0					
+ANR	617769	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617770	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617771	Identifier	asf_st		616599	0					
+ANR	617772	Identifier	pkt		616599	1					
+ANR	617773	Identifier	size		616599	1					
+ANR	617774	Argument	0		616599	1					
+ANR	617775	PrimaryExpression	0		616599	0					
+ANR	617776	Argument	FF_INPUT_BUFFER_PADDING_SIZE		616599	2					
+ANR	617777	Identifier	FF_INPUT_BUFFER_PADDING_SIZE		616599	0					
+ANR	617778	WhileStatement	while ( offset < asf_st -> pkt . size )		616599	3					
+ANR	617779	Condition	offset < asf_st -> pkt . size	356:31:8437:8461	616599	0	True				
+ANR	617780	RelationalExpression	offset < asf_st -> pkt . size		616599	0		<			
+ANR	617781	Identifier	offset		616599	0					
+ANR	617782	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617783	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617784	Identifier	asf_st		616599	0					
+ANR	617785	Identifier	pkt		616599	1					
+ANR	617786	Identifier	size		616599	1					
+ANR	617787	CompoundStatement		362:28:8608:8676	616599	1					
+ANR	617788	IdentifierDeclStatement	int off = offset / asf_st -> ds_chunk_size ;	358:28:8495:8535	616599	0	True				
+ANR	617789	IdentifierDecl	off = offset / asf_st -> ds_chunk_size		616599	0					
+ANR	617790	IdentifierDeclType	int		616599	0					
+ANR	617791	Identifier	off		616599	1					
+ANR	617792	AssignmentExpression	off = offset / asf_st -> ds_chunk_size		616599	2		=			
+ANR	617793	Identifier	off		616599	0					
+ANR	617794	MultiplicativeExpression	offset / asf_st -> ds_chunk_size		616599	1		/			
+ANR	617795	Identifier	offset		616599	0					
+ANR	617796	PtrMemberAccess	asf_st -> ds_chunk_size		616599	1					
+ANR	617797	Identifier	asf_st		616599	0					
+ANR	617798	Identifier	ds_chunk_size		616599	1					
+ANR	617799	IdentifierDeclStatement	int row = off / asf_st -> ds_span ;	360:28:8566:8597	616599	1	True				
+ANR	617800	IdentifierDecl	row = off / asf_st -> ds_span		616599	0					
+ANR	617801	IdentifierDeclType	int		616599	0					
+ANR	617802	Identifier	row		616599	1					
+ANR	617803	AssignmentExpression	row = off / asf_st -> ds_span		616599	2		=			
+ANR	617804	Identifier	row		616599	0					
+ANR	617805	MultiplicativeExpression	off / asf_st -> ds_span		616599	1		/			
+ANR	617806	Identifier	off		616599	0					
+ANR	617807	PtrMemberAccess	asf_st -> ds_span		616599	1					
+ANR	617808	Identifier	asf_st		616599	0					
+ANR	617809	Identifier	ds_span		616599	1					
+ANR	617810	IdentifierDeclStatement	int col = off % asf_st -> ds_span ;	362:28:8628:8659	616599	2	True				
+ANR	617811	IdentifierDecl	col = off % asf_st -> ds_span		616599	0					
+ANR	617812	IdentifierDeclType	int		616599	0					
+ANR	617813	Identifier	col		616599	1					
+ANR	617814	AssignmentExpression	col = off % asf_st -> ds_span		616599	2		=			
+ANR	617815	Identifier	col		616599	0					
+ANR	617816	MultiplicativeExpression	off % asf_st -> ds_span		616599	1		%			
+ANR	617817	Identifier	off		616599	0					
+ANR	617818	PtrMemberAccess	asf_st -> ds_span		616599	1					
+ANR	617819	Identifier	asf_st		616599	0					
+ANR	617820	Identifier	ds_span		616599	1					
+ANR	617821	IdentifierDeclStatement	int idx = row + col * asf_st -> ds_packet_size / asf_st -> ds_chunk_size ;	364:28:8690:8758	616599	3	True				
+ANR	617822	IdentifierDecl	idx = row + col * asf_st -> ds_packet_size / asf_st -> ds_chunk_size		616599	0					
+ANR	617823	IdentifierDeclType	int		616599	0					
+ANR	617824	Identifier	idx		616599	1					
+ANR	617825	AssignmentExpression	idx = row + col * asf_st -> ds_packet_size / asf_st -> ds_chunk_size		616599	2		=			
+ANR	617826	Identifier	idx		616599	0					
+ANR	617827	AdditiveExpression	row + col * asf_st -> ds_packet_size / asf_st -> ds_chunk_size		616599	1		+			
+ANR	617828	Identifier	row		616599	0					
+ANR	617829	MultiplicativeExpression	col * asf_st -> ds_packet_size / asf_st -> ds_chunk_size		616599	1		*			
+ANR	617830	Identifier	col		616599	0					
+ANR	617831	MultiplicativeExpression	asf_st -> ds_packet_size / asf_st -> ds_chunk_size		616599	1		/			
+ANR	617832	PtrMemberAccess	asf_st -> ds_packet_size		616599	0					
+ANR	617833	Identifier	asf_st		616599	0					
+ANR	617834	Identifier	ds_packet_size		616599	1					
+ANR	617835	PtrMemberAccess	asf_st -> ds_chunk_size		616599	1					
+ANR	617836	Identifier	asf_st		616599	0					
+ANR	617837	Identifier	ds_chunk_size		616599	1					
+ANR	617838	ExpressionStatement	assert ( offset + asf_st -> ds_chunk_size <= asf_st -> pkt . size )	366:28:8789:8847	616599	4	True				
+ANR	617839	CallExpression	assert ( offset + asf_st -> ds_chunk_size <= asf_st -> pkt . size )		616599	0					
+ANR	617840	Callee	assert		616599	0					
+ANR	617841	Identifier	assert		616599	0					
+ANR	617842	ArgumentList	offset + asf_st -> ds_chunk_size <= asf_st -> pkt . size		616599	1					
+ANR	617843	Argument	offset + asf_st -> ds_chunk_size <= asf_st -> pkt . size		616599	0					
+ANR	617844	RelationalExpression	offset + asf_st -> ds_chunk_size <= asf_st -> pkt . size		616599	0		<=			
+ANR	617845	AdditiveExpression	offset + asf_st -> ds_chunk_size		616599	0		+			
+ANR	617846	Identifier	offset		616599	0					
+ANR	617847	PtrMemberAccess	asf_st -> ds_chunk_size		616599	1					
+ANR	617848	Identifier	asf_st		616599	0					
+ANR	617849	Identifier	ds_chunk_size		616599	1					
+ANR	617850	MemberAccess	asf_st -> pkt . size		616599	1					
+ANR	617851	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617852	Identifier	asf_st		616599	0					
+ANR	617853	Identifier	pkt		616599	1					
+ANR	617854	Identifier	size		616599	1					
+ANR	617855	ExpressionStatement	assert ( idx + 1 <= asf_st -> pkt . size / asf_st -> ds_chunk_size )	368:28:8878:8937	616599	5	True				
+ANR	617856	CallExpression	assert ( idx + 1 <= asf_st -> pkt . size / asf_st -> ds_chunk_size )		616599	0					
+ANR	617857	Callee	assert		616599	0					
+ANR	617858	Identifier	assert		616599	0					
+ANR	617859	ArgumentList	idx + 1 <= asf_st -> pkt . size / asf_st -> ds_chunk_size		616599	1					
+ANR	617860	Argument	idx + 1 <= asf_st -> pkt . size / asf_st -> ds_chunk_size		616599	0					
+ANR	617861	RelationalExpression	idx + 1 <= asf_st -> pkt . size / asf_st -> ds_chunk_size		616599	0		<=			
+ANR	617862	AdditiveExpression	idx + 1		616599	0		+			
+ANR	617863	Identifier	idx		616599	0					
+ANR	617864	PrimaryExpression	1		616599	1					
+ANR	617865	MultiplicativeExpression	asf_st -> pkt . size / asf_st -> ds_chunk_size		616599	1		/			
+ANR	617866	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617867	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617868	Identifier	asf_st		616599	0					
+ANR	617869	Identifier	pkt		616599	1					
+ANR	617870	Identifier	size		616599	1					
+ANR	617871	PtrMemberAccess	asf_st -> ds_chunk_size		616599	1					
+ANR	617872	Identifier	asf_st		616599	0					
+ANR	617873	Identifier	ds_chunk_size		616599	1					
+ANR	617874	ExpressionStatement	"memcpy ( newdata + offset , asf_st -> pkt . data + idx * asf_st -> ds_chunk_size , asf_st -> ds_chunk_size )"	370:28:8968:9135	616599	6	True				
+ANR	617875	CallExpression	"memcpy ( newdata + offset , asf_st -> pkt . data + idx * asf_st -> ds_chunk_size , asf_st -> ds_chunk_size )"		616599	0					
+ANR	617876	Callee	memcpy		616599	0					
+ANR	617877	Identifier	memcpy		616599	0					
+ANR	617878	ArgumentList	newdata + offset		616599	1					
+ANR	617879	Argument	newdata + offset		616599	0					
+ANR	617880	AdditiveExpression	newdata + offset		616599	0		+			
+ANR	617881	Identifier	newdata		616599	0					
+ANR	617882	Identifier	offset		616599	1					
+ANR	617883	Argument	asf_st -> pkt . data + idx * asf_st -> ds_chunk_size		616599	1					
+ANR	617884	AdditiveExpression	asf_st -> pkt . data + idx * asf_st -> ds_chunk_size		616599	0		+			
+ANR	617885	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617886	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617887	Identifier	asf_st		616599	0					
+ANR	617888	Identifier	pkt		616599	1					
+ANR	617889	Identifier	data		616599	1					
+ANR	617890	MultiplicativeExpression	idx * asf_st -> ds_chunk_size		616599	1		*			
+ANR	617891	Identifier	idx		616599	0					
+ANR	617892	PtrMemberAccess	asf_st -> ds_chunk_size		616599	1					
+ANR	617893	Identifier	asf_st		616599	0					
+ANR	617894	Identifier	ds_chunk_size		616599	1					
+ANR	617895	Argument	asf_st -> ds_chunk_size		616599	2					
+ANR	617896	PtrMemberAccess	asf_st -> ds_chunk_size		616599	0					
+ANR	617897	Identifier	asf_st		616599	0					
+ANR	617898	Identifier	ds_chunk_size		616599	1					
+ANR	617899	ExpressionStatement	offset += asf_st -> ds_chunk_size	376:28:9166:9197	616599	7	True				
+ANR	617900	AssignmentExpression	offset += asf_st -> ds_chunk_size		616599	0		+=			
+ANR	617901	Identifier	offset		616599	0					
+ANR	617902	PtrMemberAccess	asf_st -> ds_chunk_size		616599	1					
+ANR	617903	Identifier	asf_st		616599	0					
+ANR	617904	Identifier	ds_chunk_size		616599	1					
+ANR	617905	ExpressionStatement	av_buffer_unref ( & asf_st -> pkt . buf )	380:24:9251:9284	616599	4	True				
+ANR	617906	CallExpression	av_buffer_unref ( & asf_st -> pkt . buf )		616599	0					
+ANR	617907	Callee	av_buffer_unref		616599	0					
+ANR	617908	Identifier	av_buffer_unref		616599	0					
+ANR	617909	ArgumentList	& asf_st -> pkt . buf		616599	1					
+ANR	617910	Argument	& asf_st -> pkt . buf		616599	0					
+ANR	617911	UnaryOperationExpression	& asf_st -> pkt . buf		616599	0					
+ANR	617912	UnaryOperator	&		616599	0					
+ANR	617913	MemberAccess	asf_st -> pkt . buf		616599	1					
+ANR	617914	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617915	Identifier	asf_st		616599	0					
+ANR	617916	Identifier	pkt		616599	1					
+ANR	617917	Identifier	buf		616599	1					
+ANR	617918	ExpressionStatement	asf_st -> pkt . buf = buf	382:24:9311:9333	616599	5	True				
+ANR	617919	AssignmentExpression	asf_st -> pkt . buf = buf		616599	0		=			
+ANR	617920	MemberAccess	asf_st -> pkt . buf		616599	0					
+ANR	617921	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617922	Identifier	asf_st		616599	0					
+ANR	617923	Identifier	pkt		616599	1					
+ANR	617924	Identifier	buf		616599	1					
+ANR	617925	Identifier	buf		616599	1					
+ANR	617926	ExpressionStatement	asf_st -> pkt . data = buf -> data	384:24:9360:9388	616599	6	True				
+ANR	617927	AssignmentExpression	asf_st -> pkt . data = buf -> data		616599	0		=			
+ANR	617928	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617929	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617930	Identifier	asf_st		616599	0					
+ANR	617931	Identifier	pkt		616599	1					
+ANR	617932	Identifier	data		616599	1					
+ANR	617933	PtrMemberAccess	buf -> data		616599	1					
+ANR	617934	Identifier	buf		616599	0					
+ANR	617935	Identifier	data		616599	1					
+ANR	617936	ExpressionStatement	asf_st -> frag_offset = 0	392:12:9460:9491	616599	2	True				
+ANR	617937	AssignmentExpression	asf_st -> frag_offset = 0		616599	0		=			
+ANR	617938	PtrMemberAccess	asf_st -> frag_offset		616599	0					
+ANR	617939	Identifier	asf_st		616599	0					
+ANR	617940	Identifier	frag_offset		616599	1					
+ANR	617941	PrimaryExpression	0		616599	1					
+ANR	617942	ExpressionStatement	* pkt = asf_st -> pkt	394:12:9506:9547	616599	3	True				
+ANR	617943	AssignmentExpression	* pkt = asf_st -> pkt		616599	0		=			
+ANR	617944	UnaryOperationExpression	* pkt		616599	0					
+ANR	617945	UnaryOperator	*		616599	0					
+ANR	617946	Identifier	pkt		616599	1					
+ANR	617947	PtrMemberAccess	asf_st -> pkt		616599	1					
+ANR	617948	Identifier	asf_st		616599	0					
+ANR	617949	Identifier	pkt		616599	1					
+ANR	617950	Statement	FF_DISABLE_DEPRECATION_WARNINGS	398:0:9578:9608	616599	4	True				
+ANR	617951	ExpressionStatement	asf_st -> pkt . destruct = NULL	400:12:9623:9657	616599	5	True				
+ANR	617952	AssignmentExpression	asf_st -> pkt . destruct = NULL		616599	0		=			
+ANR	617953	MemberAccess	asf_st -> pkt . destruct		616599	0					
+ANR	617954	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617955	Identifier	asf_st		616599	0					
+ANR	617956	Identifier	pkt		616599	1					
+ANR	617957	Identifier	destruct		616599	1					
+ANR	617958	Identifier	NULL		616599	1					
+ANR	617959	Statement	FF_ENABLE_DEPRECATION_WARNINGS	402:0:9660:9689	616599	6	True				
+ANR	617960	ExpressionStatement	asf_st -> pkt . buf = 0	406:12:9712:9743	616599	7	True				
+ANR	617961	AssignmentExpression	asf_st -> pkt . buf = 0		616599	0		=			
+ANR	617962	MemberAccess	asf_st -> pkt . buf		616599	0					
+ANR	617963	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617964	Identifier	asf_st		616599	0					
+ANR	617965	Identifier	pkt		616599	1					
+ANR	617966	Identifier	buf		616599	1					
+ANR	617967	PrimaryExpression	0		616599	1					
+ANR	617968	ExpressionStatement	asf_st -> pkt . size = 0	408:12:9758:9789	616599	8	True				
+ANR	617969	AssignmentExpression	asf_st -> pkt . size = 0		616599	0		=			
+ANR	617970	MemberAccess	asf_st -> pkt . size		616599	0					
+ANR	617971	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617972	Identifier	asf_st		616599	0					
+ANR	617973	Identifier	pkt		616599	1					
+ANR	617974	Identifier	size		616599	1					
+ANR	617975	PrimaryExpression	0		616599	1					
+ANR	617976	ExpressionStatement	asf_st -> pkt . data = 0	410:12:9804:9835	616599	9	True				
+ANR	617977	AssignmentExpression	asf_st -> pkt . data = 0		616599	0		=			
+ANR	617978	MemberAccess	asf_st -> pkt . data		616599	0					
+ANR	617979	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617980	Identifier	asf_st		616599	0					
+ANR	617981	Identifier	pkt		616599	1					
+ANR	617982	Identifier	data		616599	1					
+ANR	617983	PrimaryExpression	0		616599	1					
+ANR	617984	ExpressionStatement	asf_st -> pkt . side_data_elems = 0	412:12:9850:9881	616599	10	True				
+ANR	617985	AssignmentExpression	asf_st -> pkt . side_data_elems = 0		616599	0		=			
+ANR	617986	MemberAccess	asf_st -> pkt . side_data_elems		616599	0					
+ANR	617987	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617988	Identifier	asf_st		616599	0					
+ANR	617989	Identifier	pkt		616599	1					
+ANR	617990	Identifier	side_data_elems		616599	1					
+ANR	617991	PrimaryExpression	0		616599	1					
+ANR	617992	ExpressionStatement	asf_st -> pkt . side_data = NULL	414:12:9896:9930	616599	11	True				
+ANR	617993	AssignmentExpression	asf_st -> pkt . side_data = NULL		616599	0		=			
+ANR	617994	MemberAccess	asf_st -> pkt . side_data		616599	0					
+ANR	617995	PtrMemberAccess	asf_st -> pkt		616599	0					
+ANR	617996	Identifier	asf_st		616599	0					
+ANR	617997	Identifier	pkt		616599	1					
+ANR	617998	Identifier	side_data		616599	1					
+ANR	617999	Identifier	NULL		616599	1					
+ANR	618000	BreakStatement	break ;	416:12:9945:9950	616599	12	True				
+ANR	618001	ReturnStatement	return 0 ;	422:4:9995:10003	616599	3	True				
+ANR	618002	PrimaryExpression	0		616599	0					
+ANR	618003	ReturnType	static int		616599	1					
+ANR	618004	Identifier	asf_parse_packet		616599	2					
+ANR	618005	ParameterList	"AVFormatContext * s , AVIOContext * pb , AVPacket * pkt"		616599	3					
+ANR	618006	Parameter	AVFormatContext * s	1:28:28:45	616599	0	True				
+ANR	618007	ParameterType	AVFormatContext *		616599	0					
+ANR	618008	Identifier	s		616599	1					
+ANR	618009	Parameter	AVIOContext * pb	1:48:48:62	616599	1	True				
+ANR	618010	ParameterType	AVIOContext *		616599	0					
+ANR	618011	Identifier	pb		616599	1					
+ANR	618012	Parameter	AVPacket * pkt	1:65:65:77	616599	2	True				
+ANR	618013	ParameterType	AVPacket *		616599	0					
+ANR	618014	Identifier	pkt		616599	1					
+ANR	618015	CFGEntryNode	ENTRY		616599		True				
+ANR	618016	CFGExitNode	EXIT		616599		True				
+ANR	618017	InfiniteForNode	true		616599		True				
+ANR	618018	Symbol	* asf_st		616599						
+ANR	618019	Symbol	s -> streams [ asf -> stream_index ] -> codec -> codec_type		616599						
+ANR	618020	Symbol	asf_st		616599						
+ANR	618021	Symbol	asf -> streams		616599						
+ANR	618022	Symbol	asf_st -> pkt_clean		616599						
+ANR	618023	Symbol	* asf_st -> pkt . data		616599						
+ANR	618024	Symbol	* s -> streams		616599						
+ANR	618025	Symbol	asf -> packet_time_delta		616599						
+ANR	618026	Symbol	AV_LOG_DEBUG		616599						
+ANR	618027	Symbol	s -> priv_data		616599						
+ANR	618028	Symbol	* asf		616599						
+ANR	618029	Symbol	* * asf -> stream_index		616599						
+ANR	618030	Symbol	* buf		616599						
+ANR	618031	Symbol	asf -> packet_time_start		616599						
+ANR	618032	Symbol	asf -> packet_replic_size		616599						
+ANR	618033	Symbol	asf_st -> ds_packet_size		616599						
+ANR	618034	Symbol	AVDISCARD_NONKEY		616599						
+ANR	618035	Symbol	s -> streams [ asf -> stream_index ] -> codec -> codec_id		616599						
+ANR	618036	Symbol	* * * s		616599						
+ANR	618037	Symbol	s -> streams [ asf -> stream_index ] -> discard		616599						
+ANR	618038	Symbol	* * * asf		616599						
+ANR	618039	Symbol	asf_st -> palette		616599						
+ANR	618040	Symbol	avio_r8		616599						
+ANR	618041	Symbol	s -> packet_size		616599						
+ANR	618042	Symbol	* s -> streams [ asf -> stream_index ] -> codec		616599						
+ANR	618043	Symbol	avio_read		616599						
+ANR	618044	Symbol	asf -> packet_multi_size		616599						
+ANR	618045	Symbol	AV_LOG_INFO		616599						
+ANR	618046	Symbol	asf_st -> packet_pos		616599						
+ANR	618047	Symbol	newdata		616599						
+ANR	618048	Symbol	asf -> packet_key_frame		616599						
+ANR	618049	Symbol	* * * * asf		616599						
+ANR	618050	Symbol	av_buffer_alloc		616599						
+ANR	618051	Symbol	* asf -> stream_index		616599						
+ANR	618052	Symbol	asf_st -> pkt . flags		616599						
+ANR	618053	Symbol	FF_INPUT_BUFFER_PADDING_SIZE		616599						
+ANR	618054	Symbol	asf -> data_object_size		616599						
+ANR	618055	Symbol	avio_tell		616599						
+ANR	618056	Symbol	asf_st -> frag_offset		616599						
+ANR	618057	Symbol	* asf_st -> pkt		616599						
+ANR	618058	Symbol	* * * s -> streams		616599						
+ANR	618059	Symbol	* * s		616599						
+ANR	618060	Symbol	AV_PKT_DATA_PALETTE		616599						
+ANR	618061	Symbol	AV_LOG_ERROR		616599						
+ANR	618062	Symbol	asf -> hdr		616599						
+ANR	618063	Symbol	asf_st -> pkt . side_data		616599						
+ANR	618064	Symbol	asf_st -> pkt . stream_index		616599						
+ANR	618065	Symbol	i		616599						
+ANR	618066	Symbol	asf_st -> pkt . data		616599						
+ANR	618067	Symbol	off		616599						
+ANR	618068	Symbol	buf		616599						
+ANR	618069	Symbol	s		616599						
+ANR	618070	Symbol	* asf -> streams		616599						
+ANR	618071	Symbol	asf		616599						
+ANR	618072	Symbol	* s -> streams [ asf -> stream_index ] -> id		616599						
+ANR	618073	Symbol	asf_st -> pkt . dts		616599						
+ANR	618074	Symbol	col		616599						
+ANR	618075	Symbol	url_feof		616599						
+ANR	618076	Symbol	asf -> data_object_offset		616599						
+ANR	618077	Symbol	asf_st -> ds_chunk_size		616599						
+ANR	618078	Symbol	* pkt		616599						
+ANR	618079	Symbol	* * * * s		616599						
+ANR	618080	Symbol	AVMEDIA_TYPE_AUDIO		616599						
+ANR	618081	Symbol	asf -> stream_index		616599						
+ANR	618082	Symbol	s -> streams		616599						
+ANR	618083	Symbol	asf_st -> pkt . side_data_elems		616599						
+ANR	618084	Symbol	asf -> asf_st		616599						
+ANR	618085	Symbol	s -> key		616599						
+ANR	618086	Symbol	asf -> streams [ s -> streams [ asf -> stream_index ] -> id ] . skip_to_key		616599						
+ANR	618087	Symbol	asf -> packet_frag_offset		616599						
+ANR	618088	Symbol	s -> keylen		616599						
+ANR	618089	Symbol	s -> streams [ asf -> stream_index ] -> id		616599						
+ANR	618090	Symbol	pal		616599						
+ANR	618091	Symbol	ret		616599						
+ANR	618092	Symbol	asf -> asf_st -> skip_to_key		616599						
+ANR	618093	Symbol	asf_st -> seq		616599						
+ANR	618094	Symbol	NULL		616599						
+ANR	618095	Symbol	offset		616599						
+ANR	618096	Symbol	s -> streams [ asf -> stream_index ] -> codec		616599						
+ANR	618097	Symbol	* * asf_st		616599						
+ANR	618098	Symbol	AVPALETTE_SIZE		616599						
+ANR	618099	Symbol	buf -> data		616599						
+ANR	618100	Symbol	asf_st -> palette_changed		616599						
+ANR	618101	Symbol	asf -> packet_pos		616599						
+ANR	618102	Symbol	AV_PKT_FLAG_KEY		616599						
+ANR	618103	Symbol	idx		616599						
+ANR	618104	Symbol	asf -> packet_seq		616599						
+ANR	618105	Symbol	& asf_st -> pkt . buf		616599						
+ANR	618106	Symbol	asf -> packet_segments		616599						
+ANR	618107	Symbol	* * s -> streams		616599						
+ANR	618108	Symbol	asf_st -> pkt . destruct		616599						
+ANR	618109	Symbol	* * asf		616599						
+ANR	618110	Symbol	asf_read_frame_header		616599						
+ANR	618111	Symbol	asf_st -> pkt . size		616599						
+ANR	618112	Symbol	asf_st -> ds_span		616599						
+ANR	618113	Symbol	asf -> hdr . preroll		616599						
+ANR	618114	Symbol	pkt		616599						
+ANR	618115	Symbol	asf_st -> pkt		616599						
+ANR	618116	Symbol	row		616599						
+ANR	618117	Symbol	asf -> packet_padsize		616599						
+ANR	618118	Symbol	* * * asf -> stream_index		616599						
+ANR	618119	Symbol	* asf -> asf_st		616599						
+ANR	618120	Symbol	asf -> packet_frag_timestamp		616599						
+ANR	618121	Symbol	AVDISCARD_ALL		616599						
+ANR	618122	Symbol	asf -> packet_frag_size		616599						
+ANR	618123	Symbol	asf_st -> pkt . buf		616599						
+ANR	618124	Symbol	asf -> packet_size_left		616599						
+ANR	618125	Symbol	& asf_st -> pkt		616599						
+ANR	618126	Symbol	pb		616599						
+ANR	618127	Symbol	AV_CODEC_ID_MPEG2VIDEO		616599						
+ANR	618128	Symbol	* i		616599						
+ANR	618129	Symbol	asf_st -> packet_obj_size		616599						
+ANR	618130	Symbol	asf_st -> pkt . pos		616599						
+ANR	618131	Symbol	av_packet_new_side_data		616599						
+ANR	618132	Symbol	* s		616599						
+ANR	618133	Symbol	AVERROR_EOF		616599						
+ANR	618134	Symbol	FRAME_HEADER_SIZE		616599						

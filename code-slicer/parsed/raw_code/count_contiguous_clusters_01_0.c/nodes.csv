@@ -1,0 +1,162 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1440420	File	/home/p4ultr4n/workplace/ReVeal/raw_code/count_contiguous_clusters_01_0.c								
+ANR	1440421	Function	count_contiguous_clusters	1:0:0:884							
+ANR	1440422	FunctionDef	"count_contiguous_clusters (int nb_clusters , int cluster_size , uint64_t * l2_table , uint64_t stop_flags)"		1440421	0					
+ANR	1440423	CompoundStatement		5:0:123:884	1440421	0					
+ANR	1440424	IdentifierDeclStatement	int i ;	7:4:130:135	1440421	0	True				
+ANR	1440425	IdentifierDecl	i		1440421	0					
+ANR	1440426	IdentifierDeclType	int		1440421	0					
+ANR	1440427	Identifier	i		1440421	1					
+ANR	1440428	IdentifierDeclStatement	QCow2ClusterType first_cluster_type ;	9:4:142:177	1440421	1	True				
+ANR	1440429	IdentifierDecl	first_cluster_type		1440421	0					
+ANR	1440430	IdentifierDeclType	QCow2ClusterType		1440421	0					
+ANR	1440431	Identifier	first_cluster_type		1440421	1					
+ANR	1440432	IdentifierDeclStatement	uint64_t mask = stop_flags | L2E_OFFSET_MASK | QCOW_OFLAG_COMPRESSED ;	11:4:184:252	1440421	2	True				
+ANR	1440433	IdentifierDecl	mask = stop_flags | L2E_OFFSET_MASK | QCOW_OFLAG_COMPRESSED		1440421	0					
+ANR	1440434	IdentifierDeclType	uint64_t		1440421	0					
+ANR	1440435	Identifier	mask		1440421	1					
+ANR	1440436	AssignmentExpression	mask = stop_flags | L2E_OFFSET_MASK | QCOW_OFLAG_COMPRESSED		1440421	2		=			
+ANR	1440437	Identifier	mask		1440421	0					
+ANR	1440438	InclusiveOrExpression	stop_flags | L2E_OFFSET_MASK | QCOW_OFLAG_COMPRESSED		1440421	1		|			
+ANR	1440439	Identifier	stop_flags		1440421	0					
+ANR	1440440	InclusiveOrExpression	L2E_OFFSET_MASK | QCOW_OFLAG_COMPRESSED		1440421	1		|			
+ANR	1440441	Identifier	L2E_OFFSET_MASK		1440421	0					
+ANR	1440442	Identifier	QCOW_OFLAG_COMPRESSED		1440421	1					
+ANR	1440443	IdentifierDeclStatement	uint64_t first_entry = be64_to_cpu ( l2_table [ 0 ] ) ;	13:4:259:306	1440421	3	True				
+ANR	1440444	IdentifierDecl	first_entry = be64_to_cpu ( l2_table [ 0 ] )		1440421	0					
+ANR	1440445	IdentifierDeclType	uint64_t		1440421	0					
+ANR	1440446	Identifier	first_entry		1440421	1					
+ANR	1440447	AssignmentExpression	first_entry = be64_to_cpu ( l2_table [ 0 ] )		1440421	2		=			
+ANR	1440448	Identifier	first_entry		1440421	0					
+ANR	1440449	CallExpression	be64_to_cpu ( l2_table [ 0 ] )		1440421	1					
+ANR	1440450	Callee	be64_to_cpu		1440421	0					
+ANR	1440451	Identifier	be64_to_cpu		1440421	0					
+ANR	1440452	ArgumentList	l2_table [ 0 ]		1440421	1					
+ANR	1440453	Argument	l2_table [ 0 ]		1440421	0					
+ANR	1440454	ArrayIndexing	l2_table [ 0 ]		1440421	0					
+ANR	1440455	Identifier	l2_table		1440421	0					
+ANR	1440456	PrimaryExpression	0		1440421	1					
+ANR	1440457	IdentifierDeclStatement	uint64_t offset = first_entry & mask ;	15:4:313:349	1440421	4	True				
+ANR	1440458	IdentifierDecl	offset = first_entry & mask		1440421	0					
+ANR	1440459	IdentifierDeclType	uint64_t		1440421	0					
+ANR	1440460	Identifier	offset		1440421	1					
+ANR	1440461	AssignmentExpression	offset = first_entry & mask		1440421	2		=			
+ANR	1440462	Identifier	offset		1440421	0					
+ANR	1440463	BitAndExpression	first_entry & mask		1440421	1		&			
+ANR	1440464	Identifier	first_entry		1440421	0					
+ANR	1440465	Identifier	mask		1440421	1					
+ANR	1440466	IfStatement	if ( ! offset )		1440421	5					
+ANR	1440467	Condition	! offset	19:8:362:368	1440421	0	True				
+ANR	1440468	UnaryOperationExpression	! offset		1440421	0					
+ANR	1440469	UnaryOperator	!		1440421	0					
+ANR	1440470	Identifier	offset		1440421	1					
+ANR	1440471	CompoundStatement		15:17:247:247	1440421	1					
+ANR	1440472	ReturnStatement	return 0 ;	21:8:382:390	1440421	0	True				
+ANR	1440473	PrimaryExpression	0		1440421	0					
+ANR	1440474	ExpressionStatement	first_cluster_type = qcow2_get_cluster_type ( first_entry )	29:4:435:491	1440421	6	True				
+ANR	1440475	AssignmentExpression	first_cluster_type = qcow2_get_cluster_type ( first_entry )		1440421	0		=			
+ANR	1440476	Identifier	first_cluster_type		1440421	0					
+ANR	1440477	CallExpression	qcow2_get_cluster_type ( first_entry )		1440421	1					
+ANR	1440478	Callee	qcow2_get_cluster_type		1440421	0					
+ANR	1440479	Identifier	qcow2_get_cluster_type		1440421	0					
+ANR	1440480	ArgumentList	first_entry		1440421	1					
+ANR	1440481	Argument	first_entry		1440421	0					
+ANR	1440482	Identifier	first_entry		1440421	0					
+ANR	1440483	ExpressionStatement	assert ( first_cluster_type == QCOW2_CLUSTER_NORMAL || ( first_cluster_type == QCOW2_CLUSTER_ZERO && ( first_entry & L2E_OFFSET_MASK ) != 0 ) )	31:4:498:659	1440421	7	True				
+ANR	1440484	CallExpression	assert ( first_cluster_type == QCOW2_CLUSTER_NORMAL || ( first_cluster_type == QCOW2_CLUSTER_ZERO && ( first_entry & L2E_OFFSET_MASK ) != 0 ) )		1440421	0					
+ANR	1440485	Callee	assert		1440421	0					
+ANR	1440486	Identifier	assert		1440421	0					
+ANR	1440487	ArgumentList	first_cluster_type == QCOW2_CLUSTER_NORMAL || ( first_cluster_type == QCOW2_CLUSTER_ZERO && ( first_entry & L2E_OFFSET_MASK ) != 0 )		1440421	1					
+ANR	1440488	Argument	first_cluster_type == QCOW2_CLUSTER_NORMAL || ( first_cluster_type == QCOW2_CLUSTER_ZERO && ( first_entry & L2E_OFFSET_MASK ) != 0 )		1440421	0					
+ANR	1440489	OrExpression	first_cluster_type == QCOW2_CLUSTER_NORMAL || ( first_cluster_type == QCOW2_CLUSTER_ZERO && ( first_entry & L2E_OFFSET_MASK ) != 0 )		1440421	0		||			
+ANR	1440490	EqualityExpression	first_cluster_type == QCOW2_CLUSTER_NORMAL		1440421	0		==			
+ANR	1440491	Identifier	first_cluster_type		1440421	0					
+ANR	1440492	Identifier	QCOW2_CLUSTER_NORMAL		1440421	1					
+ANR	1440493	AndExpression	first_cluster_type == QCOW2_CLUSTER_ZERO && ( first_entry & L2E_OFFSET_MASK ) != 0		1440421	1		&&			
+ANR	1440494	EqualityExpression	first_cluster_type == QCOW2_CLUSTER_ZERO		1440421	0		==			
+ANR	1440495	Identifier	first_cluster_type		1440421	0					
+ANR	1440496	Identifier	QCOW2_CLUSTER_ZERO		1440421	1					
+ANR	1440497	EqualityExpression	( first_entry & L2E_OFFSET_MASK ) != 0		1440421	1		!=			
+ANR	1440498	BitAndExpression	first_entry & L2E_OFFSET_MASK		1440421	0		&			
+ANR	1440499	Identifier	first_entry		1440421	0					
+ANR	1440500	Identifier	L2E_OFFSET_MASK		1440421	1					
+ANR	1440501	PrimaryExpression	0		1440421	1					
+ANR	1440502	ForStatement	for ( i = 0 ; i < nb_clusters ; i ++ )		1440421	8					
+ANR	1440503	ForInit	i = 0 ;	39:9:673:678	1440421	0	True				
+ANR	1440504	AssignmentExpression	i = 0		1440421	0		=			
+ANR	1440505	Identifier	i		1440421	0					
+ANR	1440506	PrimaryExpression	0		1440421	1					
+ANR	1440507	Condition	i < nb_clusters	39:16:680:694	1440421	1	True				
+ANR	1440508	RelationalExpression	i < nb_clusters		1440421	0		<			
+ANR	1440509	Identifier	i		1440421	0					
+ANR	1440510	Identifier	nb_clusters		1440421	1					
+ANR	1440511	PostIncDecOperationExpression	i ++	39:33:697:699	1440421	2	True				
+ANR	1440512	Identifier	i		1440421	0					
+ANR	1440513	IncDec	++		1440421	1					
+ANR	1440514	CompoundStatement		37:8:589:640	1440421	3					
+ANR	1440515	IdentifierDeclStatement	uint64_t l2_entry = be64_to_cpu ( l2_table [ i ] ) & mask ;	41:8:713:764	1440421	0	True				
+ANR	1440516	IdentifierDecl	l2_entry = be64_to_cpu ( l2_table [ i ] ) & mask		1440421	0					
+ANR	1440517	IdentifierDeclType	uint64_t		1440421	0					
+ANR	1440518	Identifier	l2_entry		1440421	1					
+ANR	1440519	AssignmentExpression	l2_entry = be64_to_cpu ( l2_table [ i ] ) & mask		1440421	2		=			
+ANR	1440520	Identifier	l2_entry		1440421	0					
+ANR	1440521	BitAndExpression	be64_to_cpu ( l2_table [ i ] ) & mask		1440421	1		&			
+ANR	1440522	CallExpression	be64_to_cpu ( l2_table [ i ] )		1440421	0					
+ANR	1440523	Callee	be64_to_cpu		1440421	0					
+ANR	1440524	Identifier	be64_to_cpu		1440421	0					
+ANR	1440525	ArgumentList	l2_table [ i ]		1440421	1					
+ANR	1440526	Argument	l2_table [ i ]		1440421	0					
+ANR	1440527	ArrayIndexing	l2_table [ i ]		1440421	0					
+ANR	1440528	Identifier	l2_table		1440421	0					
+ANR	1440529	Identifier	i		1440421	1					
+ANR	1440530	Identifier	mask		1440421	1					
+ANR	1440531	IfStatement	if ( offset + ( uint64_t ) i * cluster_size != l2_entry )		1440421	1					
+ANR	1440532	Condition	offset + ( uint64_t ) i * cluster_size != l2_entry	43:12:779:826	1440421	0	True				
+ANR	1440533	EqualityExpression	offset + ( uint64_t ) i * cluster_size != l2_entry		1440421	0		!=			
+ANR	1440534	AdditiveExpression	offset + ( uint64_t ) i * cluster_size		1440421	0		+			
+ANR	1440535	Identifier	offset		1440421	0					
+ANR	1440536	MultiplicativeExpression	( uint64_t ) i * cluster_size		1440421	1		*			
+ANR	1440537	CastExpression	( uint64_t ) i		1440421	0					
+ANR	1440538	CastTarget	uint64_t		1440421	0					
+ANR	1440539	Identifier	i		1440421	1					
+ANR	1440540	Identifier	cluster_size		1440421	1					
+ANR	1440541	Identifier	l2_entry		1440421	1					
+ANR	1440542	CompoundStatement		39:62:705:705	1440421	1					
+ANR	1440543	BreakStatement	break ;	45:12:844:849	1440421	0	True				
+ANR	1440544	ReturnStatement	return i ;	53:1:873:881	1440421	9	True				
+ANR	1440545	Identifier	i		1440421	0					
+ANR	1440546	ReturnType	static int		1440421	1					
+ANR	1440547	Identifier	count_contiguous_clusters		1440421	2					
+ANR	1440548	ParameterList	"int nb_clusters , int cluster_size , uint64_t * l2_table , uint64_t stop_flags"		1440421	3					
+ANR	1440549	Parameter	int nb_clusters	1:37:37:51	1440421	0	True				
+ANR	1440550	ParameterType	int		1440421	0					
+ANR	1440551	Identifier	nb_clusters		1440421	1					
+ANR	1440552	Parameter	int cluster_size	1:54:54:69	1440421	1	True				
+ANR	1440553	ParameterType	int		1440421	0					
+ANR	1440554	Identifier	cluster_size		1440421	1					
+ANR	1440555	Parameter	uint64_t * l2_table	3:8:81:98	1440421	2	True				
+ANR	1440556	ParameterType	uint64_t *		1440421	0					
+ANR	1440557	Identifier	l2_table		1440421	1					
+ANR	1440558	Parameter	uint64_t stop_flags	3:28:101:119	1440421	3	True				
+ANR	1440559	ParameterType	uint64_t		1440421	0					
+ANR	1440560	Identifier	stop_flags		1440421	1					
+ANR	1440561	CFGEntryNode	ENTRY		1440421		True				
+ANR	1440562	CFGExitNode	EXIT		1440421		True				
+ANR	1440563	Symbol	stop_flags		1440421						
+ANR	1440564	Symbol	offset		1440421						
+ANR	1440565	Symbol	qcow2_get_cluster_type		1440421						
+ANR	1440566	Symbol	i		1440421						
+ANR	1440567	Symbol	nb_clusters		1440421						
+ANR	1440568	Symbol	first_cluster_type		1440421						
+ANR	1440569	Symbol	l2_entry		1440421						
+ANR	1440570	Symbol	L2E_OFFSET_MASK		1440421						
+ANR	1440571	Symbol	QCOW2_CLUSTER_NORMAL		1440421						
+ANR	1440572	Symbol	QCOW2_CLUSTER_ZERO		1440421						
+ANR	1440573	Symbol	QCOW_OFLAG_COMPRESSED		1440421						
+ANR	1440574	Symbol	first_entry		1440421						
+ANR	1440575	Symbol	* i		1440421						
+ANR	1440576	Symbol	cluster_size		1440421						
+ANR	1440577	Symbol	l2_table		1440421						
+ANR	1440578	Symbol	* l2_table		1440421						
+ANR	1440579	Symbol	mask		1440421						
+ANR	1440580	Symbol	be64_to_cpu		1440421						

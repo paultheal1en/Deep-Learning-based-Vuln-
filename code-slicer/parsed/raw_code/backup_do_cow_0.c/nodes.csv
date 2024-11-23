@@ -1,0 +1,540 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	918853	File	/home/p4ultr4n/workplace/ReVeal/raw_code/backup_do_cow_0.c								
+ANR	918854	Function	backup_do_cow	1:0:0:3105							
+ANR	918855	FunctionDef	"backup_do_cow (BackupBlockJob * job , int64_t sector_num , int nb_sectors , bool * error_is_read , bool is_write_notifier)"		918854	0					
+ANR	918856	CompoundStatement		9:0:258:3105	918854	0					
+ANR	918857	IdentifierDeclStatement	BlockBackend * blk = job -> common . blk ;	11:4:265:300	918854	0	True				
+ANR	918858	IdentifierDecl	* blk = job -> common . blk		918854	0					
+ANR	918859	IdentifierDeclType	BlockBackend *		918854	0					
+ANR	918860	Identifier	blk		918854	1					
+ANR	918861	AssignmentExpression	* blk = job -> common . blk		918854	2		=			
+ANR	918862	Identifier	blk		918854	0					
+ANR	918863	MemberAccess	job -> common . blk		918854	1					
+ANR	918864	PtrMemberAccess	job -> common		918854	0					
+ANR	918865	Identifier	job		918854	0					
+ANR	918866	Identifier	common		918854	1					
+ANR	918867	Identifier	blk		918854	1					
+ANR	918868	IdentifierDeclStatement	CowRequest cow_request ;	13:4:307:329	918854	1	True				
+ANR	918869	IdentifierDecl	cow_request		918854	0					
+ANR	918870	IdentifierDeclType	CowRequest		918854	0					
+ANR	918871	Identifier	cow_request		918854	1					
+ANR	918872	IdentifierDeclStatement	struct iovec iov ;	15:4:336:352	918854	2	True				
+ANR	918873	IdentifierDecl	iov		918854	0					
+ANR	918874	IdentifierDeclType	struct iovec		918854	0					
+ANR	918875	Identifier	iov		918854	1					
+ANR	918876	IdentifierDeclStatement	QEMUIOVector bounce_qiov ;	17:4:359:383	918854	3	True				
+ANR	918877	IdentifierDecl	bounce_qiov		918854	0					
+ANR	918878	IdentifierDeclType	QEMUIOVector		918854	0					
+ANR	918879	Identifier	bounce_qiov		918854	1					
+ANR	918880	IdentifierDeclStatement	void * bounce_buffer = NULL ;	19:4:390:416	918854	4	True				
+ANR	918881	IdentifierDecl	* bounce_buffer = NULL		918854	0					
+ANR	918882	IdentifierDeclType	void *		918854	0					
+ANR	918883	Identifier	bounce_buffer		918854	1					
+ANR	918884	AssignmentExpression	* bounce_buffer = NULL		918854	2		=			
+ANR	918885	Identifier	NULL		918854	0					
+ANR	918886	Identifier	NULL		918854	1					
+ANR	918887	IdentifierDeclStatement	int ret = 0 ;	21:4:423:434	918854	5	True				
+ANR	918888	IdentifierDecl	ret = 0		918854	0					
+ANR	918889	IdentifierDeclType	int		918854	0					
+ANR	918890	Identifier	ret		918854	1					
+ANR	918891	AssignmentExpression	ret = 0		918854	2		=			
+ANR	918892	Identifier	ret		918854	0					
+ANR	918893	PrimaryExpression	0		918854	1					
+ANR	918894	IdentifierDeclStatement	int64_t sectors_per_cluster = cluster_size_sectors ( job ) ;	23:4:441:496	918854	6	True				
+ANR	918895	IdentifierDecl	sectors_per_cluster = cluster_size_sectors ( job )		918854	0					
+ANR	918896	IdentifierDeclType	int64_t		918854	0					
+ANR	918897	Identifier	sectors_per_cluster		918854	1					
+ANR	918898	AssignmentExpression	sectors_per_cluster = cluster_size_sectors ( job )		918854	2		=			
+ANR	918899	Identifier	sectors_per_cluster		918854	0					
+ANR	918900	CallExpression	cluster_size_sectors ( job )		918854	1					
+ANR	918901	Callee	cluster_size_sectors		918854	0					
+ANR	918902	Identifier	cluster_size_sectors		918854	0					
+ANR	918903	ArgumentList	job		918854	1					
+ANR	918904	Argument	job		918854	0					
+ANR	918905	Identifier	job		918854	0					
+ANR	918906	IdentifierDeclStatement	"int64_t start , end ;"	25:4:503:521	918854	7	True				
+ANR	918907	IdentifierDecl	start		918854	0					
+ANR	918908	IdentifierDeclType	int64_t		918854	0					
+ANR	918909	Identifier	start		918854	1					
+ANR	918910	IdentifierDecl	end		918854	1					
+ANR	918911	IdentifierDeclType	int64_t		918854	0					
+ANR	918912	Identifier	end		918854	1					
+ANR	918913	IdentifierDeclStatement	int n ;	27:4:528:533	918854	8	True				
+ANR	918914	IdentifierDecl	n		918854	0					
+ANR	918915	IdentifierDeclType	int		918854	0					
+ANR	918916	Identifier	n		918854	1					
+ANR	918917	ExpressionStatement	qemu_co_rwlock_rdlock ( & job -> flush_rwlock )	31:4:542:583	918854	9	True				
+ANR	918918	CallExpression	qemu_co_rwlock_rdlock ( & job -> flush_rwlock )		918854	0					
+ANR	918919	Callee	qemu_co_rwlock_rdlock		918854	0					
+ANR	918920	Identifier	qemu_co_rwlock_rdlock		918854	0					
+ANR	918921	ArgumentList	& job -> flush_rwlock		918854	1					
+ANR	918922	Argument	& job -> flush_rwlock		918854	0					
+ANR	918923	UnaryOperationExpression	& job -> flush_rwlock		918854	0					
+ANR	918924	UnaryOperator	&		918854	0					
+ANR	918925	PtrMemberAccess	job -> flush_rwlock		918854	1					
+ANR	918926	Identifier	job		918854	0					
+ANR	918927	Identifier	flush_rwlock		918854	1					
+ANR	918928	ExpressionStatement	start = sector_num / sectors_per_cluster	35:4:592:632	918854	10	True				
+ANR	918929	AssignmentExpression	start = sector_num / sectors_per_cluster		918854	0		=			
+ANR	918930	Identifier	start		918854	0					
+ANR	918931	MultiplicativeExpression	sector_num / sectors_per_cluster		918854	1		/			
+ANR	918932	Identifier	sector_num		918854	0					
+ANR	918933	Identifier	sectors_per_cluster		918854	1					
+ANR	918934	ExpressionStatement	"end = DIV_ROUND_UP ( sector_num + nb_sectors , sectors_per_cluster )"	37:4:639:703	918854	11	True				
+ANR	918935	AssignmentExpression	"end = DIV_ROUND_UP ( sector_num + nb_sectors , sectors_per_cluster )"		918854	0		=			
+ANR	918936	Identifier	end		918854	0					
+ANR	918937	CallExpression	"DIV_ROUND_UP ( sector_num + nb_sectors , sectors_per_cluster )"		918854	1					
+ANR	918938	Callee	DIV_ROUND_UP		918854	0					
+ANR	918939	Identifier	DIV_ROUND_UP		918854	0					
+ANR	918940	ArgumentList	sector_num + nb_sectors		918854	1					
+ANR	918941	Argument	sector_num + nb_sectors		918854	0					
+ANR	918942	AdditiveExpression	sector_num + nb_sectors		918854	0		+			
+ANR	918943	Identifier	sector_num		918854	0					
+ANR	918944	Identifier	nb_sectors		918854	1					
+ANR	918945	Argument	sectors_per_cluster		918854	1					
+ANR	918946	Identifier	sectors_per_cluster		918854	0					
+ANR	918947	ExpressionStatement	"trace_backup_do_cow_enter ( job , start , sector_num , nb_sectors )"	41:4:712:773	918854	12	True				
+ANR	918948	CallExpression	"trace_backup_do_cow_enter ( job , start , sector_num , nb_sectors )"		918854	0					
+ANR	918949	Callee	trace_backup_do_cow_enter		918854	0					
+ANR	918950	Identifier	trace_backup_do_cow_enter		918854	0					
+ANR	918951	ArgumentList	job		918854	1					
+ANR	918952	Argument	job		918854	0					
+ANR	918953	Identifier	job		918854	0					
+ANR	918954	Argument	start		918854	1					
+ANR	918955	Identifier	start		918854	0					
+ANR	918956	Argument	sector_num		918854	2					
+ANR	918957	Identifier	sector_num		918854	0					
+ANR	918958	Argument	nb_sectors		918854	3					
+ANR	918959	Identifier	nb_sectors		918854	0					
+ANR	918960	ExpressionStatement	"wait_for_overlapping_requests ( job , start , end )"	45:4:782:828	918854	13	True				
+ANR	918961	CallExpression	"wait_for_overlapping_requests ( job , start , end )"		918854	0					
+ANR	918962	Callee	wait_for_overlapping_requests		918854	0					
+ANR	918963	Identifier	wait_for_overlapping_requests		918854	0					
+ANR	918964	ArgumentList	job		918854	1					
+ANR	918965	Argument	job		918854	0					
+ANR	918966	Identifier	job		918854	0					
+ANR	918967	Argument	start		918854	1					
+ANR	918968	Identifier	start		918854	0					
+ANR	918969	Argument	end		918854	2					
+ANR	918970	Identifier	end		918854	0					
+ANR	918971	ExpressionStatement	"cow_request_begin ( & cow_request , job , start , end )"	47:4:835:883	918854	14	True				
+ANR	918972	CallExpression	"cow_request_begin ( & cow_request , job , start , end )"		918854	0					
+ANR	918973	Callee	cow_request_begin		918854	0					
+ANR	918974	Identifier	cow_request_begin		918854	0					
+ANR	918975	ArgumentList	& cow_request		918854	1					
+ANR	918976	Argument	& cow_request		918854	0					
+ANR	918977	UnaryOperationExpression	& cow_request		918854	0					
+ANR	918978	UnaryOperator	&		918854	0					
+ANR	918979	Identifier	cow_request		918854	1					
+ANR	918980	Argument	job		918854	1					
+ANR	918981	Identifier	job		918854	0					
+ANR	918982	Argument	start		918854	2					
+ANR	918983	Identifier	start		918854	0					
+ANR	918984	Argument	end		918854	3					
+ANR	918985	Identifier	end		918854	0					
+ANR	918986	ForStatement	for ( ; start < end ; start ++ )		918854	15					
+ANR	918987	Condition	start < end	51:11:899:909	918854	0	True				
+ANR	918988	RelationalExpression	start < end		918854	0		<			
+ANR	918989	Identifier	start		918854	0					
+ANR	918990	Identifier	end		918854	1					
+ANR	918991	PostIncDecOperationExpression	start ++	51:24:912:918	918854	1	True				
+ANR	918992	Identifier	start		918854	0					
+ANR	918993	IncDec	++		918854	1					
+ANR	918994	CompoundStatement		43:33:662:662	918854	2					
+ANR	918995	IfStatement	"if ( test_bit ( start , job -> done_bitmap ) )"		918854	0					
+ANR	918996	Condition	"test_bit ( start , job -> done_bitmap )"	53:12:936:968	918854	0	True				
+ANR	918997	CallExpression	"test_bit ( start , job -> done_bitmap )"		918854	0					
+ANR	918998	Callee	test_bit		918854	0					
+ANR	918999	Identifier	test_bit		918854	0					
+ANR	919000	ArgumentList	start		918854	1					
+ANR	919001	Argument	start		918854	0					
+ANR	919002	Identifier	start		918854	0					
+ANR	919003	Argument	job -> done_bitmap		918854	1					
+ANR	919004	PtrMemberAccess	job -> done_bitmap		918854	0					
+ANR	919005	Identifier	job		918854	0					
+ANR	919006	Identifier	done_bitmap		918854	1					
+ANR	919007	CompoundStatement		45:47:712:712	918854	1					
+ANR	919008	ExpressionStatement	"trace_backup_do_cow_skip ( job , start )"	55:12:986:1022	918854	0	True				
+ANR	919009	CallExpression	"trace_backup_do_cow_skip ( job , start )"		918854	0					
+ANR	919010	Callee	trace_backup_do_cow_skip		918854	0					
+ANR	919011	Identifier	trace_backup_do_cow_skip		918854	0					
+ANR	919012	ArgumentList	job		918854	1					
+ANR	919013	Argument	job		918854	0					
+ANR	919014	Identifier	job		918854	0					
+ANR	919015	Argument	start		918854	1					
+ANR	919016	Identifier	start		918854	0					
+ANR	919017	ContinueStatement	continue ;	57:12:1037:1045	918854	1	True				
+ANR	919018	ExpressionStatement	"trace_backup_do_cow_process ( job , start )"	63:8:1090:1129	918854	1	True				
+ANR	919019	CallExpression	"trace_backup_do_cow_process ( job , start )"		918854	0					
+ANR	919020	Callee	trace_backup_do_cow_process		918854	0					
+ANR	919021	Identifier	trace_backup_do_cow_process		918854	0					
+ANR	919022	ArgumentList	job		918854	1					
+ANR	919023	Argument	job		918854	0					
+ANR	919024	Identifier	job		918854	0					
+ANR	919025	Argument	start		918854	1					
+ANR	919026	Identifier	start		918854	0					
+ANR	919027	ExpressionStatement	"n = MIN ( sectors_per_cluster , job -> common . len / BDRV_SECTOR_SIZE - start * sectors_per_cluster )"	67:8:1142:1270	918854	2	True				
+ANR	919028	AssignmentExpression	"n = MIN ( sectors_per_cluster , job -> common . len / BDRV_SECTOR_SIZE - start * sectors_per_cluster )"		918854	0		=			
+ANR	919029	Identifier	n		918854	0					
+ANR	919030	CallExpression	"MIN ( sectors_per_cluster , job -> common . len / BDRV_SECTOR_SIZE - start * sectors_per_cluster )"		918854	1					
+ANR	919031	Callee	MIN		918854	0					
+ANR	919032	Identifier	MIN		918854	0					
+ANR	919033	ArgumentList	sectors_per_cluster		918854	1					
+ANR	919034	Argument	sectors_per_cluster		918854	0					
+ANR	919035	Identifier	sectors_per_cluster		918854	0					
+ANR	919036	Argument	job -> common . len / BDRV_SECTOR_SIZE - start * sectors_per_cluster		918854	1					
+ANR	919037	AdditiveExpression	job -> common . len / BDRV_SECTOR_SIZE - start * sectors_per_cluster		918854	0		-			
+ANR	919038	MultiplicativeExpression	job -> common . len / BDRV_SECTOR_SIZE		918854	0		/			
+ANR	919039	MemberAccess	job -> common . len		918854	0					
+ANR	919040	PtrMemberAccess	job -> common		918854	0					
+ANR	919041	Identifier	job		918854	0					
+ANR	919042	Identifier	common		918854	1					
+ANR	919043	Identifier	len		918854	1					
+ANR	919044	Identifier	BDRV_SECTOR_SIZE		918854	1					
+ANR	919045	MultiplicativeExpression	start * sectors_per_cluster		918854	1		*			
+ANR	919046	Identifier	start		918854	0					
+ANR	919047	Identifier	sectors_per_cluster		918854	1					
+ANR	919048	IfStatement	if ( ! bounce_buffer )		918854	3					
+ANR	919049	Condition	! bounce_buffer	75:12:1287:1300	918854	0	True				
+ANR	919050	UnaryOperationExpression	! bounce_buffer		918854	0					
+ANR	919051	UnaryOperator	!		918854	0					
+ANR	919052	Identifier	bounce_buffer		918854	1					
+ANR	919053	CompoundStatement		67:28:1044:1044	918854	1					
+ANR	919054	ExpressionStatement	"bounce_buffer = blk_blockalign ( blk , job -> cluster_size )"	77:12:1318:1372	918854	0	True				
+ANR	919055	AssignmentExpression	"bounce_buffer = blk_blockalign ( blk , job -> cluster_size )"		918854	0		=			
+ANR	919056	Identifier	bounce_buffer		918854	0					
+ANR	919057	CallExpression	"blk_blockalign ( blk , job -> cluster_size )"		918854	1					
+ANR	919058	Callee	blk_blockalign		918854	0					
+ANR	919059	Identifier	blk_blockalign		918854	0					
+ANR	919060	ArgumentList	blk		918854	1					
+ANR	919061	Argument	blk		918854	0					
+ANR	919062	Identifier	blk		918854	0					
+ANR	919063	Argument	job -> cluster_size		918854	1					
+ANR	919064	PtrMemberAccess	job -> cluster_size		918854	0					
+ANR	919065	Identifier	job		918854	0					
+ANR	919066	Identifier	cluster_size		918854	1					
+ANR	919067	ExpressionStatement	iov . iov_base = bounce_buffer	81:8:1394:1422	918854	4	True				
+ANR	919068	AssignmentExpression	iov . iov_base = bounce_buffer		918854	0		=			
+ANR	919069	MemberAccess	iov . iov_base		918854	0					
+ANR	919070	Identifier	iov		918854	0					
+ANR	919071	Identifier	iov_base		918854	1					
+ANR	919072	Identifier	bounce_buffer		918854	1					
+ANR	919073	ExpressionStatement	iov . iov_len = n * BDRV_SECTOR_SIZE	83:8:1433:1467	918854	5	True				
+ANR	919074	AssignmentExpression	iov . iov_len = n * BDRV_SECTOR_SIZE		918854	0		=			
+ANR	919075	MemberAccess	iov . iov_len		918854	0					
+ANR	919076	Identifier	iov		918854	0					
+ANR	919077	Identifier	iov_len		918854	1					
+ANR	919078	MultiplicativeExpression	n * BDRV_SECTOR_SIZE		918854	1		*			
+ANR	919079	Identifier	n		918854	0					
+ANR	919080	Identifier	BDRV_SECTOR_SIZE		918854	1					
+ANR	919081	ExpressionStatement	"qemu_iovec_init_external ( & bounce_qiov , & iov , 1 )"	85:8:1478:1525	918854	6	True				
+ANR	919082	CallExpression	"qemu_iovec_init_external ( & bounce_qiov , & iov , 1 )"		918854	0					
+ANR	919083	Callee	qemu_iovec_init_external		918854	0					
+ANR	919084	Identifier	qemu_iovec_init_external		918854	0					
+ANR	919085	ArgumentList	& bounce_qiov		918854	1					
+ANR	919086	Argument	& bounce_qiov		918854	0					
+ANR	919087	UnaryOperationExpression	& bounce_qiov		918854	0					
+ANR	919088	UnaryOperator	&		918854	0					
+ANR	919089	Identifier	bounce_qiov		918854	1					
+ANR	919090	Argument	& iov		918854	1					
+ANR	919091	UnaryOperationExpression	& iov		918854	0					
+ANR	919092	UnaryOperator	&		918854	0					
+ANR	919093	Identifier	iov		918854	1					
+ANR	919094	Argument	1		918854	2					
+ANR	919095	PrimaryExpression	1		918854	0					
+ANR	919096	ExpressionStatement	"ret = blk_co_preadv ( blk , start * job -> cluster_size , bounce_qiov . size , & bounce_qiov , is_write_notifier ? BDRV_REQ_NO_SERIALISING : 0 )"	89:8:1538:1728	918854	7	True				
+ANR	919097	AssignmentExpression	"ret = blk_co_preadv ( blk , start * job -> cluster_size , bounce_qiov . size , & bounce_qiov , is_write_notifier ? BDRV_REQ_NO_SERIALISING : 0 )"		918854	0		=			
+ANR	919098	Identifier	ret		918854	0					
+ANR	919099	CallExpression	"blk_co_preadv ( blk , start * job -> cluster_size , bounce_qiov . size , & bounce_qiov , is_write_notifier ? BDRV_REQ_NO_SERIALISING : 0 )"		918854	1					
+ANR	919100	Callee	blk_co_preadv		918854	0					
+ANR	919101	Identifier	blk_co_preadv		918854	0					
+ANR	919102	ArgumentList	blk		918854	1					
+ANR	919103	Argument	blk		918854	0					
+ANR	919104	Identifier	blk		918854	0					
+ANR	919105	Argument	start * job -> cluster_size		918854	1					
+ANR	919106	MultiplicativeExpression	start * job -> cluster_size		918854	0		*			
+ANR	919107	Identifier	start		918854	0					
+ANR	919108	PtrMemberAccess	job -> cluster_size		918854	1					
+ANR	919109	Identifier	job		918854	0					
+ANR	919110	Identifier	cluster_size		918854	1					
+ANR	919111	Argument	bounce_qiov . size		918854	2					
+ANR	919112	MemberAccess	bounce_qiov . size		918854	0					
+ANR	919113	Identifier	bounce_qiov		918854	0					
+ANR	919114	Identifier	size		918854	1					
+ANR	919115	Argument	& bounce_qiov		918854	3					
+ANR	919116	UnaryOperationExpression	& bounce_qiov		918854	0					
+ANR	919117	UnaryOperator	&		918854	0					
+ANR	919118	Identifier	bounce_qiov		918854	1					
+ANR	919119	Argument	is_write_notifier ? BDRV_REQ_NO_SERIALISING : 0		918854	4					
+ANR	919120	ConditionalExpression	is_write_notifier ? BDRV_REQ_NO_SERIALISING : 0		918854	0					
+ANR	919121	Condition	is_write_notifier		918854	0					
+ANR	919122	Identifier	is_write_notifier		918854	0					
+ANR	919123	Identifier	BDRV_REQ_NO_SERIALISING		918854	1					
+ANR	919124	PrimaryExpression	0		918854	2					
+ANR	919125	IfStatement	if ( ret < 0 )		918854	8					
+ANR	919126	Condition	ret < 0	95:12:1743:1749	918854	0	True				
+ANR	919127	RelationalExpression	ret < 0		918854	0		<			
+ANR	919128	Identifier	ret		918854	0					
+ANR	919129	PrimaryExpression	0		918854	1					
+ANR	919130	CompoundStatement		87:21:1493:1493	918854	1					
+ANR	919131	ExpressionStatement	"trace_backup_do_cow_read_fail ( job , start , ret )"	97:12:1767:1813	918854	0	True				
+ANR	919132	CallExpression	"trace_backup_do_cow_read_fail ( job , start , ret )"		918854	0					
+ANR	919133	Callee	trace_backup_do_cow_read_fail		918854	0					
+ANR	919134	Identifier	trace_backup_do_cow_read_fail		918854	0					
+ANR	919135	ArgumentList	job		918854	1					
+ANR	919136	Argument	job		918854	0					
+ANR	919137	Identifier	job		918854	0					
+ANR	919138	Argument	start		918854	1					
+ANR	919139	Identifier	start		918854	0					
+ANR	919140	Argument	ret		918854	2					
+ANR	919141	Identifier	ret		918854	0					
+ANR	919142	IfStatement	if ( error_is_read )		918854	1					
+ANR	919143	Condition	error_is_read	99:16:1832:1844	918854	0	True				
+ANR	919144	Identifier	error_is_read		918854	0					
+ANR	919145	CompoundStatement		91:31:1588:1588	918854	1					
+ANR	919146	ExpressionStatement	* error_is_read = true	101:16:1866:1887	918854	0	True				
+ANR	919147	AssignmentExpression	* error_is_read = true		918854	0		=			
+ANR	919148	UnaryOperationExpression	* error_is_read		918854	0					
+ANR	919149	UnaryOperator	*		918854	0					
+ANR	919150	Identifier	error_is_read		918854	1					
+ANR	919151	Identifier	true		918854	1					
+ANR	919152	GotoStatement	goto out ;	105:12:1917:1925	918854	2	True				
+ANR	919153	Identifier	out		918854	0					
+ANR	919154	IfStatement	"if ( buffer_is_zero ( iov . iov_base , iov . iov_len ) )"		918854	9					
+ANR	919155	Condition	"buffer_is_zero ( iov . iov_base , iov . iov_len )"	111:12:1953:1993	918854	0	True				
+ANR	919156	CallExpression	"buffer_is_zero ( iov . iov_base , iov . iov_len )"		918854	0					
+ANR	919157	Callee	buffer_is_zero		918854	0					
+ANR	919158	Identifier	buffer_is_zero		918854	0					
+ANR	919159	ArgumentList	iov . iov_base		918854	1					
+ANR	919160	Argument	iov . iov_base		918854	0					
+ANR	919161	MemberAccess	iov . iov_base		918854	0					
+ANR	919162	Identifier	iov		918854	0					
+ANR	919163	Identifier	iov_base		918854	1					
+ANR	919164	Argument	iov . iov_len		918854	1					
+ANR	919165	MemberAccess	iov . iov_len		918854	0					
+ANR	919166	Identifier	iov		918854	0					
+ANR	919167	Identifier	iov_len		918854	1					
+ANR	919168	CompoundStatement		103:55:1737:1737	918854	1					
+ANR	919169	ExpressionStatement	"ret = blk_co_pwrite_zeroes ( job -> target , start * job -> cluster_size , bounce_qiov . size , BDRV_REQ_MAY_UNMAP )"	113:12:2011:2155	918854	0	True				
+ANR	919170	AssignmentExpression	"ret = blk_co_pwrite_zeroes ( job -> target , start * job -> cluster_size , bounce_qiov . size , BDRV_REQ_MAY_UNMAP )"		918854	0		=			
+ANR	919171	Identifier	ret		918854	0					
+ANR	919172	CallExpression	"blk_co_pwrite_zeroes ( job -> target , start * job -> cluster_size , bounce_qiov . size , BDRV_REQ_MAY_UNMAP )"		918854	1					
+ANR	919173	Callee	blk_co_pwrite_zeroes		918854	0					
+ANR	919174	Identifier	blk_co_pwrite_zeroes		918854	0					
+ANR	919175	ArgumentList	job -> target		918854	1					
+ANR	919176	Argument	job -> target		918854	0					
+ANR	919177	PtrMemberAccess	job -> target		918854	0					
+ANR	919178	Identifier	job		918854	0					
+ANR	919179	Identifier	target		918854	1					
+ANR	919180	Argument	start * job -> cluster_size		918854	1					
+ANR	919181	MultiplicativeExpression	start * job -> cluster_size		918854	0		*			
+ANR	919182	Identifier	start		918854	0					
+ANR	919183	PtrMemberAccess	job -> cluster_size		918854	1					
+ANR	919184	Identifier	job		918854	0					
+ANR	919185	Identifier	cluster_size		918854	1					
+ANR	919186	Argument	bounce_qiov . size		918854	2					
+ANR	919187	MemberAccess	bounce_qiov . size		918854	0					
+ANR	919188	Identifier	bounce_qiov		918854	0					
+ANR	919189	Identifier	size		918854	1					
+ANR	919190	Argument	BDRV_REQ_MAY_UNMAP		918854	3					
+ANR	919191	Identifier	BDRV_REQ_MAY_UNMAP		918854	0					
+ANR	919192	ElseStatement	else		918854	0					
+ANR	919193	CompoundStatement		109:15:1914:1914	918854	0					
+ANR	919194	ExpressionStatement	"ret = blk_co_pwritev ( job -> target , start * job -> cluster_size , bounce_qiov . size , & bounce_qiov , 0 )"	119:12:2188:2317	918854	0	True				
+ANR	919195	AssignmentExpression	"ret = blk_co_pwritev ( job -> target , start * job -> cluster_size , bounce_qiov . size , & bounce_qiov , 0 )"		918854	0		=			
+ANR	919196	Identifier	ret		918854	0					
+ANR	919197	CallExpression	"blk_co_pwritev ( job -> target , start * job -> cluster_size , bounce_qiov . size , & bounce_qiov , 0 )"		918854	1					
+ANR	919198	Callee	blk_co_pwritev		918854	0					
+ANR	919199	Identifier	blk_co_pwritev		918854	0					
+ANR	919200	ArgumentList	job -> target		918854	1					
+ANR	919201	Argument	job -> target		918854	0					
+ANR	919202	PtrMemberAccess	job -> target		918854	0					
+ANR	919203	Identifier	job		918854	0					
+ANR	919204	Identifier	target		918854	1					
+ANR	919205	Argument	start * job -> cluster_size		918854	1					
+ANR	919206	MultiplicativeExpression	start * job -> cluster_size		918854	0		*			
+ANR	919207	Identifier	start		918854	0					
+ANR	919208	PtrMemberAccess	job -> cluster_size		918854	1					
+ANR	919209	Identifier	job		918854	0					
+ANR	919210	Identifier	cluster_size		918854	1					
+ANR	919211	Argument	bounce_qiov . size		918854	2					
+ANR	919212	MemberAccess	bounce_qiov . size		918854	0					
+ANR	919213	Identifier	bounce_qiov		918854	0					
+ANR	919214	Identifier	size		918854	1					
+ANR	919215	Argument	& bounce_qiov		918854	3					
+ANR	919216	UnaryOperationExpression	& bounce_qiov		918854	0					
+ANR	919217	UnaryOperator	&		918854	0					
+ANR	919218	Identifier	bounce_qiov		918854	1					
+ANR	919219	Argument	0		918854	4					
+ANR	919220	PrimaryExpression	0		918854	0					
+ANR	919221	IfStatement	if ( ret < 0 )		918854	10					
+ANR	919222	Condition	ret < 0	125:12:2343:2349	918854	0	True				
+ANR	919223	RelationalExpression	ret < 0		918854	0		<			
+ANR	919224	Identifier	ret		918854	0					
+ANR	919225	PrimaryExpression	0		918854	1					
+ANR	919226	CompoundStatement		117:21:2093:2093	918854	1					
+ANR	919227	ExpressionStatement	"trace_backup_do_cow_write_fail ( job , start , ret )"	127:12:2367:2414	918854	0	True				
+ANR	919228	CallExpression	"trace_backup_do_cow_write_fail ( job , start , ret )"		918854	0					
+ANR	919229	Callee	trace_backup_do_cow_write_fail		918854	0					
+ANR	919230	Identifier	trace_backup_do_cow_write_fail		918854	0					
+ANR	919231	ArgumentList	job		918854	1					
+ANR	919232	Argument	job		918854	0					
+ANR	919233	Identifier	job		918854	0					
+ANR	919234	Argument	start		918854	1					
+ANR	919235	Identifier	start		918854	0					
+ANR	919236	Argument	ret		918854	2					
+ANR	919237	Identifier	ret		918854	0					
+ANR	919238	IfStatement	if ( error_is_read )		918854	1					
+ANR	919239	Condition	error_is_read	129:16:2433:2445	918854	0	True				
+ANR	919240	Identifier	error_is_read		918854	0					
+ANR	919241	CompoundStatement		121:31:2189:2189	918854	1					
+ANR	919242	ExpressionStatement	* error_is_read = false	131:16:2467:2489	918854	0	True				
+ANR	919243	AssignmentExpression	* error_is_read = false		918854	0		=			
+ANR	919244	UnaryOperationExpression	* error_is_read		918854	0					
+ANR	919245	UnaryOperator	*		918854	0					
+ANR	919246	Identifier	error_is_read		918854	1					
+ANR	919247	Identifier	false		918854	1					
+ANR	919248	GotoStatement	goto out ;	135:12:2519:2527	918854	2	True				
+ANR	919249	Identifier	out		918854	0					
+ANR	919250	ExpressionStatement	"set_bit ( start , job -> done_bitmap )"	141:8:2551:2583	918854	11	True				
+ANR	919251	CallExpression	"set_bit ( start , job -> done_bitmap )"		918854	0					
+ANR	919252	Callee	set_bit		918854	0					
+ANR	919253	Identifier	set_bit		918854	0					
+ANR	919254	ArgumentList	start		918854	1					
+ANR	919255	Argument	start		918854	0					
+ANR	919256	Identifier	start		918854	0					
+ANR	919257	Argument	job -> done_bitmap		918854	1					
+ANR	919258	PtrMemberAccess	job -> done_bitmap		918854	0					
+ANR	919259	Identifier	job		918854	0					
+ANR	919260	Identifier	done_bitmap		918854	1					
+ANR	919261	ExpressionStatement	job -> sectors_read += n	151:8:2767:2789	918854	12	True				
+ANR	919262	AssignmentExpression	job -> sectors_read += n		918854	0		+=			
+ANR	919263	PtrMemberAccess	job -> sectors_read		918854	0					
+ANR	919264	Identifier	job		918854	0					
+ANR	919265	Identifier	sectors_read		918854	1					
+ANR	919266	Identifier	n		918854	1					
+ANR	919267	ExpressionStatement	job -> common . offset += n * BDRV_SECTOR_SIZE	153:8:2800:2842	918854	13	True				
+ANR	919268	AssignmentExpression	job -> common . offset += n * BDRV_SECTOR_SIZE		918854	0		+=			
+ANR	919269	MemberAccess	job -> common . offset		918854	0					
+ANR	919270	PtrMemberAccess	job -> common		918854	0					
+ANR	919271	Identifier	job		918854	0					
+ANR	919272	Identifier	common		918854	1					
+ANR	919273	Identifier	offset		918854	1					
+ANR	919274	MultiplicativeExpression	n * BDRV_SECTOR_SIZE		918854	1		*			
+ANR	919275	Identifier	n		918854	0					
+ANR	919276	Identifier	BDRV_SECTOR_SIZE		918854	1					
+ANR	919277	Label	out :	159:0:2854:2857	918854	16	True				
+ANR	919278	Identifier	out		918854	0					
+ANR	919279	IfStatement	if ( bounce_buffer )		918854	17					
+ANR	919280	Condition	bounce_buffer	161:8:2868:2880	918854	0	True				
+ANR	919281	Identifier	bounce_buffer		918854	0					
+ANR	919282	CompoundStatement		153:23:2624:2624	918854	1					
+ANR	919283	ExpressionStatement	qemu_vfree ( bounce_buffer )	163:8:2894:2919	918854	0	True				
+ANR	919284	CallExpression	qemu_vfree ( bounce_buffer )		918854	0					
+ANR	919285	Callee	qemu_vfree		918854	0					
+ANR	919286	Identifier	qemu_vfree		918854	0					
+ANR	919287	ArgumentList	bounce_buffer		918854	1					
+ANR	919288	Argument	bounce_buffer		918854	0					
+ANR	919289	Identifier	bounce_buffer		918854	0					
+ANR	919290	ExpressionStatement	cow_request_end ( & cow_request )	169:4:2935:2964	918854	18	True				
+ANR	919291	CallExpression	cow_request_end ( & cow_request )		918854	0					
+ANR	919292	Callee	cow_request_end		918854	0					
+ANR	919293	Identifier	cow_request_end		918854	0					
+ANR	919294	ArgumentList	& cow_request		918854	1					
+ANR	919295	Argument	& cow_request		918854	0					
+ANR	919296	UnaryOperationExpression	& cow_request		918854	0					
+ANR	919297	UnaryOperator	&		918854	0					
+ANR	919298	Identifier	cow_request		918854	1					
+ANR	919299	ExpressionStatement	"trace_backup_do_cow_return ( job , sector_num , nb_sectors , ret )"	173:4:2973:3033	918854	19	True				
+ANR	919300	CallExpression	"trace_backup_do_cow_return ( job , sector_num , nb_sectors , ret )"		918854	0					
+ANR	919301	Callee	trace_backup_do_cow_return		918854	0					
+ANR	919302	Identifier	trace_backup_do_cow_return		918854	0					
+ANR	919303	ArgumentList	job		918854	1					
+ANR	919304	Argument	job		918854	0					
+ANR	919305	Identifier	job		918854	0					
+ANR	919306	Argument	sector_num		918854	1					
+ANR	919307	Identifier	sector_num		918854	0					
+ANR	919308	Argument	nb_sectors		918854	2					
+ANR	919309	Identifier	nb_sectors		918854	0					
+ANR	919310	Argument	ret		918854	3					
+ANR	919311	Identifier	ret		918854	0					
+ANR	919312	ExpressionStatement	qemu_co_rwlock_unlock ( & job -> flush_rwlock )	177:4:3042:3083	918854	20	True				
+ANR	919313	CallExpression	qemu_co_rwlock_unlock ( & job -> flush_rwlock )		918854	0					
+ANR	919314	Callee	qemu_co_rwlock_unlock		918854	0					
+ANR	919315	Identifier	qemu_co_rwlock_unlock		918854	0					
+ANR	919316	ArgumentList	& job -> flush_rwlock		918854	1					
+ANR	919317	Argument	& job -> flush_rwlock		918854	0					
+ANR	919318	UnaryOperationExpression	& job -> flush_rwlock		918854	0					
+ANR	919319	UnaryOperator	&		918854	0					
+ANR	919320	PtrMemberAccess	job -> flush_rwlock		918854	1					
+ANR	919321	Identifier	job		918854	0					
+ANR	919322	Identifier	flush_rwlock		918854	1					
+ANR	919323	ReturnStatement	return ret ;	181:4:3092:3102	918854	21	True				
+ANR	919324	Identifier	ret		918854	0					
+ANR	919325	ReturnType	static int coroutine_fn		918854	1					
+ANR	919326	Identifier	backup_do_cow		918854	2					
+ANR	919327	ParameterList	"BackupBlockJob * job , int64_t sector_num , int nb_sectors , bool * error_is_read , bool is_write_notifier"		918854	3					
+ANR	919328	Parameter	BackupBlockJob * job	1:38:38:56	918854	0	True				
+ANR	919329	ParameterType	BackupBlockJob *		918854	0					
+ANR	919330	Identifier	job		918854	1					
+ANR	919331	Parameter	int64_t sector_num	3:38:98:115	918854	1	True				
+ANR	919332	ParameterType	int64_t		918854	0					
+ANR	919333	Identifier	sector_num		918854	1					
+ANR	919334	Parameter	int nb_sectors	3:58:118:131	918854	2	True				
+ANR	919335	ParameterType	int		918854	0					
+ANR	919336	Identifier	nb_sectors		918854	1					
+ANR	919337	Parameter	bool * error_is_read	5:38:173:191	918854	3	True				
+ANR	919338	ParameterType	bool *		918854	0					
+ANR	919339	Identifier	error_is_read		918854	1					
+ANR	919340	Parameter	bool is_write_notifier	7:38:233:254	918854	4	True				
+ANR	919341	ParameterType	bool		918854	0					
+ANR	919342	Identifier	is_write_notifier		918854	1					
+ANR	919343	CFGEntryNode	ENTRY		918854		True				
+ANR	919344	CFGExitNode	EXIT		918854		True				
+ANR	919345	Symbol	nb_sectors		918854						
+ANR	919346	Symbol	blk_co_pwritev		918854						
+ANR	919347	Symbol	* error_is_read		918854						
+ANR	919348	Symbol	DIV_ROUND_UP		918854						
+ANR	919349	Symbol	test_bit		918854						
+ANR	919350	Symbol	blk_co_preadv		918854						
+ANR	919351	Symbol	bounce_buffer		918854						
+ANR	919352	Symbol	buffer_is_zero		918854						
+ANR	919353	Symbol	job -> common . offset		918854						
+ANR	919354	Symbol	job -> common		918854						
+ANR	919355	Symbol	& job -> flush_rwlock		918854						
+ANR	919356	Symbol	iov		918854						
+ANR	919357	Symbol	iov . iov_base		918854						
+ANR	919358	Symbol	is_write_notifier		918854						
+ANR	919359	Symbol	end		918854						
+ANR	919360	Symbol	job -> common . len		918854						
+ANR	919361	Symbol	job -> cluster_size		918854						
+ANR	919362	Symbol	blk		918854						
+ANR	919363	Symbol	ret		918854						
+ANR	919364	Symbol	bounce_qiov . size		918854						
+ANR	919365	Symbol	blk_blockalign		918854						
+ANR	919366	Symbol	NULL		918854						
+ANR	919367	Symbol	BDRV_REQ_MAY_UNMAP		918854						
+ANR	919368	Symbol	job -> target		918854						
+ANR	919369	Symbol	job -> common . blk		918854						
+ANR	919370	Symbol	* job		918854						
+ANR	919371	Symbol	bounce_qiov		918854						
+ANR	919372	Symbol	start		918854						
+ANR	919373	Symbol	false		918854						
+ANR	919374	Symbol	cow_request		918854						
+ANR	919375	Symbol	cluster_size_sectors		918854						
+ANR	919376	Symbol	n		918854						
+ANR	919377	Symbol	sector_num		918854						
+ANR	919378	Symbol	BDRV_REQ_NO_SERIALISING		918854						
+ANR	919379	Symbol	& iov		918854						
+ANR	919380	Symbol	MIN		918854						
+ANR	919381	Symbol	job -> done_bitmap		918854						
+ANR	919382	Symbol	job -> sectors_read		918854						
+ANR	919383	Symbol	error_is_read		918854						
+ANR	919384	Symbol	BDRV_SECTOR_SIZE		918854						
+ANR	919385	Symbol	iov . iov_len		918854						
+ANR	919386	Symbol	true		918854						
+ANR	919387	Symbol	sectors_per_cluster		918854						
+ANR	919388	Symbol	& bounce_qiov		918854						
+ANR	919389	Symbol	job		918854						
+ANR	919390	Symbol	blk_co_pwrite_zeroes		918854						
+ANR	919391	Symbol	& cow_request		918854						

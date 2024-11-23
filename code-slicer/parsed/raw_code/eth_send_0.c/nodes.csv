@@ -1,0 +1,161 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	3083514	File	/home/p4ultr4n/workplace/ReVeal/raw_code/eth_send_0.c								
+ANR	3083515	Function	eth_send	1:0:0:738							
+ANR	3083516	FunctionDef	"eth_send (mv88w8618_eth_state * s , int queue_index)"		3083515	0					
+ANR	3083517	CompoundStatement		3:0:63:738	3083515	0					
+ANR	3083518	IdentifierDeclStatement	uint32_t desc_addr = s -> tx_queue [ queue_index ] ;	5:4:70:115	3083515	0	True				
+ANR	3083519	IdentifierDecl	desc_addr = s -> tx_queue [ queue_index ]		3083515	0					
+ANR	3083520	IdentifierDeclType	uint32_t		3083515	0					
+ANR	3083521	Identifier	desc_addr		3083515	1					
+ANR	3083522	AssignmentExpression	desc_addr = s -> tx_queue [ queue_index ]		3083515	2		=			
+ANR	3083523	Identifier	desc_addr		3083515	0					
+ANR	3083524	ArrayIndexing	s -> tx_queue [ queue_index ]		3083515	1					
+ANR	3083525	PtrMemberAccess	s -> tx_queue		3083515	0					
+ANR	3083526	Identifier	s		3083515	0					
+ANR	3083527	Identifier	tx_queue		3083515	1					
+ANR	3083528	Identifier	queue_index		3083515	1					
+ANR	3083529	IdentifierDeclStatement	mv88w8618_tx_desc desc ;	7:4:122:144	3083515	1	True				
+ANR	3083530	IdentifierDecl	desc		3083515	0					
+ANR	3083531	IdentifierDeclType	mv88w8618_tx_desc		3083515	0					
+ANR	3083532	Identifier	desc		3083515	1					
+ANR	3083533	IdentifierDeclStatement	uint8_t buf [ 2048 ] ;	9:4:151:168	3083515	2	True				
+ANR	3083534	IdentifierDecl	buf [ 2048 ]		3083515	0					
+ANR	3083535	IdentifierDeclType	uint8_t [ 2048 ]		3083515	0					
+ANR	3083536	Identifier	buf		3083515	1					
+ANR	3083537	PrimaryExpression	2048		3083515	2					
+ANR	3083538	IdentifierDeclStatement	int len ;	11:4:175:182	3083515	3	True				
+ANR	3083539	IdentifierDecl	len		3083515	0					
+ANR	3083540	IdentifierDeclType	int		3083515	0					
+ANR	3083541	Identifier	len		3083515	1					
+ANR	3083542	DoStatement	do		3083515	4					
+ANR	3083543	CompoundStatement		15:7:132:132	3083515	0					
+ANR	3083544	ExpressionStatement	"eth_tx_desc_get ( desc_addr , & desc )"	19:8:207:240	3083515	0	True				
+ANR	3083545	CallExpression	"eth_tx_desc_get ( desc_addr , & desc )"		3083515	0					
+ANR	3083546	Callee	eth_tx_desc_get		3083515	0					
+ANR	3083547	Identifier	eth_tx_desc_get		3083515	0					
+ANR	3083548	ArgumentList	desc_addr		3083515	1					
+ANR	3083549	Argument	desc_addr		3083515	0					
+ANR	3083550	Identifier	desc_addr		3083515	0					
+ANR	3083551	Argument	& desc		3083515	1					
+ANR	3083552	UnaryOperationExpression	& desc		3083515	0					
+ANR	3083553	UnaryOperator	&		3083515	0					
+ANR	3083554	Identifier	desc		3083515	1					
+ANR	3083555	IfStatement	if ( desc . cmdstat & MP_ETH_TX_OWN )		3083515	1					
+ANR	3083556	Condition	desc . cmdstat & MP_ETH_TX_OWN	21:12:255:282	3083515	0	True				
+ANR	3083557	BitAndExpression	desc . cmdstat & MP_ETH_TX_OWN		3083515	0		&			
+ANR	3083558	MemberAccess	desc . cmdstat		3083515	0					
+ANR	3083559	Identifier	desc		3083515	0					
+ANR	3083560	Identifier	cmdstat		3083515	1					
+ANR	3083561	Identifier	MP_ETH_TX_OWN		3083515	1					
+ANR	3083562	CompoundStatement		19:42:221:221	3083515	1					
+ANR	3083563	ExpressionStatement	len = desc . bytes	23:12:300:316	3083515	0	True				
+ANR	3083564	AssignmentExpression	len = desc . bytes		3083515	0		=			
+ANR	3083565	Identifier	len		3083515	0					
+ANR	3083566	MemberAccess	desc . bytes		3083515	1					
+ANR	3083567	Identifier	desc		3083515	0					
+ANR	3083568	Identifier	bytes		3083515	1					
+ANR	3083569	IfStatement	if ( len < 2048 )		3083515	1					
+ANR	3083570	Condition	len < 2048	25:16:335:344	3083515	0	True				
+ANR	3083571	RelationalExpression	len < 2048		3083515	0		<			
+ANR	3083572	Identifier	len		3083515	0					
+ANR	3083573	PrimaryExpression	2048		3083515	1					
+ANR	3083574	CompoundStatement		23:28:283:283	3083515	1					
+ANR	3083575	ExpressionStatement	"cpu_physical_memory_read ( desc . buffer , buf , len )"	27:16:366:413	3083515	0	True				
+ANR	3083576	CallExpression	"cpu_physical_memory_read ( desc . buffer , buf , len )"		3083515	0					
+ANR	3083577	Callee	cpu_physical_memory_read		3083515	0					
+ANR	3083578	Identifier	cpu_physical_memory_read		3083515	0					
+ANR	3083579	ArgumentList	desc . buffer		3083515	1					
+ANR	3083580	Argument	desc . buffer		3083515	0					
+ANR	3083581	MemberAccess	desc . buffer		3083515	0					
+ANR	3083582	Identifier	desc		3083515	0					
+ANR	3083583	Identifier	buffer		3083515	1					
+ANR	3083584	Argument	buf		3083515	1					
+ANR	3083585	Identifier	buf		3083515	0					
+ANR	3083586	Argument	len		3083515	2					
+ANR	3083587	Identifier	len		3083515	0					
+ANR	3083588	ExpressionStatement	"qemu_send_packet ( s -> vc , buf , len )"	29:16:432:465	3083515	1	True				
+ANR	3083589	CallExpression	"qemu_send_packet ( s -> vc , buf , len )"		3083515	0					
+ANR	3083590	Callee	qemu_send_packet		3083515	0					
+ANR	3083591	Identifier	qemu_send_packet		3083515	0					
+ANR	3083592	ArgumentList	s -> vc		3083515	1					
+ANR	3083593	Argument	s -> vc		3083515	0					
+ANR	3083594	PtrMemberAccess	s -> vc		3083515	0					
+ANR	3083595	Identifier	s		3083515	0					
+ANR	3083596	Identifier	vc		3083515	1					
+ANR	3083597	Argument	buf		3083515	1					
+ANR	3083598	Identifier	buf		3083515	0					
+ANR	3083599	Argument	len		3083515	2					
+ANR	3083600	Identifier	len		3083515	0					
+ANR	3083601	ExpressionStatement	desc . cmdstat &= ~MP_ETH_TX_OWN	33:12:495:525	3083515	2	True				
+ANR	3083602	AssignmentExpression	desc . cmdstat &= ~MP_ETH_TX_OWN		3083515	0		&=			
+ANR	3083603	MemberAccess	desc . cmdstat		3083515	0					
+ANR	3083604	Identifier	desc		3083515	0					
+ANR	3083605	Identifier	cmdstat		3083515	1					
+ANR	3083606	Identifier	~MP_ETH_TX_OWN		3083515	1					
+ANR	3083607	ExpressionStatement	s -> icr |= 1 << ( MP_ETH_IRQ_TXLO_BIT - queue_index )	35:12:540:590	3083515	3	True				
+ANR	3083608	AssignmentExpression	s -> icr |= 1 << ( MP_ETH_IRQ_TXLO_BIT - queue_index )		3083515	0		|=			
+ANR	3083609	PtrMemberAccess	s -> icr		3083515	0					
+ANR	3083610	Identifier	s		3083515	0					
+ANR	3083611	Identifier	icr		3083515	1					
+ANR	3083612	ShiftExpression	1 << ( MP_ETH_IRQ_TXLO_BIT - queue_index )		3083515	1		<<			
+ANR	3083613	PrimaryExpression	1		3083515	0					
+ANR	3083614	AdditiveExpression	MP_ETH_IRQ_TXLO_BIT - queue_index		3083515	1		-			
+ANR	3083615	Identifier	MP_ETH_IRQ_TXLO_BIT		3083515	0					
+ANR	3083616	Identifier	queue_index		3083515	1					
+ANR	3083617	ExpressionStatement	"eth_tx_desc_put ( desc_addr , & desc )"	37:12:605:638	3083515	4	True				
+ANR	3083618	CallExpression	"eth_tx_desc_put ( desc_addr , & desc )"		3083515	0					
+ANR	3083619	Callee	eth_tx_desc_put		3083515	0					
+ANR	3083620	Identifier	eth_tx_desc_put		3083515	0					
+ANR	3083621	ArgumentList	desc_addr		3083515	1					
+ANR	3083622	Argument	desc_addr		3083515	0					
+ANR	3083623	Identifier	desc_addr		3083515	0					
+ANR	3083624	Argument	& desc		3083515	1					
+ANR	3083625	UnaryOperationExpression	& desc		3083515	0					
+ANR	3083626	UnaryOperator	&		3083515	0					
+ANR	3083627	Identifier	desc		3083515	1					
+ANR	3083628	ExpressionStatement	desc_addr = desc . next	41:8:660:681	3083515	2	True				
+ANR	3083629	AssignmentExpression	desc_addr = desc . next		3083515	0		=			
+ANR	3083630	Identifier	desc_addr		3083515	0					
+ANR	3083631	MemberAccess	desc . next		3083515	1					
+ANR	3083632	Identifier	desc		3083515	0					
+ANR	3083633	Identifier	next		3083515	1					
+ANR	3083634	Condition	desc_addr != s -> tx_queue [ queue_index ]	43:13:697:733	3083515	1	True				
+ANR	3083635	EqualityExpression	desc_addr != s -> tx_queue [ queue_index ]		3083515	0		!=			
+ANR	3083636	Identifier	desc_addr		3083515	0					
+ANR	3083637	ArrayIndexing	s -> tx_queue [ queue_index ]		3083515	1					
+ANR	3083638	PtrMemberAccess	s -> tx_queue		3083515	0					
+ANR	3083639	Identifier	s		3083515	0					
+ANR	3083640	Identifier	tx_queue		3083515	1					
+ANR	3083641	Identifier	queue_index		3083515	1					
+ANR	3083642	ReturnType	static void		3083515	1					
+ANR	3083643	Identifier	eth_send		3083515	2					
+ANR	3083644	ParameterList	"mv88w8618_eth_state * s , int queue_index"		3083515	3					
+ANR	3083645	Parameter	mv88w8618_eth_state * s	1:21:21:42	3083515	0	True				
+ANR	3083646	ParameterType	mv88w8618_eth_state *		3083515	0					
+ANR	3083647	Identifier	s		3083515	1					
+ANR	3083648	Parameter	int queue_index	1:45:45:59	3083515	1	True				
+ANR	3083649	ParameterType	int		3083515	0					
+ANR	3083650	Identifier	queue_index		3083515	1					
+ANR	3083651	CFGEntryNode	ENTRY		3083515		True				
+ANR	3083652	CFGExitNode	EXIT		3083515		True				
+ANR	3083653	Symbol	& desc		3083515						
+ANR	3083654	Symbol	s -> tx_queue		3083515						
+ANR	3083655	Symbol	* queue_index		3083515						
+ANR	3083656	Symbol	s -> icr		3083515						
+ANR	3083657	Symbol	MP_ETH_TX_OWN		3083515						
+ANR	3083658	Symbol	desc_addr		3083515						
+ANR	3083659	Symbol	desc . next		3083515						
+ANR	3083660	Symbol	desc . buffer		3083515						
+ANR	3083661	Symbol	* s -> tx_queue		3083515						
+ANR	3083662	Symbol	s -> vc		3083515						
+ANR	3083663	Symbol	buf		3083515						
+ANR	3083664	Symbol	s		3083515						
+ANR	3083665	Symbol	len		3083515						
+ANR	3083666	Symbol	* * s		3083515						
+ANR	3083667	Symbol	MP_ETH_IRQ_TXLO_BIT		3083515						
+ANR	3083668	Symbol	desc . bytes		3083515						
+ANR	3083669	Symbol	~MP_ETH_TX_OWN		3083515						
+ANR	3083670	Symbol	queue_index		3083515						
+ANR	3083671	Symbol	* s		3083515						
+ANR	3083672	Symbol	desc		3083515						
+ANR	3083673	Symbol	desc . cmdstat		3083515						

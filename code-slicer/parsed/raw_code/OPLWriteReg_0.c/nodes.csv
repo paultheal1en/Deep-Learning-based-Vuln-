@@ -1,0 +1,1458 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	117145	File	/home/p4ultr4n/workplace/ReVeal/raw_code/OPLWriteReg_0.c								
+ANR	117146	Function	OPLWriteReg	1:0:0:6352							
+ANR	117147	FunctionDef	"OPLWriteReg (FM_OPL * OPL , int r , int v)"		117146	0					
+ANR	117148	CompoundStatement		3:0:52:6352	117146	0					
+ANR	117149	IdentifierDeclStatement	OPL_CH * CH ;	5:1:56:66	117146	0	True				
+ANR	117150	IdentifierDecl	* CH		117146	0					
+ANR	117151	IdentifierDeclType	OPL_CH *		117146	0					
+ANR	117152	Identifier	CH		117146	1					
+ANR	117153	IdentifierDeclStatement	int slot ;	7:1:70:78	117146	1	True				
+ANR	117154	IdentifierDecl	slot		117146	0					
+ANR	117155	IdentifierDeclType	int		117146	0					
+ANR	117156	Identifier	slot		117146	1					
+ANR	117157	IdentifierDeclStatement	int block_fnum ;	9:1:82:96	117146	2	True				
+ANR	117158	IdentifierDecl	block_fnum		117146	0					
+ANR	117159	IdentifierDeclType	int		117146	0					
+ANR	117160	Identifier	block_fnum		117146	1					
+ANR	117161	SwitchStatement	switch ( r & 0xe0 )		117146	3					
+ANR	117162	Condition	r & 0xe0	13:8:109:114	117146	0	True				
+ANR	117163	BitAndExpression	r & 0xe0		117146	0		&			
+ANR	117164	Identifier	r		117146	0					
+ANR	117165	PrimaryExpression	0xe0		117146	1					
+ANR	117166	CompoundStatement		13:1:66:66	117146	1					
+ANR	117167	Label	case 0x00 :	17:1:123:132	117146	0	True				
+ANR	117168	SwitchStatement	switch ( r & 0x1f )		117146	1					
+ANR	117169	Condition	r & 0x1f	19:9:164:169	117146	0	True				
+ANR	117170	BitAndExpression	r & 0x1f		117146	0		&			
+ANR	117171	Identifier	r		117146	0					
+ANR	117172	PrimaryExpression	0x1f		117146	1					
+ANR	117173	CompoundStatement		19:2:122:122	117146	1					
+ANR	117174	Label	case 0x01 :	23:2:180:189	117146	0	True				
+ANR	117175	IfStatement	if ( OPL -> type & OPL_TYPE_WAVESEL )		117146	1					
+ANR	117176	Condition	OPL -> type & OPL_TYPE_WAVESEL	27:6:229:254	117146	0	True				
+ANR	117177	BitAndExpression	OPL -> type & OPL_TYPE_WAVESEL		117146	0		&			
+ANR	117178	PtrMemberAccess	OPL -> type		117146	0					
+ANR	117179	Identifier	OPL		117146	0					
+ANR	117180	Identifier	type		117146	1					
+ANR	117181	Identifier	OPL_TYPE_WAVESEL		117146	1					
+ANR	117182	CompoundStatement		27:3:208:208	117146	1					
+ANR	117183	ExpressionStatement	OPL -> wavesel = v & 0x20	31:4:268:289	117146	0	True				
+ANR	117184	AssignmentExpression	OPL -> wavesel = v & 0x20		117146	0		=			
+ANR	117185	PtrMemberAccess	OPL -> wavesel		117146	0					
+ANR	117186	Identifier	OPL		117146	0					
+ANR	117187	Identifier	wavesel		117146	1					
+ANR	117188	BitAndExpression	v & 0x20		117146	1		&			
+ANR	117189	Identifier	v		117146	0					
+ANR	117190	PrimaryExpression	0x20		117146	1					
+ANR	117191	IfStatement	if ( ! OPL -> wavesel )		117146	1					
+ANR	117192	Condition	! OPL -> wavesel	33:7:299:311	117146	0	True				
+ANR	117193	UnaryOperationExpression	! OPL -> wavesel		117146	0					
+ANR	117194	UnaryOperator	!		117146	0					
+ANR	117195	PtrMemberAccess	OPL -> wavesel		117146	1					
+ANR	117196	Identifier	OPL		117146	0					
+ANR	117197	Identifier	wavesel		117146	1					
+ANR	117198	CompoundStatement		37:5:309:314	117146	1					
+ANR	117199	IdentifierDeclStatement	int c ;	39:5:362:367	117146	0	True				
+ANR	117200	IdentifierDecl	c		117146	0					
+ANR	117201	IdentifierDeclType	int		117146	0					
+ANR	117202	Identifier	c		117146	1					
+ANR	117203	ForStatement	for ( c = 0 ; c < OPL -> max_ch ; c ++ )		117146	1					
+ANR	117204	ForInit	c = 0 ;	41:9:379:382	117146	0	True				
+ANR	117205	AssignmentExpression	c = 0		117146	0		=			
+ANR	117206	Identifier	c		117146	0					
+ANR	117207	PrimaryExpression	0		117146	1					
+ANR	117208	Condition	c < OPL -> max_ch	41:13:383:395	117146	1	True				
+ANR	117209	RelationalExpression	c < OPL -> max_ch		117146	0		<			
+ANR	117210	Identifier	c		117146	0					
+ANR	117211	PtrMemberAccess	OPL -> max_ch		117146	1					
+ANR	117212	Identifier	OPL		117146	0					
+ANR	117213	Identifier	max_ch		117146	1					
+ANR	117214	PostIncDecOperationExpression	c ++	41:27:397:399	117146	2	True				
+ANR	117215	Identifier	c		117146	0					
+ANR	117216	IncDec	++		117146	1					
+ANR	117217	CompoundStatement		41:5:355:355	117146	3					
+ANR	117218	ExpressionStatement	OPL -> P_CH [ c ] . SLOT [ SLOT1 ] . wavetable = & SIN_TABLE [ 0 ]	45:6:417:467	117146	0	True				
+ANR	117219	AssignmentExpression	OPL -> P_CH [ c ] . SLOT [ SLOT1 ] . wavetable = & SIN_TABLE [ 0 ]		117146	0		=			
+ANR	117220	MemberAccess	OPL -> P_CH [ c ] . SLOT [ SLOT1 ] . wavetable		117146	0					
+ANR	117221	ArrayIndexing	OPL -> P_CH [ c ] . SLOT [ SLOT1 ]		117146	0					
+ANR	117222	MemberAccess	OPL -> P_CH [ c ] . SLOT		117146	0					
+ANR	117223	ArrayIndexing	OPL -> P_CH [ c ]		117146	0					
+ANR	117224	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117225	Identifier	OPL		117146	0					
+ANR	117226	Identifier	P_CH		117146	1					
+ANR	117227	Identifier	c		117146	1					
+ANR	117228	Identifier	SLOT		117146	1					
+ANR	117229	Identifier	SLOT1		117146	1					
+ANR	117230	Identifier	wavetable		117146	1					
+ANR	117231	UnaryOperationExpression	& SIN_TABLE [ 0 ]		117146	1					
+ANR	117232	UnaryOperator	&		117146	0					
+ANR	117233	ArrayIndexing	SIN_TABLE [ 0 ]		117146	1					
+ANR	117234	Identifier	SIN_TABLE		117146	0					
+ANR	117235	PrimaryExpression	0		117146	1					
+ANR	117236	ExpressionStatement	OPL -> P_CH [ c ] . SLOT [ SLOT2 ] . wavetable = & SIN_TABLE [ 0 ]	47:6:476:526	117146	1	True				
+ANR	117237	AssignmentExpression	OPL -> P_CH [ c ] . SLOT [ SLOT2 ] . wavetable = & SIN_TABLE [ 0 ]		117146	0		=			
+ANR	117238	MemberAccess	OPL -> P_CH [ c ] . SLOT [ SLOT2 ] . wavetable		117146	0					
+ANR	117239	ArrayIndexing	OPL -> P_CH [ c ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117240	MemberAccess	OPL -> P_CH [ c ] . SLOT		117146	0					
+ANR	117241	ArrayIndexing	OPL -> P_CH [ c ]		117146	0					
+ANR	117242	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117243	Identifier	OPL		117146	0					
+ANR	117244	Identifier	P_CH		117146	1					
+ANR	117245	Identifier	c		117146	1					
+ANR	117246	Identifier	SLOT		117146	1					
+ANR	117247	Identifier	SLOT2		117146	1					
+ANR	117248	Identifier	wavetable		117146	1					
+ANR	117249	UnaryOperationExpression	& SIN_TABLE [ 0 ]		117146	1					
+ANR	117250	UnaryOperator	&		117146	0					
+ANR	117251	ArrayIndexing	SIN_TABLE [ 0 ]		117146	1					
+ANR	117252	Identifier	SIN_TABLE		117146	0					
+ANR	117253	PrimaryExpression	0		117146	1					
+ANR	117254	ReturnStatement	return ;	55:3:553:559	117146	2	True				
+ANR	117255	Label	case 0x02 :	57:2:564:573	117146	3	True				
+ANR	117256	ExpressionStatement	OPL -> T [ 0 ] = ( 256 - v ) * 4	59:3:593:614	117146	4	True				
+ANR	117257	AssignmentExpression	OPL -> T [ 0 ] = ( 256 - v ) * 4		117146	0		=			
+ANR	117258	ArrayIndexing	OPL -> T [ 0 ]		117146	0					
+ANR	117259	PtrMemberAccess	OPL -> T		117146	0					
+ANR	117260	Identifier	OPL		117146	0					
+ANR	117261	Identifier	T		117146	1					
+ANR	117262	PrimaryExpression	0		117146	1					
+ANR	117263	MultiplicativeExpression	( 256 - v ) * 4		117146	1		*			
+ANR	117264	AdditiveExpression	256 - v		117146	0		-			
+ANR	117265	PrimaryExpression	256		117146	0					
+ANR	117266	Identifier	v		117146	1					
+ANR	117267	PrimaryExpression	4		117146	1					
+ANR	117268	BreakStatement	break ;	61:3:620:625	117146	5	True				
+ANR	117269	Label	case 0x03 :	63:2:630:639	117146	6	True				
+ANR	117270	ExpressionStatement	OPL -> T [ 1 ] = ( 256 - v ) * 16	65:3:659:681	117146	7	True				
+ANR	117271	AssignmentExpression	OPL -> T [ 1 ] = ( 256 - v ) * 16		117146	0		=			
+ANR	117272	ArrayIndexing	OPL -> T [ 1 ]		117146	0					
+ANR	117273	PtrMemberAccess	OPL -> T		117146	0					
+ANR	117274	Identifier	OPL		117146	0					
+ANR	117275	Identifier	T		117146	1					
+ANR	117276	PrimaryExpression	1		117146	1					
+ANR	117277	MultiplicativeExpression	( 256 - v ) * 16		117146	1		*			
+ANR	117278	AdditiveExpression	256 - v		117146	0		-			
+ANR	117279	PrimaryExpression	256		117146	0					
+ANR	117280	Identifier	v		117146	1					
+ANR	117281	PrimaryExpression	16		117146	1					
+ANR	117282	ReturnStatement	return ;	67:3:687:693	117146	8	True				
+ANR	117283	Label	case 0x04 :	69:2:698:707	117146	9	True				
+ANR	117284	IfStatement	if ( v & 0x80 )		117146	10					
+ANR	117285	Condition	v & 0x80	71:6:756:761	117146	0	True				
+ANR	117286	BitAndExpression	v & 0x80		117146	0		&			
+ANR	117287	Identifier	v		117146	0					
+ANR	117288	PrimaryExpression	0x80		117146	1					
+ANR	117289	CompoundStatement		71:3:715:715	117146	1					
+ANR	117290	ExpressionStatement	"OPL_STATUS_RESET ( OPL , 0x7f )"	75:4:796:822	117146	0	True				
+ANR	117291	CallExpression	"OPL_STATUS_RESET ( OPL , 0x7f )"		117146	0					
+ANR	117292	Callee	OPL_STATUS_RESET		117146	0					
+ANR	117293	Identifier	OPL_STATUS_RESET		117146	0					
+ANR	117294	ArgumentList	OPL		117146	1					
+ANR	117295	Argument	OPL		117146	0					
+ANR	117296	Identifier	OPL		117146	0					
+ANR	117297	Argument	0x7f		117146	1					
+ANR	117298	PrimaryExpression	0x7f		117146	0					
+ANR	117299	ElseStatement	else		117146	0					
+ANR	117300	CompoundStatement		83:4:851:871	117146	0					
+ANR	117301	IdentifierDeclStatement	UINT8 st1 = v & 1 ;	83:4:882:897	117146	0	True				
+ANR	117302	IdentifierDecl	st1 = v & 1		117146	0					
+ANR	117303	IdentifierDeclType	UINT8		117146	0					
+ANR	117304	Identifier	st1		117146	1					
+ANR	117305	AssignmentExpression	st1 = v & 1		117146	2		=			
+ANR	117306	Identifier	st1		117146	0					
+ANR	117307	BitAndExpression	v & 1		117146	1		&			
+ANR	117308	Identifier	v		117146	0					
+ANR	117309	PrimaryExpression	1		117146	1					
+ANR	117310	IdentifierDeclStatement	UINT8 st2 = ( v >> 1 ) & 1 ;	85:4:904:924	117146	1	True				
+ANR	117311	IdentifierDecl	st2 = ( v >> 1 ) & 1		117146	0					
+ANR	117312	IdentifierDeclType	UINT8		117146	0					
+ANR	117313	Identifier	st2		117146	1					
+ANR	117314	AssignmentExpression	st2 = ( v >> 1 ) & 1		117146	2		=			
+ANR	117315	Identifier	st2		117146	0					
+ANR	117316	BitAndExpression	( v >> 1 ) & 1		117146	1		&			
+ANR	117317	ShiftExpression	v >> 1		117146	0		>>			
+ANR	117318	Identifier	v		117146	0					
+ANR	117319	PrimaryExpression	1		117146	1					
+ANR	117320	PrimaryExpression	1		117146	1					
+ANR	117321	ExpressionStatement	"OPL_STATUS_RESET ( OPL , v & 0x78 )"	89:4:984:1012	117146	2	True				
+ANR	117322	CallExpression	"OPL_STATUS_RESET ( OPL , v & 0x78 )"		117146	0					
+ANR	117323	Callee	OPL_STATUS_RESET		117146	0					
+ANR	117324	Identifier	OPL_STATUS_RESET		117146	0					
+ANR	117325	ArgumentList	OPL		117146	1					
+ANR	117326	Argument	OPL		117146	0					
+ANR	117327	Identifier	OPL		117146	0					
+ANR	117328	Argument	v & 0x78		117146	1					
+ANR	117329	BitAndExpression	v & 0x78		117146	0		&			
+ANR	117330	Identifier	v		117146	0					
+ANR	117331	PrimaryExpression	0x78		117146	1					
+ANR	117332	ExpressionStatement	"OPL_STATUSMASK_SET ( OPL , ( ( ~v ) & 0x78 ) | 0x01 )"	91:4:1019:1059	117146	3	True				
+ANR	117333	CallExpression	"OPL_STATUSMASK_SET ( OPL , ( ( ~v ) & 0x78 ) | 0x01 )"		117146	0					
+ANR	117334	Callee	OPL_STATUSMASK_SET		117146	0					
+ANR	117335	Identifier	OPL_STATUSMASK_SET		117146	0					
+ANR	117336	ArgumentList	OPL		117146	1					
+ANR	117337	Argument	OPL		117146	0					
+ANR	117338	Identifier	OPL		117146	0					
+ANR	117339	Argument	( ( ~v ) & 0x78 ) | 0x01		117146	1					
+ANR	117340	InclusiveOrExpression	( ( ~v ) & 0x78 ) | 0x01		117146	0		|			
+ANR	117341	CastExpression	( ~v ) & 0x78		117146	0					
+ANR	117342	CastTarget	~v		117146	0					
+ANR	117343	UnaryOperationExpression	& 0x78		117146	1					
+ANR	117344	UnaryOperator	&		117146	0					
+ANR	117345	PrimaryExpression	0x78		117146	1					
+ANR	117346	PrimaryExpression	0x01		117146	1					
+ANR	117347	IfStatement	if ( OPL -> st [ 1 ] != st2 )		117146	4					
+ANR	117348	Condition	OPL -> st [ 1 ] != st2	95:7:1088:1104	117146	0	True				
+ANR	117349	EqualityExpression	OPL -> st [ 1 ] != st2		117146	0		!=			
+ANR	117350	ArrayIndexing	OPL -> st [ 1 ]		117146	0					
+ANR	117351	PtrMemberAccess	OPL -> st		117146	0					
+ANR	117352	Identifier	OPL		117146	0					
+ANR	117353	Identifier	st		117146	1					
+ANR	117354	PrimaryExpression	1		117146	1					
+ANR	117355	Identifier	st2		117146	1					
+ANR	117356	CompoundStatement		97:5:1067:1129	117146	1					
+ANR	117357	IdentifierDeclStatement	double interval = st2 ? ( double ) OPL -> T [ 1 ] * OPL -> TimerBase : 0.0 ;	99:5:1120:1182	117146	0	True				
+ANR	117358	IdentifierDecl	interval = st2 ? ( double ) OPL -> T [ 1 ] * OPL -> TimerBase : 0.0		117146	0					
+ANR	117359	IdentifierDeclType	double		117146	0					
+ANR	117360	Identifier	interval		117146	1					
+ANR	117361	AssignmentExpression	interval = st2 ? ( double ) OPL -> T [ 1 ] * OPL -> TimerBase : 0.0		117146	2		=			
+ANR	117362	Identifier	interval		117146	0					
+ANR	117363	ConditionalExpression	st2 ? ( double ) OPL -> T [ 1 ] * OPL -> TimerBase : 0.0		117146	1					
+ANR	117364	Condition	st2		117146	0					
+ANR	117365	Identifier	st2		117146	0					
+ANR	117366	MultiplicativeExpression	( double ) OPL -> T [ 1 ] * OPL -> TimerBase		117146	1		*			
+ANR	117367	CastExpression	( double ) OPL -> T [ 1 ]		117146	0					
+ANR	117368	CastTarget	double		117146	0					
+ANR	117369	ArrayIndexing	OPL -> T [ 1 ]		117146	1					
+ANR	117370	PtrMemberAccess	OPL -> T		117146	0					
+ANR	117371	Identifier	OPL		117146	0					
+ANR	117372	Identifier	T		117146	1					
+ANR	117373	PrimaryExpression	1		117146	1					
+ANR	117374	PtrMemberAccess	OPL -> TimerBase		117146	1					
+ANR	117375	Identifier	OPL		117146	0					
+ANR	117376	Identifier	TimerBase		117146	1					
+ANR	117377	PrimaryExpression	0.0		117146	2					
+ANR	117378	ExpressionStatement	OPL -> st [ 1 ] = st2	101:5:1190:1206	117146	1	True				
+ANR	117379	AssignmentExpression	OPL -> st [ 1 ] = st2		117146	0		=			
+ANR	117380	ArrayIndexing	OPL -> st [ 1 ]		117146	0					
+ANR	117381	PtrMemberAccess	OPL -> st		117146	0					
+ANR	117382	Identifier	OPL		117146	0					
+ANR	117383	Identifier	st		117146	1					
+ANR	117384	PrimaryExpression	1		117146	1					
+ANR	117385	Identifier	st2		117146	1					
+ANR	117386	IfStatement	if ( OPL -> TimerHandler )		117146	2					
+ANR	117387	Condition	OPL -> TimerHandler	103:9:1218:1234	117146	0	True				
+ANR	117388	PtrMemberAccess	OPL -> TimerHandler		117146	0					
+ANR	117389	Identifier	OPL		117146	0					
+ANR	117390	Identifier	TimerHandler		117146	1					
+ANR	117391	ExpressionStatement	"( OPL -> TimerHandler ) ( OPL -> TimerParam + 1 , interval )"	103:28:1237:1284	117146	1	True				
+ANR	117392	CallExpression	"( OPL -> TimerHandler ) ( OPL -> TimerParam + 1 , interval )"		117146	0					
+ANR	117393	Callee	OPL -> TimerHandler		117146	0					
+ANR	117394	PtrMemberAccess	OPL -> TimerHandler		117146	0					
+ANR	117395	Identifier	OPL		117146	0					
+ANR	117396	Identifier	TimerHandler		117146	1					
+ANR	117397	ArgumentList	OPL -> TimerParam + 1		117146	1					
+ANR	117398	Argument	OPL -> TimerParam + 1		117146	0					
+ANR	117399	AdditiveExpression	OPL -> TimerParam + 1		117146	0		+			
+ANR	117400	PtrMemberAccess	OPL -> TimerParam		117146	0					
+ANR	117401	Identifier	OPL		117146	0					
+ANR	117402	Identifier	TimerParam		117146	1					
+ANR	117403	PrimaryExpression	1		117146	1					
+ANR	117404	Argument	interval		117146	1					
+ANR	117405	Identifier	interval		117146	0					
+ANR	117406	IfStatement	if ( OPL -> st [ 0 ] != st1 )		117146	5					
+ANR	117407	Condition	OPL -> st [ 0 ] != st1	109:7:1320:1336	117146	0	True				
+ANR	117408	EqualityExpression	OPL -> st [ 0 ] != st1		117146	0		!=			
+ANR	117409	ArrayIndexing	OPL -> st [ 0 ]		117146	0					
+ANR	117410	PtrMemberAccess	OPL -> st		117146	0					
+ANR	117411	Identifier	OPL		117146	0					
+ANR	117412	Identifier	st		117146	1					
+ANR	117413	PrimaryExpression	0		117146	1					
+ANR	117414	Identifier	st1		117146	1					
+ANR	117415	CompoundStatement		111:5:1299:1361	117146	1					
+ANR	117416	IdentifierDeclStatement	double interval = st1 ? ( double ) OPL -> T [ 0 ] * OPL -> TimerBase : 0.0 ;	113:5:1352:1414	117146	0	True				
+ANR	117417	IdentifierDecl	interval = st1 ? ( double ) OPL -> T [ 0 ] * OPL -> TimerBase : 0.0		117146	0					
+ANR	117418	IdentifierDeclType	double		117146	0					
+ANR	117419	Identifier	interval		117146	1					
+ANR	117420	AssignmentExpression	interval = st1 ? ( double ) OPL -> T [ 0 ] * OPL -> TimerBase : 0.0		117146	2		=			
+ANR	117421	Identifier	interval		117146	0					
+ANR	117422	ConditionalExpression	st1 ? ( double ) OPL -> T [ 0 ] * OPL -> TimerBase : 0.0		117146	1					
+ANR	117423	Condition	st1		117146	0					
+ANR	117424	Identifier	st1		117146	0					
+ANR	117425	MultiplicativeExpression	( double ) OPL -> T [ 0 ] * OPL -> TimerBase		117146	1		*			
+ANR	117426	CastExpression	( double ) OPL -> T [ 0 ]		117146	0					
+ANR	117427	CastTarget	double		117146	0					
+ANR	117428	ArrayIndexing	OPL -> T [ 0 ]		117146	1					
+ANR	117429	PtrMemberAccess	OPL -> T		117146	0					
+ANR	117430	Identifier	OPL		117146	0					
+ANR	117431	Identifier	T		117146	1					
+ANR	117432	PrimaryExpression	0		117146	1					
+ANR	117433	PtrMemberAccess	OPL -> TimerBase		117146	1					
+ANR	117434	Identifier	OPL		117146	0					
+ANR	117435	Identifier	TimerBase		117146	1					
+ANR	117436	PrimaryExpression	0.0		117146	2					
+ANR	117437	ExpressionStatement	OPL -> st [ 0 ] = st1	115:5:1422:1438	117146	1	True				
+ANR	117438	AssignmentExpression	OPL -> st [ 0 ] = st1		117146	0		=			
+ANR	117439	ArrayIndexing	OPL -> st [ 0 ]		117146	0					
+ANR	117440	PtrMemberAccess	OPL -> st		117146	0					
+ANR	117441	Identifier	OPL		117146	0					
+ANR	117442	Identifier	st		117146	1					
+ANR	117443	PrimaryExpression	0		117146	1					
+ANR	117444	Identifier	st1		117146	1					
+ANR	117445	IfStatement	if ( OPL -> TimerHandler )		117146	2					
+ANR	117446	Condition	OPL -> TimerHandler	117:9:1450:1466	117146	0	True				
+ANR	117447	PtrMemberAccess	OPL -> TimerHandler		117146	0					
+ANR	117448	Identifier	OPL		117146	0					
+ANR	117449	Identifier	TimerHandler		117146	1					
+ANR	117450	ExpressionStatement	"( OPL -> TimerHandler ) ( OPL -> TimerParam + 0 , interval )"	117:28:1469:1516	117146	1	True				
+ANR	117451	CallExpression	"( OPL -> TimerHandler ) ( OPL -> TimerParam + 0 , interval )"		117146	0					
+ANR	117452	Callee	OPL -> TimerHandler		117146	0					
+ANR	117453	PtrMemberAccess	OPL -> TimerHandler		117146	0					
+ANR	117454	Identifier	OPL		117146	0					
+ANR	117455	Identifier	TimerHandler		117146	1					
+ANR	117456	ArgumentList	OPL -> TimerParam + 0		117146	1					
+ANR	117457	Argument	OPL -> TimerParam + 0		117146	0					
+ANR	117458	AdditiveExpression	OPL -> TimerParam + 0		117146	0		+			
+ANR	117459	PtrMemberAccess	OPL -> TimerParam		117146	0					
+ANR	117460	Identifier	OPL		117146	0					
+ANR	117461	Identifier	TimerParam		117146	1					
+ANR	117462	PrimaryExpression	0		117146	1					
+ANR	117463	Argument	interval		117146	1					
+ANR	117464	Identifier	interval		117146	0					
+ANR	117465	ReturnStatement	return ;	123:3:1535:1541	117146	11	True				
+ANR	117466	Label	case 0x06 :	127:2:1563:1572	117146	12	True				
+ANR	117467	IfStatement	if ( OPL -> type & OPL_TYPE_KEYBOARD )		117146	13					
+ANR	117468	Condition	OPL -> type & OPL_TYPE_KEYBOARD	129:6:1602:1628	117146	0	True				
+ANR	117469	BitAndExpression	OPL -> type & OPL_TYPE_KEYBOARD		117146	0		&			
+ANR	117470	PtrMemberAccess	OPL -> type		117146	0					
+ANR	117471	Identifier	OPL		117146	0					
+ANR	117472	Identifier	type		117146	1					
+ANR	117473	Identifier	OPL_TYPE_KEYBOARD		117146	1					
+ANR	117474	CompoundStatement		129:3:1582:1582	117146	1					
+ANR	117475	IfStatement	if ( OPL -> keyboardhandler_w )		117146	0					
+ANR	117476	Condition	OPL -> keyboardhandler_w	133:7:1645:1666	117146	0	True				
+ANR	117477	PtrMemberAccess	OPL -> keyboardhandler_w		117146	0					
+ANR	117478	Identifier	OPL		117146	0					
+ANR	117479	Identifier	keyboardhandler_w		117146	1					
+ANR	117480	ExpressionStatement	"OPL -> keyboardhandler_w ( OPL -> keyboard_param , v )"	135:5:1675:1720	117146	1	True				
+ANR	117481	CallExpression	"OPL -> keyboardhandler_w ( OPL -> keyboard_param , v )"		117146	0					
+ANR	117482	Callee	OPL -> keyboardhandler_w		117146	0					
+ANR	117483	PtrMemberAccess	OPL -> keyboardhandler_w		117146	0					
+ANR	117484	Identifier	OPL		117146	0					
+ANR	117485	Identifier	keyboardhandler_w		117146	1					
+ANR	117486	ArgumentList	OPL -> keyboard_param		117146	1					
+ANR	117487	Argument	OPL -> keyboard_param		117146	0					
+ANR	117488	PtrMemberAccess	OPL -> keyboard_param		117146	0					
+ANR	117489	Identifier	OPL		117146	0					
+ANR	117490	Identifier	keyboard_param		117146	1					
+ANR	117491	Argument	v		117146	1					
+ANR	117492	Identifier	v		117146	0					
+ANR	117493	ElseStatement	else		117146	0					
+ANR	117494	ExpressionStatement	"LOG ( LOG_WAR , ( ""OPL:write unmapped KEYBOARD port\\n"" ) )"	139:5:1738:1789	117146	0	True				
+ANR	117495	CallExpression	"LOG ( LOG_WAR , ( ""OPL:write unmapped KEYBOARD port\\n"" ) )"		117146	0					
+ANR	117496	Callee	LOG		117146	0					
+ANR	117497	Identifier	LOG		117146	0					
+ANR	117498	ArgumentList	LOG_WAR		117146	1					
+ANR	117499	Argument	LOG_WAR		117146	0					
+ANR	117500	Identifier	LOG_WAR		117146	0					
+ANR	117501	Argument	"""OPL:write unmapped KEYBOARD port\\n"""		117146	1					
+ANR	117502	PrimaryExpression	"""OPL:write unmapped KEYBOARD port\\n"""		117146	0					
+ANR	117503	ReturnStatement	return ;	143:3:1801:1807	117146	14	True				
+ANR	117504	Label	case 0x07 :	145:2:1812:1821	117146	15	True				
+ANR	117505	IfStatement	if ( OPL -> type & OPL_TYPE_ADPCM )		117146	16					
+ANR	117506	Condition	OPL -> type & OPL_TYPE_ADPCM	147:6:1891:1914	117146	0	True				
+ANR	117507	BitAndExpression	OPL -> type & OPL_TYPE_ADPCM		117146	0		&			
+ANR	117508	PtrMemberAccess	OPL -> type		117146	0					
+ANR	117509	Identifier	OPL		117146	0					
+ANR	117510	Identifier	type		117146	1					
+ANR	117511	Identifier	OPL_TYPE_ADPCM		117146	1					
+ANR	117512	ExpressionStatement	"YM_DELTAT_ADPCM_Write ( OPL -> deltat , r - 0x07 , v )"	149:4:1922:1965	117146	1	True				
+ANR	117513	CallExpression	"YM_DELTAT_ADPCM_Write ( OPL -> deltat , r - 0x07 , v )"		117146	0					
+ANR	117514	Callee	YM_DELTAT_ADPCM_Write		117146	0					
+ANR	117515	Identifier	YM_DELTAT_ADPCM_Write		117146	0					
+ANR	117516	ArgumentList	OPL -> deltat		117146	1					
+ANR	117517	Argument	OPL -> deltat		117146	0					
+ANR	117518	PtrMemberAccess	OPL -> deltat		117146	0					
+ANR	117519	Identifier	OPL		117146	0					
+ANR	117520	Identifier	deltat		117146	1					
+ANR	117521	Argument	r - 0x07		117146	1					
+ANR	117522	AdditiveExpression	r - 0x07		117146	0		-			
+ANR	117523	Identifier	r		117146	0					
+ANR	117524	PrimaryExpression	0x07		117146	1					
+ANR	117525	Argument	v		117146	2					
+ANR	117526	Identifier	v		117146	0					
+ANR	117527	ReturnStatement	return ;	151:3:1971:1977	117146	17	True				
+ANR	117528	Label	case 0x08 :	153:2:1982:1991	117146	18	True				
+ANR	117529	ExpressionStatement	OPL -> mode = v	155:3:2053:2066	117146	19	True				
+ANR	117530	AssignmentExpression	OPL -> mode = v		117146	0		=			
+ANR	117531	PtrMemberAccess	OPL -> mode		117146	0					
+ANR	117532	Identifier	OPL		117146	0					
+ANR	117533	Identifier	mode		117146	1					
+ANR	117534	Identifier	v		117146	1					
+ANR	117535	ExpressionStatement	v &= 0x1f	157:3:2072:2079	117146	20	True				
+ANR	117536	AssignmentExpression	v &= 0x1f		117146	0		&=			
+ANR	117537	Identifier	v		117146	0					
+ANR	117538	PrimaryExpression	0x1f		117146	1					
+ANR	117539	Label	case 0x09 :	159:2:2107:2116	117146	21	True				
+ANR	117540	Label	case 0x0a :	161:2:2138:2147	117146	22	True				
+ANR	117541	Label	case 0x0b :	163:2:2152:2161	117146	23	True				
+ANR	117542	Label	case 0x0c :	165:2:2183:2192	117146	24	True				
+ANR	117543	Label	case 0x0d :	167:2:2197:2206	117146	25	True				
+ANR	117544	Label	case 0x0e :	169:2:2229:2238	117146	26	True				
+ANR	117545	Label	case 0x0f :	171:2:2243:2252	117146	27	True				
+ANR	117546	Label	case 0x10 :	173:2:2275:2284	117146	28	True				
+ANR	117547	Label	case 0x11 :	175:2:2308:2317	117146	29	True				
+ANR	117548	Label	case 0x12 :	177:2:2341:2350	117146	30	True				
+ANR	117549	IfStatement	if ( OPL -> type & OPL_TYPE_ADPCM )		117146	31					
+ANR	117550	Condition	OPL -> type & OPL_TYPE_ADPCM	179:6:2378:2401	117146	0	True				
+ANR	117551	BitAndExpression	OPL -> type & OPL_TYPE_ADPCM		117146	0		&			
+ANR	117552	PtrMemberAccess	OPL -> type		117146	0					
+ANR	117553	Identifier	OPL		117146	0					
+ANR	117554	Identifier	type		117146	1					
+ANR	117555	Identifier	OPL_TYPE_ADPCM		117146	1					
+ANR	117556	ExpressionStatement	"YM_DELTAT_ADPCM_Write ( OPL -> deltat , r - 0x07 , v )"	181:4:2409:2452	117146	1	True				
+ANR	117557	CallExpression	"YM_DELTAT_ADPCM_Write ( OPL -> deltat , r - 0x07 , v )"		117146	0					
+ANR	117558	Callee	YM_DELTAT_ADPCM_Write		117146	0					
+ANR	117559	Identifier	YM_DELTAT_ADPCM_Write		117146	0					
+ANR	117560	ArgumentList	OPL -> deltat		117146	1					
+ANR	117561	Argument	OPL -> deltat		117146	0					
+ANR	117562	PtrMemberAccess	OPL -> deltat		117146	0					
+ANR	117563	Identifier	OPL		117146	0					
+ANR	117564	Identifier	deltat		117146	1					
+ANR	117565	Argument	r - 0x07		117146	1					
+ANR	117566	AdditiveExpression	r - 0x07		117146	0		-			
+ANR	117567	Identifier	r		117146	0					
+ANR	117568	PrimaryExpression	0x07		117146	1					
+ANR	117569	Argument	v		117146	2					
+ANR	117570	Identifier	v		117146	0					
+ANR	117571	ReturnStatement	return ;	183:3:2458:2464	117146	32	True				
+ANR	117572	Label	case 0x15 :	187:2:2476:2485	117146	33	True				
+ANR	117573	Label	case 0x16 :	189:2:2509:2518	117146	34	True				
+ANR	117574	Label	case 0x17 :	191:2:2523:2532	117146	35	True				
+ANR	117575	ReturnStatement	return ;	193:3:2554:2560	117146	36	True				
+ANR	117576	Label	case 0x18 :	195:2:2565:2574	117146	37	True				
+ANR	117577	IfStatement	if ( OPL -> type & OPL_TYPE_IO )		117146	38					
+ANR	117578	Condition	OPL -> type & OPL_TYPE_IO	197:6:2611:2631	117146	0	True				
+ANR	117579	BitAndExpression	OPL -> type & OPL_TYPE_IO		117146	0		&			
+ANR	117580	PtrMemberAccess	OPL -> type		117146	0					
+ANR	117581	Identifier	OPL		117146	0					
+ANR	117582	Identifier	type		117146	1					
+ANR	117583	Identifier	OPL_TYPE_IO		117146	1					
+ANR	117584	ExpressionStatement	OPL -> portDirection = v & 0x0f	199:4:2639:2666	117146	1	True				
+ANR	117585	AssignmentExpression	OPL -> portDirection = v & 0x0f		117146	0		=			
+ANR	117586	PtrMemberAccess	OPL -> portDirection		117146	0					
+ANR	117587	Identifier	OPL		117146	0					
+ANR	117588	Identifier	portDirection		117146	1					
+ANR	117589	BitAndExpression	v & 0x0f		117146	1		&			
+ANR	117590	Identifier	v		117146	0					
+ANR	117591	PrimaryExpression	0x0f		117146	1					
+ANR	117592	ReturnStatement	return ;	201:3:2672:2678	117146	39	True				
+ANR	117593	Label	case 0x19 :	203:2:2683:2692	117146	40	True				
+ANR	117594	IfStatement	if ( OPL -> type & OPL_TYPE_IO )		117146	41					
+ANR	117595	Condition	OPL -> type & OPL_TYPE_IO	205:6:2717:2737	117146	0	True				
+ANR	117596	BitAndExpression	OPL -> type & OPL_TYPE_IO		117146	0		&			
+ANR	117597	PtrMemberAccess	OPL -> type		117146	0					
+ANR	117598	Identifier	OPL		117146	0					
+ANR	117599	Identifier	type		117146	1					
+ANR	117600	Identifier	OPL_TYPE_IO		117146	1					
+ANR	117601	CompoundStatement		205:3:2691:2691	117146	1					
+ANR	117602	ExpressionStatement	OPL -> portLatch = v	209:4:2751:2769	117146	0	True				
+ANR	117603	AssignmentExpression	OPL -> portLatch = v		117146	0		=			
+ANR	117604	PtrMemberAccess	OPL -> portLatch		117146	0					
+ANR	117605	Identifier	OPL		117146	0					
+ANR	117606	Identifier	portLatch		117146	1					
+ANR	117607	Identifier	v		117146	1					
+ANR	117608	IfStatement	if ( OPL -> porthandler_w )		117146	1					
+ANR	117609	Condition	OPL -> porthandler_w	211:7:2779:2796	117146	0	True				
+ANR	117610	PtrMemberAccess	OPL -> porthandler_w		117146	0					
+ANR	117611	Identifier	OPL		117146	0					
+ANR	117612	Identifier	porthandler_w		117146	1					
+ANR	117613	ExpressionStatement	"OPL -> porthandler_w ( OPL -> port_param , v & OPL -> portDirection )"	213:5:2805:2861	117146	1	True				
+ANR	117614	CallExpression	"OPL -> porthandler_w ( OPL -> port_param , v & OPL -> portDirection )"		117146	0					
+ANR	117615	Callee	OPL -> porthandler_w		117146	0					
+ANR	117616	PtrMemberAccess	OPL -> porthandler_w		117146	0					
+ANR	117617	Identifier	OPL		117146	0					
+ANR	117618	Identifier	porthandler_w		117146	1					
+ANR	117619	ArgumentList	OPL -> port_param		117146	1					
+ANR	117620	Argument	OPL -> port_param		117146	0					
+ANR	117621	PtrMemberAccess	OPL -> port_param		117146	0					
+ANR	117622	Identifier	OPL		117146	0					
+ANR	117623	Identifier	port_param		117146	1					
+ANR	117624	Argument	v & OPL -> portDirection		117146	1					
+ANR	117625	BitAndExpression	v & OPL -> portDirection		117146	0		&			
+ANR	117626	Identifier	v		117146	0					
+ANR	117627	PtrMemberAccess	OPL -> portDirection		117146	1					
+ANR	117628	Identifier	OPL		117146	0					
+ANR	117629	Identifier	portDirection		117146	1					
+ANR	117630	ReturnStatement	return ;	217:3:2873:2879	117146	42	True				
+ANR	117631	Label	case 0x1a :	219:2:2884:2893	117146	43	True				
+ANR	117632	ReturnStatement	return ;	221:3:2915:2921	117146	44	True				
+ANR	117633	BreakStatement	break ;	229:2:2947:2952	117146	2	True				
+ANR	117634	Label	case 0x20 :	231:1:2956:2965	117146	3	True				
+ANR	117635	ExpressionStatement	slot = slot_array [ r & 0x1f ]	233:2:2999:3024	117146	4	True				
+ANR	117636	AssignmentExpression	slot = slot_array [ r & 0x1f ]		117146	0		=			
+ANR	117637	Identifier	slot		117146	0					
+ANR	117638	ArrayIndexing	slot_array [ r & 0x1f ]		117146	1					
+ANR	117639	Identifier	slot_array		117146	0					
+ANR	117640	BitAndExpression	r & 0x1f		117146	1		&			
+ANR	117641	Identifier	r		117146	0					
+ANR	117642	PrimaryExpression	0x1f		117146	1					
+ANR	117643	IfStatement	if ( slot == - 1 )		117146	5					
+ANR	117644	Condition	slot == - 1	235:5:3032:3041	117146	0	True				
+ANR	117645	EqualityExpression	slot == - 1		117146	0		==			
+ANR	117646	Identifier	slot		117146	0					
+ANR	117647	UnaryOperationExpression	- 1		117146	1					
+ANR	117648	UnaryOperator	-		117146	0					
+ANR	117649	PrimaryExpression	1		117146	1					
+ANR	117650	ReturnStatement	return ;	235:17:3044:3050	117146	1	True				
+ANR	117651	ExpressionStatement	"set_mul ( OPL , slot , v )"	237:2:3055:3074	117146	6	True				
+ANR	117652	CallExpression	"set_mul ( OPL , slot , v )"		117146	0					
+ANR	117653	Callee	set_mul		117146	0					
+ANR	117654	Identifier	set_mul		117146	0					
+ANR	117655	ArgumentList	OPL		117146	1					
+ANR	117656	Argument	OPL		117146	0					
+ANR	117657	Identifier	OPL		117146	0					
+ANR	117658	Argument	slot		117146	1					
+ANR	117659	Identifier	slot		117146	0					
+ANR	117660	Argument	v		117146	2					
+ANR	117661	Identifier	v		117146	0					
+ANR	117662	ReturnStatement	return ;	239:2:3079:3085	117146	7	True				
+ANR	117663	Label	case 0x40 :	241:1:3089:3098	117146	8	True				
+ANR	117664	ExpressionStatement	slot = slot_array [ r & 0x1f ]	243:2:3103:3128	117146	9	True				
+ANR	117665	AssignmentExpression	slot = slot_array [ r & 0x1f ]		117146	0		=			
+ANR	117666	Identifier	slot		117146	0					
+ANR	117667	ArrayIndexing	slot_array [ r & 0x1f ]		117146	1					
+ANR	117668	Identifier	slot_array		117146	0					
+ANR	117669	BitAndExpression	r & 0x1f		117146	1		&			
+ANR	117670	Identifier	r		117146	0					
+ANR	117671	PrimaryExpression	0x1f		117146	1					
+ANR	117672	IfStatement	if ( slot == - 1 )		117146	10					
+ANR	117673	Condition	slot == - 1	245:5:3136:3145	117146	0	True				
+ANR	117674	EqualityExpression	slot == - 1		117146	0		==			
+ANR	117675	Identifier	slot		117146	0					
+ANR	117676	UnaryOperationExpression	- 1		117146	1					
+ANR	117677	UnaryOperator	-		117146	0					
+ANR	117678	PrimaryExpression	1		117146	1					
+ANR	117679	ReturnStatement	return ;	245:17:3148:3154	117146	1	True				
+ANR	117680	ExpressionStatement	"set_ksl_tl ( OPL , slot , v )"	247:2:3159:3181	117146	11	True				
+ANR	117681	CallExpression	"set_ksl_tl ( OPL , slot , v )"		117146	0					
+ANR	117682	Callee	set_ksl_tl		117146	0					
+ANR	117683	Identifier	set_ksl_tl		117146	0					
+ANR	117684	ArgumentList	OPL		117146	1					
+ANR	117685	Argument	OPL		117146	0					
+ANR	117686	Identifier	OPL		117146	0					
+ANR	117687	Argument	slot		117146	1					
+ANR	117688	Identifier	slot		117146	0					
+ANR	117689	Argument	v		117146	2					
+ANR	117690	Identifier	v		117146	0					
+ANR	117691	ReturnStatement	return ;	249:2:3186:3192	117146	12	True				
+ANR	117692	Label	case 0x60 :	251:1:3196:3205	117146	13	True				
+ANR	117693	ExpressionStatement	slot = slot_array [ r & 0x1f ]	253:2:3210:3235	117146	14	True				
+ANR	117694	AssignmentExpression	slot = slot_array [ r & 0x1f ]		117146	0		=			
+ANR	117695	Identifier	slot		117146	0					
+ANR	117696	ArrayIndexing	slot_array [ r & 0x1f ]		117146	1					
+ANR	117697	Identifier	slot_array		117146	0					
+ANR	117698	BitAndExpression	r & 0x1f		117146	1		&			
+ANR	117699	Identifier	r		117146	0					
+ANR	117700	PrimaryExpression	0x1f		117146	1					
+ANR	117701	IfStatement	if ( slot == - 1 )		117146	15					
+ANR	117702	Condition	slot == - 1	255:5:3243:3252	117146	0	True				
+ANR	117703	EqualityExpression	slot == - 1		117146	0		==			
+ANR	117704	Identifier	slot		117146	0					
+ANR	117705	UnaryOperationExpression	- 1		117146	1					
+ANR	117706	UnaryOperator	-		117146	0					
+ANR	117707	PrimaryExpression	1		117146	1					
+ANR	117708	ReturnStatement	return ;	255:17:3255:3261	117146	1	True				
+ANR	117709	ExpressionStatement	"set_ar_dr ( OPL , slot , v )"	257:2:3266:3287	117146	16	True				
+ANR	117710	CallExpression	"set_ar_dr ( OPL , slot , v )"		117146	0					
+ANR	117711	Callee	set_ar_dr		117146	0					
+ANR	117712	Identifier	set_ar_dr		117146	0					
+ANR	117713	ArgumentList	OPL		117146	1					
+ANR	117714	Argument	OPL		117146	0					
+ANR	117715	Identifier	OPL		117146	0					
+ANR	117716	Argument	slot		117146	1					
+ANR	117717	Identifier	slot		117146	0					
+ANR	117718	Argument	v		117146	2					
+ANR	117719	Identifier	v		117146	0					
+ANR	117720	ReturnStatement	return ;	259:2:3292:3298	117146	17	True				
+ANR	117721	Label	case 0x80 :	261:1:3302:3311	117146	18	True				
+ANR	117722	ExpressionStatement	slot = slot_array [ r & 0x1f ]	263:2:3316:3341	117146	19	True				
+ANR	117723	AssignmentExpression	slot = slot_array [ r & 0x1f ]		117146	0		=			
+ANR	117724	Identifier	slot		117146	0					
+ANR	117725	ArrayIndexing	slot_array [ r & 0x1f ]		117146	1					
+ANR	117726	Identifier	slot_array		117146	0					
+ANR	117727	BitAndExpression	r & 0x1f		117146	1		&			
+ANR	117728	Identifier	r		117146	0					
+ANR	117729	PrimaryExpression	0x1f		117146	1					
+ANR	117730	IfStatement	if ( slot == - 1 )		117146	20					
+ANR	117731	Condition	slot == - 1	265:5:3349:3358	117146	0	True				
+ANR	117732	EqualityExpression	slot == - 1		117146	0		==			
+ANR	117733	Identifier	slot		117146	0					
+ANR	117734	UnaryOperationExpression	- 1		117146	1					
+ANR	117735	UnaryOperator	-		117146	0					
+ANR	117736	PrimaryExpression	1		117146	1					
+ANR	117737	ReturnStatement	return ;	265:17:3361:3367	117146	1	True				
+ANR	117738	ExpressionStatement	"set_sl_rr ( OPL , slot , v )"	267:2:3372:3393	117146	21	True				
+ANR	117739	CallExpression	"set_sl_rr ( OPL , slot , v )"		117146	0					
+ANR	117740	Callee	set_sl_rr		117146	0					
+ANR	117741	Identifier	set_sl_rr		117146	0					
+ANR	117742	ArgumentList	OPL		117146	1					
+ANR	117743	Argument	OPL		117146	0					
+ANR	117744	Identifier	OPL		117146	0					
+ANR	117745	Argument	slot		117146	1					
+ANR	117746	Identifier	slot		117146	0					
+ANR	117747	Argument	v		117146	2					
+ANR	117748	Identifier	v		117146	0					
+ANR	117749	ReturnStatement	return ;	269:2:3398:3404	117146	22	True				
+ANR	117750	Label	case 0xa0 :	271:1:3408:3417	117146	23	True				
+ANR	117751	SwitchStatement	switch ( r )		117146	24					
+ANR	117752	Condition	r	273:9:3429:3429	117146	0	True				
+ANR	117753	Identifier	r		117146	0					
+ANR	117754	CompoundStatement		273:2:3382:3382	117146	1					
+ANR	117755	Label	case 0xbd :	277:2:3440:3449	117146	0	True				
+ANR	117756	CompoundStatement		281:3:3449:3474	117146	1					
+ANR	117757	IdentifierDeclStatement	UINT8 rkey = OPL -> rythm ^ v ;	283:3:3502:3527	117146	0	True				
+ANR	117758	IdentifierDecl	rkey = OPL -> rythm ^ v		117146	0					
+ANR	117759	IdentifierDeclType	UINT8		117146	0					
+ANR	117760	Identifier	rkey		117146	1					
+ANR	117761	AssignmentExpression	rkey = OPL -> rythm ^ v		117146	2		=			
+ANR	117762	Identifier	rkey		117146	0					
+ANR	117763	ExclusiveOrExpression	OPL -> rythm ^ v		117146	1		^			
+ANR	117764	PtrMemberAccess	OPL -> rythm		117146	0					
+ANR	117765	Identifier	OPL		117146	0					
+ANR	117766	Identifier	rythm		117146	1					
+ANR	117767	Identifier	v		117146	1					
+ANR	117768	ExpressionStatement	OPL -> ams_table = & AMS_TABLE [ v & 0x80 ? AMS_ENT : 0 ]	285:3:3533:3582	117146	1	True				
+ANR	117769	AssignmentExpression	OPL -> ams_table = & AMS_TABLE [ v & 0x80 ? AMS_ENT : 0 ]		117146	0		=			
+ANR	117770	PtrMemberAccess	OPL -> ams_table		117146	0					
+ANR	117771	Identifier	OPL		117146	0					
+ANR	117772	Identifier	ams_table		117146	1					
+ANR	117773	UnaryOperationExpression	& AMS_TABLE [ v & 0x80 ? AMS_ENT : 0 ]		117146	1					
+ANR	117774	UnaryOperator	&		117146	0					
+ANR	117775	ArrayIndexing	AMS_TABLE [ v & 0x80 ? AMS_ENT : 0 ]		117146	1					
+ANR	117776	Identifier	AMS_TABLE		117146	0					
+ANR	117777	ConditionalExpression	v & 0x80 ? AMS_ENT : 0		117146	1					
+ANR	117778	Condition	v & 0x80		117146	0					
+ANR	117779	BitAndExpression	v & 0x80		117146	0		&			
+ANR	117780	Identifier	v		117146	0					
+ANR	117781	PrimaryExpression	0x80		117146	1					
+ANR	117782	Identifier	AMS_ENT		117146	1					
+ANR	117783	PrimaryExpression	0		117146	2					
+ANR	117784	ExpressionStatement	OPL -> vib_table = & VIB_TABLE [ v & 0x40 ? VIB_ENT : 0 ]	287:3:3588:3637	117146	2	True				
+ANR	117785	AssignmentExpression	OPL -> vib_table = & VIB_TABLE [ v & 0x40 ? VIB_ENT : 0 ]		117146	0		=			
+ANR	117786	PtrMemberAccess	OPL -> vib_table		117146	0					
+ANR	117787	Identifier	OPL		117146	0					
+ANR	117788	Identifier	vib_table		117146	1					
+ANR	117789	UnaryOperationExpression	& VIB_TABLE [ v & 0x40 ? VIB_ENT : 0 ]		117146	1					
+ANR	117790	UnaryOperator	&		117146	0					
+ANR	117791	ArrayIndexing	VIB_TABLE [ v & 0x40 ? VIB_ENT : 0 ]		117146	1					
+ANR	117792	Identifier	VIB_TABLE		117146	0					
+ANR	117793	ConditionalExpression	v & 0x40 ? VIB_ENT : 0		117146	1					
+ANR	117794	Condition	v & 0x40		117146	0					
+ANR	117795	BitAndExpression	v & 0x40		117146	0		&			
+ANR	117796	Identifier	v		117146	0					
+ANR	117797	PrimaryExpression	0x40		117146	1					
+ANR	117798	Identifier	VIB_ENT		117146	1					
+ANR	117799	PrimaryExpression	0		117146	2					
+ANR	117800	ExpressionStatement	OPL -> rythm = v & 0x3f	289:3:3643:3663	117146	3	True				
+ANR	117801	AssignmentExpression	OPL -> rythm = v & 0x3f		117146	0		=			
+ANR	117802	PtrMemberAccess	OPL -> rythm		117146	0					
+ANR	117803	Identifier	OPL		117146	0					
+ANR	117804	Identifier	rythm		117146	1					
+ANR	117805	BitAndExpression	v & 0x3f		117146	1		&			
+ANR	117806	Identifier	v		117146	0					
+ANR	117807	PrimaryExpression	0x3f		117146	1					
+ANR	117808	IfStatement	if ( OPL -> rythm & 0x20 )		117146	4					
+ANR	117809	Condition	OPL -> rythm & 0x20	291:6:3672:3686	117146	0	True				
+ANR	117810	BitAndExpression	OPL -> rythm & 0x20		117146	0		&			
+ANR	117811	PtrMemberAccess	OPL -> rythm		117146	0					
+ANR	117812	Identifier	OPL		117146	0					
+ANR	117813	Identifier	rythm		117146	1					
+ANR	117814	PrimaryExpression	0x20		117146	1					
+ANR	117815	CompoundStatement		291:3:3640:3640	117146	1					
+ANR	117816	ExpressionStatement	"usrintf_showmessage ( ""OPL Rythm mode select"" )"	297:4:3707:3751	117146	0	True				
+ANR	117817	CallExpression	"usrintf_showmessage ( ""OPL Rythm mode select"" )"		117146	0					
+ANR	117818	Callee	usrintf_showmessage		117146	0					
+ANR	117819	Identifier	usrintf_showmessage		117146	0					
+ANR	117820	ArgumentList	"""OPL Rythm mode select"""		117146	1					
+ANR	117821	Argument	"""OPL Rythm mode select"""		117146	0					
+ANR	117822	PrimaryExpression	"""OPL Rythm mode select"""		117146	0					
+ANR	117823	IfStatement	if ( rkey & 0x10 )		117146	1					
+ANR	117824	Condition	rkey & 0x10	303:7:3794:3802	117146	0	True				
+ANR	117825	BitAndExpression	rkey & 0x10		117146	0		&			
+ANR	117826	Identifier	rkey		117146	0					
+ANR	117827	PrimaryExpression	0x10		117146	1					
+ANR	117828	CompoundStatement		303:4:3757:3757	117146	1					
+ANR	117829	IfStatement	if ( v & 0x10 )		117146	0					
+ANR	117830	Condition	v & 0x10	307:8:3821:3826	117146	0	True				
+ANR	117831	BitAndExpression	v & 0x10		117146	0		&			
+ANR	117832	Identifier	v		117146	0					
+ANR	117833	PrimaryExpression	0x10		117146	1					
+ANR	117834	CompoundStatement		307:5:3782:3782	117146	1					
+ANR	117835	ExpressionStatement	OPL -> P_CH [ 6 ] . op1_out [ 0 ] = OPL -> P_CH [ 6 ] . op1_out [ 1 ] = 0	311:6:3844:3897	117146	0	True				
+ANR	117836	AssignmentExpression	OPL -> P_CH [ 6 ] . op1_out [ 0 ] = OPL -> P_CH [ 6 ] . op1_out [ 1 ] = 0		117146	0		=			
+ANR	117837	ArrayIndexing	OPL -> P_CH [ 6 ] . op1_out [ 0 ]		117146	0					
+ANR	117838	MemberAccess	OPL -> P_CH [ 6 ] . op1_out		117146	0					
+ANR	117839	ArrayIndexing	OPL -> P_CH [ 6 ]		117146	0					
+ANR	117840	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117841	Identifier	OPL		117146	0					
+ANR	117842	Identifier	P_CH		117146	1					
+ANR	117843	PrimaryExpression	6		117146	1					
+ANR	117844	Identifier	op1_out		117146	1					
+ANR	117845	PrimaryExpression	0		117146	1					
+ANR	117846	AssignmentExpression	OPL -> P_CH [ 6 ] . op1_out [ 1 ] = 0		117146	1		=			
+ANR	117847	ArrayIndexing	OPL -> P_CH [ 6 ] . op1_out [ 1 ]		117146	0					
+ANR	117848	MemberAccess	OPL -> P_CH [ 6 ] . op1_out		117146	0					
+ANR	117849	ArrayIndexing	OPL -> P_CH [ 6 ]		117146	0					
+ANR	117850	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117851	Identifier	OPL		117146	0					
+ANR	117852	Identifier	P_CH		117146	1					
+ANR	117853	PrimaryExpression	6		117146	1					
+ANR	117854	Identifier	op1_out		117146	1					
+ANR	117855	PrimaryExpression	1		117146	1					
+ANR	117856	PrimaryExpression	0		117146	1					
+ANR	117857	ExpressionStatement	OPL_KEYON ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ] )	313:6:3906:3942	117146	1	True				
+ANR	117858	CallExpression	OPL_KEYON ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ] )		117146	0					
+ANR	117859	Callee	OPL_KEYON		117146	0					
+ANR	117860	Identifier	OPL_KEYON		117146	0					
+ANR	117861	ArgumentList	& OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	117862	Argument	& OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	117863	UnaryOperationExpression	& OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	117864	UnaryOperator	&		117146	0					
+ANR	117865	ArrayIndexing	OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	117866	MemberAccess	OPL -> P_CH [ 6 ] . SLOT		117146	0					
+ANR	117867	ArrayIndexing	OPL -> P_CH [ 6 ]		117146	0					
+ANR	117868	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117869	Identifier	OPL		117146	0					
+ANR	117870	Identifier	P_CH		117146	1					
+ANR	117871	PrimaryExpression	6		117146	1					
+ANR	117872	Identifier	SLOT		117146	1					
+ANR	117873	Identifier	SLOT1		117146	1					
+ANR	117874	ExpressionStatement	OPL_KEYON ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ] )	315:6:3951:3987	117146	2	True				
+ANR	117875	CallExpression	OPL_KEYON ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ] )		117146	0					
+ANR	117876	Callee	OPL_KEYON		117146	0					
+ANR	117877	Identifier	OPL_KEYON		117146	0					
+ANR	117878	ArgumentList	& OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117879	Argument	& OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117880	UnaryOperationExpression	& OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117881	UnaryOperator	&		117146	0					
+ANR	117882	ArrayIndexing	OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117883	MemberAccess	OPL -> P_CH [ 6 ] . SLOT		117146	0					
+ANR	117884	ArrayIndexing	OPL -> P_CH [ 6 ]		117146	0					
+ANR	117885	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117886	Identifier	OPL		117146	0					
+ANR	117887	Identifier	P_CH		117146	1					
+ANR	117888	PrimaryExpression	6		117146	1					
+ANR	117889	Identifier	SLOT		117146	1					
+ANR	117890	Identifier	SLOT2		117146	1					
+ANR	117891	ElseStatement	else		117146	0					
+ANR	117892	CompoundStatement		319:5:3961:3961	117146	0					
+ANR	117893	ExpressionStatement	OPL_KEYOFF ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ] )	323:6:4023:4060	117146	0	True				
+ANR	117894	CallExpression	OPL_KEYOFF ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ] )		117146	0					
+ANR	117895	Callee	OPL_KEYOFF		117146	0					
+ANR	117896	Identifier	OPL_KEYOFF		117146	0					
+ANR	117897	ArgumentList	& OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	117898	Argument	& OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	117899	UnaryOperationExpression	& OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	117900	UnaryOperator	&		117146	0					
+ANR	117901	ArrayIndexing	OPL -> P_CH [ 6 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	117902	MemberAccess	OPL -> P_CH [ 6 ] . SLOT		117146	0					
+ANR	117903	ArrayIndexing	OPL -> P_CH [ 6 ]		117146	0					
+ANR	117904	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117905	Identifier	OPL		117146	0					
+ANR	117906	Identifier	P_CH		117146	1					
+ANR	117907	PrimaryExpression	6		117146	1					
+ANR	117908	Identifier	SLOT		117146	1					
+ANR	117909	Identifier	SLOT1		117146	1					
+ANR	117910	ExpressionStatement	OPL_KEYOFF ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ] )	325:6:4069:4106	117146	1	True				
+ANR	117911	CallExpression	OPL_KEYOFF ( & OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ] )		117146	0					
+ANR	117912	Callee	OPL_KEYOFF		117146	0					
+ANR	117913	Identifier	OPL_KEYOFF		117146	0					
+ANR	117914	ArgumentList	& OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117915	Argument	& OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117916	UnaryOperationExpression	& OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117917	UnaryOperator	&		117146	0					
+ANR	117918	ArrayIndexing	OPL -> P_CH [ 6 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117919	MemberAccess	OPL -> P_CH [ 6 ] . SLOT		117146	0					
+ANR	117920	ArrayIndexing	OPL -> P_CH [ 6 ]		117146	0					
+ANR	117921	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117922	Identifier	OPL		117146	0					
+ANR	117923	Identifier	P_CH		117146	1					
+ANR	117924	PrimaryExpression	6		117146	1					
+ANR	117925	Identifier	SLOT		117146	1					
+ANR	117926	Identifier	SLOT2		117146	1					
+ANR	117927	IfStatement	if ( rkey & 0x08 )		117146	2					
+ANR	117928	Condition	rkey & 0x08	333:7:4156:4164	117146	0	True				
+ANR	117929	BitAndExpression	rkey & 0x08		117146	0		&			
+ANR	117930	Identifier	rkey		117146	0					
+ANR	117931	PrimaryExpression	0x08		117146	1					
+ANR	117932	CompoundStatement		333:4:4119:4119	117146	1					
+ANR	117933	IfStatement	if ( v & 0x08 )		117146	0					
+ANR	117934	Condition	v & 0x08	337:8:4183:4188	117146	0	True				
+ANR	117935	BitAndExpression	v & 0x08		117146	0		&			
+ANR	117936	Identifier	v		117146	0					
+ANR	117937	PrimaryExpression	0x08		117146	1					
+ANR	117938	ExpressionStatement	OPL_KEYON ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ] )	337:16:4191:4227	117146	1	True				
+ANR	117939	CallExpression	OPL_KEYON ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ] )		117146	0					
+ANR	117940	Callee	OPL_KEYON		117146	0					
+ANR	117941	Identifier	OPL_KEYON		117146	0					
+ANR	117942	ArgumentList	& OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117943	Argument	& OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117944	UnaryOperationExpression	& OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117945	UnaryOperator	&		117146	0					
+ANR	117946	ArrayIndexing	OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117947	MemberAccess	OPL -> P_CH [ 7 ] . SLOT		117146	0					
+ANR	117948	ArrayIndexing	OPL -> P_CH [ 7 ]		117146	0					
+ANR	117949	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117950	Identifier	OPL		117146	0					
+ANR	117951	Identifier	P_CH		117146	1					
+ANR	117952	PrimaryExpression	7		117146	1					
+ANR	117953	Identifier	SLOT		117146	1					
+ANR	117954	Identifier	SLOT2		117146	1					
+ANR	117955	ElseStatement	else		117146	0					
+ANR	117956	ExpressionStatement	OPL_KEYOFF ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ] )	339:16:4246:4283	117146	0	True				
+ANR	117957	CallExpression	OPL_KEYOFF ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ] )		117146	0					
+ANR	117958	Callee	OPL_KEYOFF		117146	0					
+ANR	117959	Identifier	OPL_KEYOFF		117146	0					
+ANR	117960	ArgumentList	& OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117961	Argument	& OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117962	UnaryOperationExpression	& OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	117963	UnaryOperator	&		117146	0					
+ANR	117964	ArrayIndexing	OPL -> P_CH [ 7 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	117965	MemberAccess	OPL -> P_CH [ 7 ] . SLOT		117146	0					
+ANR	117966	ArrayIndexing	OPL -> P_CH [ 7 ]		117146	0					
+ANR	117967	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117968	Identifier	OPL		117146	0					
+ANR	117969	Identifier	P_CH		117146	1					
+ANR	117970	PrimaryExpression	7		117146	1					
+ANR	117971	Identifier	SLOT		117146	1					
+ANR	117972	Identifier	SLOT2		117146	1					
+ANR	117973	IfStatement	if ( rkey & 0x04 )		117146	3					
+ANR	117974	Condition	rkey & 0x04	343:7:4320:4328	117146	0	True				
+ANR	117975	BitAndExpression	rkey & 0x04		117146	0		&			
+ANR	117976	Identifier	rkey		117146	0					
+ANR	117977	PrimaryExpression	0x04		117146	1					
+ANR	117978	CompoundStatement		343:4:4283:4283	117146	1					
+ANR	117979	IfStatement	if ( v & 0x04 )		117146	0					
+ANR	117980	Condition	v & 0x04	347:8:4347:4352	117146	0	True				
+ANR	117981	BitAndExpression	v & 0x04		117146	0		&			
+ANR	117982	Identifier	v		117146	0					
+ANR	117983	PrimaryExpression	0x04		117146	1					
+ANR	117984	ExpressionStatement	OPL_KEYON ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ] )	347:16:4355:4391	117146	1	True				
+ANR	117985	CallExpression	OPL_KEYON ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ] )		117146	0					
+ANR	117986	Callee	OPL_KEYON		117146	0					
+ANR	117987	Identifier	OPL_KEYON		117146	0					
+ANR	117988	ArgumentList	& OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	117989	Argument	& OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	117990	UnaryOperationExpression	& OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	117991	UnaryOperator	&		117146	0					
+ANR	117992	ArrayIndexing	OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	117993	MemberAccess	OPL -> P_CH [ 8 ] . SLOT		117146	0					
+ANR	117994	ArrayIndexing	OPL -> P_CH [ 8 ]		117146	0					
+ANR	117995	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	117996	Identifier	OPL		117146	0					
+ANR	117997	Identifier	P_CH		117146	1					
+ANR	117998	PrimaryExpression	8		117146	1					
+ANR	117999	Identifier	SLOT		117146	1					
+ANR	118000	Identifier	SLOT1		117146	1					
+ANR	118001	ElseStatement	else		117146	0					
+ANR	118002	ExpressionStatement	OPL_KEYOFF ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ] )	349:16:4410:4447	117146	0	True				
+ANR	118003	CallExpression	OPL_KEYOFF ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ] )		117146	0					
+ANR	118004	Callee	OPL_KEYOFF		117146	0					
+ANR	118005	Identifier	OPL_KEYOFF		117146	0					
+ANR	118006	ArgumentList	& OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	118007	Argument	& OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	118008	UnaryOperationExpression	& OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	118009	UnaryOperator	&		117146	0					
+ANR	118010	ArrayIndexing	OPL -> P_CH [ 8 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	118011	MemberAccess	OPL -> P_CH [ 8 ] . SLOT		117146	0					
+ANR	118012	ArrayIndexing	OPL -> P_CH [ 8 ]		117146	0					
+ANR	118013	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118014	Identifier	OPL		117146	0					
+ANR	118015	Identifier	P_CH		117146	1					
+ANR	118016	PrimaryExpression	8		117146	1					
+ANR	118017	Identifier	SLOT		117146	1					
+ANR	118018	Identifier	SLOT1		117146	1					
+ANR	118019	IfStatement	if ( rkey & 0x02 )		117146	4					
+ANR	118020	Condition	rkey & 0x02	355:7:4493:4501	117146	0	True				
+ANR	118021	BitAndExpression	rkey & 0x02		117146	0		&			
+ANR	118022	Identifier	rkey		117146	0					
+ANR	118023	PrimaryExpression	0x02		117146	1					
+ANR	118024	CompoundStatement		355:4:4456:4456	117146	1					
+ANR	118025	IfStatement	if ( v & 0x02 )		117146	0					
+ANR	118026	Condition	v & 0x02	359:8:4520:4525	117146	0	True				
+ANR	118027	BitAndExpression	v & 0x02		117146	0		&			
+ANR	118028	Identifier	v		117146	0					
+ANR	118029	PrimaryExpression	0x02		117146	1					
+ANR	118030	ExpressionStatement	OPL_KEYON ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ] )	359:16:4528:4564	117146	1	True				
+ANR	118031	CallExpression	OPL_KEYON ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ] )		117146	0					
+ANR	118032	Callee	OPL_KEYON		117146	0					
+ANR	118033	Identifier	OPL_KEYON		117146	0					
+ANR	118034	ArgumentList	& OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	118035	Argument	& OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	118036	UnaryOperationExpression	& OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	118037	UnaryOperator	&		117146	0					
+ANR	118038	ArrayIndexing	OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	118039	MemberAccess	OPL -> P_CH [ 8 ] . SLOT		117146	0					
+ANR	118040	ArrayIndexing	OPL -> P_CH [ 8 ]		117146	0					
+ANR	118041	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118042	Identifier	OPL		117146	0					
+ANR	118043	Identifier	P_CH		117146	1					
+ANR	118044	PrimaryExpression	8		117146	1					
+ANR	118045	Identifier	SLOT		117146	1					
+ANR	118046	Identifier	SLOT2		117146	1					
+ANR	118047	ElseStatement	else		117146	0					
+ANR	118048	ExpressionStatement	OPL_KEYOFF ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ] )	361:16:4583:4620	117146	0	True				
+ANR	118049	CallExpression	OPL_KEYOFF ( & OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ] )		117146	0					
+ANR	118050	Callee	OPL_KEYOFF		117146	0					
+ANR	118051	Identifier	OPL_KEYOFF		117146	0					
+ANR	118052	ArgumentList	& OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	118053	Argument	& OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	118054	UnaryOperationExpression	& OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	0					
+ANR	118055	UnaryOperator	&		117146	0					
+ANR	118056	ArrayIndexing	OPL -> P_CH [ 8 ] . SLOT [ SLOT2 ]		117146	1					
+ANR	118057	MemberAccess	OPL -> P_CH [ 8 ] . SLOT		117146	0					
+ANR	118058	ArrayIndexing	OPL -> P_CH [ 8 ]		117146	0					
+ANR	118059	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118060	Identifier	OPL		117146	0					
+ANR	118061	Identifier	P_CH		117146	1					
+ANR	118062	PrimaryExpression	8		117146	1					
+ANR	118063	Identifier	SLOT		117146	1					
+ANR	118064	Identifier	SLOT2		117146	1					
+ANR	118065	IfStatement	if ( rkey & 0x01 )		117146	5					
+ANR	118066	Condition	rkey & 0x01	367:7:4662:4670	117146	0	True				
+ANR	118067	BitAndExpression	rkey & 0x01		117146	0		&			
+ANR	118068	Identifier	rkey		117146	0					
+ANR	118069	PrimaryExpression	0x01		117146	1					
+ANR	118070	CompoundStatement		367:4:4625:4625	117146	1					
+ANR	118071	IfStatement	if ( v & 0x01 )		117146	0					
+ANR	118072	Condition	v & 0x01	371:8:4689:4694	117146	0	True				
+ANR	118073	BitAndExpression	v & 0x01		117146	0		&			
+ANR	118074	Identifier	v		117146	0					
+ANR	118075	PrimaryExpression	0x01		117146	1					
+ANR	118076	ExpressionStatement	OPL_KEYON ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ] )	371:16:4697:4733	117146	1	True				
+ANR	118077	CallExpression	OPL_KEYON ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ] )		117146	0					
+ANR	118078	Callee	OPL_KEYON		117146	0					
+ANR	118079	Identifier	OPL_KEYON		117146	0					
+ANR	118080	ArgumentList	& OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	118081	Argument	& OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	118082	UnaryOperationExpression	& OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	118083	UnaryOperator	&		117146	0					
+ANR	118084	ArrayIndexing	OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	118085	MemberAccess	OPL -> P_CH [ 7 ] . SLOT		117146	0					
+ANR	118086	ArrayIndexing	OPL -> P_CH [ 7 ]		117146	0					
+ANR	118087	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118088	Identifier	OPL		117146	0					
+ANR	118089	Identifier	P_CH		117146	1					
+ANR	118090	PrimaryExpression	7		117146	1					
+ANR	118091	Identifier	SLOT		117146	1					
+ANR	118092	Identifier	SLOT1		117146	1					
+ANR	118093	ElseStatement	else		117146	0					
+ANR	118094	ExpressionStatement	OPL_KEYOFF ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ] )	373:16:4752:4789	117146	0	True				
+ANR	118095	CallExpression	OPL_KEYOFF ( & OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ] )		117146	0					
+ANR	118096	Callee	OPL_KEYOFF		117146	0					
+ANR	118097	Identifier	OPL_KEYOFF		117146	0					
+ANR	118098	ArgumentList	& OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	118099	Argument	& OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	118100	UnaryOperationExpression	& OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	0					
+ANR	118101	UnaryOperator	&		117146	0					
+ANR	118102	ArrayIndexing	OPL -> P_CH [ 7 ] . SLOT [ SLOT1 ]		117146	1					
+ANR	118103	MemberAccess	OPL -> P_CH [ 7 ] . SLOT		117146	0					
+ANR	118104	ArrayIndexing	OPL -> P_CH [ 7 ]		117146	0					
+ANR	118105	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118106	Identifier	OPL		117146	0					
+ANR	118107	Identifier	P_CH		117146	1					
+ANR	118108	PrimaryExpression	7		117146	1					
+ANR	118109	Identifier	SLOT		117146	1					
+ANR	118110	Identifier	SLOT1		117146	1					
+ANR	118111	ReturnStatement	return ;	381:3:4814:4820	117146	2	True				
+ANR	118112	IfStatement	if ( ( r & 0x0f ) > 8 )		117146	25					
+ANR	118113	Condition	( r & 0x0f ) > 8	387:6:4860:4871	117146	0	True				
+ANR	118114	RelationalExpression	( r & 0x0f ) > 8		117146	0		>			
+ANR	118115	BitAndExpression	r & 0x0f		117146	0		&			
+ANR	118116	Identifier	r		117146	0					
+ANR	118117	PrimaryExpression	0x0f		117146	1					
+ANR	118118	PrimaryExpression	8		117146	1					
+ANR	118119	ReturnStatement	return ;	387:20:4874:4880	117146	1	True				
+ANR	118120	ExpressionStatement	CH = & OPL -> P_CH [ r & 0x0f ]	389:2:4885:4908	117146	26	True				
+ANR	118121	AssignmentExpression	CH = & OPL -> P_CH [ r & 0x0f ]		117146	0		=			
+ANR	118122	Identifier	CH		117146	0					
+ANR	118123	UnaryOperationExpression	& OPL -> P_CH [ r & 0x0f ]		117146	1					
+ANR	118124	UnaryOperator	&		117146	0					
+ANR	118125	ArrayIndexing	OPL -> P_CH [ r & 0x0f ]		117146	1					
+ANR	118126	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118127	Identifier	OPL		117146	0					
+ANR	118128	Identifier	P_CH		117146	1					
+ANR	118129	BitAndExpression	r & 0x0f		117146	1		&			
+ANR	118130	Identifier	r		117146	0					
+ANR	118131	PrimaryExpression	0x0f		117146	1					
+ANR	118132	IfStatement	if ( ! ( r & 0x10 ) )		117146	27					
+ANR	118133	Condition	! ( r & 0x10 )	391:5:4916:4924	117146	0	True				
+ANR	118134	UnaryOperationExpression	! ( r & 0x10 )		117146	0					
+ANR	118135	UnaryOperator	!		117146	0					
+ANR	118136	BitAndExpression	r & 0x10		117146	1		&			
+ANR	118137	Identifier	r		117146	0					
+ANR	118138	PrimaryExpression	0x10		117146	1					
+ANR	118139	CompoundStatement		391:2:4877:4877	117146	1					
+ANR	118140	ExpressionStatement	block_fnum = ( CH -> block_fnum & 0x1f00 ) | v	395:3:4948:4989	117146	0	True				
+ANR	118141	AssignmentExpression	block_fnum = ( CH -> block_fnum & 0x1f00 ) | v		117146	0		=			
+ANR	118142	Identifier	block_fnum		117146	0					
+ANR	118143	InclusiveOrExpression	( CH -> block_fnum & 0x1f00 ) | v		117146	1		|			
+ANR	118144	BitAndExpression	CH -> block_fnum & 0x1f00		117146	0		&			
+ANR	118145	PtrMemberAccess	CH -> block_fnum		117146	0					
+ANR	118146	Identifier	CH		117146	0					
+ANR	118147	Identifier	block_fnum		117146	1					
+ANR	118148	PrimaryExpression	0x1f00		117146	1					
+ANR	118149	Identifier	v		117146	1					
+ANR	118150	ElseStatement	else		117146	0					
+ANR	118151	CompoundStatement		401:3:4972:4992	117146	0					
+ANR	118152	IdentifierDeclStatement	int keyon = ( v >> 5 ) & 1 ;	403:3:5025:5045	117146	0	True				
+ANR	118153	IdentifierDecl	keyon = ( v >> 5 ) & 1		117146	0					
+ANR	118154	IdentifierDeclType	int		117146	0					
+ANR	118155	Identifier	keyon		117146	1					
+ANR	118156	AssignmentExpression	keyon = ( v >> 5 ) & 1		117146	2		=			
+ANR	118157	Identifier	keyon		117146	0					
+ANR	118158	BitAndExpression	( v >> 5 ) & 1		117146	1		&			
+ANR	118159	ShiftExpression	v >> 5		117146	0		>>			
+ANR	118160	Identifier	v		117146	0					
+ANR	118161	PrimaryExpression	5		117146	1					
+ANR	118162	PrimaryExpression	1		117146	1					
+ANR	118163	ExpressionStatement	block_fnum = ( ( v & 0x1f ) << 8 ) | ( CH -> block_fnum & 0xff )	405:3:5051:5101	117146	1	True				
+ANR	118164	AssignmentExpression	block_fnum = ( ( v & 0x1f ) << 8 ) | ( CH -> block_fnum & 0xff )		117146	0		=			
+ANR	118165	Identifier	block_fnum		117146	0					
+ANR	118166	InclusiveOrExpression	( ( v & 0x1f ) << 8 ) | ( CH -> block_fnum & 0xff )		117146	1		|			
+ANR	118167	ShiftExpression	( v & 0x1f ) << 8		117146	0		<<			
+ANR	118168	BitAndExpression	v & 0x1f		117146	0		&			
+ANR	118169	Identifier	v		117146	0					
+ANR	118170	PrimaryExpression	0x1f		117146	1					
+ANR	118171	PrimaryExpression	8		117146	1					
+ANR	118172	BitAndExpression	CH -> block_fnum & 0xff		117146	1		&			
+ANR	118173	PtrMemberAccess	CH -> block_fnum		117146	0					
+ANR	118174	Identifier	CH		117146	0					
+ANR	118175	Identifier	block_fnum		117146	1					
+ANR	118176	PrimaryExpression	0xff		117146	1					
+ANR	118177	IfStatement	if ( CH -> keyon != keyon )		117146	2					
+ANR	118178	Condition	CH -> keyon != keyon	407:6:5110:5127	117146	0	True				
+ANR	118179	EqualityExpression	CH -> keyon != keyon		117146	0		!=			
+ANR	118180	PtrMemberAccess	CH -> keyon		117146	0					
+ANR	118181	Identifier	CH		117146	0					
+ANR	118182	Identifier	keyon		117146	1					
+ANR	118183	Identifier	keyon		117146	1					
+ANR	118184	CompoundStatement		407:3:5081:5081	117146	1					
+ANR	118185	IfStatement	if ( ( CH -> keyon = keyon ) )		117146	0					
+ANR	118186	Condition	CH -> keyon = keyon	411:8:5145:5161	117146	0	True				
+ANR	118187	AssignmentExpression	CH -> keyon = keyon		117146	0		=			
+ANR	118188	PtrMemberAccess	CH -> keyon		117146	0					
+ANR	118189	Identifier	CH		117146	0					
+ANR	118190	Identifier	keyon		117146	1					
+ANR	118191	Identifier	keyon		117146	1					
+ANR	118192	CompoundStatement		411:4:5117:5117	117146	1					
+ANR	118193	ExpressionStatement	CH -> op1_out [ 0 ] = CH -> op1_out [ 1 ] = 0	415:5:5178:5213	117146	0	True				
+ANR	118194	AssignmentExpression	CH -> op1_out [ 0 ] = CH -> op1_out [ 1 ] = 0		117146	0		=			
+ANR	118195	ArrayIndexing	CH -> op1_out [ 0 ]		117146	0					
+ANR	118196	PtrMemberAccess	CH -> op1_out		117146	0					
+ANR	118197	Identifier	CH		117146	0					
+ANR	118198	Identifier	op1_out		117146	1					
+ANR	118199	PrimaryExpression	0		117146	1					
+ANR	118200	AssignmentExpression	CH -> op1_out [ 1 ] = 0		117146	1		=			
+ANR	118201	ArrayIndexing	CH -> op1_out [ 1 ]		117146	0					
+ANR	118202	PtrMemberAccess	CH -> op1_out		117146	0					
+ANR	118203	Identifier	CH		117146	0					
+ANR	118204	Identifier	op1_out		117146	1					
+ANR	118205	PrimaryExpression	1		117146	1					
+ANR	118206	PrimaryExpression	0		117146	1					
+ANR	118207	ExpressionStatement	OPL_KEYON ( & CH -> SLOT [ SLOT1 ] )	417:5:5221:5248	117146	1	True				
+ANR	118208	CallExpression	OPL_KEYON ( & CH -> SLOT [ SLOT1 ] )		117146	0					
+ANR	118209	Callee	OPL_KEYON		117146	0					
+ANR	118210	Identifier	OPL_KEYON		117146	0					
+ANR	118211	ArgumentList	& CH -> SLOT [ SLOT1 ]		117146	1					
+ANR	118212	Argument	& CH -> SLOT [ SLOT1 ]		117146	0					
+ANR	118213	UnaryOperationExpression	& CH -> SLOT [ SLOT1 ]		117146	0					
+ANR	118214	UnaryOperator	&		117146	0					
+ANR	118215	ArrayIndexing	CH -> SLOT [ SLOT1 ]		117146	1					
+ANR	118216	PtrMemberAccess	CH -> SLOT		117146	0					
+ANR	118217	Identifier	CH		117146	0					
+ANR	118218	Identifier	SLOT		117146	1					
+ANR	118219	Identifier	SLOT1		117146	1					
+ANR	118220	ExpressionStatement	OPL_KEYON ( & CH -> SLOT [ SLOT2 ] )	419:5:5256:5283	117146	2	True				
+ANR	118221	CallExpression	OPL_KEYON ( & CH -> SLOT [ SLOT2 ] )		117146	0					
+ANR	118222	Callee	OPL_KEYON		117146	0					
+ANR	118223	Identifier	OPL_KEYON		117146	0					
+ANR	118224	ArgumentList	& CH -> SLOT [ SLOT2 ]		117146	1					
+ANR	118225	Argument	& CH -> SLOT [ SLOT2 ]		117146	0					
+ANR	118226	UnaryOperationExpression	& CH -> SLOT [ SLOT2 ]		117146	0					
+ANR	118227	UnaryOperator	&		117146	0					
+ANR	118228	ArrayIndexing	CH -> SLOT [ SLOT2 ]		117146	1					
+ANR	118229	PtrMemberAccess	CH -> SLOT		117146	0					
+ANR	118230	Identifier	CH		117146	0					
+ANR	118231	Identifier	SLOT		117146	1					
+ANR	118232	Identifier	SLOT2		117146	1					
+ANR	118233	ElseStatement	else		117146	0					
+ANR	118234	CompoundStatement		423:4:5254:5254	117146	0					
+ANR	118235	ExpressionStatement	OPL_KEYOFF ( & CH -> SLOT [ SLOT1 ] )	427:5:5315:5343	117146	0	True				
+ANR	118236	CallExpression	OPL_KEYOFF ( & CH -> SLOT [ SLOT1 ] )		117146	0					
+ANR	118237	Callee	OPL_KEYOFF		117146	0					
+ANR	118238	Identifier	OPL_KEYOFF		117146	0					
+ANR	118239	ArgumentList	& CH -> SLOT [ SLOT1 ]		117146	1					
+ANR	118240	Argument	& CH -> SLOT [ SLOT1 ]		117146	0					
+ANR	118241	UnaryOperationExpression	& CH -> SLOT [ SLOT1 ]		117146	0					
+ANR	118242	UnaryOperator	&		117146	0					
+ANR	118243	ArrayIndexing	CH -> SLOT [ SLOT1 ]		117146	1					
+ANR	118244	PtrMemberAccess	CH -> SLOT		117146	0					
+ANR	118245	Identifier	CH		117146	0					
+ANR	118246	Identifier	SLOT		117146	1					
+ANR	118247	Identifier	SLOT1		117146	1					
+ANR	118248	ExpressionStatement	OPL_KEYOFF ( & CH -> SLOT [ SLOT2 ] )	429:5:5351:5379	117146	1	True				
+ANR	118249	CallExpression	OPL_KEYOFF ( & CH -> SLOT [ SLOT2 ] )		117146	0					
+ANR	118250	Callee	OPL_KEYOFF		117146	0					
+ANR	118251	Identifier	OPL_KEYOFF		117146	0					
+ANR	118252	ArgumentList	& CH -> SLOT [ SLOT2 ]		117146	1					
+ANR	118253	Argument	& CH -> SLOT [ SLOT2 ]		117146	0					
+ANR	118254	UnaryOperationExpression	& CH -> SLOT [ SLOT2 ]		117146	0					
+ANR	118255	UnaryOperator	&		117146	0					
+ANR	118256	ArrayIndexing	CH -> SLOT [ SLOT2 ]		117146	1					
+ANR	118257	PtrMemberAccess	CH -> SLOT		117146	0					
+ANR	118258	Identifier	CH		117146	0					
+ANR	118259	Identifier	SLOT		117146	1					
+ANR	118260	Identifier	SLOT2		117146	1					
+ANR	118261	IfStatement	if ( CH -> block_fnum != block_fnum )		117146	28					
+ANR	118262	Condition	CH -> block_fnum != block_fnum	439:5:5421:5448	117146	0	True				
+ANR	118263	EqualityExpression	CH -> block_fnum != block_fnum		117146	0		!=			
+ANR	118264	PtrMemberAccess	CH -> block_fnum		117146	0					
+ANR	118265	Identifier	CH		117146	0					
+ANR	118266	Identifier	block_fnum		117146	1					
+ANR	118267	Identifier	block_fnum		117146	1					
+ANR	118268	CompoundStatement		443:3:5445:5474	117146	1					
+ANR	118269	IdentifierDeclStatement	int blockRv = 7 - ( block_fnum >> 10 ) ;	443:3:5460:5492	117146	0	True				
+ANR	118270	IdentifierDecl	blockRv = 7 - ( block_fnum >> 10 )		117146	0					
+ANR	118271	IdentifierDeclType	int		117146	0					
+ANR	118272	Identifier	blockRv		117146	1					
+ANR	118273	AssignmentExpression	blockRv = 7 - ( block_fnum >> 10 )		117146	2		=			
+ANR	118274	Identifier	blockRv		117146	0					
+ANR	118275	AdditiveExpression	7 - ( block_fnum >> 10 )		117146	1		-			
+ANR	118276	PrimaryExpression	7		117146	0					
+ANR	118277	ShiftExpression	block_fnum >> 10		117146	1		>>			
+ANR	118278	Identifier	block_fnum		117146	0					
+ANR	118279	PrimaryExpression	10		117146	1					
+ANR	118280	IdentifierDeclStatement	int fnum = block_fnum & 0x3ff ;	445:3:5498:5527	117146	1	True				
+ANR	118281	IdentifierDecl	fnum = block_fnum & 0x3ff		117146	0					
+ANR	118282	IdentifierDeclType	int		117146	0					
+ANR	118283	Identifier	fnum		117146	1					
+ANR	118284	AssignmentExpression	fnum = block_fnum & 0x3ff		117146	2		=			
+ANR	118285	Identifier	fnum		117146	0					
+ANR	118286	BitAndExpression	block_fnum & 0x3ff		117146	1		&			
+ANR	118287	Identifier	block_fnum		117146	0					
+ANR	118288	PrimaryExpression	0x3ff		117146	1					
+ANR	118289	ExpressionStatement	CH -> block_fnum = block_fnum	447:3:5533:5560	117146	2	True				
+ANR	118290	AssignmentExpression	CH -> block_fnum = block_fnum		117146	0		=			
+ANR	118291	PtrMemberAccess	CH -> block_fnum		117146	0					
+ANR	118292	Identifier	CH		117146	0					
+ANR	118293	Identifier	block_fnum		117146	1					
+ANR	118294	Identifier	block_fnum		117146	1					
+ANR	118295	ExpressionStatement	CH -> ksl_base = KSL_TABLE [ block_fnum >> 6 ]	451:3:5568:5607	117146	3	True				
+ANR	118296	AssignmentExpression	CH -> ksl_base = KSL_TABLE [ block_fnum >> 6 ]		117146	0		=			
+ANR	118297	PtrMemberAccess	CH -> ksl_base		117146	0					
+ANR	118298	Identifier	CH		117146	0					
+ANR	118299	Identifier	ksl_base		117146	1					
+ANR	118300	ArrayIndexing	KSL_TABLE [ block_fnum >> 6 ]		117146	1					
+ANR	118301	Identifier	KSL_TABLE		117146	0					
+ANR	118302	ShiftExpression	block_fnum >> 6		117146	1		>>			
+ANR	118303	Identifier	block_fnum		117146	0					
+ANR	118304	PrimaryExpression	6		117146	1					
+ANR	118305	ExpressionStatement	CH -> fc = OPL -> FN_TABLE [ fnum ] >> blockRv	453:3:5613:5650	117146	4	True				
+ANR	118306	AssignmentExpression	CH -> fc = OPL -> FN_TABLE [ fnum ] >> blockRv		117146	0		=			
+ANR	118307	PtrMemberAccess	CH -> fc		117146	0					
+ANR	118308	Identifier	CH		117146	0					
+ANR	118309	Identifier	fc		117146	1					
+ANR	118310	ShiftExpression	OPL -> FN_TABLE [ fnum ] >> blockRv		117146	1		>>			
+ANR	118311	ArrayIndexing	OPL -> FN_TABLE [ fnum ]		117146	0					
+ANR	118312	PtrMemberAccess	OPL -> FN_TABLE		117146	0					
+ANR	118313	Identifier	OPL		117146	0					
+ANR	118314	Identifier	FN_TABLE		117146	1					
+ANR	118315	Identifier	fnum		117146	1					
+ANR	118316	Identifier	blockRv		117146	1					
+ANR	118317	ExpressionStatement	CH -> kcode = CH -> block_fnum >> 9	455:3:5656:5685	117146	5	True				
+ANR	118318	AssignmentExpression	CH -> kcode = CH -> block_fnum >> 9		117146	0		=			
+ANR	118319	PtrMemberAccess	CH -> kcode		117146	0					
+ANR	118320	Identifier	CH		117146	0					
+ANR	118321	Identifier	kcode		117146	1					
+ANR	118322	ShiftExpression	CH -> block_fnum >> 9		117146	1		>>			
+ANR	118323	PtrMemberAccess	CH -> block_fnum		117146	0					
+ANR	118324	Identifier	CH		117146	0					
+ANR	118325	Identifier	block_fnum		117146	1					
+ANR	118326	PrimaryExpression	9		117146	1					
+ANR	118327	IfStatement	if ( ( OPL -> mode & 0x40 ) && CH -> block_fnum & 0x100 )		117146	6					
+ANR	118328	Condition	( OPL -> mode & 0x40 ) && CH -> block_fnum & 0x100	457:7:5695:5734	117146	0	True				
+ANR	118329	AndExpression	( OPL -> mode & 0x40 ) && CH -> block_fnum & 0x100		117146	0		&&			
+ANR	118330	BitAndExpression	OPL -> mode & 0x40		117146	0		&			
+ANR	118331	PtrMemberAccess	OPL -> mode		117146	0					
+ANR	118332	Identifier	OPL		117146	0					
+ANR	118333	Identifier	mode		117146	1					
+ANR	118334	PrimaryExpression	0x40		117146	1					
+ANR	118335	BitAndExpression	CH -> block_fnum & 0x100		117146	1		&			
+ANR	118336	PtrMemberAccess	CH -> block_fnum		117146	0					
+ANR	118337	Identifier	CH		117146	0					
+ANR	118338	Identifier	block_fnum		117146	1					
+ANR	118339	PrimaryExpression	0x100		117146	1					
+ANR	118340	ExpressionStatement	CH -> kcode |= 1	457:49:5737:5750	117146	1	True				
+ANR	118341	AssignmentExpression	CH -> kcode |= 1		117146	0		|=			
+ANR	118342	PtrMemberAccess	CH -> kcode		117146	0					
+ANR	118343	Identifier	CH		117146	0					
+ANR	118344	Identifier	kcode		117146	1					
+ANR	118345	PrimaryExpression	1		117146	1					
+ANR	118346	ExpressionStatement	"CALC_FCSLOT ( CH , & CH -> SLOT [ SLOT1 ] )"	459:3:5756:5788	117146	7	True				
+ANR	118347	CallExpression	"CALC_FCSLOT ( CH , & CH -> SLOT [ SLOT1 ] )"		117146	0					
+ANR	118348	Callee	CALC_FCSLOT		117146	0					
+ANR	118349	Identifier	CALC_FCSLOT		117146	0					
+ANR	118350	ArgumentList	CH		117146	1					
+ANR	118351	Argument	CH		117146	0					
+ANR	118352	Identifier	CH		117146	0					
+ANR	118353	Argument	& CH -> SLOT [ SLOT1 ]		117146	1					
+ANR	118354	UnaryOperationExpression	& CH -> SLOT [ SLOT1 ]		117146	0					
+ANR	118355	UnaryOperator	&		117146	0					
+ANR	118356	ArrayIndexing	CH -> SLOT [ SLOT1 ]		117146	1					
+ANR	118357	PtrMemberAccess	CH -> SLOT		117146	0					
+ANR	118358	Identifier	CH		117146	0					
+ANR	118359	Identifier	SLOT		117146	1					
+ANR	118360	Identifier	SLOT1		117146	1					
+ANR	118361	ExpressionStatement	"CALC_FCSLOT ( CH , & CH -> SLOT [ SLOT2 ] )"	461:3:5794:5826	117146	8	True				
+ANR	118362	CallExpression	"CALC_FCSLOT ( CH , & CH -> SLOT [ SLOT2 ] )"		117146	0					
+ANR	118363	Callee	CALC_FCSLOT		117146	0					
+ANR	118364	Identifier	CALC_FCSLOT		117146	0					
+ANR	118365	ArgumentList	CH		117146	1					
+ANR	118366	Argument	CH		117146	0					
+ANR	118367	Identifier	CH		117146	0					
+ANR	118368	Argument	& CH -> SLOT [ SLOT2 ]		117146	1					
+ANR	118369	UnaryOperationExpression	& CH -> SLOT [ SLOT2 ]		117146	0					
+ANR	118370	UnaryOperator	&		117146	0					
+ANR	118371	ArrayIndexing	CH -> SLOT [ SLOT2 ]		117146	1					
+ANR	118372	PtrMemberAccess	CH -> SLOT		117146	0					
+ANR	118373	Identifier	CH		117146	0					
+ANR	118374	Identifier	SLOT		117146	1					
+ANR	118375	Identifier	SLOT2		117146	1					
+ANR	118376	ReturnStatement	return ;	465:2:5836:5842	117146	29	True				
+ANR	118377	Label	case 0xc0 :	467:1:5846:5855	117146	30	True				
+ANR	118378	IfStatement	if ( ( r & 0x0f ) > 8 )		117146	31					
+ANR	118379	Condition	( r & 0x0f ) > 8	471:6:5878:5889	117146	0	True				
+ANR	118380	RelationalExpression	( r & 0x0f ) > 8		117146	0		>			
+ANR	118381	BitAndExpression	r & 0x0f		117146	0		&			
+ANR	118382	Identifier	r		117146	0					
+ANR	118383	PrimaryExpression	0x0f		117146	1					
+ANR	118384	PrimaryExpression	8		117146	1					
+ANR	118385	ReturnStatement	return ;	471:20:5892:5898	117146	1	True				
+ANR	118386	ExpressionStatement	CH = & OPL -> P_CH [ r & 0x0f ]	473:2:5903:5926	117146	32	True				
+ANR	118387	AssignmentExpression	CH = & OPL -> P_CH [ r & 0x0f ]		117146	0		=			
+ANR	118388	Identifier	CH		117146	0					
+ANR	118389	UnaryOperationExpression	& OPL -> P_CH [ r & 0x0f ]		117146	1					
+ANR	118390	UnaryOperator	&		117146	0					
+ANR	118391	ArrayIndexing	OPL -> P_CH [ r & 0x0f ]		117146	1					
+ANR	118392	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118393	Identifier	OPL		117146	0					
+ANR	118394	Identifier	P_CH		117146	1					
+ANR	118395	BitAndExpression	r & 0x0f		117146	1		&			
+ANR	118396	Identifier	r		117146	0					
+ANR	118397	PrimaryExpression	0x0f		117146	1					
+ANR	118398	CompoundStatement		475:2:5883:5906	117146	33					
+ANR	118399	IdentifierDeclStatement	int feedback = ( v >> 1 ) & 7 ;	477:2:5936:5959	117146	0	True				
+ANR	118400	IdentifierDecl	feedback = ( v >> 1 ) & 7		117146	0					
+ANR	118401	IdentifierDeclType	int		117146	0					
+ANR	118402	Identifier	feedback		117146	1					
+ANR	118403	AssignmentExpression	feedback = ( v >> 1 ) & 7		117146	2		=			
+ANR	118404	Identifier	feedback		117146	0					
+ANR	118405	BitAndExpression	( v >> 1 ) & 7		117146	1		&			
+ANR	118406	ShiftExpression	v >> 1		117146	0		>>			
+ANR	118407	Identifier	v		117146	0					
+ANR	118408	PrimaryExpression	1		117146	1					
+ANR	118409	PrimaryExpression	7		117146	1					
+ANR	118410	ExpressionStatement	CH -> FB = feedback ? ( 8 + 1 ) - feedback : 0	479:2:5964:6006	117146	1	True				
+ANR	118411	AssignmentExpression	CH -> FB = feedback ? ( 8 + 1 ) - feedback : 0		117146	0		=			
+ANR	118412	PtrMemberAccess	CH -> FB		117146	0					
+ANR	118413	Identifier	CH		117146	0					
+ANR	118414	Identifier	FB		117146	1					
+ANR	118415	ConditionalExpression	feedback ? ( 8 + 1 ) - feedback : 0		117146	1					
+ANR	118416	Condition	feedback		117146	0					
+ANR	118417	Identifier	feedback		117146	0					
+ANR	118418	AdditiveExpression	( 8 + 1 ) - feedback		117146	1		-			
+ANR	118419	AdditiveExpression	8 + 1		117146	0		+			
+ANR	118420	PrimaryExpression	8		117146	0					
+ANR	118421	PrimaryExpression	1		117146	1					
+ANR	118422	Identifier	feedback		117146	1					
+ANR	118423	PrimaryExpression	0		117146	2					
+ANR	118424	ExpressionStatement	CH -> CON = v & 1	481:2:6011:6024	117146	2	True				
+ANR	118425	AssignmentExpression	CH -> CON = v & 1		117146	0		=			
+ANR	118426	PtrMemberAccess	CH -> CON		117146	0					
+ANR	118427	Identifier	CH		117146	0					
+ANR	118428	Identifier	CON		117146	1					
+ANR	118429	BitAndExpression	v & 1		117146	1		&			
+ANR	118430	Identifier	v		117146	0					
+ANR	118431	PrimaryExpression	1		117146	1					
+ANR	118432	ExpressionStatement	set_algorythm ( CH )	483:2:6029:6046	117146	3	True				
+ANR	118433	CallExpression	set_algorythm ( CH )		117146	0					
+ANR	118434	Callee	set_algorythm		117146	0					
+ANR	118435	Identifier	set_algorythm		117146	0					
+ANR	118436	ArgumentList	CH		117146	1					
+ANR	118437	Argument	CH		117146	0					
+ANR	118438	Identifier	CH		117146	0					
+ANR	118439	ReturnStatement	return ;	487:2:6056:6062	117146	34	True				
+ANR	118440	Label	case 0xe0 :	489:1:6066:6075	117146	35	True				
+ANR	118441	ExpressionStatement	slot = slot_array [ r & 0x1f ]	491:2:6096:6121	117146	36	True				
+ANR	118442	AssignmentExpression	slot = slot_array [ r & 0x1f ]		117146	0		=			
+ANR	118443	Identifier	slot		117146	0					
+ANR	118444	ArrayIndexing	slot_array [ r & 0x1f ]		117146	1					
+ANR	118445	Identifier	slot_array		117146	0					
+ANR	118446	BitAndExpression	r & 0x1f		117146	1		&			
+ANR	118447	Identifier	r		117146	0					
+ANR	118448	PrimaryExpression	0x1f		117146	1					
+ANR	118449	IfStatement	if ( slot == - 1 )		117146	37					
+ANR	118450	Condition	slot == - 1	493:5:6129:6138	117146	0	True				
+ANR	118451	EqualityExpression	slot == - 1		117146	0		==			
+ANR	118452	Identifier	slot		117146	0					
+ANR	118453	UnaryOperationExpression	- 1		117146	1					
+ANR	118454	UnaryOperator	-		117146	0					
+ANR	118455	PrimaryExpression	1		117146	1					
+ANR	118456	ReturnStatement	return ;	493:17:6141:6147	117146	1	True				
+ANR	118457	ExpressionStatement	CH = & OPL -> P_CH [ slot / 2 ]	495:2:6152:6175	117146	38	True				
+ANR	118458	AssignmentExpression	CH = & OPL -> P_CH [ slot / 2 ]		117146	0		=			
+ANR	118459	Identifier	CH		117146	0					
+ANR	118460	UnaryOperationExpression	& OPL -> P_CH [ slot / 2 ]		117146	1					
+ANR	118461	UnaryOperator	&		117146	0					
+ANR	118462	ArrayIndexing	OPL -> P_CH [ slot / 2 ]		117146	1					
+ANR	118463	PtrMemberAccess	OPL -> P_CH		117146	0					
+ANR	118464	Identifier	OPL		117146	0					
+ANR	118465	Identifier	P_CH		117146	1					
+ANR	118466	MultiplicativeExpression	slot / 2		117146	1		/			
+ANR	118467	Identifier	slot		117146	0					
+ANR	118468	PrimaryExpression	2		117146	1					
+ANR	118469	IfStatement	if ( OPL -> wavesel )		117146	39					
+ANR	118470	Condition	OPL -> wavesel	497:5:6183:6194	117146	0	True				
+ANR	118471	PtrMemberAccess	OPL -> wavesel		117146	0					
+ANR	118472	Identifier	OPL		117146	0					
+ANR	118473	Identifier	wavesel		117146	1					
+ANR	118474	CompoundStatement		497:2:6147:6147	117146	1					
+ANR	118475	ExpressionStatement	CH -> SLOT [ slot & 1 ] . wavetable = & SIN_TABLE [ ( v & 0x03 ) * SIN_ENT ]	503:3:6272:6329	117146	0	True				
+ANR	118476	AssignmentExpression	CH -> SLOT [ slot & 1 ] . wavetable = & SIN_TABLE [ ( v & 0x03 ) * SIN_ENT ]		117146	0		=			
+ANR	118477	MemberAccess	CH -> SLOT [ slot & 1 ] . wavetable		117146	0					
+ANR	118478	ArrayIndexing	CH -> SLOT [ slot & 1 ]		117146	0					
+ANR	118479	PtrMemberAccess	CH -> SLOT		117146	0					
+ANR	118480	Identifier	CH		117146	0					
+ANR	118481	Identifier	SLOT		117146	1					
+ANR	118482	BitAndExpression	slot & 1		117146	1		&			
+ANR	118483	Identifier	slot		117146	0					
+ANR	118484	PrimaryExpression	1		117146	1					
+ANR	118485	Identifier	wavetable		117146	1					
+ANR	118486	UnaryOperationExpression	& SIN_TABLE [ ( v & 0x03 ) * SIN_ENT ]		117146	1					
+ANR	118487	UnaryOperator	&		117146	0					
+ANR	118488	ArrayIndexing	SIN_TABLE [ ( v & 0x03 ) * SIN_ENT ]		117146	1					
+ANR	118489	Identifier	SIN_TABLE		117146	0					
+ANR	118490	MultiplicativeExpression	( v & 0x03 ) * SIN_ENT		117146	1		*			
+ANR	118491	BitAndExpression	v & 0x03		117146	0		&			
+ANR	118492	Identifier	v		117146	0					
+ANR	118493	PrimaryExpression	0x03		117146	1					
+ANR	118494	Identifier	SIN_ENT		117146	1					
+ANR	118495	ReturnStatement	return ;	507:2:6339:6345	117146	40	True				
+ANR	118496	ReturnType	static void		117146	1					
+ANR	118497	Identifier	OPLWriteReg		117146	2					
+ANR	118498	ParameterList	"FM_OPL * OPL , int r , int v"		117146	3					
+ANR	118499	Parameter	FM_OPL * OPL	1:24:24:34	117146	0	True				
+ANR	118500	ParameterType	FM_OPL *		117146	0					
+ANR	118501	Identifier	OPL		117146	1					
+ANR	118502	Parameter	int r	1:37:37:41	117146	1	True				
+ANR	118503	ParameterType	int		117146	0					
+ANR	118504	Identifier	r		117146	1					
+ANR	118505	Parameter	int v	1:44:44:48	117146	2	True				
+ANR	118506	ParameterType	int		117146	0					
+ANR	118507	Identifier	v		117146	1					
+ANR	118508	CFGEntryNode	ENTRY		117146		True				
+ANR	118509	CFGExitNode	EXIT		117146		True				
+ANR	118510	Symbol	OPL -> P_CH [ 7 ] . SLOT		117146						
+ANR	118511	Symbol	SIN_TABLE		117146						
+ANR	118512	Symbol	OPL_TYPE_WAVESEL		117146						
+ANR	118513	Symbol	OPL -> portDirection		117146						
+ANR	118514	Symbol	OPL -> P_CH		117146						
+ANR	118515	Symbol	OPL -> portLatch		117146						
+ANR	118516	Symbol	* CH		117146						
+ANR	118517	Symbol	* fnum		117146						
+ANR	118518	Symbol	* * * OPL		117146						
+ANR	118519	Symbol	blockRv		117146						
+ANR	118520	Symbol	OPL		117146						
+ANR	118521	Symbol	AMS_TABLE		117146						
+ANR	118522	Symbol	OPL -> rythm		117146						
+ANR	118523	Symbol	OPL -> type		117146						
+ANR	118524	Symbol	* CH -> SLOT		117146						
+ANR	118525	Symbol	LOG_WAR		117146						
+ANR	118526	Symbol	feedback		117146						
+ANR	118527	Symbol	* slot		117146						
+ANR	118528	Symbol	CH -> kcode		117146						
+ANR	118529	Symbol	OPL -> port_param		117146						
+ANR	118530	Symbol	OPL -> wavesel		117146						
+ANR	118531	Symbol	rkey		117146						
+ANR	118532	Symbol	OPL -> ams_table		117146						
+ANR	118533	Symbol	OPL -> TimerParam		117146						
+ANR	118534	Symbol	OPL -> P_CH [ c ] . SLOT [ SLOT1 ] . wavetable		117146						
+ANR	118535	Symbol	CH -> SLOT		117146						
+ANR	118536	Symbol	OPL_TYPE_KEYBOARD		117146						
+ANR	118537	Symbol	OPL -> porthandler_w		117146						
+ANR	118538	Symbol	OPL -> keyboard_param		117146						
+ANR	118539	Symbol	slot_array		117146						
+ANR	118540	Symbol	OPL -> mode		117146						
+ANR	118541	Symbol	* * c		117146						
+ANR	118542	Symbol	OPL -> vib_table		117146						
+ANR	118543	Symbol	AMS_ENT		117146						
+ANR	118544	Symbol	* OPL -> FN_TABLE		117146						
+ANR	118545	Symbol	OPL -> P_CH [ 8 ] . SLOT		117146						
+ANR	118546	Symbol	CH -> SLOT [ slot & 1 ] . wavetable		117146						
+ANR	118547	Symbol	* OPL -> P_CH [ 6 ] . op1_out		117146						
+ANR	118548	Symbol	* CH -> op1_out		117146						
+ANR	118549	Symbol	VIB_TABLE		117146						
+ANR	118550	Symbol	OPL_TYPE_ADPCM		117146						
+ANR	118551	Symbol	* slot_array		117146						
+ANR	118552	Symbol	* OPL -> P_CH [ c ] . SLOT		117146						
+ANR	118553	Symbol	interval		117146						
+ANR	118554	Symbol	CH -> keyon		117146						
+ANR	118555	Symbol	SLOT2		117146						
+ANR	118556	Symbol	* OPL -> T		117146						
+ANR	118557	Symbol	SLOT1		117146						
+ANR	118558	Symbol	CH -> CON		117146						
+ANR	118559	Symbol	* OPL		117146						
+ANR	118560	Symbol	slot		117146						
+ANR	118561	Symbol	VIB_ENT		117146						
+ANR	118562	Symbol	OPL -> FN_TABLE		117146						
+ANR	118563	Symbol	OPL_TYPE_IO		117146						
+ANR	118564	Symbol	CH -> block_fnum		117146						
+ANR	118565	Symbol	fnum		117146						
+ANR	118566	Symbol	KSL_TABLE		117146						
+ANR	118567	Symbol	* * CH		117146						
+ANR	118568	Symbol	* * OPL -> P_CH		117146						
+ANR	118569	Symbol	OPL -> P_CH [ c ] . SLOT		117146						
+ANR	118570	Symbol	OPL -> st		117146						
+ANR	118571	Symbol	* OPL -> st		117146						
+ANR	118572	Symbol	* * OPL		117146						
+ANR	118573	Symbol	CH -> op1_out		117146						
+ANR	118574	Symbol	c		117146						
+ANR	118575	Symbol	OPL -> keyboardhandler_w		117146						
+ANR	118576	Symbol	CH -> ksl_base		117146						
+ANR	118577	Symbol	CH		117146						
+ANR	118578	Symbol	* OPL -> P_CH		117146						
+ANR	118579	Symbol	* SLOT2		117146						
+ANR	118580	Symbol	* KSL_TABLE		117146						
+ANR	118581	Symbol	SIN_ENT		117146						
+ANR	118582	Symbol	* SLOT1		117146						
+ANR	118583	Symbol	* block_fnum		117146						
+ANR	118584	Symbol	* c		117146						
+ANR	118585	Symbol	OPL -> T		117146						
+ANR	118586	Symbol	OPL -> P_CH [ 6 ] . op1_out		117146						
+ANR	118587	Symbol	keyon		117146						
+ANR	118588	Symbol	OPL -> P_CH [ c ] . SLOT [ SLOT2 ] . wavetable		117146						
+ANR	118589	Symbol	st2		117146						
+ANR	118590	Symbol	CH -> fc		117146						
+ANR	118591	Symbol	st1		117146						
+ANR	118592	Symbol	CH -> FB		117146						
+ANR	118593	Symbol	r		117146						
+ANR	118594	Symbol	OPL -> deltat		117146						
+ANR	118595	Symbol	OPL -> TimerBase		117146						
+ANR	118596	Symbol	v		117146						
+ANR	118597	Symbol	OPL -> max_ch		117146						
+ANR	118598	Symbol	block_fnum		117146						
+ANR	118599	Symbol	OPL -> TimerHandler		117146						
+ANR	118600	Symbol	* r		117146						
+ANR	118601	Symbol	OPL -> P_CH [ 6 ] . SLOT		117146						

@@ -1,0 +1,192 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5919106	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_co_writev_1_0.c								
+ANR	5919107	Function	nbd_co_writev_1	1:0:0:802							
+ANR	5919108	FunctionDef	"nbd_co_writev_1 (BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov , int offset)"		5919107	0					
+ANR	5919109	CompoundStatement		7:0:174:802	5919107	0					
+ANR	5919110	IdentifierDeclStatement	BDRVNBDState * s = bs -> opaque ;	9:4:181:209	5919107	0	True				
+ANR	5919111	IdentifierDecl	* s = bs -> opaque		5919107	0					
+ANR	5919112	IdentifierDeclType	BDRVNBDState *		5919107	0					
+ANR	5919113	Identifier	s		5919107	1					
+ANR	5919114	AssignmentExpression	* s = bs -> opaque		5919107	2		=			
+ANR	5919115	Identifier	s		5919107	0					
+ANR	5919116	PtrMemberAccess	bs -> opaque		5919107	1					
+ANR	5919117	Identifier	bs		5919107	0					
+ANR	5919118	Identifier	opaque		5919107	1					
+ANR	5919119	IdentifierDeclStatement	struct nbd_request request ;	11:4:216:242	5919107	1	True				
+ANR	5919120	IdentifierDecl	request		5919107	0					
+ANR	5919121	IdentifierDeclType	struct nbd_request		5919107	0					
+ANR	5919122	Identifier	request		5919107	1					
+ANR	5919123	IdentifierDeclStatement	struct nbd_reply reply ;	13:4:249:271	5919107	2	True				
+ANR	5919124	IdentifierDecl	reply		5919107	0					
+ANR	5919125	IdentifierDeclType	struct nbd_reply		5919107	0					
+ANR	5919126	Identifier	reply		5919107	1					
+ANR	5919127	ExpressionStatement	request . type = NBD_CMD_WRITE	17:4:280:308	5919107	3	True				
+ANR	5919128	AssignmentExpression	request . type = NBD_CMD_WRITE		5919107	0		=			
+ANR	5919129	MemberAccess	request . type		5919107	0					
+ANR	5919130	Identifier	request		5919107	0					
+ANR	5919131	Identifier	type		5919107	1					
+ANR	5919132	Identifier	NBD_CMD_WRITE		5919107	1					
+ANR	5919133	IfStatement	if ( ! bdrv_enable_write_cache ( bs ) && ( s -> nbdflags & NBD_FLAG_SEND_FUA ) )		5919107	4					
+ANR	5919134	Condition	! bdrv_enable_write_cache ( bs ) && ( s -> nbdflags & NBD_FLAG_SEND_FUA )	19:8:319:383	5919107	0	True				
+ANR	5919135	AndExpression	! bdrv_enable_write_cache ( bs ) && ( s -> nbdflags & NBD_FLAG_SEND_FUA )		5919107	0		&&			
+ANR	5919136	UnaryOperationExpression	! bdrv_enable_write_cache ( bs )		5919107	0					
+ANR	5919137	UnaryOperator	!		5919107	0					
+ANR	5919138	CallExpression	bdrv_enable_write_cache ( bs )		5919107	1					
+ANR	5919139	Callee	bdrv_enable_write_cache		5919107	0					
+ANR	5919140	Identifier	bdrv_enable_write_cache		5919107	0					
+ANR	5919141	ArgumentList	bs		5919107	1					
+ANR	5919142	Argument	bs		5919107	0					
+ANR	5919143	Identifier	bs		5919107	0					
+ANR	5919144	BitAndExpression	s -> nbdflags & NBD_FLAG_SEND_FUA		5919107	1		&			
+ANR	5919145	PtrMemberAccess	s -> nbdflags		5919107	0					
+ANR	5919146	Identifier	s		5919107	0					
+ANR	5919147	Identifier	nbdflags		5919107	1					
+ANR	5919148	Identifier	NBD_FLAG_SEND_FUA		5919107	1					
+ANR	5919149	CompoundStatement		13:75:211:211	5919107	1					
+ANR	5919150	ExpressionStatement	request . type |= NBD_CMD_FLAG_FUA	21:8:397:429	5919107	0	True				
+ANR	5919151	AssignmentExpression	request . type |= NBD_CMD_FLAG_FUA		5919107	0		|=			
+ANR	5919152	MemberAccess	request . type		5919107	0					
+ANR	5919153	Identifier	request		5919107	0					
+ANR	5919154	Identifier	type		5919107	1					
+ANR	5919155	Identifier	NBD_CMD_FLAG_FUA		5919107	1					
+ANR	5919156	ExpressionStatement	request . from = sector_num * 512	27:4:445:476	5919107	5	True				
+ANR	5919157	AssignmentExpression	request . from = sector_num * 512		5919107	0		=			
+ANR	5919158	MemberAccess	request . from		5919107	0					
+ANR	5919159	Identifier	request		5919107	0					
+ANR	5919160	Identifier	from		5919107	1					
+ANR	5919161	MultiplicativeExpression	sector_num * 512		5919107	1		*			
+ANR	5919162	Identifier	sector_num		5919107	0					
+ANR	5919163	PrimaryExpression	512		5919107	1					
+ANR	5919164	ExpressionStatement	request . len = nb_sectors * 512	29:4:483:513	5919107	6	True				
+ANR	5919165	AssignmentExpression	request . len = nb_sectors * 512		5919107	0		=			
+ANR	5919166	MemberAccess	request . len		5919107	0					
+ANR	5919167	Identifier	request		5919107	0					
+ANR	5919168	Identifier	len		5919107	1					
+ANR	5919169	MultiplicativeExpression	nb_sectors * 512		5919107	1		*			
+ANR	5919170	Identifier	nb_sectors		5919107	0					
+ANR	5919171	PrimaryExpression	512		5919107	1					
+ANR	5919172	ExpressionStatement	"nbd_coroutine_start ( s , & request )"	33:4:522:554	5919107	7	True				
+ANR	5919173	CallExpression	"nbd_coroutine_start ( s , & request )"		5919107	0					
+ANR	5919174	Callee	nbd_coroutine_start		5919107	0					
+ANR	5919175	Identifier	nbd_coroutine_start		5919107	0					
+ANR	5919176	ArgumentList	s		5919107	1					
+ANR	5919177	Argument	s		5919107	0					
+ANR	5919178	Identifier	s		5919107	0					
+ANR	5919179	Argument	& request		5919107	1					
+ANR	5919180	UnaryOperationExpression	& request		5919107	0					
+ANR	5919181	UnaryOperator	&		5919107	0					
+ANR	5919182	Identifier	request		5919107	1					
+ANR	5919183	IfStatement	"if ( nbd_co_send_request ( s , & request , qiov -> iov , offset ) == - 1 )"		5919107	8					
+ANR	5919184	Condition	"nbd_co_send_request ( s , & request , qiov -> iov , offset ) == - 1"	35:8:565:621	5919107	0	True				
+ANR	5919185	EqualityExpression	"nbd_co_send_request ( s , & request , qiov -> iov , offset ) == - 1"		5919107	0		==			
+ANR	5919186	CallExpression	"nbd_co_send_request ( s , & request , qiov -> iov , offset )"		5919107	0					
+ANR	5919187	Callee	nbd_co_send_request		5919107	0					
+ANR	5919188	Identifier	nbd_co_send_request		5919107	0					
+ANR	5919189	ArgumentList	s		5919107	1					
+ANR	5919190	Argument	s		5919107	0					
+ANR	5919191	Identifier	s		5919107	0					
+ANR	5919192	Argument	& request		5919107	1					
+ANR	5919193	UnaryOperationExpression	& request		5919107	0					
+ANR	5919194	UnaryOperator	&		5919107	0					
+ANR	5919195	Identifier	request		5919107	1					
+ANR	5919196	Argument	qiov -> iov		5919107	2					
+ANR	5919197	PtrMemberAccess	qiov -> iov		5919107	0					
+ANR	5919198	Identifier	qiov		5919107	0					
+ANR	5919199	Identifier	iov		5919107	1					
+ANR	5919200	Argument	offset		5919107	3					
+ANR	5919201	Identifier	offset		5919107	0					
+ANR	5919202	UnaryOperationExpression	- 1		5919107	1					
+ANR	5919203	UnaryOperator	-		5919107	0					
+ANR	5919204	PrimaryExpression	1		5919107	1					
+ANR	5919205	CompoundStatement		29:67:449:449	5919107	1					
+ANR	5919206	ExpressionStatement	reply . error = errno	37:8:635:654	5919107	0	True				
+ANR	5919207	AssignmentExpression	reply . error = errno		5919107	0		=			
+ANR	5919208	MemberAccess	reply . error		5919107	0					
+ANR	5919209	Identifier	reply		5919107	0					
+ANR	5919210	Identifier	error		5919107	1					
+ANR	5919211	Identifier	errno		5919107	1					
+ANR	5919212	ElseStatement	else		5919107	0					
+ANR	5919213	CompoundStatement		33:11:493:493	5919107	0					
+ANR	5919214	ExpressionStatement	"nbd_co_receive_reply ( s , & request , & reply , NULL , 0 )"	41:8:679:729	5919107	0	True				
+ANR	5919215	CallExpression	"nbd_co_receive_reply ( s , & request , & reply , NULL , 0 )"		5919107	0					
+ANR	5919216	Callee	nbd_co_receive_reply		5919107	0					
+ANR	5919217	Identifier	nbd_co_receive_reply		5919107	0					
+ANR	5919218	ArgumentList	s		5919107	1					
+ANR	5919219	Argument	s		5919107	0					
+ANR	5919220	Identifier	s		5919107	0					
+ANR	5919221	Argument	& request		5919107	1					
+ANR	5919222	UnaryOperationExpression	& request		5919107	0					
+ANR	5919223	UnaryOperator	&		5919107	0					
+ANR	5919224	Identifier	request		5919107	1					
+ANR	5919225	Argument	& reply		5919107	2					
+ANR	5919226	UnaryOperationExpression	& reply		5919107	0					
+ANR	5919227	UnaryOperator	&		5919107	0					
+ANR	5919228	Identifier	reply		5919107	1					
+ANR	5919229	Argument	NULL		5919107	3					
+ANR	5919230	Identifier	NULL		5919107	0					
+ANR	5919231	Argument	0		5919107	4					
+ANR	5919232	PrimaryExpression	0		5919107	0					
+ANR	5919233	ExpressionStatement	"nbd_coroutine_end ( s , & request )"	45:4:743:773	5919107	9	True				
+ANR	5919234	CallExpression	"nbd_coroutine_end ( s , & request )"		5919107	0					
+ANR	5919235	Callee	nbd_coroutine_end		5919107	0					
+ANR	5919236	Identifier	nbd_coroutine_end		5919107	0					
+ANR	5919237	ArgumentList	s		5919107	1					
+ANR	5919238	Argument	s		5919107	0					
+ANR	5919239	Identifier	s		5919107	0					
+ANR	5919240	Argument	& request		5919107	1					
+ANR	5919241	UnaryOperationExpression	& request		5919107	0					
+ANR	5919242	UnaryOperator	&		5919107	0					
+ANR	5919243	Identifier	request		5919107	1					
+ANR	5919244	ReturnStatement	return - reply . error ;	47:4:780:799	5919107	10	True				
+ANR	5919245	UnaryOperationExpression	- reply . error		5919107	0					
+ANR	5919246	UnaryOperator	-		5919107	0					
+ANR	5919247	MemberAccess	reply . error		5919107	1					
+ANR	5919248	Identifier	reply		5919107	0					
+ANR	5919249	Identifier	error		5919107	1					
+ANR	5919250	ReturnType	static int		5919107	1					
+ANR	5919251	Identifier	nbd_co_writev_1		5919107	2					
+ANR	5919252	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov , int offset"		5919107	3					
+ANR	5919253	Parameter	BlockDriverState * bs	1:27:27:46	5919107	0	True				
+ANR	5919254	ParameterType	BlockDriverState *		5919107	0					
+ANR	5919255	Identifier	bs		5919107	1					
+ANR	5919256	Parameter	int64_t sector_num	1:49:49:66	5919107	1	True				
+ANR	5919257	ParameterType	int64_t		5919107	0					
+ANR	5919258	Identifier	sector_num		5919107	1					
+ANR	5919259	Parameter	int nb_sectors	3:27:97:110	5919107	2	True				
+ANR	5919260	ParameterType	int		5919107	0					
+ANR	5919261	Identifier	nb_sectors		5919107	1					
+ANR	5919262	Parameter	QEMUIOVector * qiov	3:43:113:130	5919107	3	True				
+ANR	5919263	ParameterType	QEMUIOVector *		5919107	0					
+ANR	5919264	Identifier	qiov		5919107	1					
+ANR	5919265	Parameter	int offset	5:27:161:170	5919107	4	True				
+ANR	5919266	ParameterType	int		5919107	0					
+ANR	5919267	Identifier	offset		5919107	1					
+ANR	5919268	CFGEntryNode	ENTRY		5919107		True				
+ANR	5919269	CFGExitNode	EXIT		5919107		True				
+ANR	5919270	Symbol	request		5919107						
+ANR	5919271	Symbol	nb_sectors		5919107						
+ANR	5919272	Symbol	& request		5919107						
+ANR	5919273	Symbol	s -> nbdflags		5919107						
+ANR	5919274	Symbol	qiov		5919107						
+ANR	5919275	Symbol	& reply		5919107						
+ANR	5919276	Symbol	bs		5919107						
+ANR	5919277	Symbol	request . from		5919107						
+ANR	5919278	Symbol	* bs		5919107						
+ANR	5919279	Symbol	reply . error		5919107						
+ANR	5919280	Symbol	* qiov		5919107						
+ANR	5919281	Symbol	reply		5919107						
+ANR	5919282	Symbol	nbd_co_send_request		5919107						
+ANR	5919283	Symbol	errno		5919107						
+ANR	5919284	Symbol	NULL		5919107						
+ANR	5919285	Symbol	offset		5919107						
+ANR	5919286	Symbol	bs -> opaque		5919107						
+ANR	5919287	Symbol	bdrv_enable_write_cache		5919107						
+ANR	5919288	Symbol	sector_num		5919107						
+ANR	5919289	Symbol	request . len		5919107						
+ANR	5919290	Symbol	s		5919107						
+ANR	5919291	Symbol	NBD_FLAG_SEND_FUA		5919107						
+ANR	5919292	Symbol	NBD_CMD_FLAG_FUA		5919107						
+ANR	5919293	Symbol	qiov -> iov		5919107						
+ANR	5919294	Symbol	request . type		5919107						
+ANR	5919295	Symbol	NBD_CMD_WRITE		5919107						
+ANR	5919296	Symbol	* s		5919107						

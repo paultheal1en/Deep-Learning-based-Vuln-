@@ -1,0 +1,89 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5006208	File	/home/p4ultr4n/workplace/ReVeal/raw_code/iscsi_allocationmap_clear_0.c								
+ANR	5006209	Function	iscsi_allocationmap_clear	1:0:0:532							
+ANR	5006210	FunctionDef	"iscsi_allocationmap_clear (IscsiLun * iscsilun , int64_t sector_num , int nb_sectors)"		5006209	0					
+ANR	5006211	CompoundStatement		5:0:134:532	5006209	0					
+ANR	5006212	IdentifierDeclStatement	"int64_t cluster_num , nb_clusters ;"	7:4:141:173	5006209	0	True				
+ANR	5006213	IdentifierDecl	cluster_num		5006209	0					
+ANR	5006214	IdentifierDeclType	int64_t		5006209	0					
+ANR	5006215	Identifier	cluster_num		5006209	1					
+ANR	5006216	IdentifierDecl	nb_clusters		5006209	1					
+ANR	5006217	IdentifierDeclType	int64_t		5006209	0					
+ANR	5006218	Identifier	nb_clusters		5006209	1					
+ANR	5006219	IfStatement	if ( iscsilun -> allocationmap == NULL )		5006209	1					
+ANR	5006220	Condition	iscsilun -> allocationmap == NULL	9:8:184:214	5006209	0	True				
+ANR	5006221	EqualityExpression	iscsilun -> allocationmap == NULL		5006209	0		==			
+ANR	5006222	PtrMemberAccess	iscsilun -> allocationmap		5006209	0					
+ANR	5006223	Identifier	iscsilun		5006209	0					
+ANR	5006224	Identifier	allocationmap		5006209	1					
+ANR	5006225	Identifier	NULL		5006209	1					
+ANR	5006226	CompoundStatement		5:41:82:82	5006209	1					
+ANR	5006227	ReturnStatement	return ;	11:8:228:234	5006209	0	True				
+ANR	5006228	ExpressionStatement	"cluster_num = DIV_ROUND_UP ( sector_num , iscsilun -> cluster_sectors )"	15:4:248:313	5006209	2	True				
+ANR	5006229	AssignmentExpression	"cluster_num = DIV_ROUND_UP ( sector_num , iscsilun -> cluster_sectors )"		5006209	0		=			
+ANR	5006230	Identifier	cluster_num		5006209	0					
+ANR	5006231	CallExpression	"DIV_ROUND_UP ( sector_num , iscsilun -> cluster_sectors )"		5006209	1					
+ANR	5006232	Callee	DIV_ROUND_UP		5006209	0					
+ANR	5006233	Identifier	DIV_ROUND_UP		5006209	0					
+ANR	5006234	ArgumentList	sector_num		5006209	1					
+ANR	5006235	Argument	sector_num		5006209	0					
+ANR	5006236	Identifier	sector_num		5006209	0					
+ANR	5006237	Argument	iscsilun -> cluster_sectors		5006209	1					
+ANR	5006238	PtrMemberAccess	iscsilun -> cluster_sectors		5006209	0					
+ANR	5006239	Identifier	iscsilun		5006209	0					
+ANR	5006240	Identifier	cluster_sectors		5006209	1					
+ANR	5006241	ExpressionStatement	nb_clusters = ( sector_num + nb_sectors ) / iscsilun -> cluster_sectors - cluster_num	17:4:320:420	5006209	3	True				
+ANR	5006242	AssignmentExpression	nb_clusters = ( sector_num + nb_sectors ) / iscsilun -> cluster_sectors - cluster_num		5006209	0		=			
+ANR	5006243	Identifier	nb_clusters		5006209	0					
+ANR	5006244	AdditiveExpression	( sector_num + nb_sectors ) / iscsilun -> cluster_sectors - cluster_num		5006209	1		-			
+ANR	5006245	MultiplicativeExpression	( sector_num + nb_sectors ) / iscsilun -> cluster_sectors		5006209	0		/			
+ANR	5006246	AdditiveExpression	sector_num + nb_sectors		5006209	0		+			
+ANR	5006247	Identifier	sector_num		5006209	0					
+ANR	5006248	Identifier	nb_sectors		5006209	1					
+ANR	5006249	PtrMemberAccess	iscsilun -> cluster_sectors		5006209	1					
+ANR	5006250	Identifier	iscsilun		5006209	0					
+ANR	5006251	Identifier	cluster_sectors		5006209	1					
+ANR	5006252	Identifier	cluster_num		5006209	1					
+ANR	5006253	IfStatement	if ( nb_clusters > 0 )		5006209	4					
+ANR	5006254	Condition	nb_clusters > 0	21:8:431:445	5006209	0	True				
+ANR	5006255	RelationalExpression	nb_clusters > 0		5006209	0		>			
+ANR	5006256	Identifier	nb_clusters		5006209	0					
+ANR	5006257	PrimaryExpression	0		5006209	1					
+ANR	5006258	CompoundStatement		17:25:313:313	5006209	1					
+ANR	5006259	ExpressionStatement	"bitmap_clear ( iscsilun -> allocationmap , cluster_num , nb_clusters )"	23:8:459:522	5006209	0	True				
+ANR	5006260	CallExpression	"bitmap_clear ( iscsilun -> allocationmap , cluster_num , nb_clusters )"		5006209	0					
+ANR	5006261	Callee	bitmap_clear		5006209	0					
+ANR	5006262	Identifier	bitmap_clear		5006209	0					
+ANR	5006263	ArgumentList	iscsilun -> allocationmap		5006209	1					
+ANR	5006264	Argument	iscsilun -> allocationmap		5006209	0					
+ANR	5006265	PtrMemberAccess	iscsilun -> allocationmap		5006209	0					
+ANR	5006266	Identifier	iscsilun		5006209	0					
+ANR	5006267	Identifier	allocationmap		5006209	1					
+ANR	5006268	Argument	cluster_num		5006209	1					
+ANR	5006269	Identifier	cluster_num		5006209	0					
+ANR	5006270	Argument	nb_clusters		5006209	2					
+ANR	5006271	Identifier	nb_clusters		5006209	0					
+ANR	5006272	ReturnType	static void		5006209	1					
+ANR	5006273	Identifier	iscsi_allocationmap_clear		5006209	2					
+ANR	5006274	ParameterList	"IscsiLun * iscsilun , int64_t sector_num , int nb_sectors"		5006209	3					
+ANR	5006275	Parameter	IscsiLun * iscsilun	1:38:38:55	5006209	0	True				
+ANR	5006276	ParameterType	IscsiLun *		5006209	0					
+ANR	5006277	Identifier	iscsilun		5006209	1					
+ANR	5006278	Parameter	int64_t sector_num	1:58:58:75	5006209	1	True				
+ANR	5006279	ParameterType	int64_t		5006209	0					
+ANR	5006280	Identifier	sector_num		5006209	1					
+ANR	5006281	Parameter	int nb_sectors	3:38:117:130	5006209	2	True				
+ANR	5006282	ParameterType	int		5006209	0					
+ANR	5006283	Identifier	nb_sectors		5006209	1					
+ANR	5006284	CFGEntryNode	ENTRY		5006209		True				
+ANR	5006285	CFGExitNode	EXIT		5006209		True				
+ANR	5006286	Symbol	nb_sectors		5006209						
+ANR	5006287	Symbol	iscsilun -> allocationmap		5006209						
+ANR	5006288	Symbol	NULL		5006209						
+ANR	5006289	Symbol	* iscsilun		5006209						
+ANR	5006290	Symbol	DIV_ROUND_UP		5006209						
+ANR	5006291	Symbol	iscsilun -> cluster_sectors		5006209						
+ANR	5006292	Symbol	nb_clusters		5006209						
+ANR	5006293	Symbol	iscsilun		5006209						
+ANR	5006294	Symbol	cluster_num		5006209						
+ANR	5006295	Symbol	sector_num		5006209						

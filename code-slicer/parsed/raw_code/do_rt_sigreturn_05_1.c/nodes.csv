@@ -1,0 +1,197 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	2620469	File	/home/p4ultr4n/workplace/ReVeal/raw_code/do_rt_sigreturn_05_1.c								
+ANR	2620470	Function	do_rt_sigreturn	1:0:0:872							
+ANR	2620471	FunctionDef	do_rt_sigreturn (CPUTLGState * env)		2620470	0					
+ANR	2620472	CompoundStatement		3:0:40:872	2620470	0					
+ANR	2620473	IdentifierDeclStatement	abi_ulong frame_addr = env -> regs [ TILEGX_R_SP ] ;	5:4:47:92	2620470	0	True				
+ANR	2620474	IdentifierDecl	frame_addr = env -> regs [ TILEGX_R_SP ]		2620470	0					
+ANR	2620475	IdentifierDeclType	abi_ulong		2620470	0					
+ANR	2620476	Identifier	frame_addr		2620470	1					
+ANR	2620477	AssignmentExpression	frame_addr = env -> regs [ TILEGX_R_SP ]		2620470	2		=			
+ANR	2620478	Identifier	frame_addr		2620470	0					
+ANR	2620479	ArrayIndexing	env -> regs [ TILEGX_R_SP ]		2620470	1					
+ANR	2620480	PtrMemberAccess	env -> regs		2620470	0					
+ANR	2620481	Identifier	env		2620470	0					
+ANR	2620482	Identifier	regs		2620470	1					
+ANR	2620483	Identifier	TILEGX_R_SP		2620470	1					
+ANR	2620484	IdentifierDeclStatement	struct target_rt_sigframe * frame ;	7:4:99:131	2620470	1	True				
+ANR	2620485	IdentifierDecl	* frame		2620470	0					
+ANR	2620486	IdentifierDeclType	struct target_rt_sigframe *		2620470	0					
+ANR	2620487	Identifier	frame		2620470	1					
+ANR	2620488	IdentifierDeclStatement	sigset_t set ;	9:4:138:150	2620470	2	True				
+ANR	2620489	IdentifierDecl	set		2620470	0					
+ANR	2620490	IdentifierDeclType	sigset_t		2620470	0					
+ANR	2620491	Identifier	set		2620470	1					
+ANR	2620492	ExpressionStatement	"trace_user_do_rt_sigreturn ( env , frame_addr )"	13:4:159:202	2620470	3	True				
+ANR	2620493	CallExpression	"trace_user_do_rt_sigreturn ( env , frame_addr )"		2620470	0					
+ANR	2620494	Callee	trace_user_do_rt_sigreturn		2620470	0					
+ANR	2620495	Identifier	trace_user_do_rt_sigreturn		2620470	0					
+ANR	2620496	ArgumentList	env		2620470	1					
+ANR	2620497	Argument	env		2620470	0					
+ANR	2620498	Identifier	env		2620470	0					
+ANR	2620499	Argument	frame_addr		2620470	1					
+ANR	2620500	Identifier	frame_addr		2620470	0					
+ANR	2620501	IfStatement	"if ( ! lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 ) )"		2620470	4					
+ANR	2620502	Condition	"! lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 )"	15:8:213:264	2620470	0	True				
+ANR	2620503	UnaryOperationExpression	"! lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 )"		2620470	0					
+ANR	2620504	UnaryOperator	!		2620470	0					
+ANR	2620505	CallExpression	"lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 )"		2620470	1					
+ANR	2620506	Callee	lock_user_struct		2620470	0					
+ANR	2620507	Identifier	lock_user_struct		2620470	0					
+ANR	2620508	ArgumentList	VERIFY_READ		2620470	1					
+ANR	2620509	Argument	VERIFY_READ		2620470	0					
+ANR	2620510	Identifier	VERIFY_READ		2620470	0					
+ANR	2620511	Argument	frame		2620470	1					
+ANR	2620512	Identifier	frame		2620470	0					
+ANR	2620513	Argument	frame_addr		2620470	2					
+ANR	2620514	Identifier	frame_addr		2620470	0					
+ANR	2620515	Argument	1		2620470	3					
+ANR	2620516	PrimaryExpression	1		2620470	0					
+ANR	2620517	CompoundStatement		13:62:226:226	2620470	1					
+ANR	2620518	GotoStatement	goto badframe ;	17:8:278:291	2620470	0	True				
+ANR	2620519	Identifier	badframe		2620470	0					
+ANR	2620520	ExpressionStatement	"target_to_host_sigset ( & set , & frame -> uc . tuc_sigmask )"	21:4:305:356	2620470	5	True				
+ANR	2620521	CallExpression	"target_to_host_sigset ( & set , & frame -> uc . tuc_sigmask )"		2620470	0					
+ANR	2620522	Callee	target_to_host_sigset		2620470	0					
+ANR	2620523	Identifier	target_to_host_sigset		2620470	0					
+ANR	2620524	ArgumentList	& set		2620470	1					
+ANR	2620525	Argument	& set		2620470	0					
+ANR	2620526	UnaryOperationExpression	& set		2620470	0					
+ANR	2620527	UnaryOperator	&		2620470	0					
+ANR	2620528	Identifier	set		2620470	1					
+ANR	2620529	Argument	& frame -> uc . tuc_sigmask		2620470	1					
+ANR	2620530	UnaryOperationExpression	& frame -> uc . tuc_sigmask		2620470	0					
+ANR	2620531	UnaryOperator	&		2620470	0					
+ANR	2620532	MemberAccess	frame -> uc . tuc_sigmask		2620470	1					
+ANR	2620533	PtrMemberAccess	frame -> uc		2620470	0					
+ANR	2620534	Identifier	frame		2620470	0					
+ANR	2620535	Identifier	uc		2620470	1					
+ANR	2620536	Identifier	tuc_sigmask		2620470	1					
+ANR	2620537	ExpressionStatement	"do_sigprocmask ( SIG_SETMASK , & set , NULL )"	23:4:363:402	2620470	6	True				
+ANR	2620538	CallExpression	"do_sigprocmask ( SIG_SETMASK , & set , NULL )"		2620470	0					
+ANR	2620539	Callee	do_sigprocmask		2620470	0					
+ANR	2620540	Identifier	do_sigprocmask		2620470	0					
+ANR	2620541	ArgumentList	SIG_SETMASK		2620470	1					
+ANR	2620542	Argument	SIG_SETMASK		2620470	0					
+ANR	2620543	Identifier	SIG_SETMASK		2620470	0					
+ANR	2620544	Argument	& set		2620470	1					
+ANR	2620545	UnaryOperationExpression	& set		2620470	0					
+ANR	2620546	UnaryOperator	&		2620470	0					
+ANR	2620547	Identifier	set		2620470	1					
+ANR	2620548	Argument	NULL		2620470	2					
+ANR	2620549	Identifier	NULL		2620470	0					
+ANR	2620550	ExpressionStatement	"restore_sigcontext ( env , & frame -> uc . tuc_mcontext )"	27:4:411:459	2620470	7	True				
+ANR	2620551	CallExpression	"restore_sigcontext ( env , & frame -> uc . tuc_mcontext )"		2620470	0					
+ANR	2620552	Callee	restore_sigcontext		2620470	0					
+ANR	2620553	Identifier	restore_sigcontext		2620470	0					
+ANR	2620554	ArgumentList	env		2620470	1					
+ANR	2620555	Argument	env		2620470	0					
+ANR	2620556	Identifier	env		2620470	0					
+ANR	2620557	Argument	& frame -> uc . tuc_mcontext		2620470	1					
+ANR	2620558	UnaryOperationExpression	& frame -> uc . tuc_mcontext		2620470	0					
+ANR	2620559	UnaryOperator	&		2620470	0					
+ANR	2620560	MemberAccess	frame -> uc . tuc_mcontext		2620470	1					
+ANR	2620561	PtrMemberAccess	frame -> uc		2620470	0					
+ANR	2620562	Identifier	frame		2620470	0					
+ANR	2620563	Identifier	uc		2620470	1					
+ANR	2620564	Identifier	tuc_mcontext		2620470	1					
+ANR	2620565	Statement	if	29:4:466:467	2620470	8	True				
+ANR	2620566	Statement	(	29:7:469:469	2620470	9	True				
+ANR	2620567	Statement	do_sigaltstack	29:8:470:483	2620470	10	True				
+ANR	2620568	Statement	(	29:22:484:484	2620470	11	True				
+ANR	2620569	Statement	frame_addr	29:23:485:494	2620470	12	True				
+ANR	2620570	Statement	+	29:34:496:496	2620470	13	True				
+ANR	2620571	Statement	offsetof	29:36:498:505	2620470	14	True				
+ANR	2620572	Statement	(	29:44:506:506	2620470	15	True				
+ANR	2620573	Statement	struct	29:45:507:512	2620470	16	True				
+ANR	2620574	Statement	target_rt_sigframe	29:52:514:531	2620470	17	True				
+ANR	2620575	Statement	","	29:70:532:532	2620470	18	True				
+ANR	2620576	Statement	uc	31:45:580:581	2620470	19	True				
+ANR	2620577	Statement	.	31:47:582:582	2620470	20	True				
+ANR	2620578	Statement	tuc_stack	31:48:583:591	2620470	21	True				
+ANR	2620579	Statement	)	31:57:592:592	2620470	22	True				
+ANR	2620580	Statement	","	31:58:593:593	2620470	23	True				
+ANR	2620581	Statement	0	33:23:619:619	2620470	24	True				
+ANR	2620582	Statement	","	33:24:620:620	2620470	25	True				
+ANR	2620583	Statement	env	33:26:622:624	2620470	26	True				
+ANR	2620584	Statement	->	33:29:625:626	2620470	27	True				
+ANR	2620585	Statement	regs	33:31:627:630	2620470	28	True				
+ANR	2620586	Statement	[	33:35:631:631	2620470	29	True				
+ANR	2620587	Statement	TILEGX_R_SP	33:36:632:642	2620470	30	True				
+ANR	2620588	Statement	]	33:47:643:643	2620470	31	True				
+ANR	2620589	Statement	)	33:48:644:644	2620470	32	True				
+ANR	2620590	Statement	==	33:50:646:647	2620470	33	True				
+ANR	2620591	Statement	-	33:53:649:649	2620470	34	True				
+ANR	2620592	Statement	EFAULT	33:54:650:655	2620470	35	True				
+ANR	2620593	Statement	)	33:60:656:656	2620470	36	True				
+ANR	2620594	CompoundStatement		31:62:617:617	2620470	37					
+ANR	2620595	GotoStatement	goto badframe ;	35:8:669:682	2620470	0	True				
+ANR	2620596	Identifier	badframe		2620470	0					
+ANR	2620597	ExpressionStatement	"unlock_user_struct ( frame , frame_addr , 0 )"	41:4:698:738	2620470	38	True				
+ANR	2620598	CallExpression	"unlock_user_struct ( frame , frame_addr , 0 )"		2620470	0					
+ANR	2620599	Callee	unlock_user_struct		2620470	0					
+ANR	2620600	Identifier	unlock_user_struct		2620470	0					
+ANR	2620601	ArgumentList	frame		2620470	1					
+ANR	2620602	Argument	frame		2620470	0					
+ANR	2620603	Identifier	frame		2620470	0					
+ANR	2620604	Argument	frame_addr		2620470	1					
+ANR	2620605	Identifier	frame_addr		2620470	0					
+ANR	2620606	Argument	0		2620470	2					
+ANR	2620607	PrimaryExpression	0		2620470	0					
+ANR	2620608	ReturnStatement	return env -> regs [ TILEGX_R_RE ] ;	43:4:745:774	2620470	39	True				
+ANR	2620609	ArrayIndexing	env -> regs [ TILEGX_R_RE ]		2620470	0					
+ANR	2620610	PtrMemberAccess	env -> regs		2620470	0					
+ANR	2620611	Identifier	env		2620470	0					
+ANR	2620612	Identifier	regs		2620470	1					
+ANR	2620613	Identifier	TILEGX_R_RE		2620470	1					
+ANR	2620614	Label	badframe :	49:1:782:790	2620470	40	True				
+ANR	2620615	Identifier	badframe		2620470	0					
+ANR	2620616	ExpressionStatement	"unlock_user_struct ( frame , frame_addr , 0 )"	51:4:797:837	2620470	41	True				
+ANR	2620617	CallExpression	"unlock_user_struct ( frame , frame_addr , 0 )"		2620470	0					
+ANR	2620618	Callee	unlock_user_struct		2620470	0					
+ANR	2620619	Identifier	unlock_user_struct		2620470	0					
+ANR	2620620	ArgumentList	frame		2620470	1					
+ANR	2620621	Argument	frame		2620470	0					
+ANR	2620622	Identifier	frame		2620470	0					
+ANR	2620623	Argument	frame_addr		2620470	1					
+ANR	2620624	Identifier	frame_addr		2620470	0					
+ANR	2620625	Argument	0		2620470	2					
+ANR	2620626	PrimaryExpression	0		2620470	0					
+ANR	2620627	ExpressionStatement	force_sig ( TARGET_SIGSEGV )	53:4:844:869	2620470	42	True				
+ANR	2620628	CallExpression	force_sig ( TARGET_SIGSEGV )		2620470	0					
+ANR	2620629	Callee	force_sig		2620470	0					
+ANR	2620630	Identifier	force_sig		2620470	0					
+ANR	2620631	ArgumentList	TARGET_SIGSEGV		2620470	1					
+ANR	2620632	Argument	TARGET_SIGSEGV		2620470	0					
+ANR	2620633	Identifier	TARGET_SIGSEGV		2620470	0					
+ANR	2620634	ReturnType	long		2620470	1					
+ANR	2620635	Identifier	do_rt_sigreturn		2620470	2					
+ANR	2620636	ParameterList	CPUTLGState * env		2620470	3					
+ANR	2620637	Parameter	CPUTLGState * env	1:21:21:36	2620470	0	True				
+ANR	2620638	ParameterType	CPUTLGState *		2620470	0					
+ANR	2620639	Identifier	env		2620470	1					
+ANR	2620640	CFGEntryNode	ENTRY		2620470		True				
+ANR	2620641	CFGExitNode	EXIT		2620470		True				
+ANR	2620642	Symbol	& frame -> uc		2620470						
+ANR	2620643	Symbol	* * env		2620470						
+ANR	2620644	Symbol	set		2620470						
+ANR	2620645	Symbol	frame -> uc		2620470						
+ANR	2620646	Symbol	NULL		2620470						
+ANR	2620647	Symbol	* frame		2620470						
+ANR	2620648	Symbol	TILEGX_R_RE		2620470						
+ANR	2620649	Symbol	lock_user_struct		2620470						
+ANR	2620650	Symbol	& frame -> uc . tuc_mcontext		2620470						
+ANR	2620651	Symbol	* env		2620470						
+ANR	2620652	Symbol	SIG_SETMASK		2620470						
+ANR	2620653	Symbol	VERIFY_READ		2620470						
+ANR	2620654	Symbol	env		2620470						
+ANR	2620655	Symbol	env -> regs		2620470						
+ANR	2620656	Symbol	* TILEGX_R_SP		2620470						
+ANR	2620657	Symbol	TILEGX_R_SP		2620470						
+ANR	2620658	Symbol	* env -> regs		2620470						
+ANR	2620659	Symbol	& set		2620470						
+ANR	2620660	Symbol	TARGET_SIGSEGV		2620470						
+ANR	2620661	Symbol	* TILEGX_R_RE		2620470						
+ANR	2620662	Symbol	frame_addr		2620470						
+ANR	2620663	Symbol	& frame -> uc . tuc_sigmask		2620470						
+ANR	2620664	Symbol	frame		2620470						

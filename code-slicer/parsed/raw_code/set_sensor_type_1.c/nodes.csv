@@ -1,0 +1,114 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7774087	File	/home/p4ultr4n/workplace/ReVeal/raw_code/set_sensor_type_1.c								
+ANR	7774088	Function	set_sensor_type	1:0:0:589							
+ANR	7774089	FunctionDef	"set_sensor_type (IPMIBmcSim * ibs , uint8_t * cmd , unsigned int cmd_len , uint8_t * rsp , unsigned int * rsp_len , unsigned int max_rsp_len)"		7774088	0					
+ANR	7774090	CompoundStatement		9:0:241:589	7774088	0					
+ANR	7774091	IdentifierDeclStatement	IPMISensor * sens ;	11:4:248:264	7774088	0	True				
+ANR	7774092	IdentifierDecl	* sens		7774088	0					
+ANR	7774093	IdentifierDeclType	IPMISensor *		7774088	0					
+ANR	7774094	Identifier	sens		7774088	1					
+ANR	7774095	ExpressionStatement	IPMI_CHECK_CMD_LEN ( 5 )	17:4:275:296	7774088	1	True				
+ANR	7774096	CallExpression	IPMI_CHECK_CMD_LEN ( 5 )		7774088	0					
+ANR	7774097	Callee	IPMI_CHECK_CMD_LEN		7774088	0					
+ANR	7774098	Identifier	IPMI_CHECK_CMD_LEN		7774088	0					
+ANR	7774099	ArgumentList	5		7774088	1					
+ANR	7774100	Argument	5		7774088	0					
+ANR	7774101	PrimaryExpression	5		7774088	0					
+ANR	7774102	IfStatement	if ( ( cmd [ 2 ] > MAX_SENSORS ) || ! IPMI_SENSOR_GET_PRESENT ( ibs -> sensors + cmd [ 2 ] ) )		7774088	2					
+ANR	7774103	Condition	( cmd [ 2 ] > MAX_SENSORS ) || ! IPMI_SENSOR_GET_PRESENT ( ibs -> sensors + cmd [ 2 ] )	19:8:307:392	7774088	0	True				
+ANR	7774104	OrExpression	( cmd [ 2 ] > MAX_SENSORS ) || ! IPMI_SENSOR_GET_PRESENT ( ibs -> sensors + cmd [ 2 ] )		7774088	0		||			
+ANR	7774105	RelationalExpression	cmd [ 2 ] > MAX_SENSORS		7774088	0		>			
+ANR	7774106	ArrayIndexing	cmd [ 2 ]		7774088	0					
+ANR	7774107	Identifier	cmd		7774088	0					
+ANR	7774108	PrimaryExpression	2		7774088	1					
+ANR	7774109	Identifier	MAX_SENSORS		7774088	1					
+ANR	7774110	UnaryOperationExpression	! IPMI_SENSOR_GET_PRESENT ( ibs -> sensors + cmd [ 2 ] )		7774088	1					
+ANR	7774111	UnaryOperator	!		7774088	0					
+ANR	7774112	CallExpression	IPMI_SENSOR_GET_PRESENT ( ibs -> sensors + cmd [ 2 ] )		7774088	1					
+ANR	7774113	Callee	IPMI_SENSOR_GET_PRESENT		7774088	0					
+ANR	7774114	Identifier	IPMI_SENSOR_GET_PRESENT		7774088	0					
+ANR	7774115	ArgumentList	ibs -> sensors + cmd [ 2 ]		7774088	1					
+ANR	7774116	Argument	ibs -> sensors + cmd [ 2 ]		7774088	0					
+ANR	7774117	AdditiveExpression	ibs -> sensors + cmd [ 2 ]		7774088	0		+			
+ANR	7774118	PtrMemberAccess	ibs -> sensors		7774088	0					
+ANR	7774119	Identifier	ibs		7774088	0					
+ANR	7774120	Identifier	sensors		7774088	1					
+ANR	7774121	ArrayIndexing	cmd [ 2 ]		7774088	1					
+ANR	7774122	Identifier	cmd		7774088	0					
+ANR	7774123	PrimaryExpression	2		7774088	1					
+ANR	7774124	CompoundStatement		13:61:153:153	7774088	1					
+ANR	7774125	ExpressionStatement	rsp [ 2 ] = IPMI_CC_REQ_ENTRY_NOT_PRESENT	23:8:406:444	7774088	0	True				
+ANR	7774126	AssignmentExpression	rsp [ 2 ] = IPMI_CC_REQ_ENTRY_NOT_PRESENT		7774088	0		=			
+ANR	7774127	ArrayIndexing	rsp [ 2 ]		7774088	0					
+ANR	7774128	Identifier	rsp		7774088	0					
+ANR	7774129	PrimaryExpression	2		7774088	1					
+ANR	7774130	Identifier	IPMI_CC_REQ_ENTRY_NOT_PRESENT		7774088	1					
+ANR	7774131	ReturnStatement	return ;	25:8:455:461	7774088	1	True				
+ANR	7774132	ExpressionStatement	sens = ibs -> sensors + cmd [ 2 ]	29:4:475:503	7774088	3	True				
+ANR	7774133	AssignmentExpression	sens = ibs -> sensors + cmd [ 2 ]		7774088	0		=			
+ANR	7774134	Identifier	sens		7774088	0					
+ANR	7774135	AdditiveExpression	ibs -> sensors + cmd [ 2 ]		7774088	1		+			
+ANR	7774136	PtrMemberAccess	ibs -> sensors		7774088	0					
+ANR	7774137	Identifier	ibs		7774088	0					
+ANR	7774138	Identifier	sensors		7774088	1					
+ANR	7774139	ArrayIndexing	cmd [ 2 ]		7774088	1					
+ANR	7774140	Identifier	cmd		7774088	0					
+ANR	7774141	PrimaryExpression	2		7774088	1					
+ANR	7774142	ExpressionStatement	sens -> sensor_type = cmd [ 3 ]	31:4:510:536	7774088	4	True				
+ANR	7774143	AssignmentExpression	sens -> sensor_type = cmd [ 3 ]		7774088	0		=			
+ANR	7774144	PtrMemberAccess	sens -> sensor_type		7774088	0					
+ANR	7774145	Identifier	sens		7774088	0					
+ANR	7774146	Identifier	sensor_type		7774088	1					
+ANR	7774147	ArrayIndexing	cmd [ 3 ]		7774088	1					
+ANR	7774148	Identifier	cmd		7774088	0					
+ANR	7774149	PrimaryExpression	3		7774088	1					
+ANR	7774150	ExpressionStatement	sens -> evt_reading_type_code = cmd [ 4 ] & 0x7f	33:4:543:586	7774088	5	True				
+ANR	7774151	AssignmentExpression	sens -> evt_reading_type_code = cmd [ 4 ] & 0x7f		7774088	0		=			
+ANR	7774152	PtrMemberAccess	sens -> evt_reading_type_code		7774088	0					
+ANR	7774153	Identifier	sens		7774088	0					
+ANR	7774154	Identifier	evt_reading_type_code		7774088	1					
+ANR	7774155	BitAndExpression	cmd [ 4 ] & 0x7f		7774088	1		&			
+ANR	7774156	ArrayIndexing	cmd [ 4 ]		7774088	0					
+ANR	7774157	Identifier	cmd		7774088	0					
+ANR	7774158	PrimaryExpression	4		7774088	1					
+ANR	7774159	PrimaryExpression	0x7f		7774088	1					
+ANR	7774160	ReturnType	static void		7774088	1					
+ANR	7774161	Identifier	set_sensor_type		7774088	2					
+ANR	7774162	ParameterList	"IPMIBmcSim * ibs , uint8_t * cmd , unsigned int cmd_len , uint8_t * rsp , unsigned int * rsp_len , unsigned int max_rsp_len"		7774088	3					
+ANR	7774163	Parameter	IPMIBmcSim * ibs	1:28:28:42	7774088	0	True				
+ANR	7774164	ParameterType	IPMIBmcSim *		7774088	0					
+ANR	7774165	Identifier	ibs		7774088	1					
+ANR	7774166	Parameter	uint8_t * cmd	3:31:77:88	7774088	1	True				
+ANR	7774167	ParameterType	uint8_t *		7774088	0					
+ANR	7774168	Identifier	cmd		7774088	1					
+ANR	7774169	Parameter	unsigned int cmd_len	3:45:91:110	7774088	2	True				
+ANR	7774170	ParameterType	unsigned int		7774088	0					
+ANR	7774171	Identifier	cmd_len		7774088	1					
+ANR	7774172	Parameter	uint8_t * rsp	5:31:145:156	7774088	3	True				
+ANR	7774173	ParameterType	uint8_t *		7774088	0					
+ANR	7774174	Identifier	rsp		7774088	1					
+ANR	7774175	Parameter	unsigned int * rsp_len	5:45:159:179	7774088	4	True				
+ANR	7774176	ParameterType	unsigned int *		7774088	0					
+ANR	7774177	Identifier	rsp_len		7774088	1					
+ANR	7774178	Parameter	unsigned int max_rsp_len	7:31:214:237	7774088	5	True				
+ANR	7774179	ParameterType	unsigned int		7774088	0					
+ANR	7774180	Identifier	max_rsp_len		7774088	1					
+ANR	7774181	CFGEntryNode	ENTRY		7774088		True				
+ANR	7774182	CFGExitNode	EXIT		7774088		True				
+ANR	7774183	Symbol	sens		7774088						
+ANR	7774184	Symbol	MAX_SENSORS		7774088						
+ANR	7774185	Symbol	IPMI_CC_REQ_ENTRY_NOT_PRESENT		7774088						
+ANR	7774186	Symbol	cmd_len		7774088						
+ANR	7774187	Symbol	IPMI_SENSOR_GET_PRESENT		7774088						
+ANR	7774188	Symbol	* sens		7774088						
+ANR	7774189	Symbol	rsp		7774088						
+ANR	7774190	Symbol	sens -> sensor_type		7774088						
+ANR	7774191	Symbol	max_rsp_len		7774088						
+ANR	7774192	Symbol	* rsp		7774088						
+ANR	7774193	Symbol	ibs		7774088						
+ANR	7774194	Symbol	cmd		7774088						
+ANR	7774195	Symbol	* cmd		7774088						
+ANR	7774196	Symbol	* ibs		7774088						
+ANR	7774197	Symbol	sens -> evt_reading_type_code		7774088						
+ANR	7774198	Symbol	rsp_len		7774088						
+ANR	7774199	Symbol	ibs -> sensors		7774088						

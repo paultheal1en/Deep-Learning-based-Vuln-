@@ -1,0 +1,136 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6070526	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nvdimm_build_nfit_01_1.c								
+ANR	6070527	Function	nvdimm_build_nfit	1:0:0:739							
+ANR	6070528	FunctionDef	"nvdimm_build_nfit (GSList * device_list , GArray * table_offsets , GArray * table_data , BIOSLinker * linker)"		6070527	0					
+ANR	6070529	CompoundStatement		5:0:146:739	6070527	0					
+ANR	6070530	IdentifierDeclStatement	GArray * structures = nvdimm_build_device_structure ( device_list ) ;	7:4:153:216	6070527	0	True				
+ANR	6070531	IdentifierDecl	* structures = nvdimm_build_device_structure ( device_list )		6070527	0					
+ANR	6070532	IdentifierDeclType	GArray *		6070527	0					
+ANR	6070533	Identifier	structures		6070527	1					
+ANR	6070534	AssignmentExpression	* structures = nvdimm_build_device_structure ( device_list )		6070527	2		=			
+ANR	6070535	Identifier	structures		6070527	0					
+ANR	6070536	CallExpression	nvdimm_build_device_structure ( device_list )		6070527	1					
+ANR	6070537	Callee	nvdimm_build_device_structure		6070527	0					
+ANR	6070538	Identifier	nvdimm_build_device_structure		6070527	0					
+ANR	6070539	ArgumentList	device_list		6070527	1					
+ANR	6070540	Argument	device_list		6070527	0					
+ANR	6070541	Identifier	device_list		6070527	0					
+ANR	6070542	IdentifierDeclStatement	unsigned int header ;	9:4:223:242	6070527	1	True				
+ANR	6070543	IdentifierDecl	header		6070527	0					
+ANR	6070544	IdentifierDeclType	unsigned int		6070527	0					
+ANR	6070545	Identifier	header		6070527	1					
+ANR	6070546	ExpressionStatement	"acpi_add_table ( table_offsets , table_data )"	13:4:251:292	6070527	2	True				
+ANR	6070547	CallExpression	"acpi_add_table ( table_offsets , table_data )"		6070527	0					
+ANR	6070548	Callee	acpi_add_table		6070527	0					
+ANR	6070549	Identifier	acpi_add_table		6070527	0					
+ANR	6070550	ArgumentList	table_offsets		6070527	1					
+ANR	6070551	Argument	table_offsets		6070527	0					
+ANR	6070552	Identifier	table_offsets		6070527	0					
+ANR	6070553	Argument	table_data		6070527	1					
+ANR	6070554	Identifier	table_data		6070527	0					
+ANR	6070555	ExpressionStatement	header = table_data -> len	19:4:325:349	6070527	3	True				
+ANR	6070556	AssignmentExpression	header = table_data -> len		6070527	0		=			
+ANR	6070557	Identifier	header		6070527	0					
+ANR	6070558	PtrMemberAccess	table_data -> len		6070527	1					
+ANR	6070559	Identifier	table_data		6070527	0					
+ANR	6070560	Identifier	len		6070527	1					
+ANR	6070561	ExpressionStatement	"acpi_data_push ( table_data , sizeof ( NvdimmNfitHeader ) )"	21:4:356:408	6070527	4	True				
+ANR	6070562	CallExpression	"acpi_data_push ( table_data , sizeof ( NvdimmNfitHeader ) )"		6070527	0					
+ANR	6070563	Callee	acpi_data_push		6070527	0					
+ANR	6070564	Identifier	acpi_data_push		6070527	0					
+ANR	6070565	ArgumentList	table_data		6070527	1					
+ANR	6070566	Argument	table_data		6070527	0					
+ANR	6070567	Identifier	table_data		6070527	0					
+ANR	6070568	Argument	sizeof ( NvdimmNfitHeader )		6070527	1					
+ANR	6070569	SizeofExpression	sizeof ( NvdimmNfitHeader )		6070527	0					
+ANR	6070570	Sizeof	sizeof		6070527	0					
+ANR	6070571	SizeofOperand	NvdimmNfitHeader		6070527	1					
+ANR	6070572	ExpressionStatement	"g_array_append_vals ( table_data , structures -> data , structures -> len )"	25:4:452:518	6070527	5	True				
+ANR	6070573	CallExpression	"g_array_append_vals ( table_data , structures -> data , structures -> len )"		6070527	0					
+ANR	6070574	Callee	g_array_append_vals		6070527	0					
+ANR	6070575	Identifier	g_array_append_vals		6070527	0					
+ANR	6070576	ArgumentList	table_data		6070527	1					
+ANR	6070577	Argument	table_data		6070527	0					
+ANR	6070578	Identifier	table_data		6070527	0					
+ANR	6070579	Argument	structures -> data		6070527	1					
+ANR	6070580	PtrMemberAccess	structures -> data		6070527	0					
+ANR	6070581	Identifier	structures		6070527	0					
+ANR	6070582	Identifier	data		6070527	1					
+ANR	6070583	Argument	structures -> len		6070527	2					
+ANR	6070584	PtrMemberAccess	structures -> len		6070527	0					
+ANR	6070585	Identifier	structures		6070527	0					
+ANR	6070586	Identifier	len		6070527	1					
+ANR	6070587	ExpressionStatement	"build_header ( linker , table_data , ( void * ) ( table_data -> data + header ) , ""NFIT"" , sizeof ( NvdimmNfitHeader ) + structures -> len , 1 , NULL , NULL )"	29:4:527:699	6070527	6	True				
+ANR	6070588	CallExpression	"build_header ( linker , table_data , ( void * ) ( table_data -> data + header ) , ""NFIT"" , sizeof ( NvdimmNfitHeader ) + structures -> len , 1 , NULL , NULL )"		6070527	0					
+ANR	6070589	Callee	build_header		6070527	0					
+ANR	6070590	Identifier	build_header		6070527	0					
+ANR	6070591	ArgumentList	linker		6070527	1					
+ANR	6070592	Argument	linker		6070527	0					
+ANR	6070593	Identifier	linker		6070527	0					
+ANR	6070594	Argument	table_data		6070527	1					
+ANR	6070595	Identifier	table_data		6070527	0					
+ANR	6070596	Argument	( void * ) ( table_data -> data + header )		6070527	2					
+ANR	6070597	CastExpression	( void * ) ( table_data -> data + header )		6070527	0					
+ANR	6070598	CastTarget	void *		6070527	0					
+ANR	6070599	AdditiveExpression	table_data -> data + header		6070527	1		+			
+ANR	6070600	PtrMemberAccess	table_data -> data		6070527	0					
+ANR	6070601	Identifier	table_data		6070527	0					
+ANR	6070602	Identifier	data		6070527	1					
+ANR	6070603	Identifier	header		6070527	1					
+ANR	6070604	Argument	"""NFIT"""		6070527	3					
+ANR	6070605	PrimaryExpression	"""NFIT"""		6070527	0					
+ANR	6070606	Argument	sizeof ( NvdimmNfitHeader ) + structures -> len		6070527	4					
+ANR	6070607	AdditiveExpression	sizeof ( NvdimmNfitHeader ) + structures -> len		6070527	0		+			
+ANR	6070608	SizeofExpression	sizeof ( NvdimmNfitHeader )		6070527	0					
+ANR	6070609	Sizeof	sizeof		6070527	0					
+ANR	6070610	SizeofOperand	NvdimmNfitHeader		6070527	1					
+ANR	6070611	PtrMemberAccess	structures -> len		6070527	1					
+ANR	6070612	Identifier	structures		6070527	0					
+ANR	6070613	Identifier	len		6070527	1					
+ANR	6070614	Argument	1		6070527	5					
+ANR	6070615	PrimaryExpression	1		6070527	0					
+ANR	6070616	Argument	NULL		6070527	6					
+ANR	6070617	Identifier	NULL		6070527	0					
+ANR	6070618	Argument	NULL		6070527	7					
+ANR	6070619	Identifier	NULL		6070527	0					
+ANR	6070620	ExpressionStatement	"g_array_free ( structures , true )"	35:4:706:736	6070527	7	True				
+ANR	6070621	CallExpression	"g_array_free ( structures , true )"		6070527	0					
+ANR	6070622	Callee	g_array_free		6070527	0					
+ANR	6070623	Identifier	g_array_free		6070527	0					
+ANR	6070624	ArgumentList	structures		6070527	1					
+ANR	6070625	Argument	structures		6070527	0					
+ANR	6070626	Identifier	structures		6070527	0					
+ANR	6070627	Argument	true		6070527	1					
+ANR	6070628	Identifier	true		6070527	0					
+ANR	6070629	ReturnType	static void		6070527	1					
+ANR	6070630	Identifier	nvdimm_build_nfit		6070527	2					
+ANR	6070631	ParameterList	"GSList * device_list , GArray * table_offsets , GArray * table_data , BIOSLinker * linker"		6070527	3					
+ANR	6070632	Parameter	GSList * device_list	1:30:30:48	6070527	0	True				
+ANR	6070633	ParameterType	GSList *		6070527	0					
+ANR	6070634	Identifier	device_list		6070527	1					
+ANR	6070635	Parameter	GArray * table_offsets	1:51:51:71	6070527	1	True				
+ANR	6070636	ParameterType	GArray *		6070527	0					
+ANR	6070637	Identifier	table_offsets		6070527	1					
+ANR	6070638	Parameter	GArray * table_data	3:30:105:122	6070527	2	True				
+ANR	6070639	ParameterType	GArray *		6070527	0					
+ANR	6070640	Identifier	table_data		6070527	1					
+ANR	6070641	Parameter	BIOSLinker * linker	3:50:125:142	6070527	3	True				
+ANR	6070642	ParameterType	BIOSLinker *		6070527	0					
+ANR	6070643	Identifier	linker		6070527	1					
+ANR	6070644	CFGEntryNode	ENTRY		6070527		True				
+ANR	6070645	CFGExitNode	EXIT		6070527		True				
+ANR	6070646	Symbol	linker		6070527						
+ANR	6070647	Symbol	device_list		6070527						
+ANR	6070648	Symbol	nvdimm_build_device_structure		6070527						
+ANR	6070649	Symbol	NULL		6070527						
+ANR	6070650	Symbol	structures -> data		6070527						
+ANR	6070651	Symbol	structures		6070527						
+ANR	6070652	Symbol	table_data -> data		6070527						
+ANR	6070653	Symbol	table_offsets		6070527						
+ANR	6070654	Symbol	* structures		6070527						
+ANR	6070655	Symbol	structures -> len		6070527						
+ANR	6070656	Symbol	table_data		6070527						
+ANR	6070657	Symbol	true		6070527						
+ANR	6070658	Symbol	header		6070527						
+ANR	6070659	Symbol	* table_data		6070527						
+ANR	6070660	Symbol	table_data -> len		6070527						

@@ -1,0 +1,288 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7782790	File	/home/p4ultr4n/workplace/ReVeal/raw_code/setup_frame_04_1.c								
+ANR	7782791	Function	setup_frame	1:0:0:1575							
+ANR	7782792	FunctionDef	"setup_frame (int sig , struct target_sigaction * ka , target_sigset_t * set , CPUMIPSState * regs)"		7782791	0					
+ANR	7782793	CompoundStatement		5:0:131:1575	7782791	0					
+ANR	7782794	IdentifierDeclStatement	struct sigframe * frame ;	7:4:138:160	7782791	0	True				
+ANR	7782795	IdentifierDecl	* frame		7782791	0					
+ANR	7782796	IdentifierDeclType	struct sigframe *		7782791	0					
+ANR	7782797	Identifier	frame		7782791	1					
+ANR	7782798	IdentifierDeclStatement	abi_ulong frame_addr ;	9:4:167:187	7782791	1	True				
+ANR	7782799	IdentifierDecl	frame_addr		7782791	0					
+ANR	7782800	IdentifierDeclType	abi_ulong		7782791	0					
+ANR	7782801	Identifier	frame_addr		7782791	1					
+ANR	7782802	IdentifierDeclStatement	int i ;	11:4:194:199	7782791	2	True				
+ANR	7782803	IdentifierDecl	i		7782791	0					
+ANR	7782804	IdentifierDeclType	int		7782791	0					
+ANR	7782805	Identifier	i		7782791	1					
+ANR	7782806	ExpressionStatement	"frame_addr = get_sigframe ( ka , regs , sizeof ( * frame ) )"	15:4:208:259	7782791	3	True				
+ANR	7782807	AssignmentExpression	"frame_addr = get_sigframe ( ka , regs , sizeof ( * frame ) )"		7782791	0		=			
+ANR	7782808	Identifier	frame_addr		7782791	0					
+ANR	7782809	CallExpression	"get_sigframe ( ka , regs , sizeof ( * frame ) )"		7782791	1					
+ANR	7782810	Callee	get_sigframe		7782791	0					
+ANR	7782811	Identifier	get_sigframe		7782791	0					
+ANR	7782812	ArgumentList	ka		7782791	1					
+ANR	7782813	Argument	ka		7782791	0					
+ANR	7782814	Identifier	ka		7782791	0					
+ANR	7782815	Argument	regs		7782791	1					
+ANR	7782816	Identifier	regs		7782791	0					
+ANR	7782817	Argument	sizeof ( * frame )		7782791	2					
+ANR	7782818	SizeofExpression	sizeof ( * frame )		7782791	0					
+ANR	7782819	Sizeof	sizeof		7782791	0					
+ANR	7782820	UnaryOperationExpression	* frame		7782791	1					
+ANR	7782821	UnaryOperator	*		7782791	0					
+ANR	7782822	Identifier	frame		7782791	1					
+ANR	7782823	IfStatement	"if ( ! lock_user_struct ( VERIFY_WRITE , frame , frame_addr , 0 ) )"		7782791	4					
+ANR	7782824	Condition	"! lock_user_struct ( VERIFY_WRITE , frame , frame_addr , 0 )"	17:8:270:322	7782791	0	True				
+ANR	7782825	UnaryOperationExpression	"! lock_user_struct ( VERIFY_WRITE , frame , frame_addr , 0 )"		7782791	0					
+ANR	7782826	UnaryOperator	!		7782791	0					
+ANR	7782827	CallExpression	"lock_user_struct ( VERIFY_WRITE , frame , frame_addr , 0 )"		7782791	1					
+ANR	7782828	Callee	lock_user_struct		7782791	0					
+ANR	7782829	Identifier	lock_user_struct		7782791	0					
+ANR	7782830	ArgumentList	VERIFY_WRITE		7782791	1					
+ANR	7782831	Argument	VERIFY_WRITE		7782791	0					
+ANR	7782832	Identifier	VERIFY_WRITE		7782791	0					
+ANR	7782833	Argument	frame		7782791	1					
+ANR	7782834	Identifier	frame		7782791	0					
+ANR	7782835	Argument	frame_addr		7782791	2					
+ANR	7782836	Identifier	frame_addr		7782791	0					
+ANR	7782837	Argument	0		7782791	3					
+ANR	7782838	PrimaryExpression	0		7782791	0					
+ANR	7782839	GotoStatement	goto give_sigsegv ;	19:1:327:344	7782791	1	True				
+ANR	7782840	Identifier	give_sigsegv		7782791	0					
+ANR	7782841	ExpressionStatement	"install_sigtramp ( frame -> sf_code , TARGET_NR_sigreturn )"	23:4:353:406	7782791	5	True				
+ANR	7782842	CallExpression	"install_sigtramp ( frame -> sf_code , TARGET_NR_sigreturn )"		7782791	0					
+ANR	7782843	Callee	install_sigtramp		7782791	0					
+ANR	7782844	Identifier	install_sigtramp		7782791	0					
+ANR	7782845	ArgumentList	frame -> sf_code		7782791	1					
+ANR	7782846	Argument	frame -> sf_code		7782791	0					
+ANR	7782847	PtrMemberAccess	frame -> sf_code		7782791	0					
+ANR	7782848	Identifier	frame		7782791	0					
+ANR	7782849	Identifier	sf_code		7782791	1					
+ANR	7782850	Argument	TARGET_NR_sigreturn		7782791	1					
+ANR	7782851	Identifier	TARGET_NR_sigreturn		7782791	0					
+ANR	7782852	ExpressionStatement	"setup_sigcontext ( regs , & frame -> sf_sc )"	27:4:415:452	7782791	6	True				
+ANR	7782853	CallExpression	"setup_sigcontext ( regs , & frame -> sf_sc )"		7782791	0					
+ANR	7782854	Callee	setup_sigcontext		7782791	0					
+ANR	7782855	Identifier	setup_sigcontext		7782791	0					
+ANR	7782856	ArgumentList	regs		7782791	1					
+ANR	7782857	Argument	regs		7782791	0					
+ANR	7782858	Identifier	regs		7782791	0					
+ANR	7782859	Argument	& frame -> sf_sc		7782791	1					
+ANR	7782860	UnaryOperationExpression	& frame -> sf_sc		7782791	0					
+ANR	7782861	UnaryOperator	&		7782791	0					
+ANR	7782862	PtrMemberAccess	frame -> sf_sc		7782791	1					
+ANR	7782863	Identifier	frame		7782791	0					
+ANR	7782864	Identifier	sf_sc		7782791	1					
+ANR	7782865	ForStatement	for ( i = 0 ; i < TARGET_NSIG_WORDS ; i ++ )		7782791	7					
+ANR	7782866	ForInit	i = 0 ;	31:8:465:470	7782791	0	True				
+ANR	7782867	AssignmentExpression	i = 0		7782791	0		=			
+ANR	7782868	Identifier	i		7782791	0					
+ANR	7782869	PrimaryExpression	0		7782791	1					
+ANR	7782870	Condition	i < TARGET_NSIG_WORDS	31:15:472:492	7782791	1	True				
+ANR	7782871	RelationalExpression	i < TARGET_NSIG_WORDS		7782791	0		<			
+ANR	7782872	Identifier	i		7782791	0					
+ANR	7782873	Identifier	TARGET_NSIG_WORDS		7782791	1					
+ANR	7782874	PostIncDecOperationExpression	i ++	31:38:495:497	7782791	2	True				
+ANR	7782875	Identifier	i		7782791	0					
+ANR	7782876	IncDec	++		7782791	1					
+ANR	7782877	CompoundStatement		27:43:368:368	7782791	3					
+ANR	7782878	IfStatement	"if ( __put_user ( set -> sig [ i ] , & frame -> sf_mask . sig [ i ] ) )"		7782791	0					
+ANR	7782879	Condition	"__put_user ( set -> sig [ i ] , & frame -> sf_mask . sig [ i ] )"	33:4:507:553	7782791	0	True				
+ANR	7782880	CallExpression	"__put_user ( set -> sig [ i ] , & frame -> sf_mask . sig [ i ] )"		7782791	0					
+ANR	7782881	Callee	__put_user		7782791	0					
+ANR	7782882	Identifier	__put_user		7782791	0					
+ANR	7782883	ArgumentList	set -> sig [ i ]		7782791	1					
+ANR	7782884	Argument	set -> sig [ i ]		7782791	0					
+ANR	7782885	ArrayIndexing	set -> sig [ i ]		7782791	0					
+ANR	7782886	PtrMemberAccess	set -> sig		7782791	0					
+ANR	7782887	Identifier	set		7782791	0					
+ANR	7782888	Identifier	sig		7782791	1					
+ANR	7782889	Identifier	i		7782791	1					
+ANR	7782890	Argument	& frame -> sf_mask . sig [ i ]		7782791	1					
+ANR	7782891	UnaryOperationExpression	& frame -> sf_mask . sig [ i ]		7782791	0					
+ANR	7782892	UnaryOperator	&		7782791	0					
+ANR	7782893	ArrayIndexing	frame -> sf_mask . sig [ i ]		7782791	1					
+ANR	7782894	MemberAccess	frame -> sf_mask . sig		7782791	0					
+ANR	7782895	PtrMemberAccess	frame -> sf_mask		7782791	0					
+ANR	7782896	Identifier	frame		7782791	0					
+ANR	7782897	Identifier	sf_mask		7782791	1					
+ANR	7782898	Identifier	sig		7782791	1					
+ANR	7782899	Identifier	i		7782791	1					
+ANR	7782900	GotoStatement	goto give_sigsegv ;	35:5:562:579	7782791	1	True				
+ANR	7782901	Identifier	give_sigsegv		7782791	0					
+ANR	7782902	ExpressionStatement	regs -> active_tc . gpr [ 4 ] = sig	61:4:855:884	7782791	8	True				
+ANR	7782903	AssignmentExpression	regs -> active_tc . gpr [ 4 ] = sig		7782791	0		=			
+ANR	7782904	ArrayIndexing	regs -> active_tc . gpr [ 4 ]		7782791	0					
+ANR	7782905	MemberAccess	regs -> active_tc . gpr		7782791	0					
+ANR	7782906	PtrMemberAccess	regs -> active_tc		7782791	0					
+ANR	7782907	Identifier	regs		7782791	0					
+ANR	7782908	Identifier	active_tc		7782791	1					
+ANR	7782909	Identifier	gpr		7782791	1					
+ANR	7782910	PrimaryExpression	4		7782791	1					
+ANR	7782911	Identifier	sig		7782791	1					
+ANR	7782912	ExpressionStatement	regs -> active_tc . gpr [ 5 ] = 0	63:4:891:918	7782791	9	True				
+ANR	7782913	AssignmentExpression	regs -> active_tc . gpr [ 5 ] = 0		7782791	0		=			
+ANR	7782914	ArrayIndexing	regs -> active_tc . gpr [ 5 ]		7782791	0					
+ANR	7782915	MemberAccess	regs -> active_tc . gpr		7782791	0					
+ANR	7782916	PtrMemberAccess	regs -> active_tc		7782791	0					
+ANR	7782917	Identifier	regs		7782791	0					
+ANR	7782918	Identifier	active_tc		7782791	1					
+ANR	7782919	Identifier	gpr		7782791	1					
+ANR	7782920	PrimaryExpression	5		7782791	1					
+ANR	7782921	PrimaryExpression	0		7782791	1					
+ANR	7782922	Statement	regs	65:4:925:928	7782791	10	True				
+ANR	7782923	Statement	->	65:8:929:930	7782791	11	True				
+ANR	7782924	Statement	active_tc	65:10:931:939	7782791	12	True				
+ANR	7782925	Statement	.	65:19:940:940	7782791	13	True				
+ANR	7782926	Statement	gpr	65:20:941:943	7782791	14	True				
+ANR	7782927	Statement	[	65:23:944:944	7782791	15	True				
+ANR	7782928	Statement	6	65:25:946:946	7782791	16	True				
+ANR	7782929	Statement	]	65:26:947:947	7782791	17	True				
+ANR	7782930	Statement	=	65:28:949:949	7782791	18	True				
+ANR	7782931	Statement	frame_addr	65:30:951:960	7782791	19	True				
+ANR	7782932	Statement	+	65:41:962:962	7782791	20	True				
+ANR	7782933	Statement	offsetof	65:43:964:971	7782791	21	True				
+ANR	7782934	Statement	(	65:51:972:972	7782791	22	True				
+ANR	7782935	Statement	struct	65:52:973:978	7782791	23	True				
+ANR	7782936	Statement	sigframe	65:59:980:987	7782791	24	True				
+ANR	7782937	Statement	","	65:67:988:988	7782791	25	True				
+ANR	7782938	Statement	sf_sc	65:69:990:994	7782791	26	True				
+ANR	7782939	Statement	)	65:74:995:995	7782791	27	True				
+ANR	7782940	ExpressionStatement		65:75:996:996	7782791	28	True				
+ANR	7782941	ExpressionStatement	regs -> active_tc . gpr [ 29 ] = frame_addr	67:4:1003:1039	7782791	29	True				
+ANR	7782942	AssignmentExpression	regs -> active_tc . gpr [ 29 ] = frame_addr		7782791	0		=			
+ANR	7782943	ArrayIndexing	regs -> active_tc . gpr [ 29 ]		7782791	0					
+ANR	7782944	MemberAccess	regs -> active_tc . gpr		7782791	0					
+ANR	7782945	PtrMemberAccess	regs -> active_tc		7782791	0					
+ANR	7782946	Identifier	regs		7782791	0					
+ANR	7782947	Identifier	active_tc		7782791	1					
+ANR	7782948	Identifier	gpr		7782791	1					
+ANR	7782949	PrimaryExpression	29		7782791	1					
+ANR	7782950	Identifier	frame_addr		7782791	1					
+ANR	7782951	Statement	regs	69:4:1046:1049	7782791	30	True				
+ANR	7782952	Statement	->	69:8:1050:1051	7782791	31	True				
+ANR	7782953	Statement	active_tc	69:10:1052:1060	7782791	32	True				
+ANR	7782954	Statement	.	69:19:1061:1061	7782791	33	True				
+ANR	7782955	Statement	gpr	69:20:1062:1064	7782791	34	True				
+ANR	7782956	Statement	[	69:23:1065:1065	7782791	35	True				
+ANR	7782957	Statement	31	69:24:1066:1067	7782791	36	True				
+ANR	7782958	Statement	]	69:26:1068:1068	7782791	37	True				
+ANR	7782959	Statement	=	69:28:1070:1070	7782791	38	True				
+ANR	7782960	Statement	frame_addr	69:30:1072:1081	7782791	39	True				
+ANR	7782961	Statement	+	69:41:1083:1083	7782791	40	True				
+ANR	7782962	Statement	offsetof	69:43:1085:1092	7782791	41	True				
+ANR	7782963	Statement	(	69:51:1093:1093	7782791	42	True				
+ANR	7782964	Statement	struct	69:52:1094:1099	7782791	43	True				
+ANR	7782965	Statement	sigframe	69:59:1101:1108	7782791	44	True				
+ANR	7782966	Statement	","	69:67:1109:1109	7782791	45	True				
+ANR	7782967	Statement	sf_code	69:69:1111:1117	7782791	46	True				
+ANR	7782968	Statement	)	69:76:1118:1118	7782791	47	True				
+ANR	7782969	ExpressionStatement		69:77:1119:1119	7782791	48	True				
+ANR	7782970	ExpressionStatement	regs -> active_tc . PC = regs -> active_tc . gpr [ 25 ] = ka -> _sa_handler	77:4:1296:1358	7782791	49	True				
+ANR	7782971	AssignmentExpression	regs -> active_tc . PC = regs -> active_tc . gpr [ 25 ] = ka -> _sa_handler		7782791	0		=			
+ANR	7782972	MemberAccess	regs -> active_tc . PC		7782791	0					
+ANR	7782973	PtrMemberAccess	regs -> active_tc		7782791	0					
+ANR	7782974	Identifier	regs		7782791	0					
+ANR	7782975	Identifier	active_tc		7782791	1					
+ANR	7782976	Identifier	PC		7782791	1					
+ANR	7782977	AssignmentExpression	regs -> active_tc . gpr [ 25 ] = ka -> _sa_handler		7782791	1		=			
+ANR	7782978	ArrayIndexing	regs -> active_tc . gpr [ 25 ]		7782791	0					
+ANR	7782979	MemberAccess	regs -> active_tc . gpr		7782791	0					
+ANR	7782980	PtrMemberAccess	regs -> active_tc		7782791	0					
+ANR	7782981	Identifier	regs		7782791	0					
+ANR	7782982	Identifier	active_tc		7782791	1					
+ANR	7782983	Identifier	gpr		7782791	1					
+ANR	7782984	PrimaryExpression	25		7782791	1					
+ANR	7782985	PtrMemberAccess	ka -> _sa_handler		7782791	1					
+ANR	7782986	Identifier	ka		7782791	0					
+ANR	7782987	Identifier	_sa_handler		7782791	1					
+ANR	7782988	ExpressionStatement	mips_set_hflags_isa_mode_from_pc ( regs )	79:4:1365:1403	7782791	50	True				
+ANR	7782989	CallExpression	mips_set_hflags_isa_mode_from_pc ( regs )		7782791	0					
+ANR	7782990	Callee	mips_set_hflags_isa_mode_from_pc		7782791	0					
+ANR	7782991	Identifier	mips_set_hflags_isa_mode_from_pc		7782791	0					
+ANR	7782992	ArgumentList	regs		7782791	1					
+ANR	7782993	Argument	regs		7782791	0					
+ANR	7782994	Identifier	regs		7782791	0					
+ANR	7782995	ExpressionStatement	"unlock_user_struct ( frame , frame_addr , 1 )"	81:4:1410:1450	7782791	51	True				
+ANR	7782996	CallExpression	"unlock_user_struct ( frame , frame_addr , 1 )"		7782791	0					
+ANR	7782997	Callee	unlock_user_struct		7782791	0					
+ANR	7782998	Identifier	unlock_user_struct		7782791	0					
+ANR	7782999	ArgumentList	frame		7782791	1					
+ANR	7783000	Argument	frame		7782791	0					
+ANR	7783001	Identifier	frame		7782791	0					
+ANR	7783002	Argument	frame_addr		7782791	1					
+ANR	7783003	Identifier	frame_addr		7782791	0					
+ANR	7783004	Argument	1		7782791	2					
+ANR	7783005	PrimaryExpression	1		7782791	0					
+ANR	7783006	ReturnStatement	return ;	83:4:1457:1463	7782791	52	True				
+ANR	7783007	Label	give_sigsegv :	87:0:1468:1480	7782791	53	True				
+ANR	7783008	Identifier	give_sigsegv		7782791	0					
+ANR	7783009	ExpressionStatement	"unlock_user_struct ( frame , frame_addr , 1 )"	89:4:1487:1527	7782791	54	True				
+ANR	7783010	CallExpression	"unlock_user_struct ( frame , frame_addr , 1 )"		7782791	0					
+ANR	7783011	Callee	unlock_user_struct		7782791	0					
+ANR	7783012	Identifier	unlock_user_struct		7782791	0					
+ANR	7783013	ArgumentList	frame		7782791	1					
+ANR	7783014	Argument	frame		7782791	0					
+ANR	7783015	Identifier	frame		7782791	0					
+ANR	7783016	Argument	frame_addr		7782791	1					
+ANR	7783017	Identifier	frame_addr		7782791	0					
+ANR	7783018	Argument	1		7782791	2					
+ANR	7783019	PrimaryExpression	1		7782791	0					
+ANR	7783020	ExpressionStatement	force_sig ( TARGET_SIGSEGV )	91:4:1534:1572	7782791	55	True				
+ANR	7783021	CallExpression	force_sig ( TARGET_SIGSEGV )		7782791	0					
+ANR	7783022	Callee	force_sig		7782791	0					
+ANR	7783023	Identifier	force_sig		7782791	0					
+ANR	7783024	ArgumentList	TARGET_SIGSEGV		7782791	1					
+ANR	7783025	Argument	TARGET_SIGSEGV		7782791	0					
+ANR	7783026	Identifier	TARGET_SIGSEGV		7782791	0					
+ANR	7783027	ReturnType	static void		7782791	1					
+ANR	7783028	Identifier	setup_frame		7782791	2					
+ANR	7783029	ParameterList	"int sig , struct target_sigaction * ka , target_sigset_t * set , CPUMIPSState * regs"		7782791	3					
+ANR	7783030	Parameter	int sig	1:24:24:30	7782791	0	True				
+ANR	7783031	ParameterType	int		7782791	0					
+ANR	7783032	Identifier	sig		7782791	1					
+ANR	7783033	Parameter	struct target_sigaction * ka	1:33:33:60	7782791	1	True				
+ANR	7783034	ParameterType	struct target_sigaction *		7782791	0					
+ANR	7783035	Identifier	ka		7782791	1					
+ANR	7783036	Parameter	target_sigset_t * set	3:24:88:107	7782791	2	True				
+ANR	7783037	ParameterType	target_sigset_t *		7782791	0					
+ANR	7783038	Identifier	set		7782791	1					
+ANR	7783039	Parameter	CPUMIPSState * regs	3:46:110:127	7782791	3	True				
+ANR	7783040	ParameterType	CPUMIPSState *		7782791	0					
+ANR	7783041	Identifier	regs		7782791	1					
+ANR	7783042	CFGEntryNode	ENTRY		7782791		True				
+ANR	7783043	CFGExitNode	EXIT		7782791		True				
+ANR	7783044	Symbol	* frame		7782791						
+ANR	7783045	Symbol	lock_user_struct		7782791						
+ANR	7783046	Symbol	regs -> active_tc . gpr		7782791						
+ANR	7783047	Symbol	* set		7782791						
+ANR	7783048	Symbol	regs -> active_tc		7782791						
+ANR	7783049	Symbol	get_sigframe		7782791						
+ANR	7783050	Symbol	sig		7782791						
+ANR	7783051	Symbol	frame_addr		7782791						
+ANR	7783052	Symbol	ka		7782791						
+ANR	7783053	Symbol	* * regs		7782791						
+ANR	7783054	Symbol	ka -> _sa_handler		7782791						
+ANR	7783055	Symbol	* set -> sig		7782791						
+ANR	7783056	Symbol	__put_user		7782791						
+ANR	7783057	Symbol	* ka		7782791						
+ANR	7783058	Symbol	frame -> sf_mask		7782791						
+ANR	7783059	Symbol	frame -> sf_mask . sig		7782791						
+ANR	7783060	Symbol	set		7782791						
+ANR	7783061	Symbol	& frame -> sf_sc		7782791						
+ANR	7783062	Symbol	* regs -> active_tc		7782791						
+ANR	7783063	Symbol	frame -> sf_code		7782791						
+ANR	7783064	Symbol	regs -> active_tc . PC		7782791						
+ANR	7783065	Symbol	i		7782791						
+ANR	7783066	Symbol	regs		7782791						
+ANR	7783067	Symbol	* regs -> active_tc . gpr		7782791						
+ANR	7783068	Symbol	TARGET_NSIG_WORDS		7782791						
+ANR	7783069	Symbol	TARGET_NR_sigreturn		7782791						
+ANR	7783070	Symbol	set -> sig		7782791						
+ANR	7783071	Symbol	TARGET_SIGSEGV		7782791						
+ANR	7783072	Symbol	* i		7782791						
+ANR	7783073	Symbol	* * set		7782791						
+ANR	7783074	Symbol	* regs		7782791						
+ANR	7783075	Symbol	VERIFY_WRITE		7782791						
+ANR	7783076	Symbol	frame		7782791						

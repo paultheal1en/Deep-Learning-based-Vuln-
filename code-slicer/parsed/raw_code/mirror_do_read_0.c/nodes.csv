@@ -1,0 +1,407 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5487253	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mirror_do_read_0.c								
+ANR	5487254	Function	mirror_do_read	1:0:0:2274							
+ANR	5487255	FunctionDef	"mirror_do_read (MirrorBlockJob * s , int64_t sector_num , int nb_sectors)"		5487254	0					
+ANR	5487256	CompoundStatement		5:0:109:2274	5487254	0					
+ANR	5487257	IdentifierDeclStatement	BlockBackend * source = s -> common . blk ;	7:4:116:152	5487254	0	True				
+ANR	5487258	IdentifierDecl	* source = s -> common . blk		5487254	0					
+ANR	5487259	IdentifierDeclType	BlockBackend *		5487254	0					
+ANR	5487260	Identifier	source		5487254	1					
+ANR	5487261	AssignmentExpression	* source = s -> common . blk		5487254	2		=			
+ANR	5487262	Identifier	source		5487254	0					
+ANR	5487263	MemberAccess	s -> common . blk		5487254	1					
+ANR	5487264	PtrMemberAccess	s -> common		5487254	0					
+ANR	5487265	Identifier	s		5487254	0					
+ANR	5487266	Identifier	common		5487254	1					
+ANR	5487267	Identifier	blk		5487254	1					
+ANR	5487268	IdentifierDeclStatement	"int sectors_per_chunk , nb_chunks ;"	9:4:159:191	5487254	1	True				
+ANR	5487269	IdentifierDecl	sectors_per_chunk		5487254	0					
+ANR	5487270	IdentifierDeclType	int		5487254	0					
+ANR	5487271	Identifier	sectors_per_chunk		5487254	1					
+ANR	5487272	IdentifierDecl	nb_chunks		5487254	1					
+ANR	5487273	IdentifierDeclType	int		5487254	0					
+ANR	5487274	Identifier	nb_chunks		5487254	1					
+ANR	5487275	IdentifierDeclStatement	int ret ;	11:4:198:205	5487254	2	True				
+ANR	5487276	IdentifierDecl	ret		5487254	0					
+ANR	5487277	IdentifierDeclType	int		5487254	0					
+ANR	5487278	Identifier	ret		5487254	1					
+ANR	5487279	IdentifierDeclStatement	MirrorOp * op ;	13:4:212:224	5487254	3	True				
+ANR	5487280	IdentifierDecl	* op		5487254	0					
+ANR	5487281	IdentifierDeclType	MirrorOp *		5487254	0					
+ANR	5487282	Identifier	op		5487254	1					
+ANR	5487283	IdentifierDeclStatement	int max_sectors ;	15:4:231:246	5487254	4	True				
+ANR	5487284	IdentifierDecl	max_sectors		5487254	0					
+ANR	5487285	IdentifierDeclType	int		5487254	0					
+ANR	5487286	Identifier	max_sectors		5487254	1					
+ANR	5487287	ExpressionStatement	sectors_per_chunk = s -> granularity >> BDRV_SECTOR_BITS	19:4:255:309	5487254	5	True				
+ANR	5487288	AssignmentExpression	sectors_per_chunk = s -> granularity >> BDRV_SECTOR_BITS		5487254	0		=			
+ANR	5487289	Identifier	sectors_per_chunk		5487254	0					
+ANR	5487290	ShiftExpression	s -> granularity >> BDRV_SECTOR_BITS		5487254	1		>>			
+ANR	5487291	PtrMemberAccess	s -> granularity		5487254	0					
+ANR	5487292	Identifier	s		5487254	0					
+ANR	5487293	Identifier	granularity		5487254	1					
+ANR	5487294	Identifier	BDRV_SECTOR_BITS		5487254	1					
+ANR	5487295	ExpressionStatement	max_sectors = sectors_per_chunk * s -> max_iov	21:4:316:360	5487254	6	True				
+ANR	5487296	AssignmentExpression	max_sectors = sectors_per_chunk * s -> max_iov		5487254	0		=			
+ANR	5487297	Identifier	max_sectors		5487254	0					
+ANR	5487298	MultiplicativeExpression	sectors_per_chunk * s -> max_iov		5487254	1		*			
+ANR	5487299	Identifier	sectors_per_chunk		5487254	0					
+ANR	5487300	PtrMemberAccess	s -> max_iov		5487254	1					
+ANR	5487301	Identifier	s		5487254	0					
+ANR	5487302	Identifier	max_iov		5487254	1					
+ANR	5487303	ExpressionStatement	"nb_sectors = MIN ( s -> buf_size >> BDRV_SECTOR_BITS , nb_sectors )"	27:4:430:491	5487254	7	True				
+ANR	5487304	AssignmentExpression	"nb_sectors = MIN ( s -> buf_size >> BDRV_SECTOR_BITS , nb_sectors )"		5487254	0		=			
+ANR	5487305	Identifier	nb_sectors		5487254	0					
+ANR	5487306	CallExpression	"MIN ( s -> buf_size >> BDRV_SECTOR_BITS , nb_sectors )"		5487254	1					
+ANR	5487307	Callee	MIN		5487254	0					
+ANR	5487308	Identifier	MIN		5487254	0					
+ANR	5487309	ArgumentList	s -> buf_size >> BDRV_SECTOR_BITS		5487254	1					
+ANR	5487310	Argument	s -> buf_size >> BDRV_SECTOR_BITS		5487254	0					
+ANR	5487311	ShiftExpression	s -> buf_size >> BDRV_SECTOR_BITS		5487254	0		>>			
+ANR	5487312	PtrMemberAccess	s -> buf_size		5487254	0					
+ANR	5487313	Identifier	s		5487254	0					
+ANR	5487314	Identifier	buf_size		5487254	1					
+ANR	5487315	Identifier	BDRV_SECTOR_BITS		5487254	1					
+ANR	5487316	Argument	nb_sectors		5487254	1					
+ANR	5487317	Identifier	nb_sectors		5487254	0					
+ANR	5487318	ExpressionStatement	"nb_sectors = MIN ( max_sectors , nb_sectors )"	29:4:498:539	5487254	8	True				
+ANR	5487319	AssignmentExpression	"nb_sectors = MIN ( max_sectors , nb_sectors )"		5487254	0		=			
+ANR	5487320	Identifier	nb_sectors		5487254	0					
+ANR	5487321	CallExpression	"MIN ( max_sectors , nb_sectors )"		5487254	1					
+ANR	5487322	Callee	MIN		5487254	0					
+ANR	5487323	Identifier	MIN		5487254	0					
+ANR	5487324	ArgumentList	max_sectors		5487254	1					
+ANR	5487325	Argument	max_sectors		5487254	0					
+ANR	5487326	Identifier	max_sectors		5487254	0					
+ANR	5487327	Argument	nb_sectors		5487254	1					
+ANR	5487328	Identifier	nb_sectors		5487254	0					
+ANR	5487329	ExpressionStatement	assert ( nb_sectors )	31:4:546:564	5487254	9	True				
+ANR	5487330	CallExpression	assert ( nb_sectors )		5487254	0					
+ANR	5487331	Callee	assert		5487254	0					
+ANR	5487332	Identifier	assert		5487254	0					
+ANR	5487333	ArgumentList	nb_sectors		5487254	1					
+ANR	5487334	Argument	nb_sectors		5487254	0					
+ANR	5487335	Identifier	nb_sectors		5487254	0					
+ANR	5487336	ExpressionStatement	ret = nb_sectors	33:4:571:587	5487254	10	True				
+ANR	5487337	AssignmentExpression	ret = nb_sectors		5487254	0		=			
+ANR	5487338	Identifier	ret		5487254	0					
+ANR	5487339	Identifier	nb_sectors		5487254	1					
+ANR	5487340	IfStatement	if ( s -> cow_bitmap )		5487254	11					
+ANR	5487341	Condition	s -> cow_bitmap	37:8:600:612	5487254	0	True				
+ANR	5487342	PtrMemberAccess	s -> cow_bitmap		5487254	0					
+ANR	5487343	Identifier	s		5487254	0					
+ANR	5487344	Identifier	cow_bitmap		5487254	1					
+ANR	5487345	CompoundStatement		33:23:505:505	5487254	1					
+ANR	5487346	ExpressionStatement	"ret += mirror_cow_align ( s , & sector_num , & nb_sectors )"	39:8:626:678	5487254	0	True				
+ANR	5487347	AssignmentExpression	"ret += mirror_cow_align ( s , & sector_num , & nb_sectors )"		5487254	0		+=			
+ANR	5487348	Identifier	ret		5487254	0					
+ANR	5487349	CallExpression	"mirror_cow_align ( s , & sector_num , & nb_sectors )"		5487254	1					
+ANR	5487350	Callee	mirror_cow_align		5487254	0					
+ANR	5487351	Identifier	mirror_cow_align		5487254	0					
+ANR	5487352	ArgumentList	s		5487254	1					
+ANR	5487353	Argument	s		5487254	0					
+ANR	5487354	Identifier	s		5487254	0					
+ANR	5487355	Argument	& sector_num		5487254	1					
+ANR	5487356	UnaryOperationExpression	& sector_num		5487254	0					
+ANR	5487357	UnaryOperator	&		5487254	0					
+ANR	5487358	Identifier	sector_num		5487254	1					
+ANR	5487359	Argument	& nb_sectors		5487254	2					
+ANR	5487360	UnaryOperationExpression	& nb_sectors		5487254	0					
+ANR	5487361	UnaryOperator	&		5487254	0					
+ANR	5487362	Identifier	nb_sectors		5487254	1					
+ANR	5487363	ExpressionStatement	assert ( nb_sectors << BDRV_SECTOR_BITS <= s -> buf_size )	43:4:692:745	5487254	12	True				
+ANR	5487364	CallExpression	assert ( nb_sectors << BDRV_SECTOR_BITS <= s -> buf_size )		5487254	0					
+ANR	5487365	Callee	assert		5487254	0					
+ANR	5487366	Identifier	assert		5487254	0					
+ANR	5487367	ArgumentList	nb_sectors << BDRV_SECTOR_BITS <= s -> buf_size		5487254	1					
+ANR	5487368	Argument	nb_sectors << BDRV_SECTOR_BITS <= s -> buf_size		5487254	0					
+ANR	5487369	RelationalExpression	nb_sectors << BDRV_SECTOR_BITS <= s -> buf_size		5487254	0		<=			
+ANR	5487370	ShiftExpression	nb_sectors << BDRV_SECTOR_BITS		5487254	0		<<			
+ANR	5487371	Identifier	nb_sectors		5487254	0					
+ANR	5487372	Identifier	BDRV_SECTOR_BITS		5487254	1					
+ANR	5487373	PtrMemberAccess	s -> buf_size		5487254	1					
+ANR	5487374	Identifier	s		5487254	0					
+ANR	5487375	Identifier	buf_size		5487254	1					
+ANR	5487376	ExpressionStatement	assert ( ! ( sector_num % sectors_per_chunk ) )	51:4:927:968	5487254	13	True				
+ANR	5487377	CallExpression	assert ( ! ( sector_num % sectors_per_chunk ) )		5487254	0					
+ANR	5487378	Callee	assert		5487254	0					
+ANR	5487379	Identifier	assert		5487254	0					
+ANR	5487380	ArgumentList	! ( sector_num % sectors_per_chunk )		5487254	1					
+ANR	5487381	Argument	! ( sector_num % sectors_per_chunk )		5487254	0					
+ANR	5487382	UnaryOperationExpression	! ( sector_num % sectors_per_chunk )		5487254	0					
+ANR	5487383	UnaryOperator	!		5487254	0					
+ANR	5487384	MultiplicativeExpression	sector_num % sectors_per_chunk		5487254	1		%			
+ANR	5487385	Identifier	sector_num		5487254	0					
+ANR	5487386	Identifier	sectors_per_chunk		5487254	1					
+ANR	5487387	ExpressionStatement	"nb_chunks = DIV_ROUND_UP ( nb_sectors , sectors_per_chunk )"	53:4:975:1030	5487254	14	True				
+ANR	5487388	AssignmentExpression	"nb_chunks = DIV_ROUND_UP ( nb_sectors , sectors_per_chunk )"		5487254	0		=			
+ANR	5487389	Identifier	nb_chunks		5487254	0					
+ANR	5487390	CallExpression	"DIV_ROUND_UP ( nb_sectors , sectors_per_chunk )"		5487254	1					
+ANR	5487391	Callee	DIV_ROUND_UP		5487254	0					
+ANR	5487392	Identifier	DIV_ROUND_UP		5487254	0					
+ANR	5487393	ArgumentList	nb_sectors		5487254	1					
+ANR	5487394	Argument	nb_sectors		5487254	0					
+ANR	5487395	Identifier	nb_sectors		5487254	0					
+ANR	5487396	Argument	sectors_per_chunk		5487254	1					
+ANR	5487397	Identifier	sectors_per_chunk		5487254	0					
+ANR	5487398	WhileStatement	while ( s -> buf_free_count < nb_chunks )		5487254	15					
+ANR	5487399	Condition	s -> buf_free_count < nb_chunks	57:11:1046:1074	5487254	0	True				
+ANR	5487400	RelationalExpression	s -> buf_free_count < nb_chunks		5487254	0		<			
+ANR	5487401	PtrMemberAccess	s -> buf_free_count		5487254	0					
+ANR	5487402	Identifier	s		5487254	0					
+ANR	5487403	Identifier	buf_free_count		5487254	1					
+ANR	5487404	Identifier	nb_chunks		5487254	1					
+ANR	5487405	CompoundStatement		53:42:967:967	5487254	1					
+ANR	5487406	ExpressionStatement	"trace_mirror_yield_in_flight ( s , sector_num * BDRV_SECTOR_SIZE , s -> in_flight )"	59:8:1088:1202	5487254	0	True				
+ANR	5487407	CallExpression	"trace_mirror_yield_in_flight ( s , sector_num * BDRV_SECTOR_SIZE , s -> in_flight )"		5487254	0					
+ANR	5487408	Callee	trace_mirror_yield_in_flight		5487254	0					
+ANR	5487409	Identifier	trace_mirror_yield_in_flight		5487254	0					
+ANR	5487410	ArgumentList	s		5487254	1					
+ANR	5487411	Argument	s		5487254	0					
+ANR	5487412	Identifier	s		5487254	0					
+ANR	5487413	Argument	sector_num * BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487414	MultiplicativeExpression	sector_num * BDRV_SECTOR_SIZE		5487254	0		*			
+ANR	5487415	Identifier	sector_num		5487254	0					
+ANR	5487416	Identifier	BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487417	Argument	s -> in_flight		5487254	2					
+ANR	5487418	PtrMemberAccess	s -> in_flight		5487254	0					
+ANR	5487419	Identifier	s		5487254	0					
+ANR	5487420	Identifier	in_flight		5487254	1					
+ANR	5487421	ExpressionStatement	mirror_wait_for_io ( s )	63:8:1213:1234	5487254	1	True				
+ANR	5487422	CallExpression	mirror_wait_for_io ( s )		5487254	0					
+ANR	5487423	Callee	mirror_wait_for_io		5487254	0					
+ANR	5487424	Identifier	mirror_wait_for_io		5487254	0					
+ANR	5487425	ArgumentList	s		5487254	1					
+ANR	5487426	Argument	s		5487254	0					
+ANR	5487427	Identifier	s		5487254	0					
+ANR	5487428	ExpressionStatement	"op = g_new ( MirrorOp , 1 )"	71:4:1315:1338	5487254	16	True				
+ANR	5487429	AssignmentExpression	"op = g_new ( MirrorOp , 1 )"		5487254	0		=			
+ANR	5487430	Identifier	op		5487254	0					
+ANR	5487431	CallExpression	"g_new ( MirrorOp , 1 )"		5487254	1					
+ANR	5487432	Callee	g_new		5487254	0					
+ANR	5487433	Identifier	g_new		5487254	0					
+ANR	5487434	ArgumentList	MirrorOp		5487254	1					
+ANR	5487435	Argument	MirrorOp		5487254	0					
+ANR	5487436	Identifier	MirrorOp		5487254	0					
+ANR	5487437	Argument	1		5487254	1					
+ANR	5487438	PrimaryExpression	1		5487254	0					
+ANR	5487439	ExpressionStatement	op -> s = s	73:4:1345:1354	5487254	17	True				
+ANR	5487440	AssignmentExpression	op -> s = s		5487254	0		=			
+ANR	5487441	PtrMemberAccess	op -> s		5487254	0					
+ANR	5487442	Identifier	op		5487254	0					
+ANR	5487443	Identifier	s		5487254	1					
+ANR	5487444	Identifier	s		5487254	1					
+ANR	5487445	ExpressionStatement	op -> sector_num = sector_num	75:4:1361:1388	5487254	18	True				
+ANR	5487446	AssignmentExpression	op -> sector_num = sector_num		5487254	0		=			
+ANR	5487447	PtrMemberAccess	op -> sector_num		5487254	0					
+ANR	5487448	Identifier	op		5487254	0					
+ANR	5487449	Identifier	sector_num		5487254	1					
+ANR	5487450	Identifier	sector_num		5487254	1					
+ANR	5487451	ExpressionStatement	op -> nb_sectors = nb_sectors	77:4:1395:1422	5487254	19	True				
+ANR	5487452	AssignmentExpression	op -> nb_sectors = nb_sectors		5487254	0		=			
+ANR	5487453	PtrMemberAccess	op -> nb_sectors		5487254	0					
+ANR	5487454	Identifier	op		5487254	0					
+ANR	5487455	Identifier	nb_sectors		5487254	1					
+ANR	5487456	Identifier	nb_sectors		5487254	1					
+ANR	5487457	ExpressionStatement	"qemu_iovec_init ( & op -> qiov , nb_chunks )"	87:4:1537:1574	5487254	20	True				
+ANR	5487458	CallExpression	"qemu_iovec_init ( & op -> qiov , nb_chunks )"		5487254	0					
+ANR	5487459	Callee	qemu_iovec_init		5487254	0					
+ANR	5487460	Identifier	qemu_iovec_init		5487254	0					
+ANR	5487461	ArgumentList	& op -> qiov		5487254	1					
+ANR	5487462	Argument	& op -> qiov		5487254	0					
+ANR	5487463	UnaryOperationExpression	& op -> qiov		5487254	0					
+ANR	5487464	UnaryOperator	&		5487254	0					
+ANR	5487465	PtrMemberAccess	op -> qiov		5487254	1					
+ANR	5487466	Identifier	op		5487254	0					
+ANR	5487467	Identifier	qiov		5487254	1					
+ANR	5487468	Argument	nb_chunks		5487254	1					
+ANR	5487469	Identifier	nb_chunks		5487254	0					
+ANR	5487470	WhileStatement	while ( nb_chunks -- > 0 )		5487254	21					
+ANR	5487471	Condition	nb_chunks -- > 0	89:11:1588:1602	5487254	0	True				
+ANR	5487472	RelationalExpression	nb_chunks -- > 0		5487254	0		>			
+ANR	5487473	PostIncDecOperationExpression	nb_chunks --		5487254	0					
+ANR	5487474	Identifier	nb_chunks		5487254	0					
+ANR	5487475	IncDec	--		5487254	1					
+ANR	5487476	PrimaryExpression	0		5487254	1					
+ANR	5487477	CompoundStatement		89:8:1565:1629	5487254	1					
+ANR	5487478	IdentifierDeclStatement	MirrorBuffer * buf = QSIMPLEQ_FIRST ( & s -> buf_free ) ;	91:8:1616:1664	5487254	0	True				
+ANR	5487479	IdentifierDecl	* buf = QSIMPLEQ_FIRST ( & s -> buf_free )		5487254	0					
+ANR	5487480	IdentifierDeclType	MirrorBuffer *		5487254	0					
+ANR	5487481	Identifier	buf		5487254	1					
+ANR	5487482	AssignmentExpression	* buf = QSIMPLEQ_FIRST ( & s -> buf_free )		5487254	2		=			
+ANR	5487483	Identifier	buf		5487254	0					
+ANR	5487484	CallExpression	QSIMPLEQ_FIRST ( & s -> buf_free )		5487254	1					
+ANR	5487485	Callee	QSIMPLEQ_FIRST		5487254	0					
+ANR	5487486	Identifier	QSIMPLEQ_FIRST		5487254	0					
+ANR	5487487	ArgumentList	& s -> buf_free		5487254	1					
+ANR	5487488	Argument	& s -> buf_free		5487254	0					
+ANR	5487489	UnaryOperationExpression	& s -> buf_free		5487254	0					
+ANR	5487490	UnaryOperator	&		5487254	0					
+ANR	5487491	PtrMemberAccess	s -> buf_free		5487254	1					
+ANR	5487492	Identifier	s		5487254	0					
+ANR	5487493	Identifier	buf_free		5487254	1					
+ANR	5487494	IdentifierDeclStatement	size_t remaining = nb_sectors * BDRV_SECTOR_SIZE - op -> qiov . size ;	93:8:1675:1739	5487254	1	True				
+ANR	5487495	IdentifierDecl	remaining = nb_sectors * BDRV_SECTOR_SIZE - op -> qiov . size		5487254	0					
+ANR	5487496	IdentifierDeclType	size_t		5487254	0					
+ANR	5487497	Identifier	remaining		5487254	1					
+ANR	5487498	AssignmentExpression	remaining = nb_sectors * BDRV_SECTOR_SIZE - op -> qiov . size		5487254	2		=			
+ANR	5487499	Identifier	remaining		5487254	0					
+ANR	5487500	AdditiveExpression	nb_sectors * BDRV_SECTOR_SIZE - op -> qiov . size		5487254	1		-			
+ANR	5487501	MultiplicativeExpression	nb_sectors * BDRV_SECTOR_SIZE		5487254	0		*			
+ANR	5487502	Identifier	nb_sectors		5487254	0					
+ANR	5487503	Identifier	BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487504	MemberAccess	op -> qiov . size		5487254	1					
+ANR	5487505	PtrMemberAccess	op -> qiov		5487254	0					
+ANR	5487506	Identifier	op		5487254	0					
+ANR	5487507	Identifier	qiov		5487254	1					
+ANR	5487508	Identifier	size		5487254	1					
+ANR	5487509	ExpressionStatement	"QSIMPLEQ_REMOVE_HEAD ( & s -> buf_free , next )"	97:8:1752:1792	5487254	2	True				
+ANR	5487510	CallExpression	"QSIMPLEQ_REMOVE_HEAD ( & s -> buf_free , next )"		5487254	0					
+ANR	5487511	Callee	QSIMPLEQ_REMOVE_HEAD		5487254	0					
+ANR	5487512	Identifier	QSIMPLEQ_REMOVE_HEAD		5487254	0					
+ANR	5487513	ArgumentList	& s -> buf_free		5487254	1					
+ANR	5487514	Argument	& s -> buf_free		5487254	0					
+ANR	5487515	UnaryOperationExpression	& s -> buf_free		5487254	0					
+ANR	5487516	UnaryOperator	&		5487254	0					
+ANR	5487517	PtrMemberAccess	s -> buf_free		5487254	1					
+ANR	5487518	Identifier	s		5487254	0					
+ANR	5487519	Identifier	buf_free		5487254	1					
+ANR	5487520	Argument	next		5487254	1					
+ANR	5487521	Identifier	next		5487254	0					
+ANR	5487522	ExpressionStatement	s -> buf_free_count --	99:8:1803:1822	5487254	3	True				
+ANR	5487523	PostIncDecOperationExpression	s -> buf_free_count --		5487254	0					
+ANR	5487524	PtrMemberAccess	s -> buf_free_count		5487254	0					
+ANR	5487525	Identifier	s		5487254	0					
+ANR	5487526	Identifier	buf_free_count		5487254	1					
+ANR	5487527	IncDec	--		5487254	1					
+ANR	5487528	ExpressionStatement	"qemu_iovec_add ( & op -> qiov , buf , MIN ( s -> granularity , remaining ) )"	101:8:1833:1895	5487254	4	True				
+ANR	5487529	CallExpression	"qemu_iovec_add ( & op -> qiov , buf , MIN ( s -> granularity , remaining ) )"		5487254	0					
+ANR	5487530	Callee	qemu_iovec_add		5487254	0					
+ANR	5487531	Identifier	qemu_iovec_add		5487254	0					
+ANR	5487532	ArgumentList	& op -> qiov		5487254	1					
+ANR	5487533	Argument	& op -> qiov		5487254	0					
+ANR	5487534	UnaryOperationExpression	& op -> qiov		5487254	0					
+ANR	5487535	UnaryOperator	&		5487254	0					
+ANR	5487536	PtrMemberAccess	op -> qiov		5487254	1					
+ANR	5487537	Identifier	op		5487254	0					
+ANR	5487538	Identifier	qiov		5487254	1					
+ANR	5487539	Argument	buf		5487254	1					
+ANR	5487540	Identifier	buf		5487254	0					
+ANR	5487541	Argument	"MIN ( s -> granularity , remaining )"		5487254	2					
+ANR	5487542	CallExpression	"MIN ( s -> granularity , remaining )"		5487254	0					
+ANR	5487543	Callee	MIN		5487254	0					
+ANR	5487544	Identifier	MIN		5487254	0					
+ANR	5487545	ArgumentList	s -> granularity		5487254	1					
+ANR	5487546	Argument	s -> granularity		5487254	0					
+ANR	5487547	PtrMemberAccess	s -> granularity		5487254	0					
+ANR	5487548	Identifier	s		5487254	0					
+ANR	5487549	Identifier	granularity		5487254	1					
+ANR	5487550	Argument	remaining		5487254	1					
+ANR	5487551	Identifier	remaining		5487254	0					
+ANR	5487552	ExpressionStatement	s -> in_flight ++	109:4:1947:1961	5487254	22	True				
+ANR	5487553	PostIncDecOperationExpression	s -> in_flight ++		5487254	0					
+ANR	5487554	PtrMemberAccess	s -> in_flight		5487254	0					
+ANR	5487555	Identifier	s		5487254	0					
+ANR	5487556	Identifier	in_flight		5487254	1					
+ANR	5487557	IncDec	++		5487254	1					
+ANR	5487558	ExpressionStatement	s -> sectors_in_flight += nb_sectors	111:4:1968:2002	5487254	23	True				
+ANR	5487559	AssignmentExpression	s -> sectors_in_flight += nb_sectors		5487254	0		+=			
+ANR	5487560	PtrMemberAccess	s -> sectors_in_flight		5487254	0					
+ANR	5487561	Identifier	s		5487254	0					
+ANR	5487562	Identifier	sectors_in_flight		5487254	1					
+ANR	5487563	Identifier	nb_sectors		5487254	1					
+ANR	5487564	ExpressionStatement	"trace_mirror_one_iteration ( s , sector_num * BDRV_SECTOR_SIZE , nb_sectors * BDRV_SECTOR_SIZE )"	113:4:2009:2132	5487254	24	True				
+ANR	5487565	CallExpression	"trace_mirror_one_iteration ( s , sector_num * BDRV_SECTOR_SIZE , nb_sectors * BDRV_SECTOR_SIZE )"		5487254	0					
+ANR	5487566	Callee	trace_mirror_one_iteration		5487254	0					
+ANR	5487567	Identifier	trace_mirror_one_iteration		5487254	0					
+ANR	5487568	ArgumentList	s		5487254	1					
+ANR	5487569	Argument	s		5487254	0					
+ANR	5487570	Identifier	s		5487254	0					
+ANR	5487571	Argument	sector_num * BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487572	MultiplicativeExpression	sector_num * BDRV_SECTOR_SIZE		5487254	0		*			
+ANR	5487573	Identifier	sector_num		5487254	0					
+ANR	5487574	Identifier	BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487575	Argument	nb_sectors * BDRV_SECTOR_SIZE		5487254	2					
+ANR	5487576	MultiplicativeExpression	nb_sectors * BDRV_SECTOR_SIZE		5487254	0		*			
+ANR	5487577	Identifier	nb_sectors		5487254	0					
+ANR	5487578	Identifier	BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487579	ExpressionStatement	"blk_aio_preadv ( source , sector_num * BDRV_SECTOR_SIZE , & op -> qiov , 0 , mirror_read_complete , op )"	119:4:2141:2254	5487254	25	True				
+ANR	5487580	CallExpression	"blk_aio_preadv ( source , sector_num * BDRV_SECTOR_SIZE , & op -> qiov , 0 , mirror_read_complete , op )"		5487254	0					
+ANR	5487581	Callee	blk_aio_preadv		5487254	0					
+ANR	5487582	Identifier	blk_aio_preadv		5487254	0					
+ANR	5487583	ArgumentList	source		5487254	1					
+ANR	5487584	Argument	source		5487254	0					
+ANR	5487585	Identifier	source		5487254	0					
+ANR	5487586	Argument	sector_num * BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487587	MultiplicativeExpression	sector_num * BDRV_SECTOR_SIZE		5487254	0		*			
+ANR	5487588	Identifier	sector_num		5487254	0					
+ANR	5487589	Identifier	BDRV_SECTOR_SIZE		5487254	1					
+ANR	5487590	Argument	& op -> qiov		5487254	2					
+ANR	5487591	UnaryOperationExpression	& op -> qiov		5487254	0					
+ANR	5487592	UnaryOperator	&		5487254	0					
+ANR	5487593	PtrMemberAccess	op -> qiov		5487254	1					
+ANR	5487594	Identifier	op		5487254	0					
+ANR	5487595	Identifier	qiov		5487254	1					
+ANR	5487596	Argument	0		5487254	3					
+ANR	5487597	PrimaryExpression	0		5487254	0					
+ANR	5487598	Argument	mirror_read_complete		5487254	4					
+ANR	5487599	Identifier	mirror_read_complete		5487254	0					
+ANR	5487600	Argument	op		5487254	5					
+ANR	5487601	Identifier	op		5487254	0					
+ANR	5487602	ReturnStatement	return ret ;	123:4:2261:2271	5487254	26	True				
+ANR	5487603	Identifier	ret		5487254	0					
+ANR	5487604	ReturnType	static int		5487254	1					
+ANR	5487605	Identifier	mirror_do_read		5487254	2					
+ANR	5487606	ParameterList	"MirrorBlockJob * s , int64_t sector_num , int nb_sectors"		5487254	3					
+ANR	5487607	Parameter	MirrorBlockJob * s	1:26:26:42	5487254	0	True				
+ANR	5487608	ParameterType	MirrorBlockJob *		5487254	0					
+ANR	5487609	Identifier	s		5487254	1					
+ANR	5487610	Parameter	int64_t sector_num	1:45:45:62	5487254	1	True				
+ANR	5487611	ParameterType	int64_t		5487254	0					
+ANR	5487612	Identifier	sector_num		5487254	1					
+ANR	5487613	Parameter	int nb_sectors	3:26:92:105	5487254	2	True				
+ANR	5487614	ParameterType	int		5487254	0					
+ANR	5487615	Identifier	nb_sectors		5487254	1					
+ANR	5487616	CFGEntryNode	ENTRY		5487254		True				
+ANR	5487617	CFGExitNode	EXIT		5487254		True				
+ANR	5487618	Symbol	next		5487254						
+ANR	5487619	Symbol	nb_sectors		5487254						
+ANR	5487620	Symbol	s -> sectors_in_flight		5487254						
+ANR	5487621	Symbol	* op		5487254						
+ANR	5487622	Symbol	DIV_ROUND_UP		5487254						
+ANR	5487623	Symbol	s -> max_iov		5487254						
+ANR	5487624	Symbol	& nb_sectors		5487254						
+ANR	5487625	Symbol	op -> nb_sectors		5487254						
+ANR	5487626	Symbol	source		5487254						
+ANR	5487627	Symbol	mirror_cow_align		5487254						
+ANR	5487628	Symbol	MirrorOp		5487254						
+ANR	5487629	Symbol	s -> common		5487254						
+ANR	5487630	Symbol	g_new		5487254						
+ANR	5487631	Symbol	& sector_num		5487254						
+ANR	5487632	Symbol	s -> cow_bitmap		5487254						
+ANR	5487633	Symbol	s -> buf_free_count		5487254						
+ANR	5487634	Symbol	& op -> qiov		5487254						
+ANR	5487635	Symbol	mirror_read_complete		5487254						
+ANR	5487636	Symbol	ret		5487254						
+ANR	5487637	Symbol	op -> sector_num		5487254						
+ANR	5487638	Symbol	op		5487254						
+ANR	5487639	Symbol	op -> qiov		5487254						
+ANR	5487640	Symbol	s -> common . blk		5487254						
+ANR	5487641	Symbol	BDRV_SECTOR_BITS		5487254						
+ANR	5487642	Symbol	s -> buf_size		5487254						
+ANR	5487643	Symbol	op -> s		5487254						
+ANR	5487644	Symbol	s -> in_flight		5487254						
+ANR	5487645	Symbol	& s -> buf_free		5487254						
+ANR	5487646	Symbol	remaining		5487254						
+ANR	5487647	Symbol	sector_num		5487254						
+ANR	5487648	Symbol	sectors_per_chunk		5487254						
+ANR	5487649	Symbol	buf		5487254						
+ANR	5487650	Symbol	s		5487254						
+ANR	5487651	Symbol	MIN		5487254						
+ANR	5487652	Symbol	max_sectors		5487254						
+ANR	5487653	Symbol	s -> granularity		5487254						
+ANR	5487654	Symbol	BDRV_SECTOR_SIZE		5487254						
+ANR	5487655	Symbol	nb_chunks		5487254						
+ANR	5487656	Symbol	* s		5487254						
+ANR	5487657	Symbol	QSIMPLEQ_FIRST		5487254						
+ANR	5487658	Symbol	op -> qiov . size		5487254						

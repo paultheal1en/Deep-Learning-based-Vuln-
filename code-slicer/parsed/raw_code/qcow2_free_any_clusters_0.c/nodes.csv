@@ -1,0 +1,179 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6858699	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_free_any_clusters_0.c								
+ANR	6858700	Function	qcow2_free_any_clusters	1:0:0:1278							
+ANR	6858701	FunctionDef	"qcow2_free_any_clusters (BlockDriverState * bs , uint64_t l2_entry , int nb_clusters , enum qcow2_discard_type type)"		6858700	0					
+ANR	6858702	CompoundStatement		5:0:148:1278	6858700	0					
+ANR	6858703	IdentifierDeclStatement	BDRVQcow2State * s = bs -> opaque ;	7:4:155:185	6858700	0	True				
+ANR	6858704	IdentifierDecl	* s = bs -> opaque		6858700	0					
+ANR	6858705	IdentifierDeclType	BDRVQcow2State *		6858700	0					
+ANR	6858706	Identifier	s		6858700	1					
+ANR	6858707	AssignmentExpression	* s = bs -> opaque		6858700	2		=			
+ANR	6858708	Identifier	s		6858700	0					
+ANR	6858709	PtrMemberAccess	bs -> opaque		6858700	1					
+ANR	6858710	Identifier	bs		6858700	0					
+ANR	6858711	Identifier	opaque		6858700	1					
+ANR	6858712	SwitchStatement	switch ( qcow2_get_cluster_type ( l2_entry ) )		6858700	1					
+ANR	6858713	Condition	qcow2_get_cluster_type ( l2_entry )	11:12:202:233	6858700	0	True				
+ANR	6858714	CallExpression	qcow2_get_cluster_type ( l2_entry )		6858700	0					
+ANR	6858715	Callee	qcow2_get_cluster_type		6858700	0					
+ANR	6858716	Identifier	qcow2_get_cluster_type		6858700	0					
+ANR	6858717	ArgumentList	l2_entry		6858700	1					
+ANR	6858718	Argument	l2_entry		6858700	0					
+ANR	6858719	Identifier	l2_entry		6858700	0					
+ANR	6858720	CompoundStatement		7:46:87:87	6858700	1					
+ANR	6858721	Label	case QCOW2_CLUSTER_COMPRESSED :	13:4:243:272	6858700	0	True				
+ANR	6858722	Identifier	QCOW2_CLUSTER_COMPRESSED		6858700	0					
+ANR	6858723	CompoundStatement		13:12:149:164	6858700	1					
+ANR	6858724	IdentifierDeclStatement	int nb_csectors ;	17:12:298:313	6858700	0	True				
+ANR	6858725	IdentifierDecl	nb_csectors		6858700	0					
+ANR	6858726	IdentifierDeclType	int		6858700	0					
+ANR	6858727	Identifier	nb_csectors		6858700	1					
+ANR	6858728	ExpressionStatement	nb_csectors = ( ( l2_entry >> s -> csize_shift ) & s -> csize_mask ) + 1	19:12:328:420	6858700	1	True				
+ANR	6858729	AssignmentExpression	nb_csectors = ( ( l2_entry >> s -> csize_shift ) & s -> csize_mask ) + 1		6858700	0		=			
+ANR	6858730	Identifier	nb_csectors		6858700	0					
+ANR	6858731	AdditiveExpression	( ( l2_entry >> s -> csize_shift ) & s -> csize_mask ) + 1		6858700	1		+			
+ANR	6858732	BitAndExpression	( l2_entry >> s -> csize_shift ) & s -> csize_mask		6858700	0		&			
+ANR	6858733	ShiftExpression	l2_entry >> s -> csize_shift		6858700	0		>>			
+ANR	6858734	Identifier	l2_entry		6858700	0					
+ANR	6858735	PtrMemberAccess	s -> csize_shift		6858700	1					
+ANR	6858736	Identifier	s		6858700	0					
+ANR	6858737	Identifier	csize_shift		6858700	1					
+ANR	6858738	PtrMemberAccess	s -> csize_mask		6858700	1					
+ANR	6858739	Identifier	s		6858700	0					
+ANR	6858740	Identifier	csize_mask		6858700	1					
+ANR	6858741	PrimaryExpression	1		6858700	1					
+ANR	6858742	ExpressionStatement	"qcow2_free_clusters ( bs , ( l2_entry & s -> cluster_offset_mask ) & ~511 , nb_csectors * 512 , type )"	23:12:435:561	6858700	2	True				
+ANR	6858743	CallExpression	"qcow2_free_clusters ( bs , ( l2_entry & s -> cluster_offset_mask ) & ~511 , nb_csectors * 512 , type )"		6858700	0					
+ANR	6858744	Callee	qcow2_free_clusters		6858700	0					
+ANR	6858745	Identifier	qcow2_free_clusters		6858700	0					
+ANR	6858746	ArgumentList	bs		6858700	1					
+ANR	6858747	Argument	bs		6858700	0					
+ANR	6858748	Identifier	bs		6858700	0					
+ANR	6858749	Argument	( l2_entry & s -> cluster_offset_mask ) & ~511		6858700	1					
+ANR	6858750	BitAndExpression	( l2_entry & s -> cluster_offset_mask ) & ~511		6858700	0		&			
+ANR	6858751	BitAndExpression	l2_entry & s -> cluster_offset_mask		6858700	0		&			
+ANR	6858752	Identifier	l2_entry		6858700	0					
+ANR	6858753	PtrMemberAccess	s -> cluster_offset_mask		6858700	1					
+ANR	6858754	Identifier	s		6858700	0					
+ANR	6858755	Identifier	cluster_offset_mask		6858700	1					
+ANR	6858756	Identifier	~511		6858700	1					
+ANR	6858757	Argument	nb_csectors * 512		6858700	2					
+ANR	6858758	MultiplicativeExpression	nb_csectors * 512		6858700	0		*			
+ANR	6858759	Identifier	nb_csectors		6858700	0					
+ANR	6858760	PrimaryExpression	512		6858700	1					
+ANR	6858761	Argument	type		6858700	3					
+ANR	6858762	Identifier	type		6858700	0					
+ANR	6858763	BreakStatement	break ;	31:8:583:588	6858700	2	True				
+ANR	6858764	Label	case QCOW2_CLUSTER_NORMAL :	33:4:595:620	6858700	3	True				
+ANR	6858765	Identifier	QCOW2_CLUSTER_NORMAL		6858700	0					
+ANR	6858766	Label	case QCOW2_CLUSTER_ZERO :	35:4:627:650	6858700	4	True				
+ANR	6858767	Identifier	QCOW2_CLUSTER_ZERO		6858700	0					
+ANR	6858768	IfStatement	if ( l2_entry & L2E_OFFSET_MASK )		6858700	5					
+ANR	6858769	Condition	l2_entry & L2E_OFFSET_MASK	37:12:665:690	6858700	0	True				
+ANR	6858770	BitAndExpression	l2_entry & L2E_OFFSET_MASK		6858700	0		&			
+ANR	6858771	Identifier	l2_entry		6858700	0					
+ANR	6858772	Identifier	L2E_OFFSET_MASK		6858700	1					
+ANR	6858773	CompoundStatement		33:40:544:544	6858700	1					
+ANR	6858774	IfStatement	"if ( offset_into_cluster ( s , l2_entry & L2E_OFFSET_MASK ) )"		6858700	0					
+ANR	6858775	Condition	"offset_into_cluster ( s , l2_entry & L2E_OFFSET_MASK )"	39:16:712:761	6858700	0	True				
+ANR	6858776	CallExpression	"offset_into_cluster ( s , l2_entry & L2E_OFFSET_MASK )"		6858700	0					
+ANR	6858777	Callee	offset_into_cluster		6858700	0					
+ANR	6858778	Identifier	offset_into_cluster		6858700	0					
+ANR	6858779	ArgumentList	s		6858700	1					
+ANR	6858780	Argument	s		6858700	0					
+ANR	6858781	Identifier	s		6858700	0					
+ANR	6858782	Argument	l2_entry & L2E_OFFSET_MASK		6858700	1					
+ANR	6858783	BitAndExpression	l2_entry & L2E_OFFSET_MASK		6858700	0		&			
+ANR	6858784	Identifier	l2_entry		6858700	0					
+ANR	6858785	Identifier	L2E_OFFSET_MASK		6858700	1					
+ANR	6858786	CompoundStatement		35:68:615:615	6858700	1					
+ANR	6858787	ExpressionStatement	"qcow2_signal_corruption ( bs , false , - 1 , - 1 , ""Cannot free unaligned cluster %#llx"" , l2_entry & L2E_OFFSET_MASK )"	41:16:783:974	6858700	0	True				
+ANR	6858788	CallExpression	"qcow2_signal_corruption ( bs , false , - 1 , - 1 , ""Cannot free unaligned cluster %#llx"" , l2_entry & L2E_OFFSET_MASK )"		6858700	0					
+ANR	6858789	Callee	qcow2_signal_corruption		6858700	0					
+ANR	6858790	Identifier	qcow2_signal_corruption		6858700	0					
+ANR	6858791	ArgumentList	bs		6858700	1					
+ANR	6858792	Argument	bs		6858700	0					
+ANR	6858793	Identifier	bs		6858700	0					
+ANR	6858794	Argument	false		6858700	1					
+ANR	6858795	Identifier	false		6858700	0					
+ANR	6858796	Argument	- 1		6858700	2					
+ANR	6858797	UnaryOperationExpression	- 1		6858700	0					
+ANR	6858798	UnaryOperator	-		6858700	0					
+ANR	6858799	PrimaryExpression	1		6858700	1					
+ANR	6858800	Argument	- 1		6858700	3					
+ANR	6858801	UnaryOperationExpression	- 1		6858700	0					
+ANR	6858802	UnaryOperator	-		6858700	0					
+ANR	6858803	PrimaryExpression	1		6858700	1					
+ANR	6858804	Argument	"""Cannot free unaligned cluster %#llx"""		6858700	4					
+ANR	6858805	PrimaryExpression	"""Cannot free unaligned cluster %#llx"""		6858700	0					
+ANR	6858806	Argument	l2_entry & L2E_OFFSET_MASK		6858700	5					
+ANR	6858807	BitAndExpression	l2_entry & L2E_OFFSET_MASK		6858700	0		&			
+ANR	6858808	Identifier	l2_entry		6858700	0					
+ANR	6858809	Identifier	L2E_OFFSET_MASK		6858700	1					
+ANR	6858810	ElseStatement	else		6858700	0					
+ANR	6858811	CompoundStatement		43:19:847:847	6858700	0					
+ANR	6858812	ExpressionStatement	"qcow2_free_clusters ( bs , l2_entry & L2E_OFFSET_MASK , nb_clusters << s -> cluster_bits , type )"	49:16:1015:1141	6858700	0	True				
+ANR	6858813	CallExpression	"qcow2_free_clusters ( bs , l2_entry & L2E_OFFSET_MASK , nb_clusters << s -> cluster_bits , type )"		6858700	0					
+ANR	6858814	Callee	qcow2_free_clusters		6858700	0					
+ANR	6858815	Identifier	qcow2_free_clusters		6858700	0					
+ANR	6858816	ArgumentList	bs		6858700	1					
+ANR	6858817	Argument	bs		6858700	0					
+ANR	6858818	Identifier	bs		6858700	0					
+ANR	6858819	Argument	l2_entry & L2E_OFFSET_MASK		6858700	1					
+ANR	6858820	BitAndExpression	l2_entry & L2E_OFFSET_MASK		6858700	0		&			
+ANR	6858821	Identifier	l2_entry		6858700	0					
+ANR	6858822	Identifier	L2E_OFFSET_MASK		6858700	1					
+ANR	6858823	Argument	nb_clusters << s -> cluster_bits		6858700	2					
+ANR	6858824	ShiftExpression	nb_clusters << s -> cluster_bits		6858700	0		<<			
+ANR	6858825	Identifier	nb_clusters		6858700	0					
+ANR	6858826	PtrMemberAccess	s -> cluster_bits		6858700	1					
+ANR	6858827	Identifier	s		6858700	0					
+ANR	6858828	Identifier	cluster_bits		6858700	1					
+ANR	6858829	Argument	type		6858700	3					
+ANR	6858830	Identifier	type		6858700	0					
+ANR	6858831	BreakStatement	break ;	57:8:1178:1183	6858700	6	True				
+ANR	6858832	Label	case QCOW2_CLUSTER_UNALLOCATED :	59:4:1190:1220	6858700	7	True				
+ANR	6858833	Identifier	QCOW2_CLUSTER_UNALLOCATED		6858700	0					
+ANR	6858834	BreakStatement	break ;	61:8:1231:1236	6858700	8	True				
+ANR	6858835	Label	default :	63:4:1243:1250	6858700	9	True				
+ANR	6858836	Identifier	default		6858700	0					
+ANR	6858837	ExpressionStatement	abort ( )	65:8:1261:1268	6858700	10	True				
+ANR	6858838	CallExpression	abort ( )		6858700	0					
+ANR	6858839	Callee	abort		6858700	0					
+ANR	6858840	Identifier	abort		6858700	0					
+ANR	6858841	ArgumentList			6858700	1					
+ANR	6858842	ReturnType	void		6858700	1					
+ANR	6858843	Identifier	qcow2_free_any_clusters		6858700	2					
+ANR	6858844	ParameterList	"BlockDriverState * bs , uint64_t l2_entry , int nb_clusters , enum qcow2_discard_type type"		6858700	3					
+ANR	6858845	Parameter	BlockDriverState * bs	1:29:29:48	6858700	0	True				
+ANR	6858846	ParameterType	BlockDriverState *		6858700	0					
+ANR	6858847	Identifier	bs		6858700	1					
+ANR	6858848	Parameter	uint64_t l2_entry	1:51:51:67	6858700	1	True				
+ANR	6858849	ParameterType	uint64_t		6858700	0					
+ANR	6858850	Identifier	l2_entry		6858700	1					
+ANR	6858851	Parameter	int nb_clusters	3:29:100:114	6858700	2	True				
+ANR	6858852	ParameterType	int		6858700	0					
+ANR	6858853	Identifier	nb_clusters		6858700	1					
+ANR	6858854	Parameter	enum qcow2_discard_type type	3:46:117:144	6858700	3	True				
+ANR	6858855	ParameterType	enum qcow2_discard_type		6858700	0					
+ANR	6858856	Identifier	type		6858700	1					
+ANR	6858857	CFGEntryNode	ENTRY		6858700		True				
+ANR	6858858	CFGExitNode	EXIT		6858700		True				
+ANR	6858859	Symbol	s -> csize_shift		6858700						
+ANR	6858860	Symbol	offset_into_cluster		6858700						
+ANR	6858861	Symbol	bs -> opaque		6858700						
+ANR	6858862	Symbol	s -> csize_mask		6858700						
+ANR	6858863	Symbol	qcow2_get_cluster_type		6858700						
+ANR	6858864	Symbol	false		6858700						
+ANR	6858865	Symbol	nb_clusters		6858700						
+ANR	6858866	Symbol	l2_entry		6858700						
+ANR	6858867	Symbol	type		6858700						
+ANR	6858868	Symbol	~511		6858700						
+ANR	6858869	Symbol	L2E_OFFSET_MASK		6858700						
+ANR	6858870	Symbol	bs		6858700						
+ANR	6858871	Symbol	s -> cluster_bits		6858700						
+ANR	6858872	Symbol	s		6858700						
+ANR	6858873	Symbol	* bs		6858700						
+ANR	6858874	Symbol	s -> cluster_offset_mask		6858700						
+ANR	6858875	Symbol	* s		6858700						
+ANR	6858876	Symbol	nb_csectors		6858700						

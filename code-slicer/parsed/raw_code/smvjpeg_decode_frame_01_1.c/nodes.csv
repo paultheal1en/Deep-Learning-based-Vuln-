@@ -1,0 +1,426 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7875753	File	/home/p4ultr4n/workplace/ReVeal/raw_code/smvjpeg_decode_frame_01_1.c								
+ANR	7875754	Function	smvjpeg_decode_frame	1:0:0:2025							
+ANR	7875755	FunctionDef	"smvjpeg_decode_frame (AVCodecContext * avctx , void * data , int * data_size , AVPacket * avpkt)"		7875754	0					
+ANR	7875756	CompoundStatement		5:0:130:2025	7875754	0					
+ANR	7875757	IdentifierDeclStatement	const AVPixFmtDescriptor * desc ;	7:4:137:167	7875754	0	True				
+ANR	7875758	IdentifierDecl	* desc		7875754	0					
+ANR	7875759	IdentifierDeclType	const AVPixFmtDescriptor *		7875754	0					
+ANR	7875760	Identifier	desc		7875754	1					
+ANR	7875761	IdentifierDeclStatement	SMVJpegDecodeContext * s = avctx -> priv_data ;	9:4:174:216	7875754	1	True				
+ANR	7875762	IdentifierDecl	* s = avctx -> priv_data		7875754	0					
+ANR	7875763	IdentifierDeclType	SMVJpegDecodeContext *		7875754	0					
+ANR	7875764	Identifier	s		7875754	1					
+ANR	7875765	AssignmentExpression	* s = avctx -> priv_data		7875754	2		=			
+ANR	7875766	Identifier	s		7875754	0					
+ANR	7875767	PtrMemberAccess	avctx -> priv_data		7875754	1					
+ANR	7875768	Identifier	avctx		7875754	0					
+ANR	7875769	Identifier	priv_data		7875754	1					
+ANR	7875770	IdentifierDeclStatement	AVFrame * mjpeg_data = s -> picture [ 0 ] ;	11:4:223:258	7875754	2	True				
+ANR	7875771	IdentifierDecl	* mjpeg_data = s -> picture [ 0 ]		7875754	0					
+ANR	7875772	IdentifierDeclType	AVFrame *		7875754	0					
+ANR	7875773	Identifier	mjpeg_data		7875754	1					
+ANR	7875774	AssignmentExpression	* mjpeg_data = s -> picture [ 0 ]		7875754	2		=			
+ANR	7875775	Identifier	mjpeg_data		7875754	0					
+ANR	7875776	ArrayIndexing	s -> picture [ 0 ]		7875754	1					
+ANR	7875777	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7875778	Identifier	s		7875754	0					
+ANR	7875779	Identifier	picture		7875754	1					
+ANR	7875780	PrimaryExpression	0		7875754	1					
+ANR	7875781	IdentifierDeclStatement	"int i , cur_frame = 0 , ret = 0 ;"	13:4:265:294	7875754	3	True				
+ANR	7875782	IdentifierDecl	i		7875754	0					
+ANR	7875783	IdentifierDeclType	int		7875754	0					
+ANR	7875784	Identifier	i		7875754	1					
+ANR	7875785	IdentifierDecl	cur_frame = 0		7875754	1					
+ANR	7875786	IdentifierDeclType	int		7875754	0					
+ANR	7875787	Identifier	cur_frame		7875754	1					
+ANR	7875788	AssignmentExpression	cur_frame = 0		7875754	2		=			
+ANR	7875789	Identifier	cur_frame		7875754	0					
+ANR	7875790	PrimaryExpression	0		7875754	1					
+ANR	7875791	IdentifierDecl	ret = 0		7875754	2					
+ANR	7875792	IdentifierDeclType	int		7875754	0					
+ANR	7875793	Identifier	ret		7875754	1					
+ANR	7875794	AssignmentExpression	ret = 0		7875754	2		=			
+ANR	7875795	Identifier	ret		7875754	0					
+ANR	7875796	PrimaryExpression	0		7875754	1					
+ANR	7875797	ExpressionStatement	cur_frame = avpkt -> pts % s -> frames_per_jpeg	17:4:303:346	7875754	4	True				
+ANR	7875798	AssignmentExpression	cur_frame = avpkt -> pts % s -> frames_per_jpeg		7875754	0		=			
+ANR	7875799	Identifier	cur_frame		7875754	0					
+ANR	7875800	MultiplicativeExpression	avpkt -> pts % s -> frames_per_jpeg		7875754	1		%			
+ANR	7875801	PtrMemberAccess	avpkt -> pts		7875754	0					
+ANR	7875802	Identifier	avpkt		7875754	0					
+ANR	7875803	Identifier	pts		7875754	1					
+ANR	7875804	PtrMemberAccess	s -> frames_per_jpeg		7875754	1					
+ANR	7875805	Identifier	s		7875754	0					
+ANR	7875806	Identifier	frames_per_jpeg		7875754	1					
+ANR	7875807	IfStatement	if ( ! cur_frame )		7875754	5					
+ANR	7875808	Condition	! cur_frame	23:8:402:411	7875754	0	True				
+ANR	7875809	UnaryOperationExpression	! cur_frame		7875754	0					
+ANR	7875810	UnaryOperator	!		7875754	0					
+ANR	7875811	Identifier	cur_frame		7875754	1					
+ANR	7875812	CompoundStatement		19:20:283:283	7875754	1					
+ANR	7875813	ExpressionStatement	av_frame_unref ( mjpeg_data )	25:8:425:451	7875754	0	True				
+ANR	7875814	CallExpression	av_frame_unref ( mjpeg_data )		7875754	0					
+ANR	7875815	Callee	av_frame_unref		7875754	0					
+ANR	7875816	Identifier	av_frame_unref		7875754	0					
+ANR	7875817	ArgumentList	mjpeg_data		7875754	1					
+ANR	7875818	Argument	mjpeg_data		7875754	0					
+ANR	7875819	Identifier	mjpeg_data		7875754	0					
+ANR	7875820	ExpressionStatement	"ret = avcodec_decode_video2 ( s -> avctx , mjpeg_data , & s -> mjpeg_data_size , avpkt )"	27:8:462:539	7875754	1	True				
+ANR	7875821	AssignmentExpression	"ret = avcodec_decode_video2 ( s -> avctx , mjpeg_data , & s -> mjpeg_data_size , avpkt )"		7875754	0		=			
+ANR	7875822	Identifier	ret		7875754	0					
+ANR	7875823	CallExpression	"avcodec_decode_video2 ( s -> avctx , mjpeg_data , & s -> mjpeg_data_size , avpkt )"		7875754	1					
+ANR	7875824	Callee	avcodec_decode_video2		7875754	0					
+ANR	7875825	Identifier	avcodec_decode_video2		7875754	0					
+ANR	7875826	ArgumentList	s -> avctx		7875754	1					
+ANR	7875827	Argument	s -> avctx		7875754	0					
+ANR	7875828	PtrMemberAccess	s -> avctx		7875754	0					
+ANR	7875829	Identifier	s		7875754	0					
+ANR	7875830	Identifier	avctx		7875754	1					
+ANR	7875831	Argument	mjpeg_data		7875754	1					
+ANR	7875832	Identifier	mjpeg_data		7875754	0					
+ANR	7875833	Argument	& s -> mjpeg_data_size		7875754	2					
+ANR	7875834	UnaryOperationExpression	& s -> mjpeg_data_size		7875754	0					
+ANR	7875835	UnaryOperator	&		7875754	0					
+ANR	7875836	PtrMemberAccess	s -> mjpeg_data_size		7875754	1					
+ANR	7875837	Identifier	s		7875754	0					
+ANR	7875838	Identifier	mjpeg_data_size		7875754	1					
+ANR	7875839	Argument	avpkt		7875754	3					
+ANR	7875840	Identifier	avpkt		7875754	0					
+ANR	7875841	IfStatement	if ( ret < 0 )		7875754	2					
+ANR	7875842	Condition	ret < 0	29:12:554:560	7875754	0	True				
+ANR	7875843	RelationalExpression	ret < 0		7875754	0		<			
+ANR	7875844	Identifier	ret		7875754	0					
+ANR	7875845	PrimaryExpression	0		7875754	1					
+ANR	7875846	CompoundStatement		25:21:432:432	7875754	1					
+ANR	7875847	ExpressionStatement	s -> mjpeg_data_size = 0	31:12:578:600	7875754	0	True				
+ANR	7875848	AssignmentExpression	s -> mjpeg_data_size = 0		7875754	0		=			
+ANR	7875849	PtrMemberAccess	s -> mjpeg_data_size		7875754	0					
+ANR	7875850	Identifier	s		7875754	0					
+ANR	7875851	Identifier	mjpeg_data_size		7875754	1					
+ANR	7875852	PrimaryExpression	0		7875754	1					
+ANR	7875853	ReturnStatement	return ret ;	33:12:615:625	7875754	1	True				
+ANR	7875854	Identifier	ret		7875754	0					
+ANR	7875855	ElseStatement	else		7875754	0					
+ANR	7875856	IfStatement	if ( ! s -> mjpeg_data_size )		7875754	0					
+ANR	7875857	Condition	! s -> mjpeg_data_size	37:15:654:672	7875754	0	True				
+ANR	7875858	UnaryOperationExpression	! s -> mjpeg_data_size		7875754	0					
+ANR	7875859	UnaryOperator	!		7875754	0					
+ANR	7875860	PtrMemberAccess	s -> mjpeg_data_size		7875754	1					
+ANR	7875861	Identifier	s		7875754	0					
+ANR	7875862	Identifier	mjpeg_data_size		7875754	1					
+ANR	7875863	ReturnStatement	return AVERROR ( EINVAL ) ;	39:8:684:706	7875754	1	True				
+ANR	7875864	CallExpression	AVERROR ( EINVAL )		7875754	0					
+ANR	7875865	Callee	AVERROR		7875754	0					
+ANR	7875866	Identifier	AVERROR		7875754	0					
+ANR	7875867	ArgumentList	EINVAL		7875754	1					
+ANR	7875868	Argument	EINVAL		7875754	0					
+ANR	7875869	Identifier	EINVAL		7875754	0					
+ANR	7875870	ExpressionStatement	desc = av_pix_fmt_desc_get ( s -> avctx -> pix_fmt )	43:4:715:760	7875754	6	True				
+ANR	7875871	AssignmentExpression	desc = av_pix_fmt_desc_get ( s -> avctx -> pix_fmt )		7875754	0		=			
+ANR	7875872	Identifier	desc		7875754	0					
+ANR	7875873	CallExpression	av_pix_fmt_desc_get ( s -> avctx -> pix_fmt )		7875754	1					
+ANR	7875874	Callee	av_pix_fmt_desc_get		7875754	0					
+ANR	7875875	Identifier	av_pix_fmt_desc_get		7875754	0					
+ANR	7875876	ArgumentList	s -> avctx -> pix_fmt		7875754	1					
+ANR	7875877	Argument	s -> avctx -> pix_fmt		7875754	0					
+ANR	7875878	PtrMemberAccess	s -> avctx -> pix_fmt		7875754	0					
+ANR	7875879	PtrMemberAccess	s -> avctx		7875754	0					
+ANR	7875880	Identifier	s		7875754	0					
+ANR	7875881	Identifier	avctx		7875754	1					
+ANR	7875882	Identifier	pix_fmt		7875754	1					
+ANR	7875883	IfStatement	if ( desc && mjpeg_data -> height % ( s -> frames_per_jpeg << desc -> log2_chroma_h ) )		7875754	7					
+ANR	7875884	Condition	desc && mjpeg_data -> height % ( s -> frames_per_jpeg << desc -> log2_chroma_h )	45:8:771:842	7875754	0	True				
+ANR	7875885	AndExpression	desc && mjpeg_data -> height % ( s -> frames_per_jpeg << desc -> log2_chroma_h )		7875754	0		&&			
+ANR	7875886	Identifier	desc		7875754	0					
+ANR	7875887	MultiplicativeExpression	mjpeg_data -> height % ( s -> frames_per_jpeg << desc -> log2_chroma_h )		7875754	1		%			
+ANR	7875888	PtrMemberAccess	mjpeg_data -> height		7875754	0					
+ANR	7875889	Identifier	mjpeg_data		7875754	0					
+ANR	7875890	Identifier	height		7875754	1					
+ANR	7875891	ShiftExpression	s -> frames_per_jpeg << desc -> log2_chroma_h		7875754	1		<<			
+ANR	7875892	PtrMemberAccess	s -> frames_per_jpeg		7875754	0					
+ANR	7875893	Identifier	s		7875754	0					
+ANR	7875894	Identifier	frames_per_jpeg		7875754	1					
+ANR	7875895	PtrMemberAccess	desc -> log2_chroma_h		7875754	1					
+ANR	7875896	Identifier	desc		7875754	0					
+ANR	7875897	Identifier	log2_chroma_h		7875754	1					
+ANR	7875898	CompoundStatement		41:82:714:714	7875754	1					
+ANR	7875899	ExpressionStatement	"av_log ( avctx , AV_LOG_ERROR , ""Invalid height\\n"" )"	47:8:856:903	7875754	0	True				
+ANR	7875900	CallExpression	"av_log ( avctx , AV_LOG_ERROR , ""Invalid height\\n"" )"		7875754	0					
+ANR	7875901	Callee	av_log		7875754	0					
+ANR	7875902	Identifier	av_log		7875754	0					
+ANR	7875903	ArgumentList	avctx		7875754	1					
+ANR	7875904	Argument	avctx		7875754	0					
+ANR	7875905	Identifier	avctx		7875754	0					
+ANR	7875906	Argument	AV_LOG_ERROR		7875754	1					
+ANR	7875907	Identifier	AV_LOG_ERROR		7875754	0					
+ANR	7875908	Argument	"""Invalid height\\n"""		7875754	2					
+ANR	7875909	PrimaryExpression	"""Invalid height\\n"""		7875754	0					
+ANR	7875910	ReturnStatement	return AVERROR_INVALIDDATA ;	49:8:914:940	7875754	1	True				
+ANR	7875911	Identifier	AVERROR_INVALIDDATA		7875754	0					
+ANR	7875912	ExpressionStatement	* data_size = s -> mjpeg_data_size	57:4:986:1017	7875754	8	True				
+ANR	7875913	AssignmentExpression	* data_size = s -> mjpeg_data_size		7875754	0		=			
+ANR	7875914	UnaryOperationExpression	* data_size		7875754	0					
+ANR	7875915	UnaryOperator	*		7875754	0					
+ANR	7875916	Identifier	data_size		7875754	1					
+ANR	7875917	PtrMemberAccess	s -> mjpeg_data_size		7875754	1					
+ANR	7875918	Identifier	s		7875754	0					
+ANR	7875919	Identifier	mjpeg_data_size		7875754	1					
+ANR	7875920	ExpressionStatement	avctx -> pix_fmt = s -> avctx -> pix_fmt	61:4:1026:1060	7875754	9	True				
+ANR	7875921	AssignmentExpression	avctx -> pix_fmt = s -> avctx -> pix_fmt		7875754	0		=			
+ANR	7875922	PtrMemberAccess	avctx -> pix_fmt		7875754	0					
+ANR	7875923	Identifier	avctx		7875754	0					
+ANR	7875924	Identifier	pix_fmt		7875754	1					
+ANR	7875925	PtrMemberAccess	s -> avctx -> pix_fmt		7875754	1					
+ANR	7875926	PtrMemberAccess	s -> avctx		7875754	0					
+ANR	7875927	Identifier	s		7875754	0					
+ANR	7875928	Identifier	avctx		7875754	1					
+ANR	7875929	Identifier	pix_fmt		7875754	1					
+ANR	7875930	ExpressionStatement	"ret = ff_set_dimensions ( avctx , mjpeg_data -> width , mjpeg_data -> height / s -> frames_per_jpeg )"	69:4:1168:1258	7875754	10	True				
+ANR	7875931	AssignmentExpression	"ret = ff_set_dimensions ( avctx , mjpeg_data -> width , mjpeg_data -> height / s -> frames_per_jpeg )"		7875754	0		=			
+ANR	7875932	Identifier	ret		7875754	0					
+ANR	7875933	CallExpression	"ff_set_dimensions ( avctx , mjpeg_data -> width , mjpeg_data -> height / s -> frames_per_jpeg )"		7875754	1					
+ANR	7875934	Callee	ff_set_dimensions		7875754	0					
+ANR	7875935	Identifier	ff_set_dimensions		7875754	0					
+ANR	7875936	ArgumentList	avctx		7875754	1					
+ANR	7875937	Argument	avctx		7875754	0					
+ANR	7875938	Identifier	avctx		7875754	0					
+ANR	7875939	Argument	mjpeg_data -> width		7875754	1					
+ANR	7875940	PtrMemberAccess	mjpeg_data -> width		7875754	0					
+ANR	7875941	Identifier	mjpeg_data		7875754	0					
+ANR	7875942	Identifier	width		7875754	1					
+ANR	7875943	Argument	mjpeg_data -> height / s -> frames_per_jpeg		7875754	2					
+ANR	7875944	MultiplicativeExpression	mjpeg_data -> height / s -> frames_per_jpeg		7875754	0		/			
+ANR	7875945	PtrMemberAccess	mjpeg_data -> height		7875754	0					
+ANR	7875946	Identifier	mjpeg_data		7875754	0					
+ANR	7875947	Identifier	height		7875754	1					
+ANR	7875948	PtrMemberAccess	s -> frames_per_jpeg		7875754	1					
+ANR	7875949	Identifier	s		7875754	0					
+ANR	7875950	Identifier	frames_per_jpeg		7875754	1					
+ANR	7875951	IfStatement	if ( ret < 0 )		7875754	11					
+ANR	7875952	Condition	ret < 0	71:8:1269:1275	7875754	0	True				
+ANR	7875953	RelationalExpression	ret < 0		7875754	0		<			
+ANR	7875954	Identifier	ret		7875754	0					
+ANR	7875955	PrimaryExpression	0		7875754	1					
+ANR	7875956	CompoundStatement		67:17:1147:1147	7875754	1					
+ANR	7875957	ExpressionStatement	"av_log ( s , AV_LOG_ERROR , ""Failed to set dimensions\\n"" )"	73:8:1289:1342	7875754	0	True				
+ANR	7875958	CallExpression	"av_log ( s , AV_LOG_ERROR , ""Failed to set dimensions\\n"" )"		7875754	0					
+ANR	7875959	Callee	av_log		7875754	0					
+ANR	7875960	Identifier	av_log		7875754	0					
+ANR	7875961	ArgumentList	s		7875754	1					
+ANR	7875962	Argument	s		7875754	0					
+ANR	7875963	Identifier	s		7875754	0					
+ANR	7875964	Argument	AV_LOG_ERROR		7875754	1					
+ANR	7875965	Identifier	AV_LOG_ERROR		7875754	0					
+ANR	7875966	Argument	"""Failed to set dimensions\\n"""		7875754	2					
+ANR	7875967	PrimaryExpression	"""Failed to set dimensions\\n"""		7875754	0					
+ANR	7875968	ReturnStatement	return ret ;	75:8:1353:1363	7875754	1	True				
+ANR	7875969	Identifier	ret		7875754	0					
+ANR	7875970	IfStatement	if ( * data_size )		7875754	12					
+ANR	7875971	Condition	* data_size	81:8:1383:1392	7875754	0	True				
+ANR	7875972	UnaryOperationExpression	* data_size		7875754	0					
+ANR	7875973	UnaryOperator	*		7875754	0					
+ANR	7875974	Identifier	data_size		7875754	1					
+ANR	7875975	CompoundStatement		77:20:1264:1264	7875754	1					
+ANR	7875976	ExpressionStatement	s -> picture [ 1 ] -> extended_data = NULL	83:8:1406:1441	7875754	0	True				
+ANR	7875977	AssignmentExpression	s -> picture [ 1 ] -> extended_data = NULL		7875754	0		=			
+ANR	7875978	PtrMemberAccess	s -> picture [ 1 ] -> extended_data		7875754	0					
+ANR	7875979	ArrayIndexing	s -> picture [ 1 ]		7875754	0					
+ANR	7875980	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7875981	Identifier	s		7875754	0					
+ANR	7875982	Identifier	picture		7875754	1					
+ANR	7875983	PrimaryExpression	1		7875754	1					
+ANR	7875984	Identifier	extended_data		7875754	1					
+ANR	7875985	Identifier	NULL		7875754	1					
+ANR	7875986	ExpressionStatement	s -> picture [ 1 ] -> width = avctx -> width	85:8:1452:1495	7875754	1	True				
+ANR	7875987	AssignmentExpression	s -> picture [ 1 ] -> width = avctx -> width		7875754	0		=			
+ANR	7875988	PtrMemberAccess	s -> picture [ 1 ] -> width		7875754	0					
+ANR	7875989	ArrayIndexing	s -> picture [ 1 ]		7875754	0					
+ANR	7875990	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7875991	Identifier	s		7875754	0					
+ANR	7875992	Identifier	picture		7875754	1					
+ANR	7875993	PrimaryExpression	1		7875754	1					
+ANR	7875994	Identifier	width		7875754	1					
+ANR	7875995	PtrMemberAccess	avctx -> width		7875754	1					
+ANR	7875996	Identifier	avctx		7875754	0					
+ANR	7875997	Identifier	width		7875754	1					
+ANR	7875998	ExpressionStatement	s -> picture [ 1 ] -> height = avctx -> height	87:8:1506:1550	7875754	2	True				
+ANR	7875999	AssignmentExpression	s -> picture [ 1 ] -> height = avctx -> height		7875754	0		=			
+ANR	7876000	PtrMemberAccess	s -> picture [ 1 ] -> height		7875754	0					
+ANR	7876001	ArrayIndexing	s -> picture [ 1 ]		7875754	0					
+ANR	7876002	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7876003	Identifier	s		7875754	0					
+ANR	7876004	Identifier	picture		7875754	1					
+ANR	7876005	PrimaryExpression	1		7875754	1					
+ANR	7876006	Identifier	height		7875754	1					
+ANR	7876007	PtrMemberAccess	avctx -> height		7875754	1					
+ANR	7876008	Identifier	avctx		7875754	0					
+ANR	7876009	Identifier	height		7875754	1					
+ANR	7876010	ExpressionStatement	s -> picture [ 1 ] -> format = avctx -> pix_fmt	89:8:1561:1606	7875754	3	True				
+ANR	7876011	AssignmentExpression	s -> picture [ 1 ] -> format = avctx -> pix_fmt		7875754	0		=			
+ANR	7876012	PtrMemberAccess	s -> picture [ 1 ] -> format		7875754	0					
+ANR	7876013	ArrayIndexing	s -> picture [ 1 ]		7875754	0					
+ANR	7876014	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7876015	Identifier	s		7875754	0					
+ANR	7876016	Identifier	picture		7875754	1					
+ANR	7876017	PrimaryExpression	1		7875754	1					
+ANR	7876018	Identifier	format		7875754	1					
+ANR	7876019	PtrMemberAccess	avctx -> pix_fmt		7875754	1					
+ANR	7876020	Identifier	avctx		7875754	0					
+ANR	7876021	Identifier	pix_fmt		7875754	1					
+ANR	7876022	ExpressionStatement	"smv_img_pnt ( s -> picture [ 1 ] -> data , mjpeg_data -> data , mjpeg_data -> linesize , avctx -> pix_fmt , avctx -> width , avctx -> height , cur_frame )"	93:8:1676:1825	7875754	4	True				
+ANR	7876023	CallExpression	"smv_img_pnt ( s -> picture [ 1 ] -> data , mjpeg_data -> data , mjpeg_data -> linesize , avctx -> pix_fmt , avctx -> width , avctx -> height , cur_frame )"		7875754	0					
+ANR	7876024	Callee	smv_img_pnt		7875754	0					
+ANR	7876025	Identifier	smv_img_pnt		7875754	0					
+ANR	7876026	ArgumentList	s -> picture [ 1 ] -> data		7875754	1					
+ANR	7876027	Argument	s -> picture [ 1 ] -> data		7875754	0					
+ANR	7876028	PtrMemberAccess	s -> picture [ 1 ] -> data		7875754	0					
+ANR	7876029	ArrayIndexing	s -> picture [ 1 ]		7875754	0					
+ANR	7876030	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7876031	Identifier	s		7875754	0					
+ANR	7876032	Identifier	picture		7875754	1					
+ANR	7876033	PrimaryExpression	1		7875754	1					
+ANR	7876034	Identifier	data		7875754	1					
+ANR	7876035	Argument	mjpeg_data -> data		7875754	1					
+ANR	7876036	PtrMemberAccess	mjpeg_data -> data		7875754	0					
+ANR	7876037	Identifier	mjpeg_data		7875754	0					
+ANR	7876038	Identifier	data		7875754	1					
+ANR	7876039	Argument	mjpeg_data -> linesize		7875754	2					
+ANR	7876040	PtrMemberAccess	mjpeg_data -> linesize		7875754	0					
+ANR	7876041	Identifier	mjpeg_data		7875754	0					
+ANR	7876042	Identifier	linesize		7875754	1					
+ANR	7876043	Argument	avctx -> pix_fmt		7875754	3					
+ANR	7876044	PtrMemberAccess	avctx -> pix_fmt		7875754	0					
+ANR	7876045	Identifier	avctx		7875754	0					
+ANR	7876046	Identifier	pix_fmt		7875754	1					
+ANR	7876047	Argument	avctx -> width		7875754	4					
+ANR	7876048	PtrMemberAccess	avctx -> width		7875754	0					
+ANR	7876049	Identifier	avctx		7875754	0					
+ANR	7876050	Identifier	width		7875754	1					
+ANR	7876051	Argument	avctx -> height		7875754	5					
+ANR	7876052	PtrMemberAccess	avctx -> height		7875754	0					
+ANR	7876053	Identifier	avctx		7875754	0					
+ANR	7876054	Identifier	height		7875754	1					
+ANR	7876055	Argument	cur_frame		7875754	6					
+ANR	7876056	Identifier	cur_frame		7875754	0					
+ANR	7876057	ForStatement	for ( i = 0 ; i < AV_NUM_DATA_POINTERS ; i ++ )		7875754	5					
+ANR	7876058	ForInit	i = 0 ;	97:13:1841:1846	7875754	0	True				
+ANR	7876059	AssignmentExpression	i = 0		7875754	0		=			
+ANR	7876060	Identifier	i		7875754	0					
+ANR	7876061	PrimaryExpression	0		7875754	1					
+ANR	7876062	Condition	i < AV_NUM_DATA_POINTERS	97:20:1848:1871	7875754	1	True				
+ANR	7876063	RelationalExpression	i < AV_NUM_DATA_POINTERS		7875754	0		<			
+ANR	7876064	Identifier	i		7875754	0					
+ANR	7876065	Identifier	AV_NUM_DATA_POINTERS		7875754	1					
+ANR	7876066	PostIncDecOperationExpression	i ++	97:46:1874:1876	7875754	2	True				
+ANR	7876067	Identifier	i		7875754	0					
+ANR	7876068	IncDec	++		7875754	1					
+ANR	7876069	ExpressionStatement	s -> picture [ 1 ] -> linesize [ i ] = mjpeg_data -> linesize [ i ]	99:12:1892:1944	7875754	3	True				
+ANR	7876070	AssignmentExpression	s -> picture [ 1 ] -> linesize [ i ] = mjpeg_data -> linesize [ i ]		7875754	0		=			
+ANR	7876071	ArrayIndexing	s -> picture [ 1 ] -> linesize [ i ]		7875754	0					
+ANR	7876072	PtrMemberAccess	s -> picture [ 1 ] -> linesize		7875754	0					
+ANR	7876073	ArrayIndexing	s -> picture [ 1 ]		7875754	0					
+ANR	7876074	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7876075	Identifier	s		7875754	0					
+ANR	7876076	Identifier	picture		7875754	1					
+ANR	7876077	PrimaryExpression	1		7875754	1					
+ANR	7876078	Identifier	linesize		7875754	1					
+ANR	7876079	Identifier	i		7875754	1					
+ANR	7876080	ArrayIndexing	mjpeg_data -> linesize [ i ]		7875754	1					
+ANR	7876081	PtrMemberAccess	mjpeg_data -> linesize		7875754	0					
+ANR	7876082	Identifier	mjpeg_data		7875754	0					
+ANR	7876083	Identifier	linesize		7875754	1					
+ANR	7876084	Identifier	i		7875754	1					
+ANR	7876085	ExpressionStatement	"ret = av_frame_ref ( data , s -> picture [ 1 ] )"	103:8:1957:1996	7875754	6	True				
+ANR	7876086	AssignmentExpression	"ret = av_frame_ref ( data , s -> picture [ 1 ] )"		7875754	0		=			
+ANR	7876087	Identifier	ret		7875754	0					
+ANR	7876088	CallExpression	"av_frame_ref ( data , s -> picture [ 1 ] )"		7875754	1					
+ANR	7876089	Callee	av_frame_ref		7875754	0					
+ANR	7876090	Identifier	av_frame_ref		7875754	0					
+ANR	7876091	ArgumentList	data		7875754	1					
+ANR	7876092	Argument	data		7875754	0					
+ANR	7876093	Identifier	data		7875754	0					
+ANR	7876094	Argument	s -> picture [ 1 ]		7875754	1					
+ANR	7876095	ArrayIndexing	s -> picture [ 1 ]		7875754	0					
+ANR	7876096	PtrMemberAccess	s -> picture		7875754	0					
+ANR	7876097	Identifier	s		7875754	0					
+ANR	7876098	Identifier	picture		7875754	1					
+ANR	7876099	PrimaryExpression	1		7875754	1					
+ANR	7876100	ReturnStatement	return ret ;	109:4:2012:2022	7875754	13	True				
+ANR	7876101	Identifier	ret		7875754	0					
+ANR	7876102	ReturnType	static int		7875754	1					
+ANR	7876103	Identifier	smvjpeg_decode_frame		7875754	2					
+ANR	7876104	ParameterList	"AVCodecContext * avctx , void * data , int * data_size , AVPacket * avpkt"		7875754	3					
+ANR	7876105	Parameter	AVCodecContext * avctx	1:32:32:52	7875754	0	True				
+ANR	7876106	ParameterType	AVCodecContext *		7875754	0					
+ANR	7876107	Identifier	avctx		7875754	1					
+ANR	7876108	Parameter	void * data	1:55:55:64	7875754	1	True				
+ANR	7876109	ParameterType	void *		7875754	0					
+ANR	7876110	Identifier	data		7875754	1					
+ANR	7876111	Parameter	int * data_size	1:67:67:80	7875754	2	True				
+ANR	7876112	ParameterType	int *		7875754	0					
+ANR	7876113	Identifier	data_size		7875754	1					
+ANR	7876114	Parameter	AVPacket * avpkt	3:28:112:126	7875754	3	True				
+ANR	7876115	ParameterType	AVPacket *		7875754	0					
+ANR	7876116	Identifier	avpkt		7875754	1					
+ANR	7876117	CFGEntryNode	ENTRY		7875754		True				
+ANR	7876118	CFGExitNode	EXIT		7875754		True				
+ANR	7876119	Symbol	data		7875754						
+ANR	7876120	Symbol	* * * * s		7875754						
+ANR	7876121	Symbol	s -> picture [ 1 ] -> width		7875754						
+ANR	7876122	Symbol	* mjpeg_data -> linesize		7875754						
+ANR	7876123	Symbol	avpkt		7875754						
+ANR	7876124	Symbol	* data_size		7875754						
+ANR	7876125	Symbol	* s -> picture [ 1 ] -> linesize		7875754						
+ANR	7876126	Symbol	avpkt -> pts		7875754						
+ANR	7876127	Symbol	data_size		7875754						
+ANR	7876128	Symbol	ret		7875754						
+ANR	7876129	Symbol	s -> mjpeg_data_size		7875754						
+ANR	7876130	Symbol	s -> picture [ 1 ] -> linesize		7875754						
+ANR	7876131	Symbol	* s -> avctx		7875754						
+ANR	7876132	Symbol	* * * s -> picture		7875754						
+ANR	7876133	Symbol	NULL		7875754						
+ANR	7876134	Symbol	mjpeg_data -> data		7875754						
+ANR	7876135	Symbol	s -> picture [ 1 ] -> height		7875754						
+ANR	7876136	Symbol	* * * s		7875754						
+ANR	7876137	Symbol	s -> picture [ 1 ] -> format		7875754						
+ANR	7876138	Symbol	* avctx		7875754						
+ANR	7876139	Symbol	ff_set_dimensions		7875754						
+ANR	7876140	Symbol	avctx -> pix_fmt		7875754						
+ANR	7876141	Symbol	s -> avctx		7875754						
+ANR	7876142	Symbol	av_pix_fmt_desc_get		7875754						
+ANR	7876143	Symbol	mjpeg_data -> height		7875754						
+ANR	7876144	Symbol	desc		7875754						
+ANR	7876145	Symbol	s -> avctx -> pix_fmt		7875754						
+ANR	7876146	Symbol	avctx -> width		7875754						
+ANR	7876147	Symbol	s -> picture		7875754						
+ANR	7876148	Symbol	s -> frames_per_jpeg		7875754						
+ANR	7876149	Symbol	mjpeg_data -> linesize		7875754						
+ANR	7876150	Symbol	AV_NUM_DATA_POINTERS		7875754						
+ANR	7876151	Symbol	av_frame_ref		7875754						
+ANR	7876152	Symbol	* s -> picture		7875754						
+ANR	7876153	Symbol	s -> picture [ 1 ] -> extended_data		7875754						
+ANR	7876154	Symbol	avctx -> height		7875754						
+ANR	7876155	Symbol	* mjpeg_data		7875754						
+ANR	7876156	Symbol	* * s		7875754						
+ANR	7876157	Symbol	* desc		7875754						
+ANR	7876158	Symbol	avctx		7875754						
+ANR	7876159	Symbol	desc -> log2_chroma_h		7875754						
+ANR	7876160	Symbol	* * mjpeg_data		7875754						
+ANR	7876161	Symbol	* avpkt		7875754						
+ANR	7876162	Symbol	AV_LOG_ERROR		7875754						
+ANR	7876163	Symbol	& s -> mjpeg_data_size		7875754						
+ANR	7876164	Symbol	i		7875754						
+ANR	7876165	Symbol	avctx -> priv_data		7875754						
+ANR	7876166	Symbol	avcodec_decode_video2		7875754						
+ANR	7876167	Symbol	EINVAL		7875754						
+ANR	7876168	Symbol	s		7875754						
+ANR	7876169	Symbol	* i		7875754						
+ANR	7876170	Symbol	mjpeg_data		7875754						
+ANR	7876171	Symbol	mjpeg_data -> width		7875754						
+ANR	7876172	Symbol	s -> picture [ 1 ] -> data		7875754						
+ANR	7876173	Symbol	AVERROR_INVALIDDATA		7875754						
+ANR	7876174	Symbol	cur_frame		7875754						
+ANR	7876175	Symbol	AVERROR		7875754						
+ANR	7876176	Symbol	* * s -> picture		7875754						
+ANR	7876177	Symbol	* s		7875754						

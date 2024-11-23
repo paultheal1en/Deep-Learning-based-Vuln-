@@ -1,0 +1,839 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5818818	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mptsas_process_scsi_task_mgmt_1.c								
+ANR	5818819	Function	mptsas_process_scsi_task_mgmt	1:0:0:5369							
+ANR	5818820	FunctionDef	"mptsas_process_scsi_task_mgmt (MPTSASState * s , MPIMsgSCSITaskMgmt * req)"		5818819	0					
+ANR	5818821	CompoundStatement		3:0:84:5369	5818819	0					
+ANR	5818822	IdentifierDeclStatement	MPIMsgSCSITaskMgmtReply reply ;	5:4:91:120	5818819	0	True				
+ANR	5818823	IdentifierDecl	reply		5818819	0					
+ANR	5818824	IdentifierDeclType	MPIMsgSCSITaskMgmtReply		5818819	0					
+ANR	5818825	Identifier	reply		5818819	1					
+ANR	5818826	IdentifierDeclStatement	MPIMsgSCSITaskMgmtReply * reply_async ;	7:4:127:163	5818819	1	True				
+ANR	5818827	IdentifierDecl	* reply_async		5818819	0					
+ANR	5818828	IdentifierDeclType	MPIMsgSCSITaskMgmtReply *		5818819	0					
+ANR	5818829	Identifier	reply_async		5818819	1					
+ANR	5818830	IdentifierDeclStatement	"int status , count ;"	9:4:170:187	5818819	2	True				
+ANR	5818831	IdentifierDecl	status		5818819	0					
+ANR	5818832	IdentifierDeclType	int		5818819	0					
+ANR	5818833	Identifier	status		5818819	1					
+ANR	5818834	IdentifierDecl	count		5818819	1					
+ANR	5818835	IdentifierDeclType	int		5818819	0					
+ANR	5818836	Identifier	count		5818819	1					
+ANR	5818837	IdentifierDeclStatement	SCSIDevice * sdev ;	11:4:194:210	5818819	3	True				
+ANR	5818838	IdentifierDecl	* sdev		5818819	0					
+ANR	5818839	IdentifierDeclType	SCSIDevice *		5818819	0					
+ANR	5818840	Identifier	sdev		5818819	1					
+ANR	5818841	IdentifierDeclStatement	"SCSIRequest * r , * next ;"	13:4:217:238	5818819	4	True				
+ANR	5818842	IdentifierDecl	* r		5818819	0					
+ANR	5818843	IdentifierDeclType	SCSIRequest *		5818819	0					
+ANR	5818844	Identifier	r		5818819	1					
+ANR	5818845	IdentifierDecl	* next		5818819	1					
+ANR	5818846	IdentifierDeclType	SCSIRequest *		5818819	0					
+ANR	5818847	Identifier	next		5818819	1					
+ANR	5818848	IdentifierDeclStatement	BusChild * kid ;	15:4:245:258	5818819	5	True				
+ANR	5818849	IdentifierDecl	* kid		5818819	0					
+ANR	5818850	IdentifierDeclType	BusChild *		5818819	0					
+ANR	5818851	Identifier	kid		5818819	1					
+ANR	5818852	ExpressionStatement	mptsas_fix_scsi_task_mgmt_endianness ( req )	19:4:267:308	5818819	6	True				
+ANR	5818853	CallExpression	mptsas_fix_scsi_task_mgmt_endianness ( req )		5818819	0					
+ANR	5818854	Callee	mptsas_fix_scsi_task_mgmt_endianness		5818819	0					
+ANR	5818855	Identifier	mptsas_fix_scsi_task_mgmt_endianness		5818819	0					
+ANR	5818856	ArgumentList	req		5818819	1					
+ANR	5818857	Argument	req		5818819	0					
+ANR	5818858	Identifier	req		5818819	0					
+ANR	5818859	ExpressionStatement	QEMU_BUILD_BUG_ON ( MPTSAS_MAX_REQUEST_SIZE < sizeof ( * req ) )	23:4:317:374	5818819	7	True				
+ANR	5818860	CallExpression	QEMU_BUILD_BUG_ON ( MPTSAS_MAX_REQUEST_SIZE < sizeof ( * req ) )		5818819	0					
+ANR	5818861	Callee	QEMU_BUILD_BUG_ON		5818819	0					
+ANR	5818862	Identifier	QEMU_BUILD_BUG_ON		5818819	0					
+ANR	5818863	ArgumentList	MPTSAS_MAX_REQUEST_SIZE < sizeof ( * req )		5818819	1					
+ANR	5818864	Argument	MPTSAS_MAX_REQUEST_SIZE < sizeof ( * req )		5818819	0					
+ANR	5818865	RelationalExpression	MPTSAS_MAX_REQUEST_SIZE < sizeof ( * req )		5818819	0		<			
+ANR	5818866	Identifier	MPTSAS_MAX_REQUEST_SIZE		5818819	0					
+ANR	5818867	SizeofExpression	sizeof ( * req )		5818819	1					
+ANR	5818868	Sizeof	sizeof		5818819	0					
+ANR	5818869	UnaryOperationExpression	* req		5818819	1					
+ANR	5818870	UnaryOperator	*		5818819	0					
+ANR	5818871	Identifier	req		5818819	1					
+ANR	5818872	ExpressionStatement	QEMU_BUILD_BUG_ON ( sizeof ( s -> doorbell_msg ) < sizeof ( * req ) )	25:4:381:438	5818819	8	True				
+ANR	5818873	CallExpression	QEMU_BUILD_BUG_ON ( sizeof ( s -> doorbell_msg ) < sizeof ( * req ) )		5818819	0					
+ANR	5818874	Callee	QEMU_BUILD_BUG_ON		5818819	0					
+ANR	5818875	Identifier	QEMU_BUILD_BUG_ON		5818819	0					
+ANR	5818876	ArgumentList	sizeof ( s -> doorbell_msg ) < sizeof ( * req )		5818819	1					
+ANR	5818877	Argument	sizeof ( s -> doorbell_msg ) < sizeof ( * req )		5818819	0					
+ANR	5818878	RelationalExpression	sizeof ( s -> doorbell_msg ) < sizeof ( * req )		5818819	0		<			
+ANR	5818879	SizeofExpression	sizeof ( s -> doorbell_msg )		5818819	0					
+ANR	5818880	Sizeof	sizeof		5818819	0					
+ANR	5818881	PtrMemberAccess	s -> doorbell_msg		5818819	1					
+ANR	5818882	Identifier	s		5818819	0					
+ANR	5818883	Identifier	doorbell_msg		5818819	1					
+ANR	5818884	SizeofExpression	sizeof ( * req )		5818819	1					
+ANR	5818885	Sizeof	sizeof		5818819	0					
+ANR	5818886	UnaryOperationExpression	* req		5818819	1					
+ANR	5818887	UnaryOperator	*		5818819	0					
+ANR	5818888	Identifier	req		5818819	1					
+ANR	5818889	ExpressionStatement	QEMU_BUILD_BUG_ON ( sizeof ( s -> doorbell_reply ) < sizeof ( reply ) )	27:4:445:505	5818819	9	True				
+ANR	5818890	CallExpression	QEMU_BUILD_BUG_ON ( sizeof ( s -> doorbell_reply ) < sizeof ( reply ) )		5818819	0					
+ANR	5818891	Callee	QEMU_BUILD_BUG_ON		5818819	0					
+ANR	5818892	Identifier	QEMU_BUILD_BUG_ON		5818819	0					
+ANR	5818893	ArgumentList	sizeof ( s -> doorbell_reply ) < sizeof ( reply )		5818819	1					
+ANR	5818894	Argument	sizeof ( s -> doorbell_reply ) < sizeof ( reply )		5818819	0					
+ANR	5818895	RelationalExpression	sizeof ( s -> doorbell_reply ) < sizeof ( reply )		5818819	0		<			
+ANR	5818896	SizeofExpression	sizeof ( s -> doorbell_reply )		5818819	0					
+ANR	5818897	Sizeof	sizeof		5818819	0					
+ANR	5818898	PtrMemberAccess	s -> doorbell_reply		5818819	1					
+ANR	5818899	Identifier	s		5818819	0					
+ANR	5818900	Identifier	doorbell_reply		5818819	1					
+ANR	5818901	SizeofExpression	sizeof ( reply )		5818819	1					
+ANR	5818902	Sizeof	sizeof		5818819	0					
+ANR	5818903	SizeofOperand	reply		5818819	1					
+ANR	5818904	ExpressionStatement	"memset ( & reply , 0 , sizeof ( reply ) )"	31:4:514:546	5818819	10	True				
+ANR	5818905	CallExpression	"memset ( & reply , 0 , sizeof ( reply ) )"		5818819	0					
+ANR	5818906	Callee	memset		5818819	0					
+ANR	5818907	Identifier	memset		5818819	0					
+ANR	5818908	ArgumentList	& reply		5818819	1					
+ANR	5818909	Argument	& reply		5818819	0					
+ANR	5818910	UnaryOperationExpression	& reply		5818819	0					
+ANR	5818911	UnaryOperator	&		5818819	0					
+ANR	5818912	Identifier	reply		5818819	1					
+ANR	5818913	Argument	0		5818819	1					
+ANR	5818914	PrimaryExpression	0		5818819	0					
+ANR	5818915	Argument	sizeof ( reply )		5818819	2					
+ANR	5818916	SizeofExpression	sizeof ( reply )		5818819	0					
+ANR	5818917	Sizeof	sizeof		5818819	0					
+ANR	5818918	SizeofOperand	reply		5818819	1					
+ANR	5818919	ExpressionStatement	reply . TargetID = req -> TargetID	33:4:553:585	5818819	11	True				
+ANR	5818920	AssignmentExpression	reply . TargetID = req -> TargetID		5818819	0		=			
+ANR	5818921	MemberAccess	reply . TargetID		5818819	0					
+ANR	5818922	Identifier	reply		5818819	0					
+ANR	5818923	Identifier	TargetID		5818819	1					
+ANR	5818924	PtrMemberAccess	req -> TargetID		5818819	1					
+ANR	5818925	Identifier	req		5818819	0					
+ANR	5818926	Identifier	TargetID		5818819	1					
+ANR	5818927	ExpressionStatement	reply . Bus = req -> Bus	35:4:592:619	5818819	12	True				
+ANR	5818928	AssignmentExpression	reply . Bus = req -> Bus		5818819	0		=			
+ANR	5818929	MemberAccess	reply . Bus		5818819	0					
+ANR	5818930	Identifier	reply		5818819	0					
+ANR	5818931	Identifier	Bus		5818819	1					
+ANR	5818932	PtrMemberAccess	req -> Bus		5818819	1					
+ANR	5818933	Identifier	req		5818819	0					
+ANR	5818934	Identifier	Bus		5818819	1					
+ANR	5818935	ExpressionStatement	reply . MsgLength = sizeof ( reply ) / 4	37:4:626:662	5818819	13	True				
+ANR	5818936	AssignmentExpression	reply . MsgLength = sizeof ( reply ) / 4		5818819	0		=			
+ANR	5818937	MemberAccess	reply . MsgLength		5818819	0					
+ANR	5818938	Identifier	reply		5818819	0					
+ANR	5818939	Identifier	MsgLength		5818819	1					
+ANR	5818940	MultiplicativeExpression	sizeof ( reply ) / 4		5818819	1		/			
+ANR	5818941	SizeofExpression	sizeof ( reply )		5818819	0					
+ANR	5818942	Sizeof	sizeof		5818819	0					
+ANR	5818943	SizeofOperand	reply		5818819	1					
+ANR	5818944	PrimaryExpression	4		5818819	1					
+ANR	5818945	ExpressionStatement	reply . Function = req -> Function	39:4:669:701	5818819	14	True				
+ANR	5818946	AssignmentExpression	reply . Function = req -> Function		5818819	0		=			
+ANR	5818947	MemberAccess	reply . Function		5818819	0					
+ANR	5818948	Identifier	reply		5818819	0					
+ANR	5818949	Identifier	Function		5818819	1					
+ANR	5818950	PtrMemberAccess	req -> Function		5818819	1					
+ANR	5818951	Identifier	req		5818819	0					
+ANR	5818952	Identifier	Function		5818819	1					
+ANR	5818953	ExpressionStatement	reply . TaskType = req -> TaskType	41:4:708:740	5818819	15	True				
+ANR	5818954	AssignmentExpression	reply . TaskType = req -> TaskType		5818819	0		=			
+ANR	5818955	MemberAccess	reply . TaskType		5818819	0					
+ANR	5818956	Identifier	reply		5818819	0					
+ANR	5818957	Identifier	TaskType		5818819	1					
+ANR	5818958	PtrMemberAccess	req -> TaskType		5818819	1					
+ANR	5818959	Identifier	req		5818819	0					
+ANR	5818960	Identifier	TaskType		5818819	1					
+ANR	5818961	ExpressionStatement	reply . MsgContext = req -> MsgContext	43:4:747:781	5818819	16	True				
+ANR	5818962	AssignmentExpression	reply . MsgContext = req -> MsgContext		5818819	0		=			
+ANR	5818963	MemberAccess	reply . MsgContext		5818819	0					
+ANR	5818964	Identifier	reply		5818819	0					
+ANR	5818965	Identifier	MsgContext		5818819	1					
+ANR	5818966	PtrMemberAccess	req -> MsgContext		5818819	1					
+ANR	5818967	Identifier	req		5818819	0					
+ANR	5818968	Identifier	MsgContext		5818819	1					
+ANR	5818969	SwitchStatement	switch ( req -> TaskType )		5818819	17					
+ANR	5818970	Condition	req -> TaskType	47:12:798:810	5818819	0	True				
+ANR	5818971	PtrMemberAccess	req -> TaskType		5818819	0					
+ANR	5818972	Identifier	req		5818819	0					
+ANR	5818973	Identifier	TaskType		5818819	1					
+ANR	5818974	CompoundStatement		45:27:728:728	5818819	1					
+ANR	5818975	Label	case MPI_SCSITASKMGMT_TASKTYPE_ABORT_TASK :	49:4:820:861	5818819	0	True				
+ANR	5818976	Identifier	MPI_SCSITASKMGMT_TASKTYPE_ABORT_TASK		5818819	0					
+ANR	5818977	Label	case MPI_SCSITASKMGMT_TASKTYPE_QUERY_TASK :	51:4:868:909	5818819	1	True				
+ANR	5818978	Identifier	MPI_SCSITASKMGMT_TASKTYPE_QUERY_TASK		5818819	0					
+ANR	5818979	ExpressionStatement	"status = mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"	53:8:920:1039	5818819	2	True				
+ANR	5818980	AssignmentExpression	"status = mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"		5818819	0		=			
+ANR	5818981	Identifier	status		5818819	0					
+ANR	5818982	CallExpression	"mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"		5818819	1					
+ANR	5818983	Callee	mptsas_scsi_device_find		5818819	0					
+ANR	5818984	Identifier	mptsas_scsi_device_find		5818819	0					
+ANR	5818985	ArgumentList	s		5818819	1					
+ANR	5818986	Argument	s		5818819	0					
+ANR	5818987	Identifier	s		5818819	0					
+ANR	5818988	Argument	req -> Bus		5818819	1					
+ANR	5818989	PtrMemberAccess	req -> Bus		5818819	0					
+ANR	5818990	Identifier	req		5818819	0					
+ANR	5818991	Identifier	Bus		5818819	1					
+ANR	5818992	Argument	req -> TargetID		5818819	2					
+ANR	5818993	PtrMemberAccess	req -> TargetID		5818819	0					
+ANR	5818994	Identifier	req		5818819	0					
+ANR	5818995	Identifier	TargetID		5818819	1					
+ANR	5818996	Argument	req -> LUN		5818819	3					
+ANR	5818997	PtrMemberAccess	req -> LUN		5818819	0					
+ANR	5818998	Identifier	req		5818819	0					
+ANR	5818999	Identifier	LUN		5818819	1					
+ANR	5819000	Argument	& sdev		5818819	4					
+ANR	5819001	UnaryOperationExpression	& sdev		5818819	0					
+ANR	5819002	UnaryOperator	&		5818819	0					
+ANR	5819003	Identifier	sdev		5818819	1					
+ANR	5819004	IfStatement	if ( status )		5818819	3					
+ANR	5819005	Condition	status	57:12:1054:1059	5818819	0	True				
+ANR	5819006	Identifier	status		5818819	0					
+ANR	5819007	CompoundStatement		55:20:977:977	5818819	1					
+ANR	5819008	ExpressionStatement	reply . IOCStatus = status	59:12:1077:1101	5818819	0	True				
+ANR	5819009	AssignmentExpression	reply . IOCStatus = status		5818819	0		=			
+ANR	5819010	MemberAccess	reply . IOCStatus		5818819	0					
+ANR	5819011	Identifier	reply		5818819	0					
+ANR	5819012	Identifier	IOCStatus		5818819	1					
+ANR	5819013	Identifier	status		5818819	1					
+ANR	5819014	GotoStatement	goto out ;	61:12:1116:1124	5818819	1	True				
+ANR	5819015	Identifier	out		5818819	0					
+ANR	5819016	IfStatement	if ( sdev -> lun != req -> LUN [ 1 ] )		5818819	4					
+ANR	5819017	Condition	sdev -> lun != req -> LUN [ 1 ]	65:12:1150:1173	5818819	0	True				
+ANR	5819018	EqualityExpression	sdev -> lun != req -> LUN [ 1 ]		5818819	0		!=			
+ANR	5819019	PtrMemberAccess	sdev -> lun		5818819	0					
+ANR	5819020	Identifier	sdev		5818819	0					
+ANR	5819021	Identifier	lun		5818819	1					
+ANR	5819022	ArrayIndexing	req -> LUN [ 1 ]		5818819	1					
+ANR	5819023	PtrMemberAccess	req -> LUN		5818819	0					
+ANR	5819024	Identifier	req		5818819	0					
+ANR	5819025	Identifier	LUN		5818819	1					
+ANR	5819026	PrimaryExpression	1		5818819	1					
+ANR	5819027	CompoundStatement		63:38:1091:1091	5818819	1					
+ANR	5819028	ExpressionStatement	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN	67:12:1191:1247	5818819	0	True				
+ANR	5819029	AssignmentExpression	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN		5818819	0		=			
+ANR	5819030	MemberAccess	reply . ResponseCode		5818819	0					
+ANR	5819031	Identifier	reply		5818819	0					
+ANR	5819032	Identifier	ResponseCode		5818819	1					
+ANR	5819033	Identifier	MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN		5818819	1					
+ANR	5819034	GotoStatement	goto out ;	69:12:1262:1270	5818819	1	True				
+ANR	5819035	Identifier	out		5818819	0					
+ANR	5819036	Statement	QTAILQ_FOREACH_SAFE	75:8:1294:1312	5818819	5	True				
+ANR	5819037	Statement	(	75:27:1313:1313	5818819	6	True				
+ANR	5819038	Statement	r	75:28:1314:1314	5818819	7	True				
+ANR	5819039	Statement	","	75:29:1315:1315	5818819	8	True				
+ANR	5819040	Statement	&	75:31:1317:1317	5818819	9	True				
+ANR	5819041	Statement	sdev	75:32:1318:1321	5818819	10	True				
+ANR	5819042	Statement	->	75:36:1322:1323	5818819	11	True				
+ANR	5819043	Statement	requests	75:38:1324:1331	5818819	12	True				
+ANR	5819044	Statement	","	75:46:1332:1332	5818819	13	True				
+ANR	5819045	Statement	next	75:48:1334:1337	5818819	14	True				
+ANR	5819046	Statement	","	75:52:1338:1338	5818819	15	True				
+ANR	5819047	Statement	next	75:54:1340:1343	5818819	16	True				
+ANR	5819048	Statement	)	75:58:1344:1344	5818819	17	True				
+ANR	5819049	CompoundStatement		75:12:1276:1315	5818819	18					
+ANR	5819050	IdentifierDeclStatement	MPTSASRequest * cmd_req = r -> hba_private ;	77:12:1361:1400	5818819	0	True				
+ANR	5819051	IdentifierDecl	* cmd_req = r -> hba_private		5818819	0					
+ANR	5819052	IdentifierDeclType	MPTSASRequest *		5818819	0					
+ANR	5819053	Identifier	cmd_req		5818819	1					
+ANR	5819054	AssignmentExpression	* cmd_req = r -> hba_private		5818819	2		=			
+ANR	5819055	Identifier	cmd_req		5818819	0					
+ANR	5819056	PtrMemberAccess	r -> hba_private		5818819	1					
+ANR	5819057	Identifier	r		5818819	0					
+ANR	5819058	Identifier	hba_private		5818819	1					
+ANR	5819059	IfStatement	if ( cmd_req && cmd_req -> scsi_io . MsgContext == req -> TaskMsgContext )		5818819	1					
+ANR	5819060	Condition	cmd_req && cmd_req -> scsi_io . MsgContext == req -> TaskMsgContext	79:16:1419:1479	5818819	0	True				
+ANR	5819061	AndExpression	cmd_req && cmd_req -> scsi_io . MsgContext == req -> TaskMsgContext		5818819	0		&&			
+ANR	5819062	Identifier	cmd_req		5818819	0					
+ANR	5819063	EqualityExpression	cmd_req -> scsi_io . MsgContext == req -> TaskMsgContext		5818819	1		==			
+ANR	5819064	MemberAccess	cmd_req -> scsi_io . MsgContext		5818819	0					
+ANR	5819065	PtrMemberAccess	cmd_req -> scsi_io		5818819	0					
+ANR	5819066	Identifier	cmd_req		5818819	0					
+ANR	5819067	Identifier	scsi_io		5818819	1					
+ANR	5819068	Identifier	MsgContext		5818819	1					
+ANR	5819069	PtrMemberAccess	req -> TaskMsgContext		5818819	1					
+ANR	5819070	Identifier	req		5818819	0					
+ANR	5819071	Identifier	TaskMsgContext		5818819	1					
+ANR	5819072	CompoundStatement		77:79:1397:1397	5818819	1					
+ANR	5819073	BreakStatement	break ;	81:16:1501:1506	5818819	0	True				
+ANR	5819074	IfStatement	if ( r )		5818819	19					
+ANR	5819075	Condition	r	87:12:1547:1547	5818819	0	True				
+ANR	5819076	Identifier	r		5818819	0					
+ANR	5819077	CompoundStatement		85:15:1465:1465	5818819	1					
+ANR	5819078	ExpressionStatement	assert ( r -> hba_private )	97:12:1717:1739	5818819	0	True				
+ANR	5819079	CallExpression	assert ( r -> hba_private )		5818819	0					
+ANR	5819080	Callee	assert		5818819	0					
+ANR	5819081	Identifier	assert		5818819	0					
+ANR	5819082	ArgumentList	r -> hba_private		5818819	1					
+ANR	5819083	Argument	r -> hba_private		5818819	0					
+ANR	5819084	PtrMemberAccess	r -> hba_private		5818819	0					
+ANR	5819085	Identifier	r		5818819	0					
+ANR	5819086	Identifier	hba_private		5818819	1					
+ANR	5819087	IfStatement	if ( req -> TaskType == MPI_SCSITASKMGMT_TASKTYPE_QUERY_TASK )		5818819	1					
+ANR	5819088	Condition	req -> TaskType == MPI_SCSITASKMGMT_TASKTYPE_QUERY_TASK	99:16:1758:1810	5818819	0	True				
+ANR	5819089	EqualityExpression	req -> TaskType == MPI_SCSITASKMGMT_TASKTYPE_QUERY_TASK		5818819	0		==			
+ANR	5819090	PtrMemberAccess	req -> TaskType		5818819	0					
+ANR	5819091	Identifier	req		5818819	0					
+ANR	5819092	Identifier	TaskType		5818819	1					
+ANR	5819093	Identifier	MPI_SCSITASKMGMT_TASKTYPE_QUERY_TASK		5818819	1					
+ANR	5819094	CompoundStatement		97:71:1728:1728	5818819	1					
+ANR	5819095	ExpressionStatement	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_SUCCEEDED	107:16:2006:2060	5818819	0	True				
+ANR	5819096	AssignmentExpression	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_SUCCEEDED		5818819	0		=			
+ANR	5819097	MemberAccess	reply . ResponseCode		5818819	0					
+ANR	5819098	Identifier	reply		5818819	0					
+ANR	5819099	Identifier	ResponseCode		5818819	1					
+ANR	5819100	Identifier	MPI_SCSITASKMGMT_RSP_TM_SUCCEEDED		5818819	1					
+ANR	5819101	ElseStatement	else		5818819	0					
+ANR	5819102	CompoundStatement		109:16:2016:2046	5818819	0					
+ANR	5819103	IdentifierDeclStatement	MPTSASCancelNotifier * notifier ;	111:16:2101:2131	5818819	0	True				
+ANR	5819104	IdentifierDecl	* notifier		5818819	0					
+ANR	5819105	IdentifierDeclType	MPTSASCancelNotifier *		5818819	0					
+ANR	5819106	Identifier	notifier		5818819	1					
+ANR	5819107	ExpressionStatement	"reply_async = g_memdup ( & reply , sizeof ( MPIMsgSCSITaskMgmtReply ) )"	115:16:2152:2215	5818819	1	True				
+ANR	5819108	AssignmentExpression	"reply_async = g_memdup ( & reply , sizeof ( MPIMsgSCSITaskMgmtReply ) )"		5818819	0		=			
+ANR	5819109	Identifier	reply_async		5818819	0					
+ANR	5819110	CallExpression	"g_memdup ( & reply , sizeof ( MPIMsgSCSITaskMgmtReply ) )"		5818819	1					
+ANR	5819111	Callee	g_memdup		5818819	0					
+ANR	5819112	Identifier	g_memdup		5818819	0					
+ANR	5819113	ArgumentList	& reply		5818819	1					
+ANR	5819114	Argument	& reply		5818819	0					
+ANR	5819115	UnaryOperationExpression	& reply		5818819	0					
+ANR	5819116	UnaryOperator	&		5818819	0					
+ANR	5819117	Identifier	reply		5818819	1					
+ANR	5819118	Argument	sizeof ( MPIMsgSCSITaskMgmtReply )		5818819	1					
+ANR	5819119	SizeofExpression	sizeof ( MPIMsgSCSITaskMgmtReply )		5818819	0					
+ANR	5819120	Sizeof	sizeof		5818819	0					
+ANR	5819121	SizeofOperand	MPIMsgSCSITaskMgmtReply		5818819	1					
+ANR	5819122	ExpressionStatement	reply_async -> IOCLogInfo = INT_MAX	117:16:2234:2267	5818819	2	True				
+ANR	5819123	AssignmentExpression	reply_async -> IOCLogInfo = INT_MAX		5818819	0		=			
+ANR	5819124	PtrMemberAccess	reply_async -> IOCLogInfo		5818819	0					
+ANR	5819125	Identifier	reply_async		5818819	0					
+ANR	5819126	Identifier	IOCLogInfo		5818819	1					
+ANR	5819127	Identifier	INT_MAX		5818819	1					
+ANR	5819128	ExpressionStatement	count = 1	121:16:2288:2297	5818819	3	True				
+ANR	5819129	AssignmentExpression	count = 1		5818819	0		=			
+ANR	5819130	Identifier	count		5818819	0					
+ANR	5819131	PrimaryExpression	1		5818819	1					
+ANR	5819132	ExpressionStatement	"notifier = g_new ( MPTSASCancelNotifier , 1 )"	123:16:2316:2357	5818819	4	True				
+ANR	5819133	AssignmentExpression	"notifier = g_new ( MPTSASCancelNotifier , 1 )"		5818819	0		=			
+ANR	5819134	Identifier	notifier		5818819	0					
+ANR	5819135	CallExpression	"g_new ( MPTSASCancelNotifier , 1 )"		5818819	1					
+ANR	5819136	Callee	g_new		5818819	0					
+ANR	5819137	Identifier	g_new		5818819	0					
+ANR	5819138	ArgumentList	MPTSASCancelNotifier		5818819	1					
+ANR	5819139	Argument	MPTSASCancelNotifier		5818819	0					
+ANR	5819140	Identifier	MPTSASCancelNotifier		5818819	0					
+ANR	5819141	Argument	1		5818819	1					
+ANR	5819142	PrimaryExpression	1		5818819	0					
+ANR	5819143	ExpressionStatement	notifier -> s = s	125:16:2376:2391	5818819	5	True				
+ANR	5819144	AssignmentExpression	notifier -> s = s		5818819	0		=			
+ANR	5819145	PtrMemberAccess	notifier -> s		5818819	0					
+ANR	5819146	Identifier	notifier		5818819	0					
+ANR	5819147	Identifier	s		5818819	1					
+ANR	5819148	Identifier	s		5818819	1					
+ANR	5819149	ExpressionStatement	notifier -> reply = reply_async	127:16:2410:2439	5818819	6	True				
+ANR	5819150	AssignmentExpression	notifier -> reply = reply_async		5818819	0		=			
+ANR	5819151	PtrMemberAccess	notifier -> reply		5818819	0					
+ANR	5819152	Identifier	notifier		5818819	0					
+ANR	5819153	Identifier	reply		5818819	1					
+ANR	5819154	Identifier	reply_async		5818819	1					
+ANR	5819155	ExpressionStatement	notifier -> notifier . notify = mptsas_cancel_notify	129:16:2458:2506	5818819	7	True				
+ANR	5819156	AssignmentExpression	notifier -> notifier . notify = mptsas_cancel_notify		5818819	0		=			
+ANR	5819157	MemberAccess	notifier -> notifier . notify		5818819	0					
+ANR	5819158	PtrMemberAccess	notifier -> notifier		5818819	0					
+ANR	5819159	Identifier	notifier		5818819	0					
+ANR	5819160	Identifier	notifier		5818819	1					
+ANR	5819161	Identifier	notify		5818819	1					
+ANR	5819162	Identifier	mptsas_cancel_notify		5818819	1					
+ANR	5819163	ExpressionStatement	"scsi_req_cancel_async ( r , & notifier -> notifier )"	131:16:2525:2570	5818819	8	True				
+ANR	5819164	CallExpression	"scsi_req_cancel_async ( r , & notifier -> notifier )"		5818819	0					
+ANR	5819165	Callee	scsi_req_cancel_async		5818819	0					
+ANR	5819166	Identifier	scsi_req_cancel_async		5818819	0					
+ANR	5819167	ArgumentList	r		5818819	1					
+ANR	5819168	Argument	r		5818819	0					
+ANR	5819169	Identifier	r		5818819	0					
+ANR	5819170	Argument	& notifier -> notifier		5818819	1					
+ANR	5819171	UnaryOperationExpression	& notifier -> notifier		5818819	0					
+ANR	5819172	UnaryOperator	&		5818819	0					
+ANR	5819173	PtrMemberAccess	notifier -> notifier		5818819	1					
+ANR	5819174	Identifier	notifier		5818819	0					
+ANR	5819175	Identifier	notifier		5818819	1					
+ANR	5819176	GotoStatement	goto reply_maybe_async ;	133:16:2589:2611	5818819	9	True				
+ANR	5819177	Identifier	reply_maybe_async		5818819	0					
+ANR	5819178	BreakStatement	break ;	139:8:2648:2653	5818819	20	True				
+ANR	5819179	Label	case MPI_SCSITASKMGMT_TASKTYPE_ABRT_TASK_SET :	143:4:2662:2706	5818819	21	True				
+ANR	5819180	Identifier	MPI_SCSITASKMGMT_TASKTYPE_ABRT_TASK_SET		5818819	0					
+ANR	5819181	Label	case MPI_SCSITASKMGMT_TASKTYPE_CLEAR_TASK_SET :	145:4:2713:2758	5818819	22	True				
+ANR	5819182	Identifier	MPI_SCSITASKMGMT_TASKTYPE_CLEAR_TASK_SET		5818819	0					
+ANR	5819183	ExpressionStatement	"status = mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"	147:8:2769:2888	5818819	23	True				
+ANR	5819184	AssignmentExpression	"status = mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"		5818819	0		=			
+ANR	5819185	Identifier	status		5818819	0					
+ANR	5819186	CallExpression	"mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"		5818819	1					
+ANR	5819187	Callee	mptsas_scsi_device_find		5818819	0					
+ANR	5819188	Identifier	mptsas_scsi_device_find		5818819	0					
+ANR	5819189	ArgumentList	s		5818819	1					
+ANR	5819190	Argument	s		5818819	0					
+ANR	5819191	Identifier	s		5818819	0					
+ANR	5819192	Argument	req -> Bus		5818819	1					
+ANR	5819193	PtrMemberAccess	req -> Bus		5818819	0					
+ANR	5819194	Identifier	req		5818819	0					
+ANR	5819195	Identifier	Bus		5818819	1					
+ANR	5819196	Argument	req -> TargetID		5818819	2					
+ANR	5819197	PtrMemberAccess	req -> TargetID		5818819	0					
+ANR	5819198	Identifier	req		5818819	0					
+ANR	5819199	Identifier	TargetID		5818819	1					
+ANR	5819200	Argument	req -> LUN		5818819	3					
+ANR	5819201	PtrMemberAccess	req -> LUN		5818819	0					
+ANR	5819202	Identifier	req		5818819	0					
+ANR	5819203	Identifier	LUN		5818819	1					
+ANR	5819204	Argument	& sdev		5818819	4					
+ANR	5819205	UnaryOperationExpression	& sdev		5818819	0					
+ANR	5819206	UnaryOperator	&		5818819	0					
+ANR	5819207	Identifier	sdev		5818819	1					
+ANR	5819208	IfStatement	if ( status )		5818819	24					
+ANR	5819209	Condition	status	151:12:2903:2908	5818819	0	True				
+ANR	5819210	Identifier	status		5818819	0					
+ANR	5819211	CompoundStatement		149:20:2826:2826	5818819	1					
+ANR	5819212	ExpressionStatement	reply . IOCStatus = status	153:12:2926:2950	5818819	0	True				
+ANR	5819213	AssignmentExpression	reply . IOCStatus = status		5818819	0		=			
+ANR	5819214	MemberAccess	reply . IOCStatus		5818819	0					
+ANR	5819215	Identifier	reply		5818819	0					
+ANR	5819216	Identifier	IOCStatus		5818819	1					
+ANR	5819217	Identifier	status		5818819	1					
+ANR	5819218	GotoStatement	goto out ;	155:12:2965:2973	5818819	1	True				
+ANR	5819219	Identifier	out		5818819	0					
+ANR	5819220	IfStatement	if ( sdev -> lun != req -> LUN [ 1 ] )		5818819	25					
+ANR	5819221	Condition	sdev -> lun != req -> LUN [ 1 ]	159:12:2999:3022	5818819	0	True				
+ANR	5819222	EqualityExpression	sdev -> lun != req -> LUN [ 1 ]		5818819	0		!=			
+ANR	5819223	PtrMemberAccess	sdev -> lun		5818819	0					
+ANR	5819224	Identifier	sdev		5818819	0					
+ANR	5819225	Identifier	lun		5818819	1					
+ANR	5819226	ArrayIndexing	req -> LUN [ 1 ]		5818819	1					
+ANR	5819227	PtrMemberAccess	req -> LUN		5818819	0					
+ANR	5819228	Identifier	req		5818819	0					
+ANR	5819229	Identifier	LUN		5818819	1					
+ANR	5819230	PrimaryExpression	1		5818819	1					
+ANR	5819231	CompoundStatement		157:38:2940:2940	5818819	1					
+ANR	5819232	ExpressionStatement	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN	161:12:3040:3096	5818819	0	True				
+ANR	5819233	AssignmentExpression	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN		5818819	0		=			
+ANR	5819234	MemberAccess	reply . ResponseCode		5818819	0					
+ANR	5819235	Identifier	reply		5818819	0					
+ANR	5819236	Identifier	ResponseCode		5818819	1					
+ANR	5819237	Identifier	MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN		5818819	1					
+ANR	5819238	GotoStatement	goto out ;	163:12:3111:3119	5818819	1	True				
+ANR	5819239	Identifier	out		5818819	0					
+ANR	5819240	ExpressionStatement	"reply_async = g_memdup ( & reply , sizeof ( MPIMsgSCSITaskMgmtReply ) )"	169:8:3143:3206	5818819	26	True				
+ANR	5819241	AssignmentExpression	"reply_async = g_memdup ( & reply , sizeof ( MPIMsgSCSITaskMgmtReply ) )"		5818819	0		=			
+ANR	5819242	Identifier	reply_async		5818819	0					
+ANR	5819243	CallExpression	"g_memdup ( & reply , sizeof ( MPIMsgSCSITaskMgmtReply ) )"		5818819	1					
+ANR	5819244	Callee	g_memdup		5818819	0					
+ANR	5819245	Identifier	g_memdup		5818819	0					
+ANR	5819246	ArgumentList	& reply		5818819	1					
+ANR	5819247	Argument	& reply		5818819	0					
+ANR	5819248	UnaryOperationExpression	& reply		5818819	0					
+ANR	5819249	UnaryOperator	&		5818819	0					
+ANR	5819250	Identifier	reply		5818819	1					
+ANR	5819251	Argument	sizeof ( MPIMsgSCSITaskMgmtReply )		5818819	1					
+ANR	5819252	SizeofExpression	sizeof ( MPIMsgSCSITaskMgmtReply )		5818819	0					
+ANR	5819253	Sizeof	sizeof		5818819	0					
+ANR	5819254	SizeofOperand	MPIMsgSCSITaskMgmtReply		5818819	1					
+ANR	5819255	ExpressionStatement	reply_async -> IOCLogInfo = INT_MAX	171:8:3217:3250	5818819	27	True				
+ANR	5819256	AssignmentExpression	reply_async -> IOCLogInfo = INT_MAX		5818819	0		=			
+ANR	5819257	PtrMemberAccess	reply_async -> IOCLogInfo		5818819	0					
+ANR	5819258	Identifier	reply_async		5818819	0					
+ANR	5819259	Identifier	IOCLogInfo		5818819	1					
+ANR	5819260	Identifier	INT_MAX		5818819	1					
+ANR	5819261	ExpressionStatement	count = 0	175:8:3263:3272	5818819	28	True				
+ANR	5819262	AssignmentExpression	count = 0		5818819	0		=			
+ANR	5819263	Identifier	count		5818819	0					
+ANR	5819264	PrimaryExpression	0		5818819	1					
+ANR	5819265	Statement	QTAILQ_FOREACH_SAFE	177:8:3283:3301	5818819	29	True				
+ANR	5819266	Statement	(	177:27:3302:3302	5818819	30	True				
+ANR	5819267	Statement	r	177:28:3303:3303	5818819	31	True				
+ANR	5819268	Statement	","	177:29:3304:3304	5818819	32	True				
+ANR	5819269	Statement	&	177:31:3306:3306	5818819	33	True				
+ANR	5819270	Statement	sdev	177:32:3307:3310	5818819	34	True				
+ANR	5819271	Statement	->	177:36:3311:3312	5818819	35	True				
+ANR	5819272	Statement	requests	177:38:3313:3320	5818819	36	True				
+ANR	5819273	Statement	","	177:46:3321:3321	5818819	37	True				
+ANR	5819274	Statement	next	177:48:3323:3326	5818819	38	True				
+ANR	5819275	Statement	","	177:52:3327:3327	5818819	39	True				
+ANR	5819276	Statement	next	177:54:3329:3332	5818819	40	True				
+ANR	5819277	Statement	)	177:58:3333:3333	5818819	41	True				
+ANR	5819278	CompoundStatement		175:60:3250:3250	5818819	42					
+ANR	5819279	IfStatement	if ( r -> hba_private )		5818819	0					
+ANR	5819280	Condition	r -> hba_private	179:16:3354:3367	5818819	0	True				
+ANR	5819281	PtrMemberAccess	r -> hba_private		5818819	0					
+ANR	5819282	Identifier	r		5818819	0					
+ANR	5819283	Identifier	hba_private		5818819	1					
+ANR	5819284	CompoundStatement		179:16:3304:3334	5818819	1					
+ANR	5819285	IdentifierDeclStatement	MPTSASCancelNotifier * notifier ;	181:16:3389:3419	5818819	0	True				
+ANR	5819286	IdentifierDecl	* notifier		5818819	0					
+ANR	5819287	IdentifierDeclType	MPTSASCancelNotifier *		5818819	0					
+ANR	5819288	Identifier	notifier		5818819	1					
+ANR	5819289	ExpressionStatement	count ++	185:16:3440:3447	5818819	1	True				
+ANR	5819290	PostIncDecOperationExpression	count ++		5818819	0					
+ANR	5819291	Identifier	count		5818819	0					
+ANR	5819292	IncDec	++		5818819	1					
+ANR	5819293	ExpressionStatement	"notifier = g_new ( MPTSASCancelNotifier , 1 )"	187:16:3466:3507	5818819	2	True				
+ANR	5819294	AssignmentExpression	"notifier = g_new ( MPTSASCancelNotifier , 1 )"		5818819	0		=			
+ANR	5819295	Identifier	notifier		5818819	0					
+ANR	5819296	CallExpression	"g_new ( MPTSASCancelNotifier , 1 )"		5818819	1					
+ANR	5819297	Callee	g_new		5818819	0					
+ANR	5819298	Identifier	g_new		5818819	0					
+ANR	5819299	ArgumentList	MPTSASCancelNotifier		5818819	1					
+ANR	5819300	Argument	MPTSASCancelNotifier		5818819	0					
+ANR	5819301	Identifier	MPTSASCancelNotifier		5818819	0					
+ANR	5819302	Argument	1		5818819	1					
+ANR	5819303	PrimaryExpression	1		5818819	0					
+ANR	5819304	ExpressionStatement	notifier -> s = s	189:16:3526:3541	5818819	3	True				
+ANR	5819305	AssignmentExpression	notifier -> s = s		5818819	0		=			
+ANR	5819306	PtrMemberAccess	notifier -> s		5818819	0					
+ANR	5819307	Identifier	notifier		5818819	0					
+ANR	5819308	Identifier	s		5818819	1					
+ANR	5819309	Identifier	s		5818819	1					
+ANR	5819310	ExpressionStatement	notifier -> reply = reply_async	191:16:3560:3589	5818819	4	True				
+ANR	5819311	AssignmentExpression	notifier -> reply = reply_async		5818819	0		=			
+ANR	5819312	PtrMemberAccess	notifier -> reply		5818819	0					
+ANR	5819313	Identifier	notifier		5818819	0					
+ANR	5819314	Identifier	reply		5818819	1					
+ANR	5819315	Identifier	reply_async		5818819	1					
+ANR	5819316	ExpressionStatement	notifier -> notifier . notify = mptsas_cancel_notify	193:16:3608:3656	5818819	5	True				
+ANR	5819317	AssignmentExpression	notifier -> notifier . notify = mptsas_cancel_notify		5818819	0		=			
+ANR	5819318	MemberAccess	notifier -> notifier . notify		5818819	0					
+ANR	5819319	PtrMemberAccess	notifier -> notifier		5818819	0					
+ANR	5819320	Identifier	notifier		5818819	0					
+ANR	5819321	Identifier	notifier		5818819	1					
+ANR	5819322	Identifier	notify		5818819	1					
+ANR	5819323	Identifier	mptsas_cancel_notify		5818819	1					
+ANR	5819324	ExpressionStatement	"scsi_req_cancel_async ( r , & notifier -> notifier )"	195:16:3675:3720	5818819	6	True				
+ANR	5819325	CallExpression	"scsi_req_cancel_async ( r , & notifier -> notifier )"		5818819	0					
+ANR	5819326	Callee	scsi_req_cancel_async		5818819	0					
+ANR	5819327	Identifier	scsi_req_cancel_async		5818819	0					
+ANR	5819328	ArgumentList	r		5818819	1					
+ANR	5819329	Argument	r		5818819	0					
+ANR	5819330	Identifier	r		5818819	0					
+ANR	5819331	Argument	& notifier -> notifier		5818819	1					
+ANR	5819332	UnaryOperationExpression	& notifier -> notifier		5818819	0					
+ANR	5819333	UnaryOperator	&		5818819	0					
+ANR	5819334	PtrMemberAccess	notifier -> notifier		5818819	1					
+ANR	5819335	Identifier	notifier		5818819	0					
+ANR	5819336	Identifier	notifier		5818819	1					
+ANR	5819337	Label	reply_maybe_async :	203:0:3751:3768	5818819	43	True				
+ANR	5819338	Identifier	reply_maybe_async		5818819	0					
+ANR	5819339	IfStatement	if ( reply_async -> TerminationCount < count )		5818819	44					
+ANR	5819340	Condition	reply_async -> TerminationCount < count	205:12:3783:3819	5818819	0	True				
+ANR	5819341	RelationalExpression	reply_async -> TerminationCount < count		5818819	0		<			
+ANR	5819342	PtrMemberAccess	reply_async -> TerminationCount		5818819	0					
+ANR	5819343	Identifier	reply_async		5818819	0					
+ANR	5819344	Identifier	TerminationCount		5818819	1					
+ANR	5819345	Identifier	count		5818819	1					
+ANR	5819346	CompoundStatement		203:51:3737:3737	5818819	1					
+ANR	5819347	ExpressionStatement	reply_async -> IOCLogInfo = count	207:12:3837:3868	5818819	0	True				
+ANR	5819348	AssignmentExpression	reply_async -> IOCLogInfo = count		5818819	0		=			
+ANR	5819349	PtrMemberAccess	reply_async -> IOCLogInfo		5818819	0					
+ANR	5819350	Identifier	reply_async		5818819	0					
+ANR	5819351	Identifier	IOCLogInfo		5818819	1					
+ANR	5819352	Identifier	count		5818819	1					
+ANR	5819353	ReturnStatement	return ;	209:12:3883:3889	5818819	1	True				
+ANR	5819354	ExpressionStatement	reply . TerminationCount = count	214:8:3912:3942	5818819	45	True				
+ANR	5819355	AssignmentExpression	reply . TerminationCount = count		5818819	0		=			
+ANR	5819356	MemberAccess	reply . TerminationCount		5818819	0					
+ANR	5819357	Identifier	reply		5818819	0					
+ANR	5819358	Identifier	TerminationCount		5818819	1					
+ANR	5819359	Identifier	count		5818819	1					
+ANR	5819360	BreakStatement	break ;	216:8:3953:3958	5818819	46	True				
+ANR	5819361	Label	case MPI_SCSITASKMGMT_TASKTYPE_LOGICAL_UNIT_RESET :	220:4:3967:4016	5818819	47	True				
+ANR	5819362	Identifier	MPI_SCSITASKMGMT_TASKTYPE_LOGICAL_UNIT_RESET		5818819	0					
+ANR	5819363	ExpressionStatement	"status = mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"	222:8:4027:4146	5818819	48	True				
+ANR	5819364	AssignmentExpression	"status = mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"		5818819	0		=			
+ANR	5819365	Identifier	status		5818819	0					
+ANR	5819366	CallExpression	"mptsas_scsi_device_find ( s , req -> Bus , req -> TargetID , req -> LUN , & sdev )"		5818819	1					
+ANR	5819367	Callee	mptsas_scsi_device_find		5818819	0					
+ANR	5819368	Identifier	mptsas_scsi_device_find		5818819	0					
+ANR	5819369	ArgumentList	s		5818819	1					
+ANR	5819370	Argument	s		5818819	0					
+ANR	5819371	Identifier	s		5818819	0					
+ANR	5819372	Argument	req -> Bus		5818819	1					
+ANR	5819373	PtrMemberAccess	req -> Bus		5818819	0					
+ANR	5819374	Identifier	req		5818819	0					
+ANR	5819375	Identifier	Bus		5818819	1					
+ANR	5819376	Argument	req -> TargetID		5818819	2					
+ANR	5819377	PtrMemberAccess	req -> TargetID		5818819	0					
+ANR	5819378	Identifier	req		5818819	0					
+ANR	5819379	Identifier	TargetID		5818819	1					
+ANR	5819380	Argument	req -> LUN		5818819	3					
+ANR	5819381	PtrMemberAccess	req -> LUN		5818819	0					
+ANR	5819382	Identifier	req		5818819	0					
+ANR	5819383	Identifier	LUN		5818819	1					
+ANR	5819384	Argument	& sdev		5818819	4					
+ANR	5819385	UnaryOperationExpression	& sdev		5818819	0					
+ANR	5819386	UnaryOperator	&		5818819	0					
+ANR	5819387	Identifier	sdev		5818819	1					
+ANR	5819388	IfStatement	if ( status )		5818819	49					
+ANR	5819389	Condition	status	226:12:4161:4166	5818819	0	True				
+ANR	5819390	Identifier	status		5818819	0					
+ANR	5819391	CompoundStatement		224:20:4084:4084	5818819	1					
+ANR	5819392	ExpressionStatement	reply . IOCStatus = status	228:12:4184:4208	5818819	0	True				
+ANR	5819393	AssignmentExpression	reply . IOCStatus = status		5818819	0		=			
+ANR	5819394	MemberAccess	reply . IOCStatus		5818819	0					
+ANR	5819395	Identifier	reply		5818819	0					
+ANR	5819396	Identifier	IOCStatus		5818819	1					
+ANR	5819397	Identifier	status		5818819	1					
+ANR	5819398	GotoStatement	goto out ;	230:12:4223:4231	5818819	1	True				
+ANR	5819399	Identifier	out		5818819	0					
+ANR	5819400	IfStatement	if ( sdev -> lun != req -> LUN [ 1 ] )		5818819	50					
+ANR	5819401	Condition	sdev -> lun != req -> LUN [ 1 ]	234:12:4257:4280	5818819	0	True				
+ANR	5819402	EqualityExpression	sdev -> lun != req -> LUN [ 1 ]		5818819	0		!=			
+ANR	5819403	PtrMemberAccess	sdev -> lun		5818819	0					
+ANR	5819404	Identifier	sdev		5818819	0					
+ANR	5819405	Identifier	lun		5818819	1					
+ANR	5819406	ArrayIndexing	req -> LUN [ 1 ]		5818819	1					
+ANR	5819407	PtrMemberAccess	req -> LUN		5818819	0					
+ANR	5819408	Identifier	req		5818819	0					
+ANR	5819409	Identifier	LUN		5818819	1					
+ANR	5819410	PrimaryExpression	1		5818819	1					
+ANR	5819411	CompoundStatement		232:38:4198:4198	5818819	1					
+ANR	5819412	ExpressionStatement	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN	236:12:4298:4354	5818819	0	True				
+ANR	5819413	AssignmentExpression	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN		5818819	0		=			
+ANR	5819414	MemberAccess	reply . ResponseCode		5818819	0					
+ANR	5819415	Identifier	reply		5818819	0					
+ANR	5819416	Identifier	ResponseCode		5818819	1					
+ANR	5819417	Identifier	MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN		5818819	1					
+ANR	5819418	GotoStatement	goto out ;	238:12:4369:4377	5818819	1	True				
+ANR	5819419	Identifier	out		5818819	0					
+ANR	5819420	ExpressionStatement	qdev_reset_all ( & sdev -> qdev )	242:8:4399:4426	5818819	51	True				
+ANR	5819421	CallExpression	qdev_reset_all ( & sdev -> qdev )		5818819	0					
+ANR	5819422	Callee	qdev_reset_all		5818819	0					
+ANR	5819423	Identifier	qdev_reset_all		5818819	0					
+ANR	5819424	ArgumentList	& sdev -> qdev		5818819	1					
+ANR	5819425	Argument	& sdev -> qdev		5818819	0					
+ANR	5819426	UnaryOperationExpression	& sdev -> qdev		5818819	0					
+ANR	5819427	UnaryOperator	&		5818819	0					
+ANR	5819428	PtrMemberAccess	sdev -> qdev		5818819	1					
+ANR	5819429	Identifier	sdev		5818819	0					
+ANR	5819430	Identifier	qdev		5818819	1					
+ANR	5819431	BreakStatement	break ;	244:8:4437:4442	5818819	52	True				
+ANR	5819432	Label	case MPI_SCSITASKMGMT_TASKTYPE_TARGET_RESET :	248:4:4451:4494	5818819	53	True				
+ANR	5819433	Identifier	MPI_SCSITASKMGMT_TASKTYPE_TARGET_RESET		5818819	0					
+ANR	5819434	IfStatement	if ( req -> Bus != 0 )		5818819	54					
+ANR	5819435	Condition	req -> Bus != 0	250:12:4509:4521	5818819	0	True				
+ANR	5819436	EqualityExpression	req -> Bus != 0		5818819	0		!=			
+ANR	5819437	PtrMemberAccess	req -> Bus		5818819	0					
+ANR	5819438	Identifier	req		5818819	0					
+ANR	5819439	Identifier	Bus		5818819	1					
+ANR	5819440	PrimaryExpression	0		5818819	1					
+ANR	5819441	CompoundStatement		248:27:4439:4439	5818819	1					
+ANR	5819442	ExpressionStatement	reply . IOCStatus = MPI_IOCSTATUS_SCSI_INVALID_BUS	252:12:4539:4587	5818819	0	True				
+ANR	5819443	AssignmentExpression	reply . IOCStatus = MPI_IOCSTATUS_SCSI_INVALID_BUS		5818819	0		=			
+ANR	5819444	MemberAccess	reply . IOCStatus		5818819	0					
+ANR	5819445	Identifier	reply		5818819	0					
+ANR	5819446	Identifier	IOCStatus		5818819	1					
+ANR	5819447	Identifier	MPI_IOCSTATUS_SCSI_INVALID_BUS		5818819	1					
+ANR	5819448	GotoStatement	goto out ;	254:12:4602:4610	5818819	1	True				
+ANR	5819449	Identifier	out		5818819	0					
+ANR	5819450	IfStatement	if ( req -> TargetID > s -> max_devices )		5818819	55					
+ANR	5819451	Condition	req -> TargetID > s -> max_devices	258:12:4636:4665	5818819	0	True				
+ANR	5819452	RelationalExpression	req -> TargetID > s -> max_devices		5818819	0		>			
+ANR	5819453	PtrMemberAccess	req -> TargetID		5818819	0					
+ANR	5819454	Identifier	req		5818819	0					
+ANR	5819455	Identifier	TargetID		5818819	1					
+ANR	5819456	PtrMemberAccess	s -> max_devices		5818819	1					
+ANR	5819457	Identifier	s		5818819	0					
+ANR	5819458	Identifier	max_devices		5818819	1					
+ANR	5819459	CompoundStatement		256:44:4583:4583	5818819	1					
+ANR	5819460	ExpressionStatement	reply . IOCStatus = MPI_IOCSTATUS_SCSI_INVALID_TARGETID	260:12:4683:4736	5818819	0	True				
+ANR	5819461	AssignmentExpression	reply . IOCStatus = MPI_IOCSTATUS_SCSI_INVALID_TARGETID		5818819	0		=			
+ANR	5819462	MemberAccess	reply . IOCStatus		5818819	0					
+ANR	5819463	Identifier	reply		5818819	0					
+ANR	5819464	Identifier	IOCStatus		5818819	1					
+ANR	5819465	Identifier	MPI_IOCSTATUS_SCSI_INVALID_TARGETID		5818819	1					
+ANR	5819466	GotoStatement	goto out ;	262:12:4751:4759	5818819	1	True				
+ANR	5819467	Identifier	out		5818819	0					
+ANR	5819468	Statement	QTAILQ_FOREACH	268:8:4783:4796	5818819	56	True				
+ANR	5819469	Statement	(	268:22:4797:4797	5818819	57	True				
+ANR	5819470	Statement	kid	268:23:4798:4800	5818819	58	True				
+ANR	5819471	Statement	","	268:26:4801:4801	5818819	59	True				
+ANR	5819472	Statement	&	268:28:4803:4803	5818819	60	True				
+ANR	5819473	Statement	s	268:29:4804:4804	5818819	61	True				
+ANR	5819474	Statement	->	268:30:4805:4806	5818819	62	True				
+ANR	5819475	Statement	bus	268:32:4807:4809	5818819	63	True				
+ANR	5819476	Statement	.	268:35:4810:4810	5818819	64	True				
+ANR	5819477	Statement	qbus	268:36:4811:4814	5818819	65	True				
+ANR	5819478	Statement	.	268:40:4815:4815	5818819	66	True				
+ANR	5819479	Statement	children	268:41:4816:4823	5818819	67	True				
+ANR	5819480	Statement	","	268:49:4824:4824	5818819	68	True				
+ANR	5819481	Statement	sibling	268:51:4826:4832	5818819	69	True				
+ANR	5819482	Statement	)	268:58:4833:4833	5818819	70	True				
+ANR	5819483	CompoundStatement		266:60:4750:4750	5818819	71					
+ANR	5819484	ExpressionStatement	sdev = SCSI_DEVICE ( kid -> child )	270:12:4850:4880	5818819	0	True				
+ANR	5819485	AssignmentExpression	sdev = SCSI_DEVICE ( kid -> child )		5818819	0		=			
+ANR	5819486	Identifier	sdev		5818819	0					
+ANR	5819487	CallExpression	SCSI_DEVICE ( kid -> child )		5818819	1					
+ANR	5819488	Callee	SCSI_DEVICE		5818819	0					
+ANR	5819489	Identifier	SCSI_DEVICE		5818819	0					
+ANR	5819490	ArgumentList	kid -> child		5818819	1					
+ANR	5819491	Argument	kid -> child		5818819	0					
+ANR	5819492	PtrMemberAccess	kid -> child		5818819	0					
+ANR	5819493	Identifier	kid		5818819	0					
+ANR	5819494	Identifier	child		5818819	1					
+ANR	5819495	IfStatement	if ( sdev -> channel == 0 && sdev -> id == req -> TargetID )		5818819	1					
+ANR	5819496	Condition	sdev -> channel == 0 && sdev -> id == req -> TargetID	272:16:4899:4945	5818819	0	True				
+ANR	5819497	AndExpression	sdev -> channel == 0 && sdev -> id == req -> TargetID		5818819	0		&&			
+ANR	5819498	EqualityExpression	sdev -> channel == 0		5818819	0		==			
+ANR	5819499	PtrMemberAccess	sdev -> channel		5818819	0					
+ANR	5819500	Identifier	sdev		5818819	0					
+ANR	5819501	Identifier	channel		5818819	1					
+ANR	5819502	PrimaryExpression	0		5818819	1					
+ANR	5819503	EqualityExpression	sdev -> id == req -> TargetID		5818819	1		==			
+ANR	5819504	PtrMemberAccess	sdev -> id		5818819	0					
+ANR	5819505	Identifier	sdev		5818819	0					
+ANR	5819506	Identifier	id		5818819	1					
+ANR	5819507	PtrMemberAccess	req -> TargetID		5818819	1					
+ANR	5819508	Identifier	req		5818819	0					
+ANR	5819509	Identifier	TargetID		5818819	1					
+ANR	5819510	CompoundStatement		270:65:4863:4863	5818819	1					
+ANR	5819511	ExpressionStatement	qdev_reset_all ( kid -> child )	274:16:4967:4993	5818819	0	True				
+ANR	5819512	CallExpression	qdev_reset_all ( kid -> child )		5818819	0					
+ANR	5819513	Callee	qdev_reset_all		5818819	0					
+ANR	5819514	Identifier	qdev_reset_all		5818819	0					
+ANR	5819515	ArgumentList	kid -> child		5818819	1					
+ANR	5819516	Argument	kid -> child		5818819	0					
+ANR	5819517	PtrMemberAccess	kid -> child		5818819	0					
+ANR	5819518	Identifier	kid		5818819	0					
+ANR	5819519	Identifier	child		5818819	1					
+ANR	5819520	BreakStatement	break ;	280:8:5030:5035	5818819	72	True				
+ANR	5819521	Label	case MPI_SCSITASKMGMT_TASKTYPE_RESET_BUS :	284:4:5044:5084	5818819	73	True				
+ANR	5819522	Identifier	MPI_SCSITASKMGMT_TASKTYPE_RESET_BUS		5818819	0					
+ANR	5819523	ExpressionStatement	qbus_reset_all ( & s -> bus . qbus )	286:8:5095:5123	5818819	74	True				
+ANR	5819524	CallExpression	qbus_reset_all ( & s -> bus . qbus )		5818819	0					
+ANR	5819525	Callee	qbus_reset_all		5818819	0					
+ANR	5819526	Identifier	qbus_reset_all		5818819	0					
+ANR	5819527	ArgumentList	& s -> bus . qbus		5818819	1					
+ANR	5819528	Argument	& s -> bus . qbus		5818819	0					
+ANR	5819529	UnaryOperationExpression	& s -> bus . qbus		5818819	0					
+ANR	5819530	UnaryOperator	&		5818819	0					
+ANR	5819531	MemberAccess	s -> bus . qbus		5818819	1					
+ANR	5819532	PtrMemberAccess	s -> bus		5818819	0					
+ANR	5819533	Identifier	s		5818819	0					
+ANR	5819534	Identifier	bus		5818819	1					
+ANR	5819535	Identifier	qbus		5818819	1					
+ANR	5819536	BreakStatement	break ;	288:8:5134:5139	5818819	75	True				
+ANR	5819537	Label	default :	292:4:5148:5155	5818819	76	True				
+ANR	5819538	Identifier	default		5818819	0					
+ANR	5819539	ExpressionStatement	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_NOT_SUPPORTED	294:8:5166:5224	5818819	77	True				
+ANR	5819540	AssignmentExpression	reply . ResponseCode = MPI_SCSITASKMGMT_RSP_TM_NOT_SUPPORTED		5818819	0		=			
+ANR	5819541	MemberAccess	reply . ResponseCode		5818819	0					
+ANR	5819542	Identifier	reply		5818819	0					
+ANR	5819543	Identifier	ResponseCode		5818819	1					
+ANR	5819544	Identifier	MPI_SCSITASKMGMT_RSP_TM_NOT_SUPPORTED		5818819	1					
+ANR	5819545	BreakStatement	break ;	296:8:5235:5240	5818819	78	True				
+ANR	5819546	Label	out :	302:0:5252:5255	5818819	18	True				
+ANR	5819547	Identifier	out		5818819	0					
+ANR	5819548	ExpressionStatement	mptsas_fix_scsi_task_mgmt_reply_endianness ( & reply )	304:4:5262:5312	5818819	19	True				
+ANR	5819549	CallExpression	mptsas_fix_scsi_task_mgmt_reply_endianness ( & reply )		5818819	0					
+ANR	5819550	Callee	mptsas_fix_scsi_task_mgmt_reply_endianness		5818819	0					
+ANR	5819551	Identifier	mptsas_fix_scsi_task_mgmt_reply_endianness		5818819	0					
+ANR	5819552	ArgumentList	& reply		5818819	1					
+ANR	5819553	Argument	& reply		5818819	0					
+ANR	5819554	UnaryOperationExpression	& reply		5818819	0					
+ANR	5819555	UnaryOperator	&		5818819	0					
+ANR	5819556	Identifier	reply		5818819	1					
+ANR	5819557	ExpressionStatement	"mptsas_post_reply ( s , ( MPIDefaultReply * ) & reply )"	306:4:5319:5366	5818819	20	True				
+ANR	5819558	CallExpression	"mptsas_post_reply ( s , ( MPIDefaultReply * ) & reply )"		5818819	0					
+ANR	5819559	Callee	mptsas_post_reply		5818819	0					
+ANR	5819560	Identifier	mptsas_post_reply		5818819	0					
+ANR	5819561	ArgumentList	s		5818819	1					
+ANR	5819562	Argument	s		5818819	0					
+ANR	5819563	Identifier	s		5818819	0					
+ANR	5819564	Argument	( MPIDefaultReply * ) & reply		5818819	1					
+ANR	5819565	CastExpression	( MPIDefaultReply * ) & reply		5818819	0					
+ANR	5819566	CastTarget	MPIDefaultReply *		5818819	0					
+ANR	5819567	UnaryOperationExpression	& reply		5818819	1					
+ANR	5819568	UnaryOperator	&		5818819	0					
+ANR	5819569	Identifier	reply		5818819	1					
+ANR	5819570	ReturnType	static void		5818819	1					
+ANR	5819571	Identifier	mptsas_process_scsi_task_mgmt		5818819	2					
+ANR	5819572	ParameterList	"MPTSASState * s , MPIMsgSCSITaskMgmt * req"		5818819	3					
+ANR	5819573	Parameter	MPTSASState * s	1:42:42:55	5818819	0	True				
+ANR	5819574	ParameterType	MPTSASState *		5818819	0					
+ANR	5819575	Identifier	s		5818819	1					
+ANR	5819576	Parameter	MPIMsgSCSITaskMgmt * req	1:58:58:80	5818819	1	True				
+ANR	5819577	ParameterType	MPIMsgSCSITaskMgmt *		5818819	0					
+ANR	5819578	Identifier	req		5818819	1					
+ANR	5819579	CFGEntryNode	ENTRY		5818819		True				
+ANR	5819580	CFGExitNode	EXIT		5818819		True				
+ANR	5819581	Symbol	& s -> bus . qbus		5818819						
+ANR	5819582	Symbol	reply . MsgLength		5818819						
+ANR	5819583	Symbol	reply_async -> TerminationCount		5818819						
+ANR	5819584	Symbol	req -> Bus		5818819						
+ANR	5819585	Symbol	g_new		5818819						
+ANR	5819586	Symbol	reply . TargetID		5818819						
+ANR	5819587	Symbol	notifier -> s		5818819						
+ANR	5819588	Symbol	MPI_IOCSTATUS_SCSI_INVALID_TARGETID		5818819						
+ANR	5819589	Symbol	reply . IOCStatus		5818819						
+ANR	5819590	Symbol	notifier -> notifier . notify		5818819						
+ANR	5819591	Symbol	req -> LUN		5818819						
+ANR	5819592	Symbol	reply		5818819						
+ANR	5819593	Symbol	req -> MsgContext		5818819						
+ANR	5819594	Symbol	* reply_async		5818819						
+ANR	5819595	Symbol	req		5818819						
+ANR	5819596	Symbol	reply_async -> IOCLogInfo		5818819						
+ANR	5819597	Symbol	count		5818819						
+ANR	5819598	Symbol	& notifier -> notifier		5818819						
+ANR	5819599	Symbol	g_memdup		5818819						
+ANR	5819600	Symbol	& sdev		5818819						
+ANR	5819601	Symbol	reply . TaskType		5818819						
+ANR	5819602	Symbol	cmd_req		5818819						
+ANR	5819603	Symbol	* kid		5818819						
+ANR	5819604	Symbol	* req -> LUN		5818819						
+ANR	5819605	Symbol	* cmd_req		5818819						
+ANR	5819606	Symbol	MPI_SCSITASKMGMT_RSP_TM_INVALID_LUN		5818819						
+ANR	5819607	Symbol	sdev -> channel		5818819						
+ANR	5819608	Symbol	& sdev -> qdev		5818819						
+ANR	5819609	Symbol	s -> doorbell_reply		5818819						
+ANR	5819610	Symbol	SCSI_DEVICE		5818819						
+ANR	5819611	Symbol	status		5818819						
+ANR	5819612	Symbol	req -> TaskType		5818819						
+ANR	5819613	Symbol	& s -> bus		5818819						
+ANR	5819614	Symbol	next		5818819						
+ANR	5819615	Symbol	reply . MsgContext		5818819						
+ANR	5819616	Symbol	* notifier		5818819						
+ANR	5819617	Symbol	mptsas_scsi_device_find		5818819						
+ANR	5819618	Symbol	MPTSASCancelNotifier		5818819						
+ANR	5819619	Symbol	kid		5818819						
+ANR	5819620	Symbol	MPI_IOCSTATUS_SCSI_INVALID_BUS		5818819						
+ANR	5819621	Symbol	* req		5818819						
+ANR	5819622	Symbol	cmd_req -> scsi_io		5818819						
+ANR	5819623	Symbol	& reply		5818819						
+ANR	5819624	Symbol	MPTSAS_MAX_REQUEST_SIZE		5818819						
+ANR	5819625	Symbol	s -> max_devices		5818819						
+ANR	5819626	Symbol	s -> doorbell_msg		5818819						
+ANR	5819627	Symbol	req -> TargetID		5818819						
+ANR	5819628	Symbol	cmd_req -> scsi_io . MsgContext		5818819						
+ANR	5819629	Symbol	notifier		5818819						
+ANR	5819630	Symbol	INT_MAX		5818819						
+ANR	5819631	Symbol	reply_async		5818819						
+ANR	5819632	Symbol	* sdev		5818819						
+ANR	5819633	Symbol	notifier -> notifier		5818819						
+ANR	5819634	Symbol	mptsas_cancel_notify		5818819						
+ANR	5819635	Symbol	MPI_SCSITASKMGMT_TASKTYPE_QUERY_TASK		5818819						
+ANR	5819636	Symbol	notifier -> reply		5818819						
+ANR	5819637	Symbol	kid -> child		5818819						
+ANR	5819638	Symbol	MPI_SCSITASKMGMT_RSP_TM_SUCCEEDED		5818819						
+ANR	5819639	Symbol	reply . Function		5818819						
+ANR	5819640	Symbol	s -> bus		5818819						
+ANR	5819641	Symbol	sdev -> id		5818819						
+ANR	5819642	Symbol	req -> Function		5818819						
+ANR	5819643	Symbol	r		5818819						
+ANR	5819644	Symbol	* * req		5818819						
+ANR	5819645	Symbol	req -> TaskMsgContext		5818819						
+ANR	5819646	Symbol	s		5818819						
+ANR	5819647	Symbol	sdev -> lun		5818819						
+ANR	5819648	Symbol	sdev		5818819						
+ANR	5819649	Symbol	reply . TerminationCount		5818819						
+ANR	5819650	Symbol	MPI_SCSITASKMGMT_RSP_TM_NOT_SUPPORTED		5818819						
+ANR	5819651	Symbol	r -> hba_private		5818819						
+ANR	5819652	Symbol	reply . ResponseCode		5818819						
+ANR	5819653	Symbol	* r		5818819						
+ANR	5819654	Symbol	* s		5818819						
+ANR	5819655	Symbol	reply . Bus		5818819						

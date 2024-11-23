@@ -1,0 +1,126 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5082568	File	/home/p4ultr4n/workplace/ReVeal/raw_code/kqemu_modify_page_0.c								
+ANR	5082569	Function	kqemu_modify_page	1:0:0:1007							
+ANR	5082570	FunctionDef	"kqemu_modify_page (CPUState * env , ram_addr_t ram_addr)"		5082569	0					
+ANR	5082571	CompoundStatement		3:0:60:1007	5082569	0					
+ANR	5082572	IdentifierDeclStatement	unsigned long page_index ;	5:4:67:91	5082569	0	True				
+ANR	5082573	IdentifierDecl	page_index		5082569	0					
+ANR	5082574	IdentifierDeclType	unsigned long		5082569	0					
+ANR	5082575	Identifier	page_index		5082569	1					
+ANR	5082576	IdentifierDeclStatement	int ret ;	7:4:98:105	5082569	1	True				
+ANR	5082577	IdentifierDecl	ret		5082569	0					
+ANR	5082578	IdentifierDeclType	int		5082569	0					
+ANR	5082579	Identifier	ret		5082569	1					
+ANR	5082580	IdentifierDeclStatement	DWORD temp ;	11:4:127:137	5082569	2	True				
+ANR	5082581	IdentifierDecl	temp		5082569	0					
+ANR	5082582	IdentifierDeclType	DWORD		5082569	0					
+ANR	5082583	Identifier	temp		5082569	1					
+ANR	5082584	ExpressionStatement	page_index = ram_addr >> TARGET_PAGE_BITS	17:4:154:195	5082569	3	True				
+ANR	5082585	AssignmentExpression	page_index = ram_addr >> TARGET_PAGE_BITS		5082569	0		=			
+ANR	5082586	Identifier	page_index		5082569	0					
+ANR	5082587	ShiftExpression	ram_addr >> TARGET_PAGE_BITS		5082569	1		>>			
+ANR	5082588	Identifier	ram_addr		5082569	0					
+ANR	5082589	Identifier	TARGET_PAGE_BITS		5082569	1					
+ANR	5082590	IfStatement	if ( ! modified_ram_pages_table [ page_index ] )		5082569	4					
+ANR	5082591	Condition	! modified_ram_pages_table [ page_index ]	19:8:206:242	5082569	0	True				
+ANR	5082592	UnaryOperationExpression	! modified_ram_pages_table [ page_index ]		5082569	0					
+ANR	5082593	UnaryOperator	!		5082569	0					
+ANR	5082594	ArrayIndexing	modified_ram_pages_table [ page_index ]		5082569	1					
+ANR	5082595	Identifier	modified_ram_pages_table		5082569	0					
+ANR	5082596	Identifier	page_index		5082569	1					
+ANR	5082597	CompoundStatement		17:47:184:184	5082569	1					
+ANR	5082598	ExpressionStatement	"printf ( ""%d: modify_page=%08lx\\n"" , nb_modified_ram_pages , ram_addr )"	23:8:263:329	5082569	0	True				
+ANR	5082599	CallExpression	"printf ( ""%d: modify_page=%08lx\\n"" , nb_modified_ram_pages , ram_addr )"		5082569	0					
+ANR	5082600	Callee	printf		5082569	0					
+ANR	5082601	Identifier	printf		5082569	0					
+ANR	5082602	ArgumentList	"""%d: modify_page=%08lx\\n"""		5082569	1					
+ANR	5082603	Argument	"""%d: modify_page=%08lx\\n"""		5082569	0					
+ANR	5082604	PrimaryExpression	"""%d: modify_page=%08lx\\n"""		5082569	0					
+ANR	5082605	Argument	nb_modified_ram_pages		5082569	1					
+ANR	5082606	Identifier	nb_modified_ram_pages		5082569	0					
+ANR	5082607	Argument	ram_addr		5082569	2					
+ANR	5082608	Identifier	ram_addr		5082569	0					
+ANR	5082609	ExpressionStatement	modified_ram_pages_table [ page_index ] = 1	27:8:348:388	5082569	1	True				
+ANR	5082610	AssignmentExpression	modified_ram_pages_table [ page_index ] = 1		5082569	0		=			
+ANR	5082611	ArrayIndexing	modified_ram_pages_table [ page_index ]		5082569	0					
+ANR	5082612	Identifier	modified_ram_pages_table		5082569	0					
+ANR	5082613	Identifier	page_index		5082569	1					
+ANR	5082614	PrimaryExpression	1		5082569	1					
+ANR	5082615	ExpressionStatement	modified_ram_pages [ nb_modified_ram_pages ++ ] = ram_addr	29:8:399:453	5082569	2	True				
+ANR	5082616	AssignmentExpression	modified_ram_pages [ nb_modified_ram_pages ++ ] = ram_addr		5082569	0		=			
+ANR	5082617	ArrayIndexing	modified_ram_pages [ nb_modified_ram_pages ++ ]		5082569	0					
+ANR	5082618	Identifier	modified_ram_pages		5082569	0					
+ANR	5082619	PostIncDecOperationExpression	nb_modified_ram_pages ++		5082569	1					
+ANR	5082620	Identifier	nb_modified_ram_pages		5082569	0					
+ANR	5082621	IncDec	++		5082569	1					
+ANR	5082622	Identifier	ram_addr		5082569	1					
+ANR	5082623	IfStatement	if ( nb_modified_ram_pages >= KQEMU_MAX_MODIFIED_RAM_PAGES )		5082569	3					
+ANR	5082624	Condition	nb_modified_ram_pages >= KQEMU_MAX_MODIFIED_RAM_PAGES	31:12:468:520	5082569	0	True				
+ANR	5082625	RelationalExpression	nb_modified_ram_pages >= KQEMU_MAX_MODIFIED_RAM_PAGES		5082569	0		>=			
+ANR	5082626	Identifier	nb_modified_ram_pages		5082569	0					
+ANR	5082627	Identifier	KQEMU_MAX_MODIFIED_RAM_PAGES		5082569	1					
+ANR	5082628	CompoundStatement		29:67:462:462	5082569	1					
+ANR	5082629	ExpressionStatement	"ret = DeviceIoControl ( kqemu_fd , KQEMU_MODIFY_RAM_PAGES , & nb_modified_ram_pages , sizeof ( nb_modified_ram_pages ) , NULL , 0 , & temp , NULL )"	37:12:578:815	5082569	0	True				
+ANR	5082630	AssignmentExpression	"ret = DeviceIoControl ( kqemu_fd , KQEMU_MODIFY_RAM_PAGES , & nb_modified_ram_pages , sizeof ( nb_modified_ram_pages ) , NULL , 0 , & temp , NULL )"		5082569	0		=			
+ANR	5082631	Identifier	ret		5082569	0					
+ANR	5082632	CallExpression	"DeviceIoControl ( kqemu_fd , KQEMU_MODIFY_RAM_PAGES , & nb_modified_ram_pages , sizeof ( nb_modified_ram_pages ) , NULL , 0 , & temp , NULL )"		5082569	1					
+ANR	5082633	Callee	DeviceIoControl		5082569	0					
+ANR	5082634	Identifier	DeviceIoControl		5082569	0					
+ANR	5082635	ArgumentList	kqemu_fd		5082569	1					
+ANR	5082636	Argument	kqemu_fd		5082569	0					
+ANR	5082637	Identifier	kqemu_fd		5082569	0					
+ANR	5082638	Argument	KQEMU_MODIFY_RAM_PAGES		5082569	1					
+ANR	5082639	Identifier	KQEMU_MODIFY_RAM_PAGES		5082569	0					
+ANR	5082640	Argument	& nb_modified_ram_pages		5082569	2					
+ANR	5082641	UnaryOperationExpression	& nb_modified_ram_pages		5082569	0					
+ANR	5082642	UnaryOperator	&		5082569	0					
+ANR	5082643	Identifier	nb_modified_ram_pages		5082569	1					
+ANR	5082644	Argument	sizeof ( nb_modified_ram_pages )		5082569	3					
+ANR	5082645	SizeofExpression	sizeof ( nb_modified_ram_pages )		5082569	0					
+ANR	5082646	Sizeof	sizeof		5082569	0					
+ANR	5082647	SizeofOperand	nb_modified_ram_pages		5082569	1					
+ANR	5082648	Argument	NULL		5082569	4					
+ANR	5082649	Identifier	NULL		5082569	0					
+ANR	5082650	Argument	0		5082569	5					
+ANR	5082651	PrimaryExpression	0		5082569	0					
+ANR	5082652	Argument	& temp		5082569	6					
+ANR	5082653	UnaryOperationExpression	& temp		5082569	0					
+ANR	5082654	UnaryOperator	&		5082569	0					
+ANR	5082655	Identifier	temp		5082569	1					
+ANR	5082656	Argument	NULL		5082569	7					
+ANR	5082657	Identifier	NULL		5082569	0					
+ANR	5082658	ExpressionStatement	kqemu_reset_modified_ram_pages ( )	53:12:954:986	5082569	1	True				
+ANR	5082659	CallExpression	kqemu_reset_modified_ram_pages ( )		5082569	0					
+ANR	5082660	Callee	kqemu_reset_modified_ram_pages		5082569	0					
+ANR	5082661	Identifier	kqemu_reset_modified_ram_pages		5082569	0					
+ANR	5082662	ArgumentList			5082569	1					
+ANR	5082663	ReturnType	void		5082569	1					
+ANR	5082664	Identifier	kqemu_modify_page		5082569	2					
+ANR	5082665	ParameterList	"CPUState * env , ram_addr_t ram_addr"		5082569	3					
+ANR	5082666	Parameter	CPUState * env	1:23:23:35	5082569	0	True				
+ANR	5082667	ParameterType	CPUState *		5082569	0					
+ANR	5082668	Identifier	env		5082569	1					
+ANR	5082669	Parameter	ram_addr_t ram_addr	1:38:38:56	5082569	1	True				
+ANR	5082670	ParameterType	ram_addr_t		5082569	0					
+ANR	5082671	Identifier	ram_addr		5082569	1					
+ANR	5082672	CFGEntryNode	ENTRY		5082569		True				
+ANR	5082673	CFGExitNode	EXIT		5082569		True				
+ANR	5082674	Symbol	ret		5082569						
+ANR	5082675	Symbol	modified_ram_pages_table		5082569						
+ANR	5082676	Symbol	modified_ram_pages		5082569						
+ANR	5082677	Symbol	KQEMU_MODIFY_RAM_PAGES		5082569						
+ANR	5082678	Symbol	temp		5082569						
+ANR	5082679	Symbol	NULL		5082569						
+ANR	5082680	Symbol	* modified_ram_pages		5082569						
+ANR	5082681	Symbol	* page_index		5082569						
+ANR	5082682	Symbol	DeviceIoControl		5082569						
+ANR	5082683	Symbol	TARGET_PAGE_BITS		5082569						
+ANR	5082684	Symbol	env		5082569						
+ANR	5082685	Symbol	nb_modified_ram_pages		5082569						
+ANR	5082686	Symbol	KQEMU_MAX_MODIFIED_RAM_PAGES		5082569						
+ANR	5082687	Symbol	page_index		5082569						
+ANR	5082688	Symbol	& nb_modified_ram_pages		5082569						
+ANR	5082689	Symbol	ram_addr		5082569						
+ANR	5082690	Symbol	kqemu_fd		5082569						
+ANR	5082691	Symbol	* modified_ram_pages_table		5082569						
+ANR	5082692	Symbol	& temp		5082569						

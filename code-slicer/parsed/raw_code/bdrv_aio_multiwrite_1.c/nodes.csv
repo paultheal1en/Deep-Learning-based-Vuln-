@@ -1,0 +1,263 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	937239	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_aio_multiwrite_1.c								
+ANR	937240	Function	bdrv_aio_multiwrite	1:0:0:1388							
+ANR	937241	FunctionDef	"bdrv_aio_multiwrite (BlockDriverState * bs , BlockRequest * reqs , int num_reqs)"		937240	0					
+ANR	937242	CompoundStatement		3:0:81:1388	937240	0					
+ANR	937243	IdentifierDeclStatement	BlockDriverAIOCB * acb ;	5:4:88:109	937240	0	True				
+ANR	937244	IdentifierDecl	* acb		937240	0					
+ANR	937245	IdentifierDeclType	BlockDriverAIOCB *		937240	0					
+ANR	937246	Identifier	acb		937240	1					
+ANR	937247	IdentifierDeclStatement	MultiwriteCB * mcb ;	7:4:116:133	937240	1	True				
+ANR	937248	IdentifierDecl	* mcb		937240	0					
+ANR	937249	IdentifierDeclType	MultiwriteCB *		937240	0					
+ANR	937250	Identifier	mcb		937240	1					
+ANR	937251	IdentifierDeclStatement	int i ;	9:4:140:145	937240	2	True				
+ANR	937252	IdentifierDecl	i		937240	0					
+ANR	937253	IdentifierDeclType	int		937240	0					
+ANR	937254	Identifier	i		937240	1					
+ANR	937255	IfStatement	if ( num_reqs == 0 )		937240	3					
+ANR	937256	Condition	num_reqs == 0	13:8:158:170	937240	0	True				
+ANR	937257	EqualityExpression	num_reqs == 0		937240	0		==			
+ANR	937258	Identifier	num_reqs		937240	0					
+ANR	937259	PrimaryExpression	0		937240	1					
+ANR	937260	CompoundStatement		11:23:91:91	937240	1					
+ANR	937261	ReturnStatement	return 0 ;	15:8:184:192	937240	0	True				
+ANR	937262	PrimaryExpression	0		937240	0					
+ANR	937263	ExpressionStatement	mcb = qemu_mallocz ( sizeof ( * mcb ) + num_reqs * sizeof ( * mcb -> callbacks ) )	23:4:246:315	937240	4	True				
+ANR	937264	AssignmentExpression	mcb = qemu_mallocz ( sizeof ( * mcb ) + num_reqs * sizeof ( * mcb -> callbacks ) )		937240	0		=			
+ANR	937265	Identifier	mcb		937240	0					
+ANR	937266	CallExpression	qemu_mallocz ( sizeof ( * mcb ) + num_reqs * sizeof ( * mcb -> callbacks ) )		937240	1					
+ANR	937267	Callee	qemu_mallocz		937240	0					
+ANR	937268	Identifier	qemu_mallocz		937240	0					
+ANR	937269	ArgumentList	sizeof ( * mcb ) + num_reqs * sizeof ( * mcb -> callbacks )		937240	1					
+ANR	937270	Argument	sizeof ( * mcb ) + num_reqs * sizeof ( * mcb -> callbacks )		937240	0					
+ANR	937271	AdditiveExpression	sizeof ( * mcb ) + num_reqs * sizeof ( * mcb -> callbacks )		937240	0		+			
+ANR	937272	SizeofExpression	sizeof ( * mcb )		937240	0					
+ANR	937273	Sizeof	sizeof		937240	0					
+ANR	937274	UnaryOperationExpression	* mcb		937240	1					
+ANR	937275	UnaryOperator	*		937240	0					
+ANR	937276	Identifier	mcb		937240	1					
+ANR	937277	MultiplicativeExpression	num_reqs * sizeof ( * mcb -> callbacks )		937240	1		*			
+ANR	937278	Identifier	num_reqs		937240	0					
+ANR	937279	SizeofExpression	sizeof ( * mcb -> callbacks )		937240	1					
+ANR	937280	Sizeof	sizeof		937240	0					
+ANR	937281	UnaryOperationExpression	* mcb -> callbacks		937240	1					
+ANR	937282	UnaryOperator	*		937240	0					
+ANR	937283	PtrMemberAccess	mcb -> callbacks		937240	1					
+ANR	937284	Identifier	mcb		937240	0					
+ANR	937285	Identifier	callbacks		937240	1					
+ANR	937286	ExpressionStatement	mcb -> num_requests = 0	25:4:322:343	937240	5	True				
+ANR	937287	AssignmentExpression	mcb -> num_requests = 0		937240	0		=			
+ANR	937288	PtrMemberAccess	mcb -> num_requests		937240	0					
+ANR	937289	Identifier	mcb		937240	0					
+ANR	937290	Identifier	num_requests		937240	1					
+ANR	937291	PrimaryExpression	0		937240	1					
+ANR	937292	ExpressionStatement	mcb -> num_callbacks = num_reqs	27:4:350:379	937240	6	True				
+ANR	937293	AssignmentExpression	mcb -> num_callbacks = num_reqs		937240	0		=			
+ANR	937294	PtrMemberAccess	mcb -> num_callbacks		937240	0					
+ANR	937295	Identifier	mcb		937240	0					
+ANR	937296	Identifier	num_callbacks		937240	1					
+ANR	937297	Identifier	num_reqs		937240	1					
+ANR	937298	ForStatement	for ( i = 0 ; i < num_reqs ; i ++ )		937240	7					
+ANR	937299	ForInit	i = 0 ;	31:9:393:398	937240	0	True				
+ANR	937300	AssignmentExpression	i = 0		937240	0		=			
+ANR	937301	Identifier	i		937240	0					
+ANR	937302	PrimaryExpression	0		937240	1					
+ANR	937303	Condition	i < num_reqs	31:16:400:411	937240	1	True				
+ANR	937304	RelationalExpression	i < num_reqs		937240	0		<			
+ANR	937305	Identifier	i		937240	0					
+ANR	937306	Identifier	num_reqs		937240	1					
+ANR	937307	PostIncDecOperationExpression	i ++	31:30:414:416	937240	2	True				
+ANR	937308	Identifier	i		937240	0					
+ANR	937309	IncDec	++		937240	1					
+ANR	937310	CompoundStatement		29:35:337:337	937240	3					
+ANR	937311	ExpressionStatement	mcb -> callbacks [ i ] . cb = reqs [ i ] . cb	33:8:430:463	937240	0	True				
+ANR	937312	AssignmentExpression	mcb -> callbacks [ i ] . cb = reqs [ i ] . cb		937240	0		=			
+ANR	937313	MemberAccess	mcb -> callbacks [ i ] . cb		937240	0					
+ANR	937314	ArrayIndexing	mcb -> callbacks [ i ]		937240	0					
+ANR	937315	PtrMemberAccess	mcb -> callbacks		937240	0					
+ANR	937316	Identifier	mcb		937240	0					
+ANR	937317	Identifier	callbacks		937240	1					
+ANR	937318	Identifier	i		937240	1					
+ANR	937319	Identifier	cb		937240	1					
+ANR	937320	MemberAccess	reqs [ i ] . cb		937240	1					
+ANR	937321	ArrayIndexing	reqs [ i ]		937240	0					
+ANR	937322	Identifier	reqs		937240	0					
+ANR	937323	Identifier	i		937240	1					
+ANR	937324	Identifier	cb		937240	1					
+ANR	937325	ExpressionStatement	mcb -> callbacks [ i ] . opaque = reqs [ i ] . opaque	35:8:474:515	937240	1	True				
+ANR	937326	AssignmentExpression	mcb -> callbacks [ i ] . opaque = reqs [ i ] . opaque		937240	0		=			
+ANR	937327	MemberAccess	mcb -> callbacks [ i ] . opaque		937240	0					
+ANR	937328	ArrayIndexing	mcb -> callbacks [ i ]		937240	0					
+ANR	937329	PtrMemberAccess	mcb -> callbacks		937240	0					
+ANR	937330	Identifier	mcb		937240	0					
+ANR	937331	Identifier	callbacks		937240	1					
+ANR	937332	Identifier	i		937240	1					
+ANR	937333	Identifier	opaque		937240	1					
+ANR	937334	MemberAccess	reqs [ i ] . opaque		937240	1					
+ANR	937335	ArrayIndexing	reqs [ i ]		937240	0					
+ANR	937336	Identifier	reqs		937240	0					
+ANR	937337	Identifier	i		937240	1					
+ANR	937338	Identifier	opaque		937240	1					
+ANR	937339	ExpressionStatement	"num_reqs = multiwrite_merge ( bs , reqs , num_reqs , mcb )"	43:4:567:619	937240	8	True				
+ANR	937340	AssignmentExpression	"num_reqs = multiwrite_merge ( bs , reqs , num_reqs , mcb )"		937240	0		=			
+ANR	937341	Identifier	num_reqs		937240	0					
+ANR	937342	CallExpression	"multiwrite_merge ( bs , reqs , num_reqs , mcb )"		937240	1					
+ANR	937343	Callee	multiwrite_merge		937240	0					
+ANR	937344	Identifier	multiwrite_merge		937240	0					
+ANR	937345	ArgumentList	bs		937240	1					
+ANR	937346	Argument	bs		937240	0					
+ANR	937347	Identifier	bs		937240	0					
+ANR	937348	Argument	reqs		937240	1					
+ANR	937349	Identifier	reqs		937240	0					
+ANR	937350	Argument	num_reqs		937240	2					
+ANR	937351	Identifier	num_reqs		937240	0					
+ANR	937352	Argument	mcb		937240	3					
+ANR	937353	Identifier	mcb		937240	0					
+ANR	937354	ForStatement	for ( i = 0 ; i < num_reqs ; i ++ )		937240	9					
+ANR	937355	ForInit	i = 0 ;	49:9:662:667	937240	0	True				
+ANR	937356	AssignmentExpression	i = 0		937240	0		=			
+ANR	937357	Identifier	i		937240	0					
+ANR	937358	PrimaryExpression	0		937240	1					
+ANR	937359	Condition	i < num_reqs	49:16:669:680	937240	1	True				
+ANR	937360	RelationalExpression	i < num_reqs		937240	0		<			
+ANR	937361	Identifier	i		937240	0					
+ANR	937362	Identifier	num_reqs		937240	1					
+ANR	937363	PostIncDecOperationExpression	i ++	49:30:683:685	937240	2	True				
+ANR	937364	Identifier	i		937240	0					
+ANR	937365	IncDec	++		937240	1					
+ANR	937366	CompoundStatement		47:35:606:606	937240	3					
+ANR	937367	ExpressionStatement	"acb = bdrv_aio_writev ( bs , reqs [ i ] . sector , reqs [ i ] . qiov , reqs [ i ] . nb_sectors , multiwrite_cb , mcb )"	51:8:699:807	937240	0	True				
+ANR	937368	AssignmentExpression	"acb = bdrv_aio_writev ( bs , reqs [ i ] . sector , reqs [ i ] . qiov , reqs [ i ] . nb_sectors , multiwrite_cb , mcb )"		937240	0		=			
+ANR	937369	Identifier	acb		937240	0					
+ANR	937370	CallExpression	"bdrv_aio_writev ( bs , reqs [ i ] . sector , reqs [ i ] . qiov , reqs [ i ] . nb_sectors , multiwrite_cb , mcb )"		937240	1					
+ANR	937371	Callee	bdrv_aio_writev		937240	0					
+ANR	937372	Identifier	bdrv_aio_writev		937240	0					
+ANR	937373	ArgumentList	bs		937240	1					
+ANR	937374	Argument	bs		937240	0					
+ANR	937375	Identifier	bs		937240	0					
+ANR	937376	Argument	reqs [ i ] . sector		937240	1					
+ANR	937377	MemberAccess	reqs [ i ] . sector		937240	0					
+ANR	937378	ArrayIndexing	reqs [ i ]		937240	0					
+ANR	937379	Identifier	reqs		937240	0					
+ANR	937380	Identifier	i		937240	1					
+ANR	937381	Identifier	sector		937240	1					
+ANR	937382	Argument	reqs [ i ] . qiov		937240	2					
+ANR	937383	MemberAccess	reqs [ i ] . qiov		937240	0					
+ANR	937384	ArrayIndexing	reqs [ i ]		937240	0					
+ANR	937385	Identifier	reqs		937240	0					
+ANR	937386	Identifier	i		937240	1					
+ANR	937387	Identifier	qiov		937240	1					
+ANR	937388	Argument	reqs [ i ] . nb_sectors		937240	3					
+ANR	937389	MemberAccess	reqs [ i ] . nb_sectors		937240	0					
+ANR	937390	ArrayIndexing	reqs [ i ]		937240	0					
+ANR	937391	Identifier	reqs		937240	0					
+ANR	937392	Identifier	i		937240	1					
+ANR	937393	Identifier	nb_sectors		937240	1					
+ANR	937394	Argument	multiwrite_cb		937240	4					
+ANR	937395	Identifier	multiwrite_cb		937240	0					
+ANR	937396	Argument	mcb		937240	5					
+ANR	937397	Identifier	mcb		937240	0					
+ANR	937398	IfStatement	if ( acb == NULL )		937240	1					
+ANR	937399	Condition	acb == NULL	57:12:824:834	937240	0	True				
+ANR	937400	EqualityExpression	acb == NULL		937240	0		==			
+ANR	937401	Identifier	acb		937240	0					
+ANR	937402	Identifier	NULL		937240	1					
+ANR	937403	CompoundStatement		55:25:755:755	937240	1					
+ANR	937404	IfStatement	if ( mcb -> num_requests == 0 )		937240	0					
+ANR	937405	Condition	mcb -> num_requests == 0	65:16:1069:1090	937240	0	True				
+ANR	937406	EqualityExpression	mcb -> num_requests == 0		937240	0		==			
+ANR	937407	PtrMemberAccess	mcb -> num_requests		937240	0					
+ANR	937408	Identifier	mcb		937240	0					
+ANR	937409	Identifier	num_requests		937240	1					
+ANR	937410	PrimaryExpression	0		937240	1					
+ANR	937411	CompoundStatement		63:40:1011:1011	937240	1					
+ANR	937412	ExpressionStatement	reqs [ i ] . error = - EIO	67:16:1112:1132	937240	0	True				
+ANR	937413	AssignmentExpression	reqs [ i ] . error = - EIO		937240	0		=			
+ANR	937414	MemberAccess	reqs [ i ] . error		937240	0					
+ANR	937415	ArrayIndexing	reqs [ i ]		937240	0					
+ANR	937416	Identifier	reqs		937240	0					
+ANR	937417	Identifier	i		937240	1					
+ANR	937418	Identifier	error		937240	1					
+ANR	937419	UnaryOperationExpression	- EIO		937240	1					
+ANR	937420	UnaryOperator	-		937240	0					
+ANR	937421	Identifier	EIO		937240	1					
+ANR	937422	GotoStatement	goto fail ;	69:16:1151:1160	937240	1	True				
+ANR	937423	Identifier	fail		937240	0					
+ANR	937424	ElseStatement	else		937240	0					
+ANR	937425	CompoundStatement		69:19:1100:1100	937240	0					
+ANR	937426	ExpressionStatement	mcb -> error = - EIO	73:16:1201:1218	937240	0	True				
+ANR	937427	AssignmentExpression	mcb -> error = - EIO		937240	0		=			
+ANR	937428	PtrMemberAccess	mcb -> error		937240	0					
+ANR	937429	Identifier	mcb		937240	0					
+ANR	937430	Identifier	error		937240	1					
+ANR	937431	UnaryOperationExpression	- EIO		937240	1					
+ANR	937432	UnaryOperator	-		937240	0					
+ANR	937433	Identifier	EIO		937240	1					
+ANR	937434	BreakStatement	break ;	75:16:1237:1242	937240	1	True				
+ANR	937435	ElseStatement	else		937240	0					
+ANR	937436	CompoundStatement		77:15:1193:1193	937240	0					
+ANR	937437	ExpressionStatement	mcb -> num_requests ++	81:12:1290:1309	937240	0	True				
+ANR	937438	PostIncDecOperationExpression	mcb -> num_requests ++		937240	0					
+ANR	937439	PtrMemberAccess	mcb -> num_requests		937240	0					
+ANR	937440	Identifier	mcb		937240	0					
+ANR	937441	Identifier	num_requests		937240	1					
+ANR	937442	IncDec	++		937240	1					
+ANR	937443	ReturnStatement	return 0 ;	89:4:1336:1344	937240	10	True				
+ANR	937444	PrimaryExpression	0		937240	0					
+ANR	937445	Label	fail :	93:0:1349:1353	937240	11	True				
+ANR	937446	Identifier	fail		937240	0					
+ANR	937447	ExpressionStatement	free ( mcb )	95:4:1360:1369	937240	12	True				
+ANR	937448	CallExpression	free ( mcb )		937240	0					
+ANR	937449	Callee	free		937240	0					
+ANR	937450	Identifier	free		937240	0					
+ANR	937451	ArgumentList	mcb		937240	1					
+ANR	937452	Argument	mcb		937240	0					
+ANR	937453	Identifier	mcb		937240	0					
+ANR	937454	ReturnStatement	return - 1 ;	97:4:1376:1385	937240	13	True				
+ANR	937455	UnaryOperationExpression	- 1		937240	0					
+ANR	937456	UnaryOperator	-		937240	0					
+ANR	937457	PrimaryExpression	1		937240	1					
+ANR	937458	ReturnType	int		937240	1					
+ANR	937459	Identifier	bdrv_aio_multiwrite		937240	2					
+ANR	937460	ParameterList	"BlockDriverState * bs , BlockRequest * reqs , int num_reqs"		937240	3					
+ANR	937461	Parameter	BlockDriverState * bs	1:24:24:43	937240	0	True				
+ANR	937462	ParameterType	BlockDriverState *		937240	0					
+ANR	937463	Identifier	bs		937240	1					
+ANR	937464	Parameter	BlockRequest * reqs	1:46:46:63	937240	1	True				
+ANR	937465	ParameterType	BlockRequest *		937240	0					
+ANR	937466	Identifier	reqs		937240	1					
+ANR	937467	Parameter	int num_reqs	1:66:66:77	937240	2	True				
+ANR	937468	ParameterType	int		937240	0					
+ANR	937469	Identifier	num_reqs		937240	1					
+ANR	937470	CFGEntryNode	ENTRY		937240		True				
+ANR	937471	CFGExitNode	EXIT		937240		True				
+ANR	937472	Symbol	acb		937240						
+ANR	937473	Symbol	num_reqs		937240						
+ANR	937474	Symbol	multiwrite_cb		937240						
+ANR	937475	Symbol	mcb		937240						
+ANR	937476	Symbol	bs		937240						
+ANR	937477	Symbol	multiwrite_merge		937240						
+ANR	937478	Symbol	* mcb -> callbacks		937240						
+ANR	937479	Symbol	reqs [ i ] . nb_sectors		937240						
+ANR	937480	Symbol	mcb -> callbacks [ i ] . opaque		937240						
+ANR	937481	Symbol	mcb -> error		937240						
+ANR	937482	Symbol	reqs [ i ] . cb		937240						
+ANR	937483	Symbol	reqs [ i ] . sector		937240						
+ANR	937484	Symbol	reqs [ i ] . opaque		937240						
+ANR	937485	Symbol	reqs		937240						
+ANR	937486	Symbol	* * mcb		937240						
+ANR	937487	Symbol	reqs [ i ] . error		937240						
+ANR	937488	Symbol	mcb -> callbacks		937240						
+ANR	937489	Symbol	NULL		937240						
+ANR	937490	Symbol	* reqs		937240						
+ANR	937491	Symbol	i		937240						
+ANR	937492	Symbol	EIO		937240						
+ANR	937493	Symbol	mcb -> num_requests		937240						
+ANR	937494	Symbol	mcb -> callbacks [ i ] . cb		937240						
+ANR	937495	Symbol	* i		937240						
+ANR	937496	Symbol	bdrv_aio_writev		937240						
+ANR	937497	Symbol	* mcb		937240						
+ANR	937498	Symbol	reqs [ i ] . qiov		937240						
+ANR	937499	Symbol	qemu_mallocz		937240						
+ANR	937500	Symbol	mcb -> num_callbacks		937240						

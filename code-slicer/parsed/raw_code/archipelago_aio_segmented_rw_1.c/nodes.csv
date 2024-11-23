@@ -1,0 +1,428 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	589100	File	/home/p4ultr4n/workplace/ReVeal/raw_code/archipelago_aio_segmented_rw_1.c								
+ANR	589101	Function	archipelago_aio_segmented_rw	1:0:0:2782							
+ANR	589102	FunctionDef	"archipelago_aio_segmented_rw (BDRVArchipelagoState * s , size_t count , off_t offset , ArchipelagoAIOCB * aio_cb , int op)"		589101	0					
+ANR	589103	CompoundStatement		11:0:292:2782	589101	0					
+ANR	589104	IdentifierDeclStatement	"int i , ret , segments_nr , last_segment_size ;"	13:4:299:341	589101	0	True				
+ANR	589105	IdentifierDecl	i		589101	0					
+ANR	589106	IdentifierDeclType	int		589101	0					
+ANR	589107	Identifier	i		589101	1					
+ANR	589108	IdentifierDecl	ret		589101	1					
+ANR	589109	IdentifierDeclType	int		589101	0					
+ANR	589110	Identifier	ret		589101	1					
+ANR	589111	IdentifierDecl	segments_nr		589101	2					
+ANR	589112	IdentifierDeclType	int		589101	0					
+ANR	589113	Identifier	segments_nr		589101	1					
+ANR	589114	IdentifierDecl	last_segment_size		589101	3					
+ANR	589115	IdentifierDeclType	int		589101	0					
+ANR	589116	Identifier	last_segment_size		589101	1					
+ANR	589117	IdentifierDeclStatement	ArchipelagoSegmentedRequest * segreq ;	15:4:348:383	589101	1	True				
+ANR	589118	IdentifierDecl	* segreq		589101	0					
+ANR	589119	IdentifierDeclType	ArchipelagoSegmentedRequest *		589101	0					
+ANR	589120	Identifier	segreq		589101	1					
+ANR	589121	ExpressionStatement	segreq = g_malloc ( sizeof ( ArchipelagoSegmentedRequest ) )	19:4:392:446	589101	2	True				
+ANR	589122	AssignmentExpression	segreq = g_malloc ( sizeof ( ArchipelagoSegmentedRequest ) )		589101	0		=			
+ANR	589123	Identifier	segreq		589101	0					
+ANR	589124	CallExpression	g_malloc ( sizeof ( ArchipelagoSegmentedRequest ) )		589101	1					
+ANR	589125	Callee	g_malloc		589101	0					
+ANR	589126	Identifier	g_malloc		589101	0					
+ANR	589127	ArgumentList	sizeof ( ArchipelagoSegmentedRequest )		589101	1					
+ANR	589128	Argument	sizeof ( ArchipelagoSegmentedRequest )		589101	0					
+ANR	589129	SizeofExpression	sizeof ( ArchipelagoSegmentedRequest )		589101	0					
+ANR	589130	Sizeof	sizeof		589101	0					
+ANR	589131	SizeofOperand	ArchipelagoSegmentedRequest		589101	1					
+ANR	589132	IfStatement	if ( op == ARCHIP_OP_FLUSH )		589101	3					
+ANR	589133	Condition	op == ARCHIP_OP_FLUSH	23:8:459:479	589101	0	True				
+ANR	589134	EqualityExpression	op == ARCHIP_OP_FLUSH		589101	0		==			
+ANR	589135	Identifier	op		589101	0					
+ANR	589136	Identifier	ARCHIP_OP_FLUSH		589101	1					
+ANR	589137	CompoundStatement		13:31:189:189	589101	1					
+ANR	589138	ExpressionStatement	segments_nr = 1	25:8:493:508	589101	0	True				
+ANR	589139	AssignmentExpression	segments_nr = 1		589101	0		=			
+ANR	589140	Identifier	segments_nr		589101	0					
+ANR	589141	PrimaryExpression	1		589101	1					
+ANR	589142	ExpressionStatement	segreq -> ref = segments_nr	27:8:519:544	589101	1	True				
+ANR	589143	AssignmentExpression	segreq -> ref = segments_nr		589101	0		=			
+ANR	589144	PtrMemberAccess	segreq -> ref		589101	0					
+ANR	589145	Identifier	segreq		589101	0					
+ANR	589146	Identifier	ref		589101	1					
+ANR	589147	Identifier	segments_nr		589101	1					
+ANR	589148	ExpressionStatement	segreq -> total = count	29:8:555:576	589101	2	True				
+ANR	589149	AssignmentExpression	segreq -> total = count		589101	0		=			
+ANR	589150	PtrMemberAccess	segreq -> total		589101	0					
+ANR	589151	Identifier	segreq		589101	0					
+ANR	589152	Identifier	total		589101	1					
+ANR	589153	Identifier	count		589101	1					
+ANR	589154	ExpressionStatement	segreq -> count = 0	31:8:587:604	589101	3	True				
+ANR	589155	AssignmentExpression	segreq -> count = 0		589101	0		=			
+ANR	589156	PtrMemberAccess	segreq -> count		589101	0					
+ANR	589157	Identifier	segreq		589101	0					
+ANR	589158	Identifier	count		589101	1					
+ANR	589159	PrimaryExpression	0		589101	1					
+ANR	589160	ExpressionStatement	segreq -> failed = 0	33:8:615:633	589101	4	True				
+ANR	589161	AssignmentExpression	segreq -> failed = 0		589101	0		=			
+ANR	589162	PtrMemberAccess	segreq -> failed		589101	0					
+ANR	589163	Identifier	segreq		589101	0					
+ANR	589164	Identifier	failed		589101	1					
+ANR	589165	PrimaryExpression	0		589101	1					
+ANR	589166	ExpressionStatement	"ret = archipelago_submit_request ( s , 0 , count , offset , aio_cb , segreq , ARCHIP_OP_FLUSH )"	35:8:644:774	589101	5	True				
+ANR	589167	AssignmentExpression	"ret = archipelago_submit_request ( s , 0 , count , offset , aio_cb , segreq , ARCHIP_OP_FLUSH )"		589101	0		=			
+ANR	589168	Identifier	ret		589101	0					
+ANR	589169	CallExpression	"archipelago_submit_request ( s , 0 , count , offset , aio_cb , segreq , ARCHIP_OP_FLUSH )"		589101	1					
+ANR	589170	Callee	archipelago_submit_request		589101	0					
+ANR	589171	Identifier	archipelago_submit_request		589101	0					
+ANR	589172	ArgumentList	s		589101	1					
+ANR	589173	Argument	s		589101	0					
+ANR	589174	Identifier	s		589101	0					
+ANR	589175	Argument	0		589101	1					
+ANR	589176	PrimaryExpression	0		589101	0					
+ANR	589177	Argument	count		589101	2					
+ANR	589178	Identifier	count		589101	0					
+ANR	589179	Argument	offset		589101	3					
+ANR	589180	Identifier	offset		589101	0					
+ANR	589181	Argument	aio_cb		589101	4					
+ANR	589182	Identifier	aio_cb		589101	0					
+ANR	589183	Argument	segreq		589101	5					
+ANR	589184	Identifier	segreq		589101	0					
+ANR	589185	Argument	ARCHIP_OP_FLUSH		589101	6					
+ANR	589186	Identifier	ARCHIP_OP_FLUSH		589101	0					
+ANR	589187	IfStatement	if ( ret < 0 )		589101	6					
+ANR	589188	Condition	ret < 0	39:12:789:795	589101	0	True				
+ANR	589189	RelationalExpression	ret < 0		589101	0		<			
+ANR	589190	Identifier	ret		589101	0					
+ANR	589191	PrimaryExpression	0		589101	1					
+ANR	589192	CompoundStatement		29:21:505:505	589101	1					
+ANR	589193	GotoStatement	goto err_exit ;	41:12:813:826	589101	0	True				
+ANR	589194	Identifier	err_exit		589101	0					
+ANR	589195	ReturnStatement	return 0 ;	45:8:848:856	589101	7	True				
+ANR	589196	PrimaryExpression	0		589101	0					
+ANR	589197	ExpressionStatement	segments_nr = ( int ) ( count / MAX_REQUEST_SIZE ) + ( ( count % MAX_REQUEST_SIZE ) ? 1 : 0 )	51:4:872:977	589101	4	True				
+ANR	589198	AssignmentExpression	segments_nr = ( int ) ( count / MAX_REQUEST_SIZE ) + ( ( count % MAX_REQUEST_SIZE ) ? 1 : 0 )		589101	0		=			
+ANR	589199	Identifier	segments_nr		589101	0					
+ANR	589200	AdditiveExpression	( int ) ( count / MAX_REQUEST_SIZE ) + ( ( count % MAX_REQUEST_SIZE ) ? 1 : 0 )		589101	1		+			
+ANR	589201	CastExpression	( int ) ( count / MAX_REQUEST_SIZE )		589101	0					
+ANR	589202	CastTarget	int		589101	0					
+ANR	589203	MultiplicativeExpression	count / MAX_REQUEST_SIZE		589101	1		/			
+ANR	589204	Identifier	count		589101	0					
+ANR	589205	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589206	ConditionalExpression	( count % MAX_REQUEST_SIZE ) ? 1 : 0		589101	1					
+ANR	589207	Condition	count % MAX_REQUEST_SIZE		589101	0					
+ANR	589208	MultiplicativeExpression	count % MAX_REQUEST_SIZE		589101	0		%			
+ANR	589209	Identifier	count		589101	0					
+ANR	589210	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589211	PrimaryExpression	1		589101	1					
+ANR	589212	PrimaryExpression	0		589101	2					
+ANR	589213	ExpressionStatement	last_segment_size = ( int ) ( count % MAX_REQUEST_SIZE )	55:4:984:1035	589101	5	True				
+ANR	589214	AssignmentExpression	last_segment_size = ( int ) ( count % MAX_REQUEST_SIZE )		589101	0		=			
+ANR	589215	Identifier	last_segment_size		589101	0					
+ANR	589216	CastExpression	( int ) ( count % MAX_REQUEST_SIZE )		589101	1					
+ANR	589217	CastTarget	int		589101	0					
+ANR	589218	MultiplicativeExpression	count % MAX_REQUEST_SIZE		589101	1		%			
+ANR	589219	Identifier	count		589101	0					
+ANR	589220	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589221	ExpressionStatement	segreq -> ref = segments_nr	59:4:1044:1069	589101	6	True				
+ANR	589222	AssignmentExpression	segreq -> ref = segments_nr		589101	0		=			
+ANR	589223	PtrMemberAccess	segreq -> ref		589101	0					
+ANR	589224	Identifier	segreq		589101	0					
+ANR	589225	Identifier	ref		589101	1					
+ANR	589226	Identifier	segments_nr		589101	1					
+ANR	589227	ExpressionStatement	segreq -> total = count	61:4:1076:1097	589101	7	True				
+ANR	589228	AssignmentExpression	segreq -> total = count		589101	0		=			
+ANR	589229	PtrMemberAccess	segreq -> total		589101	0					
+ANR	589230	Identifier	segreq		589101	0					
+ANR	589231	Identifier	total		589101	1					
+ANR	589232	Identifier	count		589101	1					
+ANR	589233	ExpressionStatement	segreq -> count = 0	63:4:1104:1121	589101	8	True				
+ANR	589234	AssignmentExpression	segreq -> count = 0		589101	0		=			
+ANR	589235	PtrMemberAccess	segreq -> count		589101	0					
+ANR	589236	Identifier	segreq		589101	0					
+ANR	589237	Identifier	count		589101	1					
+ANR	589238	PrimaryExpression	0		589101	1					
+ANR	589239	ExpressionStatement	segreq -> failed = 0	65:4:1128:1146	589101	9	True				
+ANR	589240	AssignmentExpression	segreq -> failed = 0		589101	0		=			
+ANR	589241	PtrMemberAccess	segreq -> failed		589101	0					
+ANR	589242	Identifier	segreq		589101	0					
+ANR	589243	Identifier	failed		589101	1					
+ANR	589244	PrimaryExpression	0		589101	1					
+ANR	589245	ForStatement	for ( i = 0 ; i < segments_nr - 1 ; i ++ )		589101	10					
+ANR	589246	ForInit	i = 0 ;	69:9:1160:1165	589101	0	True				
+ANR	589247	AssignmentExpression	i = 0		589101	0		=			
+ANR	589248	Identifier	i		589101	0					
+ANR	589249	PrimaryExpression	0		589101	1					
+ANR	589250	Condition	i < segments_nr - 1	69:16:1167:1185	589101	1	True				
+ANR	589251	RelationalExpression	i < segments_nr - 1		589101	0		<			
+ANR	589252	Identifier	i		589101	0					
+ANR	589253	AdditiveExpression	segments_nr - 1		589101	1		-			
+ANR	589254	Identifier	segments_nr		589101	0					
+ANR	589255	PrimaryExpression	1		589101	1					
+ANR	589256	PostIncDecOperationExpression	i ++	69:37:1188:1190	589101	2	True				
+ANR	589257	Identifier	i		589101	0					
+ANR	589258	IncDec	++		589101	1					
+ANR	589259	CompoundStatement		59:42:900:900	589101	3					
+ANR	589260	ExpressionStatement	"ret = archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , MAX_REQUEST_SIZE , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"	71:8:1204:1462	589101	0	True				
+ANR	589261	AssignmentExpression	"ret = archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , MAX_REQUEST_SIZE , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"		589101	0		=			
+ANR	589262	Identifier	ret		589101	0					
+ANR	589263	CallExpression	"archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , MAX_REQUEST_SIZE , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"		589101	1					
+ANR	589264	Callee	archipelago_submit_request		589101	0					
+ANR	589265	Identifier	archipelago_submit_request		589101	0					
+ANR	589266	ArgumentList	s		589101	1					
+ANR	589267	Argument	s		589101	0					
+ANR	589268	Identifier	s		589101	0					
+ANR	589269	Argument	i * MAX_REQUEST_SIZE		589101	1					
+ANR	589270	MultiplicativeExpression	i * MAX_REQUEST_SIZE		589101	0		*			
+ANR	589271	Identifier	i		589101	0					
+ANR	589272	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589273	Argument	MAX_REQUEST_SIZE		589101	2					
+ANR	589274	Identifier	MAX_REQUEST_SIZE		589101	0					
+ANR	589275	Argument	offset + i * MAX_REQUEST_SIZE		589101	3					
+ANR	589276	AdditiveExpression	offset + i * MAX_REQUEST_SIZE		589101	0		+			
+ANR	589277	Identifier	offset		589101	0					
+ANR	589278	MultiplicativeExpression	i * MAX_REQUEST_SIZE		589101	1		*			
+ANR	589279	Identifier	i		589101	0					
+ANR	589280	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589281	Argument	aio_cb		589101	4					
+ANR	589282	Identifier	aio_cb		589101	0					
+ANR	589283	Argument	segreq		589101	5					
+ANR	589284	Identifier	segreq		589101	0					
+ANR	589285	Argument	op		589101	6					
+ANR	589286	Identifier	op		589101	0					
+ANR	589287	IfStatement	if ( ret < 0 )		589101	1					
+ANR	589288	Condition	ret < 0	81:12:1479:1485	589101	0	True				
+ANR	589289	RelationalExpression	ret < 0		589101	0		<			
+ANR	589290	Identifier	ret		589101	0					
+ANR	589291	PrimaryExpression	0		589101	1					
+ANR	589292	CompoundStatement		71:21:1195:1195	589101	1					
+ANR	589293	GotoStatement	goto err_exit ;	83:12:1503:1516	589101	0	True				
+ANR	589294	Identifier	err_exit		589101	0					
+ANR	589295	IfStatement	if ( ( segments_nr > 1 ) && last_segment_size )		589101	11					
+ANR	589296	Condition	( segments_nr > 1 ) && last_segment_size	91:8:1547:1584	589101	0	True				
+ANR	589297	AndExpression	( segments_nr > 1 ) && last_segment_size		589101	0		&&			
+ANR	589298	RelationalExpression	segments_nr > 1		589101	0		>			
+ANR	589299	Identifier	segments_nr		589101	0					
+ANR	589300	PrimaryExpression	1		589101	1					
+ANR	589301	Identifier	last_segment_size		589101	1					
+ANR	589302	CompoundStatement		81:48:1294:1294	589101	1					
+ANR	589303	ExpressionStatement	"ret = archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , last_segment_size , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"	93:8:1598:1857	589101	0	True				
+ANR	589304	AssignmentExpression	"ret = archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , last_segment_size , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"		589101	0		=			
+ANR	589305	Identifier	ret		589101	0					
+ANR	589306	CallExpression	"archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , last_segment_size , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"		589101	1					
+ANR	589307	Callee	archipelago_submit_request		589101	0					
+ANR	589308	Identifier	archipelago_submit_request		589101	0					
+ANR	589309	ArgumentList	s		589101	1					
+ANR	589310	Argument	s		589101	0					
+ANR	589311	Identifier	s		589101	0					
+ANR	589312	Argument	i * MAX_REQUEST_SIZE		589101	1					
+ANR	589313	MultiplicativeExpression	i * MAX_REQUEST_SIZE		589101	0		*			
+ANR	589314	Identifier	i		589101	0					
+ANR	589315	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589316	Argument	last_segment_size		589101	2					
+ANR	589317	Identifier	last_segment_size		589101	0					
+ANR	589318	Argument	offset + i * MAX_REQUEST_SIZE		589101	3					
+ANR	589319	AdditiveExpression	offset + i * MAX_REQUEST_SIZE		589101	0		+			
+ANR	589320	Identifier	offset		589101	0					
+ANR	589321	MultiplicativeExpression	i * MAX_REQUEST_SIZE		589101	1		*			
+ANR	589322	Identifier	i		589101	0					
+ANR	589323	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589324	Argument	aio_cb		589101	4					
+ANR	589325	Identifier	aio_cb		589101	0					
+ANR	589326	Argument	segreq		589101	5					
+ANR	589327	Identifier	segreq		589101	0					
+ANR	589328	Argument	op		589101	6					
+ANR	589329	Identifier	op		589101	0					
+ANR	589330	ElseStatement	else		589101	0					
+ANR	589331	IfStatement	if ( ( segments_nr > 1 ) && ! last_segment_size )		589101	0					
+ANR	589332	Condition	( segments_nr > 1 ) && ! last_segment_size	101:15:1875:1913	589101	0	True				
+ANR	589333	AndExpression	( segments_nr > 1 ) && ! last_segment_size		589101	0		&&			
+ANR	589334	RelationalExpression	segments_nr > 1		589101	0		>			
+ANR	589335	Identifier	segments_nr		589101	0					
+ANR	589336	PrimaryExpression	1		589101	1					
+ANR	589337	UnaryOperationExpression	! last_segment_size		589101	1					
+ANR	589338	UnaryOperator	!		589101	0					
+ANR	589339	Identifier	last_segment_size		589101	1					
+ANR	589340	CompoundStatement		91:56:1623:1623	589101	1					
+ANR	589341	ExpressionStatement	"ret = archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , MAX_REQUEST_SIZE , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"	103:8:1927:2185	589101	0	True				
+ANR	589342	AssignmentExpression	"ret = archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , MAX_REQUEST_SIZE , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"		589101	0		=			
+ANR	589343	Identifier	ret		589101	0					
+ANR	589344	CallExpression	"archipelago_submit_request ( s , i * MAX_REQUEST_SIZE , MAX_REQUEST_SIZE , offset + i * MAX_REQUEST_SIZE , aio_cb , segreq , op )"		589101	1					
+ANR	589345	Callee	archipelago_submit_request		589101	0					
+ANR	589346	Identifier	archipelago_submit_request		589101	0					
+ANR	589347	ArgumentList	s		589101	1					
+ANR	589348	Argument	s		589101	0					
+ANR	589349	Identifier	s		589101	0					
+ANR	589350	Argument	i * MAX_REQUEST_SIZE		589101	1					
+ANR	589351	MultiplicativeExpression	i * MAX_REQUEST_SIZE		589101	0		*			
+ANR	589352	Identifier	i		589101	0					
+ANR	589353	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589354	Argument	MAX_REQUEST_SIZE		589101	2					
+ANR	589355	Identifier	MAX_REQUEST_SIZE		589101	0					
+ANR	589356	Argument	offset + i * MAX_REQUEST_SIZE		589101	3					
+ANR	589357	AdditiveExpression	offset + i * MAX_REQUEST_SIZE		589101	0		+			
+ANR	589358	Identifier	offset		589101	0					
+ANR	589359	MultiplicativeExpression	i * MAX_REQUEST_SIZE		589101	1		*			
+ANR	589360	Identifier	i		589101	0					
+ANR	589361	Identifier	MAX_REQUEST_SIZE		589101	1					
+ANR	589362	Argument	aio_cb		589101	4					
+ANR	589363	Identifier	aio_cb		589101	0					
+ANR	589364	Argument	segreq		589101	5					
+ANR	589365	Identifier	segreq		589101	0					
+ANR	589366	Argument	op		589101	6					
+ANR	589367	Identifier	op		589101	0					
+ANR	589368	ElseStatement	else		589101	0					
+ANR	589369	IfStatement	if ( segments_nr == 1 )		589101	0					
+ANR	589370	Condition	segments_nr == 1	111:15:2203:2218	589101	0	True				
+ANR	589371	EqualityExpression	segments_nr == 1		589101	0		==			
+ANR	589372	Identifier	segments_nr		589101	0					
+ANR	589373	PrimaryExpression	1		589101	1					
+ANR	589374	CompoundStatement		101:33:1928:1928	589101	1					
+ANR	589375	ExpressionStatement	"ret = archipelago_submit_request ( s , 0 , count , offset , aio_cb , segreq , op )"	113:12:2236:2357	589101	0	True				
+ANR	589376	AssignmentExpression	"ret = archipelago_submit_request ( s , 0 , count , offset , aio_cb , segreq , op )"		589101	0		=			
+ANR	589377	Identifier	ret		589101	0					
+ANR	589378	CallExpression	"archipelago_submit_request ( s , 0 , count , offset , aio_cb , segreq , op )"		589101	1					
+ANR	589379	Callee	archipelago_submit_request		589101	0					
+ANR	589380	Identifier	archipelago_submit_request		589101	0					
+ANR	589381	ArgumentList	s		589101	1					
+ANR	589382	Argument	s		589101	0					
+ANR	589383	Identifier	s		589101	0					
+ANR	589384	Argument	0		589101	1					
+ANR	589385	PrimaryExpression	0		589101	0					
+ANR	589386	Argument	count		589101	2					
+ANR	589387	Identifier	count		589101	0					
+ANR	589388	Argument	offset		589101	3					
+ANR	589389	Identifier	offset		589101	0					
+ANR	589390	Argument	aio_cb		589101	4					
+ANR	589391	Identifier	aio_cb		589101	0					
+ANR	589392	Argument	segreq		589101	5					
+ANR	589393	Identifier	segreq		589101	0					
+ANR	589394	Argument	op		589101	6					
+ANR	589395	Identifier	op		589101	0					
+ANR	589396	IfStatement	if ( ret < 0 )		589101	12					
+ANR	589397	Condition	ret < 0	121:8:2377:2383	589101	0	True				
+ANR	589398	RelationalExpression	ret < 0		589101	0		<			
+ANR	589399	Identifier	ret		589101	0					
+ANR	589400	PrimaryExpression	0		589101	1					
+ANR	589401	CompoundStatement		111:17:2093:2093	589101	1					
+ANR	589402	GotoStatement	goto err_exit ;	123:8:2397:2410	589101	0	True				
+ANR	589403	Identifier	err_exit		589101	0					
+ANR	589404	ReturnStatement	return 0 ;	129:4:2426:2434	589101	13	True				
+ANR	589405	PrimaryExpression	0		589101	0					
+ANR	589406	Label	err_exit :	133:0:2439:2447	589101	14	True				
+ANR	589407	Identifier	err_exit		589101	0					
+ANR	589408	ExpressionStatement	"__sync_add_and_fetch ( & segreq -> failed , 1 )"	135:4:2454:2494	589101	15	True				
+ANR	589409	CallExpression	"__sync_add_and_fetch ( & segreq -> failed , 1 )"		589101	0					
+ANR	589410	Callee	__sync_add_and_fetch		589101	0					
+ANR	589411	Identifier	__sync_add_and_fetch		589101	0					
+ANR	589412	ArgumentList	& segreq -> failed		589101	1					
+ANR	589413	Argument	& segreq -> failed		589101	0					
+ANR	589414	UnaryOperationExpression	& segreq -> failed		589101	0					
+ANR	589415	UnaryOperator	&		589101	0					
+ANR	589416	PtrMemberAccess	segreq -> failed		589101	1					
+ANR	589417	Identifier	segreq		589101	0					
+ANR	589418	Identifier	failed		589101	1					
+ANR	589419	Argument	1		589101	1					
+ANR	589420	PrimaryExpression	1		589101	0					
+ANR	589421	IfStatement	if ( segments_nr == 1 )		589101	16					
+ANR	589422	Condition	segments_nr == 1	137:8:2505:2520	589101	0	True				
+ANR	589423	EqualityExpression	segments_nr == 1		589101	0		==			
+ANR	589424	Identifier	segments_nr		589101	0					
+ANR	589425	PrimaryExpression	1		589101	1					
+ANR	589426	CompoundStatement		127:26:2230:2230	589101	1					
+ANR	589427	IfStatement	"if ( __sync_add_and_fetch ( & segreq -> ref , - 1 ) == 0 )"		589101	0					
+ANR	589428	Condition	"__sync_add_and_fetch ( & segreq -> ref , - 1 ) == 0"	139:12:2538:2580	589101	0	True				
+ANR	589429	EqualityExpression	"__sync_add_and_fetch ( & segreq -> ref , - 1 ) == 0"		589101	0		==			
+ANR	589430	CallExpression	"__sync_add_and_fetch ( & segreq -> ref , - 1 )"		589101	0					
+ANR	589431	Callee	__sync_add_and_fetch		589101	0					
+ANR	589432	Identifier	__sync_add_and_fetch		589101	0					
+ANR	589433	ArgumentList	& segreq -> ref		589101	1					
+ANR	589434	Argument	& segreq -> ref		589101	0					
+ANR	589435	UnaryOperationExpression	& segreq -> ref		589101	0					
+ANR	589436	UnaryOperator	&		589101	0					
+ANR	589437	PtrMemberAccess	segreq -> ref		589101	1					
+ANR	589438	Identifier	segreq		589101	0					
+ANR	589439	Identifier	ref		589101	1					
+ANR	589440	Argument	- 1		589101	1					
+ANR	589441	UnaryOperationExpression	- 1		589101	0					
+ANR	589442	UnaryOperator	-		589101	0					
+ANR	589443	PrimaryExpression	1		589101	1					
+ANR	589444	PrimaryExpression	0		589101	1					
+ANR	589445	CompoundStatement		129:57:2290:2290	589101	1					
+ANR	589446	ExpressionStatement	g_free ( segreq )	141:12:2598:2612	589101	0	True				
+ANR	589447	CallExpression	g_free ( segreq )		589101	0					
+ANR	589448	Callee	g_free		589101	0					
+ANR	589449	Identifier	g_free		589101	0					
+ANR	589450	ArgumentList	segreq		589101	1					
+ANR	589451	Argument	segreq		589101	0					
+ANR	589452	Identifier	segreq		589101	0					
+ANR	589453	ElseStatement	else		589101	0					
+ANR	589454	CompoundStatement		135:11:2344:2344	589101	0					
+ANR	589455	IfStatement	"if ( ( __sync_add_and_fetch ( & segreq -> ref , - segments_nr + i ) ) == 0 )"		589101	0					
+ANR	589456	Condition	"( __sync_add_and_fetch ( & segreq -> ref , - segments_nr + i ) ) == 0"	147:12:2652:2710	589101	0	True				
+ANR	589457	EqualityExpression	"( __sync_add_and_fetch ( & segreq -> ref , - segments_nr + i ) ) == 0"		589101	0		==			
+ANR	589458	CallExpression	"__sync_add_and_fetch ( & segreq -> ref , - segments_nr + i )"		589101	0					
+ANR	589459	Callee	__sync_add_and_fetch		589101	0					
+ANR	589460	Identifier	__sync_add_and_fetch		589101	0					
+ANR	589461	ArgumentList	& segreq -> ref		589101	1					
+ANR	589462	Argument	& segreq -> ref		589101	0					
+ANR	589463	UnaryOperationExpression	& segreq -> ref		589101	0					
+ANR	589464	UnaryOperator	&		589101	0					
+ANR	589465	PtrMemberAccess	segreq -> ref		589101	1					
+ANR	589466	Identifier	segreq		589101	0					
+ANR	589467	Identifier	ref		589101	1					
+ANR	589468	Argument	- segments_nr + i		589101	1					
+ANR	589469	AdditiveExpression	- segments_nr + i		589101	0		+			
+ANR	589470	UnaryOperationExpression	- segments_nr		589101	0					
+ANR	589471	UnaryOperator	-		589101	0					
+ANR	589472	Identifier	segments_nr		589101	1					
+ANR	589473	Identifier	i		589101	1					
+ANR	589474	PrimaryExpression	0		589101	1					
+ANR	589475	CompoundStatement		137:73:2420:2420	589101	1					
+ANR	589476	ExpressionStatement	g_free ( segreq )	149:12:2728:2742	589101	0	True				
+ANR	589477	CallExpression	g_free ( segreq )		589101	0					
+ANR	589478	Callee	g_free		589101	0					
+ANR	589479	Identifier	g_free		589101	0					
+ANR	589480	ArgumentList	segreq		589101	1					
+ANR	589481	Argument	segreq		589101	0					
+ANR	589482	Identifier	segreq		589101	0					
+ANR	589483	ReturnStatement	return ret ;	157:4:2769:2779	589101	17	True				
+ANR	589484	Identifier	ret		589101	0					
+ANR	589485	ReturnType	static int		589101	1					
+ANR	589486	Identifier	archipelago_aio_segmented_rw		589101	2					
+ANR	589487	ParameterList	"BDRVArchipelagoState * s , size_t count , off_t offset , ArchipelagoAIOCB * aio_cb , int op"		589101	3					
+ANR	589488	Parameter	BDRVArchipelagoState * s	1:40:40:62	589101	0	True				
+ANR	589489	ParameterType	BDRVArchipelagoState *		589101	0					
+ANR	589490	Identifier	s		589101	1					
+ANR	589491	Parameter	size_t count	3:40:106:117	589101	1	True				
+ANR	589492	ParameterType	size_t		589101	0					
+ANR	589493	Identifier	count		589101	1					
+ANR	589494	Parameter	off_t offset	5:40:161:172	589101	2	True				
+ANR	589495	ParameterType	off_t		589101	0					
+ANR	589496	Identifier	offset		589101	1					
+ANR	589497	Parameter	ArchipelagoAIOCB * aio_cb	7:40:216:239	589101	3	True				
+ANR	589498	ParameterType	ArchipelagoAIOCB *		589101	0					
+ANR	589499	Identifier	aio_cb		589101	1					
+ANR	589500	Parameter	int op	9:40:283:288	589101	4	True				
+ANR	589501	ParameterType	int		589101	0					
+ANR	589502	Identifier	op		589101	1					
+ANR	589503	CFGEntryNode	ENTRY		589101		True				
+ANR	589504	CFGExitNode	EXIT		589101		True				
+ANR	589505	Symbol	ret		589101						
+ANR	589506	Symbol	op		589101						
+ANR	589507	Symbol	segreq -> ref		589101						
+ANR	589508	Symbol	segments_nr		589101						
+ANR	589509	Symbol	offset		589101						
+ANR	589510	Symbol	& segreq -> ref		589101						
+ANR	589511	Symbol	segreq -> count		589101						
+ANR	589512	Symbol	segreq -> failed		589101						
+ANR	589513	Symbol	count		589101						
+ANR	589514	Symbol	archipelago_submit_request		589101						
+ANR	589515	Symbol	i		589101						
+ANR	589516	Symbol	__sync_add_and_fetch		589101						
+ANR	589517	Symbol	last_segment_size		589101						
+ANR	589518	Symbol	* segreq		589101						
+ANR	589519	Symbol	segreq -> total		589101						
+ANR	589520	Symbol	MAX_REQUEST_SIZE		589101						
+ANR	589521	Symbol	g_malloc		589101						
+ANR	589522	Symbol	s		589101						
+ANR	589523	Symbol	ARCHIP_OP_FLUSH		589101						
+ANR	589524	Symbol	segreq		589101						
+ANR	589525	Symbol	aio_cb		589101						
+ANR	589526	Symbol	& segreq -> failed		589101						

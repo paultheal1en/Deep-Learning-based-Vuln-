@@ -1,0 +1,186 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7387596	File	/home/p4ultr4n/workplace/ReVeal/raw_code/remove_hpte_1.c								
+ANR	7387597	Function	remove_hpte	1:0:0:900							
+ANR	7387598	FunctionDef	"remove_hpte (CPUPPCState * env , target_ulong ptex , target_ulong avpn , target_ulong flags , target_ulong * vp , target_ulong * rp)"		7387597	0					
+ANR	7387599	CompoundStatement		9:0:244:900	7387597	0					
+ANR	7387600	IdentifierDeclStatement	hwaddr hpte ;	11:4:251:262	7387597	0	True				
+ANR	7387601	IdentifierDecl	hpte		7387597	0					
+ANR	7387602	IdentifierDeclType	hwaddr		7387597	0					
+ANR	7387603	Identifier	hpte		7387597	1					
+ANR	7387604	IdentifierDeclStatement	"target_ulong v , r , rb ;"	13:4:269:290	7387597	1	True				
+ANR	7387605	IdentifierDecl	v		7387597	0					
+ANR	7387606	IdentifierDeclType	target_ulong		7387597	0					
+ANR	7387607	Identifier	v		7387597	1					
+ANR	7387608	IdentifierDecl	r		7387597	1					
+ANR	7387609	IdentifierDeclType	target_ulong		7387597	0					
+ANR	7387610	Identifier	r		7387597	1					
+ANR	7387611	IdentifierDecl	rb		7387597	2					
+ANR	7387612	IdentifierDeclType	target_ulong		7387597	0					
+ANR	7387613	Identifier	rb		7387597	1					
+ANR	7387614	IfStatement	if ( ( ptex * HASH_PTE_SIZE_64 ) & ~env -> htab_mask )		7387597	2					
+ANR	7387615	Condition	( ptex * HASH_PTE_SIZE_64 ) & ~env -> htab_mask	17:8:303:345	7387597	0	True				
+ANR	7387616	BitAndExpression	( ptex * HASH_PTE_SIZE_64 ) & ~env -> htab_mask		7387597	0		&			
+ANR	7387617	MultiplicativeExpression	ptex * HASH_PTE_SIZE_64		7387597	0		*			
+ANR	7387618	Identifier	ptex		7387597	0					
+ANR	7387619	Identifier	HASH_PTE_SIZE_64		7387597	1					
+ANR	7387620	PtrMemberAccess	~env -> htab_mask		7387597	1					
+ANR	7387621	Identifier	~env		7387597	0					
+ANR	7387622	Identifier	htab_mask		7387597	1					
+ANR	7387623	CompoundStatement		9:53:103:103	7387597	1					
+ANR	7387624	ReturnStatement	return REMOVE_PARM ;	19:8:359:377	7387597	0	True				
+ANR	7387625	Identifier	REMOVE_PARM		7387597	0					
+ANR	7387626	ExpressionStatement	hpte = ptex * HASH_PTE_SIZE_64	25:4:393:423	7387597	3	True				
+ANR	7387627	AssignmentExpression	hpte = ptex * HASH_PTE_SIZE_64		7387597	0		=			
+ANR	7387628	Identifier	hpte		7387597	0					
+ANR	7387629	MultiplicativeExpression	ptex * HASH_PTE_SIZE_64		7387597	1		*			
+ANR	7387630	Identifier	ptex		7387597	0					
+ANR	7387631	Identifier	HASH_PTE_SIZE_64		7387597	1					
+ANR	7387632	ExpressionStatement	"v = ppc_hash64_load_hpte0 ( env , hpte )"	29:4:432:468	7387597	4	True				
+ANR	7387633	AssignmentExpression	"v = ppc_hash64_load_hpte0 ( env , hpte )"		7387597	0		=			
+ANR	7387634	Identifier	v		7387597	0					
+ANR	7387635	CallExpression	"ppc_hash64_load_hpte0 ( env , hpte )"		7387597	1					
+ANR	7387636	Callee	ppc_hash64_load_hpte0		7387597	0					
+ANR	7387637	Identifier	ppc_hash64_load_hpte0		7387597	0					
+ANR	7387638	ArgumentList	env		7387597	1					
+ANR	7387639	Argument	env		7387597	0					
+ANR	7387640	Identifier	env		7387597	0					
+ANR	7387641	Argument	hpte		7387597	1					
+ANR	7387642	Identifier	hpte		7387597	0					
+ANR	7387643	ExpressionStatement	"r = ppc_hash64_load_hpte1 ( env , hpte )"	31:4:475:511	7387597	5	True				
+ANR	7387644	AssignmentExpression	"r = ppc_hash64_load_hpte1 ( env , hpte )"		7387597	0		=			
+ANR	7387645	Identifier	r		7387597	0					
+ANR	7387646	CallExpression	"ppc_hash64_load_hpte1 ( env , hpte )"		7387597	1					
+ANR	7387647	Callee	ppc_hash64_load_hpte1		7387597	0					
+ANR	7387648	Identifier	ppc_hash64_load_hpte1		7387597	0					
+ANR	7387649	ArgumentList	env		7387597	1					
+ANR	7387650	Argument	env		7387597	0					
+ANR	7387651	Identifier	env		7387597	0					
+ANR	7387652	Argument	hpte		7387597	1					
+ANR	7387653	Identifier	hpte		7387597	0					
+ANR	7387654	IfStatement	if ( ( v & HPTE64_V_VALID ) == 0 || ( ( flags & H_AVPN ) && ( v & ~0x7fULL ) != avpn ) || ( ( flags & H_ANDCOND ) && ( v & avpn ) != 0 ) )		7387597	6					
+ANR	7387655	Condition	( v & HPTE64_V_VALID ) == 0 || ( ( flags & H_AVPN ) && ( v & ~0x7fULL ) != avpn ) || ( ( flags & H_ANDCOND ) && ( v & avpn ) != 0 )	35:8:524:658	7387597	0	True				
+ANR	7387656	OrExpression	( v & HPTE64_V_VALID ) == 0 || ( ( flags & H_AVPN ) && ( v & ~0x7fULL ) != avpn ) || ( ( flags & H_ANDCOND ) && ( v & avpn ) != 0 )		7387597	0		||			
+ANR	7387657	EqualityExpression	( v & HPTE64_V_VALID ) == 0		7387597	0		==			
+ANR	7387658	BitAndExpression	v & HPTE64_V_VALID		7387597	0		&			
+ANR	7387659	Identifier	v		7387597	0					
+ANR	7387660	Identifier	HPTE64_V_VALID		7387597	1					
+ANR	7387661	PrimaryExpression	0		7387597	1					
+ANR	7387662	OrExpression	( ( flags & H_AVPN ) && ( v & ~0x7fULL ) != avpn ) || ( ( flags & H_ANDCOND ) && ( v & avpn ) != 0 )		7387597	1		||			
+ANR	7387663	AndExpression	( flags & H_AVPN ) && ( v & ~0x7fULL ) != avpn		7387597	0		&&			
+ANR	7387664	BitAndExpression	flags & H_AVPN		7387597	0		&			
+ANR	7387665	Identifier	flags		7387597	0					
+ANR	7387666	Identifier	H_AVPN		7387597	1					
+ANR	7387667	EqualityExpression	( v & ~0x7fULL ) != avpn		7387597	1		!=			
+ANR	7387668	BitAndExpression	v & ~0x7fULL		7387597	0		&			
+ANR	7387669	Identifier	v		7387597	0					
+ANR	7387670	Identifier	~0x7fULL		7387597	1					
+ANR	7387671	Identifier	avpn		7387597	1					
+ANR	7387672	AndExpression	( flags & H_ANDCOND ) && ( v & avpn ) != 0		7387597	1		&&			
+ANR	7387673	BitAndExpression	flags & H_ANDCOND		7387597	0		&			
+ANR	7387674	Identifier	flags		7387597	0					
+ANR	7387675	Identifier	H_ANDCOND		7387597	1					
+ANR	7387676	EqualityExpression	( v & avpn ) != 0		7387597	1		!=			
+ANR	7387677	BitAndExpression	v & avpn		7387597	0		&			
+ANR	7387678	Identifier	v		7387597	0					
+ANR	7387679	Identifier	avpn		7387597	1					
+ANR	7387680	PrimaryExpression	0		7387597	1					
+ANR	7387681	CompoundStatement		31:50:416:416	7387597	1					
+ANR	7387682	ReturnStatement	return REMOVE_NOT_FOUND ;	41:8:672:695	7387597	0	True				
+ANR	7387683	Identifier	REMOVE_NOT_FOUND		7387597	0					
+ANR	7387684	ExpressionStatement	* vp = v	45:4:709:716	7387597	7	True				
+ANR	7387685	AssignmentExpression	* vp = v		7387597	0		=			
+ANR	7387686	UnaryOperationExpression	* vp		7387597	0					
+ANR	7387687	UnaryOperator	*		7387597	0					
+ANR	7387688	Identifier	vp		7387597	1					
+ANR	7387689	Identifier	v		7387597	1					
+ANR	7387690	ExpressionStatement	* rp = r	47:4:723:730	7387597	8	True				
+ANR	7387691	AssignmentExpression	* rp = r		7387597	0		=			
+ANR	7387692	UnaryOperationExpression	* rp		7387597	0					
+ANR	7387693	UnaryOperator	*		7387597	0					
+ANR	7387694	Identifier	rp		7387597	1					
+ANR	7387695	Identifier	r		7387597	1					
+ANR	7387696	ExpressionStatement	"ppc_hash64_store_hpte0 ( env , hpte , HPTE64_V_HPTE_DIRTY )"	49:4:737:791	7387597	9	True				
+ANR	7387697	CallExpression	"ppc_hash64_store_hpte0 ( env , hpte , HPTE64_V_HPTE_DIRTY )"		7387597	0					
+ANR	7387698	Callee	ppc_hash64_store_hpte0		7387597	0					
+ANR	7387699	Identifier	ppc_hash64_store_hpte0		7387597	0					
+ANR	7387700	ArgumentList	env		7387597	1					
+ANR	7387701	Argument	env		7387597	0					
+ANR	7387702	Identifier	env		7387597	0					
+ANR	7387703	Argument	hpte		7387597	1					
+ANR	7387704	Identifier	hpte		7387597	0					
+ANR	7387705	Argument	HPTE64_V_HPTE_DIRTY		7387597	2					
+ANR	7387706	Identifier	HPTE64_V_HPTE_DIRTY		7387597	0					
+ANR	7387707	ExpressionStatement	"rb = compute_tlbie_rb ( v , r , ptex )"	51:4:798:831	7387597	10	True				
+ANR	7387708	AssignmentExpression	"rb = compute_tlbie_rb ( v , r , ptex )"		7387597	0		=			
+ANR	7387709	Identifier	rb		7387597	0					
+ANR	7387710	CallExpression	"compute_tlbie_rb ( v , r , ptex )"		7387597	1					
+ANR	7387711	Callee	compute_tlbie_rb		7387597	0					
+ANR	7387712	Identifier	compute_tlbie_rb		7387597	0					
+ANR	7387713	ArgumentList	v		7387597	1					
+ANR	7387714	Argument	v		7387597	0					
+ANR	7387715	Identifier	v		7387597	0					
+ANR	7387716	Argument	r		7387597	1					
+ANR	7387717	Identifier	r		7387597	0					
+ANR	7387718	Argument	ptex		7387597	2					
+ANR	7387719	Identifier	ptex		7387597	0					
+ANR	7387720	ExpressionStatement	"ppc_tlb_invalidate_one ( env , rb )"	53:4:838:869	7387597	11	True				
+ANR	7387721	CallExpression	"ppc_tlb_invalidate_one ( env , rb )"		7387597	0					
+ANR	7387722	Callee	ppc_tlb_invalidate_one		7387597	0					
+ANR	7387723	Identifier	ppc_tlb_invalidate_one		7387597	0					
+ANR	7387724	ArgumentList	env		7387597	1					
+ANR	7387725	Argument	env		7387597	0					
+ANR	7387726	Identifier	env		7387597	0					
+ANR	7387727	Argument	rb		7387597	1					
+ANR	7387728	Identifier	rb		7387597	0					
+ANR	7387729	ReturnStatement	return REMOVE_SUCCESS ;	55:4:876:897	7387597	12	True				
+ANR	7387730	Identifier	REMOVE_SUCCESS		7387597	0					
+ANR	7387731	ReturnType	static RemoveResult		7387597	1					
+ANR	7387732	Identifier	remove_hpte		7387597	2					
+ANR	7387733	ParameterList	"CPUPPCState * env , target_ulong ptex , target_ulong avpn , target_ulong flags , target_ulong * vp , target_ulong * rp"		7387597	3					
+ANR	7387734	Parameter	CPUPPCState * env	1:32:32:47	7387597	0	True				
+ANR	7387735	ParameterType	CPUPPCState *		7387597	0					
+ANR	7387736	Identifier	env		7387597	1					
+ANR	7387737	Parameter	target_ulong ptex	1:50:50:66	7387597	1	True				
+ANR	7387738	ParameterType	target_ulong		7387597	0					
+ANR	7387739	Identifier	ptex		7387597	1					
+ANR	7387740	Parameter	target_ulong avpn	3:32:102:118	7387597	2	True				
+ANR	7387741	ParameterType	target_ulong		7387597	0					
+ANR	7387742	Identifier	avpn		7387597	1					
+ANR	7387743	Parameter	target_ulong flags	5:32:154:171	7387597	3	True				
+ANR	7387744	ParameterType	target_ulong		7387597	0					
+ANR	7387745	Identifier	flags		7387597	1					
+ANR	7387746	Parameter	target_ulong * vp	7:32:207:222	7387597	4	True				
+ANR	7387747	ParameterType	target_ulong *		7387597	0					
+ANR	7387748	Identifier	vp		7387597	1					
+ANR	7387749	Parameter	target_ulong * rp	7:50:225:240	7387597	5	True				
+ANR	7387750	ParameterType	target_ulong *		7387597	0					
+ANR	7387751	Identifier	rp		7387597	1					
+ANR	7387752	CFGEntryNode	ENTRY		7387597		True				
+ANR	7387753	CFGExitNode	EXIT		7387597		True				
+ANR	7387754	Symbol	ptex		7387597						
+ANR	7387755	Symbol	HASH_PTE_SIZE_64		7387597						
+ANR	7387756	Symbol	flags		7387597						
+ANR	7387757	Symbol	compute_tlbie_rb		7387597						
+ANR	7387758	Symbol	hpte		7387597						
+ANR	7387759	Symbol	ppc_hash64_load_hpte0		7387597						
+ANR	7387760	Symbol	REMOVE_NOT_FOUND		7387597						
+ANR	7387761	Symbol	ppc_hash64_load_hpte1		7387597						
+ANR	7387762	Symbol	* ~env		7387597						
+ANR	7387763	Symbol	REMOVE_PARM		7387597						
+ANR	7387764	Symbol	~env		7387597						
+ANR	7387765	Symbol	H_ANDCOND		7387597						
+ANR	7387766	Symbol	~0x7fULL		7387597						
+ANR	7387767	Symbol	avpn		7387597						
+ANR	7387768	Symbol	* vp		7387597						
+ANR	7387769	Symbol	REMOVE_SUCCESS		7387597						
+ANR	7387770	Symbol	* rp		7387597						
+ANR	7387771	Symbol	env		7387597						
+ANR	7387772	Symbol	HPTE64_V_VALID		7387597						
+ANR	7387773	Symbol	rb		7387597						
+ANR	7387774	Symbol	~env -> htab_mask		7387597						
+ANR	7387775	Symbol	r		7387597						
+ANR	7387776	Symbol	HPTE64_V_HPTE_DIRTY		7387597						
+ANR	7387777	Symbol	v		7387597						
+ANR	7387778	Symbol	vp		7387597						
+ANR	7387779	Symbol	H_AVPN		7387597						
+ANR	7387780	Symbol	rp		7387597						

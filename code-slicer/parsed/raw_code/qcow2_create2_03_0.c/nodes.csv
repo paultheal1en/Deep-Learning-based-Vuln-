@@ -1,0 +1,571 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6849703	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_create2_03_0.c								
+ANR	6849704	Function	qcow2_create2	1:0:0:3838							
+ANR	6849705	FunctionDef	"qcow2_create2 (const char * filename , int64_t total_size , const char * backing_file , const char * backing_format , int flags , size_t cluster_size , int prealloc , QEMUOptionParameter * options)"		6849704	0					
+ANR	6849706	CompoundStatement		9:0:276:3838	6849704	0					
+ANR	6849707	IdentifierDeclStatement	int cluster_bits ;	13:4:317:333	6849704	0	True				
+ANR	6849708	IdentifierDecl	cluster_bits		6849704	0					
+ANR	6849709	IdentifierDeclType	int		6849704	0					
+ANR	6849710	Identifier	cluster_bits		6849704	1					
+ANR	6849711	ExpressionStatement	cluster_bits = ffs ( cluster_size ) - 1	15:4:340:376	6849704	1	True				
+ANR	6849712	AssignmentExpression	cluster_bits = ffs ( cluster_size ) - 1		6849704	0		=			
+ANR	6849713	Identifier	cluster_bits		6849704	0					
+ANR	6849714	AdditiveExpression	ffs ( cluster_size ) - 1		6849704	1		-			
+ANR	6849715	CallExpression	ffs ( cluster_size )		6849704	0					
+ANR	6849716	Callee	ffs		6849704	0					
+ANR	6849717	Identifier	ffs		6849704	0					
+ANR	6849718	ArgumentList	cluster_size		6849704	1					
+ANR	6849719	Argument	cluster_size		6849704	0					
+ANR	6849720	Identifier	cluster_size		6849704	0					
+ANR	6849721	PrimaryExpression	1		6849704	1					
+ANR	6849722	IfStatement	if ( cluster_bits < MIN_CLUSTER_BITS || cluster_bits > MAX_CLUSTER_BITS || ( 1 << cluster_bits ) != cluster_size )		6849704	2					
+ANR	6849723	Condition	cluster_bits < MIN_CLUSTER_BITS || cluster_bits > MAX_CLUSTER_BITS || ( 1 << cluster_bits ) != cluster_size	17:8:387:500	6849704	0	True				
+ANR	6849724	OrExpression	cluster_bits < MIN_CLUSTER_BITS || cluster_bits > MAX_CLUSTER_BITS || ( 1 << cluster_bits ) != cluster_size		6849704	0		||			
+ANR	6849725	RelationalExpression	cluster_bits < MIN_CLUSTER_BITS		6849704	0		<			
+ANR	6849726	Identifier	cluster_bits		6849704	0					
+ANR	6849727	Identifier	MIN_CLUSTER_BITS		6849704	1					
+ANR	6849728	OrExpression	cluster_bits > MAX_CLUSTER_BITS || ( 1 << cluster_bits ) != cluster_size		6849704	1		||			
+ANR	6849729	RelationalExpression	cluster_bits > MAX_CLUSTER_BITS		6849704	0		>			
+ANR	6849730	Identifier	cluster_bits		6849704	0					
+ANR	6849731	Identifier	MAX_CLUSTER_BITS		6849704	1					
+ANR	6849732	EqualityExpression	( 1 << cluster_bits ) != cluster_size		6849704	1		!=			
+ANR	6849733	ShiftExpression	1 << cluster_bits		6849704	0		<<			
+ANR	6849734	PrimaryExpression	1		6849704	0					
+ANR	6849735	Identifier	cluster_bits		6849704	1					
+ANR	6849736	Identifier	cluster_size		6849704	1					
+ANR	6849737	CompoundStatement		13:4:231:231	6849704	1					
+ANR	6849738	ExpressionStatement	"error_report ( ""Cluster size must be a power of two between %d and %dk"" , 1 << MIN_CLUSTER_BITS , 1 << ( MAX_CLUSTER_BITS - 10 ) )"	23:8:519:669	6849704	0	True				
+ANR	6849739	CallExpression	"error_report ( ""Cluster size must be a power of two between %d and %dk"" , 1 << MIN_CLUSTER_BITS , 1 << ( MAX_CLUSTER_BITS - 10 ) )"		6849704	0					
+ANR	6849740	Callee	error_report		6849704	0					
+ANR	6849741	Identifier	error_report		6849704	0					
+ANR	6849742	ArgumentList	"""Cluster size must be a power of two between %d and %dk"""		6849704	1					
+ANR	6849743	Argument	"""Cluster size must be a power of two between %d and %dk"""		6849704	0					
+ANR	6849744	PrimaryExpression	"""Cluster size must be a power of two between %d and %dk"""		6849704	0					
+ANR	6849745	Argument	1 << MIN_CLUSTER_BITS		6849704	1					
+ANR	6849746	ShiftExpression	1 << MIN_CLUSTER_BITS		6849704	0		<<			
+ANR	6849747	PrimaryExpression	1		6849704	0					
+ANR	6849748	Identifier	MIN_CLUSTER_BITS		6849704	1					
+ANR	6849749	Argument	1 << ( MAX_CLUSTER_BITS - 10 )		6849704	2					
+ANR	6849750	ShiftExpression	1 << ( MAX_CLUSTER_BITS - 10 )		6849704	0		<<			
+ANR	6849751	PrimaryExpression	1		6849704	0					
+ANR	6849752	AdditiveExpression	MAX_CLUSTER_BITS - 10		6849704	1		-			
+ANR	6849753	Identifier	MAX_CLUSTER_BITS		6849704	0					
+ANR	6849754	PrimaryExpression	10		6849704	1					
+ANR	6849755	ReturnStatement	return - EINVAL ;	29:8:680:694	6849704	1	True				
+ANR	6849756	UnaryOperationExpression	- EINVAL		6849704	0					
+ANR	6849757	UnaryOperator	-		6849704	0					
+ANR	6849758	Identifier	EINVAL		6849704	1					
+ANR	6849759	IdentifierDeclStatement	BlockDriverState * bs ;	59:4:1245:1265	6849704	3	True				
+ANR	6849760	IdentifierDecl	* bs		6849704	0					
+ANR	6849761	IdentifierDeclType	BlockDriverState *		6849704	0					
+ANR	6849762	Identifier	bs		6849704	1					
+ANR	6849763	IdentifierDeclStatement	QCowHeader header ;	61:4:1272:1289	6849704	4	True				
+ANR	6849764	IdentifierDecl	header		6849704	0					
+ANR	6849765	IdentifierDeclType	QCowHeader		6849704	0					
+ANR	6849766	Identifier	header		6849704	1					
+ANR	6849767	IdentifierDeclStatement	uint8_t * refcount_table ;	63:4:1296:1319	6849704	5	True				
+ANR	6849768	IdentifierDecl	* refcount_table		6849704	0					
+ANR	6849769	IdentifierDeclType	uint8_t *		6849704	0					
+ANR	6849770	Identifier	refcount_table		6849704	1					
+ANR	6849771	IdentifierDeclStatement	int ret ;	65:4:1326:1333	6849704	6	True				
+ANR	6849772	IdentifierDecl	ret		6849704	0					
+ANR	6849773	IdentifierDeclType	int		6849704	0					
+ANR	6849774	Identifier	ret		6849704	1					
+ANR	6849775	ExpressionStatement	"ret = bdrv_create_file ( filename , options )"	69:4:1342:1383	6849704	7	True				
+ANR	6849776	AssignmentExpression	"ret = bdrv_create_file ( filename , options )"		6849704	0		=			
+ANR	6849777	Identifier	ret		6849704	0					
+ANR	6849778	CallExpression	"bdrv_create_file ( filename , options )"		6849704	1					
+ANR	6849779	Callee	bdrv_create_file		6849704	0					
+ANR	6849780	Identifier	bdrv_create_file		6849704	0					
+ANR	6849781	ArgumentList	filename		6849704	1					
+ANR	6849782	Argument	filename		6849704	0					
+ANR	6849783	Identifier	filename		6849704	0					
+ANR	6849784	Argument	options		6849704	1					
+ANR	6849785	Identifier	options		6849704	0					
+ANR	6849786	IfStatement	if ( ret < 0 )		6849704	8					
+ANR	6849787	Condition	ret < 0	71:8:1394:1400	6849704	0	True				
+ANR	6849788	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6849789	Identifier	ret		6849704	0					
+ANR	6849790	PrimaryExpression	0		6849704	1					
+ANR	6849791	CompoundStatement		63:17:1126:1126	6849704	1					
+ANR	6849792	ReturnStatement	return ret ;	73:8:1414:1424	6849704	0	True				
+ANR	6849793	Identifier	ret		6849704	0					
+ANR	6849794	ExpressionStatement	"ret = bdrv_file_open ( & bs , filename , BDRV_O_RDWR )"	79:4:1440:1488	6849704	9	True				
+ANR	6849795	AssignmentExpression	"ret = bdrv_file_open ( & bs , filename , BDRV_O_RDWR )"		6849704	0		=			
+ANR	6849796	Identifier	ret		6849704	0					
+ANR	6849797	CallExpression	"bdrv_file_open ( & bs , filename , BDRV_O_RDWR )"		6849704	1					
+ANR	6849798	Callee	bdrv_file_open		6849704	0					
+ANR	6849799	Identifier	bdrv_file_open		6849704	0					
+ANR	6849800	ArgumentList	& bs		6849704	1					
+ANR	6849801	Argument	& bs		6849704	0					
+ANR	6849802	UnaryOperationExpression	& bs		6849704	0					
+ANR	6849803	UnaryOperator	&		6849704	0					
+ANR	6849804	Identifier	bs		6849704	1					
+ANR	6849805	Argument	filename		6849704	1					
+ANR	6849806	Identifier	filename		6849704	0					
+ANR	6849807	Argument	BDRV_O_RDWR		6849704	2					
+ANR	6849808	Identifier	BDRV_O_RDWR		6849704	0					
+ANR	6849809	IfStatement	if ( ret < 0 )		6849704	10					
+ANR	6849810	Condition	ret < 0	81:8:1499:1505	6849704	0	True				
+ANR	6849811	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6849812	Identifier	ret		6849704	0					
+ANR	6849813	PrimaryExpression	0		6849704	1					
+ANR	6849814	CompoundStatement		73:17:1231:1231	6849704	1					
+ANR	6849815	ReturnStatement	return ret ;	83:8:1519:1529	6849704	0	True				
+ANR	6849816	Identifier	ret		6849704	0					
+ANR	6849817	ExpressionStatement	"memset ( & header , 0 , sizeof ( header ) )"	91:4:1573:1607	6849704	11	True				
+ANR	6849818	CallExpression	"memset ( & header , 0 , sizeof ( header ) )"		6849704	0					
+ANR	6849819	Callee	memset		6849704	0					
+ANR	6849820	Identifier	memset		6849704	0					
+ANR	6849821	ArgumentList	& header		6849704	1					
+ANR	6849822	Argument	& header		6849704	0					
+ANR	6849823	UnaryOperationExpression	& header		6849704	0					
+ANR	6849824	UnaryOperator	&		6849704	0					
+ANR	6849825	Identifier	header		6849704	1					
+ANR	6849826	Argument	0		6849704	1					
+ANR	6849827	PrimaryExpression	0		6849704	0					
+ANR	6849828	Argument	sizeof ( header )		6849704	2					
+ANR	6849829	SizeofExpression	sizeof ( header )		6849704	0					
+ANR	6849830	Sizeof	sizeof		6849704	0					
+ANR	6849831	SizeofOperand	header		6849704	1					
+ANR	6849832	ExpressionStatement	header . magic = cpu_to_be32 ( QCOW_MAGIC )	93:4:1614:1652	6849704	12	True				
+ANR	6849833	AssignmentExpression	header . magic = cpu_to_be32 ( QCOW_MAGIC )		6849704	0		=			
+ANR	6849834	MemberAccess	header . magic		6849704	0					
+ANR	6849835	Identifier	header		6849704	0					
+ANR	6849836	Identifier	magic		6849704	1					
+ANR	6849837	CallExpression	cpu_to_be32 ( QCOW_MAGIC )		6849704	1					
+ANR	6849838	Callee	cpu_to_be32		6849704	0					
+ANR	6849839	Identifier	cpu_to_be32		6849704	0					
+ANR	6849840	ArgumentList	QCOW_MAGIC		6849704	1					
+ANR	6849841	Argument	QCOW_MAGIC		6849704	0					
+ANR	6849842	Identifier	QCOW_MAGIC		6849704	0					
+ANR	6849843	ExpressionStatement	header . version = cpu_to_be32 ( QCOW_VERSION )	95:4:1659:1701	6849704	13	True				
+ANR	6849844	AssignmentExpression	header . version = cpu_to_be32 ( QCOW_VERSION )		6849704	0		=			
+ANR	6849845	MemberAccess	header . version		6849704	0					
+ANR	6849846	Identifier	header		6849704	0					
+ANR	6849847	Identifier	version		6849704	1					
+ANR	6849848	CallExpression	cpu_to_be32 ( QCOW_VERSION )		6849704	1					
+ANR	6849849	Callee	cpu_to_be32		6849704	0					
+ANR	6849850	Identifier	cpu_to_be32		6849704	0					
+ANR	6849851	ArgumentList	QCOW_VERSION		6849704	1					
+ANR	6849852	Argument	QCOW_VERSION		6849704	0					
+ANR	6849853	Identifier	QCOW_VERSION		6849704	0					
+ANR	6849854	ExpressionStatement	header . cluster_bits = cpu_to_be32 ( cluster_bits )	97:4:1708:1755	6849704	14	True				
+ANR	6849855	AssignmentExpression	header . cluster_bits = cpu_to_be32 ( cluster_bits )		6849704	0		=			
+ANR	6849856	MemberAccess	header . cluster_bits		6849704	0					
+ANR	6849857	Identifier	header		6849704	0					
+ANR	6849858	Identifier	cluster_bits		6849704	1					
+ANR	6849859	CallExpression	cpu_to_be32 ( cluster_bits )		6849704	1					
+ANR	6849860	Callee	cpu_to_be32		6849704	0					
+ANR	6849861	Identifier	cpu_to_be32		6849704	0					
+ANR	6849862	ArgumentList	cluster_bits		6849704	1					
+ANR	6849863	Argument	cluster_bits		6849704	0					
+ANR	6849864	Identifier	cluster_bits		6849704	0					
+ANR	6849865	ExpressionStatement	header . size = cpu_to_be64 ( 0 )	99:4:1762:1790	6849704	15	True				
+ANR	6849866	AssignmentExpression	header . size = cpu_to_be64 ( 0 )		6849704	0		=			
+ANR	6849867	MemberAccess	header . size		6849704	0					
+ANR	6849868	Identifier	header		6849704	0					
+ANR	6849869	Identifier	size		6849704	1					
+ANR	6849870	CallExpression	cpu_to_be64 ( 0 )		6849704	1					
+ANR	6849871	Callee	cpu_to_be64		6849704	0					
+ANR	6849872	Identifier	cpu_to_be64		6849704	0					
+ANR	6849873	ArgumentList	0		6849704	1					
+ANR	6849874	Argument	0		6849704	0					
+ANR	6849875	PrimaryExpression	0		6849704	0					
+ANR	6849876	ExpressionStatement	header . l1_table_offset = cpu_to_be64 ( 0 )	101:4:1797:1836	6849704	16	True				
+ANR	6849877	AssignmentExpression	header . l1_table_offset = cpu_to_be64 ( 0 )		6849704	0		=			
+ANR	6849878	MemberAccess	header . l1_table_offset		6849704	0					
+ANR	6849879	Identifier	header		6849704	0					
+ANR	6849880	Identifier	l1_table_offset		6849704	1					
+ANR	6849881	CallExpression	cpu_to_be64 ( 0 )		6849704	1					
+ANR	6849882	Callee	cpu_to_be64		6849704	0					
+ANR	6849883	Identifier	cpu_to_be64		6849704	0					
+ANR	6849884	ArgumentList	0		6849704	1					
+ANR	6849885	Argument	0		6849704	0					
+ANR	6849886	PrimaryExpression	0		6849704	0					
+ANR	6849887	ExpressionStatement	header . l1_size = cpu_to_be32 ( 0 )	103:4:1843:1874	6849704	17	True				
+ANR	6849888	AssignmentExpression	header . l1_size = cpu_to_be32 ( 0 )		6849704	0		=			
+ANR	6849889	MemberAccess	header . l1_size		6849704	0					
+ANR	6849890	Identifier	header		6849704	0					
+ANR	6849891	Identifier	l1_size		6849704	1					
+ANR	6849892	CallExpression	cpu_to_be32 ( 0 )		6849704	1					
+ANR	6849893	Callee	cpu_to_be32		6849704	0					
+ANR	6849894	Identifier	cpu_to_be32		6849704	0					
+ANR	6849895	ArgumentList	0		6849704	1					
+ANR	6849896	Argument	0		6849704	0					
+ANR	6849897	PrimaryExpression	0		6849704	0					
+ANR	6849898	ExpressionStatement	header . refcount_table_offset = cpu_to_be64 ( cluster_size )	105:4:1881:1937	6849704	18	True				
+ANR	6849899	AssignmentExpression	header . refcount_table_offset = cpu_to_be64 ( cluster_size )		6849704	0		=			
+ANR	6849900	MemberAccess	header . refcount_table_offset		6849704	0					
+ANR	6849901	Identifier	header		6849704	0					
+ANR	6849902	Identifier	refcount_table_offset		6849704	1					
+ANR	6849903	CallExpression	cpu_to_be64 ( cluster_size )		6849704	1					
+ANR	6849904	Callee	cpu_to_be64		6849704	0					
+ANR	6849905	Identifier	cpu_to_be64		6849704	0					
+ANR	6849906	ArgumentList	cluster_size		6849704	1					
+ANR	6849907	Argument	cluster_size		6849704	0					
+ANR	6849908	Identifier	cluster_size		6849704	0					
+ANR	6849909	ExpressionStatement	header . refcount_table_clusters = cpu_to_be32 ( 1 )	107:4:1944:1991	6849704	19	True				
+ANR	6849910	AssignmentExpression	header . refcount_table_clusters = cpu_to_be32 ( 1 )		6849704	0		=			
+ANR	6849911	MemberAccess	header . refcount_table_clusters		6849704	0					
+ANR	6849912	Identifier	header		6849704	0					
+ANR	6849913	Identifier	refcount_table_clusters		6849704	1					
+ANR	6849914	CallExpression	cpu_to_be32 ( 1 )		6849704	1					
+ANR	6849915	Callee	cpu_to_be32		6849704	0					
+ANR	6849916	Identifier	cpu_to_be32		6849704	0					
+ANR	6849917	ArgumentList	1		6849704	1					
+ANR	6849918	Argument	1		6849704	0					
+ANR	6849919	PrimaryExpression	1		6849704	0					
+ANR	6849920	IfStatement	if ( flags & BLOCK_FLAG_ENCRYPT )		6849704	20					
+ANR	6849921	Condition	flags & BLOCK_FLAG_ENCRYPT	111:8:2004:2029	6849704	0	True				
+ANR	6849922	BitAndExpression	flags & BLOCK_FLAG_ENCRYPT		6849704	0		&			
+ANR	6849923	Identifier	flags		6849704	0					
+ANR	6849924	Identifier	BLOCK_FLAG_ENCRYPT		6849704	1					
+ANR	6849925	CompoundStatement		103:36:1755:1755	6849704	1					
+ANR	6849926	ExpressionStatement	header . crypt_method = cpu_to_be32 ( QCOW_CRYPT_AES )	113:8:2043:2092	6849704	0	True				
+ANR	6849927	AssignmentExpression	header . crypt_method = cpu_to_be32 ( QCOW_CRYPT_AES )		6849704	0		=			
+ANR	6849928	MemberAccess	header . crypt_method		6849704	0					
+ANR	6849929	Identifier	header		6849704	0					
+ANR	6849930	Identifier	crypt_method		6849704	1					
+ANR	6849931	CallExpression	cpu_to_be32 ( QCOW_CRYPT_AES )		6849704	1					
+ANR	6849932	Callee	cpu_to_be32		6849704	0					
+ANR	6849933	Identifier	cpu_to_be32		6849704	0					
+ANR	6849934	ArgumentList	QCOW_CRYPT_AES		6849704	1					
+ANR	6849935	Argument	QCOW_CRYPT_AES		6849704	0					
+ANR	6849936	Identifier	QCOW_CRYPT_AES		6849704	0					
+ANR	6849937	ElseStatement	else		6849704	0					
+ANR	6849938	CompoundStatement		107:11:1829:1829	6849704	0					
+ANR	6849939	ExpressionStatement	header . crypt_method = cpu_to_be32 ( QCOW_CRYPT_NONE )	117:8:2117:2167	6849704	0	True				
+ANR	6849940	AssignmentExpression	header . crypt_method = cpu_to_be32 ( QCOW_CRYPT_NONE )		6849704	0		=			
+ANR	6849941	MemberAccess	header . crypt_method		6849704	0					
+ANR	6849942	Identifier	header		6849704	0					
+ANR	6849943	Identifier	crypt_method		6849704	1					
+ANR	6849944	CallExpression	cpu_to_be32 ( QCOW_CRYPT_NONE )		6849704	1					
+ANR	6849945	Callee	cpu_to_be32		6849704	0					
+ANR	6849946	Identifier	cpu_to_be32		6849704	0					
+ANR	6849947	ArgumentList	QCOW_CRYPT_NONE		6849704	1					
+ANR	6849948	Argument	QCOW_CRYPT_NONE		6849704	0					
+ANR	6849949	Identifier	QCOW_CRYPT_NONE		6849704	0					
+ANR	6849950	ExpressionStatement	"ret = bdrv_pwrite ( bs , 0 , & header , sizeof ( header ) )"	123:4:2183:2232	6849704	21	True				
+ANR	6849951	AssignmentExpression	"ret = bdrv_pwrite ( bs , 0 , & header , sizeof ( header ) )"		6849704	0		=			
+ANR	6849952	Identifier	ret		6849704	0					
+ANR	6849953	CallExpression	"bdrv_pwrite ( bs , 0 , & header , sizeof ( header ) )"		6849704	1					
+ANR	6849954	Callee	bdrv_pwrite		6849704	0					
+ANR	6849955	Identifier	bdrv_pwrite		6849704	0					
+ANR	6849956	ArgumentList	bs		6849704	1					
+ANR	6849957	Argument	bs		6849704	0					
+ANR	6849958	Identifier	bs		6849704	0					
+ANR	6849959	Argument	0		6849704	1					
+ANR	6849960	PrimaryExpression	0		6849704	0					
+ANR	6849961	Argument	& header		6849704	2					
+ANR	6849962	UnaryOperationExpression	& header		6849704	0					
+ANR	6849963	UnaryOperator	&		6849704	0					
+ANR	6849964	Identifier	header		6849704	1					
+ANR	6849965	Argument	sizeof ( header )		6849704	3					
+ANR	6849966	SizeofExpression	sizeof ( header )		6849704	0					
+ANR	6849967	Sizeof	sizeof		6849704	0					
+ANR	6849968	SizeofOperand	header		6849704	1					
+ANR	6849969	IfStatement	if ( ret < 0 )		6849704	22					
+ANR	6849970	Condition	ret < 0	125:8:2243:2249	6849704	0	True				
+ANR	6849971	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6849972	Identifier	ret		6849704	0					
+ANR	6849973	PrimaryExpression	0		6849704	1					
+ANR	6849974	CompoundStatement		117:17:1975:1975	6849704	1					
+ANR	6849975	GotoStatement	goto out ;	127:8:2263:2271	6849704	0	True				
+ANR	6849976	Identifier	out		6849704	0					
+ANR	6849977	ExpressionStatement	refcount_table = g_malloc0 ( cluster_size )	135:4:2328:2368	6849704	23	True				
+ANR	6849978	AssignmentExpression	refcount_table = g_malloc0 ( cluster_size )		6849704	0		=			
+ANR	6849979	Identifier	refcount_table		6849704	0					
+ANR	6849980	CallExpression	g_malloc0 ( cluster_size )		6849704	1					
+ANR	6849981	Callee	g_malloc0		6849704	0					
+ANR	6849982	Identifier	g_malloc0		6849704	0					
+ANR	6849983	ArgumentList	cluster_size		6849704	1					
+ANR	6849984	Argument	cluster_size		6849704	0					
+ANR	6849985	Identifier	cluster_size		6849704	0					
+ANR	6849986	ExpressionStatement	"ret = bdrv_pwrite ( bs , cluster_size , refcount_table , cluster_size )"	137:4:2375:2440	6849704	24	True				
+ANR	6849987	AssignmentExpression	"ret = bdrv_pwrite ( bs , cluster_size , refcount_table , cluster_size )"		6849704	0		=			
+ANR	6849988	Identifier	ret		6849704	0					
+ANR	6849989	CallExpression	"bdrv_pwrite ( bs , cluster_size , refcount_table , cluster_size )"		6849704	1					
+ANR	6849990	Callee	bdrv_pwrite		6849704	0					
+ANR	6849991	Identifier	bdrv_pwrite		6849704	0					
+ANR	6849992	ArgumentList	bs		6849704	1					
+ANR	6849993	Argument	bs		6849704	0					
+ANR	6849994	Identifier	bs		6849704	0					
+ANR	6849995	Argument	cluster_size		6849704	1					
+ANR	6849996	Identifier	cluster_size		6849704	0					
+ANR	6849997	Argument	refcount_table		6849704	2					
+ANR	6849998	Identifier	refcount_table		6849704	0					
+ANR	6849999	Argument	cluster_size		6849704	3					
+ANR	6850000	Identifier	cluster_size		6849704	0					
+ANR	6850001	ExpressionStatement	g_free ( refcount_table )	139:4:2447:2469	6849704	25	True				
+ANR	6850002	CallExpression	g_free ( refcount_table )		6849704	0					
+ANR	6850003	Callee	g_free		6849704	0					
+ANR	6850004	Identifier	g_free		6849704	0					
+ANR	6850005	ArgumentList	refcount_table		6849704	1					
+ANR	6850006	Argument	refcount_table		6849704	0					
+ANR	6850007	Identifier	refcount_table		6849704	0					
+ANR	6850008	IfStatement	if ( ret < 0 )		6849704	26					
+ANR	6850009	Condition	ret < 0	143:8:2482:2488	6849704	0	True				
+ANR	6850010	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6850011	Identifier	ret		6849704	0					
+ANR	6850012	PrimaryExpression	0		6849704	1					
+ANR	6850013	CompoundStatement		135:17:2214:2214	6849704	1					
+ANR	6850014	GotoStatement	goto out ;	145:8:2502:2510	6849704	0	True				
+ANR	6850015	Identifier	out		6849704	0					
+ANR	6850016	ExpressionStatement	bdrv_close ( bs )	151:4:2526:2540	6849704	27	True				
+ANR	6850017	CallExpression	bdrv_close ( bs )		6849704	0					
+ANR	6850018	Callee	bdrv_close		6849704	0					
+ANR	6850019	Identifier	bdrv_close		6849704	0					
+ANR	6850020	ArgumentList	bs		6849704	1					
+ANR	6850021	Argument	bs		6849704	0					
+ANR	6850022	Identifier	bs		6849704	0					
+ANR	6850023	IdentifierDeclStatement	"BlockDriver * drv = bdrv_find_format ( ""qcow2"" ) ;"	165:4:2740:2784	6849704	28	True				
+ANR	6850024	IdentifierDecl	"* drv = bdrv_find_format ( ""qcow2"" )"		6849704	0					
+ANR	6850025	IdentifierDeclType	BlockDriver *		6849704	0					
+ANR	6850026	Identifier	drv		6849704	1					
+ANR	6850027	AssignmentExpression	"* drv = bdrv_find_format ( ""qcow2"" )"		6849704	2		=			
+ANR	6850028	Identifier	drv		6849704	0					
+ANR	6850029	CallExpression	"bdrv_find_format ( ""qcow2"" )"		6849704	1					
+ANR	6850030	Callee	bdrv_find_format		6849704	0					
+ANR	6850031	Identifier	bdrv_find_format		6849704	0					
+ANR	6850032	ArgumentList	"""qcow2"""		6849704	1					
+ANR	6850033	Argument	"""qcow2"""		6849704	0					
+ANR	6850034	PrimaryExpression	"""qcow2"""		6849704	0					
+ANR	6850035	ExpressionStatement	assert ( drv != NULL )	167:4:2791:2810	6849704	29	True				
+ANR	6850036	CallExpression	assert ( drv != NULL )		6849704	0					
+ANR	6850037	Callee	assert		6849704	0					
+ANR	6850038	Identifier	assert		6849704	0					
+ANR	6850039	ArgumentList	drv != NULL		6849704	1					
+ANR	6850040	Argument	drv != NULL		6849704	0					
+ANR	6850041	EqualityExpression	drv != NULL		6849704	0		!=			
+ANR	6850042	Identifier	drv		6849704	0					
+ANR	6850043	Identifier	NULL		6849704	1					
+ANR	6850044	ExpressionStatement	"ret = bdrv_open ( bs , filename , BDRV_O_RDWR | BDRV_O_CACHE_WB | BDRV_O_NO_FLUSH , drv )"	169:4:2817:2909	6849704	30	True				
+ANR	6850045	AssignmentExpression	"ret = bdrv_open ( bs , filename , BDRV_O_RDWR | BDRV_O_CACHE_WB | BDRV_O_NO_FLUSH , drv )"		6849704	0		=			
+ANR	6850046	Identifier	ret		6849704	0					
+ANR	6850047	CallExpression	"bdrv_open ( bs , filename , BDRV_O_RDWR | BDRV_O_CACHE_WB | BDRV_O_NO_FLUSH , drv )"		6849704	1					
+ANR	6850048	Callee	bdrv_open		6849704	0					
+ANR	6850049	Identifier	bdrv_open		6849704	0					
+ANR	6850050	ArgumentList	bs		6849704	1					
+ANR	6850051	Argument	bs		6849704	0					
+ANR	6850052	Identifier	bs		6849704	0					
+ANR	6850053	Argument	filename		6849704	1					
+ANR	6850054	Identifier	filename		6849704	0					
+ANR	6850055	Argument	BDRV_O_RDWR | BDRV_O_CACHE_WB | BDRV_O_NO_FLUSH		6849704	2					
+ANR	6850056	InclusiveOrExpression	BDRV_O_RDWR | BDRV_O_CACHE_WB | BDRV_O_NO_FLUSH		6849704	0		|			
+ANR	6850057	Identifier	BDRV_O_RDWR		6849704	0					
+ANR	6850058	InclusiveOrExpression	BDRV_O_CACHE_WB | BDRV_O_NO_FLUSH		6849704	1		|			
+ANR	6850059	Identifier	BDRV_O_CACHE_WB		6849704	0					
+ANR	6850060	Identifier	BDRV_O_NO_FLUSH		6849704	1					
+ANR	6850061	Argument	drv		6849704	3					
+ANR	6850062	Identifier	drv		6849704	0					
+ANR	6850063	IfStatement	if ( ret < 0 )		6849704	31					
+ANR	6850064	Condition	ret < 0	173:8:2920:2926	6849704	0	True				
+ANR	6850065	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6850066	Identifier	ret		6849704	0					
+ANR	6850067	PrimaryExpression	0		6849704	1					
+ANR	6850068	CompoundStatement		165:17:2652:2652	6849704	1					
+ANR	6850069	GotoStatement	goto out ;	175:8:2940:2948	6849704	0	True				
+ANR	6850070	Identifier	out		6849704	0					
+ANR	6850071	ExpressionStatement	"ret = qcow2_alloc_clusters ( bs , 2 * cluster_size )"	181:4:2964:3012	6849704	32	True				
+ANR	6850072	AssignmentExpression	"ret = qcow2_alloc_clusters ( bs , 2 * cluster_size )"		6849704	0		=			
+ANR	6850073	Identifier	ret		6849704	0					
+ANR	6850074	CallExpression	"qcow2_alloc_clusters ( bs , 2 * cluster_size )"		6849704	1					
+ANR	6850075	Callee	qcow2_alloc_clusters		6849704	0					
+ANR	6850076	Identifier	qcow2_alloc_clusters		6849704	0					
+ANR	6850077	ArgumentList	bs		6849704	1					
+ANR	6850078	Argument	bs		6849704	0					
+ANR	6850079	Identifier	bs		6849704	0					
+ANR	6850080	Argument	2 * cluster_size		6849704	1					
+ANR	6850081	MultiplicativeExpression	2 * cluster_size		6849704	0		*			
+ANR	6850082	PrimaryExpression	2		6849704	0					
+ANR	6850083	Identifier	cluster_size		6849704	1					
+ANR	6850084	IfStatement	if ( ret < 0 )		6849704	33					
+ANR	6850085	Condition	ret < 0	183:8:3023:3029	6849704	0	True				
+ANR	6850086	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6850087	Identifier	ret		6849704	0					
+ANR	6850088	PrimaryExpression	0		6849704	1					
+ANR	6850089	CompoundStatement		175:17:2755:2755	6849704	1					
+ANR	6850090	GotoStatement	goto out ;	185:8:3043:3051	6849704	0	True				
+ANR	6850091	Identifier	out		6849704	0					
+ANR	6850092	ElseStatement	else		6849704	0					
+ANR	6850093	IfStatement	if ( ret != 0 )		6849704	0					
+ANR	6850094	Condition	ret != 0	189:15:3071:3078	6849704	0	True				
+ANR	6850095	EqualityExpression	ret != 0		6849704	0		!=			
+ANR	6850096	Identifier	ret		6849704	0					
+ANR	6850097	PrimaryExpression	0		6849704	1					
+ANR	6850098	CompoundStatement		181:25:2804:2804	6849704	1					
+ANR	6850099	ExpressionStatement	"error_report ( ""Huh, first cluster in empty image is already in use?"" )"	191:8:3092:3160	6849704	0	True				
+ANR	6850100	CallExpression	"error_report ( ""Huh, first cluster in empty image is already in use?"" )"		6849704	0					
+ANR	6850101	Callee	error_report		6849704	0					
+ANR	6850102	Identifier	error_report		6849704	0					
+ANR	6850103	ArgumentList	"""Huh, first cluster in empty image is already in use?"""		6849704	1					
+ANR	6850104	Argument	"""Huh, first cluster in empty image is already in use?"""		6849704	0					
+ANR	6850105	PrimaryExpression	"""Huh, first cluster in empty image is already in use?"""		6849704	0					
+ANR	6850106	ExpressionStatement	abort ( )	193:8:3171:3178	6849704	1	True				
+ANR	6850107	CallExpression	abort ( )		6849704	0					
+ANR	6850108	Callee	abort		6849704	0					
+ANR	6850109	Identifier	abort		6849704	0					
+ANR	6850110	ArgumentList			6849704	1					
+ANR	6850111	ExpressionStatement	"ret = bdrv_truncate ( bs , total_size * BDRV_SECTOR_SIZE )"	201:4:3272:3326	6849704	34	True				
+ANR	6850112	AssignmentExpression	"ret = bdrv_truncate ( bs , total_size * BDRV_SECTOR_SIZE )"		6849704	0		=			
+ANR	6850113	Identifier	ret		6849704	0					
+ANR	6850114	CallExpression	"bdrv_truncate ( bs , total_size * BDRV_SECTOR_SIZE )"		6849704	1					
+ANR	6850115	Callee	bdrv_truncate		6849704	0					
+ANR	6850116	Identifier	bdrv_truncate		6849704	0					
+ANR	6850117	ArgumentList	bs		6849704	1					
+ANR	6850118	Argument	bs		6849704	0					
+ANR	6850119	Identifier	bs		6849704	0					
+ANR	6850120	Argument	total_size * BDRV_SECTOR_SIZE		6849704	1					
+ANR	6850121	MultiplicativeExpression	total_size * BDRV_SECTOR_SIZE		6849704	0		*			
+ANR	6850122	Identifier	total_size		6849704	0					
+ANR	6850123	Identifier	BDRV_SECTOR_SIZE		6849704	1					
+ANR	6850124	IfStatement	if ( ret < 0 )		6849704	35					
+ANR	6850125	Condition	ret < 0	203:8:3337:3343	6849704	0	True				
+ANR	6850126	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6850127	Identifier	ret		6849704	0					
+ANR	6850128	PrimaryExpression	0		6849704	1					
+ANR	6850129	CompoundStatement		195:17:3069:3069	6849704	1					
+ANR	6850130	GotoStatement	goto out ;	205:8:3357:3365	6849704	0	True				
+ANR	6850131	Identifier	out		6849704	0					
+ANR	6850132	IfStatement	if ( backing_file )		6849704	36					
+ANR	6850133	Condition	backing_file	213:8:3430:3441	6849704	0	True				
+ANR	6850134	Identifier	backing_file		6849704	0					
+ANR	6850135	CompoundStatement		205:22:3167:3167	6849704	1					
+ANR	6850136	ExpressionStatement	"ret = bdrv_change_backing_file ( bs , backing_file , backing_format )"	215:8:3455:3519	6849704	0	True				
+ANR	6850137	AssignmentExpression	"ret = bdrv_change_backing_file ( bs , backing_file , backing_format )"		6849704	0		=			
+ANR	6850138	Identifier	ret		6849704	0					
+ANR	6850139	CallExpression	"bdrv_change_backing_file ( bs , backing_file , backing_format )"		6849704	1					
+ANR	6850140	Callee	bdrv_change_backing_file		6849704	0					
+ANR	6850141	Identifier	bdrv_change_backing_file		6849704	0					
+ANR	6850142	ArgumentList	bs		6849704	1					
+ANR	6850143	Argument	bs		6849704	0					
+ANR	6850144	Identifier	bs		6849704	0					
+ANR	6850145	Argument	backing_file		6849704	1					
+ANR	6850146	Identifier	backing_file		6849704	0					
+ANR	6850147	Argument	backing_format		6849704	2					
+ANR	6850148	Identifier	backing_format		6849704	0					
+ANR	6850149	IfStatement	if ( ret < 0 )		6849704	1					
+ANR	6850150	Condition	ret < 0	217:12:3534:3540	6849704	0	True				
+ANR	6850151	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6850152	Identifier	ret		6849704	0					
+ANR	6850153	PrimaryExpression	0		6849704	1					
+ANR	6850154	CompoundStatement		209:21:3266:3266	6849704	1					
+ANR	6850155	GotoStatement	goto out ;	219:12:3558:3566	6849704	0	True				
+ANR	6850156	Identifier	out		6849704	0					
+ANR	6850157	IfStatement	if ( prealloc )		6849704	37					
+ANR	6850158	Condition	prealloc	229:8:3667:3674	6849704	0	True				
+ANR	6850159	Identifier	prealloc		6849704	0					
+ANR	6850160	CompoundStatement		221:18:3400:3400	6849704	1					
+ANR	6850161	ExpressionStatement	ret = preallocate ( bs )	231:8:3688:3709	6849704	0	True				
+ANR	6850162	AssignmentExpression	ret = preallocate ( bs )		6849704	0		=			
+ANR	6850163	Identifier	ret		6849704	0					
+ANR	6850164	CallExpression	preallocate ( bs )		6849704	1					
+ANR	6850165	Callee	preallocate		6849704	0					
+ANR	6850166	Identifier	preallocate		6849704	0					
+ANR	6850167	ArgumentList	bs		6849704	1					
+ANR	6850168	Argument	bs		6849704	0					
+ANR	6850169	Identifier	bs		6849704	0					
+ANR	6850170	IfStatement	if ( ret < 0 )		6849704	1					
+ANR	6850171	Condition	ret < 0	233:12:3724:3730	6849704	0	True				
+ANR	6850172	RelationalExpression	ret < 0		6849704	0		<			
+ANR	6850173	Identifier	ret		6849704	0					
+ANR	6850174	PrimaryExpression	0		6849704	1					
+ANR	6850175	CompoundStatement		225:21:3456:3456	6849704	1					
+ANR	6850176	GotoStatement	goto out ;	235:12:3748:3756	6849704	0	True				
+ANR	6850177	Identifier	out		6849704	0					
+ANR	6850178	ExpressionStatement	ret = 0	243:4:3783:3790	6849704	38	True				
+ANR	6850179	AssignmentExpression	ret = 0		6849704	0		=			
+ANR	6850180	Identifier	ret		6849704	0					
+ANR	6850181	PrimaryExpression	0		6849704	1					
+ANR	6850182	Label	out :	245:0:3793:3796	6849704	39	True				
+ANR	6850183	Identifier	out		6849704	0					
+ANR	6850184	ExpressionStatement	bdrv_delete ( bs )	247:4:3803:3818	6849704	40	True				
+ANR	6850185	CallExpression	bdrv_delete ( bs )		6849704	0					
+ANR	6850186	Callee	bdrv_delete		6849704	0					
+ANR	6850187	Identifier	bdrv_delete		6849704	0					
+ANR	6850188	ArgumentList	bs		6849704	1					
+ANR	6850189	Argument	bs		6849704	0					
+ANR	6850190	Identifier	bs		6849704	0					
+ANR	6850191	ReturnStatement	return ret ;	249:4:3825:3835	6849704	41	True				
+ANR	6850192	Identifier	ret		6849704	0					
+ANR	6850193	ReturnType	static int		6849704	1					
+ANR	6850194	Identifier	qcow2_create2		6849704	2					
+ANR	6850195	ParameterList	"const char * filename , int64_t total_size , const char * backing_file , const char * backing_format , int flags , size_t cluster_size , int prealloc , QEMUOptionParameter * options"		6849704	3					
+ANR	6850196	Parameter	const char * filename	1:25:25:44	6849704	0	True				
+ANR	6850197	ParameterType	const char *		6849704	0					
+ANR	6850198	Identifier	filename		6849704	1					
+ANR	6850199	Parameter	int64_t total_size	1:47:47:64	6849704	1	True				
+ANR	6850200	ParameterType	int64_t		6849704	0					
+ANR	6850201	Identifier	total_size		6849704	1					
+ANR	6850202	Parameter	const char * backing_file	3:25:93:116	6849704	2	True				
+ANR	6850203	ParameterType	const char *		6849704	0					
+ANR	6850204	Identifier	backing_file		6849704	1					
+ANR	6850205	Parameter	const char * backing_format	3:51:119:144	6849704	3	True				
+ANR	6850206	ParameterType	const char *		6849704	0					
+ANR	6850207	Identifier	backing_format		6849704	1					
+ANR	6850208	Parameter	int flags	5:25:173:181	6849704	4	True				
+ANR	6850209	ParameterType	int		6849704	0					
+ANR	6850210	Identifier	flags		6849704	1					
+ANR	6850211	Parameter	size_t cluster_size	5:36:184:202	6849704	5	True				
+ANR	6850212	ParameterType	size_t		6849704	0					
+ANR	6850213	Identifier	cluster_size		6849704	1					
+ANR	6850214	Parameter	int prealloc	5:57:205:216	6849704	6	True				
+ANR	6850215	ParameterType	int		6849704	0					
+ANR	6850216	Identifier	prealloc		6849704	1					
+ANR	6850217	Parameter	QEMUOptionParameter * options	7:25:245:272	6849704	7	True				
+ANR	6850218	ParameterType	QEMUOptionParameter *		6849704	0					
+ANR	6850219	Identifier	options		6849704	1					
+ANR	6850220	CFGEntryNode	ENTRY		6849704		True				
+ANR	6850221	CFGExitNode	EXIT		6849704		True				
+ANR	6850222	Symbol	backing_file		6849704						
+ANR	6850223	Symbol	cpu_to_be32		6849704						
+ANR	6850224	Symbol	header . l1_table_offset		6849704						
+ANR	6850225	Symbol	bdrv_create_file		6849704						
+ANR	6850226	Symbol	bdrv_find_format		6849704						
+ANR	6850227	Symbol	header . size		6849704						
+ANR	6850228	Symbol	header . refcount_table_clusters		6849704						
+ANR	6850229	Symbol	options		6849704						
+ANR	6850230	Symbol	header . magic		6849704						
+ANR	6850231	Symbol	bdrv_pwrite		6849704						
+ANR	6850232	Symbol	& bs		6849704						
+ANR	6850233	Symbol	bdrv_open		6849704						
+ANR	6850234	Symbol	header . refcount_table_offset		6849704						
+ANR	6850235	Symbol	header . version		6849704						
+ANR	6850236	Symbol	prealloc		6849704						
+ANR	6850237	Symbol	QCOW_CRYPT_AES		6849704						
+ANR	6850238	Symbol	ret		6849704						
+ANR	6850239	Symbol	NULL		6849704						
+ANR	6850240	Symbol	refcount_table		6849704						
+ANR	6850241	Symbol	header . cluster_bits		6849704						
+ANR	6850242	Symbol	drv		6849704						
+ANR	6850243	Symbol	preallocate		6849704						
+ANR	6850244	Symbol	& header		6849704						
+ANR	6850245	Symbol	header . l1_size		6849704						
+ANR	6850246	Symbol	ffs		6849704						
+ANR	6850247	Symbol	filename		6849704						
+ANR	6850248	Symbol	qcow2_alloc_clusters		6849704						
+ANR	6850249	Symbol	header		6849704						
+ANR	6850250	Symbol	g_malloc0		6849704						
+ANR	6850251	Symbol	QCOW_VERSION		6849704						
+ANR	6850252	Symbol	BLOCK_FLAG_ENCRYPT		6849704						
+ANR	6850253	Symbol	MAX_CLUSTER_BITS		6849704						
+ANR	6850254	Symbol	bdrv_change_backing_file		6849704						
+ANR	6850255	Symbol	flags		6849704						
+ANR	6850256	Symbol	BDRV_O_CACHE_WB		6849704						
+ANR	6850257	Symbol	QCOW_MAGIC		6849704						
+ANR	6850258	Symbol	bs		6849704						
+ANR	6850259	Symbol	bdrv_file_open		6849704						
+ANR	6850260	Symbol	QCOW_CRYPT_NONE		6849704						
+ANR	6850261	Symbol	backing_format		6849704						
+ANR	6850262	Symbol	cluster_bits		6849704						
+ANR	6850263	Symbol	cpu_to_be64		6849704						
+ANR	6850264	Symbol	total_size		6849704						
+ANR	6850265	Symbol	MIN_CLUSTER_BITS		6849704						
+ANR	6850266	Symbol	bdrv_truncate		6849704						
+ANR	6850267	Symbol	header . crypt_method		6849704						
+ANR	6850268	Symbol	EINVAL		6849704						
+ANR	6850269	Symbol	cluster_size		6849704						
+ANR	6850270	Symbol	BDRV_SECTOR_SIZE		6849704						
+ANR	6850271	Symbol	BDRV_O_RDWR		6849704						
+ANR	6850272	Symbol	BDRV_O_NO_FLUSH		6849704						

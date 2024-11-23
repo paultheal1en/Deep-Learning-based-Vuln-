@@ -1,0 +1,328 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1582085	File	/home/p4ultr4n/workplace/ReVeal/raw_code/cryptodev_builtin_create_cipher_session_0.c								
+ANR	1582086	Function	cryptodev_builtin_create_cipher_session	1:0:0:2383							
+ANR	1582087	FunctionDef	"cryptodev_builtin_create_cipher_session (CryptoDevBackendBuiltin * builtin , CryptoDevBackendSymSessionInfo * sess_info , Error * * errp)"		1582086	0					
+ANR	1582088	CompoundStatement		9:0:207:2383	1582086	0					
+ANR	1582089	IdentifierDeclStatement	int algo ;	11:4:214:222	1582086	0	True				
+ANR	1582090	IdentifierDecl	algo		1582086	0					
+ANR	1582091	IdentifierDeclType	int		1582086	0					
+ANR	1582092	Identifier	algo		1582086	1					
+ANR	1582093	IdentifierDeclStatement	int mode ;	13:4:229:237	1582086	1	True				
+ANR	1582094	IdentifierDecl	mode		1582086	0					
+ANR	1582095	IdentifierDeclType	int		1582086	0					
+ANR	1582096	Identifier	mode		1582086	1					
+ANR	1582097	IdentifierDeclStatement	QCryptoCipher * cipher ;	15:4:244:265	1582086	2	True				
+ANR	1582098	IdentifierDecl	* cipher		1582086	0					
+ANR	1582099	IdentifierDeclType	QCryptoCipher *		1582086	0					
+ANR	1582100	Identifier	cipher		1582086	1					
+ANR	1582101	IdentifierDeclStatement	int index ;	17:4:272:281	1582086	3	True				
+ANR	1582102	IdentifierDecl	index		1582086	0					
+ANR	1582103	IdentifierDeclType	int		1582086	0					
+ANR	1582104	Identifier	index		1582086	1					
+ANR	1582105	IdentifierDeclStatement	CryptoDevBackendBuiltinSession * sess ;	19:4:288:324	1582086	4	True				
+ANR	1582106	IdentifierDecl	* sess		1582086	0					
+ANR	1582107	IdentifierDeclType	CryptoDevBackendBuiltinSession *		1582086	0					
+ANR	1582108	Identifier	sess		1582086	1					
+ANR	1582109	IfStatement	if ( sess_info -> op_type != VIRTIO_CRYPTO_SYM_OP_CIPHER )		1582086	5					
+ANR	1582110	Condition	sess_info -> op_type != VIRTIO_CRYPTO_SYM_OP_CIPHER	23:8:337:385	1582086	0	True				
+ANR	1582111	EqualityExpression	sess_info -> op_type != VIRTIO_CRYPTO_SYM_OP_CIPHER		1582086	0		!=			
+ANR	1582112	PtrMemberAccess	sess_info -> op_type		1582086	0					
+ANR	1582113	Identifier	sess_info		1582086	0					
+ANR	1582114	Identifier	op_type		1582086	1					
+ANR	1582115	Identifier	VIRTIO_CRYPTO_SYM_OP_CIPHER		1582086	1					
+ANR	1582116	CompoundStatement		15:59:180:180	1582086	1					
+ANR	1582117	ExpressionStatement	"error_setg ( errp , ""Unsupported optype :%u"" , sess_info -> op_type )"	25:8:399:461	1582086	0	True				
+ANR	1582118	CallExpression	"error_setg ( errp , ""Unsupported optype :%u"" , sess_info -> op_type )"		1582086	0					
+ANR	1582119	Callee	error_setg		1582086	0					
+ANR	1582120	Identifier	error_setg		1582086	0					
+ANR	1582121	ArgumentList	errp		1582086	1					
+ANR	1582122	Argument	errp		1582086	0					
+ANR	1582123	Identifier	errp		1582086	0					
+ANR	1582124	Argument	"""Unsupported optype :%u"""		1582086	1					
+ANR	1582125	PrimaryExpression	"""Unsupported optype :%u"""		1582086	0					
+ANR	1582126	Argument	sess_info -> op_type		1582086	2					
+ANR	1582127	PtrMemberAccess	sess_info -> op_type		1582086	0					
+ANR	1582128	Identifier	sess_info		1582086	0					
+ANR	1582129	Identifier	op_type		1582086	1					
+ANR	1582130	ReturnStatement	return - 1 ;	27:8:472:481	1582086	1	True				
+ANR	1582131	UnaryOperationExpression	- 1		1582086	0					
+ANR	1582132	UnaryOperator	-		1582086	0					
+ANR	1582133	PrimaryExpression	1		1582086	1					
+ANR	1582134	ExpressionStatement	index = cryptodev_builtin_get_unused_session_index ( builtin )	33:4:497:556	1582086	6	True				
+ANR	1582135	AssignmentExpression	index = cryptodev_builtin_get_unused_session_index ( builtin )		1582086	0		=			
+ANR	1582136	Identifier	index		1582086	0					
+ANR	1582137	CallExpression	cryptodev_builtin_get_unused_session_index ( builtin )		1582086	1					
+ANR	1582138	Callee	cryptodev_builtin_get_unused_session_index		1582086	0					
+ANR	1582139	Identifier	cryptodev_builtin_get_unused_session_index		1582086	0					
+ANR	1582140	ArgumentList	builtin		1582086	1					
+ANR	1582141	Argument	builtin		1582086	0					
+ANR	1582142	Identifier	builtin		1582086	0					
+ANR	1582143	IfStatement	if ( index < 0 )		1582086	7					
+ANR	1582144	Condition	index < 0	35:8:567:575	1582086	0	True				
+ANR	1582145	RelationalExpression	index < 0		1582086	0		<			
+ANR	1582146	Identifier	index		1582086	0					
+ANR	1582147	PrimaryExpression	0		1582086	1					
+ANR	1582148	CompoundStatement		27:19:370:370	1582086	1					
+ANR	1582149	ExpressionStatement	"error_setg ( errp , ""Total number of sessions created exceeds %u"" , MAX_NUM_SESSIONS )"	37:8:589:689	1582086	0	True				
+ANR	1582150	CallExpression	"error_setg ( errp , ""Total number of sessions created exceeds %u"" , MAX_NUM_SESSIONS )"		1582086	0					
+ANR	1582151	Callee	error_setg		1582086	0					
+ANR	1582152	Identifier	error_setg		1582086	0					
+ANR	1582153	ArgumentList	errp		1582086	1					
+ANR	1582154	Argument	errp		1582086	0					
+ANR	1582155	Identifier	errp		1582086	0					
+ANR	1582156	Argument	"""Total number of sessions created exceeds %u"""		1582086	1					
+ANR	1582157	PrimaryExpression	"""Total number of sessions created exceeds %u"""		1582086	0					
+ANR	1582158	Argument	MAX_NUM_SESSIONS		1582086	2					
+ANR	1582159	Identifier	MAX_NUM_SESSIONS		1582086	0					
+ANR	1582160	ReturnStatement	return - 1 ;	41:8:700:709	1582086	1	True				
+ANR	1582161	UnaryOperationExpression	- 1		1582086	0					
+ANR	1582162	UnaryOperator	-		1582086	0					
+ANR	1582163	PrimaryExpression	1		1582086	1					
+ANR	1582164	SwitchStatement	switch ( sess_info -> cipher_alg )		1582086	8					
+ANR	1582165	Condition	sess_info -> cipher_alg	47:12:733:753	1582086	0	True				
+ANR	1582166	PtrMemberAccess	sess_info -> cipher_alg		1582086	0					
+ANR	1582167	Identifier	sess_info		1582086	0					
+ANR	1582168	Identifier	cipher_alg		1582086	1					
+ANR	1582169	CompoundStatement		39:35:548:548	1582086	1					
+ANR	1582170	Label	case VIRTIO_CRYPTO_CIPHER_AES_ECB :	49:4:763:796	1582086	0	True				
+ANR	1582171	Identifier	VIRTIO_CRYPTO_CIPHER_AES_ECB		1582086	0					
+ANR	1582172	ExpressionStatement	"algo = cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"	51:8:807:929	1582086	1	True				
+ANR	1582173	AssignmentExpression	"algo = cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"		1582086	0		=			
+ANR	1582174	Identifier	algo		1582086	0					
+ANR	1582175	CallExpression	"cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"		1582086	1					
+ANR	1582176	Callee	cryptodev_builtin_get_aes_algo		1582086	0					
+ANR	1582177	Identifier	cryptodev_builtin_get_aes_algo		1582086	0					
+ANR	1582178	ArgumentList	sess_info -> key_len		1582086	1					
+ANR	1582179	Argument	sess_info -> key_len		1582086	0					
+ANR	1582180	PtrMemberAccess	sess_info -> key_len		1582086	0					
+ANR	1582181	Identifier	sess_info		1582086	0					
+ANR	1582182	Identifier	key_len		1582086	1					
+ANR	1582183	Argument	errp		1582086	1					
+ANR	1582184	Identifier	errp		1582086	0					
+ANR	1582185	IfStatement	if ( algo < 0 )		1582086	2					
+ANR	1582186	Condition	algo < 0	55:12:944:951	1582086	0	True				
+ANR	1582187	RelationalExpression	algo < 0		1582086	0		<			
+ANR	1582188	Identifier	algo		1582086	0					
+ANR	1582189	PrimaryExpression	0		1582086	1					
+ANR	1582190	CompoundStatement		47:23:747:747	1582086	1					
+ANR	1582191	ReturnStatement	return - 1 ;	57:12:970:979	1582086	0	True				
+ANR	1582192	UnaryOperationExpression	- 1		1582086	0					
+ANR	1582193	UnaryOperator	-		1582086	0					
+ANR	1582194	PrimaryExpression	1		1582086	1					
+ANR	1582195	ExpressionStatement	mode = QCRYPTO_CIPHER_MODE_ECB	61:8:1001:1031	1582086	3	True				
+ANR	1582196	AssignmentExpression	mode = QCRYPTO_CIPHER_MODE_ECB		1582086	0		=			
+ANR	1582197	Identifier	mode		1582086	0					
+ANR	1582198	Identifier	QCRYPTO_CIPHER_MODE_ECB		1582086	1					
+ANR	1582199	BreakStatement	break ;	63:8:1042:1047	1582086	4	True				
+ANR	1582200	Label	case VIRTIO_CRYPTO_CIPHER_AES_CBC :	65:4:1054:1087	1582086	5	True				
+ANR	1582201	Identifier	VIRTIO_CRYPTO_CIPHER_AES_CBC		1582086	0					
+ANR	1582202	ExpressionStatement	"algo = cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"	67:8:1098:1220	1582086	6	True				
+ANR	1582203	AssignmentExpression	"algo = cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"		1582086	0		=			
+ANR	1582204	Identifier	algo		1582086	0					
+ANR	1582205	CallExpression	"cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"		1582086	1					
+ANR	1582206	Callee	cryptodev_builtin_get_aes_algo		1582086	0					
+ANR	1582207	Identifier	cryptodev_builtin_get_aes_algo		1582086	0					
+ANR	1582208	ArgumentList	sess_info -> key_len		1582086	1					
+ANR	1582209	Argument	sess_info -> key_len		1582086	0					
+ANR	1582210	PtrMemberAccess	sess_info -> key_len		1582086	0					
+ANR	1582211	Identifier	sess_info		1582086	0					
+ANR	1582212	Identifier	key_len		1582086	1					
+ANR	1582213	Argument	errp		1582086	1					
+ANR	1582214	Identifier	errp		1582086	0					
+ANR	1582215	IfStatement	if ( algo < 0 )		1582086	7					
+ANR	1582216	Condition	algo < 0	71:12:1235:1242	1582086	0	True				
+ANR	1582217	RelationalExpression	algo < 0		1582086	0		<			
+ANR	1582218	Identifier	algo		1582086	0					
+ANR	1582219	PrimaryExpression	0		1582086	1					
+ANR	1582220	CompoundStatement		63:23:1038:1038	1582086	1					
+ANR	1582221	ReturnStatement	return - 1 ;	73:12:1261:1270	1582086	0	True				
+ANR	1582222	UnaryOperationExpression	- 1		1582086	0					
+ANR	1582223	UnaryOperator	-		1582086	0					
+ANR	1582224	PrimaryExpression	1		1582086	1					
+ANR	1582225	ExpressionStatement	mode = QCRYPTO_CIPHER_MODE_CBC	77:8:1292:1322	1582086	8	True				
+ANR	1582226	AssignmentExpression	mode = QCRYPTO_CIPHER_MODE_CBC		1582086	0		=			
+ANR	1582227	Identifier	mode		1582086	0					
+ANR	1582228	Identifier	QCRYPTO_CIPHER_MODE_CBC		1582086	1					
+ANR	1582229	BreakStatement	break ;	79:8:1333:1338	1582086	9	True				
+ANR	1582230	Label	case VIRTIO_CRYPTO_CIPHER_AES_CTR :	81:4:1345:1378	1582086	10	True				
+ANR	1582231	Identifier	VIRTIO_CRYPTO_CIPHER_AES_CTR		1582086	0					
+ANR	1582232	ExpressionStatement	"algo = cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"	83:8:1389:1511	1582086	11	True				
+ANR	1582233	AssignmentExpression	"algo = cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"		1582086	0		=			
+ANR	1582234	Identifier	algo		1582086	0					
+ANR	1582235	CallExpression	"cryptodev_builtin_get_aes_algo ( sess_info -> key_len , errp )"		1582086	1					
+ANR	1582236	Callee	cryptodev_builtin_get_aes_algo		1582086	0					
+ANR	1582237	Identifier	cryptodev_builtin_get_aes_algo		1582086	0					
+ANR	1582238	ArgumentList	sess_info -> key_len		1582086	1					
+ANR	1582239	Argument	sess_info -> key_len		1582086	0					
+ANR	1582240	PtrMemberAccess	sess_info -> key_len		1582086	0					
+ANR	1582241	Identifier	sess_info		1582086	0					
+ANR	1582242	Identifier	key_len		1582086	1					
+ANR	1582243	Argument	errp		1582086	1					
+ANR	1582244	Identifier	errp		1582086	0					
+ANR	1582245	IfStatement	if ( algo < 0 )		1582086	12					
+ANR	1582246	Condition	algo < 0	87:12:1526:1533	1582086	0	True				
+ANR	1582247	RelationalExpression	algo < 0		1582086	0		<			
+ANR	1582248	Identifier	algo		1582086	0					
+ANR	1582249	PrimaryExpression	0		1582086	1					
+ANR	1582250	CompoundStatement		79:23:1329:1329	1582086	1					
+ANR	1582251	ReturnStatement	return - 1 ;	89:12:1552:1561	1582086	0	True				
+ANR	1582252	UnaryOperationExpression	- 1		1582086	0					
+ANR	1582253	UnaryOperator	-		1582086	0					
+ANR	1582254	PrimaryExpression	1		1582086	1					
+ANR	1582255	ExpressionStatement	mode = QCRYPTO_CIPHER_MODE_CTR	93:8:1583:1613	1582086	13	True				
+ANR	1582256	AssignmentExpression	mode = QCRYPTO_CIPHER_MODE_CTR		1582086	0		=			
+ANR	1582257	Identifier	mode		1582086	0					
+ANR	1582258	Identifier	QCRYPTO_CIPHER_MODE_CTR		1582086	1					
+ANR	1582259	BreakStatement	break ;	95:8:1624:1629	1582086	14	True				
+ANR	1582260	Label	case VIRTIO_CRYPTO_CIPHER_DES_ECB :	97:4:1636:1669	1582086	15	True				
+ANR	1582261	Identifier	VIRTIO_CRYPTO_CIPHER_DES_ECB		1582086	0					
+ANR	1582262	ExpressionStatement	algo = QCRYPTO_CIPHER_ALG_DES_RFB	99:8:1680:1713	1582086	16	True				
+ANR	1582263	AssignmentExpression	algo = QCRYPTO_CIPHER_ALG_DES_RFB		1582086	0		=			
+ANR	1582264	Identifier	algo		1582086	0					
+ANR	1582265	Identifier	QCRYPTO_CIPHER_ALG_DES_RFB		1582086	1					
+ANR	1582266	ExpressionStatement	mode = QCRYPTO_CIPHER_MODE_ECB	101:8:1724:1754	1582086	17	True				
+ANR	1582267	AssignmentExpression	mode = QCRYPTO_CIPHER_MODE_ECB		1582086	0		=			
+ANR	1582268	Identifier	mode		1582086	0					
+ANR	1582269	Identifier	QCRYPTO_CIPHER_MODE_ECB		1582086	1					
+ANR	1582270	BreakStatement	break ;	103:8:1765:1770	1582086	18	True				
+ANR	1582271	Label	default :	105:4:1777:1784	1582086	19	True				
+ANR	1582272	Identifier	default		1582086	0					
+ANR	1582273	ExpressionStatement	"error_setg ( errp , ""Unsupported cipher alg :%u"" , sess_info -> cipher_alg )"	107:8:1795:1884	1582086	20	True				
+ANR	1582274	CallExpression	"error_setg ( errp , ""Unsupported cipher alg :%u"" , sess_info -> cipher_alg )"		1582086	0					
+ANR	1582275	Callee	error_setg		1582086	0					
+ANR	1582276	Identifier	error_setg		1582086	0					
+ANR	1582277	ArgumentList	errp		1582086	1					
+ANR	1582278	Argument	errp		1582086	0					
+ANR	1582279	Identifier	errp		1582086	0					
+ANR	1582280	Argument	"""Unsupported cipher alg :%u"""		1582086	1					
+ANR	1582281	PrimaryExpression	"""Unsupported cipher alg :%u"""		1582086	0					
+ANR	1582282	Argument	sess_info -> cipher_alg		1582086	2					
+ANR	1582283	PtrMemberAccess	sess_info -> cipher_alg		1582086	0					
+ANR	1582284	Identifier	sess_info		1582086	0					
+ANR	1582285	Identifier	cipher_alg		1582086	1					
+ANR	1582286	ReturnStatement	return - 1 ;	111:8:1895:1904	1582086	21	True				
+ANR	1582287	UnaryOperationExpression	- 1		1582086	0					
+ANR	1582288	UnaryOperator	-		1582086	0					
+ANR	1582289	PrimaryExpression	1		1582086	1					
+ANR	1582290	ExpressionStatement	"cipher = qcrypto_cipher_new ( algo , mode , sess_info -> cipher_key , sess_info -> key_len , errp )"	117:4:1920:2104	1582086	9	True				
+ANR	1582291	AssignmentExpression	"cipher = qcrypto_cipher_new ( algo , mode , sess_info -> cipher_key , sess_info -> key_len , errp )"		1582086	0		=			
+ANR	1582292	Identifier	cipher		1582086	0					
+ANR	1582293	CallExpression	"qcrypto_cipher_new ( algo , mode , sess_info -> cipher_key , sess_info -> key_len , errp )"		1582086	1					
+ANR	1582294	Callee	qcrypto_cipher_new		1582086	0					
+ANR	1582295	Identifier	qcrypto_cipher_new		1582086	0					
+ANR	1582296	ArgumentList	algo		1582086	1					
+ANR	1582297	Argument	algo		1582086	0					
+ANR	1582298	Identifier	algo		1582086	0					
+ANR	1582299	Argument	mode		1582086	1					
+ANR	1582300	Identifier	mode		1582086	0					
+ANR	1582301	Argument	sess_info -> cipher_key		1582086	2					
+ANR	1582302	PtrMemberAccess	sess_info -> cipher_key		1582086	0					
+ANR	1582303	Identifier	sess_info		1582086	0					
+ANR	1582304	Identifier	cipher_key		1582086	1					
+ANR	1582305	Argument	sess_info -> key_len		1582086	3					
+ANR	1582306	PtrMemberAccess	sess_info -> key_len		1582086	0					
+ANR	1582307	Identifier	sess_info		1582086	0					
+ANR	1582308	Identifier	key_len		1582086	1					
+ANR	1582309	Argument	errp		1582086	4					
+ANR	1582310	Identifier	errp		1582086	0					
+ANR	1582311	IfStatement	if ( ! cipher )		1582086	10					
+ANR	1582312	Condition	! cipher	125:8:2115:2121	1582086	0	True				
+ANR	1582313	UnaryOperationExpression	! cipher		1582086	0					
+ANR	1582314	UnaryOperator	!		1582086	0					
+ANR	1582315	Identifier	cipher		1582086	1					
+ANR	1582316	CompoundStatement		117:17:1916:1916	1582086	1					
+ANR	1582317	ReturnStatement	return - 1 ;	127:8:2135:2144	1582086	0	True				
+ANR	1582318	UnaryOperationExpression	- 1		1582086	0					
+ANR	1582319	UnaryOperator	-		1582086	0					
+ANR	1582320	PrimaryExpression	1		1582086	1					
+ANR	1582321	ExpressionStatement	"sess = g_new0 ( CryptoDevBackendBuiltinSession , 1 )"	133:4:2160:2208	1582086	11	True				
+ANR	1582322	AssignmentExpression	"sess = g_new0 ( CryptoDevBackendBuiltinSession , 1 )"		1582086	0		=			
+ANR	1582323	Identifier	sess		1582086	0					
+ANR	1582324	CallExpression	"g_new0 ( CryptoDevBackendBuiltinSession , 1 )"		1582086	1					
+ANR	1582325	Callee	g_new0		1582086	0					
+ANR	1582326	Identifier	g_new0		1582086	0					
+ANR	1582327	ArgumentList	CryptoDevBackendBuiltinSession		1582086	1					
+ANR	1582328	Argument	CryptoDevBackendBuiltinSession		1582086	0					
+ANR	1582329	Identifier	CryptoDevBackendBuiltinSession		1582086	0					
+ANR	1582330	Argument	1		1582086	1					
+ANR	1582331	PrimaryExpression	1		1582086	0					
+ANR	1582332	ExpressionStatement	sess -> cipher = cipher	135:4:2215:2236	1582086	12	True				
+ANR	1582333	AssignmentExpression	sess -> cipher = cipher		1582086	0		=			
+ANR	1582334	PtrMemberAccess	sess -> cipher		1582086	0					
+ANR	1582335	Identifier	sess		1582086	0					
+ANR	1582336	Identifier	cipher		1582086	1					
+ANR	1582337	Identifier	cipher		1582086	1					
+ANR	1582338	ExpressionStatement	sess -> direction = sess_info -> direction	137:4:2243:2281	1582086	13	True				
+ANR	1582339	AssignmentExpression	sess -> direction = sess_info -> direction		1582086	0		=			
+ANR	1582340	PtrMemberAccess	sess -> direction		1582086	0					
+ANR	1582341	Identifier	sess		1582086	0					
+ANR	1582342	Identifier	direction		1582086	1					
+ANR	1582343	PtrMemberAccess	sess_info -> direction		1582086	1					
+ANR	1582344	Identifier	sess_info		1582086	0					
+ANR	1582345	Identifier	direction		1582086	1					
+ANR	1582346	ExpressionStatement	sess -> type = sess_info -> op_type	139:4:2288:2319	1582086	14	True				
+ANR	1582347	AssignmentExpression	sess -> type = sess_info -> op_type		1582086	0		=			
+ANR	1582348	PtrMemberAccess	sess -> type		1582086	0					
+ANR	1582349	Identifier	sess		1582086	0					
+ANR	1582350	Identifier	type		1582086	1					
+ANR	1582351	PtrMemberAccess	sess_info -> op_type		1582086	1					
+ANR	1582352	Identifier	sess_info		1582086	0					
+ANR	1582353	Identifier	op_type		1582086	1					
+ANR	1582354	ExpressionStatement	builtin -> sessions [ index ] = sess	143:4:2328:2359	1582086	15	True				
+ANR	1582355	AssignmentExpression	builtin -> sessions [ index ] = sess		1582086	0		=			
+ANR	1582356	ArrayIndexing	builtin -> sessions [ index ]		1582086	0					
+ANR	1582357	PtrMemberAccess	builtin -> sessions		1582086	0					
+ANR	1582358	Identifier	builtin		1582086	0					
+ANR	1582359	Identifier	sessions		1582086	1					
+ANR	1582360	Identifier	index		1582086	1					
+ANR	1582361	Identifier	sess		1582086	1					
+ANR	1582362	ReturnStatement	return index ;	147:4:2368:2380	1582086	16	True				
+ANR	1582363	Identifier	index		1582086	0					
+ANR	1582364	ReturnType	static int		1582086	1					
+ANR	1582365	Identifier	cryptodev_builtin_create_cipher_session		1582086	2					
+ANR	1582366	ParameterList	"CryptoDevBackendBuiltin * builtin , CryptoDevBackendSymSessionInfo * sess_info , Error * * errp"		1582086	3					
+ANR	1582367	Parameter	CryptoDevBackendBuiltin * builtin	3:20:73:104	1582086	0	True				
+ANR	1582368	ParameterType	CryptoDevBackendBuiltin *		1582086	0					
+ANR	1582369	Identifier	builtin		1582086	1					
+ANR	1582370	Parameter	CryptoDevBackendSymSessionInfo * sess_info	5:20:128:168	1582086	1	True				
+ANR	1582371	ParameterType	CryptoDevBackendSymSessionInfo *		1582086	0					
+ANR	1582372	Identifier	sess_info		1582086	1					
+ANR	1582373	Parameter	Error * * errp	7:20:192:203	1582086	2	True				
+ANR	1582374	ParameterType	Error * *		1582086	0					
+ANR	1582375	Identifier	errp		1582086	1					
+ANR	1582376	CFGEntryNode	ENTRY		1582086		True				
+ANR	1582377	CFGExitNode	EXIT		1582086		True				
+ANR	1582378	Symbol	sess_info -> cipher_alg		1582086						
+ANR	1582379	Symbol	errp		1582086						
+ANR	1582380	Symbol	sess_info -> cipher_key		1582086						
+ANR	1582381	Symbol	qcrypto_cipher_new		1582086						
+ANR	1582382	Symbol	QCRYPTO_CIPHER_MODE_ECB		1582086						
+ANR	1582383	Symbol	sess		1582086						
+ANR	1582384	Symbol	* index		1582086						
+ANR	1582385	Symbol	sess_info -> op_type		1582086						
+ANR	1582386	Symbol	* sess		1582086						
+ANR	1582387	Symbol	* builtin		1582086						
+ANR	1582388	Symbol	mode		1582086						
+ANR	1582389	Symbol	MAX_NUM_SESSIONS		1582086						
+ANR	1582390	Symbol	g_new0		1582086						
+ANR	1582391	Symbol	VIRTIO_CRYPTO_SYM_OP_CIPHER		1582086						
+ANR	1582392	Symbol	cipher		1582086						
+ANR	1582393	Symbol	* * builtin		1582086						
+ANR	1582394	Symbol	sess -> cipher		1582086						
+ANR	1582395	Symbol	builtin -> sessions		1582086						
+ANR	1582396	Symbol	QCRYPTO_CIPHER_MODE_CTR		1582086						
+ANR	1582397	Symbol	QCRYPTO_CIPHER_MODE_CBC		1582086						
+ANR	1582398	Symbol	builtin		1582086						
+ANR	1582399	Symbol	sess_info -> key_len		1582086						
+ANR	1582400	Symbol	sess -> direction		1582086						
+ANR	1582401	Symbol	* builtin -> sessions		1582086						
+ANR	1582402	Symbol	index		1582086						
+ANR	1582403	Symbol	cryptodev_builtin_get_unused_session_index		1582086						
+ANR	1582404	Symbol	sess_info		1582086						
+ANR	1582405	Symbol	cryptodev_builtin_get_aes_algo		1582086						
+ANR	1582406	Symbol	CryptoDevBackendBuiltinSession		1582086						
+ANR	1582407	Symbol	QCRYPTO_CIPHER_ALG_DES_RFB		1582086						
+ANR	1582408	Symbol	* sess_info		1582086						
+ANR	1582409	Symbol	sess -> type		1582086						
+ANR	1582410	Symbol	sess_info -> direction		1582086						
+ANR	1582411	Symbol	algo		1582086						

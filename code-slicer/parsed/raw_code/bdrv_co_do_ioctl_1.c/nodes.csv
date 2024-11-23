@@ -1,0 +1,211 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	954802	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_co_do_ioctl_1.c								
+ANR	954803	Function	bdrv_co_do_ioctl	1:0:0:871							
+ANR	954804	FunctionDef	"bdrv_co_do_ioctl (BlockDriverState * bs , int req , void * buf)"		954803	0					
+ANR	954805	CompoundStatement		3:0:71:871	954803	0					
+ANR	954806	IdentifierDeclStatement	BlockDriver * drv = bs -> drv ;	5:4:78:104	954803	0	True				
+ANR	954807	IdentifierDecl	* drv = bs -> drv		954803	0					
+ANR	954808	IdentifierDeclType	BlockDriver *		954803	0					
+ANR	954809	Identifier	drv		954803	1					
+ANR	954810	AssignmentExpression	* drv = bs -> drv		954803	2		=			
+ANR	954811	Identifier	drv		954803	0					
+ANR	954812	PtrMemberAccess	bs -> drv		954803	1					
+ANR	954813	Identifier	bs		954803	0					
+ANR	954814	Identifier	drv		954803	1					
+ANR	954815	IdentifierDeclStatement	BdrvTrackedRequest tracked_req ;	7:4:111:141	954803	1	True				
+ANR	954816	IdentifierDecl	tracked_req		954803	0					
+ANR	954817	IdentifierDeclType	BdrvTrackedRequest		954803	0					
+ANR	954818	Identifier	tracked_req		954803	1					
+ANR	954819	Statement	CoroutineIOCompletion	9:4:148:168	954803	2	True				
+ANR	954820	Statement	co	9:26:170:171	954803	3	True				
+ANR	954821	Statement	=	9:29:173:173	954803	4	True				
+ANR	954822	CompoundStatement		7:31:103:103	954803	5					
+ANR	954823	Statement	.	11:8:186:186	954803	0	True				
+ANR	954824	Statement	coroutine	11:9:187:195	954803	1	True				
+ANR	954825	Statement	=	11:19:197:197	954803	2	True				
+ANR	954826	Statement	qemu_coroutine_self	11:21:199:217	954803	3	True				
+ANR	954827	Statement	(	11:40:218:218	954803	4	True				
+ANR	954828	Statement	)	11:41:219:219	954803	5	True				
+ANR	954829	Statement	","	11:42:220:220	954803	6	True				
+ANR	954830	ExpressionStatement		13:5:228:228	954803	6	True				
+ANR	954831	IdentifierDeclStatement	BlockAIOCB * acb ;	15:4:235:250	954803	7	True				
+ANR	954832	IdentifierDecl	* acb		954803	0					
+ANR	954833	IdentifierDeclType	BlockAIOCB *		954803	0					
+ANR	954834	Identifier	acb		954803	1					
+ANR	954835	ExpressionStatement	"tracked_request_begin ( & tracked_req , bs , 0 , 0 , BDRV_TRACKED_IOCTL )"	19:4:259:324	954803	8	True				
+ANR	954836	CallExpression	"tracked_request_begin ( & tracked_req , bs , 0 , 0 , BDRV_TRACKED_IOCTL )"		954803	0					
+ANR	954837	Callee	tracked_request_begin		954803	0					
+ANR	954838	Identifier	tracked_request_begin		954803	0					
+ANR	954839	ArgumentList	& tracked_req		954803	1					
+ANR	954840	Argument	& tracked_req		954803	0					
+ANR	954841	UnaryOperationExpression	& tracked_req		954803	0					
+ANR	954842	UnaryOperator	&		954803	0					
+ANR	954843	Identifier	tracked_req		954803	1					
+ANR	954844	Argument	bs		954803	1					
+ANR	954845	Identifier	bs		954803	0					
+ANR	954846	Argument	0		954803	2					
+ANR	954847	PrimaryExpression	0		954803	0					
+ANR	954848	Argument	0		954803	3					
+ANR	954849	PrimaryExpression	0		954803	0					
+ANR	954850	Argument	BDRV_TRACKED_IOCTL		954803	4					
+ANR	954851	Identifier	BDRV_TRACKED_IOCTL		954803	0					
+ANR	954852	IfStatement	if ( ! drv || ! drv -> bdrv_aio_ioctl )		954803	9					
+ANR	954853	Condition	! drv || ! drv -> bdrv_aio_ioctl	21:8:335:362	954803	0	True				
+ANR	954854	OrExpression	! drv || ! drv -> bdrv_aio_ioctl		954803	0		||			
+ANR	954855	UnaryOperationExpression	! drv		954803	0					
+ANR	954856	UnaryOperator	!		954803	0					
+ANR	954857	Identifier	drv		954803	1					
+ANR	954858	UnaryOperationExpression	! drv -> bdrv_aio_ioctl		954803	1					
+ANR	954859	UnaryOperator	!		954803	0					
+ANR	954860	PtrMemberAccess	drv -> bdrv_aio_ioctl		954803	1					
+ANR	954861	Identifier	drv		954803	0					
+ANR	954862	Identifier	bdrv_aio_ioctl		954803	1					
+ANR	954863	CompoundStatement		19:38:293:293	954803	1					
+ANR	954864	ExpressionStatement	co . ret = - ENOTSUP	23:8:376:393	954803	0	True				
+ANR	954865	AssignmentExpression	co . ret = - ENOTSUP		954803	0		=			
+ANR	954866	MemberAccess	co . ret		954803	0					
+ANR	954867	Identifier	co		954803	0					
+ANR	954868	Identifier	ret		954803	1					
+ANR	954869	UnaryOperationExpression	- ENOTSUP		954803	1					
+ANR	954870	UnaryOperator	-		954803	0					
+ANR	954871	Identifier	ENOTSUP		954803	1					
+ANR	954872	GotoStatement	goto out ;	25:8:404:412	954803	1	True				
+ANR	954873	Identifier	out		954803	0					
+ANR	954874	ExpressionStatement	"acb = drv -> bdrv_aio_ioctl ( bs , req , buf , bdrv_co_io_em_complete , & co )"	31:4:428:496	954803	10	True				
+ANR	954875	AssignmentExpression	"acb = drv -> bdrv_aio_ioctl ( bs , req , buf , bdrv_co_io_em_complete , & co )"		954803	0		=			
+ANR	954876	Identifier	acb		954803	0					
+ANR	954877	CallExpression	"drv -> bdrv_aio_ioctl ( bs , req , buf , bdrv_co_io_em_complete , & co )"		954803	1					
+ANR	954878	Callee	drv -> bdrv_aio_ioctl		954803	0					
+ANR	954879	PtrMemberAccess	drv -> bdrv_aio_ioctl		954803	0					
+ANR	954880	Identifier	drv		954803	0					
+ANR	954881	Identifier	bdrv_aio_ioctl		954803	1					
+ANR	954882	ArgumentList	bs		954803	1					
+ANR	954883	Argument	bs		954803	0					
+ANR	954884	Identifier	bs		954803	0					
+ANR	954885	Argument	req		954803	1					
+ANR	954886	Identifier	req		954803	0					
+ANR	954887	Argument	buf		954803	2					
+ANR	954888	Identifier	buf		954803	0					
+ANR	954889	Argument	bdrv_co_io_em_complete		954803	3					
+ANR	954890	Identifier	bdrv_co_io_em_complete		954803	0					
+ANR	954891	Argument	& co		954803	4					
+ANR	954892	UnaryOperationExpression	& co		954803	0					
+ANR	954893	UnaryOperator	&		954803	0					
+ANR	954894	Identifier	co		954803	1					
+ANR	954895	IfStatement	if ( ! acb )		954803	11					
+ANR	954896	Condition	! acb	33:8:507:510	954803	0	True				
+ANR	954897	UnaryOperationExpression	! acb		954803	0					
+ANR	954898	UnaryOperator	!		954803	0					
+ANR	954899	Identifier	acb		954803	1					
+ANR	954900	CompoundStatement		33:8:452:517	954803	1					
+ANR	954901	IdentifierDeclStatement	"BdrvIoctlCompletionData * data = g_new ( BdrvIoctlCompletionData , 1 ) ;"	35:8:524:589	954803	0	True				
+ANR	954902	IdentifierDecl	"* data = g_new ( BdrvIoctlCompletionData , 1 )"		954803	0					
+ANR	954903	IdentifierDeclType	BdrvIoctlCompletionData *		954803	0					
+ANR	954904	Identifier	data		954803	1					
+ANR	954905	AssignmentExpression	"* data = g_new ( BdrvIoctlCompletionData , 1 )"		954803	2		=			
+ANR	954906	Identifier	data		954803	0					
+ANR	954907	CallExpression	"g_new ( BdrvIoctlCompletionData , 1 )"		954803	1					
+ANR	954908	Callee	g_new		954803	0					
+ANR	954909	Identifier	g_new		954803	0					
+ANR	954910	ArgumentList	BdrvIoctlCompletionData		954803	1					
+ANR	954911	Argument	BdrvIoctlCompletionData		954803	0					
+ANR	954912	Identifier	BdrvIoctlCompletionData		954803	0					
+ANR	954913	Argument	1		954803	1					
+ANR	954914	PrimaryExpression	1		954803	0					
+ANR	954915	ExpressionStatement	"data -> bh = aio_bh_new ( bdrv_get_aio_context ( bs ) , bdrv_ioctl_bh_cb , data )"	37:8:600:704	954803	1	True				
+ANR	954916	AssignmentExpression	"data -> bh = aio_bh_new ( bdrv_get_aio_context ( bs ) , bdrv_ioctl_bh_cb , data )"		954803	0		=			
+ANR	954917	PtrMemberAccess	data -> bh		954803	0					
+ANR	954918	Identifier	data		954803	0					
+ANR	954919	Identifier	bh		954803	1					
+ANR	954920	CallExpression	"aio_bh_new ( bdrv_get_aio_context ( bs ) , bdrv_ioctl_bh_cb , data )"		954803	1					
+ANR	954921	Callee	aio_bh_new		954803	0					
+ANR	954922	Identifier	aio_bh_new		954803	0					
+ANR	954923	ArgumentList	bdrv_get_aio_context ( bs )		954803	1					
+ANR	954924	Argument	bdrv_get_aio_context ( bs )		954803	0					
+ANR	954925	CallExpression	bdrv_get_aio_context ( bs )		954803	0					
+ANR	954926	Callee	bdrv_get_aio_context		954803	0					
+ANR	954927	Identifier	bdrv_get_aio_context		954803	0					
+ANR	954928	ArgumentList	bs		954803	1					
+ANR	954929	Argument	bs		954803	0					
+ANR	954930	Identifier	bs		954803	0					
+ANR	954931	Argument	bdrv_ioctl_bh_cb		954803	1					
+ANR	954932	Identifier	bdrv_ioctl_bh_cb		954803	0					
+ANR	954933	Argument	data		954803	2					
+ANR	954934	Identifier	data		954803	0					
+ANR	954935	ExpressionStatement	data -> co = & co	41:8:715:729	954803	2	True				
+ANR	954936	AssignmentExpression	data -> co = & co		954803	0		=			
+ANR	954937	PtrMemberAccess	data -> co		954803	0					
+ANR	954938	Identifier	data		954803	0					
+ANR	954939	Identifier	co		954803	1					
+ANR	954940	UnaryOperationExpression	& co		954803	1					
+ANR	954941	UnaryOperator	&		954803	0					
+ANR	954942	Identifier	co		954803	1					
+ANR	954943	ExpressionStatement	qemu_bh_schedule ( data -> bh )	43:8:740:766	954803	3	True				
+ANR	954944	CallExpression	qemu_bh_schedule ( data -> bh )		954803	0					
+ANR	954945	Callee	qemu_bh_schedule		954803	0					
+ANR	954946	Identifier	qemu_bh_schedule		954803	0					
+ANR	954947	ArgumentList	data -> bh		954803	1					
+ANR	954948	Argument	data -> bh		954803	0					
+ANR	954949	PtrMemberAccess	data -> bh		954803	0					
+ANR	954950	Identifier	data		954803	0					
+ANR	954951	Identifier	bh		954803	1					
+ANR	954952	ExpressionStatement	qemu_coroutine_yield ( )	47:4:780:802	954803	12	True				
+ANR	954953	CallExpression	qemu_coroutine_yield ( )		954803	0					
+ANR	954954	Callee	qemu_coroutine_yield		954803	0					
+ANR	954955	Identifier	qemu_coroutine_yield		954803	0					
+ANR	954956	ArgumentList			954803	1					
+ANR	954957	Label	out :	49:0:805:808	954803	13	True				
+ANR	954958	Identifier	out		954803	0					
+ANR	954959	ExpressionStatement	tracked_request_end ( & tracked_req )	51:4:815:848	954803	14	True				
+ANR	954960	CallExpression	tracked_request_end ( & tracked_req )		954803	0					
+ANR	954961	Callee	tracked_request_end		954803	0					
+ANR	954962	Identifier	tracked_request_end		954803	0					
+ANR	954963	ArgumentList	& tracked_req		954803	1					
+ANR	954964	Argument	& tracked_req		954803	0					
+ANR	954965	UnaryOperationExpression	& tracked_req		954803	0					
+ANR	954966	UnaryOperator	&		954803	0					
+ANR	954967	Identifier	tracked_req		954803	1					
+ANR	954968	ReturnStatement	return co . ret ;	53:4:855:868	954803	15	True				
+ANR	954969	MemberAccess	co . ret		954803	0					
+ANR	954970	Identifier	co		954803	0					
+ANR	954971	Identifier	ret		954803	1					
+ANR	954972	ReturnType	static int		954803	1					
+ANR	954973	Identifier	bdrv_co_do_ioctl		954803	2					
+ANR	954974	ParameterList	"BlockDriverState * bs , int req , void * buf"		954803	3					
+ANR	954975	Parameter	BlockDriverState * bs	1:28:28:47	954803	0	True				
+ANR	954976	ParameterType	BlockDriverState *		954803	0					
+ANR	954977	Identifier	bs		954803	1					
+ANR	954978	Parameter	int req	1:50:50:56	954803	1	True				
+ANR	954979	ParameterType	int		954803	0					
+ANR	954980	Identifier	req		954803	1					
+ANR	954981	Parameter	void * buf	1:59:59:67	954803	2	True				
+ANR	954982	ParameterType	void *		954803	0					
+ANR	954983	Identifier	buf		954803	1					
+ANR	954984	CFGEntryNode	ENTRY		954803		True				
+ANR	954985	CFGExitNode	EXIT		954803		True				
+ANR	954986	Symbol	acb		954803						
+ANR	954987	Symbol	data		954803						
+ANR	954988	Symbol	aio_bh_new		954803						
+ANR	954989	Symbol	ENOTSUP		954803						
+ANR	954990	Symbol	data -> bh		954803						
+ANR	954991	Symbol	bs -> drv		954803						
+ANR	954992	Symbol	& tracked_req		954803						
+ANR	954993	Symbol	g_new		954803						
+ANR	954994	Symbol	bs		954803						
+ANR	954995	Symbol	data -> co		954803						
+ANR	954996	Symbol	tracked_req		954803						
+ANR	954997	Symbol	* bs		954803						
+ANR	954998	Symbol	drv -> bdrv_aio_ioctl		954803						
+ANR	954999	Symbol	req		954803						
+ANR	955000	Symbol	co . ret		954803						
+ANR	955001	Symbol	bdrv_get_aio_context		954803						
+ANR	955002	Symbol	drv		954803						
+ANR	955003	Symbol	co		954803						
+ANR	955004	Symbol	bdrv_ioctl_bh_cb		954803						
+ANR	955005	Symbol	* drv		954803						
+ANR	955006	Symbol	BdrvIoctlCompletionData		954803						
+ANR	955007	Symbol	buf		954803						
+ANR	955008	Symbol	BDRV_TRACKED_IOCTL		954803						
+ANR	955009	Symbol	& co		954803						
+ANR	955010	Symbol	bdrv_co_io_em_complete		954803						
+ANR	955011	Symbol	* data		954803						

@@ -1,0 +1,122 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7726881	File	/home/p4ultr4n/workplace/ReVeal/raw_code/seek_to_sector_1.c								
+ANR	7726882	Function	seek_to_sector	1:0:0:645							
+ANR	7726883	FunctionDef	"seek_to_sector (BlockDriverState * bs , int64_t sector_num)"		7726882	0					
+ANR	7726884	CompoundStatement		3:0:76:645	7726882	0					
+ANR	7726885	IdentifierDeclStatement	BDRVParallelsState * s = bs -> opaque ;	5:4:83:117	7726882	0	True				
+ANR	7726886	IdentifierDecl	* s = bs -> opaque		7726882	0					
+ANR	7726887	IdentifierDeclType	BDRVParallelsState *		7726882	0					
+ANR	7726888	Identifier	s		7726882	1					
+ANR	7726889	AssignmentExpression	* s = bs -> opaque		7726882	2		=			
+ANR	7726890	Identifier	s		7726882	0					
+ANR	7726891	PtrMemberAccess	bs -> opaque		7726882	1					
+ANR	7726892	Identifier	bs		7726882	0					
+ANR	7726893	Identifier	opaque		7726882	1					
+ANR	7726894	IdentifierDeclStatement	"uint32_t index , offset , position ;"	7:4:124:156	7726882	1	True				
+ANR	7726895	IdentifierDecl	index		7726882	0					
+ANR	7726896	IdentifierDeclType	uint32_t		7726882	0					
+ANR	7726897	Identifier	index		7726882	1					
+ANR	7726898	IdentifierDecl	offset		7726882	1					
+ANR	7726899	IdentifierDeclType	uint32_t		7726882	0					
+ANR	7726900	Identifier	offset		7726882	1					
+ANR	7726901	IdentifierDecl	position		7726882	2					
+ANR	7726902	IdentifierDeclType	uint32_t		7726882	0					
+ANR	7726903	Identifier	position		7726882	1					
+ANR	7726904	ExpressionStatement	index = sector_num / s -> tracks	11:4:165:195	7726882	2	True				
+ANR	7726905	AssignmentExpression	index = sector_num / s -> tracks		7726882	0		=			
+ANR	7726906	Identifier	index		7726882	0					
+ANR	7726907	MultiplicativeExpression	sector_num / s -> tracks		7726882	1		/			
+ANR	7726908	Identifier	sector_num		7726882	0					
+ANR	7726909	PtrMemberAccess	s -> tracks		7726882	1					
+ANR	7726910	Identifier	s		7726882	0					
+ANR	7726911	Identifier	tracks		7726882	1					
+ANR	7726912	ExpressionStatement	offset = sector_num % s -> tracks	13:4:202:233	7726882	3	True				
+ANR	7726913	AssignmentExpression	offset = sector_num % s -> tracks		7726882	0		=			
+ANR	7726914	Identifier	offset		7726882	0					
+ANR	7726915	MultiplicativeExpression	sector_num % s -> tracks		7726882	1		%			
+ANR	7726916	Identifier	sector_num		7726882	0					
+ANR	7726917	PtrMemberAccess	s -> tracks		7726882	1					
+ANR	7726918	Identifier	s		7726882	0					
+ANR	7726919	Identifier	tracks		7726882	1					
+ANR	7726920	IfStatement	if ( ( index > s -> catalog_size ) || ( s -> catalog_bitmap [ index ] == 0 ) )		7726882	4					
+ANR	7726921	Condition	( index > s -> catalog_size ) || ( s -> catalog_bitmap [ index ] == 0 )	19:8:268:327	7726882	0	True				
+ANR	7726922	OrExpression	( index > s -> catalog_size ) || ( s -> catalog_bitmap [ index ] == 0 )		7726882	0		||			
+ANR	7726923	RelationalExpression	index > s -> catalog_size		7726882	0		>			
+ANR	7726924	Identifier	index		7726882	0					
+ANR	7726925	PtrMemberAccess	s -> catalog_size		7726882	1					
+ANR	7726926	Identifier	s		7726882	0					
+ANR	7726927	Identifier	catalog_size		7726882	1					
+ANR	7726928	EqualityExpression	s -> catalog_bitmap [ index ] == 0		7726882	1		==			
+ANR	7726929	ArrayIndexing	s -> catalog_bitmap [ index ]		7726882	0					
+ANR	7726930	PtrMemberAccess	s -> catalog_bitmap		7726882	0					
+ANR	7726931	Identifier	s		7726882	0					
+ANR	7726932	Identifier	catalog_bitmap		7726882	1					
+ANR	7726933	Identifier	index		7726882	1					
+ANR	7726934	PrimaryExpression	0		7726882	1					
+ANR	7726935	ReturnStatement	return - 1 ;	21:1:332:341	7726882	1	True				
+ANR	7726936	UnaryOperationExpression	- 1		7726882	0					
+ANR	7726937	UnaryOperator	-		7726882	0					
+ANR	7726938	PrimaryExpression	1		7726882	1					
+ANR	7726939	ExpressionStatement	position = ( s -> catalog_bitmap [ index ] + offset ) * 512	25:4:350:402	7726882	5	True				
+ANR	7726940	AssignmentExpression	position = ( s -> catalog_bitmap [ index ] + offset ) * 512		7726882	0		=			
+ANR	7726941	Identifier	position		7726882	0					
+ANR	7726942	MultiplicativeExpression	( s -> catalog_bitmap [ index ] + offset ) * 512		7726882	1		*			
+ANR	7726943	AdditiveExpression	s -> catalog_bitmap [ index ] + offset		7726882	0		+			
+ANR	7726944	ArrayIndexing	s -> catalog_bitmap [ index ]		7726882	0					
+ANR	7726945	PtrMemberAccess	s -> catalog_bitmap		7726882	0					
+ANR	7726946	Identifier	s		7726882	0					
+ANR	7726947	Identifier	catalog_bitmap		7726882	1					
+ANR	7726948	Identifier	index		7726882	1					
+ANR	7726949	Identifier	offset		7726882	1					
+ANR	7726950	PrimaryExpression	512		7726882	1					
+ANR	7726951	IfStatement	"if ( lseek ( s -> fd , position , SEEK_SET ) != position )"		7726882	6					
+ANR	7726952	Condition	"lseek ( s -> fd , position , SEEK_SET ) != position"	35:8:568:611	7726882	0	True				
+ANR	7726953	EqualityExpression	"lseek ( s -> fd , position , SEEK_SET ) != position"		7726882	0		!=			
+ANR	7726954	CallExpression	"lseek ( s -> fd , position , SEEK_SET )"		7726882	0					
+ANR	7726955	Callee	lseek		7726882	0					
+ANR	7726956	Identifier	lseek		7726882	0					
+ANR	7726957	ArgumentList	s -> fd		7726882	1					
+ANR	7726958	Argument	s -> fd		7726882	0					
+ANR	7726959	PtrMemberAccess	s -> fd		7726882	0					
+ANR	7726960	Identifier	s		7726882	0					
+ANR	7726961	Identifier	fd		7726882	1					
+ANR	7726962	Argument	position		7726882	1					
+ANR	7726963	Identifier	position		7726882	0					
+ANR	7726964	Argument	SEEK_SET		7726882	2					
+ANR	7726965	Identifier	SEEK_SET		7726882	0					
+ANR	7726966	Identifier	position		7726882	1					
+ANR	7726967	ReturnStatement	return - 1 ;	37:1:616:625	7726882	1	True				
+ANR	7726968	UnaryOperationExpression	- 1		7726882	0					
+ANR	7726969	UnaryOperator	-		7726882	0					
+ANR	7726970	PrimaryExpression	1		7726882	1					
+ANR	7726971	ReturnStatement	return 0 ;	41:4:634:642	7726882	7	True				
+ANR	7726972	PrimaryExpression	0		7726882	0					
+ANR	7726973	ReturnType	static inline int		7726882	1					
+ANR	7726974	Identifier	seek_to_sector		7726882	2					
+ANR	7726975	ParameterList	"BlockDriverState * bs , int64_t sector_num"		7726882	3					
+ANR	7726976	Parameter	BlockDriverState * bs	1:33:33:52	7726882	0	True				
+ANR	7726977	ParameterType	BlockDriverState *		7726882	0					
+ANR	7726978	Identifier	bs		7726882	1					
+ANR	7726979	Parameter	int64_t sector_num	1:55:55:72	7726882	1	True				
+ANR	7726980	ParameterType	int64_t		7726882	0					
+ANR	7726981	Identifier	sector_num		7726882	1					
+ANR	7726982	CFGEntryNode	ENTRY		7726882		True				
+ANR	7726983	CFGExitNode	EXIT		7726882		True				
+ANR	7726984	Symbol	SEEK_SET		7726882						
+ANR	7726985	Symbol	s -> tracks		7726882						
+ANR	7726986	Symbol	s -> catalog_size		7726882						
+ANR	7726987	Symbol	lseek		7726882						
+ANR	7726988	Symbol	bs -> opaque		7726882						
+ANR	7726989	Symbol	offset		7726882						
+ANR	7726990	Symbol	* index		7726882						
+ANR	7726991	Symbol	index		7726882						
+ANR	7726992	Symbol	s -> catalog_bitmap		7726882						
+ANR	7726993	Symbol	sector_num		7726882						
+ANR	7726994	Symbol	* s -> catalog_bitmap		7726882						
+ANR	7726995	Symbol	bs		7726882						
+ANR	7726996	Symbol	s		7726882						
+ANR	7726997	Symbol	* bs		7726882						
+ANR	7726998	Symbol	* * s		7726882						
+ANR	7726999	Symbol	position		7726882						
+ANR	7727000	Symbol	* s		7726882						
+ANR	7727001	Symbol	s -> fd		7726882						

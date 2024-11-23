@@ -1,0 +1,558 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7789127	File	/home/p4ultr4n/workplace/ReVeal/raw_code/setup_rt_frame_04_0.c								
+ANR	7789128	Function	setup_rt_frame	1:0:0:2385							
+ANR	7789129	FunctionDef	"setup_rt_frame (int sig , struct emulated_sigaction * ka , target_siginfo_t * info , target_sigset_t * set , CPUX86State * env)"		7789128	0					
+ANR	7789130	CompoundStatement		7:0:168:2385	7789128	0					
+ANR	7789131	IdentifierDeclStatement	struct rt_sigframe * frame ;	9:1:172:197	7789128	0	True				
+ANR	7789132	IdentifierDecl	* frame		7789128	0					
+ANR	7789133	IdentifierDeclType	struct rt_sigframe *		7789128	0					
+ANR	7789134	Identifier	frame		7789128	1					
+ANR	7789135	IdentifierDeclStatement	int err = 0 ;	11:1:201:212	7789128	1	True				
+ANR	7789136	IdentifierDecl	err = 0		7789128	0					
+ANR	7789137	IdentifierDeclType	int		7789128	0					
+ANR	7789138	Identifier	err		7789128	1					
+ANR	7789139	AssignmentExpression	err = 0		7789128	2		=			
+ANR	7789140	Identifier	err		7789128	0					
+ANR	7789141	PrimaryExpression	0		7789128	1					
+ANR	7789142	ExpressionStatement	"frame = get_sigframe ( ka , env , sizeof ( * frame ) )"	15:1:218:263	7789128	2	True				
+ANR	7789143	AssignmentExpression	"frame = get_sigframe ( ka , env , sizeof ( * frame ) )"		7789128	0		=			
+ANR	7789144	Identifier	frame		7789128	0					
+ANR	7789145	CallExpression	"get_sigframe ( ka , env , sizeof ( * frame ) )"		7789128	1					
+ANR	7789146	Callee	get_sigframe		7789128	0					
+ANR	7789147	Identifier	get_sigframe		7789128	0					
+ANR	7789148	ArgumentList	ka		7789128	1					
+ANR	7789149	Argument	ka		7789128	0					
+ANR	7789150	Identifier	ka		7789128	0					
+ANR	7789151	Argument	env		7789128	1					
+ANR	7789152	Identifier	env		7789128	0					
+ANR	7789153	Argument	sizeof ( * frame )		7789128	2					
+ANR	7789154	SizeofExpression	sizeof ( * frame )		7789128	0					
+ANR	7789155	Sizeof	sizeof		7789128	0					
+ANR	7789156	UnaryOperationExpression	* frame		7789128	1					
+ANR	7789157	UnaryOperator	*		7789128	0					
+ANR	7789158	Identifier	frame		7789128	1					
+ANR	7789159	IfStatement	"if ( ! access_ok ( VERIFY_WRITE , frame , sizeof ( * frame ) ) )"		7789128	3					
+ANR	7789160	Condition	"! access_ok ( VERIFY_WRITE , frame , sizeof ( * frame ) )"	21:5:280:326	7789128	0	True				
+ANR	7789161	UnaryOperationExpression	"! access_ok ( VERIFY_WRITE , frame , sizeof ( * frame ) )"		7789128	0					
+ANR	7789162	UnaryOperator	!		7789128	0					
+ANR	7789163	CallExpression	"access_ok ( VERIFY_WRITE , frame , sizeof ( * frame ) )"		7789128	1					
+ANR	7789164	Callee	access_ok		7789128	0					
+ANR	7789165	Identifier	access_ok		7789128	0					
+ANR	7789166	ArgumentList	VERIFY_WRITE		7789128	1					
+ANR	7789167	Argument	VERIFY_WRITE		7789128	0					
+ANR	7789168	Identifier	VERIFY_WRITE		7789128	0					
+ANR	7789169	Argument	frame		7789128	1					
+ANR	7789170	Identifier	frame		7789128	0					
+ANR	7789171	Argument	sizeof ( * frame )		7789128	2					
+ANR	7789172	SizeofExpression	sizeof ( * frame )		7789128	0					
+ANR	7789173	Sizeof	sizeof		7789128	0					
+ANR	7789174	UnaryOperationExpression	* frame		7789128	1					
+ANR	7789175	UnaryOperator	*		7789128	0					
+ANR	7789176	Identifier	frame		7789128	1					
+ANR	7789177	GotoStatement	goto give_sigsegv ;	23:2:332:349	7789128	1	True				
+ANR	7789178	Identifier	give_sigsegv		7789128	0					
+ANR	7789179	ExpressionStatement	"err |= __put_user ( ( sig ) , & frame -> sig )"	29:1:363:567	7789128	4	True				
+ANR	7789180	AssignmentExpression	"err |= __put_user ( ( sig ) , & frame -> sig )"		7789128	0		|=			
+ANR	7789181	Identifier	err		7789128	0					
+ANR	7789182	CallExpression	"__put_user ( ( sig ) , & frame -> sig )"		7789128	1					
+ANR	7789183	Callee	__put_user		7789128	0					
+ANR	7789184	Identifier	__put_user		7789128	0					
+ANR	7789185	ArgumentList	sig		7789128	1					
+ANR	7789186	Argument	sig		7789128	0					
+ANR	7789187	Identifier	sig		7789128	0					
+ANR	7789188	Argument	& frame -> sig		7789128	1					
+ANR	7789189	UnaryOperationExpression	& frame -> sig		7789128	0					
+ANR	7789190	UnaryOperator	&		7789128	0					
+ANR	7789191	PtrMemberAccess	frame -> sig		7789128	1					
+ANR	7789192	Identifier	frame		7789128	0					
+ANR	7789193	Identifier	sig		7789128	1					
+ANR	7789194	ExpressionStatement	"err |= __put_user ( ( target_ulong ) & frame -> info , & frame -> pinfo )"	41:1:571:631	7789128	5	True				
+ANR	7789195	AssignmentExpression	"err |= __put_user ( ( target_ulong ) & frame -> info , & frame -> pinfo )"		7789128	0		|=			
+ANR	7789196	Identifier	err		7789128	0					
+ANR	7789197	CallExpression	"__put_user ( ( target_ulong ) & frame -> info , & frame -> pinfo )"		7789128	1					
+ANR	7789198	Callee	__put_user		7789128	0					
+ANR	7789199	Identifier	__put_user		7789128	0					
+ANR	7789200	ArgumentList	( target_ulong ) & frame -> info		7789128	1					
+ANR	7789201	Argument	( target_ulong ) & frame -> info		7789128	0					
+ANR	7789202	CastExpression	( target_ulong ) & frame -> info		7789128	0					
+ANR	7789203	CastTarget	target_ulong		7789128	0					
+ANR	7789204	UnaryOperationExpression	& frame -> info		7789128	1					
+ANR	7789205	UnaryOperator	&		7789128	0					
+ANR	7789206	PtrMemberAccess	frame -> info		7789128	1					
+ANR	7789207	Identifier	frame		7789128	0					
+ANR	7789208	Identifier	info		7789128	1					
+ANR	7789209	Argument	& frame -> pinfo		7789128	1					
+ANR	7789210	UnaryOperationExpression	& frame -> pinfo		7789128	0					
+ANR	7789211	UnaryOperator	&		7789128	0					
+ANR	7789212	PtrMemberAccess	frame -> pinfo		7789128	1					
+ANR	7789213	Identifier	frame		7789128	0					
+ANR	7789214	Identifier	pinfo		7789128	1					
+ANR	7789215	ExpressionStatement	"err |= __put_user ( ( target_ulong ) & frame -> uc , & frame -> puc )"	43:1:635:691	7789128	6	True				
+ANR	7789216	AssignmentExpression	"err |= __put_user ( ( target_ulong ) & frame -> uc , & frame -> puc )"		7789128	0		|=			
+ANR	7789217	Identifier	err		7789128	0					
+ANR	7789218	CallExpression	"__put_user ( ( target_ulong ) & frame -> uc , & frame -> puc )"		7789128	1					
+ANR	7789219	Callee	__put_user		7789128	0					
+ANR	7789220	Identifier	__put_user		7789128	0					
+ANR	7789221	ArgumentList	( target_ulong ) & frame -> uc		7789128	1					
+ANR	7789222	Argument	( target_ulong ) & frame -> uc		7789128	0					
+ANR	7789223	CastExpression	( target_ulong ) & frame -> uc		7789128	0					
+ANR	7789224	CastTarget	target_ulong		7789128	0					
+ANR	7789225	UnaryOperationExpression	& frame -> uc		7789128	1					
+ANR	7789226	UnaryOperator	&		7789128	0					
+ANR	7789227	PtrMemberAccess	frame -> uc		7789128	1					
+ANR	7789228	Identifier	frame		7789128	0					
+ANR	7789229	Identifier	uc		7789128	1					
+ANR	7789230	Argument	& frame -> puc		7789128	1					
+ANR	7789231	UnaryOperationExpression	& frame -> puc		7789128	0					
+ANR	7789232	UnaryOperator	&		7789128	0					
+ANR	7789233	PtrMemberAccess	frame -> puc		7789128	1					
+ANR	7789234	Identifier	frame		7789128	0					
+ANR	7789235	Identifier	puc		7789128	1					
+ANR	7789236	ExpressionStatement	"err |= copy_siginfo_to_user ( & frame -> info , info )"	45:1:695:742	7789128	7	True				
+ANR	7789237	AssignmentExpression	"err |= copy_siginfo_to_user ( & frame -> info , info )"		7789128	0		|=			
+ANR	7789238	Identifier	err		7789128	0					
+ANR	7789239	CallExpression	"copy_siginfo_to_user ( & frame -> info , info )"		7789128	1					
+ANR	7789240	Callee	copy_siginfo_to_user		7789128	0					
+ANR	7789241	Identifier	copy_siginfo_to_user		7789128	0					
+ANR	7789242	ArgumentList	& frame -> info		7789128	1					
+ANR	7789243	Argument	& frame -> info		7789128	0					
+ANR	7789244	UnaryOperationExpression	& frame -> info		7789128	0					
+ANR	7789245	UnaryOperator	&		7789128	0					
+ANR	7789246	PtrMemberAccess	frame -> info		7789128	1					
+ANR	7789247	Identifier	frame		7789128	0					
+ANR	7789248	Identifier	info		7789128	1					
+ANR	7789249	Argument	info		7789128	1					
+ANR	7789250	Identifier	info		7789128	0					
+ANR	7789251	IfStatement	if ( err )		7789128	8					
+ANR	7789252	Condition	err	47:5:750:752	7789128	0	True				
+ANR	7789253	Identifier	err		7789128	0					
+ANR	7789254	GotoStatement	goto give_sigsegv ;	49:2:758:775	7789128	1	True				
+ANR	7789255	Identifier	give_sigsegv		7789128	0					
+ANR	7789256	ExpressionStatement	"err |= __put_user ( 0 , & frame -> uc . uc_flags )"	55:1:811:852	7789128	9	True				
+ANR	7789257	AssignmentExpression	"err |= __put_user ( 0 , & frame -> uc . uc_flags )"		7789128	0		|=			
+ANR	7789258	Identifier	err		7789128	0					
+ANR	7789259	CallExpression	"__put_user ( 0 , & frame -> uc . uc_flags )"		7789128	1					
+ANR	7789260	Callee	__put_user		7789128	0					
+ANR	7789261	Identifier	__put_user		7789128	0					
+ANR	7789262	ArgumentList	0		7789128	1					
+ANR	7789263	Argument	0		7789128	0					
+ANR	7789264	PrimaryExpression	0		7789128	0					
+ANR	7789265	Argument	& frame -> uc . uc_flags		7789128	1					
+ANR	7789266	UnaryOperationExpression	& frame -> uc . uc_flags		7789128	0					
+ANR	7789267	UnaryOperator	&		7789128	0					
+ANR	7789268	MemberAccess	frame -> uc . uc_flags		7789128	1					
+ANR	7789269	PtrMemberAccess	frame -> uc		7789128	0					
+ANR	7789270	Identifier	frame		7789128	0					
+ANR	7789271	Identifier	uc		7789128	1					
+ANR	7789272	Identifier	uc_flags		7789128	1					
+ANR	7789273	ExpressionStatement	"err |= __put_user ( 0 , & frame -> uc . uc_link )"	57:1:856:896	7789128	10	True				
+ANR	7789274	AssignmentExpression	"err |= __put_user ( 0 , & frame -> uc . uc_link )"		7789128	0		|=			
+ANR	7789275	Identifier	err		7789128	0					
+ANR	7789276	CallExpression	"__put_user ( 0 , & frame -> uc . uc_link )"		7789128	1					
+ANR	7789277	Callee	__put_user		7789128	0					
+ANR	7789278	Identifier	__put_user		7789128	0					
+ANR	7789279	ArgumentList	0		7789128	1					
+ANR	7789280	Argument	0		7789128	0					
+ANR	7789281	PrimaryExpression	0		7789128	0					
+ANR	7789282	Argument	& frame -> uc . uc_link		7789128	1					
+ANR	7789283	UnaryOperationExpression	& frame -> uc . uc_link		7789128	0					
+ANR	7789284	UnaryOperator	&		7789128	0					
+ANR	7789285	MemberAccess	frame -> uc . uc_link		7789128	1					
+ANR	7789286	PtrMemberAccess	frame -> uc		7789128	0					
+ANR	7789287	Identifier	frame		7789128	0					
+ANR	7789288	Identifier	uc		7789128	1					
+ANR	7789289	Identifier	uc_link		7789128	1					
+ANR	7789290	ExpressionStatement	"err |= __put_user ( 0 , & frame -> uc . uc_stack . ss_sp )"	59:1:900:970	7789128	11	True				
+ANR	7789291	AssignmentExpression	"err |= __put_user ( 0 , & frame -> uc . uc_stack . ss_sp )"		7789128	0		|=			
+ANR	7789292	Identifier	err		7789128	0					
+ANR	7789293	CallExpression	"__put_user ( 0 , & frame -> uc . uc_stack . ss_sp )"		7789128	1					
+ANR	7789294	Callee	__put_user		7789128	0					
+ANR	7789295	Identifier	__put_user		7789128	0					
+ANR	7789296	ArgumentList	0		7789128	1					
+ANR	7789297	Argument	0		7789128	0					
+ANR	7789298	PrimaryExpression	0		7789128	0					
+ANR	7789299	Argument	& frame -> uc . uc_stack . ss_sp		7789128	1					
+ANR	7789300	UnaryOperationExpression	& frame -> uc . uc_stack . ss_sp		7789128	0					
+ANR	7789301	UnaryOperator	&		7789128	0					
+ANR	7789302	MemberAccess	frame -> uc . uc_stack . ss_sp		7789128	1					
+ANR	7789303	MemberAccess	frame -> uc . uc_stack		7789128	0					
+ANR	7789304	PtrMemberAccess	frame -> uc		7789128	0					
+ANR	7789305	Identifier	frame		7789128	0					
+ANR	7789306	Identifier	uc		7789128	1					
+ANR	7789307	Identifier	uc_stack		7789128	1					
+ANR	7789308	Identifier	ss_sp		7789128	1					
+ANR	7789309	ExpressionStatement	"err |= __put_user ( 0 , & frame -> uc . uc_stack . ss_flags )"	61:1:974:1060	7789128	12	True				
+ANR	7789310	AssignmentExpression	"err |= __put_user ( 0 , & frame -> uc . uc_stack . ss_flags )"		7789128	0		|=			
+ANR	7789311	Identifier	err		7789128	0					
+ANR	7789312	CallExpression	"__put_user ( 0 , & frame -> uc . uc_stack . ss_flags )"		7789128	1					
+ANR	7789313	Callee	__put_user		7789128	0					
+ANR	7789314	Identifier	__put_user		7789128	0					
+ANR	7789315	ArgumentList	0		7789128	1					
+ANR	7789316	Argument	0		7789128	0					
+ANR	7789317	PrimaryExpression	0		7789128	0					
+ANR	7789318	Argument	& frame -> uc . uc_stack . ss_flags		7789128	1					
+ANR	7789319	UnaryOperationExpression	& frame -> uc . uc_stack . ss_flags		7789128	0					
+ANR	7789320	UnaryOperator	&		7789128	0					
+ANR	7789321	MemberAccess	frame -> uc . uc_stack . ss_flags		7789128	1					
+ANR	7789322	MemberAccess	frame -> uc . uc_stack		7789128	0					
+ANR	7789323	PtrMemberAccess	frame -> uc		7789128	0					
+ANR	7789324	Identifier	frame		7789128	0					
+ANR	7789325	Identifier	uc		7789128	1					
+ANR	7789326	Identifier	uc_stack		7789128	1					
+ANR	7789327	Identifier	ss_flags		7789128	1					
+ANR	7789328	ExpressionStatement	"err |= __put_user ( 0 , & frame -> uc . uc_stack . ss_size )"	65:1:1064:1140	7789128	13	True				
+ANR	7789329	AssignmentExpression	"err |= __put_user ( 0 , & frame -> uc . uc_stack . ss_size )"		7789128	0		|=			
+ANR	7789330	Identifier	err		7789128	0					
+ANR	7789331	CallExpression	"__put_user ( 0 , & frame -> uc . uc_stack . ss_size )"		7789128	1					
+ANR	7789332	Callee	__put_user		7789128	0					
+ANR	7789333	Identifier	__put_user		7789128	0					
+ANR	7789334	ArgumentList	0		7789128	1					
+ANR	7789335	Argument	0		7789128	0					
+ANR	7789336	PrimaryExpression	0		7789128	0					
+ANR	7789337	Argument	& frame -> uc . uc_stack . ss_size		7789128	1					
+ANR	7789338	UnaryOperationExpression	& frame -> uc . uc_stack . ss_size		7789128	0					
+ANR	7789339	UnaryOperator	&		7789128	0					
+ANR	7789340	MemberAccess	frame -> uc . uc_stack . ss_size		7789128	1					
+ANR	7789341	MemberAccess	frame -> uc . uc_stack		7789128	0					
+ANR	7789342	PtrMemberAccess	frame -> uc		7789128	0					
+ANR	7789343	Identifier	frame		7789128	0					
+ANR	7789344	Identifier	uc		7789128	1					
+ANR	7789345	Identifier	uc_stack		7789128	1					
+ANR	7789346	Identifier	ss_size		7789128	1					
+ANR	7789347	ExpressionStatement	"err |= setup_sigcontext ( & frame -> uc . uc_mcontext , & frame -> fpstate , env , set -> sig [ 0 ] )"	67:1:1144:1238	7789128	14	True				
+ANR	7789348	AssignmentExpression	"err |= setup_sigcontext ( & frame -> uc . uc_mcontext , & frame -> fpstate , env , set -> sig [ 0 ] )"		7789128	0		|=			
+ANR	7789349	Identifier	err		7789128	0					
+ANR	7789350	CallExpression	"setup_sigcontext ( & frame -> uc . uc_mcontext , & frame -> fpstate , env , set -> sig [ 0 ] )"		7789128	1					
+ANR	7789351	Callee	setup_sigcontext		7789128	0					
+ANR	7789352	Identifier	setup_sigcontext		7789128	0					
+ANR	7789353	ArgumentList	& frame -> uc . uc_mcontext		7789128	1					
+ANR	7789354	Argument	& frame -> uc . uc_mcontext		7789128	0					
+ANR	7789355	UnaryOperationExpression	& frame -> uc . uc_mcontext		7789128	0					
+ANR	7789356	UnaryOperator	&		7789128	0					
+ANR	7789357	MemberAccess	frame -> uc . uc_mcontext		7789128	1					
+ANR	7789358	PtrMemberAccess	frame -> uc		7789128	0					
+ANR	7789359	Identifier	frame		7789128	0					
+ANR	7789360	Identifier	uc		7789128	1					
+ANR	7789361	Identifier	uc_mcontext		7789128	1					
+ANR	7789362	Argument	& frame -> fpstate		7789128	1					
+ANR	7789363	UnaryOperationExpression	& frame -> fpstate		7789128	0					
+ANR	7789364	UnaryOperator	&		7789128	0					
+ANR	7789365	PtrMemberAccess	frame -> fpstate		7789128	1					
+ANR	7789366	Identifier	frame		7789128	0					
+ANR	7789367	Identifier	fpstate		7789128	1					
+ANR	7789368	Argument	env		7789128	2					
+ANR	7789369	Identifier	env		7789128	0					
+ANR	7789370	Argument	set -> sig [ 0 ]		7789128	3					
+ANR	7789371	ArrayIndexing	set -> sig [ 0 ]		7789128	0					
+ANR	7789372	PtrMemberAccess	set -> sig		7789128	0					
+ANR	7789373	Identifier	set		7789128	0					
+ANR	7789374	Identifier	sig		7789128	1					
+ANR	7789375	PrimaryExpression	0		7789128	1					
+ANR	7789376	ExpressionStatement	"err |= __copy_to_user ( & frame -> uc . uc_sigmask , set , sizeof ( * set ) )"	71:1:1242:1305	7789128	15	True				
+ANR	7789377	AssignmentExpression	"err |= __copy_to_user ( & frame -> uc . uc_sigmask , set , sizeof ( * set ) )"		7789128	0		|=			
+ANR	7789378	Identifier	err		7789128	0					
+ANR	7789379	CallExpression	"__copy_to_user ( & frame -> uc . uc_sigmask , set , sizeof ( * set ) )"		7789128	1					
+ANR	7789380	Callee	__copy_to_user		7789128	0					
+ANR	7789381	Identifier	__copy_to_user		7789128	0					
+ANR	7789382	ArgumentList	& frame -> uc . uc_sigmask		7789128	1					
+ANR	7789383	Argument	& frame -> uc . uc_sigmask		7789128	0					
+ANR	7789384	UnaryOperationExpression	& frame -> uc . uc_sigmask		7789128	0					
+ANR	7789385	UnaryOperator	&		7789128	0					
+ANR	7789386	MemberAccess	frame -> uc . uc_sigmask		7789128	1					
+ANR	7789387	PtrMemberAccess	frame -> uc		7789128	0					
+ANR	7789388	Identifier	frame		7789128	0					
+ANR	7789389	Identifier	uc		7789128	1					
+ANR	7789390	Identifier	uc_sigmask		7789128	1					
+ANR	7789391	Argument	set		7789128	1					
+ANR	7789392	Identifier	set		7789128	0					
+ANR	7789393	Argument	sizeof ( * set )		7789128	2					
+ANR	7789394	SizeofExpression	sizeof ( * set )		7789128	0					
+ANR	7789395	Sizeof	sizeof		7789128	0					
+ANR	7789396	UnaryOperationExpression	* set		7789128	1					
+ANR	7789397	UnaryOperator	*		7789128	0					
+ANR	7789398	Identifier	set		7789128	1					
+ANR	7789399	IfStatement	if ( err )		7789128	16					
+ANR	7789400	Condition	err	73:5:1313:1315	7789128	0	True				
+ANR	7789401	Identifier	err		7789128	0					
+ANR	7789402	GotoStatement	goto give_sigsegv ;	75:2:1321:1338	7789128	1	True				
+ANR	7789403	Identifier	give_sigsegv		7789128	0					
+ANR	7789404	IfStatement	if ( ka -> sa . sa_flags & TARGET_SA_RESTORER )		7789128	17					
+ANR	7789405	Condition	ka -> sa . sa_flags & TARGET_SA_RESTORER	83:5:1442:1477	7789128	0	True				
+ANR	7789406	BitAndExpression	ka -> sa . sa_flags & TARGET_SA_RESTORER		7789128	0		&			
+ANR	7789407	MemberAccess	ka -> sa . sa_flags		7789128	0					
+ANR	7789408	PtrMemberAccess	ka -> sa		7789128	0					
+ANR	7789409	Identifier	ka		7789128	0					
+ANR	7789410	Identifier	sa		7789128	1					
+ANR	7789411	Identifier	sa_flags		7789128	1					
+ANR	7789412	Identifier	TARGET_SA_RESTORER		7789128	1					
+ANR	7789413	CompoundStatement		77:43:1311:1311	7789128	1					
+ANR	7789414	ExpressionStatement	"err |= __put_user ( ka -> sa . sa_restorer , & frame -> pretcode )"	85:2:1485:1540	7789128	0	True				
+ANR	7789415	AssignmentExpression	"err |= __put_user ( ka -> sa . sa_restorer , & frame -> pretcode )"		7789128	0		|=			
+ANR	7789416	Identifier	err		7789128	0					
+ANR	7789417	CallExpression	"__put_user ( ka -> sa . sa_restorer , & frame -> pretcode )"		7789128	1					
+ANR	7789418	Callee	__put_user		7789128	0					
+ANR	7789419	Identifier	__put_user		7789128	0					
+ANR	7789420	ArgumentList	ka -> sa . sa_restorer		7789128	1					
+ANR	7789421	Argument	ka -> sa . sa_restorer		7789128	0					
+ANR	7789422	MemberAccess	ka -> sa . sa_restorer		7789128	0					
+ANR	7789423	PtrMemberAccess	ka -> sa		7789128	0					
+ANR	7789424	Identifier	ka		7789128	0					
+ANR	7789425	Identifier	sa		7789128	1					
+ANR	7789426	Identifier	sa_restorer		7789128	1					
+ANR	7789427	Argument	& frame -> pretcode		7789128	1					
+ANR	7789428	UnaryOperationExpression	& frame -> pretcode		7789128	0					
+ANR	7789429	UnaryOperator	&		7789128	0					
+ANR	7789430	PtrMemberAccess	frame -> pretcode		7789128	1					
+ANR	7789431	Identifier	frame		7789128	0					
+ANR	7789432	Identifier	pretcode		7789128	1					
+ANR	7789433	ElseStatement	else		7789128	0					
+ANR	7789434	CompoundStatement		81:8:1382:1382	7789128	0					
+ANR	7789435	ExpressionStatement	"err |= __put_user ( frame -> retcode , & frame -> pretcode )"	89:2:1556:1607	7789128	0	True				
+ANR	7789436	AssignmentExpression	"err |= __put_user ( frame -> retcode , & frame -> pretcode )"		7789128	0		|=			
+ANR	7789437	Identifier	err		7789128	0					
+ANR	7789438	CallExpression	"__put_user ( frame -> retcode , & frame -> pretcode )"		7789128	1					
+ANR	7789439	Callee	__put_user		7789128	0					
+ANR	7789440	Identifier	__put_user		7789128	0					
+ANR	7789441	ArgumentList	frame -> retcode		7789128	1					
+ANR	7789442	Argument	frame -> retcode		7789128	0					
+ANR	7789443	PtrMemberAccess	frame -> retcode		7789128	0					
+ANR	7789444	Identifier	frame		7789128	0					
+ANR	7789445	Identifier	retcode		7789128	1					
+ANR	7789446	Argument	& frame -> pretcode		7789128	1					
+ANR	7789447	UnaryOperationExpression	& frame -> pretcode		7789128	0					
+ANR	7789448	UnaryOperator	&		7789128	0					
+ANR	7789449	PtrMemberAccess	frame -> pretcode		7789128	1					
+ANR	7789450	Identifier	frame		7789128	0					
+ANR	7789451	Identifier	pretcode		7789128	1					
+ANR	7789452	ExpressionStatement	"err |= __put_user ( 0xb8 , ( char * ) ( frame -> retcode + 0 ) )"	93:2:1653:1704	7789128	1	True				
+ANR	7789453	AssignmentExpression	"err |= __put_user ( 0xb8 , ( char * ) ( frame -> retcode + 0 ) )"		7789128	0		|=			
+ANR	7789454	Identifier	err		7789128	0					
+ANR	7789455	CallExpression	"__put_user ( 0xb8 , ( char * ) ( frame -> retcode + 0 ) )"		7789128	1					
+ANR	7789456	Callee	__put_user		7789128	0					
+ANR	7789457	Identifier	__put_user		7789128	0					
+ANR	7789458	ArgumentList	0xb8		7789128	1					
+ANR	7789459	Argument	0xb8		7789128	0					
+ANR	7789460	PrimaryExpression	0xb8		7789128	0					
+ANR	7789461	Argument	( char * ) ( frame -> retcode + 0 )		7789128	1					
+ANR	7789462	CastExpression	( char * ) ( frame -> retcode + 0 )		7789128	0					
+ANR	7789463	CastTarget	char *		7789128	0					
+ANR	7789464	AdditiveExpression	frame -> retcode + 0		7789128	1		+			
+ANR	7789465	PtrMemberAccess	frame -> retcode		7789128	0					
+ANR	7789466	Identifier	frame		7789128	0					
+ANR	7789467	Identifier	retcode		7789128	1					
+ANR	7789468	PrimaryExpression	0		7789128	1					
+ANR	7789469	ExpressionStatement	"err |= __put_user ( TARGET_NR_rt_sigreturn , ( int * ) ( frame -> retcode + 1 ) )"	95:2:1709:1777	7789128	2	True				
+ANR	7789470	AssignmentExpression	"err |= __put_user ( TARGET_NR_rt_sigreturn , ( int * ) ( frame -> retcode + 1 ) )"		7789128	0		|=			
+ANR	7789471	Identifier	err		7789128	0					
+ANR	7789472	CallExpression	"__put_user ( TARGET_NR_rt_sigreturn , ( int * ) ( frame -> retcode + 1 ) )"		7789128	1					
+ANR	7789473	Callee	__put_user		7789128	0					
+ANR	7789474	Identifier	__put_user		7789128	0					
+ANR	7789475	ArgumentList	TARGET_NR_rt_sigreturn		7789128	1					
+ANR	7789476	Argument	TARGET_NR_rt_sigreturn		7789128	0					
+ANR	7789477	Identifier	TARGET_NR_rt_sigreturn		7789128	0					
+ANR	7789478	Argument	( int * ) ( frame -> retcode + 1 )		7789128	1					
+ANR	7789479	CastExpression	( int * ) ( frame -> retcode + 1 )		7789128	0					
+ANR	7789480	CastTarget	int *		7789128	0					
+ANR	7789481	AdditiveExpression	frame -> retcode + 1		7789128	1		+			
+ANR	7789482	PtrMemberAccess	frame -> retcode		7789128	0					
+ANR	7789483	Identifier	frame		7789128	0					
+ANR	7789484	Identifier	retcode		7789128	1					
+ANR	7789485	PrimaryExpression	1		7789128	1					
+ANR	7789486	ExpressionStatement	"err |= __put_user ( 0x80cd , ( short * ) ( frame -> retcode + 5 ) )"	97:2:1782:1836	7789128	3	True				
+ANR	7789487	AssignmentExpression	"err |= __put_user ( 0x80cd , ( short * ) ( frame -> retcode + 5 ) )"		7789128	0		|=			
+ANR	7789488	Identifier	err		7789128	0					
+ANR	7789489	CallExpression	"__put_user ( 0x80cd , ( short * ) ( frame -> retcode + 5 ) )"		7789128	1					
+ANR	7789490	Callee	__put_user		7789128	0					
+ANR	7789491	Identifier	__put_user		7789128	0					
+ANR	7789492	ArgumentList	0x80cd		7789128	1					
+ANR	7789493	Argument	0x80cd		7789128	0					
+ANR	7789494	PrimaryExpression	0x80cd		7789128	0					
+ANR	7789495	Argument	( short * ) ( frame -> retcode + 5 )		7789128	1					
+ANR	7789496	CastExpression	( short * ) ( frame -> retcode + 5 )		7789128	0					
+ANR	7789497	CastTarget	short *		7789128	0					
+ANR	7789498	AdditiveExpression	frame -> retcode + 5		7789128	1		+			
+ANR	7789499	PtrMemberAccess	frame -> retcode		7789128	0					
+ANR	7789500	Identifier	frame		7789128	0					
+ANR	7789501	Identifier	retcode		7789128	1					
+ANR	7789502	PrimaryExpression	5		7789128	1					
+ANR	7789503	IfStatement	if ( err )		7789128	18					
+ANR	7789504	Condition	err	103:5:1850:1852	7789128	0	True				
+ANR	7789505	Identifier	err		7789128	0					
+ANR	7789506	GotoStatement	goto give_sigsegv ;	105:2:1858:1875	7789128	1	True				
+ANR	7789507	Identifier	give_sigsegv		7789128	0					
+ANR	7789508	ExpressionStatement	env -> regs [ R_ESP ] = ( unsigned long ) frame	111:1:1925:1965	7789128	19	True				
+ANR	7789509	AssignmentExpression	env -> regs [ R_ESP ] = ( unsigned long ) frame		7789128	0		=			
+ANR	7789510	ArrayIndexing	env -> regs [ R_ESP ]		7789128	0					
+ANR	7789511	PtrMemberAccess	env -> regs		7789128	0					
+ANR	7789512	Identifier	env		7789128	0					
+ANR	7789513	Identifier	regs		7789128	1					
+ANR	7789514	Identifier	R_ESP		7789128	1					
+ANR	7789515	CastExpression	( unsigned long ) frame		7789128	1					
+ANR	7789516	CastTarget	unsigned long		7789128	0					
+ANR	7789517	Identifier	frame		7789128	1					
+ANR	7789518	ExpressionStatement	env -> eip = ( unsigned long ) ka -> sa . _sa_handler	113:1:1969:2014	7789128	20	True				
+ANR	7789519	AssignmentExpression	env -> eip = ( unsigned long ) ka -> sa . _sa_handler		7789128	0		=			
+ANR	7789520	PtrMemberAccess	env -> eip		7789128	0					
+ANR	7789521	Identifier	env		7789128	0					
+ANR	7789522	Identifier	eip		7789128	1					
+ANR	7789523	CastExpression	( unsigned long ) ka -> sa . _sa_handler		7789128	1					
+ANR	7789524	CastTarget	unsigned long		7789128	0					
+ANR	7789525	MemberAccess	ka -> sa . _sa_handler		7789128	1					
+ANR	7789526	PtrMemberAccess	ka -> sa		7789128	0					
+ANR	7789527	Identifier	ka		7789128	0					
+ANR	7789528	Identifier	sa		7789128	1					
+ANR	7789529	Identifier	_sa_handler		7789128	1					
+ANR	7789530	ExpressionStatement	"cpu_x86_load_seg ( env , R_DS , __USER_DS )"	117:8:2027:2065	7789128	21	True				
+ANR	7789531	CallExpression	"cpu_x86_load_seg ( env , R_DS , __USER_DS )"		7789128	0					
+ANR	7789532	Callee	cpu_x86_load_seg		7789128	0					
+ANR	7789533	Identifier	cpu_x86_load_seg		7789128	0					
+ANR	7789534	ArgumentList	env		7789128	1					
+ANR	7789535	Argument	env		7789128	0					
+ANR	7789536	Identifier	env		7789128	0					
+ANR	7789537	Argument	R_DS		7789128	1					
+ANR	7789538	Identifier	R_DS		7789128	0					
+ANR	7789539	Argument	__USER_DS		7789128	2					
+ANR	7789540	Identifier	__USER_DS		7789128	0					
+ANR	7789541	ExpressionStatement	"cpu_x86_load_seg ( env , R_ES , __USER_DS )"	119:8:2076:2114	7789128	22	True				
+ANR	7789542	CallExpression	"cpu_x86_load_seg ( env , R_ES , __USER_DS )"		7789128	0					
+ANR	7789543	Callee	cpu_x86_load_seg		7789128	0					
+ANR	7789544	Identifier	cpu_x86_load_seg		7789128	0					
+ANR	7789545	ArgumentList	env		7789128	1					
+ANR	7789546	Argument	env		7789128	0					
+ANR	7789547	Identifier	env		7789128	0					
+ANR	7789548	Argument	R_ES		7789128	1					
+ANR	7789549	Identifier	R_ES		7789128	0					
+ANR	7789550	Argument	__USER_DS		7789128	2					
+ANR	7789551	Identifier	__USER_DS		7789128	0					
+ANR	7789552	ExpressionStatement	"cpu_x86_load_seg ( env , R_SS , __USER_DS )"	121:8:2125:2163	7789128	23	True				
+ANR	7789553	CallExpression	"cpu_x86_load_seg ( env , R_SS , __USER_DS )"		7789128	0					
+ANR	7789554	Callee	cpu_x86_load_seg		7789128	0					
+ANR	7789555	Identifier	cpu_x86_load_seg		7789128	0					
+ANR	7789556	ArgumentList	env		7789128	1					
+ANR	7789557	Argument	env		7789128	0					
+ANR	7789558	Identifier	env		7789128	0					
+ANR	7789559	Argument	R_SS		7789128	1					
+ANR	7789560	Identifier	R_SS		7789128	0					
+ANR	7789561	Argument	__USER_DS		7789128	2					
+ANR	7789562	Identifier	__USER_DS		7789128	0					
+ANR	7789563	ExpressionStatement	"cpu_x86_load_seg ( env , R_CS , __USER_CS )"	123:8:2174:2212	7789128	24	True				
+ANR	7789564	CallExpression	"cpu_x86_load_seg ( env , R_CS , __USER_CS )"		7789128	0					
+ANR	7789565	Callee	cpu_x86_load_seg		7789128	0					
+ANR	7789566	Identifier	cpu_x86_load_seg		7789128	0					
+ANR	7789567	ArgumentList	env		7789128	1					
+ANR	7789568	Argument	env		7789128	0					
+ANR	7789569	Identifier	env		7789128	0					
+ANR	7789570	Argument	R_CS		7789128	1					
+ANR	7789571	Identifier	R_CS		7789128	0					
+ANR	7789572	Argument	__USER_CS		7789128	2					
+ANR	7789573	Identifier	__USER_CS		7789128	0					
+ANR	7789574	ExpressionStatement	env -> eflags &= ~TF_MASK	125:1:2216:2239	7789128	25	True				
+ANR	7789575	AssignmentExpression	env -> eflags &= ~TF_MASK		7789128	0		&=			
+ANR	7789576	PtrMemberAccess	env -> eflags		7789128	0					
+ANR	7789577	Identifier	env		7789128	0					
+ANR	7789578	Identifier	eflags		7789128	1					
+ANR	7789579	Identifier	~TF_MASK		7789128	1					
+ANR	7789580	ReturnStatement	return ;	129:1:2245:2251	7789128	26	True				
+ANR	7789581	Label	give_sigsegv :	133:0:2256:2268	7789128	27	True				
+ANR	7789582	Identifier	give_sigsegv		7789128	0					
+ANR	7789583	IfStatement	if ( sig == TARGET_SIGSEGV )		7789128	28					
+ANR	7789584	Condition	sig == TARGET_SIGSEGV	135:5:2276:2296	7789128	0	True				
+ANR	7789585	EqualityExpression	sig == TARGET_SIGSEGV		7789128	0		==			
+ANR	7789586	Identifier	sig		7789128	0					
+ANR	7789587	Identifier	TARGET_SIGSEGV		7789128	1					
+ANR	7789588	ExpressionStatement	ka -> sa . _sa_handler = TARGET_SIG_DFL	137:2:2302:2337	7789128	1	True				
+ANR	7789589	AssignmentExpression	ka -> sa . _sa_handler = TARGET_SIG_DFL		7789128	0		=			
+ANR	7789590	MemberAccess	ka -> sa . _sa_handler		7789128	0					
+ANR	7789591	PtrMemberAccess	ka -> sa		7789128	0					
+ANR	7789592	Identifier	ka		7789128	0					
+ANR	7789593	Identifier	sa		7789128	1					
+ANR	7789594	Identifier	_sa_handler		7789128	1					
+ANR	7789595	Identifier	TARGET_SIG_DFL		7789128	1					
+ANR	7789596	ExpressionStatement	force_sig ( TARGET_SIGSEGV )	139:1:2341:2382	7789128	29	True				
+ANR	7789597	CallExpression	force_sig ( TARGET_SIGSEGV )		7789128	0					
+ANR	7789598	Callee	force_sig		7789128	0					
+ANR	7789599	Identifier	force_sig		7789128	0					
+ANR	7789600	ArgumentList	TARGET_SIGSEGV		7789128	1					
+ANR	7789601	Argument	TARGET_SIGSEGV		7789128	0					
+ANR	7789602	Identifier	TARGET_SIGSEGV		7789128	0					
+ANR	7789603	ReturnType	static void		7789128	1					
+ANR	7789604	Identifier	setup_rt_frame		7789128	2					
+ANR	7789605	ParameterList	"int sig , struct emulated_sigaction * ka , target_siginfo_t * info , target_sigset_t * set , CPUX86State * env"		7789128	3					
+ANR	7789606	Parameter	int sig	1:27:27:33	7789128	0	True				
+ANR	7789607	ParameterType	int		7789128	0					
+ANR	7789608	Identifier	sig		7789128	1					
+ANR	7789609	Parameter	struct emulated_sigaction * ka	1:36:36:64	7789128	1	True				
+ANR	7789610	ParameterType	struct emulated_sigaction *		7789128	0					
+ANR	7789611	Identifier	ka		7789128	1					
+ANR	7789612	Parameter	target_siginfo_t * info	3:27:96:117	7789128	2	True				
+ANR	7789613	ParameterType	target_siginfo_t *		7789128	0					
+ANR	7789614	Identifier	info		7789128	1					
+ANR	7789615	Parameter	target_sigset_t * set	5:6:127:146	7789128	3	True				
+ANR	7789616	ParameterType	target_sigset_t *		7789128	0					
+ANR	7789617	Identifier	set		7789128	1					
+ANR	7789618	Parameter	CPUX86State * env	5:28:149:164	7789128	4	True				
+ANR	7789619	ParameterType	CPUX86State *		7789128	0					
+ANR	7789620	Identifier	env		7789128	1					
+ANR	7789621	CFGEntryNode	ENTRY		7789128		True				
+ANR	7789622	CFGExitNode	EXIT		7789128		True				
+ANR	7789623	Symbol	* set		7789128						
+ANR	7789624	Symbol	env -> regs		7789128						
+ANR	7789625	Symbol	get_sigframe		7789128						
+ANR	7789626	Symbol	& frame -> uc . uc_sigmask		7789128						
+ANR	7789627	Symbol	& frame -> puc		7789128						
+ANR	7789628	Symbol	ka -> sa . _sa_handler		7789128						
+ANR	7789629	Symbol	__put_user		7789128						
+ANR	7789630	Symbol	R_ES		7789128						
+ANR	7789631	Symbol	info		7789128						
+ANR	7789632	Symbol	* ka		7789128						
+ANR	7789633	Symbol	& frame -> uc		7789128						
+ANR	7789634	Symbol	& frame -> pretcode		7789128						
+ANR	7789635	Symbol	__copy_to_user		7789128						
+ANR	7789636	Symbol	* env		7789128						
+ANR	7789637	Symbol	& frame -> pinfo		7789128						
+ANR	7789638	Symbol	frame -> uc . uc_stack		7789128						
+ANR	7789639	Symbol	setup_sigcontext		7789128						
+ANR	7789640	Symbol	* env -> regs		7789128						
+ANR	7789641	Symbol	TARGET_SIGSEGV		7789128						
+ANR	7789642	Symbol	TARGET_SIG_DFL		7789128						
+ANR	7789643	Symbol	* * set		7789128						
+ANR	7789644	Symbol	R_DS		7789128						
+ANR	7789645	Symbol	env -> eflags		7789128						
+ANR	7789646	Symbol	frame		7789128						
+ANR	7789647	Symbol	& frame -> uc . uc_flags		7789128						
+ANR	7789648	Symbol	* * env		7789128						
+ANR	7789649	Symbol	frame -> uc		7789128						
+ANR	7789650	Symbol	* frame		7789128						
+ANR	7789651	Symbol	copy_siginfo_to_user		7789128						
+ANR	7789652	Symbol	env -> eip		7789128						
+ANR	7789653	Symbol	R_SS		7789128						
+ANR	7789654	Symbol	TARGET_SA_RESTORER		7789128						
+ANR	7789655	Symbol	& frame -> uc . uc_mcontext		7789128						
+ANR	7789656	Symbol	sig		7789128						
+ANR	7789657	Symbol	frame -> retcode		7789128						
+ANR	7789658	Symbol	ka		7789128						
+ANR	7789659	Symbol	ka -> sa . sa_restorer		7789128						
+ANR	7789660	Symbol	& frame -> fpstate		7789128						
+ANR	7789661	Symbol	__USER_DS		7789128						
+ANR	7789662	Symbol	* set -> sig		7789128						
+ANR	7789663	Symbol	R_ESP		7789128						
+ANR	7789664	Symbol	R_CS		7789128						
+ANR	7789665	Symbol	& frame -> uc . uc_stack . ss_sp		7789128						
+ANR	7789666	Symbol	ka -> sa		7789128						
+ANR	7789667	Symbol	set		7789128						
+ANR	7789668	Symbol	err		7789128						
+ANR	7789669	Symbol	& frame -> uc . uc_stack . ss_flags		7789128						
+ANR	7789670	Symbol	& frame -> uc . uc_stack . ss_size		7789128						
+ANR	7789671	Symbol	& frame -> sig		7789128						
+ANR	7789672	Symbol	~TF_MASK		7789128						
+ANR	7789673	Symbol	env		7789128						
+ANR	7789674	Symbol	& frame -> uc . uc_link		7789128						
+ANR	7789675	Symbol	* R_ESP		7789128						
+ANR	7789676	Symbol	set -> sig		7789128						
+ANR	7789677	Symbol	& frame -> info		7789128						
+ANR	7789678	Symbol	access_ok		7789128						
+ANR	7789679	Symbol	& frame -> uc . uc_stack		7789128						
+ANR	7789680	Symbol	ka -> sa . sa_flags		7789128						
+ANR	7789681	Symbol	TARGET_NR_rt_sigreturn		7789128						
+ANR	7789682	Symbol	VERIFY_WRITE		7789128						
+ANR	7789683	Symbol	__USER_CS		7789128						

@@ -1,0 +1,152 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	968988	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_create_dirty_bitmap_0.c								
+ANR	968989	Function	bdrv_create_dirty_bitmap	1:0:0:721							
+ANR	968990	FunctionDef	"bdrv_create_dirty_bitmap (BlockDriverState * bs , int granularity , Error * * errp)"		968989	0					
+ANR	968991	CompoundStatement		5:0:139:721	968989	0					
+ANR	968992	IdentifierDeclStatement	int64_t bitmap_size ;	7:4:146:165	968989	0	True				
+ANR	968993	IdentifierDecl	bitmap_size		968989	0					
+ANR	968994	IdentifierDeclType	int64_t		968989	0					
+ANR	968995	Identifier	bitmap_size		968989	1					
+ANR	968996	IdentifierDeclStatement	BdrvDirtyBitmap * bitmap ;	9:4:172:195	968989	1	True				
+ANR	968997	IdentifierDecl	* bitmap		968989	0					
+ANR	968998	IdentifierDeclType	BdrvDirtyBitmap *		968989	0					
+ANR	968999	Identifier	bitmap		968989	1					
+ANR	969000	ExpressionStatement	assert ( ( granularity & ( granularity - 1 ) ) == 0 )	13:4:204:250	968989	2	True				
+ANR	969001	CallExpression	assert ( ( granularity & ( granularity - 1 ) ) == 0 )		968989	0					
+ANR	969002	Callee	assert		968989	0					
+ANR	969003	Identifier	assert		968989	0					
+ANR	969004	ArgumentList	( granularity & ( granularity - 1 ) ) == 0		968989	1					
+ANR	969005	Argument	( granularity & ( granularity - 1 ) ) == 0		968989	0					
+ANR	969006	EqualityExpression	( granularity & ( granularity - 1 ) ) == 0		968989	0		==			
+ANR	969007	BitAndExpression	granularity & ( granularity - 1 )		968989	0		&			
+ANR	969008	Identifier	granularity		968989	0					
+ANR	969009	AdditiveExpression	granularity - 1		968989	1		-			
+ANR	969010	Identifier	granularity		968989	0					
+ANR	969011	PrimaryExpression	1		968989	1					
+ANR	969012	PrimaryExpression	0		968989	1					
+ANR	969013	ExpressionStatement	granularity >>= BDRV_SECTOR_BITS	17:4:259:291	968989	3	True				
+ANR	969014	AssignmentExpression	granularity >>= BDRV_SECTOR_BITS		968989	0		>>=			
+ANR	969015	Identifier	granularity		968989	0					
+ANR	969016	Identifier	BDRV_SECTOR_BITS		968989	1					
+ANR	969017	ExpressionStatement	assert ( granularity )	19:4:298:317	968989	4	True				
+ANR	969018	CallExpression	assert ( granularity )		968989	0					
+ANR	969019	Callee	assert		968989	0					
+ANR	969020	Identifier	assert		968989	0					
+ANR	969021	ArgumentList	granularity		968989	1					
+ANR	969022	Argument	granularity		968989	0					
+ANR	969023	Identifier	granularity		968989	0					
+ANR	969024	ExpressionStatement	bitmap_size = bdrv_nb_sectors ( bs )	21:4:324:357	968989	5	True				
+ANR	969025	AssignmentExpression	bitmap_size = bdrv_nb_sectors ( bs )		968989	0		=			
+ANR	969026	Identifier	bitmap_size		968989	0					
+ANR	969027	CallExpression	bdrv_nb_sectors ( bs )		968989	1					
+ANR	969028	Callee	bdrv_nb_sectors		968989	0					
+ANR	969029	Identifier	bdrv_nb_sectors		968989	0					
+ANR	969030	ArgumentList	bs		968989	1					
+ANR	969031	Argument	bs		968989	0					
+ANR	969032	Identifier	bs		968989	0					
+ANR	969033	IfStatement	if ( bitmap_size < 0 )		968989	6					
+ANR	969034	Condition	bitmap_size < 0	23:8:368:382	968989	0	True				
+ANR	969035	RelationalExpression	bitmap_size < 0		968989	0		<			
+ANR	969036	Identifier	bitmap_size		968989	0					
+ANR	969037	PrimaryExpression	0		968989	1					
+ANR	969038	CompoundStatement		19:25:245:245	968989	1					
+ANR	969039	ExpressionStatement	"error_setg_errno ( errp , - bitmap_size , ""could not get length of device"" )"	25:8:396:466	968989	0	True				
+ANR	969040	CallExpression	"error_setg_errno ( errp , - bitmap_size , ""could not get length of device"" )"		968989	0					
+ANR	969041	Callee	error_setg_errno		968989	0					
+ANR	969042	Identifier	error_setg_errno		968989	0					
+ANR	969043	ArgumentList	errp		968989	1					
+ANR	969044	Argument	errp		968989	0					
+ANR	969045	Identifier	errp		968989	0					
+ANR	969046	Argument	- bitmap_size		968989	1					
+ANR	969047	UnaryOperationExpression	- bitmap_size		968989	0					
+ANR	969048	UnaryOperator	-		968989	0					
+ANR	969049	Identifier	bitmap_size		968989	1					
+ANR	969050	Argument	"""could not get length of device"""		968989	2					
+ANR	969051	PrimaryExpression	"""could not get length of device"""		968989	0					
+ANR	969052	ExpressionStatement	errno = - bitmap_size	27:8:477:497	968989	1	True				
+ANR	969053	AssignmentExpression	errno = - bitmap_size		968989	0		=			
+ANR	969054	Identifier	errno		968989	0					
+ANR	969055	UnaryOperationExpression	- bitmap_size		968989	1					
+ANR	969056	UnaryOperator	-		968989	0					
+ANR	969057	Identifier	bitmap_size		968989	1					
+ANR	969058	ReturnStatement	return NULL ;	29:8:508:519	968989	2	True				
+ANR	969059	Identifier	NULL		968989	0					
+ANR	969060	ExpressionStatement	"bitmap = g_new0 ( BdrvDirtyBitmap , 1 )"	33:4:533:568	968989	7	True				
+ANR	969061	AssignmentExpression	"bitmap = g_new0 ( BdrvDirtyBitmap , 1 )"		968989	0		=			
+ANR	969062	Identifier	bitmap		968989	0					
+ANR	969063	CallExpression	"g_new0 ( BdrvDirtyBitmap , 1 )"		968989	1					
+ANR	969064	Callee	g_new0		968989	0					
+ANR	969065	Identifier	g_new0		968989	0					
+ANR	969066	ArgumentList	BdrvDirtyBitmap		968989	1					
+ANR	969067	Argument	BdrvDirtyBitmap		968989	0					
+ANR	969068	Identifier	BdrvDirtyBitmap		968989	0					
+ANR	969069	Argument	1		968989	1					
+ANR	969070	PrimaryExpression	1		968989	0					
+ANR	969071	ExpressionStatement	"bitmap -> bitmap = hbitmap_alloc ( bitmap_size , ffs ( granularity ) - 1 )"	35:4:575:640	968989	8	True				
+ANR	969072	AssignmentExpression	"bitmap -> bitmap = hbitmap_alloc ( bitmap_size , ffs ( granularity ) - 1 )"		968989	0		=			
+ANR	969073	PtrMemberAccess	bitmap -> bitmap		968989	0					
+ANR	969074	Identifier	bitmap		968989	0					
+ANR	969075	Identifier	bitmap		968989	1					
+ANR	969076	CallExpression	"hbitmap_alloc ( bitmap_size , ffs ( granularity ) - 1 )"		968989	1					
+ANR	969077	Callee	hbitmap_alloc		968989	0					
+ANR	969078	Identifier	hbitmap_alloc		968989	0					
+ANR	969079	ArgumentList	bitmap_size		968989	1					
+ANR	969080	Argument	bitmap_size		968989	0					
+ANR	969081	Identifier	bitmap_size		968989	0					
+ANR	969082	Argument	ffs ( granularity ) - 1		968989	1					
+ANR	969083	AdditiveExpression	ffs ( granularity ) - 1		968989	0		-			
+ANR	969084	CallExpression	ffs ( granularity )		968989	0					
+ANR	969085	Callee	ffs		968989	0					
+ANR	969086	Identifier	ffs		968989	0					
+ANR	969087	ArgumentList	granularity		968989	1					
+ANR	969088	Argument	granularity		968989	0					
+ANR	969089	Identifier	granularity		968989	0					
+ANR	969090	PrimaryExpression	1		968989	1					
+ANR	969091	ExpressionStatement	"QLIST_INSERT_HEAD ( & bs -> dirty_bitmaps , bitmap , list )"	37:4:647:698	968989	9	True				
+ANR	969092	CallExpression	"QLIST_INSERT_HEAD ( & bs -> dirty_bitmaps , bitmap , list )"		968989	0					
+ANR	969093	Callee	QLIST_INSERT_HEAD		968989	0					
+ANR	969094	Identifier	QLIST_INSERT_HEAD		968989	0					
+ANR	969095	ArgumentList	& bs -> dirty_bitmaps		968989	1					
+ANR	969096	Argument	& bs -> dirty_bitmaps		968989	0					
+ANR	969097	UnaryOperationExpression	& bs -> dirty_bitmaps		968989	0					
+ANR	969098	UnaryOperator	&		968989	0					
+ANR	969099	PtrMemberAccess	bs -> dirty_bitmaps		968989	1					
+ANR	969100	Identifier	bs		968989	0					
+ANR	969101	Identifier	dirty_bitmaps		968989	1					
+ANR	969102	Argument	bitmap		968989	1					
+ANR	969103	Identifier	bitmap		968989	0					
+ANR	969104	Argument	list		968989	2					
+ANR	969105	Identifier	list		968989	0					
+ANR	969106	ReturnStatement	return bitmap ;	39:4:705:718	968989	10	True				
+ANR	969107	Identifier	bitmap		968989	0					
+ANR	969108	ReturnType	BdrvDirtyBitmap *		968989	1					
+ANR	969109	Identifier	bdrv_create_dirty_bitmap		968989	2					
+ANR	969110	ParameterList	"BlockDriverState * bs , int granularity , Error * * errp"		968989	3					
+ANR	969111	Parameter	BlockDriverState * bs	1:42:42:61	968989	0	True				
+ANR	969112	ParameterType	BlockDriverState *		968989	0					
+ANR	969113	Identifier	bs		968989	1					
+ANR	969114	Parameter	int granularity	1:64:64:78	968989	1	True				
+ANR	969115	ParameterType	int		968989	0					
+ANR	969116	Identifier	granularity		968989	1					
+ANR	969117	Parameter	Error * * errp	3:42:124:135	968989	2	True				
+ANR	969118	ParameterType	Error * *		968989	0					
+ANR	969119	Identifier	errp		968989	1					
+ANR	969120	CFGEntryNode	ENTRY		968989		True				
+ANR	969121	CFGExitNode	EXIT		968989		True				
+ANR	969122	Symbol	bdrv_nb_sectors		968989						
+ANR	969123	Symbol	errno		968989						
+ANR	969124	Symbol	NULL		968989						
+ANR	969125	Symbol	errp		968989						
+ANR	969126	Symbol	BdrvDirtyBitmap		968989						
+ANR	969127	Symbol	hbitmap_alloc		968989						
+ANR	969128	Symbol	BDRV_SECTOR_BITS		968989						
+ANR	969129	Symbol	bitmap_size		968989						
+ANR	969130	Symbol	list		968989						
+ANR	969131	Symbol	bs		968989						
+ANR	969132	Symbol	ffs		968989						
+ANR	969133	Symbol	* bitmap		968989						
+ANR	969134	Symbol	granularity		968989						
+ANR	969135	Symbol	bitmap -> bitmap		968989						
+ANR	969136	Symbol	bitmap		968989						
+ANR	969137	Symbol	& bs -> dirty_bitmaps		968989						
+ANR	969138	Symbol	g_new0		968989						

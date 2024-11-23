@@ -1,0 +1,223 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5015028	File	/home/p4ultr4n/workplace/ReVeal/raw_code/iscsi_do_inquiry_1.c								
+ANR	5015029	Function	iscsi_do_inquiry	1:0:0:1165							
+ANR	5015030	FunctionDef	"iscsi_do_inquiry (struct iscsi_context * iscsi , int lun , int evpd , int pc , void * * inq , Error * * errp)"		5015029	0					
+ANR	5015031	CompoundStatement		5:0:168:1165	5015029	0					
+ANR	5015032	IdentifierDeclStatement	int full_size ;	7:4:175:188	5015029	0	True				
+ANR	5015033	IdentifierDecl	full_size		5015029	0					
+ANR	5015034	IdentifierDeclType	int		5015029	0					
+ANR	5015035	Identifier	full_size		5015029	1					
+ANR	5015036	IdentifierDeclStatement	struct scsi_task * task = NULL ;	9:4:195:224	5015029	1	True				
+ANR	5015037	IdentifierDecl	* task = NULL		5015029	0					
+ANR	5015038	IdentifierDeclType	struct scsi_task *		5015029	0					
+ANR	5015039	Identifier	task		5015029	1					
+ANR	5015040	AssignmentExpression	* task = NULL		5015029	2		=			
+ANR	5015041	Identifier	NULL		5015029	0					
+ANR	5015042	Identifier	NULL		5015029	1					
+ANR	5015043	ExpressionStatement	"task = iscsi_inquiry_sync ( iscsi , lun , evpd , pc , 64 )"	11:4:231:282	5015029	2	True				
+ANR	5015044	AssignmentExpression	"task = iscsi_inquiry_sync ( iscsi , lun , evpd , pc , 64 )"		5015029	0		=			
+ANR	5015045	Identifier	task		5015029	0					
+ANR	5015046	CallExpression	"iscsi_inquiry_sync ( iscsi , lun , evpd , pc , 64 )"		5015029	1					
+ANR	5015047	Callee	iscsi_inquiry_sync		5015029	0					
+ANR	5015048	Identifier	iscsi_inquiry_sync		5015029	0					
+ANR	5015049	ArgumentList	iscsi		5015029	1					
+ANR	5015050	Argument	iscsi		5015029	0					
+ANR	5015051	Identifier	iscsi		5015029	0					
+ANR	5015052	Argument	lun		5015029	1					
+ANR	5015053	Identifier	lun		5015029	0					
+ANR	5015054	Argument	evpd		5015029	2					
+ANR	5015055	Identifier	evpd		5015029	0					
+ANR	5015056	Argument	pc		5015029	3					
+ANR	5015057	Identifier	pc		5015029	0					
+ANR	5015058	Argument	64		5015029	4					
+ANR	5015059	PrimaryExpression	64		5015029	0					
+ANR	5015060	IfStatement	if ( task == NULL || task -> status != SCSI_STATUS_GOOD )		5015029	3					
+ANR	5015061	Condition	task == NULL || task -> status != SCSI_STATUS_GOOD	13:8:293:340	5015029	0	True				
+ANR	5015062	OrExpression	task == NULL || task -> status != SCSI_STATUS_GOOD		5015029	0		||			
+ANR	5015063	EqualityExpression	task == NULL		5015029	0		==			
+ANR	5015064	Identifier	task		5015029	0					
+ANR	5015065	Identifier	NULL		5015029	1					
+ANR	5015066	EqualityExpression	task -> status != SCSI_STATUS_GOOD		5015029	1		!=			
+ANR	5015067	PtrMemberAccess	task -> status		5015029	0					
+ANR	5015068	Identifier	task		5015029	0					
+ANR	5015069	Identifier	status		5015029	1					
+ANR	5015070	Identifier	SCSI_STATUS_GOOD		5015029	1					
+ANR	5015071	CompoundStatement		9:58:174:174	5015029	1					
+ANR	5015072	GotoStatement	goto fail ;	15:8:354:363	5015029	0	True				
+ANR	5015073	Identifier	fail		5015029	0					
+ANR	5015074	ExpressionStatement	full_size = scsi_datain_getfullsize ( task )	19:4:377:418	5015029	4	True				
+ANR	5015075	AssignmentExpression	full_size = scsi_datain_getfullsize ( task )		5015029	0		=			
+ANR	5015076	Identifier	full_size		5015029	0					
+ANR	5015077	CallExpression	scsi_datain_getfullsize ( task )		5015029	1					
+ANR	5015078	Callee	scsi_datain_getfullsize		5015029	0					
+ANR	5015079	Identifier	scsi_datain_getfullsize		5015029	0					
+ANR	5015080	ArgumentList	task		5015029	1					
+ANR	5015081	Argument	task		5015029	0					
+ANR	5015082	Identifier	task		5015029	0					
+ANR	5015083	IfStatement	if ( full_size > task -> datain . size )		5015029	5					
+ANR	5015084	Condition	full_size > task -> datain . size	21:8:429:457	5015029	0	True				
+ANR	5015085	RelationalExpression	full_size > task -> datain . size		5015029	0		>			
+ANR	5015086	Identifier	full_size		5015029	0					
+ANR	5015087	MemberAccess	task -> datain . size		5015029	1					
+ANR	5015088	PtrMemberAccess	task -> datain		5015029	0					
+ANR	5015089	Identifier	task		5015029	0					
+ANR	5015090	Identifier	datain		5015029	1					
+ANR	5015091	Identifier	size		5015029	1					
+ANR	5015092	CompoundStatement		17:39:291:291	5015029	1					
+ANR	5015093	ExpressionStatement	scsi_free_scsi_task ( task )	23:8:471:496	5015029	0	True				
+ANR	5015094	CallExpression	scsi_free_scsi_task ( task )		5015029	0					
+ANR	5015095	Callee	scsi_free_scsi_task		5015029	0					
+ANR	5015096	Identifier	scsi_free_scsi_task		5015029	0					
+ANR	5015097	ArgumentList	task		5015029	1					
+ANR	5015098	Argument	task		5015029	0					
+ANR	5015099	Identifier	task		5015029	0					
+ANR	5015100	ExpressionStatement	"task = iscsi_inquiry_sync ( iscsi , lun , evpd , pc , full_size )"	29:8:560:618	5015029	1	True				
+ANR	5015101	AssignmentExpression	"task = iscsi_inquiry_sync ( iscsi , lun , evpd , pc , full_size )"		5015029	0		=			
+ANR	5015102	Identifier	task		5015029	0					
+ANR	5015103	CallExpression	"iscsi_inquiry_sync ( iscsi , lun , evpd , pc , full_size )"		5015029	1					
+ANR	5015104	Callee	iscsi_inquiry_sync		5015029	0					
+ANR	5015105	Identifier	iscsi_inquiry_sync		5015029	0					
+ANR	5015106	ArgumentList	iscsi		5015029	1					
+ANR	5015107	Argument	iscsi		5015029	0					
+ANR	5015108	Identifier	iscsi		5015029	0					
+ANR	5015109	Argument	lun		5015029	1					
+ANR	5015110	Identifier	lun		5015029	0					
+ANR	5015111	Argument	evpd		5015029	2					
+ANR	5015112	Identifier	evpd		5015029	0					
+ANR	5015113	Argument	pc		5015029	3					
+ANR	5015114	Identifier	pc		5015029	0					
+ANR	5015115	Argument	full_size		5015029	4					
+ANR	5015116	Identifier	full_size		5015029	0					
+ANR	5015117	IfStatement	if ( task == NULL || task -> status != SCSI_STATUS_GOOD )		5015029	2					
+ANR	5015118	Condition	task == NULL || task -> status != SCSI_STATUS_GOOD	31:12:633:680	5015029	0	True				
+ANR	5015119	OrExpression	task == NULL || task -> status != SCSI_STATUS_GOOD		5015029	0		||			
+ANR	5015120	EqualityExpression	task == NULL		5015029	0		==			
+ANR	5015121	Identifier	task		5015029	0					
+ANR	5015122	Identifier	NULL		5015029	1					
+ANR	5015123	EqualityExpression	task -> status != SCSI_STATUS_GOOD		5015029	1		!=			
+ANR	5015124	PtrMemberAccess	task -> status		5015029	0					
+ANR	5015125	Identifier	task		5015029	0					
+ANR	5015126	Identifier	status		5015029	1					
+ANR	5015127	Identifier	SCSI_STATUS_GOOD		5015029	1					
+ANR	5015128	CompoundStatement		27:62:514:514	5015029	1					
+ANR	5015129	GotoStatement	goto fail ;	33:12:698:707	5015029	0	True				
+ANR	5015130	Identifier	fail		5015029	0					
+ANR	5015131	ExpressionStatement	* inq = scsi_datain_unmarshall ( task )	41:4:734:769	5015029	6	True				
+ANR	5015132	AssignmentExpression	* inq = scsi_datain_unmarshall ( task )		5015029	0		=			
+ANR	5015133	UnaryOperationExpression	* inq		5015029	0					
+ANR	5015134	UnaryOperator	*		5015029	0					
+ANR	5015135	Identifier	inq		5015029	1					
+ANR	5015136	CallExpression	scsi_datain_unmarshall ( task )		5015029	1					
+ANR	5015137	Callee	scsi_datain_unmarshall		5015029	0					
+ANR	5015138	Identifier	scsi_datain_unmarshall		5015029	0					
+ANR	5015139	ArgumentList	task		5015029	1					
+ANR	5015140	Argument	task		5015029	0					
+ANR	5015141	Identifier	task		5015029	0					
+ANR	5015142	IfStatement	if ( * inq == NULL )		5015029	7					
+ANR	5015143	Condition	* inq == NULL	43:8:780:791	5015029	0	True				
+ANR	5015144	EqualityExpression	* inq == NULL		5015029	0		==			
+ANR	5015145	UnaryOperationExpression	* inq		5015029	0					
+ANR	5015146	UnaryOperator	*		5015029	0					
+ANR	5015147	Identifier	inq		5015029	1					
+ANR	5015148	Identifier	NULL		5015029	1					
+ANR	5015149	CompoundStatement		39:22:625:625	5015029	1					
+ANR	5015150	ExpressionStatement	"error_setg ( errp , ""iSCSI: failed to unmarshall inquiry datain blob"" )"	45:8:805:872	5015029	0	True				
+ANR	5015151	CallExpression	"error_setg ( errp , ""iSCSI: failed to unmarshall inquiry datain blob"" )"		5015029	0					
+ANR	5015152	Callee	error_setg		5015029	0					
+ANR	5015153	Identifier	error_setg		5015029	0					
+ANR	5015154	ArgumentList	errp		5015029	1					
+ANR	5015155	Argument	errp		5015029	0					
+ANR	5015156	Identifier	errp		5015029	0					
+ANR	5015157	Argument	"""iSCSI: failed to unmarshall inquiry datain blob"""		5015029	1					
+ANR	5015158	PrimaryExpression	"""iSCSI: failed to unmarshall inquiry datain blob"""		5015029	0					
+ANR	5015159	GotoStatement	goto fail ;	47:8:883:892	5015029	1	True				
+ANR	5015160	Identifier	fail		5015029	0					
+ANR	5015161	ReturnStatement	return task ;	53:4:908:919	5015029	8	True				
+ANR	5015162	Identifier	task		5015029	0					
+ANR	5015163	Label	fail :	57:0:924:928	5015029	9	True				
+ANR	5015164	Identifier	fail		5015029	0					
+ANR	5015165	IfStatement	if ( ! error_is_set ( errp ) )		5015029	10					
+ANR	5015166	Condition	! error_is_set ( errp )	59:8:939:957	5015029	0	True				
+ANR	5015167	UnaryOperationExpression	! error_is_set ( errp )		5015029	0					
+ANR	5015168	UnaryOperator	!		5015029	0					
+ANR	5015169	CallExpression	error_is_set ( errp )		5015029	1					
+ANR	5015170	Callee	error_is_set		5015029	0					
+ANR	5015171	Identifier	error_is_set		5015029	0					
+ANR	5015172	ArgumentList	errp		5015029	1					
+ANR	5015173	Argument	errp		5015029	0					
+ANR	5015174	Identifier	errp		5015029	0					
+ANR	5015175	CompoundStatement		55:29:791:791	5015029	1					
+ANR	5015176	ExpressionStatement	"error_setg ( errp , ""iSCSI: Inquiry command failed : %s"" , iscsi_get_error ( iscsi ) )"	61:8:971:1069	5015029	0	True				
+ANR	5015177	CallExpression	"error_setg ( errp , ""iSCSI: Inquiry command failed : %s"" , iscsi_get_error ( iscsi ) )"		5015029	0					
+ANR	5015178	Callee	error_setg		5015029	0					
+ANR	5015179	Identifier	error_setg		5015029	0					
+ANR	5015180	ArgumentList	errp		5015029	1					
+ANR	5015181	Argument	errp		5015029	0					
+ANR	5015182	Identifier	errp		5015029	0					
+ANR	5015183	Argument	"""iSCSI: Inquiry command failed : %s"""		5015029	1					
+ANR	5015184	PrimaryExpression	"""iSCSI: Inquiry command failed : %s"""		5015029	0					
+ANR	5015185	Argument	iscsi_get_error ( iscsi )		5015029	2					
+ANR	5015186	CallExpression	iscsi_get_error ( iscsi )		5015029	0					
+ANR	5015187	Callee	iscsi_get_error		5015029	0					
+ANR	5015188	Identifier	iscsi_get_error		5015029	0					
+ANR	5015189	ArgumentList	iscsi		5015029	1					
+ANR	5015190	Argument	iscsi		5015029	0					
+ANR	5015191	Identifier	iscsi		5015029	0					
+ANR	5015192	IfStatement	if ( task != NULL )		5015029	11					
+ANR	5015193	Condition	task != NULL	67:8:1087:1098	5015029	0	True				
+ANR	5015194	EqualityExpression	task != NULL		5015029	0		!=			
+ANR	5015195	Identifier	task		5015029	0					
+ANR	5015196	Identifier	NULL		5015029	1					
+ANR	5015197	CompoundStatement		63:22:932:932	5015029	1					
+ANR	5015198	ExpressionStatement	scsi_free_scsi_task ( task )	69:8:1112:1137	5015029	0	True				
+ANR	5015199	CallExpression	scsi_free_scsi_task ( task )		5015029	0					
+ANR	5015200	Callee	scsi_free_scsi_task		5015029	0					
+ANR	5015201	Identifier	scsi_free_scsi_task		5015029	0					
+ANR	5015202	ArgumentList	task		5015029	1					
+ANR	5015203	Argument	task		5015029	0					
+ANR	5015204	Identifier	task		5015029	0					
+ANR	5015205	ReturnStatement	return NULL ;	73:4:1151:1162	5015029	12	True				
+ANR	5015206	Identifier	NULL		5015029	0					
+ANR	5015207	ReturnType	static struct scsi_task *		5015029	1					
+ANR	5015208	Identifier	iscsi_do_inquiry		5015029	2					
+ANR	5015209	ParameterList	"struct iscsi_context * iscsi , int lun , int evpd , int pc , void * * inq , Error * * errp"		5015029	3					
+ANR	5015210	Parameter	struct iscsi_context * iscsi	1:42:42:68	5015029	0	True				
+ANR	5015211	ParameterType	struct iscsi_context *		5015029	0					
+ANR	5015212	Identifier	iscsi		5015029	1					
+ANR	5015213	Parameter	int lun	1:71:71:77	5015029	1	True				
+ANR	5015214	ParameterType	int		5015029	0					
+ANR	5015215	Identifier	lun		5015029	1					
+ANR	5015216	Parameter	int evpd	3:42:123:130	5015029	2	True				
+ANR	5015217	ParameterType	int		5015029	0					
+ANR	5015218	Identifier	evpd		5015029	1					
+ANR	5015219	Parameter	int pc	3:52:133:138	5015029	3	True				
+ANR	5015220	ParameterType	int		5015029	0					
+ANR	5015221	Identifier	pc		5015029	1					
+ANR	5015222	Parameter	void * * inq	3:60:141:150	5015029	4	True				
+ANR	5015223	ParameterType	void * *		5015029	0					
+ANR	5015224	Identifier	inq		5015029	1					
+ANR	5015225	Parameter	Error * * errp	3:72:153:164	5015029	5	True				
+ANR	5015226	ParameterType	Error * *		5015029	0					
+ANR	5015227	Identifier	errp		5015029	1					
+ANR	5015228	CFGEntryNode	ENTRY		5015029		True				
+ANR	5015229	CFGExitNode	EXIT		5015029		True				
+ANR	5015230	Symbol	NULL		5015029						
+ANR	5015231	Symbol	task -> datain		5015029						
+ANR	5015232	Symbol	lun		5015029						
+ANR	5015233	Symbol	errp		5015029						
+ANR	5015234	Symbol	scsi_datain_unmarshall		5015029						
+ANR	5015235	Symbol	* inq		5015029						
+ANR	5015236	Symbol	evpd		5015029						
+ANR	5015237	Symbol	SCSI_STATUS_GOOD		5015029						
+ANR	5015238	Symbol	inq		5015029						
+ANR	5015239	Symbol	iscsi		5015029						
+ANR	5015240	Symbol	pc		5015029						
+ANR	5015241	Symbol	task		5015029						
+ANR	5015242	Symbol	scsi_datain_getfullsize		5015029						
+ANR	5015243	Symbol	iscsi_get_error		5015029						
+ANR	5015244	Symbol	iscsi_inquiry_sync		5015029						
+ANR	5015245	Symbol	task -> datain . size		5015029						
+ANR	5015246	Symbol	error_is_set		5015029						
+ANR	5015247	Symbol	task -> status		5015029						
+ANR	5015248	Symbol	full_size		5015029						
+ANR	5015249	Symbol	* task		5015029						

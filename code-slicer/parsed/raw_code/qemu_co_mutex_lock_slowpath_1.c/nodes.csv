@@ -1,0 +1,174 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6970339	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qemu_co_mutex_lock_slowpath_1.c								
+ANR	6970340	Function	qemu_co_mutex_lock_slowpath	1:0:0:1082							
+ANR	6970341	FunctionDef	qemu_co_mutex_lock_slowpath (CoMutex * mutex)		6970340	0					
+ANR	6970342	CompoundStatement		3:0:70:1082	6970340	0					
+ANR	6970343	IdentifierDeclStatement	Coroutine * self = qemu_coroutine_self ( ) ;	5:4:77:116	6970340	0	True				
+ANR	6970344	IdentifierDecl	* self = qemu_coroutine_self ( )		6970340	0					
+ANR	6970345	IdentifierDeclType	Coroutine *		6970340	0					
+ANR	6970346	Identifier	self		6970340	1					
+ANR	6970347	AssignmentExpression	* self = qemu_coroutine_self ( )		6970340	2		=			
+ANR	6970348	Identifier	self		6970340	0					
+ANR	6970349	CallExpression	qemu_coroutine_self ( )		6970340	1					
+ANR	6970350	Callee	qemu_coroutine_self		6970340	0					
+ANR	6970351	Identifier	qemu_coroutine_self		6970340	0					
+ANR	6970352	ArgumentList			6970340	1					
+ANR	6970353	IdentifierDeclStatement	CoWaitRecord w ;	7:4:123:137	6970340	1	True				
+ANR	6970354	IdentifierDecl	w		6970340	0					
+ANR	6970355	IdentifierDeclType	CoWaitRecord		6970340	0					
+ANR	6970356	Identifier	w		6970340	1					
+ANR	6970357	IdentifierDeclStatement	unsigned old_handoff ;	9:4:144:164	6970340	2	True				
+ANR	6970358	IdentifierDecl	old_handoff		6970340	0					
+ANR	6970359	IdentifierDeclType	unsigned		6970340	0					
+ANR	6970360	Identifier	old_handoff		6970340	1					
+ANR	6970361	ExpressionStatement	"trace_qemu_co_mutex_lock_entry ( mutex , self )"	13:4:173:216	6970340	3	True				
+ANR	6970362	CallExpression	"trace_qemu_co_mutex_lock_entry ( mutex , self )"		6970340	0					
+ANR	6970363	Callee	trace_qemu_co_mutex_lock_entry		6970340	0					
+ANR	6970364	Identifier	trace_qemu_co_mutex_lock_entry		6970340	0					
+ANR	6970365	ArgumentList	mutex		6970340	1					
+ANR	6970366	Argument	mutex		6970340	0					
+ANR	6970367	Identifier	mutex		6970340	0					
+ANR	6970368	Argument	self		6970340	1					
+ANR	6970369	Identifier	self		6970340	0					
+ANR	6970370	ExpressionStatement	w . co = self	15:4:223:234	6970340	4	True				
+ANR	6970371	AssignmentExpression	w . co = self		6970340	0		=			
+ANR	6970372	MemberAccess	w . co		6970340	0					
+ANR	6970373	Identifier	w		6970340	0					
+ANR	6970374	Identifier	co		6970340	1					
+ANR	6970375	Identifier	self		6970340	1					
+ANR	6970376	ExpressionStatement	"push_waiter ( mutex , & w )"	17:4:241:263	6970340	5	True				
+ANR	6970377	CallExpression	"push_waiter ( mutex , & w )"		6970340	0					
+ANR	6970378	Callee	push_waiter		6970340	0					
+ANR	6970379	Identifier	push_waiter		6970340	0					
+ANR	6970380	ArgumentList	mutex		6970340	1					
+ANR	6970381	Argument	mutex		6970340	0					
+ANR	6970382	Identifier	mutex		6970340	0					
+ANR	6970383	Argument	& w		6970340	1					
+ANR	6970384	UnaryOperationExpression	& w		6970340	0					
+ANR	6970385	UnaryOperator	&		6970340	0					
+ANR	6970386	Identifier	w		6970340	1					
+ANR	6970387	ExpressionStatement	old_handoff = atomic_mb_read ( & mutex -> handoff )	27:4:429:474	6970340	6	True				
+ANR	6970388	AssignmentExpression	old_handoff = atomic_mb_read ( & mutex -> handoff )		6970340	0		=			
+ANR	6970389	Identifier	old_handoff		6970340	0					
+ANR	6970390	CallExpression	atomic_mb_read ( & mutex -> handoff )		6970340	1					
+ANR	6970391	Callee	atomic_mb_read		6970340	0					
+ANR	6970392	Identifier	atomic_mb_read		6970340	0					
+ANR	6970393	ArgumentList	& mutex -> handoff		6970340	1					
+ANR	6970394	Argument	& mutex -> handoff		6970340	0					
+ANR	6970395	UnaryOperationExpression	& mutex -> handoff		6970340	0					
+ANR	6970396	UnaryOperator	&		6970340	0					
+ANR	6970397	PtrMemberAccess	mutex -> handoff		6970340	1					
+ANR	6970398	Identifier	mutex		6970340	0					
+ANR	6970399	Identifier	handoff		6970340	1					
+ANR	6970400	IfStatement	"if ( old_handoff && has_waiters ( mutex ) && atomic_cmpxchg ( & mutex -> handoff , old_handoff , 0 ) == old_handoff )"		6970340	7					
+ANR	6970401	Condition	"old_handoff && has_waiters ( mutex ) && atomic_cmpxchg ( & mutex -> handoff , old_handoff , 0 ) == old_handoff"	29:8:485:601	6970340	0	True				
+ANR	6970402	AndExpression	"old_handoff && has_waiters ( mutex ) && atomic_cmpxchg ( & mutex -> handoff , old_handoff , 0 ) == old_handoff"		6970340	0		&&			
+ANR	6970403	Identifier	old_handoff		6970340	0					
+ANR	6970404	AndExpression	"has_waiters ( mutex ) && atomic_cmpxchg ( & mutex -> handoff , old_handoff , 0 ) == old_handoff"		6970340	1		&&			
+ANR	6970405	CallExpression	has_waiters ( mutex )		6970340	0					
+ANR	6970406	Callee	has_waiters		6970340	0					
+ANR	6970407	Identifier	has_waiters		6970340	0					
+ANR	6970408	ArgumentList	mutex		6970340	1					
+ANR	6970409	Argument	mutex		6970340	0					
+ANR	6970410	Identifier	mutex		6970340	0					
+ANR	6970411	EqualityExpression	"atomic_cmpxchg ( & mutex -> handoff , old_handoff , 0 ) == old_handoff"		6970340	1		==			
+ANR	6970412	CallExpression	"atomic_cmpxchg ( & mutex -> handoff , old_handoff , 0 )"		6970340	0					
+ANR	6970413	Callee	atomic_cmpxchg		6970340	0					
+ANR	6970414	Identifier	atomic_cmpxchg		6970340	0					
+ANR	6970415	ArgumentList	& mutex -> handoff		6970340	1					
+ANR	6970416	Argument	& mutex -> handoff		6970340	0					
+ANR	6970417	UnaryOperationExpression	& mutex -> handoff		6970340	0					
+ANR	6970418	UnaryOperator	&		6970340	0					
+ANR	6970419	PtrMemberAccess	mutex -> handoff		6970340	1					
+ANR	6970420	Identifier	mutex		6970340	0					
+ANR	6970421	Identifier	handoff		6970340	1					
+ANR	6970422	Argument	old_handoff		6970340	1					
+ANR	6970423	Identifier	old_handoff		6970340	0					
+ANR	6970424	Argument	0		6970340	2					
+ANR	6970425	PrimaryExpression	0		6970340	0					
+ANR	6970426	Identifier	old_handoff		6970340	1					
+ANR	6970427	CompoundStatement		41:8:722:749	6970340	1					
+ANR	6970428	IdentifierDeclStatement	CoWaitRecord * to_wake = pop_waiter ( mutex ) ;	41:8:741:782	6970340	0	True				
+ANR	6970429	IdentifierDecl	* to_wake = pop_waiter ( mutex )		6970340	0					
+ANR	6970430	IdentifierDeclType	CoWaitRecord *		6970340	0					
+ANR	6970431	Identifier	to_wake		6970340	1					
+ANR	6970432	AssignmentExpression	* to_wake = pop_waiter ( mutex )		6970340	2		=			
+ANR	6970433	Identifier	to_wake		6970340	0					
+ANR	6970434	CallExpression	pop_waiter ( mutex )		6970340	1					
+ANR	6970435	Callee	pop_waiter		6970340	0					
+ANR	6970436	Identifier	pop_waiter		6970340	0					
+ANR	6970437	ArgumentList	mutex		6970340	1					
+ANR	6970438	Argument	mutex		6970340	0					
+ANR	6970439	Identifier	mutex		6970340	0					
+ANR	6970440	IdentifierDeclStatement	Coroutine * co = to_wake -> co ;	43:8:793:820	6970340	1	True				
+ANR	6970441	IdentifierDecl	* co = to_wake -> co		6970340	0					
+ANR	6970442	IdentifierDeclType	Coroutine *		6970340	0					
+ANR	6970443	Identifier	co		6970340	1					
+ANR	6970444	AssignmentExpression	* co = to_wake -> co		6970340	2		=			
+ANR	6970445	Identifier	co		6970340	0					
+ANR	6970446	PtrMemberAccess	to_wake -> co		6970340	1					
+ANR	6970447	Identifier	to_wake		6970340	0					
+ANR	6970448	Identifier	co		6970340	1					
+ANR	6970449	IfStatement	if ( co == self )		6970340	2					
+ANR	6970450	Condition	co == self	45:12:835:844	6970340	0	True				
+ANR	6970451	EqualityExpression	co == self		6970340	0		==			
+ANR	6970452	Identifier	co		6970340	0					
+ANR	6970453	Identifier	self		6970340	1					
+ANR	6970454	CompoundStatement		43:24:776:776	6970340	1					
+ANR	6970455	ExpressionStatement	assert ( to_wake == & w )	49:12:909:930	6970340	0	True				
+ANR	6970456	CallExpression	assert ( to_wake == & w )		6970340	0					
+ANR	6970457	Callee	assert		6970340	0					
+ANR	6970458	Identifier	assert		6970340	0					
+ANR	6970459	ArgumentList	to_wake == & w		6970340	1					
+ANR	6970460	Argument	to_wake == & w		6970340	0					
+ANR	6970461	EqualityExpression	to_wake == & w		6970340	0		==			
+ANR	6970462	Identifier	to_wake		6970340	0					
+ANR	6970463	UnaryOperationExpression	& w		6970340	1					
+ANR	6970464	UnaryOperator	&		6970340	0					
+ANR	6970465	Identifier	w		6970340	1					
+ANR	6970466	ReturnStatement	return ;	51:12:945:951	6970340	1	True				
+ANR	6970467	ExpressionStatement	aio_co_wake ( co )	57:8:975:990	6970340	3	True				
+ANR	6970468	CallExpression	aio_co_wake ( co )		6970340	0					
+ANR	6970469	Callee	aio_co_wake		6970340	0					
+ANR	6970470	Identifier	aio_co_wake		6970340	0					
+ANR	6970471	ArgumentList	co		6970340	1					
+ANR	6970472	Argument	co		6970340	0					
+ANR	6970473	Identifier	co		6970340	0					
+ANR	6970474	ExpressionStatement	qemu_coroutine_yield ( )	63:4:1006:1028	6970340	8	True				
+ANR	6970475	CallExpression	qemu_coroutine_yield ( )		6970340	0					
+ANR	6970476	Callee	qemu_coroutine_yield		6970340	0					
+ANR	6970477	Identifier	qemu_coroutine_yield		6970340	0					
+ANR	6970478	ArgumentList			6970340	1					
+ANR	6970479	ExpressionStatement	"trace_qemu_co_mutex_lock_return ( mutex , self )"	65:4:1035:1079	6970340	9	True				
+ANR	6970480	CallExpression	"trace_qemu_co_mutex_lock_return ( mutex , self )"		6970340	0					
+ANR	6970481	Callee	trace_qemu_co_mutex_lock_return		6970340	0					
+ANR	6970482	Identifier	trace_qemu_co_mutex_lock_return		6970340	0					
+ANR	6970483	ArgumentList	mutex		6970340	1					
+ANR	6970484	Argument	mutex		6970340	0					
+ANR	6970485	Identifier	mutex		6970340	0					
+ANR	6970486	Argument	self		6970340	1					
+ANR	6970487	Identifier	self		6970340	0					
+ANR	6970488	ReturnType	static void coroutine_fn		6970340	1					
+ANR	6970489	Identifier	qemu_co_mutex_lock_slowpath		6970340	2					
+ANR	6970490	ParameterList	CoMutex * mutex		6970340	3					
+ANR	6970491	Parameter	CoMutex * mutex	1:53:53:66	6970340	0	True				
+ANR	6970492	ParameterType	CoMutex *		6970340	0					
+ANR	6970493	Identifier	mutex		6970340	1					
+ANR	6970494	CFGEntryNode	ENTRY		6970340		True				
+ANR	6970495	CFGExitNode	EXIT		6970340		True				
+ANR	6970496	Symbol	to_wake		6970340						
+ANR	6970497	Symbol	mutex		6970340						
+ANR	6970498	Symbol	pop_waiter		6970340						
+ANR	6970499	Symbol	atomic_mb_read		6970340						
+ANR	6970500	Symbol	co		6970340						
+ANR	6970501	Symbol	w . co		6970340						
+ANR	6970502	Symbol	old_handoff		6970340						
+ANR	6970503	Symbol	& mutex -> handoff		6970340						
+ANR	6970504	Symbol	w		6970340						
+ANR	6970505	Symbol	self		6970340						
+ANR	6970506	Symbol	to_wake -> co		6970340						
+ANR	6970507	Symbol	qemu_coroutine_self		6970340						
+ANR	6970508	Symbol	atomic_cmpxchg		6970340						
+ANR	6970509	Symbol	* to_wake		6970340						
+ANR	6970510	Symbol	& w		6970340						
+ANR	6970511	Symbol	has_waiters		6970340						

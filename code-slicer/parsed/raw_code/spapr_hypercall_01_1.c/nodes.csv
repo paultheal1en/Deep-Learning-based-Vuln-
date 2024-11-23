@@ -1,0 +1,139 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7925696	File	/home/p4ultr4n/workplace/ReVeal/raw_code/spapr_hypercall_01_1.c								
+ANR	7925697	Function	spapr_hypercall	1:0:0:824							
+ANR	7925698	FunctionDef	"spapr_hypercall (CPUPPCState * env , target_ulong opcode , target_ulong * args)"		7925697	0					
+ANR	7925699	CompoundStatement		5:0:119:824	7925697	0					
+ANR	7925700	IfStatement	if ( msr_pr )		7925697	0					
+ANR	7925701	Condition	msr_pr	7:8:130:135	7925697	0	True				
+ANR	7925702	Identifier	msr_pr		7925697	0					
+ANR	7925703	CompoundStatement		3:16:18:18	7925697	1					
+ANR	7925704	ExpressionStatement	"hcall_dprintf ( ""Hypercall made with MSR[PR]=1\\n"" )"	9:8:149:197	7925697	0	True				
+ANR	7925705	CallExpression	"hcall_dprintf ( ""Hypercall made with MSR[PR]=1\\n"" )"		7925697	0					
+ANR	7925706	Callee	hcall_dprintf		7925697	0					
+ANR	7925707	Identifier	hcall_dprintf		7925697	0					
+ANR	7925708	ArgumentList	"""Hypercall made with MSR[PR]=1\\n"""		7925697	1					
+ANR	7925709	Argument	"""Hypercall made with MSR[PR]=1\\n"""		7925697	0					
+ANR	7925710	PrimaryExpression	"""Hypercall made with MSR[PR]=1\\n"""		7925697	0					
+ANR	7925711	ReturnStatement	return H_PRIVILEGE ;	11:8:208:226	7925697	1	True				
+ANR	7925712	Identifier	H_PRIVILEGE		7925697	0					
+ANR	7925713	IfStatement	if ( ( opcode <= MAX_HCALL_OPCODE ) && ( ( opcode & 0x3 ) == 0 ) )		7925697	1					
+ANR	7925714	Condition	( opcode <= MAX_HCALL_OPCODE ) && ( ( opcode & 0x3 ) == 0 )	17:8:246:307	7925697	0	True				
+ANR	7925715	AndExpression	( opcode <= MAX_HCALL_OPCODE ) && ( ( opcode & 0x3 ) == 0 )		7925697	0		&&			
+ANR	7925716	RelationalExpression	opcode <= MAX_HCALL_OPCODE		7925697	0		<=			
+ANR	7925717	Identifier	opcode		7925697	0					
+ANR	7925718	Identifier	MAX_HCALL_OPCODE		7925697	1					
+ANR	7925719	EqualityExpression	( opcode & 0x3 ) == 0		7925697	1		==			
+ANR	7925720	BitAndExpression	opcode & 0x3		7925697	0		&			
+ANR	7925721	Identifier	opcode		7925697	0					
+ANR	7925722	PrimaryExpression	0x3		7925697	1					
+ANR	7925723	PrimaryExpression	0		7925697	1					
+ANR	7925724	CompoundStatement		17:8:201:253	7925697	1					
+ANR	7925725	IdentifierDeclStatement	spapr_hcall_fn fn = papr_hypercall_table [ opcode / 4 ] ;	21:8:321:373	7925697	0	True				
+ANR	7925726	IdentifierDecl	fn = papr_hypercall_table [ opcode / 4 ]		7925697	0					
+ANR	7925727	IdentifierDeclType	spapr_hcall_fn		7925697	0					
+ANR	7925728	Identifier	fn		7925697	1					
+ANR	7925729	AssignmentExpression	fn = papr_hypercall_table [ opcode / 4 ]		7925697	2		=			
+ANR	7925730	Identifier	fn		7925697	0					
+ANR	7925731	ArrayIndexing	papr_hypercall_table [ opcode / 4 ]		7925697	1					
+ANR	7925732	Identifier	papr_hypercall_table		7925697	0					
+ANR	7925733	MultiplicativeExpression	opcode / 4		7925697	1		/			
+ANR	7925734	Identifier	opcode		7925697	0					
+ANR	7925735	PrimaryExpression	4		7925697	1					
+ANR	7925736	IfStatement	if ( fn )		7925697	1					
+ANR	7925737	Condition	fn	25:12:390:391	7925697	0	True				
+ANR	7925738	Identifier	fn		7925697	0					
+ANR	7925739	CompoundStatement		21:16:274:274	7925697	1					
+ANR	7925740	ReturnStatement	"return fn ( env , spapr , opcode , args ) ;"	27:12:409:444	7925697	0	True				
+ANR	7925741	CallExpression	"fn ( env , spapr , opcode , args )"		7925697	0					
+ANR	7925742	Callee	fn		7925697	0					
+ANR	7925743	Identifier	fn		7925697	0					
+ANR	7925744	ArgumentList	env		7925697	1					
+ANR	7925745	Argument	env		7925697	0					
+ANR	7925746	Identifier	env		7925697	0					
+ANR	7925747	Argument	spapr		7925697	1					
+ANR	7925748	Identifier	spapr		7925697	0					
+ANR	7925749	Argument	opcode		7925697	2					
+ANR	7925750	Identifier	opcode		7925697	0					
+ANR	7925751	Argument	args		7925697	3					
+ANR	7925752	Identifier	args		7925697	0					
+ANR	7925753	ElseStatement	else		7925697	0					
+ANR	7925754	IfStatement	if ( ( opcode >= KVMPPC_HCALL_BASE ) && ( opcode <= KVMPPC_HCALL_MAX ) )		7925697	0					
+ANR	7925755	Condition	( opcode >= KVMPPC_HCALL_BASE ) && ( opcode <= KVMPPC_HCALL_MAX )	31:15:473:549	7925697	0	True				
+ANR	7925756	AndExpression	( opcode >= KVMPPC_HCALL_BASE ) && ( opcode <= KVMPPC_HCALL_MAX )		7925697	0		&&			
+ANR	7925757	RelationalExpression	opcode >= KVMPPC_HCALL_BASE		7925697	0		>=			
+ANR	7925758	Identifier	opcode		7925697	0					
+ANR	7925759	Identifier	KVMPPC_HCALL_BASE		7925697	1					
+ANR	7925760	RelationalExpression	opcode <= KVMPPC_HCALL_MAX		7925697	1		<=			
+ANR	7925761	Identifier	opcode		7925697	0					
+ANR	7925762	Identifier	KVMPPC_HCALL_MAX		7925697	1					
+ANR	7925763	CompoundStatement		31:8:443:513	7925697	1					
+ANR	7925764	IdentifierDeclStatement	spapr_hcall_fn fn = kvmppc_hypercall_table [ opcode - KVMPPC_HCALL_BASE ] ;	35:8:563:633	7925697	0	True				
+ANR	7925765	IdentifierDecl	fn = kvmppc_hypercall_table [ opcode - KVMPPC_HCALL_BASE ]		7925697	0					
+ANR	7925766	IdentifierDeclType	spapr_hcall_fn		7925697	0					
+ANR	7925767	Identifier	fn		7925697	1					
+ANR	7925768	AssignmentExpression	fn = kvmppc_hypercall_table [ opcode - KVMPPC_HCALL_BASE ]		7925697	2		=			
+ANR	7925769	Identifier	fn		7925697	0					
+ANR	7925770	ArrayIndexing	kvmppc_hypercall_table [ opcode - KVMPPC_HCALL_BASE ]		7925697	1					
+ANR	7925771	Identifier	kvmppc_hypercall_table		7925697	0					
+ANR	7925772	AdditiveExpression	opcode - KVMPPC_HCALL_BASE		7925697	1		-			
+ANR	7925773	Identifier	opcode		7925697	0					
+ANR	7925774	Identifier	KVMPPC_HCALL_BASE		7925697	1					
+ANR	7925775	IfStatement	if ( fn )		7925697	1					
+ANR	7925776	Condition	fn	39:12:650:651	7925697	0	True				
+ANR	7925777	Identifier	fn		7925697	0					
+ANR	7925778	CompoundStatement		35:16:534:534	7925697	1					
+ANR	7925779	ReturnStatement	"return fn ( env , spapr , opcode , args ) ;"	41:12:669:704	7925697	0	True				
+ANR	7925780	CallExpression	"fn ( env , spapr , opcode , args )"		7925697	0					
+ANR	7925781	Callee	fn		7925697	0					
+ANR	7925782	Identifier	fn		7925697	0					
+ANR	7925783	ArgumentList	env		7925697	1					
+ANR	7925784	Argument	env		7925697	0					
+ANR	7925785	Identifier	env		7925697	0					
+ANR	7925786	Argument	spapr		7925697	1					
+ANR	7925787	Identifier	spapr		7925697	0					
+ANR	7925788	Argument	opcode		7925697	2					
+ANR	7925789	Identifier	opcode		7925697	0					
+ANR	7925790	Argument	args		7925697	3					
+ANR	7925791	Identifier	args		7925697	0					
+ANR	7925792	Statement	hcall_dprintf	49:4:731:743	7925697	2	True				
+ANR	7925793	Statement	(	49:17:744:744	7925697	3	True				
+ANR	7925794	Statement	"""Unimplemented hcall 0x"""	49:18:745:768	7925697	4	True				
+ANR	7925795	Statement	TARGET_FMT_lx	49:43:770:782	7925697	5	True				
+ANR	7925796	Statement	"""\\n"""	49:57:784:787	7925697	6	True				
+ANR	7925797	Statement	","	49:61:788:788	7925697	7	True				
+ANR	7925798	Statement	opcode	49:63:790:795	7925697	8	True				
+ANR	7925799	Statement	)	49:69:796:796	7925697	9	True				
+ANR	7925800	ExpressionStatement		49:70:797:797	7925697	10	True				
+ANR	7925801	ReturnStatement	return H_FUNCTION ;	51:4:804:821	7925697	11	True				
+ANR	7925802	Identifier	H_FUNCTION		7925697	0					
+ANR	7925803	ReturnType	target_ulong		7925697	1					
+ANR	7925804	Identifier	spapr_hypercall		7925697	2					
+ANR	7925805	ParameterList	"CPUPPCState * env , target_ulong opcode , target_ulong * args"		7925697	3					
+ANR	7925806	Parameter	CPUPPCState * env	1:29:29:44	7925697	0	True				
+ANR	7925807	ParameterType	CPUPPCState *		7925697	0					
+ANR	7925808	Identifier	env		7925697	1					
+ANR	7925809	Parameter	target_ulong opcode	1:47:47:65	7925697	1	True				
+ANR	7925810	ParameterType	target_ulong		7925697	0					
+ANR	7925811	Identifier	opcode		7925697	1					
+ANR	7925812	Parameter	target_ulong * args	3:29:98:115	7925697	2	True				
+ANR	7925813	ParameterType	target_ulong *		7925697	0					
+ANR	7925814	Identifier	args		7925697	1					
+ANR	7925815	CFGEntryNode	ENTRY		7925697		True				
+ANR	7925816	CFGExitNode	EXIT		7925697		True				
+ANR	7925817	Symbol	* KVMPPC_HCALL_BASE		7925697						
+ANR	7925818	Symbol	papr_hypercall_table		7925697						
+ANR	7925819	Symbol	fn		7925697						
+ANR	7925820	Symbol	KVMPPC_HCALL_MAX		7925697						
+ANR	7925821	Symbol	KVMPPC_HCALL_BASE		7925697						
+ANR	7925822	Symbol	env		7925697						
+ANR	7925823	Symbol	opcode		7925697						
+ANR	7925824	Symbol	kvmppc_hypercall_table		7925697						
+ANR	7925825	Symbol	H_FUNCTION		7925697						
+ANR	7925826	Symbol	spapr		7925697						
+ANR	7925827	Symbol	args		7925697						
+ANR	7925828	Symbol	MAX_HCALL_OPCODE		7925697						
+ANR	7925829	Symbol	H_PRIVILEGE		7925697						
+ANR	7925830	Symbol	* papr_hypercall_table		7925697						
+ANR	7925831	Symbol	* kvmppc_hypercall_table		7925697						
+ANR	7925832	Symbol	msr_pr		7925697						
+ANR	7925833	Symbol	* opcode		7925697						

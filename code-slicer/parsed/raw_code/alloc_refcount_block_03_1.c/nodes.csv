@@ -1,0 +1,1102 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	526588	File	/home/p4ultr4n/workplace/ReVeal/raw_code/alloc_refcount_block_03_1.c								
+ANR	526589	Function	alloc_refcount_block	1:0:0:8848							
+ANR	526590	FunctionDef	"alloc_refcount_block (BlockDriverState * bs , int64_t cluster_index)"		526589	0					
+ANR	526591	CompoundStatement		3:0:82:8848	526589	0					
+ANR	526592	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	5:4:89:118	526589	0	True				
+ANR	526593	IdentifierDecl	* s = bs -> opaque		526589	0					
+ANR	526594	IdentifierDeclType	BDRVQcowState *		526589	0					
+ANR	526595	Identifier	s		526589	1					
+ANR	526596	AssignmentExpression	* s = bs -> opaque		526589	2		=			
+ANR	526597	Identifier	s		526589	0					
+ANR	526598	PtrMemberAccess	bs -> opaque		526589	1					
+ANR	526599	Identifier	bs		526589	0					
+ANR	526600	Identifier	opaque		526589	1					
+ANR	526601	IdentifierDeclStatement	unsigned int refcount_table_index ;	7:4:125:158	526589	1	True				
+ANR	526602	IdentifierDecl	refcount_table_index		526589	0					
+ANR	526603	IdentifierDeclType	unsigned int		526589	0					
+ANR	526604	Identifier	refcount_table_index		526589	1					
+ANR	526605	IdentifierDeclStatement	int ret ;	9:4:165:172	526589	2	True				
+ANR	526606	IdentifierDecl	ret		526589	0					
+ANR	526607	IdentifierDeclType	int		526589	0					
+ANR	526608	Identifier	ret		526589	1					
+ANR	526609	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC )"	13:4:181:226	526589	3	True				
+ANR	526610	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC )"		526589	0					
+ANR	526611	Callee	BLKDBG_EVENT		526589	0					
+ANR	526612	Identifier	BLKDBG_EVENT		526589	0					
+ANR	526613	ArgumentList	bs -> file		526589	1					
+ANR	526614	Argument	bs -> file		526589	0					
+ANR	526615	PtrMemberAccess	bs -> file		526589	0					
+ANR	526616	Identifier	bs		526589	0					
+ANR	526617	Identifier	file		526589	1					
+ANR	526618	Argument	BLKDBG_REFBLOCK_ALLOC		526589	1					
+ANR	526619	Identifier	BLKDBG_REFBLOCK_ALLOC		526589	0					
+ANR	526620	ExpressionStatement	refcount_table_index = cluster_index >> ( s -> cluster_bits - REFCOUNT_SHIFT )	19:4:292:366	526589	4	True				
+ANR	526621	AssignmentExpression	refcount_table_index = cluster_index >> ( s -> cluster_bits - REFCOUNT_SHIFT )		526589	0		=			
+ANR	526622	Identifier	refcount_table_index		526589	0					
+ANR	526623	ShiftExpression	cluster_index >> ( s -> cluster_bits - REFCOUNT_SHIFT )		526589	1		>>			
+ANR	526624	Identifier	cluster_index		526589	0					
+ANR	526625	AdditiveExpression	s -> cluster_bits - REFCOUNT_SHIFT		526589	1		-			
+ANR	526626	PtrMemberAccess	s -> cluster_bits		526589	0					
+ANR	526627	Identifier	s		526589	0					
+ANR	526628	Identifier	cluster_bits		526589	1					
+ANR	526629	Identifier	REFCOUNT_SHIFT		526589	1					
+ANR	526630	IfStatement	if ( refcount_table_index < s -> refcount_table_size )		526589	5					
+ANR	526631	Condition	refcount_table_index < s -> refcount_table_size	23:8:379:423	526589	0	True				
+ANR	526632	RelationalExpression	refcount_table_index < s -> refcount_table_size		526589	0		<			
+ANR	526633	Identifier	refcount_table_index		526589	0					
+ANR	526634	PtrMemberAccess	s -> refcount_table_size		526589	1					
+ANR	526635	Identifier	s		526589	0					
+ANR	526636	Identifier	refcount_table_size		526589	1					
+ANR	526637	CompoundStatement		25:8:356:441	526589	1					
+ANR	526638	IdentifierDeclStatement	uint64_t refcount_block_offset = s -> refcount_table [ refcount_table_index ] ;	27:8:439:524	526589	0	True				
+ANR	526639	IdentifierDecl	refcount_block_offset = s -> refcount_table [ refcount_table_index ]		526589	0					
+ANR	526640	IdentifierDeclType	uint64_t		526589	0					
+ANR	526641	Identifier	refcount_block_offset		526589	1					
+ANR	526642	AssignmentExpression	refcount_block_offset = s -> refcount_table [ refcount_table_index ]		526589	2		=			
+ANR	526643	Identifier	refcount_block_offset		526589	0					
+ANR	526644	ArrayIndexing	s -> refcount_table [ refcount_table_index ]		526589	1					
+ANR	526645	PtrMemberAccess	s -> refcount_table		526589	0					
+ANR	526646	Identifier	s		526589	0					
+ANR	526647	Identifier	refcount_table		526589	1					
+ANR	526648	Identifier	refcount_table_index		526589	1					
+ANR	526649	IfStatement	if ( refcount_block_offset )		526589	1					
+ANR	526650	Condition	refcount_block_offset	35:12:590:610	526589	0	True				
+ANR	526651	Identifier	refcount_block_offset		526589	0					
+ANR	526652	CompoundStatement		33:35:530:530	526589	1					
+ANR	526653	IfStatement	if ( refcount_block_offset != s -> refcount_block_cache_offset )		526589	0					
+ANR	526654	Condition	refcount_block_offset != s -> refcount_block_cache_offset	37:16:632:686	526589	0	True				
+ANR	526655	EqualityExpression	refcount_block_offset != s -> refcount_block_cache_offset		526589	0		!=			
+ANR	526656	Identifier	refcount_block_offset		526589	0					
+ANR	526657	PtrMemberAccess	s -> refcount_block_cache_offset		526589	1					
+ANR	526658	Identifier	s		526589	0					
+ANR	526659	Identifier	refcount_block_cache_offset		526589	1					
+ANR	526660	CompoundStatement		35:73:606:606	526589	1					
+ANR	526661	ExpressionStatement	"ret = load_refcount_block ( bs , refcount_block_offset )"	39:16:708:760	526589	0	True				
+ANR	526662	AssignmentExpression	"ret = load_refcount_block ( bs , refcount_block_offset )"		526589	0		=			
+ANR	526663	Identifier	ret		526589	0					
+ANR	526664	CallExpression	"load_refcount_block ( bs , refcount_block_offset )"		526589	1					
+ANR	526665	Callee	load_refcount_block		526589	0					
+ANR	526666	Identifier	load_refcount_block		526589	0					
+ANR	526667	ArgumentList	bs		526589	1					
+ANR	526668	Argument	bs		526589	0					
+ANR	526669	Identifier	bs		526589	0					
+ANR	526670	Argument	refcount_block_offset		526589	1					
+ANR	526671	Identifier	refcount_block_offset		526589	0					
+ANR	526672	IfStatement	if ( ret < 0 )		526589	1					
+ANR	526673	Condition	ret < 0	41:20:783:789	526589	0	True				
+ANR	526674	RelationalExpression	ret < 0		526589	0		<			
+ANR	526675	Identifier	ret		526589	0					
+ANR	526676	PrimaryExpression	0		526589	1					
+ANR	526677	CompoundStatement		39:29:709:709	526589	1					
+ANR	526678	ReturnStatement	return ret ;	43:20:815:825	526589	0	True				
+ANR	526679	Identifier	ret		526589	0					
+ANR	526680	ReturnStatement	return refcount_block_offset ;	49:12:874:902	526589	1	True				
+ANR	526681	Identifier	refcount_block_offset		526589	0					
+ANR	526682	IfStatement	if ( cache_refcount_updates )		526589	6					
+ANR	526683	Condition	cache_refcount_updates	101:8:2039:2060	526589	0	True				
+ANR	526684	Identifier	cache_refcount_updates		526589	0					
+ANR	526685	CompoundStatement		99:32:1980:1980	526589	1					
+ANR	526686	ExpressionStatement	ret = write_refcount_block ( bs )	103:8:2074:2104	526589	0	True				
+ANR	526687	AssignmentExpression	ret = write_refcount_block ( bs )		526589	0		=			
+ANR	526688	Identifier	ret		526589	0					
+ANR	526689	CallExpression	write_refcount_block ( bs )		526589	1					
+ANR	526690	Callee	write_refcount_block		526589	0					
+ANR	526691	Identifier	write_refcount_block		526589	0					
+ANR	526692	ArgumentList	bs		526589	1					
+ANR	526693	Argument	bs		526589	0					
+ANR	526694	Identifier	bs		526589	0					
+ANR	526695	IfStatement	if ( ret < 0 )		526589	1					
+ANR	526696	Condition	ret < 0	105:12:2119:2125	526589	0	True				
+ANR	526697	RelationalExpression	ret < 0		526589	0		<			
+ANR	526698	Identifier	ret		526589	0					
+ANR	526699	PrimaryExpression	0		526589	1					
+ANR	526700	CompoundStatement		103:21:2045:2045	526589	1					
+ANR	526701	ReturnStatement	return ret ;	107:12:2143:2153	526589	0	True				
+ANR	526702	Identifier	ret		526589	0					
+ANR	526703	IdentifierDeclStatement	"uint64_t new_block = alloc_clusters_noref ( bs , s -> cluster_size ) ;"	117:4:2246:2308	526589	7	True				
+ANR	526704	IdentifierDecl	"new_block = alloc_clusters_noref ( bs , s -> cluster_size )"		526589	0					
+ANR	526705	IdentifierDeclType	uint64_t		526589	0					
+ANR	526706	Identifier	new_block		526589	1					
+ANR	526707	AssignmentExpression	"new_block = alloc_clusters_noref ( bs , s -> cluster_size )"		526589	2		=			
+ANR	526708	Identifier	new_block		526589	0					
+ANR	526709	CallExpression	"alloc_clusters_noref ( bs , s -> cluster_size )"		526589	1					
+ANR	526710	Callee	alloc_clusters_noref		526589	0					
+ANR	526711	Identifier	alloc_clusters_noref		526589	0					
+ANR	526712	ArgumentList	bs		526589	1					
+ANR	526713	Argument	bs		526589	0					
+ANR	526714	Identifier	bs		526589	0					
+ANR	526715	Argument	s -> cluster_size		526589	1					
+ANR	526716	PtrMemberAccess	s -> cluster_size		526589	0					
+ANR	526717	Identifier	s		526589	0					
+ANR	526718	Identifier	cluster_size		526589	1					
+ANR	526719	ExpressionStatement	"memset ( s -> refcount_block_cache , 0 , s -> cluster_size )"	119:4:2315:2366	526589	8	True				
+ANR	526720	CallExpression	"memset ( s -> refcount_block_cache , 0 , s -> cluster_size )"		526589	0					
+ANR	526721	Callee	memset		526589	0					
+ANR	526722	Identifier	memset		526589	0					
+ANR	526723	ArgumentList	s -> refcount_block_cache		526589	1					
+ANR	526724	Argument	s -> refcount_block_cache		526589	0					
+ANR	526725	PtrMemberAccess	s -> refcount_block_cache		526589	0					
+ANR	526726	Identifier	s		526589	0					
+ANR	526727	Identifier	refcount_block_cache		526589	1					
+ANR	526728	Argument	0		526589	1					
+ANR	526729	PrimaryExpression	0		526589	0					
+ANR	526730	Argument	s -> cluster_size		526589	2					
+ANR	526731	PtrMemberAccess	s -> cluster_size		526589	0					
+ANR	526732	Identifier	s		526589	0					
+ANR	526733	Identifier	cluster_size		526589	1					
+ANR	526734	ExpressionStatement	s -> refcount_block_cache_offset = new_block	121:4:2373:2415	526589	9	True				
+ANR	526735	AssignmentExpression	s -> refcount_block_cache_offset = new_block		526589	0		=			
+ANR	526736	PtrMemberAccess	s -> refcount_block_cache_offset		526589	0					
+ANR	526737	Identifier	s		526589	0					
+ANR	526738	Identifier	refcount_block_cache_offset		526589	1					
+ANR	526739	Identifier	new_block		526589	1					
+ANR	526740	Statement	fprintf	127:4:2445:2451	526589	10	True				
+ANR	526741	Statement	(	127:11:2452:2452	526589	11	True				
+ANR	526742	Statement	stderr	127:12:2453:2458	526589	12	True				
+ANR	526743	Statement	","	127:18:2459:2459	526589	13	True				
+ANR	526744	Statement	"""qcow2: Allocate refcount block %d for %"""	127:20:2461:2501	526589	14	True				
+ANR	526745	Statement	PRIx64	127:62:2503:2508	526589	15	True				
+ANR	526746	Statement	""" at %"""	129:8:2519:2525	526589	16	True				
+ANR	526747	Statement	PRIx64	129:16:2527:2532	526589	17	True				
+ANR	526748	Statement	"""\\n"""	129:23:2534:2537	526589	18	True				
+ANR	526749	Statement	","	129:27:2538:2538	526589	19	True				
+ANR	526750	Statement	refcount_table_index	131:8:2549:2568	526589	20	True				
+ANR	526751	Statement	","	131:28:2569:2569	526589	21	True				
+ANR	526752	Statement	cluster_index	131:30:2571:2583	526589	22	True				
+ANR	526753	Statement	<<	131:44:2585:2586	526589	23	True				
+ANR	526754	Statement	s	131:47:2588:2588	526589	24	True				
+ANR	526755	Statement	->	131:48:2589:2590	526589	25	True				
+ANR	526756	Statement	cluster_bits	131:50:2591:2602	526589	26	True				
+ANR	526757	Statement	","	131:62:2603:2603	526589	27	True				
+ANR	526758	Statement	new_block	131:64:2605:2613	526589	28	True				
+ANR	526759	Statement	)	131:73:2614:2614	526589	29	True				
+ANR	526760	ExpressionStatement		131:74:2615:2615	526589	30	True				
+ANR	526761	IfStatement	"if ( in_same_refcount_block ( s , new_block , cluster_index << s -> cluster_bits ) )"		526589	31					
+ANR	526762	Condition	"in_same_refcount_block ( s , new_block , cluster_index << s -> cluster_bits )"	137:8:2636:2705	526589	0	True				
+ANR	526763	CallExpression	"in_same_refcount_block ( s , new_block , cluster_index << s -> cluster_bits )"		526589	0					
+ANR	526764	Callee	in_same_refcount_block		526589	0					
+ANR	526765	Identifier	in_same_refcount_block		526589	0					
+ANR	526766	ArgumentList	s		526589	1					
+ANR	526767	Argument	s		526589	0					
+ANR	526768	Identifier	s		526589	0					
+ANR	526769	Argument	new_block		526589	1					
+ANR	526770	Identifier	new_block		526589	0					
+ANR	526771	Argument	cluster_index << s -> cluster_bits		526589	2					
+ANR	526772	ShiftExpression	cluster_index << s -> cluster_bits		526589	0		<<			
+ANR	526773	Identifier	cluster_index		526589	0					
+ANR	526774	PtrMemberAccess	s -> cluster_bits		526589	1					
+ANR	526775	Identifier	s		526589	0					
+ANR	526776	Identifier	cluster_bits		526589	1					
+ANR	526777	CompoundStatement		139:8:2704:2815	526589	1					
+ANR	526778	IdentifierDeclStatement	int block_index = ( new_block >> s -> cluster_bits ) & ( ( 1 << ( s -> cluster_bits - REFCOUNT_SHIFT ) ) - 1 ) ;	141:8:2787:2898	526589	0	True				
+ANR	526779	IdentifierDecl	block_index = ( new_block >> s -> cluster_bits ) & ( ( 1 << ( s -> cluster_bits - REFCOUNT_SHIFT ) ) - 1 )		526589	0					
+ANR	526780	IdentifierDeclType	int		526589	0					
+ANR	526781	Identifier	block_index		526589	1					
+ANR	526782	AssignmentExpression	block_index = ( new_block >> s -> cluster_bits ) & ( ( 1 << ( s -> cluster_bits - REFCOUNT_SHIFT ) ) - 1 )		526589	2		=			
+ANR	526783	Identifier	block_index		526589	0					
+ANR	526784	BitAndExpression	( new_block >> s -> cluster_bits ) & ( ( 1 << ( s -> cluster_bits - REFCOUNT_SHIFT ) ) - 1 )		526589	1		&			
+ANR	526785	ShiftExpression	new_block >> s -> cluster_bits		526589	0		>>			
+ANR	526786	Identifier	new_block		526589	0					
+ANR	526787	PtrMemberAccess	s -> cluster_bits		526589	1					
+ANR	526788	Identifier	s		526589	0					
+ANR	526789	Identifier	cluster_bits		526589	1					
+ANR	526790	AdditiveExpression	( 1 << ( s -> cluster_bits - REFCOUNT_SHIFT ) ) - 1		526589	1		-			
+ANR	526791	ShiftExpression	1 << ( s -> cluster_bits - REFCOUNT_SHIFT )		526589	0		<<			
+ANR	526792	PrimaryExpression	1		526589	0					
+ANR	526793	AdditiveExpression	s -> cluster_bits - REFCOUNT_SHIFT		526589	1		-			
+ANR	526794	PtrMemberAccess	s -> cluster_bits		526589	0					
+ANR	526795	Identifier	s		526589	0					
+ANR	526796	Identifier	cluster_bits		526589	1					
+ANR	526797	Identifier	REFCOUNT_SHIFT		526589	1					
+ANR	526798	PrimaryExpression	1		526589	1					
+ANR	526799	ExpressionStatement	s -> refcount_block_cache [ block_index ] = cpu_to_be16 ( 1 )	145:8:2909:2962	526589	1	True				
+ANR	526800	AssignmentExpression	s -> refcount_block_cache [ block_index ] = cpu_to_be16 ( 1 )		526589	0		=			
+ANR	526801	ArrayIndexing	s -> refcount_block_cache [ block_index ]		526589	0					
+ANR	526802	PtrMemberAccess	s -> refcount_block_cache		526589	0					
+ANR	526803	Identifier	s		526589	0					
+ANR	526804	Identifier	refcount_block_cache		526589	1					
+ANR	526805	Identifier	block_index		526589	1					
+ANR	526806	CallExpression	cpu_to_be16 ( 1 )		526589	1					
+ANR	526807	Callee	cpu_to_be16		526589	0					
+ANR	526808	Identifier	cpu_to_be16		526589	0					
+ANR	526809	ArgumentList	1		526589	1					
+ANR	526810	Argument	1		526589	0					
+ANR	526811	PrimaryExpression	1		526589	0					
+ANR	526812	ElseStatement	else		526589	0					
+ANR	526813	CompoundStatement		145:11:2893:2893	526589	0					
+ANR	526814	ExpressionStatement	"ret = update_refcount ( bs , new_block , s -> cluster_size , 1 )"	153:8:3122:3178	526589	0	True				
+ANR	526815	AssignmentExpression	"ret = update_refcount ( bs , new_block , s -> cluster_size , 1 )"		526589	0		=			
+ANR	526816	Identifier	ret		526589	0					
+ANR	526817	CallExpression	"update_refcount ( bs , new_block , s -> cluster_size , 1 )"		526589	1					
+ANR	526818	Callee	update_refcount		526589	0					
+ANR	526819	Identifier	update_refcount		526589	0					
+ANR	526820	ArgumentList	bs		526589	1					
+ANR	526821	Argument	bs		526589	0					
+ANR	526822	Identifier	bs		526589	0					
+ANR	526823	Argument	new_block		526589	1					
+ANR	526824	Identifier	new_block		526589	0					
+ANR	526825	Argument	s -> cluster_size		526589	2					
+ANR	526826	PtrMemberAccess	s -> cluster_size		526589	0					
+ANR	526827	Identifier	s		526589	0					
+ANR	526828	Identifier	cluster_size		526589	1					
+ANR	526829	Argument	1		526589	3					
+ANR	526830	PrimaryExpression	1		526589	0					
+ANR	526831	IfStatement	if ( ret < 0 )		526589	1					
+ANR	526832	Condition	ret < 0	155:12:3193:3199	526589	0	True				
+ANR	526833	RelationalExpression	ret < 0		526589	0		<			
+ANR	526834	Identifier	ret		526589	0					
+ANR	526835	PrimaryExpression	0		526589	1					
+ANR	526836	CompoundStatement		153:21:3119:3119	526589	1					
+ANR	526837	GotoStatement	goto fail_block ;	157:12:3217:3232	526589	0	True				
+ANR	526838	Identifier	fail_block		526589	0					
+ANR	526839	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_WRITE )"	167:4:3325:3376	526589	32	True				
+ANR	526840	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_WRITE )"		526589	0					
+ANR	526841	Callee	BLKDBG_EVENT		526589	0					
+ANR	526842	Identifier	BLKDBG_EVENT		526589	0					
+ANR	526843	ArgumentList	bs -> file		526589	1					
+ANR	526844	Argument	bs -> file		526589	0					
+ANR	526845	PtrMemberAccess	bs -> file		526589	0					
+ANR	526846	Identifier	bs		526589	0					
+ANR	526847	Identifier	file		526589	1					
+ANR	526848	Argument	BLKDBG_REFBLOCK_ALLOC_WRITE		526589	1					
+ANR	526849	Identifier	BLKDBG_REFBLOCK_ALLOC_WRITE		526589	0					
+ANR	526850	ExpressionStatement	"ret = bdrv_pwrite ( bs -> file , new_block , s -> refcount_block_cache , s -> cluster_size )"	169:4:3383:3472	526589	33	True				
+ANR	526851	AssignmentExpression	"ret = bdrv_pwrite ( bs -> file , new_block , s -> refcount_block_cache , s -> cluster_size )"		526589	0		=			
+ANR	526852	Identifier	ret		526589	0					
+ANR	526853	CallExpression	"bdrv_pwrite ( bs -> file , new_block , s -> refcount_block_cache , s -> cluster_size )"		526589	1					
+ANR	526854	Callee	bdrv_pwrite		526589	0					
+ANR	526855	Identifier	bdrv_pwrite		526589	0					
+ANR	526856	ArgumentList	bs -> file		526589	1					
+ANR	526857	Argument	bs -> file		526589	0					
+ANR	526858	PtrMemberAccess	bs -> file		526589	0					
+ANR	526859	Identifier	bs		526589	0					
+ANR	526860	Identifier	file		526589	1					
+ANR	526861	Argument	new_block		526589	1					
+ANR	526862	Identifier	new_block		526589	0					
+ANR	526863	Argument	s -> refcount_block_cache		526589	2					
+ANR	526864	PtrMemberAccess	s -> refcount_block_cache		526589	0					
+ANR	526865	Identifier	s		526589	0					
+ANR	526866	Identifier	refcount_block_cache		526589	1					
+ANR	526867	Argument	s -> cluster_size		526589	3					
+ANR	526868	PtrMemberAccess	s -> cluster_size		526589	0					
+ANR	526869	Identifier	s		526589	0					
+ANR	526870	Identifier	cluster_size		526589	1					
+ANR	526871	IfStatement	if ( ret < 0 )		526589	34					
+ANR	526872	Condition	ret < 0	173:8:3483:3489	526589	0	True				
+ANR	526873	RelationalExpression	ret < 0		526589	0		<			
+ANR	526874	Identifier	ret		526589	0					
+ANR	526875	PrimaryExpression	0		526589	1					
+ANR	526876	CompoundStatement		171:17:3409:3409	526589	1					
+ANR	526877	GotoStatement	goto fail_block ;	175:8:3503:3518	526589	0	True				
+ANR	526878	Identifier	fail_block		526589	0					
+ANR	526879	IfStatement	if ( refcount_table_index < s -> refcount_table_size )		526589	35					
+ANR	526880	Condition	refcount_table_index < s -> refcount_table_size	183:8:3615:3659	526589	0	True				
+ANR	526881	RelationalExpression	refcount_table_index < s -> refcount_table_size		526589	0		<			
+ANR	526882	Identifier	refcount_table_index		526589	0					
+ANR	526883	PtrMemberAccess	s -> refcount_table_size		526589	1					
+ANR	526884	Identifier	s		526589	0					
+ANR	526885	Identifier	refcount_table_size		526589	1					
+ANR	526886	CompoundStatement		183:8:3590:3630	526589	1					
+ANR	526887	IdentifierDeclStatement	uint64_t data64 = cpu_to_be64 ( new_block ) ;	185:8:3673:3713	526589	0	True				
+ANR	526888	IdentifierDecl	data64 = cpu_to_be64 ( new_block )		526589	0					
+ANR	526889	IdentifierDeclType	uint64_t		526589	0					
+ANR	526890	Identifier	data64		526589	1					
+ANR	526891	AssignmentExpression	data64 = cpu_to_be64 ( new_block )		526589	2		=			
+ANR	526892	Identifier	data64		526589	0					
+ANR	526893	CallExpression	cpu_to_be64 ( new_block )		526589	1					
+ANR	526894	Callee	cpu_to_be64		526589	0					
+ANR	526895	Identifier	cpu_to_be64		526589	0					
+ANR	526896	ArgumentList	new_block		526589	1					
+ANR	526897	Argument	new_block		526589	0					
+ANR	526898	Identifier	new_block		526589	0					
+ANR	526899	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_HOOKUP )"	187:8:3724:3776	526589	1	True				
+ANR	526900	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_HOOKUP )"		526589	0					
+ANR	526901	Callee	BLKDBG_EVENT		526589	0					
+ANR	526902	Identifier	BLKDBG_EVENT		526589	0					
+ANR	526903	ArgumentList	bs -> file		526589	1					
+ANR	526904	Argument	bs -> file		526589	0					
+ANR	526905	PtrMemberAccess	bs -> file		526589	0					
+ANR	526906	Identifier	bs		526589	0					
+ANR	526907	Identifier	file		526589	1					
+ANR	526908	Argument	BLKDBG_REFBLOCK_ALLOC_HOOKUP		526589	1					
+ANR	526909	Identifier	BLKDBG_REFBLOCK_ALLOC_HOOKUP		526589	0					
+ANR	526910	ExpressionStatement	"ret = bdrv_pwrite ( bs -> file , s -> refcount_table_offset + refcount_table_index * sizeof ( uint64_t ) , & data64 , sizeof ( data64 ) )"	189:8:3787:3933	526589	2	True				
+ANR	526911	AssignmentExpression	"ret = bdrv_pwrite ( bs -> file , s -> refcount_table_offset + refcount_table_index * sizeof ( uint64_t ) , & data64 , sizeof ( data64 ) )"		526589	0		=			
+ANR	526912	Identifier	ret		526589	0					
+ANR	526913	CallExpression	"bdrv_pwrite ( bs -> file , s -> refcount_table_offset + refcount_table_index * sizeof ( uint64_t ) , & data64 , sizeof ( data64 ) )"		526589	1					
+ANR	526914	Callee	bdrv_pwrite		526589	0					
+ANR	526915	Identifier	bdrv_pwrite		526589	0					
+ANR	526916	ArgumentList	bs -> file		526589	1					
+ANR	526917	Argument	bs -> file		526589	0					
+ANR	526918	PtrMemberAccess	bs -> file		526589	0					
+ANR	526919	Identifier	bs		526589	0					
+ANR	526920	Identifier	file		526589	1					
+ANR	526921	Argument	s -> refcount_table_offset + refcount_table_index * sizeof ( uint64_t )		526589	1					
+ANR	526922	AdditiveExpression	s -> refcount_table_offset + refcount_table_index * sizeof ( uint64_t )		526589	0		+			
+ANR	526923	PtrMemberAccess	s -> refcount_table_offset		526589	0					
+ANR	526924	Identifier	s		526589	0					
+ANR	526925	Identifier	refcount_table_offset		526589	1					
+ANR	526926	MultiplicativeExpression	refcount_table_index * sizeof ( uint64_t )		526589	1		*			
+ANR	526927	Identifier	refcount_table_index		526589	0					
+ANR	526928	SizeofExpression	sizeof ( uint64_t )		526589	1					
+ANR	526929	Sizeof	sizeof		526589	0					
+ANR	526930	SizeofOperand	uint64_t		526589	1					
+ANR	526931	Argument	& data64		526589	2					
+ANR	526932	UnaryOperationExpression	& data64		526589	0					
+ANR	526933	UnaryOperator	&		526589	0					
+ANR	526934	Identifier	data64		526589	1					
+ANR	526935	Argument	sizeof ( data64 )		526589	3					
+ANR	526936	SizeofExpression	sizeof ( data64 )		526589	0					
+ANR	526937	Sizeof	sizeof		526589	0					
+ANR	526938	SizeofOperand	data64		526589	1					
+ANR	526939	IfStatement	if ( ret < 0 )		526589	3					
+ANR	526940	Condition	ret < 0	195:12:3948:3954	526589	0	True				
+ANR	526941	RelationalExpression	ret < 0		526589	0		<			
+ANR	526942	Identifier	ret		526589	0					
+ANR	526943	PrimaryExpression	0		526589	1					
+ANR	526944	CompoundStatement		193:21:3874:3874	526589	1					
+ANR	526945	GotoStatement	goto fail_block ;	197:12:3972:3987	526589	0	True				
+ANR	526946	Identifier	fail_block		526589	0					
+ANR	526947	ExpressionStatement	s -> refcount_table [ refcount_table_index ] = new_block	203:8:4011:4062	526589	4	True				
+ANR	526948	AssignmentExpression	s -> refcount_table [ refcount_table_index ] = new_block		526589	0		=			
+ANR	526949	ArrayIndexing	s -> refcount_table [ refcount_table_index ]		526589	0					
+ANR	526950	PtrMemberAccess	s -> refcount_table		526589	0					
+ANR	526951	Identifier	s		526589	0					
+ANR	526952	Identifier	refcount_table		526589	1					
+ANR	526953	Identifier	refcount_table_index		526589	1					
+ANR	526954	Identifier	new_block		526589	1					
+ANR	526955	ReturnStatement	return new_block ;	205:8:4073:4089	526589	5	True				
+ANR	526956	Identifier	new_block		526589	0					
+ANR	526957	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFTABLE_GROW )"	233:4:4631:4675	526589	36	True				
+ANR	526958	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFTABLE_GROW )"		526589	0					
+ANR	526959	Callee	BLKDBG_EVENT		526589	0					
+ANR	526960	Identifier	BLKDBG_EVENT		526589	0					
+ANR	526961	ArgumentList	bs -> file		526589	1					
+ANR	526962	Argument	bs -> file		526589	0					
+ANR	526963	PtrMemberAccess	bs -> file		526589	0					
+ANR	526964	Identifier	bs		526589	0					
+ANR	526965	Identifier	file		526589	1					
+ANR	526966	Argument	BLKDBG_REFTABLE_GROW		526589	1					
+ANR	526967	Identifier	BLKDBG_REFTABLE_GROW		526589	0					
+ANR	526968	IdentifierDeclStatement	uint64_t refcount_block_clusters = 1 << ( s -> cluster_bits - REFCOUNT_SHIFT ) ;	239:4:4749:4823	526589	37	True				
+ANR	526969	IdentifierDecl	refcount_block_clusters = 1 << ( s -> cluster_bits - REFCOUNT_SHIFT )		526589	0					
+ANR	526970	IdentifierDeclType	uint64_t		526589	0					
+ANR	526971	Identifier	refcount_block_clusters		526589	1					
+ANR	526972	AssignmentExpression	refcount_block_clusters = 1 << ( s -> cluster_bits - REFCOUNT_SHIFT )		526589	2		=			
+ANR	526973	Identifier	refcount_block_clusters		526589	0					
+ANR	526974	ShiftExpression	1 << ( s -> cluster_bits - REFCOUNT_SHIFT )		526589	1		<<			
+ANR	526975	PrimaryExpression	1		526589	0					
+ANR	526976	AdditiveExpression	s -> cluster_bits - REFCOUNT_SHIFT		526589	1		-			
+ANR	526977	PtrMemberAccess	s -> cluster_bits		526589	0					
+ANR	526978	Identifier	s		526589	0					
+ANR	526979	Identifier	cluster_bits		526589	1					
+ANR	526980	Identifier	REFCOUNT_SHIFT		526589	1					
+ANR	526981	IdentifierDeclStatement	uint64_t blocks_used = ( s -> free_cluster_index + refcount_block_clusters - 1 ) / refcount_block_clusters ;	241:4:4830:4941	526589	38	True				
+ANR	526982	IdentifierDecl	blocks_used = ( s -> free_cluster_index + refcount_block_clusters - 1 ) / refcount_block_clusters		526589	0					
+ANR	526983	IdentifierDeclType	uint64_t		526589	0					
+ANR	526984	Identifier	blocks_used		526589	1					
+ANR	526985	AssignmentExpression	blocks_used = ( s -> free_cluster_index + refcount_block_clusters - 1 ) / refcount_block_clusters		526589	2		=			
+ANR	526986	Identifier	blocks_used		526589	0					
+ANR	526987	MultiplicativeExpression	( s -> free_cluster_index + refcount_block_clusters - 1 ) / refcount_block_clusters		526589	1		/			
+ANR	526988	AdditiveExpression	s -> free_cluster_index + refcount_block_clusters - 1		526589	0		+			
+ANR	526989	PtrMemberAccess	s -> free_cluster_index		526589	0					
+ANR	526990	Identifier	s		526589	0					
+ANR	526991	Identifier	free_cluster_index		526589	1					
+ANR	526992	AdditiveExpression	refcount_block_clusters - 1		526589	1		-			
+ANR	526993	Identifier	refcount_block_clusters		526589	0					
+ANR	526994	PrimaryExpression	1		526589	1					
+ANR	526995	Identifier	refcount_block_clusters		526589	1					
+ANR	526996	IdentifierDeclStatement	"uint64_t table_size = next_refcount_table_size ( s , blocks_used + 1 ) ;"	249:4:5022:5088	526589	39	True				
+ANR	526997	IdentifierDecl	"table_size = next_refcount_table_size ( s , blocks_used + 1 )"		526589	0					
+ANR	526998	IdentifierDeclType	uint64_t		526589	0					
+ANR	526999	Identifier	table_size		526589	1					
+ANR	527000	AssignmentExpression	"table_size = next_refcount_table_size ( s , blocks_used + 1 )"		526589	2		=			
+ANR	527001	Identifier	table_size		526589	0					
+ANR	527002	CallExpression	"next_refcount_table_size ( s , blocks_used + 1 )"		526589	1					
+ANR	527003	Callee	next_refcount_table_size		526589	0					
+ANR	527004	Identifier	next_refcount_table_size		526589	0					
+ANR	527005	ArgumentList	s		526589	1					
+ANR	527006	Argument	s		526589	0					
+ANR	527007	Identifier	s		526589	0					
+ANR	527008	Argument	blocks_used + 1		526589	1					
+ANR	527009	AdditiveExpression	blocks_used + 1		526589	0		+			
+ANR	527010	Identifier	blocks_used		526589	0					
+ANR	527011	PrimaryExpression	1		526589	1					
+ANR	527012	IdentifierDeclStatement	uint64_t last_table_size ;	251:4:5095:5119	526589	40	True				
+ANR	527013	IdentifierDecl	last_table_size		526589	0					
+ANR	527014	IdentifierDeclType	uint64_t		526589	0					
+ANR	527015	Identifier	last_table_size		526589	1					
+ANR	527016	IdentifierDeclStatement	uint64_t blocks_clusters ;	253:4:5126:5150	526589	41	True				
+ANR	527017	IdentifierDecl	blocks_clusters		526589	0					
+ANR	527018	IdentifierDeclType	uint64_t		526589	0					
+ANR	527019	Identifier	blocks_clusters		526589	1					
+ANR	527020	DoStatement	do		526589	42					
+ANR	527021	CompoundStatement		263:8:5289:5346	526589	0					
+ANR	527022	IdentifierDeclStatement	"uint64_t table_clusters = size_to_clusters ( s , table_size ) ;"	257:8:5171:5228	526589	0	True				
+ANR	527023	IdentifierDecl	"table_clusters = size_to_clusters ( s , table_size )"		526589	0					
+ANR	527024	IdentifierDeclType	uint64_t		526589	0					
+ANR	527025	Identifier	table_clusters		526589	1					
+ANR	527026	AssignmentExpression	"table_clusters = size_to_clusters ( s , table_size )"		526589	2		=			
+ANR	527027	Identifier	table_clusters		526589	0					
+ANR	527028	CallExpression	"size_to_clusters ( s , table_size )"		526589	1					
+ANR	527029	Callee	size_to_clusters		526589	0					
+ANR	527030	Identifier	size_to_clusters		526589	0					
+ANR	527031	ArgumentList	s		526589	1					
+ANR	527032	Argument	s		526589	0					
+ANR	527033	Identifier	s		526589	0					
+ANR	527034	Argument	table_size		526589	1					
+ANR	527035	Identifier	table_size		526589	0					
+ANR	527036	ExpressionStatement	blocks_clusters = 1 + ( ( table_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters )	259:8:5239:5361	526589	1	True				
+ANR	527037	AssignmentExpression	blocks_clusters = 1 + ( ( table_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters )		526589	0		=			
+ANR	527038	Identifier	blocks_clusters		526589	0					
+ANR	527039	AdditiveExpression	1 + ( ( table_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters )		526589	1		+			
+ANR	527040	PrimaryExpression	1		526589	0					
+ANR	527041	MultiplicativeExpression	( table_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters		526589	1		/			
+ANR	527042	AdditiveExpression	table_clusters + refcount_block_clusters - 1		526589	0		+			
+ANR	527043	Identifier	table_clusters		526589	0					
+ANR	527044	AdditiveExpression	refcount_block_clusters - 1		526589	1		-			
+ANR	527045	Identifier	refcount_block_clusters		526589	0					
+ANR	527046	PrimaryExpression	1		526589	1					
+ANR	527047	Identifier	refcount_block_clusters		526589	1					
+ANR	527048	IdentifierDeclStatement	uint64_t meta_clusters = table_clusters + blocks_clusters ;	265:8:5372:5429	526589	2	True				
+ANR	527049	IdentifierDecl	meta_clusters = table_clusters + blocks_clusters		526589	0					
+ANR	527050	IdentifierDeclType	uint64_t		526589	0					
+ANR	527051	Identifier	meta_clusters		526589	1					
+ANR	527052	AssignmentExpression	meta_clusters = table_clusters + blocks_clusters		526589	2		=			
+ANR	527053	Identifier	meta_clusters		526589	0					
+ANR	527054	AdditiveExpression	table_clusters + blocks_clusters		526589	1		+			
+ANR	527055	Identifier	table_clusters		526589	0					
+ANR	527056	Identifier	blocks_clusters		526589	1					
+ANR	527057	ExpressionStatement	last_table_size = table_size	269:8:5442:5470	526589	3	True				
+ANR	527058	AssignmentExpression	last_table_size = table_size		526589	0		=			
+ANR	527059	Identifier	last_table_size		526589	0					
+ANR	527060	Identifier	table_size		526589	1					
+ANR	527061	ExpressionStatement	"table_size = next_refcount_table_size ( s , blocks_used + ( ( meta_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters ) )"	271:8:5481:5636	526589	4	True				
+ANR	527062	AssignmentExpression	"table_size = next_refcount_table_size ( s , blocks_used + ( ( meta_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters ) )"		526589	0		=			
+ANR	527063	Identifier	table_size		526589	0					
+ANR	527064	CallExpression	"next_refcount_table_size ( s , blocks_used + ( ( meta_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters ) )"		526589	1					
+ANR	527065	Callee	next_refcount_table_size		526589	0					
+ANR	527066	Identifier	next_refcount_table_size		526589	0					
+ANR	527067	ArgumentList	s		526589	1					
+ANR	527068	Argument	s		526589	0					
+ANR	527069	Identifier	s		526589	0					
+ANR	527070	Argument	blocks_used + ( ( meta_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters )		526589	1					
+ANR	527071	AdditiveExpression	blocks_used + ( ( meta_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters )		526589	0		+			
+ANR	527072	Identifier	blocks_used		526589	0					
+ANR	527073	MultiplicativeExpression	( meta_clusters + refcount_block_clusters - 1 ) / refcount_block_clusters		526589	1		/			
+ANR	527074	AdditiveExpression	meta_clusters + refcount_block_clusters - 1		526589	0		+			
+ANR	527075	Identifier	meta_clusters		526589	0					
+ANR	527076	AdditiveExpression	refcount_block_clusters - 1		526589	1		-			
+ANR	527077	Identifier	refcount_block_clusters		526589	0					
+ANR	527078	PrimaryExpression	1		526589	1					
+ANR	527079	Identifier	refcount_block_clusters		526589	1					
+ANR	527080	Condition	last_table_size != table_size	279:13:5654:5682	526589	1	True				
+ANR	527081	EqualityExpression	last_table_size != table_size		526589	0		!=			
+ANR	527082	Identifier	last_table_size		526589	0					
+ANR	527083	Identifier	table_size		526589	1					
+ANR	527084	Statement	fprintf	285:4:5714:5720	526589	43	True				
+ANR	527085	Statement	(	285:11:5721:5721	526589	44	True				
+ANR	527086	Statement	stderr	285:12:5722:5727	526589	45	True				
+ANR	527087	Statement	","	285:18:5728:5728	526589	46	True				
+ANR	527088	Statement	"""qcow2: Grow refcount table %"""	285:20:5730:5759	526589	47	True				
+ANR	527089	Statement	PRId32	285:51:5761:5766	526589	48	True				
+ANR	527090	Statement	""" => %"""	285:58:5768:5774	526589	49	True				
+ANR	527091	Statement	PRId64	285:66:5776:5781	526589	50	True				
+ANR	527092	Statement	"""\\n"""	285:73:5783:5786	526589	51	True				
+ANR	527093	Statement	","	285:77:5787:5787	526589	52	True				
+ANR	527094	Statement	s	287:8:5798:5798	526589	53	True				
+ANR	527095	Statement	->	287:9:5799:5800	526589	54	True				
+ANR	527096	Statement	refcount_table_size	287:11:5801:5819	526589	55	True				
+ANR	527097	Statement	","	287:30:5820:5820	526589	56	True				
+ANR	527098	Statement	table_size	287:32:5822:5831	526589	57	True				
+ANR	527099	Statement	)	287:42:5832:5832	526589	58	True				
+ANR	527100	ExpressionStatement		287:43:5833:5833	526589	59	True				
+ANR	527101	IdentifierDeclStatement	uint64_t meta_offset = ( blocks_used * refcount_block_clusters ) * s -> cluster_size ;	295:4:5902:5991	526589	60	True				
+ANR	527102	IdentifierDecl	meta_offset = ( blocks_used * refcount_block_clusters ) * s -> cluster_size		526589	0					
+ANR	527103	IdentifierDeclType	uint64_t		526589	0					
+ANR	527104	Identifier	meta_offset		526589	1					
+ANR	527105	AssignmentExpression	meta_offset = ( blocks_used * refcount_block_clusters ) * s -> cluster_size		526589	2		=			
+ANR	527106	Identifier	meta_offset		526589	0					
+ANR	527107	MultiplicativeExpression	( blocks_used * refcount_block_clusters ) * s -> cluster_size		526589	1		*			
+ANR	527108	MultiplicativeExpression	blocks_used * refcount_block_clusters		526589	0		*			
+ANR	527109	Identifier	blocks_used		526589	0					
+ANR	527110	Identifier	refcount_block_clusters		526589	1					
+ANR	527111	PtrMemberAccess	s -> cluster_size		526589	1					
+ANR	527112	Identifier	s		526589	0					
+ANR	527113	Identifier	cluster_size		526589	1					
+ANR	527114	IdentifierDeclStatement	uint64_t table_offset = meta_offset + blocks_clusters * s -> cluster_size ;	299:4:5998:6069	526589	61	True				
+ANR	527115	IdentifierDecl	table_offset = meta_offset + blocks_clusters * s -> cluster_size		526589	0					
+ANR	527116	IdentifierDeclType	uint64_t		526589	0					
+ANR	527117	Identifier	table_offset		526589	1					
+ANR	527118	AssignmentExpression	table_offset = meta_offset + blocks_clusters * s -> cluster_size		526589	2		=			
+ANR	527119	Identifier	table_offset		526589	0					
+ANR	527120	AdditiveExpression	meta_offset + blocks_clusters * s -> cluster_size		526589	1		+			
+ANR	527121	Identifier	meta_offset		526589	0					
+ANR	527122	MultiplicativeExpression	blocks_clusters * s -> cluster_size		526589	1		*			
+ANR	527123	Identifier	blocks_clusters		526589	0					
+ANR	527124	PtrMemberAccess	s -> cluster_size		526589	1					
+ANR	527125	Identifier	s		526589	0					
+ANR	527126	Identifier	cluster_size		526589	1					
+ANR	527127	IdentifierDeclStatement	uint16_t * new_blocks = qemu_mallocz ( blocks_clusters * s -> cluster_size ) ;	301:4:6076:6146	526589	62	True				
+ANR	527128	IdentifierDecl	* new_blocks = qemu_mallocz ( blocks_clusters * s -> cluster_size )		526589	0					
+ANR	527129	IdentifierDeclType	uint16_t *		526589	0					
+ANR	527130	Identifier	new_blocks		526589	1					
+ANR	527131	AssignmentExpression	* new_blocks = qemu_mallocz ( blocks_clusters * s -> cluster_size )		526589	2		=			
+ANR	527132	Identifier	new_blocks		526589	0					
+ANR	527133	CallExpression	qemu_mallocz ( blocks_clusters * s -> cluster_size )		526589	1					
+ANR	527134	Callee	qemu_mallocz		526589	0					
+ANR	527135	Identifier	qemu_mallocz		526589	0					
+ANR	527136	ArgumentList	blocks_clusters * s -> cluster_size		526589	1					
+ANR	527137	Argument	blocks_clusters * s -> cluster_size		526589	0					
+ANR	527138	MultiplicativeExpression	blocks_clusters * s -> cluster_size		526589	0		*			
+ANR	527139	Identifier	blocks_clusters		526589	0					
+ANR	527140	PtrMemberAccess	s -> cluster_size		526589	1					
+ANR	527141	Identifier	s		526589	0					
+ANR	527142	Identifier	cluster_size		526589	1					
+ANR	527143	IdentifierDeclStatement	uint64_t * new_table = qemu_mallocz ( table_size * sizeof ( uint64_t ) ) ;	303:4:6153:6218	526589	63	True				
+ANR	527144	IdentifierDecl	* new_table = qemu_mallocz ( table_size * sizeof ( uint64_t ) )		526589	0					
+ANR	527145	IdentifierDeclType	uint64_t *		526589	0					
+ANR	527146	Identifier	new_table		526589	1					
+ANR	527147	AssignmentExpression	* new_table = qemu_mallocz ( table_size * sizeof ( uint64_t ) )		526589	2		=			
+ANR	527148	Identifier	new_table		526589	0					
+ANR	527149	CallExpression	qemu_mallocz ( table_size * sizeof ( uint64_t ) )		526589	1					
+ANR	527150	Callee	qemu_mallocz		526589	0					
+ANR	527151	Identifier	qemu_mallocz		526589	0					
+ANR	527152	ArgumentList	table_size * sizeof ( uint64_t )		526589	1					
+ANR	527153	Argument	table_size * sizeof ( uint64_t )		526589	0					
+ANR	527154	MultiplicativeExpression	table_size * sizeof ( uint64_t )		526589	0		*			
+ANR	527155	Identifier	table_size		526589	0					
+ANR	527156	SizeofExpression	sizeof ( uint64_t )		526589	1					
+ANR	527157	Sizeof	sizeof		526589	0					
+ANR	527158	SizeofOperand	uint64_t		526589	1					
+ANR	527159	ExpressionStatement	assert ( meta_offset >= ( s -> free_cluster_index * s -> cluster_size ) )	307:4:6227:6291	526589	64	True				
+ANR	527160	CallExpression	assert ( meta_offset >= ( s -> free_cluster_index * s -> cluster_size ) )		526589	0					
+ANR	527161	Callee	assert		526589	0					
+ANR	527162	Identifier	assert		526589	0					
+ANR	527163	ArgumentList	meta_offset >= ( s -> free_cluster_index * s -> cluster_size )		526589	1					
+ANR	527164	Argument	meta_offset >= ( s -> free_cluster_index * s -> cluster_size )		526589	0					
+ANR	527165	RelationalExpression	meta_offset >= ( s -> free_cluster_index * s -> cluster_size )		526589	0		>=			
+ANR	527166	Identifier	meta_offset		526589	0					
+ANR	527167	MultiplicativeExpression	s -> free_cluster_index * s -> cluster_size		526589	1		*			
+ANR	527168	PtrMemberAccess	s -> free_cluster_index		526589	0					
+ANR	527169	Identifier	s		526589	0					
+ANR	527170	Identifier	free_cluster_index		526589	1					
+ANR	527171	PtrMemberAccess	s -> cluster_size		526589	1					
+ANR	527172	Identifier	s		526589	0					
+ANR	527173	Identifier	cluster_size		526589	1					
+ANR	527174	ExpressionStatement	"memcpy ( new_table , s -> refcount_table , s -> refcount_table_size * sizeof ( uint64_t ) )"	313:4:6339:6427	526589	65	True				
+ANR	527175	CallExpression	"memcpy ( new_table , s -> refcount_table , s -> refcount_table_size * sizeof ( uint64_t ) )"		526589	0					
+ANR	527176	Callee	memcpy		526589	0					
+ANR	527177	Identifier	memcpy		526589	0					
+ANR	527178	ArgumentList	new_table		526589	1					
+ANR	527179	Argument	new_table		526589	0					
+ANR	527180	Identifier	new_table		526589	0					
+ANR	527181	Argument	s -> refcount_table		526589	1					
+ANR	527182	PtrMemberAccess	s -> refcount_table		526589	0					
+ANR	527183	Identifier	s		526589	0					
+ANR	527184	Identifier	refcount_table		526589	1					
+ANR	527185	Argument	s -> refcount_table_size * sizeof ( uint64_t )		526589	2					
+ANR	527186	MultiplicativeExpression	s -> refcount_table_size * sizeof ( uint64_t )		526589	0		*			
+ANR	527187	PtrMemberAccess	s -> refcount_table_size		526589	0					
+ANR	527188	Identifier	s		526589	0					
+ANR	527189	Identifier	refcount_table_size		526589	1					
+ANR	527190	SizeofExpression	sizeof ( uint64_t )		526589	1					
+ANR	527191	Sizeof	sizeof		526589	0					
+ANR	527192	SizeofOperand	uint64_t		526589	1					
+ANR	527193	ExpressionStatement	new_table [ refcount_table_index ] = new_block	317:4:6434:6477	526589	66	True				
+ANR	527194	AssignmentExpression	new_table [ refcount_table_index ] = new_block		526589	0		=			
+ANR	527195	ArrayIndexing	new_table [ refcount_table_index ]		526589	0					
+ANR	527196	Identifier	new_table		526589	0					
+ANR	527197	Identifier	refcount_table_index		526589	1					
+ANR	527198	Identifier	new_block		526589	1					
+ANR	527199	IdentifierDeclStatement	int i ;	321:4:6486:6491	526589	67	True				
+ANR	527200	IdentifierDecl	i		526589	0					
+ANR	527201	IdentifierDeclType	int		526589	0					
+ANR	527202	Identifier	i		526589	1					
+ANR	527203	ForStatement	for ( i = 0 ; i < blocks_clusters ; i ++ )		526589	68					
+ANR	527204	ForInit	i = 0 ;	323:9:6503:6508	526589	0	True				
+ANR	527205	AssignmentExpression	i = 0		526589	0		=			
+ANR	527206	Identifier	i		526589	0					
+ANR	527207	PrimaryExpression	0		526589	1					
+ANR	527208	Condition	i < blocks_clusters	323:16:6510:6528	526589	1	True				
+ANR	527209	RelationalExpression	i < blocks_clusters		526589	0		<			
+ANR	527210	Identifier	i		526589	0					
+ANR	527211	Identifier	blocks_clusters		526589	1					
+ANR	527212	PostIncDecOperationExpression	i ++	323:37:6531:6533	526589	2	True				
+ANR	527213	Identifier	i		526589	0					
+ANR	527214	IncDec	++		526589	1					
+ANR	527215	CompoundStatement		321:42:6453:6453	526589	3					
+ANR	527216	ExpressionStatement	new_table [ blocks_used + i ] = meta_offset + ( i * s -> cluster_size )	325:8:6547:6611	526589	0	True				
+ANR	527217	AssignmentExpression	new_table [ blocks_used + i ] = meta_offset + ( i * s -> cluster_size )		526589	0		=			
+ANR	527218	ArrayIndexing	new_table [ blocks_used + i ]		526589	0					
+ANR	527219	Identifier	new_table		526589	0					
+ANR	527220	AdditiveExpression	blocks_used + i		526589	1		+			
+ANR	527221	Identifier	blocks_used		526589	0					
+ANR	527222	Identifier	i		526589	1					
+ANR	527223	AdditiveExpression	meta_offset + ( i * s -> cluster_size )		526589	1		+			
+ANR	527224	Identifier	meta_offset		526589	0					
+ANR	527225	MultiplicativeExpression	i * s -> cluster_size		526589	1		*			
+ANR	527226	Identifier	i		526589	0					
+ANR	527227	PtrMemberAccess	s -> cluster_size		526589	1					
+ANR	527228	Identifier	s		526589	0					
+ANR	527229	Identifier	cluster_size		526589	1					
+ANR	527230	IdentifierDeclStatement	"uint64_t table_clusters = size_to_clusters ( s , table_size * sizeof ( uint64_t ) ) ;"	333:4:6663:6739	526589	69	True				
+ANR	527231	IdentifierDecl	"table_clusters = size_to_clusters ( s , table_size * sizeof ( uint64_t ) )"		526589	0					
+ANR	527232	IdentifierDeclType	uint64_t		526589	0					
+ANR	527233	Identifier	table_clusters		526589	1					
+ANR	527234	AssignmentExpression	"table_clusters = size_to_clusters ( s , table_size * sizeof ( uint64_t ) )"		526589	2		=			
+ANR	527235	Identifier	table_clusters		526589	0					
+ANR	527236	CallExpression	"size_to_clusters ( s , table_size * sizeof ( uint64_t ) )"		526589	1					
+ANR	527237	Callee	size_to_clusters		526589	0					
+ANR	527238	Identifier	size_to_clusters		526589	0					
+ANR	527239	ArgumentList	s		526589	1					
+ANR	527240	Argument	s		526589	0					
+ANR	527241	Identifier	s		526589	0					
+ANR	527242	Argument	table_size * sizeof ( uint64_t )		526589	1					
+ANR	527243	MultiplicativeExpression	table_size * sizeof ( uint64_t )		526589	0		*			
+ANR	527244	Identifier	table_size		526589	0					
+ANR	527245	SizeofExpression	sizeof ( uint64_t )		526589	1					
+ANR	527246	Sizeof	sizeof		526589	0					
+ANR	527247	SizeofOperand	uint64_t		526589	1					
+ANR	527248	IdentifierDeclStatement	int block = 0 ;	335:4:6746:6759	526589	70	True				
+ANR	527249	IdentifierDecl	block = 0		526589	0					
+ANR	527250	IdentifierDeclType	int		526589	0					
+ANR	527251	Identifier	block		526589	1					
+ANR	527252	AssignmentExpression	block = 0		526589	2		=			
+ANR	527253	Identifier	block		526589	0					
+ANR	527254	PrimaryExpression	0		526589	1					
+ANR	527255	ForStatement	for ( i = 0 ; i < table_clusters + blocks_clusters ; i ++ )		526589	71					
+ANR	527256	ForInit	i = 0 ;	337:9:6771:6776	526589	0	True				
+ANR	527257	AssignmentExpression	i = 0		526589	0		=			
+ANR	527258	Identifier	i		526589	0					
+ANR	527259	PrimaryExpression	0		526589	1					
+ANR	527260	Condition	i < table_clusters + blocks_clusters	337:16:6778:6813	526589	1	True				
+ANR	527261	RelationalExpression	i < table_clusters + blocks_clusters		526589	0		<			
+ANR	527262	Identifier	i		526589	0					
+ANR	527263	AdditiveExpression	table_clusters + blocks_clusters		526589	1		+			
+ANR	527264	Identifier	table_clusters		526589	0					
+ANR	527265	Identifier	blocks_clusters		526589	1					
+ANR	527266	PostIncDecOperationExpression	i ++	337:54:6816:6818	526589	2	True				
+ANR	527267	Identifier	i		526589	0					
+ANR	527268	IncDec	++		526589	1					
+ANR	527269	CompoundStatement		335:59:6738:6738	526589	3					
+ANR	527270	ExpressionStatement	new_blocks [ block ++ ] = cpu_to_be16 ( 1 )	339:8:6832:6868	526589	0	True				
+ANR	527271	AssignmentExpression	new_blocks [ block ++ ] = cpu_to_be16 ( 1 )		526589	0		=			
+ANR	527272	ArrayIndexing	new_blocks [ block ++ ]		526589	0					
+ANR	527273	Identifier	new_blocks		526589	0					
+ANR	527274	PostIncDecOperationExpression	block ++		526589	1					
+ANR	527275	Identifier	block		526589	0					
+ANR	527276	IncDec	++		526589	1					
+ANR	527277	CallExpression	cpu_to_be16 ( 1 )		526589	1					
+ANR	527278	Callee	cpu_to_be16		526589	0					
+ANR	527279	Identifier	cpu_to_be16		526589	0					
+ANR	527280	ArgumentList	1		526589	1					
+ANR	527281	Argument	1		526589	0					
+ANR	527282	PrimaryExpression	1		526589	0					
+ANR	527283	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_WRITE_BLOCKS )"	347:4:6925:6983	526589	72	True				
+ANR	527284	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_WRITE_BLOCKS )"		526589	0					
+ANR	527285	Callee	BLKDBG_EVENT		526589	0					
+ANR	527286	Identifier	BLKDBG_EVENT		526589	0					
+ANR	527287	ArgumentList	bs -> file		526589	1					
+ANR	527288	Argument	bs -> file		526589	0					
+ANR	527289	PtrMemberAccess	bs -> file		526589	0					
+ANR	527290	Identifier	bs		526589	0					
+ANR	527291	Identifier	file		526589	1					
+ANR	527292	Argument	BLKDBG_REFBLOCK_ALLOC_WRITE_BLOCKS		526589	1					
+ANR	527293	Identifier	BLKDBG_REFBLOCK_ALLOC_WRITE_BLOCKS		526589	0					
+ANR	527294	ExpressionStatement	"ret = bdrv_pwrite ( bs -> file , meta_offset , new_blocks , blocks_clusters * s -> cluster_size )"	349:4:6990:7086	526589	73	True				
+ANR	527295	AssignmentExpression	"ret = bdrv_pwrite ( bs -> file , meta_offset , new_blocks , blocks_clusters * s -> cluster_size )"		526589	0		=			
+ANR	527296	Identifier	ret		526589	0					
+ANR	527297	CallExpression	"bdrv_pwrite ( bs -> file , meta_offset , new_blocks , blocks_clusters * s -> cluster_size )"		526589	1					
+ANR	527298	Callee	bdrv_pwrite		526589	0					
+ANR	527299	Identifier	bdrv_pwrite		526589	0					
+ANR	527300	ArgumentList	bs -> file		526589	1					
+ANR	527301	Argument	bs -> file		526589	0					
+ANR	527302	PtrMemberAccess	bs -> file		526589	0					
+ANR	527303	Identifier	bs		526589	0					
+ANR	527304	Identifier	file		526589	1					
+ANR	527305	Argument	meta_offset		526589	1					
+ANR	527306	Identifier	meta_offset		526589	0					
+ANR	527307	Argument	new_blocks		526589	2					
+ANR	527308	Identifier	new_blocks		526589	0					
+ANR	527309	Argument	blocks_clusters * s -> cluster_size		526589	3					
+ANR	527310	MultiplicativeExpression	blocks_clusters * s -> cluster_size		526589	0		*			
+ANR	527311	Identifier	blocks_clusters		526589	0					
+ANR	527312	PtrMemberAccess	s -> cluster_size		526589	1					
+ANR	527313	Identifier	s		526589	0					
+ANR	527314	Identifier	cluster_size		526589	1					
+ANR	527315	ExpressionStatement	qemu_free ( new_blocks )	353:4:7093:7114	526589	74	True				
+ANR	527316	CallExpression	qemu_free ( new_blocks )		526589	0					
+ANR	527317	Callee	qemu_free		526589	0					
+ANR	527318	Identifier	qemu_free		526589	0					
+ANR	527319	ArgumentList	new_blocks		526589	1					
+ANR	527320	Argument	new_blocks		526589	0					
+ANR	527321	Identifier	new_blocks		526589	0					
+ANR	527322	IfStatement	if ( ret < 0 )		526589	75					
+ANR	527323	Condition	ret < 0	355:8:7125:7131	526589	0	True				
+ANR	527324	RelationalExpression	ret < 0		526589	0		<			
+ANR	527325	Identifier	ret		526589	0					
+ANR	527326	PrimaryExpression	0		526589	1					
+ANR	527327	CompoundStatement		353:17:7051:7051	526589	1					
+ANR	527328	GotoStatement	goto fail_table ;	357:8:7145:7160	526589	0	True				
+ANR	527329	Identifier	fail_table		526589	0					
+ANR	527330	ForStatement	for ( i = 0 ; i < table_size ; i ++ )		526589	76					
+ANR	527331	ForInit	i = 0 ;	365:8:7220:7225	526589	0	True				
+ANR	527332	AssignmentExpression	i = 0		526589	0		=			
+ANR	527333	Identifier	i		526589	0					
+ANR	527334	PrimaryExpression	0		526589	1					
+ANR	527335	Condition	i < table_size	365:15:7227:7240	526589	1	True				
+ANR	527336	RelationalExpression	i < table_size		526589	0		<			
+ANR	527337	Identifier	i		526589	0					
+ANR	527338	Identifier	table_size		526589	1					
+ANR	527339	PostIncDecOperationExpression	i ++	365:31:7243:7245	526589	2	True				
+ANR	527340	Identifier	i		526589	0					
+ANR	527341	IncDec	++		526589	1					
+ANR	527342	CompoundStatement		363:36:7165:7165	526589	3					
+ANR	527343	ExpressionStatement	cpu_to_be64s ( & new_table [ i ] )	367:8:7259:7286	526589	0	True				
+ANR	527344	CallExpression	cpu_to_be64s ( & new_table [ i ] )		526589	0					
+ANR	527345	Callee	cpu_to_be64s		526589	0					
+ANR	527346	Identifier	cpu_to_be64s		526589	0					
+ANR	527347	ArgumentList	& new_table [ i ]		526589	1					
+ANR	527348	Argument	& new_table [ i ]		526589	0					
+ANR	527349	UnaryOperationExpression	& new_table [ i ]		526589	0					
+ANR	527350	UnaryOperator	&		526589	0					
+ANR	527351	ArrayIndexing	new_table [ i ]		526589	1					
+ANR	527352	Identifier	new_table		526589	0					
+ANR	527353	Identifier	i		526589	1					
+ANR	527354	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_WRITE_TABLE )"	373:4:7302:7359	526589	77	True				
+ANR	527355	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_WRITE_TABLE )"		526589	0					
+ANR	527356	Callee	BLKDBG_EVENT		526589	0					
+ANR	527357	Identifier	BLKDBG_EVENT		526589	0					
+ANR	527358	ArgumentList	bs -> file		526589	1					
+ANR	527359	Argument	bs -> file		526589	0					
+ANR	527360	PtrMemberAccess	bs -> file		526589	0					
+ANR	527361	Identifier	bs		526589	0					
+ANR	527362	Identifier	file		526589	1					
+ANR	527363	Argument	BLKDBG_REFBLOCK_ALLOC_WRITE_TABLE		526589	1					
+ANR	527364	Identifier	BLKDBG_REFBLOCK_ALLOC_WRITE_TABLE		526589	0					
+ANR	527365	ExpressionStatement	"ret = bdrv_pwrite ( bs -> file , table_offset , new_table , table_size * sizeof ( uint64_t ) )"	375:4:7366:7458	526589	78	True				
+ANR	527366	AssignmentExpression	"ret = bdrv_pwrite ( bs -> file , table_offset , new_table , table_size * sizeof ( uint64_t ) )"		526589	0		=			
+ANR	527367	Identifier	ret		526589	0					
+ANR	527368	CallExpression	"bdrv_pwrite ( bs -> file , table_offset , new_table , table_size * sizeof ( uint64_t ) )"		526589	1					
+ANR	527369	Callee	bdrv_pwrite		526589	0					
+ANR	527370	Identifier	bdrv_pwrite		526589	0					
+ANR	527371	ArgumentList	bs -> file		526589	1					
+ANR	527372	Argument	bs -> file		526589	0					
+ANR	527373	PtrMemberAccess	bs -> file		526589	0					
+ANR	527374	Identifier	bs		526589	0					
+ANR	527375	Identifier	file		526589	1					
+ANR	527376	Argument	table_offset		526589	1					
+ANR	527377	Identifier	table_offset		526589	0					
+ANR	527378	Argument	new_table		526589	2					
+ANR	527379	Identifier	new_table		526589	0					
+ANR	527380	Argument	table_size * sizeof ( uint64_t )		526589	3					
+ANR	527381	MultiplicativeExpression	table_size * sizeof ( uint64_t )		526589	0		*			
+ANR	527382	Identifier	table_size		526589	0					
+ANR	527383	SizeofExpression	sizeof ( uint64_t )		526589	1					
+ANR	527384	Sizeof	sizeof		526589	0					
+ANR	527385	SizeofOperand	uint64_t		526589	1					
+ANR	527386	IfStatement	if ( ret < 0 )		526589	79					
+ANR	527387	Condition	ret < 0	379:8:7469:7475	526589	0	True				
+ANR	527388	RelationalExpression	ret < 0		526589	0		<			
+ANR	527389	Identifier	ret		526589	0					
+ANR	527390	PrimaryExpression	0		526589	1					
+ANR	527391	CompoundStatement		377:17:7395:7395	526589	1					
+ANR	527392	GotoStatement	goto fail_table ;	381:8:7489:7504	526589	0	True				
+ANR	527393	Identifier	fail_table		526589	0					
+ANR	527394	ForStatement	for ( i = 0 ; i < table_size ; i ++ )		526589	80					
+ANR	527395	ForInit	i = 0 ;	387:8:7524:7529	526589	0	True				
+ANR	527396	AssignmentExpression	i = 0		526589	0		=			
+ANR	527397	Identifier	i		526589	0					
+ANR	527398	PrimaryExpression	0		526589	1					
+ANR	527399	Condition	i < table_size	387:15:7531:7544	526589	1	True				
+ANR	527400	RelationalExpression	i < table_size		526589	0		<			
+ANR	527401	Identifier	i		526589	0					
+ANR	527402	Identifier	table_size		526589	1					
+ANR	527403	PostIncDecOperationExpression	i ++	387:31:7547:7549	526589	2	True				
+ANR	527404	Identifier	i		526589	0					
+ANR	527405	IncDec	++		526589	1					
+ANR	527406	CompoundStatement		385:36:7469:7469	526589	3					
+ANR	527407	ExpressionStatement	cpu_to_be64s ( & new_table [ i ] )	389:8:7563:7590	526589	0	True				
+ANR	527408	CallExpression	cpu_to_be64s ( & new_table [ i ] )		526589	0					
+ANR	527409	Callee	cpu_to_be64s		526589	0					
+ANR	527410	Identifier	cpu_to_be64s		526589	0					
+ANR	527411	ArgumentList	& new_table [ i ]		526589	1					
+ANR	527412	Argument	& new_table [ i ]		526589	0					
+ANR	527413	UnaryOperationExpression	& new_table [ i ]		526589	0					
+ANR	527414	UnaryOperator	&		526589	0					
+ANR	527415	ArrayIndexing	new_table [ i ]		526589	1					
+ANR	527416	Identifier	new_table		526589	0					
+ANR	527417	Identifier	i		526589	1					
+ANR	527418	IdentifierDeclStatement	uint8_t data [ 12 ] ;	397:4:7668:7684	526589	81	True				
+ANR	527419	IdentifierDecl	data [ 12 ]		526589	0					
+ANR	527420	IdentifierDeclType	uint8_t [ 12 ]		526589	0					
+ANR	527421	Identifier	data		526589	1					
+ANR	527422	PrimaryExpression	12		526589	2					
+ANR	527423	ExpressionStatement	"cpu_to_be64w ( ( uint64_t * ) data , table_offset )"	399:4:7691:7734	526589	82	True				
+ANR	527424	CallExpression	"cpu_to_be64w ( ( uint64_t * ) data , table_offset )"		526589	0					
+ANR	527425	Callee	cpu_to_be64w		526589	0					
+ANR	527426	Identifier	cpu_to_be64w		526589	0					
+ANR	527427	ArgumentList	( uint64_t * ) data		526589	1					
+ANR	527428	Argument	( uint64_t * ) data		526589	0					
+ANR	527429	CastExpression	( uint64_t * ) data		526589	0					
+ANR	527430	CastTarget	uint64_t *		526589	0					
+ANR	527431	Identifier	data		526589	1					
+ANR	527432	Argument	table_offset		526589	1					
+ANR	527433	Identifier	table_offset		526589	0					
+ANR	527434	ExpressionStatement	"cpu_to_be32w ( ( uint32_t * ) ( data + 8 ) , table_clusters )"	401:4:7741:7792	526589	83	True				
+ANR	527435	CallExpression	"cpu_to_be32w ( ( uint32_t * ) ( data + 8 ) , table_clusters )"		526589	0					
+ANR	527436	Callee	cpu_to_be32w		526589	0					
+ANR	527437	Identifier	cpu_to_be32w		526589	0					
+ANR	527438	ArgumentList	( uint32_t * ) ( data + 8 )		526589	1					
+ANR	527439	Argument	( uint32_t * ) ( data + 8 )		526589	0					
+ANR	527440	CastExpression	( uint32_t * ) ( data + 8 )		526589	0					
+ANR	527441	CastTarget	uint32_t *		526589	0					
+ANR	527442	AdditiveExpression	data + 8		526589	1		+			
+ANR	527443	Identifier	data		526589	0					
+ANR	527444	PrimaryExpression	8		526589	1					
+ANR	527445	Argument	table_clusters		526589	1					
+ANR	527446	Identifier	table_clusters		526589	0					
+ANR	527447	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_SWITCH_TABLE )"	403:4:7799:7857	526589	84	True				
+ANR	527448	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_REFBLOCK_ALLOC_SWITCH_TABLE )"		526589	0					
+ANR	527449	Callee	BLKDBG_EVENT		526589	0					
+ANR	527450	Identifier	BLKDBG_EVENT		526589	0					
+ANR	527451	ArgumentList	bs -> file		526589	1					
+ANR	527452	Argument	bs -> file		526589	0					
+ANR	527453	PtrMemberAccess	bs -> file		526589	0					
+ANR	527454	Identifier	bs		526589	0					
+ANR	527455	Identifier	file		526589	1					
+ANR	527456	Argument	BLKDBG_REFBLOCK_ALLOC_SWITCH_TABLE		526589	1					
+ANR	527457	Identifier	BLKDBG_REFBLOCK_ALLOC_SWITCH_TABLE		526589	0					
+ANR	527458	ExpressionStatement	"ret = bdrv_pwrite ( bs -> file , offsetof ( QCowHeader , refcount_table_offset ) , data , sizeof ( data ) )"	405:4:7864:7965	526589	85	True				
+ANR	527459	AssignmentExpression	"ret = bdrv_pwrite ( bs -> file , offsetof ( QCowHeader , refcount_table_offset ) , data , sizeof ( data ) )"		526589	0		=			
+ANR	527460	Identifier	ret		526589	0					
+ANR	527461	CallExpression	"bdrv_pwrite ( bs -> file , offsetof ( QCowHeader , refcount_table_offset ) , data , sizeof ( data ) )"		526589	1					
+ANR	527462	Callee	bdrv_pwrite		526589	0					
+ANR	527463	Identifier	bdrv_pwrite		526589	0					
+ANR	527464	ArgumentList	bs -> file		526589	1					
+ANR	527465	Argument	bs -> file		526589	0					
+ANR	527466	PtrMemberAccess	bs -> file		526589	0					
+ANR	527467	Identifier	bs		526589	0					
+ANR	527468	Identifier	file		526589	1					
+ANR	527469	Argument	"offsetof ( QCowHeader , refcount_table_offset )"		526589	1					
+ANR	527470	CallExpression	"offsetof ( QCowHeader , refcount_table_offset )"		526589	0					
+ANR	527471	Callee	offsetof		526589	0					
+ANR	527472	Identifier	offsetof		526589	0					
+ANR	527473	ArgumentList	QCowHeader		526589	1					
+ANR	527474	Argument	QCowHeader		526589	0					
+ANR	527475	Identifier	QCowHeader		526589	0					
+ANR	527476	Argument	refcount_table_offset		526589	1					
+ANR	527477	Identifier	refcount_table_offset		526589	0					
+ANR	527478	Argument	data		526589	2					
+ANR	527479	Identifier	data		526589	0					
+ANR	527480	Argument	sizeof ( data )		526589	3					
+ANR	527481	SizeofExpression	sizeof ( data )		526589	0					
+ANR	527482	Sizeof	sizeof		526589	0					
+ANR	527483	SizeofOperand	data		526589	1					
+ANR	527484	IfStatement	if ( ret < 0 )		526589	86					
+ANR	527485	Condition	ret < 0	409:8:7976:7982	526589	0	True				
+ANR	527486	RelationalExpression	ret < 0		526589	0		<			
+ANR	527487	Identifier	ret		526589	0					
+ANR	527488	PrimaryExpression	0		526589	1					
+ANR	527489	CompoundStatement		407:17:7902:7902	526589	1					
+ANR	527490	GotoStatement	goto fail_table ;	411:8:7996:8011	526589	0	True				
+ANR	527491	Identifier	fail_table		526589	0					
+ANR	527492	IdentifierDeclStatement	uint64_t old_table_offset = s -> refcount_table_offset ;	419:4:8062:8114	526589	87	True				
+ANR	527493	IdentifierDecl	old_table_offset = s -> refcount_table_offset		526589	0					
+ANR	527494	IdentifierDeclType	uint64_t		526589	0					
+ANR	527495	Identifier	old_table_offset		526589	1					
+ANR	527496	AssignmentExpression	old_table_offset = s -> refcount_table_offset		526589	2		=			
+ANR	527497	Identifier	old_table_offset		526589	0					
+ANR	527498	PtrMemberAccess	s -> refcount_table_offset		526589	1					
+ANR	527499	Identifier	s		526589	0					
+ANR	527500	Identifier	refcount_table_offset		526589	1					
+ANR	527501	IdentifierDeclStatement	uint64_t old_table_size = s -> refcount_table_size ;	421:4:8121:8169	526589	88	True				
+ANR	527502	IdentifierDecl	old_table_size = s -> refcount_table_size		526589	0					
+ANR	527503	IdentifierDeclType	uint64_t		526589	0					
+ANR	527504	Identifier	old_table_size		526589	1					
+ANR	527505	AssignmentExpression	old_table_size = s -> refcount_table_size		526589	2		=			
+ANR	527506	Identifier	old_table_size		526589	0					
+ANR	527507	PtrMemberAccess	s -> refcount_table_size		526589	1					
+ANR	527508	Identifier	s		526589	0					
+ANR	527509	Identifier	refcount_table_size		526589	1					
+ANR	527510	ExpressionStatement	qemu_free ( s -> refcount_table )	425:4:8178:8206	526589	89	True				
+ANR	527511	CallExpression	qemu_free ( s -> refcount_table )		526589	0					
+ANR	527512	Callee	qemu_free		526589	0					
+ANR	527513	Identifier	qemu_free		526589	0					
+ANR	527514	ArgumentList	s -> refcount_table		526589	1					
+ANR	527515	Argument	s -> refcount_table		526589	0					
+ANR	527516	PtrMemberAccess	s -> refcount_table		526589	0					
+ANR	527517	Identifier	s		526589	0					
+ANR	527518	Identifier	refcount_table		526589	1					
+ANR	527519	ExpressionStatement	s -> refcount_table = new_table	427:4:8213:8242	526589	90	True				
+ANR	527520	AssignmentExpression	s -> refcount_table = new_table		526589	0		=			
+ANR	527521	PtrMemberAccess	s -> refcount_table		526589	0					
+ANR	527522	Identifier	s		526589	0					
+ANR	527523	Identifier	refcount_table		526589	1					
+ANR	527524	Identifier	new_table		526589	1					
+ANR	527525	ExpressionStatement	s -> refcount_table_size = table_size	429:4:8249:8284	526589	91	True				
+ANR	527526	AssignmentExpression	s -> refcount_table_size = table_size		526589	0		=			
+ANR	527527	PtrMemberAccess	s -> refcount_table_size		526589	0					
+ANR	527528	Identifier	s		526589	0					
+ANR	527529	Identifier	refcount_table_size		526589	1					
+ANR	527530	Identifier	table_size		526589	1					
+ANR	527531	ExpressionStatement	s -> refcount_table_offset = table_offset	431:4:8291:8330	526589	92	True				
+ANR	527532	AssignmentExpression	s -> refcount_table_offset = table_offset		526589	0		=			
+ANR	527533	PtrMemberAccess	s -> refcount_table_offset		526589	0					
+ANR	527534	Identifier	s		526589	0					
+ANR	527535	Identifier	refcount_table_offset		526589	1					
+ANR	527536	Identifier	table_offset		526589	1					
+ANR	527537	IdentifierDeclStatement	uint64_t old_free_cluster_index = s -> free_cluster_index ;	437:4:8414:8469	526589	93	True				
+ANR	527538	IdentifierDecl	old_free_cluster_index = s -> free_cluster_index		526589	0					
+ANR	527539	IdentifierDeclType	uint64_t		526589	0					
+ANR	527540	Identifier	old_free_cluster_index		526589	1					
+ANR	527541	AssignmentExpression	old_free_cluster_index = s -> free_cluster_index		526589	2		=			
+ANR	527542	Identifier	old_free_cluster_index		526589	0					
+ANR	527543	PtrMemberAccess	s -> free_cluster_index		526589	1					
+ANR	527544	Identifier	s		526589	0					
+ANR	527545	Identifier	free_cluster_index		526589	1					
+ANR	527546	ExpressionStatement	"qcow2_free_clusters ( bs , old_table_offset , old_table_size * sizeof ( uint64_t ) )"	439:4:8476:8552	526589	94	True				
+ANR	527547	CallExpression	"qcow2_free_clusters ( bs , old_table_offset , old_table_size * sizeof ( uint64_t ) )"		526589	0					
+ANR	527548	Callee	qcow2_free_clusters		526589	0					
+ANR	527549	Identifier	qcow2_free_clusters		526589	0					
+ANR	527550	ArgumentList	bs		526589	1					
+ANR	527551	Argument	bs		526589	0					
+ANR	527552	Identifier	bs		526589	0					
+ANR	527553	Argument	old_table_offset		526589	1					
+ANR	527554	Identifier	old_table_offset		526589	0					
+ANR	527555	Argument	old_table_size * sizeof ( uint64_t )		526589	2					
+ANR	527556	MultiplicativeExpression	old_table_size * sizeof ( uint64_t )		526589	0		*			
+ANR	527557	Identifier	old_table_size		526589	0					
+ANR	527558	SizeofExpression	sizeof ( uint64_t )		526589	1					
+ANR	527559	Sizeof	sizeof		526589	0					
+ANR	527560	SizeofOperand	uint64_t		526589	1					
+ANR	527561	ExpressionStatement	s -> free_cluster_index = old_free_cluster_index	441:4:8559:8605	526589	95	True				
+ANR	527562	AssignmentExpression	s -> free_cluster_index = old_free_cluster_index		526589	0		=			
+ANR	527563	PtrMemberAccess	s -> free_cluster_index		526589	0					
+ANR	527564	Identifier	s		526589	0					
+ANR	527565	Identifier	free_cluster_index		526589	1					
+ANR	527566	Identifier	old_free_cluster_index		526589	1					
+ANR	527567	ExpressionStatement	"ret = load_refcount_block ( bs , new_block )"	445:4:8614:8654	526589	96	True				
+ANR	527568	AssignmentExpression	"ret = load_refcount_block ( bs , new_block )"		526589	0		=			
+ANR	527569	Identifier	ret		526589	0					
+ANR	527570	CallExpression	"load_refcount_block ( bs , new_block )"		526589	1					
+ANR	527571	Callee	load_refcount_block		526589	0					
+ANR	527572	Identifier	load_refcount_block		526589	0					
+ANR	527573	ArgumentList	bs		526589	1					
+ANR	527574	Argument	bs		526589	0					
+ANR	527575	Identifier	bs		526589	0					
+ANR	527576	Argument	new_block		526589	1					
+ANR	527577	Identifier	new_block		526589	0					
+ANR	527578	IfStatement	if ( ret < 0 )		526589	97					
+ANR	527579	Condition	ret < 0	447:8:8665:8671	526589	0	True				
+ANR	527580	RelationalExpression	ret < 0		526589	0		<			
+ANR	527581	Identifier	ret		526589	0					
+ANR	527582	PrimaryExpression	0		526589	1					
+ANR	527583	CompoundStatement		445:17:8591:8591	526589	1					
+ANR	527584	GotoStatement	goto fail_block ;	449:8:8685:8700	526589	0	True				
+ANR	527585	Identifier	fail_block		526589	0					
+ANR	527586	ReturnStatement	return new_block ;	455:4:8716:8732	526589	98	True				
+ANR	527587	Identifier	new_block		526589	0					
+ANR	527588	Label	fail_table :	459:0:8737:8747	526589	99	True				
+ANR	527589	Identifier	fail_table		526589	0					
+ANR	527590	ExpressionStatement	qemu_free ( new_table )	461:4:8754:8774	526589	100	True				
+ANR	527591	CallExpression	qemu_free ( new_table )		526589	0					
+ANR	527592	Callee	qemu_free		526589	0					
+ANR	527593	Identifier	qemu_free		526589	0					
+ANR	527594	ArgumentList	new_table		526589	1					
+ANR	527595	Argument	new_table		526589	0					
+ANR	527596	Identifier	new_table		526589	0					
+ANR	527597	Label	fail_block :	463:0:8777:8787	526589	101	True				
+ANR	527598	Identifier	fail_block		526589	0					
+ANR	527599	ExpressionStatement	s -> refcount_block_cache_offset = 0	465:4:8794:8828	526589	102	True				
+ANR	527600	AssignmentExpression	s -> refcount_block_cache_offset = 0		526589	0		=			
+ANR	527601	PtrMemberAccess	s -> refcount_block_cache_offset		526589	0					
+ANR	527602	Identifier	s		526589	0					
+ANR	527603	Identifier	refcount_block_cache_offset		526589	1					
+ANR	527604	PrimaryExpression	0		526589	1					
+ANR	527605	ReturnStatement	return ret ;	467:4:8835:8845	526589	103	True				
+ANR	527606	Identifier	ret		526589	0					
+ANR	527607	ReturnType	static int64_t		526589	1					
+ANR	527608	Identifier	alloc_refcount_block		526589	2					
+ANR	527609	ParameterList	"BlockDriverState * bs , int64_t cluster_index"		526589	3					
+ANR	527610	Parameter	BlockDriverState * bs	1:36:36:55	526589	0	True				
+ANR	527611	ParameterType	BlockDriverState *		526589	0					
+ANR	527612	Identifier	bs		526589	1					
+ANR	527613	Parameter	int64_t cluster_index	1:58:58:78	526589	1	True				
+ANR	527614	ParameterType	int64_t		526589	0					
+ANR	527615	Identifier	cluster_index		526589	1					
+ANR	527616	CFGEntryNode	ENTRY		526589		True				
+ANR	527617	CFGExitNode	EXIT		526589		True				
+ANR	527618	Symbol	table_size		526589						
+ANR	527619	Symbol	bs -> file		526589						
+ANR	527620	Symbol	table_offset		526589						
+ANR	527621	Symbol	data		526589						
+ANR	527622	Symbol	refcount_block_offset		526589						
+ANR	527623	Symbol	next_refcount_table_size		526589						
+ANR	527624	Symbol	* blocks_used		526589						
+ANR	527625	Symbol	update_refcount		526589						
+ANR	527626	Symbol	BLKDBG_REFBLOCK_ALLOC_WRITE		526589						
+ANR	527627	Symbol	new_blocks		526589						
+ANR	527628	Symbol	s -> cluster_size		526589						
+ANR	527629	Symbol	old_table_offset		526589						
+ANR	527630	Symbol	BLKDBG_REFBLOCK_ALLOC_SWITCH_TABLE		526589						
+ANR	527631	Symbol	meta_clusters		526589						
+ANR	527632	Symbol	* bs		526589						
+ANR	527633	Symbol	load_refcount_block		526589						
+ANR	527634	Symbol	bdrv_pwrite		526589						
+ANR	527635	Symbol	block		526589						
+ANR	527636	Symbol	REFCOUNT_SHIFT		526589						
+ANR	527637	Symbol	in_same_refcount_block		526589						
+ANR	527638	Symbol	new_table		526589						
+ANR	527639	Symbol	ret		526589						
+ANR	527640	Symbol	blocks_clusters		526589						
+ANR	527641	Symbol	size_to_clusters		526589						
+ANR	527642	Symbol	* refcount_table_index		526589						
+ANR	527643	Symbol	BLKDBG_REFTABLE_GROW		526589						
+ANR	527644	Symbol	s -> refcount_block_cache_offset		526589						
+ANR	527645	Symbol	s -> free_cluster_index		526589						
+ANR	527646	Symbol	block_index		526589						
+ANR	527647	Symbol	refcount_table_offset		526589						
+ANR	527648	Symbol	write_refcount_block		526589						
+ANR	527649	Symbol	last_table_size		526589						
+ANR	527650	Symbol	BLKDBG_REFBLOCK_ALLOC		526589						
+ANR	527651	Symbol	QCowHeader		526589						
+ANR	527652	Symbol	s -> refcount_table_size		526589						
+ANR	527653	Symbol	s -> refcount_table_offset		526589						
+ANR	527654	Symbol	& data64		526589						
+ANR	527655	Symbol	BLKDBG_REFBLOCK_ALLOC_WRITE_TABLE		526589						
+ANR	527656	Symbol	cache_refcount_updates		526589						
+ANR	527657	Symbol	bs		526589						
+ANR	527658	Symbol	* s -> refcount_table		526589						
+ANR	527659	Symbol	new_block		526589						
+ANR	527660	Symbol	* s -> refcount_block_cache		526589						
+ANR	527661	Symbol	s -> refcount_block_cache		526589						
+ANR	527662	Symbol	* * s		526589						
+ANR	527663	Symbol	meta_offset		526589						
+ANR	527664	Symbol	data64		526589						
+ANR	527665	Symbol	cluster_index		526589						
+ANR	527666	Symbol	offsetof		526589						
+ANR	527667	Symbol	cpu_to_be16		526589						
+ANR	527668	Symbol	BLKDBG_REFBLOCK_ALLOC_WRITE_BLOCKS		526589						
+ANR	527669	Symbol	* new_table		526589						
+ANR	527670	Symbol	cpu_to_be64		526589						
+ANR	527671	Symbol	bs -> opaque		526589						
+ANR	527672	Symbol	* block_index		526589						
+ANR	527673	Symbol	blocks_used		526589						
+ANR	527674	Symbol	i		526589						
+ANR	527675	Symbol	table_clusters		526589						
+ANR	527676	Symbol	old_table_size		526589						
+ANR	527677	Symbol	old_free_cluster_index		526589						
+ANR	527678	Symbol	refcount_table_index		526589						
+ANR	527679	Symbol	s -> cluster_bits		526589						
+ANR	527680	Symbol	s		526589						
+ANR	527681	Symbol	* i		526589						
+ANR	527682	Symbol	alloc_clusters_noref		526589						
+ANR	527683	Symbol	refcount_block_clusters		526589						
+ANR	527684	Symbol	s -> refcount_table		526589						
+ANR	527685	Symbol	* s		526589						
+ANR	527686	Symbol	BLKDBG_REFBLOCK_ALLOC_HOOKUP		526589						
+ANR	527687	Symbol	qemu_mallocz		526589						
+ANR	527688	Symbol	* new_blocks		526589						

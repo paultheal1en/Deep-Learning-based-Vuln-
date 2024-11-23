@@ -1,0 +1,250 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	2633955	File	/home/p4ultr4n/workplace/ReVeal/raw_code/do_sigreturn_07_1.c								
+ANR	2633956	Function	do_sigreturn	1:0:0:986							
+ANR	2633957	FunctionDef	do_sigreturn (CPUSH4State * regs)		2633956	0					
+ANR	2633958	CompoundStatement		3:0:38:986	2633956	0					
+ANR	2633959	IdentifierDeclStatement	struct target_sigframe * frame ;	5:4:45:74	2633956	0	True				
+ANR	2633960	IdentifierDecl	* frame		2633956	0					
+ANR	2633961	IdentifierDeclType	struct target_sigframe *		2633956	0					
+ANR	2633962	Identifier	frame		2633956	1					
+ANR	2633963	IdentifierDeclStatement	abi_ulong frame_addr ;	7:4:81:101	2633956	1	True				
+ANR	2633964	IdentifierDecl	frame_addr		2633956	0					
+ANR	2633965	IdentifierDeclType	abi_ulong		2633956	0					
+ANR	2633966	Identifier	frame_addr		2633956	1					
+ANR	2633967	IdentifierDeclStatement	sigset_t blocked ;	9:4:108:124	2633956	2	True				
+ANR	2633968	IdentifierDecl	blocked		2633956	0					
+ANR	2633969	IdentifierDeclType	sigset_t		2633956	0					
+ANR	2633970	Identifier	blocked		2633956	1					
+ANR	2633971	IdentifierDeclStatement	target_sigset_t target_set ;	11:4:131:157	2633956	3	True				
+ANR	2633972	IdentifierDecl	target_set		2633956	0					
+ANR	2633973	IdentifierDeclType	target_sigset_t		2633956	0					
+ANR	2633974	Identifier	target_set		2633956	1					
+ANR	2633975	IdentifierDeclStatement	target_ulong r0 ;	13:4:164:179	2633956	4	True				
+ANR	2633976	IdentifierDecl	r0		2633956	0					
+ANR	2633977	IdentifierDeclType	target_ulong		2633956	0					
+ANR	2633978	Identifier	r0		2633956	1					
+ANR	2633979	IdentifierDeclStatement	int i ;	15:4:186:191	2633956	5	True				
+ANR	2633980	IdentifierDecl	i		2633956	0					
+ANR	2633981	IdentifierDeclType	int		2633956	0					
+ANR	2633982	Identifier	i		2633956	1					
+ANR	2633983	IdentifierDeclStatement	int err = 0 ;	17:4:198:209	2633956	6	True				
+ANR	2633984	IdentifierDecl	err = 0		2633956	0					
+ANR	2633985	IdentifierDeclType	int		2633956	0					
+ANR	2633986	Identifier	err		2633956	1					
+ANR	2633987	AssignmentExpression	err = 0		2633956	2		=			
+ANR	2633988	Identifier	err		2633956	0					
+ANR	2633989	PrimaryExpression	0		2633956	1					
+ANR	2633990	ExpressionStatement	"fprintf ( stderr , ""do_sigreturn\\n"" )"	23:4:245:278	2633956	7	True				
+ANR	2633991	CallExpression	"fprintf ( stderr , ""do_sigreturn\\n"" )"		2633956	0					
+ANR	2633992	Callee	fprintf		2633956	0					
+ANR	2633993	Identifier	fprintf		2633956	0					
+ANR	2633994	ArgumentList	stderr		2633956	1					
+ANR	2633995	Argument	stderr		2633956	0					
+ANR	2633996	Identifier	stderr		2633956	0					
+ANR	2633997	Argument	"""do_sigreturn\\n"""		2633956	1					
+ANR	2633998	PrimaryExpression	"""do_sigreturn\\n"""		2633956	0					
+ANR	2633999	ExpressionStatement	frame_addr = regs -> gregs [ 15 ]	27:4:293:321	2633956	8	True				
+ANR	2634000	AssignmentExpression	frame_addr = regs -> gregs [ 15 ]		2633956	0		=			
+ANR	2634001	Identifier	frame_addr		2633956	0					
+ANR	2634002	ArrayIndexing	regs -> gregs [ 15 ]		2633956	1					
+ANR	2634003	PtrMemberAccess	regs -> gregs		2633956	0					
+ANR	2634004	Identifier	regs		2633956	0					
+ANR	2634005	Identifier	gregs		2633956	1					
+ANR	2634006	PrimaryExpression	15		2633956	1					
+ANR	2634007	IfStatement	"if ( ! lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 ) )"		2633956	9					
+ANR	2634008	Condition	"! lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 )"	29:8:332:383	2633956	0	True				
+ANR	2634009	UnaryOperationExpression	"! lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 )"		2633956	0					
+ANR	2634010	UnaryOperator	!		2633956	0					
+ANR	2634011	CallExpression	"lock_user_struct ( VERIFY_READ , frame , frame_addr , 1 )"		2633956	1					
+ANR	2634012	Callee	lock_user_struct		2633956	0					
+ANR	2634013	Identifier	lock_user_struct		2633956	0					
+ANR	2634014	ArgumentList	VERIFY_READ		2633956	1					
+ANR	2634015	Argument	VERIFY_READ		2633956	0					
+ANR	2634016	Identifier	VERIFY_READ		2633956	0					
+ANR	2634017	Argument	frame		2633956	1					
+ANR	2634018	Identifier	frame		2633956	0					
+ANR	2634019	Argument	frame_addr		2633956	2					
+ANR	2634020	Identifier	frame_addr		2633956	0					
+ANR	2634021	Argument	1		2633956	3					
+ANR	2634022	PrimaryExpression	1		2633956	0					
+ANR	2634023	GotoStatement	goto badframe ;	31:4:391:404	2633956	1	True				
+ANR	2634024	Identifier	badframe		2633956	0					
+ANR	2634025	ExpressionStatement	"__get_user ( target_set . sig [ 0 ] , & frame -> sc . oldmask )"	35:4:413:462	2633956	10	True				
+ANR	2634026	CallExpression	"__get_user ( target_set . sig [ 0 ] , & frame -> sc . oldmask )"		2633956	0					
+ANR	2634027	Callee	__get_user		2633956	0					
+ANR	2634028	Identifier	__get_user		2633956	0					
+ANR	2634029	ArgumentList	target_set . sig [ 0 ]		2633956	1					
+ANR	2634030	Argument	target_set . sig [ 0 ]		2633956	0					
+ANR	2634031	ArrayIndexing	target_set . sig [ 0 ]		2633956	0					
+ANR	2634032	MemberAccess	target_set . sig		2633956	0					
+ANR	2634033	Identifier	target_set		2633956	0					
+ANR	2634034	Identifier	sig		2633956	1					
+ANR	2634035	PrimaryExpression	0		2633956	1					
+ANR	2634036	Argument	& frame -> sc . oldmask		2633956	1					
+ANR	2634037	UnaryOperationExpression	& frame -> sc . oldmask		2633956	0					
+ANR	2634038	UnaryOperator	&		2633956	0					
+ANR	2634039	MemberAccess	frame -> sc . oldmask		2633956	1					
+ANR	2634040	PtrMemberAccess	frame -> sc		2633956	0					
+ANR	2634041	Identifier	frame		2633956	0					
+ANR	2634042	Identifier	sc		2633956	1					
+ANR	2634043	Identifier	oldmask		2633956	1					
+ANR	2634044	ForStatement	for ( i = 1 ; i < TARGET_NSIG_WORDS ; i ++ )		2633956	11					
+ANR	2634045	ForInit	i = 1 ;	37:8:473:478	2633956	0	True				
+ANR	2634046	AssignmentExpression	i = 1		2633956	0		=			
+ANR	2634047	Identifier	i		2633956	0					
+ANR	2634048	PrimaryExpression	1		2633956	1					
+ANR	2634049	Condition	i < TARGET_NSIG_WORDS	37:15:480:500	2633956	1	True				
+ANR	2634050	RelationalExpression	i < TARGET_NSIG_WORDS		2633956	0		<			
+ANR	2634051	Identifier	i		2633956	0					
+ANR	2634052	Identifier	TARGET_NSIG_WORDS		2633956	1					
+ANR	2634053	PostIncDecOperationExpression	i ++	37:38:503:505	2633956	2	True				
+ANR	2634054	Identifier	i		2633956	0					
+ANR	2634055	IncDec	++		2633956	1					
+ANR	2634056	CompoundStatement		35:43:469:469	2633956	3					
+ANR	2634057	ExpressionStatement	"__get_user ( target_set . sig [ i ] , & frame -> extramask [ i - 1 ] )"	39:8:519:574	2633956	0	True				
+ANR	2634058	CallExpression	"__get_user ( target_set . sig [ i ] , & frame -> extramask [ i - 1 ] )"		2633956	0					
+ANR	2634059	Callee	__get_user		2633956	0					
+ANR	2634060	Identifier	__get_user		2633956	0					
+ANR	2634061	ArgumentList	target_set . sig [ i ]		2633956	1					
+ANR	2634062	Argument	target_set . sig [ i ]		2633956	0					
+ANR	2634063	ArrayIndexing	target_set . sig [ i ]		2633956	0					
+ANR	2634064	MemberAccess	target_set . sig		2633956	0					
+ANR	2634065	Identifier	target_set		2633956	0					
+ANR	2634066	Identifier	sig		2633956	1					
+ANR	2634067	Identifier	i		2633956	1					
+ANR	2634068	Argument	& frame -> extramask [ i - 1 ]		2633956	1					
+ANR	2634069	UnaryOperationExpression	& frame -> extramask [ i - 1 ]		2633956	0					
+ANR	2634070	UnaryOperator	&		2633956	0					
+ANR	2634071	ArrayIndexing	frame -> extramask [ i - 1 ]		2633956	1					
+ANR	2634072	PtrMemberAccess	frame -> extramask		2633956	0					
+ANR	2634073	Identifier	frame		2633956	0					
+ANR	2634074	Identifier	extramask		2633956	1					
+ANR	2634075	AdditiveExpression	i - 1		2633956	1		-			
+ANR	2634076	Identifier	i		2633956	0					
+ANR	2634077	PrimaryExpression	1		2633956	1					
+ANR	2634078	IfStatement	if ( err )		2633956	12					
+ANR	2634079	Condition	err	45:8:594:596	2633956	0	True				
+ANR	2634080	Identifier	err		2633956	0					
+ANR	2634081	GotoStatement	goto badframe ;	47:8:608:621	2633956	1	True				
+ANR	2634082	Identifier	badframe		2633956	0					
+ANR	2634083	ExpressionStatement	"target_to_host_sigset_internal ( & blocked , & target_set )"	51:4:630:683	2633956	13	True				
+ANR	2634084	CallExpression	"target_to_host_sigset_internal ( & blocked , & target_set )"		2633956	0					
+ANR	2634085	Callee	target_to_host_sigset_internal		2633956	0					
+ANR	2634086	Identifier	target_to_host_sigset_internal		2633956	0					
+ANR	2634087	ArgumentList	& blocked		2633956	1					
+ANR	2634088	Argument	& blocked		2633956	0					
+ANR	2634089	UnaryOperationExpression	& blocked		2633956	0					
+ANR	2634090	UnaryOperator	&		2633956	0					
+ANR	2634091	Identifier	blocked		2633956	1					
+ANR	2634092	Argument	& target_set		2633956	1					
+ANR	2634093	UnaryOperationExpression	& target_set		2633956	0					
+ANR	2634094	UnaryOperator	&		2633956	0					
+ANR	2634095	Identifier	target_set		2633956	1					
+ANR	2634096	ExpressionStatement	"do_sigprocmask ( SIG_SETMASK , & blocked , NULL )"	53:4:690:733	2633956	14	True				
+ANR	2634097	CallExpression	"do_sigprocmask ( SIG_SETMASK , & blocked , NULL )"		2633956	0					
+ANR	2634098	Callee	do_sigprocmask		2633956	0					
+ANR	2634099	Identifier	do_sigprocmask		2633956	0					
+ANR	2634100	ArgumentList	SIG_SETMASK		2633956	1					
+ANR	2634101	Argument	SIG_SETMASK		2633956	0					
+ANR	2634102	Identifier	SIG_SETMASK		2633956	0					
+ANR	2634103	Argument	& blocked		2633956	1					
+ANR	2634104	UnaryOperationExpression	& blocked		2633956	0					
+ANR	2634105	UnaryOperator	&		2633956	0					
+ANR	2634106	Identifier	blocked		2633956	1					
+ANR	2634107	Argument	NULL		2633956	2					
+ANR	2634108	Identifier	NULL		2633956	0					
+ANR	2634109	IfStatement	"if ( restore_sigcontext ( regs , & frame -> sc , & r0 ) )"		2633956	15					
+ANR	2634110	Condition	"restore_sigcontext ( regs , & frame -> sc , & r0 )"	57:8:746:786	2633956	0	True				
+ANR	2634111	CallExpression	"restore_sigcontext ( regs , & frame -> sc , & r0 )"		2633956	0					
+ANR	2634112	Callee	restore_sigcontext		2633956	0					
+ANR	2634113	Identifier	restore_sigcontext		2633956	0					
+ANR	2634114	ArgumentList	regs		2633956	1					
+ANR	2634115	Argument	regs		2633956	0					
+ANR	2634116	Identifier	regs		2633956	0					
+ANR	2634117	Argument	& frame -> sc		2633956	1					
+ANR	2634118	UnaryOperationExpression	& frame -> sc		2633956	0					
+ANR	2634119	UnaryOperator	&		2633956	0					
+ANR	2634120	PtrMemberAccess	frame -> sc		2633956	1					
+ANR	2634121	Identifier	frame		2633956	0					
+ANR	2634122	Identifier	sc		2633956	1					
+ANR	2634123	Argument	& r0		2633956	2					
+ANR	2634124	UnaryOperationExpression	& r0		2633956	0					
+ANR	2634125	UnaryOperator	&		2633956	0					
+ANR	2634126	Identifier	r0		2633956	1					
+ANR	2634127	GotoStatement	goto badframe ;	59:8:798:811	2633956	1	True				
+ANR	2634128	Identifier	badframe		2633956	0					
+ANR	2634129	ExpressionStatement	"unlock_user_struct ( frame , frame_addr , 0 )"	63:4:820:860	2633956	16	True				
+ANR	2634130	CallExpression	"unlock_user_struct ( frame , frame_addr , 0 )"		2633956	0					
+ANR	2634131	Callee	unlock_user_struct		2633956	0					
+ANR	2634132	Identifier	unlock_user_struct		2633956	0					
+ANR	2634133	ArgumentList	frame		2633956	1					
+ANR	2634134	Argument	frame		2633956	0					
+ANR	2634135	Identifier	frame		2633956	0					
+ANR	2634136	Argument	frame_addr		2633956	1					
+ANR	2634137	Identifier	frame_addr		2633956	0					
+ANR	2634138	Argument	0		2633956	2					
+ANR	2634139	PrimaryExpression	0		2633956	0					
+ANR	2634140	ReturnStatement	return r0 ;	65:4:867:876	2633956	17	True				
+ANR	2634141	Identifier	r0		2633956	0					
+ANR	2634142	Label	badframe :	69:0:881:889	2633956	18	True				
+ANR	2634143	Identifier	badframe		2633956	0					
+ANR	2634144	ExpressionStatement	"unlock_user_struct ( frame , frame_addr , 0 )"	71:4:896:936	2633956	19	True				
+ANR	2634145	CallExpression	"unlock_user_struct ( frame , frame_addr , 0 )"		2633956	0					
+ANR	2634146	Callee	unlock_user_struct		2633956	0					
+ANR	2634147	Identifier	unlock_user_struct		2633956	0					
+ANR	2634148	ArgumentList	frame		2633956	1					
+ANR	2634149	Argument	frame		2633956	0					
+ANR	2634150	Identifier	frame		2633956	0					
+ANR	2634151	Argument	frame_addr		2633956	1					
+ANR	2634152	Identifier	frame_addr		2633956	0					
+ANR	2634153	Argument	0		2633956	2					
+ANR	2634154	PrimaryExpression	0		2633956	0					
+ANR	2634155	ExpressionStatement	force_sig ( TARGET_SIGSEGV )	73:4:943:968	2633956	20	True				
+ANR	2634156	CallExpression	force_sig ( TARGET_SIGSEGV )		2633956	0					
+ANR	2634157	Callee	force_sig		2633956	0					
+ANR	2634158	Identifier	force_sig		2633956	0					
+ANR	2634159	ArgumentList	TARGET_SIGSEGV		2633956	1					
+ANR	2634160	Argument	TARGET_SIGSEGV		2633956	0					
+ANR	2634161	Identifier	TARGET_SIGSEGV		2633956	0					
+ANR	2634162	ReturnStatement	return 0 ;	75:4:975:983	2633956	21	True				
+ANR	2634163	PrimaryExpression	0		2633956	0					
+ANR	2634164	ReturnType	long		2633956	1					
+ANR	2634165	Identifier	do_sigreturn		2633956	2					
+ANR	2634166	ParameterList	CPUSH4State * regs		2633956	3					
+ANR	2634167	Parameter	CPUSH4State * regs	1:18:18:34	2633956	0	True				
+ANR	2634168	ParameterType	CPUSH4State *		2633956	0					
+ANR	2634169	Identifier	regs		2633956	1					
+ANR	2634170	CFGEntryNode	ENTRY		2633956		True				
+ANR	2634171	CFGExitNode	EXIT		2633956		True				
+ANR	2634172	Symbol	* frame		2633956						
+ANR	2634173	Symbol	lock_user_struct		2633956						
+ANR	2634174	Symbol	frame -> sc		2633956						
+ANR	2634175	Symbol	* regs -> gregs		2633956						
+ANR	2634176	Symbol	restore_sigcontext		2633956						
+ANR	2634177	Symbol	frame_addr		2633956						
+ANR	2634178	Symbol	blocked		2633956						
+ANR	2634179	Symbol	& target_set		2633956						
+ANR	2634180	Symbol	* * regs		2633956						
+ANR	2634181	Symbol	* target_set . sig		2633956						
+ANR	2634182	Symbol	& frame -> sc		2633956						
+ANR	2634183	Symbol	NULL		2633956						
+ANR	2634184	Symbol	err		2633956						
+ANR	2634185	Symbol	SIG_SETMASK		2633956						
+ANR	2634186	Symbol	i		2633956						
+ANR	2634187	Symbol	regs -> gregs		2633956						
+ANR	2634188	Symbol	VERIFY_READ		2633956						
+ANR	2634189	Symbol	& r0		2633956						
+ANR	2634190	Symbol	regs		2633956						
+ANR	2634191	Symbol	* target_set		2633956						
+ANR	2634192	Symbol	stderr		2633956						
+ANR	2634193	Symbol	& frame -> sc . oldmask		2633956						
+ANR	2634194	Symbol	TARGET_NSIG_WORDS		2633956						
+ANR	2634195	Symbol	TARGET_SIGSEGV		2633956						
+ANR	2634196	Symbol	target_set		2633956						
+ANR	2634197	Symbol	* i		2633956						
+ANR	2634198	Symbol	& blocked		2633956						
+ANR	2634199	Symbol	frame -> extramask		2633956						
+ANR	2634200	Symbol	* regs		2633956						
+ANR	2634201	Symbol	target_set . sig		2633956						
+ANR	2634202	Symbol	r0		2633956						
+ANR	2634203	Symbol	frame		2633956						

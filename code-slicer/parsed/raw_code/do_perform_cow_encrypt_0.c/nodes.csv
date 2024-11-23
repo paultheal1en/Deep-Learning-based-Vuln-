@@ -1,0 +1,129 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	2615195	File	/home/p4ultr4n/workplace/ReVeal/raw_code/do_perform_cow_encrypt_0.c								
+ANR	2615196	Function	do_perform_cow_encrypt	1:0:0:890							
+ANR	2615197	FunctionDef	"do_perform_cow_encrypt (BlockDriverState * bs , uint64_t src_cluster_offset , unsigned offset_in_cluster , uint8_t * buffer , unsigned bytes)"		2615196	0					
+ANR	2615198	CompoundStatement		11:0:357:890	2615196	0					
+ANR	2615199	IfStatement	if ( bytes && bs -> encrypted )		2615196	0					
+ANR	2615200	Condition	bytes && bs -> encrypted	13:8:368:389	2615196	0	True				
+ANR	2615201	AndExpression	bytes && bs -> encrypted		2615196	0		&&			
+ANR	2615202	Identifier	bytes		2615196	0					
+ANR	2615203	PtrMemberAccess	bs -> encrypted		2615196	1					
+ANR	2615204	Identifier	bs		2615196	0					
+ANR	2615205	Identifier	encrypted		2615196	1					
+ANR	2615206	CompoundStatement		7:8:86:189	2615196	1					
+ANR	2615207	IdentifierDeclStatement	BDRVQcow2State * s = bs -> opaque ;	15:8:403:433	2615196	0	True				
+ANR	2615208	IdentifierDecl	* s = bs -> opaque		2615196	0					
+ANR	2615209	IdentifierDeclType	BDRVQcow2State *		2615196	0					
+ANR	2615210	Identifier	s		2615196	1					
+ANR	2615211	AssignmentExpression	* s = bs -> opaque		2615196	2		=			
+ANR	2615212	Identifier	s		2615196	0					
+ANR	2615213	PtrMemberAccess	bs -> opaque		2615196	1					
+ANR	2615214	Identifier	bs		2615196	0					
+ANR	2615215	Identifier	opaque		2615196	1					
+ANR	2615216	IdentifierDeclStatement	int64_t sector = ( src_cluster_offset + offset_in_cluster ) >> BDRV_SECTOR_BITS ;	17:8:444:547	2615196	1	True				
+ANR	2615217	IdentifierDecl	sector = ( src_cluster_offset + offset_in_cluster ) >> BDRV_SECTOR_BITS		2615196	0					
+ANR	2615218	IdentifierDeclType	int64_t		2615196	0					
+ANR	2615219	Identifier	sector		2615196	1					
+ANR	2615220	AssignmentExpression	sector = ( src_cluster_offset + offset_in_cluster ) >> BDRV_SECTOR_BITS		2615196	2		=			
+ANR	2615221	Identifier	sector		2615196	0					
+ANR	2615222	ShiftExpression	( src_cluster_offset + offset_in_cluster ) >> BDRV_SECTOR_BITS		2615196	1		>>			
+ANR	2615223	AdditiveExpression	src_cluster_offset + offset_in_cluster		2615196	0		+			
+ANR	2615224	Identifier	src_cluster_offset		2615196	0					
+ANR	2615225	Identifier	offset_in_cluster		2615196	1					
+ANR	2615226	Identifier	BDRV_SECTOR_BITS		2615196	1					
+ANR	2615227	ExpressionStatement	assert ( s -> cipher )	21:8:558:575	2615196	2	True				
+ANR	2615228	CallExpression	assert ( s -> cipher )		2615196	0					
+ANR	2615229	Callee	assert		2615196	0					
+ANR	2615230	Identifier	assert		2615196	0					
+ANR	2615231	ArgumentList	s -> cipher		2615196	1					
+ANR	2615232	Argument	s -> cipher		2615196	0					
+ANR	2615233	PtrMemberAccess	s -> cipher		2615196	0					
+ANR	2615234	Identifier	s		2615196	0					
+ANR	2615235	Identifier	cipher		2615196	1					
+ANR	2615236	ExpressionStatement	assert ( ( offset_in_cluster & ~BDRV_SECTOR_MASK ) == 0 )	23:8:586:638	2615196	3	True				
+ANR	2615237	CallExpression	assert ( ( offset_in_cluster & ~BDRV_SECTOR_MASK ) == 0 )		2615196	0					
+ANR	2615238	Callee	assert		2615196	0					
+ANR	2615239	Identifier	assert		2615196	0					
+ANR	2615240	ArgumentList	( offset_in_cluster & ~BDRV_SECTOR_MASK ) == 0		2615196	1					
+ANR	2615241	Argument	( offset_in_cluster & ~BDRV_SECTOR_MASK ) == 0		2615196	0					
+ANR	2615242	EqualityExpression	( offset_in_cluster & ~BDRV_SECTOR_MASK ) == 0		2615196	0		==			
+ANR	2615243	BitAndExpression	offset_in_cluster & ~BDRV_SECTOR_MASK		2615196	0		&			
+ANR	2615244	Identifier	offset_in_cluster		2615196	0					
+ANR	2615245	Identifier	~BDRV_SECTOR_MASK		2615196	1					
+ANR	2615246	PrimaryExpression	0		2615196	1					
+ANR	2615247	ExpressionStatement	assert ( ( bytes & ~BDRV_SECTOR_MASK ) == 0 )	25:8:649:689	2615196	4	True				
+ANR	2615248	CallExpression	assert ( ( bytes & ~BDRV_SECTOR_MASK ) == 0 )		2615196	0					
+ANR	2615249	Callee	assert		2615196	0					
+ANR	2615250	Identifier	assert		2615196	0					
+ANR	2615251	ArgumentList	( bytes & ~BDRV_SECTOR_MASK ) == 0		2615196	1					
+ANR	2615252	Argument	( bytes & ~BDRV_SECTOR_MASK ) == 0		2615196	0					
+ANR	2615253	EqualityExpression	( bytes & ~BDRV_SECTOR_MASK ) == 0		2615196	0		==			
+ANR	2615254	BitAndExpression	bytes & ~BDRV_SECTOR_MASK		2615196	0		&			
+ANR	2615255	Identifier	bytes		2615196	0					
+ANR	2615256	Identifier	~BDRV_SECTOR_MASK		2615196	1					
+ANR	2615257	PrimaryExpression	0		2615196	1					
+ANR	2615258	IfStatement	"if ( qcow2_encrypt_sectors ( s , sector , buffer , bytes >> BDRV_SECTOR_BITS , true , NULL ) < 0 )"		2615196	5					
+ANR	2615259	Condition	"qcow2_encrypt_sectors ( s , sector , buffer , bytes >> BDRV_SECTOR_BITS , true , NULL ) < 0"	27:12:704:821	2615196	0	True				
+ANR	2615260	RelationalExpression	"qcow2_encrypt_sectors ( s , sector , buffer , bytes >> BDRV_SECTOR_BITS , true , NULL ) < 0"		2615196	0		<			
+ANR	2615261	CallExpression	"qcow2_encrypt_sectors ( s , sector , buffer , bytes >> BDRV_SECTOR_BITS , true , NULL )"		2615196	0					
+ANR	2615262	Callee	qcow2_encrypt_sectors		2615196	0					
+ANR	2615263	Identifier	qcow2_encrypt_sectors		2615196	0					
+ANR	2615264	ArgumentList	s		2615196	1					
+ANR	2615265	Argument	s		2615196	0					
+ANR	2615266	Identifier	s		2615196	0					
+ANR	2615267	Argument	sector		2615196	1					
+ANR	2615268	Identifier	sector		2615196	0					
+ANR	2615269	Argument	buffer		2615196	2					
+ANR	2615270	Identifier	buffer		2615196	0					
+ANR	2615271	Argument	bytes >> BDRV_SECTOR_BITS		2615196	3					
+ANR	2615272	ShiftExpression	bytes >> BDRV_SECTOR_BITS		2615196	0		>>			
+ANR	2615273	Identifier	bytes		2615196	0					
+ANR	2615274	Identifier	BDRV_SECTOR_BITS		2615196	1					
+ANR	2615275	Argument	true		2615196	4					
+ANR	2615276	Identifier	true		2615196	0					
+ANR	2615277	Argument	NULL		2615196	5					
+ANR	2615278	Identifier	NULL		2615196	0					
+ANR	2615279	PrimaryExpression	0		2615196	1					
+ANR	2615280	CompoundStatement		19:78:466:466	2615196	1					
+ANR	2615281	ReturnStatement	return false ;	31:12:839:851	2615196	0	True				
+ANR	2615282	Identifier	false		2615196	0					
+ANR	2615283	ReturnStatement	return true ;	37:4:876:887	2615196	1	True				
+ANR	2615284	Identifier	true		2615196	0					
+ANR	2615285	ReturnType	static bool coroutine_fn		2615196	1					
+ANR	2615286	Identifier	do_perform_cow_encrypt		2615196	2					
+ANR	2615287	ParameterList	"BlockDriverState * bs , uint64_t src_cluster_offset , unsigned offset_in_cluster , uint8_t * buffer , unsigned bytes"		2615196	3					
+ANR	2615288	Parameter	BlockDriverState * bs	1:48:48:67	2615196	0	True				
+ANR	2615289	ParameterType	BlockDriverState *		2615196	0					
+ANR	2615290	Identifier	bs		2615196	1					
+ANR	2615291	Parameter	uint64_t src_cluster_offset	3:48:119:145	2615196	1	True				
+ANR	2615292	ParameterType	uint64_t		2615196	0					
+ANR	2615293	Identifier	src_cluster_offset		2615196	1					
+ANR	2615294	Parameter	unsigned offset_in_cluster	5:48:197:222	2615196	2	True				
+ANR	2615295	ParameterType	unsigned		2615196	0					
+ANR	2615296	Identifier	offset_in_cluster		2615196	1					
+ANR	2615297	Parameter	uint8_t * buffer	7:48:274:288	2615196	3	True				
+ANR	2615298	ParameterType	uint8_t *		2615196	0					
+ANR	2615299	Identifier	buffer		2615196	1					
+ANR	2615300	Parameter	unsigned bytes	9:48:340:353	2615196	4	True				
+ANR	2615301	ParameterType	unsigned		2615196	0					
+ANR	2615302	Identifier	bytes		2615196	1					
+ANR	2615303	CFGEntryNode	ENTRY		2615196		True				
+ANR	2615304	CFGExitNode	EXIT		2615196		True				
+ANR	2615305	Symbol	s -> cipher		2615196						
+ANR	2615306	Symbol	NULL		2615196						
+ANR	2615307	Symbol	bs -> opaque		2615196						
+ANR	2615308	Symbol	~BDRV_SECTOR_MASK		2615196						
+ANR	2615309	Symbol	false		2615196						
+ANR	2615310	Symbol	BDRV_SECTOR_BITS		2615196						
+ANR	2615311	Symbol	bs		2615196						
+ANR	2615312	Symbol	s		2615196						
+ANR	2615313	Symbol	* bs		2615196						
+ANR	2615314	Symbol	qcow2_encrypt_sectors		2615196						
+ANR	2615315	Symbol	bytes		2615196						
+ANR	2615316	Symbol	offset_in_cluster		2615196						
+ANR	2615317	Symbol	bs -> encrypted		2615196						
+ANR	2615318	Symbol	true		2615196						
+ANR	2615319	Symbol	buffer		2615196						
+ANR	2615320	Symbol	src_cluster_offset		2615196						
+ANR	2615321	Symbol	sector		2615196						
+ANR	2615322	Symbol	* s		2615196						

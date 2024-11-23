@@ -1,0 +1,464 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5902841	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nal_send_1.c								
+ANR	5902842	Function	nal_send	1:0:0:2380							
+ANR	5902843	FunctionDef	"nal_send (AVFormatContext * s1 , const uint8_t * buf , int size , int last)"		5902842	0					
+ANR	5902844	CompoundStatement		3:0:83:2380	5902842	0					
+ANR	5902845	IdentifierDeclStatement	RTPMuxContext * s = s1 -> priv_data ;	5:4:90:122	5902842	0	True				
+ANR	5902846	IdentifierDecl	* s = s1 -> priv_data		5902842	0					
+ANR	5902847	IdentifierDeclType	RTPMuxContext *		5902842	0					
+ANR	5902848	Identifier	s		5902842	1					
+ANR	5902849	AssignmentExpression	* s = s1 -> priv_data		5902842	2		=			
+ANR	5902850	Identifier	s		5902842	0					
+ANR	5902851	PtrMemberAccess	s1 -> priv_data		5902842	1					
+ANR	5902852	Identifier	s1		5902842	0					
+ANR	5902853	Identifier	priv_data		5902842	1					
+ANR	5902854	ExpressionStatement	"av_log ( s1 , AV_LOG_DEBUG , ""Sending NAL %x of len %d M=%d\\n"" , buf [ 0 ] & 0x1F , size , last )"	9:4:131:217	5902842	1	True				
+ANR	5902855	CallExpression	"av_log ( s1 , AV_LOG_DEBUG , ""Sending NAL %x of len %d M=%d\\n"" , buf [ 0 ] & 0x1F , size , last )"		5902842	0					
+ANR	5902856	Callee	av_log		5902842	0					
+ANR	5902857	Identifier	av_log		5902842	0					
+ANR	5902858	ArgumentList	s1		5902842	1					
+ANR	5902859	Argument	s1		5902842	0					
+ANR	5902860	Identifier	s1		5902842	0					
+ANR	5902861	Argument	AV_LOG_DEBUG		5902842	1					
+ANR	5902862	Identifier	AV_LOG_DEBUG		5902842	0					
+ANR	5902863	Argument	"""Sending NAL %x of len %d M=%d\\n"""		5902842	2					
+ANR	5902864	PrimaryExpression	"""Sending NAL %x of len %d M=%d\\n"""		5902842	0					
+ANR	5902865	Argument	buf [ 0 ] & 0x1F		5902842	3					
+ANR	5902866	BitAndExpression	buf [ 0 ] & 0x1F		5902842	0		&			
+ANR	5902867	ArrayIndexing	buf [ 0 ]		5902842	0					
+ANR	5902868	Identifier	buf		5902842	0					
+ANR	5902869	PrimaryExpression	0		5902842	1					
+ANR	5902870	PrimaryExpression	0x1F		5902842	1					
+ANR	5902871	Argument	size		5902842	4					
+ANR	5902872	Identifier	size		5902842	0					
+ANR	5902873	Argument	last		5902842	5					
+ANR	5902874	Identifier	last		5902842	0					
+ANR	5902875	IfStatement	if ( size <= s -> max_payload_size )		5902842	2					
+ANR	5902876	Condition	size <= s -> max_payload_size	11:8:228:254	5902842	0	True				
+ANR	5902877	RelationalExpression	size <= s -> max_payload_size		5902842	0		<=			
+ANR	5902878	Identifier	size		5902842	0					
+ANR	5902879	PtrMemberAccess	s -> max_payload_size		5902842	1					
+ANR	5902880	Identifier	s		5902842	0					
+ANR	5902881	Identifier	max_payload_size		5902842	1					
+ANR	5902882	CompoundStatement		11:8:184:223	5902842	1					
+ANR	5902883	IdentifierDeclStatement	int buffered_size = s -> buf_ptr - s -> buf ;	13:8:268:307	5902842	0	True				
+ANR	5902884	IdentifierDecl	buffered_size = s -> buf_ptr - s -> buf		5902842	0					
+ANR	5902885	IdentifierDeclType	int		5902842	0					
+ANR	5902886	Identifier	buffered_size		5902842	1					
+ANR	5902887	AssignmentExpression	buffered_size = s -> buf_ptr - s -> buf		5902842	2		=			
+ANR	5902888	Identifier	buffered_size		5902842	0					
+ANR	5902889	AdditiveExpression	s -> buf_ptr - s -> buf		5902842	1		-			
+ANR	5902890	PtrMemberAccess	s -> buf_ptr		5902842	0					
+ANR	5902891	Identifier	s		5902842	0					
+ANR	5902892	Identifier	buf_ptr		5902842	1					
+ANR	5902893	PtrMemberAccess	s -> buf		5902842	1					
+ANR	5902894	Identifier	s		5902842	0					
+ANR	5902895	Identifier	buf		5902842	1					
+ANR	5902896	IfStatement	if ( buffered_size + 2 + size > s -> max_payload_size )		5902842	1					
+ANR	5902897	Condition	buffered_size + 2 + size > s -> max_payload_size	17:12:391:436	5902842	0	True				
+ANR	5902898	RelationalExpression	buffered_size + 2 + size > s -> max_payload_size		5902842	0		>			
+ANR	5902899	AdditiveExpression	buffered_size + 2 + size		5902842	0		+			
+ANR	5902900	Identifier	buffered_size		5902842	0					
+ANR	5902901	AdditiveExpression	2 + size		5902842	1		+			
+ANR	5902902	PrimaryExpression	2		5902842	0					
+ANR	5902903	Identifier	size		5902842	1					
+ANR	5902904	PtrMemberAccess	s -> max_payload_size		5902842	1					
+ANR	5902905	Identifier	s		5902842	0					
+ANR	5902906	Identifier	max_payload_size		5902842	1					
+ANR	5902907	CompoundStatement		15:60:355:355	5902842	1					
+ANR	5902908	ExpressionStatement	"flush_buffered ( s1 , 0 )"	19:12:454:475	5902842	0	True				
+ANR	5902909	CallExpression	"flush_buffered ( s1 , 0 )"		5902842	0					
+ANR	5902910	Callee	flush_buffered		5902842	0					
+ANR	5902911	Identifier	flush_buffered		5902842	0					
+ANR	5902912	ArgumentList	s1		5902842	1					
+ANR	5902913	Argument	s1		5902842	0					
+ANR	5902914	Identifier	s1		5902842	0					
+ANR	5902915	Argument	0		5902842	1					
+ANR	5902916	PrimaryExpression	0		5902842	0					
+ANR	5902917	ExpressionStatement	buffered_size = 0	21:12:490:507	5902842	1	True				
+ANR	5902918	AssignmentExpression	buffered_size = 0		5902842	0		=			
+ANR	5902919	Identifier	buffered_size		5902842	0					
+ANR	5902920	PrimaryExpression	0		5902842	1					
+ANR	5902921	IfStatement	if ( buffered_size + 3 + size <= s -> max_payload_size && ! ( s -> flags & FF_RTP_FLAG_H264_MODE0 ) )		5902842	2					
+ANR	5902922	Condition	buffered_size + 3 + size <= s -> max_payload_size && ! ( s -> flags & FF_RTP_FLAG_H264_MODE0 )	33:12:794:893	5902842	0	True				
+ANR	5902923	AndExpression	buffered_size + 3 + size <= s -> max_payload_size && ! ( s -> flags & FF_RTP_FLAG_H264_MODE0 )		5902842	0		&&			
+ANR	5902924	RelationalExpression	buffered_size + 3 + size <= s -> max_payload_size		5902842	0		<=			
+ANR	5902925	AdditiveExpression	buffered_size + 3 + size		5902842	0		+			
+ANR	5902926	Identifier	buffered_size		5902842	0					
+ANR	5902927	AdditiveExpression	3 + size		5902842	1		+			
+ANR	5902928	PrimaryExpression	3		5902842	0					
+ANR	5902929	Identifier	size		5902842	1					
+ANR	5902930	PtrMemberAccess	s -> max_payload_size		5902842	1					
+ANR	5902931	Identifier	s		5902842	0					
+ANR	5902932	Identifier	max_payload_size		5902842	1					
+ANR	5902933	UnaryOperationExpression	! ( s -> flags & FF_RTP_FLAG_H264_MODE0 )		5902842	1					
+ANR	5902934	UnaryOperator	!		5902842	0					
+ANR	5902935	BitAndExpression	s -> flags & FF_RTP_FLAG_H264_MODE0		5902842	1		&			
+ANR	5902936	PtrMemberAccess	s -> flags		5902842	0					
+ANR	5902937	Identifier	s		5902842	0					
+ANR	5902938	Identifier	flags		5902842	1					
+ANR	5902939	Identifier	FF_RTP_FLAG_H264_MODE0		5902842	1					
+ANR	5902940	CompoundStatement		33:50:812:812	5902842	1					
+ANR	5902941	IfStatement	if ( buffered_size == 0 )		5902842	0					
+ANR	5902942	Condition	buffered_size == 0	37:16:915:932	5902842	0	True				
+ANR	5902943	EqualityExpression	buffered_size == 0		5902842	0		==			
+ANR	5902944	Identifier	buffered_size		5902842	0					
+ANR	5902945	PrimaryExpression	0		5902842	1					
+ANR	5902946	ExpressionStatement	* s -> buf_ptr ++ = 24	39:16:952:970	5902842	1	True				
+ANR	5902947	AssignmentExpression	* s -> buf_ptr ++ = 24		5902842	0		=			
+ANR	5902948	UnaryOperationExpression	* s -> buf_ptr ++		5902842	0					
+ANR	5902949	UnaryOperator	*		5902842	0					
+ANR	5902950	PostIncDecOperationExpression	s -> buf_ptr ++		5902842	1					
+ANR	5902951	PtrMemberAccess	s -> buf_ptr		5902842	0					
+ANR	5902952	Identifier	s		5902842	0					
+ANR	5902953	Identifier	buf_ptr		5902842	1					
+ANR	5902954	IncDec	++		5902842	1					
+ANR	5902955	PrimaryExpression	24		5902842	1					
+ANR	5902956	ExpressionStatement	"AV_WB16 ( s -> buf_ptr , size )"	41:12:985:1010	5902842	1	True				
+ANR	5902957	CallExpression	"AV_WB16 ( s -> buf_ptr , size )"		5902842	0					
+ANR	5902958	Callee	AV_WB16		5902842	0					
+ANR	5902959	Identifier	AV_WB16		5902842	0					
+ANR	5902960	ArgumentList	s -> buf_ptr		5902842	1					
+ANR	5902961	Argument	s -> buf_ptr		5902842	0					
+ANR	5902962	PtrMemberAccess	s -> buf_ptr		5902842	0					
+ANR	5902963	Identifier	s		5902842	0					
+ANR	5902964	Identifier	buf_ptr		5902842	1					
+ANR	5902965	Argument	size		5902842	1					
+ANR	5902966	Identifier	size		5902842	0					
+ANR	5902967	ExpressionStatement	s -> buf_ptr += 2	43:12:1025:1040	5902842	2	True				
+ANR	5902968	AssignmentExpression	s -> buf_ptr += 2		5902842	0		+=			
+ANR	5902969	PtrMemberAccess	s -> buf_ptr		5902842	0					
+ANR	5902970	Identifier	s		5902842	0					
+ANR	5902971	Identifier	buf_ptr		5902842	1					
+ANR	5902972	PrimaryExpression	2		5902842	1					
+ANR	5902973	ExpressionStatement	"memcpy ( s -> buf_ptr , buf , size )"	45:12:1055:1084	5902842	3	True				
+ANR	5902974	CallExpression	"memcpy ( s -> buf_ptr , buf , size )"		5902842	0					
+ANR	5902975	Callee	memcpy		5902842	0					
+ANR	5902976	Identifier	memcpy		5902842	0					
+ANR	5902977	ArgumentList	s -> buf_ptr		5902842	1					
+ANR	5902978	Argument	s -> buf_ptr		5902842	0					
+ANR	5902979	PtrMemberAccess	s -> buf_ptr		5902842	0					
+ANR	5902980	Identifier	s		5902842	0					
+ANR	5902981	Identifier	buf_ptr		5902842	1					
+ANR	5902982	Argument	buf		5902842	1					
+ANR	5902983	Identifier	buf		5902842	0					
+ANR	5902984	Argument	size		5902842	2					
+ANR	5902985	Identifier	size		5902842	0					
+ANR	5902986	ExpressionStatement	s -> buf_ptr += size	47:12:1099:1117	5902842	4	True				
+ANR	5902987	AssignmentExpression	s -> buf_ptr += size		5902842	0		+=			
+ANR	5902988	PtrMemberAccess	s -> buf_ptr		5902842	0					
+ANR	5902989	Identifier	s		5902842	0					
+ANR	5902990	Identifier	buf_ptr		5902842	1					
+ANR	5902991	Identifier	size		5902842	1					
+ANR	5902992	ExpressionStatement	s -> buffered_nals ++	49:12:1132:1150	5902842	5	True				
+ANR	5902993	PostIncDecOperationExpression	s -> buffered_nals ++		5902842	0					
+ANR	5902994	PtrMemberAccess	s -> buffered_nals		5902842	0					
+ANR	5902995	Identifier	s		5902842	0					
+ANR	5902996	Identifier	buffered_nals		5902842	1					
+ANR	5902997	IncDec	++		5902842	1					
+ANR	5902998	ElseStatement	else		5902842	0					
+ANR	5902999	CompoundStatement		49:15:1084:1084	5902842	0					
+ANR	5903000	ExpressionStatement	"flush_buffered ( s1 , 0 )"	53:12:1183:1204	5902842	0	True				
+ANR	5903001	CallExpression	"flush_buffered ( s1 , 0 )"		5902842	0					
+ANR	5903002	Callee	flush_buffered		5902842	0					
+ANR	5903003	Identifier	flush_buffered		5902842	0					
+ANR	5903004	ArgumentList	s1		5902842	1					
+ANR	5903005	Argument	s1		5902842	0					
+ANR	5903006	Identifier	s1		5902842	0					
+ANR	5903007	Argument	0		5902842	1					
+ANR	5903008	PrimaryExpression	0		5902842	0					
+ANR	5903009	ExpressionStatement	"ff_rtp_send_data ( s1 , buf , size , last )"	55:12:1219:1256	5902842	1	True				
+ANR	5903010	CallExpression	"ff_rtp_send_data ( s1 , buf , size , last )"		5902842	0					
+ANR	5903011	Callee	ff_rtp_send_data		5902842	0					
+ANR	5903012	Identifier	ff_rtp_send_data		5902842	0					
+ANR	5903013	ArgumentList	s1		5902842	1					
+ANR	5903014	Argument	s1		5902842	0					
+ANR	5903015	Identifier	s1		5902842	0					
+ANR	5903016	Argument	buf		5902842	1					
+ANR	5903017	Identifier	buf		5902842	0					
+ANR	5903018	Argument	size		5902842	2					
+ANR	5903019	Identifier	size		5902842	0					
+ANR	5903020	Argument	last		5902842	3					
+ANR	5903021	Identifier	last		5902842	0					
+ANR	5903022	ElseStatement	else		5902842	0					
+ANR	5903023	CompoundStatement		61:8:1247:1274	5902842	0					
+ANR	5903024	IdentifierDeclStatement	uint8_t type = buf [ 0 ] & 0x1F ;	61:8:1292:1320	5902842	0	True				
+ANR	5903025	IdentifierDecl	type = buf [ 0 ] & 0x1F		5902842	0					
+ANR	5903026	IdentifierDeclType	uint8_t		5902842	0					
+ANR	5903027	Identifier	type		5902842	1					
+ANR	5903028	AssignmentExpression	type = buf [ 0 ] & 0x1F		5902842	2		=			
+ANR	5903029	Identifier	type		5902842	0					
+ANR	5903030	BitAndExpression	buf [ 0 ] & 0x1F		5902842	1		&			
+ANR	5903031	ArrayIndexing	buf [ 0 ]		5902842	0					
+ANR	5903032	Identifier	buf		5902842	0					
+ANR	5903033	PrimaryExpression	0		5902842	1					
+ANR	5903034	PrimaryExpression	0x1F		5902842	1					
+ANR	5903035	IdentifierDeclStatement	uint8_t nri = buf [ 0 ] & 0x60 ;	63:8:1331:1358	5902842	1	True				
+ANR	5903036	IdentifierDecl	nri = buf [ 0 ] & 0x60		5902842	0					
+ANR	5903037	IdentifierDeclType	uint8_t		5902842	0					
+ANR	5903038	Identifier	nri		5902842	1					
+ANR	5903039	AssignmentExpression	nri = buf [ 0 ] & 0x60		5902842	2		=			
+ANR	5903040	Identifier	nri		5902842	0					
+ANR	5903041	BitAndExpression	buf [ 0 ] & 0x60		5902842	1		&			
+ANR	5903042	ArrayIndexing	buf [ 0 ]		5902842	0					
+ANR	5903043	Identifier	buf		5902842	0					
+ANR	5903044	PrimaryExpression	0		5902842	1					
+ANR	5903045	PrimaryExpression	0x60		5902842	1					
+ANR	5903046	ExpressionStatement	"flush_buffered ( s1 , 0 )"	67:8:1371:1392	5902842	2	True				
+ANR	5903047	CallExpression	"flush_buffered ( s1 , 0 )"		5902842	0					
+ANR	5903048	Callee	flush_buffered		5902842	0					
+ANR	5903049	Identifier	flush_buffered		5902842	0					
+ANR	5903050	ArgumentList	s1		5902842	1					
+ANR	5903051	Argument	s1		5902842	0					
+ANR	5903052	Identifier	s1		5902842	0					
+ANR	5903053	Argument	0		5902842	1					
+ANR	5903054	PrimaryExpression	0		5902842	0					
+ANR	5903055	IfStatement	if ( s -> flags & FF_RTP_FLAG_H264_MODE0 )		5902842	3					
+ANR	5903056	Condition	s -> flags & FF_RTP_FLAG_H264_MODE0	69:12:1407:1439	5902842	0	True				
+ANR	5903057	BitAndExpression	s -> flags & FF_RTP_FLAG_H264_MODE0		5902842	0		&			
+ANR	5903058	PtrMemberAccess	s -> flags		5902842	0					
+ANR	5903059	Identifier	s		5902842	0					
+ANR	5903060	Identifier	flags		5902842	1					
+ANR	5903061	Identifier	FF_RTP_FLAG_H264_MODE0		5902842	1					
+ANR	5903062	CompoundStatement		67:47:1358:1358	5902842	1					
+ANR	5903063	ExpressionStatement	"av_log ( s1 , AV_LOG_ERROR , ""NAL size %d > %d, try -slice-max-size %d\\n"" , size , s -> max_payload_size , s -> max_payload_size )"	71:12:1457:1615	5902842	0	True				
+ANR	5903064	CallExpression	"av_log ( s1 , AV_LOG_ERROR , ""NAL size %d > %d, try -slice-max-size %d\\n"" , size , s -> max_payload_size , s -> max_payload_size )"		5902842	0					
+ANR	5903065	Callee	av_log		5902842	0					
+ANR	5903066	Identifier	av_log		5902842	0					
+ANR	5903067	ArgumentList	s1		5902842	1					
+ANR	5903068	Argument	s1		5902842	0					
+ANR	5903069	Identifier	s1		5902842	0					
+ANR	5903070	Argument	AV_LOG_ERROR		5902842	1					
+ANR	5903071	Identifier	AV_LOG_ERROR		5902842	0					
+ANR	5903072	Argument	"""NAL size %d > %d, try -slice-max-size %d\\n"""		5902842	2					
+ANR	5903073	PrimaryExpression	"""NAL size %d > %d, try -slice-max-size %d\\n"""		5902842	0					
+ANR	5903074	Argument	size		5902842	3					
+ANR	5903075	Identifier	size		5902842	0					
+ANR	5903076	Argument	s -> max_payload_size		5902842	4					
+ANR	5903077	PtrMemberAccess	s -> max_payload_size		5902842	0					
+ANR	5903078	Identifier	s		5902842	0					
+ANR	5903079	Identifier	max_payload_size		5902842	1					
+ANR	5903080	Argument	s -> max_payload_size		5902842	5					
+ANR	5903081	PtrMemberAccess	s -> max_payload_size		5902842	0					
+ANR	5903082	Identifier	s		5902842	0					
+ANR	5903083	Identifier	max_payload_size		5902842	1					
+ANR	5903084	ReturnStatement	return ;	77:12:1630:1636	5902842	1	True				
+ANR	5903085	ExpressionStatement	"av_log ( s1 , AV_LOG_DEBUG , ""NAL size %d > %d\\n"" , size , s -> max_payload_size )"	81:8:1658:1731	5902842	4	True				
+ANR	5903086	CallExpression	"av_log ( s1 , AV_LOG_DEBUG , ""NAL size %d > %d\\n"" , size , s -> max_payload_size )"		5902842	0					
+ANR	5903087	Callee	av_log		5902842	0					
+ANR	5903088	Identifier	av_log		5902842	0					
+ANR	5903089	ArgumentList	s1		5902842	1					
+ANR	5903090	Argument	s1		5902842	0					
+ANR	5903091	Identifier	s1		5902842	0					
+ANR	5903092	Argument	AV_LOG_DEBUG		5902842	1					
+ANR	5903093	Identifier	AV_LOG_DEBUG		5902842	0					
+ANR	5903094	Argument	"""NAL size %d > %d\\n"""		5902842	2					
+ANR	5903095	PrimaryExpression	"""NAL size %d > %d\\n"""		5902842	0					
+ANR	5903096	Argument	size		5902842	3					
+ANR	5903097	Identifier	size		5902842	0					
+ANR	5903098	Argument	s -> max_payload_size		5902842	4					
+ANR	5903099	PtrMemberAccess	s -> max_payload_size		5902842	0					
+ANR	5903100	Identifier	s		5902842	0					
+ANR	5903101	Identifier	max_payload_size		5902842	1					
+ANR	5903102	ExpressionStatement	s -> buf [ 0 ] = 28	83:8:1742:1756	5902842	5	True				
+ANR	5903103	AssignmentExpression	s -> buf [ 0 ] = 28		5902842	0		=			
+ANR	5903104	ArrayIndexing	s -> buf [ 0 ]		5902842	0					
+ANR	5903105	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903106	Identifier	s		5902842	0					
+ANR	5903107	Identifier	buf		5902842	1					
+ANR	5903108	PrimaryExpression	0		5902842	1					
+ANR	5903109	PrimaryExpression	28		5902842	1					
+ANR	5903110	ExpressionStatement	s -> buf [ 0 ] |= nri	85:8:1814:1830	5902842	6	True				
+ANR	5903111	AssignmentExpression	s -> buf [ 0 ] |= nri		5902842	0		|=			
+ANR	5903112	ArrayIndexing	s -> buf [ 0 ]		5902842	0					
+ANR	5903113	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903114	Identifier	s		5902842	0					
+ANR	5903115	Identifier	buf		5902842	1					
+ANR	5903116	PrimaryExpression	0		5902842	1					
+ANR	5903117	Identifier	nri		5902842	1					
+ANR	5903118	ExpressionStatement	s -> buf [ 1 ] = type	87:8:1841:1857	5902842	7	True				
+ANR	5903119	AssignmentExpression	s -> buf [ 1 ] = type		5902842	0		=			
+ANR	5903120	ArrayIndexing	s -> buf [ 1 ]		5902842	0					
+ANR	5903121	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903122	Identifier	s		5902842	0					
+ANR	5903123	Identifier	buf		5902842	1					
+ANR	5903124	PrimaryExpression	1		5902842	1					
+ANR	5903125	Identifier	type		5902842	1					
+ANR	5903126	ExpressionStatement	s -> buf [ 1 ] |= 1 << 7	89:8:1868:1887	5902842	8	True				
+ANR	5903127	AssignmentExpression	s -> buf [ 1 ] |= 1 << 7		5902842	0		|=			
+ANR	5903128	ArrayIndexing	s -> buf [ 1 ]		5902842	0					
+ANR	5903129	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903130	Identifier	s		5902842	0					
+ANR	5903131	Identifier	buf		5902842	1					
+ANR	5903132	PrimaryExpression	1		5902842	1					
+ANR	5903133	ShiftExpression	1 << 7		5902842	1		<<			
+ANR	5903134	PrimaryExpression	1		5902842	0					
+ANR	5903135	PrimaryExpression	7		5902842	1					
+ANR	5903136	ExpressionStatement	buf += 1	91:8:1898:1906	5902842	9	True				
+ANR	5903137	AssignmentExpression	buf += 1		5902842	0		+=			
+ANR	5903138	Identifier	buf		5902842	0					
+ANR	5903139	PrimaryExpression	1		5902842	1					
+ANR	5903140	ExpressionStatement	size -= 1	93:8:1917:1926	5902842	10	True				
+ANR	5903141	AssignmentExpression	size -= 1		5902842	0		-=			
+ANR	5903142	Identifier	size		5902842	0					
+ANR	5903143	PrimaryExpression	1		5902842	1					
+ANR	5903144	WhileStatement	while ( size + 2 > s -> max_payload_size )		5902842	11					
+ANR	5903145	Condition	size + 2 > s -> max_payload_size	95:15:1944:1973	5902842	0	True				
+ANR	5903146	RelationalExpression	size + 2 > s -> max_payload_size		5902842	0		>			
+ANR	5903147	AdditiveExpression	size + 2		5902842	0		+			
+ANR	5903148	Identifier	size		5902842	0					
+ANR	5903149	PrimaryExpression	2		5902842	1					
+ANR	5903150	PtrMemberAccess	s -> max_payload_size		5902842	1					
+ANR	5903151	Identifier	s		5902842	0					
+ANR	5903152	Identifier	max_payload_size		5902842	1					
+ANR	5903153	CompoundStatement		93:47:1892:1892	5902842	1					
+ANR	5903154	ExpressionStatement	"memcpy ( & s -> buf [ 2 ] , buf , s -> max_payload_size - 2 )"	97:12:1991:2039	5902842	0	True				
+ANR	5903155	CallExpression	"memcpy ( & s -> buf [ 2 ] , buf , s -> max_payload_size - 2 )"		5902842	0					
+ANR	5903156	Callee	memcpy		5902842	0					
+ANR	5903157	Identifier	memcpy		5902842	0					
+ANR	5903158	ArgumentList	& s -> buf [ 2 ]		5902842	1					
+ANR	5903159	Argument	& s -> buf [ 2 ]		5902842	0					
+ANR	5903160	UnaryOperationExpression	& s -> buf [ 2 ]		5902842	0					
+ANR	5903161	UnaryOperator	&		5902842	0					
+ANR	5903162	ArrayIndexing	s -> buf [ 2 ]		5902842	1					
+ANR	5903163	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903164	Identifier	s		5902842	0					
+ANR	5903165	Identifier	buf		5902842	1					
+ANR	5903166	PrimaryExpression	2		5902842	1					
+ANR	5903167	Argument	buf		5902842	1					
+ANR	5903168	Identifier	buf		5902842	0					
+ANR	5903169	Argument	s -> max_payload_size - 2		5902842	2					
+ANR	5903170	AdditiveExpression	s -> max_payload_size - 2		5902842	0		-			
+ANR	5903171	PtrMemberAccess	s -> max_payload_size		5902842	0					
+ANR	5903172	Identifier	s		5902842	0					
+ANR	5903173	Identifier	max_payload_size		5902842	1					
+ANR	5903174	PrimaryExpression	2		5902842	1					
+ANR	5903175	ExpressionStatement	"ff_rtp_send_data ( s1 , s -> buf , s -> max_payload_size , 0 )"	99:12:2054:2106	5902842	1	True				
+ANR	5903176	CallExpression	"ff_rtp_send_data ( s1 , s -> buf , s -> max_payload_size , 0 )"		5902842	0					
+ANR	5903177	Callee	ff_rtp_send_data		5902842	0					
+ANR	5903178	Identifier	ff_rtp_send_data		5902842	0					
+ANR	5903179	ArgumentList	s1		5902842	1					
+ANR	5903180	Argument	s1		5902842	0					
+ANR	5903181	Identifier	s1		5902842	0					
+ANR	5903182	Argument	s -> buf		5902842	1					
+ANR	5903183	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903184	Identifier	s		5902842	0					
+ANR	5903185	Identifier	buf		5902842	1					
+ANR	5903186	Argument	s -> max_payload_size		5902842	2					
+ANR	5903187	PtrMemberAccess	s -> max_payload_size		5902842	0					
+ANR	5903188	Identifier	s		5902842	0					
+ANR	5903189	Identifier	max_payload_size		5902842	1					
+ANR	5903190	Argument	0		5902842	3					
+ANR	5903191	PrimaryExpression	0		5902842	0					
+ANR	5903192	ExpressionStatement	buf += s -> max_payload_size - 2	101:12:2121:2151	5902842	2	True				
+ANR	5903193	AssignmentExpression	buf += s -> max_payload_size - 2		5902842	0		+=			
+ANR	5903194	Identifier	buf		5902842	0					
+ANR	5903195	AdditiveExpression	s -> max_payload_size - 2		5902842	1		-			
+ANR	5903196	PtrMemberAccess	s -> max_payload_size		5902842	0					
+ANR	5903197	Identifier	s		5902842	0					
+ANR	5903198	Identifier	max_payload_size		5902842	1					
+ANR	5903199	PrimaryExpression	2		5902842	1					
+ANR	5903200	ExpressionStatement	size -= s -> max_payload_size - 2	103:12:2166:2197	5902842	3	True				
+ANR	5903201	AssignmentExpression	size -= s -> max_payload_size - 2		5902842	0		-=			
+ANR	5903202	Identifier	size		5902842	0					
+ANR	5903203	AdditiveExpression	s -> max_payload_size - 2		5902842	1		-			
+ANR	5903204	PtrMemberAccess	s -> max_payload_size		5902842	0					
+ANR	5903205	Identifier	s		5902842	0					
+ANR	5903206	Identifier	max_payload_size		5902842	1					
+ANR	5903207	PrimaryExpression	2		5902842	1					
+ANR	5903208	ExpressionStatement	s -> buf [ 1 ] &= ~ ( 1 << 7 )	105:12:2212:2234	5902842	4	True				
+ANR	5903209	AssignmentExpression	s -> buf [ 1 ] &= ~ ( 1 << 7 )		5902842	0		&=			
+ANR	5903210	ArrayIndexing	s -> buf [ 1 ]		5902842	0					
+ANR	5903211	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903212	Identifier	s		5902842	0					
+ANR	5903213	Identifier	buf		5902842	1					
+ANR	5903214	PrimaryExpression	1		5902842	1					
+ANR	5903215	UnaryOperationExpression	~ ( 1 << 7 )		5902842	1					
+ANR	5903216	UnaryOperator	~		5902842	0					
+ANR	5903217	ShiftExpression	1 << 7		5902842	1		<<			
+ANR	5903218	PrimaryExpression	1		5902842	0					
+ANR	5903219	PrimaryExpression	7		5902842	1					
+ANR	5903220	ExpressionStatement	s -> buf [ 1 ] |= 1 << 6	109:8:2256:2275	5902842	12	True				
+ANR	5903221	AssignmentExpression	s -> buf [ 1 ] |= 1 << 6		5902842	0		|=			
+ANR	5903222	ArrayIndexing	s -> buf [ 1 ]		5902842	0					
+ANR	5903223	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903224	Identifier	s		5902842	0					
+ANR	5903225	Identifier	buf		5902842	1					
+ANR	5903226	PrimaryExpression	1		5902842	1					
+ANR	5903227	ShiftExpression	1 << 6		5902842	1		<<			
+ANR	5903228	PrimaryExpression	1		5902842	0					
+ANR	5903229	PrimaryExpression	6		5902842	1					
+ANR	5903230	ExpressionStatement	"memcpy ( & s -> buf [ 2 ] , buf , size )"	111:8:2286:2315	5902842	13	True				
+ANR	5903231	CallExpression	"memcpy ( & s -> buf [ 2 ] , buf , size )"		5902842	0					
+ANR	5903232	Callee	memcpy		5902842	0					
+ANR	5903233	Identifier	memcpy		5902842	0					
+ANR	5903234	ArgumentList	& s -> buf [ 2 ]		5902842	1					
+ANR	5903235	Argument	& s -> buf [ 2 ]		5902842	0					
+ANR	5903236	UnaryOperationExpression	& s -> buf [ 2 ]		5902842	0					
+ANR	5903237	UnaryOperator	&		5902842	0					
+ANR	5903238	ArrayIndexing	s -> buf [ 2 ]		5902842	1					
+ANR	5903239	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903240	Identifier	s		5902842	0					
+ANR	5903241	Identifier	buf		5902842	1					
+ANR	5903242	PrimaryExpression	2		5902842	1					
+ANR	5903243	Argument	buf		5902842	1					
+ANR	5903244	Identifier	buf		5902842	0					
+ANR	5903245	Argument	size		5902842	2					
+ANR	5903246	Identifier	size		5902842	0					
+ANR	5903247	ExpressionStatement	"ff_rtp_send_data ( s1 , s -> buf , size + 2 , last )"	113:8:2326:2370	5902842	14	True				
+ANR	5903248	CallExpression	"ff_rtp_send_data ( s1 , s -> buf , size + 2 , last )"		5902842	0					
+ANR	5903249	Callee	ff_rtp_send_data		5902842	0					
+ANR	5903250	Identifier	ff_rtp_send_data		5902842	0					
+ANR	5903251	ArgumentList	s1		5902842	1					
+ANR	5903252	Argument	s1		5902842	0					
+ANR	5903253	Identifier	s1		5902842	0					
+ANR	5903254	Argument	s -> buf		5902842	1					
+ANR	5903255	PtrMemberAccess	s -> buf		5902842	0					
+ANR	5903256	Identifier	s		5902842	0					
+ANR	5903257	Identifier	buf		5902842	1					
+ANR	5903258	Argument	size + 2		5902842	2					
+ANR	5903259	AdditiveExpression	size + 2		5902842	0		+			
+ANR	5903260	Identifier	size		5902842	0					
+ANR	5903261	PrimaryExpression	2		5902842	1					
+ANR	5903262	Argument	last		5902842	3					
+ANR	5903263	Identifier	last		5902842	0					
+ANR	5903264	ReturnType	static void		5902842	1					
+ANR	5903265	Identifier	nal_send		5902842	2					
+ANR	5903266	ParameterList	"AVFormatContext * s1 , const uint8_t * buf , int size , int last"		5902842	3					
+ANR	5903267	Parameter	AVFormatContext * s1	1:21:21:39	5902842	0	True				
+ANR	5903268	ParameterType	AVFormatContext *		5902842	0					
+ANR	5903269	Identifier	s1		5902842	1					
+ANR	5903270	Parameter	const uint8_t * buf	1:42:42:59	5902842	1	True				
+ANR	5903271	ParameterType	const uint8_t *		5902842	0					
+ANR	5903272	Identifier	buf		5902842	1					
+ANR	5903273	Parameter	int size	1:62:62:69	5902842	2	True				
+ANR	5903274	ParameterType	int		5902842	0					
+ANR	5903275	Identifier	size		5902842	1					
+ANR	5903276	Parameter	int last	1:72:72:79	5902842	3	True				
+ANR	5903277	ParameterType	int		5902842	0					
+ANR	5903278	Identifier	last		5902842	1					
+ANR	5903279	CFGEntryNode	ENTRY		5902842		True				
+ANR	5903280	CFGExitNode	EXIT		5902842		True				
+ANR	5903281	Symbol	* s -> buf_ptr ++		5902842						
+ANR	5903282	Symbol	* buf		5902842						
+ANR	5903283	Symbol	s -> buf		5902842						
+ANR	5903284	Symbol	last		5902842						
+ANR	5903285	Symbol	nri		5902842						
+ANR	5903286	Symbol	AV_LOG_ERROR		5902842						
+ANR	5903287	Symbol	* s1		5902842						
+ANR	5903288	Symbol	s -> flags		5902842						
+ANR	5903289	Symbol	buffered_size		5902842						
+ANR	5903290	Symbol	* s -> buf		5902842						
+ANR	5903291	Symbol	type		5902842						
+ANR	5903292	Symbol	buf		5902842						
+ANR	5903293	Symbol	s		5902842						
+ANR	5903294	Symbol	size		5902842						
+ANR	5903295	Symbol	s -> buffered_nals		5902842						
+ANR	5903296	Symbol	s1 -> priv_data		5902842						
+ANR	5903297	Symbol	s -> buf_ptr		5902842						
+ANR	5903298	Symbol	FF_RTP_FLAG_H264_MODE0		5902842						
+ANR	5903299	Symbol	* * s		5902842						
+ANR	5903300	Symbol	AV_LOG_DEBUG		5902842						
+ANR	5903301	Symbol	* s		5902842						
+ANR	5903302	Symbol	s -> max_payload_size		5902842						
+ANR	5903303	Symbol	s1		5902842						

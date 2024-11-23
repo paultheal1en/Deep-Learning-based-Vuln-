@@ -1,0 +1,182 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5434398	File	/home/p4ultr4n/workplace/ReVeal/raw_code/memory_region_section_get_iotlb_0.c								
+ANR	5434399	Function	memory_region_section_get_iotlb	1:0:0:1893							
+ANR	5434400	FunctionDef	"memory_region_section_get_iotlb (CPUArchState * env , MemoryRegionSection * section , target_ulong vaddr , target_phys_addr_t paddr , int prot , target_ulong * address)"		5434399	0					
+ANR	5434401	CompoundStatement		13:0:440:1893	5434399	0					
+ANR	5434402	IdentifierDeclStatement	target_phys_addr_t iotlb ;	15:4:447:471	5434399	0	True				
+ANR	5434403	IdentifierDecl	iotlb		5434399	0					
+ANR	5434404	IdentifierDeclType	target_phys_addr_t		5434399	0					
+ANR	5434405	Identifier	iotlb		5434399	1					
+ANR	5434406	IdentifierDeclStatement	CPUWatchpoint * wp ;	17:4:478:495	5434399	1	True				
+ANR	5434407	IdentifierDecl	* wp		5434399	0					
+ANR	5434408	IdentifierDeclType	CPUWatchpoint *		5434399	0					
+ANR	5434409	Identifier	wp		5434399	1					
+ANR	5434410	IfStatement	if ( memory_region_is_ram ( section -> mr ) )		5434399	2					
+ANR	5434411	Condition	memory_region_is_ram ( section -> mr )	21:8:508:540	5434399	0	True				
+ANR	5434412	CallExpression	memory_region_is_ram ( section -> mr )		5434399	0					
+ANR	5434413	Callee	memory_region_is_ram		5434399	0					
+ANR	5434414	Identifier	memory_region_is_ram		5434399	0					
+ANR	5434415	ArgumentList	section -> mr		5434399	1					
+ANR	5434416	Argument	section -> mr		5434399	0					
+ANR	5434417	PtrMemberAccess	section -> mr		5434399	0					
+ANR	5434418	Identifier	section		5434399	0					
+ANR	5434419	Identifier	mr		5434399	1					
+ANR	5434420	CompoundStatement		9:43:102:102	5434399	1					
+ANR	5434421	ExpressionStatement	"iotlb = ( memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK ) + memory_region_section_addr ( section , paddr )"	25:8:582:708	5434399	0	True				
+ANR	5434422	AssignmentExpression	"iotlb = ( memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK ) + memory_region_section_addr ( section , paddr )"		5434399	0		=			
+ANR	5434423	Identifier	iotlb		5434399	0					
+ANR	5434424	AdditiveExpression	"( memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK ) + memory_region_section_addr ( section , paddr )"		5434399	1		+			
+ANR	5434425	BitAndExpression	memory_region_get_ram_addr ( section -> mr ) & TARGET_PAGE_MASK		5434399	0		&			
+ANR	5434426	CallExpression	memory_region_get_ram_addr ( section -> mr )		5434399	0					
+ANR	5434427	Callee	memory_region_get_ram_addr		5434399	0					
+ANR	5434428	Identifier	memory_region_get_ram_addr		5434399	0					
+ANR	5434429	ArgumentList	section -> mr		5434399	1					
+ANR	5434430	Argument	section -> mr		5434399	0					
+ANR	5434431	PtrMemberAccess	section -> mr		5434399	0					
+ANR	5434432	Identifier	section		5434399	0					
+ANR	5434433	Identifier	mr		5434399	1					
+ANR	5434434	Identifier	TARGET_PAGE_MASK		5434399	1					
+ANR	5434435	CallExpression	"memory_region_section_addr ( section , paddr )"		5434399	1					
+ANR	5434436	Callee	memory_region_section_addr		5434399	0					
+ANR	5434437	Identifier	memory_region_section_addr		5434399	0					
+ANR	5434438	ArgumentList	section		5434399	1					
+ANR	5434439	Argument	section		5434399	0					
+ANR	5434440	Identifier	section		5434399	0					
+ANR	5434441	Argument	paddr		5434399	1					
+ANR	5434442	Identifier	paddr		5434399	0					
+ANR	5434443	IfStatement	if ( ! section -> readonly )		5434399	1					
+ANR	5434444	Condition	! section -> readonly	29:12:723:740	5434399	0	True				
+ANR	5434445	UnaryOperationExpression	! section -> readonly		5434399	0					
+ANR	5434446	UnaryOperator	!		5434399	0					
+ANR	5434447	PtrMemberAccess	section -> readonly		5434399	1					
+ANR	5434448	Identifier	section		5434399	0					
+ANR	5434449	Identifier	readonly		5434399	1					
+ANR	5434450	CompoundStatement		17:32:302:302	5434399	1					
+ANR	5434451	ExpressionStatement	iotlb |= phys_section_notdirty	31:12:758:788	5434399	0	True				
+ANR	5434452	AssignmentExpression	iotlb |= phys_section_notdirty		5434399	0		|=			
+ANR	5434453	Identifier	iotlb		5434399	0					
+ANR	5434454	Identifier	phys_section_notdirty		5434399	1					
+ANR	5434455	ElseStatement	else		5434399	0					
+ANR	5434456	CompoundStatement		21:15:365:365	5434399	0					
+ANR	5434457	ExpressionStatement	iotlb |= phys_section_rom	35:12:821:846	5434399	0	True				
+ANR	5434458	AssignmentExpression	iotlb |= phys_section_rom		5434399	0		|=			
+ANR	5434459	Identifier	iotlb		5434399	0					
+ANR	5434460	Identifier	phys_section_rom		5434399	1					
+ANR	5434461	ElseStatement	else		5434399	0					
+ANR	5434462	CompoundStatement		27:11:430:430	5434399	0					
+ANR	5434463	ExpressionStatement	iotlb = section - phys_sections	53:8:1270:1301	5434399	0	True				
+ANR	5434464	AssignmentExpression	iotlb = section - phys_sections		5434399	0		=			
+ANR	5434465	Identifier	iotlb		5434399	0					
+ANR	5434466	AdditiveExpression	section - phys_sections		5434399	1		-			
+ANR	5434467	Identifier	section		5434399	0					
+ANR	5434468	Identifier	phys_sections		5434399	1					
+ANR	5434469	ExpressionStatement	"iotlb += memory_region_section_addr ( section , paddr )"	55:8:1312:1363	5434399	1	True				
+ANR	5434470	AssignmentExpression	"iotlb += memory_region_section_addr ( section , paddr )"		5434399	0		+=			
+ANR	5434471	Identifier	iotlb		5434399	0					
+ANR	5434472	CallExpression	"memory_region_section_addr ( section , paddr )"		5434399	1					
+ANR	5434473	Callee	memory_region_section_addr		5434399	0					
+ANR	5434474	Identifier	memory_region_section_addr		5434399	0					
+ANR	5434475	ArgumentList	section		5434399	1					
+ANR	5434476	Argument	section		5434399	0					
+ANR	5434477	Identifier	section		5434399	0					
+ANR	5434478	Argument	paddr		5434399	1					
+ANR	5434479	Identifier	paddr		5434399	0					
+ANR	5434480	Statement	QTAILQ_FOREACH	65:4:1476:1489	5434399	3	True				
+ANR	5434481	Statement	(	65:18:1490:1490	5434399	4	True				
+ANR	5434482	Statement	wp	65:19:1491:1492	5434399	5	True				
+ANR	5434483	Statement	","	65:21:1493:1493	5434399	6	True				
+ANR	5434484	Statement	&	65:23:1495:1495	5434399	7	True				
+ANR	5434485	Statement	env	65:24:1496:1498	5434399	8	True				
+ANR	5434486	Statement	->	65:27:1499:1500	5434399	9	True				
+ANR	5434487	Statement	watchpoints	65:29:1501:1511	5434399	10	True				
+ANR	5434488	Statement	","	65:40:1512:1512	5434399	11	True				
+ANR	5434489	Statement	entry	65:42:1514:1518	5434399	12	True				
+ANR	5434490	Statement	)	65:47:1519:1519	5434399	13	True				
+ANR	5434491	CompoundStatement		53:49:1080:1080	5434399	14					
+ANR	5434492	IfStatement	if ( vaddr == ( wp -> vaddr & TARGET_PAGE_MASK ) )		5434399	0					
+ANR	5434493	Condition	vaddr == ( wp -> vaddr & TARGET_PAGE_MASK )	67:12:1536:1574	5434399	0	True				
+ANR	5434494	EqualityExpression	vaddr == ( wp -> vaddr & TARGET_PAGE_MASK )		5434399	0		==			
+ANR	5434495	Identifier	vaddr		5434399	0					
+ANR	5434496	BitAndExpression	wp -> vaddr & TARGET_PAGE_MASK		5434399	1		&			
+ANR	5434497	PtrMemberAccess	wp -> vaddr		5434399	0					
+ANR	5434498	Identifier	wp		5434399	0					
+ANR	5434499	Identifier	vaddr		5434399	1					
+ANR	5434500	Identifier	TARGET_PAGE_MASK		5434399	1					
+ANR	5434501	CompoundStatement		55:53:1136:1136	5434399	1					
+ANR	5434502	IfStatement	if ( ( prot & PAGE_WRITE ) || ( wp -> flags & BP_MEM_READ ) )		5434399	0					
+ANR	5434503	Condition	( prot & PAGE_WRITE ) || ( wp -> flags & BP_MEM_READ )	71:16:1670:1717	5434399	0	True				
+ANR	5434504	OrExpression	( prot & PAGE_WRITE ) || ( wp -> flags & BP_MEM_READ )		5434399	0		||			
+ANR	5434505	BitAndExpression	prot & PAGE_WRITE		5434399	0		&			
+ANR	5434506	Identifier	prot		5434399	0					
+ANR	5434507	Identifier	PAGE_WRITE		5434399	1					
+ANR	5434508	BitAndExpression	wp -> flags & BP_MEM_READ		5434399	1		&			
+ANR	5434509	PtrMemberAccess	wp -> flags		5434399	0					
+ANR	5434510	Identifier	wp		5434399	0					
+ANR	5434511	Identifier	flags		5434399	1					
+ANR	5434512	Identifier	BP_MEM_READ		5434399	1					
+ANR	5434513	CompoundStatement		59:66:1279:1279	5434399	1					
+ANR	5434514	ExpressionStatement	iotlb = phys_section_watch + paddr	73:16:1739:1773	5434399	0	True				
+ANR	5434515	AssignmentExpression	iotlb = phys_section_watch + paddr		5434399	0		=			
+ANR	5434516	Identifier	iotlb		5434399	0					
+ANR	5434517	AdditiveExpression	phys_section_watch + paddr		5434399	1		+			
+ANR	5434518	Identifier	phys_section_watch		5434399	0					
+ANR	5434519	Identifier	paddr		5434399	1					
+ANR	5434520	ExpressionStatement	* address |= TLB_MMIO	75:16:1792:1812	5434399	1	True				
+ANR	5434521	AssignmentExpression	* address |= TLB_MMIO		5434399	0		|=			
+ANR	5434522	UnaryOperationExpression	* address		5434399	0					
+ANR	5434523	UnaryOperator	*		5434399	0					
+ANR	5434524	Identifier	address		5434399	1					
+ANR	5434525	Identifier	TLB_MMIO		5434399	1					
+ANR	5434526	BreakStatement	break ;	77:16:1831:1836	5434399	2	True				
+ANR	5434527	ReturnStatement	return iotlb ;	87:4:1878:1890	5434399	15	True				
+ANR	5434528	Identifier	iotlb		5434399	0					
+ANR	5434529	ReturnType	target_phys_addr_t		5434399	1					
+ANR	5434530	Identifier	memory_region_section_get_iotlb		5434399	2					
+ANR	5434531	ParameterList	"CPUArchState * env , MemoryRegionSection * section , target_ulong vaddr , target_phys_addr_t paddr , int prot , target_ulong * address"		5434399	3					
+ANR	5434532	Parameter	CPUArchState * env	1:51:51:67	5434399	0	True				
+ANR	5434533	ParameterType	CPUArchState *		5434399	0					
+ANR	5434534	Identifier	env		5434399	1					
+ANR	5434535	Parameter	MemoryRegionSection * section	3:51:122:149	5434399	1	True				
+ANR	5434536	ParameterType	MemoryRegionSection *		5434399	0					
+ANR	5434537	Identifier	section		5434399	1					
+ANR	5434538	Parameter	target_ulong vaddr	5:51:204:221	5434399	2	True				
+ANR	5434539	ParameterType	target_ulong		5434399	0					
+ANR	5434540	Identifier	vaddr		5434399	1					
+ANR	5434541	Parameter	target_phys_addr_t paddr	7:51:276:299	5434399	3	True				
+ANR	5434542	ParameterType	target_phys_addr_t		5434399	0					
+ANR	5434543	Identifier	paddr		5434399	1					
+ANR	5434544	Parameter	int prot	9:51:354:361	5434399	4	True				
+ANR	5434545	ParameterType	int		5434399	0					
+ANR	5434546	Identifier	prot		5434399	1					
+ANR	5434547	Parameter	target_ulong * address	11:51:416:436	5434399	5	True				
+ANR	5434548	ParameterType	target_ulong *		5434399	0					
+ANR	5434549	Identifier	address		5434399	1					
+ANR	5434550	CFGEntryNode	ENTRY		5434399		True				
+ANR	5434551	CFGExitNode	EXIT		5434399		True				
+ANR	5434552	CFGErrorNode	ERROR		5434399		True				
+ANR	5434553	Symbol	phys_section_watch		5434399						
+ANR	5434554	Symbol	phys_sections		5434399						
+ANR	5434555	Symbol	wp -> vaddr		5434399						
+ANR	5434556	Symbol	section -> mr		5434399						
+ANR	5434557	Symbol	TARGET_PAGE_MASK		5434399						
+ANR	5434558	Symbol	* address		5434399						
+ANR	5434559	Symbol	section		5434399						
+ANR	5434560	Symbol	vaddr		5434399						
+ANR	5434561	Symbol	memory_region_is_ram		5434399						
+ANR	5434562	Symbol	phys_section_rom		5434399						
+ANR	5434563	Symbol	prot		5434399						
+ANR	5434564	Symbol	wp		5434399						
+ANR	5434565	Symbol	* wp		5434399						
+ANR	5434566	Symbol	* section		5434399						
+ANR	5434567	Symbol	TLB_MMIO		5434399						
+ANR	5434568	Symbol	address		5434399						
+ANR	5434569	Symbol	memory_region_section_addr		5434399						
+ANR	5434570	Symbol	env		5434399						
+ANR	5434571	Symbol	BP_MEM_READ		5434399						
+ANR	5434572	Symbol	PAGE_WRITE		5434399						
+ANR	5434573	Symbol	phys_section_notdirty		5434399						
+ANR	5434574	Symbol	paddr		5434399						
+ANR	5434575	Symbol	memory_region_get_ram_addr		5434399						
+ANR	5434576	Symbol	section -> readonly		5434399						
+ANR	5434577	Symbol	iotlb		5434399						
+ANR	5434578	Symbol	wp -> flags		5434399						

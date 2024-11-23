@@ -1,0 +1,407 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	662255	File	/home/p4ultr4n/workplace/ReVeal/raw_code/atrac1_decode_init_1.c								
+ANR	662256	Function	atrac1_decode_init	1:0:0:1424							
+ANR	662257	FunctionDef	atrac1_decode_init (AVCodecContext * avctx)		662256	0					
+ANR	662258	CompoundStatement		3:0:62:1424	662256	0					
+ANR	662259	IdentifierDeclStatement	AT1Ctx * q = avctx -> priv_data ;	5:4:69:97	662256	0	True				
+ANR	662260	IdentifierDecl	* q = avctx -> priv_data		662256	0					
+ANR	662261	IdentifierDeclType	AT1Ctx *		662256	0					
+ANR	662262	Identifier	q		662256	1					
+ANR	662263	AssignmentExpression	* q = avctx -> priv_data		662256	2		=			
+ANR	662264	Identifier	q		662256	0					
+ANR	662265	PtrMemberAccess	avctx -> priv_data		662256	1					
+ANR	662266	Identifier	avctx		662256	0					
+ANR	662267	Identifier	priv_data		662256	1					
+ANR	662268	ExpressionStatement	avctx -> sample_fmt = AV_SAMPLE_FMT_FLT	9:4:106:143	662256	1	True				
+ANR	662269	AssignmentExpression	avctx -> sample_fmt = AV_SAMPLE_FMT_FLT		662256	0		=			
+ANR	662270	PtrMemberAccess	avctx -> sample_fmt		662256	0					
+ANR	662271	Identifier	avctx		662256	0					
+ANR	662272	Identifier	sample_fmt		662256	1					
+ANR	662273	Identifier	AV_SAMPLE_FMT_FLT		662256	1					
+ANR	662274	IfStatement	if ( avctx -> channels < 1 || avctx -> channels > AT1_MAX_CHANNELS )		662256	2					
+ANR	662275	Condition	avctx -> channels < 1 || avctx -> channels > AT1_MAX_CHANNELS	13:8:156:212	662256	0	True				
+ANR	662276	OrExpression	avctx -> channels < 1 || avctx -> channels > AT1_MAX_CHANNELS		662256	0		||			
+ANR	662277	RelationalExpression	avctx -> channels < 1		662256	0		<			
+ANR	662278	PtrMemberAccess	avctx -> channels		662256	0					
+ANR	662279	Identifier	avctx		662256	0					
+ANR	662280	Identifier	channels		662256	1					
+ANR	662281	PrimaryExpression	1		662256	1					
+ANR	662282	RelationalExpression	avctx -> channels > AT1_MAX_CHANNELS		662256	1		>			
+ANR	662283	PtrMemberAccess	avctx -> channels		662256	0					
+ANR	662284	Identifier	avctx		662256	0					
+ANR	662285	Identifier	channels		662256	1					
+ANR	662286	Identifier	AT1_MAX_CHANNELS		662256	1					
+ANR	662287	CompoundStatement		11:67:152:152	662256	1					
+ANR	662288	ExpressionStatement	"av_log ( avctx , AV_LOG_ERROR , ""Unsupported number of channels: %d\\n"" , avctx -> channels )"	15:8:226:326	662256	0	True				
+ANR	662289	CallExpression	"av_log ( avctx , AV_LOG_ERROR , ""Unsupported number of channels: %d\\n"" , avctx -> channels )"		662256	0					
+ANR	662290	Callee	av_log		662256	0					
+ANR	662291	Identifier	av_log		662256	0					
+ANR	662292	ArgumentList	avctx		662256	1					
+ANR	662293	Argument	avctx		662256	0					
+ANR	662294	Identifier	avctx		662256	0					
+ANR	662295	Argument	AV_LOG_ERROR		662256	1					
+ANR	662296	Identifier	AV_LOG_ERROR		662256	0					
+ANR	662297	Argument	"""Unsupported number of channels: %d\\n"""		662256	2					
+ANR	662298	PrimaryExpression	"""Unsupported number of channels: %d\\n"""		662256	0					
+ANR	662299	Argument	avctx -> channels		662256	3					
+ANR	662300	PtrMemberAccess	avctx -> channels		662256	0					
+ANR	662301	Identifier	avctx		662256	0					
+ANR	662302	Identifier	channels		662256	1					
+ANR	662303	ReturnStatement	return AVERROR ( EINVAL ) ;	19:8:337:359	662256	1	True				
+ANR	662304	CallExpression	AVERROR ( EINVAL )		662256	0					
+ANR	662305	Callee	AVERROR		662256	0					
+ANR	662306	Identifier	AVERROR		662256	0					
+ANR	662307	ArgumentList	EINVAL		662256	1					
+ANR	662308	Argument	EINVAL		662256	0					
+ANR	662309	Identifier	EINVAL		662256	0					
+ANR	662310	ExpressionStatement	q -> channels = avctx -> channels	23:4:373:402	662256	3	True				
+ANR	662311	AssignmentExpression	q -> channels = avctx -> channels		662256	0		=			
+ANR	662312	PtrMemberAccess	q -> channels		662256	0					
+ANR	662313	Identifier	q		662256	0					
+ANR	662314	Identifier	channels		662256	1					
+ANR	662315	PtrMemberAccess	avctx -> channels		662256	1					
+ANR	662316	Identifier	avctx		662256	0					
+ANR	662317	Identifier	channels		662256	1					
+ANR	662318	IfStatement	if ( avctx -> channels == 2 )		662256	4					
+ANR	662319	Condition	avctx -> channels == 2	27:8:415:434	662256	0	True				
+ANR	662320	EqualityExpression	avctx -> channels == 2		662256	0		==			
+ANR	662321	PtrMemberAccess	avctx -> channels		662256	0					
+ANR	662322	Identifier	avctx		662256	0					
+ANR	662323	Identifier	channels		662256	1					
+ANR	662324	PrimaryExpression	2		662256	1					
+ANR	662325	CompoundStatement		25:30:374:374	662256	1					
+ANR	662326	ExpressionStatement	q -> out_samples [ 0 ] = av_malloc ( 2 * AT1_SU_SAMPLES * sizeof ( * q -> out_samples [ 0 ] ) )	29:8:448:526	662256	0	True				
+ANR	662327	AssignmentExpression	q -> out_samples [ 0 ] = av_malloc ( 2 * AT1_SU_SAMPLES * sizeof ( * q -> out_samples [ 0 ] ) )		662256	0		=			
+ANR	662328	ArrayIndexing	q -> out_samples [ 0 ]		662256	0					
+ANR	662329	PtrMemberAccess	q -> out_samples		662256	0					
+ANR	662330	Identifier	q		662256	0					
+ANR	662331	Identifier	out_samples		662256	1					
+ANR	662332	PrimaryExpression	0		662256	1					
+ANR	662333	CallExpression	av_malloc ( 2 * AT1_SU_SAMPLES * sizeof ( * q -> out_samples [ 0 ] ) )		662256	1					
+ANR	662334	Callee	av_malloc		662256	0					
+ANR	662335	Identifier	av_malloc		662256	0					
+ANR	662336	ArgumentList	2 * AT1_SU_SAMPLES * sizeof ( * q -> out_samples [ 0 ] )		662256	1					
+ANR	662337	Argument	2 * AT1_SU_SAMPLES * sizeof ( * q -> out_samples [ 0 ] )		662256	0					
+ANR	662338	MultiplicativeExpression	2 * AT1_SU_SAMPLES * sizeof ( * q -> out_samples [ 0 ] )		662256	0		*			
+ANR	662339	PrimaryExpression	2		662256	0					
+ANR	662340	MultiplicativeExpression	AT1_SU_SAMPLES * sizeof ( * q -> out_samples [ 0 ] )		662256	1		*			
+ANR	662341	Identifier	AT1_SU_SAMPLES		662256	0					
+ANR	662342	SizeofExpression	sizeof ( * q -> out_samples [ 0 ] )		662256	1					
+ANR	662343	Sizeof	sizeof		662256	0					
+ANR	662344	UnaryOperationExpression	* q -> out_samples [ 0 ]		662256	1					
+ANR	662345	UnaryOperator	*		662256	0					
+ANR	662346	ArrayIndexing	q -> out_samples [ 0 ]		662256	1					
+ANR	662347	PtrMemberAccess	q -> out_samples		662256	0					
+ANR	662348	Identifier	q		662256	0					
+ANR	662349	Identifier	out_samples		662256	1					
+ANR	662350	PrimaryExpression	0		662256	1					
+ANR	662351	ExpressionStatement	q -> out_samples [ 1 ] = q -> out_samples [ 0 ] + AT1_SU_SAMPLES	31:8:537:591	662256	1	True				
+ANR	662352	AssignmentExpression	q -> out_samples [ 1 ] = q -> out_samples [ 0 ] + AT1_SU_SAMPLES		662256	0		=			
+ANR	662353	ArrayIndexing	q -> out_samples [ 1 ]		662256	0					
+ANR	662354	PtrMemberAccess	q -> out_samples		662256	0					
+ANR	662355	Identifier	q		662256	0					
+ANR	662356	Identifier	out_samples		662256	1					
+ANR	662357	PrimaryExpression	1		662256	1					
+ANR	662358	AdditiveExpression	q -> out_samples [ 0 ] + AT1_SU_SAMPLES		662256	1		+			
+ANR	662359	ArrayIndexing	q -> out_samples [ 0 ]		662256	0					
+ANR	662360	PtrMemberAccess	q -> out_samples		662256	0					
+ANR	662361	Identifier	q		662256	0					
+ANR	662362	Identifier	out_samples		662256	1					
+ANR	662363	PrimaryExpression	0		662256	1					
+ANR	662364	Identifier	AT1_SU_SAMPLES		662256	1					
+ANR	662365	IfStatement	if ( ! q -> out_samples [ 0 ] )		662256	2					
+ANR	662366	Condition	! q -> out_samples [ 0 ]	33:12:606:623	662256	0	True				
+ANR	662367	UnaryOperationExpression	! q -> out_samples [ 0 ]		662256	0					
+ANR	662368	UnaryOperator	!		662256	0					
+ANR	662369	ArrayIndexing	q -> out_samples [ 0 ]		662256	1					
+ANR	662370	PtrMemberAccess	q -> out_samples		662256	0					
+ANR	662371	Identifier	q		662256	0					
+ANR	662372	Identifier	out_samples		662256	1					
+ANR	662373	PrimaryExpression	0		662256	1					
+ANR	662374	CompoundStatement		31:32:563:563	662256	1					
+ANR	662375	ExpressionStatement	av_freep ( & q -> out_samples [ 0 ] )	35:12:641:669	662256	0	True				
+ANR	662376	CallExpression	av_freep ( & q -> out_samples [ 0 ] )		662256	0					
+ANR	662377	Callee	av_freep		662256	0					
+ANR	662378	Identifier	av_freep		662256	0					
+ANR	662379	ArgumentList	& q -> out_samples [ 0 ]		662256	1					
+ANR	662380	Argument	& q -> out_samples [ 0 ]		662256	0					
+ANR	662381	UnaryOperationExpression	& q -> out_samples [ 0 ]		662256	0					
+ANR	662382	UnaryOperator	&		662256	0					
+ANR	662383	ArrayIndexing	q -> out_samples [ 0 ]		662256	1					
+ANR	662384	PtrMemberAccess	q -> out_samples		662256	0					
+ANR	662385	Identifier	q		662256	0					
+ANR	662386	Identifier	out_samples		662256	1					
+ANR	662387	PrimaryExpression	0		662256	1					
+ANR	662388	ReturnStatement	return AVERROR ( ENOMEM ) ;	37:12:684:706	662256	1	True				
+ANR	662389	CallExpression	AVERROR ( ENOMEM )		662256	0					
+ANR	662390	Callee	AVERROR		662256	0					
+ANR	662391	Identifier	AVERROR		662256	0					
+ANR	662392	ArgumentList	ENOMEM		662256	1					
+ANR	662393	Argument	ENOMEM		662256	0					
+ANR	662394	Identifier	ENOMEM		662256	0					
+ANR	662395	ExpressionStatement	"ff_mdct_init ( & q -> mdct_ctx [ 0 ] , 6 , 1 , - 1.0 / ( 1 << 15 ) )"	47:4:769:821	662256	5	True				
+ANR	662396	CallExpression	"ff_mdct_init ( & q -> mdct_ctx [ 0 ] , 6 , 1 , - 1.0 / ( 1 << 15 ) )"		662256	0					
+ANR	662397	Callee	ff_mdct_init		662256	0					
+ANR	662398	Identifier	ff_mdct_init		662256	0					
+ANR	662399	ArgumentList	& q -> mdct_ctx [ 0 ]		662256	1					
+ANR	662400	Argument	& q -> mdct_ctx [ 0 ]		662256	0					
+ANR	662401	UnaryOperationExpression	& q -> mdct_ctx [ 0 ]		662256	0					
+ANR	662402	UnaryOperator	&		662256	0					
+ANR	662403	ArrayIndexing	q -> mdct_ctx [ 0 ]		662256	1					
+ANR	662404	PtrMemberAccess	q -> mdct_ctx		662256	0					
+ANR	662405	Identifier	q		662256	0					
+ANR	662406	Identifier	mdct_ctx		662256	1					
+ANR	662407	PrimaryExpression	0		662256	1					
+ANR	662408	Argument	6		662256	1					
+ANR	662409	PrimaryExpression	6		662256	0					
+ANR	662410	Argument	1		662256	2					
+ANR	662411	PrimaryExpression	1		662256	0					
+ANR	662412	Argument	- 1.0 / ( 1 << 15 )		662256	3					
+ANR	662413	MultiplicativeExpression	- 1.0 / ( 1 << 15 )		662256	0		/			
+ANR	662414	UnaryOperationExpression	- 1.0		662256	0					
+ANR	662415	UnaryOperator	-		662256	0					
+ANR	662416	PrimaryExpression	1.0		662256	1					
+ANR	662417	ShiftExpression	1 << 15		662256	1		<<			
+ANR	662418	PrimaryExpression	1		662256	0					
+ANR	662419	PrimaryExpression	15		662256	1					
+ANR	662420	ExpressionStatement	"ff_mdct_init ( & q -> mdct_ctx [ 1 ] , 8 , 1 , - 1.0 / ( 1 << 15 ) )"	49:4:828:880	662256	6	True				
+ANR	662421	CallExpression	"ff_mdct_init ( & q -> mdct_ctx [ 1 ] , 8 , 1 , - 1.0 / ( 1 << 15 ) )"		662256	0					
+ANR	662422	Callee	ff_mdct_init		662256	0					
+ANR	662423	Identifier	ff_mdct_init		662256	0					
+ANR	662424	ArgumentList	& q -> mdct_ctx [ 1 ]		662256	1					
+ANR	662425	Argument	& q -> mdct_ctx [ 1 ]		662256	0					
+ANR	662426	UnaryOperationExpression	& q -> mdct_ctx [ 1 ]		662256	0					
+ANR	662427	UnaryOperator	&		662256	0					
+ANR	662428	ArrayIndexing	q -> mdct_ctx [ 1 ]		662256	1					
+ANR	662429	PtrMemberAccess	q -> mdct_ctx		662256	0					
+ANR	662430	Identifier	q		662256	0					
+ANR	662431	Identifier	mdct_ctx		662256	1					
+ANR	662432	PrimaryExpression	1		662256	1					
+ANR	662433	Argument	8		662256	1					
+ANR	662434	PrimaryExpression	8		662256	0					
+ANR	662435	Argument	1		662256	2					
+ANR	662436	PrimaryExpression	1		662256	0					
+ANR	662437	Argument	- 1.0 / ( 1 << 15 )		662256	3					
+ANR	662438	MultiplicativeExpression	- 1.0 / ( 1 << 15 )		662256	0		/			
+ANR	662439	UnaryOperationExpression	- 1.0		662256	0					
+ANR	662440	UnaryOperator	-		662256	0					
+ANR	662441	PrimaryExpression	1.0		662256	1					
+ANR	662442	ShiftExpression	1 << 15		662256	1		<<			
+ANR	662443	PrimaryExpression	1		662256	0					
+ANR	662444	PrimaryExpression	15		662256	1					
+ANR	662445	ExpressionStatement	"ff_mdct_init ( & q -> mdct_ctx [ 2 ] , 9 , 1 , - 1.0 / ( 1 << 15 ) )"	51:4:887:939	662256	7	True				
+ANR	662446	CallExpression	"ff_mdct_init ( & q -> mdct_ctx [ 2 ] , 9 , 1 , - 1.0 / ( 1 << 15 ) )"		662256	0					
+ANR	662447	Callee	ff_mdct_init		662256	0					
+ANR	662448	Identifier	ff_mdct_init		662256	0					
+ANR	662449	ArgumentList	& q -> mdct_ctx [ 2 ]		662256	1					
+ANR	662450	Argument	& q -> mdct_ctx [ 2 ]		662256	0					
+ANR	662451	UnaryOperationExpression	& q -> mdct_ctx [ 2 ]		662256	0					
+ANR	662452	UnaryOperator	&		662256	0					
+ANR	662453	ArrayIndexing	q -> mdct_ctx [ 2 ]		662256	1					
+ANR	662454	PtrMemberAccess	q -> mdct_ctx		662256	0					
+ANR	662455	Identifier	q		662256	0					
+ANR	662456	Identifier	mdct_ctx		662256	1					
+ANR	662457	PrimaryExpression	2		662256	1					
+ANR	662458	Argument	9		662256	1					
+ANR	662459	PrimaryExpression	9		662256	0					
+ANR	662460	Argument	1		662256	2					
+ANR	662461	PrimaryExpression	1		662256	0					
+ANR	662462	Argument	- 1.0 / ( 1 << 15 )		662256	3					
+ANR	662463	MultiplicativeExpression	- 1.0 / ( 1 << 15 )		662256	0		/			
+ANR	662464	UnaryOperationExpression	- 1.0		662256	0					
+ANR	662465	UnaryOperator	-		662256	0					
+ANR	662466	PrimaryExpression	1.0		662256	1					
+ANR	662467	ShiftExpression	1 << 15		662256	1		<<			
+ANR	662468	PrimaryExpression	1		662256	0					
+ANR	662469	PrimaryExpression	15		662256	1					
+ANR	662470	ExpressionStatement	ff_init_ff_sine_windows ( 5 )	55:4:948:974	662256	8	True				
+ANR	662471	CallExpression	ff_init_ff_sine_windows ( 5 )		662256	0					
+ANR	662472	Callee	ff_init_ff_sine_windows		662256	0					
+ANR	662473	Identifier	ff_init_ff_sine_windows		662256	0					
+ANR	662474	ArgumentList	5		662256	1					
+ANR	662475	Argument	5		662256	0					
+ANR	662476	PrimaryExpression	5		662256	0					
+ANR	662477	ExpressionStatement	atrac_generate_tables ( )	59:4:983:1006	662256	9	True				
+ANR	662478	CallExpression	atrac_generate_tables ( )		662256	0					
+ANR	662479	Callee	atrac_generate_tables		662256	0					
+ANR	662480	Identifier	atrac_generate_tables		662256	0					
+ANR	662481	ArgumentList			662256	1					
+ANR	662482	ExpressionStatement	"dsputil_init ( & q -> dsp , avctx )"	63:4:1015:1043	662256	10	True				
+ANR	662483	CallExpression	"dsputil_init ( & q -> dsp , avctx )"		662256	0					
+ANR	662484	Callee	dsputil_init		662256	0					
+ANR	662485	Identifier	dsputil_init		662256	0					
+ANR	662486	ArgumentList	& q -> dsp		662256	1					
+ANR	662487	Argument	& q -> dsp		662256	0					
+ANR	662488	UnaryOperationExpression	& q -> dsp		662256	0					
+ANR	662489	UnaryOperator	&		662256	0					
+ANR	662490	PtrMemberAccess	q -> dsp		662256	1					
+ANR	662491	Identifier	q		662256	0					
+ANR	662492	Identifier	dsp		662256	1					
+ANR	662493	Argument	avctx		662256	1					
+ANR	662494	Identifier	avctx		662256	0					
+ANR	662495	ExpressionStatement	"ff_fmt_convert_init ( & q -> fmt_conv , avctx )"	65:4:1050:1090	662256	11	True				
+ANR	662496	CallExpression	"ff_fmt_convert_init ( & q -> fmt_conv , avctx )"		662256	0					
+ANR	662497	Callee	ff_fmt_convert_init		662256	0					
+ANR	662498	Identifier	ff_fmt_convert_init		662256	0					
+ANR	662499	ArgumentList	& q -> fmt_conv		662256	1					
+ANR	662500	Argument	& q -> fmt_conv		662256	0					
+ANR	662501	UnaryOperationExpression	& q -> fmt_conv		662256	0					
+ANR	662502	UnaryOperator	&		662256	0					
+ANR	662503	PtrMemberAccess	q -> fmt_conv		662256	1					
+ANR	662504	Identifier	q		662256	0					
+ANR	662505	Identifier	fmt_conv		662256	1					
+ANR	662506	Argument	avctx		662256	1					
+ANR	662507	Identifier	avctx		662256	0					
+ANR	662508	ExpressionStatement	q -> bands [ 0 ] = q -> low	69:4:1099:1119	662256	12	True				
+ANR	662509	AssignmentExpression	q -> bands [ 0 ] = q -> low		662256	0		=			
+ANR	662510	ArrayIndexing	q -> bands [ 0 ]		662256	0					
+ANR	662511	PtrMemberAccess	q -> bands		662256	0					
+ANR	662512	Identifier	q		662256	0					
+ANR	662513	Identifier	bands		662256	1					
+ANR	662514	PrimaryExpression	0		662256	1					
+ANR	662515	PtrMemberAccess	q -> low		662256	1					
+ANR	662516	Identifier	q		662256	0					
+ANR	662517	Identifier	low		662256	1					
+ANR	662518	ExpressionStatement	q -> bands [ 1 ] = q -> mid	71:4:1126:1146	662256	13	True				
+ANR	662519	AssignmentExpression	q -> bands [ 1 ] = q -> mid		662256	0		=			
+ANR	662520	ArrayIndexing	q -> bands [ 1 ]		662256	0					
+ANR	662521	PtrMemberAccess	q -> bands		662256	0					
+ANR	662522	Identifier	q		662256	0					
+ANR	662523	Identifier	bands		662256	1					
+ANR	662524	PrimaryExpression	1		662256	1					
+ANR	662525	PtrMemberAccess	q -> mid		662256	1					
+ANR	662526	Identifier	q		662256	0					
+ANR	662527	Identifier	mid		662256	1					
+ANR	662528	ExpressionStatement	q -> bands [ 2 ] = q -> high	73:4:1153:1174	662256	14	True				
+ANR	662529	AssignmentExpression	q -> bands [ 2 ] = q -> high		662256	0		=			
+ANR	662530	ArrayIndexing	q -> bands [ 2 ]		662256	0					
+ANR	662531	PtrMemberAccess	q -> bands		662256	0					
+ANR	662532	Identifier	q		662256	0					
+ANR	662533	Identifier	bands		662256	1					
+ANR	662534	PrimaryExpression	2		662256	1					
+ANR	662535	PtrMemberAccess	q -> high		662256	1					
+ANR	662536	Identifier	q		662256	0					
+ANR	662537	Identifier	high		662256	1					
+ANR	662538	ExpressionStatement	q -> SUs [ 0 ] . spectrum [ 0 ] = q -> SUs [ 0 ] . spec1	79:4:1227:1266	662256	15	True				
+ANR	662539	AssignmentExpression	q -> SUs [ 0 ] . spectrum [ 0 ] = q -> SUs [ 0 ] . spec1		662256	0		=			
+ANR	662540	ArrayIndexing	q -> SUs [ 0 ] . spectrum [ 0 ]		662256	0					
+ANR	662541	MemberAccess	q -> SUs [ 0 ] . spectrum		662256	0					
+ANR	662542	ArrayIndexing	q -> SUs [ 0 ]		662256	0					
+ANR	662543	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662544	Identifier	q		662256	0					
+ANR	662545	Identifier	SUs		662256	1					
+ANR	662546	PrimaryExpression	0		662256	1					
+ANR	662547	Identifier	spectrum		662256	1					
+ANR	662548	PrimaryExpression	0		662256	1					
+ANR	662549	MemberAccess	q -> SUs [ 0 ] . spec1		662256	1					
+ANR	662550	ArrayIndexing	q -> SUs [ 0 ]		662256	0					
+ANR	662551	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662552	Identifier	q		662256	0					
+ANR	662553	Identifier	SUs		662256	1					
+ANR	662554	PrimaryExpression	0		662256	1					
+ANR	662555	Identifier	spec1		662256	1					
+ANR	662556	ExpressionStatement	q -> SUs [ 0 ] . spectrum [ 1 ] = q -> SUs [ 0 ] . spec2	81:4:1273:1312	662256	16	True				
+ANR	662557	AssignmentExpression	q -> SUs [ 0 ] . spectrum [ 1 ] = q -> SUs [ 0 ] . spec2		662256	0		=			
+ANR	662558	ArrayIndexing	q -> SUs [ 0 ] . spectrum [ 1 ]		662256	0					
+ANR	662559	MemberAccess	q -> SUs [ 0 ] . spectrum		662256	0					
+ANR	662560	ArrayIndexing	q -> SUs [ 0 ]		662256	0					
+ANR	662561	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662562	Identifier	q		662256	0					
+ANR	662563	Identifier	SUs		662256	1					
+ANR	662564	PrimaryExpression	0		662256	1					
+ANR	662565	Identifier	spectrum		662256	1					
+ANR	662566	PrimaryExpression	1		662256	1					
+ANR	662567	MemberAccess	q -> SUs [ 0 ] . spec2		662256	1					
+ANR	662568	ArrayIndexing	q -> SUs [ 0 ]		662256	0					
+ANR	662569	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662570	Identifier	q		662256	0					
+ANR	662571	Identifier	SUs		662256	1					
+ANR	662572	PrimaryExpression	0		662256	1					
+ANR	662573	Identifier	spec2		662256	1					
+ANR	662574	ExpressionStatement	q -> SUs [ 1 ] . spectrum [ 0 ] = q -> SUs [ 1 ] . spec1	83:4:1319:1358	662256	17	True				
+ANR	662575	AssignmentExpression	q -> SUs [ 1 ] . spectrum [ 0 ] = q -> SUs [ 1 ] . spec1		662256	0		=			
+ANR	662576	ArrayIndexing	q -> SUs [ 1 ] . spectrum [ 0 ]		662256	0					
+ANR	662577	MemberAccess	q -> SUs [ 1 ] . spectrum		662256	0					
+ANR	662578	ArrayIndexing	q -> SUs [ 1 ]		662256	0					
+ANR	662579	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662580	Identifier	q		662256	0					
+ANR	662581	Identifier	SUs		662256	1					
+ANR	662582	PrimaryExpression	1		662256	1					
+ANR	662583	Identifier	spectrum		662256	1					
+ANR	662584	PrimaryExpression	0		662256	1					
+ANR	662585	MemberAccess	q -> SUs [ 1 ] . spec1		662256	1					
+ANR	662586	ArrayIndexing	q -> SUs [ 1 ]		662256	0					
+ANR	662587	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662588	Identifier	q		662256	0					
+ANR	662589	Identifier	SUs		662256	1					
+ANR	662590	PrimaryExpression	1		662256	1					
+ANR	662591	Identifier	spec1		662256	1					
+ANR	662592	ExpressionStatement	q -> SUs [ 1 ] . spectrum [ 1 ] = q -> SUs [ 1 ] . spec2	85:4:1365:1404	662256	18	True				
+ANR	662593	AssignmentExpression	q -> SUs [ 1 ] . spectrum [ 1 ] = q -> SUs [ 1 ] . spec2		662256	0		=			
+ANR	662594	ArrayIndexing	q -> SUs [ 1 ] . spectrum [ 1 ]		662256	0					
+ANR	662595	MemberAccess	q -> SUs [ 1 ] . spectrum		662256	0					
+ANR	662596	ArrayIndexing	q -> SUs [ 1 ]		662256	0					
+ANR	662597	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662598	Identifier	q		662256	0					
+ANR	662599	Identifier	SUs		662256	1					
+ANR	662600	PrimaryExpression	1		662256	1					
+ANR	662601	Identifier	spectrum		662256	1					
+ANR	662602	PrimaryExpression	1		662256	1					
+ANR	662603	MemberAccess	q -> SUs [ 1 ] . spec2		662256	1					
+ANR	662604	ArrayIndexing	q -> SUs [ 1 ]		662256	0					
+ANR	662605	PtrMemberAccess	q -> SUs		662256	0					
+ANR	662606	Identifier	q		662256	0					
+ANR	662607	Identifier	SUs		662256	1					
+ANR	662608	PrimaryExpression	1		662256	1					
+ANR	662609	Identifier	spec2		662256	1					
+ANR	662610	ReturnStatement	return 0 ;	89:4:1413:1421	662256	19	True				
+ANR	662611	PrimaryExpression	0		662256	0					
+ANR	662612	ReturnType	static av_cold int		662256	1					
+ANR	662613	Identifier	atrac1_decode_init		662256	2					
+ANR	662614	ParameterList	AVCodecContext * avctx		662256	3					
+ANR	662615	Parameter	AVCodecContext * avctx	1:38:38:58	662256	0	True				
+ANR	662616	ParameterType	AVCodecContext *		662256	0					
+ANR	662617	Identifier	avctx		662256	1					
+ANR	662618	CFGEntryNode	ENTRY		662256		True				
+ANR	662619	CFGExitNode	EXIT		662256		True				
+ANR	662620	Symbol	av_malloc		662256						
+ANR	662621	Symbol	ENOMEM		662256						
+ANR	662622	Symbol	q -> bands		662256						
+ANR	662623	Symbol	q -> low		662256						
+ANR	662624	Symbol	q -> SUs [ 0 ] . spectrum		662256						
+ANR	662625	Symbol	q -> SUs [ 1 ] . spectrum		662256						
+ANR	662626	Symbol	q -> out_samples		662256						
+ANR	662627	Symbol	q -> channels		662256						
+ANR	662628	Symbol	* q -> bands		662256						
+ANR	662629	Symbol	avctx -> channels		662256						
+ANR	662630	Symbol	* * q -> out_samples		662256						
+ANR	662631	Symbol	* q -> SUs [ 1 ] . spectrum		662256						
+ANR	662632	Symbol	q -> high		662256						
+ANR	662633	Symbol	* q -> SUs [ 0 ] . spectrum		662256						
+ANR	662634	Symbol	q -> mid		662256						
+ANR	662635	Symbol	* * q -> SUs		662256						
+ANR	662636	Symbol	* * q		662256						
+ANR	662637	Symbol	q -> SUs [ 1 ] . spec2		662256						
+ANR	662638	Symbol	q -> SUs [ 1 ] . spec1		662256						
+ANR	662639	Symbol	avctx		662256						
+ANR	662640	Symbol	q -> SUs		662256						
+ANR	662641	Symbol	avctx -> sample_fmt		662256						
+ANR	662642	Symbol	* q -> out_samples [ 0 ]		662256						
+ANR	662643	Symbol	AV_LOG_ERROR		662256						
+ANR	662644	Symbol	AT1_MAX_CHANNELS		662256						
+ANR	662645	Symbol	AV_SAMPLE_FMT_FLT		662256						
+ANR	662646	Symbol	avctx -> priv_data		662256						
+ANR	662647	Symbol	* q -> SUs		662256						
+ANR	662648	Symbol	EINVAL		662256						
+ANR	662649	Symbol	* * * q		662256						
+ANR	662650	Symbol	q		662256						
+ANR	662651	Symbol	* avctx		662256						
+ANR	662652	Symbol	q -> mdct_ctx		662256						
+ANR	662653	Symbol	* q -> out_samples		662256						
+ANR	662654	Symbol	AT1_SU_SAMPLES		662256						
+ANR	662655	Symbol	& q -> fmt_conv		662256						
+ANR	662656	Symbol	AVERROR		662256						
+ANR	662657	Symbol	* q		662256						
+ANR	662658	Symbol	q -> SUs [ 0 ] . spec1		662256						
+ANR	662659	Symbol	q -> SUs [ 0 ] . spec2		662256						
+ANR	662660	Symbol	& q -> dsp		662256						

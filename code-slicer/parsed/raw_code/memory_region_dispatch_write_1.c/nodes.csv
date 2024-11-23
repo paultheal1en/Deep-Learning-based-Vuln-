@@ -1,0 +1,143 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5429113	File	/home/p4ultr4n/workplace/ReVeal/raw_code/memory_region_dispatch_write_1.c								
+ANR	5429114	Function	memory_region_dispatch_write	1:0:0:808							
+ANR	5429115	FunctionDef	"memory_region_dispatch_write (MemoryRegion * mr , hwaddr addr , uint64_t data , unsigned size)"		5429114	0					
+ANR	5429116	CompoundStatement		9:0:229:808	5429114	0					
+ANR	5429117	IfStatement	"if ( ! memory_region_access_valid ( mr , addr , size , true ) )"		5429114	0					
+ANR	5429118	Condition	"! memory_region_access_valid ( mr , addr , size , true )"	11:8:240:288	5429114	0	True				
+ANR	5429119	UnaryOperationExpression	"! memory_region_access_valid ( mr , addr , size , true )"		5429114	0					
+ANR	5429120	UnaryOperator	!		5429114	0					
+ANR	5429121	CallExpression	"memory_region_access_valid ( mr , addr , size , true )"		5429114	1					
+ANR	5429122	Callee	memory_region_access_valid		5429114	0					
+ANR	5429123	Identifier	memory_region_access_valid		5429114	0					
+ANR	5429124	ArgumentList	mr		5429114	1					
+ANR	5429125	Argument	mr		5429114	0					
+ANR	5429126	Identifier	mr		5429114	0					
+ANR	5429127	Argument	addr		5429114	1					
+ANR	5429128	Identifier	addr		5429114	0					
+ANR	5429129	Argument	size		5429114	2					
+ANR	5429130	Identifier	size		5429114	0					
+ANR	5429131	Argument	true		5429114	3					
+ANR	5429132	Identifier	true		5429114	0					
+ANR	5429133	CompoundStatement		3:59:61:61	5429114	1					
+ANR	5429134	ReturnStatement	return ;	13:8:302:308	5429114	0	True				
+ANR	5429135	ExpressionStatement	"adjust_endianness ( mr , & data , size )"	19:4:355:389	5429114	1	True				
+ANR	5429136	CallExpression	"adjust_endianness ( mr , & data , size )"		5429114	0					
+ANR	5429137	Callee	adjust_endianness		5429114	0					
+ANR	5429138	Identifier	adjust_endianness		5429114	0					
+ANR	5429139	ArgumentList	mr		5429114	1					
+ANR	5429140	Argument	mr		5429114	0					
+ANR	5429141	Identifier	mr		5429114	0					
+ANR	5429142	Argument	& data		5429114	1					
+ANR	5429143	UnaryOperationExpression	& data		5429114	0					
+ANR	5429144	UnaryOperator	&		5429114	0					
+ANR	5429145	Identifier	data		5429114	1					
+ANR	5429146	Argument	size		5429114	2					
+ANR	5429147	Identifier	size		5429114	0					
+ANR	5429148	IfStatement	if ( ! mr -> ops -> write )		5429114	2					
+ANR	5429149	Condition	! mr -> ops -> write	23:8:402:416	5429114	0	True				
+ANR	5429150	UnaryOperationExpression	! mr -> ops -> write		5429114	0					
+ANR	5429151	UnaryOperator	!		5429114	0					
+ANR	5429152	PtrMemberAccess	mr -> ops -> write		5429114	1					
+ANR	5429153	PtrMemberAccess	mr -> ops		5429114	0					
+ANR	5429154	Identifier	mr		5429114	0					
+ANR	5429155	Identifier	ops		5429114	1					
+ANR	5429156	Identifier	write		5429114	1					
+ANR	5429157	CompoundStatement		15:25:189:189	5429114	1					
+ANR	5429158	ExpressionStatement	"mr -> ops -> old_mmio . write [ bitops_ffsl ( size ) ] ( mr -> opaque , addr , data )"	25:8:430:496	5429114	0	True				
+ANR	5429159	CallExpression	"mr -> ops -> old_mmio . write [ bitops_ffsl ( size ) ] ( mr -> opaque , addr , data )"		5429114	0					
+ANR	5429160	Callee	mr -> ops -> old_mmio . write [ bitops_ffsl ( size ) ]		5429114	0					
+ANR	5429161	ArrayIndexing	mr -> ops -> old_mmio . write [ bitops_ffsl ( size ) ]		5429114	0					
+ANR	5429162	MemberAccess	mr -> ops -> old_mmio . write		5429114	0					
+ANR	5429163	PtrMemberAccess	mr -> ops -> old_mmio		5429114	0					
+ANR	5429164	PtrMemberAccess	mr -> ops		5429114	0					
+ANR	5429165	Identifier	mr		5429114	0					
+ANR	5429166	Identifier	ops		5429114	1					
+ANR	5429167	Identifier	old_mmio		5429114	1					
+ANR	5429168	Identifier	write		5429114	1					
+ANR	5429169	CallExpression	bitops_ffsl ( size )		5429114	1					
+ANR	5429170	Callee	bitops_ffsl		5429114	0					
+ANR	5429171	Identifier	bitops_ffsl		5429114	0					
+ANR	5429172	ArgumentList	size		5429114	1					
+ANR	5429173	Argument	size		5429114	0					
+ANR	5429174	Identifier	size		5429114	0					
+ANR	5429175	ArgumentList	mr -> opaque		5429114	1					
+ANR	5429176	Argument	mr -> opaque		5429114	0					
+ANR	5429177	PtrMemberAccess	mr -> opaque		5429114	0					
+ANR	5429178	Identifier	mr		5429114	0					
+ANR	5429179	Identifier	opaque		5429114	1					
+ANR	5429180	Argument	addr		5429114	1					
+ANR	5429181	Identifier	addr		5429114	0					
+ANR	5429182	Argument	data		5429114	2					
+ANR	5429183	Identifier	data		5429114	0					
+ANR	5429184	ReturnStatement	return ;	27:8:507:513	5429114	1	True				
+ANR	5429185	ExpressionStatement	"access_with_adjusted_size ( addr , & data , size , mr -> ops -> impl . min_access_size , mr -> ops -> impl . max_access_size , memory_region_write_accessor , mr )"	35:4:572:805	5429114	3	True				
+ANR	5429186	CallExpression	"access_with_adjusted_size ( addr , & data , size , mr -> ops -> impl . min_access_size , mr -> ops -> impl . max_access_size , memory_region_write_accessor , mr )"		5429114	0					
+ANR	5429187	Callee	access_with_adjusted_size		5429114	0					
+ANR	5429188	Identifier	access_with_adjusted_size		5429114	0					
+ANR	5429189	ArgumentList	addr		5429114	1					
+ANR	5429190	Argument	addr		5429114	0					
+ANR	5429191	Identifier	addr		5429114	0					
+ANR	5429192	Argument	& data		5429114	1					
+ANR	5429193	UnaryOperationExpression	& data		5429114	0					
+ANR	5429194	UnaryOperator	&		5429114	0					
+ANR	5429195	Identifier	data		5429114	1					
+ANR	5429196	Argument	size		5429114	2					
+ANR	5429197	Identifier	size		5429114	0					
+ANR	5429198	Argument	mr -> ops -> impl . min_access_size		5429114	3					
+ANR	5429199	MemberAccess	mr -> ops -> impl . min_access_size		5429114	0					
+ANR	5429200	PtrMemberAccess	mr -> ops -> impl		5429114	0					
+ANR	5429201	PtrMemberAccess	mr -> ops		5429114	0					
+ANR	5429202	Identifier	mr		5429114	0					
+ANR	5429203	Identifier	ops		5429114	1					
+ANR	5429204	Identifier	impl		5429114	1					
+ANR	5429205	Identifier	min_access_size		5429114	1					
+ANR	5429206	Argument	mr -> ops -> impl . max_access_size		5429114	4					
+ANR	5429207	MemberAccess	mr -> ops -> impl . max_access_size		5429114	0					
+ANR	5429208	PtrMemberAccess	mr -> ops -> impl		5429114	0					
+ANR	5429209	PtrMemberAccess	mr -> ops		5429114	0					
+ANR	5429210	Identifier	mr		5429114	0					
+ANR	5429211	Identifier	ops		5429114	1					
+ANR	5429212	Identifier	impl		5429114	1					
+ANR	5429213	Identifier	max_access_size		5429114	1					
+ANR	5429214	Argument	memory_region_write_accessor		5429114	5					
+ANR	5429215	Identifier	memory_region_write_accessor		5429114	0					
+ANR	5429216	Argument	mr		5429114	6					
+ANR	5429217	Identifier	mr		5429114	0					
+ANR	5429218	ReturnType	static void		5429114	1					
+ANR	5429219	Identifier	memory_region_dispatch_write		5429114	2					
+ANR	5429220	ParameterList	"MemoryRegion * mr , hwaddr addr , uint64_t data , unsigned size"		5429114	3					
+ANR	5429221	Parameter	MemoryRegion * mr	1:41:41:56	5429114	0	True				
+ANR	5429222	ParameterType	MemoryRegion *		5429114	0					
+ANR	5429223	Identifier	mr		5429114	1					
+ANR	5429224	Parameter	hwaddr addr	3:41:101:111	5429114	1	True				
+ANR	5429225	ParameterType	hwaddr		5429114	0					
+ANR	5429226	Identifier	addr		5429114	1					
+ANR	5429227	Parameter	uint64_t data	5:41:156:168	5429114	2	True				
+ANR	5429228	ParameterType	uint64_t		5429114	0					
+ANR	5429229	Identifier	data		5429114	1					
+ANR	5429230	Parameter	unsigned size	7:41:213:225	5429114	3	True				
+ANR	5429231	ParameterType	unsigned		5429114	0					
+ANR	5429232	Identifier	size		5429114	1					
+ANR	5429233	CFGEntryNode	ENTRY		5429114		True				
+ANR	5429234	CFGExitNode	EXIT		5429114		True				
+ANR	5429235	Symbol	* mr -> ops		5429114						
+ANR	5429236	Symbol	bitops_ffsl		5429114						
+ANR	5429237	Symbol	mr -> ops -> impl . max_access_size		5429114						
+ANR	5429238	Symbol	data		5429114						
+ANR	5429239	Symbol	mr -> ops -> impl		5429114						
+ANR	5429240	Symbol	mr		5429114						
+ANR	5429241	Symbol	mr -> ops -> impl . min_access_size		5429114						
+ANR	5429242	Symbol	memory_region_write_accessor		5429114						
+ANR	5429243	Symbol	* mr		5429114						
+ANR	5429244	Symbol	mr -> ops		5429114						
+ANR	5429245	Symbol	& data		5429114						
+ANR	5429246	Symbol	mr -> ops -> write		5429114						
+ANR	5429247	Symbol	* * mr		5429114						
+ANR	5429248	Symbol	size		5429114						
+ANR	5429249	Symbol	mr -> ops -> old_mmio		5429114						
+ANR	5429250	Symbol	mr -> ops -> old_mmio . write		5429114						
+ANR	5429251	Symbol	mr -> opaque		5429114						
+ANR	5429252	Symbol	true		5429114						
+ANR	5429253	Symbol	memory_region_access_valid		5429114						
+ANR	5429254	Symbol	addr		5429114						

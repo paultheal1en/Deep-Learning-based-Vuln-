@@ -1,0 +1,312 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1074558	File	/home/p4ultr4n/workplace/ReVeal/raw_code/block_job_create_1.c								
+ANR	1074559	Function	block_job_create	1:0:0:1541							
+ANR	1074560	FunctionDef	"block_job_create (const BlockJobDriver * driver , BlockDriverState * bs , int64_t speed , BlockCompletionFunc * cb , void * opaque , Error * * errp)"		1074559	0					
+ANR	1074561	CompoundStatement		7:0:192:1541	1074559	0					
+ANR	1074562	IdentifierDeclStatement	BlockBackend * blk ;	9:4:199:216	1074559	0	True				
+ANR	1074563	IdentifierDecl	* blk		1074559	0					
+ANR	1074564	IdentifierDeclType	BlockBackend *		1074559	0					
+ANR	1074565	Identifier	blk		1074559	1					
+ANR	1074566	IdentifierDeclStatement	BlockJob * job ;	11:4:223:236	1074559	1	True				
+ANR	1074567	IdentifierDecl	* job		1074559	0					
+ANR	1074568	IdentifierDeclType	BlockJob *		1074559	0					
+ANR	1074569	Identifier	job		1074559	1					
+ANR	1074570	ExpressionStatement	assert ( cb )	15:4:245:255	1074559	2	True				
+ANR	1074571	CallExpression	assert ( cb )		1074559	0					
+ANR	1074572	Callee	assert		1074559	0					
+ANR	1074573	Identifier	assert		1074559	0					
+ANR	1074574	ArgumentList	cb		1074559	1					
+ANR	1074575	Argument	cb		1074559	0					
+ANR	1074576	Identifier	cb		1074559	0					
+ANR	1074577	IfStatement	if ( bs -> job )		1074559	3					
+ANR	1074578	Condition	bs -> job	17:8:266:272	1074559	0	True				
+ANR	1074579	PtrMemberAccess	bs -> job		1074559	0					
+ANR	1074580	Identifier	bs		1074559	0					
+ANR	1074581	Identifier	job		1074559	1					
+ANR	1074582	CompoundStatement		11:17:82:82	1074559	1					
+ANR	1074583	ExpressionStatement	"error_setg ( errp , QERR_DEVICE_IN_USE , bdrv_get_device_name ( bs ) )"	19:8:286:348	1074559	0	True				
+ANR	1074584	CallExpression	"error_setg ( errp , QERR_DEVICE_IN_USE , bdrv_get_device_name ( bs ) )"		1074559	0					
+ANR	1074585	Callee	error_setg		1074559	0					
+ANR	1074586	Identifier	error_setg		1074559	0					
+ANR	1074587	ArgumentList	errp		1074559	1					
+ANR	1074588	Argument	errp		1074559	0					
+ANR	1074589	Identifier	errp		1074559	0					
+ANR	1074590	Argument	QERR_DEVICE_IN_USE		1074559	1					
+ANR	1074591	Identifier	QERR_DEVICE_IN_USE		1074559	0					
+ANR	1074592	Argument	bdrv_get_device_name ( bs )		1074559	2					
+ANR	1074593	CallExpression	bdrv_get_device_name ( bs )		1074559	0					
+ANR	1074594	Callee	bdrv_get_device_name		1074559	0					
+ANR	1074595	Identifier	bdrv_get_device_name		1074559	0					
+ANR	1074596	ArgumentList	bs		1074559	1					
+ANR	1074597	Argument	bs		1074559	0					
+ANR	1074598	Identifier	bs		1074559	0					
+ANR	1074599	ReturnStatement	return NULL ;	21:8:359:370	1074559	1	True				
+ANR	1074600	Identifier	NULL		1074559	0					
+ANR	1074601	ExpressionStatement	blk = blk_new ( )	27:4:386:401	1074559	4	True				
+ANR	1074602	AssignmentExpression	blk = blk_new ( )		1074559	0		=			
+ANR	1074603	Identifier	blk		1074559	0					
+ANR	1074604	CallExpression	blk_new ( )		1074559	1					
+ANR	1074605	Callee	blk_new		1074559	0					
+ANR	1074606	Identifier	blk_new		1074559	0					
+ANR	1074607	ArgumentList			1074559	1					
+ANR	1074608	ExpressionStatement	"blk_insert_bs ( blk , bs )"	29:4:408:430	1074559	5	True				
+ANR	1074609	CallExpression	"blk_insert_bs ( blk , bs )"		1074559	0					
+ANR	1074610	Callee	blk_insert_bs		1074559	0					
+ANR	1074611	Identifier	blk_insert_bs		1074559	0					
+ANR	1074612	ArgumentList	blk		1074559	1					
+ANR	1074613	Argument	blk		1074559	0					
+ANR	1074614	Identifier	blk		1074559	0					
+ANR	1074615	Argument	bs		1074559	1					
+ANR	1074616	Identifier	bs		1074559	0					
+ANR	1074617	ExpressionStatement	job = g_malloc0 ( driver -> instance_size )	33:4:439:477	1074559	6	True				
+ANR	1074618	AssignmentExpression	job = g_malloc0 ( driver -> instance_size )		1074559	0		=			
+ANR	1074619	Identifier	job		1074559	0					
+ANR	1074620	CallExpression	g_malloc0 ( driver -> instance_size )		1074559	1					
+ANR	1074621	Callee	g_malloc0		1074559	0					
+ANR	1074622	Identifier	g_malloc0		1074559	0					
+ANR	1074623	ArgumentList	driver -> instance_size		1074559	1					
+ANR	1074624	Argument	driver -> instance_size		1074559	0					
+ANR	1074625	PtrMemberAccess	driver -> instance_size		1074559	0					
+ANR	1074626	Identifier	driver		1074559	0					
+ANR	1074627	Identifier	instance_size		1074559	1					
+ANR	1074628	ExpressionStatement	"error_setg ( & job -> blocker , ""block device is in use by block job: %s"" , BlockJobType_lookup [ driver -> job_type ] )"	35:4:484:607	1074559	7	True				
+ANR	1074629	CallExpression	"error_setg ( & job -> blocker , ""block device is in use by block job: %s"" , BlockJobType_lookup [ driver -> job_type ] )"		1074559	0					
+ANR	1074630	Callee	error_setg		1074559	0					
+ANR	1074631	Identifier	error_setg		1074559	0					
+ANR	1074632	ArgumentList	& job -> blocker		1074559	1					
+ANR	1074633	Argument	& job -> blocker		1074559	0					
+ANR	1074634	UnaryOperationExpression	& job -> blocker		1074559	0					
+ANR	1074635	UnaryOperator	&		1074559	0					
+ANR	1074636	PtrMemberAccess	job -> blocker		1074559	1					
+ANR	1074637	Identifier	job		1074559	0					
+ANR	1074638	Identifier	blocker		1074559	1					
+ANR	1074639	Argument	"""block device is in use by block job: %s"""		1074559	1					
+ANR	1074640	PrimaryExpression	"""block device is in use by block job: %s"""		1074559	0					
+ANR	1074641	Argument	BlockJobType_lookup [ driver -> job_type ]		1074559	2					
+ANR	1074642	ArrayIndexing	BlockJobType_lookup [ driver -> job_type ]		1074559	0					
+ANR	1074643	Identifier	BlockJobType_lookup		1074559	0					
+ANR	1074644	PtrMemberAccess	driver -> job_type		1074559	1					
+ANR	1074645	Identifier	driver		1074559	0					
+ANR	1074646	Identifier	job_type		1074559	1					
+ANR	1074647	ExpressionStatement	"bdrv_op_block_all ( bs , job -> blocker )"	39:4:614:649	1074559	8	True				
+ANR	1074648	CallExpression	"bdrv_op_block_all ( bs , job -> blocker )"		1074559	0					
+ANR	1074649	Callee	bdrv_op_block_all		1074559	0					
+ANR	1074650	Identifier	bdrv_op_block_all		1074559	0					
+ANR	1074651	ArgumentList	bs		1074559	1					
+ANR	1074652	Argument	bs		1074559	0					
+ANR	1074653	Identifier	bs		1074559	0					
+ANR	1074654	Argument	job -> blocker		1074559	1					
+ANR	1074655	PtrMemberAccess	job -> blocker		1074559	0					
+ANR	1074656	Identifier	job		1074559	0					
+ANR	1074657	Identifier	blocker		1074559	1					
+ANR	1074658	ExpressionStatement	"bdrv_op_unblock ( bs , BLOCK_OP_TYPE_DATAPLANE , job -> blocker )"	41:4:656:714	1074559	9	True				
+ANR	1074659	CallExpression	"bdrv_op_unblock ( bs , BLOCK_OP_TYPE_DATAPLANE , job -> blocker )"		1074559	0					
+ANR	1074660	Callee	bdrv_op_unblock		1074559	0					
+ANR	1074661	Identifier	bdrv_op_unblock		1074559	0					
+ANR	1074662	ArgumentList	bs		1074559	1					
+ANR	1074663	Argument	bs		1074559	0					
+ANR	1074664	Identifier	bs		1074559	0					
+ANR	1074665	Argument	BLOCK_OP_TYPE_DATAPLANE		1074559	1					
+ANR	1074666	Identifier	BLOCK_OP_TYPE_DATAPLANE		1074559	0					
+ANR	1074667	Argument	job -> blocker		1074559	2					
+ANR	1074668	PtrMemberAccess	job -> blocker		1074559	0					
+ANR	1074669	Identifier	job		1074559	0					
+ANR	1074670	Identifier	blocker		1074559	1					
+ANR	1074671	ExpressionStatement	job -> driver = driver	45:4:723:750	1074559	10	True				
+ANR	1074672	AssignmentExpression	job -> driver = driver		1074559	0		=			
+ANR	1074673	PtrMemberAccess	job -> driver		1074559	0					
+ANR	1074674	Identifier	job		1074559	0					
+ANR	1074675	Identifier	driver		1074559	1					
+ANR	1074676	Identifier	driver		1074559	1					
+ANR	1074677	ExpressionStatement	job -> id = g_strdup ( bdrv_get_device_name ( bs ) )	47:4:757:812	1074559	11	True				
+ANR	1074678	AssignmentExpression	job -> id = g_strdup ( bdrv_get_device_name ( bs ) )		1074559	0		=			
+ANR	1074679	PtrMemberAccess	job -> id		1074559	0					
+ANR	1074680	Identifier	job		1074559	0					
+ANR	1074681	Identifier	id		1074559	1					
+ANR	1074682	CallExpression	g_strdup ( bdrv_get_device_name ( bs ) )		1074559	1					
+ANR	1074683	Callee	g_strdup		1074559	0					
+ANR	1074684	Identifier	g_strdup		1074559	0					
+ANR	1074685	ArgumentList	bdrv_get_device_name ( bs )		1074559	1					
+ANR	1074686	Argument	bdrv_get_device_name ( bs )		1074559	0					
+ANR	1074687	CallExpression	bdrv_get_device_name ( bs )		1074559	0					
+ANR	1074688	Callee	bdrv_get_device_name		1074559	0					
+ANR	1074689	Identifier	bdrv_get_device_name		1074559	0					
+ANR	1074690	ArgumentList	bs		1074559	1					
+ANR	1074691	Argument	bs		1074559	0					
+ANR	1074692	Identifier	bs		1074559	0					
+ANR	1074693	ExpressionStatement	job -> blk = blk	49:4:819:843	1074559	12	True				
+ANR	1074694	AssignmentExpression	job -> blk = blk		1074559	0		=			
+ANR	1074695	PtrMemberAccess	job -> blk		1074559	0					
+ANR	1074696	Identifier	job		1074559	0					
+ANR	1074697	Identifier	blk		1074559	1					
+ANR	1074698	Identifier	blk		1074559	1					
+ANR	1074699	ExpressionStatement	job -> cb = cb	51:4:850:873	1074559	13	True				
+ANR	1074700	AssignmentExpression	job -> cb = cb		1074559	0		=			
+ANR	1074701	PtrMemberAccess	job -> cb		1074559	0					
+ANR	1074702	Identifier	job		1074559	0					
+ANR	1074703	Identifier	cb		1074559	1					
+ANR	1074704	Identifier	cb		1074559	1					
+ANR	1074705	ExpressionStatement	job -> opaque = opaque	53:4:880:907	1074559	14	True				
+ANR	1074706	AssignmentExpression	job -> opaque = opaque		1074559	0		=			
+ANR	1074707	PtrMemberAccess	job -> opaque		1074559	0					
+ANR	1074708	Identifier	job		1074559	0					
+ANR	1074709	Identifier	opaque		1074559	1					
+ANR	1074710	Identifier	opaque		1074559	1					
+ANR	1074711	ExpressionStatement	job -> busy = true	55:4:914:939	1074559	15	True				
+ANR	1074712	AssignmentExpression	job -> busy = true		1074559	0		=			
+ANR	1074713	PtrMemberAccess	job -> busy		1074559	0					
+ANR	1074714	Identifier	job		1074559	0					
+ANR	1074715	Identifier	busy		1074559	1					
+ANR	1074716	Identifier	true		1074559	1					
+ANR	1074717	ExpressionStatement	job -> refcnt = 1	57:4:946:968	1074559	16	True				
+ANR	1074718	AssignmentExpression	job -> refcnt = 1		1074559	0		=			
+ANR	1074719	PtrMemberAccess	job -> refcnt		1074559	0					
+ANR	1074720	Identifier	job		1074559	0					
+ANR	1074721	Identifier	refcnt		1074559	1					
+ANR	1074722	PrimaryExpression	1		1074559	1					
+ANR	1074723	ExpressionStatement	bs -> job = job	59:4:975:988	1074559	17	True				
+ANR	1074724	AssignmentExpression	bs -> job = job		1074559	0		=			
+ANR	1074725	PtrMemberAccess	bs -> job		1074559	0					
+ANR	1074726	Identifier	bs		1074559	0					
+ANR	1074727	Identifier	job		1074559	1					
+ANR	1074728	Identifier	job		1074559	1					
+ANR	1074729	ExpressionStatement	"QLIST_INSERT_HEAD ( & block_jobs , job , job_list )"	63:4:997:1042	1074559	18	True				
+ANR	1074730	CallExpression	"QLIST_INSERT_HEAD ( & block_jobs , job , job_list )"		1074559	0					
+ANR	1074731	Callee	QLIST_INSERT_HEAD		1074559	0					
+ANR	1074732	Identifier	QLIST_INSERT_HEAD		1074559	0					
+ANR	1074733	ArgumentList	& block_jobs		1074559	1					
+ANR	1074734	Argument	& block_jobs		1074559	0					
+ANR	1074735	UnaryOperationExpression	& block_jobs		1074559	0					
+ANR	1074736	UnaryOperator	&		1074559	0					
+ANR	1074737	Identifier	block_jobs		1074559	1					
+ANR	1074738	Argument	job		1074559	1					
+ANR	1074739	Identifier	job		1074559	0					
+ANR	1074740	Argument	job_list		1074559	2					
+ANR	1074741	Identifier	job_list		1074559	0					
+ANR	1074742	ExpressionStatement	"blk_add_aio_context_notifier ( blk , block_job_attached_aio_context , block_job_detach_aio_context , job )"	67:4:1051:1185	1074559	19	True				
+ANR	1074743	CallExpression	"blk_add_aio_context_notifier ( blk , block_job_attached_aio_context , block_job_detach_aio_context , job )"		1074559	0					
+ANR	1074744	Callee	blk_add_aio_context_notifier		1074559	0					
+ANR	1074745	Identifier	blk_add_aio_context_notifier		1074559	0					
+ANR	1074746	ArgumentList	blk		1074559	1					
+ANR	1074747	Argument	blk		1074559	0					
+ANR	1074748	Identifier	blk		1074559	0					
+ANR	1074749	Argument	block_job_attached_aio_context		1074559	1					
+ANR	1074750	Identifier	block_job_attached_aio_context		1074559	0					
+ANR	1074751	Argument	block_job_detach_aio_context		1074559	2					
+ANR	1074752	Identifier	block_job_detach_aio_context		1074559	0					
+ANR	1074753	Argument	job		1074559	3					
+ANR	1074754	Identifier	job		1074559	0					
+ANR	1074755	IfStatement	if ( speed != 0 )		1074559	20					
+ANR	1074756	Condition	speed != 0	75:8:1267:1276	1074559	0	True				
+ANR	1074757	EqualityExpression	speed != 0		1074559	0		!=			
+ANR	1074758	Identifier	speed		1074559	0					
+ANR	1074759	PrimaryExpression	0		1074559	1					
+ANR	1074760	CompoundStatement		71:8:1097:1120	1074559	1					
+ANR	1074761	IdentifierDeclStatement	Error * local_err = NULL ;	77:8:1290:1313	1074559	0	True				
+ANR	1074762	IdentifierDecl	* local_err = NULL		1074559	0					
+ANR	1074763	IdentifierDeclType	Error *		1074559	0					
+ANR	1074764	Identifier	local_err		1074559	1					
+ANR	1074765	AssignmentExpression	* local_err = NULL		1074559	2		=			
+ANR	1074766	Identifier	NULL		1074559	0					
+ANR	1074767	Identifier	NULL		1074559	1					
+ANR	1074768	ExpressionStatement	"block_job_set_speed ( job , speed , & local_err )"	81:8:1326:1369	1074559	1	True				
+ANR	1074769	CallExpression	"block_job_set_speed ( job , speed , & local_err )"		1074559	0					
+ANR	1074770	Callee	block_job_set_speed		1074559	0					
+ANR	1074771	Identifier	block_job_set_speed		1074559	0					
+ANR	1074772	ArgumentList	job		1074559	1					
+ANR	1074773	Argument	job		1074559	0					
+ANR	1074774	Identifier	job		1074559	0					
+ANR	1074775	Argument	speed		1074559	1					
+ANR	1074776	Identifier	speed		1074559	0					
+ANR	1074777	Argument	& local_err		1074559	2					
+ANR	1074778	UnaryOperationExpression	& local_err		1074559	0					
+ANR	1074779	UnaryOperator	&		1074559	0					
+ANR	1074780	Identifier	local_err		1074559	1					
+ANR	1074781	IfStatement	if ( local_err )		1074559	2					
+ANR	1074782	Condition	local_err	83:12:1384:1392	1074559	0	True				
+ANR	1074783	Identifier	local_err		1074559	0					
+ANR	1074784	CompoundStatement		77:23:1202:1202	1074559	1					
+ANR	1074785	ExpressionStatement	block_job_unref ( job )	85:12:1410:1430	1074559	0	True				
+ANR	1074786	CallExpression	block_job_unref ( job )		1074559	0					
+ANR	1074787	Callee	block_job_unref		1074559	0					
+ANR	1074788	Identifier	block_job_unref		1074559	0					
+ANR	1074789	ArgumentList	job		1074559	1					
+ANR	1074790	Argument	job		1074559	0					
+ANR	1074791	Identifier	job		1074559	0					
+ANR	1074792	ExpressionStatement	"error_propagate ( errp , local_err )"	87:12:1445:1477	1074559	1	True				
+ANR	1074793	CallExpression	"error_propagate ( errp , local_err )"		1074559	0					
+ANR	1074794	Callee	error_propagate		1074559	0					
+ANR	1074795	Identifier	error_propagate		1074559	0					
+ANR	1074796	ArgumentList	errp		1074559	1					
+ANR	1074797	Argument	errp		1074559	0					
+ANR	1074798	Identifier	errp		1074559	0					
+ANR	1074799	Argument	local_err		1074559	1					
+ANR	1074800	Identifier	local_err		1074559	0					
+ANR	1074801	ReturnStatement	return NULL ;	89:12:1492:1503	1074559	2	True				
+ANR	1074802	Identifier	NULL		1074559	0					
+ANR	1074803	ReturnStatement	return job ;	95:4:1528:1538	1074559	21	True				
+ANR	1074804	Identifier	job		1074559	0					
+ANR	1074805	ReturnType	void *		1074559	1					
+ANR	1074806	Identifier	block_job_create		1074559	2					
+ANR	1074807	ParameterList	"const BlockJobDriver * driver , BlockDriverState * bs , int64_t speed , BlockCompletionFunc * cb , void * opaque , Error * * errp"		1074559	3					
+ANR	1074808	Parameter	const BlockJobDriver * driver	1:23:23:50	1074559	0	True				
+ANR	1074809	ParameterType	const BlockJobDriver *		1074559	0					
+ANR	1074810	Identifier	driver		1074559	1					
+ANR	1074811	Parameter	BlockDriverState * bs	1:53:53:72	1074559	1	True				
+ANR	1074812	ParameterType	BlockDriverState *		1074559	0					
+ANR	1074813	Identifier	bs		1074559	1					
+ANR	1074814	Parameter	int64_t speed	3:23:99:111	1074559	2	True				
+ANR	1074815	ParameterType	int64_t		1074559	0					
+ANR	1074816	Identifier	speed		1074559	1					
+ANR	1074817	Parameter	BlockCompletionFunc * cb	3:38:114:136	1074559	3	True				
+ANR	1074818	ParameterType	BlockCompletionFunc *		1074559	0					
+ANR	1074819	Identifier	cb		1074559	1					
+ANR	1074820	Parameter	void * opaque	5:23:163:174	1074559	4	True				
+ANR	1074821	ParameterType	void *		1074559	0					
+ANR	1074822	Identifier	opaque		1074559	1					
+ANR	1074823	Parameter	Error * * errp	5:37:177:188	1074559	5	True				
+ANR	1074824	ParameterType	Error * *		1074559	0					
+ANR	1074825	Identifier	errp		1074559	1					
+ANR	1074826	CFGEntryNode	ENTRY		1074559		True				
+ANR	1074827	CFGExitNode	EXIT		1074559		True				
+ANR	1074828	Symbol	job -> refcnt		1074559						
+ANR	1074829	Symbol	errp		1074559						
+ANR	1074830	Symbol	job -> cb		1074559						
+ANR	1074831	Symbol	BLOCK_OP_TYPE_DATAPLANE		1074559						
+ANR	1074832	Symbol	job -> id		1074559						
+ANR	1074833	Symbol	* driver		1074559						
+ANR	1074834	Symbol	block_job_detach_aio_context		1074559						
+ANR	1074835	Symbol	speed		1074559						
+ANR	1074836	Symbol	* driver -> job_type		1074559						
+ANR	1074837	Symbol	BlockJobType_lookup		1074559						
+ANR	1074838	Symbol	bs		1074559						
+ANR	1074839	Symbol	* bs		1074559						
+ANR	1074840	Symbol	job -> opaque		1074559						
+ANR	1074841	Symbol	block_job_attached_aio_context		1074559						
+ANR	1074842	Symbol	g_strdup		1074559						
+ANR	1074843	Symbol	job_list		1074559						
+ANR	1074844	Symbol	& local_err		1074559						
+ANR	1074845	Symbol	bs -> job		1074559						
+ANR	1074846	Symbol	job -> blocker		1074559						
+ANR	1074847	Symbol	& block_jobs		1074559						
+ANR	1074848	Symbol	cb		1074559						
+ANR	1074849	Symbol	blk		1074559						
+ANR	1074850	Symbol	job -> driver		1074559						
+ANR	1074851	Symbol	opaque		1074559						
+ANR	1074852	Symbol	QERR_DEVICE_IN_USE		1074559						
+ANR	1074853	Symbol	NULL		1074559						
+ANR	1074854	Symbol	& job -> blocker		1074559						
+ANR	1074855	Symbol	job -> blk		1074559						
+ANR	1074856	Symbol	* job		1074559						
+ANR	1074857	Symbol	* BlockJobType_lookup		1074559						
+ANR	1074858	Symbol	bdrv_get_device_name		1074559						
+ANR	1074859	Symbol	driver -> instance_size		1074559						
+ANR	1074860	Symbol	driver		1074559						
+ANR	1074861	Symbol	true		1074559						
+ANR	1074862	Symbol	g_malloc0		1074559						
+ANR	1074863	Symbol	* * driver		1074559						
+ANR	1074864	Symbol	job		1074559						
+ANR	1074865	Symbol	blk_new		1074559						
+ANR	1074866	Symbol	job -> busy		1074559						
+ANR	1074867	Symbol	driver -> job_type		1074559						
+ANR	1074868	Symbol	local_err		1074559						

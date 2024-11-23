@@ -1,0 +1,233 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7516929	File	/home/p4ultr4n/workplace/ReVeal/raw_code/rtsp_send_cmd_async_0.c								
+ANR	7516930	Function	rtsp_send_cmd_async	1:0:0:930							
+ANR	7516931	FunctionDef	"rtsp_send_cmd_async (AVFormatContext * s , const char * cmd , RTSPMessageHeader * reply , unsigned char * * content_ptr)"		7516930	0					
+ANR	7516932	CompoundStatement		7:0:180:930	7516930	0					
+ANR	7516933	IdentifierDeclStatement	RTSPState * rt = s -> priv_data ;	9:4:187:215	7516930	0	True				
+ANR	7516934	IdentifierDecl	* rt = s -> priv_data		7516930	0					
+ANR	7516935	IdentifierDeclType	RTSPState *		7516930	0					
+ANR	7516936	Identifier	rt		7516930	1					
+ANR	7516937	AssignmentExpression	* rt = s -> priv_data		7516930	2		=			
+ANR	7516938	Identifier	rt		7516930	0					
+ANR	7516939	PtrMemberAccess	s -> priv_data		7516930	1					
+ANR	7516940	Identifier	s		7516930	0					
+ANR	7516941	Identifier	priv_data		7516930	1					
+ANR	7516942	IdentifierDeclStatement	"char buf [ 4096 ] , buf1 [ 1024 ] ;"	11:4:222:248	7516930	1	True				
+ANR	7516943	IdentifierDecl	buf [ 4096 ]		7516930	0					
+ANR	7516944	IdentifierDeclType	char [ 4096 ]		7516930	0					
+ANR	7516945	Identifier	buf		7516930	1					
+ANR	7516946	PrimaryExpression	4096		7516930	2					
+ANR	7516947	IdentifierDecl	buf1 [ 1024 ]		7516930	1					
+ANR	7516948	IdentifierDeclType	char [ 1024 ]		7516930	0					
+ANR	7516949	Identifier	buf1		7516930	1					
+ANR	7516950	PrimaryExpression	1024		7516930	2					
+ANR	7516951	ExpressionStatement	rt -> seq ++	15:4:257:266	7516930	2	True				
+ANR	7516952	PostIncDecOperationExpression	rt -> seq ++		7516930	0					
+ANR	7516953	PtrMemberAccess	rt -> seq		7516930	0					
+ANR	7516954	Identifier	rt		7516930	0					
+ANR	7516955	Identifier	seq		7516930	1					
+ANR	7516956	IncDec	++		7516930	1					
+ANR	7516957	ExpressionStatement	"av_strlcpy ( buf , cmd , sizeof ( buf ) )"	17:4:273:306	7516930	3	True				
+ANR	7516958	CallExpression	"av_strlcpy ( buf , cmd , sizeof ( buf ) )"		7516930	0					
+ANR	7516959	Callee	av_strlcpy		7516930	0					
+ANR	7516960	Identifier	av_strlcpy		7516930	0					
+ANR	7516961	ArgumentList	buf		7516930	1					
+ANR	7516962	Argument	buf		7516930	0					
+ANR	7516963	Identifier	buf		7516930	0					
+ANR	7516964	Argument	cmd		7516930	1					
+ANR	7516965	Identifier	cmd		7516930	0					
+ANR	7516966	Argument	sizeof ( buf )		7516930	2					
+ANR	7516967	SizeofExpression	sizeof ( buf )		7516930	0					
+ANR	7516968	Sizeof	sizeof		7516930	0					
+ANR	7516969	SizeofOperand	buf		7516930	1					
+ANR	7516970	ExpressionStatement	"snprintf ( buf1 , sizeof ( buf1 ) , ""CSeq: %d\\r\\n"" , rt -> seq )"	19:4:313:366	7516930	4	True				
+ANR	7516971	CallExpression	"snprintf ( buf1 , sizeof ( buf1 ) , ""CSeq: %d\\r\\n"" , rt -> seq )"		7516930	0					
+ANR	7516972	Callee	snprintf		7516930	0					
+ANR	7516973	Identifier	snprintf		7516930	0					
+ANR	7516974	ArgumentList	buf1		7516930	1					
+ANR	7516975	Argument	buf1		7516930	0					
+ANR	7516976	Identifier	buf1		7516930	0					
+ANR	7516977	Argument	sizeof ( buf1 )		7516930	1					
+ANR	7516978	SizeofExpression	sizeof ( buf1 )		7516930	0					
+ANR	7516979	Sizeof	sizeof		7516930	0					
+ANR	7516980	SizeofOperand	buf1		7516930	1					
+ANR	7516981	Argument	"""CSeq: %d\\r\\n"""		7516930	2					
+ANR	7516982	PrimaryExpression	"""CSeq: %d\\r\\n"""		7516930	0					
+ANR	7516983	Argument	rt -> seq		7516930	3					
+ANR	7516984	PtrMemberAccess	rt -> seq		7516930	0					
+ANR	7516985	Identifier	rt		7516930	0					
+ANR	7516986	Identifier	seq		7516930	1					
+ANR	7516987	ExpressionStatement	"av_strlcat ( buf , buf1 , sizeof ( buf ) )"	21:4:373:407	7516930	5	True				
+ANR	7516988	CallExpression	"av_strlcat ( buf , buf1 , sizeof ( buf ) )"		7516930	0					
+ANR	7516989	Callee	av_strlcat		7516930	0					
+ANR	7516990	Identifier	av_strlcat		7516930	0					
+ANR	7516991	ArgumentList	buf		7516930	1					
+ANR	7516992	Argument	buf		7516930	0					
+ANR	7516993	Identifier	buf		7516930	0					
+ANR	7516994	Argument	buf1		7516930	1					
+ANR	7516995	Identifier	buf1		7516930	0					
+ANR	7516996	Argument	sizeof ( buf )		7516930	2					
+ANR	7516997	SizeofExpression	sizeof ( buf )		7516930	0					
+ANR	7516998	Sizeof	sizeof		7516930	0					
+ANR	7516999	SizeofOperand	buf		7516930	1					
+ANR	7517000	IfStatement	"if ( rt -> session_id [ 0 ] != '\\0' && ! strstr ( cmd , ""\\nIf-Match:"" ) )"		7516930	6					
+ANR	7517001	Condition	"rt -> session_id [ 0 ] != '\\0' && ! strstr ( cmd , ""\\nIf-Match:"" )"	23:8:418:473	7516930	0	True				
+ANR	7517002	AndExpression	"rt -> session_id [ 0 ] != '\\0' && ! strstr ( cmd , ""\\nIf-Match:"" )"		7516930	0		&&			
+ANR	7517003	EqualityExpression	rt -> session_id [ 0 ] != '\\0'		7516930	0		!=			
+ANR	7517004	ArrayIndexing	rt -> session_id [ 0 ]		7516930	0					
+ANR	7517005	PtrMemberAccess	rt -> session_id		7516930	0					
+ANR	7517006	Identifier	rt		7516930	0					
+ANR	7517007	Identifier	session_id		7516930	1					
+ANR	7517008	PrimaryExpression	0		7516930	1					
+ANR	7517009	PrimaryExpression	'\\0'		7516930	1					
+ANR	7517010	UnaryOperationExpression	"! strstr ( cmd , ""\\nIf-Match:"" )"		7516930	1					
+ANR	7517011	UnaryOperator	!		7516930	0					
+ANR	7517012	CallExpression	"strstr ( cmd , ""\\nIf-Match:"" )"		7516930	1					
+ANR	7517013	Callee	strstr		7516930	0					
+ANR	7517014	Identifier	strstr		7516930	0					
+ANR	7517015	ArgumentList	cmd		7516930	1					
+ANR	7517016	Argument	cmd		7516930	0					
+ANR	7517017	Identifier	cmd		7516930	0					
+ANR	7517018	Argument	"""\\nIf-Match:"""		7516930	1					
+ANR	7517019	PrimaryExpression	"""\\nIf-Match:"""		7516930	0					
+ANR	7517020	CompoundStatement		17:66:295:295	7516930	1					
+ANR	7517021	ExpressionStatement	"snprintf ( buf1 , sizeof ( buf1 ) , ""Session: %s\\r\\n"" , rt -> session_id )"	25:8:487:550	7516930	0	True				
+ANR	7517022	CallExpression	"snprintf ( buf1 , sizeof ( buf1 ) , ""Session: %s\\r\\n"" , rt -> session_id )"		7516930	0					
+ANR	7517023	Callee	snprintf		7516930	0					
+ANR	7517024	Identifier	snprintf		7516930	0					
+ANR	7517025	ArgumentList	buf1		7516930	1					
+ANR	7517026	Argument	buf1		7516930	0					
+ANR	7517027	Identifier	buf1		7516930	0					
+ANR	7517028	Argument	sizeof ( buf1 )		7516930	1					
+ANR	7517029	SizeofExpression	sizeof ( buf1 )		7516930	0					
+ANR	7517030	Sizeof	sizeof		7516930	0					
+ANR	7517031	SizeofOperand	buf1		7516930	1					
+ANR	7517032	Argument	"""Session: %s\\r\\n"""		7516930	2					
+ANR	7517033	PrimaryExpression	"""Session: %s\\r\\n"""		7516930	0					
+ANR	7517034	Argument	rt -> session_id		7516930	3					
+ANR	7517035	PtrMemberAccess	rt -> session_id		7516930	0					
+ANR	7517036	Identifier	rt		7516930	0					
+ANR	7517037	Identifier	session_id		7516930	1					
+ANR	7517038	ExpressionStatement	"av_strlcat ( buf , buf1 , sizeof ( buf ) )"	27:8:561:595	7516930	1	True				
+ANR	7517039	CallExpression	"av_strlcat ( buf , buf1 , sizeof ( buf ) )"		7516930	0					
+ANR	7517040	Callee	av_strlcat		7516930	0					
+ANR	7517041	Identifier	av_strlcat		7516930	0					
+ANR	7517042	ArgumentList	buf		7516930	1					
+ANR	7517043	Argument	buf		7516930	0					
+ANR	7517044	Identifier	buf		7516930	0					
+ANR	7517045	Argument	buf1		7516930	1					
+ANR	7517046	Identifier	buf1		7516930	0					
+ANR	7517047	Argument	sizeof ( buf )		7516930	2					
+ANR	7517048	SizeofExpression	sizeof ( buf )		7516930	0					
+ANR	7517049	Sizeof	sizeof		7516930	0					
+ANR	7517050	SizeofOperand	buf		7516930	1					
+ANR	7517051	IfStatement	if ( rt -> auth_b64 )		7516930	7					
+ANR	7517052	Condition	rt -> auth_b64	31:8:613:624	7516930	0	True				
+ANR	7517053	PtrMemberAccess	rt -> auth_b64		7516930	0					
+ANR	7517054	Identifier	rt		7516930	0					
+ANR	7517055	Identifier	auth_b64		7516930	1					
+ANR	7517056	ExpressionStatement	"av_strlcatf ( buf , sizeof ( buf ) , ""Authorization: Basic %s\\r\\n"" , rt -> auth_b64 )"	33:8:636:752	7516930	1	True				
+ANR	7517057	CallExpression	"av_strlcatf ( buf , sizeof ( buf ) , ""Authorization: Basic %s\\r\\n"" , rt -> auth_b64 )"		7516930	0					
+ANR	7517058	Callee	av_strlcatf		7516930	0					
+ANR	7517059	Identifier	av_strlcatf		7516930	0					
+ANR	7517060	ArgumentList	buf		7516930	1					
+ANR	7517061	Argument	buf		7516930	0					
+ANR	7517062	Identifier	buf		7516930	0					
+ANR	7517063	Argument	sizeof ( buf )		7516930	1					
+ANR	7517064	SizeofExpression	sizeof ( buf )		7516930	0					
+ANR	7517065	Sizeof	sizeof		7516930	0					
+ANR	7517066	SizeofOperand	buf		7516930	1					
+ANR	7517067	Argument	"""Authorization: Basic %s\\r\\n"""		7516930	2					
+ANR	7517068	PrimaryExpression	"""Authorization: Basic %s\\r\\n"""		7516930	0					
+ANR	7517069	Argument	rt -> auth_b64		7516930	3					
+ANR	7517070	PtrMemberAccess	rt -> auth_b64		7516930	0					
+ANR	7517071	Identifier	rt		7516930	0					
+ANR	7517072	Identifier	auth_b64		7516930	1					
+ANR	7517073	ExpressionStatement	"av_strlcat ( buf , ""\\r\\n"" , sizeof ( buf ) )"	39:4:759:795	7516930	8	True				
+ANR	7517074	CallExpression	"av_strlcat ( buf , ""\\r\\n"" , sizeof ( buf ) )"		7516930	0					
+ANR	7517075	Callee	av_strlcat		7516930	0					
+ANR	7517076	Identifier	av_strlcat		7516930	0					
+ANR	7517077	ArgumentList	buf		7516930	1					
+ANR	7517078	Argument	buf		7516930	0					
+ANR	7517079	Identifier	buf		7516930	0					
+ANR	7517080	Argument	"""\\r\\n"""		7516930	1					
+ANR	7517081	PrimaryExpression	"""\\r\\n"""		7516930	0					
+ANR	7517082	Argument	sizeof ( buf )		7516930	2					
+ANR	7517083	SizeofExpression	sizeof ( buf )		7516930	0					
+ANR	7517084	Sizeof	sizeof		7516930	0					
+ANR	7517085	SizeofOperand	buf		7516930	1					
+ANR	7517086	ExpressionStatement	"dprintf ( s , ""Sending:\\n%s--\\n"" , buf )"	43:4:804:839	7516930	9	True				
+ANR	7517087	CallExpression	"dprintf ( s , ""Sending:\\n%s--\\n"" , buf )"		7516930	0					
+ANR	7517088	Callee	dprintf		7516930	0					
+ANR	7517089	Identifier	dprintf		7516930	0					
+ANR	7517090	ArgumentList	s		7516930	1					
+ANR	7517091	Argument	s		7516930	0					
+ANR	7517092	Identifier	s		7516930	0					
+ANR	7517093	Argument	"""Sending:\\n%s--\\n"""		7516930	1					
+ANR	7517094	PrimaryExpression	"""Sending:\\n%s--\\n"""		7516930	0					
+ANR	7517095	Argument	buf		7516930	2					
+ANR	7517096	Identifier	buf		7516930	0					
+ANR	7517097	ExpressionStatement	"url_write ( rt -> rtsp_hd , buf , strlen ( buf ) )"	47:4:848:888	7516930	10	True				
+ANR	7517098	CallExpression	"url_write ( rt -> rtsp_hd , buf , strlen ( buf ) )"		7516930	0					
+ANR	7517099	Callee	url_write		7516930	0					
+ANR	7517100	Identifier	url_write		7516930	0					
+ANR	7517101	ArgumentList	rt -> rtsp_hd		7516930	1					
+ANR	7517102	Argument	rt -> rtsp_hd		7516930	0					
+ANR	7517103	PtrMemberAccess	rt -> rtsp_hd		7516930	0					
+ANR	7517104	Identifier	rt		7516930	0					
+ANR	7517105	Identifier	rtsp_hd		7516930	1					
+ANR	7517106	Argument	buf		7516930	1					
+ANR	7517107	Identifier	buf		7516930	0					
+ANR	7517108	Argument	strlen ( buf )		7516930	2					
+ANR	7517109	CallExpression	strlen ( buf )		7516930	0					
+ANR	7517110	Callee	strlen		7516930	0					
+ANR	7517111	Identifier	strlen		7516930	0					
+ANR	7517112	ArgumentList	buf		7516930	1					
+ANR	7517113	Argument	buf		7516930	0					
+ANR	7517114	Identifier	buf		7516930	0					
+ANR	7517115	ExpressionStatement	rt -> last_cmd_time = av_gettime ( )	49:4:895:927	7516930	11	True				
+ANR	7517116	AssignmentExpression	rt -> last_cmd_time = av_gettime ( )		7516930	0		=			
+ANR	7517117	PtrMemberAccess	rt -> last_cmd_time		7516930	0					
+ANR	7517118	Identifier	rt		7516930	0					
+ANR	7517119	Identifier	last_cmd_time		7516930	1					
+ANR	7517120	CallExpression	av_gettime ( )		7516930	1					
+ANR	7517121	Callee	av_gettime		7516930	0					
+ANR	7517122	Identifier	av_gettime		7516930	0					
+ANR	7517123	ArgumentList			7516930	1					
+ANR	7517124	ReturnType	static void		7516930	1					
+ANR	7517125	Identifier	rtsp_send_cmd_async		7516930	2					
+ANR	7517126	ParameterList	"AVFormatContext * s , const char * cmd , RTSPMessageHeader * reply , unsigned char * * content_ptr"		7516930	3					
+ANR	7517127	Parameter	AVFormatContext * s	1:33:33:50	7516930	0	True				
+ANR	7517128	ParameterType	AVFormatContext *		7516930	0					
+ANR	7517129	Identifier	s		7516930	1					
+ANR	7517130	Parameter	const char * cmd	3:26:80:94	7516930	1	True				
+ANR	7517131	ParameterType	const char *		7516930	0					
+ANR	7517132	Identifier	cmd		7516930	1					
+ANR	7517133	Parameter	RTSPMessageHeader * reply	3:43:97:120	7516930	2	True				
+ANR	7517134	ParameterType	RTSPMessageHeader *		7516930	0					
+ANR	7517135	Identifier	reply		7516930	1					
+ANR	7517136	Parameter	unsigned char * * content_ptr	5:26:150:176	7516930	3	True				
+ANR	7517137	ParameterType	unsigned char * *		7516930	0					
+ANR	7517138	Identifier	content_ptr		7516930	1					
+ANR	7517139	CFGEntryNode	ENTRY		7516930		True				
+ANR	7517140	CFGExitNode	EXIT		7516930		True				
+ANR	7517141	Symbol	s -> priv_data		7516930						
+ANR	7517142	Symbol	rt		7516930						
+ANR	7517143	Symbol	rt -> seq		7516930						
+ANR	7517144	Symbol	* rt		7516930						
+ANR	7517145	Symbol	* * rt		7516930						
+ANR	7517146	Symbol	rt -> last_cmd_time		7516930						
+ANR	7517147	Symbol	buf1		7516930						
+ANR	7517148	Symbol	strlen		7516930						
+ANR	7517149	Symbol	buf		7516930						
+ANR	7517150	Symbol	s		7516930						
+ANR	7517151	Symbol	strstr		7516930						
+ANR	7517152	Symbol	rt -> session_id		7516930						
+ANR	7517153	Symbol	rt -> rtsp_hd		7516930						
+ANR	7517154	Symbol	cmd		7516930						
+ANR	7517155	Symbol	content_ptr		7516930						
+ANR	7517156	Symbol	av_gettime		7516930						
+ANR	7517157	Symbol	reply		7516930						
+ANR	7517158	Symbol	* rt -> session_id		7516930						
+ANR	7517159	Symbol	* s		7516930						
+ANR	7517160	Symbol	rt -> auth_b64		7516930						

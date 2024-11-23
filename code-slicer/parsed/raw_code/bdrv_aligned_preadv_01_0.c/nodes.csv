@@ -1,0 +1,430 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	940344	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_aligned_preadv_01_0.c								
+ANR	940345	Function	bdrv_aligned_preadv	1:0:0:2438							
+ANR	940346	FunctionDef	"bdrv_aligned_preadv (BlockDriverState * bs , int64_t offset , unsigned int bytes , QEMUIOVector * qiov , int flags)"		940345	0					
+ANR	940347	CompoundStatement		5:0:139:2438	940345	0					
+ANR	940348	IdentifierDeclStatement	BlockDriver * drv = bs -> drv ;	7:4:146:172	940345	0	True				
+ANR	940349	IdentifierDecl	* drv = bs -> drv		940345	0					
+ANR	940350	IdentifierDeclType	BlockDriver *		940345	0					
+ANR	940351	Identifier	drv		940345	1					
+ANR	940352	AssignmentExpression	* drv = bs -> drv		940345	2		=			
+ANR	940353	Identifier	drv		940345	0					
+ANR	940354	PtrMemberAccess	bs -> drv		940345	1					
+ANR	940355	Identifier	bs		940345	0					
+ANR	940356	Identifier	drv		940345	1					
+ANR	940357	IdentifierDeclStatement	BdrvTrackedRequest req ;	9:4:179:201	940345	1	True				
+ANR	940358	IdentifierDecl	req		940345	0					
+ANR	940359	IdentifierDeclType	BdrvTrackedRequest		940345	0					
+ANR	940360	Identifier	req		940345	1					
+ANR	940361	IdentifierDeclStatement	int ret ;	11:4:208:215	940345	2	True				
+ANR	940362	IdentifierDecl	ret		940345	0					
+ANR	940363	IdentifierDeclType	int		940345	0					
+ANR	940364	Identifier	ret		940345	1					
+ANR	940365	IdentifierDeclStatement	int64_t sector_num = offset >> BDRV_SECTOR_BITS ;	15:4:224:271	940345	3	True				
+ANR	940366	IdentifierDecl	sector_num = offset >> BDRV_SECTOR_BITS		940345	0					
+ANR	940367	IdentifierDeclType	int64_t		940345	0					
+ANR	940368	Identifier	sector_num		940345	1					
+ANR	940369	AssignmentExpression	sector_num = offset >> BDRV_SECTOR_BITS		940345	2		=			
+ANR	940370	Identifier	sector_num		940345	0					
+ANR	940371	ShiftExpression	offset >> BDRV_SECTOR_BITS		940345	1		>>			
+ANR	940372	Identifier	offset		940345	0					
+ANR	940373	Identifier	BDRV_SECTOR_BITS		940345	1					
+ANR	940374	IdentifierDeclStatement	unsigned int nb_sectors = bytes >> BDRV_SECTOR_BITS ;	17:4:278:329	940345	4	True				
+ANR	940375	IdentifierDecl	nb_sectors = bytes >> BDRV_SECTOR_BITS		940345	0					
+ANR	940376	IdentifierDeclType	unsigned int		940345	0					
+ANR	940377	Identifier	nb_sectors		940345	1					
+ANR	940378	AssignmentExpression	nb_sectors = bytes >> BDRV_SECTOR_BITS		940345	2		=			
+ANR	940379	Identifier	nb_sectors		940345	0					
+ANR	940380	ShiftExpression	bytes >> BDRV_SECTOR_BITS		940345	1		>>			
+ANR	940381	Identifier	bytes		940345	0					
+ANR	940382	Identifier	BDRV_SECTOR_BITS		940345	1					
+ANR	940383	ExpressionStatement	assert ( ( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )	21:4:338:384	940345	5	True				
+ANR	940384	CallExpression	assert ( ( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )		940345	0					
+ANR	940385	Callee	assert		940345	0					
+ANR	940386	Identifier	assert		940345	0					
+ANR	940387	ArgumentList	( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		940345	1					
+ANR	940388	Argument	( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		940345	0					
+ANR	940389	EqualityExpression	( offset & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		940345	0		==			
+ANR	940390	BitAndExpression	offset & ( BDRV_SECTOR_SIZE - 1 )		940345	0		&			
+ANR	940391	Identifier	offset		940345	0					
+ANR	940392	AdditiveExpression	BDRV_SECTOR_SIZE - 1		940345	1		-			
+ANR	940393	Identifier	BDRV_SECTOR_SIZE		940345	0					
+ANR	940394	PrimaryExpression	1		940345	1					
+ANR	940395	PrimaryExpression	0		940345	1					
+ANR	940396	ExpressionStatement	assert ( ( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )	23:4:391:436	940345	6	True				
+ANR	940397	CallExpression	assert ( ( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0 )		940345	0					
+ANR	940398	Callee	assert		940345	0					
+ANR	940399	Identifier	assert		940345	0					
+ANR	940400	ArgumentList	( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		940345	1					
+ANR	940401	Argument	( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		940345	0					
+ANR	940402	EqualityExpression	( bytes & ( BDRV_SECTOR_SIZE - 1 ) ) == 0		940345	0		==			
+ANR	940403	BitAndExpression	bytes & ( BDRV_SECTOR_SIZE - 1 )		940345	0		&			
+ANR	940404	Identifier	bytes		940345	0					
+ANR	940405	AdditiveExpression	BDRV_SECTOR_SIZE - 1		940345	1		-			
+ANR	940406	Identifier	BDRV_SECTOR_SIZE		940345	0					
+ANR	940407	PrimaryExpression	1		940345	1					
+ANR	940408	PrimaryExpression	0		940345	1					
+ANR	940409	IfStatement	if ( flags & BDRV_REQ_COPY_ON_READ )		940345	7					
+ANR	940410	Condition	flags & BDRV_REQ_COPY_ON_READ	29:8:509:537	940345	0	True				
+ANR	940411	BitAndExpression	flags & BDRV_REQ_COPY_ON_READ		940345	0		&			
+ANR	940412	Identifier	flags		940345	0					
+ANR	940413	Identifier	BDRV_REQ_COPY_ON_READ		940345	1					
+ANR	940414	CompoundStatement		25:39:400:400	940345	1					
+ANR	940415	ExpressionStatement	bs -> copy_on_read_in_flight ++	31:8:551:579	940345	0	True				
+ANR	940416	PostIncDecOperationExpression	bs -> copy_on_read_in_flight ++		940345	0					
+ANR	940417	PtrMemberAccess	bs -> copy_on_read_in_flight		940345	0					
+ANR	940418	Identifier	bs		940345	0					
+ANR	940419	Identifier	copy_on_read_in_flight		940345	1					
+ANR	940420	IncDec	++		940345	1					
+ANR	940421	IfStatement	if ( bs -> copy_on_read_in_flight )		940345	8					
+ANR	940422	Condition	bs -> copy_on_read_in_flight	37:8:599:624	940345	0	True				
+ANR	940423	PtrMemberAccess	bs -> copy_on_read_in_flight		940345	0					
+ANR	940424	Identifier	bs		940345	0					
+ANR	940425	Identifier	copy_on_read_in_flight		940345	1					
+ANR	940426	CompoundStatement		33:36:487:487	940345	1					
+ANR	940427	ExpressionStatement	"wait_for_overlapping_requests ( bs , offset , bytes )"	39:8:638:686	940345	0	True				
+ANR	940428	CallExpression	"wait_for_overlapping_requests ( bs , offset , bytes )"		940345	0					
+ANR	940429	Callee	wait_for_overlapping_requests		940345	0					
+ANR	940430	Identifier	wait_for_overlapping_requests		940345	0					
+ANR	940431	ArgumentList	bs		940345	1					
+ANR	940432	Argument	bs		940345	0					
+ANR	940433	Identifier	bs		940345	0					
+ANR	940434	Argument	offset		940345	1					
+ANR	940435	Identifier	offset		940345	0					
+ANR	940436	Argument	bytes		940345	2					
+ANR	940437	Identifier	bytes		940345	0					
+ANR	940438	ExpressionStatement	"tracked_request_begin ( & req , bs , offset , bytes , false )"	45:4:702:755	940345	9	True				
+ANR	940439	CallExpression	"tracked_request_begin ( & req , bs , offset , bytes , false )"		940345	0					
+ANR	940440	Callee	tracked_request_begin		940345	0					
+ANR	940441	Identifier	tracked_request_begin		940345	0					
+ANR	940442	ArgumentList	& req		940345	1					
+ANR	940443	Argument	& req		940345	0					
+ANR	940444	UnaryOperationExpression	& req		940345	0					
+ANR	940445	UnaryOperator	&		940345	0					
+ANR	940446	Identifier	req		940345	1					
+ANR	940447	Argument	bs		940345	1					
+ANR	940448	Identifier	bs		940345	0					
+ANR	940449	Argument	offset		940345	2					
+ANR	940450	Identifier	offset		940345	0					
+ANR	940451	Argument	bytes		940345	3					
+ANR	940452	Identifier	bytes		940345	0					
+ANR	940453	Argument	false		940345	4					
+ANR	940454	Identifier	false		940345	0					
+ANR	940455	IfStatement	if ( flags & BDRV_REQ_COPY_ON_READ )		940345	10					
+ANR	940456	Condition	flags & BDRV_REQ_COPY_ON_READ	49:8:768:796	940345	0	True				
+ANR	940457	BitAndExpression	flags & BDRV_REQ_COPY_ON_READ		940345	0		&			
+ANR	940458	Identifier	flags		940345	0					
+ANR	940459	Identifier	BDRV_REQ_COPY_ON_READ		940345	1					
+ANR	940460	CompoundStatement		47:8:670:678	940345	1					
+ANR	940461	IdentifierDeclStatement	int pnum ;	51:8:810:818	940345	0	True				
+ANR	940462	IdentifierDecl	pnum		940345	0					
+ANR	940463	IdentifierDeclType	int		940345	0					
+ANR	940464	Identifier	pnum		940345	1					
+ANR	940465	ExpressionStatement	"ret = bdrv_is_allocated ( bs , sector_num , nb_sectors , & pnum )"	55:8:831:889	940345	1	True				
+ANR	940466	AssignmentExpression	"ret = bdrv_is_allocated ( bs , sector_num , nb_sectors , & pnum )"		940345	0		=			
+ANR	940467	Identifier	ret		940345	0					
+ANR	940468	CallExpression	"bdrv_is_allocated ( bs , sector_num , nb_sectors , & pnum )"		940345	1					
+ANR	940469	Callee	bdrv_is_allocated		940345	0					
+ANR	940470	Identifier	bdrv_is_allocated		940345	0					
+ANR	940471	ArgumentList	bs		940345	1					
+ANR	940472	Argument	bs		940345	0					
+ANR	940473	Identifier	bs		940345	0					
+ANR	940474	Argument	sector_num		940345	1					
+ANR	940475	Identifier	sector_num		940345	0					
+ANR	940476	Argument	nb_sectors		940345	2					
+ANR	940477	Identifier	nb_sectors		940345	0					
+ANR	940478	Argument	& pnum		940345	3					
+ANR	940479	UnaryOperationExpression	& pnum		940345	0					
+ANR	940480	UnaryOperator	&		940345	0					
+ANR	940481	Identifier	pnum		940345	1					
+ANR	940482	IfStatement	if ( ret < 0 )		940345	2					
+ANR	940483	Condition	ret < 0	57:12:904:910	940345	0	True				
+ANR	940484	RelationalExpression	ret < 0		940345	0		<			
+ANR	940485	Identifier	ret		940345	0					
+ANR	940486	PrimaryExpression	0		940345	1					
+ANR	940487	CompoundStatement		53:21:773:773	940345	1					
+ANR	940488	GotoStatement	goto out ;	59:12:928:936	940345	0	True				
+ANR	940489	Identifier	out		940345	0					
+ANR	940490	IfStatement	if ( ! ret || pnum != nb_sectors )		940345	3					
+ANR	940491	Condition	! ret || pnum != nb_sectors	65:12:964:989	940345	0	True				
+ANR	940492	OrExpression	! ret || pnum != nb_sectors		940345	0		||			
+ANR	940493	UnaryOperationExpression	! ret		940345	0					
+ANR	940494	UnaryOperator	!		940345	0					
+ANR	940495	Identifier	ret		940345	1					
+ANR	940496	EqualityExpression	pnum != nb_sectors		940345	1		!=			
+ANR	940497	Identifier	pnum		940345	0					
+ANR	940498	Identifier	nb_sectors		940345	1					
+ANR	940499	CompoundStatement		61:40:852:852	940345	1					
+ANR	940500	ExpressionStatement	"ret = bdrv_co_do_copy_on_readv ( bs , sector_num , nb_sectors , qiov )"	67:12:1007:1071	940345	0	True				
+ANR	940501	AssignmentExpression	"ret = bdrv_co_do_copy_on_readv ( bs , sector_num , nb_sectors , qiov )"		940345	0		=			
+ANR	940502	Identifier	ret		940345	0					
+ANR	940503	CallExpression	"bdrv_co_do_copy_on_readv ( bs , sector_num , nb_sectors , qiov )"		940345	1					
+ANR	940504	Callee	bdrv_co_do_copy_on_readv		940345	0					
+ANR	940505	Identifier	bdrv_co_do_copy_on_readv		940345	0					
+ANR	940506	ArgumentList	bs		940345	1					
+ANR	940507	Argument	bs		940345	0					
+ANR	940508	Identifier	bs		940345	0					
+ANR	940509	Argument	sector_num		940345	1					
+ANR	940510	Identifier	sector_num		940345	0					
+ANR	940511	Argument	nb_sectors		940345	2					
+ANR	940512	Identifier	nb_sectors		940345	0					
+ANR	940513	Argument	qiov		940345	3					
+ANR	940514	Identifier	qiov		940345	0					
+ANR	940515	GotoStatement	goto out ;	69:12:1086:1094	940345	1	True				
+ANR	940516	Identifier	out		940345	0					
+ANR	940517	IfStatement	if ( ! ( bs -> zero_beyond_eof && bs -> growable ) )		940345	11					
+ANR	940518	Condition	! ( bs -> zero_beyond_eof && bs -> growable )	79:8:1175:1212	940345	0	True				
+ANR	940519	UnaryOperationExpression	! ( bs -> zero_beyond_eof && bs -> growable )		940345	0					
+ANR	940520	UnaryOperator	!		940345	0					
+ANR	940521	AndExpression	bs -> zero_beyond_eof && bs -> growable		940345	1		&&			
+ANR	940522	PtrMemberAccess	bs -> zero_beyond_eof		940345	0					
+ANR	940523	Identifier	bs		940345	0					
+ANR	940524	Identifier	zero_beyond_eof		940345	1					
+ANR	940525	PtrMemberAccess	bs -> growable		940345	1					
+ANR	940526	Identifier	bs		940345	0					
+ANR	940527	Identifier	growable		940345	1					
+ANR	940528	CompoundStatement		75:48:1075:1075	940345	1					
+ANR	940529	ExpressionStatement	"ret = drv -> bdrv_co_readv ( bs , sector_num , nb_sectors , qiov )"	81:8:1226:1284	940345	0	True				
+ANR	940530	AssignmentExpression	"ret = drv -> bdrv_co_readv ( bs , sector_num , nb_sectors , qiov )"		940345	0		=			
+ANR	940531	Identifier	ret		940345	0					
+ANR	940532	CallExpression	"drv -> bdrv_co_readv ( bs , sector_num , nb_sectors , qiov )"		940345	1					
+ANR	940533	Callee	drv -> bdrv_co_readv		940345	0					
+ANR	940534	PtrMemberAccess	drv -> bdrv_co_readv		940345	0					
+ANR	940535	Identifier	drv		940345	0					
+ANR	940536	Identifier	bdrv_co_readv		940345	1					
+ANR	940537	ArgumentList	bs		940345	1					
+ANR	940538	Argument	bs		940345	0					
+ANR	940539	Identifier	bs		940345	0					
+ANR	940540	Argument	sector_num		940345	1					
+ANR	940541	Identifier	sector_num		940345	0					
+ANR	940542	Argument	nb_sectors		940345	2					
+ANR	940543	Identifier	nb_sectors		940345	0					
+ANR	940544	Argument	qiov		940345	3					
+ANR	940545	Identifier	qiov		940345	0					
+ANR	940546	ElseStatement	else		940345	0					
+ANR	940547	CompoundStatement		83:8:1223:1265	940345	0					
+ANR	940548	IdentifierDeclStatement	"int64_t len , total_sectors , max_nb_sectors ;"	87:8:1363:1405	940345	0	True				
+ANR	940549	IdentifierDecl	len		940345	0					
+ANR	940550	IdentifierDeclType	int64_t		940345	0					
+ANR	940551	Identifier	len		940345	1					
+ANR	940552	IdentifierDecl	total_sectors		940345	1					
+ANR	940553	IdentifierDeclType	int64_t		940345	0					
+ANR	940554	Identifier	total_sectors		940345	1					
+ANR	940555	IdentifierDecl	max_nb_sectors		940345	2					
+ANR	940556	IdentifierDeclType	int64_t		940345	0					
+ANR	940557	Identifier	max_nb_sectors		940345	1					
+ANR	940558	ExpressionStatement	len = bdrv_getlength ( bs )	91:8:1418:1442	940345	1	True				
+ANR	940559	AssignmentExpression	len = bdrv_getlength ( bs )		940345	0		=			
+ANR	940560	Identifier	len		940345	0					
+ANR	940561	CallExpression	bdrv_getlength ( bs )		940345	1					
+ANR	940562	Callee	bdrv_getlength		940345	0					
+ANR	940563	Identifier	bdrv_getlength		940345	0					
+ANR	940564	ArgumentList	bs		940345	1					
+ANR	940565	Argument	bs		940345	0					
+ANR	940566	Identifier	bs		940345	0					
+ANR	940567	IfStatement	if ( len < 0 )		940345	2					
+ANR	940568	Condition	len < 0	93:12:1457:1463	940345	0	True				
+ANR	940569	RelationalExpression	len < 0		940345	0		<			
+ANR	940570	Identifier	len		940345	0					
+ANR	940571	PrimaryExpression	0		940345	1					
+ANR	940572	CompoundStatement		89:21:1326:1326	940345	1					
+ANR	940573	ExpressionStatement	ret = len	95:12:1481:1490	940345	0	True				
+ANR	940574	AssignmentExpression	ret = len		940345	0		=			
+ANR	940575	Identifier	ret		940345	0					
+ANR	940576	Identifier	len		940345	1					
+ANR	940577	GotoStatement	goto out ;	97:12:1505:1513	940345	1	True				
+ANR	940578	Identifier	out		940345	0					
+ANR	940579	ExpressionStatement	"total_sectors = DIV_ROUND_UP ( len , BDRV_SECTOR_SIZE )"	103:8:1537:1588	940345	3	True				
+ANR	940580	AssignmentExpression	"total_sectors = DIV_ROUND_UP ( len , BDRV_SECTOR_SIZE )"		940345	0		=			
+ANR	940581	Identifier	total_sectors		940345	0					
+ANR	940582	CallExpression	"DIV_ROUND_UP ( len , BDRV_SECTOR_SIZE )"		940345	1					
+ANR	940583	Callee	DIV_ROUND_UP		940345	0					
+ANR	940584	Identifier	DIV_ROUND_UP		940345	0					
+ANR	940585	ArgumentList	len		940345	1					
+ANR	940586	Argument	len		940345	0					
+ANR	940587	Identifier	len		940345	0					
+ANR	940588	Argument	BDRV_SECTOR_SIZE		940345	1					
+ANR	940589	Identifier	BDRV_SECTOR_SIZE		940345	0					
+ANR	940590	ExpressionStatement	"max_nb_sectors = MAX ( 0 , total_sectors - sector_num )"	105:8:1599:1650	940345	4	True				
+ANR	940591	AssignmentExpression	"max_nb_sectors = MAX ( 0 , total_sectors - sector_num )"		940345	0		=			
+ANR	940592	Identifier	max_nb_sectors		940345	0					
+ANR	940593	CallExpression	"MAX ( 0 , total_sectors - sector_num )"		940345	1					
+ANR	940594	Callee	MAX		940345	0					
+ANR	940595	Identifier	MAX		940345	0					
+ANR	940596	ArgumentList	0		940345	1					
+ANR	940597	Argument	0		940345	0					
+ANR	940598	PrimaryExpression	0		940345	0					
+ANR	940599	Argument	total_sectors - sector_num		940345	1					
+ANR	940600	AdditiveExpression	total_sectors - sector_num		940345	0		-			
+ANR	940601	Identifier	total_sectors		940345	0					
+ANR	940602	Identifier	sector_num		940345	1					
+ANR	940603	IfStatement	if ( max_nb_sectors > 0 )		940345	5					
+ANR	940604	Condition	max_nb_sectors > 0	107:12:1665:1682	940345	0	True				
+ANR	940605	RelationalExpression	max_nb_sectors > 0		940345	0		>			
+ANR	940606	Identifier	max_nb_sectors		940345	0					
+ANR	940607	PrimaryExpression	0		940345	1					
+ANR	940608	CompoundStatement		103:32:1545:1545	940345	1					
+ANR	940609	ExpressionStatement	"ret = drv -> bdrv_co_readv ( bs , sector_num , MIN ( nb_sectors , max_nb_sectors ) , qiov )"	109:12:1700:1817	940345	0	True				
+ANR	940610	AssignmentExpression	"ret = drv -> bdrv_co_readv ( bs , sector_num , MIN ( nb_sectors , max_nb_sectors ) , qiov )"		940345	0		=			
+ANR	940611	Identifier	ret		940345	0					
+ANR	940612	CallExpression	"drv -> bdrv_co_readv ( bs , sector_num , MIN ( nb_sectors , max_nb_sectors ) , qiov )"		940345	1					
+ANR	940613	Callee	drv -> bdrv_co_readv		940345	0					
+ANR	940614	PtrMemberAccess	drv -> bdrv_co_readv		940345	0					
+ANR	940615	Identifier	drv		940345	0					
+ANR	940616	Identifier	bdrv_co_readv		940345	1					
+ANR	940617	ArgumentList	bs		940345	1					
+ANR	940618	Argument	bs		940345	0					
+ANR	940619	Identifier	bs		940345	0					
+ANR	940620	Argument	sector_num		940345	1					
+ANR	940621	Identifier	sector_num		940345	0					
+ANR	940622	Argument	"MIN ( nb_sectors , max_nb_sectors )"		940345	2					
+ANR	940623	CallExpression	"MIN ( nb_sectors , max_nb_sectors )"		940345	0					
+ANR	940624	Callee	MIN		940345	0					
+ANR	940625	Identifier	MIN		940345	0					
+ANR	940626	ArgumentList	nb_sectors		940345	1					
+ANR	940627	Argument	nb_sectors		940345	0					
+ANR	940628	Identifier	nb_sectors		940345	0					
+ANR	940629	Argument	max_nb_sectors		940345	1					
+ANR	940630	Identifier	max_nb_sectors		940345	0					
+ANR	940631	Argument	qiov		940345	3					
+ANR	940632	Identifier	qiov		940345	0					
+ANR	940633	ElseStatement	else		940345	0					
+ANR	940634	CompoundStatement		109:15:1695:1695	940345	0					
+ANR	940635	ExpressionStatement	ret = 0	115:12:1850:1857	940345	0	True				
+ANR	940636	AssignmentExpression	ret = 0		940345	0		=			
+ANR	940637	Identifier	ret		940345	0					
+ANR	940638	PrimaryExpression	0		940345	1					
+ANR	940639	IfStatement	if ( ret == 0 && total_sectors < sector_num + nb_sectors )		940345	6					
+ANR	940640	Condition	ret == 0 && total_sectors < sector_num + nb_sectors	123:12:1957:2007	940345	0	True				
+ANR	940641	AndExpression	ret == 0 && total_sectors < sector_num + nb_sectors		940345	0		&&			
+ANR	940642	EqualityExpression	ret == 0		940345	0		==			
+ANR	940643	Identifier	ret		940345	0					
+ANR	940644	PrimaryExpression	0		940345	1					
+ANR	940645	RelationalExpression	total_sectors < sector_num + nb_sectors		940345	1		<			
+ANR	940646	Identifier	total_sectors		940345	0					
+ANR	940647	AdditiveExpression	sector_num + nb_sectors		940345	1		+			
+ANR	940648	Identifier	sector_num		940345	0					
+ANR	940649	Identifier	nb_sectors		940345	1					
+ANR	940650	CompoundStatement		123:12:1952:2053	940345	1					
+ANR	940651	IdentifierDeclStatement	"uint64_t offset = MAX ( 0 , total_sectors - sector_num ) ;"	125:12:2025:2077	940345	0	True				
+ANR	940652	IdentifierDecl	"offset = MAX ( 0 , total_sectors - sector_num )"		940345	0					
+ANR	940653	IdentifierDeclType	uint64_t		940345	0					
+ANR	940654	Identifier	offset		940345	1					
+ANR	940655	AssignmentExpression	"offset = MAX ( 0 , total_sectors - sector_num )"		940345	2		=			
+ANR	940656	Identifier	offset		940345	0					
+ANR	940657	CallExpression	"MAX ( 0 , total_sectors - sector_num )"		940345	1					
+ANR	940658	Callee	MAX		940345	0					
+ANR	940659	Identifier	MAX		940345	0					
+ANR	940660	ArgumentList	0		940345	1					
+ANR	940661	Argument	0		940345	0					
+ANR	940662	PrimaryExpression	0		940345	0					
+ANR	940663	Argument	total_sectors - sector_num		940345	1					
+ANR	940664	AdditiveExpression	total_sectors - sector_num		940345	0		-			
+ANR	940665	Identifier	total_sectors		940345	0					
+ANR	940666	Identifier	sector_num		940345	1					
+ANR	940667	IdentifierDeclStatement	uint64_t bytes = ( sector_num + nb_sectors - offset ) * BDRV_SECTOR_SIZE ;	127:12:2092:2193	940345	1	True				
+ANR	940668	IdentifierDecl	bytes = ( sector_num + nb_sectors - offset ) * BDRV_SECTOR_SIZE		940345	0					
+ANR	940669	IdentifierDeclType	uint64_t		940345	0					
+ANR	940670	Identifier	bytes		940345	1					
+ANR	940671	AssignmentExpression	bytes = ( sector_num + nb_sectors - offset ) * BDRV_SECTOR_SIZE		940345	2		=			
+ANR	940672	Identifier	bytes		940345	0					
+ANR	940673	MultiplicativeExpression	( sector_num + nb_sectors - offset ) * BDRV_SECTOR_SIZE		940345	1		*			
+ANR	940674	AdditiveExpression	sector_num + nb_sectors - offset		940345	0		+			
+ANR	940675	Identifier	sector_num		940345	0					
+ANR	940676	AdditiveExpression	nb_sectors - offset		940345	1		-			
+ANR	940677	Identifier	nb_sectors		940345	0					
+ANR	940678	Identifier	offset		940345	1					
+ANR	940679	Identifier	BDRV_SECTOR_SIZE		940345	1					
+ANR	940680	ExpressionStatement	"qemu_iovec_memset ( qiov , offset * BDRV_SECTOR_SIZE , 0 , bytes )"	131:12:2208:2268	940345	2	True				
+ANR	940681	CallExpression	"qemu_iovec_memset ( qiov , offset * BDRV_SECTOR_SIZE , 0 , bytes )"		940345	0					
+ANR	940682	Callee	qemu_iovec_memset		940345	0					
+ANR	940683	Identifier	qemu_iovec_memset		940345	0					
+ANR	940684	ArgumentList	qiov		940345	1					
+ANR	940685	Argument	qiov		940345	0					
+ANR	940686	Identifier	qiov		940345	0					
+ANR	940687	Argument	offset * BDRV_SECTOR_SIZE		940345	1					
+ANR	940688	MultiplicativeExpression	offset * BDRV_SECTOR_SIZE		940345	0		*			
+ANR	940689	Identifier	offset		940345	0					
+ANR	940690	Identifier	BDRV_SECTOR_SIZE		940345	1					
+ANR	940691	Argument	0		940345	2					
+ANR	940692	PrimaryExpression	0		940345	0					
+ANR	940693	Argument	bytes		940345	3					
+ANR	940694	Identifier	bytes		940345	0					
+ANR	940695	Label	out :	139:0:2291:2294	940345	12	True				
+ANR	940696	Identifier	out		940345	0					
+ANR	940697	ExpressionStatement	tracked_request_end ( & req )	141:4:2301:2326	940345	13	True				
+ANR	940698	CallExpression	tracked_request_end ( & req )		940345	0					
+ANR	940699	Callee	tracked_request_end		940345	0					
+ANR	940700	Identifier	tracked_request_end		940345	0					
+ANR	940701	ArgumentList	& req		940345	1					
+ANR	940702	Argument	& req		940345	0					
+ANR	940703	UnaryOperationExpression	& req		940345	0					
+ANR	940704	UnaryOperator	&		940345	0					
+ANR	940705	Identifier	req		940345	1					
+ANR	940706	IfStatement	if ( flags & BDRV_REQ_COPY_ON_READ )		940345	14					
+ANR	940707	Condition	flags & BDRV_REQ_COPY_ON_READ	145:8:2339:2367	940345	0	True				
+ANR	940708	BitAndExpression	flags & BDRV_REQ_COPY_ON_READ		940345	0		&			
+ANR	940709	Identifier	flags		940345	0					
+ANR	940710	Identifier	BDRV_REQ_COPY_ON_READ		940345	1					
+ANR	940711	CompoundStatement		141:39:2230:2230	940345	1					
+ANR	940712	ExpressionStatement	bs -> copy_on_read_in_flight --	147:8:2381:2409	940345	0	True				
+ANR	940713	PostIncDecOperationExpression	bs -> copy_on_read_in_flight --		940345	0					
+ANR	940714	PtrMemberAccess	bs -> copy_on_read_in_flight		940345	0					
+ANR	940715	Identifier	bs		940345	0					
+ANR	940716	Identifier	copy_on_read_in_flight		940345	1					
+ANR	940717	IncDec	--		940345	1					
+ANR	940718	ReturnStatement	return ret ;	153:4:2425:2435	940345	15	True				
+ANR	940719	Identifier	ret		940345	0					
+ANR	940720	ReturnType	static int coroutine_fn		940345	1					
+ANR	940721	Identifier	bdrv_aligned_preadv		940345	2					
+ANR	940722	ParameterList	"BlockDriverState * bs , int64_t offset , unsigned int bytes , QEMUIOVector * qiov , int flags"		940345	3					
+ANR	940723	Parameter	BlockDriverState * bs	1:44:44:63	940345	0	True				
+ANR	940724	ParameterType	BlockDriverState *		940345	0					
+ANR	940725	Identifier	bs		940345	1					
+ANR	940726	Parameter	int64_t offset	3:4:71:84	940345	1	True				
+ANR	940727	ParameterType	int64_t		940345	0					
+ANR	940728	Identifier	offset		940345	1					
+ANR	940729	Parameter	unsigned int bytes	3:20:87:104	940345	2	True				
+ANR	940730	ParameterType	unsigned int		940345	0					
+ANR	940731	Identifier	bytes		940345	1					
+ANR	940732	Parameter	QEMUIOVector * qiov	3:40:107:124	940345	3	True				
+ANR	940733	ParameterType	QEMUIOVector *		940345	0					
+ANR	940734	Identifier	qiov		940345	1					
+ANR	940735	Parameter	int flags	3:60:127:135	940345	4	True				
+ANR	940736	ParameterType	int		940345	0					
+ANR	940737	Identifier	flags		940345	1					
+ANR	940738	CFGEntryNode	ENTRY		940345		True				
+ANR	940739	CFGExitNode	EXIT		940345		True				
+ANR	940740	Symbol	nb_sectors		940345						
+ANR	940741	Symbol	& req		940345						
+ANR	940742	Symbol	max_nb_sectors		940345						
+ANR	940743	Symbol	MAX		940345						
+ANR	940744	Symbol	DIV_ROUND_UP		940345						
+ANR	940745	Symbol	flags		940345						
+ANR	940746	Symbol	bs -> copy_on_read_in_flight		940345						
+ANR	940747	Symbol	qiov		940345						
+ANR	940748	Symbol	bs -> drv		940345						
+ANR	940749	Symbol	bdrv_is_allocated		940345						
+ANR	940750	Symbol	bs		940345						
+ANR	940751	Symbol	* bs		940345						
+ANR	940752	Symbol	len		940345						
+ANR	940753	Symbol	bdrv_getlength		940345						
+ANR	940754	Symbol	req		940345						
+ANR	940755	Symbol	& pnum		940345						
+ANR	940756	Symbol	drv -> bdrv_co_readv		940345						
+ANR	940757	Symbol	ret		940345						
+ANR	940758	Symbol	bs -> zero_beyond_eof		940345						
+ANR	940759	Symbol	pnum		940345						
+ANR	940760	Symbol	offset		940345						
+ANR	940761	Symbol	false		940345						
+ANR	940762	Symbol	drv		940345						
+ANR	940763	Symbol	BDRV_SECTOR_BITS		940345						
+ANR	940764	Symbol	total_sectors		940345						
+ANR	940765	Symbol	bs -> growable		940345						
+ANR	940766	Symbol	* drv		940345						
+ANR	940767	Symbol	sector_num		940345						
+ANR	940768	Symbol	MIN		940345						
+ANR	940769	Symbol	bytes		940345						
+ANR	940770	Symbol	BDRV_SECTOR_SIZE		940345						
+ANR	940771	Symbol	BDRV_REQ_COPY_ON_READ		940345						
+ANR	940772	Symbol	bdrv_co_do_copy_on_readv		940345						

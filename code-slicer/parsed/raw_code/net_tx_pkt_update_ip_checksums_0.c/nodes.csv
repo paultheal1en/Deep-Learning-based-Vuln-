@@ -1,0 +1,229 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6011130	File	/home/p4ultr4n/workplace/ReVeal/raw_code/net_tx_pkt_update_ip_checksums_0.c								
+ANR	6011131	Function	net_tx_pkt_update_ip_checksums	1:0:0:1207							
+ANR	6011132	FunctionDef	net_tx_pkt_update_ip_checksums (struct NetTxPkt * pkt)		6011131	0					
+ANR	6011133	CompoundStatement		3:0:59:1207	6011131	0					
+ANR	6011134	IdentifierDeclStatement	uint16_t csum ;	5:4:66:79	6011131	0	True				
+ANR	6011135	IdentifierDecl	csum		6011131	0					
+ANR	6011136	IdentifierDeclType	uint16_t		6011131	0					
+ANR	6011137	Identifier	csum		6011131	1					
+ANR	6011138	IdentifierDeclStatement	uint32_t ph_raw_csum ;	7:4:86:106	6011131	1	True				
+ANR	6011139	IdentifierDecl	ph_raw_csum		6011131	0					
+ANR	6011140	IdentifierDeclType	uint32_t		6011131	0					
+ANR	6011141	Identifier	ph_raw_csum		6011131	1					
+ANR	6011142	ExpressionStatement	assert ( pkt )	9:4:113:124	6011131	2	True				
+ANR	6011143	CallExpression	assert ( pkt )		6011131	0					
+ANR	6011144	Callee	assert		6011131	0					
+ANR	6011145	Identifier	assert		6011131	0					
+ANR	6011146	ArgumentList	pkt		6011131	1					
+ANR	6011147	Argument	pkt		6011131	0					
+ANR	6011148	Identifier	pkt		6011131	0					
+ANR	6011149	IdentifierDeclStatement	uint8_t gso_type = pkt -> virt_hdr . gso_type & ~VIRTIO_NET_HDR_GSO_ECN ;	11:4:131:198	6011131	3	True				
+ANR	6011150	IdentifierDecl	gso_type = pkt -> virt_hdr . gso_type & ~VIRTIO_NET_HDR_GSO_ECN		6011131	0					
+ANR	6011151	IdentifierDeclType	uint8_t		6011131	0					
+ANR	6011152	Identifier	gso_type		6011131	1					
+ANR	6011153	AssignmentExpression	gso_type = pkt -> virt_hdr . gso_type & ~VIRTIO_NET_HDR_GSO_ECN		6011131	2		=			
+ANR	6011154	Identifier	gso_type		6011131	0					
+ANR	6011155	BitAndExpression	pkt -> virt_hdr . gso_type & ~VIRTIO_NET_HDR_GSO_ECN		6011131	1		&			
+ANR	6011156	MemberAccess	pkt -> virt_hdr . gso_type		6011131	0					
+ANR	6011157	PtrMemberAccess	pkt -> virt_hdr		6011131	0					
+ANR	6011158	Identifier	pkt		6011131	0					
+ANR	6011159	Identifier	virt_hdr		6011131	1					
+ANR	6011160	Identifier	gso_type		6011131	1					
+ANR	6011161	Identifier	~VIRTIO_NET_HDR_GSO_ECN		6011131	1					
+ANR	6011162	IdentifierDeclStatement	struct ip_header * ip_hdr ;	13:4:205:229	6011131	4	True				
+ANR	6011163	IdentifierDecl	* ip_hdr		6011131	0					
+ANR	6011164	IdentifierDeclType	struct ip_header *		6011131	0					
+ANR	6011165	Identifier	ip_hdr		6011131	1					
+ANR	6011166	IfStatement	if ( VIRTIO_NET_HDR_GSO_TCPV4 != gso_type && VIRTIO_NET_HDR_GSO_UDP != gso_type )		6011131	5					
+ANR	6011167	Condition	VIRTIO_NET_HDR_GSO_TCPV4 != gso_type && VIRTIO_NET_HDR_GSO_UDP != gso_type	17:8:242:324	6011131	0	True				
+ANR	6011168	AndExpression	VIRTIO_NET_HDR_GSO_TCPV4 != gso_type && VIRTIO_NET_HDR_GSO_UDP != gso_type		6011131	0		&&			
+ANR	6011169	EqualityExpression	VIRTIO_NET_HDR_GSO_TCPV4 != gso_type		6011131	0		!=			
+ANR	6011170	Identifier	VIRTIO_NET_HDR_GSO_TCPV4		6011131	0					
+ANR	6011171	Identifier	gso_type		6011131	1					
+ANR	6011172	EqualityExpression	VIRTIO_NET_HDR_GSO_UDP != gso_type		6011131	1		!=			
+ANR	6011173	Identifier	VIRTIO_NET_HDR_GSO_UDP		6011131	0					
+ANR	6011174	Identifier	gso_type		6011131	1					
+ANR	6011175	CompoundStatement		17:44:267:267	6011131	1					
+ANR	6011176	ReturnStatement	return ;	21:8:338:344	6011131	0	True				
+ANR	6011177	ExpressionStatement	ip_hdr = pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_base	27:4:360:409	6011131	6	True				
+ANR	6011178	AssignmentExpression	ip_hdr = pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_base		6011131	0		=			
+ANR	6011179	Identifier	ip_hdr		6011131	0					
+ANR	6011180	MemberAccess	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_base		6011131	1					
+ANR	6011181	ArrayIndexing	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ]		6011131	0					
+ANR	6011182	PtrMemberAccess	pkt -> vec		6011131	0					
+ANR	6011183	Identifier	pkt		6011131	0					
+ANR	6011184	Identifier	vec		6011131	1					
+ANR	6011185	Identifier	NET_TX_PKT_L3HDR_FRAG		6011131	1					
+ANR	6011186	Identifier	iov_base		6011131	1					
+ANR	6011187	IfStatement	if ( pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len > ETH_MAX_IP_DGRAM_LEN )		6011131	7					
+ANR	6011188	Condition	pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len > ETH_MAX_IP_DGRAM_LEN	31:8:422:511	6011131	0	True				
+ANR	6011189	RelationalExpression	pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len > ETH_MAX_IP_DGRAM_LEN		6011131	0		>			
+ANR	6011190	AdditiveExpression	pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	0		+			
+ANR	6011191	PtrMemberAccess	pkt -> payload_len		6011131	0					
+ANR	6011192	Identifier	pkt		6011131	0					
+ANR	6011193	Identifier	payload_len		6011131	1					
+ANR	6011194	MemberAccess	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	1					
+ANR	6011195	ArrayIndexing	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ]		6011131	0					
+ANR	6011196	PtrMemberAccess	pkt -> vec		6011131	0					
+ANR	6011197	Identifier	pkt		6011131	0					
+ANR	6011198	Identifier	vec		6011131	1					
+ANR	6011199	Identifier	NET_TX_PKT_L3HDR_FRAG		6011131	1					
+ANR	6011200	Identifier	iov_len		6011131	1					
+ANR	6011201	Identifier	ETH_MAX_IP_DGRAM_LEN		6011131	1					
+ANR	6011202	CompoundStatement		31:30:454:454	6011131	1					
+ANR	6011203	ReturnStatement	return ;	35:8:525:531	6011131	0	True				
+ANR	6011204	ExpressionStatement	ip_hdr -> ip_len = cpu_to_be16 ( pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len )	41:4:547:644	6011131	8	True				
+ANR	6011205	AssignmentExpression	ip_hdr -> ip_len = cpu_to_be16 ( pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len )		6011131	0		=			
+ANR	6011206	PtrMemberAccess	ip_hdr -> ip_len		6011131	0					
+ANR	6011207	Identifier	ip_hdr		6011131	0					
+ANR	6011208	Identifier	ip_len		6011131	1					
+ANR	6011209	CallExpression	cpu_to_be16 ( pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len )		6011131	1					
+ANR	6011210	Callee	cpu_to_be16		6011131	0					
+ANR	6011211	Identifier	cpu_to_be16		6011131	0					
+ANR	6011212	ArgumentList	pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	1					
+ANR	6011213	Argument	pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	0					
+ANR	6011214	AdditiveExpression	pkt -> payload_len + pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	0		+			
+ANR	6011215	PtrMemberAccess	pkt -> payload_len		6011131	0					
+ANR	6011216	Identifier	pkt		6011131	0					
+ANR	6011217	Identifier	payload_len		6011131	1					
+ANR	6011218	MemberAccess	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	1					
+ANR	6011219	ArrayIndexing	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ]		6011131	0					
+ANR	6011220	PtrMemberAccess	pkt -> vec		6011131	0					
+ANR	6011221	Identifier	pkt		6011131	0					
+ANR	6011222	Identifier	vec		6011131	1					
+ANR	6011223	Identifier	NET_TX_PKT_L3HDR_FRAG		6011131	1					
+ANR	6011224	Identifier	iov_len		6011131	1					
+ANR	6011225	ExpressionStatement	ip_hdr -> ip_sum = 0	49:4:712:730	6011131	9	True				
+ANR	6011226	AssignmentExpression	ip_hdr -> ip_sum = 0		6011131	0		=			
+ANR	6011227	PtrMemberAccess	ip_hdr -> ip_sum		6011131	0					
+ANR	6011228	Identifier	ip_hdr		6011131	0					
+ANR	6011229	Identifier	ip_sum		6011131	1					
+ANR	6011230	PrimaryExpression	0		6011131	1					
+ANR	6011231	ExpressionStatement	"csum = net_raw_checksum ( ( uint8_t * ) ip_hdr , pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len )"	51:4:737:829	6011131	10	True				
+ANR	6011232	AssignmentExpression	"csum = net_raw_checksum ( ( uint8_t * ) ip_hdr , pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len )"		6011131	0		=			
+ANR	6011233	Identifier	csum		6011131	0					
+ANR	6011234	CallExpression	"net_raw_checksum ( ( uint8_t * ) ip_hdr , pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len )"		6011131	1					
+ANR	6011235	Callee	net_raw_checksum		6011131	0					
+ANR	6011236	Identifier	net_raw_checksum		6011131	0					
+ANR	6011237	ArgumentList	( uint8_t * ) ip_hdr		6011131	1					
+ANR	6011238	Argument	( uint8_t * ) ip_hdr		6011131	0					
+ANR	6011239	CastExpression	( uint8_t * ) ip_hdr		6011131	0					
+ANR	6011240	CastTarget	uint8_t *		6011131	0					
+ANR	6011241	Identifier	ip_hdr		6011131	1					
+ANR	6011242	Argument	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	1					
+ANR	6011243	MemberAccess	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131	0					
+ANR	6011244	ArrayIndexing	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ]		6011131	0					
+ANR	6011245	PtrMemberAccess	pkt -> vec		6011131	0					
+ANR	6011246	Identifier	pkt		6011131	0					
+ANR	6011247	Identifier	vec		6011131	1					
+ANR	6011248	Identifier	NET_TX_PKT_L3HDR_FRAG		6011131	1					
+ANR	6011249	Identifier	iov_len		6011131	1					
+ANR	6011250	ExpressionStatement	ip_hdr -> ip_sum = cpu_to_be16 ( csum )	55:4:836:870	6011131	11	True				
+ANR	6011251	AssignmentExpression	ip_hdr -> ip_sum = cpu_to_be16 ( csum )		6011131	0		=			
+ANR	6011252	PtrMemberAccess	ip_hdr -> ip_sum		6011131	0					
+ANR	6011253	Identifier	ip_hdr		6011131	0					
+ANR	6011254	Identifier	ip_sum		6011131	1					
+ANR	6011255	CallExpression	cpu_to_be16 ( csum )		6011131	1					
+ANR	6011256	Callee	cpu_to_be16		6011131	0					
+ANR	6011257	Identifier	cpu_to_be16		6011131	0					
+ANR	6011258	ArgumentList	csum		6011131	1					
+ANR	6011259	Argument	csum		6011131	0					
+ANR	6011260	Identifier	csum		6011131	0					
+ANR	6011261	ExpressionStatement	"ph_raw_csum = eth_calc_pseudo_hdr_csum ( ip_hdr , pkt -> payload_len )"	61:4:938:1002	6011131	12	True				
+ANR	6011262	AssignmentExpression	"ph_raw_csum = eth_calc_pseudo_hdr_csum ( ip_hdr , pkt -> payload_len )"		6011131	0		=			
+ANR	6011263	Identifier	ph_raw_csum		6011131	0					
+ANR	6011264	CallExpression	"eth_calc_pseudo_hdr_csum ( ip_hdr , pkt -> payload_len )"		6011131	1					
+ANR	6011265	Callee	eth_calc_pseudo_hdr_csum		6011131	0					
+ANR	6011266	Identifier	eth_calc_pseudo_hdr_csum		6011131	0					
+ANR	6011267	ArgumentList	ip_hdr		6011131	1					
+ANR	6011268	Argument	ip_hdr		6011131	0					
+ANR	6011269	Identifier	ip_hdr		6011131	0					
+ANR	6011270	Argument	pkt -> payload_len		6011131	1					
+ANR	6011271	PtrMemberAccess	pkt -> payload_len		6011131	0					
+ANR	6011272	Identifier	pkt		6011131	0					
+ANR	6011273	Identifier	payload_len		6011131	1					
+ANR	6011274	ExpressionStatement	csum = cpu_to_be16 ( ~net_checksum_finish ( ph_raw_csum ) )	63:4:1009:1062	6011131	13	True				
+ANR	6011275	AssignmentExpression	csum = cpu_to_be16 ( ~net_checksum_finish ( ph_raw_csum ) )		6011131	0		=			
+ANR	6011276	Identifier	csum		6011131	0					
+ANR	6011277	CallExpression	cpu_to_be16 ( ~net_checksum_finish ( ph_raw_csum ) )		6011131	1					
+ANR	6011278	Callee	cpu_to_be16		6011131	0					
+ANR	6011279	Identifier	cpu_to_be16		6011131	0					
+ANR	6011280	ArgumentList	~net_checksum_finish ( ph_raw_csum )		6011131	1					
+ANR	6011281	Argument	~net_checksum_finish ( ph_raw_csum )		6011131	0					
+ANR	6011282	CallExpression	~net_checksum_finish ( ph_raw_csum )		6011131	0					
+ANR	6011283	Callee	~net_checksum_finish		6011131	0					
+ANR	6011284	Identifier	~net_checksum_finish		6011131	0					
+ANR	6011285	ArgumentList	ph_raw_csum		6011131	1					
+ANR	6011286	Argument	ph_raw_csum		6011131	0					
+ANR	6011287	Identifier	ph_raw_csum		6011131	0					
+ANR	6011288	ExpressionStatement	"iov_from_buf ( & pkt -> vec [ NET_TX_PKT_PL_START_FRAG ] , pkt -> payload_frags , pkt -> virt_hdr . csum_offset , & csum , sizeof ( csum ) )"	65:4:1069:1204	6011131	14	True				
+ANR	6011289	CallExpression	"iov_from_buf ( & pkt -> vec [ NET_TX_PKT_PL_START_FRAG ] , pkt -> payload_frags , pkt -> virt_hdr . csum_offset , & csum , sizeof ( csum ) )"		6011131	0					
+ANR	6011290	Callee	iov_from_buf		6011131	0					
+ANR	6011291	Identifier	iov_from_buf		6011131	0					
+ANR	6011292	ArgumentList	& pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6011131	1					
+ANR	6011293	Argument	& pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6011131	0					
+ANR	6011294	UnaryOperationExpression	& pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6011131	0					
+ANR	6011295	UnaryOperator	&		6011131	0					
+ANR	6011296	ArrayIndexing	pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6011131	1					
+ANR	6011297	PtrMemberAccess	pkt -> vec		6011131	0					
+ANR	6011298	Identifier	pkt		6011131	0					
+ANR	6011299	Identifier	vec		6011131	1					
+ANR	6011300	Identifier	NET_TX_PKT_PL_START_FRAG		6011131	1					
+ANR	6011301	Argument	pkt -> payload_frags		6011131	1					
+ANR	6011302	PtrMemberAccess	pkt -> payload_frags		6011131	0					
+ANR	6011303	Identifier	pkt		6011131	0					
+ANR	6011304	Identifier	payload_frags		6011131	1					
+ANR	6011305	Argument	pkt -> virt_hdr . csum_offset		6011131	2					
+ANR	6011306	MemberAccess	pkt -> virt_hdr . csum_offset		6011131	0					
+ANR	6011307	PtrMemberAccess	pkt -> virt_hdr		6011131	0					
+ANR	6011308	Identifier	pkt		6011131	0					
+ANR	6011309	Identifier	virt_hdr		6011131	1					
+ANR	6011310	Identifier	csum_offset		6011131	1					
+ANR	6011311	Argument	& csum		6011131	3					
+ANR	6011312	UnaryOperationExpression	& csum		6011131	0					
+ANR	6011313	UnaryOperator	&		6011131	0					
+ANR	6011314	Identifier	csum		6011131	1					
+ANR	6011315	Argument	sizeof ( csum )		6011131	4					
+ANR	6011316	SizeofExpression	sizeof ( csum )		6011131	0					
+ANR	6011317	Sizeof	sizeof		6011131	0					
+ANR	6011318	SizeofOperand	csum		6011131	1					
+ANR	6011319	ReturnType	void		6011131	1					
+ANR	6011320	Identifier	net_tx_pkt_update_ip_checksums		6011131	2					
+ANR	6011321	ParameterList	struct NetTxPkt * pkt		6011131	3					
+ANR	6011322	Parameter	struct NetTxPkt * pkt	1:36:36:55	6011131	0	True				
+ANR	6011323	ParameterType	struct NetTxPkt *		6011131	0					
+ANR	6011324	Identifier	pkt		6011131	1					
+ANR	6011325	CFGEntryNode	ENTRY		6011131		True				
+ANR	6011326	CFGExitNode	EXIT		6011131		True				
+ANR	6011327	Symbol	* pkt		6011131						
+ANR	6011328	Symbol	pkt -> vec		6011131						
+ANR	6011329	Symbol	ETH_MAX_IP_DGRAM_LEN		6011131						
+ANR	6011330	Symbol	* pkt -> vec		6011131						
+ANR	6011331	Symbol	& csum		6011131						
+ANR	6011332	Symbol	pkt -> virt_hdr . gso_type		6011131						
+ANR	6011333	Symbol	pkt -> virt_hdr		6011131						
+ANR	6011334	Symbol	gso_type		6011131						
+ANR	6011335	Symbol	pkt		6011131						
+ANR	6011336	Symbol	net_raw_checksum		6011131						
+ANR	6011337	Symbol	pkt -> payload_len		6011131						
+ANR	6011338	Symbol	cpu_to_be16		6011131						
+ANR	6011339	Symbol	ip_hdr		6011131						
+ANR	6011340	Symbol	NET_TX_PKT_L3HDR_FRAG		6011131						
+ANR	6011341	Symbol	ip_hdr -> ip_sum		6011131						
+ANR	6011342	Symbol	ph_raw_csum		6011131						
+ANR	6011343	Symbol	csum		6011131						
+ANR	6011344	Symbol	pkt -> payload_frags		6011131						
+ANR	6011345	Symbol	* ip_hdr		6011131						
+ANR	6011346	Symbol	VIRTIO_NET_HDR_GSO_TCPV4		6011131						
+ANR	6011347	Symbol	ip_hdr -> ip_len		6011131						
+ANR	6011348	Symbol	NET_TX_PKT_PL_START_FRAG		6011131						
+ANR	6011349	Symbol	* * pkt		6011131						
+ANR	6011350	Symbol	eth_calc_pseudo_hdr_csum		6011131						
+ANR	6011351	Symbol	~VIRTIO_NET_HDR_GSO_ECN		6011131						
+ANR	6011352	Symbol	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_base		6011131						
+ANR	6011353	Symbol	* NET_TX_PKT_L3HDR_FRAG		6011131						
+ANR	6011354	Symbol	pkt -> virt_hdr . csum_offset		6011131						
+ANR	6011355	Symbol	VIRTIO_NET_HDR_GSO_UDP		6011131						
+ANR	6011356	Symbol	pkt -> vec [ NET_TX_PKT_L3HDR_FRAG ] . iov_len		6011131						
+ANR	6011357	Symbol	~net_checksum_finish		6011131						

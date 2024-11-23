@@ -1,0 +1,136 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	938952	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_aio_rw_vector_1.c								
+ANR	938953	Function	bdrv_aio_rw_vector	1:0:0:1082							
+ANR	938954	FunctionDef	"bdrv_aio_rw_vector (BlockDriverState * bs , int64_t sector_num , QEMUIOVector * iov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int is_write)"		938953	0					
+ANR	938955	CompoundStatement		17:0:453:1082	938953	0					
+ANR	938956	IdentifierDeclStatement	"VectorTranslationAIOCB * s = qemu_aio_get_pool ( & vectored_aio_pool , bs , cb , opaque ) ;"	19:4:460:592	938953	0	True				
+ANR	938957	IdentifierDecl	"* s = qemu_aio_get_pool ( & vectored_aio_pool , bs , cb , opaque )"		938953	0					
+ANR	938958	IdentifierDeclType	VectorTranslationAIOCB *		938953	0					
+ANR	938959	Identifier	s		938953	1					
+ANR	938960	AssignmentExpression	"* s = qemu_aio_get_pool ( & vectored_aio_pool , bs , cb , opaque )"		938953	2		=			
+ANR	938961	Identifier	s		938953	0					
+ANR	938962	CallExpression	"qemu_aio_get_pool ( & vectored_aio_pool , bs , cb , opaque )"		938953	1					
+ANR	938963	Callee	qemu_aio_get_pool		938953	0					
+ANR	938964	Identifier	qemu_aio_get_pool		938953	0					
+ANR	938965	ArgumentList	& vectored_aio_pool		938953	1					
+ANR	938966	Argument	& vectored_aio_pool		938953	0					
+ANR	938967	UnaryOperationExpression	& vectored_aio_pool		938953	0					
+ANR	938968	UnaryOperator	&		938953	0					
+ANR	938969	Identifier	vectored_aio_pool		938953	1					
+ANR	938970	Argument	bs		938953	1					
+ANR	938971	Identifier	bs		938953	0					
+ANR	938972	Argument	cb		938953	2					
+ANR	938973	Identifier	cb		938953	0					
+ANR	938974	Argument	opaque		938953	3					
+ANR	938975	Identifier	opaque		938953	0					
+ANR	938976	ExpressionStatement	s -> iov = iov	25:4:601:613	938953	1	True				
+ANR	938977	AssignmentExpression	s -> iov = iov		938953	0		=			
+ANR	938978	PtrMemberAccess	s -> iov		938953	0					
+ANR	938979	Identifier	s		938953	0					
+ANR	938980	Identifier	iov		938953	1					
+ANR	938981	Identifier	iov		938953	1					
+ANR	938982	ExpressionStatement	"s -> bounce = qemu_memalign ( 512 , nb_sectors * 512 )"	27:4:620:668	938953	2	True				
+ANR	938983	AssignmentExpression	"s -> bounce = qemu_memalign ( 512 , nb_sectors * 512 )"		938953	0		=			
+ANR	938984	PtrMemberAccess	s -> bounce		938953	0					
+ANR	938985	Identifier	s		938953	0					
+ANR	938986	Identifier	bounce		938953	1					
+ANR	938987	CallExpression	"qemu_memalign ( 512 , nb_sectors * 512 )"		938953	1					
+ANR	938988	Callee	qemu_memalign		938953	0					
+ANR	938989	Identifier	qemu_memalign		938953	0					
+ANR	938990	ArgumentList	512		938953	1					
+ANR	938991	Argument	512		938953	0					
+ANR	938992	PrimaryExpression	512		938953	0					
+ANR	938993	Argument	nb_sectors * 512		938953	1					
+ANR	938994	MultiplicativeExpression	nb_sectors * 512		938953	0		*			
+ANR	938995	Identifier	nb_sectors		938953	0					
+ANR	938996	PrimaryExpression	512		938953	1					
+ANR	938997	ExpressionStatement	s -> is_write = is_write	29:4:675:697	938953	3	True				
+ANR	938998	AssignmentExpression	s -> is_write = is_write		938953	0		=			
+ANR	938999	PtrMemberAccess	s -> is_write		938953	0					
+ANR	939000	Identifier	s		938953	0					
+ANR	939001	Identifier	is_write		938953	1					
+ANR	939002	Identifier	is_write		938953	1					
+ANR	939003	IfStatement	if ( is_write )		938953	4					
+ANR	939004	Condition	is_write	31:8:708:715	938953	0	True				
+ANR	939005	Identifier	is_write		938953	0					
+ANR	939006	CompoundStatement		15:18:264:264	938953	1					
+ANR	939007	ExpressionStatement	"qemu_iovec_to_buffer ( s -> iov , s -> bounce )"	33:8:729:768	938953	0	True				
+ANR	939008	CallExpression	"qemu_iovec_to_buffer ( s -> iov , s -> bounce )"		938953	0					
+ANR	939009	Callee	qemu_iovec_to_buffer		938953	0					
+ANR	939010	Identifier	qemu_iovec_to_buffer		938953	0					
+ANR	939011	ArgumentList	s -> iov		938953	1					
+ANR	939012	Argument	s -> iov		938953	0					
+ANR	939013	PtrMemberAccess	s -> iov		938953	0					
+ANR	939014	Identifier	s		938953	0					
+ANR	939015	Identifier	iov		938953	1					
+ANR	939016	Argument	s -> bounce		938953	1					
+ANR	939017	PtrMemberAccess	s -> bounce		938953	0					
+ANR	939018	Identifier	s		938953	0					
+ANR	939019	Identifier	bounce		938953	1					
+ANR	939020	ExpressionStatement	"s -> aiocb = bdrv_aio_write ( bs , sector_num , s -> bounce , nb_sectors , bdrv_aio_rw_vector_cb , s )"	35:8:779:904	938953	1	True				
+ANR	939021	AssignmentExpression	"s -> aiocb = bdrv_aio_write ( bs , sector_num , s -> bounce , nb_sectors , bdrv_aio_rw_vector_cb , s )"		938953	0		=			
+ANR	939022	PtrMemberAccess	s -> aiocb		938953	0					
+ANR	939023	Identifier	s		938953	0					
+ANR	939024	Identifier	aiocb		938953	1					
+ANR	939025	CallExpression	"bdrv_aio_write ( bs , sector_num , s -> bounce , nb_sectors , bdrv_aio_rw_vector_cb , s )"		938953	1					
+ANR	939026	Callee	bdrv_aio_write		938953	0					
+ANR	939027	Identifier	bdrv_aio_write		938953	0					
+ANR	939028	ArgumentList	bs		938953	1					
+ANR	939029	Argument	bs		938953	0					
+ANR	939030	Identifier	bs		938953	0					
+ANR	939031	Argument	sector_num		938953	1					
+ANR	939032	Identifier	sector_num		938953	0					
+ANR	939033	Argument	s -> bounce		938953	2					
+ANR	939034	PtrMemberAccess	s -> bounce		938953	0					
+ANR	939035	Identifier	s		938953	0					
+ANR	939036	Identifier	bounce		938953	1					
+ANR	939037	Argument	nb_sectors		938953	3					
+ANR	939038	Identifier	nb_sectors		938953	0					
+ANR	939039	Argument	bdrv_aio_rw_vector_cb		938953	4					
+ANR	939040	Identifier	bdrv_aio_rw_vector_cb		938953	0					
+ANR	939041	Argument	s		938953	5					
+ANR	939042	Identifier	s		938953	0					
+ANR	939043	ReturnType	static BlockDriverAIOCB *		938953	1					
+ANR	939044	Identifier	bdrv_aio_rw_vector		938953	2					
+ANR	939045	ParameterList	"BlockDriverState * bs , int64_t sector_num , QEMUIOVector * iov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int is_write"		938953	3					
+ANR	939046	Parameter	BlockDriverState * bs	1:44:44:63	938953	0	True				
+ANR	939047	ParameterType	BlockDriverState *		938953	0					
+ANR	939048	Identifier	bs		938953	1					
+ANR	939049	Parameter	int64_t sector_num	3:44:111:128	938953	1	True				
+ANR	939050	ParameterType	int64_t		938953	0					
+ANR	939051	Identifier	sector_num		938953	1					
+ANR	939052	Parameter	QEMUIOVector * iov	5:44:176:192	938953	2	True				
+ANR	939053	ParameterType	QEMUIOVector *		938953	0					
+ANR	939054	Identifier	iov		938953	1					
+ANR	939055	Parameter	int nb_sectors	7:44:240:253	938953	3	True				
+ANR	939056	ParameterType	int		938953	0					
+ANR	939057	Identifier	nb_sectors		938953	1					
+ANR	939058	Parameter	BlockDriverCompletionFunc * cb	9:44:301:329	938953	4	True				
+ANR	939059	ParameterType	BlockDriverCompletionFunc *		938953	0					
+ANR	939060	Identifier	cb		938953	1					
+ANR	939061	Parameter	void * opaque	11:44:377:388	938953	5	True				
+ANR	939062	ParameterType	void *		938953	0					
+ANR	939063	Identifier	opaque		938953	1					
+ANR	939064	Parameter	int is_write	13:44:436:447	938953	6	True				
+ANR	939065	ParameterType	int		938953	0					
+ANR	939066	Identifier	is_write		938953	1					
+ANR	939067	CFGEntryNode	ENTRY		938953		True				
+ANR	939068	CFGExitNode	EXIT		938953		True				
+ANR	939069	Symbol	nb_sectors		938953						
+ANR	939070	Symbol	s -> aiocb		938953						
+ANR	939071	Symbol	opaque		938953						
+ANR	939072	Symbol	bdrv_aio_rw_vector_cb		938953						
+ANR	939073	Symbol	is_write		938953						
+ANR	939074	Symbol	s -> is_write		938953						
+ANR	939075	Symbol	sector_num		938953						
+ANR	939076	Symbol	bs		938953						
+ANR	939077	Symbol	iov		938953						
+ANR	939078	Symbol	qemu_memalign		938953						
+ANR	939079	Symbol	s		938953						
+ANR	939080	Symbol	bdrv_aio_write		938953						
+ANR	939081	Symbol	& vectored_aio_pool		938953						
+ANR	939082	Symbol	qemu_aio_get_pool		938953						
+ANR	939083	Symbol	s -> bounce		938953						
+ANR	939084	Symbol	s -> iov		938953						
+ANR	939085	Symbol	* s		938953						
+ANR	939086	Symbol	cb		938953						

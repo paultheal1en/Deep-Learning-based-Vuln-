@@ -1,0 +1,117 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5311831	File	/home/p4ultr4n/workplace/ReVeal/raw_code/m5206_mbar_writel_1.c								
+ANR	5311832	Function	m5206_mbar_writel	1:0:0:566							
+ANR	5311833	FunctionDef	"m5206_mbar_writel (void * opaque , target_phys_addr_t offset , uint32_t value)"		5311832	0					
+ANR	5311834	CompoundStatement		5:0:119:566	5311832	0					
+ANR	5311835	IdentifierDeclStatement	m5206_mbar_state * s = ( m5206_mbar_state * ) opaque ;	7:4:126:174	5311832	0	True				
+ANR	5311836	IdentifierDecl	* s = ( m5206_mbar_state * ) opaque		5311832	0					
+ANR	5311837	IdentifierDeclType	m5206_mbar_state *		5311832	0					
+ANR	5311838	Identifier	s		5311832	1					
+ANR	5311839	AssignmentExpression	* s = ( m5206_mbar_state * ) opaque		5311832	2		=			
+ANR	5311840	Identifier	s		5311832	0					
+ANR	5311841	CastExpression	( m5206_mbar_state * ) opaque		5311832	1					
+ANR	5311842	CastTarget	m5206_mbar_state *		5311832	0					
+ANR	5311843	Identifier	opaque		5311832	1					
+ANR	5311844	IdentifierDeclStatement	int width ;	9:4:181:190	5311832	1	True				
+ANR	5311845	IdentifierDecl	width		5311832	0					
+ANR	5311846	IdentifierDeclType	int		5311832	0					
+ANR	5311847	Identifier	width		5311832	1					
+ANR	5311848	ExpressionStatement	offset &= 0x3ff	11:4:197:212	5311832	2	True				
+ANR	5311849	AssignmentExpression	offset &= 0x3ff		5311832	0		&=			
+ANR	5311850	Identifier	offset		5311832	0					
+ANR	5311851	PrimaryExpression	0x3ff		5311832	1					
+ANR	5311852	IfStatement	if ( offset > 0x200 )		5311832	3					
+ANR	5311853	Condition	offset > 0x200	13:8:223:236	5311832	0	True				
+ANR	5311854	RelationalExpression	offset > 0x200		5311832	0		>			
+ANR	5311855	Identifier	offset		5311832	0					
+ANR	5311856	PrimaryExpression	0x200		5311832	1					
+ANR	5311857	CompoundStatement		9:24:119:119	5311832	1					
+ANR	5311858	ExpressionStatement	"hw_error ( ""Bad MBAR write offset 0x%x"" , ( int ) offset )"	15:8:250:301	5311832	0	True				
+ANR	5311859	CallExpression	"hw_error ( ""Bad MBAR write offset 0x%x"" , ( int ) offset )"		5311832	0					
+ANR	5311860	Callee	hw_error		5311832	0					
+ANR	5311861	Identifier	hw_error		5311832	0					
+ANR	5311862	ArgumentList	"""Bad MBAR write offset 0x%x"""		5311832	1					
+ANR	5311863	Argument	"""Bad MBAR write offset 0x%x"""		5311832	0					
+ANR	5311864	PrimaryExpression	"""Bad MBAR write offset 0x%x"""		5311832	0					
+ANR	5311865	Argument	( int ) offset		5311832	1					
+ANR	5311866	CastExpression	( int ) offset		5311832	0					
+ANR	5311867	CastTarget	int		5311832	0					
+ANR	5311868	Identifier	offset		5311832	1					
+ANR	5311869	ExpressionStatement	width = m5206_mbar_width [ offset >> 2 ]	19:4:315:352	5311832	4	True				
+ANR	5311870	AssignmentExpression	width = m5206_mbar_width [ offset >> 2 ]		5311832	0		=			
+ANR	5311871	Identifier	width		5311832	0					
+ANR	5311872	ArrayIndexing	m5206_mbar_width [ offset >> 2 ]		5311832	1					
+ANR	5311873	Identifier	m5206_mbar_width		5311832	0					
+ANR	5311874	ShiftExpression	offset >> 2		5311832	1		>>			
+ANR	5311875	Identifier	offset		5311832	0					
+ANR	5311876	PrimaryExpression	2		5311832	1					
+ANR	5311877	IfStatement	if ( width < 4 )		5311832	5					
+ANR	5311878	Condition	width < 4	21:8:363:371	5311832	0	True				
+ANR	5311879	RelationalExpression	width < 4		5311832	0		<			
+ANR	5311880	Identifier	width		5311832	0					
+ANR	5311881	PrimaryExpression	4		5311832	1					
+ANR	5311882	CompoundStatement		17:19:254:254	5311832	1					
+ANR	5311883	ExpressionStatement	"m5206_mbar_writew ( opaque , offset , value >> 16 )"	23:8:385:431	5311832	0	True				
+ANR	5311884	CallExpression	"m5206_mbar_writew ( opaque , offset , value >> 16 )"		5311832	0					
+ANR	5311885	Callee	m5206_mbar_writew		5311832	0					
+ANR	5311886	Identifier	m5206_mbar_writew		5311832	0					
+ANR	5311887	ArgumentList	opaque		5311832	1					
+ANR	5311888	Argument	opaque		5311832	0					
+ANR	5311889	Identifier	opaque		5311832	0					
+ANR	5311890	Argument	offset		5311832	1					
+ANR	5311891	Identifier	offset		5311832	0					
+ANR	5311892	Argument	value >> 16		5311832	2					
+ANR	5311893	ShiftExpression	value >> 16		5311832	0		>>			
+ANR	5311894	Identifier	value		5311832	0					
+ANR	5311895	PrimaryExpression	16		5311832	1					
+ANR	5311896	ExpressionStatement	"m5206_mbar_writew ( opaque , offset + 2 , value & 0xffff )"	25:8:442:495	5311832	1	True				
+ANR	5311897	CallExpression	"m5206_mbar_writew ( opaque , offset + 2 , value & 0xffff )"		5311832	0					
+ANR	5311898	Callee	m5206_mbar_writew		5311832	0					
+ANR	5311899	Identifier	m5206_mbar_writew		5311832	0					
+ANR	5311900	ArgumentList	opaque		5311832	1					
+ANR	5311901	Argument	opaque		5311832	0					
+ANR	5311902	Identifier	opaque		5311832	0					
+ANR	5311903	Argument	offset + 2		5311832	1					
+ANR	5311904	AdditiveExpression	offset + 2		5311832	0		+			
+ANR	5311905	Identifier	offset		5311832	0					
+ANR	5311906	PrimaryExpression	2		5311832	1					
+ANR	5311907	Argument	value & 0xffff		5311832	2					
+ANR	5311908	BitAndExpression	value & 0xffff		5311832	0		&			
+ANR	5311909	Identifier	value		5311832	0					
+ANR	5311910	PrimaryExpression	0xffff		5311832	1					
+ANR	5311911	ReturnStatement	return ;	27:8:506:512	5311832	2	True				
+ANR	5311912	ExpressionStatement	"m5206_mbar_write ( s , offset , value , 4 )"	31:4:526:563	5311832	6	True				
+ANR	5311913	CallExpression	"m5206_mbar_write ( s , offset , value , 4 )"		5311832	0					
+ANR	5311914	Callee	m5206_mbar_write		5311832	0					
+ANR	5311915	Identifier	m5206_mbar_write		5311832	0					
+ANR	5311916	ArgumentList	s		5311832	1					
+ANR	5311917	Argument	s		5311832	0					
+ANR	5311918	Identifier	s		5311832	0					
+ANR	5311919	Argument	offset		5311832	1					
+ANR	5311920	Identifier	offset		5311832	0					
+ANR	5311921	Argument	value		5311832	2					
+ANR	5311922	Identifier	value		5311832	0					
+ANR	5311923	Argument	4		5311832	3					
+ANR	5311924	PrimaryExpression	4		5311832	0					
+ANR	5311925	ReturnType	static void		5311832	1					
+ANR	5311926	Identifier	m5206_mbar_writel		5311832	2					
+ANR	5311927	ParameterList	"void * opaque , target_phys_addr_t offset , uint32_t value"		5311832	3					
+ANR	5311928	Parameter	void * opaque	1:30:30:41	5311832	0	True				
+ANR	5311929	ParameterType	void *		5311832	0					
+ANR	5311930	Identifier	opaque		5311832	1					
+ANR	5311931	Parameter	target_phys_addr_t offset	1:44:44:68	5311832	1	True				
+ANR	5311932	ParameterType	target_phys_addr_t		5311832	0					
+ANR	5311933	Identifier	offset		5311832	1					
+ANR	5311934	Parameter	uint32_t value	3:30:102:115	5311832	2	True				
+ANR	5311935	ParameterType	uint32_t		5311832	0					
+ANR	5311936	Identifier	value		5311832	1					
+ANR	5311937	CFGEntryNode	ENTRY		5311832		True				
+ANR	5311938	CFGExitNode	EXIT		5311832		True				
+ANR	5311939	Symbol	m5206_mbar_width		5311832						
+ANR	5311940	Symbol	opaque		5311832						
+ANR	5311941	Symbol	s		5311832						
+ANR	5311942	Symbol	offset		5311832						
+ANR	5311943	Symbol	* m5206_mbar_width		5311832						
+ANR	5311944	Symbol	width		5311832						
+ANR	5311945	Symbol	* offset		5311832						
+ANR	5311946	Symbol	value		5311832						

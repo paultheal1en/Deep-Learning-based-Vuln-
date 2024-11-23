@@ -1,0 +1,259 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5485047	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mipsnet_ioport_write_01_0.c								
+ANR	5485048	Function	mipsnet_ioport_write	1:0:0:1604							
+ANR	5485049	FunctionDef	"mipsnet_ioport_write (void * opaque , target_phys_addr_t addr , uint64_t val , unsigned int size)"		5485048	0					
+ANR	5485050	CompoundStatement		5:0:140:1604	5485048	0					
+ANR	5485051	IdentifierDeclStatement	MIPSnetState * s = opaque ;	7:4:147:171	5485048	0	True				
+ANR	5485052	IdentifierDecl	* s = opaque		5485048	0					
+ANR	5485053	IdentifierDeclType	MIPSnetState *		5485048	0					
+ANR	5485054	Identifier	s		5485048	1					
+ANR	5485055	AssignmentExpression	* s = opaque		5485048	2		=			
+ANR	5485056	Identifier	opaque		5485048	0					
+ANR	5485057	Identifier	opaque		5485048	1					
+ANR	5485058	ExpressionStatement	addr &= 0x3f	11:4:180:192	5485048	1	True				
+ANR	5485059	AssignmentExpression	addr &= 0x3f		5485048	0		&=			
+ANR	5485060	Identifier	addr		5485048	0					
+ANR	5485061	PrimaryExpression	0x3f		5485048	1					
+ANR	5485062	ExpressionStatement	"trace_mipsnet_write ( addr , val )"	13:4:199:229	5485048	2	True				
+ANR	5485063	CallExpression	"trace_mipsnet_write ( addr , val )"		5485048	0					
+ANR	5485064	Callee	trace_mipsnet_write		5485048	0					
+ANR	5485065	Identifier	trace_mipsnet_write		5485048	0					
+ANR	5485066	ArgumentList	addr		5485048	1					
+ANR	5485067	Argument	addr		5485048	0					
+ANR	5485068	Identifier	addr		5485048	0					
+ANR	5485069	Argument	val		5485048	1					
+ANR	5485070	Identifier	val		5485048	0					
+ANR	5485071	SwitchStatement	switch ( addr )		5485048	3					
+ANR	5485072	Condition	addr	15:12:244:247	5485048	0	True				
+ANR	5485073	Identifier	addr		5485048	0					
+ANR	5485074	CompoundStatement		11:18:109:109	5485048	1					
+ANR	5485075	Label	case MIPSNET_TX_DATA_COUNT :	17:4:257:283	5485048	0	True				
+ANR	5485076	Identifier	MIPSNET_TX_DATA_COUNT		5485048	0					
+ANR	5485077	ExpressionStatement	s -> tx_count = ( val <= MAX_ETH_FRAME_SIZE ) ? val : 0	19:1:287:338	5485048	1	True				
+ANR	5485078	AssignmentExpression	s -> tx_count = ( val <= MAX_ETH_FRAME_SIZE ) ? val : 0		5485048	0		=			
+ANR	5485079	PtrMemberAccess	s -> tx_count		5485048	0					
+ANR	5485080	Identifier	s		5485048	0					
+ANR	5485081	Identifier	tx_count		5485048	1					
+ANR	5485082	ConditionalExpression	( val <= MAX_ETH_FRAME_SIZE ) ? val : 0		5485048	1					
+ANR	5485083	Condition	val <= MAX_ETH_FRAME_SIZE		5485048	0					
+ANR	5485084	RelationalExpression	val <= MAX_ETH_FRAME_SIZE		5485048	0		<=			
+ANR	5485085	Identifier	val		5485048	0					
+ANR	5485086	Identifier	MAX_ETH_FRAME_SIZE		5485048	1					
+ANR	5485087	Identifier	val		5485048	1					
+ANR	5485088	PrimaryExpression	0		5485048	2					
+ANR	5485089	ExpressionStatement	s -> tx_written = 0	21:8:349:366	5485048	2	True				
+ANR	5485090	AssignmentExpression	s -> tx_written = 0		5485048	0		=			
+ANR	5485091	PtrMemberAccess	s -> tx_written		5485048	0					
+ANR	5485092	Identifier	s		5485048	0					
+ANR	5485093	Identifier	tx_written		5485048	1					
+ANR	5485094	PrimaryExpression	0		5485048	1					
+ANR	5485095	BreakStatement	break ;	23:8:377:382	5485048	3	True				
+ANR	5485096	Label	case MIPSNET_INT_CTL :	25:4:389:409	5485048	4	True				
+ANR	5485097	Identifier	MIPSNET_INT_CTL		5485048	0					
+ANR	5485098	IfStatement	if ( val & MIPSNET_INTCTL_TXDONE )		5485048	5					
+ANR	5485099	Condition	val & MIPSNET_INTCTL_TXDONE	27:12:424:450	5485048	0	True				
+ANR	5485100	BitAndExpression	val & MIPSNET_INTCTL_TXDONE		5485048	0		&			
+ANR	5485101	Identifier	val		5485048	0					
+ANR	5485102	Identifier	MIPSNET_INTCTL_TXDONE		5485048	1					
+ANR	5485103	CompoundStatement		23:41:312:312	5485048	1					
+ANR	5485104	ExpressionStatement	s -> intctl &= ~MIPSNET_INTCTL_TXDONE	29:12:468:503	5485048	0	True				
+ANR	5485105	AssignmentExpression	s -> intctl &= ~MIPSNET_INTCTL_TXDONE		5485048	0		&=			
+ANR	5485106	PtrMemberAccess	s -> intctl		5485048	0					
+ANR	5485107	Identifier	s		5485048	0					
+ANR	5485108	Identifier	intctl		5485048	1					
+ANR	5485109	Identifier	~MIPSNET_INTCTL_TXDONE		5485048	1					
+ANR	5485110	ElseStatement	else		5485048	0					
+ANR	5485111	IfStatement	if ( val & MIPSNET_INTCTL_RXDONE )		5485048	0					
+ANR	5485112	Condition	val & MIPSNET_INTCTL_RXDONE	31:19:525:551	5485048	0	True				
+ANR	5485113	BitAndExpression	val & MIPSNET_INTCTL_RXDONE		5485048	0		&			
+ANR	5485114	Identifier	val		5485048	0					
+ANR	5485115	Identifier	MIPSNET_INTCTL_RXDONE		5485048	1					
+ANR	5485116	CompoundStatement		27:48:413:413	5485048	1					
+ANR	5485117	ExpressionStatement	s -> intctl &= ~MIPSNET_INTCTL_RXDONE	33:12:569:604	5485048	0	True				
+ANR	5485118	AssignmentExpression	s -> intctl &= ~MIPSNET_INTCTL_RXDONE		5485048	0		&=			
+ANR	5485119	PtrMemberAccess	s -> intctl		5485048	0					
+ANR	5485120	Identifier	s		5485048	0					
+ANR	5485121	Identifier	intctl		5485048	1					
+ANR	5485122	Identifier	~MIPSNET_INTCTL_RXDONE		5485048	1					
+ANR	5485123	ElseStatement	else		5485048	0					
+ANR	5485124	IfStatement	if ( val & MIPSNET_INTCTL_TESTBIT )		5485048	0					
+ANR	5485125	Condition	val & MIPSNET_INTCTL_TESTBIT	35:19:626:653	5485048	0	True				
+ANR	5485126	BitAndExpression	val & MIPSNET_INTCTL_TESTBIT		5485048	0		&			
+ANR	5485127	Identifier	val		5485048	0					
+ANR	5485128	Identifier	MIPSNET_INTCTL_TESTBIT		5485048	1					
+ANR	5485129	CompoundStatement		31:49:515:515	5485048	1					
+ANR	5485130	ExpressionStatement	mipsnet_reset ( s )	37:12:671:687	5485048	0	True				
+ANR	5485131	CallExpression	mipsnet_reset ( s )		5485048	0					
+ANR	5485132	Callee	mipsnet_reset		5485048	0					
+ANR	5485133	Identifier	mipsnet_reset		5485048	0					
+ANR	5485134	ArgumentList	s		5485048	1					
+ANR	5485135	Argument	s		5485048	0					
+ANR	5485136	Identifier	s		5485048	0					
+ANR	5485137	ExpressionStatement	s -> intctl |= MIPSNET_INTCTL_TESTBIT	39:12:702:737	5485048	1	True				
+ANR	5485138	AssignmentExpression	s -> intctl |= MIPSNET_INTCTL_TESTBIT		5485048	0		|=			
+ANR	5485139	PtrMemberAccess	s -> intctl		5485048	0					
+ANR	5485140	Identifier	s		5485048	0					
+ANR	5485141	Identifier	intctl		5485048	1					
+ANR	5485142	Identifier	MIPSNET_INTCTL_TESTBIT		5485048	1					
+ANR	5485143	ElseStatement	else		5485048	0					
+ANR	5485144	IfStatement	if ( ! val )		5485048	0					
+ANR	5485145	Condition	! val	41:19:759:762	5485048	0	True				
+ANR	5485146	UnaryOperationExpression	! val		5485048	0					
+ANR	5485147	UnaryOperator	!		5485048	0					
+ANR	5485148	Identifier	val		5485048	1					
+ANR	5485149	CompoundStatement		37:25:624:624	5485048	1					
+ANR	5485150	ExpressionStatement	s -> busy = ! ! s -> intctl	47:8:855:876	5485048	6	True				
+ANR	5485151	AssignmentExpression	s -> busy = ! ! s -> intctl		5485048	0		=			
+ANR	5485152	PtrMemberAccess	s -> busy		5485048	0					
+ANR	5485153	Identifier	s		5485048	0					
+ANR	5485154	Identifier	busy		5485048	1					
+ANR	5485155	UnaryOperationExpression	! ! s -> intctl		5485048	1					
+ANR	5485156	UnaryOperator	!		5485048	0					
+ANR	5485157	UnaryOperationExpression	! s -> intctl		5485048	1					
+ANR	5485158	UnaryOperator	!		5485048	0					
+ANR	5485159	PtrMemberAccess	s -> intctl		5485048	1					
+ANR	5485160	Identifier	s		5485048	0					
+ANR	5485161	Identifier	intctl		5485048	1					
+ANR	5485162	ExpressionStatement	mipsnet_update_irq ( s )	49:8:887:908	5485048	7	True				
+ANR	5485163	CallExpression	mipsnet_update_irq ( s )		5485048	0					
+ANR	5485164	Callee	mipsnet_update_irq		5485048	0					
+ANR	5485165	Identifier	mipsnet_update_irq		5485048	0					
+ANR	5485166	ArgumentList	s		5485048	1					
+ANR	5485167	Argument	s		5485048	0					
+ANR	5485168	Identifier	s		5485048	0					
+ANR	5485169	BreakStatement	break ;	51:8:919:924	5485048	8	True				
+ANR	5485170	Label	case MIPSNET_TX_DATA_BUFFER :	53:4:931:958	5485048	9	True				
+ANR	5485171	Identifier	MIPSNET_TX_DATA_BUFFER		5485048	0					
+ANR	5485172	ExpressionStatement	s -> tx_buffer [ s -> tx_written ++ ] = val	55:8:969:1004	5485048	10	True				
+ANR	5485173	AssignmentExpression	s -> tx_buffer [ s -> tx_written ++ ] = val		5485048	0		=			
+ANR	5485174	ArrayIndexing	s -> tx_buffer [ s -> tx_written ++ ]		5485048	0					
+ANR	5485175	PtrMemberAccess	s -> tx_buffer		5485048	0					
+ANR	5485176	Identifier	s		5485048	0					
+ANR	5485177	Identifier	tx_buffer		5485048	1					
+ANR	5485178	PostIncDecOperationExpression	s -> tx_written ++		5485048	1					
+ANR	5485179	PtrMemberAccess	s -> tx_written		5485048	0					
+ANR	5485180	Identifier	s		5485048	0					
+ANR	5485181	Identifier	tx_written		5485048	1					
+ANR	5485182	IncDec	++		5485048	1					
+ANR	5485183	Identifier	val		5485048	1					
+ANR	5485184	IfStatement	if ( s -> tx_written == s -> tx_count )		5485048	11					
+ANR	5485185	Condition	s -> tx_written == s -> tx_count	57:12:1019:1046	5485048	0	True				
+ANR	5485186	EqualityExpression	s -> tx_written == s -> tx_count		5485048	0		==			
+ANR	5485187	PtrMemberAccess	s -> tx_written		5485048	0					
+ANR	5485188	Identifier	s		5485048	0					
+ANR	5485189	Identifier	tx_written		5485048	1					
+ANR	5485190	PtrMemberAccess	s -> tx_count		5485048	1					
+ANR	5485191	Identifier	s		5485048	0					
+ANR	5485192	Identifier	tx_count		5485048	1					
+ANR	5485193	CompoundStatement		53:42:908:908	5485048	1					
+ANR	5485194	ExpressionStatement	trace_mipsnet_send ( s -> tx_count )	61:12:1096:1127	5485048	0	True				
+ANR	5485195	CallExpression	trace_mipsnet_send ( s -> tx_count )		5485048	0					
+ANR	5485196	Callee	trace_mipsnet_send		5485048	0					
+ANR	5485197	Identifier	trace_mipsnet_send		5485048	0					
+ANR	5485198	ArgumentList	s -> tx_count		5485048	1					
+ANR	5485199	Argument	s -> tx_count		5485048	0					
+ANR	5485200	PtrMemberAccess	s -> tx_count		5485048	0					
+ANR	5485201	Identifier	s		5485048	0					
+ANR	5485202	Identifier	tx_count		5485048	1					
+ANR	5485203	ExpressionStatement	"qemu_send_packet ( & s -> nic -> nc , s -> tx_buffer , s -> tx_count )"	63:12:1142:1198	5485048	1	True				
+ANR	5485204	CallExpression	"qemu_send_packet ( & s -> nic -> nc , s -> tx_buffer , s -> tx_count )"		5485048	0					
+ANR	5485205	Callee	qemu_send_packet		5485048	0					
+ANR	5485206	Identifier	qemu_send_packet		5485048	0					
+ANR	5485207	ArgumentList	& s -> nic -> nc		5485048	1					
+ANR	5485208	Argument	& s -> nic -> nc		5485048	0					
+ANR	5485209	UnaryOperationExpression	& s -> nic -> nc		5485048	0					
+ANR	5485210	UnaryOperator	&		5485048	0					
+ANR	5485211	PtrMemberAccess	s -> nic -> nc		5485048	1					
+ANR	5485212	PtrMemberAccess	s -> nic		5485048	0					
+ANR	5485213	Identifier	s		5485048	0					
+ANR	5485214	Identifier	nic		5485048	1					
+ANR	5485215	Identifier	nc		5485048	1					
+ANR	5485216	Argument	s -> tx_buffer		5485048	1					
+ANR	5485217	PtrMemberAccess	s -> tx_buffer		5485048	0					
+ANR	5485218	Identifier	s		5485048	0					
+ANR	5485219	Identifier	tx_buffer		5485048	1					
+ANR	5485220	Argument	s -> tx_count		5485048	2					
+ANR	5485221	PtrMemberAccess	s -> tx_count		5485048	0					
+ANR	5485222	Identifier	s		5485048	0					
+ANR	5485223	Identifier	tx_count		5485048	1					
+ANR	5485224	ExpressionStatement	s -> tx_count = s -> tx_written = 0	65:12:1213:1244	5485048	2	True				
+ANR	5485225	AssignmentExpression	s -> tx_count = s -> tx_written = 0		5485048	0		=			
+ANR	5485226	PtrMemberAccess	s -> tx_count		5485048	0					
+ANR	5485227	Identifier	s		5485048	0					
+ANR	5485228	Identifier	tx_count		5485048	1					
+ANR	5485229	AssignmentExpression	s -> tx_written = 0		5485048	1		=			
+ANR	5485230	PtrMemberAccess	s -> tx_written		5485048	0					
+ANR	5485231	Identifier	s		5485048	0					
+ANR	5485232	Identifier	tx_written		5485048	1					
+ANR	5485233	PrimaryExpression	0		5485048	1					
+ANR	5485234	ExpressionStatement	s -> intctl |= MIPSNET_INTCTL_TXDONE	67:12:1259:1293	5485048	3	True				
+ANR	5485235	AssignmentExpression	s -> intctl |= MIPSNET_INTCTL_TXDONE		5485048	0		|=			
+ANR	5485236	PtrMemberAccess	s -> intctl		5485048	0					
+ANR	5485237	Identifier	s		5485048	0					
+ANR	5485238	Identifier	intctl		5485048	1					
+ANR	5485239	Identifier	MIPSNET_INTCTL_TXDONE		5485048	1					
+ANR	5485240	ExpressionStatement	s -> busy = 1	69:12:1308:1319	5485048	4	True				
+ANR	5485241	AssignmentExpression	s -> busy = 1		5485048	0		=			
+ANR	5485242	PtrMemberAccess	s -> busy		5485048	0					
+ANR	5485243	Identifier	s		5485048	0					
+ANR	5485244	Identifier	busy		5485048	1					
+ANR	5485245	PrimaryExpression	1		5485048	1					
+ANR	5485246	ExpressionStatement	mipsnet_update_irq ( s )	71:12:1334:1355	5485048	5	True				
+ANR	5485247	CallExpression	mipsnet_update_irq ( s )		5485048	0					
+ANR	5485248	Callee	mipsnet_update_irq		5485048	0					
+ANR	5485249	Identifier	mipsnet_update_irq		5485048	0					
+ANR	5485250	ArgumentList	s		5485048	1					
+ANR	5485251	Argument	s		5485048	0					
+ANR	5485252	Identifier	s		5485048	0					
+ANR	5485253	BreakStatement	break ;	75:8:1377:1382	5485048	12	True				
+ANR	5485254	Label	case MIPSNET_DEV_ID :	79:4:1420:1439	5485048	13	True				
+ANR	5485255	Identifier	MIPSNET_DEV_ID		5485048	0					
+ANR	5485256	Label	case MIPSNET_BUSY :	81:4:1446:1463	5485048	14	True				
+ANR	5485257	Identifier	MIPSNET_BUSY		5485048	0					
+ANR	5485258	Label	case MIPSNET_RX_DATA_COUNT :	83:4:1470:1496	5485048	15	True				
+ANR	5485259	Identifier	MIPSNET_RX_DATA_COUNT		5485048	0					
+ANR	5485260	Label	case MIPSNET_INTERRUPT_INFO :	85:4:1503:1530	5485048	16	True				
+ANR	5485261	Identifier	MIPSNET_INTERRUPT_INFO		5485048	0					
+ANR	5485262	Label	case MIPSNET_RX_DATA_BUFFER :	87:4:1537:1564	5485048	17	True				
+ANR	5485263	Identifier	MIPSNET_RX_DATA_BUFFER		5485048	0					
+ANR	5485264	Label	default :	89:4:1571:1578	5485048	18	True				
+ANR	5485265	Identifier	default		5485048	0					
+ANR	5485266	BreakStatement	break ;	91:8:1589:1594	5485048	19	True				
+ANR	5485267	ReturnType	static void		5485048	1					
+ANR	5485268	Identifier	mipsnet_ioport_write		5485048	2					
+ANR	5485269	ParameterList	"void * opaque , target_phys_addr_t addr , uint64_t val , unsigned int size"		5485048	3					
+ANR	5485270	Parameter	void * opaque	1:33:33:44	5485048	0	True				
+ANR	5485271	ParameterType	void *		5485048	0					
+ANR	5485272	Identifier	opaque		5485048	1					
+ANR	5485273	Parameter	target_phys_addr_t addr	1:47:47:69	5485048	1	True				
+ANR	5485274	ParameterType	target_phys_addr_t		5485048	0					
+ANR	5485275	Identifier	addr		5485048	1					
+ANR	5485276	Parameter	uint64_t val	3:33:106:117	5485048	2	True				
+ANR	5485277	ParameterType	uint64_t		5485048	0					
+ANR	5485278	Identifier	val		5485048	1					
+ANR	5485279	Parameter	unsigned int size	3:47:120:136	5485048	3	True				
+ANR	5485280	ParameterType	unsigned int		5485048	0					
+ANR	5485281	Identifier	size		5485048	1					
+ANR	5485282	CFGEntryNode	ENTRY		5485048		True				
+ANR	5485283	CFGExitNode	EXIT		5485048		True				
+ANR	5485284	Symbol	val		5485048						
+ANR	5485285	Symbol	s -> busy		5485048						
+ANR	5485286	Symbol	opaque		5485048						
+ANR	5485287	Symbol	& s -> nic -> nc		5485048						
+ANR	5485288	Symbol	s -> tx_count		5485048						
+ANR	5485289	Symbol	MIPSNET_INTCTL_TXDONE		5485048						
+ANR	5485290	Symbol	~MIPSNET_INTCTL_TXDONE		5485048						
+ANR	5485291	Symbol	* s -> tx_buffer		5485048						
+ANR	5485292	Symbol	MAX_ETH_FRAME_SIZE		5485048						
+ANR	5485293	Symbol	MIPSNET_INTCTL_RXDONE		5485048						
+ANR	5485294	Symbol	MIPSNET_INTCTL_TESTBIT		5485048						
+ANR	5485295	Symbol	s -> tx_buffer		5485048						
+ANR	5485296	Symbol	s		5485048						
+ANR	5485297	Symbol	size		5485048						
+ANR	5485298	Symbol	s -> nic		5485048						
+ANR	5485299	Symbol	* * s		5485048						
+ANR	5485300	Symbol	s -> tx_written		5485048						
+ANR	5485301	Symbol	~MIPSNET_INTCTL_RXDONE		5485048						
+ANR	5485302	Symbol	addr		5485048						
+ANR	5485303	Symbol	* s		5485048						
+ANR	5485304	Symbol	s -> intctl		5485048						

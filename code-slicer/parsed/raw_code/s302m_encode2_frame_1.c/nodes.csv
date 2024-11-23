@@ -1,0 +1,784 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7557027	File	/home/p4ultr4n/workplace/ReVeal/raw_code/s302m_encode2_frame_1.c								
+ANR	7557028	Function	s302m_encode2_frame	1:0:0:3848							
+ANR	7557029	FunctionDef	"s302m_encode2_frame (AVCodecContext * avctx , AVPacket * avpkt , const AVFrame * frame , int * got_packet_ptr)"		7557028	0					
+ANR	7557030	CompoundStatement		5:0:147:3848	7557028	0					
+ANR	7557031	IdentifierDeclStatement	S302MEncContext * s = avctx -> priv_data ;	7:4:154:191	7557028	0	True				
+ANR	7557032	IdentifierDecl	* s = avctx -> priv_data		7557028	0					
+ANR	7557033	IdentifierDeclType	S302MEncContext *		7557028	0					
+ANR	7557034	Identifier	s		7557028	1					
+ANR	7557035	AssignmentExpression	* s = avctx -> priv_data		7557028	2		=			
+ANR	7557036	Identifier	s		7557028	0					
+ANR	7557037	PtrMemberAccess	avctx -> priv_data		7557028	1					
+ANR	7557038	Identifier	avctx		7557028	0					
+ANR	7557039	Identifier	priv_data		7557028	1					
+ANR	7557040	IdentifierDeclStatement	const int buf_size = AES3_HEADER_LEN + ( frame -> nb_samples * avctx -> channels * ( avctx -> bits_per_raw_sample + 4 ) ) / 8 ;	9:4:198:389	7557028	1	True				
+ANR	7557041	IdentifierDecl	buf_size = AES3_HEADER_LEN + ( frame -> nb_samples * avctx -> channels * ( avctx -> bits_per_raw_sample + 4 ) ) / 8		7557028	0					
+ANR	7557042	IdentifierDeclType	const int		7557028	0					
+ANR	7557043	Identifier	buf_size		7557028	1					
+ANR	7557044	AssignmentExpression	buf_size = AES3_HEADER_LEN + ( frame -> nb_samples * avctx -> channels * ( avctx -> bits_per_raw_sample + 4 ) ) / 8		7557028	2		=			
+ANR	7557045	Identifier	buf_size		7557028	0					
+ANR	7557046	AdditiveExpression	AES3_HEADER_LEN + ( frame -> nb_samples * avctx -> channels * ( avctx -> bits_per_raw_sample + 4 ) ) / 8		7557028	1		+			
+ANR	7557047	Identifier	AES3_HEADER_LEN		7557028	0					
+ANR	7557048	MultiplicativeExpression	( frame -> nb_samples * avctx -> channels * ( avctx -> bits_per_raw_sample + 4 ) ) / 8		7557028	1		/			
+ANR	7557049	MultiplicativeExpression	frame -> nb_samples * avctx -> channels * ( avctx -> bits_per_raw_sample + 4 )		7557028	0		*			
+ANR	7557050	PtrMemberAccess	frame -> nb_samples		7557028	0					
+ANR	7557051	Identifier	frame		7557028	0					
+ANR	7557052	Identifier	nb_samples		7557028	1					
+ANR	7557053	MultiplicativeExpression	avctx -> channels * ( avctx -> bits_per_raw_sample + 4 )		7557028	1		*			
+ANR	7557054	PtrMemberAccess	avctx -> channels		7557028	0					
+ANR	7557055	Identifier	avctx		7557028	0					
+ANR	7557056	Identifier	channels		7557028	1					
+ANR	7557057	AdditiveExpression	avctx -> bits_per_raw_sample + 4		7557028	1		+			
+ANR	7557058	PtrMemberAccess	avctx -> bits_per_raw_sample		7557028	0					
+ANR	7557059	Identifier	avctx		7557028	0					
+ANR	7557060	Identifier	bits_per_raw_sample		7557028	1					
+ANR	7557061	PrimaryExpression	4		7557028	1					
+ANR	7557062	PrimaryExpression	8		7557028	1					
+ANR	7557063	IdentifierDeclStatement	"int ret , c , channels ;"	17:4:396:416	7557028	2	True				
+ANR	7557064	IdentifierDecl	ret		7557028	0					
+ANR	7557065	IdentifierDeclType	int		7557028	0					
+ANR	7557066	Identifier	ret		7557028	1					
+ANR	7557067	IdentifierDecl	c		7557028	1					
+ANR	7557068	IdentifierDeclType	int		7557028	0					
+ANR	7557069	Identifier	c		7557028	1					
+ANR	7557070	IdentifierDecl	channels		7557028	2					
+ANR	7557071	IdentifierDeclType	int		7557028	0					
+ANR	7557072	Identifier	channels		7557028	1					
+ANR	7557073	IdentifierDeclStatement	uint8_t * o ;	19:4:423:433	7557028	3	True				
+ANR	7557074	IdentifierDecl	* o		7557028	0					
+ANR	7557075	IdentifierDeclType	uint8_t *		7557028	0					
+ANR	7557076	Identifier	o		7557028	1					
+ANR	7557077	IdentifierDeclStatement	PutBitContext pb ;	21:4:440:456	7557028	4	True				
+ANR	7557078	IdentifierDecl	pb		7557028	0					
+ANR	7557079	IdentifierDeclType	PutBitContext		7557028	0					
+ANR	7557080	Identifier	pb		7557028	1					
+ANR	7557081	IfStatement	"if ( ( ret = ff_alloc_packet2 ( avctx , avpkt , buf_size ) ) < 0 )"		7557028	5					
+ANR	7557082	Condition	"( ret = ff_alloc_packet2 ( avctx , avpkt , buf_size ) ) < 0"	25:8:469:520	7557028	0	True				
+ANR	7557083	RelationalExpression	"( ret = ff_alloc_packet2 ( avctx , avpkt , buf_size ) ) < 0"		7557028	0		<			
+ANR	7557084	AssignmentExpression	"ret = ff_alloc_packet2 ( avctx , avpkt , buf_size )"		7557028	0		=			
+ANR	7557085	Identifier	ret		7557028	0					
+ANR	7557086	CallExpression	"ff_alloc_packet2 ( avctx , avpkt , buf_size )"		7557028	1					
+ANR	7557087	Callee	ff_alloc_packet2		7557028	0					
+ANR	7557088	Identifier	ff_alloc_packet2		7557028	0					
+ANR	7557089	ArgumentList	avctx		7557028	1					
+ANR	7557090	Argument	avctx		7557028	0					
+ANR	7557091	Identifier	avctx		7557028	0					
+ANR	7557092	Argument	avpkt		7557028	1					
+ANR	7557093	Identifier	avpkt		7557028	0					
+ANR	7557094	Argument	buf_size		7557028	2					
+ANR	7557095	Identifier	buf_size		7557028	0					
+ANR	7557096	PrimaryExpression	0		7557028	1					
+ANR	7557097	ReturnStatement	return ret ;	27:8:532:542	7557028	1	True				
+ANR	7557098	Identifier	ret		7557028	0					
+ANR	7557099	ExpressionStatement	o = avpkt -> data	31:4:551:566	7557028	6	True				
+ANR	7557100	AssignmentExpression	o = avpkt -> data		7557028	0		=			
+ANR	7557101	Identifier	o		7557028	0					
+ANR	7557102	PtrMemberAccess	avpkt -> data		7557028	1					
+ANR	7557103	Identifier	avpkt		7557028	0					
+ANR	7557104	Identifier	data		7557028	1					
+ANR	7557105	ExpressionStatement	"init_put_bits ( & pb , o , buf_size * 8 )"	33:4:573:608	7557028	7	True				
+ANR	7557106	CallExpression	"init_put_bits ( & pb , o , buf_size * 8 )"		7557028	0					
+ANR	7557107	Callee	init_put_bits		7557028	0					
+ANR	7557108	Identifier	init_put_bits		7557028	0					
+ANR	7557109	ArgumentList	& pb		7557028	1					
+ANR	7557110	Argument	& pb		7557028	0					
+ANR	7557111	UnaryOperationExpression	& pb		7557028	0					
+ANR	7557112	UnaryOperator	&		7557028	0					
+ANR	7557113	Identifier	pb		7557028	1					
+ANR	7557114	Argument	o		7557028	1					
+ANR	7557115	Identifier	o		7557028	0					
+ANR	7557116	Argument	buf_size * 8		7557028	2					
+ANR	7557117	MultiplicativeExpression	buf_size * 8		7557028	0		*			
+ANR	7557118	Identifier	buf_size		7557028	0					
+ANR	7557119	PrimaryExpression	8		7557028	1					
+ANR	7557120	ExpressionStatement	"put_bits ( & pb , 16 , buf_size - AES3_HEADER_LEN )"	35:4:615:660	7557028	8	True				
+ANR	7557121	CallExpression	"put_bits ( & pb , 16 , buf_size - AES3_HEADER_LEN )"		7557028	0					
+ANR	7557122	Callee	put_bits		7557028	0					
+ANR	7557123	Identifier	put_bits		7557028	0					
+ANR	7557124	ArgumentList	& pb		7557028	1					
+ANR	7557125	Argument	& pb		7557028	0					
+ANR	7557126	UnaryOperationExpression	& pb		7557028	0					
+ANR	7557127	UnaryOperator	&		7557028	0					
+ANR	7557128	Identifier	pb		7557028	1					
+ANR	7557129	Argument	16		7557028	1					
+ANR	7557130	PrimaryExpression	16		7557028	0					
+ANR	7557131	Argument	buf_size - AES3_HEADER_LEN		7557028	2					
+ANR	7557132	AdditiveExpression	buf_size - AES3_HEADER_LEN		7557028	0		-			
+ANR	7557133	Identifier	buf_size		7557028	0					
+ANR	7557134	Identifier	AES3_HEADER_LEN		7557028	1					
+ANR	7557135	ExpressionStatement	"put_bits ( & pb , 2 , ( avctx -> channels - 2 ) >> 1 )"	37:4:667:711	7557028	9	True				
+ANR	7557136	CallExpression	"put_bits ( & pb , 2 , ( avctx -> channels - 2 ) >> 1 )"		7557028	0					
+ANR	7557137	Callee	put_bits		7557028	0					
+ANR	7557138	Identifier	put_bits		7557028	0					
+ANR	7557139	ArgumentList	& pb		7557028	1					
+ANR	7557140	Argument	& pb		7557028	0					
+ANR	7557141	UnaryOperationExpression	& pb		7557028	0					
+ANR	7557142	UnaryOperator	&		7557028	0					
+ANR	7557143	Identifier	pb		7557028	1					
+ANR	7557144	Argument	2		7557028	1					
+ANR	7557145	PrimaryExpression	2		7557028	0					
+ANR	7557146	Argument	( avctx -> channels - 2 ) >> 1		7557028	2					
+ANR	7557147	ShiftExpression	( avctx -> channels - 2 ) >> 1		7557028	0		>>			
+ANR	7557148	AdditiveExpression	avctx -> channels - 2		7557028	0		-			
+ANR	7557149	PtrMemberAccess	avctx -> channels		7557028	0					
+ANR	7557150	Identifier	avctx		7557028	0					
+ANR	7557151	Identifier	channels		7557028	1					
+ANR	7557152	PrimaryExpression	2		7557028	1					
+ANR	7557153	PrimaryExpression	1		7557028	1					
+ANR	7557154	ExpressionStatement	"put_bits ( & pb , 8 , 0 )"	39:4:742:761	7557028	10	True				
+ANR	7557155	CallExpression	"put_bits ( & pb , 8 , 0 )"		7557028	0					
+ANR	7557156	Callee	put_bits		7557028	0					
+ANR	7557157	Identifier	put_bits		7557028	0					
+ANR	7557158	ArgumentList	& pb		7557028	1					
+ANR	7557159	Argument	& pb		7557028	0					
+ANR	7557160	UnaryOperationExpression	& pb		7557028	0					
+ANR	7557161	UnaryOperator	&		7557028	0					
+ANR	7557162	Identifier	pb		7557028	1					
+ANR	7557163	Argument	8		7557028	1					
+ANR	7557164	PrimaryExpression	8		7557028	0					
+ANR	7557165	Argument	0		7557028	2					
+ANR	7557166	PrimaryExpression	0		7557028	0					
+ANR	7557167	ExpressionStatement	"put_bits ( & pb , 2 , ( avctx -> bits_per_raw_sample - 16 ) / 4 )"	41:4:809:864	7557028	11	True				
+ANR	7557168	CallExpression	"put_bits ( & pb , 2 , ( avctx -> bits_per_raw_sample - 16 ) / 4 )"		7557028	0					
+ANR	7557169	Callee	put_bits		7557028	0					
+ANR	7557170	Identifier	put_bits		7557028	0					
+ANR	7557171	ArgumentList	& pb		7557028	1					
+ANR	7557172	Argument	& pb		7557028	0					
+ANR	7557173	UnaryOperationExpression	& pb		7557028	0					
+ANR	7557174	UnaryOperator	&		7557028	0					
+ANR	7557175	Identifier	pb		7557028	1					
+ANR	7557176	Argument	2		7557028	1					
+ANR	7557177	PrimaryExpression	2		7557028	0					
+ANR	7557178	Argument	( avctx -> bits_per_raw_sample - 16 ) / 4		7557028	2					
+ANR	7557179	MultiplicativeExpression	( avctx -> bits_per_raw_sample - 16 ) / 4		7557028	0		/			
+ANR	7557180	AdditiveExpression	avctx -> bits_per_raw_sample - 16		7557028	0		-			
+ANR	7557181	PtrMemberAccess	avctx -> bits_per_raw_sample		7557028	0					
+ANR	7557182	Identifier	avctx		7557028	0					
+ANR	7557183	Identifier	bits_per_raw_sample		7557028	1					
+ANR	7557184	PrimaryExpression	16		7557028	1					
+ANR	7557185	PrimaryExpression	4		7557028	1					
+ANR	7557186	ExpressionStatement	"put_bits ( & pb , 4 , 0 )"	43:4:925:944	7557028	12	True				
+ANR	7557187	CallExpression	"put_bits ( & pb , 4 , 0 )"		7557028	0					
+ANR	7557188	Callee	put_bits		7557028	0					
+ANR	7557189	Identifier	put_bits		7557028	0					
+ANR	7557190	ArgumentList	& pb		7557028	1					
+ANR	7557191	Argument	& pb		7557028	0					
+ANR	7557192	UnaryOperationExpression	& pb		7557028	0					
+ANR	7557193	UnaryOperator	&		7557028	0					
+ANR	7557194	Identifier	pb		7557028	1					
+ANR	7557195	Argument	4		7557028	1					
+ANR	7557196	PrimaryExpression	4		7557028	0					
+ANR	7557197	Argument	0		7557028	2					
+ANR	7557198	PrimaryExpression	0		7557028	0					
+ANR	7557199	ExpressionStatement	flush_put_bits ( & pb )	45:4:992:1011	7557028	13	True				
+ANR	7557200	CallExpression	flush_put_bits ( & pb )		7557028	0					
+ANR	7557201	Callee	flush_put_bits		7557028	0					
+ANR	7557202	Identifier	flush_put_bits		7557028	0					
+ANR	7557203	ArgumentList	& pb		7557028	1					
+ANR	7557204	Argument	& pb		7557028	0					
+ANR	7557205	UnaryOperationExpression	& pb		7557028	0					
+ANR	7557206	UnaryOperator	&		7557028	0					
+ANR	7557207	Identifier	pb		7557028	1					
+ANR	7557208	ExpressionStatement	o += AES3_HEADER_LEN	47:4:1018:1038	7557028	14	True				
+ANR	7557209	AssignmentExpression	o += AES3_HEADER_LEN		7557028	0		+=			
+ANR	7557210	Identifier	o		7557028	0					
+ANR	7557211	Identifier	AES3_HEADER_LEN		7557028	1					
+ANR	7557212	IfStatement	if ( avctx -> bits_per_raw_sample == 24 )		7557028	15					
+ANR	7557213	Condition	avctx -> bits_per_raw_sample == 24	51:8:1051:1082	7557028	0	True				
+ANR	7557214	EqualityExpression	avctx -> bits_per_raw_sample == 24		7557028	0		==			
+ANR	7557215	PtrMemberAccess	avctx -> bits_per_raw_sample		7557028	0					
+ANR	7557216	Identifier	avctx		7557028	0					
+ANR	7557217	Identifier	bits_per_raw_sample		7557028	1					
+ANR	7557218	PrimaryExpression	24		7557028	1					
+ANR	7557219	CompoundStatement		49:8:948:1000	7557028	1					
+ANR	7557220	IdentifierDeclStatement	const uint32_t * samples = ( uint32_t * ) frame -> data [ 0 ] ;	53:8:1096:1148	7557028	0	True				
+ANR	7557221	IdentifierDecl	* samples = ( uint32_t * ) frame -> data [ 0 ]		7557028	0					
+ANR	7557222	IdentifierDeclType	const uint32_t *		7557028	0					
+ANR	7557223	Identifier	samples		7557028	1					
+ANR	7557224	AssignmentExpression	* samples = ( uint32_t * ) frame -> data [ 0 ]		7557028	2		=			
+ANR	7557225	Identifier	samples		7557028	0					
+ANR	7557226	CastExpression	( uint32_t * ) frame -> data [ 0 ]		7557028	1					
+ANR	7557227	CastTarget	uint32_t *		7557028	0					
+ANR	7557228	ArrayIndexing	frame -> data [ 0 ]		7557028	1					
+ANR	7557229	PtrMemberAccess	frame -> data		7557028	0					
+ANR	7557230	Identifier	frame		7557028	0					
+ANR	7557231	Identifier	data		7557028	1					
+ANR	7557232	PrimaryExpression	0		7557028	1					
+ANR	7557233	ForStatement	for ( c = 0 ; c < frame -> nb_samples ; c ++ )		7557028	1					
+ANR	7557234	ForInit	c = 0 ;	57:13:1166:1171	7557028	0	True				
+ANR	7557235	AssignmentExpression	c = 0		7557028	0		=			
+ANR	7557236	Identifier	c		7557028	0					
+ANR	7557237	PrimaryExpression	0		7557028	1					
+ANR	7557238	Condition	c < frame -> nb_samples	57:20:1173:1193	7557028	1	True				
+ANR	7557239	RelationalExpression	c < frame -> nb_samples		7557028	0		<			
+ANR	7557240	Identifier	c		7557028	0					
+ANR	7557241	PtrMemberAccess	frame -> nb_samples		7557028	1					
+ANR	7557242	Identifier	frame		7557028	0					
+ANR	7557243	Identifier	nb_samples		7557028	1					
+ANR	7557244	PostIncDecOperationExpression	c ++	57:43:1196:1198	7557028	2	True				
+ANR	7557245	Identifier	c		7557028	0					
+ANR	7557246	IncDec	++		7557028	1					
+ANR	7557247	CompoundStatement		55:12:1068:1114	7557028	3					
+ANR	7557248	IdentifierDeclStatement	uint8_t vucf = s -> framing_index == 0 ? 0x10 : 0 ;	59:12:1216:1262	7557028	0	True				
+ANR	7557249	IdentifierDecl	vucf = s -> framing_index == 0 ? 0x10 : 0		7557028	0					
+ANR	7557250	IdentifierDeclType	uint8_t		7557028	0					
+ANR	7557251	Identifier	vucf		7557028	1					
+ANR	7557252	AssignmentExpression	vucf = s -> framing_index == 0 ? 0x10 : 0		7557028	2		=			
+ANR	7557253	Identifier	vucf		7557028	0					
+ANR	7557254	ConditionalExpression	s -> framing_index == 0 ? 0x10 : 0		7557028	1					
+ANR	7557255	Condition	s -> framing_index == 0		7557028	0					
+ANR	7557256	EqualityExpression	s -> framing_index == 0		7557028	0		==			
+ANR	7557257	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557258	Identifier	s		7557028	0					
+ANR	7557259	Identifier	framing_index		7557028	1					
+ANR	7557260	PrimaryExpression	0		7557028	1					
+ANR	7557261	PrimaryExpression	0x10		7557028	1					
+ANR	7557262	PrimaryExpression	0		7557028	2					
+ANR	7557263	ForStatement	for ( channels = 0 ; channels < avctx -> channels ; channels += 2 )		7557028	1					
+ANR	7557264	ForInit	channels = 0 ;	63:17:1284:1296	7557028	0	True				
+ANR	7557265	AssignmentExpression	channels = 0		7557028	0		=			
+ANR	7557266	Identifier	channels		7557028	0					
+ANR	7557267	PrimaryExpression	0		7557028	1					
+ANR	7557268	Condition	channels < avctx -> channels	63:31:1298:1323	7557028	1	True				
+ANR	7557269	RelationalExpression	channels < avctx -> channels		7557028	0		<			
+ANR	7557270	Identifier	channels		7557028	0					
+ANR	7557271	PtrMemberAccess	avctx -> channels		7557028	1					
+ANR	7557272	Identifier	avctx		7557028	0					
+ANR	7557273	Identifier	channels		7557028	1					
+ANR	7557274	AssignmentExpression	channels += 2	63:59:1326:1338	7557028	2	True	+=			
+ANR	7557275	Identifier	channels		7557028	0					
+ANR	7557276	PrimaryExpression	2		7557028	1					
+ANR	7557277	CompoundStatement		59:74:1193:1193	7557028	3					
+ANR	7557278	ExpressionStatement	o [ 0 ] = ff_reverse [ ( samples [ 0 ] & 0x0000FF00 ) >> 8 ]	65:16:1360:1409	7557028	0	True				
+ANR	7557279	AssignmentExpression	o [ 0 ] = ff_reverse [ ( samples [ 0 ] & 0x0000FF00 ) >> 8 ]		7557028	0		=			
+ANR	7557280	ArrayIndexing	o [ 0 ]		7557028	0					
+ANR	7557281	Identifier	o		7557028	0					
+ANR	7557282	PrimaryExpression	0		7557028	1					
+ANR	7557283	ArrayIndexing	ff_reverse [ ( samples [ 0 ] & 0x0000FF00 ) >> 8 ]		7557028	1					
+ANR	7557284	Identifier	ff_reverse		7557028	0					
+ANR	7557285	ShiftExpression	( samples [ 0 ] & 0x0000FF00 ) >> 8		7557028	1		>>			
+ANR	7557286	BitAndExpression	samples [ 0 ] & 0x0000FF00		7557028	0		&			
+ANR	7557287	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557288	Identifier	samples		7557028	0					
+ANR	7557289	PrimaryExpression	0		7557028	1					
+ANR	7557290	PrimaryExpression	0x0000FF00		7557028	1					
+ANR	7557291	PrimaryExpression	8		7557028	1					
+ANR	7557292	ExpressionStatement	o [ 1 ] = ff_reverse [ ( samples [ 0 ] & 0x00FF0000 ) >> 16 ]	67:16:1428:1478	7557028	1	True				
+ANR	7557293	AssignmentExpression	o [ 1 ] = ff_reverse [ ( samples [ 0 ] & 0x00FF0000 ) >> 16 ]		7557028	0		=			
+ANR	7557294	ArrayIndexing	o [ 1 ]		7557028	0					
+ANR	7557295	Identifier	o		7557028	0					
+ANR	7557296	PrimaryExpression	1		7557028	1					
+ANR	7557297	ArrayIndexing	ff_reverse [ ( samples [ 0 ] & 0x00FF0000 ) >> 16 ]		7557028	1					
+ANR	7557298	Identifier	ff_reverse		7557028	0					
+ANR	7557299	ShiftExpression	( samples [ 0 ] & 0x00FF0000 ) >> 16		7557028	1		>>			
+ANR	7557300	BitAndExpression	samples [ 0 ] & 0x00FF0000		7557028	0		&			
+ANR	7557301	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557302	Identifier	samples		7557028	0					
+ANR	7557303	PrimaryExpression	0		7557028	1					
+ANR	7557304	PrimaryExpression	0x00FF0000		7557028	1					
+ANR	7557305	PrimaryExpression	16		7557028	1					
+ANR	7557306	ExpressionStatement	o [ 2 ] = ff_reverse [ ( samples [ 0 ] & 0xFF000000 ) >> 24 ]	69:16:1497:1547	7557028	2	True				
+ANR	7557307	AssignmentExpression	o [ 2 ] = ff_reverse [ ( samples [ 0 ] & 0xFF000000 ) >> 24 ]		7557028	0		=			
+ANR	7557308	ArrayIndexing	o [ 2 ]		7557028	0					
+ANR	7557309	Identifier	o		7557028	0					
+ANR	7557310	PrimaryExpression	2		7557028	1					
+ANR	7557311	ArrayIndexing	ff_reverse [ ( samples [ 0 ] & 0xFF000000 ) >> 24 ]		7557028	1					
+ANR	7557312	Identifier	ff_reverse		7557028	0					
+ANR	7557313	ShiftExpression	( samples [ 0 ] & 0xFF000000 ) >> 24		7557028	1		>>			
+ANR	7557314	BitAndExpression	samples [ 0 ] & 0xFF000000		7557028	0		&			
+ANR	7557315	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557316	Identifier	samples		7557028	0					
+ANR	7557317	PrimaryExpression	0		7557028	1					
+ANR	7557318	PrimaryExpression	0xFF000000		7557028	1					
+ANR	7557319	PrimaryExpression	24		7557028	1					
+ANR	7557320	ExpressionStatement	o [ 3 ] = ff_reverse [ ( samples [ 1 ] & 0x00000F00 ) >> 4 ] | vucf	71:16:1566:1622	7557028	3	True				
+ANR	7557321	AssignmentExpression	o [ 3 ] = ff_reverse [ ( samples [ 1 ] & 0x00000F00 ) >> 4 ] | vucf		7557028	0		=			
+ANR	7557322	ArrayIndexing	o [ 3 ]		7557028	0					
+ANR	7557323	Identifier	o		7557028	0					
+ANR	7557324	PrimaryExpression	3		7557028	1					
+ANR	7557325	InclusiveOrExpression	ff_reverse [ ( samples [ 1 ] & 0x00000F00 ) >> 4 ] | vucf		7557028	1		|			
+ANR	7557326	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0x00000F00 ) >> 4 ]		7557028	0					
+ANR	7557327	Identifier	ff_reverse		7557028	0					
+ANR	7557328	ShiftExpression	( samples [ 1 ] & 0x00000F00 ) >> 4		7557028	1		>>			
+ANR	7557329	BitAndExpression	samples [ 1 ] & 0x00000F00		7557028	0		&			
+ANR	7557330	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557331	Identifier	samples		7557028	0					
+ANR	7557332	PrimaryExpression	1		7557028	1					
+ANR	7557333	PrimaryExpression	0x00000F00		7557028	1					
+ANR	7557334	PrimaryExpression	4		7557028	1					
+ANR	7557335	Identifier	vucf		7557028	1					
+ANR	7557336	ExpressionStatement	o [ 4 ] = ff_reverse [ ( samples [ 1 ] & 0x000FF000 ) >> 12 ]	73:16:1641:1691	7557028	4	True				
+ANR	7557337	AssignmentExpression	o [ 4 ] = ff_reverse [ ( samples [ 1 ] & 0x000FF000 ) >> 12 ]		7557028	0		=			
+ANR	7557338	ArrayIndexing	o [ 4 ]		7557028	0					
+ANR	7557339	Identifier	o		7557028	0					
+ANR	7557340	PrimaryExpression	4		7557028	1					
+ANR	7557341	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0x000FF000 ) >> 12 ]		7557028	1					
+ANR	7557342	Identifier	ff_reverse		7557028	0					
+ANR	7557343	ShiftExpression	( samples [ 1 ] & 0x000FF000 ) >> 12		7557028	1		>>			
+ANR	7557344	BitAndExpression	samples [ 1 ] & 0x000FF000		7557028	0		&			
+ANR	7557345	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557346	Identifier	samples		7557028	0					
+ANR	7557347	PrimaryExpression	1		7557028	1					
+ANR	7557348	PrimaryExpression	0x000FF000		7557028	1					
+ANR	7557349	PrimaryExpression	12		7557028	1					
+ANR	7557350	ExpressionStatement	o [ 5 ] = ff_reverse [ ( samples [ 1 ] & 0x0FF00000 ) >> 20 ]	75:16:1710:1760	7557028	5	True				
+ANR	7557351	AssignmentExpression	o [ 5 ] = ff_reverse [ ( samples [ 1 ] & 0x0FF00000 ) >> 20 ]		7557028	0		=			
+ANR	7557352	ArrayIndexing	o [ 5 ]		7557028	0					
+ANR	7557353	Identifier	o		7557028	0					
+ANR	7557354	PrimaryExpression	5		7557028	1					
+ANR	7557355	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0x0FF00000 ) >> 20 ]		7557028	1					
+ANR	7557356	Identifier	ff_reverse		7557028	0					
+ANR	7557357	ShiftExpression	( samples [ 1 ] & 0x0FF00000 ) >> 20		7557028	1		>>			
+ANR	7557358	BitAndExpression	samples [ 1 ] & 0x0FF00000		7557028	0		&			
+ANR	7557359	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557360	Identifier	samples		7557028	0					
+ANR	7557361	PrimaryExpression	1		7557028	1					
+ANR	7557362	PrimaryExpression	0x0FF00000		7557028	1					
+ANR	7557363	PrimaryExpression	20		7557028	1					
+ANR	7557364	ExpressionStatement	o [ 6 ] = ff_reverse [ ( samples [ 1 ] & 0xF0000000 ) >> 28 ]	77:16:1779:1829	7557028	6	True				
+ANR	7557365	AssignmentExpression	o [ 6 ] = ff_reverse [ ( samples [ 1 ] & 0xF0000000 ) >> 28 ]		7557028	0		=			
+ANR	7557366	ArrayIndexing	o [ 6 ]		7557028	0					
+ANR	7557367	Identifier	o		7557028	0					
+ANR	7557368	PrimaryExpression	6		7557028	1					
+ANR	7557369	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0xF0000000 ) >> 28 ]		7557028	1					
+ANR	7557370	Identifier	ff_reverse		7557028	0					
+ANR	7557371	ShiftExpression	( samples [ 1 ] & 0xF0000000 ) >> 28		7557028	1		>>			
+ANR	7557372	BitAndExpression	samples [ 1 ] & 0xF0000000		7557028	0		&			
+ANR	7557373	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557374	Identifier	samples		7557028	0					
+ANR	7557375	PrimaryExpression	1		7557028	1					
+ANR	7557376	PrimaryExpression	0xF0000000		7557028	1					
+ANR	7557377	PrimaryExpression	28		7557028	1					
+ANR	7557378	ExpressionStatement	o += 7	79:16:1848:1854	7557028	7	True				
+ANR	7557379	AssignmentExpression	o += 7		7557028	0		+=			
+ANR	7557380	Identifier	o		7557028	0					
+ANR	7557381	PrimaryExpression	7		7557028	1					
+ANR	7557382	ExpressionStatement	samples += 2	81:16:1873:1885	7557028	8	True				
+ANR	7557383	AssignmentExpression	samples += 2		7557028	0		+=			
+ANR	7557384	Identifier	samples		7557028	0					
+ANR	7557385	PrimaryExpression	2		7557028	1					
+ANR	7557386	ExpressionStatement	s -> framing_index ++	87:12:1917:1935	7557028	2	True				
+ANR	7557387	PostIncDecOperationExpression	s -> framing_index ++		7557028	0					
+ANR	7557388	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557389	Identifier	s		7557028	0					
+ANR	7557390	Identifier	framing_index		7557028	1					
+ANR	7557391	IncDec	++		7557028	1					
+ANR	7557392	IfStatement	if ( s -> framing_index >= 192 )		7557028	3					
+ANR	7557393	Condition	s -> framing_index >= 192	89:16:1954:1976	7557028	0	True				
+ANR	7557394	RelationalExpression	s -> framing_index >= 192		7557028	0		>=			
+ANR	7557395	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557396	Identifier	s		7557028	0					
+ANR	7557397	Identifier	framing_index		7557028	1					
+ANR	7557398	PrimaryExpression	192		7557028	1					
+ANR	7557399	ExpressionStatement	s -> framing_index = 0	91:16:1996:2016	7557028	1	True				
+ANR	7557400	AssignmentExpression	s -> framing_index = 0		7557028	0		=			
+ANR	7557401	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557402	Identifier	s		7557028	0					
+ANR	7557403	Identifier	framing_index		7557028	1					
+ANR	7557404	PrimaryExpression	0		7557028	1					
+ANR	7557405	ElseStatement	else		7557028	0					
+ANR	7557406	IfStatement	if ( avctx -> bits_per_raw_sample == 20 )		7557028	0					
+ANR	7557407	Condition	avctx -> bits_per_raw_sample == 20	95:15:2045:2076	7557028	0	True				
+ANR	7557408	EqualityExpression	avctx -> bits_per_raw_sample == 20		7557028	0		==			
+ANR	7557409	PtrMemberAccess	avctx -> bits_per_raw_sample		7557028	0					
+ANR	7557410	Identifier	avctx		7557028	0					
+ANR	7557411	Identifier	bits_per_raw_sample		7557028	1					
+ANR	7557412	PrimaryExpression	20		7557028	1					
+ANR	7557413	CompoundStatement		93:8:1942:1994	7557028	1					
+ANR	7557414	IdentifierDeclStatement	const uint32_t * samples = ( uint32_t * ) frame -> data [ 0 ] ;	97:8:2090:2142	7557028	0	True				
+ANR	7557415	IdentifierDecl	* samples = ( uint32_t * ) frame -> data [ 0 ]		7557028	0					
+ANR	7557416	IdentifierDeclType	const uint32_t *		7557028	0					
+ANR	7557417	Identifier	samples		7557028	1					
+ANR	7557418	AssignmentExpression	* samples = ( uint32_t * ) frame -> data [ 0 ]		7557028	2		=			
+ANR	7557419	Identifier	samples		7557028	0					
+ANR	7557420	CastExpression	( uint32_t * ) frame -> data [ 0 ]		7557028	1					
+ANR	7557421	CastTarget	uint32_t *		7557028	0					
+ANR	7557422	ArrayIndexing	frame -> data [ 0 ]		7557028	1					
+ANR	7557423	PtrMemberAccess	frame -> data		7557028	0					
+ANR	7557424	Identifier	frame		7557028	0					
+ANR	7557425	Identifier	data		7557028	1					
+ANR	7557426	PrimaryExpression	0		7557028	1					
+ANR	7557427	ForStatement	for ( c = 0 ; c < frame -> nb_samples ; c ++ )		7557028	1					
+ANR	7557428	ForInit	c = 0 ;	101:13:2160:2165	7557028	0	True				
+ANR	7557429	AssignmentExpression	c = 0		7557028	0		=			
+ANR	7557430	Identifier	c		7557028	0					
+ANR	7557431	PrimaryExpression	0		7557028	1					
+ANR	7557432	Condition	c < frame -> nb_samples	101:20:2167:2187	7557028	1	True				
+ANR	7557433	RelationalExpression	c < frame -> nb_samples		7557028	0		<			
+ANR	7557434	Identifier	c		7557028	0					
+ANR	7557435	PtrMemberAccess	frame -> nb_samples		7557028	1					
+ANR	7557436	Identifier	frame		7557028	0					
+ANR	7557437	Identifier	nb_samples		7557028	1					
+ANR	7557438	PostIncDecOperationExpression	c ++	101:43:2190:2192	7557028	2	True				
+ANR	7557439	Identifier	c		7557028	0					
+ANR	7557440	IncDec	++		7557028	1					
+ANR	7557441	CompoundStatement		99:12:2062:2108	7557028	3					
+ANR	7557442	IdentifierDeclStatement	uint8_t vucf = s -> framing_index == 0 ? 0x80 : 0 ;	103:12:2210:2256	7557028	0	True				
+ANR	7557443	IdentifierDecl	vucf = s -> framing_index == 0 ? 0x80 : 0		7557028	0					
+ANR	7557444	IdentifierDeclType	uint8_t		7557028	0					
+ANR	7557445	Identifier	vucf		7557028	1					
+ANR	7557446	AssignmentExpression	vucf = s -> framing_index == 0 ? 0x80 : 0		7557028	2		=			
+ANR	7557447	Identifier	vucf		7557028	0					
+ANR	7557448	ConditionalExpression	s -> framing_index == 0 ? 0x80 : 0		7557028	1					
+ANR	7557449	Condition	s -> framing_index == 0		7557028	0					
+ANR	7557450	EqualityExpression	s -> framing_index == 0		7557028	0		==			
+ANR	7557451	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557452	Identifier	s		7557028	0					
+ANR	7557453	Identifier	framing_index		7557028	1					
+ANR	7557454	PrimaryExpression	0		7557028	1					
+ANR	7557455	PrimaryExpression	0x80		7557028	1					
+ANR	7557456	PrimaryExpression	0		7557028	2					
+ANR	7557457	ForStatement	for ( channels = 0 ; channels < avctx -> channels ; channels += 2 )		7557028	1					
+ANR	7557458	ForInit	channels = 0 ;	107:17:2278:2290	7557028	0	True				
+ANR	7557459	AssignmentExpression	channels = 0		7557028	0		=			
+ANR	7557460	Identifier	channels		7557028	0					
+ANR	7557461	PrimaryExpression	0		7557028	1					
+ANR	7557462	Condition	channels < avctx -> channels	107:31:2292:2317	7557028	1	True				
+ANR	7557463	RelationalExpression	channels < avctx -> channels		7557028	0		<			
+ANR	7557464	Identifier	channels		7557028	0					
+ANR	7557465	PtrMemberAccess	avctx -> channels		7557028	1					
+ANR	7557466	Identifier	avctx		7557028	0					
+ANR	7557467	Identifier	channels		7557028	1					
+ANR	7557468	AssignmentExpression	channels += 2	107:59:2320:2332	7557028	2	True	+=			
+ANR	7557469	Identifier	channels		7557028	0					
+ANR	7557470	PrimaryExpression	2		7557028	1					
+ANR	7557471	CompoundStatement		103:74:2187:2187	7557028	3					
+ANR	7557472	ExpressionStatement	o [ 0 ] = ff_reverse [ ( samples [ 0 ] & 0x000FF000 ) >> 12 ]	109:16:2354:2405	7557028	0	True				
+ANR	7557473	AssignmentExpression	o [ 0 ] = ff_reverse [ ( samples [ 0 ] & 0x000FF000 ) >> 12 ]		7557028	0		=			
+ANR	7557474	ArrayIndexing	o [ 0 ]		7557028	0					
+ANR	7557475	Identifier	o		7557028	0					
+ANR	7557476	PrimaryExpression	0		7557028	1					
+ANR	7557477	ArrayIndexing	ff_reverse [ ( samples [ 0 ] & 0x000FF000 ) >> 12 ]		7557028	1					
+ANR	7557478	Identifier	ff_reverse		7557028	0					
+ANR	7557479	ShiftExpression	( samples [ 0 ] & 0x000FF000 ) >> 12		7557028	1		>>			
+ANR	7557480	BitAndExpression	samples [ 0 ] & 0x000FF000		7557028	0		&			
+ANR	7557481	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557482	Identifier	samples		7557028	0					
+ANR	7557483	PrimaryExpression	0		7557028	1					
+ANR	7557484	PrimaryExpression	0x000FF000		7557028	1					
+ANR	7557485	PrimaryExpression	12		7557028	1					
+ANR	7557486	ExpressionStatement	o [ 1 ] = ff_reverse [ ( samples [ 0 ] & 0x0FF00000 ) >> 20 ]	111:16:2424:2475	7557028	1	True				
+ANR	7557487	AssignmentExpression	o [ 1 ] = ff_reverse [ ( samples [ 0 ] & 0x0FF00000 ) >> 20 ]		7557028	0		=			
+ANR	7557488	ArrayIndexing	o [ 1 ]		7557028	0					
+ANR	7557489	Identifier	o		7557028	0					
+ANR	7557490	PrimaryExpression	1		7557028	1					
+ANR	7557491	ArrayIndexing	ff_reverse [ ( samples [ 0 ] & 0x0FF00000 ) >> 20 ]		7557028	1					
+ANR	7557492	Identifier	ff_reverse		7557028	0					
+ANR	7557493	ShiftExpression	( samples [ 0 ] & 0x0FF00000 ) >> 20		7557028	1		>>			
+ANR	7557494	BitAndExpression	samples [ 0 ] & 0x0FF00000		7557028	0		&			
+ANR	7557495	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557496	Identifier	samples		7557028	0					
+ANR	7557497	PrimaryExpression	0		7557028	1					
+ANR	7557498	PrimaryExpression	0x0FF00000		7557028	1					
+ANR	7557499	PrimaryExpression	20		7557028	1					
+ANR	7557500	ExpressionStatement	o [ 2 ] = ff_reverse [ ( ( samples [ 0 ] & 0xF0000000 ) >> 28 ) | vucf ]	113:16:2494:2553	7557028	2	True				
+ANR	7557501	AssignmentExpression	o [ 2 ] = ff_reverse [ ( ( samples [ 0 ] & 0xF0000000 ) >> 28 ) | vucf ]		7557028	0		=			
+ANR	7557502	ArrayIndexing	o [ 2 ]		7557028	0					
+ANR	7557503	Identifier	o		7557028	0					
+ANR	7557504	PrimaryExpression	2		7557028	1					
+ANR	7557505	ArrayIndexing	ff_reverse [ ( ( samples [ 0 ] & 0xF0000000 ) >> 28 ) | vucf ]		7557028	1					
+ANR	7557506	Identifier	ff_reverse		7557028	0					
+ANR	7557507	InclusiveOrExpression	( ( samples [ 0 ] & 0xF0000000 ) >> 28 ) | vucf		7557028	1		|			
+ANR	7557508	ShiftExpression	( samples [ 0 ] & 0xF0000000 ) >> 28		7557028	0		>>			
+ANR	7557509	BitAndExpression	samples [ 0 ] & 0xF0000000		7557028	0		&			
+ANR	7557510	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557511	Identifier	samples		7557028	0					
+ANR	7557512	PrimaryExpression	0		7557028	1					
+ANR	7557513	PrimaryExpression	0xF0000000		7557028	1					
+ANR	7557514	PrimaryExpression	28		7557028	1					
+ANR	7557515	Identifier	vucf		7557028	1					
+ANR	7557516	ExpressionStatement	o [ 3 ] = ff_reverse [ ( samples [ 1 ] & 0x000FF000 ) >> 12 ]	115:16:2572:2623	7557028	3	True				
+ANR	7557517	AssignmentExpression	o [ 3 ] = ff_reverse [ ( samples [ 1 ] & 0x000FF000 ) >> 12 ]		7557028	0		=			
+ANR	7557518	ArrayIndexing	o [ 3 ]		7557028	0					
+ANR	7557519	Identifier	o		7557028	0					
+ANR	7557520	PrimaryExpression	3		7557028	1					
+ANR	7557521	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0x000FF000 ) >> 12 ]		7557028	1					
+ANR	7557522	Identifier	ff_reverse		7557028	0					
+ANR	7557523	ShiftExpression	( samples [ 1 ] & 0x000FF000 ) >> 12		7557028	1		>>			
+ANR	7557524	BitAndExpression	samples [ 1 ] & 0x000FF000		7557028	0		&			
+ANR	7557525	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557526	Identifier	samples		7557028	0					
+ANR	7557527	PrimaryExpression	1		7557028	1					
+ANR	7557528	PrimaryExpression	0x000FF000		7557028	1					
+ANR	7557529	PrimaryExpression	12		7557028	1					
+ANR	7557530	ExpressionStatement	o [ 4 ] = ff_reverse [ ( samples [ 1 ] & 0x0FF00000 ) >> 20 ]	117:16:2642:2693	7557028	4	True				
+ANR	7557531	AssignmentExpression	o [ 4 ] = ff_reverse [ ( samples [ 1 ] & 0x0FF00000 ) >> 20 ]		7557028	0		=			
+ANR	7557532	ArrayIndexing	o [ 4 ]		7557028	0					
+ANR	7557533	Identifier	o		7557028	0					
+ANR	7557534	PrimaryExpression	4		7557028	1					
+ANR	7557535	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0x0FF00000 ) >> 20 ]		7557028	1					
+ANR	7557536	Identifier	ff_reverse		7557028	0					
+ANR	7557537	ShiftExpression	( samples [ 1 ] & 0x0FF00000 ) >> 20		7557028	1		>>			
+ANR	7557538	BitAndExpression	samples [ 1 ] & 0x0FF00000		7557028	0		&			
+ANR	7557539	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557540	Identifier	samples		7557028	0					
+ANR	7557541	PrimaryExpression	1		7557028	1					
+ANR	7557542	PrimaryExpression	0x0FF00000		7557028	1					
+ANR	7557543	PrimaryExpression	20		7557028	1					
+ANR	7557544	ExpressionStatement	o [ 5 ] = ff_reverse [ ( samples [ 1 ] & 0xF0000000 ) >> 28 ]	119:16:2712:2763	7557028	5	True				
+ANR	7557545	AssignmentExpression	o [ 5 ] = ff_reverse [ ( samples [ 1 ] & 0xF0000000 ) >> 28 ]		7557028	0		=			
+ANR	7557546	ArrayIndexing	o [ 5 ]		7557028	0					
+ANR	7557547	Identifier	o		7557028	0					
+ANR	7557548	PrimaryExpression	5		7557028	1					
+ANR	7557549	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0xF0000000 ) >> 28 ]		7557028	1					
+ANR	7557550	Identifier	ff_reverse		7557028	0					
+ANR	7557551	ShiftExpression	( samples [ 1 ] & 0xF0000000 ) >> 28		7557028	1		>>			
+ANR	7557552	BitAndExpression	samples [ 1 ] & 0xF0000000		7557028	0		&			
+ANR	7557553	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557554	Identifier	samples		7557028	0					
+ANR	7557555	PrimaryExpression	1		7557028	1					
+ANR	7557556	PrimaryExpression	0xF0000000		7557028	1					
+ANR	7557557	PrimaryExpression	28		7557028	1					
+ANR	7557558	ExpressionStatement	o += 6	121:16:2782:2788	7557028	6	True				
+ANR	7557559	AssignmentExpression	o += 6		7557028	0		+=			
+ANR	7557560	Identifier	o		7557028	0					
+ANR	7557561	PrimaryExpression	6		7557028	1					
+ANR	7557562	ExpressionStatement	samples += 2	123:16:2807:2819	7557028	7	True				
+ANR	7557563	AssignmentExpression	samples += 2		7557028	0		+=			
+ANR	7557564	Identifier	samples		7557028	0					
+ANR	7557565	PrimaryExpression	2		7557028	1					
+ANR	7557566	ExpressionStatement	s -> framing_index ++	129:12:2851:2869	7557028	2	True				
+ANR	7557567	PostIncDecOperationExpression	s -> framing_index ++		7557028	0					
+ANR	7557568	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557569	Identifier	s		7557028	0					
+ANR	7557570	Identifier	framing_index		7557028	1					
+ANR	7557571	IncDec	++		7557028	1					
+ANR	7557572	IfStatement	if ( s -> framing_index >= 192 )		7557028	3					
+ANR	7557573	Condition	s -> framing_index >= 192	131:16:2888:2910	7557028	0	True				
+ANR	7557574	RelationalExpression	s -> framing_index >= 192		7557028	0		>=			
+ANR	7557575	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557576	Identifier	s		7557028	0					
+ANR	7557577	Identifier	framing_index		7557028	1					
+ANR	7557578	PrimaryExpression	192		7557028	1					
+ANR	7557579	ExpressionStatement	s -> framing_index = 0	133:16:2930:2950	7557028	1	True				
+ANR	7557580	AssignmentExpression	s -> framing_index = 0		7557028	0		=			
+ANR	7557581	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557582	Identifier	s		7557028	0					
+ANR	7557583	Identifier	framing_index		7557028	1					
+ANR	7557584	PrimaryExpression	0		7557028	1					
+ANR	7557585	ElseStatement	else		7557028	0					
+ANR	7557586	IfStatement	if ( avctx -> bits_per_raw_sample == 16 )		7557028	0					
+ANR	7557587	Condition	avctx -> bits_per_raw_sample == 16	137:15:2979:3010	7557028	0	True				
+ANR	7557588	EqualityExpression	avctx -> bits_per_raw_sample == 16		7557028	0		==			
+ANR	7557589	PtrMemberAccess	avctx -> bits_per_raw_sample		7557028	0					
+ANR	7557590	Identifier	avctx		7557028	0					
+ANR	7557591	Identifier	bits_per_raw_sample		7557028	1					
+ANR	7557592	PrimaryExpression	16		7557028	1					
+ANR	7557593	CompoundStatement		135:8:2876:2928	7557028	1					
+ANR	7557594	IdentifierDeclStatement	const uint16_t * samples = ( uint16_t * ) frame -> data [ 0 ] ;	139:8:3024:3076	7557028	0	True				
+ANR	7557595	IdentifierDecl	* samples = ( uint16_t * ) frame -> data [ 0 ]		7557028	0					
+ANR	7557596	IdentifierDeclType	const uint16_t *		7557028	0					
+ANR	7557597	Identifier	samples		7557028	1					
+ANR	7557598	AssignmentExpression	* samples = ( uint16_t * ) frame -> data [ 0 ]		7557028	2		=			
+ANR	7557599	Identifier	samples		7557028	0					
+ANR	7557600	CastExpression	( uint16_t * ) frame -> data [ 0 ]		7557028	1					
+ANR	7557601	CastTarget	uint16_t *		7557028	0					
+ANR	7557602	ArrayIndexing	frame -> data [ 0 ]		7557028	1					
+ANR	7557603	PtrMemberAccess	frame -> data		7557028	0					
+ANR	7557604	Identifier	frame		7557028	0					
+ANR	7557605	Identifier	data		7557028	1					
+ANR	7557606	PrimaryExpression	0		7557028	1					
+ANR	7557607	ForStatement	for ( c = 0 ; c < frame -> nb_samples ; c ++ )		7557028	1					
+ANR	7557608	ForInit	c = 0 ;	143:13:3094:3099	7557028	0	True				
+ANR	7557609	AssignmentExpression	c = 0		7557028	0		=			
+ANR	7557610	Identifier	c		7557028	0					
+ANR	7557611	PrimaryExpression	0		7557028	1					
+ANR	7557612	Condition	c < frame -> nb_samples	143:20:3101:3121	7557028	1	True				
+ANR	7557613	RelationalExpression	c < frame -> nb_samples		7557028	0		<			
+ANR	7557614	Identifier	c		7557028	0					
+ANR	7557615	PtrMemberAccess	frame -> nb_samples		7557028	1					
+ANR	7557616	Identifier	frame		7557028	0					
+ANR	7557617	Identifier	nb_samples		7557028	1					
+ANR	7557618	PostIncDecOperationExpression	c ++	143:43:3124:3126	7557028	2	True				
+ANR	7557619	Identifier	c		7557028	0					
+ANR	7557620	IncDec	++		7557028	1					
+ANR	7557621	CompoundStatement		141:12:2996:3043	7557028	3					
+ANR	7557622	IdentifierDeclStatement	uint8_t vucf = s -> framing_index == 0 ? 0x10 : 0 ;	145:12:3144:3191	7557028	0	True				
+ANR	7557623	IdentifierDecl	vucf = s -> framing_index == 0 ? 0x10 : 0		7557028	0					
+ANR	7557624	IdentifierDeclType	uint8_t		7557028	0					
+ANR	7557625	Identifier	vucf		7557028	1					
+ANR	7557626	AssignmentExpression	vucf = s -> framing_index == 0 ? 0x10 : 0		7557028	2		=			
+ANR	7557627	Identifier	vucf		7557028	0					
+ANR	7557628	ConditionalExpression	s -> framing_index == 0 ? 0x10 : 0		7557028	1					
+ANR	7557629	Condition	s -> framing_index == 0		7557028	0					
+ANR	7557630	EqualityExpression	s -> framing_index == 0		7557028	0		==			
+ANR	7557631	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557632	Identifier	s		7557028	0					
+ANR	7557633	Identifier	framing_index		7557028	1					
+ANR	7557634	PrimaryExpression	0		7557028	1					
+ANR	7557635	PrimaryExpression	0x10		7557028	1					
+ANR	7557636	PrimaryExpression	0		7557028	2					
+ANR	7557637	ForStatement	for ( channels = 0 ; channels < avctx -> channels ; channels += 2 )		7557028	1					
+ANR	7557638	ForInit	channels = 0 ;	149:17:3213:3225	7557028	0	True				
+ANR	7557639	AssignmentExpression	channels = 0		7557028	0		=			
+ANR	7557640	Identifier	channels		7557028	0					
+ANR	7557641	PrimaryExpression	0		7557028	1					
+ANR	7557642	Condition	channels < avctx -> channels	149:31:3227:3252	7557028	1	True				
+ANR	7557643	RelationalExpression	channels < avctx -> channels		7557028	0		<			
+ANR	7557644	Identifier	channels		7557028	0					
+ANR	7557645	PtrMemberAccess	avctx -> channels		7557028	1					
+ANR	7557646	Identifier	avctx		7557028	0					
+ANR	7557647	Identifier	channels		7557028	1					
+ANR	7557648	AssignmentExpression	channels += 2	149:59:3255:3267	7557028	2	True	+=			
+ANR	7557649	Identifier	channels		7557028	0					
+ANR	7557650	PrimaryExpression	2		7557028	1					
+ANR	7557651	CompoundStatement		145:74:3122:3122	7557028	3					
+ANR	7557652	ExpressionStatement	o [ 0 ] = ff_reverse [ samples [ 0 ] & 0xFF ]	151:16:3289:3326	7557028	0	True				
+ANR	7557653	AssignmentExpression	o [ 0 ] = ff_reverse [ samples [ 0 ] & 0xFF ]		7557028	0		=			
+ANR	7557654	ArrayIndexing	o [ 0 ]		7557028	0					
+ANR	7557655	Identifier	o		7557028	0					
+ANR	7557656	PrimaryExpression	0		7557028	1					
+ANR	7557657	ArrayIndexing	ff_reverse [ samples [ 0 ] & 0xFF ]		7557028	1					
+ANR	7557658	Identifier	ff_reverse		7557028	0					
+ANR	7557659	BitAndExpression	samples [ 0 ] & 0xFF		7557028	1		&			
+ANR	7557660	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557661	Identifier	samples		7557028	0					
+ANR	7557662	PrimaryExpression	0		7557028	1					
+ANR	7557663	PrimaryExpression	0xFF		7557028	1					
+ANR	7557664	ExpressionStatement	o [ 1 ] = ff_reverse [ ( samples [ 0 ] & 0xFF00 ) >> 8 ]	153:16:3345:3391	7557028	1	True				
+ANR	7557665	AssignmentExpression	o [ 1 ] = ff_reverse [ ( samples [ 0 ] & 0xFF00 ) >> 8 ]		7557028	0		=			
+ANR	7557666	ArrayIndexing	o [ 1 ]		7557028	0					
+ANR	7557667	Identifier	o		7557028	0					
+ANR	7557668	PrimaryExpression	1		7557028	1					
+ANR	7557669	ArrayIndexing	ff_reverse [ ( samples [ 0 ] & 0xFF00 ) >> 8 ]		7557028	1					
+ANR	7557670	Identifier	ff_reverse		7557028	0					
+ANR	7557671	ShiftExpression	( samples [ 0 ] & 0xFF00 ) >> 8		7557028	1		>>			
+ANR	7557672	BitAndExpression	samples [ 0 ] & 0xFF00		7557028	0		&			
+ANR	7557673	ArrayIndexing	samples [ 0 ]		7557028	0					
+ANR	7557674	Identifier	samples		7557028	0					
+ANR	7557675	PrimaryExpression	0		7557028	1					
+ANR	7557676	PrimaryExpression	0xFF00		7557028	1					
+ANR	7557677	PrimaryExpression	8		7557028	1					
+ANR	7557678	ExpressionStatement	o [ 2 ] = ff_reverse [ ( samples [ 1 ] & 0x0F ) << 4 ] | vucf	155:16:3410:3463	7557028	2	True				
+ANR	7557679	AssignmentExpression	o [ 2 ] = ff_reverse [ ( samples [ 1 ] & 0x0F ) << 4 ] | vucf		7557028	0		=			
+ANR	7557680	ArrayIndexing	o [ 2 ]		7557028	0					
+ANR	7557681	Identifier	o		7557028	0					
+ANR	7557682	PrimaryExpression	2		7557028	1					
+ANR	7557683	InclusiveOrExpression	ff_reverse [ ( samples [ 1 ] & 0x0F ) << 4 ] | vucf		7557028	1		|			
+ANR	7557684	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0x0F ) << 4 ]		7557028	0					
+ANR	7557685	Identifier	ff_reverse		7557028	0					
+ANR	7557686	ShiftExpression	( samples [ 1 ] & 0x0F ) << 4		7557028	1		<<			
+ANR	7557687	BitAndExpression	samples [ 1 ] & 0x0F		7557028	0		&			
+ANR	7557688	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557689	Identifier	samples		7557028	0					
+ANR	7557690	PrimaryExpression	1		7557028	1					
+ANR	7557691	PrimaryExpression	0x0F		7557028	1					
+ANR	7557692	PrimaryExpression	4		7557028	1					
+ANR	7557693	Identifier	vucf		7557028	1					
+ANR	7557694	ExpressionStatement	o [ 3 ] = ff_reverse [ ( samples [ 1 ] & 0x0FF0 ) >> 4 ]	157:16:3482:3528	7557028	3	True				
+ANR	7557695	AssignmentExpression	o [ 3 ] = ff_reverse [ ( samples [ 1 ] & 0x0FF0 ) >> 4 ]		7557028	0		=			
+ANR	7557696	ArrayIndexing	o [ 3 ]		7557028	0					
+ANR	7557697	Identifier	o		7557028	0					
+ANR	7557698	PrimaryExpression	3		7557028	1					
+ANR	7557699	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0x0FF0 ) >> 4 ]		7557028	1					
+ANR	7557700	Identifier	ff_reverse		7557028	0					
+ANR	7557701	ShiftExpression	( samples [ 1 ] & 0x0FF0 ) >> 4		7557028	1		>>			
+ANR	7557702	BitAndExpression	samples [ 1 ] & 0x0FF0		7557028	0		&			
+ANR	7557703	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557704	Identifier	samples		7557028	0					
+ANR	7557705	PrimaryExpression	1		7557028	1					
+ANR	7557706	PrimaryExpression	0x0FF0		7557028	1					
+ANR	7557707	PrimaryExpression	4		7557028	1					
+ANR	7557708	ExpressionStatement	o [ 4 ] = ff_reverse [ ( samples [ 1 ] & 0xF000 ) >> 12 ]	159:16:3547:3593	7557028	4	True				
+ANR	7557709	AssignmentExpression	o [ 4 ] = ff_reverse [ ( samples [ 1 ] & 0xF000 ) >> 12 ]		7557028	0		=			
+ANR	7557710	ArrayIndexing	o [ 4 ]		7557028	0					
+ANR	7557711	Identifier	o		7557028	0					
+ANR	7557712	PrimaryExpression	4		7557028	1					
+ANR	7557713	ArrayIndexing	ff_reverse [ ( samples [ 1 ] & 0xF000 ) >> 12 ]		7557028	1					
+ANR	7557714	Identifier	ff_reverse		7557028	0					
+ANR	7557715	ShiftExpression	( samples [ 1 ] & 0xF000 ) >> 12		7557028	1		>>			
+ANR	7557716	BitAndExpression	samples [ 1 ] & 0xF000		7557028	0		&			
+ANR	7557717	ArrayIndexing	samples [ 1 ]		7557028	0					
+ANR	7557718	Identifier	samples		7557028	0					
+ANR	7557719	PrimaryExpression	1		7557028	1					
+ANR	7557720	PrimaryExpression	0xF000		7557028	1					
+ANR	7557721	PrimaryExpression	12		7557028	1					
+ANR	7557722	ExpressionStatement	o += 5	161:16:3612:3618	7557028	5	True				
+ANR	7557723	AssignmentExpression	o += 5		7557028	0		+=			
+ANR	7557724	Identifier	o		7557028	0					
+ANR	7557725	PrimaryExpression	5		7557028	1					
+ANR	7557726	ExpressionStatement	samples += 2	163:16:3637:3649	7557028	6	True				
+ANR	7557727	AssignmentExpression	samples += 2		7557028	0		+=			
+ANR	7557728	Identifier	samples		7557028	0					
+ANR	7557729	PrimaryExpression	2		7557028	1					
+ANR	7557730	ExpressionStatement	s -> framing_index ++	171:12:3683:3701	7557028	2	True				
+ANR	7557731	PostIncDecOperationExpression	s -> framing_index ++		7557028	0					
+ANR	7557732	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557733	Identifier	s		7557028	0					
+ANR	7557734	Identifier	framing_index		7557028	1					
+ANR	7557735	IncDec	++		7557028	1					
+ANR	7557736	IfStatement	if ( s -> framing_index >= 192 )		7557028	3					
+ANR	7557737	Condition	s -> framing_index >= 192	173:16:3720:3742	7557028	0	True				
+ANR	7557738	RelationalExpression	s -> framing_index >= 192		7557028	0		>=			
+ANR	7557739	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557740	Identifier	s		7557028	0					
+ANR	7557741	Identifier	framing_index		7557028	1					
+ANR	7557742	PrimaryExpression	192		7557028	1					
+ANR	7557743	ExpressionStatement	s -> framing_index = 0	175:16:3762:3782	7557028	1	True				
+ANR	7557744	AssignmentExpression	s -> framing_index = 0		7557028	0		=			
+ANR	7557745	PtrMemberAccess	s -> framing_index		7557028	0					
+ANR	7557746	Identifier	s		7557028	0					
+ANR	7557747	Identifier	framing_index		7557028	1					
+ANR	7557748	PrimaryExpression	0		7557028	1					
+ANR	7557749	ExpressionStatement	* got_packet_ptr = 1	183:4:3809:3828	7557028	16	True				
+ANR	7557750	AssignmentExpression	* got_packet_ptr = 1		7557028	0		=			
+ANR	7557751	UnaryOperationExpression	* got_packet_ptr		7557028	0					
+ANR	7557752	UnaryOperator	*		7557028	0					
+ANR	7557753	Identifier	got_packet_ptr		7557028	1					
+ANR	7557754	PrimaryExpression	1		7557028	1					
+ANR	7557755	ReturnStatement	return 0 ;	187:4:3837:3845	7557028	17	True				
+ANR	7557756	PrimaryExpression	0		7557028	0					
+ANR	7557757	ReturnType	static int		7557028	1					
+ANR	7557758	Identifier	s302m_encode2_frame		7557028	2					
+ANR	7557759	ParameterList	"AVCodecContext * avctx , AVPacket * avpkt , const AVFrame * frame , int * got_packet_ptr"		7557028	3					
+ANR	7557760	Parameter	AVCodecContext * avctx	1:31:31:51	7557028	0	True				
+ANR	7557761	ParameterType	AVCodecContext *		7557028	0					
+ANR	7557762	Identifier	avctx		7557028	1					
+ANR	7557763	Parameter	AVPacket * avpkt	1:54:54:68	7557028	1	True				
+ANR	7557764	ParameterType	AVPacket *		7557028	0					
+ANR	7557765	Identifier	avpkt		7557028	1					
+ANR	7557766	Parameter	const AVFrame * frame	3:31:103:122	7557028	2	True				
+ANR	7557767	ParameterType	const AVFrame *		7557028	0					
+ANR	7557768	Identifier	frame		7557028	1					
+ANR	7557769	Parameter	int * got_packet_ptr	3:53:125:143	7557028	3	True				
+ANR	7557770	ParameterType	int *		7557028	0					
+ANR	7557771	Identifier	got_packet_ptr		7557028	1					
+ANR	7557772	CFGEntryNode	ENTRY		7557028		True				
+ANR	7557773	CFGExitNode	EXIT		7557028		True				
+ANR	7557774	Symbol	* frame -> data		7557028						
+ANR	7557775	Symbol	* frame		7557028						
+ANR	7557776	Symbol	ff_reverse		7557028						
+ANR	7557777	Symbol	avpkt		7557028						
+ANR	7557778	Symbol	* got_packet_ptr		7557028						
+ANR	7557779	Symbol	ff_alloc_packet2		7557028						
+ANR	7557780	Symbol	avctx -> channels		7557028						
+ANR	7557781	Symbol	avctx -> bits_per_raw_sample		7557028						
+ANR	7557782	Symbol	* * frame		7557028						
+ANR	7557783	Symbol	* samples		7557028						
+ANR	7557784	Symbol	vucf		7557028						
+ANR	7557785	Symbol	s -> framing_index		7557028						
+ANR	7557786	Symbol	avctx		7557028						
+ANR	7557787	Symbol	frame -> data		7557028						
+ANR	7557788	Symbol	ret		7557028						
+ANR	7557789	Symbol	* avpkt		7557028						
+ANR	7557790	Symbol	frame -> nb_samples		7557028						
+ANR	7557791	Symbol	c		7557028						
+ANR	7557792	Symbol	buf_size		7557028						
+ANR	7557793	Symbol	* * samples		7557028						
+ANR	7557794	Symbol	AES3_HEADER_LEN		7557028						
+ANR	7557795	Symbol	avctx -> priv_data		7557028						
+ANR	7557796	Symbol	samples		7557028						
+ANR	7557797	Symbol	o		7557028						
+ANR	7557798	Symbol	* avctx		7557028						
+ANR	7557799	Symbol	pb		7557028						
+ANR	7557800	Symbol	s		7557028						
+ANR	7557801	Symbol	channels		7557028						
+ANR	7557802	Symbol	* ff_reverse		7557028						
+ANR	7557803	Symbol	* o		7557028						
+ANR	7557804	Symbol	got_packet_ptr		7557028						
+ANR	7557805	Symbol	avpkt -> data		7557028						
+ANR	7557806	Symbol	& pb		7557028						
+ANR	7557807	Symbol	* s		7557028						
+ANR	7557808	Symbol	* vucf		7557028						
+ANR	7557809	Symbol	frame		7557028						

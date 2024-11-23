@@ -1,0 +1,493 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7690578	File	/home/p4ultr4n/workplace/ReVeal/raw_code/sdhci_sdma_transfer_multi_blocks_0.c								
+ANR	7690579	Function	sdhci_sdma_transfer_multi_blocks	1:0:0:3178							
+ANR	7690580	FunctionDef	sdhci_sdma_transfer_multi_blocks (SDHCIState * s)		7690579	0					
+ANR	7690581	CompoundStatement		3:0:61:3178	7690579	0					
+ANR	7690582	IdentifierDeclStatement	bool page_aligned = false ;	5:4:68:93	7690579	0	True				
+ANR	7690583	IdentifierDecl	page_aligned = false		7690579	0					
+ANR	7690584	IdentifierDeclType	bool		7690579	0					
+ANR	7690585	Identifier	page_aligned		7690579	1					
+ANR	7690586	AssignmentExpression	page_aligned = false		7690579	2		=			
+ANR	7690587	Identifier	false		7690579	0					
+ANR	7690588	Identifier	false		7690579	1					
+ANR	7690589	IdentifierDeclStatement	"unsigned int n , begin ;"	7:4:100:121	7690579	1	True				
+ANR	7690590	IdentifierDecl	n		7690579	0					
+ANR	7690591	IdentifierDeclType	unsigned int		7690579	0					
+ANR	7690592	Identifier	n		7690579	1					
+ANR	7690593	IdentifierDecl	begin		7690579	1					
+ANR	7690594	IdentifierDeclType	unsigned int		7690579	0					
+ANR	7690595	Identifier	begin		7690579	1					
+ANR	7690596	IdentifierDeclStatement	const uint16_t block_size = s -> blksize & 0x0fff ;	9:4:128:175	7690579	2	True				
+ANR	7690597	IdentifierDecl	block_size = s -> blksize & 0x0fff		7690579	0					
+ANR	7690598	IdentifierDeclType	const uint16_t		7690579	0					
+ANR	7690599	Identifier	block_size		7690579	1					
+ANR	7690600	AssignmentExpression	block_size = s -> blksize & 0x0fff		7690579	2		=			
+ANR	7690601	Identifier	block_size		7690579	0					
+ANR	7690602	BitAndExpression	s -> blksize & 0x0fff		7690579	1		&			
+ANR	7690603	PtrMemberAccess	s -> blksize		7690579	0					
+ANR	7690604	Identifier	s		7690579	0					
+ANR	7690605	Identifier	blksize		7690579	1					
+ANR	7690606	PrimaryExpression	0x0fff		7690579	1					
+ANR	7690607	IdentifierDeclStatement	uint32_t boundary_chk = 1 << ( ( ( s -> blksize & 0xf000 ) >> 12 ) + 12 ) ;	11:4:182:247	7690579	3	True				
+ANR	7690608	IdentifierDecl	boundary_chk = 1 << ( ( ( s -> blksize & 0xf000 ) >> 12 ) + 12 )		7690579	0					
+ANR	7690609	IdentifierDeclType	uint32_t		7690579	0					
+ANR	7690610	Identifier	boundary_chk		7690579	1					
+ANR	7690611	AssignmentExpression	boundary_chk = 1 << ( ( ( s -> blksize & 0xf000 ) >> 12 ) + 12 )		7690579	2		=			
+ANR	7690612	Identifier	boundary_chk		7690579	0					
+ANR	7690613	ShiftExpression	1 << ( ( ( s -> blksize & 0xf000 ) >> 12 ) + 12 )		7690579	1		<<			
+ANR	7690614	PrimaryExpression	1		7690579	0					
+ANR	7690615	AdditiveExpression	( ( s -> blksize & 0xf000 ) >> 12 ) + 12		7690579	1		+			
+ANR	7690616	ShiftExpression	( s -> blksize & 0xf000 ) >> 12		7690579	0		>>			
+ANR	7690617	BitAndExpression	s -> blksize & 0xf000		7690579	0		&			
+ANR	7690618	PtrMemberAccess	s -> blksize		7690579	0					
+ANR	7690619	Identifier	s		7690579	0					
+ANR	7690620	Identifier	blksize		7690579	1					
+ANR	7690621	PrimaryExpression	0xf000		7690579	1					
+ANR	7690622	PrimaryExpression	12		7690579	1					
+ANR	7690623	PrimaryExpression	12		7690579	1					
+ANR	7690624	IdentifierDeclStatement	uint32_t boundary_count = boundary_chk - ( s -> sdmasysad % boundary_chk ) ;	13:4:254:324	7690579	4	True				
+ANR	7690625	IdentifierDecl	boundary_count = boundary_chk - ( s -> sdmasysad % boundary_chk )		7690579	0					
+ANR	7690626	IdentifierDeclType	uint32_t		7690579	0					
+ANR	7690627	Identifier	boundary_count		7690579	1					
+ANR	7690628	AssignmentExpression	boundary_count = boundary_chk - ( s -> sdmasysad % boundary_chk )		7690579	2		=			
+ANR	7690629	Identifier	boundary_count		7690579	0					
+ANR	7690630	AdditiveExpression	boundary_chk - ( s -> sdmasysad % boundary_chk )		7690579	1		-			
+ANR	7690631	Identifier	boundary_chk		7690579	0					
+ANR	7690632	MultiplicativeExpression	s -> sdmasysad % boundary_chk		7690579	1		%			
+ANR	7690633	PtrMemberAccess	s -> sdmasysad		7690579	0					
+ANR	7690634	Identifier	s		7690579	0					
+ANR	7690635	Identifier	sdmasysad		7690579	1					
+ANR	7690636	Identifier	boundary_chk		7690579	1					
+ANR	7690637	IfStatement	if ( ( s -> sdmasysad % boundary_chk ) == 0 )		7690579	5					
+ANR	7690638	Condition	( s -> sdmasysad % boundary_chk ) == 0	23:8:533:566	7690579	0	True				
+ANR	7690639	EqualityExpression	( s -> sdmasysad % boundary_chk ) == 0		7690579	0		==			
+ANR	7690640	MultiplicativeExpression	s -> sdmasysad % boundary_chk		7690579	0		%			
+ANR	7690641	PtrMemberAccess	s -> sdmasysad		7690579	0					
+ANR	7690642	Identifier	s		7690579	0					
+ANR	7690643	Identifier	sdmasysad		7690579	1					
+ANR	7690644	Identifier	boundary_chk		7690579	1					
+ANR	7690645	PrimaryExpression	0		7690579	1					
+ANR	7690646	CompoundStatement		21:44:507:507	7690579	1					
+ANR	7690647	ExpressionStatement	page_aligned = true	25:8:580:599	7690579	0	True				
+ANR	7690648	AssignmentExpression	page_aligned = true		7690579	0		=			
+ANR	7690649	Identifier	page_aligned		7690579	0					
+ANR	7690650	Identifier	true		7690579	1					
+ANR	7690651	IfStatement	if ( s -> trnmod & SDHC_TRNS_READ )		7690579	6					
+ANR	7690652	Condition	s -> trnmod & SDHC_TRNS_READ	31:8:619:644	7690579	0	True				
+ANR	7690653	BitAndExpression	s -> trnmod & SDHC_TRNS_READ		7690579	0		&			
+ANR	7690654	PtrMemberAccess	s -> trnmod		7690579	0					
+ANR	7690655	Identifier	s		7690579	0					
+ANR	7690656	Identifier	trnmod		7690579	1					
+ANR	7690657	Identifier	SDHC_TRNS_READ		7690579	1					
+ANR	7690658	CompoundStatement		29:36:585:585	7690579	1					
+ANR	7690659	ExpressionStatement	s -> prnsts |= SDHC_DOING_READ | SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE	33:8:658:746	7690579	0	True				
+ANR	7690660	AssignmentExpression	s -> prnsts |= SDHC_DOING_READ | SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE		7690579	0		|=			
+ANR	7690661	PtrMemberAccess	s -> prnsts		7690579	0					
+ANR	7690662	Identifier	s		7690579	0					
+ANR	7690663	Identifier	prnsts		7690579	1					
+ANR	7690664	InclusiveOrExpression	SDHC_DOING_READ | SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE		7690579	1		|			
+ANR	7690665	Identifier	SDHC_DOING_READ		7690579	0					
+ANR	7690666	InclusiveOrExpression	SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE		7690579	1		|			
+ANR	7690667	Identifier	SDHC_DATA_INHIBIT		7690579	0					
+ANR	7690668	Identifier	SDHC_DAT_LINE_ACTIVE		7690579	1					
+ANR	7690669	WhileStatement	while ( s -> blkcnt )		7690579	1					
+ANR	7690670	Condition	s -> blkcnt	37:15:764:772	7690579	0	True				
+ANR	7690671	PtrMemberAccess	s -> blkcnt		7690579	0					
+ANR	7690672	Identifier	s		7690579	0					
+ANR	7690673	Identifier	blkcnt		7690579	1					
+ANR	7690674	CompoundStatement		35:26:713:713	7690579	1					
+ANR	7690675	IfStatement	if ( s -> data_count == 0 )		7690579	0					
+ANR	7690676	Condition	s -> data_count == 0	39:16:794:811	7690579	0	True				
+ANR	7690677	EqualityExpression	s -> data_count == 0		7690579	0		==			
+ANR	7690678	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690679	Identifier	s		7690579	0					
+ANR	7690680	Identifier	data_count		7690579	1					
+ANR	7690681	PrimaryExpression	0		7690579	1					
+ANR	7690682	CompoundStatement		37:36:752:752	7690579	1					
+ANR	7690683	ForStatement	for ( n = 0 ; n < block_size ; n ++ )		7690579	0					
+ANR	7690684	ForInit	n = 0 ;	41:21:838:843	7690579	0	True				
+ANR	7690685	AssignmentExpression	n = 0		7690579	0		=			
+ANR	7690686	Identifier	n		7690579	0					
+ANR	7690687	PrimaryExpression	0		7690579	1					
+ANR	7690688	Condition	n < block_size	41:28:845:858	7690579	1	True				
+ANR	7690689	RelationalExpression	n < block_size		7690579	0		<			
+ANR	7690690	Identifier	n		7690579	0					
+ANR	7690691	Identifier	block_size		7690579	1					
+ANR	7690692	PostIncDecOperationExpression	n ++	41:44:861:863	7690579	2	True				
+ANR	7690693	Identifier	n		7690579	0					
+ANR	7690694	IncDec	++		7690579	1					
+ANR	7690695	CompoundStatement		39:49:804:804	7690579	3					
+ANR	7690696	ExpressionStatement	s -> fifo_buffer [ n ] = sdbus_read_data ( & s -> sdbus )	43:20:889:935	7690579	0	True				
+ANR	7690697	AssignmentExpression	s -> fifo_buffer [ n ] = sdbus_read_data ( & s -> sdbus )		7690579	0		=			
+ANR	7690698	ArrayIndexing	s -> fifo_buffer [ n ]		7690579	0					
+ANR	7690699	PtrMemberAccess	s -> fifo_buffer		7690579	0					
+ANR	7690700	Identifier	s		7690579	0					
+ANR	7690701	Identifier	fifo_buffer		7690579	1					
+ANR	7690702	Identifier	n		7690579	1					
+ANR	7690703	CallExpression	sdbus_read_data ( & s -> sdbus )		7690579	1					
+ANR	7690704	Callee	sdbus_read_data		7690579	0					
+ANR	7690705	Identifier	sdbus_read_data		7690579	0					
+ANR	7690706	ArgumentList	& s -> sdbus		7690579	1					
+ANR	7690707	Argument	& s -> sdbus		7690579	0					
+ANR	7690708	UnaryOperationExpression	& s -> sdbus		7690579	0					
+ANR	7690709	UnaryOperator	&		7690579	0					
+ANR	7690710	PtrMemberAccess	s -> sdbus		7690579	1					
+ANR	7690711	Identifier	s		7690579	0					
+ANR	7690712	Identifier	sdbus		7690579	1					
+ANR	7690713	ExpressionStatement	begin = s -> data_count	49:12:984:1005	7690579	1	True				
+ANR	7690714	AssignmentExpression	begin = s -> data_count		7690579	0		=			
+ANR	7690715	Identifier	begin		7690579	0					
+ANR	7690716	PtrMemberAccess	s -> data_count		7690579	1					
+ANR	7690717	Identifier	s		7690579	0					
+ANR	7690718	Identifier	data_count		7690579	1					
+ANR	7690719	IfStatement	if ( ( ( boundary_count + begin ) < block_size ) && page_aligned )		7690579	2					
+ANR	7690720	Condition	( ( boundary_count + begin ) < block_size ) && page_aligned	51:16:1024:1078	7690579	0	True				
+ANR	7690721	AndExpression	( ( boundary_count + begin ) < block_size ) && page_aligned		7690579	0		&&			
+ANR	7690722	RelationalExpression	( boundary_count + begin ) < block_size		7690579	0		<			
+ANR	7690723	AdditiveExpression	boundary_count + begin		7690579	0		+			
+ANR	7690724	Identifier	boundary_count		7690579	0					
+ANR	7690725	Identifier	begin		7690579	1					
+ANR	7690726	Identifier	block_size		7690579	1					
+ANR	7690727	Identifier	page_aligned		7690579	1					
+ANR	7690728	CompoundStatement		49:73:1019:1019	7690579	1					
+ANR	7690729	ExpressionStatement	s -> data_count = boundary_count + begin	53:16:1100:1138	7690579	0	True				
+ANR	7690730	AssignmentExpression	s -> data_count = boundary_count + begin		7690579	0		=			
+ANR	7690731	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690732	Identifier	s		7690579	0					
+ANR	7690733	Identifier	data_count		7690579	1					
+ANR	7690734	AdditiveExpression	boundary_count + begin		7690579	1		+			
+ANR	7690735	Identifier	boundary_count		7690579	0					
+ANR	7690736	Identifier	begin		7690579	1					
+ANR	7690737	ExpressionStatement	boundary_count = 0	55:16:1157:1175	7690579	1	True				
+ANR	7690738	AssignmentExpression	boundary_count = 0		7690579	0		=			
+ANR	7690739	Identifier	boundary_count		7690579	0					
+ANR	7690740	PrimaryExpression	0		7690579	1					
+ANR	7690741	ElseStatement	else		7690579	0					
+ANR	7690742	CompoundStatement		55:20:1136:1136	7690579	0					
+ANR	7690743	ExpressionStatement	s -> data_count = block_size	59:16:1217:1243	7690579	0	True				
+ANR	7690744	AssignmentExpression	s -> data_count = block_size		7690579	0		=			
+ANR	7690745	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690746	Identifier	s		7690579	0					
+ANR	7690747	Identifier	data_count		7690579	1					
+ANR	7690748	Identifier	block_size		7690579	1					
+ANR	7690749	ExpressionStatement	boundary_count -= block_size - begin	61:16:1262:1298	7690579	1	True				
+ANR	7690750	AssignmentExpression	boundary_count -= block_size - begin		7690579	0		-=			
+ANR	7690751	Identifier	boundary_count		7690579	0					
+ANR	7690752	AdditiveExpression	block_size - begin		7690579	1		-			
+ANR	7690753	Identifier	block_size		7690579	0					
+ANR	7690754	Identifier	begin		7690579	1					
+ANR	7690755	IfStatement	if ( s -> trnmod & SDHC_TRNS_BLK_CNT_EN )		7690579	2					
+ANR	7690756	Condition	s -> trnmod & SDHC_TRNS_BLK_CNT_EN	63:20:1321:1352	7690579	0	True				
+ANR	7690757	BitAndExpression	s -> trnmod & SDHC_TRNS_BLK_CNT_EN		7690579	0		&			
+ANR	7690758	PtrMemberAccess	s -> trnmod		7690579	0					
+ANR	7690759	Identifier	s		7690579	0					
+ANR	7690760	Identifier	trnmod		7690579	1					
+ANR	7690761	Identifier	SDHC_TRNS_BLK_CNT_EN		7690579	1					
+ANR	7690762	CompoundStatement		61:54:1293:1293	7690579	1					
+ANR	7690763	ExpressionStatement	s -> blkcnt --	65:20:1378:1389	7690579	0	True				
+ANR	7690764	PostIncDecOperationExpression	s -> blkcnt --		7690579	0					
+ANR	7690765	PtrMemberAccess	s -> blkcnt		7690579	0					
+ANR	7690766	Identifier	s		7690579	0					
+ANR	7690767	Identifier	blkcnt		7690579	1					
+ANR	7690768	IncDec	--		7690579	1					
+ANR	7690769	ExpressionStatement	"dma_memory_write ( & address_space_memory , s -> sdmasysad , & s -> fifo_buffer [ begin ] , s -> data_count - begin )"	71:12:1438:1568	7690579	3	True				
+ANR	7690770	CallExpression	"dma_memory_write ( & address_space_memory , s -> sdmasysad , & s -> fifo_buffer [ begin ] , s -> data_count - begin )"		7690579	0					
+ANR	7690771	Callee	dma_memory_write		7690579	0					
+ANR	7690772	Identifier	dma_memory_write		7690579	0					
+ANR	7690773	ArgumentList	& address_space_memory		7690579	1					
+ANR	7690774	Argument	& address_space_memory		7690579	0					
+ANR	7690775	UnaryOperationExpression	& address_space_memory		7690579	0					
+ANR	7690776	UnaryOperator	&		7690579	0					
+ANR	7690777	Identifier	address_space_memory		7690579	1					
+ANR	7690778	Argument	s -> sdmasysad		7690579	1					
+ANR	7690779	PtrMemberAccess	s -> sdmasysad		7690579	0					
+ANR	7690780	Identifier	s		7690579	0					
+ANR	7690781	Identifier	sdmasysad		7690579	1					
+ANR	7690782	Argument	& s -> fifo_buffer [ begin ]		7690579	2					
+ANR	7690783	UnaryOperationExpression	& s -> fifo_buffer [ begin ]		7690579	0					
+ANR	7690784	UnaryOperator	&		7690579	0					
+ANR	7690785	ArrayIndexing	s -> fifo_buffer [ begin ]		7690579	1					
+ANR	7690786	PtrMemberAccess	s -> fifo_buffer		7690579	0					
+ANR	7690787	Identifier	s		7690579	0					
+ANR	7690788	Identifier	fifo_buffer		7690579	1					
+ANR	7690789	Identifier	begin		7690579	1					
+ANR	7690790	Argument	s -> data_count - begin		7690579	3					
+ANR	7690791	AdditiveExpression	s -> data_count - begin		7690579	0		-			
+ANR	7690792	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690793	Identifier	s		7690579	0					
+ANR	7690794	Identifier	data_count		7690579	1					
+ANR	7690795	Identifier	begin		7690579	1					
+ANR	7690796	ExpressionStatement	s -> sdmasysad += s -> data_count - begin	75:12:1583:1620	7690579	4	True				
+ANR	7690797	AssignmentExpression	s -> sdmasysad += s -> data_count - begin		7690579	0		+=			
+ANR	7690798	PtrMemberAccess	s -> sdmasysad		7690579	0					
+ANR	7690799	Identifier	s		7690579	0					
+ANR	7690800	Identifier	sdmasysad		7690579	1					
+ANR	7690801	AdditiveExpression	s -> data_count - begin		7690579	1		-			
+ANR	7690802	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690803	Identifier	s		7690579	0					
+ANR	7690804	Identifier	data_count		7690579	1					
+ANR	7690805	Identifier	begin		7690579	1					
+ANR	7690806	IfStatement	if ( s -> data_count == block_size )		7690579	5					
+ANR	7690807	Condition	s -> data_count == block_size	77:16:1639:1665	7690579	0	True				
+ANR	7690808	EqualityExpression	s -> data_count == block_size		7690579	0		==			
+ANR	7690809	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690810	Identifier	s		7690579	0					
+ANR	7690811	Identifier	data_count		7690579	1					
+ANR	7690812	Identifier	block_size		7690579	1					
+ANR	7690813	CompoundStatement		75:45:1606:1606	7690579	1					
+ANR	7690814	ExpressionStatement	s -> data_count = 0	79:16:1687:1704	7690579	0	True				
+ANR	7690815	AssignmentExpression	s -> data_count = 0		7690579	0		=			
+ANR	7690816	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690817	Identifier	s		7690579	0					
+ANR	7690818	Identifier	data_count		7690579	1					
+ANR	7690819	PrimaryExpression	0		7690579	1					
+ANR	7690820	IfStatement	if ( page_aligned && boundary_count == 0 )		7690579	6					
+ANR	7690821	Condition	page_aligned && boundary_count == 0	83:16:1738:1772	7690579	0	True				
+ANR	7690822	AndExpression	page_aligned && boundary_count == 0		7690579	0		&&			
+ANR	7690823	Identifier	page_aligned		7690579	0					
+ANR	7690824	EqualityExpression	boundary_count == 0		7690579	1		==			
+ANR	7690825	Identifier	boundary_count		7690579	0					
+ANR	7690826	PrimaryExpression	0		7690579	1					
+ANR	7690827	CompoundStatement		81:53:1713:1713	7690579	1					
+ANR	7690828	BreakStatement	break ;	85:16:1794:1799	7690579	0	True				
+ANR	7690829	ElseStatement	else		7690579	0					
+ANR	7690830	CompoundStatement		89:11:1777:1777	7690579	0					
+ANR	7690831	ExpressionStatement	s -> prnsts |= SDHC_DOING_WRITE | SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE	93:8:1850:1939	7690579	0	True				
+ANR	7690832	AssignmentExpression	s -> prnsts |= SDHC_DOING_WRITE | SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE		7690579	0		|=			
+ANR	7690833	PtrMemberAccess	s -> prnsts		7690579	0					
+ANR	7690834	Identifier	s		7690579	0					
+ANR	7690835	Identifier	prnsts		7690579	1					
+ANR	7690836	InclusiveOrExpression	SDHC_DOING_WRITE | SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE		7690579	1		|			
+ANR	7690837	Identifier	SDHC_DOING_WRITE		7690579	0					
+ANR	7690838	InclusiveOrExpression	SDHC_DATA_INHIBIT | SDHC_DAT_LINE_ACTIVE		7690579	1		|			
+ANR	7690839	Identifier	SDHC_DATA_INHIBIT		7690579	0					
+ANR	7690840	Identifier	SDHC_DAT_LINE_ACTIVE		7690579	1					
+ANR	7690841	WhileStatement	while ( s -> blkcnt )		7690579	1					
+ANR	7690842	Condition	s -> blkcnt	97:15:1957:1965	7690579	0	True				
+ANR	7690843	PtrMemberAccess	s -> blkcnt		7690579	0					
+ANR	7690844	Identifier	s		7690579	0					
+ANR	7690845	Identifier	blkcnt		7690579	1					
+ANR	7690846	CompoundStatement		95:26:1906:1906	7690579	1					
+ANR	7690847	ExpressionStatement	begin = s -> data_count	99:12:1983:2004	7690579	0	True				
+ANR	7690848	AssignmentExpression	begin = s -> data_count		7690579	0		=			
+ANR	7690849	Identifier	begin		7690579	0					
+ANR	7690850	PtrMemberAccess	s -> data_count		7690579	1					
+ANR	7690851	Identifier	s		7690579	0					
+ANR	7690852	Identifier	data_count		7690579	1					
+ANR	7690853	IfStatement	if ( ( ( boundary_count + begin ) < block_size ) && page_aligned )		7690579	1					
+ANR	7690854	Condition	( ( boundary_count + begin ) < block_size ) && page_aligned	101:16:2023:2077	7690579	0	True				
+ANR	7690855	AndExpression	( ( boundary_count + begin ) < block_size ) && page_aligned		7690579	0		&&			
+ANR	7690856	RelationalExpression	( boundary_count + begin ) < block_size		7690579	0		<			
+ANR	7690857	AdditiveExpression	boundary_count + begin		7690579	0		+			
+ANR	7690858	Identifier	boundary_count		7690579	0					
+ANR	7690859	Identifier	begin		7690579	1					
+ANR	7690860	Identifier	block_size		7690579	1					
+ANR	7690861	Identifier	page_aligned		7690579	1					
+ANR	7690862	CompoundStatement		99:73:2018:2018	7690579	1					
+ANR	7690863	ExpressionStatement	s -> data_count = boundary_count + begin	103:16:2099:2137	7690579	0	True				
+ANR	7690864	AssignmentExpression	s -> data_count = boundary_count + begin		7690579	0		=			
+ANR	7690865	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690866	Identifier	s		7690579	0					
+ANR	7690867	Identifier	data_count		7690579	1					
+ANR	7690868	AdditiveExpression	boundary_count + begin		7690579	1		+			
+ANR	7690869	Identifier	boundary_count		7690579	0					
+ANR	7690870	Identifier	begin		7690579	1					
+ANR	7690871	ExpressionStatement	boundary_count = 0	105:16:2156:2174	7690579	1	True				
+ANR	7690872	AssignmentExpression	boundary_count = 0		7690579	0		=			
+ANR	7690873	Identifier	boundary_count		7690579	0					
+ANR	7690874	PrimaryExpression	0		7690579	1					
+ANR	7690875	ElseStatement	else		7690579	0					
+ANR	7690876	CompoundStatement		105:20:2135:2135	7690579	0					
+ANR	7690877	ExpressionStatement	s -> data_count = block_size	109:16:2216:2242	7690579	0	True				
+ANR	7690878	AssignmentExpression	s -> data_count = block_size		7690579	0		=			
+ANR	7690879	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690880	Identifier	s		7690579	0					
+ANR	7690881	Identifier	data_count		7690579	1					
+ANR	7690882	Identifier	block_size		7690579	1					
+ANR	7690883	ExpressionStatement	boundary_count -= block_size - begin	111:16:2261:2297	7690579	1	True				
+ANR	7690884	AssignmentExpression	boundary_count -= block_size - begin		7690579	0		-=			
+ANR	7690885	Identifier	boundary_count		7690579	0					
+ANR	7690886	AdditiveExpression	block_size - begin		7690579	1		-			
+ANR	7690887	Identifier	block_size		7690579	0					
+ANR	7690888	Identifier	begin		7690579	1					
+ANR	7690889	ExpressionStatement	"dma_memory_read ( & address_space_memory , s -> sdmasysad , & s -> fifo_buffer [ begin ] , s -> data_count )"	115:12:2327:2447	7690579	2	True				
+ANR	7690890	CallExpression	"dma_memory_read ( & address_space_memory , s -> sdmasysad , & s -> fifo_buffer [ begin ] , s -> data_count )"		7690579	0					
+ANR	7690891	Callee	dma_memory_read		7690579	0					
+ANR	7690892	Identifier	dma_memory_read		7690579	0					
+ANR	7690893	ArgumentList	& address_space_memory		7690579	1					
+ANR	7690894	Argument	& address_space_memory		7690579	0					
+ANR	7690895	UnaryOperationExpression	& address_space_memory		7690579	0					
+ANR	7690896	UnaryOperator	&		7690579	0					
+ANR	7690897	Identifier	address_space_memory		7690579	1					
+ANR	7690898	Argument	s -> sdmasysad		7690579	1					
+ANR	7690899	PtrMemberAccess	s -> sdmasysad		7690579	0					
+ANR	7690900	Identifier	s		7690579	0					
+ANR	7690901	Identifier	sdmasysad		7690579	1					
+ANR	7690902	Argument	& s -> fifo_buffer [ begin ]		7690579	2					
+ANR	7690903	UnaryOperationExpression	& s -> fifo_buffer [ begin ]		7690579	0					
+ANR	7690904	UnaryOperator	&		7690579	0					
+ANR	7690905	ArrayIndexing	s -> fifo_buffer [ begin ]		7690579	1					
+ANR	7690906	PtrMemberAccess	s -> fifo_buffer		7690579	0					
+ANR	7690907	Identifier	s		7690579	0					
+ANR	7690908	Identifier	fifo_buffer		7690579	1					
+ANR	7690909	Identifier	begin		7690579	1					
+ANR	7690910	Argument	s -> data_count		7690579	3					
+ANR	7690911	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690912	Identifier	s		7690579	0					
+ANR	7690913	Identifier	data_count		7690579	1					
+ANR	7690914	ExpressionStatement	s -> sdmasysad += s -> data_count - begin	119:12:2462:2499	7690579	3	True				
+ANR	7690915	AssignmentExpression	s -> sdmasysad += s -> data_count - begin		7690579	0		+=			
+ANR	7690916	PtrMemberAccess	s -> sdmasysad		7690579	0					
+ANR	7690917	Identifier	s		7690579	0					
+ANR	7690918	Identifier	sdmasysad		7690579	1					
+ANR	7690919	AdditiveExpression	s -> data_count - begin		7690579	1		-			
+ANR	7690920	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690921	Identifier	s		7690579	0					
+ANR	7690922	Identifier	data_count		7690579	1					
+ANR	7690923	Identifier	begin		7690579	1					
+ANR	7690924	IfStatement	if ( s -> data_count == block_size )		7690579	4					
+ANR	7690925	Condition	s -> data_count == block_size	121:16:2518:2544	7690579	0	True				
+ANR	7690926	EqualityExpression	s -> data_count == block_size		7690579	0		==			
+ANR	7690927	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690928	Identifier	s		7690579	0					
+ANR	7690929	Identifier	data_count		7690579	1					
+ANR	7690930	Identifier	block_size		7690579	1					
+ANR	7690931	CompoundStatement		119:45:2485:2485	7690579	1					
+ANR	7690932	ForStatement	for ( n = 0 ; n < block_size ; n ++ )		7690579	0					
+ANR	7690933	ForInit	n = 0 ;	123:21:2571:2576	7690579	0	True				
+ANR	7690934	AssignmentExpression	n = 0		7690579	0		=			
+ANR	7690935	Identifier	n		7690579	0					
+ANR	7690936	PrimaryExpression	0		7690579	1					
+ANR	7690937	Condition	n < block_size	123:28:2578:2591	7690579	1	True				
+ANR	7690938	RelationalExpression	n < block_size		7690579	0		<			
+ANR	7690939	Identifier	n		7690579	0					
+ANR	7690940	Identifier	block_size		7690579	1					
+ANR	7690941	PostIncDecOperationExpression	n ++	123:44:2594:2596	7690579	2	True				
+ANR	7690942	Identifier	n		7690579	0					
+ANR	7690943	IncDec	++		7690579	1					
+ANR	7690944	CompoundStatement		121:49:2537:2537	7690579	3					
+ANR	7690945	ExpressionStatement	"sdbus_write_data ( & s -> sdbus , s -> fifo_buffer [ n ] )"	125:20:2622:2668	7690579	0	True				
+ANR	7690946	CallExpression	"sdbus_write_data ( & s -> sdbus , s -> fifo_buffer [ n ] )"		7690579	0					
+ANR	7690947	Callee	sdbus_write_data		7690579	0					
+ANR	7690948	Identifier	sdbus_write_data		7690579	0					
+ANR	7690949	ArgumentList	& s -> sdbus		7690579	1					
+ANR	7690950	Argument	& s -> sdbus		7690579	0					
+ANR	7690951	UnaryOperationExpression	& s -> sdbus		7690579	0					
+ANR	7690952	UnaryOperator	&		7690579	0					
+ANR	7690953	PtrMemberAccess	s -> sdbus		7690579	1					
+ANR	7690954	Identifier	s		7690579	0					
+ANR	7690955	Identifier	sdbus		7690579	1					
+ANR	7690956	Argument	s -> fifo_buffer [ n ]		7690579	1					
+ANR	7690957	ArrayIndexing	s -> fifo_buffer [ n ]		7690579	0					
+ANR	7690958	PtrMemberAccess	s -> fifo_buffer		7690579	0					
+ANR	7690959	Identifier	s		7690579	0					
+ANR	7690960	Identifier	fifo_buffer		7690579	1					
+ANR	7690961	Identifier	n		7690579	1					
+ANR	7690962	ExpressionStatement	s -> data_count = 0	129:16:2706:2723	7690579	1	True				
+ANR	7690963	AssignmentExpression	s -> data_count = 0		7690579	0		=			
+ANR	7690964	PtrMemberAccess	s -> data_count		7690579	0					
+ANR	7690965	Identifier	s		7690579	0					
+ANR	7690966	Identifier	data_count		7690579	1					
+ANR	7690967	PrimaryExpression	0		7690579	1					
+ANR	7690968	IfStatement	if ( s -> trnmod & SDHC_TRNS_BLK_CNT_EN )		7690579	2					
+ANR	7690969	Condition	s -> trnmod & SDHC_TRNS_BLK_CNT_EN	131:20:2746:2777	7690579	0	True				
+ANR	7690970	BitAndExpression	s -> trnmod & SDHC_TRNS_BLK_CNT_EN		7690579	0		&			
+ANR	7690971	PtrMemberAccess	s -> trnmod		7690579	0					
+ANR	7690972	Identifier	s		7690579	0					
+ANR	7690973	Identifier	trnmod		7690579	1					
+ANR	7690974	Identifier	SDHC_TRNS_BLK_CNT_EN		7690579	1					
+ANR	7690975	CompoundStatement		129:54:2718:2718	7690579	1					
+ANR	7690976	ExpressionStatement	s -> blkcnt --	133:20:2803:2814	7690579	0	True				
+ANR	7690977	PostIncDecOperationExpression	s -> blkcnt --		7690579	0					
+ANR	7690978	PtrMemberAccess	s -> blkcnt		7690579	0					
+ANR	7690979	Identifier	s		7690579	0					
+ANR	7690980	Identifier	blkcnt		7690579	1					
+ANR	7690981	IncDec	--		7690579	1					
+ANR	7690982	IfStatement	if ( page_aligned && boundary_count == 0 )		7690579	5					
+ANR	7690983	Condition	page_aligned && boundary_count == 0	139:16:2867:2901	7690579	0	True				
+ANR	7690984	AndExpression	page_aligned && boundary_count == 0		7690579	0		&&			
+ANR	7690985	Identifier	page_aligned		7690579	0					
+ANR	7690986	EqualityExpression	boundary_count == 0		7690579	1		==			
+ANR	7690987	Identifier	boundary_count		7690579	0					
+ANR	7690988	PrimaryExpression	0		7690579	1					
+ANR	7690989	CompoundStatement		137:53:2842:2842	7690579	1					
+ANR	7690990	BreakStatement	break ;	141:16:2923:2928	7690579	0	True				
+ANR	7690991	IfStatement	if ( s -> blkcnt == 0 )		7690579	7					
+ANR	7690992	Condition	s -> blkcnt == 0	151:8:2974:2987	7690579	0	True				
+ANR	7690993	EqualityExpression	s -> blkcnt == 0		7690579	0		==			
+ANR	7690994	PtrMemberAccess	s -> blkcnt		7690579	0					
+ANR	7690995	Identifier	s		7690579	0					
+ANR	7690996	Identifier	blkcnt		7690579	1					
+ANR	7690997	PrimaryExpression	0		7690579	1					
+ANR	7690998	CompoundStatement		149:24:2928:2928	7690579	1					
+ANR	7690999	ExpressionStatement	sdhci_end_transfer ( s )	153:8:3001:3022	7690579	0	True				
+ANR	7691000	CallExpression	sdhci_end_transfer ( s )		7690579	0					
+ANR	7691001	Callee	sdhci_end_transfer		7690579	0					
+ANR	7691002	Identifier	sdhci_end_transfer		7690579	0					
+ANR	7691003	ArgumentList	s		7690579	1					
+ANR	7691004	Argument	s		7690579	0					
+ANR	7691005	Identifier	s		7690579	0					
+ANR	7691006	ElseStatement	else		7690579	0					
+ANR	7691007	CompoundStatement		153:11:2974:2974	7690579	0					
+ANR	7691008	IfStatement	if ( s -> norintstsen & SDHC_NISEN_DMA )		7690579	0					
+ANR	7691009	Condition	s -> norintstsen & SDHC_NISEN_DMA	157:12:3051:3081	7690579	0	True				
+ANR	7691010	BitAndExpression	s -> norintstsen & SDHC_NISEN_DMA		7690579	0		&			
+ANR	7691011	PtrMemberAccess	s -> norintstsen		7690579	0					
+ANR	7691012	Identifier	s		7690579	0					
+ANR	7691013	Identifier	norintstsen		7690579	1					
+ANR	7691014	Identifier	SDHC_NISEN_DMA		7690579	1					
+ANR	7691015	CompoundStatement		155:45:3022:3022	7690579	1					
+ANR	7691016	ExpressionStatement	s -> norintsts |= SDHC_NIS_DMA	159:12:3099:3127	7690579	0	True				
+ANR	7691017	AssignmentExpression	s -> norintsts |= SDHC_NIS_DMA		7690579	0		|=			
+ANR	7691018	PtrMemberAccess	s -> norintsts		7690579	0					
+ANR	7691019	Identifier	s		7690579	0					
+ANR	7691020	Identifier	norintsts		7690579	1					
+ANR	7691021	Identifier	SDHC_NIS_DMA		7690579	1					
+ANR	7691022	ExpressionStatement	sdhci_update_irq ( s )	163:8:3149:3168	7690579	1	True				
+ANR	7691023	CallExpression	sdhci_update_irq ( s )		7690579	0					
+ANR	7691024	Callee	sdhci_update_irq		7690579	0					
+ANR	7691025	Identifier	sdhci_update_irq		7690579	0					
+ANR	7691026	ArgumentList	s		7690579	1					
+ANR	7691027	Argument	s		7690579	0					
+ANR	7691028	Identifier	s		7690579	0					
+ANR	7691029	ReturnType	static void		7690579	1					
+ANR	7691030	Identifier	sdhci_sdma_transfer_multi_blocks		7690579	2					
+ANR	7691031	ParameterList	SDHCIState * s		7690579	3					
+ANR	7691032	Parameter	SDHCIState * s	1:45:45:57	7690579	0	True				
+ANR	7691033	ParameterType	SDHCIState *		7690579	0					
+ANR	7691034	Identifier	s		7690579	1					
+ANR	7691035	CFGEntryNode	ENTRY		7690579		True				
+ANR	7691036	CFGExitNode	EXIT		7690579		True				
+ANR	7691037	Symbol	s -> norintstsen		7690579						
+ANR	7691038	Symbol	page_aligned		7690579						
+ANR	7691039	Symbol	s -> data_count		7690579						
+ANR	7691040	Symbol	s -> blksize		7690579						
+ANR	7691041	Symbol	& s -> sdbus		7690579						
+ANR	7691042	Symbol	s -> sdmasysad		7690579						
+ANR	7691043	Symbol	SDHC_TRNS_BLK_CNT_EN		7690579						
+ANR	7691044	Symbol	SDHC_DATA_INHIBIT		7690579						
+ANR	7691045	Symbol	* * s		7690579						
+ANR	7691046	Symbol	SDHC_TRNS_READ		7690579						
+ANR	7691047	Symbol	SDHC_DAT_LINE_ACTIVE		7690579						
+ANR	7691048	Symbol	SDHC_DOING_READ		7690579						
+ANR	7691049	Symbol	s -> trnmod		7690579						
+ANR	7691050	Symbol	* s -> fifo_buffer		7690579						
+ANR	7691051	Symbol	boundary_count		7690579						
+ANR	7691052	Symbol	block_size		7690579						
+ANR	7691053	Symbol	s -> norintsts		7690579						
+ANR	7691054	Symbol	s -> fifo_buffer		7690579						
+ANR	7691055	Symbol	boundary_chk		7690579						
+ANR	7691056	Symbol	sdbus_read_data		7690579						
+ANR	7691057	Symbol	false		7690579						
+ANR	7691058	Symbol	s -> blkcnt		7690579						
+ANR	7691059	Symbol	n		7690579						
+ANR	7691060	Symbol	SDHC_NIS_DMA		7690579						
+ANR	7691061	Symbol	s		7690579						
+ANR	7691062	Symbol	s -> prnsts		7690579						
+ANR	7691063	Symbol	SDHC_NISEN_DMA		7690579						
+ANR	7691064	Symbol	true		7690579						
+ANR	7691065	Symbol	* n		7690579						
+ANR	7691066	Symbol	& address_space_memory		7690579						
+ANR	7691067	Symbol	begin		7690579						
+ANR	7691068	Symbol	* s		7690579						
+ANR	7691069	Symbol	SDHC_DOING_WRITE		7690579						

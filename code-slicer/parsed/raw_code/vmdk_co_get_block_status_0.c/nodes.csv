@@ -1,0 +1,241 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9163398	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vmdk_co_get_block_status_0.c								
+ANR	9163399	Function	vmdk_co_get_block_status	1:0:0:1208							
+ANR	9163400	FunctionDef	"vmdk_co_get_block_status (BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum)"		9163399	0					
+ANR	9163401	CompoundStatement		5:0:132:1208	9163399	0					
+ANR	9163402	IdentifierDeclStatement	BDRVVmdkState * s = bs -> opaque ;	7:4:139:168	9163399	0	True				
+ANR	9163403	IdentifierDecl	* s = bs -> opaque		9163399	0					
+ANR	9163404	IdentifierDeclType	BDRVVmdkState *		9163399	0					
+ANR	9163405	Identifier	s		9163399	1					
+ANR	9163406	AssignmentExpression	* s = bs -> opaque		9163399	2		=			
+ANR	9163407	Identifier	s		9163399	0					
+ANR	9163408	PtrMemberAccess	bs -> opaque		9163399	1					
+ANR	9163409	Identifier	bs		9163399	0					
+ANR	9163410	Identifier	opaque		9163399	1					
+ANR	9163411	IdentifierDeclStatement	"int64_t index_in_cluster , n , ret ;"	9:4:175:207	9163399	1	True				
+ANR	9163412	IdentifierDecl	index_in_cluster		9163399	0					
+ANR	9163413	IdentifierDeclType	int64_t		9163399	0					
+ANR	9163414	Identifier	index_in_cluster		9163399	1					
+ANR	9163415	IdentifierDecl	n		9163399	1					
+ANR	9163416	IdentifierDeclType	int64_t		9163399	0					
+ANR	9163417	Identifier	n		9163399	1					
+ANR	9163418	IdentifierDecl	ret		9163399	2					
+ANR	9163419	IdentifierDeclType	int64_t		9163399	0					
+ANR	9163420	Identifier	ret		9163399	1					
+ANR	9163421	IdentifierDeclStatement	uint64_t offset ;	11:4:214:229	9163399	2	True				
+ANR	9163422	IdentifierDecl	offset		9163399	0					
+ANR	9163423	IdentifierDeclType	uint64_t		9163399	0					
+ANR	9163424	Identifier	offset		9163399	1					
+ANR	9163425	IdentifierDeclStatement	VmdkExtent * extent ;	13:4:236:254	9163399	3	True				
+ANR	9163426	IdentifierDecl	* extent		9163399	0					
+ANR	9163427	IdentifierDeclType	VmdkExtent *		9163399	0					
+ANR	9163428	Identifier	extent		9163399	1					
+ANR	9163429	ExpressionStatement	"extent = find_extent ( s , sector_num , NULL )"	17:4:263:304	9163399	4	True				
+ANR	9163430	AssignmentExpression	"extent = find_extent ( s , sector_num , NULL )"		9163399	0		=			
+ANR	9163431	Identifier	extent		9163399	0					
+ANR	9163432	CallExpression	"find_extent ( s , sector_num , NULL )"		9163399	1					
+ANR	9163433	Callee	find_extent		9163399	0					
+ANR	9163434	Identifier	find_extent		9163399	0					
+ANR	9163435	ArgumentList	s		9163399	1					
+ANR	9163436	Argument	s		9163399	0					
+ANR	9163437	Identifier	s		9163399	0					
+ANR	9163438	Argument	sector_num		9163399	1					
+ANR	9163439	Identifier	sector_num		9163399	0					
+ANR	9163440	Argument	NULL		9163399	2					
+ANR	9163441	Identifier	NULL		9163399	0					
+ANR	9163442	IfStatement	if ( ! extent )		9163399	5					
+ANR	9163443	Condition	! extent	19:8:315:321	9163399	0	True				
+ANR	9163444	UnaryOperationExpression	! extent		9163399	0					
+ANR	9163445	UnaryOperator	!		9163399	0					
+ANR	9163446	Identifier	extent		9163399	1					
+ANR	9163447	CompoundStatement		15:17:191:191	9163399	1					
+ANR	9163448	ReturnStatement	return 0 ;	21:8:335:343	9163399	0	True				
+ANR	9163449	PrimaryExpression	0		9163399	0					
+ANR	9163450	ExpressionStatement	qemu_co_mutex_lock ( & s -> lock )	25:4:357:385	9163399	6	True				
+ANR	9163451	CallExpression	qemu_co_mutex_lock ( & s -> lock )		9163399	0					
+ANR	9163452	Callee	qemu_co_mutex_lock		9163399	0					
+ANR	9163453	Identifier	qemu_co_mutex_lock		9163399	0					
+ANR	9163454	ArgumentList	& s -> lock		9163399	1					
+ANR	9163455	Argument	& s -> lock		9163399	0					
+ANR	9163456	UnaryOperationExpression	& s -> lock		9163399	0					
+ANR	9163457	UnaryOperator	&		9163399	0					
+ANR	9163458	PtrMemberAccess	s -> lock		9163399	1					
+ANR	9163459	Identifier	s		9163399	0					
+ANR	9163460	Identifier	lock		9163399	1					
+ANR	9163461	ExpressionStatement	"ret = get_cluster_offset ( bs , extent , NULL , sector_num * 512 , false , & offset , 0 , 0 )"	27:4:392:534	9163399	7	True				
+ANR	9163462	AssignmentExpression	"ret = get_cluster_offset ( bs , extent , NULL , sector_num * 512 , false , & offset , 0 , 0 )"		9163399	0		=			
+ANR	9163463	Identifier	ret		9163399	0					
+ANR	9163464	CallExpression	"get_cluster_offset ( bs , extent , NULL , sector_num * 512 , false , & offset , 0 , 0 )"		9163399	1					
+ANR	9163465	Callee	get_cluster_offset		9163399	0					
+ANR	9163466	Identifier	get_cluster_offset		9163399	0					
+ANR	9163467	ArgumentList	bs		9163399	1					
+ANR	9163468	Argument	bs		9163399	0					
+ANR	9163469	Identifier	bs		9163399	0					
+ANR	9163470	Argument	extent		9163399	1					
+ANR	9163471	Identifier	extent		9163399	0					
+ANR	9163472	Argument	NULL		9163399	2					
+ANR	9163473	Identifier	NULL		9163399	0					
+ANR	9163474	Argument	sector_num * 512		9163399	3					
+ANR	9163475	MultiplicativeExpression	sector_num * 512		9163399	0		*			
+ANR	9163476	Identifier	sector_num		9163399	0					
+ANR	9163477	PrimaryExpression	512		9163399	1					
+ANR	9163478	Argument	false		9163399	4					
+ANR	9163479	Identifier	false		9163399	0					
+ANR	9163480	Argument	& offset		9163399	5					
+ANR	9163481	UnaryOperationExpression	& offset		9163399	0					
+ANR	9163482	UnaryOperator	&		9163399	0					
+ANR	9163483	Identifier	offset		9163399	1					
+ANR	9163484	Argument	0		9163399	6					
+ANR	9163485	PrimaryExpression	0		9163399	0					
+ANR	9163486	Argument	0		9163399	7					
+ANR	9163487	PrimaryExpression	0		9163399	0					
+ANR	9163488	ExpressionStatement	qemu_co_mutex_unlock ( & s -> lock )	33:4:541:571	9163399	8	True				
+ANR	9163489	CallExpression	qemu_co_mutex_unlock ( & s -> lock )		9163399	0					
+ANR	9163490	Callee	qemu_co_mutex_unlock		9163399	0					
+ANR	9163491	Identifier	qemu_co_mutex_unlock		9163399	0					
+ANR	9163492	ArgumentList	& s -> lock		9163399	1					
+ANR	9163493	Argument	& s -> lock		9163399	0					
+ANR	9163494	UnaryOperationExpression	& s -> lock		9163399	0					
+ANR	9163495	UnaryOperator	&		9163399	0					
+ANR	9163496	PtrMemberAccess	s -> lock		9163399	1					
+ANR	9163497	Identifier	s		9163399	0					
+ANR	9163498	Identifier	lock		9163399	1					
+ANR	9163499	SwitchStatement	switch ( ret )		9163399	9					
+ANR	9163500	Condition	ret	37:12:588:590	9163399	0	True				
+ANR	9163501	Identifier	ret		9163399	0					
+ANR	9163502	CompoundStatement		33:17:460:460	9163399	1					
+ANR	9163503	Label	case VMDK_ERROR :	39:4:600:615	9163399	0	True				
+ANR	9163504	Identifier	VMDK_ERROR		9163399	0					
+ANR	9163505	ExpressionStatement	ret = - EIO	41:8:626:636	9163399	1	True				
+ANR	9163506	AssignmentExpression	ret = - EIO		9163399	0		=			
+ANR	9163507	Identifier	ret		9163399	0					
+ANR	9163508	UnaryOperationExpression	- EIO		9163399	1					
+ANR	9163509	UnaryOperator	-		9163399	0					
+ANR	9163510	Identifier	EIO		9163399	1					
+ANR	9163511	BreakStatement	break ;	43:8:647:652	9163399	2	True				
+ANR	9163512	Label	case VMDK_UNALLOC :	45:4:659:676	9163399	3	True				
+ANR	9163513	Identifier	VMDK_UNALLOC		9163399	0					
+ANR	9163514	ExpressionStatement	ret = 0	47:8:687:694	9163399	4	True				
+ANR	9163515	AssignmentExpression	ret = 0		9163399	0		=			
+ANR	9163516	Identifier	ret		9163399	0					
+ANR	9163517	PrimaryExpression	0		9163399	1					
+ANR	9163518	BreakStatement	break ;	49:8:705:710	9163399	5	True				
+ANR	9163519	Label	case VMDK_ZEROED :	51:4:717:733	9163399	6	True				
+ANR	9163520	Identifier	VMDK_ZEROED		9163399	0					
+ANR	9163521	ExpressionStatement	ret = BDRV_BLOCK_ZERO	53:8:744:765	9163399	7	True				
+ANR	9163522	AssignmentExpression	ret = BDRV_BLOCK_ZERO		9163399	0		=			
+ANR	9163523	Identifier	ret		9163399	0					
+ANR	9163524	Identifier	BDRV_BLOCK_ZERO		9163399	1					
+ANR	9163525	BreakStatement	break ;	55:8:776:781	9163399	8	True				
+ANR	9163526	Label	case VMDK_OK :	57:4:788:800	9163399	9	True				
+ANR	9163527	Identifier	VMDK_OK		9163399	0					
+ANR	9163528	ExpressionStatement	ret = BDRV_BLOCK_DATA	59:8:811:832	9163399	10	True				
+ANR	9163529	AssignmentExpression	ret = BDRV_BLOCK_DATA		9163399	0		=			
+ANR	9163530	Identifier	ret		9163399	0					
+ANR	9163531	Identifier	BDRV_BLOCK_DATA		9163399	1					
+ANR	9163532	IfStatement	if ( extent -> file == bs -> file && ! extent -> compressed )		9163399	11					
+ANR	9163533	Condition	extent -> file == bs -> file && ! extent -> compressed	61:12:847:893	9163399	0	True				
+ANR	9163534	AndExpression	extent -> file == bs -> file && ! extent -> compressed		9163399	0		&&			
+ANR	9163535	EqualityExpression	extent -> file == bs -> file		9163399	0		==			
+ANR	9163536	PtrMemberAccess	extent -> file		9163399	0					
+ANR	9163537	Identifier	extent		9163399	0					
+ANR	9163538	Identifier	file		9163399	1					
+ANR	9163539	PtrMemberAccess	bs -> file		9163399	1					
+ANR	9163540	Identifier	bs		9163399	0					
+ANR	9163541	Identifier	file		9163399	1					
+ANR	9163542	UnaryOperationExpression	! extent -> compressed		9163399	1					
+ANR	9163543	UnaryOperator	!		9163399	0					
+ANR	9163544	PtrMemberAccess	extent -> compressed		9163399	1					
+ANR	9163545	Identifier	extent		9163399	0					
+ANR	9163546	Identifier	compressed		9163399	1					
+ANR	9163547	CompoundStatement		57:61:763:763	9163399	1					
+ANR	9163548	ExpressionStatement	ret |= BDRV_BLOCK_OFFSET_VALID | offset	63:12:911:950	9163399	0	True				
+ANR	9163549	AssignmentExpression	ret |= BDRV_BLOCK_OFFSET_VALID | offset		9163399	0		|=			
+ANR	9163550	Identifier	ret		9163399	0					
+ANR	9163551	InclusiveOrExpression	BDRV_BLOCK_OFFSET_VALID | offset		9163399	1		|			
+ANR	9163552	Identifier	BDRV_BLOCK_OFFSET_VALID		9163399	0					
+ANR	9163553	Identifier	offset		9163399	1					
+ANR	9163554	BreakStatement	break ;	69:8:974:979	9163399	12	True				
+ANR	9163555	ExpressionStatement	"index_in_cluster = vmdk_find_index_in_cluster ( extent , sector_num )"	75:4:995:1060	9163399	10	True				
+ANR	9163556	AssignmentExpression	"index_in_cluster = vmdk_find_index_in_cluster ( extent , sector_num )"		9163399	0		=			
+ANR	9163557	Identifier	index_in_cluster		9163399	0					
+ANR	9163558	CallExpression	"vmdk_find_index_in_cluster ( extent , sector_num )"		9163399	1					
+ANR	9163559	Callee	vmdk_find_index_in_cluster		9163399	0					
+ANR	9163560	Identifier	vmdk_find_index_in_cluster		9163399	0					
+ANR	9163561	ArgumentList	extent		9163399	1					
+ANR	9163562	Argument	extent		9163399	0					
+ANR	9163563	Identifier	extent		9163399	0					
+ANR	9163564	Argument	sector_num		9163399	1					
+ANR	9163565	Identifier	sector_num		9163399	0					
+ANR	9163566	ExpressionStatement	n = extent -> cluster_sectors - index_in_cluster	77:4:1067:1113	9163399	11	True				
+ANR	9163567	AssignmentExpression	n = extent -> cluster_sectors - index_in_cluster		9163399	0		=			
+ANR	9163568	Identifier	n		9163399	0					
+ANR	9163569	AdditiveExpression	extent -> cluster_sectors - index_in_cluster		9163399	1		-			
+ANR	9163570	PtrMemberAccess	extent -> cluster_sectors		9163399	0					
+ANR	9163571	Identifier	extent		9163399	0					
+ANR	9163572	Identifier	cluster_sectors		9163399	1					
+ANR	9163573	Identifier	index_in_cluster		9163399	1					
+ANR	9163574	IfStatement	if ( n > nb_sectors )		9163399	12					
+ANR	9163575	Condition	n > nb_sectors	79:8:1124:1137	9163399	0	True				
+ANR	9163576	RelationalExpression	n > nb_sectors		9163399	0		>			
+ANR	9163577	Identifier	n		9163399	0					
+ANR	9163578	Identifier	nb_sectors		9163399	1					
+ANR	9163579	CompoundStatement		75:24:1007:1007	9163399	1					
+ANR	9163580	ExpressionStatement	n = nb_sectors	81:8:1151:1165	9163399	0	True				
+ANR	9163581	AssignmentExpression	n = nb_sectors		9163399	0		=			
+ANR	9163582	Identifier	n		9163399	0					
+ANR	9163583	Identifier	nb_sectors		9163399	1					
+ANR	9163584	ExpressionStatement	* pnum = n	85:4:1179:1188	9163399	13	True				
+ANR	9163585	AssignmentExpression	* pnum = n		9163399	0		=			
+ANR	9163586	UnaryOperationExpression	* pnum		9163399	0					
+ANR	9163587	UnaryOperator	*		9163399	0					
+ANR	9163588	Identifier	pnum		9163399	1					
+ANR	9163589	Identifier	n		9163399	1					
+ANR	9163590	ReturnStatement	return ret ;	87:4:1195:1205	9163399	14	True				
+ANR	9163591	Identifier	ret		9163399	0					
+ANR	9163592	ReturnType	static int64_t coroutine_fn		9163399	1					
+ANR	9163593	Identifier	vmdk_co_get_block_status		9163399	2					
+ANR	9163594	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum"		9163399	3					
+ANR	9163595	Parameter	BlockDriverState * bs	1:53:53:72	9163399	0	True				
+ANR	9163596	ParameterType	BlockDriverState *		9163399	0					
+ANR	9163597	Identifier	bs		9163399	1					
+ANR	9163598	Parameter	int64_t sector_num	3:8:84:101	9163399	1	True				
+ANR	9163599	ParameterType	int64_t		9163399	0					
+ANR	9163600	Identifier	sector_num		9163399	1					
+ANR	9163601	Parameter	int nb_sectors	3:28:104:117	9163399	2	True				
+ANR	9163602	ParameterType	int		9163399	0					
+ANR	9163603	Identifier	nb_sectors		9163399	1					
+ANR	9163604	Parameter	int * pnum	3:44:120:128	9163399	3	True				
+ANR	9163605	ParameterType	int *		9163399	0					
+ANR	9163606	Identifier	pnum		9163399	1					
+ANR	9163607	CFGEntryNode	ENTRY		9163399		True				
+ANR	9163608	CFGExitNode	EXIT		9163399		True				
+ANR	9163609	Symbol	extent		9163399						
+ANR	9163610	Symbol	nb_sectors		9163399						
+ANR	9163611	Symbol	* extent		9163399						
+ANR	9163612	Symbol	bs -> file		9163399						
+ANR	9163613	Symbol	find_extent		9163399						
+ANR	9163614	Symbol	BDRV_BLOCK_DATA		9163399						
+ANR	9163615	Symbol	extent -> file		9163399						
+ANR	9163616	Symbol	index_in_cluster		9163399						
+ANR	9163617	Symbol	BDRV_BLOCK_ZERO		9163399						
+ANR	9163618	Symbol	bs		9163399						
+ANR	9163619	Symbol	extent -> compressed		9163399						
+ANR	9163620	Symbol	* bs		9163399						
+ANR	9163621	Symbol	BDRV_BLOCK_OFFSET_VALID		9163399						
+ANR	9163622	Symbol	vmdk_find_index_in_cluster		9163399						
+ANR	9163623	Symbol	extent -> cluster_sectors		9163399						
+ANR	9163624	Symbol	ret		9163399						
+ANR	9163625	Symbol	pnum		9163399						
+ANR	9163626	Symbol	NULL		9163399						
+ANR	9163627	Symbol	bs -> opaque		9163399						
+ANR	9163628	Symbol	offset		9163399						
+ANR	9163629	Symbol	& offset		9163399						
+ANR	9163630	Symbol	false		9163399						
+ANR	9163631	Symbol	get_cluster_offset		9163399						
+ANR	9163632	Symbol	EIO		9163399						
+ANR	9163633	Symbol	& s -> lock		9163399						
+ANR	9163634	Symbol	n		9163399						
+ANR	9163635	Symbol	sector_num		9163399						
+ANR	9163636	Symbol	* pnum		9163399						
+ANR	9163637	Symbol	s		9163399						

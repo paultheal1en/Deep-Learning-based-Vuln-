@@ -1,0 +1,337 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9084656	File	/home/p4ultr4n/workplace/ReVeal/raw_code/virtio_gpu_create_mapping_iov_0.c								
+ANR	9084657	Function	virtio_gpu_create_mapping_iov	1:0:0:1648							
+ANR	9084658	FunctionDef	"virtio_gpu_create_mapping_iov (struct virtio_gpu_resource_attach_backing * ab , struct virtio_gpu_ctrl_command * cmd , struct iovec * * iov)"		9084657	0					
+ANR	9084659	CompoundStatement		7:0:209:1648	9084657	0					
+ANR	9084660	IdentifierDeclStatement	struct virtio_gpu_mem_entry * ents ;	9:4:216:249	9084657	0	True				
+ANR	9084661	IdentifierDecl	* ents		9084657	0					
+ANR	9084662	IdentifierDeclType	struct virtio_gpu_mem_entry *		9084657	0					
+ANR	9084663	Identifier	ents		9084657	1					
+ANR	9084664	IdentifierDeclStatement	"size_t esize , s ;"	11:4:256:271	9084657	1	True				
+ANR	9084665	IdentifierDecl	esize		9084657	0					
+ANR	9084666	IdentifierDeclType	size_t		9084657	0					
+ANR	9084667	Identifier	esize		9084657	1					
+ANR	9084668	IdentifierDecl	s		9084657	1					
+ANR	9084669	IdentifierDeclType	size_t		9084657	0					
+ANR	9084670	Identifier	s		9084657	1					
+ANR	9084671	IdentifierDeclStatement	int i ;	13:4:278:283	9084657	2	True				
+ANR	9084672	IdentifierDecl	i		9084657	0					
+ANR	9084673	IdentifierDeclType	int		9084657	0					
+ANR	9084674	Identifier	i		9084657	1					
+ANR	9084675	IfStatement	if ( ab -> nr_entries > 16384 )		9084657	3					
+ANR	9084676	Condition	ab -> nr_entries > 16384	17:8:296:317	9084657	0	True				
+ANR	9084677	RelationalExpression	ab -> nr_entries > 16384		9084657	0		>			
+ANR	9084678	PtrMemberAccess	ab -> nr_entries		9084657	0					
+ANR	9084679	Identifier	ab		9084657	0					
+ANR	9084680	Identifier	nr_entries		9084657	1					
+ANR	9084681	PrimaryExpression	16384		9084657	1					
+ANR	9084682	CompoundStatement		11:32:110:110	9084657	1					
+ANR	9084683	ExpressionStatement	"qemu_log_mask ( LOG_GUEST_ERROR , ""%s: nr_entries is too big (%d > 1024)\\n"" , __func__ , ab -> nr_entries )"	19:8:331:476	9084657	0	True				
+ANR	9084684	CallExpression	"qemu_log_mask ( LOG_GUEST_ERROR , ""%s: nr_entries is too big (%d > 1024)\\n"" , __func__ , ab -> nr_entries )"		9084657	0					
+ANR	9084685	Callee	qemu_log_mask		9084657	0					
+ANR	9084686	Identifier	qemu_log_mask		9084657	0					
+ANR	9084687	ArgumentList	LOG_GUEST_ERROR		9084657	1					
+ANR	9084688	Argument	LOG_GUEST_ERROR		9084657	0					
+ANR	9084689	Identifier	LOG_GUEST_ERROR		9084657	0					
+ANR	9084690	Argument	"""%s: nr_entries is too big (%d > 1024)\\n"""		9084657	1					
+ANR	9084691	PrimaryExpression	"""%s: nr_entries is too big (%d > 1024)\\n"""		9084657	0					
+ANR	9084692	Argument	__func__		9084657	2					
+ANR	9084693	Identifier	__func__		9084657	0					
+ANR	9084694	Argument	ab -> nr_entries		9084657	3					
+ANR	9084695	PtrMemberAccess	ab -> nr_entries		9084657	0					
+ANR	9084696	Identifier	ab		9084657	0					
+ANR	9084697	Identifier	nr_entries		9084657	1					
+ANR	9084698	ReturnStatement	return - 1 ;	25:8:487:496	9084657	1	True				
+ANR	9084699	UnaryOperationExpression	- 1		9084657	0					
+ANR	9084700	UnaryOperator	-		9084657	0					
+ANR	9084701	PrimaryExpression	1		9084657	1					
+ANR	9084702	ExpressionStatement	esize = sizeof ( * ents ) * ab -> nr_entries	31:4:512:550	9084657	4	True				
+ANR	9084703	AssignmentExpression	esize = sizeof ( * ents ) * ab -> nr_entries		9084657	0		=			
+ANR	9084704	Identifier	esize		9084657	0					
+ANR	9084705	MultiplicativeExpression	sizeof ( * ents ) * ab -> nr_entries		9084657	1		*			
+ANR	9084706	SizeofExpression	sizeof ( * ents )		9084657	0					
+ANR	9084707	Sizeof	sizeof		9084657	0					
+ANR	9084708	UnaryOperationExpression	* ents		9084657	1					
+ANR	9084709	UnaryOperator	*		9084657	0					
+ANR	9084710	Identifier	ents		9084657	1					
+ANR	9084711	PtrMemberAccess	ab -> nr_entries		9084657	1					
+ANR	9084712	Identifier	ab		9084657	0					
+ANR	9084713	Identifier	nr_entries		9084657	1					
+ANR	9084714	ExpressionStatement	ents = g_malloc ( esize )	33:4:557:579	9084657	5	True				
+ANR	9084715	AssignmentExpression	ents = g_malloc ( esize )		9084657	0		=			
+ANR	9084716	Identifier	ents		9084657	0					
+ANR	9084717	CallExpression	g_malloc ( esize )		9084657	1					
+ANR	9084718	Callee	g_malloc		9084657	0					
+ANR	9084719	Identifier	g_malloc		9084657	0					
+ANR	9084720	ArgumentList	esize		9084657	1					
+ANR	9084721	Argument	esize		9084657	0					
+ANR	9084722	Identifier	esize		9084657	0					
+ANR	9084723	ExpressionStatement	"s = iov_to_buf ( cmd -> elem . out_sg , cmd -> elem . out_num , sizeof ( * ab ) , ents , esize )"	35:4:586:683	9084657	6	True				
+ANR	9084724	AssignmentExpression	"s = iov_to_buf ( cmd -> elem . out_sg , cmd -> elem . out_num , sizeof ( * ab ) , ents , esize )"		9084657	0		=			
+ANR	9084725	Identifier	s		9084657	0					
+ANR	9084726	CallExpression	"iov_to_buf ( cmd -> elem . out_sg , cmd -> elem . out_num , sizeof ( * ab ) , ents , esize )"		9084657	1					
+ANR	9084727	Callee	iov_to_buf		9084657	0					
+ANR	9084728	Identifier	iov_to_buf		9084657	0					
+ANR	9084729	ArgumentList	cmd -> elem . out_sg		9084657	1					
+ANR	9084730	Argument	cmd -> elem . out_sg		9084657	0					
+ANR	9084731	MemberAccess	cmd -> elem . out_sg		9084657	0					
+ANR	9084732	PtrMemberAccess	cmd -> elem		9084657	0					
+ANR	9084733	Identifier	cmd		9084657	0					
+ANR	9084734	Identifier	elem		9084657	1					
+ANR	9084735	Identifier	out_sg		9084657	1					
+ANR	9084736	Argument	cmd -> elem . out_num		9084657	1					
+ANR	9084737	MemberAccess	cmd -> elem . out_num		9084657	0					
+ANR	9084738	PtrMemberAccess	cmd -> elem		9084657	0					
+ANR	9084739	Identifier	cmd		9084657	0					
+ANR	9084740	Identifier	elem		9084657	1					
+ANR	9084741	Identifier	out_num		9084657	1					
+ANR	9084742	Argument	sizeof ( * ab )		9084657	2					
+ANR	9084743	SizeofExpression	sizeof ( * ab )		9084657	0					
+ANR	9084744	Sizeof	sizeof		9084657	0					
+ANR	9084745	UnaryOperationExpression	* ab		9084657	1					
+ANR	9084746	UnaryOperator	*		9084657	0					
+ANR	9084747	Identifier	ab		9084657	1					
+ANR	9084748	Argument	ents		9084657	3					
+ANR	9084749	Identifier	ents		9084657	0					
+ANR	9084750	Argument	esize		9084657	4					
+ANR	9084751	Identifier	esize		9084657	0					
+ANR	9084752	IfStatement	if ( s != esize )		9084657	7					
+ANR	9084753	Condition	s != esize	39:8:694:703	9084657	0	True				
+ANR	9084754	EqualityExpression	s != esize		9084657	0		!=			
+ANR	9084755	Identifier	s		9084657	0					
+ANR	9084756	Identifier	esize		9084657	1					
+ANR	9084757	CompoundStatement		33:20:496:496	9084657	1					
+ANR	9084758	ExpressionStatement	"qemu_log_mask ( LOG_GUEST_ERROR , ""%s: command data size incorrect %zu vs %zu\\n"" , __func__ , s , esize )"	41:8:717:861	9084657	0	True				
+ANR	9084759	CallExpression	"qemu_log_mask ( LOG_GUEST_ERROR , ""%s: command data size incorrect %zu vs %zu\\n"" , __func__ , s , esize )"		9084657	0					
+ANR	9084760	Callee	qemu_log_mask		9084657	0					
+ANR	9084761	Identifier	qemu_log_mask		9084657	0					
+ANR	9084762	ArgumentList	LOG_GUEST_ERROR		9084657	1					
+ANR	9084763	Argument	LOG_GUEST_ERROR		9084657	0					
+ANR	9084764	Identifier	LOG_GUEST_ERROR		9084657	0					
+ANR	9084765	Argument	"""%s: command data size incorrect %zu vs %zu\\n"""		9084657	1					
+ANR	9084766	PrimaryExpression	"""%s: command data size incorrect %zu vs %zu\\n"""		9084657	0					
+ANR	9084767	Argument	__func__		9084657	2					
+ANR	9084768	Identifier	__func__		9084657	0					
+ANR	9084769	Argument	s		9084657	3					
+ANR	9084770	Identifier	s		9084657	0					
+ANR	9084771	Argument	esize		9084657	4					
+ANR	9084772	Identifier	esize		9084657	0					
+ANR	9084773	ExpressionStatement	g_free ( ents )	47:8:872:884	9084657	1	True				
+ANR	9084774	CallExpression	g_free ( ents )		9084657	0					
+ANR	9084775	Callee	g_free		9084657	0					
+ANR	9084776	Identifier	g_free		9084657	0					
+ANR	9084777	ArgumentList	ents		9084657	1					
+ANR	9084778	Argument	ents		9084657	0					
+ANR	9084779	Identifier	ents		9084657	0					
+ANR	9084780	ReturnStatement	return - 1 ;	49:8:895:904	9084657	2	True				
+ANR	9084781	UnaryOperationExpression	- 1		9084657	0					
+ANR	9084782	UnaryOperator	-		9084657	0					
+ANR	9084783	PrimaryExpression	1		9084657	1					
+ANR	9084784	ExpressionStatement	* iov = g_malloc0 ( sizeof ( struct iovec ) * ab -> nr_entries )	55:4:920:975	9084657	8	True				
+ANR	9084785	AssignmentExpression	* iov = g_malloc0 ( sizeof ( struct iovec ) * ab -> nr_entries )		9084657	0		=			
+ANR	9084786	UnaryOperationExpression	* iov		9084657	0					
+ANR	9084787	UnaryOperator	*		9084657	0					
+ANR	9084788	Identifier	iov		9084657	1					
+ANR	9084789	CallExpression	g_malloc0 ( sizeof ( struct iovec ) * ab -> nr_entries )		9084657	1					
+ANR	9084790	Callee	g_malloc0		9084657	0					
+ANR	9084791	Identifier	g_malloc0		9084657	0					
+ANR	9084792	ArgumentList	sizeof ( struct iovec ) * ab -> nr_entries		9084657	1					
+ANR	9084793	Argument	sizeof ( struct iovec ) * ab -> nr_entries		9084657	0					
+ANR	9084794	MultiplicativeExpression	sizeof ( struct iovec ) * ab -> nr_entries		9084657	0		*			
+ANR	9084795	SizeofExpression	sizeof ( struct iovec )		9084657	0					
+ANR	9084796	Sizeof	sizeof		9084657	0					
+ANR	9084797	SizeofOperand	struct iovec		9084657	1					
+ANR	9084798	PtrMemberAccess	ab -> nr_entries		9084657	1					
+ANR	9084799	Identifier	ab		9084657	0					
+ANR	9084800	Identifier	nr_entries		9084657	1					
+ANR	9084801	ForStatement	for ( i = 0 ; i < ab -> nr_entries ; i ++ )		9084657	9					
+ANR	9084802	ForInit	i = 0 ;	57:9:987:992	9084657	0	True				
+ANR	9084803	AssignmentExpression	i = 0		9084657	0		=			
+ANR	9084804	Identifier	i		9084657	0					
+ANR	9084805	PrimaryExpression	0		9084657	1					
+ANR	9084806	Condition	i < ab -> nr_entries	57:16:994:1011	9084657	1	True				
+ANR	9084807	RelationalExpression	i < ab -> nr_entries		9084657	0		<			
+ANR	9084808	Identifier	i		9084657	0					
+ANR	9084809	PtrMemberAccess	ab -> nr_entries		9084657	1					
+ANR	9084810	Identifier	ab		9084657	0					
+ANR	9084811	Identifier	nr_entries		9084657	1					
+ANR	9084812	PostIncDecOperationExpression	i ++	57:36:1014:1016	9084657	2	True				
+ANR	9084813	Identifier	i		9084657	0					
+ANR	9084814	IncDec	++		9084657	1					
+ANR	9084815	CompoundStatement		53:8:820:847	9084657	3					
+ANR	9084816	IdentifierDeclStatement	hwaddr len = ents [ i ] . length ;	59:8:1030:1057	9084657	0	True				
+ANR	9084817	IdentifierDecl	len = ents [ i ] . length		9084657	0					
+ANR	9084818	IdentifierDeclType	hwaddr		9084657	0					
+ANR	9084819	Identifier	len		9084657	1					
+ANR	9084820	AssignmentExpression	len = ents [ i ] . length		9084657	2		=			
+ANR	9084821	Identifier	len		9084657	0					
+ANR	9084822	MemberAccess	ents [ i ] . length		9084657	1					
+ANR	9084823	ArrayIndexing	ents [ i ]		9084657	0					
+ANR	9084824	Identifier	ents		9084657	0					
+ANR	9084825	Identifier	i		9084657	1					
+ANR	9084826	Identifier	length		9084657	1					
+ANR	9084827	ExpressionStatement	( * iov ) [ i ] . iov_len = ents [ i ] . length	61:8:1068:1102	9084657	1	True				
+ANR	9084828	AssignmentExpression	( * iov ) [ i ] . iov_len = ents [ i ] . length		9084657	0		=			
+ANR	9084829	MemberAccess	( * iov ) [ i ] . iov_len		9084657	0					
+ANR	9084830	ArrayIndexing	( * iov ) [ i ]		9084657	0					
+ANR	9084831	UnaryOperationExpression	* iov		9084657	0					
+ANR	9084832	UnaryOperator	*		9084657	0					
+ANR	9084833	Identifier	iov		9084657	1					
+ANR	9084834	Identifier	i		9084657	1					
+ANR	9084835	Identifier	iov_len		9084657	1					
+ANR	9084836	MemberAccess	ents [ i ] . length		9084657	1					
+ANR	9084837	ArrayIndexing	ents [ i ]		9084657	0					
+ANR	9084838	Identifier	ents		9084657	0					
+ANR	9084839	Identifier	i		9084657	1					
+ANR	9084840	Identifier	length		9084657	1					
+ANR	9084841	ExpressionStatement	"( * iov ) [ i ] . iov_base = cpu_physical_memory_map ( ents [ i ] . addr , & len , 1 )"	63:8:1113:1180	9084657	2	True				
+ANR	9084842	AssignmentExpression	"( * iov ) [ i ] . iov_base = cpu_physical_memory_map ( ents [ i ] . addr , & len , 1 )"		9084657	0		=			
+ANR	9084843	MemberAccess	( * iov ) [ i ] . iov_base		9084657	0					
+ANR	9084844	ArrayIndexing	( * iov ) [ i ]		9084657	0					
+ANR	9084845	UnaryOperationExpression	* iov		9084657	0					
+ANR	9084846	UnaryOperator	*		9084657	0					
+ANR	9084847	Identifier	iov		9084657	1					
+ANR	9084848	Identifier	i		9084657	1					
+ANR	9084849	Identifier	iov_base		9084657	1					
+ANR	9084850	CallExpression	"cpu_physical_memory_map ( ents [ i ] . addr , & len , 1 )"		9084657	1					
+ANR	9084851	Callee	cpu_physical_memory_map		9084657	0					
+ANR	9084852	Identifier	cpu_physical_memory_map		9084657	0					
+ANR	9084853	ArgumentList	ents [ i ] . addr		9084657	1					
+ANR	9084854	Argument	ents [ i ] . addr		9084657	0					
+ANR	9084855	MemberAccess	ents [ i ] . addr		9084657	0					
+ANR	9084856	ArrayIndexing	ents [ i ]		9084657	0					
+ANR	9084857	Identifier	ents		9084657	0					
+ANR	9084858	Identifier	i		9084657	1					
+ANR	9084859	Identifier	addr		9084657	1					
+ANR	9084860	Argument	& len		9084657	1					
+ANR	9084861	UnaryOperationExpression	& len		9084657	0					
+ANR	9084862	UnaryOperator	&		9084657	0					
+ANR	9084863	Identifier	len		9084657	1					
+ANR	9084864	Argument	1		9084657	2					
+ANR	9084865	PrimaryExpression	1		9084657	0					
+ANR	9084866	IfStatement	if ( ! ( * iov ) [ i ] . iov_base || len != ents [ i ] . length )		9084657	3					
+ANR	9084867	Condition	! ( * iov ) [ i ] . iov_base || len != ents [ i ] . length	65:12:1195:1238	9084657	0	True				
+ANR	9084868	OrExpression	! ( * iov ) [ i ] . iov_base || len != ents [ i ] . length		9084657	0		||			
+ANR	9084869	UnaryOperationExpression	! ( * iov ) [ i ] . iov_base		9084657	0					
+ANR	9084870	UnaryOperator	!		9084657	0					
+ANR	9084871	MemberAccess	( * iov ) [ i ] . iov_base		9084657	1					
+ANR	9084872	ArrayIndexing	( * iov ) [ i ]		9084657	0					
+ANR	9084873	UnaryOperationExpression	* iov		9084657	0					
+ANR	9084874	UnaryOperator	*		9084657	0					
+ANR	9084875	Identifier	iov		9084657	1					
+ANR	9084876	Identifier	i		9084657	1					
+ANR	9084877	Identifier	iov_base		9084657	1					
+ANR	9084878	EqualityExpression	len != ents [ i ] . length		9084657	1		!=			
+ANR	9084879	Identifier	len		9084657	0					
+ANR	9084880	MemberAccess	ents [ i ] . length		9084657	1					
+ANR	9084881	ArrayIndexing	ents [ i ]		9084657	0					
+ANR	9084882	Identifier	ents		9084657	0					
+ANR	9084883	Identifier	i		9084657	1					
+ANR	9084884	Identifier	length		9084657	1					
+ANR	9084885	CompoundStatement		59:58:1031:1031	9084657	1					
+ANR	9084886	Statement	qemu_log_mask	67:12:1256:1268	9084657	0	True				
+ANR	9084887	Statement	(	67:25:1269:1269	9084657	1	True				
+ANR	9084888	Statement	LOG_GUEST_ERROR	67:26:1270:1284	9084657	2	True				
+ANR	9084889	Statement	","	67:41:1285:1285	9084657	3	True				
+ANR	9084890	Statement	"""%s: failed to map MMIO memory for"""	67:43:1287:1321	9084657	4	True				
+ANR	9084891	Statement	""" resource %d element %d\\n"""	69:26:1350:1376	9084657	5	True				
+ANR	9084892	Statement	","	69:53:1377:1377	9084657	6	True				
+ANR	9084893	Statement	__func__	71:26:1406:1413	9084657	7	True				
+ANR	9084894	Statement	","	71:34:1414:1414	9084657	8	True				
+ANR	9084895	Statement	ab	71:36:1416:1417	9084657	9	True				
+ANR	9084896	Statement	->	71:38:1418:1419	9084657	10	True				
+ANR	9084897	Statement	resource_id	71:40:1420:1430	9084657	11	True				
+ANR	9084898	Statement	","	71:51:1431:1431	9084657	12	True				
+ANR	9084899	Statement	i	71:53:1433:1433	9084657	13	True				
+ANR	9084900	Statement	)	71:54:1434:1434	9084657	14	True				
+ANR	9084901	ExpressionStatement		71:55:1435:1435	9084657	15	True				
+ANR	9084902	ExpressionStatement	"virtio_gpu_cleanup_mapping_iov ( * iov , i )"	73:12:1450:1489	9084657	16	True				
+ANR	9084903	CallExpression	"virtio_gpu_cleanup_mapping_iov ( * iov , i )"		9084657	0					
+ANR	9084904	Callee	virtio_gpu_cleanup_mapping_iov		9084657	0					
+ANR	9084905	Identifier	virtio_gpu_cleanup_mapping_iov		9084657	0					
+ANR	9084906	ArgumentList	* iov		9084657	1					
+ANR	9084907	Argument	* iov		9084657	0					
+ANR	9084908	UnaryOperationExpression	* iov		9084657	0					
+ANR	9084909	UnaryOperator	*		9084657	0					
+ANR	9084910	Identifier	iov		9084657	1					
+ANR	9084911	Argument	i		9084657	1					
+ANR	9084912	Identifier	i		9084657	0					
+ANR	9084913	ExpressionStatement	g_free ( ents )	75:12:1504:1516	9084657	17	True				
+ANR	9084914	CallExpression	g_free ( ents )		9084657	0					
+ANR	9084915	Callee	g_free		9084657	0					
+ANR	9084916	Identifier	g_free		9084657	0					
+ANR	9084917	ArgumentList	ents		9084657	1					
+ANR	9084918	Argument	ents		9084657	0					
+ANR	9084919	Identifier	ents		9084657	0					
+ANR	9084920	ExpressionStatement	g_free ( * iov )	77:12:1531:1543	9084657	18	True				
+ANR	9084921	CallExpression	g_free ( * iov )		9084657	0					
+ANR	9084922	Callee	g_free		9084657	0					
+ANR	9084923	Identifier	g_free		9084657	0					
+ANR	9084924	ArgumentList	* iov		9084657	1					
+ANR	9084925	Argument	* iov		9084657	0					
+ANR	9084926	UnaryOperationExpression	* iov		9084657	0					
+ANR	9084927	UnaryOperator	*		9084657	0					
+ANR	9084928	Identifier	iov		9084657	1					
+ANR	9084929	ExpressionStatement	* iov = NULL	79:12:1558:1569	9084657	19	True				
+ANR	9084930	AssignmentExpression	* iov = NULL		9084657	0		=			
+ANR	9084931	UnaryOperationExpression	* iov		9084657	0					
+ANR	9084932	UnaryOperator	*		9084657	0					
+ANR	9084933	Identifier	iov		9084657	1					
+ANR	9084934	Identifier	NULL		9084657	1					
+ANR	9084935	ReturnStatement	return - 1 ;	81:12:1584:1593	9084657	20	True				
+ANR	9084936	UnaryOperationExpression	- 1		9084657	0					
+ANR	9084937	UnaryOperator	-		9084657	0					
+ANR	9084938	PrimaryExpression	1		9084657	1					
+ANR	9084939	ExpressionStatement	g_free ( ents )	87:4:1618:1630	9084657	10	True				
+ANR	9084940	CallExpression	g_free ( ents )		9084657	0					
+ANR	9084941	Callee	g_free		9084657	0					
+ANR	9084942	Identifier	g_free		9084657	0					
+ANR	9084943	ArgumentList	ents		9084657	1					
+ANR	9084944	Argument	ents		9084657	0					
+ANR	9084945	Identifier	ents		9084657	0					
+ANR	9084946	ReturnStatement	return 0 ;	89:4:1637:1645	9084657	11	True				
+ANR	9084947	PrimaryExpression	0		9084657	0					
+ANR	9084948	ReturnType	int		9084657	1					
+ANR	9084949	Identifier	virtio_gpu_create_mapping_iov		9084657	2					
+ANR	9084950	ParameterList	"struct virtio_gpu_resource_attach_backing * ab , struct virtio_gpu_ctrl_command * cmd , struct iovec * * iov"		9084657	3					
+ANR	9084951	Parameter	struct virtio_gpu_resource_attach_backing * ab	1:34:34:78	9084657	0	True				
+ANR	9084952	ParameterType	struct virtio_gpu_resource_attach_backing *		9084657	0					
+ANR	9084953	Identifier	ab		9084657	1					
+ANR	9084954	Parameter	struct virtio_gpu_ctrl_command * cmd	3:34:116:150	9084657	1	True				
+ANR	9084955	ParameterType	struct virtio_gpu_ctrl_command *		9084657	0					
+ANR	9084956	Identifier	cmd		9084657	1					
+ANR	9084957	Parameter	struct iovec * * iov	5:34:188:205	9084657	2	True				
+ANR	9084958	ParameterType	struct iovec * *		9084657	0					
+ANR	9084959	Identifier	iov		9084657	1					
+ANR	9084960	CFGEntryNode	ENTRY		9084657		True				
+ANR	9084961	CFGExitNode	EXIT		9084657		True				
+ANR	9084962	Symbol	* ents		9084657						
+ANR	9084963	Symbol	* ab		9084657						
+ANR	9084964	Symbol	* iov		9084657						
+ANR	9084965	Symbol	ents		9084657						
+ANR	9084966	Symbol	iov		9084657						
+ANR	9084967	Symbol	g_malloc		9084657						
+ANR	9084968	Symbol	len		9084657						
+ANR	9084969	Symbol	( * iov ) [ i ] . iov_base		9084657						
+ANR	9084970	Symbol	( * iov ) [ i ] . iov_len		9084657						
+ANR	9084971	Symbol	* cmd		9084657						
+ANR	9084972	Symbol	ab		9084657						
+ANR	9084973	Symbol	esize		9084657						
+ANR	9084974	Symbol	NULL		9084657						
+ANR	9084975	Symbol	* * iov		9084657						
+ANR	9084976	Symbol	cmd -> elem . out_num		9084657						
+ANR	9084977	Symbol	cmd -> elem . out_sg		9084657						
+ANR	9084978	Symbol	i		9084657						
+ANR	9084979	Symbol	ents [ i ] . length		9084657						
+ANR	9084980	Symbol	LOG_GUEST_ERROR		9084657						
+ANR	9084981	Symbol	s		9084657						
+ANR	9084982	Symbol	* i		9084657						
+ANR	9084983	Symbol	ents [ i ] . addr		9084657						
+ANR	9084984	Symbol	__func__		9084657						
+ANR	9084985	Symbol	cmd -> elem		9084657						
+ANR	9084986	Symbol	cpu_physical_memory_map		9084657						
+ANR	9084987	Symbol	g_malloc0		9084657						
+ANR	9084988	Symbol	cmd		9084657						
+ANR	9084989	Symbol	& len		9084657						
+ANR	9084990	Symbol	ab -> nr_entries		9084657						
+ANR	9084991	Symbol	iov_to_buf		9084657						

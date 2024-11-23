@@ -1,0 +1,110 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5431945	File	/home/p4ultr4n/workplace/ReVeal/raw_code/memory_region_iommu_replay_01_0.c								
+ANR	5431946	Function	memory_region_iommu_replay	1:0:0:632							
+ANR	5431947	FunctionDef	"memory_region_iommu_replay (MemoryRegion * mr , Notifier * n , hwaddr granularity , bool is_write)"		5431946	0					
+ANR	5431948	CompoundStatement		5:0:132:632	5431946	0					
+ANR	5431949	IdentifierDeclStatement	hwaddr addr ;	7:4:139:150	5431946	0	True				
+ANR	5431950	IdentifierDecl	addr		5431946	0					
+ANR	5431951	IdentifierDeclType	hwaddr		5431946	0					
+ANR	5431952	Identifier	addr		5431946	1					
+ANR	5431953	IdentifierDeclStatement	IOMMUTLBEntry iotlb ;	9:4:157:176	5431946	1	True				
+ANR	5431954	IdentifierDecl	iotlb		5431946	0					
+ANR	5431955	IdentifierDeclType	IOMMUTLBEntry		5431946	0					
+ANR	5431956	Identifier	iotlb		5431946	1					
+ANR	5431957	ForStatement	for ( addr = 0 ; addr < memory_region_size ( mr ) ; addr += granularity )		5431946	2					
+ANR	5431958	ForInit	addr = 0 ;	13:9:190:198	5431946	0	True				
+ANR	5431959	AssignmentExpression	addr = 0		5431946	0		=			
+ANR	5431960	Identifier	addr		5431946	0					
+ANR	5431961	PrimaryExpression	0		5431946	1					
+ANR	5431962	Condition	addr < memory_region_size ( mr )	13:19:200:228	5431946	1	True				
+ANR	5431963	RelationalExpression	addr < memory_region_size ( mr )		5431946	0		<			
+ANR	5431964	Identifier	addr		5431946	0					
+ANR	5431965	CallExpression	memory_region_size ( mr )		5431946	1					
+ANR	5431966	Callee	memory_region_size		5431946	0					
+ANR	5431967	Identifier	memory_region_size		5431946	0					
+ANR	5431968	ArgumentList	mr		5431946	1					
+ANR	5431969	Argument	mr		5431946	0					
+ANR	5431970	Identifier	mr		5431946	0					
+ANR	5431971	AssignmentExpression	addr += granularity	13:50:231:249	5431946	2	True	+=			
+ANR	5431972	Identifier	addr		5431946	0					
+ANR	5431973	Identifier	granularity		5431946	1					
+ANR	5431974	CompoundStatement		9:71:119:119	5431946	3					
+ANR	5431975	ExpressionStatement	"iotlb = mr -> iommu_ops -> translate ( mr , addr , is_write )"	15:8:263:315	5431946	0	True				
+ANR	5431976	AssignmentExpression	"iotlb = mr -> iommu_ops -> translate ( mr , addr , is_write )"		5431946	0		=			
+ANR	5431977	Identifier	iotlb		5431946	0					
+ANR	5431978	CallExpression	"mr -> iommu_ops -> translate ( mr , addr , is_write )"		5431946	1					
+ANR	5431979	Callee	mr -> iommu_ops -> translate		5431946	0					
+ANR	5431980	PtrMemberAccess	mr -> iommu_ops -> translate		5431946	0					
+ANR	5431981	PtrMemberAccess	mr -> iommu_ops		5431946	0					
+ANR	5431982	Identifier	mr		5431946	0					
+ANR	5431983	Identifier	iommu_ops		5431946	1					
+ANR	5431984	Identifier	translate		5431946	1					
+ANR	5431985	ArgumentList	mr		5431946	1					
+ANR	5431986	Argument	mr		5431946	0					
+ANR	5431987	Identifier	mr		5431946	0					
+ANR	5431988	Argument	addr		5431946	1					
+ANR	5431989	Identifier	addr		5431946	0					
+ANR	5431990	Argument	is_write		5431946	2					
+ANR	5431991	Identifier	is_write		5431946	0					
+ANR	5431992	IfStatement	if ( iotlb . perm != IOMMU_NONE )		5431946	1					
+ANR	5431993	Condition	iotlb . perm != IOMMU_NONE	17:12:330:353	5431946	0	True				
+ANR	5431994	EqualityExpression	iotlb . perm != IOMMU_NONE		5431946	0		!=			
+ANR	5431995	MemberAccess	iotlb . perm		5431946	0					
+ANR	5431996	Identifier	iotlb		5431946	0					
+ANR	5431997	Identifier	perm		5431946	1					
+ANR	5431998	Identifier	IOMMU_NONE		5431946	1					
+ANR	5431999	CompoundStatement		13:38:223:223	5431946	1					
+ANR	5432000	ExpressionStatement	"n -> notify ( n , & iotlb )"	19:12:371:391	5431946	0	True				
+ANR	5432001	CallExpression	"n -> notify ( n , & iotlb )"		5431946	0					
+ANR	5432002	Callee	n -> notify		5431946	0					
+ANR	5432003	PtrMemberAccess	n -> notify		5431946	0					
+ANR	5432004	Identifier	n		5431946	0					
+ANR	5432005	Identifier	notify		5431946	1					
+ANR	5432006	ArgumentList	n		5431946	1					
+ANR	5432007	Argument	n		5431946	0					
+ANR	5432008	Identifier	n		5431946	0					
+ANR	5432009	Argument	& iotlb		5431946	1					
+ANR	5432010	UnaryOperationExpression	& iotlb		5431946	0					
+ANR	5432011	UnaryOperator	&		5431946	0					
+ANR	5432012	Identifier	iotlb		5431946	1					
+ANR	5432013	IfStatement	if ( ( addr + granularity ) < addr )		5431946	2					
+ANR	5432014	Condition	( addr + granularity ) < addr	29:12:562:588	5431946	0	True				
+ANR	5432015	RelationalExpression	( addr + granularity ) < addr		5431946	0		<			
+ANR	5432016	AdditiveExpression	addr + granularity		5431946	0		+			
+ANR	5432017	Identifier	addr		5431946	0					
+ANR	5432018	Identifier	granularity		5431946	1					
+ANR	5432019	Identifier	addr		5431946	1					
+ANR	5432020	CompoundStatement		25:41:458:458	5431946	1					
+ANR	5432021	BreakStatement	break ;	31:12:606:611	5431946	0	True				
+ANR	5432022	ReturnType	void		5431946	1					
+ANR	5432023	Identifier	memory_region_iommu_replay		5431946	2					
+ANR	5432024	ParameterList	"MemoryRegion * mr , Notifier * n , hwaddr granularity , bool is_write"		5431946	3					
+ANR	5432025	Parameter	MemoryRegion * mr	1:32:32:47	5431946	0	True				
+ANR	5432026	ParameterType	MemoryRegion *		5431946	0					
+ANR	5432027	Identifier	mr		5431946	1					
+ANR	5432028	Parameter	Notifier * n	1:50:50:60	5431946	1	True				
+ANR	5432029	ParameterType	Notifier *		5431946	0					
+ANR	5432030	Identifier	n		5431946	1					
+ANR	5432031	Parameter	hwaddr granularity	3:32:96:113	5431946	2	True				
+ANR	5432032	ParameterType	hwaddr		5431946	0					
+ANR	5432033	Identifier	granularity		5431946	1					
+ANR	5432034	Parameter	bool is_write	3:52:116:128	5431946	3	True				
+ANR	5432035	ParameterType	bool		5431946	0					
+ANR	5432036	Identifier	is_write		5431946	1					
+ANR	5432037	CFGEntryNode	ENTRY		5431946		True				
+ANR	5432038	CFGExitNode	EXIT		5431946		True				
+ANR	5432039	Symbol	memory_region_size		5431946						
+ANR	5432040	Symbol	iotlb . perm		5431946						
+ANR	5432041	Symbol	mr		5431946						
+ANR	5432042	Symbol	mr -> iommu_ops -> translate		5431946						
+ANR	5432043	Symbol	* mr		5431946						
+ANR	5432044	Symbol	& iotlb		5431946						
+ANR	5432045	Symbol	is_write		5431946						
+ANR	5432046	Symbol	n		5431946						
+ANR	5432047	Symbol	* * mr		5431946						
+ANR	5432048	Symbol	granularity		5431946						
+ANR	5432049	Symbol	* mr -> iommu_ops		5431946						
+ANR	5432050	Symbol	mr -> iommu_ops		5431946						
+ANR	5432051	Symbol	addr		5431946						
+ANR	5432052	Symbol	IOMMU_NONE		5431946						
+ANR	5432053	Symbol	iotlb		5431946						

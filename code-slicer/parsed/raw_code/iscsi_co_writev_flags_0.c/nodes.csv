@@ -1,0 +1,409 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5013317	File	/home/p4ultr4n/workplace/ReVeal/raw_code/iscsi_co_writev_flags_0.c								
+ANR	5013318	Function	iscsi_co_writev_flags	1:0:0:2225							
+ANR	5013319	FunctionDef	"iscsi_co_writev_flags (BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * iov , int flags)"		5013318	0					
+ANR	5013320	CompoundStatement		5:0:134:2225	5013318	0					
+ANR	5013321	IdentifierDeclStatement	IscsiLun * iscsilun = bs -> opaque ;	7:4:141:172	5013318	0	True				
+ANR	5013322	IdentifierDecl	* iscsilun = bs -> opaque		5013318	0					
+ANR	5013323	IdentifierDeclType	IscsiLun *		5013318	0					
+ANR	5013324	Identifier	iscsilun		5013318	1					
+ANR	5013325	AssignmentExpression	* iscsilun = bs -> opaque		5013318	2		=			
+ANR	5013326	Identifier	iscsilun		5013318	0					
+ANR	5013327	PtrMemberAccess	bs -> opaque		5013318	1					
+ANR	5013328	Identifier	bs		5013318	0					
+ANR	5013329	Identifier	opaque		5013318	1					
+ANR	5013330	IdentifierDeclStatement	struct IscsiTask iTask ;	9:4:179:201	5013318	1	True				
+ANR	5013331	IdentifierDecl	iTask		5013318	0					
+ANR	5013332	IdentifierDeclType	struct IscsiTask		5013318	0					
+ANR	5013333	Identifier	iTask		5013318	1					
+ANR	5013334	IdentifierDeclStatement	uint64_t lba ;	11:4:208:220	5013318	2	True				
+ANR	5013335	IdentifierDecl	lba		5013318	0					
+ANR	5013336	IdentifierDeclType	uint64_t		5013318	0					
+ANR	5013337	Identifier	lba		5013318	1					
+ANR	5013338	IdentifierDeclStatement	uint32_t num_sectors ;	13:4:227:247	5013318	3	True				
+ANR	5013339	IdentifierDecl	num_sectors		5013318	0					
+ANR	5013340	IdentifierDeclType	uint32_t		5013318	0					
+ANR	5013341	Identifier	num_sectors		5013318	1					
+ANR	5013342	IdentifierDeclStatement	bool fua = flags & BDRV_REQ_FUA ;	15:4:254:285	5013318	4	True				
+ANR	5013343	IdentifierDecl	fua = flags & BDRV_REQ_FUA		5013318	0					
+ANR	5013344	IdentifierDeclType	bool		5013318	0					
+ANR	5013345	Identifier	fua		5013318	1					
+ANR	5013346	AssignmentExpression	fua = flags & BDRV_REQ_FUA		5013318	2		=			
+ANR	5013347	Identifier	fua		5013318	0					
+ANR	5013348	BitAndExpression	flags & BDRV_REQ_FUA		5013318	1		&			
+ANR	5013349	Identifier	flags		5013318	0					
+ANR	5013350	Identifier	BDRV_REQ_FUA		5013318	1					
+ANR	5013351	IfStatement	if ( fua )		5013318	5					
+ANR	5013352	Condition	fua	19:8:298:300	5013318	0	True				
+ANR	5013353	Identifier	fua		5013318	0					
+ANR	5013354	CompoundStatement		15:13:168:168	5013318	1					
+ANR	5013355	ExpressionStatement	assert ( iscsilun -> dpofua )	21:8:314:338	5013318	0	True				
+ANR	5013356	CallExpression	assert ( iscsilun -> dpofua )		5013318	0					
+ANR	5013357	Callee	assert		5013318	0					
+ANR	5013358	Identifier	assert		5013318	0					
+ANR	5013359	ArgumentList	iscsilun -> dpofua		5013318	1					
+ANR	5013360	Argument	iscsilun -> dpofua		5013318	0					
+ANR	5013361	PtrMemberAccess	iscsilun -> dpofua		5013318	0					
+ANR	5013362	Identifier	iscsilun		5013318	0					
+ANR	5013363	Identifier	dpofua		5013318	1					
+ANR	5013364	IfStatement	"if ( ! is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun ) )"		5013318	6					
+ANR	5013365	Condition	"! is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun )"	25:8:356:419	5013318	0	True				
+ANR	5013366	UnaryOperationExpression	"! is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun )"		5013318	0					
+ANR	5013367	UnaryOperator	!		5013318	0					
+ANR	5013368	CallExpression	"is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun )"		5013318	1					
+ANR	5013369	Callee	is_sector_request_lun_aligned		5013318	0					
+ANR	5013370	Identifier	is_sector_request_lun_aligned		5013318	0					
+ANR	5013371	ArgumentList	sector_num		5013318	1					
+ANR	5013372	Argument	sector_num		5013318	0					
+ANR	5013373	Identifier	sector_num		5013318	0					
+ANR	5013374	Argument	nb_sectors		5013318	1					
+ANR	5013375	Identifier	nb_sectors		5013318	0					
+ANR	5013376	Argument	iscsilun		5013318	2					
+ANR	5013377	Identifier	iscsilun		5013318	0					
+ANR	5013378	CompoundStatement		21:74:287:287	5013318	1					
+ANR	5013379	ReturnStatement	return - EINVAL ;	27:8:433:447	5013318	0	True				
+ANR	5013380	UnaryOperationExpression	- EINVAL		5013318	0					
+ANR	5013381	UnaryOperator	-		5013318	0					
+ANR	5013382	Identifier	EINVAL		5013318	1					
+ANR	5013383	IfStatement	if ( bs -> bl . max_transfer_length && nb_sectors > bs -> bl . max_transfer_length )		5013318	7					
+ANR	5013384	Condition	bs -> bl . max_transfer_length && nb_sectors > bs -> bl . max_transfer_length	33:8:467:535	5013318	0	True				
+ANR	5013385	AndExpression	bs -> bl . max_transfer_length && nb_sectors > bs -> bl . max_transfer_length		5013318	0		&&			
+ANR	5013386	MemberAccess	bs -> bl . max_transfer_length		5013318	0					
+ANR	5013387	PtrMemberAccess	bs -> bl		5013318	0					
+ANR	5013388	Identifier	bs		5013318	0					
+ANR	5013389	Identifier	bl		5013318	1					
+ANR	5013390	Identifier	max_transfer_length		5013318	1					
+ANR	5013391	RelationalExpression	nb_sectors > bs -> bl . max_transfer_length		5013318	1		>			
+ANR	5013392	Identifier	nb_sectors		5013318	0					
+ANR	5013393	MemberAccess	bs -> bl . max_transfer_length		5013318	1					
+ANR	5013394	PtrMemberAccess	bs -> bl		5013318	0					
+ANR	5013395	Identifier	bs		5013318	0					
+ANR	5013396	Identifier	bl		5013318	1					
+ANR	5013397	Identifier	max_transfer_length		5013318	1					
+ANR	5013398	CompoundStatement		29:79:403:403	5013318	1					
+ANR	5013399	Statement	error_report	35:8:549:560	5013318	0	True				
+ANR	5013400	Statement	(	35:20:561:561	5013318	1	True				
+ANR	5013401	Statement	"""iSCSI Error: Write of %d sectors exceeds max_xfer_len """	35:21:562:617	5013318	2	True				
+ANR	5013402	Statement	"""of %d sectors"""	37:21:641:655	5013318	3	True				
+ANR	5013403	Statement	","	37:36:656:656	5013318	4	True				
+ANR	5013404	Statement	nb_sectors	37:38:658:667	5013318	5	True				
+ANR	5013405	Statement	","	37:48:668:668	5013318	6	True				
+ANR	5013406	Statement	bs	37:50:670:671	5013318	7	True				
+ANR	5013407	Statement	->	37:52:672:673	5013318	8	True				
+ANR	5013408	Statement	bl	37:54:674:675	5013318	9	True				
+ANR	5013409	Statement	.	37:56:676:676	5013318	10	True				
+ANR	5013410	Statement	max_transfer_length	37:57:677:695	5013318	11	True				
+ANR	5013411	Statement	)	37:76:696:696	5013318	12	True				
+ANR	5013412	ExpressionStatement		37:77:697:697	5013318	13	True				
+ANR	5013413	ReturnStatement	return - EINVAL ;	39:8:708:722	5013318	14	True				
+ANR	5013414	UnaryOperationExpression	- EINVAL		5013318	0					
+ANR	5013415	UnaryOperator	-		5013318	0					
+ANR	5013416	Identifier	EINVAL		5013318	1					
+ANR	5013417	ExpressionStatement	"lba = sector_qemu2lun ( sector_num , iscsilun )"	45:4:738:781	5013318	8	True				
+ANR	5013418	AssignmentExpression	"lba = sector_qemu2lun ( sector_num , iscsilun )"		5013318	0		=			
+ANR	5013419	Identifier	lba		5013318	0					
+ANR	5013420	CallExpression	"sector_qemu2lun ( sector_num , iscsilun )"		5013318	1					
+ANR	5013421	Callee	sector_qemu2lun		5013318	0					
+ANR	5013422	Identifier	sector_qemu2lun		5013318	0					
+ANR	5013423	ArgumentList	sector_num		5013318	1					
+ANR	5013424	Argument	sector_num		5013318	0					
+ANR	5013425	Identifier	sector_num		5013318	0					
+ANR	5013426	Argument	iscsilun		5013318	1					
+ANR	5013427	Identifier	iscsilun		5013318	0					
+ANR	5013428	ExpressionStatement	"num_sectors = sector_qemu2lun ( nb_sectors , iscsilun )"	47:4:788:839	5013318	9	True				
+ANR	5013429	AssignmentExpression	"num_sectors = sector_qemu2lun ( nb_sectors , iscsilun )"		5013318	0		=			
+ANR	5013430	Identifier	num_sectors		5013318	0					
+ANR	5013431	CallExpression	"sector_qemu2lun ( nb_sectors , iscsilun )"		5013318	1					
+ANR	5013432	Callee	sector_qemu2lun		5013318	0					
+ANR	5013433	Identifier	sector_qemu2lun		5013318	0					
+ANR	5013434	ArgumentList	nb_sectors		5013318	1					
+ANR	5013435	Argument	nb_sectors		5013318	0					
+ANR	5013436	Identifier	nb_sectors		5013318	0					
+ANR	5013437	Argument	iscsilun		5013318	1					
+ANR	5013438	Identifier	iscsilun		5013318	0					
+ANR	5013439	ExpressionStatement	"iscsi_co_init_iscsitask ( iscsilun , & iTask )"	49:4:846:887	5013318	10	True				
+ANR	5013440	CallExpression	"iscsi_co_init_iscsitask ( iscsilun , & iTask )"		5013318	0					
+ANR	5013441	Callee	iscsi_co_init_iscsitask		5013318	0					
+ANR	5013442	Identifier	iscsi_co_init_iscsitask		5013318	0					
+ANR	5013443	ArgumentList	iscsilun		5013318	1					
+ANR	5013444	Argument	iscsilun		5013318	0					
+ANR	5013445	Identifier	iscsilun		5013318	0					
+ANR	5013446	Argument	& iTask		5013318	1					
+ANR	5013447	UnaryOperationExpression	& iTask		5013318	0					
+ANR	5013448	UnaryOperator	&		5013318	0					
+ANR	5013449	Identifier	iTask		5013318	1					
+ANR	5013450	Label	retry :	51:0:890:895	5013318	11	True				
+ANR	5013451	Identifier	retry		5013318	0					
+ANR	5013452	IfStatement	if ( iscsilun -> use_16_for_rw )		5013318	12					
+ANR	5013453	Condition	iscsilun -> use_16_for_rw	53:8:906:928	5013318	0	True				
+ANR	5013454	PtrMemberAccess	iscsilun -> use_16_for_rw		5013318	0					
+ANR	5013455	Identifier	iscsilun		5013318	0					
+ANR	5013456	Identifier	use_16_for_rw		5013318	1					
+ANR	5013457	CompoundStatement		49:33:796:796	5013318	1					
+ANR	5013458	ExpressionStatement	"iTask . task = iscsi_write16_task ( iscsilun -> iscsi , iscsilun -> lun , lba , NULL , num_sectors * iscsilun -> block_size , iscsilun -> block_size , 0 , 0 , fua , 0 , 0 , iscsi_co_generic_cb , & iTask )"	55:8:942:1243	5013318	0	True				
+ANR	5013459	AssignmentExpression	"iTask . task = iscsi_write16_task ( iscsilun -> iscsi , iscsilun -> lun , lba , NULL , num_sectors * iscsilun -> block_size , iscsilun -> block_size , 0 , 0 , fua , 0 , 0 , iscsi_co_generic_cb , & iTask )"		5013318	0		=			
+ANR	5013460	MemberAccess	iTask . task		5013318	0					
+ANR	5013461	Identifier	iTask		5013318	0					
+ANR	5013462	Identifier	task		5013318	1					
+ANR	5013463	CallExpression	"iscsi_write16_task ( iscsilun -> iscsi , iscsilun -> lun , lba , NULL , num_sectors * iscsilun -> block_size , iscsilun -> block_size , 0 , 0 , fua , 0 , 0 , iscsi_co_generic_cb , & iTask )"		5013318	1					
+ANR	5013464	Callee	iscsi_write16_task		5013318	0					
+ANR	5013465	Identifier	iscsi_write16_task		5013318	0					
+ANR	5013466	ArgumentList	iscsilun -> iscsi		5013318	1					
+ANR	5013467	Argument	iscsilun -> iscsi		5013318	0					
+ANR	5013468	PtrMemberAccess	iscsilun -> iscsi		5013318	0					
+ANR	5013469	Identifier	iscsilun		5013318	0					
+ANR	5013470	Identifier	iscsi		5013318	1					
+ANR	5013471	Argument	iscsilun -> lun		5013318	1					
+ANR	5013472	PtrMemberAccess	iscsilun -> lun		5013318	0					
+ANR	5013473	Identifier	iscsilun		5013318	0					
+ANR	5013474	Identifier	lun		5013318	1					
+ANR	5013475	Argument	lba		5013318	2					
+ANR	5013476	Identifier	lba		5013318	0					
+ANR	5013477	Argument	NULL		5013318	3					
+ANR	5013478	Identifier	NULL		5013318	0					
+ANR	5013479	Argument	num_sectors * iscsilun -> block_size		5013318	4					
+ANR	5013480	MultiplicativeExpression	num_sectors * iscsilun -> block_size		5013318	0		*			
+ANR	5013481	Identifier	num_sectors		5013318	0					
+ANR	5013482	PtrMemberAccess	iscsilun -> block_size		5013318	1					
+ANR	5013483	Identifier	iscsilun		5013318	0					
+ANR	5013484	Identifier	block_size		5013318	1					
+ANR	5013485	Argument	iscsilun -> block_size		5013318	5					
+ANR	5013486	PtrMemberAccess	iscsilun -> block_size		5013318	0					
+ANR	5013487	Identifier	iscsilun		5013318	0					
+ANR	5013488	Identifier	block_size		5013318	1					
+ANR	5013489	Argument	0		5013318	6					
+ANR	5013490	PrimaryExpression	0		5013318	0					
+ANR	5013491	Argument	0		5013318	7					
+ANR	5013492	PrimaryExpression	0		5013318	0					
+ANR	5013493	Argument	fua		5013318	8					
+ANR	5013494	Identifier	fua		5013318	0					
+ANR	5013495	Argument	0		5013318	9					
+ANR	5013496	PrimaryExpression	0		5013318	0					
+ANR	5013497	Argument	0		5013318	10					
+ANR	5013498	PrimaryExpression	0		5013318	0					
+ANR	5013499	Argument	iscsi_co_generic_cb		5013318	11					
+ANR	5013500	Identifier	iscsi_co_generic_cb		5013318	0					
+ANR	5013501	Argument	& iTask		5013318	12					
+ANR	5013502	UnaryOperationExpression	& iTask		5013318	0					
+ANR	5013503	UnaryOperator	&		5013318	0					
+ANR	5013504	Identifier	iTask		5013318	1					
+ANR	5013505	ElseStatement	else		5013318	0					
+ANR	5013506	CompoundStatement		59:11:1122:1122	5013318	0					
+ANR	5013507	ExpressionStatement	"iTask . task = iscsi_write10_task ( iscsilun -> iscsi , iscsilun -> lun , lba , NULL , num_sectors * iscsilun -> block_size , iscsilun -> block_size , 0 , 0 , fua , 0 , 0 , iscsi_co_generic_cb , & iTask )"	65:8:1268:1569	5013318	0	True				
+ANR	5013508	AssignmentExpression	"iTask . task = iscsi_write10_task ( iscsilun -> iscsi , iscsilun -> lun , lba , NULL , num_sectors * iscsilun -> block_size , iscsilun -> block_size , 0 , 0 , fua , 0 , 0 , iscsi_co_generic_cb , & iTask )"		5013318	0		=			
+ANR	5013509	MemberAccess	iTask . task		5013318	0					
+ANR	5013510	Identifier	iTask		5013318	0					
+ANR	5013511	Identifier	task		5013318	1					
+ANR	5013512	CallExpression	"iscsi_write10_task ( iscsilun -> iscsi , iscsilun -> lun , lba , NULL , num_sectors * iscsilun -> block_size , iscsilun -> block_size , 0 , 0 , fua , 0 , 0 , iscsi_co_generic_cb , & iTask )"		5013318	1					
+ANR	5013513	Callee	iscsi_write10_task		5013318	0					
+ANR	5013514	Identifier	iscsi_write10_task		5013318	0					
+ANR	5013515	ArgumentList	iscsilun -> iscsi		5013318	1					
+ANR	5013516	Argument	iscsilun -> iscsi		5013318	0					
+ANR	5013517	PtrMemberAccess	iscsilun -> iscsi		5013318	0					
+ANR	5013518	Identifier	iscsilun		5013318	0					
+ANR	5013519	Identifier	iscsi		5013318	1					
+ANR	5013520	Argument	iscsilun -> lun		5013318	1					
+ANR	5013521	PtrMemberAccess	iscsilun -> lun		5013318	0					
+ANR	5013522	Identifier	iscsilun		5013318	0					
+ANR	5013523	Identifier	lun		5013318	1					
+ANR	5013524	Argument	lba		5013318	2					
+ANR	5013525	Identifier	lba		5013318	0					
+ANR	5013526	Argument	NULL		5013318	3					
+ANR	5013527	Identifier	NULL		5013318	0					
+ANR	5013528	Argument	num_sectors * iscsilun -> block_size		5013318	4					
+ANR	5013529	MultiplicativeExpression	num_sectors * iscsilun -> block_size		5013318	0		*			
+ANR	5013530	Identifier	num_sectors		5013318	0					
+ANR	5013531	PtrMemberAccess	iscsilun -> block_size		5013318	1					
+ANR	5013532	Identifier	iscsilun		5013318	0					
+ANR	5013533	Identifier	block_size		5013318	1					
+ANR	5013534	Argument	iscsilun -> block_size		5013318	5					
+ANR	5013535	PtrMemberAccess	iscsilun -> block_size		5013318	0					
+ANR	5013536	Identifier	iscsilun		5013318	0					
+ANR	5013537	Identifier	block_size		5013318	1					
+ANR	5013538	Argument	0		5013318	6					
+ANR	5013539	PrimaryExpression	0		5013318	0					
+ANR	5013540	Argument	0		5013318	7					
+ANR	5013541	PrimaryExpression	0		5013318	0					
+ANR	5013542	Argument	fua		5013318	8					
+ANR	5013543	Identifier	fua		5013318	0					
+ANR	5013544	Argument	0		5013318	9					
+ANR	5013545	PrimaryExpression	0		5013318	0					
+ANR	5013546	Argument	0		5013318	10					
+ANR	5013547	PrimaryExpression	0		5013318	0					
+ANR	5013548	Argument	iscsi_co_generic_cb		5013318	11					
+ANR	5013549	Identifier	iscsi_co_generic_cb		5013318	0					
+ANR	5013550	Argument	& iTask		5013318	12					
+ANR	5013551	UnaryOperationExpression	& iTask		5013318	0					
+ANR	5013552	UnaryOperator	&		5013318	0					
+ANR	5013553	Identifier	iTask		5013318	1					
+ANR	5013554	IfStatement	if ( iTask . task == NULL )		5013318	13					
+ANR	5013555	Condition	iTask . task == NULL	75:8:1587:1604	5013318	0	True				
+ANR	5013556	EqualityExpression	iTask . task == NULL		5013318	0		==			
+ANR	5013557	MemberAccess	iTask . task		5013318	0					
+ANR	5013558	Identifier	iTask		5013318	0					
+ANR	5013559	Identifier	task		5013318	1					
+ANR	5013560	Identifier	NULL		5013318	1					
+ANR	5013561	CompoundStatement		71:28:1472:1472	5013318	1					
+ANR	5013562	ReturnStatement	return - ENOMEM ;	77:8:1618:1632	5013318	0	True				
+ANR	5013563	UnaryOperationExpression	- ENOMEM		5013318	0					
+ANR	5013564	UnaryOperator	-		5013318	0					
+ANR	5013565	Identifier	ENOMEM		5013318	1					
+ANR	5013566	ExpressionStatement	"scsi_task_set_iov_out ( iTask . task , ( struct scsi_iovec * ) iov -> iov , iov -> niov )"	81:4:1646:1749	5013318	14	True				
+ANR	5013567	CallExpression	"scsi_task_set_iov_out ( iTask . task , ( struct scsi_iovec * ) iov -> iov , iov -> niov )"		5013318	0					
+ANR	5013568	Callee	scsi_task_set_iov_out		5013318	0					
+ANR	5013569	Identifier	scsi_task_set_iov_out		5013318	0					
+ANR	5013570	ArgumentList	iTask . task		5013318	1					
+ANR	5013571	Argument	iTask . task		5013318	0					
+ANR	5013572	MemberAccess	iTask . task		5013318	0					
+ANR	5013573	Identifier	iTask		5013318	0					
+ANR	5013574	Identifier	task		5013318	1					
+ANR	5013575	Argument	( struct scsi_iovec * ) iov -> iov		5013318	1					
+ANR	5013576	CastExpression	( struct scsi_iovec * ) iov -> iov		5013318	0					
+ANR	5013577	CastTarget	struct scsi_iovec *		5013318	0					
+ANR	5013578	PtrMemberAccess	iov -> iov		5013318	1					
+ANR	5013579	Identifier	iov		5013318	0					
+ANR	5013580	Identifier	iov		5013318	1					
+ANR	5013581	Argument	iov -> niov		5013318	2					
+ANR	5013582	PtrMemberAccess	iov -> niov		5013318	0					
+ANR	5013583	Identifier	iov		5013318	0					
+ANR	5013584	Identifier	niov		5013318	1					
+ANR	5013585	WhileStatement	while ( ! iTask . complete )		5013318	15					
+ANR	5013586	Condition	! iTask . complete	85:11:1763:1777	5013318	0	True				
+ANR	5013587	UnaryOperationExpression	! iTask . complete		5013318	0					
+ANR	5013588	UnaryOperator	!		5013318	0					
+ANR	5013589	MemberAccess	iTask . complete		5013318	1					
+ANR	5013590	Identifier	iTask		5013318	0					
+ANR	5013591	Identifier	complete		5013318	1					
+ANR	5013592	CompoundStatement		81:28:1645:1645	5013318	1					
+ANR	5013593	ExpressionStatement	iscsi_set_events ( iscsilun )	87:8:1791:1817	5013318	0	True				
+ANR	5013594	CallExpression	iscsi_set_events ( iscsilun )		5013318	0					
+ANR	5013595	Callee	iscsi_set_events		5013318	0					
+ANR	5013596	Identifier	iscsi_set_events		5013318	0					
+ANR	5013597	ArgumentList	iscsilun		5013318	1					
+ANR	5013598	Argument	iscsilun		5013318	0					
+ANR	5013599	Identifier	iscsilun		5013318	0					
+ANR	5013600	ExpressionStatement	qemu_coroutine_yield ( )	89:8:1828:1850	5013318	1	True				
+ANR	5013601	CallExpression	qemu_coroutine_yield ( )		5013318	0					
+ANR	5013602	Callee	qemu_coroutine_yield		5013318	0					
+ANR	5013603	Identifier	qemu_coroutine_yield		5013318	0					
+ANR	5013604	ArgumentList			5013318	1					
+ANR	5013605	IfStatement	if ( iTask . task != NULL )		5013318	16					
+ANR	5013606	Condition	iTask . task != NULL	95:8:1870:1887	5013318	0	True				
+ANR	5013607	EqualityExpression	iTask . task != NULL		5013318	0		!=			
+ANR	5013608	MemberAccess	iTask . task		5013318	0					
+ANR	5013609	Identifier	iTask		5013318	0					
+ANR	5013610	Identifier	task		5013318	1					
+ANR	5013611	Identifier	NULL		5013318	1					
+ANR	5013612	CompoundStatement		91:28:1755:1755	5013318	1					
+ANR	5013613	ExpressionStatement	scsi_free_scsi_task ( iTask . task )	97:8:1901:1932	5013318	0	True				
+ANR	5013614	CallExpression	scsi_free_scsi_task ( iTask . task )		5013318	0					
+ANR	5013615	Callee	scsi_free_scsi_task		5013318	0					
+ANR	5013616	Identifier	scsi_free_scsi_task		5013318	0					
+ANR	5013617	ArgumentList	iTask . task		5013318	1					
+ANR	5013618	Argument	iTask . task		5013318	0					
+ANR	5013619	MemberAccess	iTask . task		5013318	0					
+ANR	5013620	Identifier	iTask		5013318	0					
+ANR	5013621	Identifier	task		5013318	1					
+ANR	5013622	ExpressionStatement	iTask . task = NULL	99:8:1943:1960	5013318	1	True				
+ANR	5013623	AssignmentExpression	iTask . task = NULL		5013318	0		=			
+ANR	5013624	MemberAccess	iTask . task		5013318	0					
+ANR	5013625	Identifier	iTask		5013318	0					
+ANR	5013626	Identifier	task		5013318	1					
+ANR	5013627	Identifier	NULL		5013318	1					
+ANR	5013628	IfStatement	if ( iTask . do_retry )		5013318	17					
+ANR	5013629	Condition	iTask . do_retry	105:8:1980:1993	5013318	0	True				
+ANR	5013630	MemberAccess	iTask . do_retry		5013318	0					
+ANR	5013631	Identifier	iTask		5013318	0					
+ANR	5013632	Identifier	do_retry		5013318	1					
+ANR	5013633	CompoundStatement		101:24:1861:1861	5013318	1					
+ANR	5013634	ExpressionStatement	iTask . complete = 0	107:8:2007:2025	5013318	0	True				
+ANR	5013635	AssignmentExpression	iTask . complete = 0		5013318	0		=			
+ANR	5013636	MemberAccess	iTask . complete		5013318	0					
+ANR	5013637	Identifier	iTask		5013318	0					
+ANR	5013638	Identifier	complete		5013318	1					
+ANR	5013639	PrimaryExpression	0		5013318	1					
+ANR	5013640	GotoStatement	goto retry ;	109:8:2036:2046	5013318	1	True				
+ANR	5013641	Identifier	retry		5013318	0					
+ANR	5013642	IfStatement	if ( iTask . status != SCSI_STATUS_GOOD )		5013318	18					
+ANR	5013643	Condition	iTask . status != SCSI_STATUS_GOOD	115:8:2066:2097	5013318	0	True				
+ANR	5013644	EqualityExpression	iTask . status != SCSI_STATUS_GOOD		5013318	0		!=			
+ANR	5013645	MemberAccess	iTask . status		5013318	0					
+ANR	5013646	Identifier	iTask		5013318	0					
+ANR	5013647	Identifier	status		5013318	1					
+ANR	5013648	Identifier	SCSI_STATUS_GOOD		5013318	1					
+ANR	5013649	CompoundStatement		111:42:1965:1965	5013318	1					
+ANR	5013650	ReturnStatement	return iTask . err_code ;	117:8:2111:2132	5013318	0	True				
+ANR	5013651	MemberAccess	iTask . err_code		5013318	0					
+ANR	5013652	Identifier	iTask		5013318	0					
+ANR	5013653	Identifier	err_code		5013318	1					
+ANR	5013654	ExpressionStatement	"iscsi_allocationmap_set ( iscsilun , sector_num , nb_sectors )"	123:4:2148:2205	5013318	19	True				
+ANR	5013655	CallExpression	"iscsi_allocationmap_set ( iscsilun , sector_num , nb_sectors )"		5013318	0					
+ANR	5013656	Callee	iscsi_allocationmap_set		5013318	0					
+ANR	5013657	Identifier	iscsi_allocationmap_set		5013318	0					
+ANR	5013658	ArgumentList	iscsilun		5013318	1					
+ANR	5013659	Argument	iscsilun		5013318	0					
+ANR	5013660	Identifier	iscsilun		5013318	0					
+ANR	5013661	Argument	sector_num		5013318	1					
+ANR	5013662	Identifier	sector_num		5013318	0					
+ANR	5013663	Argument	nb_sectors		5013318	2					
+ANR	5013664	Identifier	nb_sectors		5013318	0					
+ANR	5013665	ReturnStatement	return 0 ;	127:4:2214:2222	5013318	20	True				
+ANR	5013666	PrimaryExpression	0		5013318	0					
+ANR	5013667	Identifier	iscsi_co_writev_flags		5013318	1					
+ANR	5013668	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , QEMUIOVector * iov , int flags"		5013318	2					
+ANR	5013669	Parameter	BlockDriverState * bs	1:22:22:41	5013318	0	True				
+ANR	5013670	ParameterType	BlockDriverState *		5013318	0					
+ANR	5013671	Identifier	bs		5013318	1					
+ANR	5013672	Parameter	int64_t sector_num	1:44:44:61	5013318	1	True				
+ANR	5013673	ParameterType	int64_t		5013318	0					
+ANR	5013674	Identifier	sector_num		5013318	1					
+ANR	5013675	Parameter	int nb_sectors	1:64:64:77	5013318	2	True				
+ANR	5013676	ParameterType	int		5013318	0					
+ANR	5013677	Identifier	nb_sectors		5013318	1					
+ANR	5013678	Parameter	QEMUIOVector * iov	3:22:103:119	5013318	3	True				
+ANR	5013679	ParameterType	QEMUIOVector *		5013318	0					
+ANR	5013680	Identifier	iov		5013318	1					
+ANR	5013681	Parameter	int flags	3:41:122:130	5013318	4	True				
+ANR	5013682	ParameterType	int		5013318	0					
+ANR	5013683	Identifier	flags		5013318	1					
+ANR	5013684	CFGEntryNode	ENTRY		5013318		True				
+ANR	5013685	CFGExitNode	EXIT		5013318		True				
+ANR	5013686	Symbol	ENOMEM		5013318						
+ANR	5013687	Symbol	nb_sectors		5013318						
+ANR	5013688	Symbol	iscsilun -> iscsi		5013318						
+ANR	5013689	Symbol	* iov		5013318						
+ANR	5013690	Symbol	flags		5013318						
+ANR	5013691	Symbol	sector_qemu2lun		5013318						
+ANR	5013692	Symbol	SCSI_STATUS_GOOD		5013318						
+ANR	5013693	Symbol	iscsi_write16_task		5013318						
+ANR	5013694	Symbol	iov -> iov		5013318						
+ANR	5013695	Symbol	bs		5013318						
+ANR	5013696	Symbol	iov		5013318						
+ANR	5013697	Symbol	iTask . do_retry		5013318						
+ANR	5013698	Symbol	* bs		5013318						
+ANR	5013699	Symbol	* iscsilun		5013318						
+ANR	5013700	Symbol	iscsilun -> lun		5013318						
+ANR	5013701	Symbol	iscsilun -> block_size		5013318						
+ANR	5013702	Symbol	iscsi_write10_task		5013318						
+ANR	5013703	Symbol	iTask . err_code		5013318						
+ANR	5013704	Symbol	bs -> bl		5013318						
+ANR	5013705	Symbol	iscsilun -> use_16_for_rw		5013318						
+ANR	5013706	Symbol	iTask . task		5013318						
+ANR	5013707	Symbol	iTask		5013318						
+ANR	5013708	Symbol	& iTask		5013318						
+ANR	5013709	Symbol	NULL		5013318						
+ANR	5013710	Symbol	bs -> opaque		5013318						
+ANR	5013711	Symbol	BDRV_REQ_FUA		5013318						
+ANR	5013712	Symbol	is_sector_request_lun_aligned		5013318						
+ANR	5013713	Symbol	bs -> bl . max_transfer_length		5013318						
+ANR	5013714	Symbol	iTask . complete		5013318						
+ANR	5013715	Symbol	lba		5013318						
+ANR	5013716	Symbol	iscsi_co_generic_cb		5013318						
+ANR	5013717	Symbol	iscsilun		5013318						
+ANR	5013718	Symbol	num_sectors		5013318						
+ANR	5013719	Symbol	iscsilun -> dpofua		5013318						
+ANR	5013720	Symbol	sector_num		5013318						
+ANR	5013721	Symbol	EINVAL		5013318						
+ANR	5013722	Symbol	iov -> niov		5013318						
+ANR	5013723	Symbol	fua		5013318						
+ANR	5013724	Symbol	iTask . status		5013318						
