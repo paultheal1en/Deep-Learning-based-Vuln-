@@ -1,0 +1,159 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1114848	File	/home/p4ultr4n/workplace/ReVeal/raw_code/booke_update_fixed_timer_1.c								
+ANR	1114849	Function	booke_update_fixed_timer	1:0:0:901							
+ANR	1114850	FunctionDef	"booke_update_fixed_timer (CPUPPCState * env , uint8_t target_bit , uint64_t * next , struct QEMUTimer * timer)"		1114849	0					
+ANR	1114851	CompoundStatement		9:0:258:901	1114849	0					
+ANR	1114852	IdentifierDeclStatement	ppc_tb_t * tb_env = env -> tb_env ;	11:4:265:295	1114849	0	True				
+ANR	1114853	IdentifierDecl	* tb_env = env -> tb_env		1114849	0					
+ANR	1114854	IdentifierDeclType	ppc_tb_t *		1114849	0					
+ANR	1114855	Identifier	tb_env		1114849	1					
+ANR	1114856	AssignmentExpression	* tb_env = env -> tb_env		1114849	2		=			
+ANR	1114857	Identifier	tb_env		1114849	0					
+ANR	1114858	PtrMemberAccess	env -> tb_env		1114849	1					
+ANR	1114859	Identifier	env		1114849	0					
+ANR	1114860	Identifier	tb_env		1114849	1					
+ANR	1114861	IdentifierDeclStatement	uint64_t lapse ;	13:4:302:316	1114849	1	True				
+ANR	1114862	IdentifierDecl	lapse		1114849	0					
+ANR	1114863	IdentifierDeclType	uint64_t		1114849	0					
+ANR	1114864	Identifier	lapse		1114849	1					
+ANR	1114865	IdentifierDeclStatement	uint64_t tb ;	15:4:323:334	1114849	2	True				
+ANR	1114866	IdentifierDecl	tb		1114849	0					
+ANR	1114867	IdentifierDeclType	uint64_t		1114849	0					
+ANR	1114868	Identifier	tb		1114849	1					
+ANR	1114869	IdentifierDeclStatement	uint64_t period = 1 << ( target_bit + 1 ) ;	17:4:341:380	1114849	3	True				
+ANR	1114870	IdentifierDecl	period = 1 << ( target_bit + 1 )		1114849	0					
+ANR	1114871	IdentifierDeclType	uint64_t		1114849	0					
+ANR	1114872	Identifier	period		1114849	1					
+ANR	1114873	AssignmentExpression	period = 1 << ( target_bit + 1 )		1114849	2		=			
+ANR	1114874	Identifier	period		1114849	0					
+ANR	1114875	ShiftExpression	1 << ( target_bit + 1 )		1114849	1		<<			
+ANR	1114876	PrimaryExpression	1		1114849	0					
+ANR	1114877	AdditiveExpression	target_bit + 1		1114849	1		+			
+ANR	1114878	Identifier	target_bit		1114849	0					
+ANR	1114879	PrimaryExpression	1		1114849	1					
+ANR	1114880	IdentifierDeclStatement	uint64_t now ;	19:4:387:399	1114849	4	True				
+ANR	1114881	IdentifierDecl	now		1114849	0					
+ANR	1114882	IdentifierDeclType	uint64_t		1114849	0					
+ANR	1114883	Identifier	now		1114849	1					
+ANR	1114884	ExpressionStatement	now = qemu_get_clock_ns ( vm_clock )	23:4:408:441	1114849	5	True				
+ANR	1114885	AssignmentExpression	now = qemu_get_clock_ns ( vm_clock )		1114849	0		=			
+ANR	1114886	Identifier	now		1114849	0					
+ANR	1114887	CallExpression	qemu_get_clock_ns ( vm_clock )		1114849	1					
+ANR	1114888	Callee	qemu_get_clock_ns		1114849	0					
+ANR	1114889	Identifier	qemu_get_clock_ns		1114849	0					
+ANR	1114890	ArgumentList	vm_clock		1114849	1					
+ANR	1114891	Argument	vm_clock		1114849	0					
+ANR	1114892	Identifier	vm_clock		1114849	0					
+ANR	1114893	ExpressionStatement	"tb = cpu_ppc_get_tb ( tb_env , now , tb_env -> tb_offset )"	25:4:448:500	1114849	6	True				
+ANR	1114894	AssignmentExpression	"tb = cpu_ppc_get_tb ( tb_env , now , tb_env -> tb_offset )"		1114849	0		=			
+ANR	1114895	Identifier	tb		1114849	0					
+ANR	1114896	CallExpression	"cpu_ppc_get_tb ( tb_env , now , tb_env -> tb_offset )"		1114849	1					
+ANR	1114897	Callee	cpu_ppc_get_tb		1114849	0					
+ANR	1114898	Identifier	cpu_ppc_get_tb		1114849	0					
+ANR	1114899	ArgumentList	tb_env		1114849	1					
+ANR	1114900	Argument	tb_env		1114849	0					
+ANR	1114901	Identifier	tb_env		1114849	0					
+ANR	1114902	Argument	now		1114849	1					
+ANR	1114903	Identifier	now		1114849	0					
+ANR	1114904	Argument	tb_env -> tb_offset		1114849	2					
+ANR	1114905	PtrMemberAccess	tb_env -> tb_offset		1114849	0					
+ANR	1114906	Identifier	tb_env		1114849	0					
+ANR	1114907	Identifier	tb_offset		1114849	1					
+ANR	1114908	ExpressionStatement	lapse = period - ( ( tb - ( 1 << target_bit ) ) & ( period - 1 ) )	29:4:509:567	1114849	7	True				
+ANR	1114909	AssignmentExpression	lapse = period - ( ( tb - ( 1 << target_bit ) ) & ( period - 1 ) )		1114849	0		=			
+ANR	1114910	Identifier	lapse		1114849	0					
+ANR	1114911	AdditiveExpression	period - ( ( tb - ( 1 << target_bit ) ) & ( period - 1 ) )		1114849	1		-			
+ANR	1114912	Identifier	period		1114849	0					
+ANR	1114913	BitAndExpression	( tb - ( 1 << target_bit ) ) & ( period - 1 )		1114849	1		&			
+ANR	1114914	AdditiveExpression	tb - ( 1 << target_bit )		1114849	0		-			
+ANR	1114915	Identifier	tb		1114849	0					
+ANR	1114916	ShiftExpression	1 << target_bit		1114849	1		<<			
+ANR	1114917	PrimaryExpression	1		1114849	0					
+ANR	1114918	Identifier	target_bit		1114849	1					
+ANR	1114919	AdditiveExpression	period - 1		1114849	1		-			
+ANR	1114920	Identifier	period		1114849	0					
+ANR	1114921	PrimaryExpression	1		1114849	1					
+ANR	1114922	ExpressionStatement	"* next = now + muldiv64 ( lapse , get_ticks_per_sec ( ) , tb_env -> tb_freq )"	33:4:576:643	1114849	8	True				
+ANR	1114923	AssignmentExpression	"* next = now + muldiv64 ( lapse , get_ticks_per_sec ( ) , tb_env -> tb_freq )"		1114849	0		=			
+ANR	1114924	UnaryOperationExpression	* next		1114849	0					
+ANR	1114925	UnaryOperator	*		1114849	0					
+ANR	1114926	Identifier	next		1114849	1					
+ANR	1114927	AdditiveExpression	"now + muldiv64 ( lapse , get_ticks_per_sec ( ) , tb_env -> tb_freq )"		1114849	1		+			
+ANR	1114928	Identifier	now		1114849	0					
+ANR	1114929	CallExpression	"muldiv64 ( lapse , get_ticks_per_sec ( ) , tb_env -> tb_freq )"		1114849	1					
+ANR	1114930	Callee	muldiv64		1114849	0					
+ANR	1114931	Identifier	muldiv64		1114849	0					
+ANR	1114932	ArgumentList	lapse		1114849	1					
+ANR	1114933	Argument	lapse		1114849	0					
+ANR	1114934	Identifier	lapse		1114849	0					
+ANR	1114935	Argument	get_ticks_per_sec ( )		1114849	1					
+ANR	1114936	CallExpression	get_ticks_per_sec ( )		1114849	0					
+ANR	1114937	Callee	get_ticks_per_sec		1114849	0					
+ANR	1114938	Identifier	get_ticks_per_sec		1114849	0					
+ANR	1114939	ArgumentList			1114849	1					
+ANR	1114940	Argument	tb_env -> tb_freq		1114849	2					
+ANR	1114941	PtrMemberAccess	tb_env -> tb_freq		1114849	0					
+ANR	1114942	Identifier	tb_env		1114849	0					
+ANR	1114943	Identifier	tb_freq		1114849	1					
+ANR	1114944	IfStatement	if ( * next == now )		1114849	9					
+ANR	1114945	Condition	* next == now	45:8:820:831	1114849	0	True				
+ANR	1114946	EqualityExpression	* next == now		1114849	0		==			
+ANR	1114947	UnaryOperationExpression	* next		1114849	0					
+ANR	1114948	UnaryOperator	*		1114849	0					
+ANR	1114949	Identifier	next		1114849	1					
+ANR	1114950	Identifier	now		1114849	1					
+ANR	1114951	CompoundStatement		37:22:575:575	1114849	1					
+ANR	1114952	ExpressionStatement	( * next ) ++	47:8:845:854	1114849	0	True				
+ANR	1114953	PostIncDecOperationExpression	( * next ) ++		1114849	0					
+ANR	1114954	UnaryOperationExpression	* next		1114849	0					
+ANR	1114955	UnaryOperator	*		1114849	0					
+ANR	1114956	Identifier	next		1114849	1					
+ANR	1114957	IncDec	++		1114849	1					
+ANR	1114958	ExpressionStatement	"qemu_mod_timer ( timer , * next )"	53:4:870:898	1114849	10	True				
+ANR	1114959	CallExpression	"qemu_mod_timer ( timer , * next )"		1114849	0					
+ANR	1114960	Callee	qemu_mod_timer		1114849	0					
+ANR	1114961	Identifier	qemu_mod_timer		1114849	0					
+ANR	1114962	ArgumentList	timer		1114849	1					
+ANR	1114963	Argument	timer		1114849	0					
+ANR	1114964	Identifier	timer		1114849	0					
+ANR	1114965	Argument	* next		1114849	1					
+ANR	1114966	UnaryOperationExpression	* next		1114849	0					
+ANR	1114967	UnaryOperator	*		1114849	0					
+ANR	1114968	Identifier	next		1114849	1					
+ANR	1114969	ReturnType	static void		1114849	1					
+ANR	1114970	Identifier	booke_update_fixed_timer		1114849	2					
+ANR	1114971	ParameterList	"CPUPPCState * env , uint8_t target_bit , uint64_t * next , struct QEMUTimer * timer"		1114849	3					
+ANR	1114972	Parameter	CPUPPCState * env	1:37:37:60	1114849	0	True				
+ANR	1114973	ParameterType	CPUPPCState *		1114849	0					
+ANR	1114974	Identifier	env		1114849	1					
+ANR	1114975	Parameter	uint8_t target_bit	3:37:101:128	1114849	1	True				
+ANR	1114976	ParameterType	uint8_t		1114849	0					
+ANR	1114977	Identifier	target_bit		1114849	1					
+ANR	1114978	Parameter	uint64_t * next	5:37:169:191	1114849	2	True				
+ANR	1114979	ParameterType	uint64_t *		1114849	0					
+ANR	1114980	Identifier	next		1114849	1					
+ANR	1114981	Parameter	struct QEMUTimer * timer	7:37:232:254	1114849	3	True				
+ANR	1114982	ParameterType	struct QEMUTimer *		1114849	0					
+ANR	1114983	Identifier	timer		1114849	1					
+ANR	1114984	CFGEntryNode	ENTRY		1114849		True				
+ANR	1114985	CFGExitNode	EXIT		1114849		True				
+ANR	1114986	Symbol	next		1114849						
+ANR	1114987	Symbol	env -> tb_env		1114849						
+ANR	1114988	Symbol	period		1114849						
+ANR	1114989	Symbol	tb_env -> tb_freq		1114849						
+ANR	1114990	Symbol	* env		1114849						
+ANR	1114991	Symbol	* next		1114849						
+ANR	1114992	Symbol	env		1114849						
+ANR	1114993	Symbol	tb		1114849						
+ANR	1114994	Symbol	* tb_env		1114849						
+ANR	1114995	Symbol	cpu_ppc_get_tb		1114849						
+ANR	1114996	Symbol	get_ticks_per_sec		1114849						
+ANR	1114997	Symbol	timer		1114849						
+ANR	1114998	Symbol	lapse		1114849						
+ANR	1114999	Symbol	vm_clock		1114849						
+ANR	1115000	Symbol	now		1114849						
+ANR	1115001	Symbol	qemu_get_clock_ns		1114849						
+ANR	1115002	Symbol	tb_env -> tb_offset		1114849						
+ANR	1115003	Symbol	target_bit		1114849						
+ANR	1115004	Symbol	muldiv64		1114849						
+ANR	1115005	Symbol	tb_env		1114849						

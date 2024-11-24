@@ -1,0 +1,743 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6882255	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_update_header_1.c								
+ANR	6882256	Function	qcow2_update_header	1:0:0:4554							
+ANR	6882257	FunctionDef	qcow2_update_header (BlockDriverState * bs)		6882256	0					
+ANR	6882258	CompoundStatement		3:0:47:4554	6882256	0					
+ANR	6882259	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	5:4:54:83	6882256	0	True				
+ANR	6882260	IdentifierDecl	* s = bs -> opaque		6882256	0					
+ANR	6882261	IdentifierDeclType	BDRVQcowState *		6882256	0					
+ANR	6882262	Identifier	s		6882256	1					
+ANR	6882263	AssignmentExpression	* s = bs -> opaque		6882256	2		=			
+ANR	6882264	Identifier	s		6882256	0					
+ANR	6882265	PtrMemberAccess	bs -> opaque		6882256	1					
+ANR	6882266	Identifier	bs		6882256	0					
+ANR	6882267	Identifier	opaque		6882256	1					
+ANR	6882268	IdentifierDeclStatement	QCowHeader * header ;	7:4:90:108	6882256	1	True				
+ANR	6882269	IdentifierDecl	* header		6882256	0					
+ANR	6882270	IdentifierDeclType	QCowHeader *		6882256	0					
+ANR	6882271	Identifier	header		6882256	1					
+ANR	6882272	IdentifierDeclStatement	char * buf ;	9:4:115:124	6882256	2	True				
+ANR	6882273	IdentifierDecl	* buf		6882256	0					
+ANR	6882274	IdentifierDeclType	char *		6882256	0					
+ANR	6882275	Identifier	buf		6882256	1					
+ANR	6882276	IdentifierDeclStatement	size_t buflen = s -> cluster_size ;	11:4:131:162	6882256	3	True				
+ANR	6882277	IdentifierDecl	buflen = s -> cluster_size		6882256	0					
+ANR	6882278	IdentifierDeclType	size_t		6882256	0					
+ANR	6882279	Identifier	buflen		6882256	1					
+ANR	6882280	AssignmentExpression	buflen = s -> cluster_size		6882256	2		=			
+ANR	6882281	Identifier	buflen		6882256	0					
+ANR	6882282	PtrMemberAccess	s -> cluster_size		6882256	1					
+ANR	6882283	Identifier	s		6882256	0					
+ANR	6882284	Identifier	cluster_size		6882256	1					
+ANR	6882285	IdentifierDeclStatement	int ret ;	13:4:169:176	6882256	4	True				
+ANR	6882286	IdentifierDecl	ret		6882256	0					
+ANR	6882287	IdentifierDeclType	int		6882256	0					
+ANR	6882288	Identifier	ret		6882256	1					
+ANR	6882289	IdentifierDeclStatement	uint64_t total_size ;	15:4:183:202	6882256	5	True				
+ANR	6882290	IdentifierDecl	total_size		6882256	0					
+ANR	6882291	IdentifierDeclType	uint64_t		6882256	0					
+ANR	6882292	Identifier	total_size		6882256	1					
+ANR	6882293	IdentifierDeclStatement	uint32_t refcount_table_clusters ;	17:4:209:241	6882256	6	True				
+ANR	6882294	IdentifierDecl	refcount_table_clusters		6882256	0					
+ANR	6882295	IdentifierDeclType	uint32_t		6882256	0					
+ANR	6882296	Identifier	refcount_table_clusters		6882256	1					
+ANR	6882297	IdentifierDeclStatement	size_t header_length ;	19:4:248:268	6882256	7	True				
+ANR	6882298	IdentifierDecl	header_length		6882256	0					
+ANR	6882299	IdentifierDeclType	size_t		6882256	0					
+ANR	6882300	Identifier	header_length		6882256	1					
+ANR	6882301	IdentifierDeclStatement	Qcow2UnknownHeaderExtension * uext ;	21:4:275:308	6882256	8	True				
+ANR	6882302	IdentifierDecl	* uext		6882256	0					
+ANR	6882303	IdentifierDeclType	Qcow2UnknownHeaderExtension *		6882256	0					
+ANR	6882304	Identifier	uext		6882256	1					
+ANR	6882305	ExpressionStatement	"buf = qemu_blockalign ( bs , buflen )"	25:4:317:350	6882256	9	True				
+ANR	6882306	AssignmentExpression	"buf = qemu_blockalign ( bs , buflen )"		6882256	0		=			
+ANR	6882307	Identifier	buf		6882256	0					
+ANR	6882308	CallExpression	"qemu_blockalign ( bs , buflen )"		6882256	1					
+ANR	6882309	Callee	qemu_blockalign		6882256	0					
+ANR	6882310	Identifier	qemu_blockalign		6882256	0					
+ANR	6882311	ArgumentList	bs		6882256	1					
+ANR	6882312	Argument	bs		6882256	0					
+ANR	6882313	Identifier	bs		6882256	0					
+ANR	6882314	Argument	buflen		6882256	1					
+ANR	6882315	Identifier	buflen		6882256	0					
+ANR	6882316	ExpressionStatement	header = ( QCowHeader * ) buf	31:4:387:413	6882256	10	True				
+ANR	6882317	AssignmentExpression	header = ( QCowHeader * ) buf		6882256	0		=			
+ANR	6882318	Identifier	header		6882256	0					
+ANR	6882319	CastExpression	( QCowHeader * ) buf		6882256	1					
+ANR	6882320	CastTarget	QCowHeader *		6882256	0					
+ANR	6882321	Identifier	buf		6882256	1					
+ANR	6882322	IfStatement	if ( buflen < sizeof ( * header ) )		6882256	11					
+ANR	6882323	Condition	buflen < sizeof ( * header )	35:8:426:449	6882256	0	True				
+ANR	6882324	RelationalExpression	buflen < sizeof ( * header )		6882256	0		<			
+ANR	6882325	Identifier	buflen		6882256	0					
+ANR	6882326	SizeofExpression	sizeof ( * header )		6882256	1					
+ANR	6882327	Sizeof	sizeof		6882256	0					
+ANR	6882328	UnaryOperationExpression	* header		6882256	1					
+ANR	6882329	UnaryOperator	*		6882256	0					
+ANR	6882330	Identifier	header		6882256	1					
+ANR	6882331	CompoundStatement		33:34:404:404	6882256	1					
+ANR	6882332	ExpressionStatement	ret = - ENOSPC	37:8:463:476	6882256	0	True				
+ANR	6882333	AssignmentExpression	ret = - ENOSPC		6882256	0		=			
+ANR	6882334	Identifier	ret		6882256	0					
+ANR	6882335	UnaryOperationExpression	- ENOSPC		6882256	1					
+ANR	6882336	UnaryOperator	-		6882256	0					
+ANR	6882337	Identifier	ENOSPC		6882256	1					
+ANR	6882338	GotoStatement	goto fail ;	39:8:487:496	6882256	1	True				
+ANR	6882339	Identifier	fail		6882256	0					
+ANR	6882340	ExpressionStatement	header_length = sizeof ( * header ) + s -> unknown_header_fields_size	45:4:512:575	6882256	12	True				
+ANR	6882341	AssignmentExpression	header_length = sizeof ( * header ) + s -> unknown_header_fields_size		6882256	0		=			
+ANR	6882342	Identifier	header_length		6882256	0					
+ANR	6882343	AdditiveExpression	sizeof ( * header ) + s -> unknown_header_fields_size		6882256	1		+			
+ANR	6882344	SizeofExpression	sizeof ( * header )		6882256	0					
+ANR	6882345	Sizeof	sizeof		6882256	0					
+ANR	6882346	UnaryOperationExpression	* header		6882256	1					
+ANR	6882347	UnaryOperator	*		6882256	0					
+ANR	6882348	Identifier	header		6882256	1					
+ANR	6882349	PtrMemberAccess	s -> unknown_header_fields_size		6882256	1					
+ANR	6882350	Identifier	s		6882256	0					
+ANR	6882351	Identifier	unknown_header_fields_size		6882256	1					
+ANR	6882352	ExpressionStatement	total_size = bs -> total_sectors * BDRV_SECTOR_SIZE	47:4:582:631	6882256	13	True				
+ANR	6882353	AssignmentExpression	total_size = bs -> total_sectors * BDRV_SECTOR_SIZE		6882256	0		=			
+ANR	6882354	Identifier	total_size		6882256	0					
+ANR	6882355	MultiplicativeExpression	bs -> total_sectors * BDRV_SECTOR_SIZE		6882256	1		*			
+ANR	6882356	PtrMemberAccess	bs -> total_sectors		6882256	0					
+ANR	6882357	Identifier	bs		6882256	0					
+ANR	6882358	Identifier	total_sectors		6882256	1					
+ANR	6882359	Identifier	BDRV_SECTOR_SIZE		6882256	1					
+ANR	6882360	ExpressionStatement	refcount_table_clusters = s -> refcount_table_size >> ( s -> cluster_bits - 3 )	49:4:638:711	6882256	14	True				
+ANR	6882361	AssignmentExpression	refcount_table_clusters = s -> refcount_table_size >> ( s -> cluster_bits - 3 )		6882256	0		=			
+ANR	6882362	Identifier	refcount_table_clusters		6882256	0					
+ANR	6882363	ShiftExpression	s -> refcount_table_size >> ( s -> cluster_bits - 3 )		6882256	1		>>			
+ANR	6882364	PtrMemberAccess	s -> refcount_table_size		6882256	0					
+ANR	6882365	Identifier	s		6882256	0					
+ANR	6882366	Identifier	refcount_table_size		6882256	1					
+ANR	6882367	AdditiveExpression	s -> cluster_bits - 3		6882256	1		-			
+ANR	6882368	PtrMemberAccess	s -> cluster_bits		6882256	0					
+ANR	6882369	Identifier	s		6882256	0					
+ANR	6882370	Identifier	cluster_bits		6882256	1					
+ANR	6882371	PrimaryExpression	3		6882256	1					
+ANR	6882372	Statement	*	53:4:720:720	6882256	15	True				
+ANR	6882373	Statement	header	53:5:721:726	6882256	16	True				
+ANR	6882374	Statement	=	53:12:728:728	6882256	17	True				
+ANR	6882375	Statement	(	53:14:730:730	6882256	18	True				
+ANR	6882376	Statement	QCowHeader	53:15:731:740	6882256	19	True				
+ANR	6882377	Statement	)	53:25:741:741	6882256	20	True				
+ANR	6882378	CompoundStatement		51:27:695:695	6882256	21					
+ANR	6882379	Statement	.	57:8:786:786	6882256	0	True				
+ANR	6882380	Statement	magic	57:9:787:791	6882256	1	True				
+ANR	6882381	Statement	=	57:32:810:810	6882256	2	True				
+ANR	6882382	Statement	cpu_to_be32	57:34:812:822	6882256	3	True				
+ANR	6882383	Statement	(	57:45:823:823	6882256	4	True				
+ANR	6882384	Statement	QCOW_MAGIC	57:46:824:833	6882256	5	True				
+ANR	6882385	Statement	)	57:56:834:834	6882256	6	True				
+ANR	6882386	Statement	","	57:57:835:835	6882256	7	True				
+ANR	6882387	Statement	.	59:8:846:846	6882256	8	True				
+ANR	6882388	Statement	version	59:9:847:853	6882256	9	True				
+ANR	6882389	Statement	=	59:32:870:870	6882256	10	True				
+ANR	6882390	Statement	cpu_to_be32	59:34:872:882	6882256	11	True				
+ANR	6882391	Statement	(	59:45:883:883	6882256	12	True				
+ANR	6882392	Statement	s	59:46:884:884	6882256	13	True				
+ANR	6882393	Statement	->	59:47:885:886	6882256	14	True				
+ANR	6882394	Statement	qcow_version	59:49:887:898	6882256	15	True				
+ANR	6882395	Statement	)	59:61:899:899	6882256	16	True				
+ANR	6882396	Statement	","	59:62:900:900	6882256	17	True				
+ANR	6882397	Statement	.	61:8:911:911	6882256	18	True				
+ANR	6882398	Statement	backing_file_offset	61:9:912:930	6882256	19	True				
+ANR	6882399	Statement	=	61:32:935:935	6882256	20	True				
+ANR	6882400	Statement	0	61:34:937:937	6882256	21	True				
+ANR	6882401	Statement	","	61:35:938:938	6882256	22	True				
+ANR	6882402	Statement	.	63:8:949:949	6882256	23	True				
+ANR	6882403	Statement	backing_file_size	63:9:950:966	6882256	24	True				
+ANR	6882404	Statement	=	63:32:973:973	6882256	25	True				
+ANR	6882405	Statement	0	63:34:975:975	6882256	26	True				
+ANR	6882406	Statement	","	63:35:976:976	6882256	27	True				
+ANR	6882407	Statement	.	65:8:987:987	6882256	28	True				
+ANR	6882408	Statement	cluster_bits	65:9:988:999	6882256	29	True				
+ANR	6882409	Statement	=	65:32:1011:1011	6882256	30	True				
+ANR	6882410	Statement	cpu_to_be32	65:34:1013:1023	6882256	31	True				
+ANR	6882411	Statement	(	65:45:1024:1024	6882256	32	True				
+ANR	6882412	Statement	s	65:46:1025:1025	6882256	33	True				
+ANR	6882413	Statement	->	65:47:1026:1027	6882256	34	True				
+ANR	6882414	Statement	cluster_bits	65:49:1028:1039	6882256	35	True				
+ANR	6882415	Statement	)	65:61:1040:1040	6882256	36	True				
+ANR	6882416	Statement	","	65:62:1041:1041	6882256	37	True				
+ANR	6882417	Statement	.	67:8:1052:1052	6882256	38	True				
+ANR	6882418	Statement	size	67:9:1053:1056	6882256	39	True				
+ANR	6882419	Statement	=	67:32:1076:1076	6882256	40	True				
+ANR	6882420	Statement	cpu_to_be64	67:34:1078:1088	6882256	41	True				
+ANR	6882421	Statement	(	67:45:1089:1089	6882256	42	True				
+ANR	6882422	Statement	total_size	67:46:1090:1099	6882256	43	True				
+ANR	6882423	Statement	)	67:56:1100:1100	6882256	44	True				
+ANR	6882424	Statement	","	67:57:1101:1101	6882256	45	True				
+ANR	6882425	Statement	.	69:8:1112:1112	6882256	46	True				
+ANR	6882426	Statement	crypt_method	69:9:1113:1124	6882256	47	True				
+ANR	6882427	Statement	=	69:32:1136:1136	6882256	48	True				
+ANR	6882428	Statement	cpu_to_be32	69:34:1138:1148	6882256	49	True				
+ANR	6882429	Statement	(	69:45:1149:1149	6882256	50	True				
+ANR	6882430	Statement	s	69:46:1150:1150	6882256	51	True				
+ANR	6882431	Statement	->	69:47:1151:1152	6882256	52	True				
+ANR	6882432	Statement	crypt_method_header	69:49:1153:1171	6882256	53	True				
+ANR	6882433	Statement	)	69:68:1172:1172	6882256	54	True				
+ANR	6882434	Statement	","	69:69:1173:1173	6882256	55	True				
+ANR	6882435	Statement	.	71:8:1184:1184	6882256	56	True				
+ANR	6882436	Statement	l1_size	71:9:1185:1191	6882256	57	True				
+ANR	6882437	Statement	=	71:32:1208:1208	6882256	58	True				
+ANR	6882438	Statement	cpu_to_be32	71:34:1210:1220	6882256	59	True				
+ANR	6882439	Statement	(	71:45:1221:1221	6882256	60	True				
+ANR	6882440	Statement	s	71:46:1222:1222	6882256	61	True				
+ANR	6882441	Statement	->	71:47:1223:1224	6882256	62	True				
+ANR	6882442	Statement	l1_size	71:49:1225:1231	6882256	63	True				
+ANR	6882443	Statement	)	71:56:1232:1232	6882256	64	True				
+ANR	6882444	Statement	","	71:57:1233:1233	6882256	65	True				
+ANR	6882445	Statement	.	73:8:1244:1244	6882256	66	True				
+ANR	6882446	Statement	l1_table_offset	73:9:1245:1259	6882256	67	True				
+ANR	6882447	Statement	=	73:32:1268:1268	6882256	68	True				
+ANR	6882448	Statement	cpu_to_be64	73:34:1270:1280	6882256	69	True				
+ANR	6882449	Statement	(	73:45:1281:1281	6882256	70	True				
+ANR	6882450	Statement	s	73:46:1282:1282	6882256	71	True				
+ANR	6882451	Statement	->	73:47:1283:1284	6882256	72	True				
+ANR	6882452	Statement	l1_table_offset	73:49:1285:1299	6882256	73	True				
+ANR	6882453	Statement	)	73:64:1300:1300	6882256	74	True				
+ANR	6882454	Statement	","	73:65:1301:1301	6882256	75	True				
+ANR	6882455	Statement	.	75:8:1312:1312	6882256	76	True				
+ANR	6882456	Statement	refcount_table_offset	75:9:1313:1333	6882256	77	True				
+ANR	6882457	Statement	=	75:32:1336:1336	6882256	78	True				
+ANR	6882458	Statement	cpu_to_be64	75:34:1338:1348	6882256	79	True				
+ANR	6882459	Statement	(	75:45:1349:1349	6882256	80	True				
+ANR	6882460	Statement	s	75:46:1350:1350	6882256	81	True				
+ANR	6882461	Statement	->	75:47:1351:1352	6882256	82	True				
+ANR	6882462	Statement	refcount_table_offset	75:49:1353:1373	6882256	83	True				
+ANR	6882463	Statement	)	75:70:1374:1374	6882256	84	True				
+ANR	6882464	Statement	","	75:71:1375:1375	6882256	85	True				
+ANR	6882465	Statement	.	77:8:1386:1386	6882256	86	True				
+ANR	6882466	Statement	refcount_table_clusters	77:9:1387:1409	6882256	87	True				
+ANR	6882467	Statement	=	77:33:1411:1411	6882256	88	True				
+ANR	6882468	Statement	cpu_to_be32	77:35:1413:1423	6882256	89	True				
+ANR	6882469	Statement	(	77:46:1424:1424	6882256	90	True				
+ANR	6882470	Statement	refcount_table_clusters	77:47:1425:1447	6882256	91	True				
+ANR	6882471	Statement	)	77:70:1448:1448	6882256	92	True				
+ANR	6882472	Statement	","	77:71:1449:1449	6882256	93	True				
+ANR	6882473	Statement	.	79:8:1460:1460	6882256	94	True				
+ANR	6882474	Statement	nb_snapshots	79:9:1461:1472	6882256	95	True				
+ANR	6882475	Statement	=	79:32:1484:1484	6882256	96	True				
+ANR	6882476	Statement	cpu_to_be32	79:34:1486:1496	6882256	97	True				
+ANR	6882477	Statement	(	79:45:1497:1497	6882256	98	True				
+ANR	6882478	Statement	s	79:46:1498:1498	6882256	99	True				
+ANR	6882479	Statement	->	79:47:1499:1500	6882256	100	True				
+ANR	6882480	Statement	nb_snapshots	79:49:1501:1512	6882256	101	True				
+ANR	6882481	Statement	)	79:61:1513:1513	6882256	102	True				
+ANR	6882482	Statement	","	79:62:1514:1514	6882256	103	True				
+ANR	6882483	Statement	.	81:8:1525:1525	6882256	104	True				
+ANR	6882484	Statement	snapshots_offset	81:9:1526:1541	6882256	105	True				
+ANR	6882485	Statement	=	81:32:1549:1549	6882256	106	True				
+ANR	6882486	Statement	cpu_to_be64	81:34:1551:1561	6882256	107	True				
+ANR	6882487	Statement	(	81:45:1562:1562	6882256	108	True				
+ANR	6882488	Statement	s	81:46:1563:1563	6882256	109	True				
+ANR	6882489	Statement	->	81:47:1564:1565	6882256	110	True				
+ANR	6882490	Statement	snapshots_offset	81:49:1566:1581	6882256	111	True				
+ANR	6882491	Statement	)	81:65:1582:1582	6882256	112	True				
+ANR	6882492	Statement	","	81:66:1583:1583	6882256	113	True				
+ANR	6882493	Statement	.	87:8:1628:1628	6882256	114	True				
+ANR	6882494	Statement	incompatible_features	87:9:1629:1649	6882256	115	True				
+ANR	6882495	Statement	=	87:32:1652:1652	6882256	116	True				
+ANR	6882496	Statement	cpu_to_be64	87:34:1654:1664	6882256	117	True				
+ANR	6882497	Statement	(	87:45:1665:1665	6882256	118	True				
+ANR	6882498	Statement	s	87:46:1666:1666	6882256	119	True				
+ANR	6882499	Statement	->	87:47:1667:1668	6882256	120	True				
+ANR	6882500	Statement	incompatible_features	87:49:1669:1689	6882256	121	True				
+ANR	6882501	Statement	)	87:70:1690:1690	6882256	122	True				
+ANR	6882502	Statement	","	87:71:1691:1691	6882256	123	True				
+ANR	6882503	Statement	.	89:8:1702:1702	6882256	124	True				
+ANR	6882504	Statement	compatible_features	89:9:1703:1721	6882256	125	True				
+ANR	6882505	Statement	=	89:32:1726:1726	6882256	126	True				
+ANR	6882506	Statement	cpu_to_be64	89:34:1728:1738	6882256	127	True				
+ANR	6882507	Statement	(	89:45:1739:1739	6882256	128	True				
+ANR	6882508	Statement	s	89:46:1740:1740	6882256	129	True				
+ANR	6882509	Statement	->	89:47:1741:1742	6882256	130	True				
+ANR	6882510	Statement	compatible_features	89:49:1743:1761	6882256	131	True				
+ANR	6882511	Statement	)	89:68:1762:1762	6882256	132	True				
+ANR	6882512	Statement	","	89:69:1763:1763	6882256	133	True				
+ANR	6882513	Statement	.	91:8:1774:1774	6882256	134	True				
+ANR	6882514	Statement	autoclear_features	91:9:1775:1792	6882256	135	True				
+ANR	6882515	Statement	=	91:32:1798:1798	6882256	136	True				
+ANR	6882516	Statement	cpu_to_be64	91:34:1800:1810	6882256	137	True				
+ANR	6882517	Statement	(	91:45:1811:1811	6882256	138	True				
+ANR	6882518	Statement	s	91:46:1812:1812	6882256	139	True				
+ANR	6882519	Statement	->	91:47:1813:1814	6882256	140	True				
+ANR	6882520	Statement	autoclear_features	91:49:1815:1832	6882256	141	True				
+ANR	6882521	Statement	)	91:67:1833:1833	6882256	142	True				
+ANR	6882522	Statement	","	91:68:1834:1834	6882256	143	True				
+ANR	6882523	Statement	.	93:8:1845:1845	6882256	144	True				
+ANR	6882524	Statement	refcount_order	93:9:1846:1859	6882256	145	True				
+ANR	6882525	Statement	=	93:32:1869:1869	6882256	146	True				
+ANR	6882526	Statement	cpu_to_be32	93:34:1871:1881	6882256	147	True				
+ANR	6882527	Statement	(	93:45:1882:1882	6882256	148	True				
+ANR	6882528	Statement	3	93:46:1883:1883	6882256	149	True				
+ANR	6882529	Statement	+	93:48:1885:1885	6882256	150	True				
+ANR	6882530	Statement	REFCOUNT_SHIFT	93:50:1887:1900	6882256	151	True				
+ANR	6882531	Statement	)	93:64:1901:1901	6882256	152	True				
+ANR	6882532	Statement	","	93:65:1902:1902	6882256	153	True				
+ANR	6882533	Statement	.	95:8:1913:1913	6882256	154	True				
+ANR	6882534	Statement	header_length	95:9:1914:1926	6882256	155	True				
+ANR	6882535	Statement	=	95:32:1937:1937	6882256	156	True				
+ANR	6882536	Statement	cpu_to_be32	95:34:1939:1949	6882256	157	True				
+ANR	6882537	Statement	(	95:45:1950:1950	6882256	158	True				
+ANR	6882538	Statement	header_length	95:46:1951:1963	6882256	159	True				
+ANR	6882539	Statement	)	95:59:1964:1964	6882256	160	True				
+ANR	6882540	Statement	","	95:60:1965:1965	6882256	161	True				
+ANR	6882541	ExpressionStatement		97:5:1973:1973	6882256	22	True				
+ANR	6882542	SwitchStatement	switch ( s -> qcow_version )		6882256	23					
+ANR	6882543	Condition	s -> qcow_version	103:12:2044:2058	6882256	0	True				
+ANR	6882544	PtrMemberAccess	s -> qcow_version		6882256	0					
+ANR	6882545	Identifier	s		6882256	0					
+ANR	6882546	Identifier	qcow_version		6882256	1					
+ANR	6882547	CompoundStatement		101:29:2013:2013	6882256	1					
+ANR	6882548	Label	case 2 :	105:4:2068:2074	6882256	0	True				
+ANR	6882549	ExpressionStatement	"ret = offsetof ( QCowHeader , incompatible_features )"	107:8:2085:2134	6882256	1	True				
+ANR	6882550	AssignmentExpression	"ret = offsetof ( QCowHeader , incompatible_features )"		6882256	0		=			
+ANR	6882551	Identifier	ret		6882256	0					
+ANR	6882552	CallExpression	"offsetof ( QCowHeader , incompatible_features )"		6882256	1					
+ANR	6882553	Callee	offsetof		6882256	0					
+ANR	6882554	Identifier	offsetof		6882256	0					
+ANR	6882555	ArgumentList	QCowHeader		6882256	1					
+ANR	6882556	Argument	QCowHeader		6882256	0					
+ANR	6882557	Identifier	QCowHeader		6882256	0					
+ANR	6882558	Argument	incompatible_features		6882256	1					
+ANR	6882559	Identifier	incompatible_features		6882256	0					
+ANR	6882560	BreakStatement	break ;	109:8:2145:2150	6882256	2	True				
+ANR	6882561	Label	case 3 :	111:4:2157:2163	6882256	3	True				
+ANR	6882562	ExpressionStatement	ret = sizeof ( * header )	113:8:2174:2195	6882256	4	True				
+ANR	6882563	AssignmentExpression	ret = sizeof ( * header )		6882256	0		=			
+ANR	6882564	Identifier	ret		6882256	0					
+ANR	6882565	SizeofExpression	sizeof ( * header )		6882256	1					
+ANR	6882566	Sizeof	sizeof		6882256	0					
+ANR	6882567	UnaryOperationExpression	* header		6882256	1					
+ANR	6882568	UnaryOperator	*		6882256	0					
+ANR	6882569	Identifier	header		6882256	1					
+ANR	6882570	BreakStatement	break ;	115:8:2206:2211	6882256	5	True				
+ANR	6882571	Label	default :	117:4:2218:2225	6882256	6	True				
+ANR	6882572	Identifier	default		6882256	0					
+ANR	6882573	ReturnStatement	return - EINVAL ;	119:8:2236:2250	6882256	7	True				
+ANR	6882574	UnaryOperationExpression	- EINVAL		6882256	0					
+ANR	6882575	UnaryOperator	-		6882256	0					
+ANR	6882576	Identifier	EINVAL		6882256	1					
+ANR	6882577	ExpressionStatement	buf += ret	125:4:2266:2276	6882256	24	True				
+ANR	6882578	AssignmentExpression	buf += ret		6882256	0		+=			
+ANR	6882579	Identifier	buf		6882256	0					
+ANR	6882580	Identifier	ret		6882256	1					
+ANR	6882581	ExpressionStatement	buflen -= ret	127:4:2283:2296	6882256	25	True				
+ANR	6882582	AssignmentExpression	buflen -= ret		6882256	0		-=			
+ANR	6882583	Identifier	buflen		6882256	0					
+ANR	6882584	Identifier	ret		6882256	1					
+ANR	6882585	ExpressionStatement	"memset ( buf , 0 , buflen )"	129:4:2303:2325	6882256	26	True				
+ANR	6882586	CallExpression	"memset ( buf , 0 , buflen )"		6882256	0					
+ANR	6882587	Callee	memset		6882256	0					
+ANR	6882588	Identifier	memset		6882256	0					
+ANR	6882589	ArgumentList	buf		6882256	1					
+ANR	6882590	Argument	buf		6882256	0					
+ANR	6882591	Identifier	buf		6882256	0					
+ANR	6882592	Argument	0		6882256	1					
+ANR	6882593	PrimaryExpression	0		6882256	0					
+ANR	6882594	Argument	buflen		6882256	2					
+ANR	6882595	Identifier	buflen		6882256	0					
+ANR	6882596	IfStatement	if ( s -> unknown_header_fields_size )		6882256	27					
+ANR	6882597	Condition	s -> unknown_header_fields_size	135:8:2390:2418	6882256	0	True				
+ANR	6882598	PtrMemberAccess	s -> unknown_header_fields_size		6882256	0					
+ANR	6882599	Identifier	s		6882256	0					
+ANR	6882600	Identifier	unknown_header_fields_size		6882256	1					
+ANR	6882601	CompoundStatement		133:39:2373:2373	6882256	1					
+ANR	6882602	IfStatement	if ( buflen < s -> unknown_header_fields_size )		6882256	0					
+ANR	6882603	Condition	buflen < s -> unknown_header_fields_size	137:12:2436:2473	6882256	0	True				
+ANR	6882604	RelationalExpression	buflen < s -> unknown_header_fields_size		6882256	0		<			
+ANR	6882605	Identifier	buflen		6882256	0					
+ANR	6882606	PtrMemberAccess	s -> unknown_header_fields_size		6882256	1					
+ANR	6882607	Identifier	s		6882256	0					
+ANR	6882608	Identifier	unknown_header_fields_size		6882256	1					
+ANR	6882609	CompoundStatement		135:52:2428:2428	6882256	1					
+ANR	6882610	ExpressionStatement	ret = - ENOSPC	139:12:2491:2504	6882256	0	True				
+ANR	6882611	AssignmentExpression	ret = - ENOSPC		6882256	0		=			
+ANR	6882612	Identifier	ret		6882256	0					
+ANR	6882613	UnaryOperationExpression	- ENOSPC		6882256	1					
+ANR	6882614	UnaryOperator	-		6882256	0					
+ANR	6882615	Identifier	ENOSPC		6882256	1					
+ANR	6882616	GotoStatement	goto fail ;	141:12:2519:2528	6882256	1	True				
+ANR	6882617	Identifier	fail		6882256	0					
+ANR	6882618	ExpressionStatement	"memcpy ( buf , s -> unknown_header_fields , s -> unknown_header_fields_size )"	147:8:2552:2620	6882256	1	True				
+ANR	6882619	CallExpression	"memcpy ( buf , s -> unknown_header_fields , s -> unknown_header_fields_size )"		6882256	0					
+ANR	6882620	Callee	memcpy		6882256	0					
+ANR	6882621	Identifier	memcpy		6882256	0					
+ANR	6882622	ArgumentList	buf		6882256	1					
+ANR	6882623	Argument	buf		6882256	0					
+ANR	6882624	Identifier	buf		6882256	0					
+ANR	6882625	Argument	s -> unknown_header_fields		6882256	1					
+ANR	6882626	PtrMemberAccess	s -> unknown_header_fields		6882256	0					
+ANR	6882627	Identifier	s		6882256	0					
+ANR	6882628	Identifier	unknown_header_fields		6882256	1					
+ANR	6882629	Argument	s -> unknown_header_fields_size		6882256	2					
+ANR	6882630	PtrMemberAccess	s -> unknown_header_fields_size		6882256	0					
+ANR	6882631	Identifier	s		6882256	0					
+ANR	6882632	Identifier	unknown_header_fields_size		6882256	1					
+ANR	6882633	ExpressionStatement	buf += s -> unknown_header_fields_size	149:8:2631:2667	6882256	2	True				
+ANR	6882634	AssignmentExpression	buf += s -> unknown_header_fields_size		6882256	0		+=			
+ANR	6882635	Identifier	buf		6882256	0					
+ANR	6882636	PtrMemberAccess	s -> unknown_header_fields_size		6882256	1					
+ANR	6882637	Identifier	s		6882256	0					
+ANR	6882638	Identifier	unknown_header_fields_size		6882256	1					
+ANR	6882639	ExpressionStatement	buflen -= s -> unknown_header_fields_size	151:8:2678:2717	6882256	3	True				
+ANR	6882640	AssignmentExpression	buflen -= s -> unknown_header_fields_size		6882256	0		-=			
+ANR	6882641	Identifier	buflen		6882256	0					
+ANR	6882642	PtrMemberAccess	s -> unknown_header_fields_size		6882256	1					
+ANR	6882643	Identifier	s		6882256	0					
+ANR	6882644	Identifier	unknown_header_fields_size		6882256	1					
+ANR	6882645	IfStatement	if ( * bs -> backing_format )		6882256	28					
+ANR	6882646	Condition	* bs -> backing_format	159:8:2785:2803	6882256	0	True				
+ANR	6882647	UnaryOperationExpression	* bs -> backing_format		6882256	0					
+ANR	6882648	UnaryOperator	*		6882256	0					
+ANR	6882649	PtrMemberAccess	bs -> backing_format		6882256	1					
+ANR	6882650	Identifier	bs		6882256	0					
+ANR	6882651	Identifier	backing_format		6882256	1					
+ANR	6882652	CompoundStatement		157:29:2758:2758	6882256	1					
+ANR	6882653	ExpressionStatement	"ret = header_ext_add ( buf , QCOW2_EXT_MAGIC_BACKING_FORMAT , bs -> backing_format , strlen ( bs -> backing_format ) , buflen )"	161:8:2817:2990	6882256	0	True				
+ANR	6882654	AssignmentExpression	"ret = header_ext_add ( buf , QCOW2_EXT_MAGIC_BACKING_FORMAT , bs -> backing_format , strlen ( bs -> backing_format ) , buflen )"		6882256	0		=			
+ANR	6882655	Identifier	ret		6882256	0					
+ANR	6882656	CallExpression	"header_ext_add ( buf , QCOW2_EXT_MAGIC_BACKING_FORMAT , bs -> backing_format , strlen ( bs -> backing_format ) , buflen )"		6882256	1					
+ANR	6882657	Callee	header_ext_add		6882256	0					
+ANR	6882658	Identifier	header_ext_add		6882256	0					
+ANR	6882659	ArgumentList	buf		6882256	1					
+ANR	6882660	Argument	buf		6882256	0					
+ANR	6882661	Identifier	buf		6882256	0					
+ANR	6882662	Argument	QCOW2_EXT_MAGIC_BACKING_FORMAT		6882256	1					
+ANR	6882663	Identifier	QCOW2_EXT_MAGIC_BACKING_FORMAT		6882256	0					
+ANR	6882664	Argument	bs -> backing_format		6882256	2					
+ANR	6882665	PtrMemberAccess	bs -> backing_format		6882256	0					
+ANR	6882666	Identifier	bs		6882256	0					
+ANR	6882667	Identifier	backing_format		6882256	1					
+ANR	6882668	Argument	strlen ( bs -> backing_format )		6882256	3					
+ANR	6882669	CallExpression	strlen ( bs -> backing_format )		6882256	0					
+ANR	6882670	Callee	strlen		6882256	0					
+ANR	6882671	Identifier	strlen		6882256	0					
+ANR	6882672	ArgumentList	bs -> backing_format		6882256	1					
+ANR	6882673	Argument	bs -> backing_format		6882256	0					
+ANR	6882674	PtrMemberAccess	bs -> backing_format		6882256	0					
+ANR	6882675	Identifier	bs		6882256	0					
+ANR	6882676	Identifier	backing_format		6882256	1					
+ANR	6882677	Argument	buflen		6882256	4					
+ANR	6882678	Identifier	buflen		6882256	0					
+ANR	6882679	IfStatement	if ( ret < 0 )		6882256	1					
+ANR	6882680	Condition	ret < 0	167:12:3005:3011	6882256	0	True				
+ANR	6882681	RelationalExpression	ret < 0		6882256	0		<			
+ANR	6882682	Identifier	ret		6882256	0					
+ANR	6882683	PrimaryExpression	0		6882256	1					
+ANR	6882684	CompoundStatement		165:21:2966:2966	6882256	1					
+ANR	6882685	GotoStatement	goto fail ;	169:12:3029:3038	6882256	0	True				
+ANR	6882686	Identifier	fail		6882256	0					
+ANR	6882687	ExpressionStatement	buf += ret	175:8:3062:3072	6882256	2	True				
+ANR	6882688	AssignmentExpression	buf += ret		6882256	0		+=			
+ANR	6882689	Identifier	buf		6882256	0					
+ANR	6882690	Identifier	ret		6882256	1					
+ANR	6882691	ExpressionStatement	buflen -= ret	177:8:3083:3096	6882256	3	True				
+ANR	6882692	AssignmentExpression	buflen -= ret		6882256	0		-=			
+ANR	6882693	Identifier	buflen		6882256	0					
+ANR	6882694	Identifier	ret		6882256	1					
+ANR	6882695	Statement	Qcow2Feature	185:4:3137:3148	6882256	29	True				
+ANR	6882696	Statement	features	185:17:3150:3157	6882256	30	True				
+ANR	6882697	Statement	[	185:25:3158:3158	6882256	31	True				
+ANR	6882698	Statement	]	185:26:3159:3159	6882256	32	True				
+ANR	6882699	Statement	=	185:28:3161:3161	6882256	33	True				
+ANR	6882700	CompoundStatement		183:30:3115:3115	6882256	34					
+ANR	6882701	ExpressionStatement		189:5:3209:3209	6882256	35	True				
+ANR	6882702	ExpressionStatement	"ret = header_ext_add ( buf , QCOW2_EXT_MAGIC_FEATURE_TABLE , features , sizeof ( features ) , buflen )"	193:4:3218:3336	6882256	36	True				
+ANR	6882703	AssignmentExpression	"ret = header_ext_add ( buf , QCOW2_EXT_MAGIC_FEATURE_TABLE , features , sizeof ( features ) , buflen )"		6882256	0		=			
+ANR	6882704	Identifier	ret		6882256	0					
+ANR	6882705	CallExpression	"header_ext_add ( buf , QCOW2_EXT_MAGIC_FEATURE_TABLE , features , sizeof ( features ) , buflen )"		6882256	1					
+ANR	6882706	Callee	header_ext_add		6882256	0					
+ANR	6882707	Identifier	header_ext_add		6882256	0					
+ANR	6882708	ArgumentList	buf		6882256	1					
+ANR	6882709	Argument	buf		6882256	0					
+ANR	6882710	Identifier	buf		6882256	0					
+ANR	6882711	Argument	QCOW2_EXT_MAGIC_FEATURE_TABLE		6882256	1					
+ANR	6882712	Identifier	QCOW2_EXT_MAGIC_FEATURE_TABLE		6882256	0					
+ANR	6882713	Argument	features		6882256	2					
+ANR	6882714	Identifier	features		6882256	0					
+ANR	6882715	Argument	sizeof ( features )		6882256	3					
+ANR	6882716	SizeofExpression	sizeof ( features )		6882256	0					
+ANR	6882717	Sizeof	sizeof		6882256	0					
+ANR	6882718	SizeofOperand	features		6882256	1					
+ANR	6882719	Argument	buflen		6882256	4					
+ANR	6882720	Identifier	buflen		6882256	0					
+ANR	6882721	IfStatement	if ( ret < 0 )		6882256	37					
+ANR	6882722	Condition	ret < 0	197:8:3347:3353	6882256	0	True				
+ANR	6882723	RelationalExpression	ret < 0		6882256	0		<			
+ANR	6882724	Identifier	ret		6882256	0					
+ANR	6882725	PrimaryExpression	0		6882256	1					
+ANR	6882726	CompoundStatement		195:17:3308:3308	6882256	1					
+ANR	6882727	GotoStatement	goto fail ;	199:8:3367:3376	6882256	0	True				
+ANR	6882728	Identifier	fail		6882256	0					
+ANR	6882729	ExpressionStatement	buf += ret	203:4:3390:3400	6882256	38	True				
+ANR	6882730	AssignmentExpression	buf += ret		6882256	0		+=			
+ANR	6882731	Identifier	buf		6882256	0					
+ANR	6882732	Identifier	ret		6882256	1					
+ANR	6882733	ExpressionStatement	buflen -= ret	205:4:3407:3420	6882256	39	True				
+ANR	6882734	AssignmentExpression	buflen -= ret		6882256	0		-=			
+ANR	6882735	Identifier	buflen		6882256	0					
+ANR	6882736	Identifier	ret		6882256	1					
+ANR	6882737	Statement	QLIST_FOREACH	211:4:3471:3483	6882256	40	True				
+ANR	6882738	Statement	(	211:17:3484:3484	6882256	41	True				
+ANR	6882739	Statement	uext	211:18:3485:3488	6882256	42	True				
+ANR	6882740	Statement	","	211:22:3489:3489	6882256	43	True				
+ANR	6882741	Statement	&	211:24:3491:3491	6882256	44	True				
+ANR	6882742	Statement	s	211:25:3492:3492	6882256	45	True				
+ANR	6882743	Statement	->	211:26:3493:3494	6882256	46	True				
+ANR	6882744	Statement	unknown_header_ext	211:28:3495:3512	6882256	47	True				
+ANR	6882745	Statement	","	211:46:3513:3513	6882256	48	True				
+ANR	6882746	Statement	next	211:48:3515:3518	6882256	49	True				
+ANR	6882747	Statement	)	211:52:3519:3519	6882256	50	True				
+ANR	6882748	CompoundStatement		209:54:3473:3473	6882256	51					
+ANR	6882749	ExpressionStatement	"ret = header_ext_add ( buf , uext -> magic , uext -> data , uext -> len , buflen )"	213:8:3532:3601	6882256	0	True				
+ANR	6882750	AssignmentExpression	"ret = header_ext_add ( buf , uext -> magic , uext -> data , uext -> len , buflen )"		6882256	0		=			
+ANR	6882751	Identifier	ret		6882256	0					
+ANR	6882752	CallExpression	"header_ext_add ( buf , uext -> magic , uext -> data , uext -> len , buflen )"		6882256	1					
+ANR	6882753	Callee	header_ext_add		6882256	0					
+ANR	6882754	Identifier	header_ext_add		6882256	0					
+ANR	6882755	ArgumentList	buf		6882256	1					
+ANR	6882756	Argument	buf		6882256	0					
+ANR	6882757	Identifier	buf		6882256	0					
+ANR	6882758	Argument	uext -> magic		6882256	1					
+ANR	6882759	PtrMemberAccess	uext -> magic		6882256	0					
+ANR	6882760	Identifier	uext		6882256	0					
+ANR	6882761	Identifier	magic		6882256	1					
+ANR	6882762	Argument	uext -> data		6882256	2					
+ANR	6882763	PtrMemberAccess	uext -> data		6882256	0					
+ANR	6882764	Identifier	uext		6882256	0					
+ANR	6882765	Identifier	data		6882256	1					
+ANR	6882766	Argument	uext -> len		6882256	3					
+ANR	6882767	PtrMemberAccess	uext -> len		6882256	0					
+ANR	6882768	Identifier	uext		6882256	0					
+ANR	6882769	Identifier	len		6882256	1					
+ANR	6882770	Argument	buflen		6882256	4					
+ANR	6882771	Identifier	buflen		6882256	0					
+ANR	6882772	IfStatement	if ( ret < 0 )		6882256	1					
+ANR	6882773	Condition	ret < 0	215:12:3616:3622	6882256	0	True				
+ANR	6882774	RelationalExpression	ret < 0		6882256	0		<			
+ANR	6882775	Identifier	ret		6882256	0					
+ANR	6882776	PrimaryExpression	0		6882256	1					
+ANR	6882777	CompoundStatement		213:21:3577:3577	6882256	1					
+ANR	6882778	GotoStatement	goto fail ;	217:12:3640:3649	6882256	0	True				
+ANR	6882779	Identifier	fail		6882256	0					
+ANR	6882780	ExpressionStatement	buf += ret	223:8:3673:3683	6882256	2	True				
+ANR	6882781	AssignmentExpression	buf += ret		6882256	0		+=			
+ANR	6882782	Identifier	buf		6882256	0					
+ANR	6882783	Identifier	ret		6882256	1					
+ANR	6882784	ExpressionStatement	buflen -= ret	225:8:3694:3707	6882256	3	True				
+ANR	6882785	AssignmentExpression	buflen -= ret		6882256	0		-=			
+ANR	6882786	Identifier	buflen		6882256	0					
+ANR	6882787	Identifier	ret		6882256	1					
+ANR	6882788	ExpressionStatement	"ret = header_ext_add ( buf , QCOW2_EXT_MAGIC_END , NULL , 0 , buflen )"	233:4:3759:3822	6882256	52	True				
+ANR	6882789	AssignmentExpression	"ret = header_ext_add ( buf , QCOW2_EXT_MAGIC_END , NULL , 0 , buflen )"		6882256	0		=			
+ANR	6882790	Identifier	ret		6882256	0					
+ANR	6882791	CallExpression	"header_ext_add ( buf , QCOW2_EXT_MAGIC_END , NULL , 0 , buflen )"		6882256	1					
+ANR	6882792	Callee	header_ext_add		6882256	0					
+ANR	6882793	Identifier	header_ext_add		6882256	0					
+ANR	6882794	ArgumentList	buf		6882256	1					
+ANR	6882795	Argument	buf		6882256	0					
+ANR	6882796	Identifier	buf		6882256	0					
+ANR	6882797	Argument	QCOW2_EXT_MAGIC_END		6882256	1					
+ANR	6882798	Identifier	QCOW2_EXT_MAGIC_END		6882256	0					
+ANR	6882799	Argument	NULL		6882256	2					
+ANR	6882800	Identifier	NULL		6882256	0					
+ANR	6882801	Argument	0		6882256	3					
+ANR	6882802	PrimaryExpression	0		6882256	0					
+ANR	6882803	Argument	buflen		6882256	4					
+ANR	6882804	Identifier	buflen		6882256	0					
+ANR	6882805	IfStatement	if ( ret < 0 )		6882256	53					
+ANR	6882806	Condition	ret < 0	235:8:3833:3839	6882256	0	True				
+ANR	6882807	RelationalExpression	ret < 0		6882256	0		<			
+ANR	6882808	Identifier	ret		6882256	0					
+ANR	6882809	PrimaryExpression	0		6882256	1					
+ANR	6882810	CompoundStatement		233:17:3794:3794	6882256	1					
+ANR	6882811	GotoStatement	goto fail ;	237:8:3853:3862	6882256	0	True				
+ANR	6882812	Identifier	fail		6882256	0					
+ANR	6882813	ExpressionStatement	buf += ret	243:4:3878:3888	6882256	54	True				
+ANR	6882814	AssignmentExpression	buf += ret		6882256	0		+=			
+ANR	6882815	Identifier	buf		6882256	0					
+ANR	6882816	Identifier	ret		6882256	1					
+ANR	6882817	ExpressionStatement	buflen -= ret	245:4:3895:3908	6882256	55	True				
+ANR	6882818	AssignmentExpression	buflen -= ret		6882256	0		-=			
+ANR	6882819	Identifier	buflen		6882256	0					
+ANR	6882820	Identifier	ret		6882256	1					
+ANR	6882821	IfStatement	if ( * bs -> backing_file )		6882256	56					
+ANR	6882822	Condition	* bs -> backing_file	251:8:3950:3966	6882256	0	True				
+ANR	6882823	UnaryOperationExpression	* bs -> backing_file		6882256	0					
+ANR	6882824	UnaryOperator	*		6882256	0					
+ANR	6882825	PtrMemberAccess	bs -> backing_file		6882256	1					
+ANR	6882826	Identifier	bs		6882256	0					
+ANR	6882827	Identifier	backing_file		6882256	1					
+ANR	6882828	CompoundStatement		251:8:3932:3982	6882256	1					
+ANR	6882829	IdentifierDeclStatement	size_t backing_file_len = strlen ( bs -> backing_file ) ;	253:8:3980:4030	6882256	0	True				
+ANR	6882830	IdentifierDecl	backing_file_len = strlen ( bs -> backing_file )		6882256	0					
+ANR	6882831	IdentifierDeclType	size_t		6882256	0					
+ANR	6882832	Identifier	backing_file_len		6882256	1					
+ANR	6882833	AssignmentExpression	backing_file_len = strlen ( bs -> backing_file )		6882256	2		=			
+ANR	6882834	Identifier	backing_file_len		6882256	0					
+ANR	6882835	CallExpression	strlen ( bs -> backing_file )		6882256	1					
+ANR	6882836	Callee	strlen		6882256	0					
+ANR	6882837	Identifier	strlen		6882256	0					
+ANR	6882838	ArgumentList	bs -> backing_file		6882256	1					
+ANR	6882839	Argument	bs -> backing_file		6882256	0					
+ANR	6882840	PtrMemberAccess	bs -> backing_file		6882256	0					
+ANR	6882841	Identifier	bs		6882256	0					
+ANR	6882842	Identifier	backing_file		6882256	1					
+ANR	6882843	IfStatement	if ( buflen < backing_file_len )		6882256	1					
+ANR	6882844	Condition	buflen < backing_file_len	257:12:4047:4071	6882256	0	True				
+ANR	6882845	RelationalExpression	buflen < backing_file_len		6882256	0		<			
+ANR	6882846	Identifier	buflen		6882256	0					
+ANR	6882847	Identifier	backing_file_len		6882256	1					
+ANR	6882848	CompoundStatement		255:39:4026:4026	6882256	1					
+ANR	6882849	ExpressionStatement	ret = - ENOSPC	259:12:4089:4102	6882256	0	True				
+ANR	6882850	AssignmentExpression	ret = - ENOSPC		6882256	0		=			
+ANR	6882851	Identifier	ret		6882256	0					
+ANR	6882852	UnaryOperationExpression	- ENOSPC		6882256	1					
+ANR	6882853	UnaryOperator	-		6882256	0					
+ANR	6882854	Identifier	ENOSPC		6882256	1					
+ANR	6882855	GotoStatement	goto fail ;	261:12:4117:4126	6882256	1	True				
+ANR	6882856	Identifier	fail		6882256	0					
+ANR	6882857	ExpressionStatement	"strncpy ( buf , bs -> backing_file , buflen )"	267:8:4150:4188	6882256	2	True				
+ANR	6882858	CallExpression	"strncpy ( buf , bs -> backing_file , buflen )"		6882256	0					
+ANR	6882859	Callee	strncpy		6882256	0					
+ANR	6882860	Identifier	strncpy		6882256	0					
+ANR	6882861	ArgumentList	buf		6882256	1					
+ANR	6882862	Argument	buf		6882256	0					
+ANR	6882863	Identifier	buf		6882256	0					
+ANR	6882864	Argument	bs -> backing_file		6882256	1					
+ANR	6882865	PtrMemberAccess	bs -> backing_file		6882256	0					
+ANR	6882866	Identifier	bs		6882256	0					
+ANR	6882867	Identifier	backing_file		6882256	1					
+ANR	6882868	Argument	buflen		6882256	2					
+ANR	6882869	Identifier	buflen		6882256	0					
+ANR	6882870	ExpressionStatement	header -> backing_file_offset = cpu_to_be64 ( buf - ( ( char * ) header ) )	271:8:4201:4266	6882256	3	True				
+ANR	6882871	AssignmentExpression	header -> backing_file_offset = cpu_to_be64 ( buf - ( ( char * ) header ) )		6882256	0		=			
+ANR	6882872	PtrMemberAccess	header -> backing_file_offset		6882256	0					
+ANR	6882873	Identifier	header		6882256	0					
+ANR	6882874	Identifier	backing_file_offset		6882256	1					
+ANR	6882875	CallExpression	cpu_to_be64 ( buf - ( ( char * ) header ) )		6882256	1					
+ANR	6882876	Callee	cpu_to_be64		6882256	0					
+ANR	6882877	Identifier	cpu_to_be64		6882256	0					
+ANR	6882878	ArgumentList	buf - ( ( char * ) header )		6882256	1					
+ANR	6882879	Argument	buf - ( ( char * ) header )		6882256	0					
+ANR	6882880	AdditiveExpression	buf - ( ( char * ) header )		6882256	0		-			
+ANR	6882881	Identifier	buf		6882256	0					
+ANR	6882882	CastExpression	( char * ) header		6882256	1					
+ANR	6882883	CastTarget	char *		6882256	0					
+ANR	6882884	Identifier	header		6882256	1					
+ANR	6882885	ExpressionStatement	header -> backing_file_size = cpu_to_be32 ( backing_file_len )	273:8:4277:4336	6882256	4	True				
+ANR	6882886	AssignmentExpression	header -> backing_file_size = cpu_to_be32 ( backing_file_len )		6882256	0		=			
+ANR	6882887	PtrMemberAccess	header -> backing_file_size		6882256	0					
+ANR	6882888	Identifier	header		6882256	0					
+ANR	6882889	Identifier	backing_file_size		6882256	1					
+ANR	6882890	CallExpression	cpu_to_be32 ( backing_file_len )		6882256	1					
+ANR	6882891	Callee	cpu_to_be32		6882256	0					
+ANR	6882892	Identifier	cpu_to_be32		6882256	0					
+ANR	6882893	ArgumentList	backing_file_len		6882256	1					
+ANR	6882894	Argument	backing_file_len		6882256	0					
+ANR	6882895	Identifier	backing_file_len		6882256	0					
+ANR	6882896	ExpressionStatement	"ret = bdrv_pwrite ( bs -> file , 0 , header , s -> cluster_size )"	281:4:4384:4439	6882256	57	True				
+ANR	6882897	AssignmentExpression	"ret = bdrv_pwrite ( bs -> file , 0 , header , s -> cluster_size )"		6882256	0		=			
+ANR	6882898	Identifier	ret		6882256	0					
+ANR	6882899	CallExpression	"bdrv_pwrite ( bs -> file , 0 , header , s -> cluster_size )"		6882256	1					
+ANR	6882900	Callee	bdrv_pwrite		6882256	0					
+ANR	6882901	Identifier	bdrv_pwrite		6882256	0					
+ANR	6882902	ArgumentList	bs -> file		6882256	1					
+ANR	6882903	Argument	bs -> file		6882256	0					
+ANR	6882904	PtrMemberAccess	bs -> file		6882256	0					
+ANR	6882905	Identifier	bs		6882256	0					
+ANR	6882906	Identifier	file		6882256	1					
+ANR	6882907	Argument	0		6882256	1					
+ANR	6882908	PrimaryExpression	0		6882256	0					
+ANR	6882909	Argument	header		6882256	2					
+ANR	6882910	Identifier	header		6882256	0					
+ANR	6882911	Argument	s -> cluster_size		6882256	3					
+ANR	6882912	PtrMemberAccess	s -> cluster_size		6882256	0					
+ANR	6882913	Identifier	s		6882256	0					
+ANR	6882914	Identifier	cluster_size		6882256	1					
+ANR	6882915	IfStatement	if ( ret < 0 )		6882256	58					
+ANR	6882916	Condition	ret < 0	283:8:4450:4456	6882256	0	True				
+ANR	6882917	RelationalExpression	ret < 0		6882256	0		<			
+ANR	6882918	Identifier	ret		6882256	0					
+ANR	6882919	PrimaryExpression	0		6882256	1					
+ANR	6882920	CompoundStatement		281:17:4411:4411	6882256	1					
+ANR	6882921	GotoStatement	goto fail ;	285:8:4470:4479	6882256	0	True				
+ANR	6882922	Identifier	fail		6882256	0					
+ANR	6882923	ExpressionStatement	ret = 0	291:4:4495:4502	6882256	59	True				
+ANR	6882924	AssignmentExpression	ret = 0		6882256	0		=			
+ANR	6882925	Identifier	ret		6882256	0					
+ANR	6882926	PrimaryExpression	0		6882256	1					
+ANR	6882927	Label	fail :	293:0:4505:4509	6882256	60	True				
+ANR	6882928	Identifier	fail		6882256	0					
+ANR	6882929	ExpressionStatement	qemu_vfree ( header )	295:4:4516:4534	6882256	61	True				
+ANR	6882930	CallExpression	qemu_vfree ( header )		6882256	0					
+ANR	6882931	Callee	qemu_vfree		6882256	0					
+ANR	6882932	Identifier	qemu_vfree		6882256	0					
+ANR	6882933	ArgumentList	header		6882256	1					
+ANR	6882934	Argument	header		6882256	0					
+ANR	6882935	Identifier	header		6882256	0					
+ANR	6882936	ReturnStatement	return ret ;	297:4:4541:4551	6882256	62	True				
+ANR	6882937	Identifier	ret		6882256	0					
+ANR	6882938	ReturnType	int		6882256	1					
+ANR	6882939	Identifier	qcow2_update_header		6882256	2					
+ANR	6882940	ParameterList	BlockDriverState * bs		6882256	3					
+ANR	6882941	Parameter	BlockDriverState * bs	1:24:24:43	6882256	0	True				
+ANR	6882942	ParameterType	BlockDriverState *		6882256	0					
+ANR	6882943	Identifier	bs		6882256	1					
+ANR	6882944	CFGEntryNode	ENTRY		6882256		True				
+ANR	6882945	CFGExitNode	EXIT		6882256		True				
+ANR	6882946	Symbol	qemu_blockalign		6882256						
+ANR	6882947	Symbol	QCOW2_EXT_MAGIC_FEATURE_TABLE		6882256						
+ANR	6882948	Symbol	cpu_to_be32		6882256						
+ANR	6882949	Symbol	QCOW2_EXT_MAGIC_BACKING_FORMAT		6882256						
+ANR	6882950	Symbol	bs -> file		6882256						
+ANR	6882951	Symbol	s -> cluster_size		6882256						
+ANR	6882952	Symbol	* bs -> backing_file		6882256						
+ANR	6882953	Symbol	strlen		6882256						
+ANR	6882954	Symbol	features		6882256						
+ANR	6882955	Symbol	uext -> data		6882256						
+ANR	6882956	Symbol	* bs		6882256						
+ANR	6882957	Symbol	buflen		6882256						
+ANR	6882958	Symbol	bdrv_pwrite		6882256						
+ANR	6882959	Symbol	refcount_table_clusters		6882256						
+ANR	6882960	Symbol	uext -> len		6882256						
+ANR	6882961	Symbol	ret		6882256						
+ANR	6882962	Symbol	NULL		6882256						
+ANR	6882963	Symbol	bs -> total_sectors		6882256						
+ANR	6882964	Symbol	s -> unknown_header_fields		6882256						
+ANR	6882965	Symbol	* header		6882256						
+ANR	6882966	Symbol	ENOSPC		6882256						
+ANR	6882967	Symbol	s -> unknown_header_fields_size		6882256						
+ANR	6882968	Symbol	QCOW2_EXT_MAGIC_END		6882256						
+ANR	6882969	Symbol	uext -> magic		6882256						
+ANR	6882970	Symbol	header_length		6882256						
+ANR	6882971	Symbol	backing_file_len		6882256						
+ANR	6882972	Symbol	header		6882256						
+ANR	6882973	Symbol	uext		6882256						
+ANR	6882974	Symbol	* bs -> backing_format		6882256						
+ANR	6882975	Symbol	* * bs		6882256						
+ANR	6882976	Symbol	QCowHeader		6882256						
+ANR	6882977	Symbol	s -> refcount_table_size		6882256						
+ANR	6882978	Symbol	header -> backing_file_size		6882256						
+ANR	6882979	Symbol	bs -> backing_format		6882256						
+ANR	6882980	Symbol	header_ext_add		6882256						
+ANR	6882981	Symbol	bs -> backing_file		6882256						
+ANR	6882982	Symbol	s -> qcow_version		6882256						
+ANR	6882983	Symbol	bs		6882256						
+ANR	6882984	Symbol	offsetof		6882256						
+ANR	6882985	Symbol	cpu_to_be64		6882256						
+ANR	6882986	Symbol	header -> backing_file_offset		6882256						
+ANR	6882987	Symbol	bs -> opaque		6882256						
+ANR	6882988	Symbol	* uext		6882256						
+ANR	6882989	Symbol	total_size		6882256						
+ANR	6882990	Symbol	EINVAL		6882256						
+ANR	6882991	Symbol	buf		6882256						
+ANR	6882992	Symbol	s -> cluster_bits		6882256						
+ANR	6882993	Symbol	s		6882256						
+ANR	6882994	Symbol	BDRV_SECTOR_SIZE		6882256						
+ANR	6882995	Symbol	incompatible_features		6882256						
+ANR	6882996	Symbol	* s		6882256						

@@ -1,0 +1,464 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	962822	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_co_get_block_status_1.c								
+ANR	962823	Function	bdrv_co_get_block_status	1:0:0:3314							
+ANR	962824	FunctionDef	"bdrv_co_get_block_status (BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum , BlockDriverState * * file)"		962823	0					
+ANR	962825	CompoundStatement		9:0:310:3314	962823	0					
+ANR	962826	IdentifierDeclStatement	int64_t total_sectors ;	11:4:317:338	962823	0	True				
+ANR	962827	IdentifierDecl	total_sectors		962823	0					
+ANR	962828	IdentifierDeclType	int64_t		962823	0					
+ANR	962829	Identifier	total_sectors		962823	1					
+ANR	962830	IdentifierDeclStatement	int64_t n ;	13:4:345:354	962823	1	True				
+ANR	962831	IdentifierDecl	n		962823	0					
+ANR	962832	IdentifierDeclType	int64_t		962823	0					
+ANR	962833	Identifier	n		962823	1					
+ANR	962834	IdentifierDeclStatement	"int64_t ret , ret2 ;"	15:4:361:378	962823	2	True				
+ANR	962835	IdentifierDecl	ret		962823	0					
+ANR	962836	IdentifierDeclType	int64_t		962823	0					
+ANR	962837	Identifier	ret		962823	1					
+ANR	962838	IdentifierDecl	ret2		962823	1					
+ANR	962839	IdentifierDeclType	int64_t		962823	0					
+ANR	962840	Identifier	ret2		962823	1					
+ANR	962841	ExpressionStatement	total_sectors = bdrv_nb_sectors ( bs )	19:4:387:422	962823	3	True				
+ANR	962842	AssignmentExpression	total_sectors = bdrv_nb_sectors ( bs )		962823	0		=			
+ANR	962843	Identifier	total_sectors		962823	0					
+ANR	962844	CallExpression	bdrv_nb_sectors ( bs )		962823	1					
+ANR	962845	Callee	bdrv_nb_sectors		962823	0					
+ANR	962846	Identifier	bdrv_nb_sectors		962823	0					
+ANR	962847	ArgumentList	bs		962823	1					
+ANR	962848	Argument	bs		962823	0					
+ANR	962849	Identifier	bs		962823	0					
+ANR	962850	IfStatement	if ( total_sectors < 0 )		962823	4					
+ANR	962851	Condition	total_sectors < 0	21:8:433:449	962823	0	True				
+ANR	962852	RelationalExpression	total_sectors < 0		962823	0		<			
+ANR	962853	Identifier	total_sectors		962823	0					
+ANR	962854	PrimaryExpression	0		962823	1					
+ANR	962855	CompoundStatement		13:27:141:141	962823	1					
+ANR	962856	ReturnStatement	return total_sectors ;	23:8:463:483	962823	0	True				
+ANR	962857	Identifier	total_sectors		962823	0					
+ANR	962858	IfStatement	if ( sector_num >= total_sectors )		962823	5					
+ANR	962859	Condition	sector_num >= total_sectors	29:8:503:529	962823	0	True				
+ANR	962860	RelationalExpression	sector_num >= total_sectors		962823	0		>=			
+ANR	962861	Identifier	sector_num		962823	0					
+ANR	962862	Identifier	total_sectors		962823	1					
+ANR	962863	CompoundStatement		21:37:221:221	962823	1					
+ANR	962864	ExpressionStatement	* pnum = 0	31:8:543:552	962823	0	True				
+ANR	962865	AssignmentExpression	* pnum = 0		962823	0		=			
+ANR	962866	UnaryOperationExpression	* pnum		962823	0					
+ANR	962867	UnaryOperator	*		962823	0					
+ANR	962868	Identifier	pnum		962823	1					
+ANR	962869	PrimaryExpression	0		962823	1					
+ANR	962870	ReturnStatement	return BDRV_BLOCK_EOF ;	33:8:563:584	962823	1	True				
+ANR	962871	Identifier	BDRV_BLOCK_EOF		962823	0					
+ANR	962872	ExpressionStatement	n = total_sectors - sector_num	39:4:600:630	962823	6	True				
+ANR	962873	AssignmentExpression	n = total_sectors - sector_num		962823	0		=			
+ANR	962874	Identifier	n		962823	0					
+ANR	962875	AdditiveExpression	total_sectors - sector_num		962823	1		-			
+ANR	962876	Identifier	total_sectors		962823	0					
+ANR	962877	Identifier	sector_num		962823	1					
+ANR	962878	IfStatement	if ( n < nb_sectors )		962823	7					
+ANR	962879	Condition	n < nb_sectors	41:8:641:654	962823	0	True				
+ANR	962880	RelationalExpression	n < nb_sectors		962823	0		<			
+ANR	962881	Identifier	n		962823	0					
+ANR	962882	Identifier	nb_sectors		962823	1					
+ANR	962883	CompoundStatement		33:24:346:346	962823	1					
+ANR	962884	ExpressionStatement	nb_sectors = n	43:8:668:682	962823	0	True				
+ANR	962885	AssignmentExpression	nb_sectors = n		962823	0		=			
+ANR	962886	Identifier	nb_sectors		962823	0					
+ANR	962887	Identifier	n		962823	1					
+ANR	962888	IfStatement	if ( ! bs -> drv -> bdrv_co_get_block_status )		962823	8					
+ANR	962889	Condition	! bs -> drv -> bdrv_co_get_block_status	49:8:702:735	962823	0	True				
+ANR	962890	UnaryOperationExpression	! bs -> drv -> bdrv_co_get_block_status		962823	0					
+ANR	962891	UnaryOperator	!		962823	0					
+ANR	962892	PtrMemberAccess	bs -> drv -> bdrv_co_get_block_status		962823	1					
+ANR	962893	PtrMemberAccess	bs -> drv		962823	0					
+ANR	962894	Identifier	bs		962823	0					
+ANR	962895	Identifier	drv		962823	1					
+ANR	962896	Identifier	bdrv_co_get_block_status		962823	1					
+ANR	962897	CompoundStatement		41:44:427:427	962823	1					
+ANR	962898	ExpressionStatement	* pnum = nb_sectors	51:8:749:767	962823	0	True				
+ANR	962899	AssignmentExpression	* pnum = nb_sectors		962823	0		=			
+ANR	962900	UnaryOperationExpression	* pnum		962823	0					
+ANR	962901	UnaryOperator	*		962823	0					
+ANR	962902	Identifier	pnum		962823	1					
+ANR	962903	Identifier	nb_sectors		962823	1					
+ANR	962904	ExpressionStatement	ret = BDRV_BLOCK_DATA | BDRV_BLOCK_ALLOCATED	53:8:778:822	962823	1	True				
+ANR	962905	AssignmentExpression	ret = BDRV_BLOCK_DATA | BDRV_BLOCK_ALLOCATED		962823	0		=			
+ANR	962906	Identifier	ret		962823	0					
+ANR	962907	InclusiveOrExpression	BDRV_BLOCK_DATA | BDRV_BLOCK_ALLOCATED		962823	1		|			
+ANR	962908	Identifier	BDRV_BLOCK_DATA		962823	0					
+ANR	962909	Identifier	BDRV_BLOCK_ALLOCATED		962823	1					
+ANR	962910	IfStatement	if ( sector_num + nb_sectors == total_sectors )		962823	2					
+ANR	962911	Condition	sector_num + nb_sectors == total_sectors	55:12:837:876	962823	0	True				
+ANR	962912	EqualityExpression	sector_num + nb_sectors == total_sectors		962823	0		==			
+ANR	962913	AdditiveExpression	sector_num + nb_sectors		962823	0		+			
+ANR	962914	Identifier	sector_num		962823	0					
+ANR	962915	Identifier	nb_sectors		962823	1					
+ANR	962916	Identifier	total_sectors		962823	1					
+ANR	962917	CompoundStatement		47:54:568:568	962823	1					
+ANR	962918	ExpressionStatement	ret |= BDRV_BLOCK_EOF	57:12:894:915	962823	0	True				
+ANR	962919	AssignmentExpression	ret |= BDRV_BLOCK_EOF		962823	0		|=			
+ANR	962920	Identifier	ret		962823	0					
+ANR	962921	Identifier	BDRV_BLOCK_EOF		962823	1					
+ANR	962922	IfStatement	if ( bs -> drv -> protocol_name )		962823	3					
+ANR	962923	Condition	bs -> drv -> protocol_name	61:12:941:962	962823	0	True				
+ANR	962924	PtrMemberAccess	bs -> drv -> protocol_name		962823	0					
+ANR	962925	PtrMemberAccess	bs -> drv		962823	0					
+ANR	962926	Identifier	bs		962823	0					
+ANR	962927	Identifier	drv		962823	1					
+ANR	962928	Identifier	protocol_name		962823	1					
+ANR	962929	CompoundStatement		53:36:654:654	962823	1					
+ANR	962930	ExpressionStatement	ret |= BDRV_BLOCK_OFFSET_VALID | ( sector_num * BDRV_SECTOR_SIZE )	63:12:980:1044	962823	0	True				
+ANR	962931	AssignmentExpression	ret |= BDRV_BLOCK_OFFSET_VALID | ( sector_num * BDRV_SECTOR_SIZE )		962823	0		|=			
+ANR	962932	Identifier	ret		962823	0					
+ANR	962933	InclusiveOrExpression	BDRV_BLOCK_OFFSET_VALID | ( sector_num * BDRV_SECTOR_SIZE )		962823	1		|			
+ANR	962934	Identifier	BDRV_BLOCK_OFFSET_VALID		962823	0					
+ANR	962935	MultiplicativeExpression	sector_num * BDRV_SECTOR_SIZE		962823	1		*			
+ANR	962936	Identifier	sector_num		962823	0					
+ANR	962937	Identifier	BDRV_SECTOR_SIZE		962823	1					
+ANR	962938	ReturnStatement	return ret ;	67:8:1066:1076	962823	4	True				
+ANR	962939	Identifier	ret		962823	0					
+ANR	962940	ExpressionStatement	* file = NULL	73:4:1092:1104	962823	9	True				
+ANR	962941	AssignmentExpression	* file = NULL		962823	0		=			
+ANR	962942	UnaryOperationExpression	* file		962823	0					
+ANR	962943	UnaryOperator	*		962823	0					
+ANR	962944	Identifier	file		962823	1					
+ANR	962945	Identifier	NULL		962823	1					
+ANR	962946	ExpressionStatement	bdrv_inc_in_flight ( bs )	75:4:1111:1133	962823	10	True				
+ANR	962947	CallExpression	bdrv_inc_in_flight ( bs )		962823	0					
+ANR	962948	Callee	bdrv_inc_in_flight		962823	0					
+ANR	962949	Identifier	bdrv_inc_in_flight		962823	0					
+ANR	962950	ArgumentList	bs		962823	1					
+ANR	962951	Argument	bs		962823	0					
+ANR	962952	Identifier	bs		962823	0					
+ANR	962953	ExpressionStatement	"ret = bs -> drv -> bdrv_co_get_block_status ( bs , sector_num , nb_sectors , pnum , file )"	77:4:1140:1264	962823	11	True				
+ANR	962954	AssignmentExpression	"ret = bs -> drv -> bdrv_co_get_block_status ( bs , sector_num , nb_sectors , pnum , file )"		962823	0		=			
+ANR	962955	Identifier	ret		962823	0					
+ANR	962956	CallExpression	"bs -> drv -> bdrv_co_get_block_status ( bs , sector_num , nb_sectors , pnum , file )"		962823	1					
+ANR	962957	Callee	bs -> drv -> bdrv_co_get_block_status		962823	0					
+ANR	962958	PtrMemberAccess	bs -> drv -> bdrv_co_get_block_status		962823	0					
+ANR	962959	PtrMemberAccess	bs -> drv		962823	0					
+ANR	962960	Identifier	bs		962823	0					
+ANR	962961	Identifier	drv		962823	1					
+ANR	962962	Identifier	bdrv_co_get_block_status		962823	1					
+ANR	962963	ArgumentList	bs		962823	1					
+ANR	962964	Argument	bs		962823	0					
+ANR	962965	Identifier	bs		962823	0					
+ANR	962966	Argument	sector_num		962823	1					
+ANR	962967	Identifier	sector_num		962823	0					
+ANR	962968	Argument	nb_sectors		962823	2					
+ANR	962969	Identifier	nb_sectors		962823	0					
+ANR	962970	Argument	pnum		962823	3					
+ANR	962971	Identifier	pnum		962823	0					
+ANR	962972	Argument	file		962823	4					
+ANR	962973	Identifier	file		962823	0					
+ANR	962974	IfStatement	if ( ret < 0 )		962823	12					
+ANR	962975	Condition	ret < 0	81:8:1275:1281	962823	0	True				
+ANR	962976	RelationalExpression	ret < 0		962823	0		<			
+ANR	962977	Identifier	ret		962823	0					
+ANR	962978	PrimaryExpression	0		962823	1					
+ANR	962979	CompoundStatement		73:17:973:973	962823	1					
+ANR	962980	ExpressionStatement	* pnum = 0	83:8:1295:1304	962823	0	True				
+ANR	962981	AssignmentExpression	* pnum = 0		962823	0		=			
+ANR	962982	UnaryOperationExpression	* pnum		962823	0					
+ANR	962983	UnaryOperator	*		962823	0					
+ANR	962984	Identifier	pnum		962823	1					
+ANR	962985	PrimaryExpression	0		962823	1					
+ANR	962986	GotoStatement	goto out ;	85:8:1315:1323	962823	1	True				
+ANR	962987	Identifier	out		962823	0					
+ANR	962988	IfStatement	if ( ret & BDRV_BLOCK_RAW )		962823	13					
+ANR	962989	Condition	ret & BDRV_BLOCK_RAW	91:8:1343:1362	962823	0	True				
+ANR	962990	BitAndExpression	ret & BDRV_BLOCK_RAW		962823	0		&			
+ANR	962991	Identifier	ret		962823	0					
+ANR	962992	Identifier	BDRV_BLOCK_RAW		962823	1					
+ANR	962993	CompoundStatement		83:30:1054:1054	962823	1					
+ANR	962994	ExpressionStatement	assert ( ret & BDRV_BLOCK_OFFSET_VALID )	93:8:1376:1413	962823	0	True				
+ANR	962995	CallExpression	assert ( ret & BDRV_BLOCK_OFFSET_VALID )		962823	0					
+ANR	962996	Callee	assert		962823	0					
+ANR	962997	Identifier	assert		962823	0					
+ANR	962998	ArgumentList	ret & BDRV_BLOCK_OFFSET_VALID		962823	1					
+ANR	962999	Argument	ret & BDRV_BLOCK_OFFSET_VALID		962823	0					
+ANR	963000	BitAndExpression	ret & BDRV_BLOCK_OFFSET_VALID		962823	0		&			
+ANR	963001	Identifier	ret		962823	0					
+ANR	963002	Identifier	BDRV_BLOCK_OFFSET_VALID		962823	1					
+ANR	963003	ExpressionStatement	"ret = bdrv_co_get_block_status ( * file , ret >> BDRV_SECTOR_BITS , * pnum , pnum , file )"	95:8:1424:1545	962823	1	True				
+ANR	963004	AssignmentExpression	"ret = bdrv_co_get_block_status ( * file , ret >> BDRV_SECTOR_BITS , * pnum , pnum , file )"		962823	0		=			
+ANR	963005	Identifier	ret		962823	0					
+ANR	963006	CallExpression	"bdrv_co_get_block_status ( * file , ret >> BDRV_SECTOR_BITS , * pnum , pnum , file )"		962823	1					
+ANR	963007	Callee	bdrv_co_get_block_status		962823	0					
+ANR	963008	Identifier	bdrv_co_get_block_status		962823	0					
+ANR	963009	ArgumentList	* file		962823	1					
+ANR	963010	Argument	* file		962823	0					
+ANR	963011	UnaryOperationExpression	* file		962823	0					
+ANR	963012	UnaryOperator	*		962823	0					
+ANR	963013	Identifier	file		962823	1					
+ANR	963014	Argument	ret >> BDRV_SECTOR_BITS		962823	1					
+ANR	963015	ShiftExpression	ret >> BDRV_SECTOR_BITS		962823	0		>>			
+ANR	963016	Identifier	ret		962823	0					
+ANR	963017	Identifier	BDRV_SECTOR_BITS		962823	1					
+ANR	963018	Argument	* pnum		962823	2					
+ANR	963019	UnaryOperationExpression	* pnum		962823	0					
+ANR	963020	UnaryOperator	*		962823	0					
+ANR	963021	Identifier	pnum		962823	1					
+ANR	963022	Argument	pnum		962823	3					
+ANR	963023	Identifier	pnum		962823	0					
+ANR	963024	Argument	file		962823	4					
+ANR	963025	Identifier	file		962823	0					
+ANR	963026	GotoStatement	goto out ;	99:8:1556:1564	962823	2	True				
+ANR	963027	Identifier	out		962823	0					
+ANR	963028	IfStatement	if ( ret & ( BDRV_BLOCK_DATA | BDRV_BLOCK_ZERO ) )		962823	14					
+ANR	963029	Condition	ret & ( BDRV_BLOCK_DATA | BDRV_BLOCK_ZERO )	105:8:1584:1624	962823	0	True				
+ANR	963030	BitAndExpression	ret & ( BDRV_BLOCK_DATA | BDRV_BLOCK_ZERO )		962823	0		&			
+ANR	963031	Identifier	ret		962823	0					
+ANR	963032	InclusiveOrExpression	BDRV_BLOCK_DATA | BDRV_BLOCK_ZERO		962823	1		|			
+ANR	963033	Identifier	BDRV_BLOCK_DATA		962823	0					
+ANR	963034	Identifier	BDRV_BLOCK_ZERO		962823	1					
+ANR	963035	CompoundStatement		97:51:1316:1316	962823	1					
+ANR	963036	ExpressionStatement	ret |= BDRV_BLOCK_ALLOCATED	107:8:1638:1665	962823	0	True				
+ANR	963037	AssignmentExpression	ret |= BDRV_BLOCK_ALLOCATED		962823	0		|=			
+ANR	963038	Identifier	ret		962823	0					
+ANR	963039	Identifier	BDRV_BLOCK_ALLOCATED		962823	1					
+ANR	963040	ElseStatement	else		962823	0					
+ANR	963041	CompoundStatement		101:11:1368:1368	962823	0					
+ANR	963042	IfStatement	if ( bdrv_unallocated_blocks_are_zero ( bs ) )		962823	0					
+ANR	963043	Condition	bdrv_unallocated_blocks_are_zero ( bs )	111:12:1694:1729	962823	0	True				
+ANR	963044	CallExpression	bdrv_unallocated_blocks_are_zero ( bs )		962823	0					
+ANR	963045	Callee	bdrv_unallocated_blocks_are_zero		962823	0					
+ANR	963046	Identifier	bdrv_unallocated_blocks_are_zero		962823	0					
+ANR	963047	ArgumentList	bs		962823	1					
+ANR	963048	Argument	bs		962823	0					
+ANR	963049	Identifier	bs		962823	0					
+ANR	963050	CompoundStatement		103:50:1421:1421	962823	1					
+ANR	963051	ExpressionStatement	ret |= BDRV_BLOCK_ZERO	113:12:1747:1769	962823	0	True				
+ANR	963052	AssignmentExpression	ret |= BDRV_BLOCK_ZERO		962823	0		|=			
+ANR	963053	Identifier	ret		962823	0					
+ANR	963054	Identifier	BDRV_BLOCK_ZERO		962823	1					
+ANR	963055	ElseStatement	else		962823	0					
+ANR	963056	IfStatement	if ( bs -> backing )		962823	0					
+ANR	963057	Condition	bs -> backing	115:19:1791:1801	962823	0	True				
+ANR	963058	PtrMemberAccess	bs -> backing		962823	0					
+ANR	963059	Identifier	bs		962823	0					
+ANR	963060	Identifier	backing		962823	1					
+ANR	963061	CompoundStatement		111:12:1562:1604	962823	1					
+ANR	963062	IdentifierDeclStatement	BlockDriverState * bs2 = bs -> backing -> bs ;	117:12:1819:1858	962823	0	True				
+ANR	963063	IdentifierDecl	* bs2 = bs -> backing -> bs		962823	0					
+ANR	963064	IdentifierDeclType	BlockDriverState *		962823	0					
+ANR	963065	Identifier	bs2		962823	1					
+ANR	963066	AssignmentExpression	* bs2 = bs -> backing -> bs		962823	2		=			
+ANR	963067	Identifier	bs2		962823	0					
+ANR	963068	PtrMemberAccess	bs -> backing -> bs		962823	1					
+ANR	963069	PtrMemberAccess	bs -> backing		962823	0					
+ANR	963070	Identifier	bs		962823	0					
+ANR	963071	Identifier	backing		962823	1					
+ANR	963072	Identifier	bs		962823	1					
+ANR	963073	IdentifierDeclStatement	int64_t nb_sectors2 = bdrv_nb_sectors ( bs2 ) ;	119:12:1873:1915	962823	1	True				
+ANR	963074	IdentifierDecl	nb_sectors2 = bdrv_nb_sectors ( bs2 )		962823	0					
+ANR	963075	IdentifierDeclType	int64_t		962823	0					
+ANR	963076	Identifier	nb_sectors2		962823	1					
+ANR	963077	AssignmentExpression	nb_sectors2 = bdrv_nb_sectors ( bs2 )		962823	2		=			
+ANR	963078	Identifier	nb_sectors2		962823	0					
+ANR	963079	CallExpression	bdrv_nb_sectors ( bs2 )		962823	1					
+ANR	963080	Callee	bdrv_nb_sectors		962823	0					
+ANR	963081	Identifier	bdrv_nb_sectors		962823	0					
+ANR	963082	ArgumentList	bs2		962823	1					
+ANR	963083	Argument	bs2		962823	0					
+ANR	963084	Identifier	bs2		962823	0					
+ANR	963085	IfStatement	if ( nb_sectors2 >= 0 && sector_num >= nb_sectors2 )		962823	2					
+ANR	963086	Condition	nb_sectors2 >= 0 && sector_num >= nb_sectors2	121:16:1934:1978	962823	0	True				
+ANR	963087	AndExpression	nb_sectors2 >= 0 && sector_num >= nb_sectors2		962823	0		&&			
+ANR	963088	RelationalExpression	nb_sectors2 >= 0		962823	0		>=			
+ANR	963089	Identifier	nb_sectors2		962823	0					
+ANR	963090	PrimaryExpression	0		962823	1					
+ANR	963091	RelationalExpression	sector_num >= nb_sectors2		962823	1		>=			
+ANR	963092	Identifier	sector_num		962823	0					
+ANR	963093	Identifier	nb_sectors2		962823	1					
+ANR	963094	CompoundStatement		113:63:1670:1670	962823	1					
+ANR	963095	ExpressionStatement	ret |= BDRV_BLOCK_ZERO	123:16:2000:2022	962823	0	True				
+ANR	963096	AssignmentExpression	ret |= BDRV_BLOCK_ZERO		962823	0		|=			
+ANR	963097	Identifier	ret		962823	0					
+ANR	963098	Identifier	BDRV_BLOCK_ZERO		962823	1					
+ANR	963099	IfStatement	if ( * file && * file != bs && ( ret & BDRV_BLOCK_DATA ) && ! ( ret & BDRV_BLOCK_ZERO ) && ( ret & BDRV_BLOCK_OFFSET_VALID ) )		962823	15					
+ANR	963100	Condition	* file && * file != bs && ( ret & BDRV_BLOCK_DATA ) && ! ( ret & BDRV_BLOCK_ZERO ) && ( ret & BDRV_BLOCK_OFFSET_VALID )	133:8:2068:2195	962823	0	True				
+ANR	963101	AndExpression	* file && * file != bs && ( ret & BDRV_BLOCK_DATA ) && ! ( ret & BDRV_BLOCK_ZERO ) && ( ret & BDRV_BLOCK_OFFSET_VALID )		962823	0		&&			
+ANR	963102	UnaryOperationExpression	* file		962823	0					
+ANR	963103	UnaryOperator	*		962823	0					
+ANR	963104	Identifier	file		962823	1					
+ANR	963105	AndExpression	* file != bs && ( ret & BDRV_BLOCK_DATA ) && ! ( ret & BDRV_BLOCK_ZERO ) && ( ret & BDRV_BLOCK_OFFSET_VALID )		962823	1		&&			
+ANR	963106	EqualityExpression	* file != bs		962823	0		!=			
+ANR	963107	UnaryOperationExpression	* file		962823	0					
+ANR	963108	UnaryOperator	*		962823	0					
+ANR	963109	Identifier	file		962823	1					
+ANR	963110	Identifier	bs		962823	1					
+ANR	963111	AndExpression	( ret & BDRV_BLOCK_DATA ) && ! ( ret & BDRV_BLOCK_ZERO ) && ( ret & BDRV_BLOCK_OFFSET_VALID )		962823	1		&&			
+ANR	963112	BitAndExpression	ret & BDRV_BLOCK_DATA		962823	0		&			
+ANR	963113	Identifier	ret		962823	0					
+ANR	963114	Identifier	BDRV_BLOCK_DATA		962823	1					
+ANR	963115	AndExpression	! ( ret & BDRV_BLOCK_ZERO ) && ( ret & BDRV_BLOCK_OFFSET_VALID )		962823	1		&&			
+ANR	963116	UnaryOperationExpression	! ( ret & BDRV_BLOCK_ZERO )		962823	0					
+ANR	963117	UnaryOperator	!		962823	0					
+ANR	963118	BitAndExpression	ret & BDRV_BLOCK_ZERO		962823	1		&			
+ANR	963119	Identifier	ret		962823	0					
+ANR	963120	Identifier	BDRV_BLOCK_ZERO		962823	1					
+ANR	963121	BitAndExpression	ret & BDRV_BLOCK_OFFSET_VALID		962823	1		&			
+ANR	963122	Identifier	ret		962823	0					
+ANR	963123	Identifier	BDRV_BLOCK_OFFSET_VALID		962823	1					
+ANR	963124	CompoundStatement		133:8:1932:1945	962823	1					
+ANR	963125	IdentifierDeclStatement	BlockDriverState * file2 ;	139:8:2209:2232	962823	0	True				
+ANR	963126	IdentifierDecl	* file2		962823	0					
+ANR	963127	IdentifierDeclType	BlockDriverState *		962823	0					
+ANR	963128	Identifier	file2		962823	1					
+ANR	963129	IdentifierDeclStatement	int file_pnum ;	141:8:2243:2256	962823	1	True				
+ANR	963130	IdentifierDecl	file_pnum		962823	0					
+ANR	963131	IdentifierDeclType	int		962823	0					
+ANR	963132	Identifier	file_pnum		962823	1					
+ANR	963133	ExpressionStatement	"ret2 = bdrv_co_get_block_status ( * file , ret >> BDRV_SECTOR_BITS , * pnum , & file_pnum , & file2 )"	145:8:2269:2400	962823	2	True				
+ANR	963134	AssignmentExpression	"ret2 = bdrv_co_get_block_status ( * file , ret >> BDRV_SECTOR_BITS , * pnum , & file_pnum , & file2 )"		962823	0		=			
+ANR	963135	Identifier	ret2		962823	0					
+ANR	963136	CallExpression	"bdrv_co_get_block_status ( * file , ret >> BDRV_SECTOR_BITS , * pnum , & file_pnum , & file2 )"		962823	1					
+ANR	963137	Callee	bdrv_co_get_block_status		962823	0					
+ANR	963138	Identifier	bdrv_co_get_block_status		962823	0					
+ANR	963139	ArgumentList	* file		962823	1					
+ANR	963140	Argument	* file		962823	0					
+ANR	963141	UnaryOperationExpression	* file		962823	0					
+ANR	963142	UnaryOperator	*		962823	0					
+ANR	963143	Identifier	file		962823	1					
+ANR	963144	Argument	ret >> BDRV_SECTOR_BITS		962823	1					
+ANR	963145	ShiftExpression	ret >> BDRV_SECTOR_BITS		962823	0		>>			
+ANR	963146	Identifier	ret		962823	0					
+ANR	963147	Identifier	BDRV_SECTOR_BITS		962823	1					
+ANR	963148	Argument	* pnum		962823	2					
+ANR	963149	UnaryOperationExpression	* pnum		962823	0					
+ANR	963150	UnaryOperator	*		962823	0					
+ANR	963151	Identifier	pnum		962823	1					
+ANR	963152	Argument	& file_pnum		962823	3					
+ANR	963153	UnaryOperationExpression	& file_pnum		962823	0					
+ANR	963154	UnaryOperator	&		962823	0					
+ANR	963155	Identifier	file_pnum		962823	1					
+ANR	963156	Argument	& file2		962823	4					
+ANR	963157	UnaryOperationExpression	& file2		962823	0					
+ANR	963158	UnaryOperator	&		962823	0					
+ANR	963159	Identifier	file2		962823	1					
+ANR	963160	IfStatement	if ( ret2 >= 0 )		962823	3					
+ANR	963161	Condition	ret2 >= 0	149:12:2415:2423	962823	0	True				
+ANR	963162	RelationalExpression	ret2 >= 0		962823	0		>=			
+ANR	963163	Identifier	ret2		962823	0					
+ANR	963164	PrimaryExpression	0		962823	1					
+ANR	963165	CompoundStatement		141:23:2115:2115	962823	1					
+ANR	963166	IfStatement	if ( ret2 & BDRV_BLOCK_EOF && ( ! file_pnum || ret2 & BDRV_BLOCK_ZERO ) )		962823	0					
+ANR	963167	Condition	ret2 & BDRV_BLOCK_EOF && ( ! file_pnum || ret2 & BDRV_BLOCK_ZERO )	157:16:2584:2663	962823	0	True				
+ANR	963168	AndExpression	ret2 & BDRV_BLOCK_EOF && ( ! file_pnum || ret2 & BDRV_BLOCK_ZERO )		962823	0		&&			
+ANR	963169	BitAndExpression	ret2 & BDRV_BLOCK_EOF		962823	0		&			
+ANR	963170	Identifier	ret2		962823	0					
+ANR	963171	Identifier	BDRV_BLOCK_EOF		962823	1					
+ANR	963172	OrExpression	! file_pnum || ret2 & BDRV_BLOCK_ZERO		962823	1		||			
+ANR	963173	UnaryOperationExpression	! file_pnum		962823	0					
+ANR	963174	UnaryOperator	!		962823	0					
+ANR	963175	Identifier	file_pnum		962823	1					
+ANR	963176	BitAndExpression	ret2 & BDRV_BLOCK_ZERO		962823	1		&			
+ANR	963177	Identifier	ret2		962823	0					
+ANR	963178	Identifier	BDRV_BLOCK_ZERO		962823	1					
+ANR	963179	CompoundStatement		151:56:2355:2355	962823	1					
+ANR	963180	ExpressionStatement	ret |= BDRV_BLOCK_ZERO	171:16:2913:2935	962823	0	True				
+ANR	963181	AssignmentExpression	ret |= BDRV_BLOCK_ZERO		962823	0		|=			
+ANR	963182	Identifier	ret		962823	0					
+ANR	963183	Identifier	BDRV_BLOCK_ZERO		962823	1					
+ANR	963184	ElseStatement	else		962823	0					
+ANR	963185	CompoundStatement		165:19:2646:2646	962823	0					
+ANR	963186	ExpressionStatement	* pnum = file_pnum	177:16:3058:3075	962823	0	True				
+ANR	963187	AssignmentExpression	* pnum = file_pnum		962823	0		=			
+ANR	963188	UnaryOperationExpression	* pnum		962823	0					
+ANR	963189	UnaryOperator	*		962823	0					
+ANR	963190	Identifier	pnum		962823	1					
+ANR	963191	Identifier	file_pnum		962823	1					
+ANR	963192	ExpressionStatement	ret |= ( ret2 & BDRV_BLOCK_ZERO )	179:16:3094:3125	962823	1	True				
+ANR	963193	AssignmentExpression	ret |= ( ret2 & BDRV_BLOCK_ZERO )		962823	0		|=			
+ANR	963194	Identifier	ret		962823	0					
+ANR	963195	BitAndExpression	ret2 & BDRV_BLOCK_ZERO		962823	1		&			
+ANR	963196	Identifier	ret2		962823	0					
+ANR	963197	Identifier	BDRV_BLOCK_ZERO		962823	1					
+ANR	963198	Label	out :	189:0:3163:3166	962823	16	True				
+ANR	963199	Identifier	out		962823	0					
+ANR	963200	ExpressionStatement	bdrv_dec_in_flight ( bs )	191:4:3173:3195	962823	17	True				
+ANR	963201	CallExpression	bdrv_dec_in_flight ( bs )		962823	0					
+ANR	963202	Callee	bdrv_dec_in_flight		962823	0					
+ANR	963203	Identifier	bdrv_dec_in_flight		962823	0					
+ANR	963204	ArgumentList	bs		962823	1					
+ANR	963205	Argument	bs		962823	0					
+ANR	963206	Identifier	bs		962823	0					
+ANR	963207	IfStatement	if ( ret >= 0 && sector_num + * pnum == total_sectors )		962823	18					
+ANR	963208	Condition	ret >= 0 && sector_num + * pnum == total_sectors	193:8:3206:3252	962823	0	True				
+ANR	963209	AndExpression	ret >= 0 && sector_num + * pnum == total_sectors		962823	0		&&			
+ANR	963210	RelationalExpression	ret >= 0		962823	0		>=			
+ANR	963211	Identifier	ret		962823	0					
+ANR	963212	PrimaryExpression	0		962823	1					
+ANR	963213	EqualityExpression	sector_num + * pnum == total_sectors		962823	1		==			
+ANR	963214	AdditiveExpression	sector_num + * pnum		962823	0		+			
+ANR	963215	Identifier	sector_num		962823	0					
+ANR	963216	UnaryOperationExpression	* pnum		962823	1					
+ANR	963217	UnaryOperator	*		962823	0					
+ANR	963218	Identifier	pnum		962823	1					
+ANR	963219	Identifier	total_sectors		962823	1					
+ANR	963220	CompoundStatement		185:57:2944:2944	962823	1					
+ANR	963221	ExpressionStatement	ret |= BDRV_BLOCK_EOF	195:8:3266:3287	962823	0	True				
+ANR	963222	AssignmentExpression	ret |= BDRV_BLOCK_EOF		962823	0		|=			
+ANR	963223	Identifier	ret		962823	0					
+ANR	963224	Identifier	BDRV_BLOCK_EOF		962823	1					
+ANR	963225	ReturnStatement	return ret ;	199:4:3301:3311	962823	19	True				
+ANR	963226	Identifier	ret		962823	0					
+ANR	963227	ReturnType	static int64_t coroutine_fn		962823	1					
+ANR	963228	Identifier	bdrv_co_get_block_status		962823	2					
+ANR	963229	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum , BlockDriverState * * file"		962823	3					
+ANR	963230	Parameter	BlockDriverState * bs	1:53:53:72	962823	0	True				
+ANR	963231	ParameterType	BlockDriverState *		962823	0					
+ANR	963232	Identifier	bs		962823	1					
+ANR	963233	Parameter	int64_t sector_num	3:53:129:146	962823	1	True				
+ANR	963234	ParameterType	int64_t		962823	0					
+ANR	963235	Identifier	sector_num		962823	1					
+ANR	963236	Parameter	int nb_sectors	5:53:203:216	962823	2	True				
+ANR	963237	ParameterType	int		962823	0					
+ANR	963238	Identifier	nb_sectors		962823	1					
+ANR	963239	Parameter	int * pnum	5:69:219:227	962823	3	True				
+ANR	963240	ParameterType	int *		962823	0					
+ANR	963241	Identifier	pnum		962823	1					
+ANR	963242	Parameter	BlockDriverState * * file	7:53:284:306	962823	4	True				
+ANR	963243	ParameterType	BlockDriverState * *		962823	0					
+ANR	963244	Identifier	file		962823	1					
+ANR	963245	CFGEntryNode	ENTRY		962823		True				
+ANR	963246	CFGExitNode	EXIT		962823		True				
+ANR	963247	Symbol	bs2		962823						
+ANR	963248	Symbol	nb_sectors		962823						
+ANR	963249	Symbol	ret2		962823						
+ANR	963250	Symbol	bdrv_unallocated_blocks_are_zero		962823						
+ANR	963251	Symbol	BDRV_BLOCK_DATA		962823						
+ANR	963252	Symbol	bs -> drv		962823						
+ANR	963253	Symbol	BDRV_BLOCK_ZERO		962823						
+ANR	963254	Symbol	bs		962823						
+ANR	963255	Symbol	* bs -> backing		962823						
+ANR	963256	Symbol	file		962823						
+ANR	963257	Symbol	* bs		962823						
+ANR	963258	Symbol	bs -> drv -> protocol_name		962823						
+ANR	963259	Symbol	& file_pnum		962823						
+ANR	963260	Symbol	BDRV_BLOCK_OFFSET_VALID		962823						
+ANR	963261	Symbol	bs -> backing -> bs		962823						
+ANR	963262	Symbol	BDRV_BLOCK_RAW		962823						
+ANR	963263	Symbol	ret		962823						
+ANR	963264	Symbol	bdrv_nb_sectors		962823						
+ANR	963265	Symbol	bs -> backing		962823						
+ANR	963266	Symbol	pnum		962823						
+ANR	963267	Symbol	NULL		962823						
+ANR	963268	Symbol	bs -> drv -> bdrv_co_get_block_status		962823						
+ANR	963269	Symbol	BDRV_SECTOR_BITS		962823						
+ANR	963270	Symbol	total_sectors		962823						
+ANR	963271	Symbol	* bs -> drv		962823						
+ANR	963272	Symbol	& file2		962823						
+ANR	963273	Symbol	BDRV_BLOCK_ALLOCATED		962823						
+ANR	963274	Symbol	* file		962823						
+ANR	963275	Symbol	bdrv_co_get_block_status		962823						
+ANR	963276	Symbol	n		962823						
+ANR	963277	Symbol	sector_num		962823						
+ANR	963278	Symbol	* pnum		962823						
+ANR	963279	Symbol	file_pnum		962823						
+ANR	963280	Symbol	BDRV_BLOCK_EOF		962823						
+ANR	963281	Symbol	BDRV_SECTOR_SIZE		962823						
+ANR	963282	Symbol	file2		962823						
+ANR	963283	Symbol	nb_sectors2		962823						
+ANR	963284	Symbol	* * bs		962823						

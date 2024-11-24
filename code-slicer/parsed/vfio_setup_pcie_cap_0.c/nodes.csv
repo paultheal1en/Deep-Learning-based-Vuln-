@@ -1,0 +1,405 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	8982226	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vfio_setup_pcie_cap_0.c								
+ANR	8982227	Function	vfio_setup_pcie_cap	1:0:0:3704							
+ANR	8982228	FunctionDef	"vfio_setup_pcie_cap (VFIOPCIDevice * vdev , int pos , uint8_t size)"		8982227	0					
+ANR	8982229	CompoundStatement		3:0:76:3704	8982227	0					
+ANR	8982230	IdentifierDeclStatement	uint16_t flags ;	5:4:83:97	8982227	0	True				
+ANR	8982231	IdentifierDecl	flags		8982227	0					
+ANR	8982232	IdentifierDeclType	uint16_t		8982227	0					
+ANR	8982233	Identifier	flags		8982227	1					
+ANR	8982234	IdentifierDeclStatement	uint8_t type ;	7:4:104:116	8982227	1	True				
+ANR	8982235	IdentifierDecl	type		8982227	0					
+ANR	8982236	IdentifierDeclType	uint8_t		8982227	0					
+ANR	8982237	Identifier	type		8982227	1					
+ANR	8982238	ExpressionStatement	flags = pci_get_word ( vdev -> pdev . config + pos + PCI_CAP_FLAGS )	11:4:125:186	8982227	2	True				
+ANR	8982239	AssignmentExpression	flags = pci_get_word ( vdev -> pdev . config + pos + PCI_CAP_FLAGS )		8982227	0		=			
+ANR	8982240	Identifier	flags		8982227	0					
+ANR	8982241	CallExpression	pci_get_word ( vdev -> pdev . config + pos + PCI_CAP_FLAGS )		8982227	1					
+ANR	8982242	Callee	pci_get_word		8982227	0					
+ANR	8982243	Identifier	pci_get_word		8982227	0					
+ANR	8982244	ArgumentList	vdev -> pdev . config + pos + PCI_CAP_FLAGS		8982227	1					
+ANR	8982245	Argument	vdev -> pdev . config + pos + PCI_CAP_FLAGS		8982227	0					
+ANR	8982246	AdditiveExpression	vdev -> pdev . config + pos + PCI_CAP_FLAGS		8982227	0		+			
+ANR	8982247	MemberAccess	vdev -> pdev . config		8982227	0					
+ANR	8982248	PtrMemberAccess	vdev -> pdev		8982227	0					
+ANR	8982249	Identifier	vdev		8982227	0					
+ANR	8982250	Identifier	pdev		8982227	1					
+ANR	8982251	Identifier	config		8982227	1					
+ANR	8982252	AdditiveExpression	pos + PCI_CAP_FLAGS		8982227	1		+			
+ANR	8982253	Identifier	pos		8982227	0					
+ANR	8982254	Identifier	PCI_CAP_FLAGS		8982227	1					
+ANR	8982255	ExpressionStatement	type = ( flags & PCI_EXP_FLAGS_TYPE ) >> 4	13:4:193:233	8982227	3	True				
+ANR	8982256	AssignmentExpression	type = ( flags & PCI_EXP_FLAGS_TYPE ) >> 4		8982227	0		=			
+ANR	8982257	Identifier	type		8982227	0					
+ANR	8982258	ShiftExpression	( flags & PCI_EXP_FLAGS_TYPE ) >> 4		8982227	1		>>			
+ANR	8982259	BitAndExpression	flags & PCI_EXP_FLAGS_TYPE		8982227	0		&			
+ANR	8982260	Identifier	flags		8982227	0					
+ANR	8982261	Identifier	PCI_EXP_FLAGS_TYPE		8982227	1					
+ANR	8982262	PrimaryExpression	4		8982227	1					
+ANR	8982263	IfStatement	if ( type != PCI_EXP_TYPE_ENDPOINT && type != PCI_EXP_TYPE_LEG_END && type != PCI_EXP_TYPE_RC_END )		8982227	4					
+ANR	8982264	Condition	type != PCI_EXP_TYPE_ENDPOINT && type != PCI_EXP_TYPE_LEG_END && type != PCI_EXP_TYPE_RC_END	17:8:246:355	8982227	0	True				
+ANR	8982265	AndExpression	type != PCI_EXP_TYPE_ENDPOINT && type != PCI_EXP_TYPE_LEG_END && type != PCI_EXP_TYPE_RC_END		8982227	0		&&			
+ANR	8982266	EqualityExpression	type != PCI_EXP_TYPE_ENDPOINT		8982227	0		!=			
+ANR	8982267	Identifier	type		8982227	0					
+ANR	8982268	Identifier	PCI_EXP_TYPE_ENDPOINT		8982227	1					
+ANR	8982269	AndExpression	type != PCI_EXP_TYPE_LEG_END && type != PCI_EXP_TYPE_RC_END		8982227	1		&&			
+ANR	8982270	EqualityExpression	type != PCI_EXP_TYPE_LEG_END		8982227	0		!=			
+ANR	8982271	Identifier	type		8982227	0					
+ANR	8982272	Identifier	PCI_EXP_TYPE_LEG_END		8982227	1					
+ANR	8982273	EqualityExpression	type != PCI_EXP_TYPE_RC_END		8982227	1		!=			
+ANR	8982274	Identifier	type		8982227	0					
+ANR	8982275	Identifier	PCI_EXP_TYPE_RC_END		8982227	1					
+ANR	8982276	CompoundStatement		19:37:281:281	8982227	1					
+ANR	8982277	Statement	error_report	25:8:371:382	8982227	0	True				
+ANR	8982278	Statement	(	25:20:383:383	8982227	1	True				
+ANR	8982279	Statement	"""vfio: Assignment of PCIe type 0x%x """	25:21:384:420	8982227	2	True				
+ANR	8982280	Statement	"""devices is not currently supported"""	27:21:444:479	8982227	3	True				
+ANR	8982281	Statement	","	27:57:480:480	8982227	4	True				
+ANR	8982282	Statement	type	27:59:482:485	8982227	5	True				
+ANR	8982283	Statement	)	27:63:486:486	8982227	6	True				
+ANR	8982284	ExpressionStatement		27:64:487:487	8982227	7	True				
+ANR	8982285	ReturnStatement	return - EINVAL ;	29:8:498:512	8982227	8	True				
+ANR	8982286	UnaryOperationExpression	- EINVAL		8982227	0					
+ANR	8982287	UnaryOperator	-		8982227	0					
+ANR	8982288	Identifier	EINVAL		8982227	1					
+ANR	8982289	IfStatement	if ( ! pci_bus_is_express ( vdev -> pdev . bus ) )		8982227	5					
+ANR	8982290	Condition	! pci_bus_is_express ( vdev -> pdev . bus )	35:8:532:566	8982227	0	True				
+ANR	8982291	UnaryOperationExpression	! pci_bus_is_express ( vdev -> pdev . bus )		8982227	0					
+ANR	8982292	UnaryOperator	!		8982227	0					
+ANR	8982293	CallExpression	pci_bus_is_express ( vdev -> pdev . bus )		8982227	1					
+ANR	8982294	Callee	pci_bus_is_express		8982227	0					
+ANR	8982295	Identifier	pci_bus_is_express		8982227	0					
+ANR	8982296	ArgumentList	vdev -> pdev . bus		8982227	1					
+ANR	8982297	Argument	vdev -> pdev . bus		8982227	0					
+ANR	8982298	MemberAccess	vdev -> pdev . bus		8982227	0					
+ANR	8982299	PtrMemberAccess	vdev -> pdev		8982227	0					
+ANR	8982300	Identifier	vdev		8982227	0					
+ANR	8982301	Identifier	pdev		8982227	1					
+ANR	8982302	Identifier	bus		8982227	1					
+ANR	8982303	CompoundStatement		33:45:492:492	8982227	1					
+ANR	8982304	ElseStatement	else		8982227	0					
+ANR	8982305	IfStatement	if ( pci_bus_is_root ( vdev -> pdev . bus ) )		8982227	0					
+ANR	8982306	Condition	pci_bus_is_root ( vdev -> pdev . bus )	51:15:956:986	8982227	0	True				
+ANR	8982307	CallExpression	pci_bus_is_root ( vdev -> pdev . bus )		8982227	0					
+ANR	8982308	Callee	pci_bus_is_root		8982227	0					
+ANR	8982309	Identifier	pci_bus_is_root		8982227	0					
+ANR	8982310	ArgumentList	vdev -> pdev . bus		8982227	1					
+ANR	8982311	Argument	vdev -> pdev . bus		8982227	0					
+ANR	8982312	MemberAccess	vdev -> pdev . bus		8982227	0					
+ANR	8982313	PtrMemberAccess	vdev -> pdev		8982227	0					
+ANR	8982314	Identifier	vdev		8982227	0					
+ANR	8982315	Identifier	pdev		8982227	1					
+ANR	8982316	Identifier	bus		8982227	1					
+ANR	8982317	CompoundStatement		49:48:912:912	8982227	1					
+ANR	8982318	IfStatement	if ( type == PCI_EXP_TYPE_ENDPOINT )		8982227	0					
+ANR	8982319	Condition	type == PCI_EXP_TYPE_ENDPOINT	61:12:1184:1212	8982227	0	True				
+ANR	8982320	EqualityExpression	type == PCI_EXP_TYPE_ENDPOINT		8982227	0		==			
+ANR	8982321	Identifier	type		8982227	0					
+ANR	8982322	Identifier	PCI_EXP_TYPE_ENDPOINT		8982227	1					
+ANR	8982323	CompoundStatement		59:43:1138:1138	8982227	1					
+ANR	8982324	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_CAP_FLAGS , PCI_EXP_TYPE_RC_END << 4 , PCI_EXP_FLAGS_TYPE )"	63:12:1230:1397	8982227	0	True				
+ANR	8982325	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_CAP_FLAGS , PCI_EXP_TYPE_RC_END << 4 , PCI_EXP_FLAGS_TYPE )"		8982227	0					
+ANR	8982326	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982327	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982328	ArgumentList	vdev		8982227	1					
+ANR	8982329	Argument	vdev		8982227	0					
+ANR	8982330	Identifier	vdev		8982227	0					
+ANR	8982331	Argument	pos + PCI_CAP_FLAGS		8982227	1					
+ANR	8982332	AdditiveExpression	pos + PCI_CAP_FLAGS		8982227	0		+			
+ANR	8982333	Identifier	pos		8982227	0					
+ANR	8982334	Identifier	PCI_CAP_FLAGS		8982227	1					
+ANR	8982335	Argument	PCI_EXP_TYPE_RC_END << 4		8982227	2					
+ANR	8982336	ShiftExpression	PCI_EXP_TYPE_RC_END << 4		8982227	0		<<			
+ANR	8982337	Identifier	PCI_EXP_TYPE_RC_END		8982227	0					
+ANR	8982338	PrimaryExpression	4		8982227	1					
+ANR	8982339	Argument	PCI_EXP_FLAGS_TYPE		8982227	3					
+ANR	8982340	Identifier	PCI_EXP_FLAGS_TYPE		8982227	0					
+ANR	8982341	IfStatement	if ( size > PCI_EXP_LNKCTL )		8982227	1					
+ANR	8982342	Condition	size > PCI_EXP_LNKCTL	73:16:1486:1506	8982227	0	True				
+ANR	8982343	RelationalExpression	size > PCI_EXP_LNKCTL		8982227	0		>			
+ANR	8982344	Identifier	size		8982227	0					
+ANR	8982345	Identifier	PCI_EXP_LNKCTL		8982227	1					
+ANR	8982346	CompoundStatement		71:39:1432:1432	8982227	1					
+ANR	8982347	ExpressionStatement	"vfio_add_emulated_long ( vdev , pos + PCI_EXP_LNKCAP , 0 , ~0 )"	75:16:1528:1585	8982227	0	True				
+ANR	8982348	CallExpression	"vfio_add_emulated_long ( vdev , pos + PCI_EXP_LNKCAP , 0 , ~0 )"		8982227	0					
+ANR	8982349	Callee	vfio_add_emulated_long		8982227	0					
+ANR	8982350	Identifier	vfio_add_emulated_long		8982227	0					
+ANR	8982351	ArgumentList	vdev		8982227	1					
+ANR	8982352	Argument	vdev		8982227	0					
+ANR	8982353	Identifier	vdev		8982227	0					
+ANR	8982354	Argument	pos + PCI_EXP_LNKCAP		8982227	1					
+ANR	8982355	AdditiveExpression	pos + PCI_EXP_LNKCAP		8982227	0		+			
+ANR	8982356	Identifier	pos		8982227	0					
+ANR	8982357	Identifier	PCI_EXP_LNKCAP		8982227	1					
+ANR	8982358	Argument	0		8982227	2					
+ANR	8982359	PrimaryExpression	0		8982227	0					
+ANR	8982360	Argument	~0		8982227	3					
+ANR	8982361	Identifier	~0		8982227	0					
+ANR	8982362	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKCTL , 0 , ~0 )"	77:16:1604:1661	8982227	1	True				
+ANR	8982363	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKCTL , 0 , ~0 )"		8982227	0					
+ANR	8982364	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982365	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982366	ArgumentList	vdev		8982227	1					
+ANR	8982367	Argument	vdev		8982227	0					
+ANR	8982368	Identifier	vdev		8982227	0					
+ANR	8982369	Argument	pos + PCI_EXP_LNKCTL		8982227	1					
+ANR	8982370	AdditiveExpression	pos + PCI_EXP_LNKCTL		8982227	0		+			
+ANR	8982371	Identifier	pos		8982227	0					
+ANR	8982372	Identifier	PCI_EXP_LNKCTL		8982227	1					
+ANR	8982373	Argument	0		8982227	2					
+ANR	8982374	PrimaryExpression	0		8982227	0					
+ANR	8982375	Argument	~0		8982227	3					
+ANR	8982376	Identifier	~0		8982227	0					
+ANR	8982377	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKSTA , 0 , ~0 )"	79:16:1680:1737	8982227	2	True				
+ANR	8982378	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKSTA , 0 , ~0 )"		8982227	0					
+ANR	8982379	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982380	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982381	ArgumentList	vdev		8982227	1					
+ANR	8982382	Argument	vdev		8982227	0					
+ANR	8982383	Identifier	vdev		8982227	0					
+ANR	8982384	Argument	pos + PCI_EXP_LNKSTA		8982227	1					
+ANR	8982385	AdditiveExpression	pos + PCI_EXP_LNKSTA		8982227	0		+			
+ANR	8982386	Identifier	pos		8982227	0					
+ANR	8982387	Identifier	PCI_EXP_LNKSTA		8982227	1					
+ANR	8982388	Argument	0		8982227	2					
+ANR	8982389	PrimaryExpression	0		8982227	0					
+ANR	8982390	Argument	~0		8982227	3					
+ANR	8982391	Identifier	~0		8982227	0					
+ANR	8982392	Statement	define	85:1:1768:1773	8982227	3	True				
+ANR	8982393	Statement	PCI_EXP_LNKCAP2	85:8:1775:1789	8982227	4	True				
+ANR	8982394	Statement	44	85:24:1791:1792	8982227	5	True				
+ANR	8982395	Statement	define	91:1:1829:1834	8982227	6	True				
+ANR	8982396	Statement	PCI_EXP_LNKSTA2	91:8:1836:1850	8982227	7	True				
+ANR	8982397	Statement	50	91:24:1852:1853	8982227	8	True				
+ANR	8982398	IfStatement	if ( size > PCI_EXP_LNKCAP2 )		8982227	9					
+ANR	8982399	Condition	size > PCI_EXP_LNKCAP2	97:20:1958:1979	8982227	0	True				
+ANR	8982400	RelationalExpression	size > PCI_EXP_LNKCAP2		8982227	0		>			
+ANR	8982401	Identifier	size		8982227	0					
+ANR	8982402	Identifier	PCI_EXP_LNKCAP2		8982227	1					
+ANR	8982403	CompoundStatement		95:44:1905:1905	8982227	1					
+ANR	8982404	ExpressionStatement	"vfio_add_emulated_long ( vdev , pos + PCI_EXP_LNKCAP2 , 0 , ~0 )"	99:20:2005:2063	8982227	0	True				
+ANR	8982405	CallExpression	"vfio_add_emulated_long ( vdev , pos + PCI_EXP_LNKCAP2 , 0 , ~0 )"		8982227	0					
+ANR	8982406	Callee	vfio_add_emulated_long		8982227	0					
+ANR	8982407	Identifier	vfio_add_emulated_long		8982227	0					
+ANR	8982408	ArgumentList	vdev		8982227	1					
+ANR	8982409	Argument	vdev		8982227	0					
+ANR	8982410	Identifier	vdev		8982227	0					
+ANR	8982411	Argument	pos + PCI_EXP_LNKCAP2		8982227	1					
+ANR	8982412	AdditiveExpression	pos + PCI_EXP_LNKCAP2		8982227	0		+			
+ANR	8982413	Identifier	pos		8982227	0					
+ANR	8982414	Identifier	PCI_EXP_LNKCAP2		8982227	1					
+ANR	8982415	Argument	0		8982227	2					
+ANR	8982416	PrimaryExpression	0		8982227	0					
+ANR	8982417	Argument	~0		8982227	3					
+ANR	8982418	Identifier	~0		8982227	0					
+ANR	8982419	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKCTL2 , 0 , ~0 )"	101:20:2086:2144	8982227	1	True				
+ANR	8982420	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKCTL2 , 0 , ~0 )"		8982227	0					
+ANR	8982421	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982422	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982423	ArgumentList	vdev		8982227	1					
+ANR	8982424	Argument	vdev		8982227	0					
+ANR	8982425	Identifier	vdev		8982227	0					
+ANR	8982426	Argument	pos + PCI_EXP_LNKCTL2		8982227	1					
+ANR	8982427	AdditiveExpression	pos + PCI_EXP_LNKCTL2		8982227	0		+			
+ANR	8982428	Identifier	pos		8982227	0					
+ANR	8982429	Identifier	PCI_EXP_LNKCTL2		8982227	1					
+ANR	8982430	Argument	0		8982227	2					
+ANR	8982431	PrimaryExpression	0		8982227	0					
+ANR	8982432	Argument	~0		8982227	3					
+ANR	8982433	Identifier	~0		8982227	0					
+ANR	8982434	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKSTA2 , 0 , ~0 )"	103:20:2167:2225	8982227	2	True				
+ANR	8982435	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKSTA2 , 0 , ~0 )"		8982227	0					
+ANR	8982436	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982437	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982438	ArgumentList	vdev		8982227	1					
+ANR	8982439	Argument	vdev		8982227	0					
+ANR	8982440	Identifier	vdev		8982227	0					
+ANR	8982441	Argument	pos + PCI_EXP_LNKSTA2		8982227	1					
+ANR	8982442	AdditiveExpression	pos + PCI_EXP_LNKSTA2		8982227	0		+			
+ANR	8982443	Identifier	pos		8982227	0					
+ANR	8982444	Identifier	PCI_EXP_LNKSTA2		8982227	1					
+ANR	8982445	Argument	0		8982227	2					
+ANR	8982446	PrimaryExpression	0		8982227	0					
+ANR	8982447	Argument	~0		8982227	3					
+ANR	8982448	Identifier	~0		8982227	0					
+ANR	8982449	ElseStatement	else		8982227	0					
+ANR	8982450	IfStatement	if ( type == PCI_EXP_TYPE_LEG_END )		8982227	0					
+ANR	8982451	Condition	type == PCI_EXP_TYPE_LEG_END	111:19:2283:2310	8982227	0	True				
+ANR	8982452	EqualityExpression	type == PCI_EXP_TYPE_LEG_END		8982227	0		==			
+ANR	8982453	Identifier	type		8982227	0					
+ANR	8982454	Identifier	PCI_EXP_TYPE_LEG_END		8982227	1					
+ANR	8982455	CompoundStatement		109:49:2236:2236	8982227	1					
+ANR	8982456	ReturnStatement	return 0 ;	121:12:2513:2521	8982227	0	True				
+ANR	8982457	PrimaryExpression	0		8982227	0					
+ANR	8982458	ElseStatement	else		8982227	0					
+ANR	8982459	CompoundStatement		125:11:2471:2471	8982227	0					
+ANR	8982460	IfStatement	if ( type == PCI_EXP_TYPE_RC_END )		8982227	0					
+ANR	8982461	Condition	type == PCI_EXP_TYPE_RC_END	137:12:2744:2770	8982227	0	True				
+ANR	8982462	EqualityExpression	type == PCI_EXP_TYPE_RC_END		8982227	0		==			
+ANR	8982463	Identifier	type		8982227	0					
+ANR	8982464	Identifier	PCI_EXP_TYPE_RC_END		8982227	1					
+ANR	8982465	CompoundStatement		135:41:2696:2696	8982227	1					
+ANR	8982466	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_CAP_FLAGS , PCI_EXP_TYPE_ENDPOINT << 4 , PCI_EXP_FLAGS_TYPE )"	139:12:2788:2957	8982227	0	True				
+ANR	8982467	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_CAP_FLAGS , PCI_EXP_TYPE_ENDPOINT << 4 , PCI_EXP_FLAGS_TYPE )"		8982227	0					
+ANR	8982468	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982469	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982470	ArgumentList	vdev		8982227	1					
+ANR	8982471	Argument	vdev		8982227	0					
+ANR	8982472	Identifier	vdev		8982227	0					
+ANR	8982473	Argument	pos + PCI_CAP_FLAGS		8982227	1					
+ANR	8982474	AdditiveExpression	pos + PCI_CAP_FLAGS		8982227	0		+			
+ANR	8982475	Identifier	pos		8982227	0					
+ANR	8982476	Identifier	PCI_CAP_FLAGS		8982227	1					
+ANR	8982477	Argument	PCI_EXP_TYPE_ENDPOINT << 4		8982227	2					
+ANR	8982478	ShiftExpression	PCI_EXP_TYPE_ENDPOINT << 4		8982227	0		<<			
+ANR	8982479	Identifier	PCI_EXP_TYPE_ENDPOINT		8982227	0					
+ANR	8982480	PrimaryExpression	4		8982227	1					
+ANR	8982481	Argument	PCI_EXP_FLAGS_TYPE		8982227	3					
+ANR	8982482	Identifier	PCI_EXP_FLAGS_TYPE		8982227	0					
+ANR	8982483	ExpressionStatement	"vfio_add_emulated_long ( vdev , pos + PCI_EXP_LNKCAP , PCI_EXP_LNK_MLW_1 | PCI_EXP_LNK_LS_25 , ~0 )"	145:12:2972:3101	8982227	1	True				
+ANR	8982484	CallExpression	"vfio_add_emulated_long ( vdev , pos + PCI_EXP_LNKCAP , PCI_EXP_LNK_MLW_1 | PCI_EXP_LNK_LS_25 , ~0 )"		8982227	0					
+ANR	8982485	Callee	vfio_add_emulated_long		8982227	0					
+ANR	8982486	Identifier	vfio_add_emulated_long		8982227	0					
+ANR	8982487	ArgumentList	vdev		8982227	1					
+ANR	8982488	Argument	vdev		8982227	0					
+ANR	8982489	Identifier	vdev		8982227	0					
+ANR	8982490	Argument	pos + PCI_EXP_LNKCAP		8982227	1					
+ANR	8982491	AdditiveExpression	pos + PCI_EXP_LNKCAP		8982227	0		+			
+ANR	8982492	Identifier	pos		8982227	0					
+ANR	8982493	Identifier	PCI_EXP_LNKCAP		8982227	1					
+ANR	8982494	Argument	PCI_EXP_LNK_MLW_1 | PCI_EXP_LNK_LS_25		8982227	2					
+ANR	8982495	InclusiveOrExpression	PCI_EXP_LNK_MLW_1 | PCI_EXP_LNK_LS_25		8982227	0		|			
+ANR	8982496	Identifier	PCI_EXP_LNK_MLW_1		8982227	0					
+ANR	8982497	Identifier	PCI_EXP_LNK_LS_25		8982227	1					
+ANR	8982498	Argument	~0		8982227	3					
+ANR	8982499	Identifier	~0		8982227	0					
+ANR	8982500	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKCTL , 0 , ~0 )"	149:12:3116:3173	8982227	2	True				
+ANR	8982501	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKCTL , 0 , ~0 )"		8982227	0					
+ANR	8982502	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982503	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982504	ArgumentList	vdev		8982227	1					
+ANR	8982505	Argument	vdev		8982227	0					
+ANR	8982506	Identifier	vdev		8982227	0					
+ANR	8982507	Argument	pos + PCI_EXP_LNKCTL		8982227	1					
+ANR	8982508	AdditiveExpression	pos + PCI_EXP_LNKCTL		8982227	0		+			
+ANR	8982509	Identifier	pos		8982227	0					
+ANR	8982510	Identifier	PCI_EXP_LNKCTL		8982227	1					
+ANR	8982511	Argument	0		8982227	2					
+ANR	8982512	PrimaryExpression	0		8982227	0					
+ANR	8982513	Argument	~0		8982227	3					
+ANR	8982514	Identifier	~0		8982227	0					
+ANR	8982515	ExpressionStatement	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKSTA , pci_get_word ( vdev -> pdev . config + pos + PCI_EXP_LNKSTA ) , PCI_EXP_LNKCAP_MLW | PCI_EXP_LNKCAP_SLS )"	157:8:3279:3535	8982227	1	True				
+ANR	8982516	CallExpression	"vfio_add_emulated_word ( vdev , pos + PCI_EXP_LNKSTA , pci_get_word ( vdev -> pdev . config + pos + PCI_EXP_LNKSTA ) , PCI_EXP_LNKCAP_MLW | PCI_EXP_LNKCAP_SLS )"		8982227	0					
+ANR	8982517	Callee	vfio_add_emulated_word		8982227	0					
+ANR	8982518	Identifier	vfio_add_emulated_word		8982227	0					
+ANR	8982519	ArgumentList	vdev		8982227	1					
+ANR	8982520	Argument	vdev		8982227	0					
+ANR	8982521	Identifier	vdev		8982227	0					
+ANR	8982522	Argument	pos + PCI_EXP_LNKSTA		8982227	1					
+ANR	8982523	AdditiveExpression	pos + PCI_EXP_LNKSTA		8982227	0		+			
+ANR	8982524	Identifier	pos		8982227	0					
+ANR	8982525	Identifier	PCI_EXP_LNKSTA		8982227	1					
+ANR	8982526	Argument	pci_get_word ( vdev -> pdev . config + pos + PCI_EXP_LNKSTA )		8982227	2					
+ANR	8982527	CallExpression	pci_get_word ( vdev -> pdev . config + pos + PCI_EXP_LNKSTA )		8982227	0					
+ANR	8982528	Callee	pci_get_word		8982227	0					
+ANR	8982529	Identifier	pci_get_word		8982227	0					
+ANR	8982530	ArgumentList	vdev -> pdev . config + pos + PCI_EXP_LNKSTA		8982227	1					
+ANR	8982531	Argument	vdev -> pdev . config + pos + PCI_EXP_LNKSTA		8982227	0					
+ANR	8982532	AdditiveExpression	vdev -> pdev . config + pos + PCI_EXP_LNKSTA		8982227	0		+			
+ANR	8982533	MemberAccess	vdev -> pdev . config		8982227	0					
+ANR	8982534	PtrMemberAccess	vdev -> pdev		8982227	0					
+ANR	8982535	Identifier	vdev		8982227	0					
+ANR	8982536	Identifier	pdev		8982227	1					
+ANR	8982537	Identifier	config		8982227	1					
+ANR	8982538	AdditiveExpression	pos + PCI_EXP_LNKSTA		8982227	1		+			
+ANR	8982539	Identifier	pos		8982227	0					
+ANR	8982540	Identifier	PCI_EXP_LNKSTA		8982227	1					
+ANR	8982541	Argument	PCI_EXP_LNKCAP_MLW | PCI_EXP_LNKCAP_SLS		8982227	3					
+ANR	8982542	InclusiveOrExpression	PCI_EXP_LNKCAP_MLW | PCI_EXP_LNKCAP_SLS		8982227	0		|			
+ANR	8982543	Identifier	PCI_EXP_LNKCAP_MLW		8982227	0					
+ANR	8982544	Identifier	PCI_EXP_LNKCAP_SLS		8982227	1					
+ANR	8982545	ExpressionStatement	"pos = pci_add_capability ( & vdev -> pdev , PCI_CAP_ID_EXP , pos , size )"	169:4:3551:3615	8982227	6	True				
+ANR	8982546	AssignmentExpression	"pos = pci_add_capability ( & vdev -> pdev , PCI_CAP_ID_EXP , pos , size )"		8982227	0		=			
+ANR	8982547	Identifier	pos		8982227	0					
+ANR	8982548	CallExpression	"pci_add_capability ( & vdev -> pdev , PCI_CAP_ID_EXP , pos , size )"		8982227	1					
+ANR	8982549	Callee	pci_add_capability		8982227	0					
+ANR	8982550	Identifier	pci_add_capability		8982227	0					
+ANR	8982551	ArgumentList	& vdev -> pdev		8982227	1					
+ANR	8982552	Argument	& vdev -> pdev		8982227	0					
+ANR	8982553	UnaryOperationExpression	& vdev -> pdev		8982227	0					
+ANR	8982554	UnaryOperator	&		8982227	0					
+ANR	8982555	PtrMemberAccess	vdev -> pdev		8982227	1					
+ANR	8982556	Identifier	vdev		8982227	0					
+ANR	8982557	Identifier	pdev		8982227	1					
+ANR	8982558	Argument	PCI_CAP_ID_EXP		8982227	1					
+ANR	8982559	Identifier	PCI_CAP_ID_EXP		8982227	0					
+ANR	8982560	Argument	pos		8982227	2					
+ANR	8982561	Identifier	pos		8982227	0					
+ANR	8982562	Argument	size		8982227	3					
+ANR	8982563	Identifier	size		8982227	0					
+ANR	8982564	IfStatement	if ( pos >= 0 )		8982227	7					
+ANR	8982565	Condition	pos >= 0	171:8:3626:3633	8982227	0	True				
+ANR	8982566	RelationalExpression	pos >= 0		8982227	0		>=			
+ANR	8982567	Identifier	pos		8982227	0					
+ANR	8982568	PrimaryExpression	0		8982227	1					
+ANR	8982569	CompoundStatement		169:18:3559:3559	8982227	1					
+ANR	8982570	ExpressionStatement	vdev -> pdev . exp . exp_cap = pos	173:8:3647:3675	8982227	0	True				
+ANR	8982571	AssignmentExpression	vdev -> pdev . exp . exp_cap = pos		8982227	0		=			
+ANR	8982572	MemberAccess	vdev -> pdev . exp . exp_cap		8982227	0					
+ANR	8982573	MemberAccess	vdev -> pdev . exp		8982227	0					
+ANR	8982574	PtrMemberAccess	vdev -> pdev		8982227	0					
+ANR	8982575	Identifier	vdev		8982227	0					
+ANR	8982576	Identifier	pdev		8982227	1					
+ANR	8982577	Identifier	exp		8982227	1					
+ANR	8982578	Identifier	exp_cap		8982227	1					
+ANR	8982579	Identifier	pos		8982227	1					
+ANR	8982580	ReturnStatement	return pos ;	179:4:3691:3701	8982227	8	True				
+ANR	8982581	Identifier	pos		8982227	0					
+ANR	8982582	ReturnType	static int		8982227	1					
+ANR	8982583	Identifier	vfio_setup_pcie_cap		8982227	2					
+ANR	8982584	ParameterList	"VFIOPCIDevice * vdev , int pos , uint8_t size"		8982227	3					
+ANR	8982585	Parameter	VFIOPCIDevice * vdev	1:31:31:49	8982227	0	True				
+ANR	8982586	ParameterType	VFIOPCIDevice *		8982227	0					
+ANR	8982587	Identifier	vdev		8982227	1					
+ANR	8982588	Parameter	int pos	1:52:52:58	8982227	1	True				
+ANR	8982589	ParameterType	int		8982227	0					
+ANR	8982590	Identifier	pos		8982227	1					
+ANR	8982591	Parameter	uint8_t size	1:61:61:72	8982227	2	True				
+ANR	8982592	ParameterType	uint8_t		8982227	0					
+ANR	8982593	Identifier	size		8982227	1					
+ANR	8982594	CFGEntryNode	ENTRY		8982227		True				
+ANR	8982595	CFGExitNode	EXIT		8982227		True				
+ANR	8982596	Symbol	vdev -> pdev . config		8982227						
+ANR	8982597	Symbol	& vdev -> pdev		8982227						
+ANR	8982598	Symbol	PCI_EXP_LNKSTA2		8982227						
+ANR	8982599	Symbol	flags		8982227						
+ANR	8982600	Symbol	PCI_EXP_FLAGS_TYPE		8982227						
+ANR	8982601	Symbol	type		8982227						
+ANR	8982602	Symbol	vdev -> pdev . bus		8982227						
+ANR	8982603	Symbol	PCI_EXP_LNK_MLW_1		8982227						
+ANR	8982604	Symbol	PCI_EXP_LNKCAP2		8982227						
+ANR	8982605	Symbol	vdev -> pdev . exp		8982227						
+ANR	8982606	Symbol	pos		8982227						
+ANR	8982607	Symbol	PCI_EXP_TYPE_RC_END		8982227						
+ANR	8982608	Symbol	PCI_CAP_FLAGS		8982227						
+ANR	8982609	Symbol	pci_bus_is_root		8982227						
+ANR	8982610	Symbol	PCI_EXP_LNKSTA		8982227						
+ANR	8982611	Symbol	pci_get_word		8982227						
+ANR	8982612	Symbol	pci_bus_is_express		8982227						
+ANR	8982613	Symbol	PCI_EXP_LNKCTL		8982227						
+ANR	8982614	Symbol	vdev		8982227						
+ANR	8982615	Symbol	PCI_EXP_LNKCAP		8982227						
+ANR	8982616	Symbol	PCI_EXP_LNKCAP_SLS		8982227						
+ANR	8982617	Symbol	PCI_CAP_ID_EXP		8982227						
+ANR	8982618	Symbol	vdev -> pdev		8982227						
+ANR	8982619	Symbol	PCI_EXP_TYPE_ENDPOINT		8982227						
+ANR	8982620	Symbol	PCI_EXP_LNKCAP_MLW		8982227						
+ANR	8982621	Symbol	* vdev		8982227						
+ANR	8982622	Symbol	EINVAL		8982227						
+ANR	8982623	Symbol	~0		8982227						
+ANR	8982624	Symbol	size		8982227						
+ANR	8982625	Symbol	PCI_EXP_LNK_LS_25		8982227						
+ANR	8982626	Symbol	pci_add_capability		8982227						
+ANR	8982627	Symbol	PCI_EXP_TYPE_LEG_END		8982227						
+ANR	8982628	Symbol	PCI_EXP_LNKCTL2		8982227						
+ANR	8982629	Symbol	vdev -> pdev . exp . exp_cap		8982227						

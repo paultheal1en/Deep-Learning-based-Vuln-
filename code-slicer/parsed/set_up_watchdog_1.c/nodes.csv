@@ -1,0 +1,110 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7777285	File	/home/p4ultr4n/workplace/ReVeal/raw_code/set_up_watchdog_1.c								
+ANR	7777286	Function	set_up_watchdog	1:0:0:460							
+ANR	7777287	FunctionDef	"set_up_watchdog (m48t59_t * NVRAM , uint8_t value)"		7777286	0					
+ANR	7777288	CompoundStatement		3:0:62:460	7777286	0					
+ANR	7777289	IdentifierDeclStatement	uint64_t interval ;	5:4:69:86	7777286	0	True				
+ANR	7777290	IdentifierDecl	interval		7777286	0					
+ANR	7777291	IdentifierDeclType	uint64_t		7777286	0					
+ANR	7777292	Identifier	interval		7777286	1					
+ANR	7777293	IfStatement	if ( NVRAM -> wd_timer != NULL )		7777286	1					
+ANR	7777294	Condition	NVRAM -> wd_timer != NULL	9:8:121:143	7777286	0	True				
+ANR	7777295	EqualityExpression	NVRAM -> wd_timer != NULL		7777286	0		!=			
+ANR	7777296	PtrMemberAccess	NVRAM -> wd_timer		7777286	0					
+ANR	7777297	Identifier	NVRAM		7777286	0					
+ANR	7777298	Identifier	wd_timer		7777286	1					
+ANR	7777299	Identifier	NULL		7777286	1					
+ANR	7777300	CompoundStatement		7:33:83:83	7777286	1					
+ANR	7777301	ExpressionStatement	qemu_del_timer ( NVRAM -> wd_timer )	11:8:157:188	7777286	0	True				
+ANR	7777302	CallExpression	qemu_del_timer ( NVRAM -> wd_timer )		7777286	0					
+ANR	7777303	Callee	qemu_del_timer		7777286	0					
+ANR	7777304	Identifier	qemu_del_timer		7777286	0					
+ANR	7777305	ArgumentList	NVRAM -> wd_timer		7777286	1					
+ANR	7777306	Argument	NVRAM -> wd_timer		7777286	0					
+ANR	7777307	PtrMemberAccess	NVRAM -> wd_timer		7777286	0					
+ANR	7777308	Identifier	NVRAM		7777286	0					
+ANR	7777309	Identifier	wd_timer		7777286	1					
+ANR	7777310	ExpressionStatement	NVRAM -> wd_timer = NULL	13:1:192:214	7777286	1	True				
+ANR	7777311	AssignmentExpression	NVRAM -> wd_timer = NULL		7777286	0		=			
+ANR	7777312	PtrMemberAccess	NVRAM -> wd_timer		7777286	0					
+ANR	7777313	Identifier	NVRAM		7777286	0					
+ANR	7777314	Identifier	wd_timer		7777286	1					
+ANR	7777315	Identifier	NULL		7777286	1					
+ANR	7777316	ExpressionStatement	NVRAM -> buffer [ 0x1FF0 ] &= ~0x80	17:4:228:258	7777286	2	True				
+ANR	7777317	AssignmentExpression	NVRAM -> buffer [ 0x1FF0 ] &= ~0x80		7777286	0		&=			
+ANR	7777318	ArrayIndexing	NVRAM -> buffer [ 0x1FF0 ]		7777286	0					
+ANR	7777319	PtrMemberAccess	NVRAM -> buffer		7777286	0					
+ANR	7777320	Identifier	NVRAM		7777286	0					
+ANR	7777321	Identifier	buffer		7777286	1					
+ANR	7777322	PrimaryExpression	0x1FF0		7777286	1					
+ANR	7777323	Identifier	~0x80		7777286	1					
+ANR	7777324	IfStatement	if ( value != 0 )		7777286	3					
+ANR	7777325	Condition	value != 0	19:8:269:278	7777286	0	True				
+ANR	7777326	EqualityExpression	value != 0		7777286	0		!=			
+ANR	7777327	Identifier	value		7777286	0					
+ANR	7777328	PrimaryExpression	0		7777286	1					
+ANR	7777329	CompoundStatement		17:20:218:218	7777286	1					
+ANR	7777330	ExpressionStatement	interval = ( 1 << ( 2 * ( value & 0x03 ) ) ) * ( ( value >> 2 ) & 0x1F )	21:1:285:347	7777286	0	True				
+ANR	7777331	AssignmentExpression	interval = ( 1 << ( 2 * ( value & 0x03 ) ) ) * ( ( value >> 2 ) & 0x1F )		7777286	0		=			
+ANR	7777332	Identifier	interval		7777286	0					
+ANR	7777333	MultiplicativeExpression	( 1 << ( 2 * ( value & 0x03 ) ) ) * ( ( value >> 2 ) & 0x1F )		7777286	1		*			
+ANR	7777334	ShiftExpression	1 << ( 2 * ( value & 0x03 ) )		7777286	0		<<			
+ANR	7777335	PrimaryExpression	1		7777286	0					
+ANR	7777336	MultiplicativeExpression	2 * ( value & 0x03 )		7777286	1		*			
+ANR	7777337	PrimaryExpression	2		7777286	0					
+ANR	7777338	BitAndExpression	value & 0x03		7777286	1		&			
+ANR	7777339	Identifier	value		7777286	0					
+ANR	7777340	PrimaryExpression	0x03		7777286	1					
+ANR	7777341	BitAndExpression	( value >> 2 ) & 0x1F		7777286	1		&			
+ANR	7777342	ShiftExpression	value >> 2		7777286	0		>>			
+ANR	7777343	Identifier	value		7777286	0					
+ANR	7777344	PrimaryExpression	2		7777286	1					
+ANR	7777345	PrimaryExpression	0x1F		7777286	1					
+ANR	7777346	ExpressionStatement	"qemu_mod_timer ( NVRAM -> wd_timer , ( ( uint64_t ) time ( NULL ) * 1000 ) + ( ( interval * 1000 ) >> 4 ) )"	23:1:351:450	7777286	1	True				
+ANR	7777347	CallExpression	"qemu_mod_timer ( NVRAM -> wd_timer , ( ( uint64_t ) time ( NULL ) * 1000 ) + ( ( interval * 1000 ) >> 4 ) )"		7777286	0					
+ANR	7777348	Callee	qemu_mod_timer		7777286	0					
+ANR	7777349	Identifier	qemu_mod_timer		7777286	0					
+ANR	7777350	ArgumentList	NVRAM -> wd_timer		7777286	1					
+ANR	7777351	Argument	NVRAM -> wd_timer		7777286	0					
+ANR	7777352	PtrMemberAccess	NVRAM -> wd_timer		7777286	0					
+ANR	7777353	Identifier	NVRAM		7777286	0					
+ANR	7777354	Identifier	wd_timer		7777286	1					
+ANR	7777355	Argument	( ( uint64_t ) time ( NULL ) * 1000 ) + ( ( interval * 1000 ) >> 4 )		7777286	1					
+ANR	7777356	AdditiveExpression	( ( uint64_t ) time ( NULL ) * 1000 ) + ( ( interval * 1000 ) >> 4 )		7777286	0		+			
+ANR	7777357	MultiplicativeExpression	( uint64_t ) time ( NULL ) * 1000		7777286	0		*			
+ANR	7777358	CastExpression	( uint64_t ) time ( NULL )		7777286	0					
+ANR	7777359	CastTarget	uint64_t		7777286	0					
+ANR	7777360	CallExpression	time ( NULL )		7777286	1					
+ANR	7777361	Callee	time		7777286	0					
+ANR	7777362	Identifier	time		7777286	0					
+ANR	7777363	ArgumentList	NULL		7777286	1					
+ANR	7777364	Argument	NULL		7777286	0					
+ANR	7777365	Identifier	NULL		7777286	0					
+ANR	7777366	PrimaryExpression	1000		7777286	1					
+ANR	7777367	ShiftExpression	( interval * 1000 ) >> 4		7777286	1		>>			
+ANR	7777368	MultiplicativeExpression	interval * 1000		7777286	0		*			
+ANR	7777369	Identifier	interval		7777286	0					
+ANR	7777370	PrimaryExpression	1000		7777286	1					
+ANR	7777371	PrimaryExpression	4		7777286	1					
+ANR	7777372	ReturnType	static void		7777286	1					
+ANR	7777373	Identifier	set_up_watchdog		7777286	2					
+ANR	7777374	ParameterList	"m48t59_t * NVRAM , uint8_t value"		7777286	3					
+ANR	7777375	Parameter	m48t59_t * NVRAM	1:29:29:43	7777286	0	True				
+ANR	7777376	ParameterType	m48t59_t *		7777286	0					
+ANR	7777377	Identifier	NVRAM		7777286	1					
+ANR	7777378	Parameter	uint8_t value	1:46:46:58	7777286	1	True				
+ANR	7777379	ParameterType	uint8_t		7777286	0					
+ANR	7777380	Identifier	value		7777286	1					
+ANR	7777381	CFGEntryNode	ENTRY		7777286		True				
+ANR	7777382	CFGExitNode	EXIT		7777286		True				
+ANR	7777383	Symbol	NULL		7777286						
+ANR	7777384	Symbol	* NVRAM		7777286						
+ANR	7777385	Symbol	NVRAM		7777286						
+ANR	7777386	Symbol	NVRAM -> wd_timer		7777286						
+ANR	7777387	Symbol	~0x80		7777286						
+ANR	7777388	Symbol	interval		7777286						
+ANR	7777389	Symbol	* NVRAM -> buffer		7777286						
+ANR	7777390	Symbol	time		7777286						
+ANR	7777391	Symbol	value		7777286						
+ANR	7777392	Symbol	* * NVRAM		7777286						
+ANR	7777393	Symbol	NVRAM -> buffer		7777286						

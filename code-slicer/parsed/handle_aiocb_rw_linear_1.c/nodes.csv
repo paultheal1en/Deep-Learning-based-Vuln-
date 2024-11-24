@@ -1,0 +1,156 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4556089	File	/home/p4ultr4n/workplace/ReVeal/raw_code/handle_aiocb_rw_linear_1.c								
+ANR	4556090	Function	handle_aiocb_rw_linear	1:0:0:877							
+ANR	4556091	FunctionDef	"handle_aiocb_rw_linear (RawPosixAIOData * aiocb , char * buf)"		4556090	0					
+ANR	4556092	CompoundStatement		3:0:74:877	4556090	0					
+ANR	4556093	IdentifierDeclStatement	ssize_t offset = 0 ;	5:4:81:99	4556090	0	True				
+ANR	4556094	IdentifierDecl	offset = 0		4556090	0					
+ANR	4556095	IdentifierDeclType	ssize_t		4556090	0					
+ANR	4556096	Identifier	offset		4556090	1					
+ANR	4556097	AssignmentExpression	offset = 0		4556090	2		=			
+ANR	4556098	Identifier	offset		4556090	0					
+ANR	4556099	PrimaryExpression	0		4556090	1					
+ANR	4556100	IdentifierDeclStatement	ssize_t len ;	7:4:106:117	4556090	1	True				
+ANR	4556101	IdentifierDecl	len		4556090	0					
+ANR	4556102	IdentifierDeclType	ssize_t		4556090	0					
+ANR	4556103	Identifier	len		4556090	1					
+ANR	4556104	WhileStatement	while ( offset < aiocb -> aio_nbytes )		4556090	2					
+ANR	4556105	Condition	offset < aiocb -> aio_nbytes	11:11:133:158	4556090	0	True				
+ANR	4556106	RelationalExpression	offset < aiocb -> aio_nbytes		4556090	0		<			
+ANR	4556107	Identifier	offset		4556090	0					
+ANR	4556108	PtrMemberAccess	aiocb -> aio_nbytes		4556090	1					
+ANR	4556109	Identifier	aiocb		4556090	0					
+ANR	4556110	Identifier	aio_nbytes		4556090	1					
+ANR	4556111	CompoundStatement		9:39:86:86	4556090	1					
+ANR	4556112	IfStatement	if ( aiocb -> aio_type & QEMU_AIO_WRITE )		4556090	0					
+ANR	4556113	Condition	aiocb -> aio_type & QEMU_AIO_WRITE	13:12:176:207	4556090	0	True				
+ANR	4556114	BitAndExpression	aiocb -> aio_type & QEMU_AIO_WRITE		4556090	0		&			
+ANR	4556115	PtrMemberAccess	aiocb -> aio_type		4556090	0					
+ANR	4556116	Identifier	aiocb		4556090	0					
+ANR	4556117	Identifier	aio_type		4556090	1					
+ANR	4556118	Identifier	QEMU_AIO_WRITE		4556090	1					
+ANR	4556119	CompoundStatement		11:46:135:135	4556090	1					
+ANR	4556120	ExpressionStatement	"len = pwrite ( aiocb -> aio_fildes , ( const char * ) buf + offset , aiocb -> aio_nbytes - offset , aiocb -> aio_offset + offset )"	15:12:225:418	4556090	0	True				
+ANR	4556121	AssignmentExpression	"len = pwrite ( aiocb -> aio_fildes , ( const char * ) buf + offset , aiocb -> aio_nbytes - offset , aiocb -> aio_offset + offset )"		4556090	0		=			
+ANR	4556122	Identifier	len		4556090	0					
+ANR	4556123	CallExpression	"pwrite ( aiocb -> aio_fildes , ( const char * ) buf + offset , aiocb -> aio_nbytes - offset , aiocb -> aio_offset + offset )"		4556090	1					
+ANR	4556124	Callee	pwrite		4556090	0					
+ANR	4556125	Identifier	pwrite		4556090	0					
+ANR	4556126	ArgumentList	aiocb -> aio_fildes		4556090	1					
+ANR	4556127	Argument	aiocb -> aio_fildes		4556090	0					
+ANR	4556128	PtrMemberAccess	aiocb -> aio_fildes		4556090	0					
+ANR	4556129	Identifier	aiocb		4556090	0					
+ANR	4556130	Identifier	aio_fildes		4556090	1					
+ANR	4556131	Argument	( const char * ) buf + offset		4556090	1					
+ANR	4556132	AdditiveExpression	( const char * ) buf + offset		4556090	0		+			
+ANR	4556133	CastExpression	( const char * ) buf		4556090	0					
+ANR	4556134	CastTarget	const char *		4556090	0					
+ANR	4556135	Identifier	buf		4556090	1					
+ANR	4556136	Identifier	offset		4556090	1					
+ANR	4556137	Argument	aiocb -> aio_nbytes - offset		4556090	2					
+ANR	4556138	AdditiveExpression	aiocb -> aio_nbytes - offset		4556090	0		-			
+ANR	4556139	PtrMemberAccess	aiocb -> aio_nbytes		4556090	0					
+ANR	4556140	Identifier	aiocb		4556090	0					
+ANR	4556141	Identifier	aio_nbytes		4556090	1					
+ANR	4556142	Identifier	offset		4556090	1					
+ANR	4556143	Argument	aiocb -> aio_offset + offset		4556090	3					
+ANR	4556144	AdditiveExpression	aiocb -> aio_offset + offset		4556090	0		+			
+ANR	4556145	PtrMemberAccess	aiocb -> aio_offset		4556090	0					
+ANR	4556146	Identifier	aiocb		4556090	0					
+ANR	4556147	Identifier	aio_offset		4556090	1					
+ANR	4556148	Identifier	offset		4556090	1					
+ANR	4556149	ElseStatement	else		4556090	0					
+ANR	4556150	CompoundStatement		21:15:361:361	4556090	0					
+ANR	4556151	ExpressionStatement	"len = pread ( aiocb -> aio_fildes , buf + offset , aiocb -> aio_nbytes - offset , aiocb -> aio_offset + offset )"	25:12:451:626	4556090	0	True				
+ANR	4556152	AssignmentExpression	"len = pread ( aiocb -> aio_fildes , buf + offset , aiocb -> aio_nbytes - offset , aiocb -> aio_offset + offset )"		4556090	0		=			
+ANR	4556153	Identifier	len		4556090	0					
+ANR	4556154	CallExpression	"pread ( aiocb -> aio_fildes , buf + offset , aiocb -> aio_nbytes - offset , aiocb -> aio_offset + offset )"		4556090	1					
+ANR	4556155	Callee	pread		4556090	0					
+ANR	4556156	Identifier	pread		4556090	0					
+ANR	4556157	ArgumentList	aiocb -> aio_fildes		4556090	1					
+ANR	4556158	Argument	aiocb -> aio_fildes		4556090	0					
+ANR	4556159	PtrMemberAccess	aiocb -> aio_fildes		4556090	0					
+ANR	4556160	Identifier	aiocb		4556090	0					
+ANR	4556161	Identifier	aio_fildes		4556090	1					
+ANR	4556162	Argument	buf + offset		4556090	1					
+ANR	4556163	AdditiveExpression	buf + offset		4556090	0		+			
+ANR	4556164	Identifier	buf		4556090	0					
+ANR	4556165	Identifier	offset		4556090	1					
+ANR	4556166	Argument	aiocb -> aio_nbytes - offset		4556090	2					
+ANR	4556167	AdditiveExpression	aiocb -> aio_nbytes - offset		4556090	0		-			
+ANR	4556168	PtrMemberAccess	aiocb -> aio_nbytes		4556090	0					
+ANR	4556169	Identifier	aiocb		4556090	0					
+ANR	4556170	Identifier	aio_nbytes		4556090	1					
+ANR	4556171	Identifier	offset		4556090	1					
+ANR	4556172	Argument	aiocb -> aio_offset + offset		4556090	3					
+ANR	4556173	AdditiveExpression	aiocb -> aio_offset + offset		4556090	0		+			
+ANR	4556174	PtrMemberAccess	aiocb -> aio_offset		4556090	0					
+ANR	4556175	Identifier	aiocb		4556090	0					
+ANR	4556176	Identifier	aio_offset		4556090	1					
+ANR	4556177	Identifier	offset		4556090	1					
+ANR	4556178	IfStatement	if ( len == - 1 && errno == EINTR )		4556090	1					
+ANR	4556179	Condition	len == - 1 && errno == EINTR	35:12:652:678	4556090	0	True				
+ANR	4556180	AndExpression	len == - 1 && errno == EINTR		4556090	0		&&			
+ANR	4556181	EqualityExpression	len == - 1		4556090	0		==			
+ANR	4556182	Identifier	len		4556090	0					
+ANR	4556183	UnaryOperationExpression	- 1		4556090	1					
+ANR	4556184	UnaryOperator	-		4556090	0					
+ANR	4556185	PrimaryExpression	1		4556090	1					
+ANR	4556186	EqualityExpression	errno == EINTR		4556090	1		==			
+ANR	4556187	Identifier	errno		4556090	0					
+ANR	4556188	Identifier	EINTR		4556090	1					
+ANR	4556189	CompoundStatement		33:41:606:606	4556090	1					
+ANR	4556190	ContinueStatement	continue ;	37:12:696:704	4556090	0	True				
+ANR	4556191	ElseStatement	else		4556090	0					
+ANR	4556192	IfStatement	if ( len == - 1 )		4556090	0					
+ANR	4556193	Condition	len == - 1	48:19:735:743	4556090	0	True				
+ANR	4556194	EqualityExpression	len == - 1		4556090	0		==			
+ANR	4556195	Identifier	len		4556090	0					
+ANR	4556196	UnaryOperationExpression	- 1		4556090	1					
+ANR	4556197	UnaryOperator	-		4556090	0					
+ANR	4556198	PrimaryExpression	1		4556090	1					
+ANR	4556199	CompoundStatement		46:30:671:671	4556090	1					
+ANR	4556200	ExpressionStatement	offset = - errno	50:12:761:776	4556090	0	True				
+ANR	4556201	AssignmentExpression	offset = - errno		4556090	0		=			
+ANR	4556202	Identifier	offset		4556090	0					
+ANR	4556203	UnaryOperationExpression	- errno		4556090	1					
+ANR	4556204	UnaryOperator	-		4556090	0					
+ANR	4556205	Identifier	errno		4556090	1					
+ANR	4556206	ElseStatement	else		4556090	0					
+ANR	4556207	IfStatement	if ( len == 0 )		4556090	0					
+ANR	4556208	Condition	len == 0	53:19:799:806	4556090	0	True				
+ANR	4556209	EqualityExpression	len == 0		4556090	0		==			
+ANR	4556210	Identifier	len		4556090	0					
+ANR	4556211	PrimaryExpression	0		4556090	1					
+ANR	4556212	CompoundStatement		51:29:734:734	4556090	1					
+ANR	4556213	ExpressionStatement	offset += len	58:8:832:845	4556090	2	True				
+ANR	4556214	AssignmentExpression	offset += len		4556090	0		+=			
+ANR	4556215	Identifier	offset		4556090	0					
+ANR	4556216	Identifier	len		4556090	1					
+ANR	4556217	ReturnStatement	return offset ;	64:4:861:874	4556090	3	True				
+ANR	4556218	Identifier	offset		4556090	0					
+ANR	4556219	ReturnType	static ssize_t		4556090	1					
+ANR	4556220	Identifier	handle_aiocb_rw_linear		4556090	2					
+ANR	4556221	ParameterList	"RawPosixAIOData * aiocb , char * buf"		4556090	3					
+ANR	4556222	Parameter	RawPosixAIOData * aiocb	1:38:38:59	4556090	0	True				
+ANR	4556223	ParameterType	RawPosixAIOData *		4556090	0					
+ANR	4556224	Identifier	aiocb		4556090	1					
+ANR	4556225	Parameter	char * buf	1:62:62:70	4556090	1	True				
+ANR	4556226	ParameterType	char *		4556090	0					
+ANR	4556227	Identifier	buf		4556090	1					
+ANR	4556228	CFGEntryNode	ENTRY		4556090		True				
+ANR	4556229	CFGExitNode	EXIT		4556090		True				
+ANR	4556230	Symbol	aiocb -> aio_offset		4556090						
+ANR	4556231	Symbol	errno		4556090						
+ANR	4556232	Symbol	offset		4556090						
+ANR	4556233	Symbol	EINTR		4556090						
+ANR	4556234	Symbol	aiocb -> aio_fildes		4556090						
+ANR	4556235	Symbol	aiocb		4556090						
+ANR	4556236	Symbol	pwrite		4556090						
+ANR	4556237	Symbol	QEMU_AIO_WRITE		4556090						
+ANR	4556238	Symbol	aiocb -> aio_nbytes		4556090						
+ANR	4556239	Symbol	buf		4556090						
+ANR	4556240	Symbol	len		4556090						
+ANR	4556241	Symbol	* aiocb		4556090						
+ANR	4556242	Symbol	pread		4556090						
+ANR	4556243	Symbol	aiocb -> aio_type		4556090						

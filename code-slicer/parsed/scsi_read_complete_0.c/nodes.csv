@@ -1,0 +1,328 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7637011	File	/home/p4ultr4n/workplace/ReVeal/raw_code/scsi_read_complete_0.c								
+ANR	7637012	Function	scsi_read_complete	1:0:0:1194							
+ANR	7637013	FunctionDef	"scsi_read_complete (void * opaque , int ret)"		7637012	0					
+ANR	7637014	CompoundStatement		3:0:56:1194	7637012	0					
+ANR	7637015	IdentifierDeclStatement	SCSIGenericReq * r = ( SCSIGenericReq * ) opaque ;	5:4:63:107	7637012	0	True				
+ANR	7637016	IdentifierDecl	* r = ( SCSIGenericReq * ) opaque		7637012	0					
+ANR	7637017	IdentifierDeclType	SCSIGenericReq *		7637012	0					
+ANR	7637018	Identifier	r		7637012	1					
+ANR	7637019	AssignmentExpression	* r = ( SCSIGenericReq * ) opaque		7637012	2		=			
+ANR	7637020	Identifier	r		7637012	0					
+ANR	7637021	CastExpression	( SCSIGenericReq * ) opaque		7637012	1					
+ANR	7637022	CastTarget	SCSIGenericReq *		7637012	0					
+ANR	7637023	Identifier	opaque		7637012	1					
+ANR	7637024	IdentifierDeclStatement	SCSIDevice * s = r -> req . dev ;	7:4:114:140	7637012	1	True				
+ANR	7637025	IdentifierDecl	* s = r -> req . dev		7637012	0					
+ANR	7637026	IdentifierDeclType	SCSIDevice *		7637012	0					
+ANR	7637027	Identifier	s		7637012	1					
+ANR	7637028	AssignmentExpression	* s = r -> req . dev		7637012	2		=			
+ANR	7637029	Identifier	s		7637012	0					
+ANR	7637030	MemberAccess	r -> req . dev		7637012	1					
+ANR	7637031	PtrMemberAccess	r -> req		7637012	0					
+ANR	7637032	Identifier	r		7637012	0					
+ANR	7637033	Identifier	req		7637012	1					
+ANR	7637034	Identifier	dev		7637012	1					
+ANR	7637035	IdentifierDeclStatement	int len ;	9:4:147:154	7637012	2	True				
+ANR	7637036	IdentifierDecl	len		7637012	0					
+ANR	7637037	IdentifierDeclType	int		7637012	0					
+ANR	7637038	Identifier	len		7637012	1					
+ANR	7637039	ExpressionStatement	r -> req . aiocb = NULL	13:4:163:182	7637012	3	True				
+ANR	7637040	AssignmentExpression	r -> req . aiocb = NULL		7637012	0		=			
+ANR	7637041	MemberAccess	r -> req . aiocb		7637012	0					
+ANR	7637042	PtrMemberAccess	r -> req		7637012	0					
+ANR	7637043	Identifier	r		7637012	0					
+ANR	7637044	Identifier	req		7637012	1					
+ANR	7637045	Identifier	aiocb		7637012	1					
+ANR	7637046	Identifier	NULL		7637012	1					
+ANR	7637047	IfStatement	if ( ret || r -> req . io_canceled )		7637012	4					
+ANR	7637048	Condition	ret || r -> req . io_canceled	15:8:193:217	7637012	0	True				
+ANR	7637049	OrExpression	ret || r -> req . io_canceled		7637012	0		||			
+ANR	7637050	Identifier	ret		7637012	0					
+ANR	7637051	MemberAccess	r -> req . io_canceled		7637012	1					
+ANR	7637052	PtrMemberAccess	r -> req		7637012	0					
+ANR	7637053	Identifier	r		7637012	0					
+ANR	7637054	Identifier	req		7637012	1					
+ANR	7637055	Identifier	io_canceled		7637012	1					
+ANR	7637056	CompoundStatement		13:35:163:163	7637012	1					
+ANR	7637057	ExpressionStatement	"scsi_command_complete ( r , ret )"	17:8:231:260	7637012	0	True				
+ANR	7637058	CallExpression	"scsi_command_complete ( r , ret )"		7637012	0					
+ANR	7637059	Callee	scsi_command_complete		7637012	0					
+ANR	7637060	Identifier	scsi_command_complete		7637012	0					
+ANR	7637061	ArgumentList	r		7637012	1					
+ANR	7637062	Argument	r		7637012	0					
+ANR	7637063	Identifier	r		7637012	0					
+ANR	7637064	Argument	ret		7637012	1					
+ANR	7637065	Identifier	ret		7637012	0					
+ANR	7637066	ReturnStatement	return ;	19:8:271:277	7637012	1	True				
+ANR	7637067	ExpressionStatement	len = r -> io_header . dxfer_len - r -> io_header . resid	23:4:291:340	7637012	5	True				
+ANR	7637068	AssignmentExpression	len = r -> io_header . dxfer_len - r -> io_header . resid		7637012	0		=			
+ANR	7637069	Identifier	len		7637012	0					
+ANR	7637070	AdditiveExpression	r -> io_header . dxfer_len - r -> io_header . resid		7637012	1		-			
+ANR	7637071	MemberAccess	r -> io_header . dxfer_len		7637012	0					
+ANR	7637072	PtrMemberAccess	r -> io_header		7637012	0					
+ANR	7637073	Identifier	r		7637012	0					
+ANR	7637074	Identifier	io_header		7637012	1					
+ANR	7637075	Identifier	dxfer_len		7637012	1					
+ANR	7637076	MemberAccess	r -> io_header . resid		7637012	1					
+ANR	7637077	PtrMemberAccess	r -> io_header		7637012	0					
+ANR	7637078	Identifier	r		7637012	0					
+ANR	7637079	Identifier	io_header		7637012	1					
+ANR	7637080	Identifier	resid		7637012	1					
+ANR	7637081	ExpressionStatement	"DPRINTF ( ""Data ready tag=0x%x len=%d\\n"" , r -> req . tag , len )"	25:4:347:403	7637012	6	True				
+ANR	7637082	CallExpression	"DPRINTF ( ""Data ready tag=0x%x len=%d\\n"" , r -> req . tag , len )"		7637012	0					
+ANR	7637083	Callee	DPRINTF		7637012	0					
+ANR	7637084	Identifier	DPRINTF		7637012	0					
+ANR	7637085	ArgumentList	"""Data ready tag=0x%x len=%d\\n"""		7637012	1					
+ANR	7637086	Argument	"""Data ready tag=0x%x len=%d\\n"""		7637012	0					
+ANR	7637087	PrimaryExpression	"""Data ready tag=0x%x len=%d\\n"""		7637012	0					
+ANR	7637088	Argument	r -> req . tag		7637012	1					
+ANR	7637089	MemberAccess	r -> req . tag		7637012	0					
+ANR	7637090	PtrMemberAccess	r -> req		7637012	0					
+ANR	7637091	Identifier	r		7637012	0					
+ANR	7637092	Identifier	req		7637012	1					
+ANR	7637093	Identifier	tag		7637012	1					
+ANR	7637094	Argument	len		7637012	2					
+ANR	7637095	Identifier	len		7637012	0					
+ANR	7637096	ExpressionStatement	r -> len = - 1	29:4:412:423	7637012	7	True				
+ANR	7637097	AssignmentExpression	r -> len = - 1		7637012	0		=			
+ANR	7637098	PtrMemberAccess	r -> len		7637012	0					
+ANR	7637099	Identifier	r		7637012	0					
+ANR	7637100	Identifier	len		7637012	1					
+ANR	7637101	UnaryOperationExpression	- 1		7637012	1					
+ANR	7637102	UnaryOperator	-		7637012	0					
+ANR	7637103	PrimaryExpression	1		7637012	1					
+ANR	7637104	IfStatement	if ( len == 0 )		7637012	8					
+ANR	7637105	Condition	len == 0	31:8:434:441	7637012	0	True				
+ANR	7637106	EqualityExpression	len == 0		7637012	0		==			
+ANR	7637107	Identifier	len		7637012	0					
+ANR	7637108	PrimaryExpression	0		7637012	1					
+ANR	7637109	CompoundStatement		29:18:387:387	7637012	1					
+ANR	7637110	ExpressionStatement	"scsi_command_complete ( r , 0 )"	33:8:455:482	7637012	0	True				
+ANR	7637111	CallExpression	"scsi_command_complete ( r , 0 )"		7637012	0					
+ANR	7637112	Callee	scsi_command_complete		7637012	0					
+ANR	7637113	Identifier	scsi_command_complete		7637012	0					
+ANR	7637114	ArgumentList	r		7637012	1					
+ANR	7637115	Argument	r		7637012	0					
+ANR	7637116	Identifier	r		7637012	0					
+ANR	7637117	Argument	0		7637012	1					
+ANR	7637118	PrimaryExpression	0		7637012	0					
+ANR	7637119	ElseStatement	else		7637012	0					
+ANR	7637120	CompoundStatement		33:11:439:439	7637012	0					
+ANR	7637121	IfStatement	if ( r -> req . cmd . buf [ 0 ] == READ_CAPACITY_10 && ( ldl_be_p ( & r -> buf [ 0 ] ) != 0xffffffffU || s -> max_lba == 0 ) )		7637012	0					
+ANR	7637122	Condition	r -> req . cmd . buf [ 0 ] == READ_CAPACITY_10 && ( ldl_be_p ( & r -> buf [ 0 ] ) != 0xffffffffU || s -> max_lba == 0 )	39:12:576:685	7637012	0	True				
+ANR	7637123	AndExpression	r -> req . cmd . buf [ 0 ] == READ_CAPACITY_10 && ( ldl_be_p ( & r -> buf [ 0 ] ) != 0xffffffffU || s -> max_lba == 0 )		7637012	0		&&			
+ANR	7637124	EqualityExpression	r -> req . cmd . buf [ 0 ] == READ_CAPACITY_10		7637012	0		==			
+ANR	7637125	ArrayIndexing	r -> req . cmd . buf [ 0 ]		7637012	0					
+ANR	7637126	MemberAccess	r -> req . cmd . buf		7637012	0					
+ANR	7637127	MemberAccess	r -> req . cmd		7637012	0					
+ANR	7637128	PtrMemberAccess	r -> req		7637012	0					
+ANR	7637129	Identifier	r		7637012	0					
+ANR	7637130	Identifier	req		7637012	1					
+ANR	7637131	Identifier	cmd		7637012	1					
+ANR	7637132	Identifier	buf		7637012	1					
+ANR	7637133	PrimaryExpression	0		7637012	1					
+ANR	7637134	Identifier	READ_CAPACITY_10		7637012	1					
+ANR	7637135	OrExpression	ldl_be_p ( & r -> buf [ 0 ] ) != 0xffffffffU || s -> max_lba == 0		7637012	1		||			
+ANR	7637136	EqualityExpression	ldl_be_p ( & r -> buf [ 0 ] ) != 0xffffffffU		7637012	0		!=			
+ANR	7637137	CallExpression	ldl_be_p ( & r -> buf [ 0 ] )		7637012	0					
+ANR	7637138	Callee	ldl_be_p		7637012	0					
+ANR	7637139	Identifier	ldl_be_p		7637012	0					
+ANR	7637140	ArgumentList	& r -> buf [ 0 ]		7637012	1					
+ANR	7637141	Argument	& r -> buf [ 0 ]		7637012	0					
+ANR	7637142	UnaryOperationExpression	& r -> buf [ 0 ]		7637012	0					
+ANR	7637143	UnaryOperator	&		7637012	0					
+ANR	7637144	ArrayIndexing	r -> buf [ 0 ]		7637012	1					
+ANR	7637145	PtrMemberAccess	r -> buf		7637012	0					
+ANR	7637146	Identifier	r		7637012	0					
+ANR	7637147	Identifier	buf		7637012	1					
+ANR	7637148	PrimaryExpression	0		7637012	1					
+ANR	7637149	PrimaryExpression	0xffffffffU		7637012	1					
+ANR	7637150	EqualityExpression	s -> max_lba == 0		7637012	1		==			
+ANR	7637151	PtrMemberAccess	s -> max_lba		7637012	0					
+ANR	7637152	Identifier	s		7637012	0					
+ANR	7637153	Identifier	max_lba		7637012	1					
+ANR	7637154	PrimaryExpression	0		7637012	1					
+ANR	7637155	CompoundStatement		39:70:631:631	7637012	1					
+ANR	7637156	ExpressionStatement	s -> blocksize = ldl_be_p ( & r -> buf [ 4 ] )	43:12:703:738	7637012	0	True				
+ANR	7637157	AssignmentExpression	s -> blocksize = ldl_be_p ( & r -> buf [ 4 ] )		7637012	0		=			
+ANR	7637158	PtrMemberAccess	s -> blocksize		7637012	0					
+ANR	7637159	Identifier	s		7637012	0					
+ANR	7637160	Identifier	blocksize		7637012	1					
+ANR	7637161	CallExpression	ldl_be_p ( & r -> buf [ 4 ] )		7637012	1					
+ANR	7637162	Callee	ldl_be_p		7637012	0					
+ANR	7637163	Identifier	ldl_be_p		7637012	0					
+ANR	7637164	ArgumentList	& r -> buf [ 4 ]		7637012	1					
+ANR	7637165	Argument	& r -> buf [ 4 ]		7637012	0					
+ANR	7637166	UnaryOperationExpression	& r -> buf [ 4 ]		7637012	0					
+ANR	7637167	UnaryOperator	&		7637012	0					
+ANR	7637168	ArrayIndexing	r -> buf [ 4 ]		7637012	1					
+ANR	7637169	PtrMemberAccess	r -> buf		7637012	0					
+ANR	7637170	Identifier	r		7637012	0					
+ANR	7637171	Identifier	buf		7637012	1					
+ANR	7637172	PrimaryExpression	4		7637012	1					
+ANR	7637173	Statement	s	45:12:753:753	7637012	1	True				
+ANR	7637174	Statement	->	45:13:754:755	7637012	2	True				
+ANR	7637175	Statement	max_lba	45:15:756:762	7637012	3	True				
+ANR	7637176	Statement	=	45:23:764:764	7637012	4	True				
+ANR	7637177	Statement	ldl_be_p	45:25:766:773	7637012	5	True				
+ANR	7637178	Statement	(	45:33:774:774	7637012	6	True				
+ANR	7637179	Statement	&	45:34:775:775	7637012	7	True				
+ANR	7637180	Statement	r	45:35:776:776	7637012	8	True				
+ANR	7637181	Statement	->	45:36:777:778	7637012	9	True				
+ANR	7637182	Statement	buf	45:38:779:781	7637012	10	True				
+ANR	7637183	Statement	[	45:41:782:782	7637012	11	True				
+ANR	7637184	Statement	0	45:42:783:783	7637012	12	True				
+ANR	7637185	Statement	]	45:43:784:784	7637012	13	True				
+ANR	7637186	Statement	)	45:44:785:785	7637012	14	True				
+ANR	7637187	Statement	&	45:46:787:787	7637012	15	True				
+ANR	7637188	Statement	0xffffffffUL	45:48:789:800	7637012	16	True				
+ANR	7637189	ExpressionStatement	L	45:60:801:802	7637012	17	True				
+ANR	7637190	Identifier	L		7637012	0					
+ANR	7637191	ElseStatement	else		7637012	0					
+ANR	7637192	IfStatement	if ( r -> req . cmd . buf [ 0 ] == SERVICE_ACTION_IN_16 && ( r -> req . cmd . buf [ 1 ] & 31 ) == SAI_READ_CAPACITY_16 )		7637012	0					
+ANR	7637193	Condition	r -> req . cmd . buf [ 0 ] == SERVICE_ACTION_IN_16 && ( r -> req . cmd . buf [ 1 ] & 31 ) == SAI_READ_CAPACITY_16	47:19:824:936	7637012	0	True				
+ANR	7637194	AndExpression	r -> req . cmd . buf [ 0 ] == SERVICE_ACTION_IN_16 && ( r -> req . cmd . buf [ 1 ] & 31 ) == SAI_READ_CAPACITY_16		7637012	0		&&			
+ANR	7637195	EqualityExpression	r -> req . cmd . buf [ 0 ] == SERVICE_ACTION_IN_16		7637012	0		==			
+ANR	7637196	ArrayIndexing	r -> req . cmd . buf [ 0 ]		7637012	0					
+ANR	7637197	MemberAccess	r -> req . cmd . buf		7637012	0					
+ANR	7637198	MemberAccess	r -> req . cmd		7637012	0					
+ANR	7637199	PtrMemberAccess	r -> req		7637012	0					
+ANR	7637200	Identifier	r		7637012	0					
+ANR	7637201	Identifier	req		7637012	1					
+ANR	7637202	Identifier	cmd		7637012	1					
+ANR	7637203	Identifier	buf		7637012	1					
+ANR	7637204	PrimaryExpression	0		7637012	1					
+ANR	7637205	Identifier	SERVICE_ACTION_IN_16		7637012	1					
+ANR	7637206	EqualityExpression	( r -> req . cmd . buf [ 1 ] & 31 ) == SAI_READ_CAPACITY_16		7637012	1		==			
+ANR	7637207	BitAndExpression	r -> req . cmd . buf [ 1 ] & 31		7637012	0		&			
+ANR	7637208	ArrayIndexing	r -> req . cmd . buf [ 1 ]		7637012	0					
+ANR	7637209	MemberAccess	r -> req . cmd . buf		7637012	0					
+ANR	7637210	MemberAccess	r -> req . cmd		7637012	0					
+ANR	7637211	PtrMemberAccess	r -> req		7637012	0					
+ANR	7637212	Identifier	r		7637012	0					
+ANR	7637213	Identifier	req		7637012	1					
+ANR	7637214	Identifier	cmd		7637012	1					
+ANR	7637215	Identifier	buf		7637012	1					
+ANR	7637216	PrimaryExpression	1		7637012	1					
+ANR	7637217	PrimaryExpression	31		7637012	1					
+ANR	7637218	Identifier	SAI_READ_CAPACITY_16		7637012	1					
+ANR	7637219	CompoundStatement		47:69:882:882	7637012	1					
+ANR	7637220	ExpressionStatement	s -> blocksize = ldl_be_p ( & r -> buf [ 8 ] )	51:12:954:989	7637012	0	True				
+ANR	7637221	AssignmentExpression	s -> blocksize = ldl_be_p ( & r -> buf [ 8 ] )		7637012	0		=			
+ANR	7637222	PtrMemberAccess	s -> blocksize		7637012	0					
+ANR	7637223	Identifier	s		7637012	0					
+ANR	7637224	Identifier	blocksize		7637012	1					
+ANR	7637225	CallExpression	ldl_be_p ( & r -> buf [ 8 ] )		7637012	1					
+ANR	7637226	Callee	ldl_be_p		7637012	0					
+ANR	7637227	Identifier	ldl_be_p		7637012	0					
+ANR	7637228	ArgumentList	& r -> buf [ 8 ]		7637012	1					
+ANR	7637229	Argument	& r -> buf [ 8 ]		7637012	0					
+ANR	7637230	UnaryOperationExpression	& r -> buf [ 8 ]		7637012	0					
+ANR	7637231	UnaryOperator	&		7637012	0					
+ANR	7637232	ArrayIndexing	r -> buf [ 8 ]		7637012	1					
+ANR	7637233	PtrMemberAccess	r -> buf		7637012	0					
+ANR	7637234	Identifier	r		7637012	0					
+ANR	7637235	Identifier	buf		7637012	1					
+ANR	7637236	PrimaryExpression	8		7637012	1					
+ANR	7637237	ExpressionStatement	s -> max_lba = ldq_be_p ( & r -> buf [ 0 ] )	53:12:1004:1037	7637012	1	True				
+ANR	7637238	AssignmentExpression	s -> max_lba = ldq_be_p ( & r -> buf [ 0 ] )		7637012	0		=			
+ANR	7637239	PtrMemberAccess	s -> max_lba		7637012	0					
+ANR	7637240	Identifier	s		7637012	0					
+ANR	7637241	Identifier	max_lba		7637012	1					
+ANR	7637242	CallExpression	ldq_be_p ( & r -> buf [ 0 ] )		7637012	1					
+ANR	7637243	Callee	ldq_be_p		7637012	0					
+ANR	7637244	Identifier	ldq_be_p		7637012	0					
+ANR	7637245	ArgumentList	& r -> buf [ 0 ]		7637012	1					
+ANR	7637246	Argument	& r -> buf [ 0 ]		7637012	0					
+ANR	7637247	UnaryOperationExpression	& r -> buf [ 0 ]		7637012	0					
+ANR	7637248	UnaryOperator	&		7637012	0					
+ANR	7637249	ArrayIndexing	r -> buf [ 0 ]		7637012	1					
+ANR	7637250	PtrMemberAccess	r -> buf		7637012	0					
+ANR	7637251	Identifier	r		7637012	0					
+ANR	7637252	Identifier	buf		7637012	1					
+ANR	7637253	PrimaryExpression	0		7637012	1					
+ANR	7637254	ExpressionStatement	"bdrv_set_guest_block_size ( s -> conf . bs , s -> blocksize )"	57:8:1059:1110	7637012	1	True				
+ANR	7637255	CallExpression	"bdrv_set_guest_block_size ( s -> conf . bs , s -> blocksize )"		7637012	0					
+ANR	7637256	Callee	bdrv_set_guest_block_size		7637012	0					
+ANR	7637257	Identifier	bdrv_set_guest_block_size		7637012	0					
+ANR	7637258	ArgumentList	s -> conf . bs		7637012	1					
+ANR	7637259	Argument	s -> conf . bs		7637012	0					
+ANR	7637260	MemberAccess	s -> conf . bs		7637012	0					
+ANR	7637261	PtrMemberAccess	s -> conf		7637012	0					
+ANR	7637262	Identifier	s		7637012	0					
+ANR	7637263	Identifier	conf		7637012	1					
+ANR	7637264	Identifier	bs		7637012	1					
+ANR	7637265	Argument	s -> blocksize		7637012	1					
+ANR	7637266	PtrMemberAccess	s -> blocksize		7637012	0					
+ANR	7637267	Identifier	s		7637012	0					
+ANR	7637268	Identifier	blocksize		7637012	1					
+ANR	7637269	ExpressionStatement	"scsi_req_data ( & r -> req , len )"	61:8:1123:1150	7637012	2	True				
+ANR	7637270	CallExpression	"scsi_req_data ( & r -> req , len )"		7637012	0					
+ANR	7637271	Callee	scsi_req_data		7637012	0					
+ANR	7637272	Identifier	scsi_req_data		7637012	0					
+ANR	7637273	ArgumentList	& r -> req		7637012	1					
+ANR	7637274	Argument	& r -> req		7637012	0					
+ANR	7637275	UnaryOperationExpression	& r -> req		7637012	0					
+ANR	7637276	UnaryOperator	&		7637012	0					
+ANR	7637277	PtrMemberAccess	r -> req		7637012	1					
+ANR	7637278	Identifier	r		7637012	0					
+ANR	7637279	Identifier	req		7637012	1					
+ANR	7637280	Argument	len		7637012	1					
+ANR	7637281	Identifier	len		7637012	0					
+ANR	7637282	ExpressionStatement	scsi_req_unref ( & r -> req )	63:8:1161:1184	7637012	3	True				
+ANR	7637283	CallExpression	scsi_req_unref ( & r -> req )		7637012	0					
+ANR	7637284	Callee	scsi_req_unref		7637012	0					
+ANR	7637285	Identifier	scsi_req_unref		7637012	0					
+ANR	7637286	ArgumentList	& r -> req		7637012	1					
+ANR	7637287	Argument	& r -> req		7637012	0					
+ANR	7637288	UnaryOperationExpression	& r -> req		7637012	0					
+ANR	7637289	UnaryOperator	&		7637012	0					
+ANR	7637290	PtrMemberAccess	r -> req		7637012	1					
+ANR	7637291	Identifier	r		7637012	0					
+ANR	7637292	Identifier	req		7637012	1					
+ANR	7637293	ReturnType	static void		7637012	1					
+ANR	7637294	Identifier	scsi_read_complete		7637012	2					
+ANR	7637295	ParameterList	"void * opaque , int ret"		7637012	3					
+ANR	7637296	Parameter	void * opaque	1:31:31:43	7637012	0	True				
+ANR	7637297	ParameterType	void *		7637012	0					
+ANR	7637298	Identifier	opaque		7637012	1					
+ANR	7637299	Parameter	int ret	1:46:46:52	7637012	1	True				
+ANR	7637300	ParameterType	int		7637012	0					
+ANR	7637301	Identifier	ret		7637012	1					
+ANR	7637302	CFGEntryNode	ENTRY		7637012		True				
+ANR	7637303	CFGExitNode	EXIT		7637012		True				
+ANR	7637304	Symbol	r -> io_header . resid		7637012						
+ANR	7637305	Symbol	r -> req . cmd . buf		7637012						
+ANR	7637306	Symbol	r -> len		7637012						
+ANR	7637307	Symbol	r -> req . io_canceled		7637012						
+ANR	7637308	Symbol	READ_CAPACITY_10		7637012						
+ANR	7637309	Symbol	r -> req		7637012						
+ANR	7637310	Symbol	r -> req . aiocb		7637012						
+ANR	7637311	Symbol	r -> io_header		7637012						
+ANR	7637312	Symbol	ldq_be_p		7637012						
+ANR	7637313	Symbol	& r -> req		7637012						
+ANR	7637314	Symbol	len		7637012						
+ANR	7637315	Symbol	r -> io_header . dxfer_len		7637012						
+ANR	7637316	Symbol	* r -> req . cmd		7637012						
+ANR	7637317	Symbol	SAI_READ_CAPACITY_16		7637012						
+ANR	7637318	Symbol	r -> req . cmd		7637012						
+ANR	7637319	Symbol	* * r		7637012						
+ANR	7637320	Symbol	s -> conf		7637012						
+ANR	7637321	Symbol	ret		7637012						
+ANR	7637322	Symbol	opaque		7637012						
+ANR	7637323	Symbol	NULL		7637012						
+ANR	7637324	Symbol	r -> buf		7637012						
+ANR	7637325	Symbol	s -> conf . bs		7637012						
+ANR	7637326	Symbol	* r -> req . cmd . buf		7637012						
+ANR	7637327	Symbol	s -> blocksize		7637012						
+ANR	7637328	Symbol	r		7637012						
+ANR	7637329	Symbol	r -> req . dev		7637012						
+ANR	7637330	Symbol	s		7637012						
+ANR	7637331	Symbol	s -> max_lba		7637012						
+ANR	7637332	Symbol	r -> req . tag		7637012						
+ANR	7637333	Symbol	SERVICE_ACTION_IN_16		7637012						
+ANR	7637334	Symbol	* r -> req		7637012						
+ANR	7637335	Symbol	* r		7637012						
+ANR	7637336	Symbol	* s		7637012						
+ANR	7637337	Symbol	ldl_be_p		7637012						

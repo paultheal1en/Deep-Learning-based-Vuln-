@@ -1,0 +1,408 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4386467	File	/home/p4ultr4n/workplace/ReVeal/raw_code/get_phys_addr_v5_01_0.c								
+ANR	4386468	Function	get_phys_addr_v5	1:0:0:2558							
+ANR	4386469	FunctionDef	"get_phys_addr_v5 (CPUState * env , uint32_t address , int access_type , int is_user , uint32_t * phys_ptr , int * prot)"		4386468	0					
+ANR	4386470	CompoundStatement		5:0:131:2558	4386468	0					
+ANR	4386471	IdentifierDeclStatement	int code ;	7:4:138:146	4386468	0	True				
+ANR	4386472	IdentifierDecl	code		4386468	0					
+ANR	4386473	IdentifierDeclType	int		4386468	0					
+ANR	4386474	Identifier	code		4386468	1					
+ANR	4386475	IdentifierDeclStatement	uint32_t table ;	9:4:153:167	4386468	1	True				
+ANR	4386476	IdentifierDecl	table		4386468	0					
+ANR	4386477	IdentifierDeclType	uint32_t		4386468	0					
+ANR	4386478	Identifier	table		4386468	1					
+ANR	4386479	IdentifierDeclStatement	uint32_t desc ;	11:4:174:187	4386468	2	True				
+ANR	4386480	IdentifierDecl	desc		4386468	0					
+ANR	4386481	IdentifierDeclType	uint32_t		4386468	0					
+ANR	4386482	Identifier	desc		4386468	1					
+ANR	4386483	IdentifierDeclStatement	int type ;	13:4:194:202	4386468	3	True				
+ANR	4386484	IdentifierDecl	type		4386468	0					
+ANR	4386485	IdentifierDeclType	int		4386468	0					
+ANR	4386486	Identifier	type		4386468	1					
+ANR	4386487	IdentifierDeclStatement	int ap ;	15:4:209:215	4386468	4	True				
+ANR	4386488	IdentifierDecl	ap		4386468	0					
+ANR	4386489	IdentifierDeclType	int		4386468	0					
+ANR	4386490	Identifier	ap		4386468	1					
+ANR	4386491	IdentifierDeclStatement	int domain ;	17:4:222:232	4386468	5	True				
+ANR	4386492	IdentifierDecl	domain		4386468	0					
+ANR	4386493	IdentifierDeclType	int		4386468	0					
+ANR	4386494	Identifier	domain		4386468	1					
+ANR	4386495	IdentifierDeclStatement	uint32_t phys_addr ;	19:4:239:257	4386468	6	True				
+ANR	4386496	IdentifierDecl	phys_addr		4386468	0					
+ANR	4386497	IdentifierDeclType	uint32_t		4386468	0					
+ANR	4386498	Identifier	phys_addr		4386468	1					
+ANR	4386499	ExpressionStatement	"table = get_level1_table_address ( env , address )"	27:4:328:374	4386468	7	True				
+ANR	4386500	AssignmentExpression	"table = get_level1_table_address ( env , address )"		4386468	0		=			
+ANR	4386501	Identifier	table		4386468	0					
+ANR	4386502	CallExpression	"get_level1_table_address ( env , address )"		4386468	1					
+ANR	4386503	Callee	get_level1_table_address		4386468	0					
+ANR	4386504	Identifier	get_level1_table_address		4386468	0					
+ANR	4386505	ArgumentList	env		4386468	1					
+ANR	4386506	Argument	env		4386468	0					
+ANR	4386507	Identifier	env		4386468	0					
+ANR	4386508	Argument	address		4386468	1					
+ANR	4386509	Identifier	address		4386468	0					
+ANR	4386510	ExpressionStatement	desc = ldl_phys ( table )	29:4:381:403	4386468	8	True				
+ANR	4386511	AssignmentExpression	desc = ldl_phys ( table )		4386468	0		=			
+ANR	4386512	Identifier	desc		4386468	0					
+ANR	4386513	CallExpression	ldl_phys ( table )		4386468	1					
+ANR	4386514	Callee	ldl_phys		4386468	0					
+ANR	4386515	Identifier	ldl_phys		4386468	0					
+ANR	4386516	ArgumentList	table		4386468	1					
+ANR	4386517	Argument	table		4386468	0					
+ANR	4386518	Identifier	table		4386468	0					
+ANR	4386519	ExpressionStatement	type = ( desc & 3 )	31:4:410:427	4386468	9	True				
+ANR	4386520	AssignmentExpression	type = ( desc & 3 )		4386468	0		=			
+ANR	4386521	Identifier	type		4386468	0					
+ANR	4386522	BitAndExpression	desc & 3		4386468	1		&			
+ANR	4386523	Identifier	desc		4386468	0					
+ANR	4386524	PrimaryExpression	3		4386468	1					
+ANR	4386525	ExpressionStatement	domain = ( env -> cp15 . c3 >> ( ( desc >> 4 ) & 0x1e ) ) & 3	33:4:434:485	4386468	10	True				
+ANR	4386526	AssignmentExpression	domain = ( env -> cp15 . c3 >> ( ( desc >> 4 ) & 0x1e ) ) & 3		4386468	0		=			
+ANR	4386527	Identifier	domain		4386468	0					
+ANR	4386528	BitAndExpression	( env -> cp15 . c3 >> ( ( desc >> 4 ) & 0x1e ) ) & 3		4386468	1		&			
+ANR	4386529	ShiftExpression	env -> cp15 . c3 >> ( ( desc >> 4 ) & 0x1e )		4386468	0		>>			
+ANR	4386530	MemberAccess	env -> cp15 . c3		4386468	0					
+ANR	4386531	PtrMemberAccess	env -> cp15		4386468	0					
+ANR	4386532	Identifier	env		4386468	0					
+ANR	4386533	Identifier	cp15		4386468	1					
+ANR	4386534	Identifier	c3		4386468	1					
+ANR	4386535	BitAndExpression	( desc >> 4 ) & 0x1e		4386468	1		&			
+ANR	4386536	ShiftExpression	desc >> 4		4386468	0		>>			
+ANR	4386537	Identifier	desc		4386468	0					
+ANR	4386538	PrimaryExpression	4		4386468	1					
+ANR	4386539	PrimaryExpression	0x1e		4386468	1					
+ANR	4386540	PrimaryExpression	3		4386468	1					
+ANR	4386541	IfStatement	if ( type == 0 )		4386468	11					
+ANR	4386542	Condition	type == 0	35:8:496:504	4386468	0	True				
+ANR	4386543	EqualityExpression	type == 0		4386468	0		==			
+ANR	4386544	Identifier	type		4386468	0					
+ANR	4386545	PrimaryExpression	0		4386468	1					
+ANR	4386546	CompoundStatement		31:19:375:375	4386468	1					
+ANR	4386547	ExpressionStatement	code = 5	39:8:561:569	4386468	0	True				
+ANR	4386548	AssignmentExpression	code = 5		4386468	0		=			
+ANR	4386549	Identifier	code		4386468	0					
+ANR	4386550	PrimaryExpression	5		4386468	1					
+ANR	4386551	GotoStatement	goto do_fault ;	41:8:580:593	4386468	1	True				
+ANR	4386552	Identifier	do_fault		4386468	0					
+ANR	4386553	IfStatement	if ( domain == 0 || domain == 2 )		4386468	12					
+ANR	4386554	Condition	domain == 0 || domain == 2	45:8:611:636	4386468	0	True				
+ANR	4386555	OrExpression	domain == 0 || domain == 2		4386468	0		||			
+ANR	4386556	EqualityExpression	domain == 0		4386468	0		==			
+ANR	4386557	Identifier	domain		4386468	0					
+ANR	4386558	PrimaryExpression	0		4386468	1					
+ANR	4386559	EqualityExpression	domain == 2		4386468	1		==			
+ANR	4386560	Identifier	domain		4386468	0					
+ANR	4386561	PrimaryExpression	2		4386468	1					
+ANR	4386562	CompoundStatement		41:36:507:507	4386468	1					
+ANR	4386563	IfStatement	if ( type == 2 )		4386468	0					
+ANR	4386564	Condition	type == 2	47:12:654:662	4386468	0	True				
+ANR	4386565	EqualityExpression	type == 2		4386468	0		==			
+ANR	4386566	Identifier	type		4386468	0					
+ANR	4386567	PrimaryExpression	2		4386468	1					
+ANR	4386568	ExpressionStatement	code = 9	49:12:678:686	4386468	1	True				
+ANR	4386569	AssignmentExpression	code = 9		4386468	0		=			
+ANR	4386570	Identifier	code		4386468	0					
+ANR	4386571	PrimaryExpression	9		4386468	1					
+ANR	4386572	ElseStatement	else		4386468	0					
+ANR	4386573	ExpressionStatement	code = 11	53:12:744:753	4386468	0	True				
+ANR	4386574	AssignmentExpression	code = 11		4386468	0		=			
+ANR	4386575	Identifier	code		4386468	0					
+ANR	4386576	PrimaryExpression	11		4386468	1					
+ANR	4386577	GotoStatement	goto do_fault ;	55:8:790:803	4386468	1	True				
+ANR	4386578	Identifier	do_fault		4386468	0					
+ANR	4386579	IfStatement	if ( type == 2 )		4386468	13					
+ANR	4386580	Condition	type == 2	59:8:821:829	4386468	0	True				
+ANR	4386581	EqualityExpression	type == 2		4386468	0		==			
+ANR	4386582	Identifier	type		4386468	0					
+ANR	4386583	PrimaryExpression	2		4386468	1					
+ANR	4386584	CompoundStatement		55:19:700:700	4386468	1					
+ANR	4386585	ExpressionStatement	phys_addr = ( desc & 0xfff00000 ) | ( address & 0x000fffff )	63:8:872:928	4386468	0	True				
+ANR	4386586	AssignmentExpression	phys_addr = ( desc & 0xfff00000 ) | ( address & 0x000fffff )		4386468	0		=			
+ANR	4386587	Identifier	phys_addr		4386468	0					
+ANR	4386588	InclusiveOrExpression	( desc & 0xfff00000 ) | ( address & 0x000fffff )		4386468	1		|			
+ANR	4386589	BitAndExpression	desc & 0xfff00000		4386468	0		&			
+ANR	4386590	Identifier	desc		4386468	0					
+ANR	4386591	PrimaryExpression	0xfff00000		4386468	1					
+ANR	4386592	BitAndExpression	address & 0x000fffff		4386468	1		&			
+ANR	4386593	Identifier	address		4386468	0					
+ANR	4386594	PrimaryExpression	0x000fffff		4386468	1					
+ANR	4386595	ExpressionStatement	ap = ( desc >> 10 ) & 3	65:8:939:960	4386468	1	True				
+ANR	4386596	AssignmentExpression	ap = ( desc >> 10 ) & 3		4386468	0		=			
+ANR	4386597	Identifier	ap		4386468	0					
+ANR	4386598	BitAndExpression	( desc >> 10 ) & 3		4386468	1		&			
+ANR	4386599	ShiftExpression	desc >> 10		4386468	0		>>			
+ANR	4386600	Identifier	desc		4386468	0					
+ANR	4386601	PrimaryExpression	10		4386468	1					
+ANR	4386602	PrimaryExpression	3		4386468	1					
+ANR	4386603	ExpressionStatement	code = 13	67:8:971:980	4386468	2	True				
+ANR	4386604	AssignmentExpression	code = 13		4386468	0		=			
+ANR	4386605	Identifier	code		4386468	0					
+ANR	4386606	PrimaryExpression	13		4386468	1					
+ANR	4386607	ElseStatement	else		4386468	0					
+ANR	4386608	CompoundStatement		65:11:862:862	4386468	0					
+ANR	4386609	IfStatement	if ( type == 1 )		4386468	0					
+ANR	4386610	Condition	type == 1	73:5:1035:1043	4386468	0	True				
+ANR	4386611	EqualityExpression	type == 1		4386468	0		==			
+ANR	4386612	Identifier	type		4386468	0					
+ANR	4386613	PrimaryExpression	1		4386468	1					
+ANR	4386614	CompoundStatement		69:16:914:914	4386468	1					
+ANR	4386615	ExpressionStatement	table = ( desc & 0xfffffc00 ) | ( ( address >> 10 ) & 0x3fc )	77:5:1085:1140	4386468	0	True				
+ANR	4386616	AssignmentExpression	table = ( desc & 0xfffffc00 ) | ( ( address >> 10 ) & 0x3fc )		4386468	0		=			
+ANR	4386617	Identifier	table		4386468	0					
+ANR	4386618	InclusiveOrExpression	( desc & 0xfffffc00 ) | ( ( address >> 10 ) & 0x3fc )		4386468	1		|			
+ANR	4386619	BitAndExpression	desc & 0xfffffc00		4386468	0		&			
+ANR	4386620	Identifier	desc		4386468	0					
+ANR	4386621	PrimaryExpression	0xfffffc00		4386468	1					
+ANR	4386622	BitAndExpression	( address >> 10 ) & 0x3fc		4386468	1		&			
+ANR	4386623	ShiftExpression	address >> 10		4386468	0		>>			
+ANR	4386624	Identifier	address		4386468	0					
+ANR	4386625	PrimaryExpression	10		4386468	1					
+ANR	4386626	PrimaryExpression	0x3fc		4386468	1					
+ANR	4386627	ElseStatement	else		4386468	0					
+ANR	4386628	CompoundStatement		75:8:1019:1019	4386468	0					
+ANR	4386629	ExpressionStatement	table = ( desc & 0xfffff000 ) | ( ( address >> 8 ) & 0xffc )	83:5:1188:1242	4386468	0	True				
+ANR	4386630	AssignmentExpression	table = ( desc & 0xfffff000 ) | ( ( address >> 8 ) & 0xffc )		4386468	0		=			
+ANR	4386631	Identifier	table		4386468	0					
+ANR	4386632	InclusiveOrExpression	( desc & 0xfffff000 ) | ( ( address >> 8 ) & 0xffc )		4386468	1		|			
+ANR	4386633	BitAndExpression	desc & 0xfffff000		4386468	0		&			
+ANR	4386634	Identifier	desc		4386468	0					
+ANR	4386635	PrimaryExpression	0xfffff000		4386468	1					
+ANR	4386636	BitAndExpression	( address >> 8 ) & 0xffc		4386468	1		&			
+ANR	4386637	ShiftExpression	address >> 8		4386468	0		>>			
+ANR	4386638	Identifier	address		4386468	0					
+ANR	4386639	PrimaryExpression	8		4386468	1					
+ANR	4386640	PrimaryExpression	0xffc		4386468	1					
+ANR	4386641	ExpressionStatement	desc = ldl_phys ( table )	87:8:1257:1279	4386468	1	True				
+ANR	4386642	AssignmentExpression	desc = ldl_phys ( table )		4386468	0		=			
+ANR	4386643	Identifier	desc		4386468	0					
+ANR	4386644	CallExpression	ldl_phys ( table )		4386468	1					
+ANR	4386645	Callee	ldl_phys		4386468	0					
+ANR	4386646	Identifier	ldl_phys		4386468	0					
+ANR	4386647	ArgumentList	table		4386468	1					
+ANR	4386648	Argument	table		4386468	0					
+ANR	4386649	Identifier	table		4386468	0					
+ANR	4386650	SwitchStatement	switch ( desc & 3 )		4386468	2					
+ANR	4386651	Condition	desc & 3	89:16:1298:1305	4386468	0	True				
+ANR	4386652	BitAndExpression	desc & 3		4386468	0		&			
+ANR	4386653	Identifier	desc		4386468	0					
+ANR	4386654	PrimaryExpression	3		4386468	1					
+ANR	4386655	CompoundStatement		85:26:1176:1176	4386468	1					
+ANR	4386656	Label	case 0 :	91:8:1319:1325	4386468	0	True				
+ANR	4386657	ExpressionStatement	code = 7	93:12:1371:1379	4386468	1	True				
+ANR	4386658	AssignmentExpression	code = 7		4386468	0		=			
+ANR	4386659	Identifier	code		4386468	0					
+ANR	4386660	PrimaryExpression	7		4386468	1					
+ANR	4386661	GotoStatement	goto do_fault ;	95:12:1394:1407	4386468	2	True				
+ANR	4386662	Identifier	do_fault		4386468	0					
+ANR	4386663	Label	case 1 :	97:8:1418:1424	4386468	3	True				
+ANR	4386664	ExpressionStatement	phys_addr = ( desc & 0xffff0000 ) | ( address & 0xffff )	99:12:1456:1508	4386468	4	True				
+ANR	4386665	AssignmentExpression	phys_addr = ( desc & 0xffff0000 ) | ( address & 0xffff )		4386468	0		=			
+ANR	4386666	Identifier	phys_addr		4386468	0					
+ANR	4386667	InclusiveOrExpression	( desc & 0xffff0000 ) | ( address & 0xffff )		4386468	1		|			
+ANR	4386668	BitAndExpression	desc & 0xffff0000		4386468	0		&			
+ANR	4386669	Identifier	desc		4386468	0					
+ANR	4386670	PrimaryExpression	0xffff0000		4386468	1					
+ANR	4386671	BitAndExpression	address & 0xffff		4386468	1		&			
+ANR	4386672	Identifier	address		4386468	0					
+ANR	4386673	PrimaryExpression	0xffff		4386468	1					
+ANR	4386674	ExpressionStatement	ap = ( desc >> ( 4 + ( ( address >> 13 ) & 6 ) ) ) & 3	101:12:1523:1569	4386468	5	True				
+ANR	4386675	AssignmentExpression	ap = ( desc >> ( 4 + ( ( address >> 13 ) & 6 ) ) ) & 3		4386468	0		=			
+ANR	4386676	Identifier	ap		4386468	0					
+ANR	4386677	BitAndExpression	( desc >> ( 4 + ( ( address >> 13 ) & 6 ) ) ) & 3		4386468	1		&			
+ANR	4386678	ShiftExpression	desc >> ( 4 + ( ( address >> 13 ) & 6 ) )		4386468	0		>>			
+ANR	4386679	Identifier	desc		4386468	0					
+ANR	4386680	AdditiveExpression	4 + ( ( address >> 13 ) & 6 )		4386468	1		+			
+ANR	4386681	PrimaryExpression	4		4386468	0					
+ANR	4386682	BitAndExpression	( address >> 13 ) & 6		4386468	1		&			
+ANR	4386683	ShiftExpression	address >> 13		4386468	0		>>			
+ANR	4386684	Identifier	address		4386468	0					
+ANR	4386685	PrimaryExpression	13		4386468	1					
+ANR	4386686	PrimaryExpression	6		4386468	1					
+ANR	4386687	PrimaryExpression	3		4386468	1					
+ANR	4386688	BreakStatement	break ;	103:12:1584:1589	4386468	6	True				
+ANR	4386689	Label	case 2 :	105:8:1600:1606	4386468	7	True				
+ANR	4386690	ExpressionStatement	phys_addr = ( desc & 0xfffff000 ) | ( address & 0xfff )	107:12:1637:1688	4386468	8	True				
+ANR	4386691	AssignmentExpression	phys_addr = ( desc & 0xfffff000 ) | ( address & 0xfff )		4386468	0		=			
+ANR	4386692	Identifier	phys_addr		4386468	0					
+ANR	4386693	InclusiveOrExpression	( desc & 0xfffff000 ) | ( address & 0xfff )		4386468	1		|			
+ANR	4386694	BitAndExpression	desc & 0xfffff000		4386468	0		&			
+ANR	4386695	Identifier	desc		4386468	0					
+ANR	4386696	PrimaryExpression	0xfffff000		4386468	1					
+ANR	4386697	BitAndExpression	address & 0xfff		4386468	1		&			
+ANR	4386698	Identifier	address		4386468	0					
+ANR	4386699	PrimaryExpression	0xfff		4386468	1					
+ANR	4386700	ExpressionStatement	ap = ( desc >> ( 4 + ( ( address >> 13 ) & 6 ) ) ) & 3	109:12:1703:1749	4386468	9	True				
+ANR	4386701	AssignmentExpression	ap = ( desc >> ( 4 + ( ( address >> 13 ) & 6 ) ) ) & 3		4386468	0		=			
+ANR	4386702	Identifier	ap		4386468	0					
+ANR	4386703	BitAndExpression	( desc >> ( 4 + ( ( address >> 13 ) & 6 ) ) ) & 3		4386468	1		&			
+ANR	4386704	ShiftExpression	desc >> ( 4 + ( ( address >> 13 ) & 6 ) )		4386468	0		>>			
+ANR	4386705	Identifier	desc		4386468	0					
+ANR	4386706	AdditiveExpression	4 + ( ( address >> 13 ) & 6 )		4386468	1		+			
+ANR	4386707	PrimaryExpression	4		4386468	0					
+ANR	4386708	BitAndExpression	( address >> 13 ) & 6		4386468	1		&			
+ANR	4386709	ShiftExpression	address >> 13		4386468	0		>>			
+ANR	4386710	Identifier	address		4386468	0					
+ANR	4386711	PrimaryExpression	13		4386468	1					
+ANR	4386712	PrimaryExpression	6		4386468	1					
+ANR	4386713	PrimaryExpression	3		4386468	1					
+ANR	4386714	BreakStatement	break ;	111:12:1764:1769	4386468	10	True				
+ANR	4386715	Label	case 3 :	113:8:1780:1786	4386468	11	True				
+ANR	4386716	IfStatement	if ( type == 1 )		4386468	12					
+ANR	4386717	Condition	type == 1	115:9:1814:1822	4386468	0	True				
+ANR	4386718	EqualityExpression	type == 1		4386468	0		==			
+ANR	4386719	Identifier	type		4386468	0					
+ANR	4386720	PrimaryExpression	1		4386468	1					
+ANR	4386721	CompoundStatement		111:20:1693:1693	4386468	1					
+ANR	4386722	IfStatement	"if ( arm_feature ( env , ARM_FEATURE_XSCALE ) )"		4386468	0					
+ANR	4386723	Condition	"arm_feature ( env , ARM_FEATURE_XSCALE )"	117:6:1834:1869	4386468	0	True				
+ANR	4386724	CallExpression	"arm_feature ( env , ARM_FEATURE_XSCALE )"		4386468	0					
+ANR	4386725	Callee	arm_feature		4386468	0					
+ANR	4386726	Identifier	arm_feature		4386468	0					
+ANR	4386727	ArgumentList	env		4386468	1					
+ANR	4386728	Argument	env		4386468	0					
+ANR	4386729	Identifier	env		4386468	0					
+ANR	4386730	Argument	ARM_FEATURE_XSCALE		4386468	1					
+ANR	4386731	Identifier	ARM_FEATURE_XSCALE		4386468	0					
+ANR	4386732	CompoundStatement		113:44:1740:1740	4386468	1					
+ANR	4386733	ExpressionStatement	phys_addr = ( desc & 0xfffff000 ) | ( address & 0xfff )	119:6:1881:1932	4386468	0	True				
+ANR	4386734	AssignmentExpression	phys_addr = ( desc & 0xfffff000 ) | ( address & 0xfff )		4386468	0		=			
+ANR	4386735	Identifier	phys_addr		4386468	0					
+ANR	4386736	InclusiveOrExpression	( desc & 0xfffff000 ) | ( address & 0xfff )		4386468	1		|			
+ANR	4386737	BitAndExpression	desc & 0xfffff000		4386468	0		&			
+ANR	4386738	Identifier	desc		4386468	0					
+ANR	4386739	PrimaryExpression	0xfffff000		4386468	1					
+ANR	4386740	BitAndExpression	address & 0xfff		4386468	1		&			
+ANR	4386741	Identifier	address		4386468	0					
+ANR	4386742	PrimaryExpression	0xfff		4386468	1					
+ANR	4386743	ElseStatement	else		4386468	0					
+ANR	4386744	CompoundStatement		117:9:1812:1812	4386468	0					
+ANR	4386745	ExpressionStatement	code = 7	125:6:1991:1999	4386468	0	True				
+ANR	4386746	AssignmentExpression	code = 7		4386468	0		=			
+ANR	4386747	Identifier	code		4386468	0					
+ANR	4386748	PrimaryExpression	7		4386468	1					
+ANR	4386749	GotoStatement	goto do_fault ;	127:6:2008:2021	4386468	1	True				
+ANR	4386750	Identifier	do_fault		4386468	0					
+ANR	4386751	ElseStatement	else		4386468	0					
+ANR	4386752	CompoundStatement		127:12:1909:1909	4386468	0					
+ANR	4386753	ExpressionStatement	phys_addr = ( desc & 0xfffffc00 ) | ( address & 0x3ff )	133:2:2046:2097	4386468	0	True				
+ANR	4386754	AssignmentExpression	phys_addr = ( desc & 0xfffffc00 ) | ( address & 0x3ff )		4386468	0		=			
+ANR	4386755	Identifier	phys_addr		4386468	0					
+ANR	4386756	InclusiveOrExpression	( desc & 0xfffffc00 ) | ( address & 0x3ff )		4386468	1		|			
+ANR	4386757	BitAndExpression	desc & 0xfffffc00		4386468	0		&			
+ANR	4386758	Identifier	desc		4386468	0					
+ANR	4386759	PrimaryExpression	0xfffffc00		4386468	1					
+ANR	4386760	BitAndExpression	address & 0x3ff		4386468	1		&			
+ANR	4386761	Identifier	address		4386468	0					
+ANR	4386762	PrimaryExpression	0x3ff		4386468	1					
+ANR	4386763	ExpressionStatement	ap = ( desc >> 4 ) & 3	137:12:2120:2140	4386468	13	True				
+ANR	4386764	AssignmentExpression	ap = ( desc >> 4 ) & 3		4386468	0		=			
+ANR	4386765	Identifier	ap		4386468	0					
+ANR	4386766	BitAndExpression	( desc >> 4 ) & 3		4386468	1		&			
+ANR	4386767	ShiftExpression	desc >> 4		4386468	0		>>			
+ANR	4386768	Identifier	desc		4386468	0					
+ANR	4386769	PrimaryExpression	4		4386468	1					
+ANR	4386770	PrimaryExpression	3		4386468	1					
+ANR	4386771	BreakStatement	break ;	139:12:2155:2160	4386468	14	True				
+ANR	4386772	Label	default :	141:8:2171:2178	4386468	15	True				
+ANR	4386773	Identifier	default		4386468	0					
+ANR	4386774	ExpressionStatement	abort ( )	145:12:2269:2276	4386468	16	True				
+ANR	4386775	CallExpression	abort ( )		4386468	0					
+ANR	4386776	Callee	abort		4386468	0					
+ANR	4386777	Identifier	abort		4386468	0					
+ANR	4386778	ArgumentList			4386468	1					
+ANR	4386779	ExpressionStatement	code = 15	149:8:2298:2307	4386468	3	True				
+ANR	4386780	AssignmentExpression	code = 15		4386468	0		=			
+ANR	4386781	Identifier	code		4386468	0					
+ANR	4386782	PrimaryExpression	15		4386468	1					
+ANR	4386783	ExpressionStatement	"* prot = check_ap ( env , ap , domain , access_type , is_user )"	153:4:2321:2376	4386468	14	True				
+ANR	4386784	AssignmentExpression	"* prot = check_ap ( env , ap , domain , access_type , is_user )"		4386468	0		=			
+ANR	4386785	UnaryOperationExpression	* prot		4386468	0					
+ANR	4386786	UnaryOperator	*		4386468	0					
+ANR	4386787	Identifier	prot		4386468	1					
+ANR	4386788	CallExpression	"check_ap ( env , ap , domain , access_type , is_user )"		4386468	1					
+ANR	4386789	Callee	check_ap		4386468	0					
+ANR	4386790	Identifier	check_ap		4386468	0					
+ANR	4386791	ArgumentList	env		4386468	1					
+ANR	4386792	Argument	env		4386468	0					
+ANR	4386793	Identifier	env		4386468	0					
+ANR	4386794	Argument	ap		4386468	1					
+ANR	4386795	Identifier	ap		4386468	0					
+ANR	4386796	Argument	domain		4386468	2					
+ANR	4386797	Identifier	domain		4386468	0					
+ANR	4386798	Argument	access_type		4386468	3					
+ANR	4386799	Identifier	access_type		4386468	0					
+ANR	4386800	Argument	is_user		4386468	4					
+ANR	4386801	Identifier	is_user		4386468	0					
+ANR	4386802	IfStatement	if ( ! * prot )		4386468	15					
+ANR	4386803	Condition	! * prot	155:8:2387:2392	4386468	0	True				
+ANR	4386804	UnaryOperationExpression	! * prot		4386468	0					
+ANR	4386805	UnaryOperator	!		4386468	0					
+ANR	4386806	UnaryOperationExpression	* prot		4386468	1					
+ANR	4386807	UnaryOperator	*		4386468	0					
+ANR	4386808	Identifier	prot		4386468	1					
+ANR	4386809	CompoundStatement		151:16:2263:2263	4386468	1					
+ANR	4386810	GotoStatement	goto do_fault ;	159:8:2447:2460	4386468	0	True				
+ANR	4386811	Identifier	do_fault		4386468	0					
+ANR	4386812	ExpressionStatement	* phys_ptr = phys_addr	163:4:2474:2495	4386468	16	True				
+ANR	4386813	AssignmentExpression	* phys_ptr = phys_addr		4386468	0		=			
+ANR	4386814	UnaryOperationExpression	* phys_ptr		4386468	0					
+ANR	4386815	UnaryOperator	*		4386468	0					
+ANR	4386816	Identifier	phys_ptr		4386468	1					
+ANR	4386817	Identifier	phys_addr		4386468	1					
+ANR	4386818	ReturnStatement	return 0 ;	165:4:2502:2510	4386468	17	True				
+ANR	4386819	PrimaryExpression	0		4386468	0					
+ANR	4386820	Label	do_fault :	167:0:2513:2521	4386468	18	True				
+ANR	4386821	Identifier	do_fault		4386468	0					
+ANR	4386822	ReturnStatement	return code | ( domain << 4 ) ;	169:4:2528:2555	4386468	19	True				
+ANR	4386823	InclusiveOrExpression	code | ( domain << 4 )		4386468	0		|			
+ANR	4386824	Identifier	code		4386468	0					
+ANR	4386825	ShiftExpression	domain << 4		4386468	1		<<			
+ANR	4386826	Identifier	domain		4386468	0					
+ANR	4386827	PrimaryExpression	4		4386468	1					
+ANR	4386828	ReturnType	static int		4386468	1					
+ANR	4386829	Identifier	get_phys_addr_v5		4386468	2					
+ANR	4386830	ParameterList	"CPUState * env , uint32_t address , int access_type , int is_user , uint32_t * phys_ptr , int * prot"		4386468	3					
+ANR	4386831	Parameter	CPUState * env	1:28:28:40	4386468	0	True				
+ANR	4386832	ParameterType	CPUState *		4386468	0					
+ANR	4386833	Identifier	env		4386468	1					
+ANR	4386834	Parameter	uint32_t address	1:43:43:58	4386468	1	True				
+ANR	4386835	ParameterType	uint32_t		4386468	0					
+ANR	4386836	Identifier	address		4386468	1					
+ANR	4386837	Parameter	int access_type	1:61:61:75	4386468	2	True				
+ANR	4386838	ParameterType	int		4386468	0					
+ANR	4386839	Identifier	access_type		4386468	1					
+ANR	4386840	Parameter	int is_user	3:7:86:96	4386468	3	True				
+ANR	4386841	ParameterType	int		4386468	0					
+ANR	4386842	Identifier	is_user		4386468	1					
+ANR	4386843	Parameter	uint32_t * phys_ptr	3:20:99:116	4386468	4	True				
+ANR	4386844	ParameterType	uint32_t *		4386468	0					
+ANR	4386845	Identifier	phys_ptr		4386468	1					
+ANR	4386846	Parameter	int * prot	3:40:119:127	4386468	5	True				
+ANR	4386847	ParameterType	int *		4386468	0					
+ANR	4386848	Identifier	prot		4386468	1					
+ANR	4386849	CFGEntryNode	ENTRY		4386468		True				
+ANR	4386850	CFGExitNode	EXIT		4386468		True				
+ANR	4386851	Symbol	access_type		4386468						
+ANR	4386852	Symbol	arm_feature		4386468						
+ANR	4386853	Symbol	address		4386468						
+ANR	4386854	Symbol	code		4386468						
+ANR	4386855	Symbol	env -> cp15 . c3		4386468						
+ANR	4386856	Symbol	phys_ptr		4386468						
+ANR	4386857	Symbol	* env		4386468						
+ANR	4386858	Symbol	env		4386468						
+ANR	4386859	Symbol	type		4386468						
+ANR	4386860	Symbol	ap		4386468						
+ANR	4386861	Symbol	prot		4386468						
+ANR	4386862	Symbol	ldl_phys		4386468						
+ANR	4386863	Symbol	* phys_ptr		4386468						
+ANR	4386864	Symbol	domain		4386468						
+ANR	4386865	Symbol	ARM_FEATURE_XSCALE		4386468						
+ANR	4386866	Symbol	phys_addr		4386468						
+ANR	4386867	Symbol	is_user		4386468						
+ANR	4386868	Symbol	env -> cp15		4386468						
+ANR	4386869	Symbol	check_ap		4386468						
+ANR	4386870	Symbol	table		4386468						
+ANR	4386871	Symbol	get_level1_table_address		4386468						
+ANR	4386872	Symbol	* prot		4386468						
+ANR	4386873	Symbol	desc		4386468						

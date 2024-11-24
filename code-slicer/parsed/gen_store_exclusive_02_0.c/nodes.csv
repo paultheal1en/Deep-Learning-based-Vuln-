@@ -1,0 +1,399 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4308951	File	/home/p4ultr4n/workplace/ReVeal/raw_code/gen_store_exclusive_02_0.c								
+ANR	4308952	Function	gen_store_exclusive	1:0:0:2301							
+ANR	4308953	FunctionDef	"gen_store_exclusive (DisasContext * s , int rd , int rt , int rt2 , TCGv_i64 addr , int size , int is_pair)"		4308952	0					
+ANR	4308954	CompoundStatement		5:0:146:2301	4308952	0					
+ANR	4308955	IdentifierDeclStatement	TCGLabel * fail_label = gen_new_label ( ) ;	31:4:523:561	4308952	0	True				
+ANR	4308956	IdentifierDecl	* fail_label = gen_new_label ( )		4308952	0					
+ANR	4308957	IdentifierDeclType	TCGLabel *		4308952	0					
+ANR	4308958	Identifier	fail_label		4308952	1					
+ANR	4308959	AssignmentExpression	* fail_label = gen_new_label ( )		4308952	2		=			
+ANR	4308960	Identifier	fail_label		4308952	0					
+ANR	4308961	CallExpression	gen_new_label ( )		4308952	1					
+ANR	4308962	Callee	gen_new_label		4308952	0					
+ANR	4308963	Identifier	gen_new_label		4308952	0					
+ANR	4308964	ArgumentList			4308952	1					
+ANR	4308965	IdentifierDeclStatement	TCGLabel * done_label = gen_new_label ( ) ;	33:4:568:606	4308952	1	True				
+ANR	4308966	IdentifierDecl	* done_label = gen_new_label ( )		4308952	0					
+ANR	4308967	IdentifierDeclType	TCGLabel *		4308952	0					
+ANR	4308968	Identifier	done_label		4308952	1					
+ANR	4308969	AssignmentExpression	* done_label = gen_new_label ( )		4308952	2		=			
+ANR	4308970	Identifier	done_label		4308952	0					
+ANR	4308971	CallExpression	gen_new_label ( )		4308952	1					
+ANR	4308972	Callee	gen_new_label		4308952	0					
+ANR	4308973	Identifier	gen_new_label		4308952	0					
+ANR	4308974	ArgumentList			4308952	1					
+ANR	4308975	IdentifierDeclStatement	TCGv_i64 tmp ;	35:4:613:625	4308952	2	True				
+ANR	4308976	IdentifierDecl	tmp		4308952	0					
+ANR	4308977	IdentifierDeclType	TCGv_i64		4308952	0					
+ANR	4308978	Identifier	tmp		4308952	1					
+ANR	4308979	ExpressionStatement	"tcg_gen_brcond_i64 ( TCG_COND_NE , addr , cpu_exclusive_addr , fail_label )"	39:4:634:703	4308952	3	True				
+ANR	4308980	CallExpression	"tcg_gen_brcond_i64 ( TCG_COND_NE , addr , cpu_exclusive_addr , fail_label )"		4308952	0					
+ANR	4308981	Callee	tcg_gen_brcond_i64		4308952	0					
+ANR	4308982	Identifier	tcg_gen_brcond_i64		4308952	0					
+ANR	4308983	ArgumentList	TCG_COND_NE		4308952	1					
+ANR	4308984	Argument	TCG_COND_NE		4308952	0					
+ANR	4308985	Identifier	TCG_COND_NE		4308952	0					
+ANR	4308986	Argument	addr		4308952	1					
+ANR	4308987	Identifier	addr		4308952	0					
+ANR	4308988	Argument	cpu_exclusive_addr		4308952	2					
+ANR	4308989	Identifier	cpu_exclusive_addr		4308952	0					
+ANR	4308990	Argument	fail_label		4308952	3					
+ANR	4308991	Identifier	fail_label		4308952	0					
+ANR	4308992	ExpressionStatement	tmp = tcg_temp_new_i64 ( )	43:4:712:736	4308952	4	True				
+ANR	4308993	AssignmentExpression	tmp = tcg_temp_new_i64 ( )		4308952	0		=			
+ANR	4308994	Identifier	tmp		4308952	0					
+ANR	4308995	CallExpression	tcg_temp_new_i64 ( )		4308952	1					
+ANR	4308996	Callee	tcg_temp_new_i64		4308952	0					
+ANR	4308997	Identifier	tcg_temp_new_i64		4308952	0					
+ANR	4308998	ArgumentList			4308952	1					
+ANR	4308999	IfStatement	if ( is_pair )		4308952	5					
+ANR	4309000	Condition	is_pair	45:8:747:753	4308952	0	True				
+ANR	4309001	Identifier	is_pair		4308952	0					
+ANR	4309002	CompoundStatement		41:17:609:609	4308952	1					
+ANR	4309003	IfStatement	if ( size == 2 )		4308952	0					
+ANR	4309004	Condition	size == 2	47:12:771:779	4308952	0	True				
+ANR	4309005	EqualityExpression	size == 2		4308952	0		==			
+ANR	4309006	Identifier	size		4308952	0					
+ANR	4309007	PrimaryExpression	2		4308952	1					
+ANR	4309008	CompoundStatement		43:23:635:635	4308952	1					
+ANR	4309009	IfStatement	if ( s -> be_data == MO_LE )		4308952	0					
+ANR	4309010	Condition	s -> be_data == MO_LE	49:16:801:819	4308952	0	True				
+ANR	4309011	EqualityExpression	s -> be_data == MO_LE		4308952	0		==			
+ANR	4309012	PtrMemberAccess	s -> be_data		4308952	0					
+ANR	4309013	Identifier	s		4308952	0					
+ANR	4309014	Identifier	be_data		4308952	1					
+ANR	4309015	Identifier	MO_LE		4308952	1					
+ANR	4309016	CompoundStatement		45:37:675:675	4308952	1					
+ANR	4309017	ExpressionStatement	"tcg_gen_concat32_i64 ( tmp , cpu_reg ( s , rt ) , cpu_reg ( s , rt2 ) )"	51:16:841:899	4308952	0	True				
+ANR	4309018	CallExpression	"tcg_gen_concat32_i64 ( tmp , cpu_reg ( s , rt ) , cpu_reg ( s , rt2 ) )"		4308952	0					
+ANR	4309019	Callee	tcg_gen_concat32_i64		4308952	0					
+ANR	4309020	Identifier	tcg_gen_concat32_i64		4308952	0					
+ANR	4309021	ArgumentList	tmp		4308952	1					
+ANR	4309022	Argument	tmp		4308952	0					
+ANR	4309023	Identifier	tmp		4308952	0					
+ANR	4309024	Argument	"cpu_reg ( s , rt )"		4308952	1					
+ANR	4309025	CallExpression	"cpu_reg ( s , rt )"		4308952	0					
+ANR	4309026	Callee	cpu_reg		4308952	0					
+ANR	4309027	Identifier	cpu_reg		4308952	0					
+ANR	4309028	ArgumentList	s		4308952	1					
+ANR	4309029	Argument	s		4308952	0					
+ANR	4309030	Identifier	s		4308952	0					
+ANR	4309031	Argument	rt		4308952	1					
+ANR	4309032	Identifier	rt		4308952	0					
+ANR	4309033	Argument	"cpu_reg ( s , rt2 )"		4308952	2					
+ANR	4309034	CallExpression	"cpu_reg ( s , rt2 )"		4308952	0					
+ANR	4309035	Callee	cpu_reg		4308952	0					
+ANR	4309036	Identifier	cpu_reg		4308952	0					
+ANR	4309037	ArgumentList	s		4308952	1					
+ANR	4309038	Argument	s		4308952	0					
+ANR	4309039	Identifier	s		4308952	0					
+ANR	4309040	Argument	rt2		4308952	1					
+ANR	4309041	Identifier	rt2		4308952	0					
+ANR	4309042	ElseStatement	else		4308952	0					
+ANR	4309043	CompoundStatement		49:19:774:774	4308952	0					
+ANR	4309044	ExpressionStatement	"tcg_gen_concat32_i64 ( tmp , cpu_reg ( s , rt2 ) , cpu_reg ( s , rt ) )"	55:16:940:998	4308952	0	True				
+ANR	4309045	CallExpression	"tcg_gen_concat32_i64 ( tmp , cpu_reg ( s , rt2 ) , cpu_reg ( s , rt ) )"		4308952	0					
+ANR	4309046	Callee	tcg_gen_concat32_i64		4308952	0					
+ANR	4309047	Identifier	tcg_gen_concat32_i64		4308952	0					
+ANR	4309048	ArgumentList	tmp		4308952	1					
+ANR	4309049	Argument	tmp		4308952	0					
+ANR	4309050	Identifier	tmp		4308952	0					
+ANR	4309051	Argument	"cpu_reg ( s , rt2 )"		4308952	1					
+ANR	4309052	CallExpression	"cpu_reg ( s , rt2 )"		4308952	0					
+ANR	4309053	Callee	cpu_reg		4308952	0					
+ANR	4309054	Identifier	cpu_reg		4308952	0					
+ANR	4309055	ArgumentList	s		4308952	1					
+ANR	4309056	Argument	s		4308952	0					
+ANR	4309057	Identifier	s		4308952	0					
+ANR	4309058	Argument	rt2		4308952	1					
+ANR	4309059	Identifier	rt2		4308952	0					
+ANR	4309060	Argument	"cpu_reg ( s , rt )"		4308952	2					
+ANR	4309061	CallExpression	"cpu_reg ( s , rt )"		4308952	0					
+ANR	4309062	Callee	cpu_reg		4308952	0					
+ANR	4309063	Identifier	cpu_reg		4308952	0					
+ANR	4309064	ArgumentList	s		4308952	1					
+ANR	4309065	Argument	s		4308952	0					
+ANR	4309066	Identifier	s		4308952	0					
+ANR	4309067	Argument	rt		4308952	1					
+ANR	4309068	Identifier	rt		4308952	0					
+ANR	4309069	ExpressionStatement	"tcg_gen_atomic_cmpxchg_i64 ( tmp , cpu_exclusive_addr , cpu_exclusive_val , tmp , get_mem_index ( s ) , MO_64 | MO_ALIGN | s -> be_data )"	59:12:1028:1272	4308952	1	True				
+ANR	4309070	CallExpression	"tcg_gen_atomic_cmpxchg_i64 ( tmp , cpu_exclusive_addr , cpu_exclusive_val , tmp , get_mem_index ( s ) , MO_64 | MO_ALIGN | s -> be_data )"		4308952	0					
+ANR	4309071	Callee	tcg_gen_atomic_cmpxchg_i64		4308952	0					
+ANR	4309072	Identifier	tcg_gen_atomic_cmpxchg_i64		4308952	0					
+ANR	4309073	ArgumentList	tmp		4308952	1					
+ANR	4309074	Argument	tmp		4308952	0					
+ANR	4309075	Identifier	tmp		4308952	0					
+ANR	4309076	Argument	cpu_exclusive_addr		4308952	1					
+ANR	4309077	Identifier	cpu_exclusive_addr		4308952	0					
+ANR	4309078	Argument	cpu_exclusive_val		4308952	2					
+ANR	4309079	Identifier	cpu_exclusive_val		4308952	0					
+ANR	4309080	Argument	tmp		4308952	3					
+ANR	4309081	Identifier	tmp		4308952	0					
+ANR	4309082	Argument	get_mem_index ( s )		4308952	4					
+ANR	4309083	CallExpression	get_mem_index ( s )		4308952	0					
+ANR	4309084	Callee	get_mem_index		4308952	0					
+ANR	4309085	Identifier	get_mem_index		4308952	0					
+ANR	4309086	ArgumentList	s		4308952	1					
+ANR	4309087	Argument	s		4308952	0					
+ANR	4309088	Identifier	s		4308952	0					
+ANR	4309089	Argument	MO_64 | MO_ALIGN | s -> be_data		4308952	5					
+ANR	4309090	InclusiveOrExpression	MO_64 | MO_ALIGN | s -> be_data		4308952	0		|			
+ANR	4309091	Identifier	MO_64		4308952	0					
+ANR	4309092	InclusiveOrExpression	MO_ALIGN | s -> be_data		4308952	1		|			
+ANR	4309093	Identifier	MO_ALIGN		4308952	0					
+ANR	4309094	PtrMemberAccess	s -> be_data		4308952	1					
+ANR	4309095	Identifier	s		4308952	0					
+ANR	4309096	Identifier	be_data		4308952	1					
+ANR	4309097	ExpressionStatement	"tcg_gen_setcond_i64 ( TCG_COND_NE , tmp , tmp , cpu_exclusive_val )"	67:12:1287:1348	4308952	2	True				
+ANR	4309098	CallExpression	"tcg_gen_setcond_i64 ( TCG_COND_NE , tmp , tmp , cpu_exclusive_val )"		4308952	0					
+ANR	4309099	Callee	tcg_gen_setcond_i64		4308952	0					
+ANR	4309100	Identifier	tcg_gen_setcond_i64		4308952	0					
+ANR	4309101	ArgumentList	TCG_COND_NE		4308952	1					
+ANR	4309102	Argument	TCG_COND_NE		4308952	0					
+ANR	4309103	Identifier	TCG_COND_NE		4308952	0					
+ANR	4309104	Argument	tmp		4308952	1					
+ANR	4309105	Identifier	tmp		4308952	0					
+ANR	4309106	Argument	tmp		4308952	2					
+ANR	4309107	Identifier	tmp		4308952	0					
+ANR	4309108	Argument	cpu_exclusive_val		4308952	3					
+ANR	4309109	Identifier	cpu_exclusive_val		4308952	0					
+ANR	4309110	ElseStatement	else		4308952	0					
+ANR	4309111	IfStatement	if ( s -> be_data == MO_LE )		4308952	0					
+ANR	4309112	Condition	s -> be_data == MO_LE	69:19:1370:1388	4308952	0	True				
+ANR	4309113	EqualityExpression	s -> be_data == MO_LE		4308952	0		==			
+ANR	4309114	PtrMemberAccess	s -> be_data		4308952	0					
+ANR	4309115	Identifier	s		4308952	0					
+ANR	4309116	Identifier	be_data		4308952	1					
+ANR	4309117	Identifier	MO_LE		4308952	1					
+ANR	4309118	CompoundStatement		65:40:1244:1244	4308952	1					
+ANR	4309119	ExpressionStatement	"gen_helper_paired_cmpxchg64_le ( tmp , cpu_env , cpu_exclusive_addr , cpu_reg ( s , rt ) , cpu_reg ( s , rt2 ) )"	71:12:1406:1547	4308952	0	True				
+ANR	4309120	CallExpression	"gen_helper_paired_cmpxchg64_le ( tmp , cpu_env , cpu_exclusive_addr , cpu_reg ( s , rt ) , cpu_reg ( s , rt2 ) )"		4308952	0					
+ANR	4309121	Callee	gen_helper_paired_cmpxchg64_le		4308952	0					
+ANR	4309122	Identifier	gen_helper_paired_cmpxchg64_le		4308952	0					
+ANR	4309123	ArgumentList	tmp		4308952	1					
+ANR	4309124	Argument	tmp		4308952	0					
+ANR	4309125	Identifier	tmp		4308952	0					
+ANR	4309126	Argument	cpu_env		4308952	1					
+ANR	4309127	Identifier	cpu_env		4308952	0					
+ANR	4309128	Argument	cpu_exclusive_addr		4308952	2					
+ANR	4309129	Identifier	cpu_exclusive_addr		4308952	0					
+ANR	4309130	Argument	"cpu_reg ( s , rt )"		4308952	3					
+ANR	4309131	CallExpression	"cpu_reg ( s , rt )"		4308952	0					
+ANR	4309132	Callee	cpu_reg		4308952	0					
+ANR	4309133	Identifier	cpu_reg		4308952	0					
+ANR	4309134	ArgumentList	s		4308952	1					
+ANR	4309135	Argument	s		4308952	0					
+ANR	4309136	Identifier	s		4308952	0					
+ANR	4309137	Argument	rt		4308952	1					
+ANR	4309138	Identifier	rt		4308952	0					
+ANR	4309139	Argument	"cpu_reg ( s , rt2 )"		4308952	4					
+ANR	4309140	CallExpression	"cpu_reg ( s , rt2 )"		4308952	0					
+ANR	4309141	Callee	cpu_reg		4308952	0					
+ANR	4309142	Identifier	cpu_reg		4308952	0					
+ANR	4309143	ArgumentList	s		4308952	1					
+ANR	4309144	Argument	s		4308952	0					
+ANR	4309145	Identifier	s		4308952	0					
+ANR	4309146	Argument	rt2		4308952	1					
+ANR	4309147	Identifier	rt2		4308952	0					
+ANR	4309148	ElseStatement	else		4308952	0					
+ANR	4309149	CompoundStatement		71:15:1418:1418	4308952	0					
+ANR	4309150	ExpressionStatement	"gen_helper_paired_cmpxchg64_be ( tmp , cpu_env , cpu_exclusive_addr , cpu_reg ( s , rt ) , cpu_reg ( s , rt2 ) )"	77:12:1580:1721	4308952	0	True				
+ANR	4309151	CallExpression	"gen_helper_paired_cmpxchg64_be ( tmp , cpu_env , cpu_exclusive_addr , cpu_reg ( s , rt ) , cpu_reg ( s , rt2 ) )"		4308952	0					
+ANR	4309152	Callee	gen_helper_paired_cmpxchg64_be		4308952	0					
+ANR	4309153	Identifier	gen_helper_paired_cmpxchg64_be		4308952	0					
+ANR	4309154	ArgumentList	tmp		4308952	1					
+ANR	4309155	Argument	tmp		4308952	0					
+ANR	4309156	Identifier	tmp		4308952	0					
+ANR	4309157	Argument	cpu_env		4308952	1					
+ANR	4309158	Identifier	cpu_env		4308952	0					
+ANR	4309159	Argument	cpu_exclusive_addr		4308952	2					
+ANR	4309160	Identifier	cpu_exclusive_addr		4308952	0					
+ANR	4309161	Argument	"cpu_reg ( s , rt )"		4308952	3					
+ANR	4309162	CallExpression	"cpu_reg ( s , rt )"		4308952	0					
+ANR	4309163	Callee	cpu_reg		4308952	0					
+ANR	4309164	Identifier	cpu_reg		4308952	0					
+ANR	4309165	ArgumentList	s		4308952	1					
+ANR	4309166	Argument	s		4308952	0					
+ANR	4309167	Identifier	s		4308952	0					
+ANR	4309168	Argument	rt		4308952	1					
+ANR	4309169	Identifier	rt		4308952	0					
+ANR	4309170	Argument	"cpu_reg ( s , rt2 )"		4308952	4					
+ANR	4309171	CallExpression	"cpu_reg ( s , rt2 )"		4308952	0					
+ANR	4309172	Callee	cpu_reg		4308952	0					
+ANR	4309173	Identifier	cpu_reg		4308952	0					
+ANR	4309174	ArgumentList	s		4308952	1					
+ANR	4309175	Argument	s		4308952	0					
+ANR	4309176	Identifier	s		4308952	0					
+ANR	4309177	Argument	rt2		4308952	1					
+ANR	4309178	Identifier	rt2		4308952	0					
+ANR	4309179	ElseStatement	else		4308952	0					
+ANR	4309180	CompoundStatement		79:11:1599:1599	4308952	0					
+ANR	4309181	ExpressionStatement	"tcg_gen_atomic_cmpxchg_i64 ( tmp , cpu_exclusive_addr , cpu_exclusive_val , cpu_reg ( s , rt ) , get_mem_index ( s ) , size | MO_ALIGN | s -> be_data )"	85:8:1757:1963	4308952	0	True				
+ANR	4309182	CallExpression	"tcg_gen_atomic_cmpxchg_i64 ( tmp , cpu_exclusive_addr , cpu_exclusive_val , cpu_reg ( s , rt ) , get_mem_index ( s ) , size | MO_ALIGN | s -> be_data )"		4308952	0					
+ANR	4309183	Callee	tcg_gen_atomic_cmpxchg_i64		4308952	0					
+ANR	4309184	Identifier	tcg_gen_atomic_cmpxchg_i64		4308952	0					
+ANR	4309185	ArgumentList	tmp		4308952	1					
+ANR	4309186	Argument	tmp		4308952	0					
+ANR	4309187	Identifier	tmp		4308952	0					
+ANR	4309188	Argument	cpu_exclusive_addr		4308952	1					
+ANR	4309189	Identifier	cpu_exclusive_addr		4308952	0					
+ANR	4309190	Argument	cpu_exclusive_val		4308952	2					
+ANR	4309191	Identifier	cpu_exclusive_val		4308952	0					
+ANR	4309192	Argument	"cpu_reg ( s , rt )"		4308952	3					
+ANR	4309193	CallExpression	"cpu_reg ( s , rt )"		4308952	0					
+ANR	4309194	Callee	cpu_reg		4308952	0					
+ANR	4309195	Identifier	cpu_reg		4308952	0					
+ANR	4309196	ArgumentList	s		4308952	1					
+ANR	4309197	Argument	s		4308952	0					
+ANR	4309198	Identifier	s		4308952	0					
+ANR	4309199	Argument	rt		4308952	1					
+ANR	4309200	Identifier	rt		4308952	0					
+ANR	4309201	Argument	get_mem_index ( s )		4308952	4					
+ANR	4309202	CallExpression	get_mem_index ( s )		4308952	0					
+ANR	4309203	Callee	get_mem_index		4308952	0					
+ANR	4309204	Identifier	get_mem_index		4308952	0					
+ANR	4309205	ArgumentList	s		4308952	1					
+ANR	4309206	Argument	s		4308952	0					
+ANR	4309207	Identifier	s		4308952	0					
+ANR	4309208	Argument	size | MO_ALIGN | s -> be_data		4308952	5					
+ANR	4309209	InclusiveOrExpression	size | MO_ALIGN | s -> be_data		4308952	0		|			
+ANR	4309210	Identifier	size		4308952	0					
+ANR	4309211	InclusiveOrExpression	MO_ALIGN | s -> be_data		4308952	1		|			
+ANR	4309212	Identifier	MO_ALIGN		4308952	0					
+ANR	4309213	PtrMemberAccess	s -> be_data		4308952	1					
+ANR	4309214	Identifier	s		4308952	0					
+ANR	4309215	Identifier	be_data		4308952	1					
+ANR	4309216	ExpressionStatement	"tcg_gen_setcond_i64 ( TCG_COND_NE , tmp , tmp , cpu_exclusive_val )"	91:8:1974:2035	4308952	1	True				
+ANR	4309217	CallExpression	"tcg_gen_setcond_i64 ( TCG_COND_NE , tmp , tmp , cpu_exclusive_val )"		4308952	0					
+ANR	4309218	Callee	tcg_gen_setcond_i64		4308952	0					
+ANR	4309219	Identifier	tcg_gen_setcond_i64		4308952	0					
+ANR	4309220	ArgumentList	TCG_COND_NE		4308952	1					
+ANR	4309221	Argument	TCG_COND_NE		4308952	0					
+ANR	4309222	Identifier	TCG_COND_NE		4308952	0					
+ANR	4309223	Argument	tmp		4308952	1					
+ANR	4309224	Identifier	tmp		4308952	0					
+ANR	4309225	Argument	tmp		4308952	2					
+ANR	4309226	Identifier	tmp		4308952	0					
+ANR	4309227	Argument	cpu_exclusive_val		4308952	3					
+ANR	4309228	Identifier	cpu_exclusive_val		4308952	0					
+ANR	4309229	ExpressionStatement	"tcg_gen_mov_i64 ( cpu_reg ( s , rd ) , tmp )"	95:4:2049:2085	4308952	6	True				
+ANR	4309230	CallExpression	"tcg_gen_mov_i64 ( cpu_reg ( s , rd ) , tmp )"		4308952	0					
+ANR	4309231	Callee	tcg_gen_mov_i64		4308952	0					
+ANR	4309232	Identifier	tcg_gen_mov_i64		4308952	0					
+ANR	4309233	ArgumentList	"cpu_reg ( s , rd )"		4308952	1					
+ANR	4309234	Argument	"cpu_reg ( s , rd )"		4308952	0					
+ANR	4309235	CallExpression	"cpu_reg ( s , rd )"		4308952	0					
+ANR	4309236	Callee	cpu_reg		4308952	0					
+ANR	4309237	Identifier	cpu_reg		4308952	0					
+ANR	4309238	ArgumentList	s		4308952	1					
+ANR	4309239	Argument	s		4308952	0					
+ANR	4309240	Identifier	s		4308952	0					
+ANR	4309241	Argument	rd		4308952	1					
+ANR	4309242	Identifier	rd		4308952	0					
+ANR	4309243	Argument	tmp		4308952	1					
+ANR	4309244	Identifier	tmp		4308952	0					
+ANR	4309245	ExpressionStatement	tcg_temp_free_i64 ( tmp )	97:4:2092:2114	4308952	7	True				
+ANR	4309246	CallExpression	tcg_temp_free_i64 ( tmp )		4308952	0					
+ANR	4309247	Callee	tcg_temp_free_i64		4308952	0					
+ANR	4309248	Identifier	tcg_temp_free_i64		4308952	0					
+ANR	4309249	ArgumentList	tmp		4308952	1					
+ANR	4309250	Argument	tmp		4308952	0					
+ANR	4309251	Identifier	tmp		4308952	0					
+ANR	4309252	ExpressionStatement	tcg_gen_br ( done_label )	99:4:2121:2143	4308952	8	True				
+ANR	4309253	CallExpression	tcg_gen_br ( done_label )		4308952	0					
+ANR	4309254	Callee	tcg_gen_br		4308952	0					
+ANR	4309255	Identifier	tcg_gen_br		4308952	0					
+ANR	4309256	ArgumentList	done_label		4308952	1					
+ANR	4309257	Argument	done_label		4308952	0					
+ANR	4309258	Identifier	done_label		4308952	0					
+ANR	4309259	ExpressionStatement	gen_set_label ( fail_label )	103:4:2152:2177	4308952	9	True				
+ANR	4309260	CallExpression	gen_set_label ( fail_label )		4308952	0					
+ANR	4309261	Callee	gen_set_label		4308952	0					
+ANR	4309262	Identifier	gen_set_label		4308952	0					
+ANR	4309263	ArgumentList	fail_label		4308952	1					
+ANR	4309264	Argument	fail_label		4308952	0					
+ANR	4309265	Identifier	fail_label		4308952	0					
+ANR	4309266	ExpressionStatement	"tcg_gen_movi_i64 ( cpu_reg ( s , rd ) , 1 )"	105:4:2184:2219	4308952	10	True				
+ANR	4309267	CallExpression	"tcg_gen_movi_i64 ( cpu_reg ( s , rd ) , 1 )"		4308952	0					
+ANR	4309268	Callee	tcg_gen_movi_i64		4308952	0					
+ANR	4309269	Identifier	tcg_gen_movi_i64		4308952	0					
+ANR	4309270	ArgumentList	"cpu_reg ( s , rd )"		4308952	1					
+ANR	4309271	Argument	"cpu_reg ( s , rd )"		4308952	0					
+ANR	4309272	CallExpression	"cpu_reg ( s , rd )"		4308952	0					
+ANR	4309273	Callee	cpu_reg		4308952	0					
+ANR	4309274	Identifier	cpu_reg		4308952	0					
+ANR	4309275	ArgumentList	s		4308952	1					
+ANR	4309276	Argument	s		4308952	0					
+ANR	4309277	Identifier	s		4308952	0					
+ANR	4309278	Argument	rd		4308952	1					
+ANR	4309279	Identifier	rd		4308952	0					
+ANR	4309280	Argument	1		4308952	1					
+ANR	4309281	PrimaryExpression	1		4308952	0					
+ANR	4309282	ExpressionStatement	gen_set_label ( done_label )	107:4:2226:2251	4308952	11	True				
+ANR	4309283	CallExpression	gen_set_label ( done_label )		4308952	0					
+ANR	4309284	Callee	gen_set_label		4308952	0					
+ANR	4309285	Identifier	gen_set_label		4308952	0					
+ANR	4309286	ArgumentList	done_label		4308952	1					
+ANR	4309287	Argument	done_label		4308952	0					
+ANR	4309288	Identifier	done_label		4308952	0					
+ANR	4309289	ExpressionStatement	"tcg_gen_movi_i64 ( cpu_exclusive_addr , - 1 )"	109:4:2258:2298	4308952	12	True				
+ANR	4309290	CallExpression	"tcg_gen_movi_i64 ( cpu_exclusive_addr , - 1 )"		4308952	0					
+ANR	4309291	Callee	tcg_gen_movi_i64		4308952	0					
+ANR	4309292	Identifier	tcg_gen_movi_i64		4308952	0					
+ANR	4309293	ArgumentList	cpu_exclusive_addr		4308952	1					
+ANR	4309294	Argument	cpu_exclusive_addr		4308952	0					
+ANR	4309295	Identifier	cpu_exclusive_addr		4308952	0					
+ANR	4309296	Argument	- 1		4308952	1					
+ANR	4309297	UnaryOperationExpression	- 1		4308952	0					
+ANR	4309298	UnaryOperator	-		4308952	0					
+ANR	4309299	PrimaryExpression	1		4308952	1					
+ANR	4309300	ReturnType	static void		4308952	1					
+ANR	4309301	Identifier	gen_store_exclusive		4308952	2					
+ANR	4309302	ParameterList	"DisasContext * s , int rd , int rt , int rt2 , TCGv_i64 addr , int size , int is_pair"		4308952	3					
+ANR	4309303	Parameter	DisasContext * s	1:32:32:46	4308952	0	True				
+ANR	4309304	ParameterType	DisasContext *		4308952	0					
+ANR	4309305	Identifier	s		4308952	1					
+ANR	4309306	Parameter	int rd	1:49:49:54	4308952	1	True				
+ANR	4309307	ParameterType	int		4308952	0					
+ANR	4309308	Identifier	rd		4308952	1					
+ANR	4309309	Parameter	int rt	1:57:57:62	4308952	2	True				
+ANR	4309310	ParameterType	int		4308952	0					
+ANR	4309311	Identifier	rt		4308952	1					
+ANR	4309312	Parameter	int rt2	1:65:65:71	4308952	3	True				
+ANR	4309313	ParameterType	int		4308952	0					
+ANR	4309314	Identifier	rt2		4308952	1					
+ANR	4309315	Parameter	TCGv_i64 addr	3:32:107:119	4308952	4	True				
+ANR	4309316	ParameterType	TCGv_i64		4308952	0					
+ANR	4309317	Identifier	addr		4308952	1					
+ANR	4309318	Parameter	int size	3:47:122:129	4308952	5	True				
+ANR	4309319	ParameterType	int		4308952	0					
+ANR	4309320	Identifier	size		4308952	1					
+ANR	4309321	Parameter	int is_pair	3:57:132:142	4308952	6	True				
+ANR	4309322	ParameterType	int		4308952	0					
+ANR	4309323	Identifier	is_pair		4308952	1					
+ANR	4309324	CFGEntryNode	ENTRY		4308952		True				
+ANR	4309325	CFGExitNode	EXIT		4308952		True				
+ANR	4309326	Symbol	rt		4308952						
+ANR	4309327	Symbol	TCG_COND_NE		4308952						
+ANR	4309328	Symbol	cpu_exclusive_val		4308952						
+ANR	4309329	Symbol	tcg_temp_new_i64		4308952						
+ANR	4309330	Symbol	s -> be_data		4308952						
+ANR	4309331	Symbol	rt2		4308952						
+ANR	4309332	Symbol	rd		4308952						
+ANR	4309333	Symbol	MO_ALIGN		4308952						
+ANR	4309334	Symbol	s		4308952						
+ANR	4309335	Symbol	cpu_env		4308952						
+ANR	4309336	Symbol	size		4308952						
+ANR	4309337	Symbol	MO_LE		4308952						
+ANR	4309338	Symbol	is_pair		4308952						
+ANR	4309339	Symbol	gen_new_label		4308952						
+ANR	4309340	Symbol	tmp		4308952						
+ANR	4309341	Symbol	get_mem_index		4308952						
+ANR	4309342	Symbol	cpu_reg		4308952						
+ANR	4309343	Symbol	done_label		4308952						
+ANR	4309344	Symbol	MO_64		4308952						
+ANR	4309345	Symbol	fail_label		4308952						
+ANR	4309346	Symbol	addr		4308952						
+ANR	4309347	Symbol	* s		4308952						
+ANR	4309348	Symbol	cpu_exclusive_addr		4308952						

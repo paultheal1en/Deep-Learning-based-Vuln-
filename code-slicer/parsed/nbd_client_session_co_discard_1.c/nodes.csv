@@ -1,0 +1,163 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5910764	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_client_session_co_discard_1.c								
+ANR	5910765	Function	nbd_client_session_co_discard	1:0:0:686							
+ANR	5910766	FunctionDef	"nbd_client_session_co_discard (NbdClientSession * client , int64_t sector_num , int nb_sectors)"		5910765	0					
+ANR	5910767	CompoundStatement		5:0:102:686	5910765	0					
+ANR	5910768	IdentifierDeclStatement	struct nbd_request request ;	7:4:109:135	5910765	0	True				
+ANR	5910769	IdentifierDecl	request		5910765	0					
+ANR	5910770	IdentifierDeclType	struct nbd_request		5910765	0					
+ANR	5910771	Identifier	request		5910765	1					
+ANR	5910772	IdentifierDeclStatement	struct nbd_reply reply ;	9:4:142:164	5910765	1	True				
+ANR	5910773	IdentifierDecl	reply		5910765	0					
+ANR	5910774	IdentifierDeclType	struct nbd_reply		5910765	0					
+ANR	5910775	Identifier	reply		5910765	1					
+ANR	5910776	IdentifierDeclStatement	ssize_t ret ;	11:4:171:182	5910765	2	True				
+ANR	5910777	IdentifierDecl	ret		5910765	0					
+ANR	5910778	IdentifierDeclType	ssize_t		5910765	0					
+ANR	5910779	Identifier	ret		5910765	1					
+ANR	5910780	IfStatement	if ( ! ( client -> nbdflags & NBD_FLAG_SEND_TRIM ) )		5910765	3					
+ANR	5910781	Condition	! ( client -> nbdflags & NBD_FLAG_SEND_TRIM )	15:8:195:234	5910765	0	True				
+ANR	5910782	UnaryOperationExpression	! ( client -> nbdflags & NBD_FLAG_SEND_TRIM )		5910765	0					
+ANR	5910783	UnaryOperator	!		5910765	0					
+ANR	5910784	BitAndExpression	client -> nbdflags & NBD_FLAG_SEND_TRIM		5910765	1		&			
+ANR	5910785	PtrMemberAccess	client -> nbdflags		5910765	0					
+ANR	5910786	Identifier	client		5910765	0					
+ANR	5910787	Identifier	nbdflags		5910765	1					
+ANR	5910788	Identifier	NBD_FLAG_SEND_TRIM		5910765	1					
+ANR	5910789	CompoundStatement		11:50:134:134	5910765	1					
+ANR	5910790	ReturnStatement	return 0 ;	17:8:248:256	5910765	0	True				
+ANR	5910791	PrimaryExpression	0		5910765	0					
+ANR	5910792	ExpressionStatement	request . type = NBD_CMD_TRIM	21:4:270:297	5910765	4	True				
+ANR	5910793	AssignmentExpression	request . type = NBD_CMD_TRIM		5910765	0		=			
+ANR	5910794	MemberAccess	request . type		5910765	0					
+ANR	5910795	Identifier	request		5910765	0					
+ANR	5910796	Identifier	type		5910765	1					
+ANR	5910797	Identifier	NBD_CMD_TRIM		5910765	1					
+ANR	5910798	ExpressionStatement	request . from = sector_num * 512	23:4:304:335	5910765	5	True				
+ANR	5910799	AssignmentExpression	request . from = sector_num * 512		5910765	0		=			
+ANR	5910800	MemberAccess	request . from		5910765	0					
+ANR	5910801	Identifier	request		5910765	0					
+ANR	5910802	Identifier	from		5910765	1					
+ANR	5910803	MultiplicativeExpression	sector_num * 512		5910765	1		*			
+ANR	5910804	Identifier	sector_num		5910765	0					
+ANR	5910805	PrimaryExpression	512		5910765	1					
+ANR	5910806	ExpressionStatement	request . len = nb_sectors * 512	25:4:342:372	5910765	6	True				
+ANR	5910807	AssignmentExpression	request . len = nb_sectors * 512		5910765	0		=			
+ANR	5910808	MemberAccess	request . len		5910765	0					
+ANR	5910809	Identifier	request		5910765	0					
+ANR	5910810	Identifier	len		5910765	1					
+ANR	5910811	MultiplicativeExpression	nb_sectors * 512		5910765	1		*			
+ANR	5910812	Identifier	nb_sectors		5910765	0					
+ANR	5910813	PrimaryExpression	512		5910765	1					
+ANR	5910814	ExpressionStatement	"nbd_coroutine_start ( client , & request )"	29:4:381:418	5910765	7	True				
+ANR	5910815	CallExpression	"nbd_coroutine_start ( client , & request )"		5910765	0					
+ANR	5910816	Callee	nbd_coroutine_start		5910765	0					
+ANR	5910817	Identifier	nbd_coroutine_start		5910765	0					
+ANR	5910818	ArgumentList	client		5910765	1					
+ANR	5910819	Argument	client		5910765	0					
+ANR	5910820	Identifier	client		5910765	0					
+ANR	5910821	Argument	& request		5910765	1					
+ANR	5910822	UnaryOperationExpression	& request		5910765	0					
+ANR	5910823	UnaryOperator	&		5910765	0					
+ANR	5910824	Identifier	request		5910765	1					
+ANR	5910825	ExpressionStatement	"ret = nbd_co_send_request ( client , & request , NULL , 0 )"	31:4:425:477	5910765	8	True				
+ANR	5910826	AssignmentExpression	"ret = nbd_co_send_request ( client , & request , NULL , 0 )"		5910765	0		=			
+ANR	5910827	Identifier	ret		5910765	0					
+ANR	5910828	CallExpression	"nbd_co_send_request ( client , & request , NULL , 0 )"		5910765	1					
+ANR	5910829	Callee	nbd_co_send_request		5910765	0					
+ANR	5910830	Identifier	nbd_co_send_request		5910765	0					
+ANR	5910831	ArgumentList	client		5910765	1					
+ANR	5910832	Argument	client		5910765	0					
+ANR	5910833	Identifier	client		5910765	0					
+ANR	5910834	Argument	& request		5910765	1					
+ANR	5910835	UnaryOperationExpression	& request		5910765	0					
+ANR	5910836	UnaryOperator	&		5910765	0					
+ANR	5910837	Identifier	request		5910765	1					
+ANR	5910838	Argument	NULL		5910765	2					
+ANR	5910839	Identifier	NULL		5910765	0					
+ANR	5910840	Argument	0		5910765	3					
+ANR	5910841	PrimaryExpression	0		5910765	0					
+ANR	5910842	IfStatement	if ( ret < 0 )		5910765	9					
+ANR	5910843	Condition	ret < 0	33:8:488:494	5910765	0	True				
+ANR	5910844	RelationalExpression	ret < 0		5910765	0		<			
+ANR	5910845	Identifier	ret		5910765	0					
+ANR	5910846	PrimaryExpression	0		5910765	1					
+ANR	5910847	CompoundStatement		29:17:394:394	5910765	1					
+ANR	5910848	ExpressionStatement	reply . error = - ret	35:8:508:526	5910765	0	True				
+ANR	5910849	AssignmentExpression	reply . error = - ret		5910765	0		=			
+ANR	5910850	MemberAccess	reply . error		5910765	0					
+ANR	5910851	Identifier	reply		5910765	0					
+ANR	5910852	Identifier	error		5910765	1					
+ANR	5910853	UnaryOperationExpression	- ret		5910765	1					
+ANR	5910854	UnaryOperator	-		5910765	0					
+ANR	5910855	Identifier	ret		5910765	1					
+ANR	5910856	ElseStatement	else		5910765	0					
+ANR	5910857	CompoundStatement		33:11:437:437	5910765	0					
+ANR	5910858	ExpressionStatement	"nbd_co_receive_reply ( client , & request , & reply , NULL , 0 )"	39:8:551:606	5910765	0	True				
+ANR	5910859	CallExpression	"nbd_co_receive_reply ( client , & request , & reply , NULL , 0 )"		5910765	0					
+ANR	5910860	Callee	nbd_co_receive_reply		5910765	0					
+ANR	5910861	Identifier	nbd_co_receive_reply		5910765	0					
+ANR	5910862	ArgumentList	client		5910765	1					
+ANR	5910863	Argument	client		5910765	0					
+ANR	5910864	Identifier	client		5910765	0					
+ANR	5910865	Argument	& request		5910765	1					
+ANR	5910866	UnaryOperationExpression	& request		5910765	0					
+ANR	5910867	UnaryOperator	&		5910765	0					
+ANR	5910868	Identifier	request		5910765	1					
+ANR	5910869	Argument	& reply		5910765	2					
+ANR	5910870	UnaryOperationExpression	& reply		5910765	0					
+ANR	5910871	UnaryOperator	&		5910765	0					
+ANR	5910872	Identifier	reply		5910765	1					
+ANR	5910873	Argument	NULL		5910765	3					
+ANR	5910874	Identifier	NULL		5910765	0					
+ANR	5910875	Argument	0		5910765	4					
+ANR	5910876	PrimaryExpression	0		5910765	0					
+ANR	5910877	ExpressionStatement	"nbd_coroutine_end ( client , & request )"	43:4:620:655	5910765	10	True				
+ANR	5910878	CallExpression	"nbd_coroutine_end ( client , & request )"		5910765	0					
+ANR	5910879	Callee	nbd_coroutine_end		5910765	0					
+ANR	5910880	Identifier	nbd_coroutine_end		5910765	0					
+ANR	5910881	ArgumentList	client		5910765	1					
+ANR	5910882	Argument	client		5910765	0					
+ANR	5910883	Identifier	client		5910765	0					
+ANR	5910884	Argument	& request		5910765	1					
+ANR	5910885	UnaryOperationExpression	& request		5910765	0					
+ANR	5910886	UnaryOperator	&		5910765	0					
+ANR	5910887	Identifier	request		5910765	1					
+ANR	5910888	ReturnStatement	return - reply . error ;	45:4:662:681	5910765	11	True				
+ANR	5910889	UnaryOperationExpression	- reply . error		5910765	0					
+ANR	5910890	UnaryOperator	-		5910765	0					
+ANR	5910891	MemberAccess	reply . error		5910765	1					
+ANR	5910892	Identifier	reply		5910765	0					
+ANR	5910893	Identifier	error		5910765	1					
+ANR	5910894	ReturnType	int		5910765	1					
+ANR	5910895	Identifier	nbd_client_session_co_discard		5910765	2					
+ANR	5910896	ParameterList	"NbdClientSession * client , int64_t sector_num , int nb_sectors"		5910765	3					
+ANR	5910897	Parameter	NbdClientSession * client	1:34:34:57	5910765	0	True				
+ANR	5910898	ParameterType	NbdClientSession *		5910765	0					
+ANR	5910899	Identifier	client		5910765	1					
+ANR	5910900	Parameter	int64_t sector_num	1:60:60:77	5910765	1	True				
+ANR	5910901	ParameterType	int64_t		5910765	0					
+ANR	5910902	Identifier	sector_num		5910765	1					
+ANR	5910903	Parameter	int nb_sectors	3:4:85:98	5910765	2	True				
+ANR	5910904	ParameterType	int		5910765	0					
+ANR	5910905	Identifier	nb_sectors		5910765	1					
+ANR	5910906	CFGEntryNode	ENTRY		5910765		True				
+ANR	5910907	CFGExitNode	EXIT		5910765		True				
+ANR	5910908	Symbol	ret		5910765						
+ANR	5910909	Symbol	request		5910765						
+ANR	5910910	Symbol	NBD_CMD_TRIM		5910765						
+ANR	5910911	Symbol	nb_sectors		5910765						
+ANR	5910912	Symbol	nbd_co_send_request		5910765						
+ANR	5910913	Symbol	NULL		5910765						
+ANR	5910914	Symbol	NBD_FLAG_SEND_TRIM		5910765						
+ANR	5910915	Symbol	& request		5910765						
+ANR	5910916	Symbol	* client		5910765						
+ANR	5910917	Symbol	client -> nbdflags		5910765						
+ANR	5910918	Symbol	& reply		5910765						
+ANR	5910919	Symbol	sector_num		5910765						
+ANR	5910920	Symbol	request . len		5910765						
+ANR	5910921	Symbol	request . from		5910765						
+ANR	5910922	Symbol	reply . error		5910765						
+ANR	5910923	Symbol	client		5910765						
+ANR	5910924	Symbol	request . type		5910765						
+ANR	5910925	Symbol	reply		5910765						

@@ -1,0 +1,544 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5009207	File	/home/p4ultr4n/workplace/ReVeal/raw_code/iscsi_co_get_block_status_1.c								
+ANR	5009208	Function	iscsi_co_get_block_status	1:0:0:3288							
+ANR	5009209	FunctionDef	"iscsi_co_get_block_status (BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum , BlockDriverState * * file)"		5009208	0					
+ANR	5009210	CompoundStatement		9:0:302:3288	5009208	0					
+ANR	5009211	IdentifierDeclStatement	IscsiLun * iscsilun = bs -> opaque ;	11:4:309:340	5009208	0	True				
+ANR	5009212	IdentifierDecl	* iscsilun = bs -> opaque		5009208	0					
+ANR	5009213	IdentifierDeclType	IscsiLun *		5009208	0					
+ANR	5009214	Identifier	iscsilun		5009208	1					
+ANR	5009215	AssignmentExpression	* iscsilun = bs -> opaque		5009208	2		=			
+ANR	5009216	Identifier	iscsilun		5009208	0					
+ANR	5009217	PtrMemberAccess	bs -> opaque		5009208	1					
+ANR	5009218	Identifier	bs		5009208	0					
+ANR	5009219	Identifier	opaque		5009208	1					
+ANR	5009220	IdentifierDeclStatement	struct scsi_get_lba_status * lbas = NULL ;	13:4:347:386	5009208	1	True				
+ANR	5009221	IdentifierDecl	* lbas = NULL		5009208	0					
+ANR	5009222	IdentifierDeclType	struct scsi_get_lba_status *		5009208	0					
+ANR	5009223	Identifier	lbas		5009208	1					
+ANR	5009224	AssignmentExpression	* lbas = NULL		5009208	2		=			
+ANR	5009225	Identifier	NULL		5009208	0					
+ANR	5009226	Identifier	NULL		5009208	1					
+ANR	5009227	IdentifierDeclStatement	struct scsi_lba_status_descriptor * lbasd = NULL ;	15:4:393:440	5009208	2	True				
+ANR	5009228	IdentifierDecl	* lbasd = NULL		5009208	0					
+ANR	5009229	IdentifierDeclType	struct scsi_lba_status_descriptor *		5009208	0					
+ANR	5009230	Identifier	lbasd		5009208	1					
+ANR	5009231	AssignmentExpression	* lbasd = NULL		5009208	2		=			
+ANR	5009232	Identifier	NULL		5009208	0					
+ANR	5009233	Identifier	NULL		5009208	1					
+ANR	5009234	IdentifierDeclStatement	struct IscsiTask iTask ;	17:4:447:469	5009208	3	True				
+ANR	5009235	IdentifierDecl	iTask		5009208	0					
+ANR	5009236	IdentifierDeclType	struct IscsiTask		5009208	0					
+ANR	5009237	Identifier	iTask		5009208	1					
+ANR	5009238	IdentifierDeclStatement	uint64_t lba ;	19:4:476:488	5009208	4	True				
+ANR	5009239	IdentifierDecl	lba		5009208	0					
+ANR	5009240	IdentifierDeclType	uint64_t		5009208	0					
+ANR	5009241	Identifier	lba		5009208	1					
+ANR	5009242	IdentifierDeclStatement	int64_t ret ;	21:4:495:506	5009208	5	True				
+ANR	5009243	IdentifierDecl	ret		5009208	0					
+ANR	5009244	IdentifierDeclType	int64_t		5009208	0					
+ANR	5009245	Identifier	ret		5009208	1					
+ANR	5009246	IfStatement	"if ( ! is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun ) )"		5009208	6					
+ANR	5009247	Condition	"! is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun )"	25:8:519:582	5009208	0	True				
+ANR	5009248	UnaryOperationExpression	"! is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun )"		5009208	0					
+ANR	5009249	UnaryOperator	!		5009208	0					
+ANR	5009250	CallExpression	"is_sector_request_lun_aligned ( sector_num , nb_sectors , iscsilun )"		5009208	1					
+ANR	5009251	Callee	is_sector_request_lun_aligned		5009208	0					
+ANR	5009252	Identifier	is_sector_request_lun_aligned		5009208	0					
+ANR	5009253	ArgumentList	sector_num		5009208	1					
+ANR	5009254	Argument	sector_num		5009208	0					
+ANR	5009255	Identifier	sector_num		5009208	0					
+ANR	5009256	Argument	nb_sectors		5009208	1					
+ANR	5009257	Identifier	nb_sectors		5009208	0					
+ANR	5009258	Argument	iscsilun		5009208	2					
+ANR	5009259	Identifier	iscsilun		5009208	0					
+ANR	5009260	CompoundStatement		17:74:282:282	5009208	1					
+ANR	5009261	ExpressionStatement	ret = - EINVAL	27:8:596:609	5009208	0	True				
+ANR	5009262	AssignmentExpression	ret = - EINVAL		5009208	0		=			
+ANR	5009263	Identifier	ret		5009208	0					
+ANR	5009264	UnaryOperationExpression	- EINVAL		5009208	1					
+ANR	5009265	UnaryOperator	-		5009208	0					
+ANR	5009266	Identifier	EINVAL		5009208	1					
+ANR	5009267	GotoStatement	goto out ;	29:8:620:628	5009208	1	True				
+ANR	5009268	Identifier	out		5009208	0					
+ANR	5009269	ExpressionStatement	ret = BDRV_BLOCK_DATA	37:4:688:709	5009208	7	True				
+ANR	5009270	AssignmentExpression	ret = BDRV_BLOCK_DATA		5009208	0		=			
+ANR	5009271	Identifier	ret		5009208	0					
+ANR	5009272	Identifier	BDRV_BLOCK_DATA		5009208	1					
+ANR	5009273	ExpressionStatement	ret |= ( sector_num << BDRV_SECTOR_BITS ) | BDRV_BLOCK_OFFSET_VALID	39:4:716:781	5009208	8	True				
+ANR	5009274	AssignmentExpression	ret |= ( sector_num << BDRV_SECTOR_BITS ) | BDRV_BLOCK_OFFSET_VALID		5009208	0		|=			
+ANR	5009275	Identifier	ret		5009208	0					
+ANR	5009276	InclusiveOrExpression	( sector_num << BDRV_SECTOR_BITS ) | BDRV_BLOCK_OFFSET_VALID		5009208	1		|			
+ANR	5009277	ShiftExpression	sector_num << BDRV_SECTOR_BITS		5009208	0		<<			
+ANR	5009278	Identifier	sector_num		5009208	0					
+ANR	5009279	Identifier	BDRV_SECTOR_BITS		5009208	1					
+ANR	5009280	Identifier	BDRV_BLOCK_OFFSET_VALID		5009208	1					
+ANR	5009281	ExpressionStatement	* pnum = nb_sectors	41:4:788:806	5009208	9	True				
+ANR	5009282	AssignmentExpression	* pnum = nb_sectors		5009208	0		=			
+ANR	5009283	UnaryOperationExpression	* pnum		5009208	0					
+ANR	5009284	UnaryOperator	*		5009208	0					
+ANR	5009285	Identifier	pnum		5009208	1					
+ANR	5009286	Identifier	nb_sectors		5009208	1					
+ANR	5009287	IfStatement	if ( ! iscsilun -> lbpme )		5009208	10					
+ANR	5009288	Condition	! iscsilun -> lbpme	47:8:878:893	5009208	0	True				
+ANR	5009289	UnaryOperationExpression	! iscsilun -> lbpme		5009208	0					
+ANR	5009290	UnaryOperator	!		5009208	0					
+ANR	5009291	PtrMemberAccess	iscsilun -> lbpme		5009208	1					
+ANR	5009292	Identifier	iscsilun		5009208	0					
+ANR	5009293	Identifier	lbpme		5009208	1					
+ANR	5009294	CompoundStatement		39:26:593:593	5009208	1					
+ANR	5009295	GotoStatement	goto out ;	49:8:907:915	5009208	0	True				
+ANR	5009296	Identifier	out		5009208	0					
+ANR	5009297	ExpressionStatement	"lba = sector_qemu2lun ( sector_num , iscsilun )"	55:4:931:974	5009208	11	True				
+ANR	5009298	AssignmentExpression	"lba = sector_qemu2lun ( sector_num , iscsilun )"		5009208	0		=			
+ANR	5009299	Identifier	lba		5009208	0					
+ANR	5009300	CallExpression	"sector_qemu2lun ( sector_num , iscsilun )"		5009208	1					
+ANR	5009301	Callee	sector_qemu2lun		5009208	0					
+ANR	5009302	Identifier	sector_qemu2lun		5009208	0					
+ANR	5009303	ArgumentList	sector_num		5009208	1					
+ANR	5009304	Argument	sector_num		5009208	0					
+ANR	5009305	Identifier	sector_num		5009208	0					
+ANR	5009306	Argument	iscsilun		5009208	1					
+ANR	5009307	Identifier	iscsilun		5009208	0					
+ANR	5009308	ExpressionStatement	"iscsi_co_init_iscsitask ( iscsilun , & iTask )"	59:4:983:1024	5009208	12	True				
+ANR	5009309	CallExpression	"iscsi_co_init_iscsitask ( iscsilun , & iTask )"		5009208	0					
+ANR	5009310	Callee	iscsi_co_init_iscsitask		5009208	0					
+ANR	5009311	Identifier	iscsi_co_init_iscsitask		5009208	0					
+ANR	5009312	ArgumentList	iscsilun		5009208	1					
+ANR	5009313	Argument	iscsilun		5009208	0					
+ANR	5009314	Identifier	iscsilun		5009208	0					
+ANR	5009315	Argument	& iTask		5009208	1					
+ANR	5009316	UnaryOperationExpression	& iTask		5009208	0					
+ANR	5009317	UnaryOperator	&		5009208	0					
+ANR	5009318	Identifier	iTask		5009208	1					
+ANR	5009319	ExpressionStatement	qemu_mutex_lock ( & iscsilun -> mutex )	61:4:1031:1064	5009208	13	True				
+ANR	5009320	CallExpression	qemu_mutex_lock ( & iscsilun -> mutex )		5009208	0					
+ANR	5009321	Callee	qemu_mutex_lock		5009208	0					
+ANR	5009322	Identifier	qemu_mutex_lock		5009208	0					
+ANR	5009323	ArgumentList	& iscsilun -> mutex		5009208	1					
+ANR	5009324	Argument	& iscsilun -> mutex		5009208	0					
+ANR	5009325	UnaryOperationExpression	& iscsilun -> mutex		5009208	0					
+ANR	5009326	UnaryOperator	&		5009208	0					
+ANR	5009327	PtrMemberAccess	iscsilun -> mutex		5009208	1					
+ANR	5009328	Identifier	iscsilun		5009208	0					
+ANR	5009329	Identifier	mutex		5009208	1					
+ANR	5009330	Label	retry :	63:0:1067:1072	5009208	14	True				
+ANR	5009331	Identifier	retry		5009208	0					
+ANR	5009332	IfStatement	"if ( iscsi_get_lba_status_task ( iscsilun -> iscsi , iscsilun -> lun , lba , 8 + 16 , iscsi_co_generic_cb , & iTask ) == NULL )"		5009208	15					
+ANR	5009333	Condition	"iscsi_get_lba_status_task ( iscsilun -> iscsi , iscsilun -> lun , lba , 8 + 16 , iscsi_co_generic_cb , & iTask ) == NULL"	65:8:1083:1259	5009208	0	True				
+ANR	5009334	EqualityExpression	"iscsi_get_lba_status_task ( iscsilun -> iscsi , iscsilun -> lun , lba , 8 + 16 , iscsi_co_generic_cb , & iTask ) == NULL"		5009208	0		==			
+ANR	5009335	CallExpression	"iscsi_get_lba_status_task ( iscsilun -> iscsi , iscsilun -> lun , lba , 8 + 16 , iscsi_co_generic_cb , & iTask )"		5009208	0					
+ANR	5009336	Callee	iscsi_get_lba_status_task		5009208	0					
+ANR	5009337	Identifier	iscsi_get_lba_status_task		5009208	0					
+ANR	5009338	ArgumentList	iscsilun -> iscsi		5009208	1					
+ANR	5009339	Argument	iscsilun -> iscsi		5009208	0					
+ANR	5009340	PtrMemberAccess	iscsilun -> iscsi		5009208	0					
+ANR	5009341	Identifier	iscsilun		5009208	0					
+ANR	5009342	Identifier	iscsi		5009208	1					
+ANR	5009343	Argument	iscsilun -> lun		5009208	1					
+ANR	5009344	PtrMemberAccess	iscsilun -> lun		5009208	0					
+ANR	5009345	Identifier	iscsilun		5009208	0					
+ANR	5009346	Identifier	lun		5009208	1					
+ANR	5009347	Argument	lba		5009208	2					
+ANR	5009348	Identifier	lba		5009208	0					
+ANR	5009349	Argument	8 + 16		5009208	3					
+ANR	5009350	AdditiveExpression	8 + 16		5009208	0		+			
+ANR	5009351	PrimaryExpression	8		5009208	0					
+ANR	5009352	PrimaryExpression	16		5009208	1					
+ANR	5009353	Argument	iscsi_co_generic_cb		5009208	4					
+ANR	5009354	Identifier	iscsi_co_generic_cb		5009208	0					
+ANR	5009355	Argument	& iTask		5009208	5					
+ANR	5009356	UnaryOperationExpression	& iTask		5009208	0					
+ANR	5009357	UnaryOperator	&		5009208	0					
+ANR	5009358	Identifier	iTask		5009208	1					
+ANR	5009359	Identifier	NULL		5009208	1					
+ANR	5009360	CompoundStatement		61:51:959:959	5009208	1					
+ANR	5009361	ExpressionStatement	ret = - ENOMEM	71:8:1273:1286	5009208	0	True				
+ANR	5009362	AssignmentExpression	ret = - ENOMEM		5009208	0		=			
+ANR	5009363	Identifier	ret		5009208	0					
+ANR	5009364	UnaryOperationExpression	- ENOMEM		5009208	1					
+ANR	5009365	UnaryOperator	-		5009208	0					
+ANR	5009366	Identifier	ENOMEM		5009208	1					
+ANR	5009367	GotoStatement	goto out_unlock ;	73:8:1297:1312	5009208	1	True				
+ANR	5009368	Identifier	out_unlock		5009208	0					
+ANR	5009369	WhileStatement	while ( ! iTask . complete )		5009208	16					
+ANR	5009370	Condition	! iTask . complete	79:11:1335:1349	5009208	0	True				
+ANR	5009371	UnaryOperationExpression	! iTask . complete		5009208	0					
+ANR	5009372	UnaryOperator	!		5009208	0					
+ANR	5009373	MemberAccess	iTask . complete		5009208	1					
+ANR	5009374	Identifier	iTask		5009208	0					
+ANR	5009375	Identifier	complete		5009208	1					
+ANR	5009376	CompoundStatement		71:28:1049:1049	5009208	1					
+ANR	5009377	ExpressionStatement	iscsi_set_events ( iscsilun )	81:8:1363:1389	5009208	0	True				
+ANR	5009378	CallExpression	iscsi_set_events ( iscsilun )		5009208	0					
+ANR	5009379	Callee	iscsi_set_events		5009208	0					
+ANR	5009380	Identifier	iscsi_set_events		5009208	0					
+ANR	5009381	ArgumentList	iscsilun		5009208	1					
+ANR	5009382	Argument	iscsilun		5009208	0					
+ANR	5009383	Identifier	iscsilun		5009208	0					
+ANR	5009384	ExpressionStatement	qemu_mutex_unlock ( & iscsilun -> mutex )	83:8:1400:1435	5009208	1	True				
+ANR	5009385	CallExpression	qemu_mutex_unlock ( & iscsilun -> mutex )		5009208	0					
+ANR	5009386	Callee	qemu_mutex_unlock		5009208	0					
+ANR	5009387	Identifier	qemu_mutex_unlock		5009208	0					
+ANR	5009388	ArgumentList	& iscsilun -> mutex		5009208	1					
+ANR	5009389	Argument	& iscsilun -> mutex		5009208	0					
+ANR	5009390	UnaryOperationExpression	& iscsilun -> mutex		5009208	0					
+ANR	5009391	UnaryOperator	&		5009208	0					
+ANR	5009392	PtrMemberAccess	iscsilun -> mutex		5009208	1					
+ANR	5009393	Identifier	iscsilun		5009208	0					
+ANR	5009394	Identifier	mutex		5009208	1					
+ANR	5009395	ExpressionStatement	qemu_coroutine_yield ( )	85:8:1446:1468	5009208	2	True				
+ANR	5009396	CallExpression	qemu_coroutine_yield ( )		5009208	0					
+ANR	5009397	Callee	qemu_coroutine_yield		5009208	0					
+ANR	5009398	Identifier	qemu_coroutine_yield		5009208	0					
+ANR	5009399	ArgumentList			5009208	1					
+ANR	5009400	ExpressionStatement	qemu_mutex_lock ( & iscsilun -> mutex )	87:8:1479:1512	5009208	3	True				
+ANR	5009401	CallExpression	qemu_mutex_lock ( & iscsilun -> mutex )		5009208	0					
+ANR	5009402	Callee	qemu_mutex_lock		5009208	0					
+ANR	5009403	Identifier	qemu_mutex_lock		5009208	0					
+ANR	5009404	ArgumentList	& iscsilun -> mutex		5009208	1					
+ANR	5009405	Argument	& iscsilun -> mutex		5009208	0					
+ANR	5009406	UnaryOperationExpression	& iscsilun -> mutex		5009208	0					
+ANR	5009407	UnaryOperator	&		5009208	0					
+ANR	5009408	PtrMemberAccess	iscsilun -> mutex		5009208	1					
+ANR	5009409	Identifier	iscsilun		5009208	0					
+ANR	5009410	Identifier	mutex		5009208	1					
+ANR	5009411	IfStatement	if ( iTask . do_retry )		5009208	17					
+ANR	5009412	Condition	iTask . do_retry	93:8:1532:1545	5009208	0	True				
+ANR	5009413	MemberAccess	iTask . do_retry		5009208	0					
+ANR	5009414	Identifier	iTask		5009208	0					
+ANR	5009415	Identifier	do_retry		5009208	1					
+ANR	5009416	CompoundStatement		85:24:1245:1245	5009208	1					
+ANR	5009417	IfStatement	if ( iTask . task != NULL )		5009208	0					
+ANR	5009418	Condition	iTask . task != NULL	95:12:1563:1580	5009208	0	True				
+ANR	5009419	EqualityExpression	iTask . task != NULL		5009208	0		!=			
+ANR	5009420	MemberAccess	iTask . task		5009208	0					
+ANR	5009421	Identifier	iTask		5009208	0					
+ANR	5009422	Identifier	task		5009208	1					
+ANR	5009423	Identifier	NULL		5009208	1					
+ANR	5009424	CompoundStatement		87:32:1280:1280	5009208	1					
+ANR	5009425	ExpressionStatement	scsi_free_scsi_task ( iTask . task )	97:12:1598:1629	5009208	0	True				
+ANR	5009426	CallExpression	scsi_free_scsi_task ( iTask . task )		5009208	0					
+ANR	5009427	Callee	scsi_free_scsi_task		5009208	0					
+ANR	5009428	Identifier	scsi_free_scsi_task		5009208	0					
+ANR	5009429	ArgumentList	iTask . task		5009208	1					
+ANR	5009430	Argument	iTask . task		5009208	0					
+ANR	5009431	MemberAccess	iTask . task		5009208	0					
+ANR	5009432	Identifier	iTask		5009208	0					
+ANR	5009433	Identifier	task		5009208	1					
+ANR	5009434	ExpressionStatement	iTask . task = NULL	99:12:1644:1661	5009208	1	True				
+ANR	5009435	AssignmentExpression	iTask . task = NULL		5009208	0		=			
+ANR	5009436	MemberAccess	iTask . task		5009208	0					
+ANR	5009437	Identifier	iTask		5009208	0					
+ANR	5009438	Identifier	task		5009208	1					
+ANR	5009439	Identifier	NULL		5009208	1					
+ANR	5009440	ExpressionStatement	iTask . complete = 0	103:8:1683:1701	5009208	1	True				
+ANR	5009441	AssignmentExpression	iTask . complete = 0		5009208	0		=			
+ANR	5009442	MemberAccess	iTask . complete		5009208	0					
+ANR	5009443	Identifier	iTask		5009208	0					
+ANR	5009444	Identifier	complete		5009208	1					
+ANR	5009445	PrimaryExpression	0		5009208	1					
+ANR	5009446	GotoStatement	goto retry ;	105:8:1712:1722	5009208	2	True				
+ANR	5009447	Identifier	retry		5009208	0					
+ANR	5009448	IfStatement	if ( iTask . status != SCSI_STATUS_GOOD )		5009208	18					
+ANR	5009449	Condition	iTask . status != SCSI_STATUS_GOOD	111:8:1742:1773	5009208	0	True				
+ANR	5009450	EqualityExpression	iTask . status != SCSI_STATUS_GOOD		5009208	0		!=			
+ANR	5009451	MemberAccess	iTask . status		5009208	0					
+ANR	5009452	Identifier	iTask		5009208	0					
+ANR	5009453	Identifier	status		5009208	1					
+ANR	5009454	Identifier	SCSI_STATUS_GOOD		5009208	1					
+ANR	5009455	CompoundStatement		103:42:1473:1473	5009208	1					
+ANR	5009456	Statement	error_report	121:8:2005:2016	5009208	0	True				
+ANR	5009457	Statement	(	121:20:2017:2017	5009208	1	True				
+ANR	5009458	Statement	"""iSCSI GET_LBA_STATUS failed at lba %"""	121:21:2018:2055	5009208	2	True				
+ANR	5009459	Statement	PRIu64	121:60:2057:2062	5009208	3	True				
+ANR	5009460	Statement	""": %s"""	121:67:2064:2069	5009208	4	True				
+ANR	5009461	Statement	","	121:73:2070:2070	5009208	5	True				
+ANR	5009462	Statement	lba	123:21:2094:2096	5009208	6	True				
+ANR	5009463	Statement	","	123:24:2097:2097	5009208	7	True				
+ANR	5009464	Statement	iTask	123:26:2099:2103	5009208	8	True				
+ANR	5009465	Statement	.	123:31:2104:2104	5009208	9	True				
+ANR	5009466	Statement	err_str	123:32:2105:2111	5009208	10	True				
+ANR	5009467	Statement	)	123:39:2112:2112	5009208	11	True				
+ANR	5009468	ExpressionStatement		123:40:2113:2113	5009208	12	True				
+ANR	5009469	GotoStatement	goto out_unlock ;	125:8:2124:2139	5009208	13	True				
+ANR	5009470	Identifier	out_unlock		5009208	0					
+ANR	5009471	ExpressionStatement	lbas = scsi_datain_unmarshall ( iTask . task )	131:4:2155:2196	5009208	19	True				
+ANR	5009472	AssignmentExpression	lbas = scsi_datain_unmarshall ( iTask . task )		5009208	0		=			
+ANR	5009473	Identifier	lbas		5009208	0					
+ANR	5009474	CallExpression	scsi_datain_unmarshall ( iTask . task )		5009208	1					
+ANR	5009475	Callee	scsi_datain_unmarshall		5009208	0					
+ANR	5009476	Identifier	scsi_datain_unmarshall		5009208	0					
+ANR	5009477	ArgumentList	iTask . task		5009208	1					
+ANR	5009478	Argument	iTask . task		5009208	0					
+ANR	5009479	MemberAccess	iTask . task		5009208	0					
+ANR	5009480	Identifier	iTask		5009208	0					
+ANR	5009481	Identifier	task		5009208	1					
+ANR	5009482	IfStatement	if ( lbas == NULL )		5009208	20					
+ANR	5009483	Condition	lbas == NULL	133:8:2207:2218	5009208	0	True				
+ANR	5009484	EqualityExpression	lbas == NULL		5009208	0		==			
+ANR	5009485	Identifier	lbas		5009208	0					
+ANR	5009486	Identifier	NULL		5009208	1					
+ANR	5009487	CompoundStatement		125:22:1918:1918	5009208	1					
+ANR	5009488	ExpressionStatement	ret = - EIO	135:8:2232:2242	5009208	0	True				
+ANR	5009489	AssignmentExpression	ret = - EIO		5009208	0		=			
+ANR	5009490	Identifier	ret		5009208	0					
+ANR	5009491	UnaryOperationExpression	- EIO		5009208	1					
+ANR	5009492	UnaryOperator	-		5009208	0					
+ANR	5009493	Identifier	EIO		5009208	1					
+ANR	5009494	GotoStatement	goto out_unlock ;	137:8:2253:2268	5009208	1	True				
+ANR	5009495	Identifier	out_unlock		5009208	0					
+ANR	5009496	ExpressionStatement	lbasd = & lbas -> descriptors [ 0 ]	143:4:2284:2313	5009208	21	True				
+ANR	5009497	AssignmentExpression	lbasd = & lbas -> descriptors [ 0 ]		5009208	0		=			
+ANR	5009498	Identifier	lbasd		5009208	0					
+ANR	5009499	UnaryOperationExpression	& lbas -> descriptors [ 0 ]		5009208	1					
+ANR	5009500	UnaryOperator	&		5009208	0					
+ANR	5009501	ArrayIndexing	lbas -> descriptors [ 0 ]		5009208	1					
+ANR	5009502	PtrMemberAccess	lbas -> descriptors		5009208	0					
+ANR	5009503	Identifier	lbas		5009208	0					
+ANR	5009504	Identifier	descriptors		5009208	1					
+ANR	5009505	PrimaryExpression	0		5009208	1					
+ANR	5009506	IfStatement	"if ( sector_qemu2lun ( sector_num , iscsilun ) != lbasd -> lba )"		5009208	22					
+ANR	5009507	Condition	"sector_qemu2lun ( sector_num , iscsilun ) != lbasd -> lba"	147:8:2326:2376	5009208	0	True				
+ANR	5009508	EqualityExpression	"sector_qemu2lun ( sector_num , iscsilun ) != lbasd -> lba"		5009208	0		!=			
+ANR	5009509	CallExpression	"sector_qemu2lun ( sector_num , iscsilun )"		5009208	0					
+ANR	5009510	Callee	sector_qemu2lun		5009208	0					
+ANR	5009511	Identifier	sector_qemu2lun		5009208	0					
+ANR	5009512	ArgumentList	sector_num		5009208	1					
+ANR	5009513	Argument	sector_num		5009208	0					
+ANR	5009514	Identifier	sector_num		5009208	0					
+ANR	5009515	Argument	iscsilun		5009208	1					
+ANR	5009516	Identifier	iscsilun		5009208	0					
+ANR	5009517	PtrMemberAccess	lbasd -> lba		5009208	1					
+ANR	5009518	Identifier	lbasd		5009208	0					
+ANR	5009519	Identifier	lba		5009208	1					
+ANR	5009520	CompoundStatement		139:61:2076:2076	5009208	1					
+ANR	5009521	ExpressionStatement	ret = - EIO	149:8:2390:2400	5009208	0	True				
+ANR	5009522	AssignmentExpression	ret = - EIO		5009208	0		=			
+ANR	5009523	Identifier	ret		5009208	0					
+ANR	5009524	UnaryOperationExpression	- EIO		5009208	1					
+ANR	5009525	UnaryOperator	-		5009208	0					
+ANR	5009526	Identifier	EIO		5009208	1					
+ANR	5009527	GotoStatement	goto out_unlock ;	151:8:2411:2426	5009208	1	True				
+ANR	5009528	Identifier	out_unlock		5009208	0					
+ANR	5009529	ExpressionStatement	"* pnum = sector_lun2qemu ( lbasd -> num_blocks , iscsilun )"	157:4:2442:2494	5009208	23	True				
+ANR	5009530	AssignmentExpression	"* pnum = sector_lun2qemu ( lbasd -> num_blocks , iscsilun )"		5009208	0		=			
+ANR	5009531	UnaryOperationExpression	* pnum		5009208	0					
+ANR	5009532	UnaryOperator	*		5009208	0					
+ANR	5009533	Identifier	pnum		5009208	1					
+ANR	5009534	CallExpression	"sector_lun2qemu ( lbasd -> num_blocks , iscsilun )"		5009208	1					
+ANR	5009535	Callee	sector_lun2qemu		5009208	0					
+ANR	5009536	Identifier	sector_lun2qemu		5009208	0					
+ANR	5009537	ArgumentList	lbasd -> num_blocks		5009208	1					
+ANR	5009538	Argument	lbasd -> num_blocks		5009208	0					
+ANR	5009539	PtrMemberAccess	lbasd -> num_blocks		5009208	0					
+ANR	5009540	Identifier	lbasd		5009208	0					
+ANR	5009541	Identifier	num_blocks		5009208	1					
+ANR	5009542	Argument	iscsilun		5009208	1					
+ANR	5009543	Identifier	iscsilun		5009208	0					
+ANR	5009544	IfStatement	if ( lbasd -> provisioning == SCSI_PROVISIONING_TYPE_DEALLOCATED || lbasd -> provisioning == SCSI_PROVISIONING_TYPE_ANCHORED )		5009208	24					
+ANR	5009545	Condition	lbasd -> provisioning == SCSI_PROVISIONING_TYPE_DEALLOCATED || lbasd -> provisioning == SCSI_PROVISIONING_TYPE_ANCHORED	161:8:2507:2630	5009208	0	True				
+ANR	5009546	OrExpression	lbasd -> provisioning == SCSI_PROVISIONING_TYPE_DEALLOCATED || lbasd -> provisioning == SCSI_PROVISIONING_TYPE_ANCHORED		5009208	0		||			
+ANR	5009547	EqualityExpression	lbasd -> provisioning == SCSI_PROVISIONING_TYPE_DEALLOCATED		5009208	0		==			
+ANR	5009548	PtrMemberAccess	lbasd -> provisioning		5009208	0					
+ANR	5009549	Identifier	lbasd		5009208	0					
+ANR	5009550	Identifier	provisioning		5009208	1					
+ANR	5009551	Identifier	SCSI_PROVISIONING_TYPE_DEALLOCATED		5009208	1					
+ANR	5009552	EqualityExpression	lbasd -> provisioning == SCSI_PROVISIONING_TYPE_ANCHORED		5009208	1		==			
+ANR	5009553	PtrMemberAccess	lbasd -> provisioning		5009208	0					
+ANR	5009554	Identifier	lbasd		5009208	0					
+ANR	5009555	Identifier	provisioning		5009208	1					
+ANR	5009556	Identifier	SCSI_PROVISIONING_TYPE_ANCHORED		5009208	1					
+ANR	5009557	CompoundStatement		155:64:2330:2330	5009208	1					
+ANR	5009558	ExpressionStatement	ret &= ~BDRV_BLOCK_DATA	165:8:2644:2667	5009208	0	True				
+ANR	5009559	AssignmentExpression	ret &= ~BDRV_BLOCK_DATA		5009208	0		&=			
+ANR	5009560	Identifier	ret		5009208	0					
+ANR	5009561	Identifier	~BDRV_BLOCK_DATA		5009208	1					
+ANR	5009562	IfStatement	if ( iscsilun -> lbprz )		5009208	1					
+ANR	5009563	Condition	iscsilun -> lbprz	167:12:2682:2696	5009208	0	True				
+ANR	5009564	PtrMemberAccess	iscsilun -> lbprz		5009208	0					
+ANR	5009565	Identifier	iscsilun		5009208	0					
+ANR	5009566	Identifier	lbprz		5009208	1					
+ANR	5009567	CompoundStatement		159:29:2396:2396	5009208	1					
+ANR	5009568	ExpressionStatement	ret |= BDRV_BLOCK_ZERO	169:12:2714:2736	5009208	0	True				
+ANR	5009569	AssignmentExpression	ret |= BDRV_BLOCK_ZERO		5009208	0		|=			
+ANR	5009570	Identifier	ret		5009208	0					
+ANR	5009571	Identifier	BDRV_BLOCK_ZERO		5009208	1					
+ANR	5009572	IfStatement	if ( ret & BDRV_BLOCK_ZERO )		5009208	25					
+ANR	5009573	Condition	ret & BDRV_BLOCK_ZERO	177:8:2767:2787	5009208	0	True				
+ANR	5009574	BitAndExpression	ret & BDRV_BLOCK_ZERO		5009208	0		&			
+ANR	5009575	Identifier	ret		5009208	0					
+ANR	5009576	Identifier	BDRV_BLOCK_ZERO		5009208	1					
+ANR	5009577	CompoundStatement		169:31:2487:2487	5009208	1					
+ANR	5009578	ExpressionStatement	"iscsi_allocmap_set_unallocated ( iscsilun , sector_num , * pnum )"	179:8:2801:2860	5009208	0	True				
+ANR	5009579	CallExpression	"iscsi_allocmap_set_unallocated ( iscsilun , sector_num , * pnum )"		5009208	0					
+ANR	5009580	Callee	iscsi_allocmap_set_unallocated		5009208	0					
+ANR	5009581	Identifier	iscsi_allocmap_set_unallocated		5009208	0					
+ANR	5009582	ArgumentList	iscsilun		5009208	1					
+ANR	5009583	Argument	iscsilun		5009208	0					
+ANR	5009584	Identifier	iscsilun		5009208	0					
+ANR	5009585	Argument	sector_num		5009208	1					
+ANR	5009586	Identifier	sector_num		5009208	0					
+ANR	5009587	Argument	* pnum		5009208	2					
+ANR	5009588	UnaryOperationExpression	* pnum		5009208	0					
+ANR	5009589	UnaryOperator	*		5009208	0					
+ANR	5009590	Identifier	pnum		5009208	1					
+ANR	5009591	ElseStatement	else		5009208	0					
+ANR	5009592	CompoundStatement		173:11:2571:2571	5009208	0					
+ANR	5009593	ExpressionStatement	"iscsi_allocmap_set_allocated ( iscsilun , sector_num , * pnum )"	183:8:2885:2942	5009208	0	True				
+ANR	5009594	CallExpression	"iscsi_allocmap_set_allocated ( iscsilun , sector_num , * pnum )"		5009208	0					
+ANR	5009595	Callee	iscsi_allocmap_set_allocated		5009208	0					
+ANR	5009596	Identifier	iscsi_allocmap_set_allocated		5009208	0					
+ANR	5009597	ArgumentList	iscsilun		5009208	1					
+ANR	5009598	Argument	iscsilun		5009208	0					
+ANR	5009599	Identifier	iscsilun		5009208	0					
+ANR	5009600	Argument	sector_num		5009208	1					
+ANR	5009601	Identifier	sector_num		5009208	0					
+ANR	5009602	Argument	* pnum		5009208	2					
+ANR	5009603	UnaryOperationExpression	* pnum		5009208	0					
+ANR	5009604	UnaryOperator	*		5009208	0					
+ANR	5009605	Identifier	pnum		5009208	1					
+ANR	5009606	IfStatement	if ( * pnum > nb_sectors )		5009208	26					
+ANR	5009607	Condition	* pnum > nb_sectors	189:8:2962:2979	5009208	0	True				
+ANR	5009608	RelationalExpression	* pnum > nb_sectors		5009208	0		>			
+ANR	5009609	UnaryOperationExpression	* pnum		5009208	0					
+ANR	5009610	UnaryOperator	*		5009208	0					
+ANR	5009611	Identifier	pnum		5009208	1					
+ANR	5009612	Identifier	nb_sectors		5009208	1					
+ANR	5009613	CompoundStatement		181:28:2679:2679	5009208	1					
+ANR	5009614	ExpressionStatement	* pnum = nb_sectors	191:8:2993:3011	5009208	0	True				
+ANR	5009615	AssignmentExpression	* pnum = nb_sectors		5009208	0		=			
+ANR	5009616	UnaryOperationExpression	* pnum		5009208	0					
+ANR	5009617	UnaryOperator	*		5009208	0					
+ANR	5009618	Identifier	pnum		5009208	1					
+ANR	5009619	Identifier	nb_sectors		5009208	1					
+ANR	5009620	Label	out_unlock :	195:0:3021:3031	5009208	27	True				
+ANR	5009621	Identifier	out_unlock		5009208	0					
+ANR	5009622	ExpressionStatement	qemu_mutex_unlock ( & iscsilun -> mutex )	197:4:3038:3073	5009208	28	True				
+ANR	5009623	CallExpression	qemu_mutex_unlock ( & iscsilun -> mutex )		5009208	0					
+ANR	5009624	Callee	qemu_mutex_unlock		5009208	0					
+ANR	5009625	Identifier	qemu_mutex_unlock		5009208	0					
+ANR	5009626	ArgumentList	& iscsilun -> mutex		5009208	1					
+ANR	5009627	Argument	& iscsilun -> mutex		5009208	0					
+ANR	5009628	UnaryOperationExpression	& iscsilun -> mutex		5009208	0					
+ANR	5009629	UnaryOperator	&		5009208	0					
+ANR	5009630	PtrMemberAccess	iscsilun -> mutex		5009208	1					
+ANR	5009631	Identifier	iscsilun		5009208	0					
+ANR	5009632	Identifier	mutex		5009208	1					
+ANR	5009633	ExpressionStatement	g_free ( iTask . err_str )	199:4:3080:3101	5009208	29	True				
+ANR	5009634	CallExpression	g_free ( iTask . err_str )		5009208	0					
+ANR	5009635	Callee	g_free		5009208	0					
+ANR	5009636	Identifier	g_free		5009208	0					
+ANR	5009637	ArgumentList	iTask . err_str		5009208	1					
+ANR	5009638	Argument	iTask . err_str		5009208	0					
+ANR	5009639	MemberAccess	iTask . err_str		5009208	0					
+ANR	5009640	Identifier	iTask		5009208	0					
+ANR	5009641	Identifier	err_str		5009208	1					
+ANR	5009642	Label	out :	201:0:3104:3107	5009208	30	True				
+ANR	5009643	Identifier	out		5009208	0					
+ANR	5009644	IfStatement	if ( iTask . task != NULL )		5009208	31					
+ANR	5009645	Condition	iTask . task != NULL	203:8:3118:3135	5009208	0	True				
+ANR	5009646	EqualityExpression	iTask . task != NULL		5009208	0		!=			
+ANR	5009647	MemberAccess	iTask . task		5009208	0					
+ANR	5009648	Identifier	iTask		5009208	0					
+ANR	5009649	Identifier	task		5009208	1					
+ANR	5009650	Identifier	NULL		5009208	1					
+ANR	5009651	CompoundStatement		195:28:2835:2835	5009208	1					
+ANR	5009652	ExpressionStatement	scsi_free_scsi_task ( iTask . task )	205:8:3149:3180	5009208	0	True				
+ANR	5009653	CallExpression	scsi_free_scsi_task ( iTask . task )		5009208	0					
+ANR	5009654	Callee	scsi_free_scsi_task		5009208	0					
+ANR	5009655	Identifier	scsi_free_scsi_task		5009208	0					
+ANR	5009656	ArgumentList	iTask . task		5009208	1					
+ANR	5009657	Argument	iTask . task		5009208	0					
+ANR	5009658	MemberAccess	iTask . task		5009208	0					
+ANR	5009659	Identifier	iTask		5009208	0					
+ANR	5009660	Identifier	task		5009208	1					
+ANR	5009661	IfStatement	if ( ret > 0 && ret & BDRV_BLOCK_OFFSET_VALID )		5009208	32					
+ANR	5009662	Condition	ret > 0 && ret & BDRV_BLOCK_OFFSET_VALID	209:8:3198:3237	5009208	0	True				
+ANR	5009663	AndExpression	ret > 0 && ret & BDRV_BLOCK_OFFSET_VALID		5009208	0		&&			
+ANR	5009664	RelationalExpression	ret > 0		5009208	0		>			
+ANR	5009665	Identifier	ret		5009208	0					
+ANR	5009666	PrimaryExpression	0		5009208	1					
+ANR	5009667	BitAndExpression	ret & BDRV_BLOCK_OFFSET_VALID		5009208	1		&			
+ANR	5009668	Identifier	ret		5009208	0					
+ANR	5009669	Identifier	BDRV_BLOCK_OFFSET_VALID		5009208	1					
+ANR	5009670	CompoundStatement		201:50:2937:2937	5009208	1					
+ANR	5009671	ExpressionStatement	* file = bs	211:8:3251:3261	5009208	0	True				
+ANR	5009672	AssignmentExpression	* file = bs		5009208	0		=			
+ANR	5009673	UnaryOperationExpression	* file		5009208	0					
+ANR	5009674	UnaryOperator	*		5009208	0					
+ANR	5009675	Identifier	file		5009208	1					
+ANR	5009676	Identifier	bs		5009208	1					
+ANR	5009677	ReturnStatement	return ret ;	215:4:3275:3285	5009208	33	True				
+ANR	5009678	Identifier	ret		5009208	0					
+ANR	5009679	ReturnType	static int64_t coroutine_fn		5009208	1					
+ANR	5009680	Identifier	iscsi_co_get_block_status		5009208	2					
+ANR	5009681	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum , BlockDriverState * * file"		5009208	3					
+ANR	5009682	Parameter	BlockDriverState * bs	1:54:54:73	5009208	0	True				
+ANR	5009683	ParameterType	BlockDriverState *		5009208	0					
+ANR	5009684	Identifier	bs		5009208	1					
+ANR	5009685	Parameter	int64_t sector_num	3:50:127:144	5009208	1	True				
+ANR	5009686	ParameterType	int64_t		5009208	0					
+ANR	5009687	Identifier	sector_num		5009208	1					
+ANR	5009688	Parameter	int nb_sectors	5:50:198:211	5009208	2	True				
+ANR	5009689	ParameterType	int		5009208	0					
+ANR	5009690	Identifier	nb_sectors		5009208	1					
+ANR	5009691	Parameter	int * pnum	5:66:214:222	5009208	3	True				
+ANR	5009692	ParameterType	int *		5009208	0					
+ANR	5009693	Identifier	pnum		5009208	1					
+ANR	5009694	Parameter	BlockDriverState * * file	7:50:276:298	5009208	4	True				
+ANR	5009695	ParameterType	BlockDriverState * *		5009208	0					
+ANR	5009696	Identifier	file		5009208	1					
+ANR	5009697	CFGEntryNode	ENTRY		5009208		True				
+ANR	5009698	CFGExitNode	EXIT		5009208		True				
+ANR	5009699	Symbol	ENOMEM		5009208						
+ANR	5009700	Symbol	nb_sectors		5009208						
+ANR	5009701	Symbol	SCSI_PROVISIONING_TYPE_ANCHORED		5009208						
+ANR	5009702	Symbol	SCSI_STATUS_GOOD		5009208						
+ANR	5009703	Symbol	iscsilun -> lbprz		5009208						
+ANR	5009704	Symbol	& iscsilun -> mutex		5009208						
+ANR	5009705	Symbol	lbasd -> provisioning		5009208						
+ANR	5009706	Symbol	* bs		5009208						
+ANR	5009707	Symbol	* iscsilun		5009208						
+ANR	5009708	Symbol	iscsilun -> lun		5009208						
+ANR	5009709	Symbol	lbas		5009208						
+ANR	5009710	Symbol	ret		5009208						
+ANR	5009711	Symbol	pnum		5009208						
+ANR	5009712	Symbol	NULL		5009208						
+ANR	5009713	Symbol	lbasd		5009208						
+ANR	5009714	Symbol	& iTask		5009208						
+ANR	5009715	Symbol	sector_lun2qemu		5009208						
+ANR	5009716	Symbol	scsi_datain_unmarshall		5009208						
+ANR	5009717	Symbol	iTask . complete		5009208						
+ANR	5009718	Symbol	lba		5009208						
+ANR	5009719	Symbol	iscsi_get_lba_status_task		5009208						
+ANR	5009720	Symbol	EIO		5009208						
+ANR	5009721	Symbol	iscsilun		5009208						
+ANR	5009722	Symbol	* file		5009208						
+ANR	5009723	Symbol	lbasd -> lba		5009208						
+ANR	5009724	Symbol	iTask . status		5009208						
+ANR	5009725	Symbol	lbas -> descriptors		5009208						
+ANR	5009726	Symbol	iscsilun -> iscsi		5009208						
+ANR	5009727	Symbol	BDRV_BLOCK_DATA		5009208						
+ANR	5009728	Symbol	* lbasd		5009208						
+ANR	5009729	Symbol	~BDRV_BLOCK_DATA		5009208						
+ANR	5009730	Symbol	sector_qemu2lun		5009208						
+ANR	5009731	Symbol	BDRV_BLOCK_ZERO		5009208						
+ANR	5009732	Symbol	bs		5009208						
+ANR	5009733	Symbol	iTask . do_retry		5009208						
+ANR	5009734	Symbol	file		5009208						
+ANR	5009735	Symbol	BDRV_BLOCK_OFFSET_VALID		5009208						
+ANR	5009736	Symbol	iTask . task		5009208						
+ANR	5009737	Symbol	iTask		5009208						
+ANR	5009738	Symbol	bs -> opaque		5009208						
+ANR	5009739	Symbol	is_sector_request_lun_aligned		5009208						
+ANR	5009740	Symbol	BDRV_SECTOR_BITS		5009208						
+ANR	5009741	Symbol	iscsi_co_generic_cb		5009208						
+ANR	5009742	Symbol	iTask . err_str		5009208						
+ANR	5009743	Symbol	sector_num		5009208						
+ANR	5009744	Symbol	* pnum		5009208						
+ANR	5009745	Symbol	SCSI_PROVISIONING_TYPE_DEALLOCATED		5009208						
+ANR	5009746	Symbol	EINVAL		5009208						
+ANR	5009747	Symbol	lbasd -> num_blocks		5009208						
+ANR	5009748	Symbol	iscsilun -> lbpme		5009208						
+ANR	5009749	Symbol	* lbas		5009208						

@@ -1,0 +1,1082 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7620121	File	/home/p4ultr4n/workplace/ReVeal/raw_code/scsi_disk_emulate_command_02_1.c								
+ANR	7620122	Function	scsi_disk_emulate_command	1:0:0:6624							
+ANR	7620123	FunctionDef	scsi_disk_emulate_command (SCSIDiskReq * r)		7620122	0					
+ANR	7620124	CompoundStatement		3:0:54:6624	7620122	0					
+ANR	7620125	IdentifierDeclStatement	SCSIRequest * req = & r -> req ;	5:4:61:87	7620122	0	True				
+ANR	7620126	IdentifierDecl	* req = & r -> req		7620122	0					
+ANR	7620127	IdentifierDeclType	SCSIRequest *		7620122	0					
+ANR	7620128	Identifier	req		7620122	1					
+ANR	7620129	AssignmentExpression	* req = & r -> req		7620122	2		=			
+ANR	7620130	Identifier	req		7620122	0					
+ANR	7620131	UnaryOperationExpression	& r -> req		7620122	1					
+ANR	7620132	UnaryOperator	&		7620122	0					
+ANR	7620133	PtrMemberAccess	r -> req		7620122	1					
+ANR	7620134	Identifier	r		7620122	0					
+ANR	7620135	Identifier	req		7620122	1					
+ANR	7620136	IdentifierDeclStatement	"SCSIDiskState * s = DO_UPCAST ( SCSIDiskState , qdev , req -> dev ) ;"	7:4:94:153	7620122	1	True				
+ANR	7620137	IdentifierDecl	"* s = DO_UPCAST ( SCSIDiskState , qdev , req -> dev )"		7620122	0					
+ANR	7620138	IdentifierDeclType	SCSIDiskState *		7620122	0					
+ANR	7620139	Identifier	s		7620122	1					
+ANR	7620140	AssignmentExpression	"* s = DO_UPCAST ( SCSIDiskState , qdev , req -> dev )"		7620122	2		=			
+ANR	7620141	Identifier	s		7620122	0					
+ANR	7620142	CallExpression	"DO_UPCAST ( SCSIDiskState , qdev , req -> dev )"		7620122	1					
+ANR	7620143	Callee	DO_UPCAST		7620122	0					
+ANR	7620144	Identifier	DO_UPCAST		7620122	0					
+ANR	7620145	ArgumentList	SCSIDiskState		7620122	1					
+ANR	7620146	Argument	SCSIDiskState		7620122	0					
+ANR	7620147	Identifier	SCSIDiskState		7620122	0					
+ANR	7620148	Argument	qdev		7620122	1					
+ANR	7620149	Identifier	qdev		7620122	0					
+ANR	7620150	Argument	req -> dev		7620122	2					
+ANR	7620151	PtrMemberAccess	req -> dev		7620122	0					
+ANR	7620152	Identifier	req		7620122	0					
+ANR	7620153	Identifier	dev		7620122	1					
+ANR	7620154	IdentifierDeclStatement	uint64_t nb_sectors ;	9:4:160:179	7620122	2	True				
+ANR	7620155	IdentifierDecl	nb_sectors		7620122	0					
+ANR	7620156	IdentifierDeclType	uint64_t		7620122	0					
+ANR	7620157	Identifier	nb_sectors		7620122	1					
+ANR	7620158	IdentifierDeclStatement	uint8_t * outbuf ;	11:4:186:201	7620122	3	True				
+ANR	7620159	IdentifierDecl	* outbuf		7620122	0					
+ANR	7620160	IdentifierDeclType	uint8_t *		7620122	0					
+ANR	7620161	Identifier	outbuf		7620122	1					
+ANR	7620162	IdentifierDeclStatement	int buflen = 0 ;	13:4:208:222	7620122	4	True				
+ANR	7620163	IdentifierDecl	buflen = 0		7620122	0					
+ANR	7620164	IdentifierDeclType	int		7620122	0					
+ANR	7620165	Identifier	buflen		7620122	1					
+ANR	7620166	AssignmentExpression	buflen = 0		7620122	2		=			
+ANR	7620167	Identifier	buflen		7620122	0					
+ANR	7620168	PrimaryExpression	0		7620122	1					
+ANR	7620169	IfStatement	if ( ! r -> iov . iov_base )		7620122	5					
+ANR	7620170	Condition	! r -> iov . iov_base	17:8:235:250	7620122	0	True				
+ANR	7620171	UnaryOperationExpression	! r -> iov . iov_base		7620122	0					
+ANR	7620172	UnaryOperator	!		7620122	0					
+ANR	7620173	MemberAccess	r -> iov . iov_base		7620122	1					
+ANR	7620174	PtrMemberAccess	r -> iov		7620122	0					
+ANR	7620175	Identifier	r		7620122	0					
+ANR	7620176	Identifier	iov		7620122	1					
+ANR	7620177	Identifier	iov_base		7620122	1					
+ANR	7620178	CompoundStatement		15:26:198:198	7620122	1					
+ANR	7620179	IfStatement	if ( req -> cmd . xfer > 65536 )		7620122	0					
+ANR	7620180	Condition	req -> cmd . xfer > 65536	35:12:682:702	7620122	0	True				
+ANR	7620181	RelationalExpression	req -> cmd . xfer > 65536		7620122	0		>			
+ANR	7620182	MemberAccess	req -> cmd . xfer		7620122	0					
+ANR	7620183	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620184	Identifier	req		7620122	0					
+ANR	7620185	Identifier	cmd		7620122	1					
+ANR	7620186	Identifier	xfer		7620122	1					
+ANR	7620187	PrimaryExpression	65536		7620122	1					
+ANR	7620188	CompoundStatement		33:35:650:650	7620122	1					
+ANR	7620189	GotoStatement	goto illegal_request ;	37:12:720:740	7620122	0	True				
+ANR	7620190	Identifier	illegal_request		7620122	0					
+ANR	7620191	ExpressionStatement	"r -> buflen = MAX ( 4096 , req -> cmd . xfer )"	41:8:762:798	7620122	1	True				
+ANR	7620192	AssignmentExpression	"r -> buflen = MAX ( 4096 , req -> cmd . xfer )"		7620122	0		=			
+ANR	7620193	PtrMemberAccess	r -> buflen		7620122	0					
+ANR	7620194	Identifier	r		7620122	0					
+ANR	7620195	Identifier	buflen		7620122	1					
+ANR	7620196	CallExpression	"MAX ( 4096 , req -> cmd . xfer )"		7620122	1					
+ANR	7620197	Callee	MAX		7620122	0					
+ANR	7620198	Identifier	MAX		7620122	0					
+ANR	7620199	ArgumentList	4096		7620122	1					
+ANR	7620200	Argument	4096		7620122	0					
+ANR	7620201	PrimaryExpression	4096		7620122	0					
+ANR	7620202	Argument	req -> cmd . xfer		7620122	1					
+ANR	7620203	MemberAccess	req -> cmd . xfer		7620122	0					
+ANR	7620204	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620205	Identifier	req		7620122	0					
+ANR	7620206	Identifier	cmd		7620122	1					
+ANR	7620207	Identifier	xfer		7620122	1					
+ANR	7620208	ExpressionStatement	"r -> iov . iov_base = qemu_blockalign ( s -> qdev . conf . bs , r -> buflen )"	43:8:809:870	7620122	2	True				
+ANR	7620209	AssignmentExpression	"r -> iov . iov_base = qemu_blockalign ( s -> qdev . conf . bs , r -> buflen )"		7620122	0		=			
+ANR	7620210	MemberAccess	r -> iov . iov_base		7620122	0					
+ANR	7620211	PtrMemberAccess	r -> iov		7620122	0					
+ANR	7620212	Identifier	r		7620122	0					
+ANR	7620213	Identifier	iov		7620122	1					
+ANR	7620214	Identifier	iov_base		7620122	1					
+ANR	7620215	CallExpression	"qemu_blockalign ( s -> qdev . conf . bs , r -> buflen )"		7620122	1					
+ANR	7620216	Callee	qemu_blockalign		7620122	0					
+ANR	7620217	Identifier	qemu_blockalign		7620122	0					
+ANR	7620218	ArgumentList	s -> qdev . conf . bs		7620122	1					
+ANR	7620219	Argument	s -> qdev . conf . bs		7620122	0					
+ANR	7620220	MemberAccess	s -> qdev . conf . bs		7620122	0					
+ANR	7620221	MemberAccess	s -> qdev . conf		7620122	0					
+ANR	7620222	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620223	Identifier	s		7620122	0					
+ANR	7620224	Identifier	qdev		7620122	1					
+ANR	7620225	Identifier	conf		7620122	1					
+ANR	7620226	Identifier	bs		7620122	1					
+ANR	7620227	Argument	r -> buflen		7620122	1					
+ANR	7620228	PtrMemberAccess	r -> buflen		7620122	0					
+ANR	7620229	Identifier	r		7620122	0					
+ANR	7620230	Identifier	buflen		7620122	1					
+ANR	7620231	ExpressionStatement	outbuf = r -> iov . iov_base	49:4:886:910	7620122	6	True				
+ANR	7620232	AssignmentExpression	outbuf = r -> iov . iov_base		7620122	0		=			
+ANR	7620233	Identifier	outbuf		7620122	0					
+ANR	7620234	MemberAccess	r -> iov . iov_base		7620122	1					
+ANR	7620235	PtrMemberAccess	r -> iov		7620122	0					
+ANR	7620236	Identifier	r		7620122	0					
+ANR	7620237	Identifier	iov		7620122	1					
+ANR	7620238	Identifier	iov_base		7620122	1					
+ANR	7620239	SwitchStatement	switch ( req -> cmd . buf [ 0 ] )		7620122	7					
+ANR	7620240	Condition	req -> cmd . buf [ 0 ]	51:12:925:939	7620122	0	True				
+ANR	7620241	ArrayIndexing	req -> cmd . buf [ 0 ]		7620122	0					
+ANR	7620242	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620243	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620244	Identifier	req		7620122	0					
+ANR	7620245	Identifier	cmd		7620122	1					
+ANR	7620246	Identifier	buf		7620122	1					
+ANR	7620247	PrimaryExpression	0		7620122	1					
+ANR	7620248	CompoundStatement		49:29:887:887	7620122	1					
+ANR	7620249	Label	case TEST_UNIT_READY :	53:4:949:969	7620122	0	True				
+ANR	7620250	Identifier	TEST_UNIT_READY		7620122	0					
+ANR	7620251	ExpressionStatement	assert ( ! s -> tray_open && bdrv_is_inserted ( s -> qdev . conf . bs ) )	55:8:980:1038	7620122	1	True				
+ANR	7620252	CallExpression	assert ( ! s -> tray_open && bdrv_is_inserted ( s -> qdev . conf . bs ) )		7620122	0					
+ANR	7620253	Callee	assert		7620122	0					
+ANR	7620254	Identifier	assert		7620122	0					
+ANR	7620255	ArgumentList	! s -> tray_open && bdrv_is_inserted ( s -> qdev . conf . bs )		7620122	1					
+ANR	7620256	Argument	! s -> tray_open && bdrv_is_inserted ( s -> qdev . conf . bs )		7620122	0					
+ANR	7620257	AndExpression	! s -> tray_open && bdrv_is_inserted ( s -> qdev . conf . bs )		7620122	0		&&			
+ANR	7620258	UnaryOperationExpression	! s -> tray_open		7620122	0					
+ANR	7620259	UnaryOperator	!		7620122	0					
+ANR	7620260	PtrMemberAccess	s -> tray_open		7620122	1					
+ANR	7620261	Identifier	s		7620122	0					
+ANR	7620262	Identifier	tray_open		7620122	1					
+ANR	7620263	CallExpression	bdrv_is_inserted ( s -> qdev . conf . bs )		7620122	1					
+ANR	7620264	Callee	bdrv_is_inserted		7620122	0					
+ANR	7620265	Identifier	bdrv_is_inserted		7620122	0					
+ANR	7620266	ArgumentList	s -> qdev . conf . bs		7620122	1					
+ANR	7620267	Argument	s -> qdev . conf . bs		7620122	0					
+ANR	7620268	MemberAccess	s -> qdev . conf . bs		7620122	0					
+ANR	7620269	MemberAccess	s -> qdev . conf		7620122	0					
+ANR	7620270	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620271	Identifier	s		7620122	0					
+ANR	7620272	Identifier	qdev		7620122	1					
+ANR	7620273	Identifier	conf		7620122	1					
+ANR	7620274	Identifier	bs		7620122	1					
+ANR	7620275	BreakStatement	break ;	57:8:1049:1054	7620122	2	True				
+ANR	7620276	Label	case INQUIRY :	59:4:1061:1073	7620122	3	True				
+ANR	7620277	Identifier	INQUIRY		7620122	0					
+ANR	7620278	ExpressionStatement	"buflen = scsi_disk_emulate_inquiry ( req , outbuf )"	61:8:1084:1131	7620122	4	True				
+ANR	7620279	AssignmentExpression	"buflen = scsi_disk_emulate_inquiry ( req , outbuf )"		7620122	0		=			
+ANR	7620280	Identifier	buflen		7620122	0					
+ANR	7620281	CallExpression	"scsi_disk_emulate_inquiry ( req , outbuf )"		7620122	1					
+ANR	7620282	Callee	scsi_disk_emulate_inquiry		7620122	0					
+ANR	7620283	Identifier	scsi_disk_emulate_inquiry		7620122	0					
+ANR	7620284	ArgumentList	req		7620122	1					
+ANR	7620285	Argument	req		7620122	0					
+ANR	7620286	Identifier	req		7620122	0					
+ANR	7620287	Argument	outbuf		7620122	1					
+ANR	7620288	Identifier	outbuf		7620122	0					
+ANR	7620289	IfStatement	if ( buflen < 0 )		7620122	5					
+ANR	7620290	Condition	buflen < 0	63:12:1146:1155	7620122	0	True				
+ANR	7620291	RelationalExpression	buflen < 0		7620122	0		<			
+ANR	7620292	Identifier	buflen		7620122	0					
+ANR	7620293	PrimaryExpression	0		7620122	1					
+ANR	7620294	CompoundStatement		61:24:1103:1103	7620122	1					
+ANR	7620295	GotoStatement	goto illegal_request ;	65:12:1173:1193	7620122	0	True				
+ANR	7620296	Identifier	illegal_request		7620122	0					
+ANR	7620297	BreakStatement	break ;	69:8:1215:1220	7620122	6	True				
+ANR	7620298	Label	case MODE_SENSE :	71:4:1227:1242	7620122	7	True				
+ANR	7620299	Identifier	MODE_SENSE		7620122	0					
+ANR	7620300	Label	case MODE_SENSE_10 :	73:4:1249:1267	7620122	8	True				
+ANR	7620301	Identifier	MODE_SENSE_10		7620122	0					
+ANR	7620302	ExpressionStatement	"buflen = scsi_disk_emulate_mode_sense ( r , outbuf )"	75:8:1278:1326	7620122	9	True				
+ANR	7620303	AssignmentExpression	"buflen = scsi_disk_emulate_mode_sense ( r , outbuf )"		7620122	0		=			
+ANR	7620304	Identifier	buflen		7620122	0					
+ANR	7620305	CallExpression	"scsi_disk_emulate_mode_sense ( r , outbuf )"		7620122	1					
+ANR	7620306	Callee	scsi_disk_emulate_mode_sense		7620122	0					
+ANR	7620307	Identifier	scsi_disk_emulate_mode_sense		7620122	0					
+ANR	7620308	ArgumentList	r		7620122	1					
+ANR	7620309	Argument	r		7620122	0					
+ANR	7620310	Identifier	r		7620122	0					
+ANR	7620311	Argument	outbuf		7620122	1					
+ANR	7620312	Identifier	outbuf		7620122	0					
+ANR	7620313	IfStatement	if ( buflen < 0 )		7620122	10					
+ANR	7620314	Condition	buflen < 0	77:12:1341:1350	7620122	0	True				
+ANR	7620315	RelationalExpression	buflen < 0		7620122	0		<			
+ANR	7620316	Identifier	buflen		7620122	0					
+ANR	7620317	PrimaryExpression	0		7620122	1					
+ANR	7620318	CompoundStatement		75:24:1298:1298	7620122	1					
+ANR	7620319	GotoStatement	goto illegal_request ;	79:12:1368:1388	7620122	0	True				
+ANR	7620320	Identifier	illegal_request		7620122	0					
+ANR	7620321	BreakStatement	break ;	83:8:1410:1415	7620122	11	True				
+ANR	7620322	Label	case READ_TOC :	85:4:1422:1435	7620122	12	True				
+ANR	7620323	Identifier	READ_TOC		7620122	0					
+ANR	7620324	ExpressionStatement	"buflen = scsi_disk_emulate_read_toc ( req , outbuf )"	87:8:1446:1494	7620122	13	True				
+ANR	7620325	AssignmentExpression	"buflen = scsi_disk_emulate_read_toc ( req , outbuf )"		7620122	0		=			
+ANR	7620326	Identifier	buflen		7620122	0					
+ANR	7620327	CallExpression	"scsi_disk_emulate_read_toc ( req , outbuf )"		7620122	1					
+ANR	7620328	Callee	scsi_disk_emulate_read_toc		7620122	0					
+ANR	7620329	Identifier	scsi_disk_emulate_read_toc		7620122	0					
+ANR	7620330	ArgumentList	req		7620122	1					
+ANR	7620331	Argument	req		7620122	0					
+ANR	7620332	Identifier	req		7620122	0					
+ANR	7620333	Argument	outbuf		7620122	1					
+ANR	7620334	Identifier	outbuf		7620122	0					
+ANR	7620335	IfStatement	if ( buflen < 0 )		7620122	14					
+ANR	7620336	Condition	buflen < 0	89:12:1509:1518	7620122	0	True				
+ANR	7620337	RelationalExpression	buflen < 0		7620122	0		<			
+ANR	7620338	Identifier	buflen		7620122	0					
+ANR	7620339	PrimaryExpression	0		7620122	1					
+ANR	7620340	CompoundStatement		87:24:1466:1466	7620122	1					
+ANR	7620341	GotoStatement	goto illegal_request ;	91:12:1536:1556	7620122	0	True				
+ANR	7620342	Identifier	illegal_request		7620122	0					
+ANR	7620343	BreakStatement	break ;	95:8:1578:1583	7620122	15	True				
+ANR	7620344	Label	case RESERVE :	97:4:1590:1602	7620122	16	True				
+ANR	7620345	Identifier	RESERVE		7620122	0					
+ANR	7620346	IfStatement	if ( req -> cmd . buf [ 1 ] & 1 )		7620122	17					
+ANR	7620347	Condition	req -> cmd . buf [ 1 ] & 1	99:12:1617:1635	7620122	0	True				
+ANR	7620348	BitAndExpression	req -> cmd . buf [ 1 ] & 1		7620122	0		&			
+ANR	7620349	ArrayIndexing	req -> cmd . buf [ 1 ]		7620122	0					
+ANR	7620350	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620351	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620352	Identifier	req		7620122	0					
+ANR	7620353	Identifier	cmd		7620122	1					
+ANR	7620354	Identifier	buf		7620122	1					
+ANR	7620355	PrimaryExpression	1		7620122	1					
+ANR	7620356	PrimaryExpression	1		7620122	1					
+ANR	7620357	CompoundStatement		97:33:1583:1583	7620122	1					
+ANR	7620358	GotoStatement	goto illegal_request ;	101:12:1653:1673	7620122	0	True				
+ANR	7620359	Identifier	illegal_request		7620122	0					
+ANR	7620360	BreakStatement	break ;	105:8:1695:1700	7620122	18	True				
+ANR	7620361	Label	case RESERVE_10 :	107:4:1707:1722	7620122	19	True				
+ANR	7620362	Identifier	RESERVE_10		7620122	0					
+ANR	7620363	IfStatement	if ( req -> cmd . buf [ 1 ] & 3 )		7620122	20					
+ANR	7620364	Condition	req -> cmd . buf [ 1 ] & 3	109:12:1737:1755	7620122	0	True				
+ANR	7620365	BitAndExpression	req -> cmd . buf [ 1 ] & 3		7620122	0		&			
+ANR	7620366	ArrayIndexing	req -> cmd . buf [ 1 ]		7620122	0					
+ANR	7620367	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620368	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620369	Identifier	req		7620122	0					
+ANR	7620370	Identifier	cmd		7620122	1					
+ANR	7620371	Identifier	buf		7620122	1					
+ANR	7620372	PrimaryExpression	1		7620122	1					
+ANR	7620373	PrimaryExpression	3		7620122	1					
+ANR	7620374	CompoundStatement		107:33:1703:1703	7620122	1					
+ANR	7620375	GotoStatement	goto illegal_request ;	111:12:1773:1793	7620122	0	True				
+ANR	7620376	Identifier	illegal_request		7620122	0					
+ANR	7620377	BreakStatement	break ;	115:8:1815:1820	7620122	21	True				
+ANR	7620378	Label	case RELEASE :	117:4:1827:1839	7620122	22	True				
+ANR	7620379	Identifier	RELEASE		7620122	0					
+ANR	7620380	IfStatement	if ( req -> cmd . buf [ 1 ] & 1 )		7620122	23					
+ANR	7620381	Condition	req -> cmd . buf [ 1 ] & 1	119:12:1854:1872	7620122	0	True				
+ANR	7620382	BitAndExpression	req -> cmd . buf [ 1 ] & 1		7620122	0		&			
+ANR	7620383	ArrayIndexing	req -> cmd . buf [ 1 ]		7620122	0					
+ANR	7620384	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620385	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620386	Identifier	req		7620122	0					
+ANR	7620387	Identifier	cmd		7620122	1					
+ANR	7620388	Identifier	buf		7620122	1					
+ANR	7620389	PrimaryExpression	1		7620122	1					
+ANR	7620390	PrimaryExpression	1		7620122	1					
+ANR	7620391	CompoundStatement		117:33:1820:1820	7620122	1					
+ANR	7620392	GotoStatement	goto illegal_request ;	121:12:1890:1910	7620122	0	True				
+ANR	7620393	Identifier	illegal_request		7620122	0					
+ANR	7620394	BreakStatement	break ;	125:8:1932:1937	7620122	24	True				
+ANR	7620395	Label	case RELEASE_10 :	127:4:1944:1959	7620122	25	True				
+ANR	7620396	Identifier	RELEASE_10		7620122	0					
+ANR	7620397	IfStatement	if ( req -> cmd . buf [ 1 ] & 3 )		7620122	26					
+ANR	7620398	Condition	req -> cmd . buf [ 1 ] & 3	129:12:1974:1992	7620122	0	True				
+ANR	7620399	BitAndExpression	req -> cmd . buf [ 1 ] & 3		7620122	0		&			
+ANR	7620400	ArrayIndexing	req -> cmd . buf [ 1 ]		7620122	0					
+ANR	7620401	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620402	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620403	Identifier	req		7620122	0					
+ANR	7620404	Identifier	cmd		7620122	1					
+ANR	7620405	Identifier	buf		7620122	1					
+ANR	7620406	PrimaryExpression	1		7620122	1					
+ANR	7620407	PrimaryExpression	3		7620122	1					
+ANR	7620408	CompoundStatement		127:33:1940:1940	7620122	1					
+ANR	7620409	GotoStatement	goto illegal_request ;	131:12:2010:2030	7620122	0	True				
+ANR	7620410	Identifier	illegal_request		7620122	0					
+ANR	7620411	BreakStatement	break ;	135:8:2052:2057	7620122	27	True				
+ANR	7620412	Label	case START_STOP :	137:4:2064:2079	7620122	28	True				
+ANR	7620413	Identifier	START_STOP		7620122	0					
+ANR	7620414	IfStatement	if ( scsi_disk_emulate_start_stop ( r ) < 0 )		7620122	29					
+ANR	7620415	Condition	scsi_disk_emulate_start_stop ( r ) < 0	139:12:2094:2128	7620122	0	True				
+ANR	7620416	RelationalExpression	scsi_disk_emulate_start_stop ( r ) < 0		7620122	0		<			
+ANR	7620417	CallExpression	scsi_disk_emulate_start_stop ( r )		7620122	0					
+ANR	7620418	Callee	scsi_disk_emulate_start_stop		7620122	0					
+ANR	7620419	Identifier	scsi_disk_emulate_start_stop		7620122	0					
+ANR	7620420	ArgumentList	r		7620122	1					
+ANR	7620421	Argument	r		7620122	0					
+ANR	7620422	Identifier	r		7620122	0					
+ANR	7620423	PrimaryExpression	0		7620122	1					
+ANR	7620424	CompoundStatement		137:49:2076:2076	7620122	1					
+ANR	7620425	ReturnStatement	return - 1 ;	141:12:2146:2155	7620122	0	True				
+ANR	7620426	UnaryOperationExpression	- 1		7620122	0					
+ANR	7620427	UnaryOperator	-		7620122	0					
+ANR	7620428	PrimaryExpression	1		7620122	1					
+ANR	7620429	BreakStatement	break ;	145:8:2177:2182	7620122	30	True				
+ANR	7620430	Label	case ALLOW_MEDIUM_REMOVAL :	147:4:2189:2214	7620122	31	True				
+ANR	7620431	Identifier	ALLOW_MEDIUM_REMOVAL		7620122	0					
+ANR	7620432	ExpressionStatement	s -> tray_locked = req -> cmd . buf [ 4 ] & 1	149:8:2225:2261	7620122	32	True				
+ANR	7620433	AssignmentExpression	s -> tray_locked = req -> cmd . buf [ 4 ] & 1		7620122	0		=			
+ANR	7620434	PtrMemberAccess	s -> tray_locked		7620122	0					
+ANR	7620435	Identifier	s		7620122	0					
+ANR	7620436	Identifier	tray_locked		7620122	1					
+ANR	7620437	BitAndExpression	req -> cmd . buf [ 4 ] & 1		7620122	1		&			
+ANR	7620438	ArrayIndexing	req -> cmd . buf [ 4 ]		7620122	0					
+ANR	7620439	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620440	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620441	Identifier	req		7620122	0					
+ANR	7620442	Identifier	cmd		7620122	1					
+ANR	7620443	Identifier	buf		7620122	1					
+ANR	7620444	PrimaryExpression	4		7620122	1					
+ANR	7620445	PrimaryExpression	1		7620122	1					
+ANR	7620446	ExpressionStatement	"bdrv_lock_medium ( s -> qdev . conf . bs , req -> cmd . buf [ 4 ] & 1 )"	151:8:2272:2326	7620122	33	True				
+ANR	7620447	CallExpression	"bdrv_lock_medium ( s -> qdev . conf . bs , req -> cmd . buf [ 4 ] & 1 )"		7620122	0					
+ANR	7620448	Callee	bdrv_lock_medium		7620122	0					
+ANR	7620449	Identifier	bdrv_lock_medium		7620122	0					
+ANR	7620450	ArgumentList	s -> qdev . conf . bs		7620122	1					
+ANR	7620451	Argument	s -> qdev . conf . bs		7620122	0					
+ANR	7620452	MemberAccess	s -> qdev . conf . bs		7620122	0					
+ANR	7620453	MemberAccess	s -> qdev . conf		7620122	0					
+ANR	7620454	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620455	Identifier	s		7620122	0					
+ANR	7620456	Identifier	qdev		7620122	1					
+ANR	7620457	Identifier	conf		7620122	1					
+ANR	7620458	Identifier	bs		7620122	1					
+ANR	7620459	Argument	req -> cmd . buf [ 4 ] & 1		7620122	1					
+ANR	7620460	BitAndExpression	req -> cmd . buf [ 4 ] & 1		7620122	0		&			
+ANR	7620461	ArrayIndexing	req -> cmd . buf [ 4 ]		7620122	0					
+ANR	7620462	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620463	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620464	Identifier	req		7620122	0					
+ANR	7620465	Identifier	cmd		7620122	1					
+ANR	7620466	Identifier	buf		7620122	1					
+ANR	7620467	PrimaryExpression	4		7620122	1					
+ANR	7620468	PrimaryExpression	1		7620122	1					
+ANR	7620469	BreakStatement	break ;	153:8:2337:2342	7620122	34	True				
+ANR	7620470	Label	case READ_CAPACITY_10 :	155:4:2349:2370	7620122	35	True				
+ANR	7620471	Identifier	READ_CAPACITY_10		7620122	0					
+ANR	7620472	ExpressionStatement	"memset ( outbuf , 0 , 8 )"	159:8:2444:2464	7620122	36	True				
+ANR	7620473	CallExpression	"memset ( outbuf , 0 , 8 )"		7620122	0					
+ANR	7620474	Callee	memset		7620122	0					
+ANR	7620475	Identifier	memset		7620122	0					
+ANR	7620476	ArgumentList	outbuf		7620122	1					
+ANR	7620477	Argument	outbuf		7620122	0					
+ANR	7620478	Identifier	outbuf		7620122	0					
+ANR	7620479	Argument	0		7620122	1					
+ANR	7620480	PrimaryExpression	0		7620122	0					
+ANR	7620481	Argument	8		7620122	2					
+ANR	7620482	PrimaryExpression	8		7620122	0					
+ANR	7620483	ExpressionStatement	"bdrv_get_geometry ( s -> qdev . conf . bs , & nb_sectors )"	161:8:2475:2522	7620122	37	True				
+ANR	7620484	CallExpression	"bdrv_get_geometry ( s -> qdev . conf . bs , & nb_sectors )"		7620122	0					
+ANR	7620485	Callee	bdrv_get_geometry		7620122	0					
+ANR	7620486	Identifier	bdrv_get_geometry		7620122	0					
+ANR	7620487	ArgumentList	s -> qdev . conf . bs		7620122	1					
+ANR	7620488	Argument	s -> qdev . conf . bs		7620122	0					
+ANR	7620489	MemberAccess	s -> qdev . conf . bs		7620122	0					
+ANR	7620490	MemberAccess	s -> qdev . conf		7620122	0					
+ANR	7620491	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620492	Identifier	s		7620122	0					
+ANR	7620493	Identifier	qdev		7620122	1					
+ANR	7620494	Identifier	conf		7620122	1					
+ANR	7620495	Identifier	bs		7620122	1					
+ANR	7620496	Argument	& nb_sectors		7620122	1					
+ANR	7620497	UnaryOperationExpression	& nb_sectors		7620122	0					
+ANR	7620498	UnaryOperator	&		7620122	0					
+ANR	7620499	Identifier	nb_sectors		7620122	1					
+ANR	7620500	IfStatement	if ( ! nb_sectors )		7620122	38					
+ANR	7620501	Condition	! nb_sectors	163:12:2537:2547	7620122	0	True				
+ANR	7620502	UnaryOperationExpression	! nb_sectors		7620122	0					
+ANR	7620503	UnaryOperator	!		7620122	0					
+ANR	7620504	Identifier	nb_sectors		7620122	1					
+ANR	7620505	CompoundStatement		161:25:2495:2495	7620122	1					
+ANR	7620506	ExpressionStatement	"scsi_check_condition ( r , SENSE_CODE ( LUN_NOT_READY ) )"	165:12:2565:2615	7620122	0	True				
+ANR	7620507	CallExpression	"scsi_check_condition ( r , SENSE_CODE ( LUN_NOT_READY ) )"		7620122	0					
+ANR	7620508	Callee	scsi_check_condition		7620122	0					
+ANR	7620509	Identifier	scsi_check_condition		7620122	0					
+ANR	7620510	ArgumentList	r		7620122	1					
+ANR	7620511	Argument	r		7620122	0					
+ANR	7620512	Identifier	r		7620122	0					
+ANR	7620513	Argument	SENSE_CODE ( LUN_NOT_READY )		7620122	1					
+ANR	7620514	CallExpression	SENSE_CODE ( LUN_NOT_READY )		7620122	0					
+ANR	7620515	Callee	SENSE_CODE		7620122	0					
+ANR	7620516	Identifier	SENSE_CODE		7620122	0					
+ANR	7620517	ArgumentList	LUN_NOT_READY		7620122	1					
+ANR	7620518	Argument	LUN_NOT_READY		7620122	0					
+ANR	7620519	Identifier	LUN_NOT_READY		7620122	0					
+ANR	7620520	ReturnStatement	return - 1 ;	167:12:2630:2639	7620122	1	True				
+ANR	7620521	UnaryOperationExpression	- 1		7620122	0					
+ANR	7620522	UnaryOperator	-		7620122	0					
+ANR	7620523	PrimaryExpression	1		7620122	1					
+ANR	7620524	IfStatement	if ( ( req -> cmd . buf [ 8 ] & 1 ) == 0 && req -> cmd . lba )		7620122	39					
+ANR	7620525	Condition	( req -> cmd . buf [ 8 ] & 1 ) == 0 && req -> cmd . lba	171:12:2665:2706	7620122	0	True				
+ANR	7620526	AndExpression	( req -> cmd . buf [ 8 ] & 1 ) == 0 && req -> cmd . lba		7620122	0		&&			
+ANR	7620527	EqualityExpression	( req -> cmd . buf [ 8 ] & 1 ) == 0		7620122	0		==			
+ANR	7620528	BitAndExpression	req -> cmd . buf [ 8 ] & 1		7620122	0		&			
+ANR	7620529	ArrayIndexing	req -> cmd . buf [ 8 ]		7620122	0					
+ANR	7620530	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620531	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620532	Identifier	req		7620122	0					
+ANR	7620533	Identifier	cmd		7620122	1					
+ANR	7620534	Identifier	buf		7620122	1					
+ANR	7620535	PrimaryExpression	8		7620122	1					
+ANR	7620536	PrimaryExpression	1		7620122	1					
+ANR	7620537	PrimaryExpression	0		7620122	1					
+ANR	7620538	MemberAccess	req -> cmd . lba		7620122	1					
+ANR	7620539	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620540	Identifier	req		7620122	0					
+ANR	7620541	Identifier	cmd		7620122	1					
+ANR	7620542	Identifier	lba		7620122	1					
+ANR	7620543	CompoundStatement		169:56:2654:2654	7620122	1					
+ANR	7620544	GotoStatement	goto illegal_request ;	173:12:2724:2744	7620122	0	True				
+ANR	7620545	Identifier	illegal_request		7620122	0					
+ANR	7620546	ExpressionStatement	nb_sectors /= s -> qdev . blocksize / 512	177:8:2766:2803	7620122	40	True				
+ANR	7620547	AssignmentExpression	nb_sectors /= s -> qdev . blocksize / 512		7620122	0		/=			
+ANR	7620548	Identifier	nb_sectors		7620122	0					
+ANR	7620549	MultiplicativeExpression	s -> qdev . blocksize / 512		7620122	1		/			
+ANR	7620550	MemberAccess	s -> qdev . blocksize		7620122	0					
+ANR	7620551	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620552	Identifier	s		7620122	0					
+ANR	7620553	Identifier	qdev		7620122	1					
+ANR	7620554	Identifier	blocksize		7620122	1					
+ANR	7620555	PrimaryExpression	512		7620122	1					
+ANR	7620556	ExpressionStatement	nb_sectors --	181:8:2880:2892	7620122	41	True				
+ANR	7620557	PostIncDecOperationExpression	nb_sectors --		7620122	0					
+ANR	7620558	Identifier	nb_sectors		7620122	0					
+ANR	7620559	IncDec	--		7620122	1					
+ANR	7620560	ExpressionStatement	s -> qdev . max_lba = nb_sectors	185:8:2972:3000	7620122	42	True				
+ANR	7620561	AssignmentExpression	s -> qdev . max_lba = nb_sectors		7620122	0		=			
+ANR	7620562	MemberAccess	s -> qdev . max_lba		7620122	0					
+ANR	7620563	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620564	Identifier	s		7620122	0					
+ANR	7620565	Identifier	qdev		7620122	1					
+ANR	7620566	Identifier	max_lba		7620122	1					
+ANR	7620567	Identifier	nb_sectors		7620122	1					
+ANR	7620568	IfStatement	if ( nb_sectors > UINT32_MAX )		7620122	43					
+ANR	7620569	Condition	nb_sectors > UINT32_MAX	189:12:3085:3107	7620122	0	True				
+ANR	7620570	RelationalExpression	nb_sectors > UINT32_MAX		7620122	0		>			
+ANR	7620571	Identifier	nb_sectors		7620122	0					
+ANR	7620572	Identifier	UINT32_MAX		7620122	1					
+ANR	7620573	CompoundStatement		187:37:3055:3055	7620122	1					
+ANR	7620574	ExpressionStatement	nb_sectors = UINT32_MAX	191:12:3125:3148	7620122	0	True				
+ANR	7620575	AssignmentExpression	nb_sectors = UINT32_MAX		7620122	0		=			
+ANR	7620576	Identifier	nb_sectors		7620122	0					
+ANR	7620577	Identifier	UINT32_MAX		7620122	1					
+ANR	7620578	ExpressionStatement	outbuf [ 0 ] = ( nb_sectors >> 24 ) & 0xff	195:8:3170:3207	7620122	44	True				
+ANR	7620579	AssignmentExpression	outbuf [ 0 ] = ( nb_sectors >> 24 ) & 0xff		7620122	0		=			
+ANR	7620580	ArrayIndexing	outbuf [ 0 ]		7620122	0					
+ANR	7620581	Identifier	outbuf		7620122	0					
+ANR	7620582	PrimaryExpression	0		7620122	1					
+ANR	7620583	BitAndExpression	( nb_sectors >> 24 ) & 0xff		7620122	1		&			
+ANR	7620584	ShiftExpression	nb_sectors >> 24		7620122	0		>>			
+ANR	7620585	Identifier	nb_sectors		7620122	0					
+ANR	7620586	PrimaryExpression	24		7620122	1					
+ANR	7620587	PrimaryExpression	0xff		7620122	1					
+ANR	7620588	ExpressionStatement	outbuf [ 1 ] = ( nb_sectors >> 16 ) & 0xff	197:8:3218:3255	7620122	45	True				
+ANR	7620589	AssignmentExpression	outbuf [ 1 ] = ( nb_sectors >> 16 ) & 0xff		7620122	0		=			
+ANR	7620590	ArrayIndexing	outbuf [ 1 ]		7620122	0					
+ANR	7620591	Identifier	outbuf		7620122	0					
+ANR	7620592	PrimaryExpression	1		7620122	1					
+ANR	7620593	BitAndExpression	( nb_sectors >> 16 ) & 0xff		7620122	1		&			
+ANR	7620594	ShiftExpression	nb_sectors >> 16		7620122	0		>>			
+ANR	7620595	Identifier	nb_sectors		7620122	0					
+ANR	7620596	PrimaryExpression	16		7620122	1					
+ANR	7620597	PrimaryExpression	0xff		7620122	1					
+ANR	7620598	ExpressionStatement	outbuf [ 2 ] = ( nb_sectors >> 8 ) & 0xff	199:8:3266:3302	7620122	46	True				
+ANR	7620599	AssignmentExpression	outbuf [ 2 ] = ( nb_sectors >> 8 ) & 0xff		7620122	0		=			
+ANR	7620600	ArrayIndexing	outbuf [ 2 ]		7620122	0					
+ANR	7620601	Identifier	outbuf		7620122	0					
+ANR	7620602	PrimaryExpression	2		7620122	1					
+ANR	7620603	BitAndExpression	( nb_sectors >> 8 ) & 0xff		7620122	1		&			
+ANR	7620604	ShiftExpression	nb_sectors >> 8		7620122	0		>>			
+ANR	7620605	Identifier	nb_sectors		7620122	0					
+ANR	7620606	PrimaryExpression	8		7620122	1					
+ANR	7620607	PrimaryExpression	0xff		7620122	1					
+ANR	7620608	ExpressionStatement	outbuf [ 3 ] = nb_sectors & 0xff	201:8:3313:3342	7620122	47	True				
+ANR	7620609	AssignmentExpression	outbuf [ 3 ] = nb_sectors & 0xff		7620122	0		=			
+ANR	7620610	ArrayIndexing	outbuf [ 3 ]		7620122	0					
+ANR	7620611	Identifier	outbuf		7620122	0					
+ANR	7620612	PrimaryExpression	3		7620122	1					
+ANR	7620613	BitAndExpression	nb_sectors & 0xff		7620122	1		&			
+ANR	7620614	Identifier	nb_sectors		7620122	0					
+ANR	7620615	PrimaryExpression	0xff		7620122	1					
+ANR	7620616	ExpressionStatement	outbuf [ 4 ] = 0	203:8:3353:3366	7620122	48	True				
+ANR	7620617	AssignmentExpression	outbuf [ 4 ] = 0		7620122	0		=			
+ANR	7620618	ArrayIndexing	outbuf [ 4 ]		7620122	0					
+ANR	7620619	Identifier	outbuf		7620122	0					
+ANR	7620620	PrimaryExpression	4		7620122	1					
+ANR	7620621	PrimaryExpression	0		7620122	1					
+ANR	7620622	ExpressionStatement	outbuf [ 5 ] = 0	205:8:3377:3390	7620122	49	True				
+ANR	7620623	AssignmentExpression	outbuf [ 5 ] = 0		7620122	0		=			
+ANR	7620624	ArrayIndexing	outbuf [ 5 ]		7620122	0					
+ANR	7620625	Identifier	outbuf		7620122	0					
+ANR	7620626	PrimaryExpression	5		7620122	1					
+ANR	7620627	PrimaryExpression	0		7620122	1					
+ANR	7620628	ExpressionStatement	outbuf [ 6 ] = s -> qdev . blocksize >> 8	207:8:3401:3435	7620122	50	True				
+ANR	7620629	AssignmentExpression	outbuf [ 6 ] = s -> qdev . blocksize >> 8		7620122	0		=			
+ANR	7620630	ArrayIndexing	outbuf [ 6 ]		7620122	0					
+ANR	7620631	Identifier	outbuf		7620122	0					
+ANR	7620632	PrimaryExpression	6		7620122	1					
+ANR	7620633	ShiftExpression	s -> qdev . blocksize >> 8		7620122	1		>>			
+ANR	7620634	MemberAccess	s -> qdev . blocksize		7620122	0					
+ANR	7620635	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620636	Identifier	s		7620122	0					
+ANR	7620637	Identifier	qdev		7620122	1					
+ANR	7620638	Identifier	blocksize		7620122	1					
+ANR	7620639	PrimaryExpression	8		7620122	1					
+ANR	7620640	ExpressionStatement	outbuf [ 7 ] = 0	209:8:3446:3459	7620122	51	True				
+ANR	7620641	AssignmentExpression	outbuf [ 7 ] = 0		7620122	0		=			
+ANR	7620642	ArrayIndexing	outbuf [ 7 ]		7620122	0					
+ANR	7620643	Identifier	outbuf		7620122	0					
+ANR	7620644	PrimaryExpression	7		7620122	1					
+ANR	7620645	PrimaryExpression	0		7620122	1					
+ANR	7620646	ExpressionStatement	buflen = 8	211:8:3470:3480	7620122	52	True				
+ANR	7620647	AssignmentExpression	buflen = 8		7620122	0		=			
+ANR	7620648	Identifier	buflen		7620122	0					
+ANR	7620649	PrimaryExpression	8		7620122	1					
+ANR	7620650	BreakStatement	break ;	213:8:3491:3496	7620122	53	True				
+ANR	7620651	Label	case REQUEST_SENSE :	215:4:3503:3521	7620122	54	True				
+ANR	7620652	Identifier	REQUEST_SENSE		7620122	0					
+ANR	7620653	ExpressionStatement	"buflen = scsi_build_sense ( NULL , 0 , outbuf , r -> buflen , ( req -> cmd . buf [ 1 ] & 1 ) == 0 )"	219:8:3572:3688	7620122	55	True				
+ANR	7620654	AssignmentExpression	"buflen = scsi_build_sense ( NULL , 0 , outbuf , r -> buflen , ( req -> cmd . buf [ 1 ] & 1 ) == 0 )"		7620122	0		=			
+ANR	7620655	Identifier	buflen		7620122	0					
+ANR	7620656	CallExpression	"scsi_build_sense ( NULL , 0 , outbuf , r -> buflen , ( req -> cmd . buf [ 1 ] & 1 ) == 0 )"		7620122	1					
+ANR	7620657	Callee	scsi_build_sense		7620122	0					
+ANR	7620658	Identifier	scsi_build_sense		7620122	0					
+ANR	7620659	ArgumentList	NULL		7620122	1					
+ANR	7620660	Argument	NULL		7620122	0					
+ANR	7620661	Identifier	NULL		7620122	0					
+ANR	7620662	Argument	0		7620122	1					
+ANR	7620663	PrimaryExpression	0		7620122	0					
+ANR	7620664	Argument	outbuf		7620122	2					
+ANR	7620665	Identifier	outbuf		7620122	0					
+ANR	7620666	Argument	r -> buflen		7620122	3					
+ANR	7620667	PtrMemberAccess	r -> buflen		7620122	0					
+ANR	7620668	Identifier	r		7620122	0					
+ANR	7620669	Identifier	buflen		7620122	1					
+ANR	7620670	Argument	( req -> cmd . buf [ 1 ] & 1 ) == 0		7620122	4					
+ANR	7620671	EqualityExpression	( req -> cmd . buf [ 1 ] & 1 ) == 0		7620122	0		==			
+ANR	7620672	BitAndExpression	req -> cmd . buf [ 1 ] & 1		7620122	0		&			
+ANR	7620673	ArrayIndexing	req -> cmd . buf [ 1 ]		7620122	0					
+ANR	7620674	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620675	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620676	Identifier	req		7620122	0					
+ANR	7620677	Identifier	cmd		7620122	1					
+ANR	7620678	Identifier	buf		7620122	1					
+ANR	7620679	PrimaryExpression	1		7620122	1					
+ANR	7620680	PrimaryExpression	1		7620122	1					
+ANR	7620681	PrimaryExpression	0		7620122	1					
+ANR	7620682	BreakStatement	break ;	223:8:3699:3704	7620122	56	True				
+ANR	7620683	Label	case MECHANISM_STATUS :	225:4:3711:3732	7620122	57	True				
+ANR	7620684	Identifier	MECHANISM_STATUS		7620122	0					
+ANR	7620685	ExpressionStatement	"buflen = scsi_emulate_mechanism_status ( s , outbuf )"	227:8:3743:3792	7620122	58	True				
+ANR	7620686	AssignmentExpression	"buflen = scsi_emulate_mechanism_status ( s , outbuf )"		7620122	0		=			
+ANR	7620687	Identifier	buflen		7620122	0					
+ANR	7620688	CallExpression	"scsi_emulate_mechanism_status ( s , outbuf )"		7620122	1					
+ANR	7620689	Callee	scsi_emulate_mechanism_status		7620122	0					
+ANR	7620690	Identifier	scsi_emulate_mechanism_status		7620122	0					
+ANR	7620691	ArgumentList	s		7620122	1					
+ANR	7620692	Argument	s		7620122	0					
+ANR	7620693	Identifier	s		7620122	0					
+ANR	7620694	Argument	outbuf		7620122	1					
+ANR	7620695	Identifier	outbuf		7620122	0					
+ANR	7620696	IfStatement	if ( buflen < 0 )		7620122	59					
+ANR	7620697	Condition	buflen < 0	229:12:3807:3816	7620122	0	True				
+ANR	7620698	RelationalExpression	buflen < 0		7620122	0		<			
+ANR	7620699	Identifier	buflen		7620122	0					
+ANR	7620700	PrimaryExpression	0		7620122	1					
+ANR	7620701	CompoundStatement		227:24:3764:3764	7620122	1					
+ANR	7620702	GotoStatement	goto illegal_request ;	231:12:3834:3854	7620122	0	True				
+ANR	7620703	Identifier	illegal_request		7620122	0					
+ANR	7620704	BreakStatement	break ;	235:8:3876:3881	7620122	60	True				
+ANR	7620705	Label	case GET_CONFIGURATION :	237:4:3888:3910	7620122	61	True				
+ANR	7620706	Identifier	GET_CONFIGURATION		7620122	0					
+ANR	7620707	ExpressionStatement	"buflen = scsi_get_configuration ( s , outbuf )"	239:8:3921:3963	7620122	62	True				
+ANR	7620708	AssignmentExpression	"buflen = scsi_get_configuration ( s , outbuf )"		7620122	0		=			
+ANR	7620709	Identifier	buflen		7620122	0					
+ANR	7620710	CallExpression	"scsi_get_configuration ( s , outbuf )"		7620122	1					
+ANR	7620711	Callee	scsi_get_configuration		7620122	0					
+ANR	7620712	Identifier	scsi_get_configuration		7620122	0					
+ANR	7620713	ArgumentList	s		7620122	1					
+ANR	7620714	Argument	s		7620122	0					
+ANR	7620715	Identifier	s		7620122	0					
+ANR	7620716	Argument	outbuf		7620122	1					
+ANR	7620717	Identifier	outbuf		7620122	0					
+ANR	7620718	IfStatement	if ( buflen < 0 )		7620122	63					
+ANR	7620719	Condition	buflen < 0	241:12:3978:3987	7620122	0	True				
+ANR	7620720	RelationalExpression	buflen < 0		7620122	0		<			
+ANR	7620721	Identifier	buflen		7620122	0					
+ANR	7620722	PrimaryExpression	0		7620122	1					
+ANR	7620723	CompoundStatement		239:24:3935:3935	7620122	1					
+ANR	7620724	GotoStatement	goto illegal_request ;	243:12:4005:4025	7620122	0	True				
+ANR	7620725	Identifier	illegal_request		7620122	0					
+ANR	7620726	BreakStatement	break ;	247:8:4047:4052	7620122	64	True				
+ANR	7620727	Label	case GET_EVENT_STATUS_NOTIFICATION :	249:4:4059:4093	7620122	65	True				
+ANR	7620728	Identifier	GET_EVENT_STATUS_NOTIFICATION		7620122	0					
+ANR	7620729	ExpressionStatement	"buflen = scsi_get_event_status_notification ( s , r , outbuf )"	251:8:4104:4161	7620122	66	True				
+ANR	7620730	AssignmentExpression	"buflen = scsi_get_event_status_notification ( s , r , outbuf )"		7620122	0		=			
+ANR	7620731	Identifier	buflen		7620122	0					
+ANR	7620732	CallExpression	"scsi_get_event_status_notification ( s , r , outbuf )"		7620122	1					
+ANR	7620733	Callee	scsi_get_event_status_notification		7620122	0					
+ANR	7620734	Identifier	scsi_get_event_status_notification		7620122	0					
+ANR	7620735	ArgumentList	s		7620122	1					
+ANR	7620736	Argument	s		7620122	0					
+ANR	7620737	Identifier	s		7620122	0					
+ANR	7620738	Argument	r		7620122	1					
+ANR	7620739	Identifier	r		7620122	0					
+ANR	7620740	Argument	outbuf		7620122	2					
+ANR	7620741	Identifier	outbuf		7620122	0					
+ANR	7620742	IfStatement	if ( buflen < 0 )		7620122	67					
+ANR	7620743	Condition	buflen < 0	253:12:4176:4185	7620122	0	True				
+ANR	7620744	RelationalExpression	buflen < 0		7620122	0		<			
+ANR	7620745	Identifier	buflen		7620122	0					
+ANR	7620746	PrimaryExpression	0		7620122	1					
+ANR	7620747	CompoundStatement		251:24:4133:4133	7620122	1					
+ANR	7620748	GotoStatement	goto illegal_request ;	255:12:4203:4223	7620122	0	True				
+ANR	7620749	Identifier	illegal_request		7620122	0					
+ANR	7620750	BreakStatement	break ;	259:8:4245:4250	7620122	68	True				
+ANR	7620751	Label	case READ_DVD_STRUCTURE :	261:4:4257:4280	7620122	69	True				
+ANR	7620752	Identifier	READ_DVD_STRUCTURE		7620122	0					
+ANR	7620753	ExpressionStatement	"buflen = scsi_read_dvd_structure ( s , r , outbuf )"	263:8:4291:4337	7620122	70	True				
+ANR	7620754	AssignmentExpression	"buflen = scsi_read_dvd_structure ( s , r , outbuf )"		7620122	0		=			
+ANR	7620755	Identifier	buflen		7620122	0					
+ANR	7620756	CallExpression	"scsi_read_dvd_structure ( s , r , outbuf )"		7620122	1					
+ANR	7620757	Callee	scsi_read_dvd_structure		7620122	0					
+ANR	7620758	Identifier	scsi_read_dvd_structure		7620122	0					
+ANR	7620759	ArgumentList	s		7620122	1					
+ANR	7620760	Argument	s		7620122	0					
+ANR	7620761	Identifier	s		7620122	0					
+ANR	7620762	Argument	r		7620122	1					
+ANR	7620763	Identifier	r		7620122	0					
+ANR	7620764	Argument	outbuf		7620122	2					
+ANR	7620765	Identifier	outbuf		7620122	0					
+ANR	7620766	IfStatement	if ( buflen < 0 )		7620122	71					
+ANR	7620767	Condition	buflen < 0	265:12:4352:4361	7620122	0	True				
+ANR	7620768	RelationalExpression	buflen < 0		7620122	0		<			
+ANR	7620769	Identifier	buflen		7620122	0					
+ANR	7620770	PrimaryExpression	0		7620122	1					
+ANR	7620771	CompoundStatement		263:24:4309:4309	7620122	1					
+ANR	7620772	GotoStatement	goto illegal_request ;	267:12:4379:4399	7620122	0	True				
+ANR	7620773	Identifier	illegal_request		7620122	0					
+ANR	7620774	BreakStatement	break ;	271:8:4421:4426	7620122	72	True				
+ANR	7620775	Label	case SERVICE_ACTION_IN_16 :	273:4:4433:4458	7620122	73	True				
+ANR	7620776	Identifier	SERVICE_ACTION_IN_16		7620122	0					
+ANR	7620777	IfStatement	if ( ( req -> cmd . buf [ 1 ] & 31 ) == SAI_READ_CAPACITY_16 )		7620122	74					
+ANR	7620778	Condition	( req -> cmd . buf [ 1 ] & 31 ) == SAI_READ_CAPACITY_16	277:12:4519:4564	7620122	0	True				
+ANR	7620779	EqualityExpression	( req -> cmd . buf [ 1 ] & 31 ) == SAI_READ_CAPACITY_16		7620122	0		==			
+ANR	7620780	BitAndExpression	req -> cmd . buf [ 1 ] & 31		7620122	0		&			
+ANR	7620781	ArrayIndexing	req -> cmd . buf [ 1 ]		7620122	0					
+ANR	7620782	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620783	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620784	Identifier	req		7620122	0					
+ANR	7620785	Identifier	cmd		7620122	1					
+ANR	7620786	Identifier	buf		7620122	1					
+ANR	7620787	PrimaryExpression	1		7620122	1					
+ANR	7620788	PrimaryExpression	31		7620122	1					
+ANR	7620789	Identifier	SAI_READ_CAPACITY_16		7620122	1					
+ANR	7620790	CompoundStatement		275:60:4512:4512	7620122	1					
+ANR	7620791	ExpressionStatement	"DPRINTF ( ""SAI READ CAPACITY(16)\\n"" )"	279:12:4582:4616	7620122	0	True				
+ANR	7620792	CallExpression	"DPRINTF ( ""SAI READ CAPACITY(16)\\n"" )"		7620122	0					
+ANR	7620793	Callee	DPRINTF		7620122	0					
+ANR	7620794	Identifier	DPRINTF		7620122	0					
+ANR	7620795	ArgumentList	"""SAI READ CAPACITY(16)\\n"""		7620122	1					
+ANR	7620796	Argument	"""SAI READ CAPACITY(16)\\n"""		7620122	0					
+ANR	7620797	PrimaryExpression	"""SAI READ CAPACITY(16)\\n"""		7620122	0					
+ANR	7620798	ExpressionStatement	"memset ( outbuf , 0 , req -> cmd . xfer )"	281:12:4631:4663	7620122	1	True				
+ANR	7620799	CallExpression	"memset ( outbuf , 0 , req -> cmd . xfer )"		7620122	0					
+ANR	7620800	Callee	memset		7620122	0					
+ANR	7620801	Identifier	memset		7620122	0					
+ANR	7620802	ArgumentList	outbuf		7620122	1					
+ANR	7620803	Argument	outbuf		7620122	0					
+ANR	7620804	Identifier	outbuf		7620122	0					
+ANR	7620805	Argument	0		7620122	1					
+ANR	7620806	PrimaryExpression	0		7620122	0					
+ANR	7620807	Argument	req -> cmd . xfer		7620122	2					
+ANR	7620808	MemberAccess	req -> cmd . xfer		7620122	0					
+ANR	7620809	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620810	Identifier	req		7620122	0					
+ANR	7620811	Identifier	cmd		7620122	1					
+ANR	7620812	Identifier	xfer		7620122	1					
+ANR	7620813	ExpressionStatement	"bdrv_get_geometry ( s -> qdev . conf . bs , & nb_sectors )"	283:12:4678:4725	7620122	2	True				
+ANR	7620814	CallExpression	"bdrv_get_geometry ( s -> qdev . conf . bs , & nb_sectors )"		7620122	0					
+ANR	7620815	Callee	bdrv_get_geometry		7620122	0					
+ANR	7620816	Identifier	bdrv_get_geometry		7620122	0					
+ANR	7620817	ArgumentList	s -> qdev . conf . bs		7620122	1					
+ANR	7620818	Argument	s -> qdev . conf . bs		7620122	0					
+ANR	7620819	MemberAccess	s -> qdev . conf . bs		7620122	0					
+ANR	7620820	MemberAccess	s -> qdev . conf		7620122	0					
+ANR	7620821	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620822	Identifier	s		7620122	0					
+ANR	7620823	Identifier	qdev		7620122	1					
+ANR	7620824	Identifier	conf		7620122	1					
+ANR	7620825	Identifier	bs		7620122	1					
+ANR	7620826	Argument	& nb_sectors		7620122	1					
+ANR	7620827	UnaryOperationExpression	& nb_sectors		7620122	0					
+ANR	7620828	UnaryOperator	&		7620122	0					
+ANR	7620829	Identifier	nb_sectors		7620122	1					
+ANR	7620830	IfStatement	if ( ! nb_sectors )		7620122	3					
+ANR	7620831	Condition	! nb_sectors	285:16:4744:4754	7620122	0	True				
+ANR	7620832	UnaryOperationExpression	! nb_sectors		7620122	0					
+ANR	7620833	UnaryOperator	!		7620122	0					
+ANR	7620834	Identifier	nb_sectors		7620122	1					
+ANR	7620835	CompoundStatement		283:29:4702:4702	7620122	1					
+ANR	7620836	ExpressionStatement	"scsi_check_condition ( r , SENSE_CODE ( LUN_NOT_READY ) )"	287:16:4776:4826	7620122	0	True				
+ANR	7620837	CallExpression	"scsi_check_condition ( r , SENSE_CODE ( LUN_NOT_READY ) )"		7620122	0					
+ANR	7620838	Callee	scsi_check_condition		7620122	0					
+ANR	7620839	Identifier	scsi_check_condition		7620122	0					
+ANR	7620840	ArgumentList	r		7620122	1					
+ANR	7620841	Argument	r		7620122	0					
+ANR	7620842	Identifier	r		7620122	0					
+ANR	7620843	Argument	SENSE_CODE ( LUN_NOT_READY )		7620122	1					
+ANR	7620844	CallExpression	SENSE_CODE ( LUN_NOT_READY )		7620122	0					
+ANR	7620845	Callee	SENSE_CODE		7620122	0					
+ANR	7620846	Identifier	SENSE_CODE		7620122	0					
+ANR	7620847	ArgumentList	LUN_NOT_READY		7620122	1					
+ANR	7620848	Argument	LUN_NOT_READY		7620122	0					
+ANR	7620849	Identifier	LUN_NOT_READY		7620122	0					
+ANR	7620850	ReturnStatement	return - 1 ;	289:16:4845:4854	7620122	1	True				
+ANR	7620851	UnaryOperationExpression	- 1		7620122	0					
+ANR	7620852	UnaryOperator	-		7620122	0					
+ANR	7620853	PrimaryExpression	1		7620122	1					
+ANR	7620854	IfStatement	if ( ( req -> cmd . buf [ 14 ] & 1 ) == 0 && req -> cmd . lba )		7620122	4					
+ANR	7620855	Condition	( req -> cmd . buf [ 14 ] & 1 ) == 0 && req -> cmd . lba	293:16:4888:4930	7620122	0	True				
+ANR	7620856	AndExpression	( req -> cmd . buf [ 14 ] & 1 ) == 0 && req -> cmd . lba		7620122	0		&&			
+ANR	7620857	EqualityExpression	( req -> cmd . buf [ 14 ] & 1 ) == 0		7620122	0		==			
+ANR	7620858	BitAndExpression	req -> cmd . buf [ 14 ] & 1		7620122	0		&			
+ANR	7620859	ArrayIndexing	req -> cmd . buf [ 14 ]		7620122	0					
+ANR	7620860	MemberAccess	req -> cmd . buf		7620122	0					
+ANR	7620861	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620862	Identifier	req		7620122	0					
+ANR	7620863	Identifier	cmd		7620122	1					
+ANR	7620864	Identifier	buf		7620122	1					
+ANR	7620865	PrimaryExpression	14		7620122	1					
+ANR	7620866	PrimaryExpression	1		7620122	1					
+ANR	7620867	PrimaryExpression	0		7620122	1					
+ANR	7620868	MemberAccess	req -> cmd . lba		7620122	1					
+ANR	7620869	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7620870	Identifier	req		7620122	0					
+ANR	7620871	Identifier	cmd		7620122	1					
+ANR	7620872	Identifier	lba		7620122	1					
+ANR	7620873	CompoundStatement		291:61:4878:4878	7620122	1					
+ANR	7620874	GotoStatement	goto illegal_request ;	295:16:4952:4972	7620122	0	True				
+ANR	7620875	Identifier	illegal_request		7620122	0					
+ANR	7620876	ExpressionStatement	nb_sectors /= s -> qdev . blocksize / 512	299:12:5002:5039	7620122	5	True				
+ANR	7620877	AssignmentExpression	nb_sectors /= s -> qdev . blocksize / 512		7620122	0		/=			
+ANR	7620878	Identifier	nb_sectors		7620122	0					
+ANR	7620879	MultiplicativeExpression	s -> qdev . blocksize / 512		7620122	1		/			
+ANR	7620880	MemberAccess	s -> qdev . blocksize		7620122	0					
+ANR	7620881	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620882	Identifier	s		7620122	0					
+ANR	7620883	Identifier	qdev		7620122	1					
+ANR	7620884	Identifier	blocksize		7620122	1					
+ANR	7620885	PrimaryExpression	512		7620122	1					
+ANR	7620886	ExpressionStatement	nb_sectors --	303:12:5124:5136	7620122	6	True				
+ANR	7620887	PostIncDecOperationExpression	nb_sectors --		7620122	0					
+ANR	7620888	Identifier	nb_sectors		7620122	0					
+ANR	7620889	IncDec	--		7620122	1					
+ANR	7620890	ExpressionStatement	s -> qdev . max_lba = nb_sectors	307:12:5224:5252	7620122	7	True				
+ANR	7620891	AssignmentExpression	s -> qdev . max_lba = nb_sectors		7620122	0		=			
+ANR	7620892	MemberAccess	s -> qdev . max_lba		7620122	0					
+ANR	7620893	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620894	Identifier	s		7620122	0					
+ANR	7620895	Identifier	qdev		7620122	1					
+ANR	7620896	Identifier	max_lba		7620122	1					
+ANR	7620897	Identifier	nb_sectors		7620122	1					
+ANR	7620898	ExpressionStatement	outbuf [ 0 ] = ( nb_sectors >> 56 ) & 0xff	309:12:5267:5304	7620122	8	True				
+ANR	7620899	AssignmentExpression	outbuf [ 0 ] = ( nb_sectors >> 56 ) & 0xff		7620122	0		=			
+ANR	7620900	ArrayIndexing	outbuf [ 0 ]		7620122	0					
+ANR	7620901	Identifier	outbuf		7620122	0					
+ANR	7620902	PrimaryExpression	0		7620122	1					
+ANR	7620903	BitAndExpression	( nb_sectors >> 56 ) & 0xff		7620122	1		&			
+ANR	7620904	ShiftExpression	nb_sectors >> 56		7620122	0		>>			
+ANR	7620905	Identifier	nb_sectors		7620122	0					
+ANR	7620906	PrimaryExpression	56		7620122	1					
+ANR	7620907	PrimaryExpression	0xff		7620122	1					
+ANR	7620908	ExpressionStatement	outbuf [ 1 ] = ( nb_sectors >> 48 ) & 0xff	311:12:5319:5356	7620122	9	True				
+ANR	7620909	AssignmentExpression	outbuf [ 1 ] = ( nb_sectors >> 48 ) & 0xff		7620122	0		=			
+ANR	7620910	ArrayIndexing	outbuf [ 1 ]		7620122	0					
+ANR	7620911	Identifier	outbuf		7620122	0					
+ANR	7620912	PrimaryExpression	1		7620122	1					
+ANR	7620913	BitAndExpression	( nb_sectors >> 48 ) & 0xff		7620122	1		&			
+ANR	7620914	ShiftExpression	nb_sectors >> 48		7620122	0		>>			
+ANR	7620915	Identifier	nb_sectors		7620122	0					
+ANR	7620916	PrimaryExpression	48		7620122	1					
+ANR	7620917	PrimaryExpression	0xff		7620122	1					
+ANR	7620918	ExpressionStatement	outbuf [ 2 ] = ( nb_sectors >> 40 ) & 0xff	313:12:5371:5408	7620122	10	True				
+ANR	7620919	AssignmentExpression	outbuf [ 2 ] = ( nb_sectors >> 40 ) & 0xff		7620122	0		=			
+ANR	7620920	ArrayIndexing	outbuf [ 2 ]		7620122	0					
+ANR	7620921	Identifier	outbuf		7620122	0					
+ANR	7620922	PrimaryExpression	2		7620122	1					
+ANR	7620923	BitAndExpression	( nb_sectors >> 40 ) & 0xff		7620122	1		&			
+ANR	7620924	ShiftExpression	nb_sectors >> 40		7620122	0		>>			
+ANR	7620925	Identifier	nb_sectors		7620122	0					
+ANR	7620926	PrimaryExpression	40		7620122	1					
+ANR	7620927	PrimaryExpression	0xff		7620122	1					
+ANR	7620928	ExpressionStatement	outbuf [ 3 ] = ( nb_sectors >> 32 ) & 0xff	315:12:5423:5460	7620122	11	True				
+ANR	7620929	AssignmentExpression	outbuf [ 3 ] = ( nb_sectors >> 32 ) & 0xff		7620122	0		=			
+ANR	7620930	ArrayIndexing	outbuf [ 3 ]		7620122	0					
+ANR	7620931	Identifier	outbuf		7620122	0					
+ANR	7620932	PrimaryExpression	3		7620122	1					
+ANR	7620933	BitAndExpression	( nb_sectors >> 32 ) & 0xff		7620122	1		&			
+ANR	7620934	ShiftExpression	nb_sectors >> 32		7620122	0		>>			
+ANR	7620935	Identifier	nb_sectors		7620122	0					
+ANR	7620936	PrimaryExpression	32		7620122	1					
+ANR	7620937	PrimaryExpression	0xff		7620122	1					
+ANR	7620938	ExpressionStatement	outbuf [ 4 ] = ( nb_sectors >> 24 ) & 0xff	317:12:5475:5512	7620122	12	True				
+ANR	7620939	AssignmentExpression	outbuf [ 4 ] = ( nb_sectors >> 24 ) & 0xff		7620122	0		=			
+ANR	7620940	ArrayIndexing	outbuf [ 4 ]		7620122	0					
+ANR	7620941	Identifier	outbuf		7620122	0					
+ANR	7620942	PrimaryExpression	4		7620122	1					
+ANR	7620943	BitAndExpression	( nb_sectors >> 24 ) & 0xff		7620122	1		&			
+ANR	7620944	ShiftExpression	nb_sectors >> 24		7620122	0		>>			
+ANR	7620945	Identifier	nb_sectors		7620122	0					
+ANR	7620946	PrimaryExpression	24		7620122	1					
+ANR	7620947	PrimaryExpression	0xff		7620122	1					
+ANR	7620948	ExpressionStatement	outbuf [ 5 ] = ( nb_sectors >> 16 ) & 0xff	319:12:5527:5564	7620122	13	True				
+ANR	7620949	AssignmentExpression	outbuf [ 5 ] = ( nb_sectors >> 16 ) & 0xff		7620122	0		=			
+ANR	7620950	ArrayIndexing	outbuf [ 5 ]		7620122	0					
+ANR	7620951	Identifier	outbuf		7620122	0					
+ANR	7620952	PrimaryExpression	5		7620122	1					
+ANR	7620953	BitAndExpression	( nb_sectors >> 16 ) & 0xff		7620122	1		&			
+ANR	7620954	ShiftExpression	nb_sectors >> 16		7620122	0		>>			
+ANR	7620955	Identifier	nb_sectors		7620122	0					
+ANR	7620956	PrimaryExpression	16		7620122	1					
+ANR	7620957	PrimaryExpression	0xff		7620122	1					
+ANR	7620958	ExpressionStatement	outbuf [ 6 ] = ( nb_sectors >> 8 ) & 0xff	321:12:5579:5615	7620122	14	True				
+ANR	7620959	AssignmentExpression	outbuf [ 6 ] = ( nb_sectors >> 8 ) & 0xff		7620122	0		=			
+ANR	7620960	ArrayIndexing	outbuf [ 6 ]		7620122	0					
+ANR	7620961	Identifier	outbuf		7620122	0					
+ANR	7620962	PrimaryExpression	6		7620122	1					
+ANR	7620963	BitAndExpression	( nb_sectors >> 8 ) & 0xff		7620122	1		&			
+ANR	7620964	ShiftExpression	nb_sectors >> 8		7620122	0		>>			
+ANR	7620965	Identifier	nb_sectors		7620122	0					
+ANR	7620966	PrimaryExpression	8		7620122	1					
+ANR	7620967	PrimaryExpression	0xff		7620122	1					
+ANR	7620968	ExpressionStatement	outbuf [ 7 ] = nb_sectors & 0xff	323:12:5630:5659	7620122	15	True				
+ANR	7620969	AssignmentExpression	outbuf [ 7 ] = nb_sectors & 0xff		7620122	0		=			
+ANR	7620970	ArrayIndexing	outbuf [ 7 ]		7620122	0					
+ANR	7620971	Identifier	outbuf		7620122	0					
+ANR	7620972	PrimaryExpression	7		7620122	1					
+ANR	7620973	BitAndExpression	nb_sectors & 0xff		7620122	1		&			
+ANR	7620974	Identifier	nb_sectors		7620122	0					
+ANR	7620975	PrimaryExpression	0xff		7620122	1					
+ANR	7620976	ExpressionStatement	outbuf [ 8 ] = 0	325:12:5674:5687	7620122	16	True				
+ANR	7620977	AssignmentExpression	outbuf [ 8 ] = 0		7620122	0		=			
+ANR	7620978	ArrayIndexing	outbuf [ 8 ]		7620122	0					
+ANR	7620979	Identifier	outbuf		7620122	0					
+ANR	7620980	PrimaryExpression	8		7620122	1					
+ANR	7620981	PrimaryExpression	0		7620122	1					
+ANR	7620982	ExpressionStatement	outbuf [ 9 ] = 0	327:12:5702:5715	7620122	17	True				
+ANR	7620983	AssignmentExpression	outbuf [ 9 ] = 0		7620122	0		=			
+ANR	7620984	ArrayIndexing	outbuf [ 9 ]		7620122	0					
+ANR	7620985	Identifier	outbuf		7620122	0					
+ANR	7620986	PrimaryExpression	9		7620122	1					
+ANR	7620987	PrimaryExpression	0		7620122	1					
+ANR	7620988	ExpressionStatement	outbuf [ 10 ] = s -> qdev . blocksize >> 8	329:12:5730:5765	7620122	18	True				
+ANR	7620989	AssignmentExpression	outbuf [ 10 ] = s -> qdev . blocksize >> 8		7620122	0		=			
+ANR	7620990	ArrayIndexing	outbuf [ 10 ]		7620122	0					
+ANR	7620991	Identifier	outbuf		7620122	0					
+ANR	7620992	PrimaryExpression	10		7620122	1					
+ANR	7620993	ShiftExpression	s -> qdev . blocksize >> 8		7620122	1		>>			
+ANR	7620994	MemberAccess	s -> qdev . blocksize		7620122	0					
+ANR	7620995	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7620996	Identifier	s		7620122	0					
+ANR	7620997	Identifier	qdev		7620122	1					
+ANR	7620998	Identifier	blocksize		7620122	1					
+ANR	7620999	PrimaryExpression	8		7620122	1					
+ANR	7621000	ExpressionStatement	outbuf [ 11 ] = 0	331:12:5780:5794	7620122	19	True				
+ANR	7621001	AssignmentExpression	outbuf [ 11 ] = 0		7620122	0		=			
+ANR	7621002	ArrayIndexing	outbuf [ 11 ]		7620122	0					
+ANR	7621003	Identifier	outbuf		7620122	0					
+ANR	7621004	PrimaryExpression	11		7620122	1					
+ANR	7621005	PrimaryExpression	0		7620122	1					
+ANR	7621006	ExpressionStatement	outbuf [ 12 ] = 0	333:12:5809:5823	7620122	20	True				
+ANR	7621007	AssignmentExpression	outbuf [ 12 ] = 0		7620122	0		=			
+ANR	7621008	ArrayIndexing	outbuf [ 12 ]		7620122	0					
+ANR	7621009	Identifier	outbuf		7620122	0					
+ANR	7621010	PrimaryExpression	12		7620122	1					
+ANR	7621011	PrimaryExpression	0		7620122	1					
+ANR	7621012	ExpressionStatement	outbuf [ 13 ] = get_physical_block_exp ( & s -> qdev . conf )	335:12:5838:5888	7620122	21	True				
+ANR	7621013	AssignmentExpression	outbuf [ 13 ] = get_physical_block_exp ( & s -> qdev . conf )		7620122	0		=			
+ANR	7621014	ArrayIndexing	outbuf [ 13 ]		7620122	0					
+ANR	7621015	Identifier	outbuf		7620122	0					
+ANR	7621016	PrimaryExpression	13		7620122	1					
+ANR	7621017	CallExpression	get_physical_block_exp ( & s -> qdev . conf )		7620122	1					
+ANR	7621018	Callee	get_physical_block_exp		7620122	0					
+ANR	7621019	Identifier	get_physical_block_exp		7620122	0					
+ANR	7621020	ArgumentList	& s -> qdev . conf		7620122	1					
+ANR	7621021	Argument	& s -> qdev . conf		7620122	0					
+ANR	7621022	UnaryOperationExpression	& s -> qdev . conf		7620122	0					
+ANR	7621023	UnaryOperator	&		7620122	0					
+ANR	7621024	MemberAccess	s -> qdev . conf		7620122	1					
+ANR	7621025	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7621026	Identifier	s		7620122	0					
+ANR	7621027	Identifier	qdev		7620122	1					
+ANR	7621028	Identifier	conf		7620122	1					
+ANR	7621029	IfStatement	if ( s -> qdev . conf . discard_granularity )		7620122	22					
+ANR	7621030	Condition	s -> qdev . conf . discard_granularity	341:16:5971:6002	7620122	0	True				
+ANR	7621031	MemberAccess	s -> qdev . conf . discard_granularity		7620122	0					
+ANR	7621032	MemberAccess	s -> qdev . conf		7620122	0					
+ANR	7621033	PtrMemberAccess	s -> qdev		7620122	0					
+ANR	7621034	Identifier	s		7620122	0					
+ANR	7621035	Identifier	qdev		7620122	1					
+ANR	7621036	Identifier	conf		7620122	1					
+ANR	7621037	Identifier	discard_granularity		7620122	1					
+ANR	7621038	CompoundStatement		339:50:5950:5950	7620122	1					
+ANR	7621039	ExpressionStatement	outbuf [ 14 ] = 0x80	343:16:6024:6041	7620122	0	True				
+ANR	7621040	AssignmentExpression	outbuf [ 14 ] = 0x80		7620122	0		=			
+ANR	7621041	ArrayIndexing	outbuf [ 14 ]		7620122	0					
+ANR	7621042	Identifier	outbuf		7620122	0					
+ANR	7621043	PrimaryExpression	14		7620122	1					
+ANR	7621044	PrimaryExpression	0x80		7620122	1					
+ANR	7621045	ExpressionStatement	buflen = req -> cmd . xfer	351:12:6146:6168	7620122	23	True				
+ANR	7621046	AssignmentExpression	buflen = req -> cmd . xfer		7620122	0		=			
+ANR	7621047	Identifier	buflen		7620122	0					
+ANR	7621048	MemberAccess	req -> cmd . xfer		7620122	1					
+ANR	7621049	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7621050	Identifier	req		7620122	0					
+ANR	7621051	Identifier	cmd		7620122	1					
+ANR	7621052	Identifier	xfer		7620122	1					
+ANR	7621053	BreakStatement	break ;	353:12:6183:6188	7620122	24	True				
+ANR	7621054	ExpressionStatement	"DPRINTF ( ""Unsupported Service Action In\\n"" )"	357:8:6210:6252	7620122	75	True				
+ANR	7621055	CallExpression	"DPRINTF ( ""Unsupported Service Action In\\n"" )"		7620122	0					
+ANR	7621056	Callee	DPRINTF		7620122	0					
+ANR	7621057	Identifier	DPRINTF		7620122	0					
+ANR	7621058	ArgumentList	"""Unsupported Service Action In\\n"""		7620122	1					
+ANR	7621059	Argument	"""Unsupported Service Action In\\n"""		7620122	0					
+ANR	7621060	PrimaryExpression	"""Unsupported Service Action In\\n"""		7620122	0					
+ANR	7621061	GotoStatement	goto illegal_request ;	359:8:6263:6283	7620122	76	True				
+ANR	7621062	Identifier	illegal_request		7620122	0					
+ANR	7621063	Label	case VERIFY_10 :	361:4:6290:6304	7620122	77	True				
+ANR	7621064	Identifier	VERIFY_10		7620122	0					
+ANR	7621065	BreakStatement	break ;	363:8:6315:6320	7620122	78	True				
+ANR	7621066	Label	default :	365:4:6327:6334	7620122	79	True				
+ANR	7621067	Identifier	default		7620122	0					
+ANR	7621068	ExpressionStatement	"scsi_check_condition ( r , SENSE_CODE ( INVALID_OPCODE ) )"	367:8:6345:6396	7620122	80	True				
+ANR	7621069	CallExpression	"scsi_check_condition ( r , SENSE_CODE ( INVALID_OPCODE ) )"		7620122	0					
+ANR	7621070	Callee	scsi_check_condition		7620122	0					
+ANR	7621071	Identifier	scsi_check_condition		7620122	0					
+ANR	7621072	ArgumentList	r		7620122	1					
+ANR	7621073	Argument	r		7620122	0					
+ANR	7621074	Identifier	r		7620122	0					
+ANR	7621075	Argument	SENSE_CODE ( INVALID_OPCODE )		7620122	1					
+ANR	7621076	CallExpression	SENSE_CODE ( INVALID_OPCODE )		7620122	0					
+ANR	7621077	Callee	SENSE_CODE		7620122	0					
+ANR	7621078	Identifier	SENSE_CODE		7620122	0					
+ANR	7621079	ArgumentList	INVALID_OPCODE		7620122	1					
+ANR	7621080	Argument	INVALID_OPCODE		7620122	0					
+ANR	7621081	Identifier	INVALID_OPCODE		7620122	0					
+ANR	7621082	ReturnStatement	return - 1 ;	369:8:6407:6416	7620122	81	True				
+ANR	7621083	UnaryOperationExpression	- 1		7620122	0					
+ANR	7621084	UnaryOperator	-		7620122	0					
+ANR	7621085	PrimaryExpression	1		7620122	1					
+ANR	7621086	ExpressionStatement	"buflen = MIN ( buflen , req -> cmd . xfer )"	373:4:6430:6465	7620122	8	True				
+ANR	7621087	AssignmentExpression	"buflen = MIN ( buflen , req -> cmd . xfer )"		7620122	0		=			
+ANR	7621088	Identifier	buflen		7620122	0					
+ANR	7621089	CallExpression	"MIN ( buflen , req -> cmd . xfer )"		7620122	1					
+ANR	7621090	Callee	MIN		7620122	0					
+ANR	7621091	Identifier	MIN		7620122	0					
+ANR	7621092	ArgumentList	buflen		7620122	1					
+ANR	7621093	Argument	buflen		7620122	0					
+ANR	7621094	Identifier	buflen		7620122	0					
+ANR	7621095	Argument	req -> cmd . xfer		7620122	1					
+ANR	7621096	MemberAccess	req -> cmd . xfer		7620122	0					
+ANR	7621097	PtrMemberAccess	req -> cmd		7620122	0					
+ANR	7621098	Identifier	req		7620122	0					
+ANR	7621099	Identifier	cmd		7620122	1					
+ANR	7621100	Identifier	xfer		7620122	1					
+ANR	7621101	ReturnStatement	return buflen ;	375:4:6472:6485	7620122	9	True				
+ANR	7621102	Identifier	buflen		7620122	0					
+ANR	7621103	Label	illegal_request :	379:0:6490:6505	7620122	10	True				
+ANR	7621104	Identifier	illegal_request		7620122	0					
+ANR	7621105	IfStatement	if ( r -> req . status == - 1 )		7620122	11					
+ANR	7621106	Condition	r -> req . status == - 1	381:8:6516:6534	7620122	0	True				
+ANR	7621107	EqualityExpression	r -> req . status == - 1		7620122	0		==			
+ANR	7621108	MemberAccess	r -> req . status		7620122	0					
+ANR	7621109	PtrMemberAccess	r -> req		7620122	0					
+ANR	7621110	Identifier	r		7620122	0					
+ANR	7621111	Identifier	req		7620122	1					
+ANR	7621112	Identifier	status		7620122	1					
+ANR	7621113	UnaryOperationExpression	- 1		7620122	1					
+ANR	7621114	UnaryOperator	-		7620122	0					
+ANR	7621115	PrimaryExpression	1		7620122	1					
+ANR	7621116	CompoundStatement		379:29:6482:6482	7620122	1					
+ANR	7621117	ExpressionStatement	"scsi_check_condition ( r , SENSE_CODE ( INVALID_FIELD ) )"	383:8:6548:6598	7620122	0	True				
+ANR	7621118	CallExpression	"scsi_check_condition ( r , SENSE_CODE ( INVALID_FIELD ) )"		7620122	0					
+ANR	7621119	Callee	scsi_check_condition		7620122	0					
+ANR	7621120	Identifier	scsi_check_condition		7620122	0					
+ANR	7621121	ArgumentList	r		7620122	1					
+ANR	7621122	Argument	r		7620122	0					
+ANR	7621123	Identifier	r		7620122	0					
+ANR	7621124	Argument	SENSE_CODE ( INVALID_FIELD )		7620122	1					
+ANR	7621125	CallExpression	SENSE_CODE ( INVALID_FIELD )		7620122	0					
+ANR	7621126	Callee	SENSE_CODE		7620122	0					
+ANR	7621127	Identifier	SENSE_CODE		7620122	0					
+ANR	7621128	ArgumentList	INVALID_FIELD		7620122	1					
+ANR	7621129	Argument	INVALID_FIELD		7620122	0					
+ANR	7621130	Identifier	INVALID_FIELD		7620122	0					
+ANR	7621131	ReturnStatement	return - 1 ;	387:4:6612:6621	7620122	12	True				
+ANR	7621132	UnaryOperationExpression	- 1		7620122	0					
+ANR	7621133	UnaryOperator	-		7620122	0					
+ANR	7621134	PrimaryExpression	1		7620122	1					
+ANR	7621135	ReturnType	static int		7620122	1					
+ANR	7621136	Identifier	scsi_disk_emulate_command		7620122	2					
+ANR	7621137	ParameterList	SCSIDiskReq * r		7620122	3					
+ANR	7621138	Parameter	SCSIDiskReq * r	1:37:37:50	7620122	0	True				
+ANR	7621139	ParameterType	SCSIDiskReq *		7620122	0					
+ANR	7621140	Identifier	r		7620122	1					
+ANR	7621141	CFGEntryNode	ENTRY		7620122		True				
+ANR	7621142	CFGExitNode	EXIT		7620122		True				
+ANR	7621143	Symbol	qemu_blockalign		7620122						
+ANR	7621144	Symbol	nb_sectors		7620122						
+ANR	7621145	Symbol	s -> qdev . conf . bs		7620122						
+ANR	7621146	Symbol	s -> tray_locked		7620122						
+ANR	7621147	Symbol	SCSIDiskState		7620122						
+ANR	7621148	Symbol	scsi_disk_emulate_inquiry		7620122						
+ANR	7621149	Symbol	scsi_read_dvd_structure		7620122						
+ANR	7621150	Symbol	& r -> req		7620122						
+ANR	7621151	Symbol	scsi_disk_emulate_start_stop		7620122						
+ANR	7621152	Symbol	scsi_disk_emulate_read_toc		7620122						
+ANR	7621153	Symbol	buflen		7620122						
+ANR	7621154	Symbol	* req -> cmd		7620122						
+ANR	7621155	Symbol	s -> qdev . blocksize		7620122						
+ANR	7621156	Symbol	req		7620122						
+ANR	7621157	Symbol	DO_UPCAST		7620122						
+ANR	7621158	Symbol	NULL		7620122						
+ANR	7621159	Symbol	s -> qdev . conf . discard_granularity		7620122						
+ANR	7621160	Symbol	r -> req . status		7620122						
+ANR	7621161	Symbol	req -> cmd		7620122						
+ANR	7621162	Symbol	s -> tray_open		7620122						
+ANR	7621163	Symbol	& s -> qdev		7620122						
+ANR	7621164	Symbol	r -> iov . iov_base		7620122						
+ANR	7621165	Symbol	qdev		7620122						
+ANR	7621166	Symbol	scsi_get_configuration		7620122						
+ANR	7621167	Symbol	scsi_emulate_mechanism_status		7620122						
+ANR	7621168	Symbol	MIN		7620122						
+ANR	7621169	Symbol	req -> cmd . buf		7620122						
+ANR	7621170	Symbol	UINT32_MAX		7620122						
+ANR	7621171	Symbol	MAX		7620122						
+ANR	7621172	Symbol	scsi_get_event_status_notification		7620122						
+ANR	7621173	Symbol	s -> qdev		7620122						
+ANR	7621174	Symbol	* req		7620122						
+ANR	7621175	Symbol	bdrv_is_inserted		7620122						
+ANR	7621176	Symbol	& nb_sectors		7620122						
+ANR	7621177	Symbol	s -> qdev . max_lba		7620122						
+ANR	7621178	Symbol	req -> dev		7620122						
+ANR	7621179	Symbol	r -> req		7620122						
+ANR	7621180	Symbol	INVALID_FIELD		7620122						
+ANR	7621181	Symbol	get_physical_block_exp		7620122						
+ANR	7621182	Symbol	scsi_disk_emulate_mode_sense		7620122						
+ANR	7621183	Symbol	* outbuf		7620122						
+ANR	7621184	Symbol	SAI_READ_CAPACITY_16		7620122						
+ANR	7621185	Symbol	s -> qdev . conf		7620122						
+ANR	7621186	Symbol	* req -> cmd . buf		7620122						
+ANR	7621187	Symbol	r -> buflen		7620122						
+ANR	7621188	Symbol	r -> iov		7620122						
+ANR	7621189	Symbol	& s -> qdev . conf		7620122						
+ANR	7621190	Symbol	SENSE_CODE		7620122						
+ANR	7621191	Symbol	INVALID_OPCODE		7620122						
+ANR	7621192	Symbol	req -> cmd . xfer		7620122						
+ANR	7621193	Symbol	scsi_build_sense		7620122						
+ANR	7621194	Symbol	LUN_NOT_READY		7620122						
+ANR	7621195	Symbol	r		7620122						
+ANR	7621196	Symbol	* * req		7620122						
+ANR	7621197	Symbol	s		7620122						
+ANR	7621198	Symbol	outbuf		7620122						
+ANR	7621199	Symbol	req -> cmd . lba		7620122						
+ANR	7621200	Symbol	* r		7620122						
+ANR	7621201	Symbol	* s		7620122						

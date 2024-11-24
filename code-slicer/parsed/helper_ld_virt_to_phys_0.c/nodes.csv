@@ -1,0 +1,140 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4618298	File	/home/p4ultr4n/workplace/ReVeal/raw_code/helper_ld_virt_to_phys_0.c								
+ANR	4618299	Function	helper_ld_virt_to_phys	1:0:0:672							
+ANR	4618300	FunctionDef	helper_ld_virt_to_phys (uint64_t virtaddr)		4618299	0					
+ANR	4618301	CompoundStatement		3:0:53:672	4618299	0					
+ANR	4618302	IdentifierDeclStatement	"uint64_t tlb_addr , physaddr ;"	5:4:60:87	4618299	0	True				
+ANR	4618303	IdentifierDecl	tlb_addr		4618299	0					
+ANR	4618304	IdentifierDeclType	uint64_t		4618299	0					
+ANR	4618305	Identifier	tlb_addr		4618299	1					
+ANR	4618306	IdentifierDecl	physaddr		4618299	1					
+ANR	4618307	IdentifierDeclType	uint64_t		4618299	0					
+ANR	4618308	Identifier	physaddr		4618299	1					
+ANR	4618309	IdentifierDeclStatement	"int index , mmu_idx ;"	7:4:94:112	4618299	1	True				
+ANR	4618310	IdentifierDecl	index		4618299	0					
+ANR	4618311	IdentifierDeclType	int		4618299	0					
+ANR	4618312	Identifier	index		4618299	1					
+ANR	4618313	IdentifierDecl	mmu_idx		4618299	1					
+ANR	4618314	IdentifierDeclType	int		4618299	0					
+ANR	4618315	Identifier	mmu_idx		4618299	1					
+ANR	4618316	IdentifierDeclStatement	void * retaddr ;	9:4:119:132	4618299	2	True				
+ANR	4618317	IdentifierDecl	* retaddr		4618299	0					
+ANR	4618318	IdentifierDeclType	void *		4618299	0					
+ANR	4618319	Identifier	retaddr		4618299	1					
+ANR	4618320	ExpressionStatement	mmu_idx = cpu_mmu_index ( env )	13:4:141:169	4618299	3	True				
+ANR	4618321	AssignmentExpression	mmu_idx = cpu_mmu_index ( env )		4618299	0		=			
+ANR	4618322	Identifier	mmu_idx		4618299	0					
+ANR	4618323	CallExpression	cpu_mmu_index ( env )		4618299	1					
+ANR	4618324	Callee	cpu_mmu_index		4618299	0					
+ANR	4618325	Identifier	cpu_mmu_index		4618299	0					
+ANR	4618326	ArgumentList	env		4618299	1					
+ANR	4618327	Argument	env		4618299	0					
+ANR	4618328	Identifier	env		4618299	0					
+ANR	4618329	ExpressionStatement	index = ( virtaddr >> TARGET_PAGE_BITS ) & ( CPU_TLB_SIZE - 1 )	15:4:176:235	4618299	4	True				
+ANR	4618330	AssignmentExpression	index = ( virtaddr >> TARGET_PAGE_BITS ) & ( CPU_TLB_SIZE - 1 )		4618299	0		=			
+ANR	4618331	Identifier	index		4618299	0					
+ANR	4618332	BitAndExpression	( virtaddr >> TARGET_PAGE_BITS ) & ( CPU_TLB_SIZE - 1 )		4618299	1		&			
+ANR	4618333	ShiftExpression	virtaddr >> TARGET_PAGE_BITS		4618299	0		>>			
+ANR	4618334	Identifier	virtaddr		4618299	0					
+ANR	4618335	Identifier	TARGET_PAGE_BITS		4618299	1					
+ANR	4618336	AdditiveExpression	CPU_TLB_SIZE - 1		4618299	1		-			
+ANR	4618337	Identifier	CPU_TLB_SIZE		4618299	0					
+ANR	4618338	PrimaryExpression	1		4618299	1					
+ANR	4618339	Label	redo :	17:1:239:243	4618299	5	True				
+ANR	4618340	Identifier	redo		4618299	0					
+ANR	4618341	ExpressionStatement	tlb_addr = env -> tlb_table [ mmu_idx ] [ index ] . addr_read	19:4:250:301	4618299	6	True				
+ANR	4618342	AssignmentExpression	tlb_addr = env -> tlb_table [ mmu_idx ] [ index ] . addr_read		4618299	0		=			
+ANR	4618343	Identifier	tlb_addr		4618299	0					
+ANR	4618344	MemberAccess	env -> tlb_table [ mmu_idx ] [ index ] . addr_read		4618299	1					
+ANR	4618345	ArrayIndexing	env -> tlb_table [ mmu_idx ] [ index ]		4618299	0					
+ANR	4618346	ArrayIndexing	env -> tlb_table [ mmu_idx ]		4618299	0					
+ANR	4618347	PtrMemberAccess	env -> tlb_table		4618299	0					
+ANR	4618348	Identifier	env		4618299	0					
+ANR	4618349	Identifier	tlb_table		4618299	1					
+ANR	4618350	Identifier	mmu_idx		4618299	1					
+ANR	4618351	Identifier	index		4618299	1					
+ANR	4618352	Identifier	addr_read		4618299	1					
+ANR	4618353	IfStatement	if ( ( virtaddr & TARGET_PAGE_MASK ) == ( tlb_addr & ( TARGET_PAGE_MASK | TLB_INVALID_MASK ) ) )		4618299	7					
+ANR	4618354	Condition	( virtaddr & TARGET_PAGE_MASK ) == ( tlb_addr & ( TARGET_PAGE_MASK | TLB_INVALID_MASK ) )	21:8:312:403	4618299	0	True				
+ANR	4618355	EqualityExpression	( virtaddr & TARGET_PAGE_MASK ) == ( tlb_addr & ( TARGET_PAGE_MASK | TLB_INVALID_MASK ) )		4618299	0		==			
+ANR	4618356	BitAndExpression	virtaddr & TARGET_PAGE_MASK		4618299	0		&			
+ANR	4618357	Identifier	virtaddr		4618299	0					
+ANR	4618358	Identifier	TARGET_PAGE_MASK		4618299	1					
+ANR	4618359	BitAndExpression	tlb_addr & ( TARGET_PAGE_MASK | TLB_INVALID_MASK )		4618299	1		&			
+ANR	4618360	Identifier	tlb_addr		4618299	0					
+ANR	4618361	InclusiveOrExpression	TARGET_PAGE_MASK | TLB_INVALID_MASK		4618299	1		|			
+ANR	4618362	Identifier	TARGET_PAGE_MASK		4618299	0					
+ANR	4618363	Identifier	TLB_INVALID_MASK		4618299	1					
+ANR	4618364	CompoundStatement		21:60:352:352	4618299	1					
+ANR	4618365	ExpressionStatement	physaddr = virtaddr + env -> tlb_table [ mmu_idx ] [ index ] . addend	25:8:417:476	4618299	0	True				
+ANR	4618366	AssignmentExpression	physaddr = virtaddr + env -> tlb_table [ mmu_idx ] [ index ] . addend		4618299	0		=			
+ANR	4618367	Identifier	physaddr		4618299	0					
+ANR	4618368	AdditiveExpression	virtaddr + env -> tlb_table [ mmu_idx ] [ index ] . addend		4618299	1		+			
+ANR	4618369	Identifier	virtaddr		4618299	0					
+ANR	4618370	MemberAccess	env -> tlb_table [ mmu_idx ] [ index ] . addend		4618299	1					
+ANR	4618371	ArrayIndexing	env -> tlb_table [ mmu_idx ] [ index ]		4618299	0					
+ANR	4618372	ArrayIndexing	env -> tlb_table [ mmu_idx ]		4618299	0					
+ANR	4618373	PtrMemberAccess	env -> tlb_table		4618299	0					
+ANR	4618374	Identifier	env		4618299	0					
+ANR	4618375	Identifier	tlb_table		4618299	1					
+ANR	4618376	Identifier	mmu_idx		4618299	1					
+ANR	4618377	Identifier	index		4618299	1					
+ANR	4618378	Identifier	addend		4618299	1					
+ANR	4618379	ElseStatement	else		4618299	0					
+ANR	4618380	CompoundStatement		25:11:436:436	4618299	0					
+ANR	4618381	ExpressionStatement	retaddr = GETPC ( )	31:8:553:570	4618299	0	True				
+ANR	4618382	AssignmentExpression	retaddr = GETPC ( )		4618299	0		=			
+ANR	4618383	Identifier	retaddr		4618299	0					
+ANR	4618384	CallExpression	GETPC ( )		4618299	1					
+ANR	4618385	Callee	GETPC		4618299	0					
+ANR	4618386	Identifier	GETPC		4618299	0					
+ANR	4618387	ArgumentList			4618299	1					
+ANR	4618388	ExpressionStatement	"tlb_fill ( virtaddr , 0 , mmu_idx , retaddr )"	33:8:581:620	4618299	1	True				
+ANR	4618389	CallExpression	"tlb_fill ( virtaddr , 0 , mmu_idx , retaddr )"		4618299	0					
+ANR	4618390	Callee	tlb_fill		4618299	0					
+ANR	4618391	Identifier	tlb_fill		4618299	0					
+ANR	4618392	ArgumentList	virtaddr		4618299	1					
+ANR	4618393	Argument	virtaddr		4618299	0					
+ANR	4618394	Identifier	virtaddr		4618299	0					
+ANR	4618395	Argument	0		4618299	1					
+ANR	4618396	PrimaryExpression	0		4618299	0					
+ANR	4618397	Argument	mmu_idx		4618299	2					
+ANR	4618398	Identifier	mmu_idx		4618299	0					
+ANR	4618399	Argument	retaddr		4618299	3					
+ANR	4618400	Identifier	retaddr		4618299	0					
+ANR	4618401	GotoStatement	goto redo ;	35:8:631:640	4618299	2	True				
+ANR	4618402	Identifier	redo		4618299	0					
+ANR	4618403	ReturnStatement	return physaddr ;	39:4:654:669	4618299	8	True				
+ANR	4618404	Identifier	physaddr		4618299	0					
+ANR	4618405	ReturnType	uint64_t		4618299	1					
+ANR	4618406	Identifier	helper_ld_virt_to_phys		4618299	2					
+ANR	4618407	ParameterList	uint64_t virtaddr		4618299	3					
+ANR	4618408	Parameter	uint64_t virtaddr	1:33:33:49	4618299	0	True				
+ANR	4618409	ParameterType	uint64_t		4618299	0					
+ANR	4618410	Identifier	virtaddr		4618299	1					
+ANR	4618411	CFGEntryNode	ENTRY		4618299		True				
+ANR	4618412	CFGExitNode	EXIT		4618299		True				
+ANR	4618413	Symbol	GETPC		4618299						
+ANR	4618414	Symbol	* * env		4618299						
+ANR	4618415	Symbol	retaddr		4618299						
+ANR	4618416	Symbol	* env -> tlb_table		4618299						
+ANR	4618417	Symbol	* index		4618299						
+ANR	4618418	Symbol	* env		4618299						
+ANR	4618419	Symbol	index		4618299						
+ANR	4618420	Symbol	TARGET_PAGE_MASK		4618299						
+ANR	4618421	Symbol	tlb_addr		4618299						
+ANR	4618422	Symbol	env -> tlb_table [ mmu_idx ] [ index ] . addr_read		4618299						
+ANR	4618423	Symbol	physaddr		4618299						
+ANR	4618424	Symbol	TARGET_PAGE_BITS		4618299						
+ANR	4618425	Symbol	* * * env		4618299						
+ANR	4618426	Symbol	env -> tlb_table [ mmu_idx ] [ index ] . addend		4618299						
+ANR	4618427	Symbol	env		4618299						
+ANR	4618428	Symbol	cpu_mmu_index		4618299						
+ANR	4618429	Symbol	TLB_INVALID_MASK		4618299						
+ANR	4618430	Symbol	CPU_TLB_SIZE		4618299						
+ANR	4618431	Symbol	env -> tlb_table		4618299						
+ANR	4618432	Symbol	virtaddr		4618299						
+ANR	4618433	Symbol	mmu_idx		4618299						
+ANR	4618434	Symbol	* * env -> tlb_table		4618299						
+ANR	4618435	Symbol	* mmu_idx		4618299						
+ANR	4618436	Symbol	* * mmu_idx		4618299						

@@ -1,0 +1,227 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9365325	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vtd_handle_gcmd_qie_0.c								
+ANR	9365326	Function	vtd_handle_gcmd_qie	1:0:0:1472							
+ANR	9365327	FunctionDef	"vtd_handle_gcmd_qie (IntelIOMMUState * s , bool en)"		9365326	0					
+ANR	9365328	CompoundStatement		3:0:62:1472	9365326	0					
+ANR	9365329	IdentifierDeclStatement	"uint64_t iqa_val = vtd_get_quad_raw ( s , DMAR_IQA_REG ) ;"	5:4:69:121	9365326	0	True				
+ANR	9365330	IdentifierDecl	"iqa_val = vtd_get_quad_raw ( s , DMAR_IQA_REG )"		9365326	0					
+ANR	9365331	IdentifierDeclType	uint64_t		9365326	0					
+ANR	9365332	Identifier	iqa_val		9365326	1					
+ANR	9365333	AssignmentExpression	"iqa_val = vtd_get_quad_raw ( s , DMAR_IQA_REG )"		9365326	2		=			
+ANR	9365334	Identifier	iqa_val		9365326	0					
+ANR	9365335	CallExpression	"vtd_get_quad_raw ( s , DMAR_IQA_REG )"		9365326	1					
+ANR	9365336	Callee	vtd_get_quad_raw		9365326	0					
+ANR	9365337	Identifier	vtd_get_quad_raw		9365326	0					
+ANR	9365338	ArgumentList	s		9365326	1					
+ANR	9365339	Argument	s		9365326	0					
+ANR	9365340	Identifier	s		9365326	0					
+ANR	9365341	Argument	DMAR_IQA_REG		9365326	1					
+ANR	9365342	Identifier	DMAR_IQA_REG		9365326	0					
+ANR	9365343	ExpressionStatement	trace_vtd_inv_qi_enable ( en )	9:4:130:157	9365326	1	True				
+ANR	9365344	CallExpression	trace_vtd_inv_qi_enable ( en )		9365326	0					
+ANR	9365345	Callee	trace_vtd_inv_qi_enable		9365326	0					
+ANR	9365346	Identifier	trace_vtd_inv_qi_enable		9365326	0					
+ANR	9365347	ArgumentList	en		9365326	1					
+ANR	9365348	Argument	en		9365326	0					
+ANR	9365349	Identifier	en		9365326	0					
+ANR	9365350	IfStatement	if ( en )		9365326	2					
+ANR	9365351	Condition	en	13:8:170:171	9365326	0	True				
+ANR	9365352	Identifier	en		9365326	0					
+ANR	9365353	CompoundStatement		11:12:111:111	9365326	1					
+ANR	9365354	ExpressionStatement	s -> iq = iqa_val & VTD_IQA_IQA_MASK ( VTD_HOST_ADDRESS_WIDTH )	15:8:185:243	9365326	0	True				
+ANR	9365355	AssignmentExpression	s -> iq = iqa_val & VTD_IQA_IQA_MASK ( VTD_HOST_ADDRESS_WIDTH )		9365326	0		=			
+ANR	9365356	PtrMemberAccess	s -> iq		9365326	0					
+ANR	9365357	Identifier	s		9365326	0					
+ANR	9365358	Identifier	iq		9365326	1					
+ANR	9365359	BitAndExpression	iqa_val & VTD_IQA_IQA_MASK ( VTD_HOST_ADDRESS_WIDTH )		9365326	1		&			
+ANR	9365360	Identifier	iqa_val		9365326	0					
+ANR	9365361	CallExpression	VTD_IQA_IQA_MASK ( VTD_HOST_ADDRESS_WIDTH )		9365326	1					
+ANR	9365362	Callee	VTD_IQA_IQA_MASK		9365326	0					
+ANR	9365363	Identifier	VTD_IQA_IQA_MASK		9365326	0					
+ANR	9365364	ArgumentList	VTD_HOST_ADDRESS_WIDTH		9365326	1					
+ANR	9365365	Argument	VTD_HOST_ADDRESS_WIDTH		9365326	0					
+ANR	9365366	Identifier	VTD_HOST_ADDRESS_WIDTH		9365326	0					
+ANR	9365367	ExpressionStatement	s -> iq_size = 1UL << ( ( iqa_val & VTD_IQA_QS ) + 8 )	19:8:285:333	9365326	1	True				
+ANR	9365368	AssignmentExpression	s -> iq_size = 1UL << ( ( iqa_val & VTD_IQA_QS ) + 8 )		9365326	0		=			
+ANR	9365369	PtrMemberAccess	s -> iq_size		9365326	0					
+ANR	9365370	Identifier	s		9365326	0					
+ANR	9365371	Identifier	iq_size		9365326	1					
+ANR	9365372	ShiftExpression	1UL << ( ( iqa_val & VTD_IQA_QS ) + 8 )		9365326	1		<<			
+ANR	9365373	PrimaryExpression	1UL		9365326	0					
+ANR	9365374	AdditiveExpression	( iqa_val & VTD_IQA_QS ) + 8		9365326	1		+			
+ANR	9365375	BitAndExpression	iqa_val & VTD_IQA_QS		9365326	0		&			
+ANR	9365376	Identifier	iqa_val		9365326	0					
+ANR	9365377	Identifier	VTD_IQA_QS		9365326	1					
+ANR	9365378	PrimaryExpression	8		9365326	1					
+ANR	9365379	ExpressionStatement	s -> qi_enabled = true	21:8:344:364	9365326	2	True				
+ANR	9365380	AssignmentExpression	s -> qi_enabled = true		9365326	0		=			
+ANR	9365381	PtrMemberAccess	s -> qi_enabled		9365326	0					
+ANR	9365382	Identifier	s		9365326	0					
+ANR	9365383	Identifier	qi_enabled		9365326	1					
+ANR	9365384	Identifier	true		9365326	1					
+ANR	9365385	ExpressionStatement	"trace_vtd_inv_qi_setup ( s -> iq , s -> iq_size )"	23:8:375:416	9365326	3	True				
+ANR	9365386	CallExpression	"trace_vtd_inv_qi_setup ( s -> iq , s -> iq_size )"		9365326	0					
+ANR	9365387	Callee	trace_vtd_inv_qi_setup		9365326	0					
+ANR	9365388	Identifier	trace_vtd_inv_qi_setup		9365326	0					
+ANR	9365389	ArgumentList	s -> iq		9365326	1					
+ANR	9365390	Argument	s -> iq		9365326	0					
+ANR	9365391	PtrMemberAccess	s -> iq		9365326	0					
+ANR	9365392	Identifier	s		9365326	0					
+ANR	9365393	Identifier	iq		9365326	1					
+ANR	9365394	Argument	s -> iq_size		9365326	1					
+ANR	9365395	PtrMemberAccess	s -> iq_size		9365326	0					
+ANR	9365396	Identifier	s		9365326	0					
+ANR	9365397	Identifier	iq_size		9365326	1					
+ANR	9365398	ExpressionStatement	"vtd_set_clear_mask_long ( s , DMAR_GSTS_REG , 0 , VTD_GSTS_QIES )"	27:8:469:528	9365326	4	True				
+ANR	9365399	CallExpression	"vtd_set_clear_mask_long ( s , DMAR_GSTS_REG , 0 , VTD_GSTS_QIES )"		9365326	0					
+ANR	9365400	Callee	vtd_set_clear_mask_long		9365326	0					
+ANR	9365401	Identifier	vtd_set_clear_mask_long		9365326	0					
+ANR	9365402	ArgumentList	s		9365326	1					
+ANR	9365403	Argument	s		9365326	0					
+ANR	9365404	Identifier	s		9365326	0					
+ANR	9365405	Argument	DMAR_GSTS_REG		9365326	1					
+ANR	9365406	Identifier	DMAR_GSTS_REG		9365326	0					
+ANR	9365407	Argument	0		9365326	2					
+ANR	9365408	PrimaryExpression	0		9365326	0					
+ANR	9365409	Argument	VTD_GSTS_QIES		9365326	3					
+ANR	9365410	Identifier	VTD_GSTS_QIES		9365326	0					
+ANR	9365411	IfStatement	if ( s -> iq_tail != 0 )		9365326	5					
+ANR	9365412	Condition	s -> iq_tail != 0	31:12:545:559	9365326	0	True				
+ANR	9365413	EqualityExpression	s -> iq_tail != 0		9365326	0		!=			
+ANR	9365414	PtrMemberAccess	s -> iq_tail		9365326	0					
+ANR	9365415	Identifier	s		9365326	0					
+ANR	9365416	Identifier	iq_tail		9365326	1					
+ANR	9365417	PrimaryExpression	0		9365326	1					
+ANR	9365418	CompoundStatement		29:29:499:499	9365326	1					
+ANR	9365419	ExpressionStatement	trace_vtd_warn_invalid_qi_tail ( s -> iq_tail )	43:12:822:864	9365326	0	True				
+ANR	9365420	CallExpression	trace_vtd_warn_invalid_qi_tail ( s -> iq_tail )		9365326	0					
+ANR	9365421	Callee	trace_vtd_warn_invalid_qi_tail		9365326	0					
+ANR	9365422	Identifier	trace_vtd_warn_invalid_qi_tail		9365326	0					
+ANR	9365423	ArgumentList	s -> iq_tail		9365326	1					
+ANR	9365424	Argument	s -> iq_tail		9365326	0					
+ANR	9365425	PtrMemberAccess	s -> iq_tail		9365326	0					
+ANR	9365426	Identifier	s		9365326	0					
+ANR	9365427	Identifier	iq_tail		9365326	1					
+ANR	9365428	IfStatement	"if ( ! ( vtd_get_long_raw ( s , DMAR_FSTS_REG ) & VTD_FSTS_IQE ) )"		9365326	1					
+ANR	9365429	Condition	"! ( vtd_get_long_raw ( s , DMAR_FSTS_REG ) & VTD_FSTS_IQE )"	45:16:883:934	9365326	0	True				
+ANR	9365430	UnaryOperationExpression	"! ( vtd_get_long_raw ( s , DMAR_FSTS_REG ) & VTD_FSTS_IQE )"		9365326	0					
+ANR	9365431	UnaryOperator	!		9365326	0					
+ANR	9365432	BitAndExpression	"vtd_get_long_raw ( s , DMAR_FSTS_REG ) & VTD_FSTS_IQE"		9365326	1		&			
+ANR	9365433	CallExpression	"vtd_get_long_raw ( s , DMAR_FSTS_REG )"		9365326	0					
+ANR	9365434	Callee	vtd_get_long_raw		9365326	0					
+ANR	9365435	Identifier	vtd_get_long_raw		9365326	0					
+ANR	9365436	ArgumentList	s		9365326	1					
+ANR	9365437	Argument	s		9365326	0					
+ANR	9365438	Identifier	s		9365326	0					
+ANR	9365439	Argument	DMAR_FSTS_REG		9365326	1					
+ANR	9365440	Identifier	DMAR_FSTS_REG		9365326	0					
+ANR	9365441	Identifier	VTD_FSTS_IQE		9365326	1					
+ANR	9365442	CompoundStatement		43:70:874:874	9365326	1					
+ANR	9365443	ExpressionStatement	vtd_fetch_inv_desc ( s )	47:16:956:977	9365326	0	True				
+ANR	9365444	CallExpression	vtd_fetch_inv_desc ( s )		9365326	0					
+ANR	9365445	Callee	vtd_fetch_inv_desc		9365326	0					
+ANR	9365446	Identifier	vtd_fetch_inv_desc		9365326	0					
+ANR	9365447	ArgumentList	s		9365326	1					
+ANR	9365448	Argument	s		9365326	0					
+ANR	9365449	Identifier	s		9365326	0					
+ANR	9365450	ElseStatement	else		9365326	0					
+ANR	9365451	CompoundStatement		51:11:954:954	9365326	0					
+ANR	9365452	IfStatement	if ( vtd_queued_inv_disable_check ( s ) )		9365326	0					
+ANR	9365453	Condition	vtd_queued_inv_disable_check ( s )	55:12:1032:1062	9365326	0	True				
+ANR	9365454	CallExpression	vtd_queued_inv_disable_check ( s )		9365326	0					
+ANR	9365455	Callee	vtd_queued_inv_disable_check		9365326	0					
+ANR	9365456	Identifier	vtd_queued_inv_disable_check		9365326	0					
+ANR	9365457	ArgumentList	s		9365326	1					
+ANR	9365458	Argument	s		9365326	0					
+ANR	9365459	Identifier	s		9365326	0					
+ANR	9365460	CompoundStatement		53:45:1002:1002	9365326	1					
+ANR	9365461	ExpressionStatement	"vtd_set_quad_raw ( s , DMAR_IQH_REG , 0 )"	59:12:1127:1163	9365326	0	True				
+ANR	9365462	CallExpression	"vtd_set_quad_raw ( s , DMAR_IQH_REG , 0 )"		9365326	0					
+ANR	9365463	Callee	vtd_set_quad_raw		9365326	0					
+ANR	9365464	Identifier	vtd_set_quad_raw		9365326	0					
+ANR	9365465	ArgumentList	s		9365326	1					
+ANR	9365466	Argument	s		9365326	0					
+ANR	9365467	Identifier	s		9365326	0					
+ANR	9365468	Argument	DMAR_IQH_REG		9365326	1					
+ANR	9365469	Identifier	DMAR_IQH_REG		9365326	0					
+ANR	9365470	Argument	0		9365326	2					
+ANR	9365471	PrimaryExpression	0		9365326	0					
+ANR	9365472	ExpressionStatement	s -> iq_head = 0	61:12:1178:1192	9365326	1	True				
+ANR	9365473	AssignmentExpression	s -> iq_head = 0		9365326	0		=			
+ANR	9365474	PtrMemberAccess	s -> iq_head		9365326	0					
+ANR	9365475	Identifier	s		9365326	0					
+ANR	9365476	Identifier	iq_head		9365326	1					
+ANR	9365477	PrimaryExpression	0		9365326	1					
+ANR	9365478	ExpressionStatement	s -> qi_enabled = false	63:12:1207:1228	9365326	2	True				
+ANR	9365479	AssignmentExpression	s -> qi_enabled = false		9365326	0		=			
+ANR	9365480	PtrMemberAccess	s -> qi_enabled		9365326	0					
+ANR	9365481	Identifier	s		9365326	0					
+ANR	9365482	Identifier	qi_enabled		9365326	1					
+ANR	9365483	Identifier	false		9365326	1					
+ANR	9365484	ExpressionStatement	"vtd_set_clear_mask_long ( s , DMAR_GSTS_REG , VTD_GSTS_QIES , 0 )"	67:12:1289:1348	9365326	3	True				
+ANR	9365485	CallExpression	"vtd_set_clear_mask_long ( s , DMAR_GSTS_REG , VTD_GSTS_QIES , 0 )"		9365326	0					
+ANR	9365486	Callee	vtd_set_clear_mask_long		9365326	0					
+ANR	9365487	Identifier	vtd_set_clear_mask_long		9365326	0					
+ANR	9365488	ArgumentList	s		9365326	1					
+ANR	9365489	Argument	s		9365326	0					
+ANR	9365490	Identifier	s		9365326	0					
+ANR	9365491	Argument	DMAR_GSTS_REG		9365326	1					
+ANR	9365492	Identifier	DMAR_GSTS_REG		9365326	0					
+ANR	9365493	Argument	VTD_GSTS_QIES		9365326	2					
+ANR	9365494	Identifier	VTD_GSTS_QIES		9365326	0					
+ANR	9365495	Argument	0		9365326	3					
+ANR	9365496	PrimaryExpression	0		9365326	0					
+ANR	9365497	ElseStatement	else		9365326	0					
+ANR	9365498	CompoundStatement		67:15:1303:1303	9365326	0					
+ANR	9365499	ExpressionStatement	"trace_vtd_err_qi_disable ( s -> iq_head , s -> iq_tail , s -> iq_last_desc_type )"	71:12:1381:1451	9365326	0	True				
+ANR	9365500	CallExpression	"trace_vtd_err_qi_disable ( s -> iq_head , s -> iq_tail , s -> iq_last_desc_type )"		9365326	0					
+ANR	9365501	Callee	trace_vtd_err_qi_disable		9365326	0					
+ANR	9365502	Identifier	trace_vtd_err_qi_disable		9365326	0					
+ANR	9365503	ArgumentList	s -> iq_head		9365326	1					
+ANR	9365504	Argument	s -> iq_head		9365326	0					
+ANR	9365505	PtrMemberAccess	s -> iq_head		9365326	0					
+ANR	9365506	Identifier	s		9365326	0					
+ANR	9365507	Identifier	iq_head		9365326	1					
+ANR	9365508	Argument	s -> iq_tail		9365326	1					
+ANR	9365509	PtrMemberAccess	s -> iq_tail		9365326	0					
+ANR	9365510	Identifier	s		9365326	0					
+ANR	9365511	Identifier	iq_tail		9365326	1					
+ANR	9365512	Argument	s -> iq_last_desc_type		9365326	2					
+ANR	9365513	PtrMemberAccess	s -> iq_last_desc_type		9365326	0					
+ANR	9365514	Identifier	s		9365326	0					
+ANR	9365515	Identifier	iq_last_desc_type		9365326	1					
+ANR	9365516	ReturnType	static void		9365326	1					
+ANR	9365517	Identifier	vtd_handle_gcmd_qie		9365326	2					
+ANR	9365518	ParameterList	"IntelIOMMUState * s , bool en"		9365326	3					
+ANR	9365519	Parameter	IntelIOMMUState * s	1:32:32:49	9365326	0	True				
+ANR	9365520	ParameterType	IntelIOMMUState *		9365326	0					
+ANR	9365521	Identifier	s		9365326	1					
+ANR	9365522	Parameter	bool en	1:52:52:58	9365326	1	True				
+ANR	9365523	ParameterType	bool		9365326	0					
+ANR	9365524	Identifier	en		9365326	1					
+ANR	9365525	CFGEntryNode	ENTRY		9365326		True				
+ANR	9365526	CFGExitNode	EXIT		9365326		True				
+ANR	9365527	Symbol	VTD_IQA_IQA_MASK		9365326						
+ANR	9365528	Symbol	s -> iq_size		9365326						
+ANR	9365529	Symbol	DMAR_GSTS_REG		9365326						
+ANR	9365530	Symbol	DMAR_FSTS_REG		9365326						
+ANR	9365531	Symbol	VTD_HOST_ADDRESS_WIDTH		9365326						
+ANR	9365532	Symbol	VTD_IQA_QS		9365326						
+ANR	9365533	Symbol	s -> iq_head		9365326						
+ANR	9365534	Symbol	VTD_FSTS_IQE		9365326						
+ANR	9365535	Symbol	false		9365326						
+ANR	9365536	Symbol	en		9365326						
+ANR	9365537	Symbol	vtd_get_long_raw		9365326						
+ANR	9365538	Symbol	DMAR_IQH_REG		9365326						
+ANR	9365539	Symbol	vtd_get_quad_raw		9365326						
+ANR	9365540	Symbol	s -> iq_last_desc_type		9365326						
+ANR	9365541	Symbol	s -> iq_tail		9365326						
+ANR	9365542	Symbol	s		9365326						
+ANR	9365543	Symbol	DMAR_IQA_REG		9365326						
+ANR	9365544	Symbol	vtd_queued_inv_disable_check		9365326						
+ANR	9365545	Symbol	s -> iq		9365326						
+ANR	9365546	Symbol	s -> qi_enabled		9365326						
+ANR	9365547	Symbol	true		9365326						
+ANR	9365548	Symbol	VTD_GSTS_QIES		9365326						
+ANR	9365549	Symbol	* s		9365326						
+ANR	9365550	Symbol	iqa_val		9365326						

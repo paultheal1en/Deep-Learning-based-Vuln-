@@ -1,0 +1,153 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5451959	File	/home/p4ultr4n/workplace/ReVeal/raw_code/migration_tls_channel_connect_0.c								
+ANR	5451960	Function	migration_tls_channel_connect	1:0:0:1044							
+ANR	5451961	FunctionDef	"migration_tls_channel_connect (MigrationState * s , QIOChannel * ioc , const char * hostname , Error * * errp)"		5451960	0					
+ANR	5451962	CompoundStatement		9:0:216:1044	5451960	0					
+ANR	5451963	IdentifierDeclStatement	QCryptoTLSCreds * creds ;	11:4:223:245	5451960	0	True				
+ANR	5451964	IdentifierDecl	* creds		5451960	0					
+ANR	5451965	IdentifierDeclType	QCryptoTLSCreds *		5451960	0					
+ANR	5451966	Identifier	creds		5451960	1					
+ANR	5451967	IdentifierDeclStatement	QIOChannelTLS * tioc ;	13:4:252:271	5451960	1	True				
+ANR	5451968	IdentifierDecl	* tioc		5451960	0					
+ANR	5451969	IdentifierDeclType	QIOChannelTLS *		5451960	0					
+ANR	5451970	Identifier	tioc		5451960	1					
+ANR	5451971	ExpressionStatement	"creds = migration_tls_get_creds ( s , QCRYPTO_TLS_CREDS_ENDPOINT_CLIENT , errp )"	17:4:280:365	5451960	2	True				
+ANR	5451972	AssignmentExpression	"creds = migration_tls_get_creds ( s , QCRYPTO_TLS_CREDS_ENDPOINT_CLIENT , errp )"		5451960	0		=			
+ANR	5451973	Identifier	creds		5451960	0					
+ANR	5451974	CallExpression	"migration_tls_get_creds ( s , QCRYPTO_TLS_CREDS_ENDPOINT_CLIENT , errp )"		5451960	1					
+ANR	5451975	Callee	migration_tls_get_creds		5451960	0					
+ANR	5451976	Identifier	migration_tls_get_creds		5451960	0					
+ANR	5451977	ArgumentList	s		5451960	1					
+ANR	5451978	Argument	s		5451960	0					
+ANR	5451979	Identifier	s		5451960	0					
+ANR	5451980	Argument	QCRYPTO_TLS_CREDS_ENDPOINT_CLIENT		5451960	1					
+ANR	5451981	Identifier	QCRYPTO_TLS_CREDS_ENDPOINT_CLIENT		5451960	0					
+ANR	5451982	Argument	errp		5451960	2					
+ANR	5451983	Identifier	errp		5451960	0					
+ANR	5451984	IfStatement	if ( ! creds )		5451960	3					
+ANR	5451985	Condition	! creds	21:8:376:381	5451960	0	True				
+ANR	5451986	UnaryOperationExpression	! creds		5451960	0					
+ANR	5451987	UnaryOperator	!		5451960	0					
+ANR	5451988	Identifier	creds		5451960	1					
+ANR	5451989	CompoundStatement		13:16:167:167	5451960	1					
+ANR	5451990	ReturnStatement	return ;	23:8:395:401	5451960	0	True				
+ANR	5451991	IfStatement	if ( s -> parameters . tls_hostname )		5451960	4					
+ANR	5451992	Condition	s -> parameters . tls_hostname	29:8:421:446	5451960	0	True				
+ANR	5451993	MemberAccess	s -> parameters . tls_hostname		5451960	0					
+ANR	5451994	PtrMemberAccess	s -> parameters		5451960	0					
+ANR	5451995	Identifier	s		5451960	0					
+ANR	5451996	Identifier	parameters		5451960	1					
+ANR	5451997	Identifier	tls_hostname		5451960	1					
+ANR	5451998	CompoundStatement		21:36:232:232	5451960	1					
+ANR	5451999	ExpressionStatement	hostname = s -> parameters . tls_hostname	31:8:460:497	5451960	0	True				
+ANR	5452000	AssignmentExpression	hostname = s -> parameters . tls_hostname		5451960	0		=			
+ANR	5452001	Identifier	hostname		5451960	0					
+ANR	5452002	MemberAccess	s -> parameters . tls_hostname		5451960	1					
+ANR	5452003	PtrMemberAccess	s -> parameters		5451960	0					
+ANR	5452004	Identifier	s		5451960	0					
+ANR	5452005	Identifier	parameters		5451960	1					
+ANR	5452006	Identifier	tls_hostname		5451960	1					
+ANR	5452007	IfStatement	if ( ! hostname )		5451960	5					
+ANR	5452008	Condition	! hostname	35:8:515:523	5451960	0	True				
+ANR	5452009	UnaryOperationExpression	! hostname		5451960	0					
+ANR	5452010	UnaryOperator	!		5451960	0					
+ANR	5452011	Identifier	hostname		5451960	1					
+ANR	5452012	CompoundStatement		27:19:309:309	5451960	1					
+ANR	5452013	ExpressionStatement	"error_setg ( errp , ""No hostname available for TLS"" )"	37:8:537:586	5451960	0	True				
+ANR	5452014	CallExpression	"error_setg ( errp , ""No hostname available for TLS"" )"		5451960	0					
+ANR	5452015	Callee	error_setg		5451960	0					
+ANR	5452016	Identifier	error_setg		5451960	0					
+ANR	5452017	ArgumentList	errp		5451960	1					
+ANR	5452018	Argument	errp		5451960	0					
+ANR	5452019	Identifier	errp		5451960	0					
+ANR	5452020	Argument	"""No hostname available for TLS"""		5451960	1					
+ANR	5452021	PrimaryExpression	"""No hostname available for TLS"""		5451960	0					
+ANR	5452022	ReturnStatement	return ;	39:8:597:603	5451960	1	True				
+ANR	5452023	ExpressionStatement	"tioc = qio_channel_tls_new_client ( ioc , creds , hostname , errp )"	45:4:619:690	5451960	6	True				
+ANR	5452024	AssignmentExpression	"tioc = qio_channel_tls_new_client ( ioc , creds , hostname , errp )"		5451960	0		=			
+ANR	5452025	Identifier	tioc		5451960	0					
+ANR	5452026	CallExpression	"qio_channel_tls_new_client ( ioc , creds , hostname , errp )"		5451960	1					
+ANR	5452027	Callee	qio_channel_tls_new_client		5451960	0					
+ANR	5452028	Identifier	qio_channel_tls_new_client		5451960	0					
+ANR	5452029	ArgumentList	ioc		5451960	1					
+ANR	5452030	Argument	ioc		5451960	0					
+ANR	5452031	Identifier	ioc		5451960	0					
+ANR	5452032	Argument	creds		5451960	1					
+ANR	5452033	Identifier	creds		5451960	0					
+ANR	5452034	Argument	hostname		5451960	2					
+ANR	5452035	Identifier	hostname		5451960	0					
+ANR	5452036	Argument	errp		5451960	3					
+ANR	5452037	Identifier	errp		5451960	0					
+ANR	5452038	IfStatement	if ( ! tioc )		5451960	7					
+ANR	5452039	Condition	! tioc	49:8:701:705	5451960	0	True				
+ANR	5452040	UnaryOperationExpression	! tioc		5451960	0					
+ANR	5452041	UnaryOperator	!		5451960	0					
+ANR	5452042	Identifier	tioc		5451960	1					
+ANR	5452043	CompoundStatement		41:15:491:491	5451960	1					
+ANR	5452044	ReturnStatement	return ;	51:8:719:725	5451960	0	True				
+ANR	5452045	ExpressionStatement	trace_migration_tls_outgoing_handshake_start ( hostname )	57:4:741:795	5451960	8	True				
+ANR	5452046	CallExpression	trace_migration_tls_outgoing_handshake_start ( hostname )		5451960	0					
+ANR	5452047	Callee	trace_migration_tls_outgoing_handshake_start		5451960	0					
+ANR	5452048	Identifier	trace_migration_tls_outgoing_handshake_start		5451960	0					
+ANR	5452049	ArgumentList	hostname		5451960	1					
+ANR	5452050	Argument	hostname		5451960	0					
+ANR	5452051	Identifier	hostname		5451960	0					
+ANR	5452052	ExpressionStatement	"qio_channel_set_name ( QIO_CHANNEL ( tioc ) , ""migration-tls-outgoing"" )"	59:4:802:867	5451960	9	True				
+ANR	5452053	CallExpression	"qio_channel_set_name ( QIO_CHANNEL ( tioc ) , ""migration-tls-outgoing"" )"		5451960	0					
+ANR	5452054	Callee	qio_channel_set_name		5451960	0					
+ANR	5452055	Identifier	qio_channel_set_name		5451960	0					
+ANR	5452056	ArgumentList	QIO_CHANNEL ( tioc )		5451960	1					
+ANR	5452057	Argument	QIO_CHANNEL ( tioc )		5451960	0					
+ANR	5452058	CallExpression	QIO_CHANNEL ( tioc )		5451960	0					
+ANR	5452059	Callee	QIO_CHANNEL		5451960	0					
+ANR	5452060	Identifier	QIO_CHANNEL		5451960	0					
+ANR	5452061	ArgumentList	tioc		5451960	1					
+ANR	5452062	Argument	tioc		5451960	0					
+ANR	5452063	Identifier	tioc		5451960	0					
+ANR	5452064	Argument	"""migration-tls-outgoing"""		5451960	1					
+ANR	5452065	PrimaryExpression	"""migration-tls-outgoing"""		5451960	0					
+ANR	5452066	ExpressionStatement	"qio_channel_tls_handshake ( tioc , migration_tls_outgoing_handshake , s , NULL )"	61:4:874:1041	5451960	10	True				
+ANR	5452067	CallExpression	"qio_channel_tls_handshake ( tioc , migration_tls_outgoing_handshake , s , NULL )"		5451960	0					
+ANR	5452068	Callee	qio_channel_tls_handshake		5451960	0					
+ANR	5452069	Identifier	qio_channel_tls_handshake		5451960	0					
+ANR	5452070	ArgumentList	tioc		5451960	1					
+ANR	5452071	Argument	tioc		5451960	0					
+ANR	5452072	Identifier	tioc		5451960	0					
+ANR	5452073	Argument	migration_tls_outgoing_handshake		5451960	1					
+ANR	5452074	Identifier	migration_tls_outgoing_handshake		5451960	0					
+ANR	5452075	Argument	s		5451960	2					
+ANR	5452076	Identifier	s		5451960	0					
+ANR	5452077	Argument	NULL		5451960	3					
+ANR	5452078	Identifier	NULL		5451960	0					
+ANR	5452079	ReturnType	void		5451960	1					
+ANR	5452080	Identifier	migration_tls_channel_connect		5451960	2					
+ANR	5452081	ParameterList	"MigrationState * s , QIOChannel * ioc , const char * hostname , Error * * errp"		5451960	3					
+ANR	5452082	Parameter	MigrationState * s	1:35:35:51	5451960	0	True				
+ANR	5452083	ParameterType	MigrationState *		5451960	0					
+ANR	5452084	Identifier	s		5451960	1					
+ANR	5452085	Parameter	QIOChannel * ioc	3:35:90:104	5451960	1	True				
+ANR	5452086	ParameterType	QIOChannel *		5451960	0					
+ANR	5452087	Identifier	ioc		5451960	1					
+ANR	5452088	Parameter	const char * hostname	5:35:143:162	5451960	2	True				
+ANR	5452089	ParameterType	const char *		5451960	0					
+ANR	5452090	Identifier	hostname		5451960	1					
+ANR	5452091	Parameter	Error * * errp	7:35:201:212	5451960	3	True				
+ANR	5452092	ParameterType	Error * *		5451960	0					
+ANR	5452093	Identifier	errp		5451960	1					
+ANR	5452094	CFGEntryNode	ENTRY		5451960		True				
+ANR	5452095	CFGExitNode	EXIT		5451960		True				
+ANR	5452096	Symbol	NULL		5451960						
+ANR	5452097	Symbol	errp		5451960						
+ANR	5452098	Symbol	migration_tls_get_creds		5451960						
+ANR	5452099	Symbol	QIO_CHANNEL		5451960						
+ANR	5452100	Symbol	s -> parameters		5451960						
+ANR	5452101	Symbol	migration_tls_outgoing_handshake		5451960						
+ANR	5452102	Symbol	creds		5451960						
+ANR	5452103	Symbol	hostname		5451960						
+ANR	5452104	Symbol	s		5451960						
+ANR	5452105	Symbol	ioc		5451960						
+ANR	5452106	Symbol	QCRYPTO_TLS_CREDS_ENDPOINT_CLIENT		5451960						
+ANR	5452107	Symbol	* s		5451960						
+ANR	5452108	Symbol	tioc		5451960						
+ANR	5452109	Symbol	s -> parameters . tls_hostname		5451960						
+ANR	5452110	Symbol	qio_channel_tls_new_client		5451960						

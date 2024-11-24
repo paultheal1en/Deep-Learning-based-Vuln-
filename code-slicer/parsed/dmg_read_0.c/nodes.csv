@@ -1,0 +1,124 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	2515498	File	/home/p4ultr4n/workplace/ReVeal/raw_code/dmg_read_0.c								
+ANR	2515499	Function	dmg_read	1:0:0:461							
+ANR	2515500	FunctionDef	"dmg_read (BlockDriverState * bs , int64_t sector_num , uint8_t * buf , int nb_sectors)"		2515499	0					
+ANR	2515501	CompoundStatement		5:0:114:461	2515499	0					
+ANR	2515502	IdentifierDeclStatement	BDRVDMGState * s = bs -> opaque ;	7:4:121:149	2515499	0	True				
+ANR	2515503	IdentifierDecl	* s = bs -> opaque		2515499	0					
+ANR	2515504	IdentifierDeclType	BDRVDMGState *		2515499	0					
+ANR	2515505	Identifier	s		2515499	1					
+ANR	2515506	AssignmentExpression	* s = bs -> opaque		2515499	2		=			
+ANR	2515507	Identifier	s		2515499	0					
+ANR	2515508	PtrMemberAccess	bs -> opaque		2515499	1					
+ANR	2515509	Identifier	bs		2515499	0					
+ANR	2515510	Identifier	opaque		2515499	1					
+ANR	2515511	IdentifierDeclStatement	int i ;	9:4:156:161	2515499	1	True				
+ANR	2515512	IdentifierDecl	i		2515499	0					
+ANR	2515513	IdentifierDeclType	int		2515499	0					
+ANR	2515514	Identifier	i		2515499	1					
+ANR	2515515	ForStatement	for ( i = 0 ; i < nb_sectors ; i ++ )		2515499	2					
+ANR	2515516	ForInit	i = 0 ;	13:8:174:177	2515499	0	True				
+ANR	2515517	AssignmentExpression	i = 0		2515499	0		=			
+ANR	2515518	Identifier	i		2515499	0					
+ANR	2515519	PrimaryExpression	0		2515499	1					
+ANR	2515520	Condition	i < nb_sectors	13:12:178:189	2515499	1	True				
+ANR	2515521	RelationalExpression	i < nb_sectors		2515499	0		<			
+ANR	2515522	Identifier	i		2515499	0					
+ANR	2515523	Identifier	nb_sectors		2515499	1					
+ANR	2515524	PostIncDecOperationExpression	i ++	13:25:191:193	2515499	2	True				
+ANR	2515525	Identifier	i		2515499	0					
+ANR	2515526	IncDec	++		2515499	1					
+ANR	2515527	CompoundStatement		11:1:85:116	2515499	3					
+ANR	2515528	IdentifierDeclStatement	uint32_t sector_offset_in_chunk ;	15:1:200:231	2515499	0	True				
+ANR	2515529	IdentifierDecl	sector_offset_in_chunk		2515499	0					
+ANR	2515530	IdentifierDeclType	uint32_t		2515499	0					
+ANR	2515531	Identifier	sector_offset_in_chunk		2515499	1					
+ANR	2515532	IfStatement	"if ( dmg_read_chunk ( bs , sector_num + i ) != 0 )"		2515499	1					
+ANR	2515533	Condition	"dmg_read_chunk ( bs , sector_num + i ) != 0"	17:4:238:274	2515499	0	True				
+ANR	2515534	EqualityExpression	"dmg_read_chunk ( bs , sector_num + i ) != 0"		2515499	0		!=			
+ANR	2515535	CallExpression	"dmg_read_chunk ( bs , sector_num + i )"		2515499	0					
+ANR	2515536	Callee	dmg_read_chunk		2515499	0					
+ANR	2515537	Identifier	dmg_read_chunk		2515499	0					
+ANR	2515538	ArgumentList	bs		2515499	1					
+ANR	2515539	Argument	bs		2515499	0					
+ANR	2515540	Identifier	bs		2515499	0					
+ANR	2515541	Argument	sector_num + i		2515499	1					
+ANR	2515542	AdditiveExpression	sector_num + i		2515499	0		+			
+ANR	2515543	Identifier	sector_num		2515499	0					
+ANR	2515544	Identifier	i		2515499	1					
+ANR	2515545	PrimaryExpression	0		2515499	1					
+ANR	2515546	ReturnStatement	return - 1 ;	19:5:283:292	2515499	1	True				
+ANR	2515547	UnaryOperationExpression	- 1		2515499	0					
+ANR	2515548	UnaryOperator	-		2515499	0					
+ANR	2515549	PrimaryExpression	1		2515499	1					
+ANR	2515550	ExpressionStatement	sector_offset_in_chunk = sector_num + i - s -> sectors [ s -> current_chunk ]	21:1:296:362	2515499	2	True				
+ANR	2515551	AssignmentExpression	sector_offset_in_chunk = sector_num + i - s -> sectors [ s -> current_chunk ]		2515499	0		=			
+ANR	2515552	Identifier	sector_offset_in_chunk		2515499	0					
+ANR	2515553	AdditiveExpression	sector_num + i - s -> sectors [ s -> current_chunk ]		2515499	1		+			
+ANR	2515554	Identifier	sector_num		2515499	0					
+ANR	2515555	AdditiveExpression	i - s -> sectors [ s -> current_chunk ]		2515499	1		-			
+ANR	2515556	Identifier	i		2515499	0					
+ANR	2515557	ArrayIndexing	s -> sectors [ s -> current_chunk ]		2515499	1					
+ANR	2515558	PtrMemberAccess	s -> sectors		2515499	0					
+ANR	2515559	Identifier	s		2515499	0					
+ANR	2515560	Identifier	sectors		2515499	1					
+ANR	2515561	PtrMemberAccess	s -> current_chunk		2515499	1					
+ANR	2515562	Identifier	s		2515499	0					
+ANR	2515563	Identifier	current_chunk		2515499	1					
+ANR	2515564	ExpressionStatement	"memcpy ( buf + i * 512 , s -> uncompressed_chunk + sector_offset_in_chunk * 512 , 512 )"	23:1:366:436	2515499	3	True				
+ANR	2515565	CallExpression	"memcpy ( buf + i * 512 , s -> uncompressed_chunk + sector_offset_in_chunk * 512 , 512 )"		2515499	0					
+ANR	2515566	Callee	memcpy		2515499	0					
+ANR	2515567	Identifier	memcpy		2515499	0					
+ANR	2515568	ArgumentList	buf + i * 512		2515499	1					
+ANR	2515569	Argument	buf + i * 512		2515499	0					
+ANR	2515570	AdditiveExpression	buf + i * 512		2515499	0		+			
+ANR	2515571	Identifier	buf		2515499	0					
+ANR	2515572	MultiplicativeExpression	i * 512		2515499	1		*			
+ANR	2515573	Identifier	i		2515499	0					
+ANR	2515574	PrimaryExpression	512		2515499	1					
+ANR	2515575	Argument	s -> uncompressed_chunk + sector_offset_in_chunk * 512		2515499	1					
+ANR	2515576	AdditiveExpression	s -> uncompressed_chunk + sector_offset_in_chunk * 512		2515499	0		+			
+ANR	2515577	PtrMemberAccess	s -> uncompressed_chunk		2515499	0					
+ANR	2515578	Identifier	s		2515499	0					
+ANR	2515579	Identifier	uncompressed_chunk		2515499	1					
+ANR	2515580	MultiplicativeExpression	sector_offset_in_chunk * 512		2515499	1		*			
+ANR	2515581	Identifier	sector_offset_in_chunk		2515499	0					
+ANR	2515582	PrimaryExpression	512		2515499	1					
+ANR	2515583	Argument	512		2515499	2					
+ANR	2515584	PrimaryExpression	512		2515499	0					
+ANR	2515585	ReturnStatement	return 0 ;	27:4:450:458	2515499	3	True				
+ANR	2515586	PrimaryExpression	0		2515499	0					
+ANR	2515587	ReturnType	static int		2515499	1					
+ANR	2515588	Identifier	dmg_read		2515499	2					
+ANR	2515589	ParameterList	"BlockDriverState * bs , int64_t sector_num , uint8_t * buf , int nb_sectors"		2515499	3					
+ANR	2515590	Parameter	BlockDriverState * bs	1:20:20:39	2515499	0	True				
+ANR	2515591	ParameterType	BlockDriverState *		2515499	0					
+ANR	2515592	Identifier	bs		2515499	1					
+ANR	2515593	Parameter	int64_t sector_num	1:42:42:59	2515499	1	True				
+ANR	2515594	ParameterType	int64_t		2515499	0					
+ANR	2515595	Identifier	sector_num		2515499	1					
+ANR	2515596	Parameter	uint8_t * buf	3:20:83:94	2515499	2	True				
+ANR	2515597	ParameterType	uint8_t *		2515499	0					
+ANR	2515598	Identifier	buf		2515499	1					
+ANR	2515599	Parameter	int nb_sectors	3:34:97:110	2515499	3	True				
+ANR	2515600	ParameterType	int		2515499	0					
+ANR	2515601	Identifier	nb_sectors		2515499	1					
+ANR	2515602	CFGEntryNode	ENTRY		2515499		True				
+ANR	2515603	CFGExitNode	EXIT		2515499		True				
+ANR	2515604	Symbol	* s -> current_chunk		2515499						
+ANR	2515605	Symbol	nb_sectors		2515499						
+ANR	2515606	Symbol	bs -> opaque		2515499						
+ANR	2515607	Symbol	s -> current_chunk		2515499						
+ANR	2515608	Symbol	s -> uncompressed_chunk		2515499						
+ANR	2515609	Symbol	i		2515499						
+ANR	2515610	Symbol	sector_num		2515499						
+ANR	2515611	Symbol	bs		2515499						
+ANR	2515612	Symbol	buf		2515499						
+ANR	2515613	Symbol	s		2515499						
+ANR	2515614	Symbol	* bs		2515499						
+ANR	2515615	Symbol	sector_offset_in_chunk		2515499						
+ANR	2515616	Symbol	* * s		2515499						
+ANR	2515617	Symbol	* s -> sectors		2515499						
+ANR	2515618	Symbol	* s		2515499						
+ANR	2515619	Symbol	dmg_read_chunk		2515499						
+ANR	2515620	Symbol	s -> sectors		2515499						

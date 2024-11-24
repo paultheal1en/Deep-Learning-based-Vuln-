@@ -1,0 +1,149 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	464775	File	/home/p4ultr4n/workplace/ReVeal/raw_code/adts_write_packet_0.c								
+ANR	464776	Function	adts_write_packet	1:0:0:591							
+ANR	464777	FunctionDef	"adts_write_packet (AVFormatContext * s , AVPacket * pkt)"		464776	0					
+ANR	464778	CompoundStatement		3:0:65:591	464776	0					
+ANR	464779	IdentifierDeclStatement	ADTSContext * adts = s -> priv_data ;	5:4:72:104	464776	0	True				
+ANR	464780	IdentifierDecl	* adts = s -> priv_data		464776	0					
+ANR	464781	IdentifierDeclType	ADTSContext *		464776	0					
+ANR	464782	Identifier	adts		464776	1					
+ANR	464783	AssignmentExpression	* adts = s -> priv_data		464776	2		=			
+ANR	464784	Identifier	adts		464776	0					
+ANR	464785	PtrMemberAccess	s -> priv_data		464776	1					
+ANR	464786	Identifier	s		464776	0					
+ANR	464787	Identifier	priv_data		464776	1					
+ANR	464788	IdentifierDeclStatement	AVIOContext * pb = s -> pb ;	7:4:111:134	464776	1	True				
+ANR	464789	IdentifierDecl	* pb = s -> pb		464776	0					
+ANR	464790	IdentifierDeclType	AVIOContext *		464776	0					
+ANR	464791	Identifier	pb		464776	1					
+ANR	464792	AssignmentExpression	* pb = s -> pb		464776	2		=			
+ANR	464793	Identifier	pb		464776	0					
+ANR	464794	PtrMemberAccess	s -> pb		464776	1					
+ANR	464795	Identifier	s		464776	0					
+ANR	464796	Identifier	pb		464776	1					
+ANR	464797	IdentifierDeclStatement	uint8_t buf [ ADTS_HEADER_SIZE ] ;	9:4:141:170	464776	2	True				
+ANR	464798	IdentifierDecl	buf [ ADTS_HEADER_SIZE ]		464776	0					
+ANR	464799	IdentifierDeclType	uint8_t [ ADTS_HEADER_SIZE ]		464776	0					
+ANR	464800	Identifier	buf		464776	1					
+ANR	464801	Identifier	ADTS_HEADER_SIZE		464776	2					
+ANR	464802	IfStatement	if ( ! pkt -> size )		464776	3					
+ANR	464803	Condition	! pkt -> size	13:8:183:192	464776	0	True				
+ANR	464804	UnaryOperationExpression	! pkt -> size		464776	0					
+ANR	464805	UnaryOperator	!		464776	0					
+ANR	464806	PtrMemberAccess	pkt -> size		464776	1					
+ANR	464807	Identifier	pkt		464776	0					
+ANR	464808	Identifier	size		464776	1					
+ANR	464809	ReturnStatement	return 0 ;	15:8:204:212	464776	1	True				
+ANR	464810	PrimaryExpression	0		464776	0					
+ANR	464811	IfStatement	if ( adts -> write_adts )		464776	4					
+ANR	464812	Condition	adts -> write_adts	17:8:223:238	464776	0	True				
+ANR	464813	PtrMemberAccess	adts -> write_adts		464776	0					
+ANR	464814	Identifier	adts		464776	0					
+ANR	464815	Identifier	write_adts		464776	1					
+ANR	464816	CompoundStatement		15:26:175:175	464776	1					
+ANR	464817	ExpressionStatement	"ff_adts_write_frame_header ( adts , buf , pkt -> size , adts -> pce_size )"	19:8:252:316	464776	0	True				
+ANR	464818	CallExpression	"ff_adts_write_frame_header ( adts , buf , pkt -> size , adts -> pce_size )"		464776	0					
+ANR	464819	Callee	ff_adts_write_frame_header		464776	0					
+ANR	464820	Identifier	ff_adts_write_frame_header		464776	0					
+ANR	464821	ArgumentList	adts		464776	1					
+ANR	464822	Argument	adts		464776	0					
+ANR	464823	Identifier	adts		464776	0					
+ANR	464824	Argument	buf		464776	1					
+ANR	464825	Identifier	buf		464776	0					
+ANR	464826	Argument	pkt -> size		464776	2					
+ANR	464827	PtrMemberAccess	pkt -> size		464776	0					
+ANR	464828	Identifier	pkt		464776	0					
+ANR	464829	Identifier	size		464776	1					
+ANR	464830	Argument	adts -> pce_size		464776	3					
+ANR	464831	PtrMemberAccess	adts -> pce_size		464776	0					
+ANR	464832	Identifier	adts		464776	0					
+ANR	464833	Identifier	pce_size		464776	1					
+ANR	464834	ExpressionStatement	"avio_write ( pb , buf , ADTS_HEADER_SIZE )"	21:8:327:364	464776	1	True				
+ANR	464835	CallExpression	"avio_write ( pb , buf , ADTS_HEADER_SIZE )"		464776	0					
+ANR	464836	Callee	avio_write		464776	0					
+ANR	464837	Identifier	avio_write		464776	0					
+ANR	464838	ArgumentList	pb		464776	1					
+ANR	464839	Argument	pb		464776	0					
+ANR	464840	Identifier	pb		464776	0					
+ANR	464841	Argument	buf		464776	1					
+ANR	464842	Identifier	buf		464776	0					
+ANR	464843	Argument	ADTS_HEADER_SIZE		464776	2					
+ANR	464844	Identifier	ADTS_HEADER_SIZE		464776	0					
+ANR	464845	IfStatement	if ( adts -> pce_size )		464776	2					
+ANR	464846	Condition	adts -> pce_size	23:12:379:392	464776	0	True				
+ANR	464847	PtrMemberAccess	adts -> pce_size		464776	0					
+ANR	464848	Identifier	adts		464776	0					
+ANR	464849	Identifier	pce_size		464776	1					
+ANR	464850	CompoundStatement		21:28:329:329	464776	1					
+ANR	464851	ExpressionStatement	"avio_write ( pb , adts -> pce_data , adts -> pce_size )"	25:12:410:456	464776	0	True				
+ANR	464852	CallExpression	"avio_write ( pb , adts -> pce_data , adts -> pce_size )"		464776	0					
+ANR	464853	Callee	avio_write		464776	0					
+ANR	464854	Identifier	avio_write		464776	0					
+ANR	464855	ArgumentList	pb		464776	1					
+ANR	464856	Argument	pb		464776	0					
+ANR	464857	Identifier	pb		464776	0					
+ANR	464858	Argument	adts -> pce_data		464776	1					
+ANR	464859	PtrMemberAccess	adts -> pce_data		464776	0					
+ANR	464860	Identifier	adts		464776	0					
+ANR	464861	Identifier	pce_data		464776	1					
+ANR	464862	Argument	adts -> pce_size		464776	2					
+ANR	464863	PtrMemberAccess	adts -> pce_size		464776	0					
+ANR	464864	Identifier	adts		464776	0					
+ANR	464865	Identifier	pce_size		464776	1					
+ANR	464866	ExpressionStatement	adts -> pce_size = 0	27:12:471:489	464776	1	True				
+ANR	464867	AssignmentExpression	adts -> pce_size = 0		464776	0		=			
+ANR	464868	PtrMemberAccess	adts -> pce_size		464776	0					
+ANR	464869	Identifier	adts		464776	0					
+ANR	464870	Identifier	pce_size		464776	1					
+ANR	464871	PrimaryExpression	0		464776	1					
+ANR	464872	ExpressionStatement	"avio_write ( pb , pkt -> data , pkt -> size )"	33:4:514:550	464776	5	True				
+ANR	464873	CallExpression	"avio_write ( pb , pkt -> data , pkt -> size )"		464776	0					
+ANR	464874	Callee	avio_write		464776	0					
+ANR	464875	Identifier	avio_write		464776	0					
+ANR	464876	ArgumentList	pb		464776	1					
+ANR	464877	Argument	pb		464776	0					
+ANR	464878	Identifier	pb		464776	0					
+ANR	464879	Argument	pkt -> data		464776	1					
+ANR	464880	PtrMemberAccess	pkt -> data		464776	0					
+ANR	464881	Identifier	pkt		464776	0					
+ANR	464882	Identifier	data		464776	1					
+ANR	464883	Argument	pkt -> size		464776	2					
+ANR	464884	PtrMemberAccess	pkt -> size		464776	0					
+ANR	464885	Identifier	pkt		464776	0					
+ANR	464886	Identifier	size		464776	1					
+ANR	464887	ExpressionStatement	avio_flush ( pb )	35:4:557:571	464776	6	True				
+ANR	464888	CallExpression	avio_flush ( pb )		464776	0					
+ANR	464889	Callee	avio_flush		464776	0					
+ANR	464890	Identifier	avio_flush		464776	0					
+ANR	464891	ArgumentList	pb		464776	1					
+ANR	464892	Argument	pb		464776	0					
+ANR	464893	Identifier	pb		464776	0					
+ANR	464894	ReturnStatement	return 0 ;	39:4:580:588	464776	7	True				
+ANR	464895	PrimaryExpression	0		464776	0					
+ANR	464896	ReturnType	static int		464776	1					
+ANR	464897	Identifier	adts_write_packet		464776	2					
+ANR	464898	ParameterList	"AVFormatContext * s , AVPacket * pkt"		464776	3					
+ANR	464899	Parameter	AVFormatContext * s	1:29:29:46	464776	0	True				
+ANR	464900	ParameterType	AVFormatContext *		464776	0					
+ANR	464901	Identifier	s		464776	1					
+ANR	464902	Parameter	AVPacket * pkt	1:49:49:61	464776	1	True				
+ANR	464903	ParameterType	AVPacket *		464776	0					
+ANR	464904	Identifier	pkt		464776	1					
+ANR	464905	CFGEntryNode	ENTRY		464776		True				
+ANR	464906	CFGExitNode	EXIT		464776		True				
+ANR	464907	Symbol	s -> priv_data		464776						
+ANR	464908	Symbol	* pkt		464776						
+ANR	464909	Symbol	* adts		464776						
+ANR	464910	Symbol	adts -> write_adts		464776						
+ANR	464911	Symbol	s -> pb		464776						
+ANR	464912	Symbol	adts -> pce_data		464776						
+ANR	464913	Symbol	pkt -> data		464776						
+ANR	464914	Symbol	adts		464776						
+ANR	464915	Symbol	pkt -> size		464776						
+ANR	464916	Symbol	pb		464776						
+ANR	464917	Symbol	buf		464776						
+ANR	464918	Symbol	s		464776						
+ANR	464919	Symbol	adts -> pce_size		464776						
+ANR	464920	Symbol	pkt		464776						
+ANR	464921	Symbol	* s		464776						
+ANR	464922	Symbol	ADTS_HEADER_SIZE		464776						

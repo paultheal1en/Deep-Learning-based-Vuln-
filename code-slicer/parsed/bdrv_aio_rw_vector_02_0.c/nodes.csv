@@ -1,0 +1,206 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	938747	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_aio_rw_vector_02_0.c								
+ANR	938748	Function	bdrv_aio_rw_vector	1:0:0:1044							
+ANR	938749	FunctionDef	"bdrv_aio_rw_vector (BlockDriverState * bs , int64_t sector_num , QEMUIOVector * qiov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int is_write)"		938748	0					
+ANR	938750	CompoundStatement		17:0:454:1044	938748	0					
+ANR	938751	IdentifierDeclStatement	BlockDriverAIOCBSync * acb ;	19:4:461:486	938748	0	True				
+ANR	938752	IdentifierDecl	* acb		938748	0					
+ANR	938753	IdentifierDeclType	BlockDriverAIOCBSync *		938748	0					
+ANR	938754	Identifier	acb		938748	1					
+ANR	938755	ExpressionStatement	"acb = qemu_aio_get ( & bdrv_em_aiocb_info , bs , cb , opaque )"	23:4:495:550	938748	1	True				
+ANR	938756	AssignmentExpression	"acb = qemu_aio_get ( & bdrv_em_aiocb_info , bs , cb , opaque )"		938748	0		=			
+ANR	938757	Identifier	acb		938748	0					
+ANR	938758	CallExpression	"qemu_aio_get ( & bdrv_em_aiocb_info , bs , cb , opaque )"		938748	1					
+ANR	938759	Callee	qemu_aio_get		938748	0					
+ANR	938760	Identifier	qemu_aio_get		938748	0					
+ANR	938761	ArgumentList	& bdrv_em_aiocb_info		938748	1					
+ANR	938762	Argument	& bdrv_em_aiocb_info		938748	0					
+ANR	938763	UnaryOperationExpression	& bdrv_em_aiocb_info		938748	0					
+ANR	938764	UnaryOperator	&		938748	0					
+ANR	938765	Identifier	bdrv_em_aiocb_info		938748	1					
+ANR	938766	Argument	bs		938748	1					
+ANR	938767	Identifier	bs		938748	0					
+ANR	938768	Argument	cb		938748	2					
+ANR	938769	Identifier	cb		938748	0					
+ANR	938770	Argument	opaque		938748	3					
+ANR	938771	Identifier	opaque		938748	0					
+ANR	938772	ExpressionStatement	acb -> is_write = is_write	25:4:557:581	938748	2	True				
+ANR	938773	AssignmentExpression	acb -> is_write = is_write		938748	0		=			
+ANR	938774	PtrMemberAccess	acb -> is_write		938748	0					
+ANR	938775	Identifier	acb		938748	0					
+ANR	938776	Identifier	is_write		938748	1					
+ANR	938777	Identifier	is_write		938748	1					
+ANR	938778	ExpressionStatement	acb -> qiov = qiov	27:4:588:604	938748	3	True				
+ANR	938779	AssignmentExpression	acb -> qiov = qiov		938748	0		=			
+ANR	938780	PtrMemberAccess	acb -> qiov		938748	0					
+ANR	938781	Identifier	acb		938748	0					
+ANR	938782	Identifier	qiov		938748	1					
+ANR	938783	Identifier	qiov		938748	1					
+ANR	938784	ExpressionStatement	"acb -> bounce = qemu_blockalign ( bs , qiov -> size )"	29:4:611:656	938748	4	True				
+ANR	938785	AssignmentExpression	"acb -> bounce = qemu_blockalign ( bs , qiov -> size )"		938748	0		=			
+ANR	938786	PtrMemberAccess	acb -> bounce		938748	0					
+ANR	938787	Identifier	acb		938748	0					
+ANR	938788	Identifier	bounce		938748	1					
+ANR	938789	CallExpression	"qemu_blockalign ( bs , qiov -> size )"		938748	1					
+ANR	938790	Callee	qemu_blockalign		938748	0					
+ANR	938791	Identifier	qemu_blockalign		938748	0					
+ANR	938792	ArgumentList	bs		938748	1					
+ANR	938793	Argument	bs		938748	0					
+ANR	938794	Identifier	bs		938748	0					
+ANR	938795	Argument	qiov -> size		938748	1					
+ANR	938796	PtrMemberAccess	qiov -> size		938748	0					
+ANR	938797	Identifier	qiov		938748	0					
+ANR	938798	Identifier	size		938748	1					
+ANR	938799	ExpressionStatement	"acb -> bh = qemu_bh_new ( bdrv_aio_bh_cb , acb )"	31:4:663:705	938748	5	True				
+ANR	938800	AssignmentExpression	"acb -> bh = qemu_bh_new ( bdrv_aio_bh_cb , acb )"		938748	0		=			
+ANR	938801	PtrMemberAccess	acb -> bh		938748	0					
+ANR	938802	Identifier	acb		938748	0					
+ANR	938803	Identifier	bh		938748	1					
+ANR	938804	CallExpression	"qemu_bh_new ( bdrv_aio_bh_cb , acb )"		938748	1					
+ANR	938805	Callee	qemu_bh_new		938748	0					
+ANR	938806	Identifier	qemu_bh_new		938748	0					
+ANR	938807	ArgumentList	bdrv_aio_bh_cb		938748	1					
+ANR	938808	Argument	bdrv_aio_bh_cb		938748	0					
+ANR	938809	Identifier	bdrv_aio_bh_cb		938748	0					
+ANR	938810	Argument	acb		938748	1					
+ANR	938811	Identifier	acb		938748	0					
+ANR	938812	IfStatement	if ( is_write )		938748	6					
+ANR	938813	Condition	is_write	35:8:718:725	938748	0	True				
+ANR	938814	Identifier	is_write		938748	0					
+ANR	938815	CompoundStatement		19:18:273:273	938748	1					
+ANR	938816	ExpressionStatement	"qemu_iovec_to_buf ( acb -> qiov , 0 , acb -> bounce , qiov -> size )"	37:8:739:795	938748	0	True				
+ANR	938817	CallExpression	"qemu_iovec_to_buf ( acb -> qiov , 0 , acb -> bounce , qiov -> size )"		938748	0					
+ANR	938818	Callee	qemu_iovec_to_buf		938748	0					
+ANR	938819	Identifier	qemu_iovec_to_buf		938748	0					
+ANR	938820	ArgumentList	acb -> qiov		938748	1					
+ANR	938821	Argument	acb -> qiov		938748	0					
+ANR	938822	PtrMemberAccess	acb -> qiov		938748	0					
+ANR	938823	Identifier	acb		938748	0					
+ANR	938824	Identifier	qiov		938748	1					
+ANR	938825	Argument	0		938748	1					
+ANR	938826	PrimaryExpression	0		938748	0					
+ANR	938827	Argument	acb -> bounce		938748	2					
+ANR	938828	PtrMemberAccess	acb -> bounce		938748	0					
+ANR	938829	Identifier	acb		938748	0					
+ANR	938830	Identifier	bounce		938748	1					
+ANR	938831	Argument	qiov -> size		938748	3					
+ANR	938832	PtrMemberAccess	qiov -> size		938748	0					
+ANR	938833	Identifier	qiov		938748	0					
+ANR	938834	Identifier	size		938748	1					
+ANR	938835	ExpressionStatement	"acb -> ret = bs -> drv -> bdrv_write ( bs , sector_num , acb -> bounce , nb_sectors )"	39:8:806:877	938748	1	True				
+ANR	938836	AssignmentExpression	"acb -> ret = bs -> drv -> bdrv_write ( bs , sector_num , acb -> bounce , nb_sectors )"		938748	0		=			
+ANR	938837	PtrMemberAccess	acb -> ret		938748	0					
+ANR	938838	Identifier	acb		938748	0					
+ANR	938839	Identifier	ret		938748	1					
+ANR	938840	CallExpression	"bs -> drv -> bdrv_write ( bs , sector_num , acb -> bounce , nb_sectors )"		938748	1					
+ANR	938841	Callee	bs -> drv -> bdrv_write		938748	0					
+ANR	938842	PtrMemberAccess	bs -> drv -> bdrv_write		938748	0					
+ANR	938843	PtrMemberAccess	bs -> drv		938748	0					
+ANR	938844	Identifier	bs		938748	0					
+ANR	938845	Identifier	drv		938748	1					
+ANR	938846	Identifier	bdrv_write		938748	1					
+ANR	938847	ArgumentList	bs		938748	1					
+ANR	938848	Argument	bs		938748	0					
+ANR	938849	Identifier	bs		938748	0					
+ANR	938850	Argument	sector_num		938748	1					
+ANR	938851	Identifier	sector_num		938748	0					
+ANR	938852	Argument	acb -> bounce		938748	2					
+ANR	938853	PtrMemberAccess	acb -> bounce		938748	0					
+ANR	938854	Identifier	acb		938748	0					
+ANR	938855	Identifier	bounce		938748	1					
+ANR	938856	Argument	nb_sectors		938748	3					
+ANR	938857	Identifier	nb_sectors		938748	0					
+ANR	938858	ElseStatement	else		938748	0					
+ANR	938859	CompoundStatement		25:11:436:436	938748	0					
+ANR	938860	ExpressionStatement	"acb -> ret = bs -> drv -> bdrv_read ( bs , sector_num , acb -> bounce , nb_sectors )"	43:8:902:972	938748	0	True				
+ANR	938861	AssignmentExpression	"acb -> ret = bs -> drv -> bdrv_read ( bs , sector_num , acb -> bounce , nb_sectors )"		938748	0		=			
+ANR	938862	PtrMemberAccess	acb -> ret		938748	0					
+ANR	938863	Identifier	acb		938748	0					
+ANR	938864	Identifier	ret		938748	1					
+ANR	938865	CallExpression	"bs -> drv -> bdrv_read ( bs , sector_num , acb -> bounce , nb_sectors )"		938748	1					
+ANR	938866	Callee	bs -> drv -> bdrv_read		938748	0					
+ANR	938867	PtrMemberAccess	bs -> drv -> bdrv_read		938748	0					
+ANR	938868	PtrMemberAccess	bs -> drv		938748	0					
+ANR	938869	Identifier	bs		938748	0					
+ANR	938870	Identifier	drv		938748	1					
+ANR	938871	Identifier	bdrv_read		938748	1					
+ANR	938872	ArgumentList	bs		938748	1					
+ANR	938873	Argument	bs		938748	0					
+ANR	938874	Identifier	bs		938748	0					
+ANR	938875	Argument	sector_num		938748	1					
+ANR	938876	Identifier	sector_num		938748	0					
+ANR	938877	Argument	acb -> bounce		938748	2					
+ANR	938878	PtrMemberAccess	acb -> bounce		938748	0					
+ANR	938879	Identifier	acb		938748	0					
+ANR	938880	Identifier	bounce		938748	1					
+ANR	938881	Argument	nb_sectors		938748	3					
+ANR	938882	Identifier	nb_sectors		938748	0					
+ANR	938883	ExpressionStatement	qemu_bh_schedule ( acb -> bh )	49:4:988:1013	938748	7	True				
+ANR	938884	CallExpression	qemu_bh_schedule ( acb -> bh )		938748	0					
+ANR	938885	Callee	qemu_bh_schedule		938748	0					
+ANR	938886	Identifier	qemu_bh_schedule		938748	0					
+ANR	938887	ArgumentList	acb -> bh		938748	1					
+ANR	938888	Argument	acb -> bh		938748	0					
+ANR	938889	PtrMemberAccess	acb -> bh		938748	0					
+ANR	938890	Identifier	acb		938748	0					
+ANR	938891	Identifier	bh		938748	1					
+ANR	938892	ReturnStatement	return & acb -> common ;	53:4:1022:1041	938748	8	True				
+ANR	938893	UnaryOperationExpression	& acb -> common		938748	0					
+ANR	938894	UnaryOperator	&		938748	0					
+ANR	938895	PtrMemberAccess	acb -> common		938748	1					
+ANR	938896	Identifier	acb		938748	0					
+ANR	938897	Identifier	common		938748	1					
+ANR	938898	ReturnType	static BlockDriverAIOCB *		938748	1					
+ANR	938899	Identifier	bdrv_aio_rw_vector		938748	2					
+ANR	938900	ParameterList	"BlockDriverState * bs , int64_t sector_num , QEMUIOVector * qiov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int is_write"		938748	3					
+ANR	938901	Parameter	BlockDriverState * bs	1:44:44:63	938748	0	True				
+ANR	938902	ParameterType	BlockDriverState *		938748	0					
+ANR	938903	Identifier	bs		938748	1					
+ANR	938904	Parameter	int64_t sector_num	3:44:111:128	938748	1	True				
+ANR	938905	ParameterType	int64_t		938748	0					
+ANR	938906	Identifier	sector_num		938748	1					
+ANR	938907	Parameter	QEMUIOVector * qiov	5:44:176:193	938748	2	True				
+ANR	938908	ParameterType	QEMUIOVector *		938748	0					
+ANR	938909	Identifier	qiov		938748	1					
+ANR	938910	Parameter	int nb_sectors	7:44:241:254	938748	3	True				
+ANR	938911	ParameterType	int		938748	0					
+ANR	938912	Identifier	nb_sectors		938748	1					
+ANR	938913	Parameter	BlockDriverCompletionFunc * cb	9:44:302:330	938748	4	True				
+ANR	938914	ParameterType	BlockDriverCompletionFunc *		938748	0					
+ANR	938915	Identifier	cb		938748	1					
+ANR	938916	Parameter	void * opaque	11:44:378:389	938748	5	True				
+ANR	938917	ParameterType	void *		938748	0					
+ANR	938918	Identifier	opaque		938748	1					
+ANR	938919	Parameter	int is_write	13:44:437:448	938748	6	True				
+ANR	938920	ParameterType	int		938748	0					
+ANR	938921	Identifier	is_write		938748	1					
+ANR	938922	CFGEntryNode	ENTRY		938748		True				
+ANR	938923	CFGExitNode	EXIT		938748		True				
+ANR	938924	Symbol	qemu_bh_new		938748						
+ANR	938925	Symbol	acb		938748						
+ANR	938926	Symbol	qemu_blockalign		938748						
+ANR	938927	Symbol	nb_sectors		938748						
+ANR	938928	Symbol	& bdrv_em_aiocb_info		938748						
+ANR	938929	Symbol	qiov		938748						
+ANR	938930	Symbol	bs -> drv		938748						
+ANR	938931	Symbol	acb -> qiov		938748						
+ANR	938932	Symbol	acb -> is_write		938748						
+ANR	938933	Symbol	acb -> bounce		938748						
+ANR	938934	Symbol	bs -> drv -> bdrv_read		938748						
+ANR	938935	Symbol	bs		938748						
+ANR	938936	Symbol	qiov -> size		938748						
+ANR	938937	Symbol	* bs		938748						
+ANR	938938	Symbol	& acb -> common		938748						
+ANR	938939	Symbol	* acb		938748						
+ANR	938940	Symbol	* qiov		938748						
+ANR	938941	Symbol	acb -> ret		938748						
+ANR	938942	Symbol	cb		938748						
+ANR	938943	Symbol	acb -> bh		938748						
+ANR	938944	Symbol	opaque		938748						
+ANR	938945	Symbol	qemu_aio_get		938748						
+ANR	938946	Symbol	* bs -> drv		938748						
+ANR	938947	Symbol	is_write		938748						
+ANR	938948	Symbol	bdrv_aio_bh_cb		938748						
+ANR	938949	Symbol	sector_num		938748						
+ANR	938950	Symbol	bs -> drv -> bdrv_write		938748						
+ANR	938951	Symbol	* * bs		938748						

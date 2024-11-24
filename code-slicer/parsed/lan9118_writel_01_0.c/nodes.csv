@@ -1,0 +1,678 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5174031	File	/home/p4ultr4n/workplace/ReVeal/raw_code/lan9118_writel_01_0.c								
+ANR	5174032	Function	lan9118_writel	1:0:0:4135							
+ANR	5174033	FunctionDef	"lan9118_writel (void * opaque , hwaddr offset , uint64_t val , unsigned size)"		5174032	0					
+ANR	5174034	CompoundStatement		5:0:114:4135	5174032	0					
+ANR	5174035	IdentifierDeclStatement	lan9118_state * s = ( lan9118_state * ) opaque ;	7:4:121:163	5174032	0	True				
+ANR	5174036	IdentifierDecl	* s = ( lan9118_state * ) opaque		5174032	0					
+ANR	5174037	IdentifierDeclType	lan9118_state *		5174032	0					
+ANR	5174038	Identifier	s		5174032	1					
+ANR	5174039	AssignmentExpression	* s = ( lan9118_state * ) opaque		5174032	2		=			
+ANR	5174040	Identifier	s		5174032	0					
+ANR	5174041	CastExpression	( lan9118_state * ) opaque		5174032	1					
+ANR	5174042	CastTarget	lan9118_state *		5174032	0					
+ANR	5174043	Identifier	opaque		5174032	1					
+ANR	5174044	ExpressionStatement	offset &= 0xff	9:4:170:184	5174032	1	True				
+ANR	5174045	AssignmentExpression	offset &= 0xff		5174032	0		&=			
+ANR	5174046	Identifier	offset		5174032	0					
+ANR	5174047	PrimaryExpression	0xff		5174032	1					
+ANR	5174048	IfStatement	if ( offset >= 0x20 && offset < 0x40 )		5174032	2					
+ANR	5174049	Condition	offset >= 0x20 && offset < 0x40	15:8:262:292	5174032	0	True				
+ANR	5174050	AndExpression	offset >= 0x20 && offset < 0x40		5174032	0		&&			
+ANR	5174051	RelationalExpression	offset >= 0x20		5174032	0		>=			
+ANR	5174052	Identifier	offset		5174032	0					
+ANR	5174053	PrimaryExpression	0x20		5174032	1					
+ANR	5174054	RelationalExpression	offset < 0x40		5174032	1		<			
+ANR	5174055	Identifier	offset		5174032	0					
+ANR	5174056	PrimaryExpression	0x40		5174032	1					
+ANR	5174057	CompoundStatement		11:41:180:180	5174032	1					
+ANR	5174058	ExpressionStatement	"tx_fifo_push ( s , val )"	19:8:329:349	5174032	0	True				
+ANR	5174059	CallExpression	"tx_fifo_push ( s , val )"		5174032	0					
+ANR	5174060	Callee	tx_fifo_push		5174032	0					
+ANR	5174061	Identifier	tx_fifo_push		5174032	0					
+ANR	5174062	ArgumentList	s		5174032	1					
+ANR	5174063	Argument	s		5174032	0					
+ANR	5174064	Identifier	s		5174032	0					
+ANR	5174065	Argument	val		5174032	1					
+ANR	5174066	Identifier	val		5174032	0					
+ANR	5174067	ReturnStatement	return ;	21:8:360:366	5174032	1	True				
+ANR	5174068	SwitchStatement	switch ( offset )		5174032	3					
+ANR	5174069	Condition	offset	25:12:388:393	5174032	0	True				
+ANR	5174070	Identifier	offset		5174032	0					
+ANR	5174071	CompoundStatement		21:20:281:281	5174032	1					
+ANR	5174072	Label	case CSR_IRQ_CFG :	27:4:403:419	5174032	0	True				
+ANR	5174073	Identifier	CSR_IRQ_CFG		5174032	0					
+ANR	5174074	ExpressionStatement	val &= ( IRQ_EN | IRQ_POL | IRQ_TYPE )	31:8:495:531	5174032	1	True				
+ANR	5174075	AssignmentExpression	val &= ( IRQ_EN | IRQ_POL | IRQ_TYPE )		5174032	0		&=			
+ANR	5174076	Identifier	val		5174032	0					
+ANR	5174077	InclusiveOrExpression	IRQ_EN | IRQ_POL | IRQ_TYPE		5174032	1		|			
+ANR	5174078	Identifier	IRQ_EN		5174032	0					
+ANR	5174079	InclusiveOrExpression	IRQ_POL | IRQ_TYPE		5174032	1		|			
+ANR	5174080	Identifier	IRQ_POL		5174032	0					
+ANR	5174081	Identifier	IRQ_TYPE		5174032	1					
+ANR	5174082	ExpressionStatement	s -> irq_cfg = ( s -> irq_cfg & IRQ_INT ) | val	33:8:542:583	5174032	2	True				
+ANR	5174083	AssignmentExpression	s -> irq_cfg = ( s -> irq_cfg & IRQ_INT ) | val		5174032	0		=			
+ANR	5174084	PtrMemberAccess	s -> irq_cfg		5174032	0					
+ANR	5174085	Identifier	s		5174032	0					
+ANR	5174086	Identifier	irq_cfg		5174032	1					
+ANR	5174087	InclusiveOrExpression	( s -> irq_cfg & IRQ_INT ) | val		5174032	1		|			
+ANR	5174088	BitAndExpression	s -> irq_cfg & IRQ_INT		5174032	0		&			
+ANR	5174089	PtrMemberAccess	s -> irq_cfg		5174032	0					
+ANR	5174090	Identifier	s		5174032	0					
+ANR	5174091	Identifier	irq_cfg		5174032	1					
+ANR	5174092	Identifier	IRQ_INT		5174032	1					
+ANR	5174093	Identifier	val		5174032	1					
+ANR	5174094	BreakStatement	break ;	35:8:594:599	5174032	3	True				
+ANR	5174095	Label	case CSR_INT_STS :	37:4:606:622	5174032	4	True				
+ANR	5174096	Identifier	CSR_INT_STS		5174032	0					
+ANR	5174097	ExpressionStatement	s -> int_sts &= ~val	39:8:633:651	5174032	5	True				
+ANR	5174098	AssignmentExpression	s -> int_sts &= ~val		5174032	0		&=			
+ANR	5174099	PtrMemberAccess	s -> int_sts		5174032	0					
+ANR	5174100	Identifier	s		5174032	0					
+ANR	5174101	Identifier	int_sts		5174032	1					
+ANR	5174102	Identifier	~val		5174032	1					
+ANR	5174103	BreakStatement	break ;	41:8:662:667	5174032	6	True				
+ANR	5174104	Label	case CSR_INT_EN :	43:4:674:689	5174032	7	True				
+ANR	5174105	Identifier	CSR_INT_EN		5174032	0					
+ANR	5174106	ExpressionStatement	s -> int_en = val & ~RESERVED_INT	45:8:700:731	5174032	8	True				
+ANR	5174107	AssignmentExpression	s -> int_en = val & ~RESERVED_INT		5174032	0		=			
+ANR	5174108	PtrMemberAccess	s -> int_en		5174032	0					
+ANR	5174109	Identifier	s		5174032	0					
+ANR	5174110	Identifier	int_en		5174032	1					
+ANR	5174111	BitAndExpression	val & ~RESERVED_INT		5174032	1		&			
+ANR	5174112	Identifier	val		5174032	0					
+ANR	5174113	Identifier	~RESERVED_INT		5174032	1					
+ANR	5174114	ExpressionStatement	s -> int_sts |= val & SW_INT	47:8:742:768	5174032	9	True				
+ANR	5174115	AssignmentExpression	s -> int_sts |= val & SW_INT		5174032	0		|=			
+ANR	5174116	PtrMemberAccess	s -> int_sts		5174032	0					
+ANR	5174117	Identifier	s		5174032	0					
+ANR	5174118	Identifier	int_sts		5174032	1					
+ANR	5174119	BitAndExpression	val & SW_INT		5174032	1		&			
+ANR	5174120	Identifier	val		5174032	0					
+ANR	5174121	Identifier	SW_INT		5174032	1					
+ANR	5174122	BreakStatement	break ;	49:8:779:784	5174032	10	True				
+ANR	5174123	Label	case CSR_FIFO_INT :	51:4:791:808	5174032	11	True				
+ANR	5174124	Identifier	CSR_FIFO_INT		5174032	0					
+ANR	5174125	ExpressionStatement	"DPRINTF ( ""FIFO INT levels %08x\\n"" , val )"	53:8:819:857	5174032	12	True				
+ANR	5174126	CallExpression	"DPRINTF ( ""FIFO INT levels %08x\\n"" , val )"		5174032	0					
+ANR	5174127	Callee	DPRINTF		5174032	0					
+ANR	5174128	Identifier	DPRINTF		5174032	0					
+ANR	5174129	ArgumentList	"""FIFO INT levels %08x\\n"""		5174032	1					
+ANR	5174130	Argument	"""FIFO INT levels %08x\\n"""		5174032	0					
+ANR	5174131	PrimaryExpression	"""FIFO INT levels %08x\\n"""		5174032	0					
+ANR	5174132	Argument	val		5174032	1					
+ANR	5174133	Identifier	val		5174032	0					
+ANR	5174134	ExpressionStatement	s -> fifo_int = val	55:8:868:885	5174032	13	True				
+ANR	5174135	AssignmentExpression	s -> fifo_int = val		5174032	0		=			
+ANR	5174136	PtrMemberAccess	s -> fifo_int		5174032	0					
+ANR	5174137	Identifier	s		5174032	0					
+ANR	5174138	Identifier	fifo_int		5174032	1					
+ANR	5174139	Identifier	val		5174032	1					
+ANR	5174140	BreakStatement	break ;	57:8:896:901	5174032	14	True				
+ANR	5174141	Label	case CSR_RX_CFG :	59:4:908:923	5174032	15	True				
+ANR	5174142	Identifier	CSR_RX_CFG		5174032	0					
+ANR	5174143	IfStatement	if ( val & 0x8000 )		5174032	16					
+ANR	5174144	Condition	val & 0x8000	61:12:938:949	5174032	0	True				
+ANR	5174145	BitAndExpression	val & 0x8000		5174032	0		&			
+ANR	5174146	Identifier	val		5174032	0					
+ANR	5174147	PrimaryExpression	0x8000		5174032	1					
+ANR	5174148	CompoundStatement		57:26:837:837	5174032	1					
+ANR	5174149	ExpressionStatement	s -> rx_fifo_used = 0	65:12:994:1013	5174032	0	True				
+ANR	5174150	AssignmentExpression	s -> rx_fifo_used = 0		5174032	0		=			
+ANR	5174151	PtrMemberAccess	s -> rx_fifo_used		5174032	0					
+ANR	5174152	Identifier	s		5174032	0					
+ANR	5174153	Identifier	rx_fifo_used		5174032	1					
+ANR	5174154	PrimaryExpression	0		5174032	1					
+ANR	5174155	ExpressionStatement	s -> rx_status_fifo_used = 0	67:12:1028:1054	5174032	1	True				
+ANR	5174156	AssignmentExpression	s -> rx_status_fifo_used = 0		5174032	0		=			
+ANR	5174157	PtrMemberAccess	s -> rx_status_fifo_used		5174032	0					
+ANR	5174158	Identifier	s		5174032	0					
+ANR	5174159	Identifier	rx_status_fifo_used		5174032	1					
+ANR	5174160	PrimaryExpression	0		5174032	1					
+ANR	5174161	ExpressionStatement	s -> rx_packet_size_tail = s -> rx_packet_size_head	69:12:1069:1116	5174032	2	True				
+ANR	5174162	AssignmentExpression	s -> rx_packet_size_tail = s -> rx_packet_size_head		5174032	0		=			
+ANR	5174163	PtrMemberAccess	s -> rx_packet_size_tail		5174032	0					
+ANR	5174164	Identifier	s		5174032	0					
+ANR	5174165	Identifier	rx_packet_size_tail		5174032	1					
+ANR	5174166	PtrMemberAccess	s -> rx_packet_size_head		5174032	1					
+ANR	5174167	Identifier	s		5174032	0					
+ANR	5174168	Identifier	rx_packet_size_head		5174032	1					
+ANR	5174169	ExpressionStatement	s -> rx_packet_size [ s -> rx_packet_size_head ] = 0	71:12:1131:1176	5174032	3	True				
+ANR	5174170	AssignmentExpression	s -> rx_packet_size [ s -> rx_packet_size_head ] = 0		5174032	0		=			
+ANR	5174171	ArrayIndexing	s -> rx_packet_size [ s -> rx_packet_size_head ]		5174032	0					
+ANR	5174172	PtrMemberAccess	s -> rx_packet_size		5174032	0					
+ANR	5174173	Identifier	s		5174032	0					
+ANR	5174174	Identifier	rx_packet_size		5174032	1					
+ANR	5174175	PtrMemberAccess	s -> rx_packet_size_head		5174032	1					
+ANR	5174176	Identifier	s		5174032	0					
+ANR	5174177	Identifier	rx_packet_size_head		5174032	1					
+ANR	5174178	PrimaryExpression	0		5174032	1					
+ANR	5174179	ExpressionStatement	s -> rx_cfg = val & 0xcfff1ff0	75:8:1198:1226	5174032	17	True				
+ANR	5174180	AssignmentExpression	s -> rx_cfg = val & 0xcfff1ff0		5174032	0		=			
+ANR	5174181	PtrMemberAccess	s -> rx_cfg		5174032	0					
+ANR	5174182	Identifier	s		5174032	0					
+ANR	5174183	Identifier	rx_cfg		5174032	1					
+ANR	5174184	BitAndExpression	val & 0xcfff1ff0		5174032	1		&			
+ANR	5174185	Identifier	val		5174032	0					
+ANR	5174186	PrimaryExpression	0xcfff1ff0		5174032	1					
+ANR	5174187	BreakStatement	break ;	77:8:1237:1242	5174032	18	True				
+ANR	5174188	Label	case CSR_TX_CFG :	79:4:1249:1264	5174032	19	True				
+ANR	5174189	Identifier	CSR_TX_CFG		5174032	0					
+ANR	5174190	IfStatement	if ( val & 0x8000 )		5174032	20					
+ANR	5174191	Condition	val & 0x8000	81:12:1279:1290	5174032	0	True				
+ANR	5174192	BitAndExpression	val & 0x8000		5174032	0		&			
+ANR	5174193	Identifier	val		5174032	0					
+ANR	5174194	PrimaryExpression	0x8000		5174032	1					
+ANR	5174195	CompoundStatement		77:26:1178:1178	5174032	1					
+ANR	5174196	ExpressionStatement	s -> tx_status_fifo_used = 0	83:12:1308:1334	5174032	0	True				
+ANR	5174197	AssignmentExpression	s -> tx_status_fifo_used = 0		5174032	0		=			
+ANR	5174198	PtrMemberAccess	s -> tx_status_fifo_used		5174032	0					
+ANR	5174199	Identifier	s		5174032	0					
+ANR	5174200	Identifier	tx_status_fifo_used		5174032	1					
+ANR	5174201	PrimaryExpression	0		5174032	1					
+ANR	5174202	IfStatement	if ( val & 0x4000 )		5174032	21					
+ANR	5174203	Condition	val & 0x4000	87:12:1360:1371	5174032	0	True				
+ANR	5174204	BitAndExpression	val & 0x4000		5174032	0		&			
+ANR	5174205	Identifier	val		5174032	0					
+ANR	5174206	PrimaryExpression	0x4000		5174032	1					
+ANR	5174207	CompoundStatement		83:26:1259:1259	5174032	1					
+ANR	5174208	ExpressionStatement	s -> txp -> state = TX_IDLE	89:12:1389:1412	5174032	0	True				
+ANR	5174209	AssignmentExpression	s -> txp -> state = TX_IDLE		5174032	0		=			
+ANR	5174210	PtrMemberAccess	s -> txp -> state		5174032	0					
+ANR	5174211	PtrMemberAccess	s -> txp		5174032	0					
+ANR	5174212	Identifier	s		5174032	0					
+ANR	5174213	Identifier	txp		5174032	1					
+ANR	5174214	Identifier	state		5174032	1					
+ANR	5174215	Identifier	TX_IDLE		5174032	1					
+ANR	5174216	ExpressionStatement	s -> txp -> fifo_used = 0	91:12:1427:1448	5174032	1	True				
+ANR	5174217	AssignmentExpression	s -> txp -> fifo_used = 0		5174032	0		=			
+ANR	5174218	PtrMemberAccess	s -> txp -> fifo_used		5174032	0					
+ANR	5174219	PtrMemberAccess	s -> txp		5174032	0					
+ANR	5174220	Identifier	s		5174032	0					
+ANR	5174221	Identifier	txp		5174032	1					
+ANR	5174222	Identifier	fifo_used		5174032	1					
+ANR	5174223	PrimaryExpression	0		5174032	1					
+ANR	5174224	ExpressionStatement	s -> txp -> cmd_a = 0xffffffff	93:12:1463:1489	5174032	2	True				
+ANR	5174225	AssignmentExpression	s -> txp -> cmd_a = 0xffffffff		5174032	0		=			
+ANR	5174226	PtrMemberAccess	s -> txp -> cmd_a		5174032	0					
+ANR	5174227	PtrMemberAccess	s -> txp		5174032	0					
+ANR	5174228	Identifier	s		5174032	0					
+ANR	5174229	Identifier	txp		5174032	1					
+ANR	5174230	Identifier	cmd_a		5174032	1					
+ANR	5174231	PrimaryExpression	0xffffffff		5174032	1					
+ANR	5174232	ExpressionStatement	s -> tx_cfg = val & 6	97:8:1511:1530	5174032	22	True				
+ANR	5174233	AssignmentExpression	s -> tx_cfg = val & 6		5174032	0		=			
+ANR	5174234	PtrMemberAccess	s -> tx_cfg		5174032	0					
+ANR	5174235	Identifier	s		5174032	0					
+ANR	5174236	Identifier	tx_cfg		5174032	1					
+ANR	5174237	BitAndExpression	val & 6		5174032	1		&			
+ANR	5174238	Identifier	val		5174032	0					
+ANR	5174239	PrimaryExpression	6		5174032	1					
+ANR	5174240	BreakStatement	break ;	99:8:1541:1546	5174032	23	True				
+ANR	5174241	Label	case CSR_HW_CFG :	101:4:1553:1568	5174032	24	True				
+ANR	5174242	Identifier	CSR_HW_CFG		5174032	0					
+ANR	5174243	IfStatement	if ( val & 1 )		5174032	25					
+ANR	5174244	Condition	val & 1	103:12:1583:1589	5174032	0	True				
+ANR	5174245	BitAndExpression	val & 1		5174032	0		&			
+ANR	5174246	Identifier	val		5174032	0					
+ANR	5174247	PrimaryExpression	1		5174032	1					
+ANR	5174248	CompoundStatement		99:21:1477:1477	5174032	1					
+ANR	5174249	ExpressionStatement	lan9118_reset ( DEVICE ( s ) )	107:12:1631:1655	5174032	0	True				
+ANR	5174250	CallExpression	lan9118_reset ( DEVICE ( s ) )		5174032	0					
+ANR	5174251	Callee	lan9118_reset		5174032	0					
+ANR	5174252	Identifier	lan9118_reset		5174032	0					
+ANR	5174253	ArgumentList	DEVICE ( s )		5174032	1					
+ANR	5174254	Argument	DEVICE ( s )		5174032	0					
+ANR	5174255	CallExpression	DEVICE ( s )		5174032	0					
+ANR	5174256	Callee	DEVICE		5174032	0					
+ANR	5174257	Identifier	DEVICE		5174032	0					
+ANR	5174258	ArgumentList	s		5174032	1					
+ANR	5174259	Argument	s		5174032	0					
+ANR	5174260	Identifier	s		5174032	0					
+ANR	5174261	ElseStatement	else		5174032	0					
+ANR	5174262	CompoundStatement		105:15:1558:1558	5174032	0					
+ANR	5174263	ExpressionStatement	s -> hw_cfg = ( val & 0x003f300 ) | ( s -> hw_cfg & 0x4 )	111:12:1688:1737	5174032	0	True				
+ANR	5174264	AssignmentExpression	s -> hw_cfg = ( val & 0x003f300 ) | ( s -> hw_cfg & 0x4 )		5174032	0		=			
+ANR	5174265	PtrMemberAccess	s -> hw_cfg		5174032	0					
+ANR	5174266	Identifier	s		5174032	0					
+ANR	5174267	Identifier	hw_cfg		5174032	1					
+ANR	5174268	InclusiveOrExpression	( val & 0x003f300 ) | ( s -> hw_cfg & 0x4 )		5174032	1		|			
+ANR	5174269	BitAndExpression	val & 0x003f300		5174032	0		&			
+ANR	5174270	Identifier	val		5174032	0					
+ANR	5174271	PrimaryExpression	0x003f300		5174032	1					
+ANR	5174272	BitAndExpression	s -> hw_cfg & 0x4		5174032	1		&			
+ANR	5174273	PtrMemberAccess	s -> hw_cfg		5174032	0					
+ANR	5174274	Identifier	s		5174032	0					
+ANR	5174275	Identifier	hw_cfg		5174032	1					
+ANR	5174276	PrimaryExpression	0x4		5174032	1					
+ANR	5174277	BreakStatement	break ;	115:8:1759:1764	5174032	26	True				
+ANR	5174278	Label	case CSR_RX_DP_CTRL :	117:4:1771:1790	5174032	27	True				
+ANR	5174279	Identifier	CSR_RX_DP_CTRL		5174032	0					
+ANR	5174280	IfStatement	if ( val & 0x80000000 )		5174032	28					
+ANR	5174281	Condition	val & 0x80000000	119:12:1805:1820	5174032	0	True				
+ANR	5174282	BitAndExpression	val & 0x80000000		5174032	0		&			
+ANR	5174283	Identifier	val		5174032	0					
+ANR	5174284	PrimaryExpression	0x80000000		5174032	1					
+ANR	5174285	CompoundStatement		115:30:1708:1708	5174032	1					
+ANR	5174286	ExpressionStatement	s -> rxp_pad = 0	123:12:1887:1901	5174032	0	True				
+ANR	5174287	AssignmentExpression	s -> rxp_pad = 0		5174032	0		=			
+ANR	5174288	PtrMemberAccess	s -> rxp_pad		5174032	0					
+ANR	5174289	Identifier	s		5174032	0					
+ANR	5174290	Identifier	rxp_pad		5174032	1					
+ANR	5174291	PrimaryExpression	0		5174032	1					
+ANR	5174292	ExpressionStatement	s -> rxp_offset = 0	125:12:1916:1933	5174032	1	True				
+ANR	5174293	AssignmentExpression	s -> rxp_offset = 0		5174032	0		=			
+ANR	5174294	PtrMemberAccess	s -> rxp_offset		5174032	0					
+ANR	5174295	Identifier	s		5174032	0					
+ANR	5174296	Identifier	rxp_offset		5174032	1					
+ANR	5174297	PrimaryExpression	0		5174032	1					
+ANR	5174298	IfStatement	if ( s -> rxp_size == 0 )		5174032	2					
+ANR	5174299	Condition	s -> rxp_size == 0	127:16:1952:1967	5174032	0	True				
+ANR	5174300	EqualityExpression	s -> rxp_size == 0		5174032	0		==			
+ANR	5174301	PtrMemberAccess	s -> rxp_size		5174032	0					
+ANR	5174302	Identifier	s		5174032	0					
+ANR	5174303	Identifier	rxp_size		5174032	1					
+ANR	5174304	PrimaryExpression	0		5174032	1					
+ANR	5174305	CompoundStatement		123:34:1855:1855	5174032	1					
+ANR	5174306	ExpressionStatement	rx_fifo_pop ( s )	131:16:2050:2064	5174032	0	True				
+ANR	5174307	CallExpression	rx_fifo_pop ( s )		5174032	0					
+ANR	5174308	Callee	rx_fifo_pop		5174032	0					
+ANR	5174309	Identifier	rx_fifo_pop		5174032	0					
+ANR	5174310	ArgumentList	s		5174032	1					
+ANR	5174311	Argument	s		5174032	0					
+ANR	5174312	Identifier	s		5174032	0					
+ANR	5174313	ExpressionStatement	s -> rxp_pad = 0	133:16:2083:2097	5174032	1	True				
+ANR	5174314	AssignmentExpression	s -> rxp_pad = 0		5174032	0		=			
+ANR	5174315	PtrMemberAccess	s -> rxp_pad		5174032	0					
+ANR	5174316	Identifier	s		5174032	0					
+ANR	5174317	Identifier	rxp_pad		5174032	1					
+ANR	5174318	PrimaryExpression	0		5174032	1					
+ANR	5174319	ExpressionStatement	s -> rxp_offset = 0	135:16:2116:2133	5174032	2	True				
+ANR	5174320	AssignmentExpression	s -> rxp_offset = 0		5174032	0		=			
+ANR	5174321	PtrMemberAccess	s -> rxp_offset		5174032	0					
+ANR	5174322	Identifier	s		5174032	0					
+ANR	5174323	Identifier	rxp_offset		5174032	1					
+ANR	5174324	PrimaryExpression	0		5174032	1					
+ANR	5174325	ExpressionStatement	s -> rx_fifo_head += s -> rxp_size	139:12:2163:2193	5174032	3	True				
+ANR	5174326	AssignmentExpression	s -> rx_fifo_head += s -> rxp_size		5174032	0		+=			
+ANR	5174327	PtrMemberAccess	s -> rx_fifo_head		5174032	0					
+ANR	5174328	Identifier	s		5174032	0					
+ANR	5174329	Identifier	rx_fifo_head		5174032	1					
+ANR	5174330	PtrMemberAccess	s -> rxp_size		5174032	1					
+ANR	5174331	Identifier	s		5174032	0					
+ANR	5174332	Identifier	rxp_size		5174032	1					
+ANR	5174333	IfStatement	if ( s -> rx_fifo_head >= s -> rx_fifo_size )		5174032	4					
+ANR	5174334	Condition	s -> rx_fifo_head >= s -> rx_fifo_size	141:16:2212:2245	5174032	0	True				
+ANR	5174335	RelationalExpression	s -> rx_fifo_head >= s -> rx_fifo_size		5174032	0		>=			
+ANR	5174336	PtrMemberAccess	s -> rx_fifo_head		5174032	0					
+ANR	5174337	Identifier	s		5174032	0					
+ANR	5174338	Identifier	rx_fifo_head		5174032	1					
+ANR	5174339	PtrMemberAccess	s -> rx_fifo_size		5174032	1					
+ANR	5174340	Identifier	s		5174032	0					
+ANR	5174341	Identifier	rx_fifo_size		5174032	1					
+ANR	5174342	CompoundStatement		137:52:2133:2133	5174032	1					
+ANR	5174343	ExpressionStatement	s -> rx_fifo_head -= s -> rx_fifo_size	143:16:2267:2301	5174032	0	True				
+ANR	5174344	AssignmentExpression	s -> rx_fifo_head -= s -> rx_fifo_size		5174032	0		-=			
+ANR	5174345	PtrMemberAccess	s -> rx_fifo_head		5174032	0					
+ANR	5174346	Identifier	s		5174032	0					
+ANR	5174347	Identifier	rx_fifo_head		5174032	1					
+ANR	5174348	PtrMemberAccess	s -> rx_fifo_size		5174032	1					
+ANR	5174349	Identifier	s		5174032	0					
+ANR	5174350	Identifier	rx_fifo_size		5174032	1					
+ANR	5174351	BreakStatement	break ;	149:8:2338:2343	5174032	29	True				
+ANR	5174352	Label	case CSR_PMT_CTRL :	151:4:2350:2367	5174032	30	True				
+ANR	5174353	Identifier	CSR_PMT_CTRL		5174032	0					
+ANR	5174354	IfStatement	if ( val & 0x400 )		5174032	31					
+ANR	5174355	Condition	val & 0x400	153:12:2382:2392	5174032	0	True				
+ANR	5174356	BitAndExpression	val & 0x400		5174032	0		&			
+ANR	5174357	Identifier	val		5174032	0					
+ANR	5174358	PrimaryExpression	0x400		5174032	1					
+ANR	5174359	CompoundStatement		149:25:2280:2280	5174032	1					
+ANR	5174360	ExpressionStatement	phy_reset ( s )	155:12:2410:2422	5174032	0	True				
+ANR	5174361	CallExpression	phy_reset ( s )		5174032	0					
+ANR	5174362	Callee	phy_reset		5174032	0					
+ANR	5174363	Identifier	phy_reset		5174032	0					
+ANR	5174364	ArgumentList	s		5174032	1					
+ANR	5174365	Argument	s		5174032	0					
+ANR	5174366	Identifier	s		5174032	0					
+ANR	5174367	ExpressionStatement	s -> pmt_ctrl &= ~0x34e	159:8:2444:2465	5174032	32	True				
+ANR	5174368	AssignmentExpression	s -> pmt_ctrl &= ~0x34e		5174032	0		&=			
+ANR	5174369	PtrMemberAccess	s -> pmt_ctrl		5174032	0					
+ANR	5174370	Identifier	s		5174032	0					
+ANR	5174371	Identifier	pmt_ctrl		5174032	1					
+ANR	5174372	Identifier	~0x34e		5174032	1					
+ANR	5174373	ExpressionStatement	s -> pmt_ctrl |= ( val & 0x34e )	161:8:2476:2504	5174032	33	True				
+ANR	5174374	AssignmentExpression	s -> pmt_ctrl |= ( val & 0x34e )		5174032	0		|=			
+ANR	5174375	PtrMemberAccess	s -> pmt_ctrl		5174032	0					
+ANR	5174376	Identifier	s		5174032	0					
+ANR	5174377	Identifier	pmt_ctrl		5174032	1					
+ANR	5174378	BitAndExpression	val & 0x34e		5174032	1		&			
+ANR	5174379	Identifier	val		5174032	0					
+ANR	5174380	PrimaryExpression	0x34e		5174032	1					
+ANR	5174381	BreakStatement	break ;	163:8:2515:2520	5174032	34	True				
+ANR	5174382	Label	case CSR_GPIO_CFG :	165:4:2527:2544	5174032	35	True				
+ANR	5174383	Identifier	CSR_GPIO_CFG		5174032	0					
+ANR	5174384	ExpressionStatement	s -> gpio_cfg = val & 0x7777071f	169:8:2600:2630	5174032	36	True				
+ANR	5174385	AssignmentExpression	s -> gpio_cfg = val & 0x7777071f		5174032	0		=			
+ANR	5174386	PtrMemberAccess	s -> gpio_cfg		5174032	0					
+ANR	5174387	Identifier	s		5174032	0					
+ANR	5174388	Identifier	gpio_cfg		5174032	1					
+ANR	5174389	BitAndExpression	val & 0x7777071f		5174032	1		&			
+ANR	5174390	Identifier	val		5174032	0					
+ANR	5174391	PrimaryExpression	0x7777071f		5174032	1					
+ANR	5174392	BreakStatement	break ;	171:8:2641:2646	5174032	37	True				
+ANR	5174393	Label	case CSR_GPT_CFG :	173:4:2653:2669	5174032	38	True				
+ANR	5174394	Identifier	CSR_GPT_CFG		5174032	0					
+ANR	5174395	IfStatement	if ( ( s -> gpt_cfg ^ val ) & GPT_TIMER_EN )		5174032	39					
+ANR	5174396	Condition	( s -> gpt_cfg ^ val ) & GPT_TIMER_EN	175:12:2684:2716	5174032	0	True				
+ANR	5174397	BitAndExpression	( s -> gpt_cfg ^ val ) & GPT_TIMER_EN		5174032	0		&			
+ANR	5174398	ExclusiveOrExpression	s -> gpt_cfg ^ val		5174032	0		^			
+ANR	5174399	PtrMemberAccess	s -> gpt_cfg		5174032	0					
+ANR	5174400	Identifier	s		5174032	0					
+ANR	5174401	Identifier	gpt_cfg		5174032	1					
+ANR	5174402	Identifier	val		5174032	1					
+ANR	5174403	Identifier	GPT_TIMER_EN		5174032	1					
+ANR	5174404	CompoundStatement		171:47:2604:2604	5174032	1					
+ANR	5174405	IfStatement	if ( val & GPT_TIMER_EN )		5174032	0					
+ANR	5174406	Condition	val & GPT_TIMER_EN	177:16:2738:2755	5174032	0	True				
+ANR	5174407	BitAndExpression	val & GPT_TIMER_EN		5174032	0		&			
+ANR	5174408	Identifier	val		5174032	0					
+ANR	5174409	Identifier	GPT_TIMER_EN		5174032	1					
+ANR	5174410	CompoundStatement		173:36:2643:2643	5174032	1					
+ANR	5174411	ExpressionStatement	"ptimer_set_count ( s -> timer , val & 0xffff )"	179:16:2777:2817	5174032	0	True				
+ANR	5174412	CallExpression	"ptimer_set_count ( s -> timer , val & 0xffff )"		5174032	0					
+ANR	5174413	Callee	ptimer_set_count		5174032	0					
+ANR	5174414	Identifier	ptimer_set_count		5174032	0					
+ANR	5174415	ArgumentList	s -> timer		5174032	1					
+ANR	5174416	Argument	s -> timer		5174032	0					
+ANR	5174417	PtrMemberAccess	s -> timer		5174032	0					
+ANR	5174418	Identifier	s		5174032	0					
+ANR	5174419	Identifier	timer		5174032	1					
+ANR	5174420	Argument	val & 0xffff		5174032	1					
+ANR	5174421	BitAndExpression	val & 0xffff		5174032	0		&			
+ANR	5174422	Identifier	val		5174032	0					
+ANR	5174423	PrimaryExpression	0xffff		5174032	1					
+ANR	5174424	ExpressionStatement	"ptimer_run ( s -> timer , 0 )"	181:16:2836:2859	5174032	1	True				
+ANR	5174425	CallExpression	"ptimer_run ( s -> timer , 0 )"		5174032	0					
+ANR	5174426	Callee	ptimer_run		5174032	0					
+ANR	5174427	Identifier	ptimer_run		5174032	0					
+ANR	5174428	ArgumentList	s -> timer		5174032	1					
+ANR	5174429	Argument	s -> timer		5174032	0					
+ANR	5174430	PtrMemberAccess	s -> timer		5174032	0					
+ANR	5174431	Identifier	s		5174032	0					
+ANR	5174432	Identifier	timer		5174032	1					
+ANR	5174433	Argument	0		5174032	1					
+ANR	5174434	PrimaryExpression	0		5174032	0					
+ANR	5174435	ElseStatement	else		5174032	0					
+ANR	5174436	CompoundStatement		179:19:2766:2766	5174032	0					
+ANR	5174437	ExpressionStatement	ptimer_stop ( s -> timer )	185:16:2900:2921	5174032	0	True				
+ANR	5174438	CallExpression	ptimer_stop ( s -> timer )		5174032	0					
+ANR	5174439	Callee	ptimer_stop		5174032	0					
+ANR	5174440	Identifier	ptimer_stop		5174032	0					
+ANR	5174441	ArgumentList	s -> timer		5174032	1					
+ANR	5174442	Argument	s -> timer		5174032	0					
+ANR	5174443	PtrMemberAccess	s -> timer		5174032	0					
+ANR	5174444	Identifier	s		5174032	0					
+ANR	5174445	Identifier	timer		5174032	1					
+ANR	5174446	ExpressionStatement	"ptimer_set_count ( s -> timer , 0xffff )"	187:16:2940:2974	5174032	1	True				
+ANR	5174447	CallExpression	"ptimer_set_count ( s -> timer , 0xffff )"		5174032	0					
+ANR	5174448	Callee	ptimer_set_count		5174032	0					
+ANR	5174449	Identifier	ptimer_set_count		5174032	0					
+ANR	5174450	ArgumentList	s -> timer		5174032	1					
+ANR	5174451	Argument	s -> timer		5174032	0					
+ANR	5174452	PtrMemberAccess	s -> timer		5174032	0					
+ANR	5174453	Identifier	s		5174032	0					
+ANR	5174454	Identifier	timer		5174032	1					
+ANR	5174455	Argument	0xffff		5174032	1					
+ANR	5174456	PrimaryExpression	0xffff		5174032	0					
+ANR	5174457	ExpressionStatement	s -> gpt_cfg = val & ( GPT_TIMER_EN | 0xffff )	193:8:3011:3053	5174032	40	True				
+ANR	5174458	AssignmentExpression	s -> gpt_cfg = val & ( GPT_TIMER_EN | 0xffff )		5174032	0		=			
+ANR	5174459	PtrMemberAccess	s -> gpt_cfg		5174032	0					
+ANR	5174460	Identifier	s		5174032	0					
+ANR	5174461	Identifier	gpt_cfg		5174032	1					
+ANR	5174462	BitAndExpression	val & ( GPT_TIMER_EN | 0xffff )		5174032	1		&			
+ANR	5174463	Identifier	val		5174032	0					
+ANR	5174464	InclusiveOrExpression	GPT_TIMER_EN | 0xffff		5174032	1		|			
+ANR	5174465	Identifier	GPT_TIMER_EN		5174032	0					
+ANR	5174466	PrimaryExpression	0xffff		5174032	1					
+ANR	5174467	BreakStatement	break ;	195:8:3064:3069	5174032	41	True				
+ANR	5174468	Label	case CSR_WORD_SWAP :	197:4:3076:3094	5174032	42	True				
+ANR	5174469	Identifier	CSR_WORD_SWAP		5174032	0					
+ANR	5174470	ExpressionStatement	s -> word_swap = val	201:8:3159:3177	5174032	43	True				
+ANR	5174471	AssignmentExpression	s -> word_swap = val		5174032	0		=			
+ANR	5174472	PtrMemberAccess	s -> word_swap		5174032	0					
+ANR	5174473	Identifier	s		5174032	0					
+ANR	5174474	Identifier	word_swap		5174032	1					
+ANR	5174475	Identifier	val		5174032	1					
+ANR	5174476	BreakStatement	break ;	203:8:3188:3193	5174032	44	True				
+ANR	5174477	Label	case CSR_MAC_CSR_CMD :	205:4:3200:3220	5174032	45	True				
+ANR	5174478	Identifier	CSR_MAC_CSR_CMD		5174032	0					
+ANR	5174479	ExpressionStatement	s -> mac_cmd = val & 0x4000000f	207:8:3231:3260	5174032	46	True				
+ANR	5174480	AssignmentExpression	s -> mac_cmd = val & 0x4000000f		5174032	0		=			
+ANR	5174481	PtrMemberAccess	s -> mac_cmd		5174032	0					
+ANR	5174482	Identifier	s		5174032	0					
+ANR	5174483	Identifier	mac_cmd		5174032	1					
+ANR	5174484	BitAndExpression	val & 0x4000000f		5174032	1		&			
+ANR	5174485	Identifier	val		5174032	0					
+ANR	5174486	PrimaryExpression	0x4000000f		5174032	1					
+ANR	5174487	IfStatement	if ( val & 0x80000000 )		5174032	47					
+ANR	5174488	Condition	val & 0x80000000	209:12:3275:3290	5174032	0	True				
+ANR	5174489	BitAndExpression	val & 0x80000000		5174032	0		&			
+ANR	5174490	Identifier	val		5174032	0					
+ANR	5174491	PrimaryExpression	0x80000000		5174032	1					
+ANR	5174492	CompoundStatement		205:30:3178:3178	5174032	1					
+ANR	5174493	IfStatement	if ( val & 0x40000000 )		5174032	0					
+ANR	5174494	Condition	val & 0x40000000	211:16:3312:3327	5174032	0	True				
+ANR	5174495	BitAndExpression	val & 0x40000000		5174032	0		&			
+ANR	5174496	Identifier	val		5174032	0					
+ANR	5174497	PrimaryExpression	0x40000000		5174032	1					
+ANR	5174498	CompoundStatement		207:34:3215:3215	5174032	1					
+ANR	5174499	ExpressionStatement	"s -> mac_data = do_mac_read ( s , val & 0xf )"	213:16:3349:3388	5174032	0	True				
+ANR	5174500	AssignmentExpression	"s -> mac_data = do_mac_read ( s , val & 0xf )"		5174032	0		=			
+ANR	5174501	PtrMemberAccess	s -> mac_data		5174032	0					
+ANR	5174502	Identifier	s		5174032	0					
+ANR	5174503	Identifier	mac_data		5174032	1					
+ANR	5174504	CallExpression	"do_mac_read ( s , val & 0xf )"		5174032	1					
+ANR	5174505	Callee	do_mac_read		5174032	0					
+ANR	5174506	Identifier	do_mac_read		5174032	0					
+ANR	5174507	ArgumentList	s		5174032	1					
+ANR	5174508	Argument	s		5174032	0					
+ANR	5174509	Identifier	s		5174032	0					
+ANR	5174510	Argument	val & 0xf		5174032	1					
+ANR	5174511	BitAndExpression	val & 0xf		5174032	0		&			
+ANR	5174512	Identifier	val		5174032	0					
+ANR	5174513	PrimaryExpression	0xf		5174032	1					
+ANR	5174514	ExpressionStatement	"DPRINTF ( ""MAC read %d = 0x%08x\\n"" , val & 0xf , s -> mac_data )"	215:16:3407:3464	5174032	1	True				
+ANR	5174515	CallExpression	"DPRINTF ( ""MAC read %d = 0x%08x\\n"" , val & 0xf , s -> mac_data )"		5174032	0					
+ANR	5174516	Callee	DPRINTF		5174032	0					
+ANR	5174517	Identifier	DPRINTF		5174032	0					
+ANR	5174518	ArgumentList	"""MAC read %d = 0x%08x\\n"""		5174032	1					
+ANR	5174519	Argument	"""MAC read %d = 0x%08x\\n"""		5174032	0					
+ANR	5174520	PrimaryExpression	"""MAC read %d = 0x%08x\\n"""		5174032	0					
+ANR	5174521	Argument	val & 0xf		5174032	1					
+ANR	5174522	BitAndExpression	val & 0xf		5174032	0		&			
+ANR	5174523	Identifier	val		5174032	0					
+ANR	5174524	PrimaryExpression	0xf		5174032	1					
+ANR	5174525	Argument	s -> mac_data		5174032	2					
+ANR	5174526	PtrMemberAccess	s -> mac_data		5174032	0					
+ANR	5174527	Identifier	s		5174032	0					
+ANR	5174528	Identifier	mac_data		5174032	1					
+ANR	5174529	ElseStatement	else		5174032	0					
+ANR	5174530	CompoundStatement		213:19:3371:3371	5174032	0					
+ANR	5174531	ExpressionStatement	"DPRINTF ( ""MAC write %d = 0x%08x\\n"" , val & 0xf , s -> mac_data )"	219:16:3505:3563	5174032	0	True				
+ANR	5174532	CallExpression	"DPRINTF ( ""MAC write %d = 0x%08x\\n"" , val & 0xf , s -> mac_data )"		5174032	0					
+ANR	5174533	Callee	DPRINTF		5174032	0					
+ANR	5174534	Identifier	DPRINTF		5174032	0					
+ANR	5174535	ArgumentList	"""MAC write %d = 0x%08x\\n"""		5174032	1					
+ANR	5174536	Argument	"""MAC write %d = 0x%08x\\n"""		5174032	0					
+ANR	5174537	PrimaryExpression	"""MAC write %d = 0x%08x\\n"""		5174032	0					
+ANR	5174538	Argument	val & 0xf		5174032	1					
+ANR	5174539	BitAndExpression	val & 0xf		5174032	0		&			
+ANR	5174540	Identifier	val		5174032	0					
+ANR	5174541	PrimaryExpression	0xf		5174032	1					
+ANR	5174542	Argument	s -> mac_data		5174032	2					
+ANR	5174543	PtrMemberAccess	s -> mac_data		5174032	0					
+ANR	5174544	Identifier	s		5174032	0					
+ANR	5174545	Identifier	mac_data		5174032	1					
+ANR	5174546	ExpressionStatement	"do_mac_write ( s , val & 0xf , s -> mac_data )"	221:16:3582:3621	5174032	1	True				
+ANR	5174547	CallExpression	"do_mac_write ( s , val & 0xf , s -> mac_data )"		5174032	0					
+ANR	5174548	Callee	do_mac_write		5174032	0					
+ANR	5174549	Identifier	do_mac_write		5174032	0					
+ANR	5174550	ArgumentList	s		5174032	1					
+ANR	5174551	Argument	s		5174032	0					
+ANR	5174552	Identifier	s		5174032	0					
+ANR	5174553	Argument	val & 0xf		5174032	1					
+ANR	5174554	BitAndExpression	val & 0xf		5174032	0		&			
+ANR	5174555	Identifier	val		5174032	0					
+ANR	5174556	PrimaryExpression	0xf		5174032	1					
+ANR	5174557	Argument	s -> mac_data		5174032	2					
+ANR	5174558	PtrMemberAccess	s -> mac_data		5174032	0					
+ANR	5174559	Identifier	s		5174032	0					
+ANR	5174560	Identifier	mac_data		5174032	1					
+ANR	5174561	BreakStatement	break ;	227:8:3658:3663	5174032	48	True				
+ANR	5174562	Label	case CSR_MAC_CSR_DATA :	229:4:3670:3691	5174032	49	True				
+ANR	5174563	Identifier	CSR_MAC_CSR_DATA		5174032	0					
+ANR	5174564	ExpressionStatement	s -> mac_data = val	231:8:3702:3719	5174032	50	True				
+ANR	5174565	AssignmentExpression	s -> mac_data = val		5174032	0		=			
+ANR	5174566	PtrMemberAccess	s -> mac_data		5174032	0					
+ANR	5174567	Identifier	s		5174032	0					
+ANR	5174568	Identifier	mac_data		5174032	1					
+ANR	5174569	Identifier	val		5174032	1					
+ANR	5174570	BreakStatement	break ;	233:8:3730:3735	5174032	51	True				
+ANR	5174571	Label	case CSR_AFC_CFG :	235:4:3742:3758	5174032	52	True				
+ANR	5174572	Identifier	CSR_AFC_CFG		5174032	0					
+ANR	5174573	ExpressionStatement	s -> afc_cfg = val & 0x00ffffff	237:8:3769:3798	5174032	53	True				
+ANR	5174574	AssignmentExpression	s -> afc_cfg = val & 0x00ffffff		5174032	0		=			
+ANR	5174575	PtrMemberAccess	s -> afc_cfg		5174032	0					
+ANR	5174576	Identifier	s		5174032	0					
+ANR	5174577	Identifier	afc_cfg		5174032	1					
+ANR	5174578	BitAndExpression	val & 0x00ffffff		5174032	1		&			
+ANR	5174579	Identifier	val		5174032	0					
+ANR	5174580	PrimaryExpression	0x00ffffff		5174032	1					
+ANR	5174581	BreakStatement	break ;	239:8:3809:3814	5174032	54	True				
+ANR	5174582	Label	case CSR_E2P_CMD :	241:4:3821:3837	5174032	55	True				
+ANR	5174583	Identifier	CSR_E2P_CMD		5174032	0					
+ANR	5174584	ExpressionStatement	"lan9118_eeprom_cmd ( s , ( val >> 28 ) & 7 , val & 0x7f )"	243:8:3848:3898	5174032	56	True				
+ANR	5174585	CallExpression	"lan9118_eeprom_cmd ( s , ( val >> 28 ) & 7 , val & 0x7f )"		5174032	0					
+ANR	5174586	Callee	lan9118_eeprom_cmd		5174032	0					
+ANR	5174587	Identifier	lan9118_eeprom_cmd		5174032	0					
+ANR	5174588	ArgumentList	s		5174032	1					
+ANR	5174589	Argument	s		5174032	0					
+ANR	5174590	Identifier	s		5174032	0					
+ANR	5174591	Argument	( val >> 28 ) & 7		5174032	1					
+ANR	5174592	BitAndExpression	( val >> 28 ) & 7		5174032	0		&			
+ANR	5174593	ShiftExpression	val >> 28		5174032	0		>>			
+ANR	5174594	Identifier	val		5174032	0					
+ANR	5174595	PrimaryExpression	28		5174032	1					
+ANR	5174596	PrimaryExpression	7		5174032	1					
+ANR	5174597	Argument	val & 0x7f		5174032	2					
+ANR	5174598	BitAndExpression	val & 0x7f		5174032	0		&			
+ANR	5174599	Identifier	val		5174032	0					
+ANR	5174600	PrimaryExpression	0x7f		5174032	1					
+ANR	5174601	BreakStatement	break ;	245:8:3909:3914	5174032	57	True				
+ANR	5174602	Label	case CSR_E2P_DATA :	247:4:3921:3938	5174032	58	True				
+ANR	5174603	Identifier	CSR_E2P_DATA		5174032	0					
+ANR	5174604	ExpressionStatement	s -> e2p_data = val & 0xff	249:8:3949:3973	5174032	59	True				
+ANR	5174605	AssignmentExpression	s -> e2p_data = val & 0xff		5174032	0		=			
+ANR	5174606	PtrMemberAccess	s -> e2p_data		5174032	0					
+ANR	5174607	Identifier	s		5174032	0					
+ANR	5174608	Identifier	e2p_data		5174032	1					
+ANR	5174609	BitAndExpression	val & 0xff		5174032	1		&			
+ANR	5174610	Identifier	val		5174032	0					
+ANR	5174611	PrimaryExpression	0xff		5174032	1					
+ANR	5174612	BreakStatement	break ;	251:8:3984:3989	5174032	60	True				
+ANR	5174613	Label	default :	255:4:3998:4005	5174032	61	True				
+ANR	5174614	Identifier	default		5174032	0					
+ANR	5174615	ExpressionStatement	"hw_error ( ""lan9118_write: Bad reg 0x%x = %x\\n"" , ( int ) offset , ( int ) val )"	257:8:4016:4085	5174032	62	True				
+ANR	5174616	CallExpression	"hw_error ( ""lan9118_write: Bad reg 0x%x = %x\\n"" , ( int ) offset , ( int ) val )"		5174032	0					
+ANR	5174617	Callee	hw_error		5174032	0					
+ANR	5174618	Identifier	hw_error		5174032	0					
+ANR	5174619	ArgumentList	"""lan9118_write: Bad reg 0x%x = %x\\n"""		5174032	1					
+ANR	5174620	Argument	"""lan9118_write: Bad reg 0x%x = %x\\n"""		5174032	0					
+ANR	5174621	PrimaryExpression	"""lan9118_write: Bad reg 0x%x = %x\\n"""		5174032	0					
+ANR	5174622	Argument	( int ) offset		5174032	1					
+ANR	5174623	CastExpression	( int ) offset		5174032	0					
+ANR	5174624	CastTarget	int		5174032	0					
+ANR	5174625	Identifier	offset		5174032	1					
+ANR	5174626	Argument	( int ) val		5174032	2					
+ANR	5174627	CastExpression	( int ) val		5174032	0					
+ANR	5174628	CastTarget	int		5174032	0					
+ANR	5174629	Identifier	val		5174032	1					
+ANR	5174630	BreakStatement	break ;	259:8:4096:4101	5174032	63	True				
+ANR	5174631	ExpressionStatement	lan9118_update ( s )	263:4:4115:4132	5174032	4	True				
+ANR	5174632	CallExpression	lan9118_update ( s )		5174032	0					
+ANR	5174633	Callee	lan9118_update		5174032	0					
+ANR	5174634	Identifier	lan9118_update		5174032	0					
+ANR	5174635	ArgumentList	s		5174032	1					
+ANR	5174636	Argument	s		5174032	0					
+ANR	5174637	Identifier	s		5174032	0					
+ANR	5174638	ReturnType	static void		5174032	1					
+ANR	5174639	Identifier	lan9118_writel		5174032	2					
+ANR	5174640	ParameterList	"void * opaque , hwaddr offset , uint64_t val , unsigned size"		5174032	3					
+ANR	5174641	Parameter	void * opaque	1:27:27:38	5174032	0	True				
+ANR	5174642	ParameterType	void *		5174032	0					
+ANR	5174643	Identifier	opaque		5174032	1					
+ANR	5174644	Parameter	hwaddr offset	1:41:41:53	5174032	1	True				
+ANR	5174645	ParameterType	hwaddr		5174032	0					
+ANR	5174646	Identifier	offset		5174032	1					
+ANR	5174647	Parameter	uint64_t val	3:27:84:95	5174032	2	True				
+ANR	5174648	ParameterType	uint64_t		5174032	0					
+ANR	5174649	Identifier	val		5174032	1					
+ANR	5174650	Parameter	unsigned size	3:41:98:110	5174032	3	True				
+ANR	5174651	ParameterType	unsigned		5174032	0					
+ANR	5174652	Identifier	size		5174032	1					
+ANR	5174653	CFGEntryNode	ENTRY		5174032		True				
+ANR	5174654	CFGExitNode	EXIT		5174032		True				
+ANR	5174655	Symbol	IRQ_POL		5174032						
+ANR	5174656	Symbol	s -> rx_fifo_used		5174032						
+ANR	5174657	Symbol	s -> rx_packet_size_tail		5174032						
+ANR	5174658	Symbol	s -> irq_cfg		5174032						
+ANR	5174659	Symbol	s -> rxp_offset		5174032						
+ANR	5174660	Symbol	s -> afc_cfg		5174032						
+ANR	5174661	Symbol	s -> mac_cmd		5174032						
+ANR	5174662	Symbol	s -> rx_packet_size_head		5174032						
+ANR	5174663	Symbol	val		5174032						
+ANR	5174664	Symbol	offset		5174032						
+ANR	5174665	Symbol	DEVICE		5174032						
+ANR	5174666	Symbol	GPT_TIMER_EN		5174032						
+ANR	5174667	Symbol	s -> txp -> cmd_a		5174032						
+ANR	5174668	Symbol	s -> timer		5174032						
+ANR	5174669	Symbol	size		5174032						
+ANR	5174670	Symbol	s -> rxp_pad		5174032						
+ANR	5174671	Symbol	s -> gpio_cfg		5174032						
+ANR	5174672	Symbol	do_mac_read		5174032						
+ANR	5174673	Symbol	IRQ_EN		5174032						
+ANR	5174674	Symbol	TX_IDLE		5174032						
+ANR	5174675	Symbol	~0x34e		5174032						
+ANR	5174676	Symbol	s -> rx_status_fifo_used		5174032						
+ANR	5174677	Symbol	s -> rxp_size		5174032						
+ANR	5174678	Symbol	s -> rx_fifo_size		5174032						
+ANR	5174679	Symbol	s -> fifo_int		5174032						
+ANR	5174680	Symbol	* s -> rx_packet_size		5174032						
+ANR	5174681	Symbol	* s -> txp		5174032						
+ANR	5174682	Symbol	~val		5174032						
+ANR	5174683	Symbol	* * s		5174032						
+ANR	5174684	Symbol	s -> e2p_data		5174032						
+ANR	5174685	Symbol	~RESERVED_INT		5174032						
+ANR	5174686	Symbol	s -> word_swap		5174032						
+ANR	5174687	Symbol	IRQ_TYPE		5174032						
+ANR	5174688	Symbol	s -> rx_cfg		5174032						
+ANR	5174689	Symbol	* s -> rx_packet_size_head		5174032						
+ANR	5174690	Symbol	opaque		5174032						
+ANR	5174691	Symbol	s -> txp -> fifo_used		5174032						
+ANR	5174692	Symbol	s -> hw_cfg		5174032						
+ANR	5174693	Symbol	s -> int_en		5174032						
+ANR	5174694	Symbol	s -> rx_fifo_head		5174032						
+ANR	5174695	Symbol	s -> txp -> state		5174032						
+ANR	5174696	Symbol	SW_INT		5174032						
+ANR	5174697	Symbol	s -> rx_packet_size		5174032						
+ANR	5174698	Symbol	s -> mac_data		5174032						
+ANR	5174699	Symbol	IRQ_INT		5174032						
+ANR	5174700	Symbol	s -> tx_status_fifo_used		5174032						
+ANR	5174701	Symbol	s		5174032						
+ANR	5174702	Symbol	s -> pmt_ctrl		5174032						
+ANR	5174703	Symbol	s -> int_sts		5174032						
+ANR	5174704	Symbol	s -> tx_cfg		5174032						
+ANR	5174705	Symbol	s -> txp		5174032						
+ANR	5174706	Symbol	s -> gpt_cfg		5174032						
+ANR	5174707	Symbol	* s		5174032						

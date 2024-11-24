@@ -1,0 +1,156 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5912984	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_co_readv_1_1.c								
+ANR	5912985	Function	nbd_co_readv_1	1:0:0:685							
+ANR	5912986	FunctionDef	"nbd_co_readv_1 (NbdClientSession * client , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov , int offset)"		5912985	0					
+ANR	5912987	CompoundStatement		7:0:175:685	5912985	0					
+ANR	5912988	IdentifierDeclStatement	struct nbd_request request ;	9:4:182:208	5912985	0	True				
+ANR	5912989	IdentifierDecl	request		5912985	0					
+ANR	5912990	IdentifierDeclType	struct nbd_request		5912985	0					
+ANR	5912991	Identifier	request		5912985	1					
+ANR	5912992	IdentifierDeclStatement	struct nbd_reply reply ;	11:4:215:237	5912985	1	True				
+ANR	5912993	IdentifierDecl	reply		5912985	0					
+ANR	5912994	IdentifierDeclType	struct nbd_reply		5912985	0					
+ANR	5912995	Identifier	reply		5912985	1					
+ANR	5912996	IdentifierDeclStatement	ssize_t ret ;	13:4:244:255	5912985	2	True				
+ANR	5912997	IdentifierDecl	ret		5912985	0					
+ANR	5912998	IdentifierDeclType	ssize_t		5912985	0					
+ANR	5912999	Identifier	ret		5912985	1					
+ANR	5913000	ExpressionStatement	request . type = NBD_CMD_READ	17:4:264:291	5912985	3	True				
+ANR	5913001	AssignmentExpression	request . type = NBD_CMD_READ		5912985	0		=			
+ANR	5913002	MemberAccess	request . type		5912985	0					
+ANR	5913003	Identifier	request		5912985	0					
+ANR	5913004	Identifier	type		5912985	1					
+ANR	5913005	Identifier	NBD_CMD_READ		5912985	1					
+ANR	5913006	ExpressionStatement	request . from = sector_num * 512	19:4:298:329	5912985	4	True				
+ANR	5913007	AssignmentExpression	request . from = sector_num * 512		5912985	0		=			
+ANR	5913008	MemberAccess	request . from		5912985	0					
+ANR	5913009	Identifier	request		5912985	0					
+ANR	5913010	Identifier	from		5912985	1					
+ANR	5913011	MultiplicativeExpression	sector_num * 512		5912985	1		*			
+ANR	5913012	Identifier	sector_num		5912985	0					
+ANR	5913013	PrimaryExpression	512		5912985	1					
+ANR	5913014	ExpressionStatement	request . len = nb_sectors * 512	21:4:336:366	5912985	5	True				
+ANR	5913015	AssignmentExpression	request . len = nb_sectors * 512		5912985	0		=			
+ANR	5913016	MemberAccess	request . len		5912985	0					
+ANR	5913017	Identifier	request		5912985	0					
+ANR	5913018	Identifier	len		5912985	1					
+ANR	5913019	MultiplicativeExpression	nb_sectors * 512		5912985	1		*			
+ANR	5913020	Identifier	nb_sectors		5912985	0					
+ANR	5913021	PrimaryExpression	512		5912985	1					
+ANR	5913022	ExpressionStatement	"nbd_coroutine_start ( client , & request )"	25:4:375:412	5912985	6	True				
+ANR	5913023	CallExpression	"nbd_coroutine_start ( client , & request )"		5912985	0					
+ANR	5913024	Callee	nbd_coroutine_start		5912985	0					
+ANR	5913025	Identifier	nbd_coroutine_start		5912985	0					
+ANR	5913026	ArgumentList	client		5912985	1					
+ANR	5913027	Argument	client		5912985	0					
+ANR	5913028	Identifier	client		5912985	0					
+ANR	5913029	Argument	& request		5912985	1					
+ANR	5913030	UnaryOperationExpression	& request		5912985	0					
+ANR	5913031	UnaryOperator	&		5912985	0					
+ANR	5913032	Identifier	request		5912985	1					
+ANR	5913033	ExpressionStatement	"ret = nbd_co_send_request ( client , & request , NULL , 0 )"	27:4:419:471	5912985	7	True				
+ANR	5913034	AssignmentExpression	"ret = nbd_co_send_request ( client , & request , NULL , 0 )"		5912985	0		=			
+ANR	5913035	Identifier	ret		5912985	0					
+ANR	5913036	CallExpression	"nbd_co_send_request ( client , & request , NULL , 0 )"		5912985	1					
+ANR	5913037	Callee	nbd_co_send_request		5912985	0					
+ANR	5913038	Identifier	nbd_co_send_request		5912985	0					
+ANR	5913039	ArgumentList	client		5912985	1					
+ANR	5913040	Argument	client		5912985	0					
+ANR	5913041	Identifier	client		5912985	0					
+ANR	5913042	Argument	& request		5912985	1					
+ANR	5913043	UnaryOperationExpression	& request		5912985	0					
+ANR	5913044	UnaryOperator	&		5912985	0					
+ANR	5913045	Identifier	request		5912985	1					
+ANR	5913046	Argument	NULL		5912985	2					
+ANR	5913047	Identifier	NULL		5912985	0					
+ANR	5913048	Argument	0		5912985	3					
+ANR	5913049	PrimaryExpression	0		5912985	0					
+ANR	5913050	IfStatement	if ( ret < 0 )		5912985	8					
+ANR	5913051	Condition	ret < 0	29:8:482:488	5912985	0	True				
+ANR	5913052	RelationalExpression	ret < 0		5912985	0		<			
+ANR	5913053	Identifier	ret		5912985	0					
+ANR	5913054	PrimaryExpression	0		5912985	1					
+ANR	5913055	CompoundStatement		23:17:315:315	5912985	1					
+ANR	5913056	ExpressionStatement	reply . error = - ret	31:8:502:520	5912985	0	True				
+ANR	5913057	AssignmentExpression	reply . error = - ret		5912985	0		=			
+ANR	5913058	MemberAccess	reply . error		5912985	0					
+ANR	5913059	Identifier	reply		5912985	0					
+ANR	5913060	Identifier	error		5912985	1					
+ANR	5913061	UnaryOperationExpression	- ret		5912985	1					
+ANR	5913062	UnaryOperator	-		5912985	0					
+ANR	5913063	Identifier	ret		5912985	1					
+ANR	5913064	ElseStatement	else		5912985	0					
+ANR	5913065	CompoundStatement		27:11:358:358	5912985	0					
+ANR	5913066	ExpressionStatement	"nbd_co_receive_reply ( client , & request , & reply , qiov , offset )"	35:8:545:605	5912985	0	True				
+ANR	5913067	CallExpression	"nbd_co_receive_reply ( client , & request , & reply , qiov , offset )"		5912985	0					
+ANR	5913068	Callee	nbd_co_receive_reply		5912985	0					
+ANR	5913069	Identifier	nbd_co_receive_reply		5912985	0					
+ANR	5913070	ArgumentList	client		5912985	1					
+ANR	5913071	Argument	client		5912985	0					
+ANR	5913072	Identifier	client		5912985	0					
+ANR	5913073	Argument	& request		5912985	1					
+ANR	5913074	UnaryOperationExpression	& request		5912985	0					
+ANR	5913075	UnaryOperator	&		5912985	0					
+ANR	5913076	Identifier	request		5912985	1					
+ANR	5913077	Argument	& reply		5912985	2					
+ANR	5913078	UnaryOperationExpression	& reply		5912985	0					
+ANR	5913079	UnaryOperator	&		5912985	0					
+ANR	5913080	Identifier	reply		5912985	1					
+ANR	5913081	Argument	qiov		5912985	3					
+ANR	5913082	Identifier	qiov		5912985	0					
+ANR	5913083	Argument	offset		5912985	4					
+ANR	5913084	Identifier	offset		5912985	0					
+ANR	5913085	ExpressionStatement	"nbd_coroutine_end ( client , & request )"	39:4:619:654	5912985	9	True				
+ANR	5913086	CallExpression	"nbd_coroutine_end ( client , & request )"		5912985	0					
+ANR	5913087	Callee	nbd_coroutine_end		5912985	0					
+ANR	5913088	Identifier	nbd_coroutine_end		5912985	0					
+ANR	5913089	ArgumentList	client		5912985	1					
+ANR	5913090	Argument	client		5912985	0					
+ANR	5913091	Identifier	client		5912985	0					
+ANR	5913092	Argument	& request		5912985	1					
+ANR	5913093	UnaryOperationExpression	& request		5912985	0					
+ANR	5913094	UnaryOperator	&		5912985	0					
+ANR	5913095	Identifier	request		5912985	1					
+ANR	5913096	ReturnStatement	return - reply . error ;	41:4:661:680	5912985	10	True				
+ANR	5913097	UnaryOperationExpression	- reply . error		5912985	0					
+ANR	5913098	UnaryOperator	-		5912985	0					
+ANR	5913099	MemberAccess	reply . error		5912985	1					
+ANR	5913100	Identifier	reply		5912985	0					
+ANR	5913101	Identifier	error		5912985	1					
+ANR	5913102	ReturnType	static int		5912985	1					
+ANR	5913103	Identifier	nbd_co_readv_1		5912985	2					
+ANR	5913104	ParameterList	"NbdClientSession * client , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov , int offset"		5912985	3					
+ANR	5913105	Parameter	NbdClientSession * client	1:26:26:49	5912985	0	True				
+ANR	5913106	ParameterType	NbdClientSession *		5912985	0					
+ANR	5913107	Identifier	client		5912985	1					
+ANR	5913108	Parameter	int64_t sector_num	1:52:52:69	5912985	1	True				
+ANR	5913109	ParameterType	int64_t		5912985	0					
+ANR	5913110	Identifier	sector_num		5912985	1					
+ANR	5913111	Parameter	int nb_sectors	3:26:99:112	5912985	2	True				
+ANR	5913112	ParameterType	int		5912985	0					
+ANR	5913113	Identifier	nb_sectors		5912985	1					
+ANR	5913114	Parameter	QEMUIOVector * qiov	3:42:115:132	5912985	3	True				
+ANR	5913115	ParameterType	QEMUIOVector *		5912985	0					
+ANR	5913116	Identifier	qiov		5912985	1					
+ANR	5913117	Parameter	int offset	5:26:162:171	5912985	4	True				
+ANR	5913118	ParameterType	int		5912985	0					
+ANR	5913119	Identifier	offset		5912985	1					
+ANR	5913120	CFGEntryNode	ENTRY		5912985		True				
+ANR	5913121	CFGExitNode	EXIT		5912985		True				
+ANR	5913122	Symbol	ret		5912985						
+ANR	5913123	Symbol	request		5912985						
+ANR	5913124	Symbol	nb_sectors		5912985						
+ANR	5913125	Symbol	nbd_co_send_request		5912985						
+ANR	5913126	Symbol	NULL		5912985						
+ANR	5913127	Symbol	offset		5912985						
+ANR	5913128	Symbol	& request		5912985						
+ANR	5913129	Symbol	qiov		5912985						
+ANR	5913130	Symbol	& reply		5912985						
+ANR	5913131	Symbol	sector_num		5912985						
+ANR	5913132	Symbol	request . len		5912985						
+ANR	5913133	Symbol	request . from		5912985						
+ANR	5913134	Symbol	reply . error		5912985						
+ANR	5913135	Symbol	client		5912985						
+ANR	5913136	Symbol	request . type		5912985						
+ANR	5913137	Symbol	reply		5912985						
+ANR	5913138	Symbol	NBD_CMD_READ		5912985						

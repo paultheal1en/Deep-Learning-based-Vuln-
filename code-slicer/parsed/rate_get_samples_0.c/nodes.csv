@@ -1,0 +1,139 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7232116	File	/home/p4ultr4n/workplace/ReVeal/raw_code/rate_get_samples_0.c								
+ANR	7232117	Function	rate_get_samples	1:0:0:631							
+ANR	7232118	FunctionDef	"rate_get_samples (struct audio_pcm_info * info , SpiceRateCtl * rate)"		7232117	0					
+ANR	7232119	CompoundStatement		3:0:79:631	7232117	0					
+ANR	7232120	IdentifierDeclStatement	int64_t now ;	5:4:86:97	7232117	0	True				
+ANR	7232121	IdentifierDecl	now		7232117	0					
+ANR	7232122	IdentifierDeclType	int64_t		7232117	0					
+ANR	7232123	Identifier	now		7232117	1					
+ANR	7232124	IdentifierDeclStatement	int64_t ticks ;	7:4:104:117	7232117	1	True				
+ANR	7232125	IdentifierDecl	ticks		7232117	0					
+ANR	7232126	IdentifierDeclType	int64_t		7232117	0					
+ANR	7232127	Identifier	ticks		7232117	1					
+ANR	7232128	IdentifierDeclStatement	int64_t bytes ;	9:4:124:137	7232117	2	True				
+ANR	7232129	IdentifierDecl	bytes		7232117	0					
+ANR	7232130	IdentifierDeclType	int64_t		7232117	0					
+ANR	7232131	Identifier	bytes		7232117	1					
+ANR	7232132	IdentifierDeclStatement	int64_t samples ;	11:4:144:159	7232117	3	True				
+ANR	7232133	IdentifierDecl	samples		7232117	0					
+ANR	7232134	IdentifierDeclType	int64_t		7232117	0					
+ANR	7232135	Identifier	samples		7232117	1					
+ANR	7232136	ExpressionStatement	now = qemu_get_clock ( vm_clock )	15:4:168:199	7232117	4	True				
+ANR	7232137	AssignmentExpression	now = qemu_get_clock ( vm_clock )		7232117	0		=			
+ANR	7232138	Identifier	now		7232117	0					
+ANR	7232139	CallExpression	qemu_get_clock ( vm_clock )		7232117	1					
+ANR	7232140	Callee	qemu_get_clock		7232117	0					
+ANR	7232141	Identifier	qemu_get_clock		7232117	0					
+ANR	7232142	ArgumentList	vm_clock		7232117	1					
+ANR	7232143	Argument	vm_clock		7232117	0					
+ANR	7232144	Identifier	vm_clock		7232117	0					
+ANR	7232145	ExpressionStatement	ticks = now - rate -> start_ticks	17:4:206:237	7232117	5	True				
+ANR	7232146	AssignmentExpression	ticks = now - rate -> start_ticks		7232117	0		=			
+ANR	7232147	Identifier	ticks		7232117	0					
+ANR	7232148	AdditiveExpression	now - rate -> start_ticks		7232117	1		-			
+ANR	7232149	Identifier	now		7232117	0					
+ANR	7232150	PtrMemberAccess	rate -> start_ticks		7232117	1					
+ANR	7232151	Identifier	rate		7232117	0					
+ANR	7232152	Identifier	start_ticks		7232117	1					
+ANR	7232153	ExpressionStatement	"bytes = muldiv64 ( ticks , info -> bytes_per_second , get_ticks_per_sec ( ) )"	19:4:244:314	7232117	6	True				
+ANR	7232154	AssignmentExpression	"bytes = muldiv64 ( ticks , info -> bytes_per_second , get_ticks_per_sec ( ) )"		7232117	0		=			
+ANR	7232155	Identifier	bytes		7232117	0					
+ANR	7232156	CallExpression	"muldiv64 ( ticks , info -> bytes_per_second , get_ticks_per_sec ( ) )"		7232117	1					
+ANR	7232157	Callee	muldiv64		7232117	0					
+ANR	7232158	Identifier	muldiv64		7232117	0					
+ANR	7232159	ArgumentList	ticks		7232117	1					
+ANR	7232160	Argument	ticks		7232117	0					
+ANR	7232161	Identifier	ticks		7232117	0					
+ANR	7232162	Argument	info -> bytes_per_second		7232117	1					
+ANR	7232163	PtrMemberAccess	info -> bytes_per_second		7232117	0					
+ANR	7232164	Identifier	info		7232117	0					
+ANR	7232165	Identifier	bytes_per_second		7232117	1					
+ANR	7232166	Argument	get_ticks_per_sec ( )		7232117	2					
+ANR	7232167	CallExpression	get_ticks_per_sec ( )		7232117	0					
+ANR	7232168	Callee	get_ticks_per_sec		7232117	0					
+ANR	7232169	Identifier	get_ticks_per_sec		7232117	0					
+ANR	7232170	ArgumentList			7232117	1					
+ANR	7232171	ExpressionStatement	samples = ( bytes - rate -> bytes_sent ) >> info -> shift	21:4:321:372	7232117	7	True				
+ANR	7232172	AssignmentExpression	samples = ( bytes - rate -> bytes_sent ) >> info -> shift		7232117	0		=			
+ANR	7232173	Identifier	samples		7232117	0					
+ANR	7232174	ShiftExpression	( bytes - rate -> bytes_sent ) >> info -> shift		7232117	1		>>			
+ANR	7232175	AdditiveExpression	bytes - rate -> bytes_sent		7232117	0		-			
+ANR	7232176	Identifier	bytes		7232117	0					
+ANR	7232177	PtrMemberAccess	rate -> bytes_sent		7232117	1					
+ANR	7232178	Identifier	rate		7232117	0					
+ANR	7232179	Identifier	bytes_sent		7232117	1					
+ANR	7232180	PtrMemberAccess	info -> shift		7232117	1					
+ANR	7232181	Identifier	info		7232117	0					
+ANR	7232182	Identifier	shift		7232117	1					
+ANR	7232183	IfStatement	if ( samples < 0 || samples > 65536 )		7232117	8					
+ANR	7232184	Condition	samples < 0 || samples > 65536	23:8:383:412	7232117	0	True				
+ANR	7232185	OrExpression	samples < 0 || samples > 65536		7232117	0		||			
+ANR	7232186	RelationalExpression	samples < 0		7232117	0		<			
+ANR	7232187	Identifier	samples		7232117	0					
+ANR	7232188	PrimaryExpression	0		7232117	1					
+ANR	7232189	RelationalExpression	samples > 65536		7232117	1		>			
+ANR	7232190	Identifier	samples		7232117	0					
+ANR	7232191	PrimaryExpression	65536		7232117	1					
+ANR	7232192	CompoundStatement		21:40:335:335	7232117	1					
+ANR	7232193	Statement	fprintf	25:8:426:432	7232117	0	True				
+ANR	7232194	Statement	(	25:16:434:434	7232117	1	True				
+ANR	7232195	Statement	stderr	25:17:435:440	7232117	2	True				
+ANR	7232196	Statement	","	25:23:441:441	7232117	3	True				
+ANR	7232197	Statement	"""Resetting rate control (%"""	25:25:443:469	7232117	4	True				
+ANR	7232198	Statement	PRId64	25:53:471:476	7232117	5	True				
+ANR	7232199	Statement	""" samples)\\n"""	25:60:478:490	7232117	6	True				
+ANR	7232200	Statement	","	25:73:491:491	7232117	7	True				
+ANR	7232201	Statement	samples	25:75:493:499	7232117	8	True				
+ANR	7232202	Statement	)	25:82:500:500	7232117	9	True				
+ANR	7232203	ExpressionStatement		25:83:501:501	7232117	10	True				
+ANR	7232204	ExpressionStatement	rate_start ( rate )	27:8:512:529	7232117	11	True				
+ANR	7232205	CallExpression	rate_start ( rate )		7232117	0					
+ANR	7232206	Callee	rate_start		7232117	0					
+ANR	7232207	Identifier	rate_start		7232117	0					
+ANR	7232208	ArgumentList	rate		7232117	1					
+ANR	7232209	Argument	rate		7232117	0					
+ANR	7232210	Identifier	rate		7232117	0					
+ANR	7232211	ExpressionStatement	samples = 0	29:8:540:551	7232117	12	True				
+ANR	7232212	AssignmentExpression	samples = 0		7232117	0		=			
+ANR	7232213	Identifier	samples		7232117	0					
+ANR	7232214	PrimaryExpression	0		7232117	1					
+ANR	7232215	ExpressionStatement	rate -> bytes_sent += samples << info -> shift	33:4:565:607	7232117	9	True				
+ANR	7232216	AssignmentExpression	rate -> bytes_sent += samples << info -> shift		7232117	0		+=			
+ANR	7232217	PtrMemberAccess	rate -> bytes_sent		7232117	0					
+ANR	7232218	Identifier	rate		7232117	0					
+ANR	7232219	Identifier	bytes_sent		7232117	1					
+ANR	7232220	ShiftExpression	samples << info -> shift		7232117	1		<<			
+ANR	7232221	Identifier	samples		7232117	0					
+ANR	7232222	PtrMemberAccess	info -> shift		7232117	1					
+ANR	7232223	Identifier	info		7232117	0					
+ANR	7232224	Identifier	shift		7232117	1					
+ANR	7232225	ReturnStatement	return samples ;	35:4:614:628	7232117	10	True				
+ANR	7232226	Identifier	samples		7232117	0					
+ANR	7232227	ReturnType	static int		7232117	1					
+ANR	7232228	Identifier	rate_get_samples		7232117	2					
+ANR	7232229	ParameterList	"struct audio_pcm_info * info , SpiceRateCtl * rate"		7232117	3					
+ANR	7232230	Parameter	struct audio_pcm_info * info	1:29:29:55	7232117	0	True				
+ANR	7232231	ParameterType	struct audio_pcm_info *		7232117	0					
+ANR	7232232	Identifier	info		7232117	1					
+ANR	7232233	Parameter	SpiceRateCtl * rate	1:58:58:75	7232117	1	True				
+ANR	7232234	ParameterType	SpiceRateCtl *		7232117	0					
+ANR	7232235	Identifier	rate		7232117	1					
+ANR	7232236	CFGEntryNode	ENTRY		7232117		True				
+ANR	7232237	CFGExitNode	EXIT		7232117		True				
+ANR	7232238	Symbol	info -> bytes_per_second		7232117						
+ANR	7232239	Symbol	ticks		7232117						
+ANR	7232240	Symbol	rate -> bytes_sent		7232117						
+ANR	7232241	Symbol	rate -> start_ticks		7232117						
+ANR	7232242	Symbol	info -> shift		7232117						
+ANR	7232243	Symbol	samples		7232117						
+ANR	7232244	Symbol	get_ticks_per_sec		7232117						
+ANR	7232245	Symbol	vm_clock		7232117						
+ANR	7232246	Symbol	qemu_get_clock		7232117						
+ANR	7232247	Symbol	rate		7232117						
+ANR	7232248	Symbol	* rate		7232117						
+ANR	7232249	Symbol	bytes		7232117						
+ANR	7232250	Symbol	now		7232117						
+ANR	7232251	Symbol	* info		7232117						
+ANR	7232252	Symbol	muldiv64		7232117						
+ANR	7232253	Symbol	info		7232117						

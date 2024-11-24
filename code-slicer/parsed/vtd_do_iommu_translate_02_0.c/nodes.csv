@@ -1,0 +1,668 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9363635	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vtd_do_iommu_translate_02_0.c								
+ANR	9363636	Function	vtd_do_iommu_translate	1:0:0:4390							
+ANR	9363637	FunctionDef	"vtd_do_iommu_translate (VTDAddressSpace * vtd_as , PCIBus * bus , uint8_t devfn , hwaddr addr , bool is_write , IOMMUTLBEntry * entry)"		9363636	0					
+ANR	9363638	CompoundStatement		7:0:211:4390	9363636	0					
+ANR	9363639	IdentifierDeclStatement	IntelIOMMUState * s = vtd_as -> iommu_state ;	9:4:218:258	9363636	0	True				
+ANR	9363640	IdentifierDecl	* s = vtd_as -> iommu_state		9363636	0					
+ANR	9363641	IdentifierDeclType	IntelIOMMUState *		9363636	0					
+ANR	9363642	Identifier	s		9363636	1					
+ANR	9363643	AssignmentExpression	* s = vtd_as -> iommu_state		9363636	2		=			
+ANR	9363644	Identifier	s		9363636	0					
+ANR	9363645	PtrMemberAccess	vtd_as -> iommu_state		9363636	1					
+ANR	9363646	Identifier	vtd_as		9363636	0					
+ANR	9363647	Identifier	iommu_state		9363636	1					
+ANR	9363648	IdentifierDeclStatement	VTDContextEntry ce ;	11:4:265:283	9363636	1	True				
+ANR	9363649	IdentifierDecl	ce		9363636	0					
+ANR	9363650	IdentifierDeclType	VTDContextEntry		9363636	0					
+ANR	9363651	Identifier	ce		9363636	1					
+ANR	9363652	IdentifierDeclStatement	uint8_t bus_num = pci_bus_num ( bus ) ;	13:4:290:324	9363636	2	True				
+ANR	9363653	IdentifierDecl	bus_num = pci_bus_num ( bus )		9363636	0					
+ANR	9363654	IdentifierDeclType	uint8_t		9363636	0					
+ANR	9363655	Identifier	bus_num		9363636	1					
+ANR	9363656	AssignmentExpression	bus_num = pci_bus_num ( bus )		9363636	2		=			
+ANR	9363657	Identifier	bus_num		9363636	0					
+ANR	9363658	CallExpression	pci_bus_num ( bus )		9363636	1					
+ANR	9363659	Callee	pci_bus_num		9363636	0					
+ANR	9363660	Identifier	pci_bus_num		9363636	0					
+ANR	9363661	ArgumentList	bus		9363636	1					
+ANR	9363662	Argument	bus		9363636	0					
+ANR	9363663	Identifier	bus		9363636	0					
+ANR	9363664	IdentifierDeclStatement	VTDContextCacheEntry * cc_entry = & vtd_as -> context_cache_entry ;	15:4:331:392	9363636	3	True				
+ANR	9363665	IdentifierDecl	* cc_entry = & vtd_as -> context_cache_entry		9363636	0					
+ANR	9363666	IdentifierDeclType	VTDContextCacheEntry *		9363636	0					
+ANR	9363667	Identifier	cc_entry		9363636	1					
+ANR	9363668	AssignmentExpression	* cc_entry = & vtd_as -> context_cache_entry		9363636	2		=			
+ANR	9363669	Identifier	cc_entry		9363636	0					
+ANR	9363670	UnaryOperationExpression	& vtd_as -> context_cache_entry		9363636	1					
+ANR	9363671	UnaryOperator	&		9363636	0					
+ANR	9363672	PtrMemberAccess	vtd_as -> context_cache_entry		9363636	1					
+ANR	9363673	Identifier	vtd_as		9363636	0					
+ANR	9363674	Identifier	context_cache_entry		9363636	1					
+ANR	9363675	IdentifierDeclStatement	"uint64_t slpte , page_mask ;"	17:4:399:424	9363636	4	True				
+ANR	9363676	IdentifierDecl	slpte		9363636	0					
+ANR	9363677	IdentifierDeclType	uint64_t		9363636	0					
+ANR	9363678	Identifier	slpte		9363636	1					
+ANR	9363679	IdentifierDecl	page_mask		9363636	1					
+ANR	9363680	IdentifierDeclType	uint64_t		9363636	0					
+ANR	9363681	Identifier	page_mask		9363636	1					
+ANR	9363682	IdentifierDeclStatement	uint32_t level ;	19:4:431:445	9363636	5	True				
+ANR	9363683	IdentifierDecl	level		9363636	0					
+ANR	9363684	IdentifierDeclType	uint32_t		9363636	0					
+ANR	9363685	Identifier	level		9363636	1					
+ANR	9363686	IdentifierDeclStatement	"uint16_t source_id = vtd_make_source_id ( bus_num , devfn ) ;"	21:4:452:507	9363636	6	True				
+ANR	9363687	IdentifierDecl	"source_id = vtd_make_source_id ( bus_num , devfn )"		9363636	0					
+ANR	9363688	IdentifierDeclType	uint16_t		9363636	0					
+ANR	9363689	Identifier	source_id		9363636	1					
+ANR	9363690	AssignmentExpression	"source_id = vtd_make_source_id ( bus_num , devfn )"		9363636	2		=			
+ANR	9363691	Identifier	source_id		9363636	0					
+ANR	9363692	CallExpression	"vtd_make_source_id ( bus_num , devfn )"		9363636	1					
+ANR	9363693	Callee	vtd_make_source_id		9363636	0					
+ANR	9363694	Identifier	vtd_make_source_id		9363636	0					
+ANR	9363695	ArgumentList	bus_num		9363636	1					
+ANR	9363696	Argument	bus_num		9363636	0					
+ANR	9363697	Identifier	bus_num		9363636	0					
+ANR	9363698	Argument	devfn		9363636	1					
+ANR	9363699	Identifier	devfn		9363636	0					
+ANR	9363700	IdentifierDeclStatement	int ret_fr ;	23:4:514:524	9363636	7	True				
+ANR	9363701	IdentifierDecl	ret_fr		9363636	0					
+ANR	9363702	IdentifierDeclType	int		9363636	0					
+ANR	9363703	Identifier	ret_fr		9363636	1					
+ANR	9363704	IdentifierDeclStatement	bool is_fpd_set = false ;	25:4:531:554	9363636	8	True				
+ANR	9363705	IdentifierDecl	is_fpd_set = false		9363636	0					
+ANR	9363706	IdentifierDeclType	bool		9363636	0					
+ANR	9363707	Identifier	is_fpd_set		9363636	1					
+ANR	9363708	AssignmentExpression	is_fpd_set = false		9363636	2		=			
+ANR	9363709	Identifier	false		9363636	0					
+ANR	9363710	Identifier	false		9363636	1					
+ANR	9363711	IdentifierDeclStatement	bool reads = true ;	27:4:561:578	9363636	9	True				
+ANR	9363712	IdentifierDecl	reads = true		9363636	0					
+ANR	9363713	IdentifierDeclType	bool		9363636	0					
+ANR	9363714	Identifier	reads		9363636	1					
+ANR	9363715	AssignmentExpression	reads = true		9363636	2		=			
+ANR	9363716	Identifier	true		9363636	0					
+ANR	9363717	Identifier	true		9363636	1					
+ANR	9363718	IdentifierDeclStatement	bool writes = true ;	29:4:585:603	9363636	10	True				
+ANR	9363719	IdentifierDecl	writes = true		9363636	0					
+ANR	9363720	IdentifierDeclType	bool		9363636	0					
+ANR	9363721	Identifier	writes		9363636	1					
+ANR	9363722	AssignmentExpression	writes = true		9363636	2		=			
+ANR	9363723	Identifier	true		9363636	0					
+ANR	9363724	Identifier	true		9363636	1					
+ANR	9363725	IdentifierDeclStatement	uint8_t access_flags ;	31:4:610:630	9363636	11	True				
+ANR	9363726	IdentifierDecl	access_flags		9363636	0					
+ANR	9363727	IdentifierDeclType	uint8_t		9363636	0					
+ANR	9363728	Identifier	access_flags		9363636	1					
+ANR	9363729	IdentifierDeclStatement	VTDIOTLBEntry * iotlb_entry ;	33:4:637:663	9363636	12	True				
+ANR	9363730	IdentifierDecl	* iotlb_entry		9363636	0					
+ANR	9363731	IdentifierDeclType	VTDIOTLBEntry *		9363636	0					
+ANR	9363732	Identifier	iotlb_entry		9363636	1					
+ANR	9363733	ExpressionStatement	assert ( ! vtd_is_interrupt_addr ( addr ) )	45:4:824:860	9363636	13	True				
+ANR	9363734	CallExpression	assert ( ! vtd_is_interrupt_addr ( addr ) )		9363636	0					
+ANR	9363735	Callee	assert		9363636	0					
+ANR	9363736	Identifier	assert		9363636	0					
+ANR	9363737	ArgumentList	! vtd_is_interrupt_addr ( addr )		9363636	1					
+ANR	9363738	Argument	! vtd_is_interrupt_addr ( addr )		9363636	0					
+ANR	9363739	UnaryOperationExpression	! vtd_is_interrupt_addr ( addr )		9363636	0					
+ANR	9363740	UnaryOperator	!		9363636	0					
+ANR	9363741	CallExpression	vtd_is_interrupt_addr ( addr )		9363636	1					
+ANR	9363742	Callee	vtd_is_interrupt_addr		9363636	0					
+ANR	9363743	Identifier	vtd_is_interrupt_addr		9363636	0					
+ANR	9363744	ArgumentList	addr		9363636	1					
+ANR	9363745	Argument	addr		9363636	0					
+ANR	9363746	Identifier	addr		9363636	0					
+ANR	9363747	ExpressionStatement	"iotlb_entry = vtd_lookup_iotlb ( s , source_id , addr )"	51:4:910:960	9363636	14	True				
+ANR	9363748	AssignmentExpression	"iotlb_entry = vtd_lookup_iotlb ( s , source_id , addr )"		9363636	0		=			
+ANR	9363749	Identifier	iotlb_entry		9363636	0					
+ANR	9363750	CallExpression	"vtd_lookup_iotlb ( s , source_id , addr )"		9363636	1					
+ANR	9363751	Callee	vtd_lookup_iotlb		9363636	0					
+ANR	9363752	Identifier	vtd_lookup_iotlb		9363636	0					
+ANR	9363753	ArgumentList	s		9363636	1					
+ANR	9363754	Argument	s		9363636	0					
+ANR	9363755	Identifier	s		9363636	0					
+ANR	9363756	Argument	source_id		9363636	1					
+ANR	9363757	Identifier	source_id		9363636	0					
+ANR	9363758	Argument	addr		9363636	2					
+ANR	9363759	Identifier	addr		9363636	0					
+ANR	9363760	IfStatement	if ( iotlb_entry )		9363636	15					
+ANR	9363761	Condition	iotlb_entry	53:8:971:981	9363636	0	True				
+ANR	9363762	Identifier	iotlb_entry		9363636	0					
+ANR	9363763	CompoundStatement		47:21:772:772	9363636	1					
+ANR	9363764	ExpressionStatement	"trace_vtd_iotlb_page_hit ( source_id , addr , iotlb_entry -> slpte , iotlb_entry -> domain_id )"	55:8:995:1114	9363636	0	True				
+ANR	9363765	CallExpression	"trace_vtd_iotlb_page_hit ( source_id , addr , iotlb_entry -> slpte , iotlb_entry -> domain_id )"		9363636	0					
+ANR	9363766	Callee	trace_vtd_iotlb_page_hit		9363636	0					
+ANR	9363767	Identifier	trace_vtd_iotlb_page_hit		9363636	0					
+ANR	9363768	ArgumentList	source_id		9363636	1					
+ANR	9363769	Argument	source_id		9363636	0					
+ANR	9363770	Identifier	source_id		9363636	0					
+ANR	9363771	Argument	addr		9363636	1					
+ANR	9363772	Identifier	addr		9363636	0					
+ANR	9363773	Argument	iotlb_entry -> slpte		9363636	2					
+ANR	9363774	PtrMemberAccess	iotlb_entry -> slpte		9363636	0					
+ANR	9363775	Identifier	iotlb_entry		9363636	0					
+ANR	9363776	Identifier	slpte		9363636	1					
+ANR	9363777	Argument	iotlb_entry -> domain_id		9363636	3					
+ANR	9363778	PtrMemberAccess	iotlb_entry -> domain_id		9363636	0					
+ANR	9363779	Identifier	iotlb_entry		9363636	0					
+ANR	9363780	Identifier	domain_id		9363636	1					
+ANR	9363781	ExpressionStatement	slpte = iotlb_entry -> slpte	59:8:1125:1151	9363636	1	True				
+ANR	9363782	AssignmentExpression	slpte = iotlb_entry -> slpte		9363636	0		=			
+ANR	9363783	Identifier	slpte		9363636	0					
+ANR	9363784	PtrMemberAccess	iotlb_entry -> slpte		9363636	1					
+ANR	9363785	Identifier	iotlb_entry		9363636	0					
+ANR	9363786	Identifier	slpte		9363636	1					
+ANR	9363787	ExpressionStatement	access_flags = iotlb_entry -> access_flags	61:8:1162:1202	9363636	2	True				
+ANR	9363788	AssignmentExpression	access_flags = iotlb_entry -> access_flags		9363636	0		=			
+ANR	9363789	Identifier	access_flags		9363636	0					
+ANR	9363790	PtrMemberAccess	iotlb_entry -> access_flags		9363636	1					
+ANR	9363791	Identifier	iotlb_entry		9363636	0					
+ANR	9363792	Identifier	access_flags		9363636	1					
+ANR	9363793	ExpressionStatement	page_mask = iotlb_entry -> mask	63:8:1213:1242	9363636	3	True				
+ANR	9363794	AssignmentExpression	page_mask = iotlb_entry -> mask		9363636	0		=			
+ANR	9363795	Identifier	page_mask		9363636	0					
+ANR	9363796	PtrMemberAccess	iotlb_entry -> mask		9363636	1					
+ANR	9363797	Identifier	iotlb_entry		9363636	0					
+ANR	9363798	Identifier	mask		9363636	1					
+ANR	9363799	GotoStatement	goto out ;	65:8:1253:1261	9363636	4	True				
+ANR	9363800	Identifier	out		9363636	0					
+ANR	9363801	IfStatement	if ( cc_entry -> context_cache_gen == s -> context_cache_gen )		9363636	16					
+ANR	9363802	Condition	cc_entry -> context_cache_gen == s -> context_cache_gen	73:8:1336:1386	9363636	0	True				
+ANR	9363803	EqualityExpression	cc_entry -> context_cache_gen == s -> context_cache_gen		9363636	0		==			
+ANR	9363804	PtrMemberAccess	cc_entry -> context_cache_gen		9363636	0					
+ANR	9363805	Identifier	cc_entry		9363636	0					
+ANR	9363806	Identifier	context_cache_gen		9363636	1					
+ANR	9363807	PtrMemberAccess	s -> context_cache_gen		9363636	1					
+ANR	9363808	Identifier	s		9363636	0					
+ANR	9363809	Identifier	context_cache_gen		9363636	1					
+ANR	9363810	CompoundStatement		67:61:1177:1177	9363636	1					
+ANR	9363811	ExpressionStatement	"trace_vtd_iotlb_cc_hit ( bus_num , devfn , cc_entry -> context_entry . hi , cc_entry -> context_entry . lo , cc_entry -> context_cache_gen )"	75:8:1400:1587	9363636	0	True				
+ANR	9363812	CallExpression	"trace_vtd_iotlb_cc_hit ( bus_num , devfn , cc_entry -> context_entry . hi , cc_entry -> context_entry . lo , cc_entry -> context_cache_gen )"		9363636	0					
+ANR	9363813	Callee	trace_vtd_iotlb_cc_hit		9363636	0					
+ANR	9363814	Identifier	trace_vtd_iotlb_cc_hit		9363636	0					
+ANR	9363815	ArgumentList	bus_num		9363636	1					
+ANR	9363816	Argument	bus_num		9363636	0					
+ANR	9363817	Identifier	bus_num		9363636	0					
+ANR	9363818	Argument	devfn		9363636	1					
+ANR	9363819	Identifier	devfn		9363636	0					
+ANR	9363820	Argument	cc_entry -> context_entry . hi		9363636	2					
+ANR	9363821	MemberAccess	cc_entry -> context_entry . hi		9363636	0					
+ANR	9363822	PtrMemberAccess	cc_entry -> context_entry		9363636	0					
+ANR	9363823	Identifier	cc_entry		9363636	0					
+ANR	9363824	Identifier	context_entry		9363636	1					
+ANR	9363825	Identifier	hi		9363636	1					
+ANR	9363826	Argument	cc_entry -> context_entry . lo		9363636	3					
+ANR	9363827	MemberAccess	cc_entry -> context_entry . lo		9363636	0					
+ANR	9363828	PtrMemberAccess	cc_entry -> context_entry		9363636	0					
+ANR	9363829	Identifier	cc_entry		9363636	0					
+ANR	9363830	Identifier	context_entry		9363636	1					
+ANR	9363831	Identifier	lo		9363636	1					
+ANR	9363832	Argument	cc_entry -> context_cache_gen		9363636	4					
+ANR	9363833	PtrMemberAccess	cc_entry -> context_cache_gen		9363636	0					
+ANR	9363834	Identifier	cc_entry		9363636	0					
+ANR	9363835	Identifier	context_cache_gen		9363636	1					
+ANR	9363836	ExpressionStatement	ce = cc_entry -> context_entry	81:8:1598:1626	9363636	1	True				
+ANR	9363837	AssignmentExpression	ce = cc_entry -> context_entry		9363636	0		=			
+ANR	9363838	Identifier	ce		9363636	0					
+ANR	9363839	PtrMemberAccess	cc_entry -> context_entry		9363636	1					
+ANR	9363840	Identifier	cc_entry		9363636	0					
+ANR	9363841	Identifier	context_entry		9363636	1					
+ANR	9363842	ExpressionStatement	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD	83:8:1637:1679	9363636	2	True				
+ANR	9363843	AssignmentExpression	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD		9363636	0		=			
+ANR	9363844	Identifier	is_fpd_set		9363636	0					
+ANR	9363845	BitAndExpression	ce . lo & VTD_CONTEXT_ENTRY_FPD		9363636	1		&			
+ANR	9363846	MemberAccess	ce . lo		9363636	0					
+ANR	9363847	Identifier	ce		9363636	0					
+ANR	9363848	Identifier	lo		9363636	1					
+ANR	9363849	Identifier	VTD_CONTEXT_ENTRY_FPD		9363636	1					
+ANR	9363850	ElseStatement	else		9363636	0					
+ANR	9363851	CompoundStatement		79:11:1481:1481	9363636	0					
+ANR	9363852	ExpressionStatement	"ret_fr = vtd_dev_to_context_entry ( s , bus_num , devfn , & ce )"	87:8:1704:1761	9363636	0	True				
+ANR	9363853	AssignmentExpression	"ret_fr = vtd_dev_to_context_entry ( s , bus_num , devfn , & ce )"		9363636	0		=			
+ANR	9363854	Identifier	ret_fr		9363636	0					
+ANR	9363855	CallExpression	"vtd_dev_to_context_entry ( s , bus_num , devfn , & ce )"		9363636	1					
+ANR	9363856	Callee	vtd_dev_to_context_entry		9363636	0					
+ANR	9363857	Identifier	vtd_dev_to_context_entry		9363636	0					
+ANR	9363858	ArgumentList	s		9363636	1					
+ANR	9363859	Argument	s		9363636	0					
+ANR	9363860	Identifier	s		9363636	0					
+ANR	9363861	Argument	bus_num		9363636	1					
+ANR	9363862	Identifier	bus_num		9363636	0					
+ANR	9363863	Argument	devfn		9363636	2					
+ANR	9363864	Identifier	devfn		9363636	0					
+ANR	9363865	Argument	& ce		9363636	3					
+ANR	9363866	UnaryOperationExpression	& ce		9363636	0					
+ANR	9363867	UnaryOperator	&		9363636	0					
+ANR	9363868	Identifier	ce		9363636	1					
+ANR	9363869	ExpressionStatement	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD	89:8:1772:1814	9363636	1	True				
+ANR	9363870	AssignmentExpression	is_fpd_set = ce . lo & VTD_CONTEXT_ENTRY_FPD		9363636	0		=			
+ANR	9363871	Identifier	is_fpd_set		9363636	0					
+ANR	9363872	BitAndExpression	ce . lo & VTD_CONTEXT_ENTRY_FPD		9363636	1		&			
+ANR	9363873	MemberAccess	ce . lo		9363636	0					
+ANR	9363874	Identifier	ce		9363636	0					
+ANR	9363875	Identifier	lo		9363636	1					
+ANR	9363876	Identifier	VTD_CONTEXT_ENTRY_FPD		9363636	1					
+ANR	9363877	IfStatement	if ( ret_fr )		9363636	2					
+ANR	9363878	Condition	ret_fr	91:12:1829:1834	9363636	0	True				
+ANR	9363879	Identifier	ret_fr		9363636	0					
+ANR	9363880	CompoundStatement		85:20:1625:1625	9363636	1					
+ANR	9363881	ExpressionStatement	ret_fr = - ret_fr	93:12:1852:1868	9363636	0	True				
+ANR	9363882	AssignmentExpression	ret_fr = - ret_fr		9363636	0		=			
+ANR	9363883	Identifier	ret_fr		9363636	0					
+ANR	9363884	UnaryOperationExpression	- ret_fr		9363636	1					
+ANR	9363885	UnaryOperator	-		9363636	0					
+ANR	9363886	Identifier	ret_fr		9363636	1					
+ANR	9363887	IfStatement	if ( is_fpd_set && vtd_is_qualified_fault ( ret_fr ) )		9363636	1					
+ANR	9363888	Condition	is_fpd_set && vtd_is_qualified_fault ( ret_fr )	95:16:1887:1930	9363636	0	True				
+ANR	9363889	AndExpression	is_fpd_set && vtd_is_qualified_fault ( ret_fr )		9363636	0		&&			
+ANR	9363890	Identifier	is_fpd_set		9363636	0					
+ANR	9363891	CallExpression	vtd_is_qualified_fault ( ret_fr )		9363636	1					
+ANR	9363892	Callee	vtd_is_qualified_fault		9363636	0					
+ANR	9363893	Identifier	vtd_is_qualified_fault		9363636	0					
+ANR	9363894	ArgumentList	ret_fr		9363636	1					
+ANR	9363895	Argument	ret_fr		9363636	0					
+ANR	9363896	Identifier	ret_fr		9363636	0					
+ANR	9363897	CompoundStatement		89:62:1721:1721	9363636	1					
+ANR	9363898	ExpressionStatement	trace_vtd_fault_disabled ( )	97:16:1952:1978	9363636	0	True				
+ANR	9363899	CallExpression	trace_vtd_fault_disabled ( )		9363636	0					
+ANR	9363900	Callee	trace_vtd_fault_disabled		9363636	0					
+ANR	9363901	Identifier	trace_vtd_fault_disabled		9363636	0					
+ANR	9363902	ArgumentList			9363636	1					
+ANR	9363903	ElseStatement	else		9363636	0					
+ANR	9363904	CompoundStatement		93:19:1788:1788	9363636	0					
+ANR	9363905	ExpressionStatement	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"	101:16:2019:2078	9363636	0	True				
+ANR	9363906	CallExpression	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"		9363636	0					
+ANR	9363907	Callee	vtd_report_dmar_fault		9363636	0					
+ANR	9363908	Identifier	vtd_report_dmar_fault		9363636	0					
+ANR	9363909	ArgumentList	s		9363636	1					
+ANR	9363910	Argument	s		9363636	0					
+ANR	9363911	Identifier	s		9363636	0					
+ANR	9363912	Argument	source_id		9363636	1					
+ANR	9363913	Identifier	source_id		9363636	0					
+ANR	9363914	Argument	addr		9363636	2					
+ANR	9363915	Identifier	addr		9363636	0					
+ANR	9363916	Argument	ret_fr		9363636	3					
+ANR	9363917	Identifier	ret_fr		9363636	0					
+ANR	9363918	Argument	is_write		9363636	4					
+ANR	9363919	Identifier	is_write		9363636	0					
+ANR	9363920	GotoStatement	goto error ;	105:12:2108:2118	9363636	2	True				
+ANR	9363921	Identifier	error		9363636	0					
+ANR	9363922	ExpressionStatement	"trace_vtd_iotlb_cc_update ( bus_num , devfn , ce . hi , ce . lo , cc_entry -> context_cache_gen , s -> context_cache_gen )"	111:8:2176:2352	9363636	3	True				
+ANR	9363923	CallExpression	"trace_vtd_iotlb_cc_update ( bus_num , devfn , ce . hi , ce . lo , cc_entry -> context_cache_gen , s -> context_cache_gen )"		9363636	0					
+ANR	9363924	Callee	trace_vtd_iotlb_cc_update		9363636	0					
+ANR	9363925	Identifier	trace_vtd_iotlb_cc_update		9363636	0					
+ANR	9363926	ArgumentList	bus_num		9363636	1					
+ANR	9363927	Argument	bus_num		9363636	0					
+ANR	9363928	Identifier	bus_num		9363636	0					
+ANR	9363929	Argument	devfn		9363636	1					
+ANR	9363930	Identifier	devfn		9363636	0					
+ANR	9363931	Argument	ce . hi		9363636	2					
+ANR	9363932	MemberAccess	ce . hi		9363636	0					
+ANR	9363933	Identifier	ce		9363636	0					
+ANR	9363934	Identifier	hi		9363636	1					
+ANR	9363935	Argument	ce . lo		9363636	3					
+ANR	9363936	MemberAccess	ce . lo		9363636	0					
+ANR	9363937	Identifier	ce		9363636	0					
+ANR	9363938	Identifier	lo		9363636	1					
+ANR	9363939	Argument	cc_entry -> context_cache_gen		9363636	4					
+ANR	9363940	PtrMemberAccess	cc_entry -> context_cache_gen		9363636	0					
+ANR	9363941	Identifier	cc_entry		9363636	0					
+ANR	9363942	Identifier	context_cache_gen		9363636	1					
+ANR	9363943	Argument	s -> context_cache_gen		9363636	5					
+ANR	9363944	PtrMemberAccess	s -> context_cache_gen		9363636	0					
+ANR	9363945	Identifier	s		9363636	0					
+ANR	9363946	Identifier	context_cache_gen		9363636	1					
+ANR	9363947	ExpressionStatement	cc_entry -> context_entry = ce	117:8:2363:2391	9363636	4	True				
+ANR	9363948	AssignmentExpression	cc_entry -> context_entry = ce		9363636	0		=			
+ANR	9363949	PtrMemberAccess	cc_entry -> context_entry		9363636	0					
+ANR	9363950	Identifier	cc_entry		9363636	0					
+ANR	9363951	Identifier	context_entry		9363636	1					
+ANR	9363952	Identifier	ce		9363636	1					
+ANR	9363953	ExpressionStatement	cc_entry -> context_cache_gen = s -> context_cache_gen	119:8:2402:2452	9363636	5	True				
+ANR	9363954	AssignmentExpression	cc_entry -> context_cache_gen = s -> context_cache_gen		9363636	0		=			
+ANR	9363955	PtrMemberAccess	cc_entry -> context_cache_gen		9363636	0					
+ANR	9363956	Identifier	cc_entry		9363636	0					
+ANR	9363957	Identifier	context_cache_gen		9363636	1					
+ANR	9363958	PtrMemberAccess	s -> context_cache_gen		9363636	1					
+ANR	9363959	Identifier	s		9363636	0					
+ANR	9363960	Identifier	context_cache_gen		9363636	1					
+ANR	9363961	IfStatement	if ( vtd_ce_get_type ( & ce ) == VTD_CONTEXT_TT_PASS_THROUGH )		9363636	17					
+ANR	9363962	Condition	vtd_ce_get_type ( & ce ) == VTD_CONTEXT_TT_PASS_THROUGH	133:8:2623:2673	9363636	0	True				
+ANR	9363963	EqualityExpression	vtd_ce_get_type ( & ce ) == VTD_CONTEXT_TT_PASS_THROUGH		9363636	0		==			
+ANR	9363964	CallExpression	vtd_ce_get_type ( & ce )		9363636	0					
+ANR	9363965	Callee	vtd_ce_get_type		9363636	0					
+ANR	9363966	Identifier	vtd_ce_get_type		9363636	0					
+ANR	9363967	ArgumentList	& ce		9363636	1					
+ANR	9363968	Argument	& ce		9363636	0					
+ANR	9363969	UnaryOperationExpression	& ce		9363636	0					
+ANR	9363970	UnaryOperator	&		9363636	0					
+ANR	9363971	Identifier	ce		9363636	1					
+ANR	9363972	Identifier	VTD_CONTEXT_TT_PASS_THROUGH		9363636	1					
+ANR	9363973	CompoundStatement		127:61:2464:2464	9363636	1					
+ANR	9363974	ExpressionStatement	entry -> iova = addr & VTD_PAGE_MASK_4K	135:8:2687:2724	9363636	0	True				
+ANR	9363975	AssignmentExpression	entry -> iova = addr & VTD_PAGE_MASK_4K		9363636	0		=			
+ANR	9363976	PtrMemberAccess	entry -> iova		9363636	0					
+ANR	9363977	Identifier	entry		9363636	0					
+ANR	9363978	Identifier	iova		9363636	1					
+ANR	9363979	BitAndExpression	addr & VTD_PAGE_MASK_4K		9363636	1		&			
+ANR	9363980	Identifier	addr		9363636	0					
+ANR	9363981	Identifier	VTD_PAGE_MASK_4K		9363636	1					
+ANR	9363982	ExpressionStatement	entry -> translated_addr = entry -> iova	137:8:2735:2771	9363636	1	True				
+ANR	9363983	AssignmentExpression	entry -> translated_addr = entry -> iova		9363636	0		=			
+ANR	9363984	PtrMemberAccess	entry -> translated_addr		9363636	0					
+ANR	9363985	Identifier	entry		9363636	0					
+ANR	9363986	Identifier	translated_addr		9363636	1					
+ANR	9363987	PtrMemberAccess	entry -> iova		9363636	1					
+ANR	9363988	Identifier	entry		9363636	0					
+ANR	9363989	Identifier	iova		9363636	1					
+ANR	9363990	ExpressionStatement	entry -> addr_mask = ~VTD_PAGE_MASK_4K	139:8:2782:2818	9363636	2	True				
+ANR	9363991	AssignmentExpression	entry -> addr_mask = ~VTD_PAGE_MASK_4K		9363636	0		=			
+ANR	9363992	PtrMemberAccess	entry -> addr_mask		9363636	0					
+ANR	9363993	Identifier	entry		9363636	0					
+ANR	9363994	Identifier	addr_mask		9363636	1					
+ANR	9363995	Identifier	~VTD_PAGE_MASK_4K		9363636	1					
+ANR	9363996	ExpressionStatement	entry -> perm = IOMMU_RW	141:8:2829:2851	9363636	3	True				
+ANR	9363997	AssignmentExpression	entry -> perm = IOMMU_RW		9363636	0		=			
+ANR	9363998	PtrMemberAccess	entry -> perm		9363636	0					
+ANR	9363999	Identifier	entry		9363636	0					
+ANR	9364000	Identifier	perm		9363636	1					
+ANR	9364001	Identifier	IOMMU_RW		9363636	1					
+ANR	9364002	ExpressionStatement	"trace_vtd_translate_pt ( source_id , entry -> iova )"	143:8:2862:2908	9363636	4	True				
+ANR	9364003	CallExpression	"trace_vtd_translate_pt ( source_id , entry -> iova )"		9363636	0					
+ANR	9364004	Callee	trace_vtd_translate_pt		9363636	0					
+ANR	9364005	Identifier	trace_vtd_translate_pt		9363636	0					
+ANR	9364006	ArgumentList	source_id		9363636	1					
+ANR	9364007	Argument	source_id		9363636	0					
+ANR	9364008	Identifier	source_id		9363636	0					
+ANR	9364009	Argument	entry -> iova		9363636	1					
+ANR	9364010	PtrMemberAccess	entry -> iova		9363636	0					
+ANR	9364011	Identifier	entry		9363636	0					
+ANR	9364012	Identifier	iova		9363636	1					
+ANR	9364013	ExpressionStatement	"vtd_pt_enable_fast_path ( s , source_id )"	165:8:3349:3386	9363636	5	True				
+ANR	9364014	CallExpression	"vtd_pt_enable_fast_path ( s , source_id )"		9363636	0					
+ANR	9364015	Callee	vtd_pt_enable_fast_path		9363636	0					
+ANR	9364016	Identifier	vtd_pt_enable_fast_path		9363636	0					
+ANR	9364017	ArgumentList	s		9363636	1					
+ANR	9364018	Argument	s		9363636	0					
+ANR	9364019	Identifier	s		9363636	0					
+ANR	9364020	Argument	source_id		9363636	1					
+ANR	9364021	Identifier	source_id		9363636	0					
+ANR	9364022	ReturnStatement	return true ;	169:8:3399:3410	9363636	6	True				
+ANR	9364023	Identifier	true		9363636	0					
+ANR	9364024	ExpressionStatement	"ret_fr = vtd_iova_to_slpte ( & ce , addr , is_write , & slpte , & level , & reads , & writes )"	175:4:3426:3538	9363636	18	True				
+ANR	9364025	AssignmentExpression	"ret_fr = vtd_iova_to_slpte ( & ce , addr , is_write , & slpte , & level , & reads , & writes )"		9363636	0		=			
+ANR	9364026	Identifier	ret_fr		9363636	0					
+ANR	9364027	CallExpression	"vtd_iova_to_slpte ( & ce , addr , is_write , & slpte , & level , & reads , & writes )"		9363636	1					
+ANR	9364028	Callee	vtd_iova_to_slpte		9363636	0					
+ANR	9364029	Identifier	vtd_iova_to_slpte		9363636	0					
+ANR	9364030	ArgumentList	& ce		9363636	1					
+ANR	9364031	Argument	& ce		9363636	0					
+ANR	9364032	UnaryOperationExpression	& ce		9363636	0					
+ANR	9364033	UnaryOperator	&		9363636	0					
+ANR	9364034	Identifier	ce		9363636	1					
+ANR	9364035	Argument	addr		9363636	1					
+ANR	9364036	Identifier	addr		9363636	0					
+ANR	9364037	Argument	is_write		9363636	2					
+ANR	9364038	Identifier	is_write		9363636	0					
+ANR	9364039	Argument	& slpte		9363636	3					
+ANR	9364040	UnaryOperationExpression	& slpte		9363636	0					
+ANR	9364041	UnaryOperator	&		9363636	0					
+ANR	9364042	Identifier	slpte		9363636	1					
+ANR	9364043	Argument	& level		9363636	4					
+ANR	9364044	UnaryOperationExpression	& level		9363636	0					
+ANR	9364045	UnaryOperator	&		9363636	0					
+ANR	9364046	Identifier	level		9363636	1					
+ANR	9364047	Argument	& reads		9363636	5					
+ANR	9364048	UnaryOperationExpression	& reads		9363636	0					
+ANR	9364049	UnaryOperator	&		9363636	0					
+ANR	9364050	Identifier	reads		9363636	1					
+ANR	9364051	Argument	& writes		9363636	6					
+ANR	9364052	UnaryOperationExpression	& writes		9363636	0					
+ANR	9364053	UnaryOperator	&		9363636	0					
+ANR	9364054	Identifier	writes		9363636	1					
+ANR	9364055	IfStatement	if ( ret_fr )		9363636	19					
+ANR	9364056	Condition	ret_fr	179:8:3549:3554	9363636	0	True				
+ANR	9364057	Identifier	ret_fr		9363636	0					
+ANR	9364058	CompoundStatement		173:16:3345:3345	9363636	1					
+ANR	9364059	ExpressionStatement	ret_fr = - ret_fr	181:8:3568:3584	9363636	0	True				
+ANR	9364060	AssignmentExpression	ret_fr = - ret_fr		9363636	0		=			
+ANR	9364061	Identifier	ret_fr		9363636	0					
+ANR	9364062	UnaryOperationExpression	- ret_fr		9363636	1					
+ANR	9364063	UnaryOperator	-		9363636	0					
+ANR	9364064	Identifier	ret_fr		9363636	1					
+ANR	9364065	IfStatement	if ( is_fpd_set && vtd_is_qualified_fault ( ret_fr ) )		9363636	1					
+ANR	9364066	Condition	is_fpd_set && vtd_is_qualified_fault ( ret_fr )	183:12:3599:3642	9363636	0	True				
+ANR	9364067	AndExpression	is_fpd_set && vtd_is_qualified_fault ( ret_fr )		9363636	0		&&			
+ANR	9364068	Identifier	is_fpd_set		9363636	0					
+ANR	9364069	CallExpression	vtd_is_qualified_fault ( ret_fr )		9363636	1					
+ANR	9364070	Callee	vtd_is_qualified_fault		9363636	0					
+ANR	9364071	Identifier	vtd_is_qualified_fault		9363636	0					
+ANR	9364072	ArgumentList	ret_fr		9363636	1					
+ANR	9364073	Argument	ret_fr		9363636	0					
+ANR	9364074	Identifier	ret_fr		9363636	0					
+ANR	9364075	CompoundStatement		177:58:3433:3433	9363636	1					
+ANR	9364076	ExpressionStatement	trace_vtd_fault_disabled ( )	185:12:3660:3686	9363636	0	True				
+ANR	9364077	CallExpression	trace_vtd_fault_disabled ( )		9363636	0					
+ANR	9364078	Callee	trace_vtd_fault_disabled		9363636	0					
+ANR	9364079	Identifier	trace_vtd_fault_disabled		9363636	0					
+ANR	9364080	ArgumentList			9363636	1					
+ANR	9364081	ElseStatement	else		9363636	0					
+ANR	9364082	CompoundStatement		181:15:3492:3492	9363636	0					
+ANR	9364083	ExpressionStatement	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"	189:12:3719:3778	9363636	0	True				
+ANR	9364084	CallExpression	"vtd_report_dmar_fault ( s , source_id , addr , ret_fr , is_write )"		9363636	0					
+ANR	9364085	Callee	vtd_report_dmar_fault		9363636	0					
+ANR	9364086	Identifier	vtd_report_dmar_fault		9363636	0					
+ANR	9364087	ArgumentList	s		9363636	1					
+ANR	9364088	Argument	s		9363636	0					
+ANR	9364089	Identifier	s		9363636	0					
+ANR	9364090	Argument	source_id		9363636	1					
+ANR	9364091	Identifier	source_id		9363636	0					
+ANR	9364092	Argument	addr		9363636	2					
+ANR	9364093	Identifier	addr		9363636	0					
+ANR	9364094	Argument	ret_fr		9363636	3					
+ANR	9364095	Identifier	ret_fr		9363636	0					
+ANR	9364096	Argument	is_write		9363636	4					
+ANR	9364097	Identifier	is_write		9363636	0					
+ANR	9364098	GotoStatement	goto error ;	193:8:3800:3810	9363636	2	True				
+ANR	9364099	Identifier	error		9363636	0					
+ANR	9364100	ExpressionStatement	page_mask = vtd_slpt_level_page_mask ( level )	199:4:3826:3869	9363636	20	True				
+ANR	9364101	AssignmentExpression	page_mask = vtd_slpt_level_page_mask ( level )		9363636	0		=			
+ANR	9364102	Identifier	page_mask		9363636	0					
+ANR	9364103	CallExpression	vtd_slpt_level_page_mask ( level )		9363636	1					
+ANR	9364104	Callee	vtd_slpt_level_page_mask		9363636	0					
+ANR	9364105	Identifier	vtd_slpt_level_page_mask		9363636	0					
+ANR	9364106	ArgumentList	level		9363636	1					
+ANR	9364107	Argument	level		9363636	0					
+ANR	9364108	Identifier	level		9363636	0					
+ANR	9364109	ExpressionStatement	"access_flags = IOMMU_ACCESS_FLAG ( reads , writes )"	201:4:3876:3923	9363636	21	True				
+ANR	9364110	AssignmentExpression	"access_flags = IOMMU_ACCESS_FLAG ( reads , writes )"		9363636	0		=			
+ANR	9364111	Identifier	access_flags		9363636	0					
+ANR	9364112	CallExpression	"IOMMU_ACCESS_FLAG ( reads , writes )"		9363636	1					
+ANR	9364113	Callee	IOMMU_ACCESS_FLAG		9363636	0					
+ANR	9364114	Identifier	IOMMU_ACCESS_FLAG		9363636	0					
+ANR	9364115	ArgumentList	reads		9363636	1					
+ANR	9364116	Argument	reads		9363636	0					
+ANR	9364117	Identifier	reads		9363636	0					
+ANR	9364118	Argument	writes		9363636	1					
+ANR	9364119	Identifier	writes		9363636	0					
+ANR	9364120	ExpressionStatement	"vtd_update_iotlb ( s , source_id , VTD_CONTEXT_ENTRY_DID ( ce . hi ) , addr , slpte , access_flags , level )"	203:4:3930:4046	9363636	22	True				
+ANR	9364121	CallExpression	"vtd_update_iotlb ( s , source_id , VTD_CONTEXT_ENTRY_DID ( ce . hi ) , addr , slpte , access_flags , level )"		9363636	0					
+ANR	9364122	Callee	vtd_update_iotlb		9363636	0					
+ANR	9364123	Identifier	vtd_update_iotlb		9363636	0					
+ANR	9364124	ArgumentList	s		9363636	1					
+ANR	9364125	Argument	s		9363636	0					
+ANR	9364126	Identifier	s		9363636	0					
+ANR	9364127	Argument	source_id		9363636	1					
+ANR	9364128	Identifier	source_id		9363636	0					
+ANR	9364129	Argument	VTD_CONTEXT_ENTRY_DID ( ce . hi )		9363636	2					
+ANR	9364130	CallExpression	VTD_CONTEXT_ENTRY_DID ( ce . hi )		9363636	0					
+ANR	9364131	Callee	VTD_CONTEXT_ENTRY_DID		9363636	0					
+ANR	9364132	Identifier	VTD_CONTEXT_ENTRY_DID		9363636	0					
+ANR	9364133	ArgumentList	ce . hi		9363636	1					
+ANR	9364134	Argument	ce . hi		9363636	0					
+ANR	9364135	MemberAccess	ce . hi		9363636	0					
+ANR	9364136	Identifier	ce		9363636	0					
+ANR	9364137	Identifier	hi		9363636	1					
+ANR	9364138	Argument	addr		9363636	3					
+ANR	9364139	Identifier	addr		9363636	0					
+ANR	9364140	Argument	slpte		9363636	4					
+ANR	9364141	Identifier	slpte		9363636	0					
+ANR	9364142	Argument	access_flags		9363636	5					
+ANR	9364143	Identifier	access_flags		9363636	0					
+ANR	9364144	Argument	level		9363636	6					
+ANR	9364145	Identifier	level		9363636	0					
+ANR	9364146	Label	out :	207:0:4049:4052	9363636	23	True				
+ANR	9364147	Identifier	out		9363636	0					
+ANR	9364148	ExpressionStatement	entry -> iova = addr & page_mask	209:4:4059:4089	9363636	24	True				
+ANR	9364149	AssignmentExpression	entry -> iova = addr & page_mask		9363636	0		=			
+ANR	9364150	PtrMemberAccess	entry -> iova		9363636	0					
+ANR	9364151	Identifier	entry		9363636	0					
+ANR	9364152	Identifier	iova		9363636	1					
+ANR	9364153	BitAndExpression	addr & page_mask		9363636	1		&			
+ANR	9364154	Identifier	addr		9363636	0					
+ANR	9364155	Identifier	page_mask		9363636	1					
+ANR	9364156	ExpressionStatement	entry -> translated_addr = vtd_get_slpte_addr ( slpte ) & page_mask	211:4:4096:4158	9363636	25	True				
+ANR	9364157	AssignmentExpression	entry -> translated_addr = vtd_get_slpte_addr ( slpte ) & page_mask		9363636	0		=			
+ANR	9364158	PtrMemberAccess	entry -> translated_addr		9363636	0					
+ANR	9364159	Identifier	entry		9363636	0					
+ANR	9364160	Identifier	translated_addr		9363636	1					
+ANR	9364161	BitAndExpression	vtd_get_slpte_addr ( slpte ) & page_mask		9363636	1		&			
+ANR	9364162	CallExpression	vtd_get_slpte_addr ( slpte )		9363636	0					
+ANR	9364163	Callee	vtd_get_slpte_addr		9363636	0					
+ANR	9364164	Identifier	vtd_get_slpte_addr		9363636	0					
+ANR	9364165	ArgumentList	slpte		9363636	1					
+ANR	9364166	Argument	slpte		9363636	0					
+ANR	9364167	Identifier	slpte		9363636	0					
+ANR	9364168	Identifier	page_mask		9363636	1					
+ANR	9364169	ExpressionStatement	entry -> addr_mask = ~page_mask	213:4:4165:4194	9363636	26	True				
+ANR	9364170	AssignmentExpression	entry -> addr_mask = ~page_mask		9363636	0		=			
+ANR	9364171	PtrMemberAccess	entry -> addr_mask		9363636	0					
+ANR	9364172	Identifier	entry		9363636	0					
+ANR	9364173	Identifier	addr_mask		9363636	1					
+ANR	9364174	Identifier	~page_mask		9363636	1					
+ANR	9364175	ExpressionStatement	entry -> perm = access_flags	215:4:4201:4227	9363636	27	True				
+ANR	9364176	AssignmentExpression	entry -> perm = access_flags		9363636	0		=			
+ANR	9364177	PtrMemberAccess	entry -> perm		9363636	0					
+ANR	9364178	Identifier	entry		9363636	0					
+ANR	9364179	Identifier	perm		9363636	1					
+ANR	9364180	Identifier	access_flags		9363636	1					
+ANR	9364181	ReturnStatement	return true ;	217:4:4234:4245	9363636	28	True				
+ANR	9364182	Identifier	true		9363636	0					
+ANR	9364183	Label	error :	221:0:4250:4255	9363636	29	True				
+ANR	9364184	Identifier	error		9363636	0					
+ANR	9364185	ExpressionStatement	entry -> iova = 0	223:4:4262:4277	9363636	30	True				
+ANR	9364186	AssignmentExpression	entry -> iova = 0		9363636	0		=			
+ANR	9364187	PtrMemberAccess	entry -> iova		9363636	0					
+ANR	9364188	Identifier	entry		9363636	0					
+ANR	9364189	Identifier	iova		9363636	1					
+ANR	9364190	PrimaryExpression	0		9363636	1					
+ANR	9364191	ExpressionStatement	entry -> translated_addr = 0	225:4:4284:4310	9363636	31	True				
+ANR	9364192	AssignmentExpression	entry -> translated_addr = 0		9363636	0		=			
+ANR	9364193	PtrMemberAccess	entry -> translated_addr		9363636	0					
+ANR	9364194	Identifier	entry		9363636	0					
+ANR	9364195	Identifier	translated_addr		9363636	1					
+ANR	9364196	PrimaryExpression	0		9363636	1					
+ANR	9364197	ExpressionStatement	entry -> addr_mask = 0	227:4:4317:4337	9363636	32	True				
+ANR	9364198	AssignmentExpression	entry -> addr_mask = 0		9363636	0		=			
+ANR	9364199	PtrMemberAccess	entry -> addr_mask		9363636	0					
+ANR	9364200	Identifier	entry		9363636	0					
+ANR	9364201	Identifier	addr_mask		9363636	1					
+ANR	9364202	PrimaryExpression	0		9363636	1					
+ANR	9364203	ExpressionStatement	entry -> perm = IOMMU_NONE	229:4:4344:4368	9363636	33	True				
+ANR	9364204	AssignmentExpression	entry -> perm = IOMMU_NONE		9363636	0		=			
+ANR	9364205	PtrMemberAccess	entry -> perm		9363636	0					
+ANR	9364206	Identifier	entry		9363636	0					
+ANR	9364207	Identifier	perm		9363636	1					
+ANR	9364208	Identifier	IOMMU_NONE		9363636	1					
+ANR	9364209	ReturnStatement	return false ;	231:4:4375:4387	9363636	34	True				
+ANR	9364210	Identifier	false		9363636	0					
+ANR	9364211	ReturnType	static bool		9363636	1					
+ANR	9364212	Identifier	vtd_do_iommu_translate		9363636	2					
+ANR	9364213	ParameterList	"VTDAddressSpace * vtd_as , PCIBus * bus , uint8_t devfn , hwaddr addr , bool is_write , IOMMUTLBEntry * entry"		9363636	3					
+ANR	9364214	Parameter	VTDAddressSpace * vtd_as	1:35:35:57	9363636	0	True				
+ANR	9364215	ParameterType	VTDAddressSpace *		9363636	0					
+ANR	9364216	Identifier	vtd_as		9363636	1					
+ANR	9364217	Parameter	PCIBus * bus	1:60:60:70	9363636	1	True				
+ANR	9364218	ParameterType	PCIBus *		9363636	0					
+ANR	9364219	Identifier	bus		9363636	1					
+ANR	9364220	Parameter	uint8_t devfn	3:35:109:121	9363636	2	True				
+ANR	9364221	ParameterType	uint8_t		9363636	0					
+ANR	9364222	Identifier	devfn		9363636	1					
+ANR	9364223	Parameter	hwaddr addr	3:50:124:134	9363636	3	True				
+ANR	9364224	ParameterType	hwaddr		9363636	0					
+ANR	9364225	Identifier	addr		9363636	1					
+ANR	9364226	Parameter	bool is_write	3:63:137:149	9363636	4	True				
+ANR	9364227	ParameterType	bool		9363636	0					
+ANR	9364228	Identifier	is_write		9363636	1					
+ANR	9364229	Parameter	IOMMUTLBEntry * entry	5:35:188:207	9363636	5	True				
+ANR	9364230	ParameterType	IOMMUTLBEntry *		9363636	0					
+ANR	9364231	Identifier	entry		9363636	1					
+ANR	9364232	CFGEntryNode	ENTRY		9363636		True				
+ANR	9364233	CFGExitNode	EXIT		9363636		True				
+ANR	9364234	Symbol	bus		9363636						
+ANR	9364235	Symbol	cc_entry -> context_entry . hi		9363636						
+ANR	9364236	Symbol	cc_entry -> context_entry . lo		9363636						
+ANR	9364237	Symbol	ce . lo		9363636						
+ANR	9364238	Symbol	~VTD_PAGE_MASK_4K		9363636						
+ANR	9364239	Symbol	vtd_lookup_iotlb		9363636						
+ANR	9364240	Symbol	ce . hi		9363636						
+ANR	9364241	Symbol	bus_num		9363636						
+ANR	9364242	Symbol	& ce		9363636						
+ANR	9364243	Symbol	~page_mask		9363636						
+ANR	9364244	Symbol	& writes		9363636						
+ANR	9364245	Symbol	entry -> translated_addr		9363636						
+ANR	9364246	Symbol	vtd_make_source_id		9363636						
+ANR	9364247	Symbol	entry -> addr_mask		9363636						
+ANR	9364248	Symbol	is_fpd_set		9363636						
+ANR	9364249	Symbol	* cc_entry		9363636						
+ANR	9364250	Symbol	& reads		9363636						
+ANR	9364251	Symbol	vtd_slpt_level_page_mask		9363636						
+ANR	9364252	Symbol	entry -> iova		9363636						
+ANR	9364253	Symbol	& slpte		9363636						
+ANR	9364254	Symbol	VTD_CONTEXT_ENTRY_FPD		9363636						
+ANR	9364255	Symbol	level		9363636						
+ANR	9364256	Symbol	vtd_as -> iommu_state		9363636						
+ANR	9364257	Symbol	is_write		9363636						
+ANR	9364258	Symbol	devfn		9363636						
+ANR	9364259	Symbol	VTD_PAGE_MASK_4K		9363636						
+ANR	9364260	Symbol	cc_entry		9363636						
+ANR	9364261	Symbol	entry		9363636						
+ANR	9364262	Symbol	vtd_dev_to_context_entry		9363636						
+ANR	9364263	Symbol	page_mask		9363636						
+ANR	9364264	Symbol	vtd_get_slpte_addr		9363636						
+ANR	9364265	Symbol	true		9363636						
+ANR	9364266	Symbol	vtd_ce_get_type		9363636						
+ANR	9364267	Symbol	vtd_is_interrupt_addr		9363636						
+ANR	9364268	Symbol	IOMMU_RW		9363636						
+ANR	9364269	Symbol	pci_bus_num		9363636						
+ANR	9364270	Symbol	vtd_as		9363636						
+ANR	9364271	Symbol	* vtd_as		9363636						
+ANR	9364272	Symbol	entry -> perm		9363636						
+ANR	9364273	Symbol	VTD_CONTEXT_ENTRY_DID		9363636						
+ANR	9364274	Symbol	access_flags		9363636						
+ANR	9364275	Symbol	iotlb_entry -> mask		9363636						
+ANR	9364276	Symbol	iotlb_entry -> access_flags		9363636						
+ANR	9364277	Symbol	s -> context_cache_gen		9363636						
+ANR	9364278	Symbol	addr		9363636						
+ANR	9364279	Symbol	* iotlb_entry		9363636						
+ANR	9364280	Symbol	IOMMU_NONE		9363636						
+ANR	9364281	Symbol	iotlb_entry		9363636						
+ANR	9364282	Symbol	VTD_CONTEXT_TT_PASS_THROUGH		9363636						
+ANR	9364283	Symbol	* entry		9363636						
+ANR	9364284	Symbol	ce		9363636						
+ANR	9364285	Symbol	& vtd_as -> context_cache_entry		9363636						
+ANR	9364286	Symbol	iotlb_entry -> domain_id		9363636						
+ANR	9364287	Symbol	& level		9363636						
+ANR	9364288	Symbol	ret_fr		9363636						
+ANR	9364289	Symbol	false		9363636						
+ANR	9364290	Symbol	reads		9363636						
+ANR	9364291	Symbol	iotlb_entry -> slpte		9363636						
+ANR	9364292	Symbol	IOMMU_ACCESS_FLAG		9363636						
+ANR	9364293	Symbol	vtd_is_qualified_fault		9363636						
+ANR	9364294	Symbol	cc_entry -> context_entry		9363636						
+ANR	9364295	Symbol	slpte		9363636						
+ANR	9364296	Symbol	s		9363636						
+ANR	9364297	Symbol	vtd_iova_to_slpte		9363636						
+ANR	9364298	Symbol	cc_entry -> context_cache_gen		9363636						
+ANR	9364299	Symbol	source_id		9363636						
+ANR	9364300	Symbol	writes		9363636						
+ANR	9364301	Symbol	* s		9363636						

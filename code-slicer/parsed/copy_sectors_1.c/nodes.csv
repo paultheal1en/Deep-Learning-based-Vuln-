@@ -1,0 +1,234 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1435487	File	/home/p4ultr4n/workplace/ReVeal/raw_code/copy_sectors_1.c								
+ANR	1435488	Function	copy_sectors	1:0:0:1228							
+ANR	1435489	FunctionDef	"copy_sectors (BlockDriverState * bs , uint64_t start_sect , uint64_t cluster_offset , int n_start , int n_end)"		1435488	0					
+ANR	1435490	CompoundStatement		5:0:142:1228	1435488	0					
+ANR	1435491	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	7:4:149:178	1435488	0	True				
+ANR	1435492	IdentifierDecl	* s = bs -> opaque		1435488	0					
+ANR	1435493	IdentifierDeclType	BDRVQcowState *		1435488	0					
+ANR	1435494	Identifier	s		1435488	1					
+ANR	1435495	AssignmentExpression	* s = bs -> opaque		1435488	2		=			
+ANR	1435496	Identifier	s		1435488	0					
+ANR	1435497	PtrMemberAccess	bs -> opaque		1435488	1					
+ANR	1435498	Identifier	bs		1435488	0					
+ANR	1435499	Identifier	opaque		1435488	1					
+ANR	1435500	IdentifierDeclStatement	"int n , ret ;"	9:4:185:195	1435488	1	True				
+ANR	1435501	IdentifierDecl	n		1435488	0					
+ANR	1435502	IdentifierDeclType	int		1435488	0					
+ANR	1435503	Identifier	n		1435488	1					
+ANR	1435504	IdentifierDecl	ret		1435488	1					
+ANR	1435505	IdentifierDeclType	int		1435488	0					
+ANR	1435506	Identifier	ret		1435488	1					
+ANR	1435507	IdentifierDeclStatement	void * buf ;	11:4:202:211	1435488	2	True				
+ANR	1435508	IdentifierDecl	* buf		1435488	0					
+ANR	1435509	IdentifierDeclType	void *		1435488	0					
+ANR	1435510	Identifier	buf		1435488	1					
+ANR	1435511	IfStatement	if ( start_sect + n_end > bs -> total_sectors )		1435488	3					
+ANR	1435512	Condition	start_sect + n_end > bs -> total_sectors	25:8:439:476	1435488	0	True				
+ANR	1435513	RelationalExpression	start_sect + n_end > bs -> total_sectors		1435488	0		>			
+ANR	1435514	AdditiveExpression	start_sect + n_end		1435488	0		+			
+ANR	1435515	Identifier	start_sect		1435488	0					
+ANR	1435516	Identifier	n_end		1435488	1					
+ANR	1435517	PtrMemberAccess	bs -> total_sectors		1435488	1					
+ANR	1435518	Identifier	bs		1435488	0					
+ANR	1435519	Identifier	total_sectors		1435488	1					
+ANR	1435520	CompoundStatement		21:48:336:336	1435488	1					
+ANR	1435521	ExpressionStatement	n_end = bs -> total_sectors - start_sect	27:8:490:528	1435488	0	True				
+ANR	1435522	AssignmentExpression	n_end = bs -> total_sectors - start_sect		1435488	0		=			
+ANR	1435523	Identifier	n_end		1435488	0					
+ANR	1435524	AdditiveExpression	bs -> total_sectors - start_sect		1435488	1		-			
+ANR	1435525	PtrMemberAccess	bs -> total_sectors		1435488	0					
+ANR	1435526	Identifier	bs		1435488	0					
+ANR	1435527	Identifier	total_sectors		1435488	1					
+ANR	1435528	Identifier	start_sect		1435488	1					
+ANR	1435529	ExpressionStatement	n = n_end - n_start	33:4:544:563	1435488	4	True				
+ANR	1435530	AssignmentExpression	n = n_end - n_start		1435488	0		=			
+ANR	1435531	Identifier	n		1435488	0					
+ANR	1435532	AdditiveExpression	n_end - n_start		1435488	1		-			
+ANR	1435533	Identifier	n_end		1435488	0					
+ANR	1435534	Identifier	n_start		1435488	1					
+ANR	1435535	IfStatement	if ( n <= 0 )		1435488	5					
+ANR	1435536	Condition	n <= 0	35:8:574:579	1435488	0	True				
+ANR	1435537	RelationalExpression	n <= 0		1435488	0		<=			
+ANR	1435538	Identifier	n		1435488	0					
+ANR	1435539	PrimaryExpression	0		1435488	1					
+ANR	1435540	CompoundStatement		31:16:439:439	1435488	1					
+ANR	1435541	ReturnStatement	return 0 ;	37:8:593:601	1435488	0	True				
+ANR	1435542	PrimaryExpression	0		1435488	0					
+ANR	1435543	ExpressionStatement	"buf = qemu_blockalign ( bs , n * BDRV_SECTOR_SIZE )"	43:4:617:664	1435488	6	True				
+ANR	1435544	AssignmentExpression	"buf = qemu_blockalign ( bs , n * BDRV_SECTOR_SIZE )"		1435488	0		=			
+ANR	1435545	Identifier	buf		1435488	0					
+ANR	1435546	CallExpression	"qemu_blockalign ( bs , n * BDRV_SECTOR_SIZE )"		1435488	1					
+ANR	1435547	Callee	qemu_blockalign		1435488	0					
+ANR	1435548	Identifier	qemu_blockalign		1435488	0					
+ANR	1435549	ArgumentList	bs		1435488	1					
+ANR	1435550	Argument	bs		1435488	0					
+ANR	1435551	Identifier	bs		1435488	0					
+ANR	1435552	Argument	n * BDRV_SECTOR_SIZE		1435488	1					
+ANR	1435553	MultiplicativeExpression	n * BDRV_SECTOR_SIZE		1435488	0		*			
+ANR	1435554	Identifier	n		1435488	0					
+ANR	1435555	Identifier	BDRV_SECTOR_SIZE		1435488	1					
+ANR	1435556	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_READ )"	47:4:673:712	1435488	7	True				
+ANR	1435557	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_READ )"		1435488	0					
+ANR	1435558	Callee	BLKDBG_EVENT		1435488	0					
+ANR	1435559	Identifier	BLKDBG_EVENT		1435488	0					
+ANR	1435560	ArgumentList	bs -> file		1435488	1					
+ANR	1435561	Argument	bs -> file		1435488	0					
+ANR	1435562	PtrMemberAccess	bs -> file		1435488	0					
+ANR	1435563	Identifier	bs		1435488	0					
+ANR	1435564	Identifier	file		1435488	1					
+ANR	1435565	Argument	BLKDBG_COW_READ		1435488	1					
+ANR	1435566	Identifier	BLKDBG_COW_READ		1435488	0					
+ANR	1435567	ExpressionStatement	"ret = bdrv_read ( bs , start_sect + n_start , buf , n )"	49:4:719:768	1435488	8	True				
+ANR	1435568	AssignmentExpression	"ret = bdrv_read ( bs , start_sect + n_start , buf , n )"		1435488	0		=			
+ANR	1435569	Identifier	ret		1435488	0					
+ANR	1435570	CallExpression	"bdrv_read ( bs , start_sect + n_start , buf , n )"		1435488	1					
+ANR	1435571	Callee	bdrv_read		1435488	0					
+ANR	1435572	Identifier	bdrv_read		1435488	0					
+ANR	1435573	ArgumentList	bs		1435488	1					
+ANR	1435574	Argument	bs		1435488	0					
+ANR	1435575	Identifier	bs		1435488	0					
+ANR	1435576	Argument	start_sect + n_start		1435488	1					
+ANR	1435577	AdditiveExpression	start_sect + n_start		1435488	0		+			
+ANR	1435578	Identifier	start_sect		1435488	0					
+ANR	1435579	Identifier	n_start		1435488	1					
+ANR	1435580	Argument	buf		1435488	2					
+ANR	1435581	Identifier	buf		1435488	0					
+ANR	1435582	Argument	n		1435488	3					
+ANR	1435583	Identifier	n		1435488	0					
+ANR	1435584	IfStatement	if ( ret < 0 )		1435488	9					
+ANR	1435585	Condition	ret < 0	51:8:779:785	1435488	0	True				
+ANR	1435586	RelationalExpression	ret < 0		1435488	0		<			
+ANR	1435587	Identifier	ret		1435488	0					
+ANR	1435588	PrimaryExpression	0		1435488	1					
+ANR	1435589	CompoundStatement		47:17:645:645	1435488	1					
+ANR	1435590	GotoStatement	goto out ;	53:8:799:807	1435488	0	True				
+ANR	1435591	Identifier	out		1435488	0					
+ANR	1435592	IfStatement	if ( s -> crypt_method )		1435488	10					
+ANR	1435593	Condition	s -> crypt_method	59:8:827:841	1435488	0	True				
+ANR	1435594	PtrMemberAccess	s -> crypt_method		1435488	0					
+ANR	1435595	Identifier	s		1435488	0					
+ANR	1435596	Identifier	crypt_method		1435488	1					
+ANR	1435597	CompoundStatement		55:25:701:701	1435488	1					
+ANR	1435598	ExpressionStatement	"qcow2_encrypt_sectors ( s , start_sect + n_start , buf , buf , n , 1 , & s -> aes_encrypt_key )"	61:8:855:988	1435488	0	True				
+ANR	1435599	CallExpression	"qcow2_encrypt_sectors ( s , start_sect + n_start , buf , buf , n , 1 , & s -> aes_encrypt_key )"		1435488	0					
+ANR	1435600	Callee	qcow2_encrypt_sectors		1435488	0					
+ANR	1435601	Identifier	qcow2_encrypt_sectors		1435488	0					
+ANR	1435602	ArgumentList	s		1435488	1					
+ANR	1435603	Argument	s		1435488	0					
+ANR	1435604	Identifier	s		1435488	0					
+ANR	1435605	Argument	start_sect + n_start		1435488	1					
+ANR	1435606	AdditiveExpression	start_sect + n_start		1435488	0		+			
+ANR	1435607	Identifier	start_sect		1435488	0					
+ANR	1435608	Identifier	n_start		1435488	1					
+ANR	1435609	Argument	buf		1435488	2					
+ANR	1435610	Identifier	buf		1435488	0					
+ANR	1435611	Argument	buf		1435488	3					
+ANR	1435612	Identifier	buf		1435488	0					
+ANR	1435613	Argument	n		1435488	4					
+ANR	1435614	Identifier	n		1435488	0					
+ANR	1435615	Argument	1		1435488	5					
+ANR	1435616	PrimaryExpression	1		1435488	0					
+ANR	1435617	Argument	& s -> aes_encrypt_key		1435488	6					
+ANR	1435618	UnaryOperationExpression	& s -> aes_encrypt_key		1435488	0					
+ANR	1435619	UnaryOperator	&		1435488	0					
+ANR	1435620	PtrMemberAccess	s -> aes_encrypt_key		1435488	1					
+ANR	1435621	Identifier	s		1435488	0					
+ANR	1435622	Identifier	aes_encrypt_key		1435488	1					
+ANR	1435623	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_WRITE )"	71:4:1004:1044	1435488	11	True				
+ANR	1435624	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_COW_WRITE )"		1435488	0					
+ANR	1435625	Callee	BLKDBG_EVENT		1435488	0					
+ANR	1435626	Identifier	BLKDBG_EVENT		1435488	0					
+ANR	1435627	ArgumentList	bs -> file		1435488	1					
+ANR	1435628	Argument	bs -> file		1435488	0					
+ANR	1435629	PtrMemberAccess	bs -> file		1435488	0					
+ANR	1435630	Identifier	bs		1435488	0					
+ANR	1435631	Identifier	file		1435488	1					
+ANR	1435632	Argument	BLKDBG_COW_WRITE		1435488	1					
+ANR	1435633	Identifier	BLKDBG_COW_WRITE		1435488	0					
+ANR	1435634	ExpressionStatement	"ret = bdrv_write ( bs -> file , ( cluster_offset >> 9 ) + n_start , buf , n )"	73:4:1051:1118	1435488	12	True				
+ANR	1435635	AssignmentExpression	"ret = bdrv_write ( bs -> file , ( cluster_offset >> 9 ) + n_start , buf , n )"		1435488	0		=			
+ANR	1435636	Identifier	ret		1435488	0					
+ANR	1435637	CallExpression	"bdrv_write ( bs -> file , ( cluster_offset >> 9 ) + n_start , buf , n )"		1435488	1					
+ANR	1435638	Callee	bdrv_write		1435488	0					
+ANR	1435639	Identifier	bdrv_write		1435488	0					
+ANR	1435640	ArgumentList	bs -> file		1435488	1					
+ANR	1435641	Argument	bs -> file		1435488	0					
+ANR	1435642	PtrMemberAccess	bs -> file		1435488	0					
+ANR	1435643	Identifier	bs		1435488	0					
+ANR	1435644	Identifier	file		1435488	1					
+ANR	1435645	Argument	( cluster_offset >> 9 ) + n_start		1435488	1					
+ANR	1435646	AdditiveExpression	( cluster_offset >> 9 ) + n_start		1435488	0		+			
+ANR	1435647	ShiftExpression	cluster_offset >> 9		1435488	0		>>			
+ANR	1435648	Identifier	cluster_offset		1435488	0					
+ANR	1435649	PrimaryExpression	9		1435488	1					
+ANR	1435650	Identifier	n_start		1435488	1					
+ANR	1435651	Argument	buf		1435488	2					
+ANR	1435652	Identifier	buf		1435488	0					
+ANR	1435653	Argument	n		1435488	3					
+ANR	1435654	Identifier	n		1435488	0					
+ANR	1435655	IfStatement	if ( ret < 0 )		1435488	13					
+ANR	1435656	Condition	ret < 0	75:8:1129:1135	1435488	0	True				
+ANR	1435657	RelationalExpression	ret < 0		1435488	0		<			
+ANR	1435658	Identifier	ret		1435488	0					
+ANR	1435659	PrimaryExpression	0		1435488	1					
+ANR	1435660	CompoundStatement		71:17:995:995	1435488	1					
+ANR	1435661	GotoStatement	goto out ;	77:8:1149:1157	1435488	0	True				
+ANR	1435662	Identifier	out		1435488	0					
+ANR	1435663	ExpressionStatement	ret = 0	83:4:1173:1180	1435488	14	True				
+ANR	1435664	AssignmentExpression	ret = 0		1435488	0		=			
+ANR	1435665	Identifier	ret		1435488	0					
+ANR	1435666	PrimaryExpression	0		1435488	1					
+ANR	1435667	Label	out :	85:0:1183:1186	1435488	15	True				
+ANR	1435668	Identifier	out		1435488	0					
+ANR	1435669	ExpressionStatement	qemu_vfree ( buf )	87:4:1193:1208	1435488	16	True				
+ANR	1435670	CallExpression	qemu_vfree ( buf )		1435488	0					
+ANR	1435671	Callee	qemu_vfree		1435488	0					
+ANR	1435672	Identifier	qemu_vfree		1435488	0					
+ANR	1435673	ArgumentList	buf		1435488	1					
+ANR	1435674	Argument	buf		1435488	0					
+ANR	1435675	Identifier	buf		1435488	0					
+ANR	1435676	ReturnStatement	return ret ;	89:4:1215:1225	1435488	17	True				
+ANR	1435677	Identifier	ret		1435488	0					
+ANR	1435678	ReturnType	static int		1435488	1					
+ANR	1435679	Identifier	copy_sectors		1435488	2					
+ANR	1435680	ParameterList	"BlockDriverState * bs , uint64_t start_sect , uint64_t cluster_offset , int n_start , int n_end"		1435488	3					
+ANR	1435681	Parameter	BlockDriverState * bs	1:24:24:43	1435488	0	True				
+ANR	1435682	ParameterType	BlockDriverState *		1435488	0					
+ANR	1435683	Identifier	bs		1435488	1					
+ANR	1435684	Parameter	uint64_t start_sect	1:46:46:64	1435488	1	True				
+ANR	1435685	ParameterType	uint64_t		1435488	0					
+ANR	1435686	Identifier	start_sect		1435488	1					
+ANR	1435687	Parameter	uint64_t cluster_offset	3:24:92:114	1435488	2	True				
+ANR	1435688	ParameterType	uint64_t		1435488	0					
+ANR	1435689	Identifier	cluster_offset		1435488	1					
+ANR	1435690	Parameter	int n_start	3:49:117:127	1435488	3	True				
+ANR	1435691	ParameterType	int		1435488	0					
+ANR	1435692	Identifier	n_start		1435488	1					
+ANR	1435693	Parameter	int n_end	3:62:130:138	1435488	4	True				
+ANR	1435694	ParameterType	int		1435488	0					
+ANR	1435695	Identifier	n_end		1435488	1					
+ANR	1435696	CFGEntryNode	ENTRY		1435488		True				
+ANR	1435697	CFGExitNode	EXIT		1435488		True				
+ANR	1435698	Symbol	ret		1435488						
+ANR	1435699	Symbol	qemu_blockalign		1435488						
+ANR	1435700	Symbol	& s -> aes_encrypt_key		1435488						
+ANR	1435701	Symbol	bs -> opaque		1435488						
+ANR	1435702	Symbol	bs -> file		1435488						
+ANR	1435703	Symbol	n_start		1435488						
+ANR	1435704	Symbol	bs -> total_sectors		1435488						
+ANR	1435705	Symbol	BLKDBG_COW_READ		1435488						
+ANR	1435706	Symbol	BLKDBG_COW_WRITE		1435488						
+ANR	1435707	Symbol	n		1435488						
+ANR	1435708	Symbol	n_end		1435488						
+ANR	1435709	Symbol	bs		1435488						
+ANR	1435710	Symbol	buf		1435488						
+ANR	1435711	Symbol	s		1435488						
+ANR	1435712	Symbol	* bs		1435488						
+ANR	1435713	Symbol	cluster_offset		1435488						
+ANR	1435714	Symbol	bdrv_read		1435488						
+ANR	1435715	Symbol	BDRV_SECTOR_SIZE		1435488						
+ANR	1435716	Symbol	s -> crypt_method		1435488						
+ANR	1435717	Symbol	bdrv_write		1435488						
+ANR	1435718	Symbol	start_sect		1435488						
+ANR	1435719	Symbol	* s		1435488						

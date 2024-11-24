@@ -1,0 +1,360 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5007626	File	/home/p4ultr4n/workplace/ReVeal/raw_code/iscsi_co_generic_cb_0.c								
+ANR	5007627	Function	iscsi_co_generic_cb	1:0:0:2410							
+ANR	5007628	FunctionDef	"iscsi_co_generic_cb (struct iscsi_context * iscsi , int status , void * command_data , void * opaque)"		5007627	0					
+ANR	5007629	CompoundStatement		5:0:121:2410	5007627	0					
+ANR	5007630	IdentifierDeclStatement	struct IscsiTask * iTask = opaque ;	7:4:128:160	5007627	0	True				
+ANR	5007631	IdentifierDecl	* iTask = opaque		5007627	0					
+ANR	5007632	IdentifierDeclType	struct IscsiTask *		5007627	0					
+ANR	5007633	Identifier	iTask		5007627	1					
+ANR	5007634	AssignmentExpression	* iTask = opaque		5007627	2		=			
+ANR	5007635	Identifier	opaque		5007627	0					
+ANR	5007636	Identifier	opaque		5007627	1					
+ANR	5007637	IdentifierDeclStatement	struct scsi_task * task = command_data ;	9:4:167:204	5007627	1	True				
+ANR	5007638	IdentifierDecl	* task = command_data		5007627	0					
+ANR	5007639	IdentifierDeclType	struct scsi_task *		5007627	0					
+ANR	5007640	Identifier	task		5007627	1					
+ANR	5007641	AssignmentExpression	* task = command_data		5007627	2		=			
+ANR	5007642	Identifier	command_data		5007627	0					
+ANR	5007643	Identifier	command_data		5007627	1					
+ANR	5007644	ExpressionStatement	iTask -> status = status	13:4:213:235	5007627	2	True				
+ANR	5007645	AssignmentExpression	iTask -> status = status		5007627	0		=			
+ANR	5007646	PtrMemberAccess	iTask -> status		5007627	0					
+ANR	5007647	Identifier	iTask		5007627	0					
+ANR	5007648	Identifier	status		5007627	1					
+ANR	5007649	Identifier	status		5007627	1					
+ANR	5007650	ExpressionStatement	iTask -> do_retry = 0	15:4:242:261	5007627	3	True				
+ANR	5007651	AssignmentExpression	iTask -> do_retry = 0		5007627	0		=			
+ANR	5007652	PtrMemberAccess	iTask -> do_retry		5007627	0					
+ANR	5007653	Identifier	iTask		5007627	0					
+ANR	5007654	Identifier	do_retry		5007627	1					
+ANR	5007655	PrimaryExpression	0		5007627	1					
+ANR	5007656	ExpressionStatement	iTask -> task = task	17:4:268:286	5007627	4	True				
+ANR	5007657	AssignmentExpression	iTask -> task = task		5007627	0		=			
+ANR	5007658	PtrMemberAccess	iTask -> task		5007627	0					
+ANR	5007659	Identifier	iTask		5007627	0					
+ANR	5007660	Identifier	task		5007627	1					
+ANR	5007661	Identifier	task		5007627	1					
+ANR	5007662	IfStatement	if ( status != SCSI_STATUS_GOOD )		5007627	5					
+ANR	5007663	Condition	status != SCSI_STATUS_GOOD	21:8:299:324	5007627	0	True				
+ANR	5007664	EqualityExpression	status != SCSI_STATUS_GOOD		5007627	0		!=			
+ANR	5007665	Identifier	status		5007627	0					
+ANR	5007666	Identifier	SCSI_STATUS_GOOD		5007627	1					
+ANR	5007667	CompoundStatement		17:36:205:205	5007627	1					
+ANR	5007668	IfStatement	if ( iTask -> retries ++ < ISCSI_CMD_RETRIES )		5007627	0					
+ANR	5007669	Condition	iTask -> retries ++ < ISCSI_CMD_RETRIES	23:12:342:377	5007627	0	True				
+ANR	5007670	RelationalExpression	iTask -> retries ++ < ISCSI_CMD_RETRIES		5007627	0		<			
+ANR	5007671	PostIncDecOperationExpression	iTask -> retries ++		5007627	0					
+ANR	5007672	PtrMemberAccess	iTask -> retries		5007627	0					
+ANR	5007673	Identifier	iTask		5007627	0					
+ANR	5007674	Identifier	retries		5007627	1					
+ANR	5007675	IncDec	++		5007627	1					
+ANR	5007676	Identifier	ISCSI_CMD_RETRIES		5007627	1					
+ANR	5007677	CompoundStatement		19:50:258:258	5007627	1					
+ANR	5007678	IfStatement	if ( status == SCSI_STATUS_CHECK_CONDITION && task -> sense . key == SCSI_SENSE_UNIT_ATTENTION )		5007627	0					
+ANR	5007679	Condition	status == SCSI_STATUS_CHECK_CONDITION && task -> sense . key == SCSI_SENSE_UNIT_ATTENTION	25:16:399:500	5007627	0	True				
+ANR	5007680	AndExpression	status == SCSI_STATUS_CHECK_CONDITION && task -> sense . key == SCSI_SENSE_UNIT_ATTENTION		5007627	0		&&			
+ANR	5007681	EqualityExpression	status == SCSI_STATUS_CHECK_CONDITION		5007627	0		==			
+ANR	5007682	Identifier	status		5007627	0					
+ANR	5007683	Identifier	SCSI_STATUS_CHECK_CONDITION		5007627	1					
+ANR	5007684	EqualityExpression	task -> sense . key == SCSI_SENSE_UNIT_ATTENTION		5007627	1		==			
+ANR	5007685	MemberAccess	task -> sense . key		5007627	0					
+ANR	5007686	PtrMemberAccess	task -> sense		5007627	0					
+ANR	5007687	Identifier	task		5007627	0					
+ANR	5007688	Identifier	sense		5007627	1					
+ANR	5007689	Identifier	key		5007627	1					
+ANR	5007690	Identifier	SCSI_SENSE_UNIT_ATTENTION		5007627	1					
+ANR	5007691	CompoundStatement		23:65:381:381	5007627	1					
+ANR	5007692	ExpressionStatement	"error_report ( ""iSCSI CheckCondition: %s"" , iscsi_get_error ( iscsi ) )"	29:16:522:616	5007627	0	True				
+ANR	5007693	CallExpression	"error_report ( ""iSCSI CheckCondition: %s"" , iscsi_get_error ( iscsi ) )"		5007627	0					
+ANR	5007694	Callee	error_report		5007627	0					
+ANR	5007695	Identifier	error_report		5007627	0					
+ANR	5007696	ArgumentList	"""iSCSI CheckCondition: %s"""		5007627	1					
+ANR	5007697	Argument	"""iSCSI CheckCondition: %s"""		5007627	0					
+ANR	5007698	PrimaryExpression	"""iSCSI CheckCondition: %s"""		5007627	0					
+ANR	5007699	Argument	iscsi_get_error ( iscsi )		5007627	1					
+ANR	5007700	CallExpression	iscsi_get_error ( iscsi )		5007627	0					
+ANR	5007701	Callee	iscsi_get_error		5007627	0					
+ANR	5007702	Identifier	iscsi_get_error		5007627	0					
+ANR	5007703	ArgumentList	iscsi		5007627	1					
+ANR	5007704	Argument	iscsi		5007627	0					
+ANR	5007705	Identifier	iscsi		5007627	0					
+ANR	5007706	ExpressionStatement	iTask -> do_retry = 1	33:16:635:654	5007627	1	True				
+ANR	5007707	AssignmentExpression	iTask -> do_retry = 1		5007627	0		=			
+ANR	5007708	PtrMemberAccess	iTask -> do_retry		5007627	0					
+ANR	5007709	Identifier	iTask		5007627	0					
+ANR	5007710	Identifier	do_retry		5007627	1					
+ANR	5007711	PrimaryExpression	1		5007627	1					
+ANR	5007712	GotoStatement	goto out ;	35:16:673:681	5007627	2	True				
+ANR	5007713	Identifier	out		5007627	0					
+ANR	5007714	IfStatement	if ( status == SCSI_STATUS_BUSY || status == SCSI_STATUS_TIMEOUT || status == SCSI_STATUS_TASK_SET_FULL )		5007627	1					
+ANR	5007715	Condition	status == SCSI_STATUS_BUSY || status == SCSI_STATUS_TIMEOUT || status == SCSI_STATUS_TASK_SET_FULL	39:16:715:846	5007627	0	True				
+ANR	5007716	OrExpression	status == SCSI_STATUS_BUSY || status == SCSI_STATUS_TIMEOUT || status == SCSI_STATUS_TASK_SET_FULL		5007627	0		||			
+ANR	5007717	EqualityExpression	status == SCSI_STATUS_BUSY		5007627	0		==			
+ANR	5007718	Identifier	status		5007627	0					
+ANR	5007719	Identifier	SCSI_STATUS_BUSY		5007627	1					
+ANR	5007720	OrExpression	status == SCSI_STATUS_TIMEOUT || status == SCSI_STATUS_TASK_SET_FULL		5007627	1		||			
+ANR	5007721	EqualityExpression	status == SCSI_STATUS_TIMEOUT		5007627	0		==			
+ANR	5007722	Identifier	status		5007627	0					
+ANR	5007723	Identifier	SCSI_STATUS_TIMEOUT		5007627	1					
+ANR	5007724	EqualityExpression	status == SCSI_STATUS_TASK_SET_FULL		5007627	1		==			
+ANR	5007725	Identifier	status		5007627	0					
+ANR	5007726	Identifier	SCSI_STATUS_TASK_SET_FULL		5007627	1					
+ANR	5007727	CompoundStatement		41:16:746:838	5007627	1					
+ANR	5007728	IdentifierDeclStatement	unsigned retry_time = exp_random ( iscsi_retry_times [ iTask -> retries - 1 ] ) ;	45:16:868:960	5007627	0	True				
+ANR	5007729	IdentifierDecl	retry_time = exp_random ( iscsi_retry_times [ iTask -> retries - 1 ] )		5007627	0					
+ANR	5007730	IdentifierDeclType	unsigned		5007627	0					
+ANR	5007731	Identifier	retry_time		5007627	1					
+ANR	5007732	AssignmentExpression	retry_time = exp_random ( iscsi_retry_times [ iTask -> retries - 1 ] )		5007627	2		=			
+ANR	5007733	Identifier	retry_time		5007627	0					
+ANR	5007734	CallExpression	exp_random ( iscsi_retry_times [ iTask -> retries - 1 ] )		5007627	1					
+ANR	5007735	Callee	exp_random		5007627	0					
+ANR	5007736	Identifier	exp_random		5007627	0					
+ANR	5007737	ArgumentList	iscsi_retry_times [ iTask -> retries - 1 ]		5007627	1					
+ANR	5007738	Argument	iscsi_retry_times [ iTask -> retries - 1 ]		5007627	0					
+ANR	5007739	ArrayIndexing	iscsi_retry_times [ iTask -> retries - 1 ]		5007627	0					
+ANR	5007740	Identifier	iscsi_retry_times		5007627	0					
+ANR	5007741	AdditiveExpression	iTask -> retries - 1		5007627	1		-			
+ANR	5007742	PtrMemberAccess	iTask -> retries		5007627	0					
+ANR	5007743	Identifier	iTask		5007627	0					
+ANR	5007744	Identifier	retries		5007627	1					
+ANR	5007745	PrimaryExpression	1		5007627	1					
+ANR	5007746	IfStatement	if ( status == SCSI_STATUS_TIMEOUT )		5007627	1					
+ANR	5007747	Condition	status == SCSI_STATUS_TIMEOUT	49:20:983:1011	5007627	0	True				
+ANR	5007748	EqualityExpression	status == SCSI_STATUS_TIMEOUT		5007627	0		==			
+ANR	5007749	Identifier	status		5007627	0					
+ANR	5007750	Identifier	SCSI_STATUS_TIMEOUT		5007627	1					
+ANR	5007751	CompoundStatement		45:51:892:892	5007627	1					
+ANR	5007752	ExpressionStatement	retry_time = EVENT_INTERVAL * 2	55:20:1158:1189	5007627	0	True				
+ANR	5007753	AssignmentExpression	retry_time = EVENT_INTERVAL * 2		5007627	0		=			
+ANR	5007754	Identifier	retry_time		5007627	0					
+ANR	5007755	MultiplicativeExpression	EVENT_INTERVAL * 2		5007627	1		*			
+ANR	5007756	Identifier	EVENT_INTERVAL		5007627	0					
+ANR	5007757	PrimaryExpression	2		5007627	1					
+ANR	5007758	ExpressionStatement	iTask -> iscsilun -> request_timed_out = true	57:20:1212:1253	5007627	1	True				
+ANR	5007759	AssignmentExpression	iTask -> iscsilun -> request_timed_out = true		5007627	0		=			
+ANR	5007760	PtrMemberAccess	iTask -> iscsilun -> request_timed_out		5007627	0					
+ANR	5007761	PtrMemberAccess	iTask -> iscsilun		5007627	0					
+ANR	5007762	Identifier	iTask		5007627	0					
+ANR	5007763	Identifier	iscsilun		5007627	1					
+ANR	5007764	Identifier	request_timed_out		5007627	1					
+ANR	5007765	Identifier	true		5007627	1					
+ANR	5007766	Statement	error_report	61:16:1291:1302	5007627	2	True				
+ANR	5007767	Statement	(	61:28:1303:1303	5007627	3	True				
+ANR	5007768	Statement	"""iSCSI Busy/TaskSetFull/TimeOut"""	61:29:1304:1335	5007627	4	True				
+ANR	5007769	Statement	""" (retry #%u in %u ms): %s"""	63:29:1367:1393	5007627	5	True				
+ANR	5007770	Statement	","	63:56:1394:1394	5007627	6	True				
+ANR	5007771	Statement	iTask	65:29:1426:1430	5007627	7	True				
+ANR	5007772	Statement	->	65:34:1431:1432	5007627	8	True				
+ANR	5007773	Statement	retries	65:36:1433:1439	5007627	9	True				
+ANR	5007774	Statement	","	65:43:1440:1440	5007627	10	True				
+ANR	5007775	Statement	retry_time	65:45:1442:1451	5007627	11	True				
+ANR	5007776	Statement	","	65:55:1452:1452	5007627	12	True				
+ANR	5007777	Statement	iscsi_get_error	67:29:1484:1498	5007627	13	True				
+ANR	5007778	Statement	(	67:44:1499:1499	5007627	14	True				
+ANR	5007779	Statement	iscsi	67:45:1500:1504	5007627	15	True				
+ANR	5007780	Statement	)	67:50:1505:1505	5007627	16	True				
+ANR	5007781	Statement	)	67:51:1506:1506	5007627	17	True				
+ANR	5007782	ExpressionStatement		67:52:1507:1507	5007627	18	True				
+ANR	5007783	ExpressionStatement	"aio_timer_init ( iTask -> iscsilun -> aio_context , & iTask -> retry_timer , QEMU_CLOCK_REALTIME , SCALE_MS , iscsi_retry_timer_expired , iTask )"	69:16:1526:1720	5007627	19	True				
+ANR	5007784	CallExpression	"aio_timer_init ( iTask -> iscsilun -> aio_context , & iTask -> retry_timer , QEMU_CLOCK_REALTIME , SCALE_MS , iscsi_retry_timer_expired , iTask )"		5007627	0					
+ANR	5007785	Callee	aio_timer_init		5007627	0					
+ANR	5007786	Identifier	aio_timer_init		5007627	0					
+ANR	5007787	ArgumentList	iTask -> iscsilun -> aio_context		5007627	1					
+ANR	5007788	Argument	iTask -> iscsilun -> aio_context		5007627	0					
+ANR	5007789	PtrMemberAccess	iTask -> iscsilun -> aio_context		5007627	0					
+ANR	5007790	PtrMemberAccess	iTask -> iscsilun		5007627	0					
+ANR	5007791	Identifier	iTask		5007627	0					
+ANR	5007792	Identifier	iscsilun		5007627	1					
+ANR	5007793	Identifier	aio_context		5007627	1					
+ANR	5007794	Argument	& iTask -> retry_timer		5007627	1					
+ANR	5007795	UnaryOperationExpression	& iTask -> retry_timer		5007627	0					
+ANR	5007796	UnaryOperator	&		5007627	0					
+ANR	5007797	PtrMemberAccess	iTask -> retry_timer		5007627	1					
+ANR	5007798	Identifier	iTask		5007627	0					
+ANR	5007799	Identifier	retry_timer		5007627	1					
+ANR	5007800	Argument	QEMU_CLOCK_REALTIME		5007627	2					
+ANR	5007801	Identifier	QEMU_CLOCK_REALTIME		5007627	0					
+ANR	5007802	Argument	SCALE_MS		5007627	3					
+ANR	5007803	Identifier	SCALE_MS		5007627	0					
+ANR	5007804	Argument	iscsi_retry_timer_expired		5007627	4					
+ANR	5007805	Identifier	iscsi_retry_timer_expired		5007627	0					
+ANR	5007806	Argument	iTask		5007627	5					
+ANR	5007807	Identifier	iTask		5007627	0					
+ANR	5007808	ExpressionStatement	"timer_mod ( & iTask -> retry_timer , qemu_clock_get_ms ( QEMU_CLOCK_REALTIME ) + retry_time )"	75:16:1739:1849	5007627	20	True				
+ANR	5007809	CallExpression	"timer_mod ( & iTask -> retry_timer , qemu_clock_get_ms ( QEMU_CLOCK_REALTIME ) + retry_time )"		5007627	0					
+ANR	5007810	Callee	timer_mod		5007627	0					
+ANR	5007811	Identifier	timer_mod		5007627	0					
+ANR	5007812	ArgumentList	& iTask -> retry_timer		5007627	1					
+ANR	5007813	Argument	& iTask -> retry_timer		5007627	0					
+ANR	5007814	UnaryOperationExpression	& iTask -> retry_timer		5007627	0					
+ANR	5007815	UnaryOperator	&		5007627	0					
+ANR	5007816	PtrMemberAccess	iTask -> retry_timer		5007627	1					
+ANR	5007817	Identifier	iTask		5007627	0					
+ANR	5007818	Identifier	retry_timer		5007627	1					
+ANR	5007819	Argument	qemu_clock_get_ms ( QEMU_CLOCK_REALTIME ) + retry_time		5007627	1					
+ANR	5007820	AdditiveExpression	qemu_clock_get_ms ( QEMU_CLOCK_REALTIME ) + retry_time		5007627	0		+			
+ANR	5007821	CallExpression	qemu_clock_get_ms ( QEMU_CLOCK_REALTIME )		5007627	0					
+ANR	5007822	Callee	qemu_clock_get_ms		5007627	0					
+ANR	5007823	Identifier	qemu_clock_get_ms		5007627	0					
+ANR	5007824	ArgumentList	QEMU_CLOCK_REALTIME		5007627	1					
+ANR	5007825	Argument	QEMU_CLOCK_REALTIME		5007627	0					
+ANR	5007826	Identifier	QEMU_CLOCK_REALTIME		5007627	0					
+ANR	5007827	Identifier	retry_time		5007627	1					
+ANR	5007828	ExpressionStatement	iTask -> do_retry = 1	79:16:1868:1887	5007627	21	True				
+ANR	5007829	AssignmentExpression	iTask -> do_retry = 1		5007627	0		=			
+ANR	5007830	PtrMemberAccess	iTask -> do_retry		5007627	0					
+ANR	5007831	Identifier	iTask		5007627	0					
+ANR	5007832	Identifier	do_retry		5007627	1					
+ANR	5007833	PrimaryExpression	1		5007627	1					
+ANR	5007834	ReturnStatement	return ;	81:16:1906:1912	5007627	22	True				
+ANR	5007835	ExpressionStatement	iTask -> err_code = iscsi_translate_sense ( & task -> sense )	87:8:1949:2002	5007627	1	True				
+ANR	5007836	AssignmentExpression	iTask -> err_code = iscsi_translate_sense ( & task -> sense )		5007627	0		=			
+ANR	5007837	PtrMemberAccess	iTask -> err_code		5007627	0					
+ANR	5007838	Identifier	iTask		5007627	0					
+ANR	5007839	Identifier	err_code		5007627	1					
+ANR	5007840	CallExpression	iscsi_translate_sense ( & task -> sense )		5007627	1					
+ANR	5007841	Callee	iscsi_translate_sense		5007627	0					
+ANR	5007842	Identifier	iscsi_translate_sense		5007627	0					
+ANR	5007843	ArgumentList	& task -> sense		5007627	1					
+ANR	5007844	Argument	& task -> sense		5007627	0					
+ANR	5007845	UnaryOperationExpression	& task -> sense		5007627	0					
+ANR	5007846	UnaryOperator	&		5007627	0					
+ANR	5007847	PtrMemberAccess	task -> sense		5007627	1					
+ANR	5007848	Identifier	task		5007627	0					
+ANR	5007849	Identifier	sense		5007627	1					
+ANR	5007850	ExpressionStatement	"error_report ( ""iSCSI Failure: %s"" , iscsi_get_error ( iscsi ) )"	89:8:2013:2070	5007627	2	True				
+ANR	5007851	CallExpression	"error_report ( ""iSCSI Failure: %s"" , iscsi_get_error ( iscsi ) )"		5007627	0					
+ANR	5007852	Callee	error_report		5007627	0					
+ANR	5007853	Identifier	error_report		5007627	0					
+ANR	5007854	ArgumentList	"""iSCSI Failure: %s"""		5007627	1					
+ANR	5007855	Argument	"""iSCSI Failure: %s"""		5007627	0					
+ANR	5007856	PrimaryExpression	"""iSCSI Failure: %s"""		5007627	0					
+ANR	5007857	Argument	iscsi_get_error ( iscsi )		5007627	1					
+ANR	5007858	CallExpression	iscsi_get_error ( iscsi )		5007627	0					
+ANR	5007859	Callee	iscsi_get_error		5007627	0					
+ANR	5007860	Identifier	iscsi_get_error		5007627	0					
+ANR	5007861	ArgumentList	iscsi		5007627	1					
+ANR	5007862	Argument	iscsi		5007627	0					
+ANR	5007863	Identifier	iscsi		5007627	0					
+ANR	5007864	ElseStatement	else		5007627	0					
+ANR	5007865	CompoundStatement		87:11:1962:1962	5007627	0					
+ANR	5007866	ExpressionStatement	iTask -> iscsilun -> force_next_flush |= iTask -> force_next_flush	93:8:2095:2155	5007627	0	True				
+ANR	5007867	AssignmentExpression	iTask -> iscsilun -> force_next_flush |= iTask -> force_next_flush		5007627	0		|=			
+ANR	5007868	PtrMemberAccess	iTask -> iscsilun -> force_next_flush		5007627	0					
+ANR	5007869	PtrMemberAccess	iTask -> iscsilun		5007627	0					
+ANR	5007870	Identifier	iTask		5007627	0					
+ANR	5007871	Identifier	iscsilun		5007627	1					
+ANR	5007872	Identifier	force_next_flush		5007627	1					
+ANR	5007873	PtrMemberAccess	iTask -> force_next_flush		5007627	1					
+ANR	5007874	Identifier	iTask		5007627	0					
+ANR	5007875	Identifier	force_next_flush		5007627	1					
+ANR	5007876	Label	out :	99:0:2167:2170	5007627	6	True				
+ANR	5007877	Identifier	out		5007627	0					
+ANR	5007878	IfStatement	if ( iTask -> co )		5007627	7					
+ANR	5007879	Condition	iTask -> co	101:8:2181:2189	5007627	0	True				
+ANR	5007880	PtrMemberAccess	iTask -> co		5007627	0					
+ANR	5007881	Identifier	iTask		5007627	0					
+ANR	5007882	Identifier	co		5007627	1					
+ANR	5007883	CompoundStatement		97:19:2070:2070	5007627	1					
+ANR	5007884	ExpressionStatement	"iTask -> bh = aio_bh_new ( iTask -> iscsilun -> aio_context , iscsi_co_generic_bh_cb , iTask )"	103:8:2203:2318	5007627	0	True				
+ANR	5007885	AssignmentExpression	"iTask -> bh = aio_bh_new ( iTask -> iscsilun -> aio_context , iscsi_co_generic_bh_cb , iTask )"		5007627	0		=			
+ANR	5007886	PtrMemberAccess	iTask -> bh		5007627	0					
+ANR	5007887	Identifier	iTask		5007627	0					
+ANR	5007888	Identifier	bh		5007627	1					
+ANR	5007889	CallExpression	"aio_bh_new ( iTask -> iscsilun -> aio_context , iscsi_co_generic_bh_cb , iTask )"		5007627	1					
+ANR	5007890	Callee	aio_bh_new		5007627	0					
+ANR	5007891	Identifier	aio_bh_new		5007627	0					
+ANR	5007892	ArgumentList	iTask -> iscsilun -> aio_context		5007627	1					
+ANR	5007893	Argument	iTask -> iscsilun -> aio_context		5007627	0					
+ANR	5007894	PtrMemberAccess	iTask -> iscsilun -> aio_context		5007627	0					
+ANR	5007895	PtrMemberAccess	iTask -> iscsilun		5007627	0					
+ANR	5007896	Identifier	iTask		5007627	0					
+ANR	5007897	Identifier	iscsilun		5007627	1					
+ANR	5007898	Identifier	aio_context		5007627	1					
+ANR	5007899	Argument	iscsi_co_generic_bh_cb		5007627	1					
+ANR	5007900	Identifier	iscsi_co_generic_bh_cb		5007627	0					
+ANR	5007901	Argument	iTask		5007627	2					
+ANR	5007902	Identifier	iTask		5007627	0					
+ANR	5007903	ExpressionStatement	qemu_bh_schedule ( iTask -> bh )	107:8:2329:2356	5007627	1	True				
+ANR	5007904	CallExpression	qemu_bh_schedule ( iTask -> bh )		5007627	0					
+ANR	5007905	Callee	qemu_bh_schedule		5007627	0					
+ANR	5007906	Identifier	qemu_bh_schedule		5007627	0					
+ANR	5007907	ArgumentList	iTask -> bh		5007627	1					
+ANR	5007908	Argument	iTask -> bh		5007627	0					
+ANR	5007909	PtrMemberAccess	iTask -> bh		5007627	0					
+ANR	5007910	Identifier	iTask		5007627	0					
+ANR	5007911	Identifier	bh		5007627	1					
+ANR	5007912	ElseStatement	else		5007627	0					
+ANR	5007913	CompoundStatement		105:11:2248:2248	5007627	0					
+ANR	5007914	ExpressionStatement	iTask -> complete = 1	111:8:2381:2400	5007627	0	True				
+ANR	5007915	AssignmentExpression	iTask -> complete = 1		5007627	0		=			
+ANR	5007916	PtrMemberAccess	iTask -> complete		5007627	0					
+ANR	5007917	Identifier	iTask		5007627	0					
+ANR	5007918	Identifier	complete		5007627	1					
+ANR	5007919	PrimaryExpression	1		5007627	1					
+ANR	5007920	Identifier	iscsi_co_generic_cb		5007627	1					
+ANR	5007921	ParameterList	"struct iscsi_context * iscsi , int status , void * command_data , void * opaque"		5007627	2					
+ANR	5007922	Parameter	struct iscsi_context * iscsi	1:20:20:46	5007627	0	True				
+ANR	5007923	ParameterType	struct iscsi_context *		5007627	0					
+ANR	5007924	Identifier	iscsi		5007627	1					
+ANR	5007925	Parameter	int status	1:49:49:58	5007627	1	True				
+ANR	5007926	ParameterType	int		5007627	0					
+ANR	5007927	Identifier	status		5007627	1					
+ANR	5007928	Parameter	void * command_data	3:24:86:103	5007627	2	True				
+ANR	5007929	ParameterType	void *		5007627	0					
+ANR	5007930	Identifier	command_data		5007627	1					
+ANR	5007931	Parameter	void * opaque	3:44:106:117	5007627	3	True				
+ANR	5007932	ParameterType	void *		5007627	0					
+ANR	5007933	Identifier	opaque		5007627	1					
+ANR	5007934	CFGEntryNode	ENTRY		5007627		True				
+ANR	5007935	CFGExitNode	EXIT		5007627		True				
+ANR	5007936	Symbol	SCSI_STATUS_TIMEOUT		5007627						
+ANR	5007937	Symbol	aio_bh_new		5007627						
+ANR	5007938	Symbol	SCSI_STATUS_GOOD		5007627						
+ANR	5007939	Symbol	command_data		5007627						
+ANR	5007940	Symbol	* * iTask		5007627						
+ANR	5007941	Symbol	* iTask -> retries		5007627						
+ANR	5007942	Symbol	iTask -> status		5007627						
+ANR	5007943	Symbol	iTask -> retries		5007627						
+ANR	5007944	Symbol	iscsi_get_error		5007627						
+ANR	5007945	Symbol	EVENT_INTERVAL		5007627						
+ANR	5007946	Symbol	task -> sense		5007627						
+ANR	5007947	Symbol	iTask -> err_code		5007627						
+ANR	5007948	Symbol	iTask -> iscsilun		5007627						
+ANR	5007949	Symbol	* task		5007627						
+ANR	5007950	Symbol	* iTask -> iscsilun		5007627						
+ANR	5007951	Symbol	iTask -> complete		5007627						
+ANR	5007952	Symbol	SCALE_MS		5007627						
+ANR	5007953	Symbol	iscsi_retry_timer_expired		5007627						
+ANR	5007954	Symbol	qemu_clock_get_ms		5007627						
+ANR	5007955	Symbol	iTask -> task		5007627						
+ANR	5007956	Symbol	iscsi_co_generic_bh_cb		5007627						
+ANR	5007957	Symbol	retry_time		5007627						
+ANR	5007958	Symbol	SCSI_STATUS_CHECK_CONDITION		5007627						
+ANR	5007959	Symbol	& task -> sense		5007627						
+ANR	5007960	Symbol	iTask -> iscsilun -> request_timed_out		5007627						
+ANR	5007961	Symbol	SCSI_STATUS_TASK_SET_FULL		5007627						
+ANR	5007962	Symbol	exp_random		5007627						
+ANR	5007963	Symbol	task		5007627						
+ANR	5007964	Symbol	iscsi_translate_sense		5007627						
+ANR	5007965	Symbol	true		5007627						
+ANR	5007966	Symbol	status		5007627						
+ANR	5007967	Symbol	iTask -> co		5007627						
+ANR	5007968	Symbol	* iTask		5007627						
+ANR	5007969	Symbol	iscsi_retry_times		5007627						
+ANR	5007970	Symbol	& iTask -> retry_timer		5007627						
+ANR	5007971	Symbol	SCSI_STATUS_BUSY		5007627						
+ANR	5007972	Symbol	iTask -> force_next_flush		5007627						
+ANR	5007973	Symbol	QEMU_CLOCK_REALTIME		5007627						
+ANR	5007974	Symbol	iTask -> do_retry		5007627						
+ANR	5007975	Symbol	iTask -> iscsilun -> aio_context		5007627						
+ANR	5007976	Symbol	iTask		5007627						
+ANR	5007977	Symbol	opaque		5007627						
+ANR	5007978	Symbol	iTask -> bh		5007627						
+ANR	5007979	Symbol	* iscsi_retry_times		5007627						
+ANR	5007980	Symbol	task -> sense . key		5007627						
+ANR	5007981	Symbol	iscsi		5007627						
+ANR	5007982	Symbol	SCSI_SENSE_UNIT_ATTENTION		5007627						
+ANR	5007983	Symbol	ISCSI_CMD_RETRIES		5007627						
+ANR	5007984	Symbol	iTask -> iscsilun -> force_next_flush		5007627						

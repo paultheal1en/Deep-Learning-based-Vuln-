@@ -1,0 +1,411 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	8965550	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vfio_msi_enable_1.c								
+ANR	8965551	Function	vfio_msi_enable	1:0:0:2496							
+ANR	8965552	FunctionDef	vfio_msi_enable (VFIOPCIDevice * vdev)		8965551	0					
+ANR	8965553	CompoundStatement		3:0:50:2496	8965551	0					
+ANR	8965554	IdentifierDeclStatement	"int ret , i ;"	5:4:57:67	8965551	0	True				
+ANR	8965555	IdentifierDecl	ret		8965551	0					
+ANR	8965556	IdentifierDeclType	int		8965551	0					
+ANR	8965557	Identifier	ret		8965551	1					
+ANR	8965558	IdentifierDecl	i		8965551	1					
+ANR	8965559	IdentifierDeclType	int		8965551	0					
+ANR	8965560	Identifier	i		8965551	1					
+ANR	8965561	ExpressionStatement	vfio_disable_interrupts ( vdev )	9:4:76:105	8965551	1	True				
+ANR	8965562	CallExpression	vfio_disable_interrupts ( vdev )		8965551	0					
+ANR	8965563	Callee	vfio_disable_interrupts		8965551	0					
+ANR	8965564	Identifier	vfio_disable_interrupts		8965551	0					
+ANR	8965565	ArgumentList	vdev		8965551	1					
+ANR	8965566	Argument	vdev		8965551	0					
+ANR	8965567	Identifier	vdev		8965551	0					
+ANR	8965568	ExpressionStatement	vdev -> nr_vectors = msi_nr_vectors_allocated ( & vdev -> pdev )	13:4:114:170	8965551	2	True				
+ANR	8965569	AssignmentExpression	vdev -> nr_vectors = msi_nr_vectors_allocated ( & vdev -> pdev )		8965551	0		=			
+ANR	8965570	PtrMemberAccess	vdev -> nr_vectors		8965551	0					
+ANR	8965571	Identifier	vdev		8965551	0					
+ANR	8965572	Identifier	nr_vectors		8965551	1					
+ANR	8965573	CallExpression	msi_nr_vectors_allocated ( & vdev -> pdev )		8965551	1					
+ANR	8965574	Callee	msi_nr_vectors_allocated		8965551	0					
+ANR	8965575	Identifier	msi_nr_vectors_allocated		8965551	0					
+ANR	8965576	ArgumentList	& vdev -> pdev		8965551	1					
+ANR	8965577	Argument	& vdev -> pdev		8965551	0					
+ANR	8965578	UnaryOperationExpression	& vdev -> pdev		8965551	0					
+ANR	8965579	UnaryOperator	&		8965551	0					
+ANR	8965580	PtrMemberAccess	vdev -> pdev		8965551	1					
+ANR	8965581	Identifier	vdev		8965551	0					
+ANR	8965582	Identifier	pdev		8965551	1					
+ANR	8965583	Label	retry :	15:0:173:178	8965551	3	True				
+ANR	8965584	Identifier	retry		8965551	0					
+ANR	8965585	ExpressionStatement	vdev -> msi_vectors = g_malloc0 ( vdev -> nr_vectors * sizeof ( VFIOMSIVector ) )	17:4:185:256	8965551	4	True				
+ANR	8965586	AssignmentExpression	vdev -> msi_vectors = g_malloc0 ( vdev -> nr_vectors * sizeof ( VFIOMSIVector ) )		8965551	0		=			
+ANR	8965587	PtrMemberAccess	vdev -> msi_vectors		8965551	0					
+ANR	8965588	Identifier	vdev		8965551	0					
+ANR	8965589	Identifier	msi_vectors		8965551	1					
+ANR	8965590	CallExpression	g_malloc0 ( vdev -> nr_vectors * sizeof ( VFIOMSIVector ) )		8965551	1					
+ANR	8965591	Callee	g_malloc0		8965551	0					
+ANR	8965592	Identifier	g_malloc0		8965551	0					
+ANR	8965593	ArgumentList	vdev -> nr_vectors * sizeof ( VFIOMSIVector )		8965551	1					
+ANR	8965594	Argument	vdev -> nr_vectors * sizeof ( VFIOMSIVector )		8965551	0					
+ANR	8965595	MultiplicativeExpression	vdev -> nr_vectors * sizeof ( VFIOMSIVector )		8965551	0		*			
+ANR	8965596	PtrMemberAccess	vdev -> nr_vectors		8965551	0					
+ANR	8965597	Identifier	vdev		8965551	0					
+ANR	8965598	Identifier	nr_vectors		8965551	1					
+ANR	8965599	SizeofExpression	sizeof ( VFIOMSIVector )		8965551	1					
+ANR	8965600	Sizeof	sizeof		8965551	0					
+ANR	8965601	SizeofOperand	VFIOMSIVector		8965551	1					
+ANR	8965602	ForStatement	for ( i = 0 ; i < vdev -> nr_vectors ; i ++ )		8965551	5					
+ANR	8965603	ForInit	i = 0 ;	21:9:270:275	8965551	0	True				
+ANR	8965604	AssignmentExpression	i = 0		8965551	0		=			
+ANR	8965605	Identifier	i		8965551	0					
+ANR	8965606	PrimaryExpression	0		8965551	1					
+ANR	8965607	Condition	i < vdev -> nr_vectors	21:16:277:296	8965551	1	True				
+ANR	8965608	RelationalExpression	i < vdev -> nr_vectors		8965551	0		<			
+ANR	8965609	Identifier	i		8965551	0					
+ANR	8965610	PtrMemberAccess	vdev -> nr_vectors		8965551	1					
+ANR	8965611	Identifier	vdev		8965551	0					
+ANR	8965612	Identifier	nr_vectors		8965551	1					
+ANR	8965613	PostIncDecOperationExpression	i ++	21:38:299:301	8965551	2	True				
+ANR	8965614	Identifier	i		8965551	0					
+ANR	8965615	IncDec	++		8965551	1					
+ANR	8965616	CompoundStatement		23:8:320:368	8965551	3					
+ANR	8965617	IdentifierDeclStatement	VFIOMSIVector * vector = & vdev -> msi_vectors [ i ] ;	23:8:315:360	8965551	0	True				
+ANR	8965618	IdentifierDecl	* vector = & vdev -> msi_vectors [ i ]		8965551	0					
+ANR	8965619	IdentifierDeclType	VFIOMSIVector *		8965551	0					
+ANR	8965620	Identifier	vector		8965551	1					
+ANR	8965621	AssignmentExpression	* vector = & vdev -> msi_vectors [ i ]		8965551	2		=			
+ANR	8965622	Identifier	vector		8965551	0					
+ANR	8965623	UnaryOperationExpression	& vdev -> msi_vectors [ i ]		8965551	1					
+ANR	8965624	UnaryOperator	&		8965551	0					
+ANR	8965625	ArrayIndexing	vdev -> msi_vectors [ i ]		8965551	1					
+ANR	8965626	PtrMemberAccess	vdev -> msi_vectors		8965551	0					
+ANR	8965627	Identifier	vdev		8965551	0					
+ANR	8965628	Identifier	msi_vectors		8965551	1					
+ANR	8965629	Identifier	i		8965551	1					
+ANR	8965630	IdentifierDeclStatement	"MSIMessage msg = msi_get_message ( & vdev -> pdev , i ) ;"	25:8:371:419	8965551	1	True				
+ANR	8965631	IdentifierDecl	"msg = msi_get_message ( & vdev -> pdev , i )"		8965551	0					
+ANR	8965632	IdentifierDeclType	MSIMessage		8965551	0					
+ANR	8965633	Identifier	msg		8965551	1					
+ANR	8965634	AssignmentExpression	"msg = msi_get_message ( & vdev -> pdev , i )"		8965551	2		=			
+ANR	8965635	Identifier	msg		8965551	0					
+ANR	8965636	CallExpression	"msi_get_message ( & vdev -> pdev , i )"		8965551	1					
+ANR	8965637	Callee	msi_get_message		8965551	0					
+ANR	8965638	Identifier	msi_get_message		8965551	0					
+ANR	8965639	ArgumentList	& vdev -> pdev		8965551	1					
+ANR	8965640	Argument	& vdev -> pdev		8965551	0					
+ANR	8965641	UnaryOperationExpression	& vdev -> pdev		8965551	0					
+ANR	8965642	UnaryOperator	&		8965551	0					
+ANR	8965643	PtrMemberAccess	vdev -> pdev		8965551	1					
+ANR	8965644	Identifier	vdev		8965551	0					
+ANR	8965645	Identifier	pdev		8965551	1					
+ANR	8965646	Argument	i		8965551	1					
+ANR	8965647	Identifier	i		8965551	0					
+ANR	8965648	ExpressionStatement	vector -> vdev = vdev	29:8:432:451	8965551	2	True				
+ANR	8965649	AssignmentExpression	vector -> vdev = vdev		8965551	0		=			
+ANR	8965650	PtrMemberAccess	vector -> vdev		8965551	0					
+ANR	8965651	Identifier	vector		8965551	0					
+ANR	8965652	Identifier	vdev		8965551	1					
+ANR	8965653	Identifier	vdev		8965551	1					
+ANR	8965654	ExpressionStatement	vector -> virq = - 1	31:8:462:479	8965551	3	True				
+ANR	8965655	AssignmentExpression	vector -> virq = - 1		8965551	0		=			
+ANR	8965656	PtrMemberAccess	vector -> virq		8965551	0					
+ANR	8965657	Identifier	vector		8965551	0					
+ANR	8965658	Identifier	virq		8965551	1					
+ANR	8965659	UnaryOperationExpression	- 1		8965551	1					
+ANR	8965660	UnaryOperator	-		8965551	0					
+ANR	8965661	PrimaryExpression	1		8965551	1					
+ANR	8965662	ExpressionStatement	vector -> use = true	33:8:490:508	8965551	4	True				
+ANR	8965663	AssignmentExpression	vector -> use = true		8965551	0		=			
+ANR	8965664	PtrMemberAccess	vector -> use		8965551	0					
+ANR	8965665	Identifier	vector		8965551	0					
+ANR	8965666	Identifier	use		8965551	1					
+ANR	8965667	Identifier	true		8965551	1					
+ANR	8965668	IfStatement	"if ( event_notifier_init ( & vector -> interrupt , 0 ) )"		8965551	5					
+ANR	8965669	Condition	"event_notifier_init ( & vector -> interrupt , 0 )"	37:12:525:566	8965551	0	True				
+ANR	8965670	CallExpression	"event_notifier_init ( & vector -> interrupt , 0 )"		8965551	0					
+ANR	8965671	Callee	event_notifier_init		8965551	0					
+ANR	8965672	Identifier	event_notifier_init		8965551	0					
+ANR	8965673	ArgumentList	& vector -> interrupt		8965551	1					
+ANR	8965674	Argument	& vector -> interrupt		8965551	0					
+ANR	8965675	UnaryOperationExpression	& vector -> interrupt		8965551	0					
+ANR	8965676	UnaryOperator	&		8965551	0					
+ANR	8965677	PtrMemberAccess	vector -> interrupt		8965551	1					
+ANR	8965678	Identifier	vector		8965551	0					
+ANR	8965679	Identifier	interrupt		8965551	1					
+ANR	8965680	Argument	0		8965551	1					
+ANR	8965681	PrimaryExpression	0		8965551	0					
+ANR	8965682	CompoundStatement		35:56:518:518	8965551	1					
+ANR	8965683	ExpressionStatement	"error_report ( ""vfio: Error: event_notifier_init failed"" )"	39:12:584:639	8965551	0	True				
+ANR	8965684	CallExpression	"error_report ( ""vfio: Error: event_notifier_init failed"" )"		8965551	0					
+ANR	8965685	Callee	error_report		8965551	0					
+ANR	8965686	Identifier	error_report		8965551	0					
+ANR	8965687	ArgumentList	"""vfio: Error: event_notifier_init failed"""		8965551	1					
+ANR	8965688	Argument	"""vfio: Error: event_notifier_init failed"""		8965551	0					
+ANR	8965689	PrimaryExpression	"""vfio: Error: event_notifier_init failed"""		8965551	0					
+ANR	8965690	ExpressionStatement	"qemu_set_fd_handler ( event_notifier_get_fd ( & vector -> interrupt ) , vfio_msi_interrupt , NULL , vector )"	45:8:663:788	8965551	6	True				
+ANR	8965691	CallExpression	"qemu_set_fd_handler ( event_notifier_get_fd ( & vector -> interrupt ) , vfio_msi_interrupt , NULL , vector )"		8965551	0					
+ANR	8965692	Callee	qemu_set_fd_handler		8965551	0					
+ANR	8965693	Identifier	qemu_set_fd_handler		8965551	0					
+ANR	8965694	ArgumentList	event_notifier_get_fd ( & vector -> interrupt )		8965551	1					
+ANR	8965695	Argument	event_notifier_get_fd ( & vector -> interrupt )		8965551	0					
+ANR	8965696	CallExpression	event_notifier_get_fd ( & vector -> interrupt )		8965551	0					
+ANR	8965697	Callee	event_notifier_get_fd		8965551	0					
+ANR	8965698	Identifier	event_notifier_get_fd		8965551	0					
+ANR	8965699	ArgumentList	& vector -> interrupt		8965551	1					
+ANR	8965700	Argument	& vector -> interrupt		8965551	0					
+ANR	8965701	UnaryOperationExpression	& vector -> interrupt		8965551	0					
+ANR	8965702	UnaryOperator	&		8965551	0					
+ANR	8965703	PtrMemberAccess	vector -> interrupt		8965551	1					
+ANR	8965704	Identifier	vector		8965551	0					
+ANR	8965705	Identifier	interrupt		8965551	1					
+ANR	8965706	Argument	vfio_msi_interrupt		8965551	1					
+ANR	8965707	Identifier	vfio_msi_interrupt		8965551	0					
+ANR	8965708	Argument	NULL		8965551	2					
+ANR	8965709	Identifier	NULL		8965551	0					
+ANR	8965710	Argument	vector		8965551	3					
+ANR	8965711	Identifier	vector		8965551	0					
+ANR	8965712	ExpressionStatement	"vfio_add_kvm_msi_virq ( vdev , vector , & msg , false )"	59:8:941:989	8965551	7	True				
+ANR	8965713	CallExpression	"vfio_add_kvm_msi_virq ( vdev , vector , & msg , false )"		8965551	0					
+ANR	8965714	Callee	vfio_add_kvm_msi_virq		8965551	0					
+ANR	8965715	Identifier	vfio_add_kvm_msi_virq		8965551	0					
+ANR	8965716	ArgumentList	vdev		8965551	1					
+ANR	8965717	Argument	vdev		8965551	0					
+ANR	8965718	Identifier	vdev		8965551	0					
+ANR	8965719	Argument	vector		8965551	1					
+ANR	8965720	Identifier	vector		8965551	0					
+ANR	8965721	Argument	& msg		8965551	2					
+ANR	8965722	UnaryOperationExpression	& msg		8965551	0					
+ANR	8965723	UnaryOperator	&		8965551	0					
+ANR	8965724	Identifier	msg		8965551	1					
+ANR	8965725	Argument	false		8965551	3					
+ANR	8965726	Identifier	false		8965551	0					
+ANR	8965727	ExpressionStatement	vdev -> interrupt = VFIO_INT_MSI	67:4:1064:1094	8965551	6	True				
+ANR	8965728	AssignmentExpression	vdev -> interrupt = VFIO_INT_MSI		8965551	0		=			
+ANR	8965729	PtrMemberAccess	vdev -> interrupt		8965551	0					
+ANR	8965730	Identifier	vdev		8965551	0					
+ANR	8965731	Identifier	interrupt		8965551	1					
+ANR	8965732	Identifier	VFIO_INT_MSI		8965551	1					
+ANR	8965733	ExpressionStatement	"ret = vfio_enable_vectors ( vdev , false )"	71:4:1103:1141	8965551	7	True				
+ANR	8965734	AssignmentExpression	"ret = vfio_enable_vectors ( vdev , false )"		8965551	0		=			
+ANR	8965735	Identifier	ret		8965551	0					
+ANR	8965736	CallExpression	"vfio_enable_vectors ( vdev , false )"		8965551	1					
+ANR	8965737	Callee	vfio_enable_vectors		8965551	0					
+ANR	8965738	Identifier	vfio_enable_vectors		8965551	0					
+ANR	8965739	ArgumentList	vdev		8965551	1					
+ANR	8965740	Argument	vdev		8965551	0					
+ANR	8965741	Identifier	vdev		8965551	0					
+ANR	8965742	Argument	false		8965551	1					
+ANR	8965743	Identifier	false		8965551	0					
+ANR	8965744	IfStatement	if ( ret )		8965551	8					
+ANR	8965745	Condition	ret	73:8:1152:1154	8965551	0	True				
+ANR	8965746	Identifier	ret		8965551	0					
+ANR	8965747	CompoundStatement		71:13:1106:1106	8965551	1					
+ANR	8965748	IfStatement	if ( ret < 0 )		8965551	0					
+ANR	8965749	Condition	ret < 0	75:12:1172:1178	8965551	0	True				
+ANR	8965750	RelationalExpression	ret < 0		8965551	0		<			
+ANR	8965751	Identifier	ret		8965551	0					
+ANR	8965752	PrimaryExpression	0		8965551	1					
+ANR	8965753	CompoundStatement		73:21:1130:1130	8965551	1					
+ANR	8965754	ExpressionStatement	"error_report ( ""vfio: Error: Failed to setup MSI fds: %m"" )"	77:12:1196:1252	8965551	0	True				
+ANR	8965755	CallExpression	"error_report ( ""vfio: Error: Failed to setup MSI fds: %m"" )"		8965551	0					
+ANR	8965756	Callee	error_report		8965551	0					
+ANR	8965757	Identifier	error_report		8965551	0					
+ANR	8965758	ArgumentList	"""vfio: Error: Failed to setup MSI fds: %m"""		8965551	1					
+ANR	8965759	Argument	"""vfio: Error: Failed to setup MSI fds: %m"""		8965551	0					
+ANR	8965760	PrimaryExpression	"""vfio: Error: Failed to setup MSI fds: %m"""		8965551	0					
+ANR	8965761	ElseStatement	else		8965551	0					
+ANR	8965762	IfStatement	if ( ret != vdev -> nr_vectors )		8965551	0					
+ANR	8965763	Condition	ret != vdev -> nr_vectors	79:19:1274:1296	8965551	0	True				
+ANR	8965764	EqualityExpression	ret != vdev -> nr_vectors		8965551	0		!=			
+ANR	8965765	Identifier	ret		8965551	0					
+ANR	8965766	PtrMemberAccess	vdev -> nr_vectors		8965551	1					
+ANR	8965767	Identifier	vdev		8965551	0					
+ANR	8965768	Identifier	nr_vectors		8965551	1					
+ANR	8965769	CompoundStatement		77:44:1248:1248	8965551	1					
+ANR	8965770	Statement	error_report	81:12:1314:1325	8965551	0	True				
+ANR	8965771	Statement	(	81:24:1326:1326	8965551	1	True				
+ANR	8965772	Statement	"""vfio: Error: Failed to enable %d """	81:25:1327:1361	8965551	2	True				
+ANR	8965773	Statement	"""MSI vectors, retry with %d"""	83:25:1389:1416	8965551	3	True				
+ANR	8965774	Statement	","	83:53:1417:1417	8965551	4	True				
+ANR	8965775	Statement	vdev	83:55:1419:1422	8965551	5	True				
+ANR	8965776	Statement	->	83:59:1423:1424	8965551	6	True				
+ANR	8965777	Statement	nr_vectors	83:61:1425:1434	8965551	7	True				
+ANR	8965778	Statement	","	83:71:1435:1435	8965551	8	True				
+ANR	8965779	Statement	ret	83:73:1437:1439	8965551	9	True				
+ANR	8965780	Statement	)	83:76:1440:1440	8965551	10	True				
+ANR	8965781	ExpressionStatement		83:77:1441:1441	8965551	11	True				
+ANR	8965782	ForStatement	for ( i = 0 ; i < vdev -> nr_vectors ; i ++ )		8965551	1					
+ANR	8965783	ForInit	i = 0 ;	89:13:1470:1475	8965551	0	True				
+ANR	8965784	AssignmentExpression	i = 0		8965551	0		=			
+ANR	8965785	Identifier	i		8965551	0					
+ANR	8965786	PrimaryExpression	0		8965551	1					
+ANR	8965787	Condition	i < vdev -> nr_vectors	89:20:1477:1496	8965551	1	True				
+ANR	8965788	RelationalExpression	i < vdev -> nr_vectors		8965551	0		<			
+ANR	8965789	Identifier	i		8965551	0					
+ANR	8965790	PtrMemberAccess	vdev -> nr_vectors		8965551	1					
+ANR	8965791	Identifier	vdev		8965551	0					
+ANR	8965792	Identifier	nr_vectors		8965551	1					
+ANR	8965793	PostIncDecOperationExpression	i ++	89:42:1499:1501	8965551	2	True				
+ANR	8965794	Identifier	i		8965551	0					
+ANR	8965795	IncDec	++		8965551	1					
+ANR	8965796	CompoundStatement		89:12:1468:1513	8965551	3					
+ANR	8965797	IdentifierDeclStatement	VFIOMSIVector * vector = & vdev -> msi_vectors [ i ] ;	91:12:1519:1564	8965551	0	True				
+ANR	8965798	IdentifierDecl	* vector = & vdev -> msi_vectors [ i ]		8965551	0					
+ANR	8965799	IdentifierDeclType	VFIOMSIVector *		8965551	0					
+ANR	8965800	Identifier	vector		8965551	1					
+ANR	8965801	AssignmentExpression	* vector = & vdev -> msi_vectors [ i ]		8965551	2		=			
+ANR	8965802	Identifier	vector		8965551	0					
+ANR	8965803	UnaryOperationExpression	& vdev -> msi_vectors [ i ]		8965551	1					
+ANR	8965804	UnaryOperator	&		8965551	0					
+ANR	8965805	ArrayIndexing	vdev -> msi_vectors [ i ]		8965551	1					
+ANR	8965806	PtrMemberAccess	vdev -> msi_vectors		8965551	0					
+ANR	8965807	Identifier	vdev		8965551	0					
+ANR	8965808	Identifier	msi_vectors		8965551	1					
+ANR	8965809	Identifier	i		8965551	1					
+ANR	8965810	IfStatement	if ( vector -> virq >= 0 )		8965551	1					
+ANR	8965811	Condition	vector -> virq >= 0	93:16:1583:1599	8965551	0	True				
+ANR	8965812	RelationalExpression	vector -> virq >= 0		8965551	0		>=			
+ANR	8965813	PtrMemberAccess	vector -> virq		8965551	0					
+ANR	8965814	Identifier	vector		8965551	0					
+ANR	8965815	Identifier	virq		8965551	1					
+ANR	8965816	PrimaryExpression	0		8965551	1					
+ANR	8965817	CompoundStatement		91:35:1551:1551	8965551	1					
+ANR	8965818	ExpressionStatement	vfio_remove_kvm_msi_virq ( vector )	95:16:1621:1653	8965551	0	True				
+ANR	8965819	CallExpression	vfio_remove_kvm_msi_virq ( vector )		8965551	0					
+ANR	8965820	Callee	vfio_remove_kvm_msi_virq		8965551	0					
+ANR	8965821	Identifier	vfio_remove_kvm_msi_virq		8965551	0					
+ANR	8965822	ArgumentList	vector		8965551	1					
+ANR	8965823	Argument	vector		8965551	0					
+ANR	8965824	Identifier	vector		8965551	0					
+ANR	8965825	ExpressionStatement	"qemu_set_fd_handler ( event_notifier_get_fd ( & vector -> interrupt ) , NULL , NULL , NULL )"	99:12:1683:1796	8965551	2	True				
+ANR	8965826	CallExpression	"qemu_set_fd_handler ( event_notifier_get_fd ( & vector -> interrupt ) , NULL , NULL , NULL )"		8965551	0					
+ANR	8965827	Callee	qemu_set_fd_handler		8965551	0					
+ANR	8965828	Identifier	qemu_set_fd_handler		8965551	0					
+ANR	8965829	ArgumentList	event_notifier_get_fd ( & vector -> interrupt )		8965551	1					
+ANR	8965830	Argument	event_notifier_get_fd ( & vector -> interrupt )		8965551	0					
+ANR	8965831	CallExpression	event_notifier_get_fd ( & vector -> interrupt )		8965551	0					
+ANR	8965832	Callee	event_notifier_get_fd		8965551	0					
+ANR	8965833	Identifier	event_notifier_get_fd		8965551	0					
+ANR	8965834	ArgumentList	& vector -> interrupt		8965551	1					
+ANR	8965835	Argument	& vector -> interrupt		8965551	0					
+ANR	8965836	UnaryOperationExpression	& vector -> interrupt		8965551	0					
+ANR	8965837	UnaryOperator	&		8965551	0					
+ANR	8965838	PtrMemberAccess	vector -> interrupt		8965551	1					
+ANR	8965839	Identifier	vector		8965551	0					
+ANR	8965840	Identifier	interrupt		8965551	1					
+ANR	8965841	Argument	NULL		8965551	1					
+ANR	8965842	Identifier	NULL		8965551	0					
+ANR	8965843	Argument	NULL		8965551	2					
+ANR	8965844	Identifier	NULL		8965551	0					
+ANR	8965845	Argument	NULL		8965551	3					
+ANR	8965846	Identifier	NULL		8965551	0					
+ANR	8965847	ExpressionStatement	event_notifier_cleanup ( & vector -> interrupt )	103:12:1811:1853	8965551	3	True				
+ANR	8965848	CallExpression	event_notifier_cleanup ( & vector -> interrupt )		8965551	0					
+ANR	8965849	Callee	event_notifier_cleanup		8965551	0					
+ANR	8965850	Identifier	event_notifier_cleanup		8965551	0					
+ANR	8965851	ArgumentList	& vector -> interrupt		8965551	1					
+ANR	8965852	Argument	& vector -> interrupt		8965551	0					
+ANR	8965853	UnaryOperationExpression	& vector -> interrupt		8965551	0					
+ANR	8965854	UnaryOperator	&		8965551	0					
+ANR	8965855	PtrMemberAccess	vector -> interrupt		8965551	1					
+ANR	8965856	Identifier	vector		8965551	0					
+ANR	8965857	Identifier	interrupt		8965551	1					
+ANR	8965858	ExpressionStatement	g_free ( vdev -> msi_vectors )	109:8:1877:1902	8965551	2	True				
+ANR	8965859	CallExpression	g_free ( vdev -> msi_vectors )		8965551	0					
+ANR	8965860	Callee	g_free		8965551	0					
+ANR	8965861	Identifier	g_free		8965551	0					
+ANR	8965862	ArgumentList	vdev -> msi_vectors		8965551	1					
+ANR	8965863	Argument	vdev -> msi_vectors		8965551	0					
+ANR	8965864	PtrMemberAccess	vdev -> msi_vectors		8965551	0					
+ANR	8965865	Identifier	vdev		8965551	0					
+ANR	8965866	Identifier	msi_vectors		8965551	1					
+ANR	8965867	IfStatement	if ( ret > 0 && ret != vdev -> nr_vectors )		8965551	3					
+ANR	8965868	Condition	ret > 0 && ret != vdev -> nr_vectors	113:12:1919:1952	8965551	0	True				
+ANR	8965869	AndExpression	ret > 0 && ret != vdev -> nr_vectors		8965551	0		&&			
+ANR	8965870	RelationalExpression	ret > 0		8965551	0		>			
+ANR	8965871	Identifier	ret		8965551	0					
+ANR	8965872	PrimaryExpression	0		8965551	1					
+ANR	8965873	EqualityExpression	ret != vdev -> nr_vectors		8965551	1		!=			
+ANR	8965874	Identifier	ret		8965551	0					
+ANR	8965875	PtrMemberAccess	vdev -> nr_vectors		8965551	1					
+ANR	8965876	Identifier	vdev		8965551	0					
+ANR	8965877	Identifier	nr_vectors		8965551	1					
+ANR	8965878	CompoundStatement		111:48:1904:1904	8965551	1					
+ANR	8965879	ExpressionStatement	vdev -> nr_vectors = ret	115:12:1970:1992	8965551	0	True				
+ANR	8965880	AssignmentExpression	vdev -> nr_vectors = ret		8965551	0		=			
+ANR	8965881	PtrMemberAccess	vdev -> nr_vectors		8965551	0					
+ANR	8965882	Identifier	vdev		8965551	0					
+ANR	8965883	Identifier	nr_vectors		8965551	1					
+ANR	8965884	Identifier	ret		8965551	1					
+ANR	8965885	GotoStatement	goto retry ;	117:12:2007:2017	8965551	1	True				
+ANR	8965886	Identifier	retry		8965551	0					
+ANR	8965887	ExpressionStatement	vdev -> nr_vectors = 0	121:8:2039:2059	8965551	4	True				
+ANR	8965888	AssignmentExpression	vdev -> nr_vectors = 0		8965551	0		=			
+ANR	8965889	PtrMemberAccess	vdev -> nr_vectors		8965551	0					
+ANR	8965890	Identifier	vdev		8965551	0					
+ANR	8965891	Identifier	nr_vectors		8965551	1					
+ANR	8965892	PrimaryExpression	0		8965551	1					
+ANR	8965893	ExpressionStatement	"error_report ( ""vfio: Error: Failed to enable MSI"" )"	135:8:2307:2356	8965551	5	True				
+ANR	8965894	CallExpression	"error_report ( ""vfio: Error: Failed to enable MSI"" )"		8965551	0					
+ANR	8965895	Callee	error_report		8965551	0					
+ANR	8965896	Identifier	error_report		8965551	0					
+ANR	8965897	ArgumentList	"""vfio: Error: Failed to enable MSI"""		8965551	1					
+ANR	8965898	Argument	"""vfio: Error: Failed to enable MSI"""		8965551	0					
+ANR	8965899	PrimaryExpression	"""vfio: Error: Failed to enable MSI"""		8965551	0					
+ANR	8965900	ExpressionStatement	vdev -> interrupt = VFIO_INT_NONE	137:8:2367:2398	8965551	6	True				
+ANR	8965901	AssignmentExpression	vdev -> interrupt = VFIO_INT_NONE		8965551	0		=			
+ANR	8965902	PtrMemberAccess	vdev -> interrupt		8965551	0					
+ANR	8965903	Identifier	vdev		8965551	0					
+ANR	8965904	Identifier	interrupt		8965551	1					
+ANR	8965905	Identifier	VFIO_INT_NONE		8965551	1					
+ANR	8965906	ReturnStatement	return ;	141:8:2411:2417	8965551	7	True				
+ANR	8965907	ExpressionStatement	"trace_vfio_msi_enable ( vdev -> vbasedev . name , vdev -> nr_vectors )"	147:4:2433:2493	8965551	9	True				
+ANR	8965908	CallExpression	"trace_vfio_msi_enable ( vdev -> vbasedev . name , vdev -> nr_vectors )"		8965551	0					
+ANR	8965909	Callee	trace_vfio_msi_enable		8965551	0					
+ANR	8965910	Identifier	trace_vfio_msi_enable		8965551	0					
+ANR	8965911	ArgumentList	vdev -> vbasedev . name		8965551	1					
+ANR	8965912	Argument	vdev -> vbasedev . name		8965551	0					
+ANR	8965913	MemberAccess	vdev -> vbasedev . name		8965551	0					
+ANR	8965914	PtrMemberAccess	vdev -> vbasedev		8965551	0					
+ANR	8965915	Identifier	vdev		8965551	0					
+ANR	8965916	Identifier	vbasedev		8965551	1					
+ANR	8965917	Identifier	name		8965551	1					
+ANR	8965918	Argument	vdev -> nr_vectors		8965551	1					
+ANR	8965919	PtrMemberAccess	vdev -> nr_vectors		8965551	0					
+ANR	8965920	Identifier	vdev		8965551	0					
+ANR	8965921	Identifier	nr_vectors		8965551	1					
+ANR	8965922	ReturnType	static void		8965551	1					
+ANR	8965923	Identifier	vfio_msi_enable		8965551	2					
+ANR	8965924	ParameterList	VFIOPCIDevice * vdev		8965551	3					
+ANR	8965925	Parameter	VFIOPCIDevice * vdev	1:28:28:46	8965551	0	True				
+ANR	8965926	ParameterType	VFIOPCIDevice *		8965551	0					
+ANR	8965927	Identifier	vdev		8965551	1					
+ANR	8965928	CFGEntryNode	ENTRY		8965551		True				
+ANR	8965929	CFGExitNode	EXIT		8965551		True				
+ANR	8965930	Symbol	msg		8965551						
+ANR	8965931	Symbol	vdev -> nr_vectors		8965551						
+ANR	8965932	Symbol	event_notifier_init		8965551						
+ANR	8965933	Symbol	event_notifier_get_fd		8965551						
+ANR	8965934	Symbol	& vdev -> pdev		8965551						
+ANR	8965935	Symbol	vdev -> msi_vectors		8965551						
+ANR	8965936	Symbol	vfio_enable_vectors		8965551						
+ANR	8965937	Symbol	msi_get_message		8965551						
+ANR	8965938	Symbol	vector -> virq		8965551						
+ANR	8965939	Symbol	msi_nr_vectors_allocated		8965551						
+ANR	8965940	Symbol	vector		8965551						
+ANR	8965941	Symbol	VFIO_INT_NONE		8965551						
+ANR	8965942	Symbol	ret		8965551						
+ANR	8965943	Symbol	& msg		8965551						
+ANR	8965944	Symbol	NULL		8965551						
+ANR	8965945	Symbol	vector -> use		8965551						
+ANR	8965946	Symbol	vector -> vdev		8965551						
+ANR	8965947	Symbol	vdev		8965551						
+ANR	8965948	Symbol	false		8965551						
+ANR	8965949	Symbol	VFIO_INT_MSI		8965551						
+ANR	8965950	Symbol	i		8965551						
+ANR	8965951	Symbol	& vector -> interrupt		8965551						
+ANR	8965952	Symbol	* vector		8965551						
+ANR	8965953	Symbol	vdev -> vbasedev . name		8965551						
+ANR	8965954	Symbol	vfio_msi_interrupt		8965551						
+ANR	8965955	Symbol	vdev -> interrupt		8965551						
+ANR	8965956	Symbol	* vdev		8965551						
+ANR	8965957	Symbol	vdev -> vbasedev		8965551						
+ANR	8965958	Symbol	true		8965551						
+ANR	8965959	Symbol	g_malloc0		8965551						

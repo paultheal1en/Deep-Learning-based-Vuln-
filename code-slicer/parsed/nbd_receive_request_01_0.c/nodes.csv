@@ -1,0 +1,195 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5945256	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_receive_request_01_0.c								
+ANR	5945257	Function	nbd_receive_request	1:0:0:1093							
+ANR	5945258	FunctionDef	"nbd_receive_request (QIOChannel * ioc , struct nbd_request * request)"		5945257	0					
+ANR	5945259	CompoundStatement		3:0:82:1093	5945257	0					
+ANR	5945260	IdentifierDeclStatement	uint8_t buf [ NBD_REQUEST_SIZE ] ;	5:4:89:118	5945257	0	True				
+ANR	5945261	IdentifierDecl	buf [ NBD_REQUEST_SIZE ]		5945257	0					
+ANR	5945262	IdentifierDeclType	uint8_t [ NBD_REQUEST_SIZE ]		5945257	0					
+ANR	5945263	Identifier	buf		5945257	1					
+ANR	5945264	Identifier	NBD_REQUEST_SIZE		5945257	2					
+ANR	5945265	IdentifierDeclStatement	uint32_t magic ;	7:4:125:139	5945257	1	True				
+ANR	5945266	IdentifierDecl	magic		5945257	0					
+ANR	5945267	IdentifierDeclType	uint32_t		5945257	0					
+ANR	5945268	Identifier	magic		5945257	1					
+ANR	5945269	IdentifierDeclStatement	ssize_t ret ;	9:4:146:157	5945257	2	True				
+ANR	5945270	IdentifierDecl	ret		5945257	0					
+ANR	5945271	IdentifierDeclType	ssize_t		5945257	0					
+ANR	5945272	Identifier	ret		5945257	1					
+ANR	5945273	ExpressionStatement	"ret = read_sync ( ioc , buf , sizeof ( buf ) )"	13:4:166:204	5945257	3	True				
+ANR	5945274	AssignmentExpression	"ret = read_sync ( ioc , buf , sizeof ( buf ) )"		5945257	0		=			
+ANR	5945275	Identifier	ret		5945257	0					
+ANR	5945276	CallExpression	"read_sync ( ioc , buf , sizeof ( buf ) )"		5945257	1					
+ANR	5945277	Callee	read_sync		5945257	0					
+ANR	5945278	Identifier	read_sync		5945257	0					
+ANR	5945279	ArgumentList	ioc		5945257	1					
+ANR	5945280	Argument	ioc		5945257	0					
+ANR	5945281	Identifier	ioc		5945257	0					
+ANR	5945282	Argument	buf		5945257	1					
+ANR	5945283	Identifier	buf		5945257	0					
+ANR	5945284	Argument	sizeof ( buf )		5945257	2					
+ANR	5945285	SizeofExpression	sizeof ( buf )		5945257	0					
+ANR	5945286	Sizeof	sizeof		5945257	0					
+ANR	5945287	SizeofOperand	buf		5945257	1					
+ANR	5945288	IfStatement	if ( ret < 0 )		5945257	4					
+ANR	5945289	Condition	ret < 0	15:8:215:221	5945257	0	True				
+ANR	5945290	RelationalExpression	ret < 0		5945257	0		<			
+ANR	5945291	Identifier	ret		5945257	0					
+ANR	5945292	PrimaryExpression	0		5945257	1					
+ANR	5945293	CompoundStatement		13:17:141:141	5945257	1					
+ANR	5945294	ReturnStatement	return ret ;	17:8:235:245	5945257	0	True				
+ANR	5945295	Identifier	ret		5945257	0					
+ANR	5945296	IfStatement	if ( ret != sizeof ( buf ) )		5945257	5					
+ANR	5945297	Condition	ret != sizeof ( buf )	23:8:265:282	5945257	0	True				
+ANR	5945298	EqualityExpression	ret != sizeof ( buf )		5945257	0		!=			
+ANR	5945299	Identifier	ret		5945257	0					
+ANR	5945300	SizeofExpression	sizeof ( buf )		5945257	1					
+ANR	5945301	Sizeof	sizeof		5945257	0					
+ANR	5945302	SizeofOperand	buf		5945257	1					
+ANR	5945303	CompoundStatement		21:28:202:202	5945257	1					
+ANR	5945304	ExpressionStatement	"LOG ( ""read failed"" )"	25:8:296:314	5945257	0	True				
+ANR	5945305	CallExpression	"LOG ( ""read failed"" )"		5945257	0					
+ANR	5945306	Callee	LOG		5945257	0					
+ANR	5945307	Identifier	LOG		5945257	0					
+ANR	5945308	ArgumentList	"""read failed"""		5945257	1					
+ANR	5945309	Argument	"""read failed"""		5945257	0					
+ANR	5945310	PrimaryExpression	"""read failed"""		5945257	0					
+ANR	5945311	ReturnStatement	return - EINVAL ;	27:8:325:339	5945257	1	True				
+ANR	5945312	UnaryOperationExpression	- EINVAL		5945257	0					
+ANR	5945313	UnaryOperator	-		5945257	0					
+ANR	5945314	Identifier	EINVAL		5945257	1					
+ANR	5945315	ExpressionStatement	magic = ldl_be_p ( buf )	49:4:563:584	5945257	6	True				
+ANR	5945316	AssignmentExpression	magic = ldl_be_p ( buf )		5945257	0		=			
+ANR	5945317	Identifier	magic		5945257	0					
+ANR	5945318	CallExpression	ldl_be_p ( buf )		5945257	1					
+ANR	5945319	Callee	ldl_be_p		5945257	0					
+ANR	5945320	Identifier	ldl_be_p		5945257	0					
+ANR	5945321	ArgumentList	buf		5945257	1					
+ANR	5945322	Argument	buf		5945257	0					
+ANR	5945323	Identifier	buf		5945257	0					
+ANR	5945324	ExpressionStatement	request -> type = ldl_be_p ( buf + 4 )	51:4:591:626	5945257	7	True				
+ANR	5945325	AssignmentExpression	request -> type = ldl_be_p ( buf + 4 )		5945257	0		=			
+ANR	5945326	PtrMemberAccess	request -> type		5945257	0					
+ANR	5945327	Identifier	request		5945257	0					
+ANR	5945328	Identifier	type		5945257	1					
+ANR	5945329	CallExpression	ldl_be_p ( buf + 4 )		5945257	1					
+ANR	5945330	Callee	ldl_be_p		5945257	0					
+ANR	5945331	Identifier	ldl_be_p		5945257	0					
+ANR	5945332	ArgumentList	buf + 4		5945257	1					
+ANR	5945333	Argument	buf + 4		5945257	0					
+ANR	5945334	AdditiveExpression	buf + 4		5945257	0		+			
+ANR	5945335	Identifier	buf		5945257	0					
+ANR	5945336	PrimaryExpression	4		5945257	1					
+ANR	5945337	ExpressionStatement	request -> handle = ldq_be_p ( buf + 8 )	53:4:633:668	5945257	8	True				
+ANR	5945338	AssignmentExpression	request -> handle = ldq_be_p ( buf + 8 )		5945257	0		=			
+ANR	5945339	PtrMemberAccess	request -> handle		5945257	0					
+ANR	5945340	Identifier	request		5945257	0					
+ANR	5945341	Identifier	handle		5945257	1					
+ANR	5945342	CallExpression	ldq_be_p ( buf + 8 )		5945257	1					
+ANR	5945343	Callee	ldq_be_p		5945257	0					
+ANR	5945344	Identifier	ldq_be_p		5945257	0					
+ANR	5945345	ArgumentList	buf + 8		5945257	1					
+ANR	5945346	Argument	buf + 8		5945257	0					
+ANR	5945347	AdditiveExpression	buf + 8		5945257	0		+			
+ANR	5945348	Identifier	buf		5945257	0					
+ANR	5945349	PrimaryExpression	8		5945257	1					
+ANR	5945350	ExpressionStatement	request -> from = ldq_be_p ( buf + 16 )	55:4:675:711	5945257	9	True				
+ANR	5945351	AssignmentExpression	request -> from = ldq_be_p ( buf + 16 )		5945257	0		=			
+ANR	5945352	PtrMemberAccess	request -> from		5945257	0					
+ANR	5945353	Identifier	request		5945257	0					
+ANR	5945354	Identifier	from		5945257	1					
+ANR	5945355	CallExpression	ldq_be_p ( buf + 16 )		5945257	1					
+ANR	5945356	Callee	ldq_be_p		5945257	0					
+ANR	5945357	Identifier	ldq_be_p		5945257	0					
+ANR	5945358	ArgumentList	buf + 16		5945257	1					
+ANR	5945359	Argument	buf + 16		5945257	0					
+ANR	5945360	AdditiveExpression	buf + 16		5945257	0		+			
+ANR	5945361	Identifier	buf		5945257	0					
+ANR	5945362	PrimaryExpression	16		5945257	1					
+ANR	5945363	ExpressionStatement	request -> len = ldl_be_p ( buf + 24 )	57:4:718:754	5945257	10	True				
+ANR	5945364	AssignmentExpression	request -> len = ldl_be_p ( buf + 24 )		5945257	0		=			
+ANR	5945365	PtrMemberAccess	request -> len		5945257	0					
+ANR	5945366	Identifier	request		5945257	0					
+ANR	5945367	Identifier	len		5945257	1					
+ANR	5945368	CallExpression	ldl_be_p ( buf + 24 )		5945257	1					
+ANR	5945369	Callee	ldl_be_p		5945257	0					
+ANR	5945370	Identifier	ldl_be_p		5945257	0					
+ANR	5945371	ArgumentList	buf + 24		5945257	1					
+ANR	5945372	Argument	buf + 24		5945257	0					
+ANR	5945373	AdditiveExpression	buf + 24		5945257	0		+			
+ANR	5945374	Identifier	buf		5945257	0					
+ANR	5945375	PrimaryExpression	24		5945257	1					
+ANR	5945376	Statement	TRACE	61:4:763:767	5945257	11	True				
+ANR	5945377	Statement	(	61:9:768:768	5945257	12	True				
+ANR	5945378	Statement	"""Got request: { magic = 0x%"""	61:10:769:796	5945257	13	True				
+ANR	5945379	Statement	PRIx32	61:39:798:803	5945257	14	True				
+ANR	5945380	Statement	""", .type = %"""	61:46:805:817	5945257	15	True				
+ANR	5945381	Statement	PRIx32	61:60:819:824	5945257	16	True				
+ANR	5945382	Statement	""", from = %"""	63:10:837:848	5945257	17	True				
+ANR	5945383	Statement	PRIu64	63:23:850:855	5945257	18	True				
+ANR	5945384	Statement	""" , len = %"""	63:30:857:868	5945257	19	True				
+ANR	5945385	Statement	PRIu32	63:43:870:875	5945257	20	True				
+ANR	5945386	Statement	""" }"""	63:50:877:880	5945257	21	True				
+ANR	5945387	Statement	","	63:54:881:881	5945257	22	True				
+ANR	5945388	Statement	magic	65:10:894:898	5945257	23	True				
+ANR	5945389	Statement	","	65:15:899:899	5945257	24	True				
+ANR	5945390	Statement	request	65:17:901:907	5945257	25	True				
+ANR	5945391	Statement	->	65:24:908:909	5945257	26	True				
+ANR	5945392	Statement	type	65:26:910:913	5945257	27	True				
+ANR	5945393	Statement	","	65:30:914:914	5945257	28	True				
+ANR	5945394	Statement	request	65:32:916:922	5945257	29	True				
+ANR	5945395	Statement	->	65:39:923:924	5945257	30	True				
+ANR	5945396	Statement	from	65:41:925:928	5945257	31	True				
+ANR	5945397	Statement	","	65:45:929:929	5945257	32	True				
+ANR	5945398	Statement	request	65:47:931:937	5945257	33	True				
+ANR	5945399	Statement	->	65:54:938:939	5945257	34	True				
+ANR	5945400	Statement	len	65:56:940:942	5945257	35	True				
+ANR	5945401	Statement	)	65:59:943:943	5945257	36	True				
+ANR	5945402	ExpressionStatement		65:60:944:944	5945257	37	True				
+ANR	5945403	IfStatement	if ( magic != NBD_REQUEST_MAGIC )		5945257	38					
+ANR	5945404	Condition	magic != NBD_REQUEST_MAGIC	69:8:957:982	5945257	0	True				
+ANR	5945405	EqualityExpression	magic != NBD_REQUEST_MAGIC		5945257	0		!=			
+ANR	5945406	Identifier	magic		5945257	0					
+ANR	5945407	Identifier	NBD_REQUEST_MAGIC		5945257	1					
+ANR	5945408	CompoundStatement		67:36:902:902	5945257	1					
+ANR	5945409	Statement	LOG	71:8:996:998	5945257	0	True				
+ANR	5945410	Statement	(	71:11:999:999	5945257	1	True				
+ANR	5945411	Statement	"""invalid magic (got 0x%"""	71:12:1000:1023	5945257	2	True				
+ANR	5945412	Statement	PRIx32	71:37:1025:1030	5945257	3	True				
+ANR	5945413	Statement	""")"""	71:44:1032:1034	5945257	4	True				
+ANR	5945414	Statement	","	71:47:1035:1035	5945257	5	True				
+ANR	5945415	Statement	magic	71:49:1037:1041	5945257	6	True				
+ANR	5945416	Statement	)	71:54:1042:1042	5945257	7	True				
+ANR	5945417	ExpressionStatement		71:55:1043:1043	5945257	8	True				
+ANR	5945418	ReturnStatement	return - EINVAL ;	73:8:1054:1068	5945257	9	True				
+ANR	5945419	UnaryOperationExpression	- EINVAL		5945257	0					
+ANR	5945420	UnaryOperator	-		5945257	0					
+ANR	5945421	Identifier	EINVAL		5945257	1					
+ANR	5945422	ReturnStatement	return 0 ;	77:4:1082:1090	5945257	39	True				
+ANR	5945423	PrimaryExpression	0		5945257	0					
+ANR	5945424	ReturnType	static ssize_t		5945257	1					
+ANR	5945425	Identifier	nbd_receive_request		5945257	2					
+ANR	5945426	ParameterList	"QIOChannel * ioc , struct nbd_request * request"		5945257	3					
+ANR	5945427	Parameter	QIOChannel * ioc	1:35:35:49	5945257	0	True				
+ANR	5945428	ParameterType	QIOChannel *		5945257	0					
+ANR	5945429	Identifier	ioc		5945257	1					
+ANR	5945430	Parameter	struct nbd_request * request	1:52:52:78	5945257	1	True				
+ANR	5945431	ParameterType	struct nbd_request *		5945257	0					
+ANR	5945432	Identifier	request		5945257	1					
+ANR	5945433	CFGEntryNode	ENTRY		5945257		True				
+ANR	5945434	CFGExitNode	EXIT		5945257		True				
+ANR	5945435	Symbol	magic		5945257						
+ANR	5945436	Symbol	ret		5945257						
+ANR	5945437	Symbol	request		5945257						
+ANR	5945438	Symbol	request -> type		5945257						
+ANR	5945439	Symbol	read_sync		5945257						
+ANR	5945440	Symbol	request -> len		5945257						
+ANR	5945441	Symbol	NBD_REQUEST_MAGIC		5945257						
+ANR	5945442	Symbol	EINVAL		5945257						
+ANR	5945443	Symbol	ldq_be_p		5945257						
+ANR	5945444	Symbol	buf		5945257						
+ANR	5945445	Symbol	request -> handle		5945257						
+ANR	5945446	Symbol	* request		5945257						
+ANR	5945447	Symbol	ioc		5945257						
+ANR	5945448	Symbol	request -> from		5945257						
+ANR	5945449	Symbol	ldl_be_p		5945257						

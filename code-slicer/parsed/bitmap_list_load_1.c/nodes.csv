@@ -1,0 +1,494 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1045919	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bitmap_list_load_1.c								
+ANR	1045920	Function	bitmap_list_load	1:0:0:2768							
+ANR	1045921	FunctionDef	"bitmap_list_load (BlockDriverState * bs , uint64_t offset , uint64_t size , Error * * errp)"		1045920	0					
+ANR	1045922	CompoundStatement		5:0:152:2768	1045920	0					
+ANR	1045923	IdentifierDeclStatement	int ret ;	7:4:159:166	1045920	0	True				
+ANR	1045924	IdentifierDecl	ret		1045920	0					
+ANR	1045925	IdentifierDeclType	int		1045920	0					
+ANR	1045926	Identifier	ret		1045920	1					
+ANR	1045927	IdentifierDeclStatement	BDRVQcow2State * s = bs -> opaque ;	9:4:173:203	1045920	1	True				
+ANR	1045928	IdentifierDecl	* s = bs -> opaque		1045920	0					
+ANR	1045929	IdentifierDeclType	BDRVQcow2State *		1045920	0					
+ANR	1045930	Identifier	s		1045920	1					
+ANR	1045931	AssignmentExpression	* s = bs -> opaque		1045920	2		=			
+ANR	1045932	Identifier	s		1045920	0					
+ANR	1045933	PtrMemberAccess	bs -> opaque		1045920	1					
+ANR	1045934	Identifier	bs		1045920	0					
+ANR	1045935	Identifier	opaque		1045920	1					
+ANR	1045936	IdentifierDeclStatement	"uint8_t * dir , * dir_end ;"	11:4:210:232	1045920	2	True				
+ANR	1045937	IdentifierDecl	* dir		1045920	0					
+ANR	1045938	IdentifierDeclType	uint8_t *		1045920	0					
+ANR	1045939	Identifier	dir		1045920	1					
+ANR	1045940	IdentifierDecl	* dir_end		1045920	1					
+ANR	1045941	IdentifierDeclType	uint8_t *		1045920	0					
+ANR	1045942	Identifier	dir_end		1045920	1					
+ANR	1045943	IdentifierDeclStatement	Qcow2BitmapDirEntry * e ;	13:4:239:261	1045920	3	True				
+ANR	1045944	IdentifierDecl	* e		1045920	0					
+ANR	1045945	IdentifierDeclType	Qcow2BitmapDirEntry *		1045920	0					
+ANR	1045946	Identifier	e		1045920	1					
+ANR	1045947	IdentifierDeclStatement	uint32_t nb_dir_entries = 0 ;	15:4:268:295	1045920	4	True				
+ANR	1045948	IdentifierDecl	nb_dir_entries = 0		1045920	0					
+ANR	1045949	IdentifierDeclType	uint32_t		1045920	0					
+ANR	1045950	Identifier	nb_dir_entries		1045920	1					
+ANR	1045951	AssignmentExpression	nb_dir_entries = 0		1045920	2		=			
+ANR	1045952	Identifier	nb_dir_entries		1045920	0					
+ANR	1045953	PrimaryExpression	0		1045920	1					
+ANR	1045954	IdentifierDeclStatement	Qcow2BitmapList * bm_list = NULL ;	17:4:302:333	1045920	5	True				
+ANR	1045955	IdentifierDecl	* bm_list = NULL		1045920	0					
+ANR	1045956	IdentifierDeclType	Qcow2BitmapList *		1045920	0					
+ANR	1045957	Identifier	bm_list		1045920	1					
+ANR	1045958	AssignmentExpression	* bm_list = NULL		1045920	2		=			
+ANR	1045959	Identifier	NULL		1045920	0					
+ANR	1045960	Identifier	NULL		1045920	1					
+ANR	1045961	IfStatement	if ( size == 0 )		1045920	6					
+ANR	1045962	Condition	size == 0	21:8:346:354	1045920	0	True				
+ANR	1045963	EqualityExpression	size == 0		1045920	0		==			
+ANR	1045964	Identifier	size		1045920	0					
+ANR	1045965	PrimaryExpression	0		1045920	1					
+ANR	1045966	CompoundStatement		17:19:204:204	1045920	1					
+ANR	1045967	ExpressionStatement	"error_setg ( errp , ""Requested bitmap directory size is zero"" )"	23:8:368:427	1045920	0	True				
+ANR	1045968	CallExpression	"error_setg ( errp , ""Requested bitmap directory size is zero"" )"		1045920	0					
+ANR	1045969	Callee	error_setg		1045920	0					
+ANR	1045970	Identifier	error_setg		1045920	0					
+ANR	1045971	ArgumentList	errp		1045920	1					
+ANR	1045972	Argument	errp		1045920	0					
+ANR	1045973	Identifier	errp		1045920	0					
+ANR	1045974	Argument	"""Requested bitmap directory size is zero"""		1045920	1					
+ANR	1045975	PrimaryExpression	"""Requested bitmap directory size is zero"""		1045920	0					
+ANR	1045976	ReturnStatement	return NULL ;	25:8:438:449	1045920	1	True				
+ANR	1045977	Identifier	NULL		1045920	0					
+ANR	1045978	IfStatement	if ( size > QCOW2_MAX_BITMAP_DIRECTORY_SIZE )		1045920	7					
+ANR	1045979	Condition	size > QCOW2_MAX_BITMAP_DIRECTORY_SIZE	31:8:469:506	1045920	0	True				
+ANR	1045980	RelationalExpression	size > QCOW2_MAX_BITMAP_DIRECTORY_SIZE		1045920	0		>			
+ANR	1045981	Identifier	size		1045920	0					
+ANR	1045982	Identifier	QCOW2_MAX_BITMAP_DIRECTORY_SIZE		1045920	1					
+ANR	1045983	CompoundStatement		27:48:356:356	1045920	1					
+ANR	1045984	ExpressionStatement	"error_setg ( errp , ""Requested bitmap directory size is too big"" )"	33:8:520:582	1045920	0	True				
+ANR	1045985	CallExpression	"error_setg ( errp , ""Requested bitmap directory size is too big"" )"		1045920	0					
+ANR	1045986	Callee	error_setg		1045920	0					
+ANR	1045987	Identifier	error_setg		1045920	0					
+ANR	1045988	ArgumentList	errp		1045920	1					
+ANR	1045989	Argument	errp		1045920	0					
+ANR	1045990	Identifier	errp		1045920	0					
+ANR	1045991	Argument	"""Requested bitmap directory size is too big"""		1045920	1					
+ANR	1045992	PrimaryExpression	"""Requested bitmap directory size is too big"""		1045920	0					
+ANR	1045993	ReturnStatement	return NULL ;	35:8:593:604	1045920	1	True				
+ANR	1045994	Identifier	NULL		1045920	0					
+ANR	1045995	ExpressionStatement	dir = g_try_malloc ( size )	41:4:620:644	1045920	8	True				
+ANR	1045996	AssignmentExpression	dir = g_try_malloc ( size )		1045920	0		=			
+ANR	1045997	Identifier	dir		1045920	0					
+ANR	1045998	CallExpression	g_try_malloc ( size )		1045920	1					
+ANR	1045999	Callee	g_try_malloc		1045920	0					
+ANR	1046000	Identifier	g_try_malloc		1045920	0					
+ANR	1046001	ArgumentList	size		1045920	1					
+ANR	1046002	Argument	size		1045920	0					
+ANR	1046003	Identifier	size		1045920	0					
+ANR	1046004	IfStatement	if ( dir == NULL )		1045920	9					
+ANR	1046005	Condition	dir == NULL	43:8:655:665	1045920	0	True				
+ANR	1046006	EqualityExpression	dir == NULL		1045920	0		==			
+ANR	1046007	Identifier	dir		1045920	0					
+ANR	1046008	Identifier	NULL		1045920	1					
+ANR	1046009	CompoundStatement		39:21:515:515	1045920	1					
+ANR	1046010	ExpressionStatement	"error_setg ( errp , ""Failed to allocate space for bitmap directory"" )"	45:8:679:744	1045920	0	True				
+ANR	1046011	CallExpression	"error_setg ( errp , ""Failed to allocate space for bitmap directory"" )"		1045920	0					
+ANR	1046012	Callee	error_setg		1045920	0					
+ANR	1046013	Identifier	error_setg		1045920	0					
+ANR	1046014	ArgumentList	errp		1045920	1					
+ANR	1046015	Argument	errp		1045920	0					
+ANR	1046016	Identifier	errp		1045920	0					
+ANR	1046017	Argument	"""Failed to allocate space for bitmap directory"""		1045920	1					
+ANR	1046018	PrimaryExpression	"""Failed to allocate space for bitmap directory"""		1045920	0					
+ANR	1046019	ReturnStatement	return NULL ;	47:8:755:766	1045920	1	True				
+ANR	1046020	Identifier	NULL		1045920	0					
+ANR	1046021	ExpressionStatement	dir_end = dir + size	51:4:780:800	1045920	10	True				
+ANR	1046022	AssignmentExpression	dir_end = dir + size		1045920	0		=			
+ANR	1046023	Identifier	dir_end		1045920	0					
+ANR	1046024	AdditiveExpression	dir + size		1045920	1		+			
+ANR	1046025	Identifier	dir		1045920	0					
+ANR	1046026	Identifier	size		1045920	1					
+ANR	1046027	ExpressionStatement	"ret = bdrv_pread ( bs -> file , offset , dir , size )"	55:4:809:854	1045920	11	True				
+ANR	1046028	AssignmentExpression	"ret = bdrv_pread ( bs -> file , offset , dir , size )"		1045920	0		=			
+ANR	1046029	Identifier	ret		1045920	0					
+ANR	1046030	CallExpression	"bdrv_pread ( bs -> file , offset , dir , size )"		1045920	1					
+ANR	1046031	Callee	bdrv_pread		1045920	0					
+ANR	1046032	Identifier	bdrv_pread		1045920	0					
+ANR	1046033	ArgumentList	bs -> file		1045920	1					
+ANR	1046034	Argument	bs -> file		1045920	0					
+ANR	1046035	PtrMemberAccess	bs -> file		1045920	0					
+ANR	1046036	Identifier	bs		1045920	0					
+ANR	1046037	Identifier	file		1045920	1					
+ANR	1046038	Argument	offset		1045920	1					
+ANR	1046039	Identifier	offset		1045920	0					
+ANR	1046040	Argument	dir		1045920	2					
+ANR	1046041	Identifier	dir		1045920	0					
+ANR	1046042	Argument	size		1045920	3					
+ANR	1046043	Identifier	size		1045920	0					
+ANR	1046044	IfStatement	if ( ret < 0 )		1045920	12					
+ANR	1046045	Condition	ret < 0	57:8:865:871	1045920	0	True				
+ANR	1046046	RelationalExpression	ret < 0		1045920	0		<			
+ANR	1046047	Identifier	ret		1045920	0					
+ANR	1046048	PrimaryExpression	0		1045920	1					
+ANR	1046049	CompoundStatement		53:17:721:721	1045920	1					
+ANR	1046050	ExpressionStatement	"error_setg_errno ( errp , - ret , ""Failed to read bitmap directory"" )"	59:8:885:948	1045920	0	True				
+ANR	1046051	CallExpression	"error_setg_errno ( errp , - ret , ""Failed to read bitmap directory"" )"		1045920	0					
+ANR	1046052	Callee	error_setg_errno		1045920	0					
+ANR	1046053	Identifier	error_setg_errno		1045920	0					
+ANR	1046054	ArgumentList	errp		1045920	1					
+ANR	1046055	Argument	errp		1045920	0					
+ANR	1046056	Identifier	errp		1045920	0					
+ANR	1046057	Argument	- ret		1045920	1					
+ANR	1046058	UnaryOperationExpression	- ret		1045920	0					
+ANR	1046059	UnaryOperator	-		1045920	0					
+ANR	1046060	Identifier	ret		1045920	1					
+ANR	1046061	Argument	"""Failed to read bitmap directory"""		1045920	2					
+ANR	1046062	PrimaryExpression	"""Failed to read bitmap directory"""		1045920	0					
+ANR	1046063	GotoStatement	goto fail ;	61:8:959:968	1045920	1	True				
+ANR	1046064	Identifier	fail		1045920	0					
+ANR	1046065	ExpressionStatement	bm_list = bitmap_list_new ( )	67:4:984:1011	1045920	13	True				
+ANR	1046066	AssignmentExpression	bm_list = bitmap_list_new ( )		1045920	0		=			
+ANR	1046067	Identifier	bm_list		1045920	0					
+ANR	1046068	CallExpression	bitmap_list_new ( )		1045920	1					
+ANR	1046069	Callee	bitmap_list_new		1045920	0					
+ANR	1046070	Identifier	bitmap_list_new		1045920	0					
+ANR	1046071	ArgumentList			1045920	1					
+ANR	1046072	ForStatement	for ( e = ( Qcow2BitmapDirEntry * ) dir ; e < ( Qcow2BitmapDirEntry * ) dir_end ; e = next_dir_entry ( e ) )		1045920	14					
+ANR	1046073	ForInit	e = ( Qcow2BitmapDirEntry * ) dir ;	69:9:1023:1053	1045920	0	True				
+ANR	1046074	AssignmentExpression	e = ( Qcow2BitmapDirEntry * ) dir		1045920	0		=			
+ANR	1046075	Identifier	e		1045920	0					
+ANR	1046076	CastExpression	( Qcow2BitmapDirEntry * ) dir		1045920	1					
+ANR	1046077	CastTarget	Qcow2BitmapDirEntry *		1045920	0					
+ANR	1046078	Identifier	dir		1045920	1					
+ANR	1046079	Condition	e < ( Qcow2BitmapDirEntry * ) dir_end	71:9:1065:1098	1045920	1	True				
+ANR	1046080	RelationalExpression	e < ( Qcow2BitmapDirEntry * ) dir_end		1045920	0		<			
+ANR	1046081	Identifier	e		1045920	0					
+ANR	1046082	CastExpression	( Qcow2BitmapDirEntry * ) dir_end		1045920	1					
+ANR	1046083	CastTarget	Qcow2BitmapDirEntry *		1045920	0					
+ANR	1046084	Identifier	dir_end		1045920	1					
+ANR	1046085	AssignmentExpression	e = next_dir_entry ( e )	73:9:1111:1131	1045920	2	True	=			
+ANR	1046086	Identifier	e		1045920	0					
+ANR	1046087	CallExpression	next_dir_entry ( e )		1045920	1					
+ANR	1046088	Callee	next_dir_entry		1045920	0					
+ANR	1046089	Identifier	next_dir_entry		1045920	0					
+ANR	1046090	ArgumentList	e		1045920	1					
+ANR	1046091	Argument	e		1045920	0					
+ANR	1046092	Identifier	e		1045920	0					
+ANR	1046093	CompoundStatement		73:8:997:1012	1045920	3					
+ANR	1046094	IdentifierDeclStatement	Qcow2Bitmap * bm ;	77:8:1150:1165	1045920	0	True				
+ANR	1046095	IdentifierDecl	* bm		1045920	0					
+ANR	1046096	IdentifierDeclType	Qcow2Bitmap *		1045920	0					
+ANR	1046097	Identifier	bm		1045920	1					
+ANR	1046098	IfStatement	if ( ( uint8_t * ) ( e + 1 ) > dir_end )		1045920	1					
+ANR	1046099	Condition	( uint8_t * ) ( e + 1 ) > dir_end	81:12:1182:1209	1045920	0	True				
+ANR	1046100	RelationalExpression	( uint8_t * ) ( e + 1 ) > dir_end		1045920	0		>			
+ANR	1046101	CastExpression	( uint8_t * ) ( e + 1 )		1045920	0					
+ANR	1046102	CastTarget	uint8_t *		1045920	0					
+ANR	1046103	AdditiveExpression	e + 1		1045920	1		+			
+ANR	1046104	Identifier	e		1045920	0					
+ANR	1046105	PrimaryExpression	1		1045920	1					
+ANR	1046106	Identifier	dir_end		1045920	1					
+ANR	1046107	CompoundStatement		77:42:1059:1059	1045920	1					
+ANR	1046108	GotoStatement	goto broken_dir ;	83:12:1227:1242	1045920	0	True				
+ANR	1046109	Identifier	broken_dir		1045920	0					
+ANR	1046110	IfStatement	if ( ++ nb_dir_entries > s -> nb_bitmaps )		1045920	2					
+ANR	1046111	Condition	++ nb_dir_entries > s -> nb_bitmaps	89:12:1270:1301	1045920	0	True				
+ANR	1046112	RelationalExpression	++ nb_dir_entries > s -> nb_bitmaps		1045920	0		>			
+ANR	1046113	UnaryExpression	++ nb_dir_entries		1045920	0					
+ANR	1046114	IncDec	++		1045920	0					
+ANR	1046115	Identifier	nb_dir_entries		1045920	1					
+ANR	1046116	PtrMemberAccess	s -> nb_bitmaps		1045920	1					
+ANR	1046117	Identifier	s		1045920	0					
+ANR	1046118	Identifier	nb_bitmaps		1045920	1					
+ANR	1046119	CompoundStatement		85:46:1151:1151	1045920	1					
+ANR	1046120	Statement	error_setg	91:12:1319:1328	1045920	0	True				
+ANR	1046121	Statement	(	91:22:1329:1329	1045920	1	True				
+ANR	1046122	Statement	errp	91:23:1330:1333	1045920	2	True				
+ANR	1046123	Statement	","	91:27:1334:1334	1045920	3	True				
+ANR	1046124	Statement	"""More bitmaps found than specified in header"""	91:29:1336:1380	1045920	4	True				
+ANR	1046125	Statement	""" extension"""	93:23:1406:1417	1045920	5	True				
+ANR	1046126	Statement	)	93:35:1418:1418	1045920	6	True				
+ANR	1046127	ExpressionStatement		93:36:1419:1419	1045920	7	True				
+ANR	1046128	GotoStatement	goto fail ;	95:12:1434:1443	1045920	8	True				
+ANR	1046129	Identifier	fail		1045920	0					
+ANR	1046130	ExpressionStatement	bitmap_dir_entry_to_cpu ( e )	99:8:1465:1491	1045920	3	True				
+ANR	1046131	CallExpression	bitmap_dir_entry_to_cpu ( e )		1045920	0					
+ANR	1046132	Callee	bitmap_dir_entry_to_cpu		1045920	0					
+ANR	1046133	Identifier	bitmap_dir_entry_to_cpu		1045920	0					
+ANR	1046134	ArgumentList	e		1045920	1					
+ANR	1046135	Argument	e		1045920	0					
+ANR	1046136	Identifier	e		1045920	0					
+ANR	1046137	IfStatement	if ( ( uint8_t * ) next_dir_entry ( e ) > dir_end )		1045920	4					
+ANR	1046138	Condition	( uint8_t * ) next_dir_entry ( e ) > dir_end	103:12:1508:1545	1045920	0	True				
+ANR	1046139	RelationalExpression	( uint8_t * ) next_dir_entry ( e ) > dir_end		1045920	0		>			
+ANR	1046140	CastExpression	( uint8_t * ) next_dir_entry ( e )		1045920	0					
+ANR	1046141	CastTarget	uint8_t *		1045920	0					
+ANR	1046142	CallExpression	next_dir_entry ( e )		1045920	1					
+ANR	1046143	Callee	next_dir_entry		1045920	0					
+ANR	1046144	Identifier	next_dir_entry		1045920	0					
+ANR	1046145	ArgumentList	e		1045920	1					
+ANR	1046146	Argument	e		1045920	0					
+ANR	1046147	Identifier	e		1045920	0					
+ANR	1046148	Identifier	dir_end		1045920	1					
+ANR	1046149	CompoundStatement		99:52:1395:1395	1045920	1					
+ANR	1046150	GotoStatement	goto broken_dir ;	105:12:1563:1578	1045920	0	True				
+ANR	1046151	Identifier	broken_dir		1045920	0					
+ANR	1046152	IfStatement	if ( e -> extra_data_size != 0 )		1045920	5					
+ANR	1046153	Condition	e -> extra_data_size != 0	111:12:1606:1628	1045920	0	True				
+ANR	1046154	EqualityExpression	e -> extra_data_size != 0		1045920	0		!=			
+ANR	1046155	PtrMemberAccess	e -> extra_data_size		1045920	0					
+ANR	1046156	Identifier	e		1045920	0					
+ANR	1046157	Identifier	extra_data_size		1045920	1					
+ANR	1046158	PrimaryExpression	0		1045920	1					
+ANR	1046159	CompoundStatement		107:37:1478:1478	1045920	1					
+ANR	1046160	ExpressionStatement	"error_setg ( errp , ""Bitmap extra data is not supported"" )"	113:12:1646:1700	1045920	0	True				
+ANR	1046161	CallExpression	"error_setg ( errp , ""Bitmap extra data is not supported"" )"		1045920	0					
+ANR	1046162	Callee	error_setg		1045920	0					
+ANR	1046163	Identifier	error_setg		1045920	0					
+ANR	1046164	ArgumentList	errp		1045920	1					
+ANR	1046165	Argument	errp		1045920	0					
+ANR	1046166	Identifier	errp		1045920	0					
+ANR	1046167	Argument	"""Bitmap extra data is not supported"""		1045920	1					
+ANR	1046168	PrimaryExpression	"""Bitmap extra data is not supported"""		1045920	0					
+ANR	1046169	GotoStatement	goto fail ;	115:12:1715:1724	1045920	1	True				
+ANR	1046170	Identifier	fail		1045920	0					
+ANR	1046171	ExpressionStatement	"ret = check_dir_entry ( bs , e )"	121:8:1748:1776	1045920	6	True				
+ANR	1046172	AssignmentExpression	"ret = check_dir_entry ( bs , e )"		1045920	0		=			
+ANR	1046173	Identifier	ret		1045920	0					
+ANR	1046174	CallExpression	"check_dir_entry ( bs , e )"		1045920	1					
+ANR	1046175	Callee	check_dir_entry		1045920	0					
+ANR	1046176	Identifier	check_dir_entry		1045920	0					
+ANR	1046177	ArgumentList	bs		1045920	1					
+ANR	1046178	Argument	bs		1045920	0					
+ANR	1046179	Identifier	bs		1045920	0					
+ANR	1046180	Argument	e		1045920	1					
+ANR	1046181	Identifier	e		1045920	0					
+ANR	1046182	IfStatement	if ( ret < 0 )		1045920	7					
+ANR	1046183	Condition	ret < 0	123:12:1791:1797	1045920	0	True				
+ANR	1046184	RelationalExpression	ret < 0		1045920	0		<			
+ANR	1046185	Identifier	ret		1045920	0					
+ANR	1046186	PrimaryExpression	0		1045920	1					
+ANR	1046187	CompoundStatement		119:21:1647:1647	1045920	1					
+ANR	1046188	ExpressionStatement	"error_setg ( errp , ""Bitmap '%.*s' doesn't satisfy the constraints"" , e -> name_size , dir_entry_name_field ( e ) )"	125:12:1815:1943	1045920	0	True				
+ANR	1046189	CallExpression	"error_setg ( errp , ""Bitmap '%.*s' doesn't satisfy the constraints"" , e -> name_size , dir_entry_name_field ( e ) )"		1045920	0					
+ANR	1046190	Callee	error_setg		1045920	0					
+ANR	1046191	Identifier	error_setg		1045920	0					
+ANR	1046192	ArgumentList	errp		1045920	1					
+ANR	1046193	Argument	errp		1045920	0					
+ANR	1046194	Identifier	errp		1045920	0					
+ANR	1046195	Argument	"""Bitmap '%.*s' doesn't satisfy the constraints"""		1045920	1					
+ANR	1046196	PrimaryExpression	"""Bitmap '%.*s' doesn't satisfy the constraints"""		1045920	0					
+ANR	1046197	Argument	e -> name_size		1045920	2					
+ANR	1046198	PtrMemberAccess	e -> name_size		1045920	0					
+ANR	1046199	Identifier	e		1045920	0					
+ANR	1046200	Identifier	name_size		1045920	1					
+ANR	1046201	Argument	dir_entry_name_field ( e )		1045920	3					
+ANR	1046202	CallExpression	dir_entry_name_field ( e )		1045920	0					
+ANR	1046203	Callee	dir_entry_name_field		1045920	0					
+ANR	1046204	Identifier	dir_entry_name_field		1045920	0					
+ANR	1046205	ArgumentList	e		1045920	1					
+ANR	1046206	Argument	e		1045920	0					
+ANR	1046207	Identifier	e		1045920	0					
+ANR	1046208	GotoStatement	goto fail ;	129:12:1958:1967	1045920	1	True				
+ANR	1046209	Identifier	fail		1045920	0					
+ANR	1046210	ExpressionStatement	"bm = g_new ( Qcow2Bitmap , 1 )"	135:8:1991:2017	1045920	8	True				
+ANR	1046211	AssignmentExpression	"bm = g_new ( Qcow2Bitmap , 1 )"		1045920	0		=			
+ANR	1046212	Identifier	bm		1045920	0					
+ANR	1046213	CallExpression	"g_new ( Qcow2Bitmap , 1 )"		1045920	1					
+ANR	1046214	Callee	g_new		1045920	0					
+ANR	1046215	Identifier	g_new		1045920	0					
+ANR	1046216	ArgumentList	Qcow2Bitmap		1045920	1					
+ANR	1046217	Argument	Qcow2Bitmap		1045920	0					
+ANR	1046218	Identifier	Qcow2Bitmap		1045920	0					
+ANR	1046219	Argument	1		1045920	1					
+ANR	1046220	PrimaryExpression	1		1045920	0					
+ANR	1046221	ExpressionStatement	bm -> table . offset = e -> bitmap_table_offset	137:8:2028:2069	1045920	9	True				
+ANR	1046222	AssignmentExpression	bm -> table . offset = e -> bitmap_table_offset		1045920	0		=			
+ANR	1046223	MemberAccess	bm -> table . offset		1045920	0					
+ANR	1046224	PtrMemberAccess	bm -> table		1045920	0					
+ANR	1046225	Identifier	bm		1045920	0					
+ANR	1046226	Identifier	table		1045920	1					
+ANR	1046227	Identifier	offset		1045920	1					
+ANR	1046228	PtrMemberAccess	e -> bitmap_table_offset		1045920	1					
+ANR	1046229	Identifier	e		1045920	0					
+ANR	1046230	Identifier	bitmap_table_offset		1045920	1					
+ANR	1046231	ExpressionStatement	bm -> table . size = e -> bitmap_table_size	139:8:2080:2117	1045920	10	True				
+ANR	1046232	AssignmentExpression	bm -> table . size = e -> bitmap_table_size		1045920	0		=			
+ANR	1046233	MemberAccess	bm -> table . size		1045920	0					
+ANR	1046234	PtrMemberAccess	bm -> table		1045920	0					
+ANR	1046235	Identifier	bm		1045920	0					
+ANR	1046236	Identifier	table		1045920	1					
+ANR	1046237	Identifier	size		1045920	1					
+ANR	1046238	PtrMemberAccess	e -> bitmap_table_size		1045920	1					
+ANR	1046239	Identifier	e		1045920	0					
+ANR	1046240	Identifier	bitmap_table_size		1045920	1					
+ANR	1046241	ExpressionStatement	bm -> flags = e -> flags	141:8:2128:2148	1045920	11	True				
+ANR	1046242	AssignmentExpression	bm -> flags = e -> flags		1045920	0		=			
+ANR	1046243	PtrMemberAccess	bm -> flags		1045920	0					
+ANR	1046244	Identifier	bm		1045920	0					
+ANR	1046245	Identifier	flags		1045920	1					
+ANR	1046246	PtrMemberAccess	e -> flags		1045920	1					
+ANR	1046247	Identifier	e		1045920	0					
+ANR	1046248	Identifier	flags		1045920	1					
+ANR	1046249	ExpressionStatement	bm -> granularity_bits = e -> granularity_bits	143:8:2159:2201	1045920	12	True				
+ANR	1046250	AssignmentExpression	bm -> granularity_bits = e -> granularity_bits		1045920	0		=			
+ANR	1046251	PtrMemberAccess	bm -> granularity_bits		1045920	0					
+ANR	1046252	Identifier	bm		1045920	0					
+ANR	1046253	Identifier	granularity_bits		1045920	1					
+ANR	1046254	PtrMemberAccess	e -> granularity_bits		1045920	1					
+ANR	1046255	Identifier	e		1045920	0					
+ANR	1046256	Identifier	granularity_bits		1045920	1					
+ANR	1046257	ExpressionStatement	bm -> name = dir_entry_copy_name ( e )	145:8:2212:2245	1045920	13	True				
+ANR	1046258	AssignmentExpression	bm -> name = dir_entry_copy_name ( e )		1045920	0		=			
+ANR	1046259	PtrMemberAccess	bm -> name		1045920	0					
+ANR	1046260	Identifier	bm		1045920	0					
+ANR	1046261	Identifier	name		1045920	1					
+ANR	1046262	CallExpression	dir_entry_copy_name ( e )		1045920	1					
+ANR	1046263	Callee	dir_entry_copy_name		1045920	0					
+ANR	1046264	Identifier	dir_entry_copy_name		1045920	0					
+ANR	1046265	ArgumentList	e		1045920	1					
+ANR	1046266	Argument	e		1045920	0					
+ANR	1046267	Identifier	e		1045920	0					
+ANR	1046268	ExpressionStatement	"QSIMPLEQ_INSERT_TAIL ( bm_list , bm , entry )"	147:8:2256:2296	1045920	14	True				
+ANR	1046269	CallExpression	"QSIMPLEQ_INSERT_TAIL ( bm_list , bm , entry )"		1045920	0					
+ANR	1046270	Callee	QSIMPLEQ_INSERT_TAIL		1045920	0					
+ANR	1046271	Identifier	QSIMPLEQ_INSERT_TAIL		1045920	0					
+ANR	1046272	ArgumentList	bm_list		1045920	1					
+ANR	1046273	Argument	bm_list		1045920	0					
+ANR	1046274	Identifier	bm_list		1045920	0					
+ANR	1046275	Argument	bm		1045920	1					
+ANR	1046276	Identifier	bm		1045920	0					
+ANR	1046277	Argument	entry		1045920	2					
+ANR	1046278	Identifier	entry		1045920	0					
+ANR	1046279	IfStatement	if ( nb_dir_entries != s -> nb_bitmaps )		1045920	15					
+ANR	1046280	Condition	nb_dir_entries != s -> nb_bitmaps	153:8:2316:2346	1045920	0	True				
+ANR	1046281	EqualityExpression	nb_dir_entries != s -> nb_bitmaps		1045920	0		!=			
+ANR	1046282	Identifier	nb_dir_entries		1045920	0					
+ANR	1046283	PtrMemberAccess	s -> nb_bitmaps		1045920	1					
+ANR	1046284	Identifier	s		1045920	0					
+ANR	1046285	Identifier	nb_bitmaps		1045920	1					
+ANR	1046286	CompoundStatement		149:41:2196:2196	1045920	1					
+ANR	1046287	Statement	error_setg	155:8:2360:2369	1045920	0	True				
+ANR	1046288	Statement	(	155:18:2370:2370	1045920	1	True				
+ANR	1046289	Statement	errp	155:19:2371:2374	1045920	2	True				
+ANR	1046290	Statement	","	155:23:2375:2375	1045920	3	True				
+ANR	1046291	Statement	"""Less bitmaps found than specified in header"""	155:25:2377:2421	1045920	4	True				
+ANR	1046292	Statement	""" extension"""	157:25:2449:2460	1045920	5	True				
+ANR	1046293	Statement	)	157:37:2461:2461	1045920	6	True				
+ANR	1046294	ExpressionStatement		157:38:2462:2462	1045920	7	True				
+ANR	1046295	GotoStatement	goto fail ;	159:8:2473:2482	1045920	8	True				
+ANR	1046296	Identifier	fail		1045920	0					
+ANR	1046297	IfStatement	if ( ( uint8_t * ) e != dir_end )		1045920	16					
+ANR	1046298	Condition	( uint8_t * ) e != dir_end	165:8:2502:2524	1045920	0	True				
+ANR	1046299	EqualityExpression	( uint8_t * ) e != dir_end		1045920	0		!=			
+ANR	1046300	CastExpression	( uint8_t * ) e		1045920	0					
+ANR	1046301	CastTarget	uint8_t *		1045920	0					
+ANR	1046302	Identifier	e		1045920	1					
+ANR	1046303	Identifier	dir_end		1045920	1					
+ANR	1046304	CompoundStatement		161:33:2374:2374	1045920	1					
+ANR	1046305	GotoStatement	goto broken_dir ;	167:8:2538:2553	1045920	0	True				
+ANR	1046306	Identifier	broken_dir		1045920	0					
+ANR	1046307	ExpressionStatement	g_free ( dir )	173:4:2569:2580	1045920	17	True				
+ANR	1046308	CallExpression	g_free ( dir )		1045920	0					
+ANR	1046309	Callee	g_free		1045920	0					
+ANR	1046310	Identifier	g_free		1045920	0					
+ANR	1046311	ArgumentList	dir		1045920	1					
+ANR	1046312	Argument	dir		1045920	0					
+ANR	1046313	Identifier	dir		1045920	0					
+ANR	1046314	ReturnStatement	return bm_list ;	175:4:2587:2601	1045920	18	True				
+ANR	1046315	Identifier	bm_list		1045920	0					
+ANR	1046316	Label	broken_dir :	179:0:2606:2616	1045920	19	True				
+ANR	1046317	Identifier	broken_dir		1045920	0					
+ANR	1046318	ExpressionStatement	ret = - EINVAL	181:4:2623:2636	1045920	20	True				
+ANR	1046319	AssignmentExpression	ret = - EINVAL		1045920	0		=			
+ANR	1046320	Identifier	ret		1045920	0					
+ANR	1046321	UnaryOperationExpression	- EINVAL		1045920	1					
+ANR	1046322	UnaryOperator	-		1045920	0					
+ANR	1046323	Identifier	EINVAL		1045920	1					
+ANR	1046324	ExpressionStatement	"error_setg ( errp , ""Broken bitmap directory"" )"	183:4:2643:2686	1045920	21	True				
+ANR	1046325	CallExpression	"error_setg ( errp , ""Broken bitmap directory"" )"		1045920	0					
+ANR	1046326	Callee	error_setg		1045920	0					
+ANR	1046327	Identifier	error_setg		1045920	0					
+ANR	1046328	ArgumentList	errp		1045920	1					
+ANR	1046329	Argument	errp		1045920	0					
+ANR	1046330	Identifier	errp		1045920	0					
+ANR	1046331	Argument	"""Broken bitmap directory"""		1045920	1					
+ANR	1046332	PrimaryExpression	"""Broken bitmap directory"""		1045920	0					
+ANR	1046333	Label	fail :	187:0:2691:2695	1045920	22	True				
+ANR	1046334	Identifier	fail		1045920	0					
+ANR	1046335	ExpressionStatement	g_free ( dir )	189:4:2702:2713	1045920	23	True				
+ANR	1046336	CallExpression	g_free ( dir )		1045920	0					
+ANR	1046337	Callee	g_free		1045920	0					
+ANR	1046338	Identifier	g_free		1045920	0					
+ANR	1046339	ArgumentList	dir		1045920	1					
+ANR	1046340	Argument	dir		1045920	0					
+ANR	1046341	Identifier	dir		1045920	0					
+ANR	1046342	ExpressionStatement	bitmap_list_free ( bm_list )	191:4:2720:2745	1045920	24	True				
+ANR	1046343	CallExpression	bitmap_list_free ( bm_list )		1045920	0					
+ANR	1046344	Callee	bitmap_list_free		1045920	0					
+ANR	1046345	Identifier	bitmap_list_free		1045920	0					
+ANR	1046346	ArgumentList	bm_list		1045920	1					
+ANR	1046347	Argument	bm_list		1045920	0					
+ANR	1046348	Identifier	bm_list		1045920	0					
+ANR	1046349	ReturnStatement	return NULL ;	195:4:2754:2765	1045920	25	True				
+ANR	1046350	Identifier	NULL		1045920	0					
+ANR	1046351	ReturnType	static Qcow2BitmapList *		1045920	1					
+ANR	1046352	Identifier	bitmap_list_load		1045920	2					
+ANR	1046353	ParameterList	"BlockDriverState * bs , uint64_t offset , uint64_t size , Error * * errp"		1045920	3					
+ANR	1046354	Parameter	BlockDriverState * bs	1:41:41:60	1045920	0	True				
+ANR	1046355	ParameterType	BlockDriverState *		1045920	0					
+ANR	1046356	Identifier	bs		1045920	1					
+ANR	1046357	Parameter	uint64_t offset	1:63:63:77	1045920	1	True				
+ANR	1046358	ParameterType	uint64_t		1045920	0					
+ANR	1046359	Identifier	offset		1045920	1					
+ANR	1046360	Parameter	uint64_t size	3:41:122:134	1045920	2	True				
+ANR	1046361	ParameterType	uint64_t		1045920	0					
+ANR	1046362	Identifier	size		1045920	1					
+ANR	1046363	Parameter	Error * * errp	3:56:137:148	1045920	3	True				
+ANR	1046364	ParameterType	Error * *		1045920	0					
+ANR	1046365	Identifier	errp		1045920	1					
+ANR	1046366	CFGEntryNode	ENTRY		1045920		True				
+ANR	1046367	CFGExitNode	EXIT		1045920		True				
+ANR	1046368	Symbol	dir_entry_copy_name		1045920						
+ANR	1046369	Symbol	bm_list		1045920						
+ANR	1046370	Symbol	errp		1045920						
+ANR	1046371	Symbol	g_try_malloc		1045920						
+ANR	1046372	Symbol	bs -> file		1045920						
+ANR	1046373	Symbol	bm -> granularity_bits		1045920						
+ANR	1046374	Symbol	e -> bitmap_table_offset		1045920						
+ANR	1046375	Symbol	bm		1045920						
+ANR	1046376	Symbol	dir		1045920						
+ANR	1046377	Symbol	g_new		1045920						
+ANR	1046378	Symbol	bs		1045920						
+ANR	1046379	Symbol	nb_dir_entries		1045920						
+ANR	1046380	Symbol	* bm		1045920						
+ANR	1046381	Symbol	* bs		1045920						
+ANR	1046382	Symbol	next_dir_entry		1045920						
+ANR	1046383	Symbol	e -> name_size		1045920						
+ANR	1046384	Symbol	Qcow2Bitmap		1045920						
+ANR	1046385	Symbol	e -> bitmap_table_size		1045920						
+ANR	1046386	Symbol	e -> extra_data_size		1045920						
+ANR	1046387	Symbol	QCOW2_MAX_BITMAP_DIRECTORY_SIZE		1045920						
+ANR	1046388	Symbol	dir_entry_name_field		1045920						
+ANR	1046389	Symbol	s -> nb_bitmaps		1045920						
+ANR	1046390	Symbol	ret		1045920						
+ANR	1046391	Symbol	NULL		1045920						
+ANR	1046392	Symbol	offset		1045920						
+ANR	1046393	Symbol	bs -> opaque		1045920						
+ANR	1046394	Symbol	bm -> name		1045920						
+ANR	1046395	Symbol	e		1045920						
+ANR	1046396	Symbol	check_dir_entry		1045920						
+ANR	1046397	Symbol	dir_end		1045920						
+ANR	1046398	Symbol	bm -> table . offset		1045920						
+ANR	1046399	Symbol	bm -> flags		1045920						
+ANR	1046400	Symbol	bitmap_list_new		1045920						
+ANR	1046401	Symbol	* e		1045920						
+ANR	1046402	Symbol	EINVAL		1045920						
+ANR	1046403	Symbol	entry		1045920						
+ANR	1046404	Symbol	s		1045920						
+ANR	1046405	Symbol	size		1045920						
+ANR	1046406	Symbol	bdrv_pread		1045920						
+ANR	1046407	Symbol	bm -> table		1045920						
+ANR	1046408	Symbol	bm -> table . size		1045920						
+ANR	1046409	Symbol	e -> granularity_bits		1045920						
+ANR	1046410	Symbol	e -> flags		1045920						
+ANR	1046411	Symbol	* s		1045920						

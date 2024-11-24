@@ -1,0 +1,365 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5554826	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mmu_translate_region_1.c								
+ANR	5554827	Function	mmu_translate_region	1:0:0:2060							
+ANR	5554828	FunctionDef	"mmu_translate_region (CPUS390XState * env , target_ulong vaddr , uint64_t asc , uint64_t entry , int level , target_ulong * raddr , int * flags , int rw , bool exc)"		5554827	0					
+ANR	5554829	CompoundStatement		9:0:264:2060	5554827	0					
+ANR	5554830	IdentifierDeclStatement	CPUState * cs = CPU ( s390_env_get_cpu ( env ) ) ;	11:4:271:312	5554827	0	True				
+ANR	5554831	IdentifierDecl	* cs = CPU ( s390_env_get_cpu ( env ) )		5554827	0					
+ANR	5554832	IdentifierDeclType	CPUState *		5554827	0					
+ANR	5554833	Identifier	cs		5554827	1					
+ANR	5554834	AssignmentExpression	* cs = CPU ( s390_env_get_cpu ( env ) )		5554827	2		=			
+ANR	5554835	Identifier	cs		5554827	0					
+ANR	5554836	CallExpression	CPU ( s390_env_get_cpu ( env ) )		5554827	1					
+ANR	5554837	Callee	CPU		5554827	0					
+ANR	5554838	Identifier	CPU		5554827	0					
+ANR	5554839	ArgumentList	s390_env_get_cpu ( env )		5554827	1					
+ANR	5554840	Argument	s390_env_get_cpu ( env )		5554827	0					
+ANR	5554841	CallExpression	s390_env_get_cpu ( env )		5554827	0					
+ANR	5554842	Callee	s390_env_get_cpu		5554827	0					
+ANR	5554843	Identifier	s390_env_get_cpu		5554827	0					
+ANR	5554844	ArgumentList	env		5554827	1					
+ANR	5554845	Argument	env		5554827	0					
+ANR	5554846	Identifier	env		5554827	0					
+ANR	5554847	IdentifierDeclStatement	"uint64_t origin , offs , new_entry ;"	13:4:319:351	5554827	1	True				
+ANR	5554848	IdentifierDecl	origin		5554827	0					
+ANR	5554849	IdentifierDeclType	uint64_t		5554827	0					
+ANR	5554850	Identifier	origin		5554827	1					
+ANR	5554851	IdentifierDecl	offs		5554827	1					
+ANR	5554852	IdentifierDeclType	uint64_t		5554827	0					
+ANR	5554853	Identifier	offs		5554827	1					
+ANR	5554854	IdentifierDecl	new_entry		5554827	2					
+ANR	5554855	IdentifierDeclType	uint64_t		5554827	0					
+ANR	5554856	Identifier	new_entry		5554827	1					
+ANR	5554857	IdentifierDeclStatement	"const int pchks [ 4 ] = { PGM_SEGMENT_TRANS , PGM_REG_THIRD_TRANS , PGM_REG_SEC_TRANS , PGM_REG_FIRST_TRANS } ;"	15:4:358:484	5554827	2	True				
+ANR	5554858	IdentifierDecl	"pchks [ 4 ] = { PGM_SEGMENT_TRANS , PGM_REG_THIRD_TRANS , PGM_REG_SEC_TRANS , PGM_REG_FIRST_TRANS }"		5554827	0					
+ANR	5554859	IdentifierDeclType	const int [ 4 ]		5554827	0					
+ANR	5554860	Identifier	pchks		5554827	1					
+ANR	5554861	PrimaryExpression	4		5554827	2					
+ANR	5554862	AssignmentExpression	"pchks [ 4 ] = { PGM_SEGMENT_TRANS , PGM_REG_THIRD_TRANS , PGM_REG_SEC_TRANS , PGM_REG_FIRST_TRANS }"		5554827	3		=			
+ANR	5554863	Identifier	pchks		5554827	0					
+ANR	5554864	InitializerList	PGM_SEGMENT_TRANS		5554827	1					
+ANR	5554865	Identifier	PGM_SEGMENT_TRANS		5554827	0					
+ANR	5554866	Identifier	PGM_REG_THIRD_TRANS		5554827	1					
+ANR	5554867	Identifier	PGM_REG_SEC_TRANS		5554827	2					
+ANR	5554868	Identifier	PGM_REG_FIRST_TRANS		5554827	3					
+ANR	5554869	Statement	PTE_DPRINTF	25:4:493:503	5554827	3	True				
+ANR	5554870	Statement	(	25:15:504:504	5554827	4	True				
+ANR	5554871	Statement	"""%s: 0x%"""	25:16:505:513	5554827	5	True				
+ANR	5554872	Statement	PRIx64	25:26:515:520	5554827	6	True				
+ANR	5554873	Statement	"""\\n"""	25:33:522:525	5554827	7	True				
+ANR	5554874	Statement	","	25:37:526:526	5554827	8	True				
+ANR	5554875	Statement	__func__	25:39:528:535	5554827	9	True				
+ANR	5554876	Statement	","	25:47:536:536	5554827	10	True				
+ANR	5554877	Statement	entry	25:49:538:542	5554827	11	True				
+ANR	5554878	Statement	)	25:54:543:543	5554827	12	True				
+ANR	5554879	ExpressionStatement		25:55:544:544	5554827	13	True				
+ANR	5554880	ExpressionStatement	origin = entry & _REGION_ENTRY_ORIGIN	29:4:553:590	5554827	14	True				
+ANR	5554881	AssignmentExpression	origin = entry & _REGION_ENTRY_ORIGIN		5554827	0		=			
+ANR	5554882	Identifier	origin		5554827	0					
+ANR	5554883	BitAndExpression	entry & _REGION_ENTRY_ORIGIN		5554827	1		&			
+ANR	5554884	Identifier	entry		5554827	0					
+ANR	5554885	Identifier	_REGION_ENTRY_ORIGIN		5554827	1					
+ANR	5554886	ExpressionStatement	offs = ( vaddr >> ( 17 + 11 * level / 4 ) ) & 0x3ff8	31:4:597:645	5554827	15	True				
+ANR	5554887	AssignmentExpression	offs = ( vaddr >> ( 17 + 11 * level / 4 ) ) & 0x3ff8		5554827	0		=			
+ANR	5554888	Identifier	offs		5554827	0					
+ANR	5554889	BitAndExpression	( vaddr >> ( 17 + 11 * level / 4 ) ) & 0x3ff8		5554827	1		&			
+ANR	5554890	ShiftExpression	vaddr >> ( 17 + 11 * level / 4 )		5554827	0		>>			
+ANR	5554891	Identifier	vaddr		5554827	0					
+ANR	5554892	AdditiveExpression	17 + 11 * level / 4		5554827	1		+			
+ANR	5554893	PrimaryExpression	17		5554827	0					
+ANR	5554894	MultiplicativeExpression	11 * level / 4		5554827	1		*			
+ANR	5554895	PrimaryExpression	11		5554827	0					
+ANR	5554896	MultiplicativeExpression	level / 4		5554827	1		/			
+ANR	5554897	Identifier	level		5554827	0					
+ANR	5554898	PrimaryExpression	4		5554827	1					
+ANR	5554899	PrimaryExpression	0x3ff8		5554827	1					
+ANR	5554900	ExpressionStatement	"new_entry = ldq_phys ( cs -> as , origin + offs )"	35:4:654:697	5554827	16	True				
+ANR	5554901	AssignmentExpression	"new_entry = ldq_phys ( cs -> as , origin + offs )"		5554827	0		=			
+ANR	5554902	Identifier	new_entry		5554827	0					
+ANR	5554903	CallExpression	"ldq_phys ( cs -> as , origin + offs )"		5554827	1					
+ANR	5554904	Callee	ldq_phys		5554827	0					
+ANR	5554905	Identifier	ldq_phys		5554827	0					
+ANR	5554906	ArgumentList	cs -> as		5554827	1					
+ANR	5554907	Argument	cs -> as		5554827	0					
+ANR	5554908	PtrMemberAccess	cs -> as		5554827	0					
+ANR	5554909	Identifier	cs		5554827	0					
+ANR	5554910	Identifier	as		5554827	1					
+ANR	5554911	Argument	origin + offs		5554827	1					
+ANR	5554912	AdditiveExpression	origin + offs		5554827	0		+			
+ANR	5554913	Identifier	origin		5554827	0					
+ANR	5554914	Identifier	offs		5554827	1					
+ANR	5554915	Statement	PTE_DPRINTF	37:4:704:714	5554827	17	True				
+ANR	5554916	Statement	(	37:15:715:715	5554827	18	True				
+ANR	5554917	Statement	"""%s: 0x%"""	37:16:716:724	5554827	19	True				
+ANR	5554918	Statement	PRIx64	37:26:726:731	5554827	20	True				
+ANR	5554919	Statement	""" + 0x%"""	37:33:733:740	5554827	21	True				
+ANR	5554920	Statement	PRIx64	37:42:742:747	5554827	22	True				
+ANR	5554921	Statement	""" => 0x%016"""	37:49:749:760	5554827	23	True				
+ANR	5554922	Statement	PRIx64	37:62:762:767	5554827	24	True				
+ANR	5554923	Statement	"""\\n"""	37:69:769:772	5554827	25	True				
+ANR	5554924	Statement	","	37:73:773:773	5554827	26	True				
+ANR	5554925	Statement	__func__	39:16:792:799	5554827	27	True				
+ANR	5554926	Statement	","	39:24:800:800	5554827	28	True				
+ANR	5554927	Statement	origin	39:26:802:807	5554827	29	True				
+ANR	5554928	Statement	","	39:32:808:808	5554827	30	True				
+ANR	5554929	Statement	offs	39:34:810:813	5554827	31	True				
+ANR	5554930	Statement	","	39:38:814:814	5554827	32	True				
+ANR	5554931	Statement	new_entry	39:40:816:824	5554827	33	True				
+ANR	5554932	Statement	)	39:49:825:825	5554827	34	True				
+ANR	5554933	ExpressionStatement		39:50:826:826	5554827	35	True				
+ANR	5554934	IfStatement	if ( ( new_entry & _REGION_ENTRY_INV ) != 0 )		5554827	36					
+ANR	5554935	Condition	( new_entry & _REGION_ENTRY_INV ) != 0	43:8:839:874	5554827	0	True				
+ANR	5554936	EqualityExpression	( new_entry & _REGION_ENTRY_INV ) != 0		5554827	0		!=			
+ANR	5554937	BitAndExpression	new_entry & _REGION_ENTRY_INV		5554827	0		&			
+ANR	5554938	Identifier	new_entry		5554827	0					
+ANR	5554939	Identifier	_REGION_ENTRY_INV		5554827	1					
+ANR	5554940	PrimaryExpression	0		5554827	1					
+ANR	5554941	CompoundStatement		35:46:612:612	5554827	1					
+ANR	5554942	ExpressionStatement	"DPRINTF ( ""%s: invalid region\\n"" , __func__ )"	47:8:947:988	5554827	0	True				
+ANR	5554943	CallExpression	"DPRINTF ( ""%s: invalid region\\n"" , __func__ )"		5554827	0					
+ANR	5554944	Callee	DPRINTF		5554827	0					
+ANR	5554945	Identifier	DPRINTF		5554827	0					
+ANR	5554946	ArgumentList	"""%s: invalid region\\n"""		5554827	1					
+ANR	5554947	Argument	"""%s: invalid region\\n"""		5554827	0					
+ANR	5554948	PrimaryExpression	"""%s: invalid region\\n"""		5554827	0					
+ANR	5554949	Argument	__func__		5554827	1					
+ANR	5554950	Identifier	__func__		5554827	0					
+ANR	5554951	ExpressionStatement	"trigger_page_fault ( env , vaddr , PGM_SEGMENT_TRANS , asc , rw , exc )"	49:8:999:1062	5554827	1	True				
+ANR	5554952	CallExpression	"trigger_page_fault ( env , vaddr , PGM_SEGMENT_TRANS , asc , rw , exc )"		5554827	0					
+ANR	5554953	Callee	trigger_page_fault		5554827	0					
+ANR	5554954	Identifier	trigger_page_fault		5554827	0					
+ANR	5554955	ArgumentList	env		5554827	1					
+ANR	5554956	Argument	env		5554827	0					
+ANR	5554957	Identifier	env		5554827	0					
+ANR	5554958	Argument	vaddr		5554827	1					
+ANR	5554959	Identifier	vaddr		5554827	0					
+ANR	5554960	Argument	PGM_SEGMENT_TRANS		5554827	2					
+ANR	5554961	Identifier	PGM_SEGMENT_TRANS		5554827	0					
+ANR	5554962	Argument	asc		5554827	3					
+ANR	5554963	Identifier	asc		5554827	0					
+ANR	5554964	Argument	rw		5554827	4					
+ANR	5554965	Identifier	rw		5554827	0					
+ANR	5554966	Argument	exc		5554827	5					
+ANR	5554967	Identifier	exc		5554827	0					
+ANR	5554968	ReturnStatement	return - 1 ;	51:8:1073:1082	5554827	2	True				
+ANR	5554969	UnaryOperationExpression	- 1		5554827	0					
+ANR	5554970	UnaryOperator	-		5554827	0					
+ANR	5554971	PrimaryExpression	1		5554827	1					
+ANR	5554972	IfStatement	if ( ( new_entry & _REGION_ENTRY_TYPE_MASK ) != level )		5554827	37					
+ANR	5554973	Condition	( new_entry & _REGION_ENTRY_TYPE_MASK ) != level	57:8:1102:1147	5554827	0	True				
+ANR	5554974	EqualityExpression	( new_entry & _REGION_ENTRY_TYPE_MASK ) != level		5554827	0		!=			
+ANR	5554975	BitAndExpression	new_entry & _REGION_ENTRY_TYPE_MASK		5554827	0		&			
+ANR	5554976	Identifier	new_entry		5554827	0					
+ANR	5554977	Identifier	_REGION_ENTRY_TYPE_MASK		5554827	1					
+ANR	5554978	Identifier	level		5554827	1					
+ANR	5554979	CompoundStatement		49:56:885:885	5554827	1					
+ANR	5554980	ExpressionStatement	"trigger_page_fault ( env , vaddr , PGM_TRANS_SPEC , asc , rw , exc )"	59:8:1161:1221	5554827	0	True				
+ANR	5554981	CallExpression	"trigger_page_fault ( env , vaddr , PGM_TRANS_SPEC , asc , rw , exc )"		5554827	0					
+ANR	5554982	Callee	trigger_page_fault		5554827	0					
+ANR	5554983	Identifier	trigger_page_fault		5554827	0					
+ANR	5554984	ArgumentList	env		5554827	1					
+ANR	5554985	Argument	env		5554827	0					
+ANR	5554986	Identifier	env		5554827	0					
+ANR	5554987	Argument	vaddr		5554827	1					
+ANR	5554988	Identifier	vaddr		5554827	0					
+ANR	5554989	Argument	PGM_TRANS_SPEC		5554827	2					
+ANR	5554990	Identifier	PGM_TRANS_SPEC		5554827	0					
+ANR	5554991	Argument	asc		5554827	3					
+ANR	5554992	Identifier	asc		5554827	0					
+ANR	5554993	Argument	rw		5554827	4					
+ANR	5554994	Identifier	rw		5554827	0					
+ANR	5554995	Argument	exc		5554827	5					
+ANR	5554996	Identifier	exc		5554827	0					
+ANR	5554997	ReturnStatement	return - 1 ;	61:8:1232:1241	5554827	1	True				
+ANR	5554998	UnaryOperationExpression	- 1		5554827	0					
+ANR	5554999	UnaryOperator	-		5554827	0					
+ANR	5555000	PrimaryExpression	1		5554827	1					
+ANR	5555001	IfStatement	if ( level == _ASCE_TYPE_SEGMENT )		5554827	38					
+ANR	5555002	Condition	level == _ASCE_TYPE_SEGMENT	73:8:1335:1361	5554827	0	True				
+ANR	5555003	EqualityExpression	level == _ASCE_TYPE_SEGMENT		5554827	0		==			
+ANR	5555004	Identifier	level		5554827	0					
+ANR	5555005	Identifier	_ASCE_TYPE_SEGMENT		5554827	1					
+ANR	5555006	CompoundStatement		65:37:1099:1099	5554827	1					
+ANR	5555007	ReturnStatement	"return mmu_translate_segment ( env , vaddr , asc , new_entry , raddr , flags , rw , exc ) ;"	75:8:1375:1492	5554827	0	True				
+ANR	5555008	CallExpression	"mmu_translate_segment ( env , vaddr , asc , new_entry , raddr , flags , rw , exc )"		5554827	0					
+ANR	5555009	Callee	mmu_translate_segment		5554827	0					
+ANR	5555010	Identifier	mmu_translate_segment		5554827	0					
+ANR	5555011	ArgumentList	env		5554827	1					
+ANR	5555012	Argument	env		5554827	0					
+ANR	5555013	Identifier	env		5554827	0					
+ANR	5555014	Argument	vaddr		5554827	1					
+ANR	5555015	Identifier	vaddr		5554827	0					
+ANR	5555016	Argument	asc		5554827	2					
+ANR	5555017	Identifier	asc		5554827	0					
+ANR	5555018	Argument	new_entry		5554827	3					
+ANR	5555019	Identifier	new_entry		5554827	0					
+ANR	5555020	Argument	raddr		5554827	4					
+ANR	5555021	Identifier	raddr		5554827	0					
+ANR	5555022	Argument	flags		5554827	5					
+ANR	5555023	Identifier	flags		5554827	0					
+ANR	5555024	Argument	rw		5554827	6					
+ANR	5555025	Identifier	rw		5554827	0					
+ANR	5555026	Argument	exc		5554827	7					
+ANR	5555027	Identifier	exc		5554827	0					
+ANR	5555028	ExpressionStatement	offs = ( vaddr >> ( 28 + 11 * ( level - 4 ) / 4 ) ) & 3	85:4:1556:1605	5554827	39	True				
+ANR	5555029	AssignmentExpression	offs = ( vaddr >> ( 28 + 11 * ( level - 4 ) / 4 ) ) & 3		5554827	0		=			
+ANR	5555030	Identifier	offs		5554827	0					
+ANR	5555031	BitAndExpression	( vaddr >> ( 28 + 11 * ( level - 4 ) / 4 ) ) & 3		5554827	1		&			
+ANR	5555032	ShiftExpression	vaddr >> ( 28 + 11 * ( level - 4 ) / 4 )		5554827	0		>>			
+ANR	5555033	Identifier	vaddr		5554827	0					
+ANR	5555034	AdditiveExpression	28 + 11 * ( level - 4 ) / 4		5554827	1		+			
+ANR	5555035	PrimaryExpression	28		5554827	0					
+ANR	5555036	MultiplicativeExpression	11 * ( level - 4 ) / 4		5554827	1		*			
+ANR	5555037	PrimaryExpression	11		5554827	0					
+ANR	5555038	MultiplicativeExpression	( level - 4 ) / 4		5554827	1		/			
+ANR	5555039	AdditiveExpression	level - 4		5554827	0		-			
+ANR	5555040	Identifier	level		5554827	0					
+ANR	5555041	PrimaryExpression	4		5554827	1					
+ANR	5555042	PrimaryExpression	4		5554827	1					
+ANR	5555043	PrimaryExpression	3		5554827	1					
+ANR	5555044	IfStatement	if ( offs < ( ( new_entry & _REGION_ENTRY_TF ) >> 6 ) || offs > ( new_entry & _REGION_ENTRY_LENGTH ) )		5554827	40					
+ANR	5555045	Condition	offs < ( ( new_entry & _REGION_ENTRY_TF ) >> 6 ) || offs > ( new_entry & _REGION_ENTRY_LENGTH )	87:8:1616:1713	5554827	0	True				
+ANR	5555046	OrExpression	offs < ( ( new_entry & _REGION_ENTRY_TF ) >> 6 ) || offs > ( new_entry & _REGION_ENTRY_LENGTH )		5554827	0		||			
+ANR	5555047	RelationalExpression	offs < ( ( new_entry & _REGION_ENTRY_TF ) >> 6 )		5554827	0		<			
+ANR	5555048	Identifier	offs		5554827	0					
+ANR	5555049	ShiftExpression	( new_entry & _REGION_ENTRY_TF ) >> 6		5554827	1		>>			
+ANR	5555050	BitAndExpression	new_entry & _REGION_ENTRY_TF		5554827	0		&			
+ANR	5555051	Identifier	new_entry		5554827	0					
+ANR	5555052	Identifier	_REGION_ENTRY_TF		5554827	1					
+ANR	5555053	PrimaryExpression	6		5554827	1					
+ANR	5555054	RelationalExpression	offs > ( new_entry & _REGION_ENTRY_LENGTH )		5554827	1		>			
+ANR	5555055	Identifier	offs		5554827	0					
+ANR	5555056	BitAndExpression	new_entry & _REGION_ENTRY_LENGTH		5554827	1		&			
+ANR	5555057	Identifier	new_entry		5554827	0					
+ANR	5555058	Identifier	_REGION_ENTRY_LENGTH		5554827	1					
+ANR	5555059	CompoundStatement		81:54:1451:1451	5554827	1					
+ANR	5555060	ExpressionStatement	"DPRINTF ( ""%s: invalid offset or len (%lx)\\n"" , __func__ , new_entry )"	91:8:1727:1792	5554827	0	True				
+ANR	5555061	CallExpression	"DPRINTF ( ""%s: invalid offset or len (%lx)\\n"" , __func__ , new_entry )"		5554827	0					
+ANR	5555062	Callee	DPRINTF		5554827	0					
+ANR	5555063	Identifier	DPRINTF		5554827	0					
+ANR	5555064	ArgumentList	"""%s: invalid offset or len (%lx)\\n"""		5554827	1					
+ANR	5555065	Argument	"""%s: invalid offset or len (%lx)\\n"""		5554827	0					
+ANR	5555066	PrimaryExpression	"""%s: invalid offset or len (%lx)\\n"""		5554827	0					
+ANR	5555067	Argument	__func__		5554827	1					
+ANR	5555068	Identifier	__func__		5554827	0					
+ANR	5555069	Argument	new_entry		5554827	2					
+ANR	5555070	Identifier	new_entry		5554827	0					
+ANR	5555071	ExpressionStatement	"trigger_page_fault ( env , vaddr , pchks [ level / 4 - 1 ] , asc , rw , exc )"	93:8:1803:1869	5554827	1	True				
+ANR	5555072	CallExpression	"trigger_page_fault ( env , vaddr , pchks [ level / 4 - 1 ] , asc , rw , exc )"		5554827	0					
+ANR	5555073	Callee	trigger_page_fault		5554827	0					
+ANR	5555074	Identifier	trigger_page_fault		5554827	0					
+ANR	5555075	ArgumentList	env		5554827	1					
+ANR	5555076	Argument	env		5554827	0					
+ANR	5555077	Identifier	env		5554827	0					
+ANR	5555078	Argument	vaddr		5554827	1					
+ANR	5555079	Identifier	vaddr		5554827	0					
+ANR	5555080	Argument	pchks [ level / 4 - 1 ]		5554827	2					
+ANR	5555081	ArrayIndexing	pchks [ level / 4 - 1 ]		5554827	0					
+ANR	5555082	Identifier	pchks		5554827	0					
+ANR	5555083	AdditiveExpression	level / 4 - 1		5554827	1		-			
+ANR	5555084	MultiplicativeExpression	level / 4		5554827	0		/			
+ANR	5555085	Identifier	level		5554827	0					
+ANR	5555086	PrimaryExpression	4		5554827	1					
+ANR	5555087	PrimaryExpression	1		5554827	1					
+ANR	5555088	Argument	asc		5554827	3					
+ANR	5555089	Identifier	asc		5554827	0					
+ANR	5555090	Argument	rw		5554827	4					
+ANR	5555091	Identifier	rw		5554827	0					
+ANR	5555092	Argument	exc		5554827	5					
+ANR	5555093	Identifier	exc		5554827	0					
+ANR	5555094	ReturnStatement	return - 1 ;	95:8:1880:1889	5554827	2	True				
+ANR	5555095	UnaryOperationExpression	- 1		5554827	0					
+ANR	5555096	UnaryOperator	-		5554827	0					
+ANR	5555097	PrimaryExpression	1		5554827	1					
+ANR	5555098	ReturnStatement	"return mmu_translate_region ( env , vaddr , asc , new_entry , level - 4 , raddr , flags , rw , exc ) ;"	103:4:1935:2057	5554827	41	True				
+ANR	5555099	CallExpression	"mmu_translate_region ( env , vaddr , asc , new_entry , level - 4 , raddr , flags , rw , exc )"		5554827	0					
+ANR	5555100	Callee	mmu_translate_region		5554827	0					
+ANR	5555101	Identifier	mmu_translate_region		5554827	0					
+ANR	5555102	ArgumentList	env		5554827	1					
+ANR	5555103	Argument	env		5554827	0					
+ANR	5555104	Identifier	env		5554827	0					
+ANR	5555105	Argument	vaddr		5554827	1					
+ANR	5555106	Identifier	vaddr		5554827	0					
+ANR	5555107	Argument	asc		5554827	2					
+ANR	5555108	Identifier	asc		5554827	0					
+ANR	5555109	Argument	new_entry		5554827	3					
+ANR	5555110	Identifier	new_entry		5554827	0					
+ANR	5555111	Argument	level - 4		5554827	4					
+ANR	5555112	AdditiveExpression	level - 4		5554827	0		-			
+ANR	5555113	Identifier	level		5554827	0					
+ANR	5555114	PrimaryExpression	4		5554827	1					
+ANR	5555115	Argument	raddr		5554827	5					
+ANR	5555116	Identifier	raddr		5554827	0					
+ANR	5555117	Argument	flags		5554827	6					
+ANR	5555118	Identifier	flags		5554827	0					
+ANR	5555119	Argument	rw		5554827	7					
+ANR	5555120	Identifier	rw		5554827	0					
+ANR	5555121	Argument	exc		5554827	8					
+ANR	5555122	Identifier	exc		5554827	0					
+ANR	5555123	ReturnType	static int		5554827	1					
+ANR	5555124	Identifier	mmu_translate_region		5554827	2					
+ANR	5555125	ParameterList	"CPUS390XState * env , target_ulong vaddr , uint64_t asc , uint64_t entry , int level , target_ulong * raddr , int * flags , int rw , bool exc"		5554827	3					
+ANR	5555126	Parameter	CPUS390XState * env	1:32:32:49	5554827	0	True				
+ANR	5555127	ParameterType	CPUS390XState *		5554827	0					
+ANR	5555128	Identifier	env		5554827	1					
+ANR	5555129	Parameter	target_ulong vaddr	1:52:52:69	5554827	1	True				
+ANR	5555130	ParameterType	target_ulong		5554827	0					
+ANR	5555131	Identifier	vaddr		5554827	1					
+ANR	5555132	Parameter	uint64_t asc	3:32:105:116	5554827	2	True				
+ANR	5555133	ParameterType	uint64_t		5554827	0					
+ANR	5555134	Identifier	asc		5554827	1					
+ANR	5555135	Parameter	uint64_t entry	3:46:119:132	5554827	3	True				
+ANR	5555136	ParameterType	uint64_t		5554827	0					
+ANR	5555137	Identifier	entry		5554827	1					
+ANR	5555138	Parameter	int level	3:62:135:143	5554827	4	True				
+ANR	5555139	ParameterType	int		5554827	0					
+ANR	5555140	Identifier	level		5554827	1					
+ANR	5555141	Parameter	target_ulong * raddr	5:32:179:197	5554827	5	True				
+ANR	5555142	ParameterType	target_ulong *		5554827	0					
+ANR	5555143	Identifier	raddr		5554827	1					
+ANR	5555144	Parameter	int * flags	5:53:200:209	5554827	6	True				
+ANR	5555145	ParameterType	int *		5554827	0					
+ANR	5555146	Identifier	flags		5554827	1					
+ANR	5555147	Parameter	int rw	5:65:212:217	5554827	7	True				
+ANR	5555148	ParameterType	int		5554827	0					
+ANR	5555149	Identifier	rw		5554827	1					
+ANR	5555150	Parameter	bool exc	7:32:253:260	5554827	8	True				
+ANR	5555151	ParameterType	bool		5554827	0					
+ANR	5555152	Identifier	exc		5554827	1					
+ANR	5555153	CFGEntryNode	ENTRY		5554827		True				
+ANR	5555154	CFGExitNode	EXIT		5554827		True				
+ANR	5555155	Symbol	mmu_translate_segment		5554827						
+ANR	5555156	Symbol	rw		5554827						
+ANR	5555157	Symbol	PGM_REG_SEC_TRANS		5554827						
+ANR	5555158	Symbol	origin		5554827						
+ANR	5555159	Symbol	flags		5554827						
+ANR	5555160	Symbol	CPU		5554827						
+ANR	5555161	Symbol	vaddr		5554827						
+ANR	5555162	Symbol	_REGION_ENTRY_ORIGIN		5554827						
+ANR	5555163	Symbol	* level		5554827						
+ANR	5555164	Symbol	_ASCE_TYPE_SEGMENT		5554827						
+ANR	5555165	Symbol	_REGION_ENTRY_TF		5554827						
+ANR	5555166	Symbol	offs		5554827						
+ANR	5555167	Symbol	exc		5554827						
+ANR	5555168	Symbol	PGM_REG_FIRST_TRANS		5554827						
+ANR	5555169	Symbol	mmu_translate_region		5554827						
+ANR	5555170	Symbol	raddr		5554827						
+ANR	5555171	Symbol	_REGION_ENTRY_INV		5554827						
+ANR	5555172	Symbol	PGM_REG_THIRD_TRANS		5554827						
+ANR	5555173	Symbol	PGM_SEGMENT_TRANS		5554827						
+ANR	5555174	Symbol	_REGION_ENTRY_LENGTH		5554827						
+ANR	5555175	Symbol	cs -> as		5554827						
+ANR	5555176	Symbol	level		5554827						
+ANR	5555177	Symbol	pchks		5554827						
+ANR	5555178	Symbol	ldq_phys		5554827						
+ANR	5555179	Symbol	env		5554827						
+ANR	5555180	Symbol	s390_env_get_cpu		5554827						
+ANR	5555181	Symbol	asc		5554827						
+ANR	5555182	Symbol	cs		5554827						
+ANR	5555183	Symbol	new_entry		5554827						
+ANR	5555184	Symbol	entry		5554827						
+ANR	5555185	Symbol	* cs		5554827						
+ANR	5555186	Symbol	__func__		5554827						
+ANR	5555187	Symbol	PGM_TRANS_SPEC		5554827						
+ANR	5555188	Symbol	_REGION_ENTRY_TYPE_MASK		5554827						
+ANR	5555189	Symbol	* pchks		5554827						

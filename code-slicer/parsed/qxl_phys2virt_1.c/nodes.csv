@@ -1,0 +1,164 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7199216	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qxl_phys2virt_1.c								
+ANR	7199217	Function	qxl_phys2virt	1:0:0:695							
+ANR	7199218	FunctionDef	"qxl_phys2virt (PCIQXLDevice * qxl , QXLPHYSICAL pqxl , int group_id)"		7199217	0					
+ANR	7199219	CompoundStatement		3:0:72:695	7199217	0					
+ANR	7199220	IdentifierDeclStatement	uint64_t phys = le64_to_cpu ( pqxl ) ;	5:4:79:114	7199217	0	True				
+ANR	7199221	IdentifierDecl	phys = le64_to_cpu ( pqxl )		7199217	0					
+ANR	7199222	IdentifierDeclType	uint64_t		7199217	0					
+ANR	7199223	Identifier	phys		7199217	1					
+ANR	7199224	AssignmentExpression	phys = le64_to_cpu ( pqxl )		7199217	2		=			
+ANR	7199225	Identifier	phys		7199217	0					
+ANR	7199226	CallExpression	le64_to_cpu ( pqxl )		7199217	1					
+ANR	7199227	Callee	le64_to_cpu		7199217	0					
+ANR	7199228	Identifier	le64_to_cpu		7199217	0					
+ANR	7199229	ArgumentList	pqxl		7199217	1					
+ANR	7199230	Argument	pqxl		7199217	0					
+ANR	7199231	Identifier	pqxl		7199217	0					
+ANR	7199232	IdentifierDeclStatement	uint32_t slot = ( phys >> ( 64 - 8 ) ) & 0xff ;	7:4:121:165	7199217	1	True				
+ANR	7199233	IdentifierDecl	slot = ( phys >> ( 64 - 8 ) ) & 0xff		7199217	0					
+ANR	7199234	IdentifierDeclType	uint32_t		7199217	0					
+ANR	7199235	Identifier	slot		7199217	1					
+ANR	7199236	AssignmentExpression	slot = ( phys >> ( 64 - 8 ) ) & 0xff		7199217	2		=			
+ANR	7199237	Identifier	slot		7199217	0					
+ANR	7199238	BitAndExpression	( phys >> ( 64 - 8 ) ) & 0xff		7199217	1		&			
+ANR	7199239	ShiftExpression	phys >> ( 64 - 8 )		7199217	0		>>			
+ANR	7199240	Identifier	phys		7199217	0					
+ANR	7199241	AdditiveExpression	64 - 8		7199217	1		-			
+ANR	7199242	PrimaryExpression	64		7199217	0					
+ANR	7199243	PrimaryExpression	8		7199217	1					
+ANR	7199244	PrimaryExpression	0xff		7199217	1					
+ANR	7199245	IdentifierDeclStatement	uint64_t offset = phys & 0xffffffffffff ;	9:4:172:211	7199217	2	True				
+ANR	7199246	IdentifierDecl	offset = phys & 0xffffffffffff		7199217	0					
+ANR	7199247	IdentifierDeclType	uint64_t		7199217	0					
+ANR	7199248	Identifier	offset		7199217	1					
+ANR	7199249	AssignmentExpression	offset = phys & 0xffffffffffff		7199217	2		=			
+ANR	7199250	Identifier	offset		7199217	0					
+ANR	7199251	BitAndExpression	phys & 0xffffffffffff		7199217	1		&			
+ANR	7199252	Identifier	phys		7199217	0					
+ANR	7199253	PrimaryExpression	0xffffffffffff		7199217	1					
+ANR	7199254	SwitchStatement	switch ( group_id )		7199217	3					
+ANR	7199255	Condition	group_id	13:12:228:235	7199217	0	True				
+ANR	7199256	Identifier	group_id		7199217	0					
+ANR	7199257	CompoundStatement		11:22:165:165	7199217	1					
+ANR	7199258	Label	case MEMSLOT_GROUP_HOST :	15:4:245:268	7199217	0	True				
+ANR	7199259	Identifier	MEMSLOT_GROUP_HOST		7199217	0					
+ANR	7199260	ReturnStatement	return ( void * ) ( intptr_t ) offset ;	17:8:279:310	7199217	1	True				
+ANR	7199261	CastExpression	( void * ) ( intptr_t ) offset		7199217	0					
+ANR	7199262	CastTarget	void *		7199217	0					
+ANR	7199263	CastExpression	( intptr_t ) offset		7199217	1					
+ANR	7199264	CastTarget	intptr_t		7199217	0					
+ANR	7199265	Identifier	offset		7199217	1					
+ANR	7199266	Label	case MEMSLOT_GROUP_GUEST :	19:4:317:341	7199217	2	True				
+ANR	7199267	Identifier	MEMSLOT_GROUP_GUEST		7199217	0					
+ANR	7199268	ExpressionStatement	PANIC_ON ( slot >= NUM_MEMSLOTS )	21:8:352:382	7199217	3	True				
+ANR	7199269	CallExpression	PANIC_ON ( slot >= NUM_MEMSLOTS )		7199217	0					
+ANR	7199270	Callee	PANIC_ON		7199217	0					
+ANR	7199271	Identifier	PANIC_ON		7199217	0					
+ANR	7199272	ArgumentList	slot >= NUM_MEMSLOTS		7199217	1					
+ANR	7199273	Argument	slot >= NUM_MEMSLOTS		7199217	0					
+ANR	7199274	RelationalExpression	slot >= NUM_MEMSLOTS		7199217	0		>=			
+ANR	7199275	Identifier	slot		7199217	0					
+ANR	7199276	Identifier	NUM_MEMSLOTS		7199217	1					
+ANR	7199277	ExpressionStatement	PANIC_ON ( ! qxl -> guest_slots [ slot ] . active )	23:8:393:433	7199217	4	True				
+ANR	7199278	CallExpression	PANIC_ON ( ! qxl -> guest_slots [ slot ] . active )		7199217	0					
+ANR	7199279	Callee	PANIC_ON		7199217	0					
+ANR	7199280	Identifier	PANIC_ON		7199217	0					
+ANR	7199281	ArgumentList	! qxl -> guest_slots [ slot ] . active		7199217	1					
+ANR	7199282	Argument	! qxl -> guest_slots [ slot ] . active		7199217	0					
+ANR	7199283	UnaryOperationExpression	! qxl -> guest_slots [ slot ] . active		7199217	0					
+ANR	7199284	UnaryOperator	!		7199217	0					
+ANR	7199285	MemberAccess	qxl -> guest_slots [ slot ] . active		7199217	1					
+ANR	7199286	ArrayIndexing	qxl -> guest_slots [ slot ]		7199217	0					
+ANR	7199287	PtrMemberAccess	qxl -> guest_slots		7199217	0					
+ANR	7199288	Identifier	qxl		7199217	0					
+ANR	7199289	Identifier	guest_slots		7199217	1					
+ANR	7199290	Identifier	slot		7199217	1					
+ANR	7199291	Identifier	active		7199217	1					
+ANR	7199292	ExpressionStatement	PANIC_ON ( offset < qxl -> guest_slots [ slot ] . delta )	25:8:444:491	7199217	5	True				
+ANR	7199293	CallExpression	PANIC_ON ( offset < qxl -> guest_slots [ slot ] . delta )		7199217	0					
+ANR	7199294	Callee	PANIC_ON		7199217	0					
+ANR	7199295	Identifier	PANIC_ON		7199217	0					
+ANR	7199296	ArgumentList	offset < qxl -> guest_slots [ slot ] . delta		7199217	1					
+ANR	7199297	Argument	offset < qxl -> guest_slots [ slot ] . delta		7199217	0					
+ANR	7199298	RelationalExpression	offset < qxl -> guest_slots [ slot ] . delta		7199217	0		<			
+ANR	7199299	Identifier	offset		7199217	0					
+ANR	7199300	MemberAccess	qxl -> guest_slots [ slot ] . delta		7199217	1					
+ANR	7199301	ArrayIndexing	qxl -> guest_slots [ slot ]		7199217	0					
+ANR	7199302	PtrMemberAccess	qxl -> guest_slots		7199217	0					
+ANR	7199303	Identifier	qxl		7199217	0					
+ANR	7199304	Identifier	guest_slots		7199217	1					
+ANR	7199305	Identifier	slot		7199217	1					
+ANR	7199306	Identifier	delta		7199217	1					
+ANR	7199307	ExpressionStatement	offset -= qxl -> guest_slots [ slot ] . delta	27:8:502:540	7199217	6	True				
+ANR	7199308	AssignmentExpression	offset -= qxl -> guest_slots [ slot ] . delta		7199217	0		-=			
+ANR	7199309	Identifier	offset		7199217	0					
+ANR	7199310	MemberAccess	qxl -> guest_slots [ slot ] . delta		7199217	1					
+ANR	7199311	ArrayIndexing	qxl -> guest_slots [ slot ]		7199217	0					
+ANR	7199312	PtrMemberAccess	qxl -> guest_slots		7199217	0					
+ANR	7199313	Identifier	qxl		7199217	0					
+ANR	7199314	Identifier	guest_slots		7199217	1					
+ANR	7199315	Identifier	slot		7199217	1					
+ANR	7199316	Identifier	delta		7199217	1					
+ANR	7199317	Statement	PANIC_ON	29:8:551:558	7199217	7	True				
+ANR	7199318	Statement	(	29:16:559:559	7199217	8	True				
+ANR	7199319	Statement	offset	29:17:560:565	7199217	9	True				
+ANR	7199320	Statement	>	29:24:567:567	7199217	10	True				
+ANR	7199321	Statement	qxl	29:26:569:571	7199217	11	True				
+ANR	7199322	Statement	->	29:29:572:573	7199217	12	True				
+ANR	7199323	Statement	guest_slots	29:31:574:584	7199217	13	True				
+ANR	7199324	Statement	[	29:42:585:585	7199217	14	True				
+ANR	7199325	Statement	slot	29:43:586:589	7199217	15	True				
+ANR	7199326	Statement	]	29:47:590:590	7199217	16	True				
+ANR	7199327	Statement	.	29:48:591:591	7199217	17	True				
+ANR	7199328	Statement	size	29:49:592:595	7199217	18	True				
+ANR	7199329	Statement	)	29:53:596:596	7199217	19	True				
+ANR	7199330	ReturnStatement	return qxl -> guest_slots [ slot ] . ptr + offset ;	31:8:607:649	7199217	20	True				
+ANR	7199331	AdditiveExpression	qxl -> guest_slots [ slot ] . ptr + offset		7199217	0		+			
+ANR	7199332	MemberAccess	qxl -> guest_slots [ slot ] . ptr		7199217	0					
+ANR	7199333	ArrayIndexing	qxl -> guest_slots [ slot ]		7199217	0					
+ANR	7199334	PtrMemberAccess	qxl -> guest_slots		7199217	0					
+ANR	7199335	Identifier	qxl		7199217	0					
+ANR	7199336	Identifier	guest_slots		7199217	1					
+ANR	7199337	Identifier	slot		7199217	1					
+ANR	7199338	Identifier	ptr		7199217	1					
+ANR	7199339	Identifier	offset		7199217	1					
+ANR	7199340	Label	default :	33:4:656:663	7199217	21	True				
+ANR	7199341	Identifier	default		7199217	0					
+ANR	7199342	ExpressionStatement	PANIC_ON ( 1 )	35:8:674:685	7199217	22	True				
+ANR	7199343	CallExpression	PANIC_ON ( 1 )		7199217	0					
+ANR	7199344	Callee	PANIC_ON		7199217	0					
+ANR	7199345	Identifier	PANIC_ON		7199217	0					
+ANR	7199346	ArgumentList	1		7199217	1					
+ANR	7199347	Argument	1		7199217	0					
+ANR	7199348	PrimaryExpression	1		7199217	0					
+ANR	7199349	ReturnType	void *		7199217	1					
+ANR	7199350	Identifier	qxl_phys2virt		7199217	2					
+ANR	7199351	ParameterList	"PCIQXLDevice * qxl , QXLPHYSICAL pqxl , int group_id"		7199217	3					
+ANR	7199352	Parameter	PCIQXLDevice * qxl	1:20:20:36	7199217	0	True				
+ANR	7199353	ParameterType	PCIQXLDevice *		7199217	0					
+ANR	7199354	Identifier	qxl		7199217	1					
+ANR	7199355	Parameter	QXLPHYSICAL pqxl	1:39:39:54	7199217	1	True				
+ANR	7199356	ParameterType	QXLPHYSICAL		7199217	0					
+ANR	7199357	Identifier	pqxl		7199217	1					
+ANR	7199358	Parameter	int group_id	1:57:57:68	7199217	2	True				
+ANR	7199359	ParameterType	int		7199217	0					
+ANR	7199360	Identifier	group_id		7199217	1					
+ANR	7199361	CFGEntryNode	ENTRY		7199217		True				
+ANR	7199362	CFGExitNode	EXIT		7199217		True				
+ANR	7199363	Symbol	le64_to_cpu		7199217						
+ANR	7199364	Symbol	qxl -> guest_slots		7199217						
+ANR	7199365	Symbol	pqxl		7199217						
+ANR	7199366	Symbol	* qxl -> guest_slots		7199217						
+ANR	7199367	Symbol	qxl		7199217						
+ANR	7199368	Symbol	offset		7199217						
+ANR	7199369	Symbol	phys		7199217						
+ANR	7199370	Symbol	slot		7199217						
+ANR	7199371	Symbol	qxl -> guest_slots [ slot ] . active		7199217						
+ANR	7199372	Symbol	qxl -> guest_slots [ slot ] . ptr		7199217						
+ANR	7199373	Symbol	* qxl		7199217						
+ANR	7199374	Symbol	* slot		7199217						
+ANR	7199375	Symbol	group_id		7199217						
+ANR	7199376	Symbol	qxl -> guest_slots [ slot ] . delta		7199217						
+ANR	7199377	Symbol	NUM_MEMSLOTS		7199217						
+ANR	7199378	Symbol	* * qxl		7199217						

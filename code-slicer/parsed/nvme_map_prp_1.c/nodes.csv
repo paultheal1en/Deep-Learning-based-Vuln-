@@ -1,0 +1,570 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6102956	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nvme_map_prp_1.c								
+ANR	6102957	Function	nvme_map_prp	1:0:0:2820							
+ANR	6102958	FunctionDef	"nvme_map_prp (QEMUSGList * qsg , QEMUIOVector * iov , uint64_t prp1 , uint64_t prp2 , uint32_t len , NvmeCtrl * n)"		6102957	0					
+ANR	6102959	CompoundStatement		5:0:153:2820	6102957	0					
+ANR	6102960	IdentifierDeclStatement	hwaddr trans_len = n -> page_size - ( prp1 % n -> page_size ) ;	7:4:160:215	6102957	0	True				
+ANR	6102961	IdentifierDecl	trans_len = n -> page_size - ( prp1 % n -> page_size )		6102957	0					
+ANR	6102962	IdentifierDeclType	hwaddr		6102957	0					
+ANR	6102963	Identifier	trans_len		6102957	1					
+ANR	6102964	AssignmentExpression	trans_len = n -> page_size - ( prp1 % n -> page_size )		6102957	2		=			
+ANR	6102965	Identifier	trans_len		6102957	0					
+ANR	6102966	AdditiveExpression	n -> page_size - ( prp1 % n -> page_size )		6102957	1		-			
+ANR	6102967	PtrMemberAccess	n -> page_size		6102957	0					
+ANR	6102968	Identifier	n		6102957	0					
+ANR	6102969	Identifier	page_size		6102957	1					
+ANR	6102970	MultiplicativeExpression	prp1 % n -> page_size		6102957	1		%			
+ANR	6102971	Identifier	prp1		6102957	0					
+ANR	6102972	PtrMemberAccess	n -> page_size		6102957	1					
+ANR	6102973	Identifier	n		6102957	0					
+ANR	6102974	Identifier	page_size		6102957	1					
+ANR	6102975	ExpressionStatement	"trans_len = MIN ( len , trans_len )"	9:4:222:253	6102957	1	True				
+ANR	6102976	AssignmentExpression	"trans_len = MIN ( len , trans_len )"		6102957	0		=			
+ANR	6102977	Identifier	trans_len		6102957	0					
+ANR	6102978	CallExpression	"MIN ( len , trans_len )"		6102957	1					
+ANR	6102979	Callee	MIN		6102957	0					
+ANR	6102980	Identifier	MIN		6102957	0					
+ANR	6102981	ArgumentList	len		6102957	1					
+ANR	6102982	Argument	len		6102957	0					
+ANR	6102983	Identifier	len		6102957	0					
+ANR	6102984	Argument	trans_len		6102957	1					
+ANR	6102985	Identifier	trans_len		6102957	0					
+ANR	6102986	IdentifierDeclStatement	int num_prps = ( len >> n -> page_bits ) + 1 ;	11:4:260:300	6102957	2	True				
+ANR	6102987	IdentifierDecl	num_prps = ( len >> n -> page_bits ) + 1		6102957	0					
+ANR	6102988	IdentifierDeclType	int		6102957	0					
+ANR	6102989	Identifier	num_prps		6102957	1					
+ANR	6102990	AssignmentExpression	num_prps = ( len >> n -> page_bits ) + 1		6102957	2		=			
+ANR	6102991	Identifier	num_prps		6102957	0					
+ANR	6102992	AdditiveExpression	( len >> n -> page_bits ) + 1		6102957	1		+			
+ANR	6102993	ShiftExpression	len >> n -> page_bits		6102957	0		>>			
+ANR	6102994	Identifier	len		6102957	0					
+ANR	6102995	PtrMemberAccess	n -> page_bits		6102957	1					
+ANR	6102996	Identifier	n		6102957	0					
+ANR	6102997	Identifier	page_bits		6102957	1					
+ANR	6102998	PrimaryExpression	1		6102957	1					
+ANR	6102999	IfStatement	if ( ! prp1 )		6102957	3					
+ANR	6103000	Condition	! prp1	15:8:313:317	6102957	0	True				
+ANR	6103001	UnaryOperationExpression	! prp1		6102957	0					
+ANR	6103002	UnaryOperator	!		6102957	0					
+ANR	6103003	Identifier	prp1		6102957	1					
+ANR	6103004	CompoundStatement		11:15:166:166	6102957	1					
+ANR	6103005	ReturnStatement	return NVME_INVALID_FIELD | NVME_DNR ;	17:8:331:367	6102957	0	True				
+ANR	6103006	InclusiveOrExpression	NVME_INVALID_FIELD | NVME_DNR		6102957	0		|			
+ANR	6103007	Identifier	NVME_INVALID_FIELD		6102957	0					
+ANR	6103008	Identifier	NVME_DNR		6102957	1					
+ANR	6103009	ElseStatement	else		6102957	0					
+ANR	6103010	IfStatement	if ( n -> cmbsz && prp1 >= n -> ctrl_mem . addr && prp1 < n -> ctrl_mem . addr + int128_get64 ( n -> ctrl_mem . size ) )		6102957	0					
+ANR	6103011	Condition	n -> cmbsz && prp1 >= n -> ctrl_mem . addr && prp1 < n -> ctrl_mem . addr + int128_get64 ( n -> ctrl_mem . size )	19:15:385:496	6102957	0	True				
+ANR	6103012	AndExpression	n -> cmbsz && prp1 >= n -> ctrl_mem . addr && prp1 < n -> ctrl_mem . addr + int128_get64 ( n -> ctrl_mem . size )		6102957	0		&&			
+ANR	6103013	PtrMemberAccess	n -> cmbsz		6102957	0					
+ANR	6103014	Identifier	n		6102957	0					
+ANR	6103015	Identifier	cmbsz		6102957	1					
+ANR	6103016	AndExpression	prp1 >= n -> ctrl_mem . addr && prp1 < n -> ctrl_mem . addr + int128_get64 ( n -> ctrl_mem . size )		6102957	1		&&			
+ANR	6103017	RelationalExpression	prp1 >= n -> ctrl_mem . addr		6102957	0		>=			
+ANR	6103018	Identifier	prp1		6102957	0					
+ANR	6103019	MemberAccess	n -> ctrl_mem . addr		6102957	1					
+ANR	6103020	PtrMemberAccess	n -> ctrl_mem		6102957	0					
+ANR	6103021	Identifier	n		6102957	0					
+ANR	6103022	Identifier	ctrl_mem		6102957	1					
+ANR	6103023	Identifier	addr		6102957	1					
+ANR	6103024	RelationalExpression	prp1 < n -> ctrl_mem . addr + int128_get64 ( n -> ctrl_mem . size )		6102957	1		<			
+ANR	6103025	Identifier	prp1		6102957	0					
+ANR	6103026	AdditiveExpression	n -> ctrl_mem . addr + int128_get64 ( n -> ctrl_mem . size )		6102957	1		+			
+ANR	6103027	MemberAccess	n -> ctrl_mem . addr		6102957	0					
+ANR	6103028	PtrMemberAccess	n -> ctrl_mem		6102957	0					
+ANR	6103029	Identifier	n		6102957	0					
+ANR	6103030	Identifier	ctrl_mem		6102957	1					
+ANR	6103031	Identifier	addr		6102957	1					
+ANR	6103032	CallExpression	int128_get64 ( n -> ctrl_mem . size )		6102957	1					
+ANR	6103033	Callee	int128_get64		6102957	0					
+ANR	6103034	Identifier	int128_get64		6102957	0					
+ANR	6103035	ArgumentList	n -> ctrl_mem . size		6102957	1					
+ANR	6103036	Argument	n -> ctrl_mem . size		6102957	0					
+ANR	6103037	MemberAccess	n -> ctrl_mem . size		6102957	0					
+ANR	6103038	PtrMemberAccess	n -> ctrl_mem		6102957	0					
+ANR	6103039	Identifier	n		6102957	0					
+ANR	6103040	Identifier	ctrl_mem		6102957	1					
+ANR	6103041	Identifier	size		6102957	1					
+ANR	6103042	CompoundStatement		17:73:345:345	6102957	1					
+ANR	6103043	ExpressionStatement	qsg -> nsg = 0	23:8:510:522	6102957	0	True				
+ANR	6103044	AssignmentExpression	qsg -> nsg = 0		6102957	0		=			
+ANR	6103045	PtrMemberAccess	qsg -> nsg		6102957	0					
+ANR	6103046	Identifier	qsg		6102957	0					
+ANR	6103047	Identifier	nsg		6102957	1					
+ANR	6103048	PrimaryExpression	0		6102957	1					
+ANR	6103049	ExpressionStatement	"qemu_iovec_init ( iov , num_prps )"	25:8:533:563	6102957	1	True				
+ANR	6103050	CallExpression	"qemu_iovec_init ( iov , num_prps )"		6102957	0					
+ANR	6103051	Callee	qemu_iovec_init		6102957	0					
+ANR	6103052	Identifier	qemu_iovec_init		6102957	0					
+ANR	6103053	ArgumentList	iov		6102957	1					
+ANR	6103054	Argument	iov		6102957	0					
+ANR	6103055	Identifier	iov		6102957	0					
+ANR	6103056	Argument	num_prps		6102957	1					
+ANR	6103057	Identifier	num_prps		6102957	0					
+ANR	6103058	ExpressionStatement	"qemu_iovec_add ( iov , ( void * ) & n -> cmbuf [ prp1 - n -> ctrl_mem . addr ] , trans_len )"	27:8:574:648	6102957	2	True				
+ANR	6103059	CallExpression	"qemu_iovec_add ( iov , ( void * ) & n -> cmbuf [ prp1 - n -> ctrl_mem . addr ] , trans_len )"		6102957	0					
+ANR	6103060	Callee	qemu_iovec_add		6102957	0					
+ANR	6103061	Identifier	qemu_iovec_add		6102957	0					
+ANR	6103062	ArgumentList	iov		6102957	1					
+ANR	6103063	Argument	iov		6102957	0					
+ANR	6103064	Identifier	iov		6102957	0					
+ANR	6103065	Argument	( void * ) & n -> cmbuf [ prp1 - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103066	CastExpression	( void * ) & n -> cmbuf [ prp1 - n -> ctrl_mem . addr ]		6102957	0					
+ANR	6103067	CastTarget	void *		6102957	0					
+ANR	6103068	UnaryOperationExpression	& n -> cmbuf [ prp1 - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103069	UnaryOperator	&		6102957	0					
+ANR	6103070	ArrayIndexing	n -> cmbuf [ prp1 - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103071	PtrMemberAccess	n -> cmbuf		6102957	0					
+ANR	6103072	Identifier	n		6102957	0					
+ANR	6103073	Identifier	cmbuf		6102957	1					
+ANR	6103074	AdditiveExpression	prp1 - n -> ctrl_mem . addr		6102957	1		-			
+ANR	6103075	Identifier	prp1		6102957	0					
+ANR	6103076	MemberAccess	n -> ctrl_mem . addr		6102957	1					
+ANR	6103077	PtrMemberAccess	n -> ctrl_mem		6102957	0					
+ANR	6103078	Identifier	n		6102957	0					
+ANR	6103079	Identifier	ctrl_mem		6102957	1					
+ANR	6103080	Identifier	addr		6102957	1					
+ANR	6103081	Argument	trans_len		6102957	2					
+ANR	6103082	Identifier	trans_len		6102957	0					
+ANR	6103083	ElseStatement	else		6102957	0					
+ANR	6103084	CompoundStatement		25:11:508:508	6102957	0					
+ANR	6103085	ExpressionStatement	"pci_dma_sglist_init ( qsg , & n -> parent_obj , num_prps )"	31:8:673:723	6102957	0	True				
+ANR	6103086	CallExpression	"pci_dma_sglist_init ( qsg , & n -> parent_obj , num_prps )"		6102957	0					
+ANR	6103087	Callee	pci_dma_sglist_init		6102957	0					
+ANR	6103088	Identifier	pci_dma_sglist_init		6102957	0					
+ANR	6103089	ArgumentList	qsg		6102957	1					
+ANR	6103090	Argument	qsg		6102957	0					
+ANR	6103091	Identifier	qsg		6102957	0					
+ANR	6103092	Argument	& n -> parent_obj		6102957	1					
+ANR	6103093	UnaryOperationExpression	& n -> parent_obj		6102957	0					
+ANR	6103094	UnaryOperator	&		6102957	0					
+ANR	6103095	PtrMemberAccess	n -> parent_obj		6102957	1					
+ANR	6103096	Identifier	n		6102957	0					
+ANR	6103097	Identifier	parent_obj		6102957	1					
+ANR	6103098	Argument	num_prps		6102957	2					
+ANR	6103099	Identifier	num_prps		6102957	0					
+ANR	6103100	ExpressionStatement	"qemu_sglist_add ( qsg , prp1 , trans_len )"	33:8:734:771	6102957	1	True				
+ANR	6103101	CallExpression	"qemu_sglist_add ( qsg , prp1 , trans_len )"		6102957	0					
+ANR	6103102	Callee	qemu_sglist_add		6102957	0					
+ANR	6103103	Identifier	qemu_sglist_add		6102957	0					
+ANR	6103104	ArgumentList	qsg		6102957	1					
+ANR	6103105	Argument	qsg		6102957	0					
+ANR	6103106	Identifier	qsg		6102957	0					
+ANR	6103107	Argument	prp1		6102957	1					
+ANR	6103108	Identifier	prp1		6102957	0					
+ANR	6103109	Argument	trans_len		6102957	2					
+ANR	6103110	Identifier	trans_len		6102957	0					
+ANR	6103111	ExpressionStatement	len -= trans_len	37:4:785:801	6102957	4	True				
+ANR	6103112	AssignmentExpression	len -= trans_len		6102957	0		-=			
+ANR	6103113	Identifier	len		6102957	0					
+ANR	6103114	Identifier	trans_len		6102957	1					
+ANR	6103115	IfStatement	if ( len )		6102957	5					
+ANR	6103116	Condition	len	39:8:812:814	6102957	0	True				
+ANR	6103117	Identifier	len		6102957	0					
+ANR	6103118	CompoundStatement		35:13:663:663	6102957	1					
+ANR	6103119	IfStatement	if ( ! prp2 )		6102957	0					
+ANR	6103120	Condition	! prp2	41:12:832:836	6102957	0	True				
+ANR	6103121	UnaryOperationExpression	! prp2		6102957	0					
+ANR	6103122	UnaryOperator	!		6102957	0					
+ANR	6103123	Identifier	prp2		6102957	1					
+ANR	6103124	CompoundStatement		37:19:685:685	6102957	1					
+ANR	6103125	GotoStatement	goto unmap ;	43:12:854:864	6102957	0	True				
+ANR	6103126	Identifier	unmap		6102957	0					
+ANR	6103127	IfStatement	if ( len > n -> page_size )		6102957	1					
+ANR	6103128	Condition	len > n -> page_size	47:12:890:907	6102957	0	True				
+ANR	6103129	RelationalExpression	len > n -> page_size		6102957	0		>			
+ANR	6103130	Identifier	len		6102957	0					
+ANR	6103131	PtrMemberAccess	n -> page_size		6102957	1					
+ANR	6103132	Identifier	n		6102957	0					
+ANR	6103133	Identifier	page_size		6102957	1					
+ANR	6103134	CompoundStatement		49:12:860:869	6102957	1					
+ANR	6103135	IdentifierDeclStatement	uint64_t prp_list [ n -> max_prp_ents ] ;	49:12:925:959	6102957	0	True				
+ANR	6103136	IdentifierDecl	prp_list [ n -> max_prp_ents ]		6102957	0					
+ANR	6103137	IdentifierDeclType	uint64_t [ n -> max_prp_ents ]		6102957	0					
+ANR	6103138	Identifier	prp_list		6102957	1					
+ANR	6103139	PtrMemberAccess	n -> max_prp_ents		6102957	2					
+ANR	6103140	Identifier	n		6102957	0					
+ANR	6103141	Identifier	max_prp_ents		6102957	1					
+ANR	6103142	IdentifierDeclStatement	"uint32_t nents , prp_trans ;"	51:12:974:999	6102957	1	True				
+ANR	6103143	IdentifierDecl	nents		6102957	0					
+ANR	6103144	IdentifierDeclType	uint32_t		6102957	0					
+ANR	6103145	Identifier	nents		6102957	1					
+ANR	6103146	IdentifierDecl	prp_trans		6102957	1					
+ANR	6103147	IdentifierDeclType	uint32_t		6102957	0					
+ANR	6103148	Identifier	prp_trans		6102957	1					
+ANR	6103149	IdentifierDeclStatement	int i = 0 ;	53:12:1014:1023	6102957	2	True				
+ANR	6103150	IdentifierDecl	i = 0		6102957	0					
+ANR	6103151	IdentifierDeclType	int		6102957	0					
+ANR	6103152	Identifier	i		6102957	1					
+ANR	6103153	AssignmentExpression	i = 0		6102957	2		=			
+ANR	6103154	Identifier	i		6102957	0					
+ANR	6103155	PrimaryExpression	0		6102957	1					
+ANR	6103156	ExpressionStatement	nents = ( len + n -> page_size - 1 ) >> n -> page_bits	57:12:1040:1088	6102957	3	True				
+ANR	6103157	AssignmentExpression	nents = ( len + n -> page_size - 1 ) >> n -> page_bits		6102957	0		=			
+ANR	6103158	Identifier	nents		6102957	0					
+ANR	6103159	ShiftExpression	( len + n -> page_size - 1 ) >> n -> page_bits		6102957	1		>>			
+ANR	6103160	AdditiveExpression	len + n -> page_size - 1		6102957	0		+			
+ANR	6103161	Identifier	len		6102957	0					
+ANR	6103162	AdditiveExpression	n -> page_size - 1		6102957	1		-			
+ANR	6103163	PtrMemberAccess	n -> page_size		6102957	0					
+ANR	6103164	Identifier	n		6102957	0					
+ANR	6103165	Identifier	page_size		6102957	1					
+ANR	6103166	PrimaryExpression	1		6102957	1					
+ANR	6103167	PtrMemberAccess	n -> page_bits		6102957	1					
+ANR	6103168	Identifier	n		6102957	0					
+ANR	6103169	Identifier	page_bits		6102957	1					
+ANR	6103170	ExpressionStatement	"prp_trans = MIN ( n -> max_prp_ents , nents ) * sizeof ( uint64_t )"	59:12:1103:1161	6102957	4	True				
+ANR	6103171	AssignmentExpression	"prp_trans = MIN ( n -> max_prp_ents , nents ) * sizeof ( uint64_t )"		6102957	0		=			
+ANR	6103172	Identifier	prp_trans		6102957	0					
+ANR	6103173	MultiplicativeExpression	"MIN ( n -> max_prp_ents , nents ) * sizeof ( uint64_t )"		6102957	1		*			
+ANR	6103174	CallExpression	"MIN ( n -> max_prp_ents , nents )"		6102957	0					
+ANR	6103175	Callee	MIN		6102957	0					
+ANR	6103176	Identifier	MIN		6102957	0					
+ANR	6103177	ArgumentList	n -> max_prp_ents		6102957	1					
+ANR	6103178	Argument	n -> max_prp_ents		6102957	0					
+ANR	6103179	PtrMemberAccess	n -> max_prp_ents		6102957	0					
+ANR	6103180	Identifier	n		6102957	0					
+ANR	6103181	Identifier	max_prp_ents		6102957	1					
+ANR	6103182	Argument	nents		6102957	1					
+ANR	6103183	Identifier	nents		6102957	0					
+ANR	6103184	SizeofExpression	sizeof ( uint64_t )		6102957	1					
+ANR	6103185	Sizeof	sizeof		6102957	0					
+ANR	6103186	SizeofOperand	uint64_t		6102957	1					
+ANR	6103187	ExpressionStatement	"nvme_addr_read ( n , prp2 , ( void * ) prp_list , prp_trans )"	61:12:1176:1228	6102957	5	True				
+ANR	6103188	CallExpression	"nvme_addr_read ( n , prp2 , ( void * ) prp_list , prp_trans )"		6102957	0					
+ANR	6103189	Callee	nvme_addr_read		6102957	0					
+ANR	6103190	Identifier	nvme_addr_read		6102957	0					
+ANR	6103191	ArgumentList	n		6102957	1					
+ANR	6103192	Argument	n		6102957	0					
+ANR	6103193	Identifier	n		6102957	0					
+ANR	6103194	Argument	prp2		6102957	1					
+ANR	6103195	Identifier	prp2		6102957	0					
+ANR	6103196	Argument	( void * ) prp_list		6102957	2					
+ANR	6103197	CastExpression	( void * ) prp_list		6102957	0					
+ANR	6103198	CastTarget	void *		6102957	0					
+ANR	6103199	Identifier	prp_list		6102957	1					
+ANR	6103200	Argument	prp_trans		6102957	3					
+ANR	6103201	Identifier	prp_trans		6102957	0					
+ANR	6103202	WhileStatement	while ( len != 0 )		6102957	6					
+ANR	6103203	Condition	len != 0	63:19:1250:1257	6102957	0	True				
+ANR	6103204	EqualityExpression	len != 0		6102957	0		!=			
+ANR	6103205	Identifier	len		6102957	0					
+ANR	6103206	PrimaryExpression	0		6102957	1					
+ANR	6103207	CompoundStatement		61:16:1125:1168	6102957	1					
+ANR	6103208	IdentifierDeclStatement	uint64_t prp_ent = le64_to_cpu ( prp_list [ i ] ) ;	65:16:1279:1322	6102957	0	True				
+ANR	6103209	IdentifierDecl	prp_ent = le64_to_cpu ( prp_list [ i ] )		6102957	0					
+ANR	6103210	IdentifierDeclType	uint64_t		6102957	0					
+ANR	6103211	Identifier	prp_ent		6102957	1					
+ANR	6103212	AssignmentExpression	prp_ent = le64_to_cpu ( prp_list [ i ] )		6102957	2		=			
+ANR	6103213	Identifier	prp_ent		6102957	0					
+ANR	6103214	CallExpression	le64_to_cpu ( prp_list [ i ] )		6102957	1					
+ANR	6103215	Callee	le64_to_cpu		6102957	0					
+ANR	6103216	Identifier	le64_to_cpu		6102957	0					
+ANR	6103217	ArgumentList	prp_list [ i ]		6102957	1					
+ANR	6103218	Argument	prp_list [ i ]		6102957	0					
+ANR	6103219	ArrayIndexing	prp_list [ i ]		6102957	0					
+ANR	6103220	Identifier	prp_list		6102957	0					
+ANR	6103221	Identifier	i		6102957	1					
+ANR	6103222	IfStatement	if ( i == n -> max_prp_ents - 1 && len > n -> page_size )		6102957	1					
+ANR	6103223	Condition	i == n -> max_prp_ents - 1 && len > n -> page_size	69:20:1347:1392	6102957	0	True				
+ANR	6103224	AndExpression	i == n -> max_prp_ents - 1 && len > n -> page_size		6102957	0		&&			
+ANR	6103225	EqualityExpression	i == n -> max_prp_ents - 1		6102957	0		==			
+ANR	6103226	Identifier	i		6102957	0					
+ANR	6103227	AdditiveExpression	n -> max_prp_ents - 1		6102957	1		-			
+ANR	6103228	PtrMemberAccess	n -> max_prp_ents		6102957	0					
+ANR	6103229	Identifier	n		6102957	0					
+ANR	6103230	Identifier	max_prp_ents		6102957	1					
+ANR	6103231	PrimaryExpression	1		6102957	1					
+ANR	6103232	RelationalExpression	len > n -> page_size		6102957	1		>			
+ANR	6103233	Identifier	len		6102957	0					
+ANR	6103234	PtrMemberAccess	n -> page_size		6102957	1					
+ANR	6103235	Identifier	n		6102957	0					
+ANR	6103236	Identifier	page_size		6102957	1					
+ANR	6103237	CompoundStatement		65:68:1241:1241	6102957	1					
+ANR	6103238	IfStatement	if ( ! prp_ent || prp_ent & ( n -> page_size - 1 ) )		6102957	0					
+ANR	6103239	Condition	! prp_ent || prp_ent & ( n -> page_size - 1 )	71:24:1422:1461	6102957	0	True				
+ANR	6103240	OrExpression	! prp_ent || prp_ent & ( n -> page_size - 1 )		6102957	0		||			
+ANR	6103241	UnaryOperationExpression	! prp_ent		6102957	0					
+ANR	6103242	UnaryOperator	!		6102957	0					
+ANR	6103243	Identifier	prp_ent		6102957	1					
+ANR	6103244	BitAndExpression	prp_ent & ( n -> page_size - 1 )		6102957	1		&			
+ANR	6103245	Identifier	prp_ent		6102957	0					
+ANR	6103246	AdditiveExpression	n -> page_size - 1		6102957	1		-			
+ANR	6103247	PtrMemberAccess	n -> page_size		6102957	0					
+ANR	6103248	Identifier	n		6102957	0					
+ANR	6103249	Identifier	page_size		6102957	1					
+ANR	6103250	PrimaryExpression	1		6102957	1					
+ANR	6103251	CompoundStatement		67:66:1310:1310	6102957	1					
+ANR	6103252	GotoStatement	goto unmap ;	73:24:1491:1501	6102957	0	True				
+ANR	6103253	Identifier	unmap		6102957	0					
+ANR	6103254	ExpressionStatement	i = 0	79:20:1549:1554	6102957	1	True				
+ANR	6103255	AssignmentExpression	i = 0		6102957	0		=			
+ANR	6103256	Identifier	i		6102957	0					
+ANR	6103257	PrimaryExpression	0		6102957	1					
+ANR	6103258	ExpressionStatement	nents = ( len + n -> page_size - 1 ) >> n -> page_bits	81:20:1577:1625	6102957	2	True				
+ANR	6103259	AssignmentExpression	nents = ( len + n -> page_size - 1 ) >> n -> page_bits		6102957	0		=			
+ANR	6103260	Identifier	nents		6102957	0					
+ANR	6103261	ShiftExpression	( len + n -> page_size - 1 ) >> n -> page_bits		6102957	1		>>			
+ANR	6103262	AdditiveExpression	len + n -> page_size - 1		6102957	0		+			
+ANR	6103263	Identifier	len		6102957	0					
+ANR	6103264	AdditiveExpression	n -> page_size - 1		6102957	1		-			
+ANR	6103265	PtrMemberAccess	n -> page_size		6102957	0					
+ANR	6103266	Identifier	n		6102957	0					
+ANR	6103267	Identifier	page_size		6102957	1					
+ANR	6103268	PrimaryExpression	1		6102957	1					
+ANR	6103269	PtrMemberAccess	n -> page_bits		6102957	1					
+ANR	6103270	Identifier	n		6102957	0					
+ANR	6103271	Identifier	page_bits		6102957	1					
+ANR	6103272	ExpressionStatement	"prp_trans = MIN ( n -> max_prp_ents , nents ) * sizeof ( uint64_t )"	83:20:1648:1706	6102957	3	True				
+ANR	6103273	AssignmentExpression	"prp_trans = MIN ( n -> max_prp_ents , nents ) * sizeof ( uint64_t )"		6102957	0		=			
+ANR	6103274	Identifier	prp_trans		6102957	0					
+ANR	6103275	MultiplicativeExpression	"MIN ( n -> max_prp_ents , nents ) * sizeof ( uint64_t )"		6102957	1		*			
+ANR	6103276	CallExpression	"MIN ( n -> max_prp_ents , nents )"		6102957	0					
+ANR	6103277	Callee	MIN		6102957	0					
+ANR	6103278	Identifier	MIN		6102957	0					
+ANR	6103279	ArgumentList	n -> max_prp_ents		6102957	1					
+ANR	6103280	Argument	n -> max_prp_ents		6102957	0					
+ANR	6103281	PtrMemberAccess	n -> max_prp_ents		6102957	0					
+ANR	6103282	Identifier	n		6102957	0					
+ANR	6103283	Identifier	max_prp_ents		6102957	1					
+ANR	6103284	Argument	nents		6102957	1					
+ANR	6103285	Identifier	nents		6102957	0					
+ANR	6103286	SizeofExpression	sizeof ( uint64_t )		6102957	1					
+ANR	6103287	Sizeof	sizeof		6102957	0					
+ANR	6103288	SizeofOperand	uint64_t		6102957	1					
+ANR	6103289	ExpressionStatement	"nvme_addr_read ( n , prp_ent , ( void * ) prp_list , prp_trans )"	85:20:1729:1809	6102957	4	True				
+ANR	6103290	CallExpression	"nvme_addr_read ( n , prp_ent , ( void * ) prp_list , prp_trans )"		6102957	0					
+ANR	6103291	Callee	nvme_addr_read		6102957	0					
+ANR	6103292	Identifier	nvme_addr_read		6102957	0					
+ANR	6103293	ArgumentList	n		6102957	1					
+ANR	6103294	Argument	n		6102957	0					
+ANR	6103295	Identifier	n		6102957	0					
+ANR	6103296	Argument	prp_ent		6102957	1					
+ANR	6103297	Identifier	prp_ent		6102957	0					
+ANR	6103298	Argument	( void * ) prp_list		6102957	2					
+ANR	6103299	CastExpression	( void * ) prp_list		6102957	0					
+ANR	6103300	CastTarget	void *		6102957	0					
+ANR	6103301	Identifier	prp_list		6102957	1					
+ANR	6103302	Argument	prp_trans		6102957	3					
+ANR	6103303	Identifier	prp_trans		6102957	0					
+ANR	6103304	ExpressionStatement	prp_ent = le64_to_cpu ( prp_list [ i ] )	89:20:1832:1866	6102957	5	True				
+ANR	6103305	AssignmentExpression	prp_ent = le64_to_cpu ( prp_list [ i ] )		6102957	0		=			
+ANR	6103306	Identifier	prp_ent		6102957	0					
+ANR	6103307	CallExpression	le64_to_cpu ( prp_list [ i ] )		6102957	1					
+ANR	6103308	Callee	le64_to_cpu		6102957	0					
+ANR	6103309	Identifier	le64_to_cpu		6102957	0					
+ANR	6103310	ArgumentList	prp_list [ i ]		6102957	1					
+ANR	6103311	Argument	prp_list [ i ]		6102957	0					
+ANR	6103312	ArrayIndexing	prp_list [ i ]		6102957	0					
+ANR	6103313	Identifier	prp_list		6102957	0					
+ANR	6103314	Identifier	i		6102957	1					
+ANR	6103315	IfStatement	if ( ! prp_ent || prp_ent & ( n -> page_size - 1 ) )		6102957	2					
+ANR	6103316	Condition	! prp_ent || prp_ent & ( n -> page_size - 1 )	95:20:1910:1949	6102957	0	True				
+ANR	6103317	OrExpression	! prp_ent || prp_ent & ( n -> page_size - 1 )		6102957	0		||			
+ANR	6103318	UnaryOperationExpression	! prp_ent		6102957	0					
+ANR	6103319	UnaryOperator	!		6102957	0					
+ANR	6103320	Identifier	prp_ent		6102957	1					
+ANR	6103321	BitAndExpression	prp_ent & ( n -> page_size - 1 )		6102957	1		&			
+ANR	6103322	Identifier	prp_ent		6102957	0					
+ANR	6103323	AdditiveExpression	n -> page_size - 1		6102957	1		-			
+ANR	6103324	PtrMemberAccess	n -> page_size		6102957	0					
+ANR	6103325	Identifier	n		6102957	0					
+ANR	6103326	Identifier	page_size		6102957	1					
+ANR	6103327	PrimaryExpression	1		6102957	1					
+ANR	6103328	CompoundStatement		91:62:1798:1798	6102957	1					
+ANR	6103329	GotoStatement	goto unmap ;	97:20:1975:1985	6102957	0	True				
+ANR	6103330	Identifier	unmap		6102957	0					
+ANR	6103331	ExpressionStatement	"trans_len = MIN ( len , n -> page_size )"	103:16:2025:2059	6102957	3	True				
+ANR	6103332	AssignmentExpression	"trans_len = MIN ( len , n -> page_size )"		6102957	0		=			
+ANR	6103333	Identifier	trans_len		6102957	0					
+ANR	6103334	CallExpression	"MIN ( len , n -> page_size )"		6102957	1					
+ANR	6103335	Callee	MIN		6102957	0					
+ANR	6103336	Identifier	MIN		6102957	0					
+ANR	6103337	ArgumentList	len		6102957	1					
+ANR	6103338	Argument	len		6102957	0					
+ANR	6103339	Identifier	len		6102957	0					
+ANR	6103340	Argument	n -> page_size		6102957	1					
+ANR	6103341	PtrMemberAccess	n -> page_size		6102957	0					
+ANR	6103342	Identifier	n		6102957	0					
+ANR	6103343	Identifier	page_size		6102957	1					
+ANR	6103344	IfStatement	if ( qsg -> nsg )		6102957	4					
+ANR	6103345	Condition	qsg -> nsg	105:20:2082:2089	6102957	0	True				
+ANR	6103346	PtrMemberAccess	qsg -> nsg		6102957	0					
+ANR	6103347	Identifier	qsg		6102957	0					
+ANR	6103348	Identifier	nsg		6102957	1					
+ANR	6103349	CompoundStatement		101:29:1937:1937	6102957	1					
+ANR	6103350	ExpressionStatement	"qemu_sglist_add ( qsg , prp_ent , trans_len )"	107:20:2114:2154	6102957	0	True				
+ANR	6103351	CallExpression	"qemu_sglist_add ( qsg , prp_ent , trans_len )"		6102957	0					
+ANR	6103352	Callee	qemu_sglist_add		6102957	0					
+ANR	6103353	Identifier	qemu_sglist_add		6102957	0					
+ANR	6103354	ArgumentList	qsg		6102957	1					
+ANR	6103355	Argument	qsg		6102957	0					
+ANR	6103356	Identifier	qsg		6102957	0					
+ANR	6103357	Argument	prp_ent		6102957	1					
+ANR	6103358	Identifier	prp_ent		6102957	0					
+ANR	6103359	Argument	trans_len		6102957	2					
+ANR	6103360	Identifier	trans_len		6102957	0					
+ANR	6103361	ElseStatement	else		6102957	0					
+ANR	6103362	CompoundStatement		105:23:2026:2026	6102957	0					
+ANR	6103363	ExpressionStatement	"qemu_iovec_add ( iov , ( void * ) & n -> cmbuf [ prp_ent - n -> ctrl_mem . addr ] , trans_len )"	111:20:2203:2280	6102957	0	True				
+ANR	6103364	CallExpression	"qemu_iovec_add ( iov , ( void * ) & n -> cmbuf [ prp_ent - n -> ctrl_mem . addr ] , trans_len )"		6102957	0					
+ANR	6103365	Callee	qemu_iovec_add		6102957	0					
+ANR	6103366	Identifier	qemu_iovec_add		6102957	0					
+ANR	6103367	ArgumentList	iov		6102957	1					
+ANR	6103368	Argument	iov		6102957	0					
+ANR	6103369	Identifier	iov		6102957	0					
+ANR	6103370	Argument	( void * ) & n -> cmbuf [ prp_ent - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103371	CastExpression	( void * ) & n -> cmbuf [ prp_ent - n -> ctrl_mem . addr ]		6102957	0					
+ANR	6103372	CastTarget	void *		6102957	0					
+ANR	6103373	UnaryOperationExpression	& n -> cmbuf [ prp_ent - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103374	UnaryOperator	&		6102957	0					
+ANR	6103375	ArrayIndexing	n -> cmbuf [ prp_ent - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103376	PtrMemberAccess	n -> cmbuf		6102957	0					
+ANR	6103377	Identifier	n		6102957	0					
+ANR	6103378	Identifier	cmbuf		6102957	1					
+ANR	6103379	AdditiveExpression	prp_ent - n -> ctrl_mem . addr		6102957	1		-			
+ANR	6103380	Identifier	prp_ent		6102957	0					
+ANR	6103381	MemberAccess	n -> ctrl_mem . addr		6102957	1					
+ANR	6103382	PtrMemberAccess	n -> ctrl_mem		6102957	0					
+ANR	6103383	Identifier	n		6102957	0					
+ANR	6103384	Identifier	ctrl_mem		6102957	1					
+ANR	6103385	Identifier	addr		6102957	1					
+ANR	6103386	Argument	trans_len		6102957	2					
+ANR	6103387	Identifier	trans_len		6102957	0					
+ANR	6103388	ExpressionStatement	len -= trans_len	115:16:2318:2334	6102957	5	True				
+ANR	6103389	AssignmentExpression	len -= trans_len		6102957	0		-=			
+ANR	6103390	Identifier	len		6102957	0					
+ANR	6103391	Identifier	trans_len		6102957	1					
+ANR	6103392	ExpressionStatement	i ++	117:16:2353:2356	6102957	6	True				
+ANR	6103393	PostIncDecOperationExpression	i ++		6102957	0					
+ANR	6103394	Identifier	i		6102957	0					
+ANR	6103395	IncDec	++		6102957	1					
+ANR	6103396	ElseStatement	else		6102957	0					
+ANR	6103397	CompoundStatement		117:15:2235:2235	6102957	0					
+ANR	6103398	IfStatement	if ( prp2 & ( n -> page_size - 1 ) )		6102957	0					
+ANR	6103399	Condition	prp2 & ( n -> page_size - 1 )	123:16:2408:2432	6102957	0	True				
+ANR	6103400	BitAndExpression	prp2 & ( n -> page_size - 1 )		6102957	0		&			
+ANR	6103401	Identifier	prp2		6102957	0					
+ANR	6103402	AdditiveExpression	n -> page_size - 1		6102957	1		-			
+ANR	6103403	PtrMemberAccess	n -> page_size		6102957	0					
+ANR	6103404	Identifier	n		6102957	0					
+ANR	6103405	Identifier	page_size		6102957	1					
+ANR	6103406	PrimaryExpression	1		6102957	1					
+ANR	6103407	CompoundStatement		119:43:2281:2281	6102957	1					
+ANR	6103408	GotoStatement	goto unmap ;	125:16:2454:2464	6102957	0	True				
+ANR	6103409	Identifier	unmap		6102957	0					
+ANR	6103410	IfStatement	if ( qsg -> nsg )		6102957	1					
+ANR	6103411	Condition	qsg -> nsg	129:16:2498:2505	6102957	0	True				
+ANR	6103412	PtrMemberAccess	qsg -> nsg		6102957	0					
+ANR	6103413	Identifier	qsg		6102957	0					
+ANR	6103414	Identifier	nsg		6102957	1					
+ANR	6103415	CompoundStatement		125:26:2354:2354	6102957	1					
+ANR	6103416	ExpressionStatement	"qemu_sglist_add ( qsg , prp2 , len )"	131:16:2527:2558	6102957	0	True				
+ANR	6103417	CallExpression	"qemu_sglist_add ( qsg , prp2 , len )"		6102957	0					
+ANR	6103418	Callee	qemu_sglist_add		6102957	0					
+ANR	6103419	Identifier	qemu_sglist_add		6102957	0					
+ANR	6103420	ArgumentList	qsg		6102957	1					
+ANR	6103421	Argument	qsg		6102957	0					
+ANR	6103422	Identifier	qsg		6102957	0					
+ANR	6103423	Argument	prp2		6102957	1					
+ANR	6103424	Identifier	prp2		6102957	0					
+ANR	6103425	Argument	len		6102957	2					
+ANR	6103426	Identifier	len		6102957	0					
+ANR	6103427	ElseStatement	else		6102957	0					
+ANR	6103428	CompoundStatement		129:19:2426:2426	6102957	0					
+ANR	6103429	ExpressionStatement	"qemu_iovec_add ( iov , ( void * ) & n -> cmbuf [ prp2 - n -> ctrl_mem . addr ] , trans_len )"	135:16:2599:2673	6102957	0	True				
+ANR	6103430	CallExpression	"qemu_iovec_add ( iov , ( void * ) & n -> cmbuf [ prp2 - n -> ctrl_mem . addr ] , trans_len )"		6102957	0					
+ANR	6103431	Callee	qemu_iovec_add		6102957	0					
+ANR	6103432	Identifier	qemu_iovec_add		6102957	0					
+ANR	6103433	ArgumentList	iov		6102957	1					
+ANR	6103434	Argument	iov		6102957	0					
+ANR	6103435	Identifier	iov		6102957	0					
+ANR	6103436	Argument	( void * ) & n -> cmbuf [ prp2 - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103437	CastExpression	( void * ) & n -> cmbuf [ prp2 - n -> ctrl_mem . addr ]		6102957	0					
+ANR	6103438	CastTarget	void *		6102957	0					
+ANR	6103439	UnaryOperationExpression	& n -> cmbuf [ prp2 - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103440	UnaryOperator	&		6102957	0					
+ANR	6103441	ArrayIndexing	n -> cmbuf [ prp2 - n -> ctrl_mem . addr ]		6102957	1					
+ANR	6103442	PtrMemberAccess	n -> cmbuf		6102957	0					
+ANR	6103443	Identifier	n		6102957	0					
+ANR	6103444	Identifier	cmbuf		6102957	1					
+ANR	6103445	AdditiveExpression	prp2 - n -> ctrl_mem . addr		6102957	1		-			
+ANR	6103446	Identifier	prp2		6102957	0					
+ANR	6103447	MemberAccess	n -> ctrl_mem . addr		6102957	1					
+ANR	6103448	PtrMemberAccess	n -> ctrl_mem		6102957	0					
+ANR	6103449	Identifier	n		6102957	0					
+ANR	6103450	Identifier	ctrl_mem		6102957	1					
+ANR	6103451	Identifier	addr		6102957	1					
+ANR	6103452	Argument	trans_len		6102957	2					
+ANR	6103453	Identifier	trans_len		6102957	0					
+ANR	6103454	ReturnStatement	return NVME_SUCCESS ;	143:4:2713:2732	6102957	6	True				
+ANR	6103455	Identifier	NVME_SUCCESS		6102957	0					
+ANR	6103456	Label	unmap :	147:1:2738:2743	6102957	7	True				
+ANR	6103457	Identifier	unmap		6102957	0					
+ANR	6103458	ExpressionStatement	qemu_sglist_destroy ( qsg )	149:4:2750:2774	6102957	8	True				
+ANR	6103459	CallExpression	qemu_sglist_destroy ( qsg )		6102957	0					
+ANR	6103460	Callee	qemu_sglist_destroy		6102957	0					
+ANR	6103461	Identifier	qemu_sglist_destroy		6102957	0					
+ANR	6103462	ArgumentList	qsg		6102957	1					
+ANR	6103463	Argument	qsg		6102957	0					
+ANR	6103464	Identifier	qsg		6102957	0					
+ANR	6103465	ReturnStatement	return NVME_INVALID_FIELD | NVME_DNR ;	151:4:2781:2817	6102957	9	True				
+ANR	6103466	InclusiveOrExpression	NVME_INVALID_FIELD | NVME_DNR		6102957	0		|			
+ANR	6103467	Identifier	NVME_INVALID_FIELD		6102957	0					
+ANR	6103468	Identifier	NVME_DNR		6102957	1					
+ANR	6103469	ReturnType	static uint16_t		6102957	1					
+ANR	6103470	Identifier	nvme_map_prp		6102957	2					
+ANR	6103471	ParameterList	"QEMUSGList * qsg , QEMUIOVector * iov , uint64_t prp1 , uint64_t prp2 , uint32_t len , NvmeCtrl * n"		6102957	3					
+ANR	6103472	Parameter	QEMUSGList * qsg	1:29:29:43	6102957	0	True				
+ANR	6103473	ParameterType	QEMUSGList *		6102957	0					
+ANR	6103474	Identifier	qsg		6102957	1					
+ANR	6103475	Parameter	QEMUIOVector * iov	1:46:46:62	6102957	1	True				
+ANR	6103476	ParameterType	QEMUIOVector *		6102957	0					
+ANR	6103477	Identifier	iov		6102957	1					
+ANR	6103478	Parameter	uint64_t prp1	1:65:65:77	6102957	2	True				
+ANR	6103479	ParameterType	uint64_t		6102957	0					
+ANR	6103480	Identifier	prp1		6102957	1					
+ANR	6103481	Parameter	uint64_t prp2	3:29:110:122	6102957	3	True				
+ANR	6103482	ParameterType	uint64_t		6102957	0					
+ANR	6103483	Identifier	prp2		6102957	1					
+ANR	6103484	Parameter	uint32_t len	3:44:125:136	6102957	4	True				
+ANR	6103485	ParameterType	uint32_t		6102957	0					
+ANR	6103486	Identifier	len		6102957	1					
+ANR	6103487	Parameter	NvmeCtrl * n	3:58:139:149	6102957	5	True				
+ANR	6103488	ParameterType	NvmeCtrl *		6102957	0					
+ANR	6103489	Identifier	n		6102957	1					
+ANR	6103490	CFGEntryNode	ENTRY		6102957		True				
+ANR	6103491	CFGExitNode	EXIT		6102957		True				
+ANR	6103492	Symbol	NVME_INVALID_FIELD		6102957						
+ANR	6103493	Symbol	& n -> parent_obj		6102957						
+ANR	6103494	Symbol	qsg -> nsg		6102957						
+ANR	6103495	Symbol	prp_ent		6102957						
+ANR	6103496	Symbol	qsg		6102957						
+ANR	6103497	Symbol	n -> ctrl_mem		6102957						
+ANR	6103498	Symbol	trans_len		6102957						
+ANR	6103499	Symbol	NVME_SUCCESS		6102957						
+ANR	6103500	Symbol	iov		6102957						
+ANR	6103501	Symbol	n -> page_size		6102957						
+ANR	6103502	Symbol	len		6102957						
+ANR	6103503	Symbol	n -> cmbsz		6102957						
+ANR	6103504	Symbol	prp_list		6102957						
+ANR	6103505	Symbol	n -> ctrl_mem . addr		6102957						
+ANR	6103506	Symbol	le64_to_cpu		6102957						
+ANR	6103507	Symbol	n -> max_prp_ents		6102957						
+ANR	6103508	Symbol	n -> page_bits		6102957						
+ANR	6103509	Symbol	i		6102957						
+ANR	6103510	Symbol	nents		6102957						
+ANR	6103511	Symbol	int128_get64		6102957						
+ANR	6103512	Symbol	n		6102957						
+ANR	6103513	Symbol	* qsg		6102957						
+ANR	6103514	Symbol	prp2		6102957						
+ANR	6103515	Symbol	MIN		6102957						
+ANR	6103516	Symbol	prp_trans		6102957						
+ANR	6103517	Symbol	* i		6102957						
+ANR	6103518	Symbol	n -> ctrl_mem . size		6102957						
+ANR	6103519	Symbol	* prp_list		6102957						
+ANR	6103520	Symbol	prp1		6102957						
+ANR	6103521	Symbol	num_prps		6102957						
+ANR	6103522	Symbol	* n		6102957						
+ANR	6103523	Symbol	NVME_DNR		6102957						
+ANR	6103524	Symbol	n -> cmbuf		6102957						

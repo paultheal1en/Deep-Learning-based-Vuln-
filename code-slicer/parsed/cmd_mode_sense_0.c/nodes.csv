@@ -1,0 +1,569 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1328288	File	/home/p4ultr4n/workplace/ReVeal/raw_code/cmd_mode_sense_0.c								
+ANR	1328289	Function	cmd_mode_sense	1:0:0:3041							
+ANR	1328290	FunctionDef	"cmd_mode_sense (IDEState * s , uint8_t * buf)"		1328289	0					
+ANR	1328291	CompoundStatement		3:0:55:3041	1328289	0					
+ANR	1328292	IdentifierDeclStatement	"int action , code ;"	5:4:62:78	1328289	0	True				
+ANR	1328293	IdentifierDecl	action		1328289	0					
+ANR	1328294	IdentifierDeclType	int		1328289	0					
+ANR	1328295	Identifier	action		1328289	1					
+ANR	1328296	IdentifierDecl	code		1328289	1					
+ANR	1328297	IdentifierDeclType	int		1328289	0					
+ANR	1328298	Identifier	code		1328289	1					
+ANR	1328299	IdentifierDeclStatement	int max_len ;	7:4:85:96	1328289	1	True				
+ANR	1328300	IdentifierDecl	max_len		1328289	0					
+ANR	1328301	IdentifierDeclType	int		1328289	0					
+ANR	1328302	Identifier	max_len		1328289	1					
+ANR	1328303	IfStatement	if ( buf [ 0 ] == GPCMD_MODE_SENSE_10 )		1328289	2					
+ANR	1328304	Condition	buf [ 0 ] == GPCMD_MODE_SENSE_10	11:8:109:137	1328289	0	True				
+ANR	1328305	EqualityExpression	buf [ 0 ] == GPCMD_MODE_SENSE_10		1328289	0		==			
+ANR	1328306	ArrayIndexing	buf [ 0 ]		1328289	0					
+ANR	1328307	Identifier	buf		1328289	0					
+ANR	1328308	PrimaryExpression	0		1328289	1					
+ANR	1328309	Identifier	GPCMD_MODE_SENSE_10		1328289	1					
+ANR	1328310	CompoundStatement		9:39:84:84	1328289	1					
+ANR	1328311	ExpressionStatement	max_len = ube16_to_cpu ( buf + 7 )	13:8:151:182	1328289	0	True				
+ANR	1328312	AssignmentExpression	max_len = ube16_to_cpu ( buf + 7 )		1328289	0		=			
+ANR	1328313	Identifier	max_len		1328289	0					
+ANR	1328314	CallExpression	ube16_to_cpu ( buf + 7 )		1328289	1					
+ANR	1328315	Callee	ube16_to_cpu		1328289	0					
+ANR	1328316	Identifier	ube16_to_cpu		1328289	0					
+ANR	1328317	ArgumentList	buf + 7		1328289	1					
+ANR	1328318	Argument	buf + 7		1328289	0					
+ANR	1328319	AdditiveExpression	buf + 7		1328289	0		+			
+ANR	1328320	Identifier	buf		1328289	0					
+ANR	1328321	PrimaryExpression	7		1328289	1					
+ANR	1328322	ElseStatement	else		1328289	0					
+ANR	1328323	CompoundStatement		13:11:140:140	1328289	0					
+ANR	1328324	ExpressionStatement	max_len = buf [ 4 ]	17:8:207:223	1328289	0	True				
+ANR	1328325	AssignmentExpression	max_len = buf [ 4 ]		1328289	0		=			
+ANR	1328326	Identifier	max_len		1328289	0					
+ANR	1328327	ArrayIndexing	buf [ 4 ]		1328289	1					
+ANR	1328328	Identifier	buf		1328289	0					
+ANR	1328329	PrimaryExpression	4		1328289	1					
+ANR	1328330	ExpressionStatement	action = buf [ 2 ] >> 6	23:4:239:259	1328289	3	True				
+ANR	1328331	AssignmentExpression	action = buf [ 2 ] >> 6		1328289	0		=			
+ANR	1328332	Identifier	action		1328289	0					
+ANR	1328333	ShiftExpression	buf [ 2 ] >> 6		1328289	1		>>			
+ANR	1328334	ArrayIndexing	buf [ 2 ]		1328289	0					
+ANR	1328335	Identifier	buf		1328289	0					
+ANR	1328336	PrimaryExpression	2		1328289	1					
+ANR	1328337	PrimaryExpression	6		1328289	1					
+ANR	1328338	ExpressionStatement	code = buf [ 2 ] & 0x3f	25:4:266:286	1328289	4	True				
+ANR	1328339	AssignmentExpression	code = buf [ 2 ] & 0x3f		1328289	0		=			
+ANR	1328340	Identifier	code		1328289	0					
+ANR	1328341	BitAndExpression	buf [ 2 ] & 0x3f		1328289	1		&			
+ANR	1328342	ArrayIndexing	buf [ 2 ]		1328289	0					
+ANR	1328343	Identifier	buf		1328289	0					
+ANR	1328344	PrimaryExpression	2		1328289	1					
+ANR	1328345	PrimaryExpression	0x3f		1328289	1					
+ANR	1328346	SwitchStatement	switch ( action )		1328289	5					
+ANR	1328347	Condition	action	29:11:302:307	1328289	0	True				
+ANR	1328348	Identifier	action		1328289	0					
+ANR	1328349	CompoundStatement		27:19:254:254	1328289	1					
+ANR	1328350	Label	case 0 :	31:4:317:323	1328289	0	True				
+ANR	1328351	SwitchStatement	switch ( code )		1328289	1					
+ANR	1328352	Condition	code	33:15:362:365	1328289	0	True				
+ANR	1328353	Identifier	code		1328289	0					
+ANR	1328354	CompoundStatement		31:21:312:312	1328289	1					
+ANR	1328355	Label	case MODE_PAGE_R_W_ERROR :	35:8:379:403	1328289	0	True				
+ANR	1328356	Identifier	MODE_PAGE_R_W_ERROR		1328289	0					
+ANR	1328357	ExpressionStatement	"cpu_to_ube16 ( & buf [ 0 ] , 16 + 6 )"	37:12:439:468	1328289	1	True				
+ANR	1328358	CallExpression	"cpu_to_ube16 ( & buf [ 0 ] , 16 + 6 )"		1328289	0					
+ANR	1328359	Callee	cpu_to_ube16		1328289	0					
+ANR	1328360	Identifier	cpu_to_ube16		1328289	0					
+ANR	1328361	ArgumentList	& buf [ 0 ]		1328289	1					
+ANR	1328362	Argument	& buf [ 0 ]		1328289	0					
+ANR	1328363	UnaryOperationExpression	& buf [ 0 ]		1328289	0					
+ANR	1328364	UnaryOperator	&		1328289	0					
+ANR	1328365	ArrayIndexing	buf [ 0 ]		1328289	1					
+ANR	1328366	Identifier	buf		1328289	0					
+ANR	1328367	PrimaryExpression	0		1328289	1					
+ANR	1328368	Argument	16 + 6		1328289	1					
+ANR	1328369	AdditiveExpression	16 + 6		1328289	0		+			
+ANR	1328370	PrimaryExpression	16		1328289	0					
+ANR	1328371	PrimaryExpression	6		1328289	1					
+ANR	1328372	ExpressionStatement	buf [ 2 ] = 0x70	39:12:483:496	1328289	2	True				
+ANR	1328373	AssignmentExpression	buf [ 2 ] = 0x70		1328289	0		=			
+ANR	1328374	ArrayIndexing	buf [ 2 ]		1328289	0					
+ANR	1328375	Identifier	buf		1328289	0					
+ANR	1328376	PrimaryExpression	2		1328289	1					
+ANR	1328377	PrimaryExpression	0x70		1328289	1					
+ANR	1328378	ExpressionStatement	buf [ 3 ] = 0	41:12:511:521	1328289	3	True				
+ANR	1328379	AssignmentExpression	buf [ 3 ] = 0		1328289	0		=			
+ANR	1328380	ArrayIndexing	buf [ 3 ]		1328289	0					
+ANR	1328381	Identifier	buf		1328289	0					
+ANR	1328382	PrimaryExpression	3		1328289	1					
+ANR	1328383	PrimaryExpression	0		1328289	1					
+ANR	1328384	ExpressionStatement	buf [ 4 ] = 0	43:12:536:546	1328289	4	True				
+ANR	1328385	AssignmentExpression	buf [ 4 ] = 0		1328289	0		=			
+ANR	1328386	ArrayIndexing	buf [ 4 ]		1328289	0					
+ANR	1328387	Identifier	buf		1328289	0					
+ANR	1328388	PrimaryExpression	4		1328289	1					
+ANR	1328389	PrimaryExpression	0		1328289	1					
+ANR	1328390	ExpressionStatement	buf [ 5 ] = 0	45:12:561:571	1328289	5	True				
+ANR	1328391	AssignmentExpression	buf [ 5 ] = 0		1328289	0		=			
+ANR	1328392	ArrayIndexing	buf [ 5 ]		1328289	0					
+ANR	1328393	Identifier	buf		1328289	0					
+ANR	1328394	PrimaryExpression	5		1328289	1					
+ANR	1328395	PrimaryExpression	0		1328289	1					
+ANR	1328396	ExpressionStatement	buf [ 6 ] = 0	47:12:586:596	1328289	6	True				
+ANR	1328397	AssignmentExpression	buf [ 6 ] = 0		1328289	0		=			
+ANR	1328398	ArrayIndexing	buf [ 6 ]		1328289	0					
+ANR	1328399	Identifier	buf		1328289	0					
+ANR	1328400	PrimaryExpression	6		1328289	1					
+ANR	1328401	PrimaryExpression	0		1328289	1					
+ANR	1328402	ExpressionStatement	buf [ 7 ] = 0	49:12:611:621	1328289	7	True				
+ANR	1328403	AssignmentExpression	buf [ 7 ] = 0		1328289	0		=			
+ANR	1328404	ArrayIndexing	buf [ 7 ]		1328289	0					
+ANR	1328405	Identifier	buf		1328289	0					
+ANR	1328406	PrimaryExpression	7		1328289	1					
+ANR	1328407	PrimaryExpression	0		1328289	1					
+ANR	1328408	ExpressionStatement	buf [ 8 ] = MODE_PAGE_R_W_ERROR	53:12:638:666	1328289	8	True				
+ANR	1328409	AssignmentExpression	buf [ 8 ] = MODE_PAGE_R_W_ERROR		1328289	0		=			
+ANR	1328410	ArrayIndexing	buf [ 8 ]		1328289	0					
+ANR	1328411	Identifier	buf		1328289	0					
+ANR	1328412	PrimaryExpression	8		1328289	1					
+ANR	1328413	Identifier	MODE_PAGE_R_W_ERROR		1328289	1					
+ANR	1328414	ExpressionStatement	buf [ 9 ] = 16 - 10	55:12:681:697	1328289	9	True				
+ANR	1328415	AssignmentExpression	buf [ 9 ] = 16 - 10		1328289	0		=			
+ANR	1328416	ArrayIndexing	buf [ 9 ]		1328289	0					
+ANR	1328417	Identifier	buf		1328289	0					
+ANR	1328418	PrimaryExpression	9		1328289	1					
+ANR	1328419	AdditiveExpression	16 - 10		1328289	1		-			
+ANR	1328420	PrimaryExpression	16		1328289	0					
+ANR	1328421	PrimaryExpression	10		1328289	1					
+ANR	1328422	ExpressionStatement	buf [ 10 ] = 0x00	57:12:712:726	1328289	10	True				
+ANR	1328423	AssignmentExpression	buf [ 10 ] = 0x00		1328289	0		=			
+ANR	1328424	ArrayIndexing	buf [ 10 ]		1328289	0					
+ANR	1328425	Identifier	buf		1328289	0					
+ANR	1328426	PrimaryExpression	10		1328289	1					
+ANR	1328427	PrimaryExpression	0x00		1328289	1					
+ANR	1328428	ExpressionStatement	buf [ 11 ] = 0x05	59:12:741:755	1328289	11	True				
+ANR	1328429	AssignmentExpression	buf [ 11 ] = 0x05		1328289	0		=			
+ANR	1328430	ArrayIndexing	buf [ 11 ]		1328289	0					
+ANR	1328431	Identifier	buf		1328289	0					
+ANR	1328432	PrimaryExpression	11		1328289	1					
+ANR	1328433	PrimaryExpression	0x05		1328289	1					
+ANR	1328434	ExpressionStatement	buf [ 12 ] = 0x00	61:12:770:784	1328289	12	True				
+ANR	1328435	AssignmentExpression	buf [ 12 ] = 0x00		1328289	0		=			
+ANR	1328436	ArrayIndexing	buf [ 12 ]		1328289	0					
+ANR	1328437	Identifier	buf		1328289	0					
+ANR	1328438	PrimaryExpression	12		1328289	1					
+ANR	1328439	PrimaryExpression	0x00		1328289	1					
+ANR	1328440	ExpressionStatement	buf [ 13 ] = 0x00	63:12:799:813	1328289	13	True				
+ANR	1328441	AssignmentExpression	buf [ 13 ] = 0x00		1328289	0		=			
+ANR	1328442	ArrayIndexing	buf [ 13 ]		1328289	0					
+ANR	1328443	Identifier	buf		1328289	0					
+ANR	1328444	PrimaryExpression	13		1328289	1					
+ANR	1328445	PrimaryExpression	0x00		1328289	1					
+ANR	1328446	ExpressionStatement	buf [ 14 ] = 0x00	65:12:828:842	1328289	14	True				
+ANR	1328447	AssignmentExpression	buf [ 14 ] = 0x00		1328289	0		=			
+ANR	1328448	ArrayIndexing	buf [ 14 ]		1328289	0					
+ANR	1328449	Identifier	buf		1328289	0					
+ANR	1328450	PrimaryExpression	14		1328289	1					
+ANR	1328451	PrimaryExpression	0x00		1328289	1					
+ANR	1328452	ExpressionStatement	buf [ 15 ] = 0x00	67:12:857:871	1328289	15	True				
+ANR	1328453	AssignmentExpression	buf [ 15 ] = 0x00		1328289	0		=			
+ANR	1328454	ArrayIndexing	buf [ 15 ]		1328289	0					
+ANR	1328455	Identifier	buf		1328289	0					
+ANR	1328456	PrimaryExpression	15		1328289	1					
+ANR	1328457	PrimaryExpression	0x00		1328289	1					
+ANR	1328458	ExpressionStatement	"ide_atapi_cmd_reply ( s , 16 , max_len )"	69:12:886:921	1328289	16	True				
+ANR	1328459	CallExpression	"ide_atapi_cmd_reply ( s , 16 , max_len )"		1328289	0					
+ANR	1328460	Callee	ide_atapi_cmd_reply		1328289	0					
+ANR	1328461	Identifier	ide_atapi_cmd_reply		1328289	0					
+ANR	1328462	ArgumentList	s		1328289	1					
+ANR	1328463	Argument	s		1328289	0					
+ANR	1328464	Identifier	s		1328289	0					
+ANR	1328465	Argument	16		1328289	1					
+ANR	1328466	PrimaryExpression	16		1328289	0					
+ANR	1328467	Argument	max_len		1328289	2					
+ANR	1328468	Identifier	max_len		1328289	0					
+ANR	1328469	BreakStatement	break ;	71:12:936:941	1328289	17	True				
+ANR	1328470	Label	case MODE_PAGE_AUDIO_CTL :	73:8:952:976	1328289	18	True				
+ANR	1328471	Identifier	MODE_PAGE_AUDIO_CTL		1328289	0					
+ANR	1328472	ExpressionStatement	"cpu_to_ube16 ( & buf [ 0 ] , 24 + 6 )"	75:12:991:1020	1328289	19	True				
+ANR	1328473	CallExpression	"cpu_to_ube16 ( & buf [ 0 ] , 24 + 6 )"		1328289	0					
+ANR	1328474	Callee	cpu_to_ube16		1328289	0					
+ANR	1328475	Identifier	cpu_to_ube16		1328289	0					
+ANR	1328476	ArgumentList	& buf [ 0 ]		1328289	1					
+ANR	1328477	Argument	& buf [ 0 ]		1328289	0					
+ANR	1328478	UnaryOperationExpression	& buf [ 0 ]		1328289	0					
+ANR	1328479	UnaryOperator	&		1328289	0					
+ANR	1328480	ArrayIndexing	buf [ 0 ]		1328289	1					
+ANR	1328481	Identifier	buf		1328289	0					
+ANR	1328482	PrimaryExpression	0		1328289	1					
+ANR	1328483	Argument	24 + 6		1328289	1					
+ANR	1328484	AdditiveExpression	24 + 6		1328289	0		+			
+ANR	1328485	PrimaryExpression	24		1328289	0					
+ANR	1328486	PrimaryExpression	6		1328289	1					
+ANR	1328487	ExpressionStatement	buf [ 2 ] = 0x70	77:12:1035:1048	1328289	20	True				
+ANR	1328488	AssignmentExpression	buf [ 2 ] = 0x70		1328289	0		=			
+ANR	1328489	ArrayIndexing	buf [ 2 ]		1328289	0					
+ANR	1328490	Identifier	buf		1328289	0					
+ANR	1328491	PrimaryExpression	2		1328289	1					
+ANR	1328492	PrimaryExpression	0x70		1328289	1					
+ANR	1328493	ExpressionStatement	buf [ 3 ] = 0	79:12:1063:1073	1328289	21	True				
+ANR	1328494	AssignmentExpression	buf [ 3 ] = 0		1328289	0		=			
+ANR	1328495	ArrayIndexing	buf [ 3 ]		1328289	0					
+ANR	1328496	Identifier	buf		1328289	0					
+ANR	1328497	PrimaryExpression	3		1328289	1					
+ANR	1328498	PrimaryExpression	0		1328289	1					
+ANR	1328499	ExpressionStatement	buf [ 4 ] = 0	81:12:1088:1098	1328289	22	True				
+ANR	1328500	AssignmentExpression	buf [ 4 ] = 0		1328289	0		=			
+ANR	1328501	ArrayIndexing	buf [ 4 ]		1328289	0					
+ANR	1328502	Identifier	buf		1328289	0					
+ANR	1328503	PrimaryExpression	4		1328289	1					
+ANR	1328504	PrimaryExpression	0		1328289	1					
+ANR	1328505	ExpressionStatement	buf [ 5 ] = 0	83:12:1113:1123	1328289	23	True				
+ANR	1328506	AssignmentExpression	buf [ 5 ] = 0		1328289	0		=			
+ANR	1328507	ArrayIndexing	buf [ 5 ]		1328289	0					
+ANR	1328508	Identifier	buf		1328289	0					
+ANR	1328509	PrimaryExpression	5		1328289	1					
+ANR	1328510	PrimaryExpression	0		1328289	1					
+ANR	1328511	ExpressionStatement	buf [ 6 ] = 0	85:12:1138:1148	1328289	24	True				
+ANR	1328512	AssignmentExpression	buf [ 6 ] = 0		1328289	0		=			
+ANR	1328513	ArrayIndexing	buf [ 6 ]		1328289	0					
+ANR	1328514	Identifier	buf		1328289	0					
+ANR	1328515	PrimaryExpression	6		1328289	1					
+ANR	1328516	PrimaryExpression	0		1328289	1					
+ANR	1328517	ExpressionStatement	buf [ 7 ] = 0	87:12:1163:1173	1328289	25	True				
+ANR	1328518	AssignmentExpression	buf [ 7 ] = 0		1328289	0		=			
+ANR	1328519	ArrayIndexing	buf [ 7 ]		1328289	0					
+ANR	1328520	Identifier	buf		1328289	0					
+ANR	1328521	PrimaryExpression	7		1328289	1					
+ANR	1328522	PrimaryExpression	0		1328289	1					
+ANR	1328523	ExpressionStatement	buf [ 8 ] = MODE_PAGE_AUDIO_CTL	91:12:1190:1218	1328289	26	True				
+ANR	1328524	AssignmentExpression	buf [ 8 ] = MODE_PAGE_AUDIO_CTL		1328289	0		=			
+ANR	1328525	ArrayIndexing	buf [ 8 ]		1328289	0					
+ANR	1328526	Identifier	buf		1328289	0					
+ANR	1328527	PrimaryExpression	8		1328289	1					
+ANR	1328528	Identifier	MODE_PAGE_AUDIO_CTL		1328289	1					
+ANR	1328529	ExpressionStatement	buf [ 9 ] = 24 - 10	93:12:1233:1249	1328289	27	True				
+ANR	1328530	AssignmentExpression	buf [ 9 ] = 24 - 10		1328289	0		=			
+ANR	1328531	ArrayIndexing	buf [ 9 ]		1328289	0					
+ANR	1328532	Identifier	buf		1328289	0					
+ANR	1328533	PrimaryExpression	9		1328289	1					
+ANR	1328534	AdditiveExpression	24 - 10		1328289	1		-			
+ANR	1328535	PrimaryExpression	24		1328289	0					
+ANR	1328536	PrimaryExpression	10		1328289	1					
+ANR	1328537	ExpressionStatement	buf [ 17 ] = 0	97:12:1312:1323	1328289	28	True				
+ANR	1328538	AssignmentExpression	buf [ 17 ] = 0		1328289	0		=			
+ANR	1328539	ArrayIndexing	buf [ 17 ]		1328289	0					
+ANR	1328540	Identifier	buf		1328289	0					
+ANR	1328541	PrimaryExpression	17		1328289	1					
+ANR	1328542	PrimaryExpression	0		1328289	1					
+ANR	1328543	ExpressionStatement	buf [ 19 ] = 0	99:12:1338:1349	1328289	29	True				
+ANR	1328544	AssignmentExpression	buf [ 19 ] = 0		1328289	0		=			
+ANR	1328545	ArrayIndexing	buf [ 19 ]		1328289	0					
+ANR	1328546	Identifier	buf		1328289	0					
+ANR	1328547	PrimaryExpression	19		1328289	1					
+ANR	1328548	PrimaryExpression	0		1328289	1					
+ANR	1328549	ExpressionStatement	buf [ 21 ] = 0	101:12:1364:1375	1328289	30	True				
+ANR	1328550	AssignmentExpression	buf [ 21 ] = 0		1328289	0		=			
+ANR	1328551	ArrayIndexing	buf [ 21 ]		1328289	0					
+ANR	1328552	Identifier	buf		1328289	0					
+ANR	1328553	PrimaryExpression	21		1328289	1					
+ANR	1328554	PrimaryExpression	0		1328289	1					
+ANR	1328555	ExpressionStatement	buf [ 23 ] = 0	103:12:1390:1401	1328289	31	True				
+ANR	1328556	AssignmentExpression	buf [ 23 ] = 0		1328289	0		=			
+ANR	1328557	ArrayIndexing	buf [ 23 ]		1328289	0					
+ANR	1328558	Identifier	buf		1328289	0					
+ANR	1328559	PrimaryExpression	23		1328289	1					
+ANR	1328560	PrimaryExpression	0		1328289	1					
+ANR	1328561	ExpressionStatement	"ide_atapi_cmd_reply ( s , 24 , max_len )"	107:12:1418:1453	1328289	32	True				
+ANR	1328562	CallExpression	"ide_atapi_cmd_reply ( s , 24 , max_len )"		1328289	0					
+ANR	1328563	Callee	ide_atapi_cmd_reply		1328289	0					
+ANR	1328564	Identifier	ide_atapi_cmd_reply		1328289	0					
+ANR	1328565	ArgumentList	s		1328289	1					
+ANR	1328566	Argument	s		1328289	0					
+ANR	1328567	Identifier	s		1328289	0					
+ANR	1328568	Argument	24		1328289	1					
+ANR	1328569	PrimaryExpression	24		1328289	0					
+ANR	1328570	Argument	max_len		1328289	2					
+ANR	1328571	Identifier	max_len		1328289	0					
+ANR	1328572	BreakStatement	break ;	109:12:1468:1473	1328289	33	True				
+ANR	1328573	Label	case MODE_PAGE_CAPABILITIES :	111:8:1484:1511	1328289	34	True				
+ANR	1328574	Identifier	MODE_PAGE_CAPABILITIES		1328289	0					
+ANR	1328575	ExpressionStatement	"cpu_to_ube16 ( & buf [ 0 ] , 28 + 6 )"	113:12:1526:1555	1328289	35	True				
+ANR	1328576	CallExpression	"cpu_to_ube16 ( & buf [ 0 ] , 28 + 6 )"		1328289	0					
+ANR	1328577	Callee	cpu_to_ube16		1328289	0					
+ANR	1328578	Identifier	cpu_to_ube16		1328289	0					
+ANR	1328579	ArgumentList	& buf [ 0 ]		1328289	1					
+ANR	1328580	Argument	& buf [ 0 ]		1328289	0					
+ANR	1328581	UnaryOperationExpression	& buf [ 0 ]		1328289	0					
+ANR	1328582	UnaryOperator	&		1328289	0					
+ANR	1328583	ArrayIndexing	buf [ 0 ]		1328289	1					
+ANR	1328584	Identifier	buf		1328289	0					
+ANR	1328585	PrimaryExpression	0		1328289	1					
+ANR	1328586	Argument	28 + 6		1328289	1					
+ANR	1328587	AdditiveExpression	28 + 6		1328289	0		+			
+ANR	1328588	PrimaryExpression	28		1328289	0					
+ANR	1328589	PrimaryExpression	6		1328289	1					
+ANR	1328590	ExpressionStatement	buf [ 2 ] = 0x70	115:12:1570:1583	1328289	36	True				
+ANR	1328591	AssignmentExpression	buf [ 2 ] = 0x70		1328289	0		=			
+ANR	1328592	ArrayIndexing	buf [ 2 ]		1328289	0					
+ANR	1328593	Identifier	buf		1328289	0					
+ANR	1328594	PrimaryExpression	2		1328289	1					
+ANR	1328595	PrimaryExpression	0x70		1328289	1					
+ANR	1328596	ExpressionStatement	buf [ 3 ] = 0	117:12:1598:1608	1328289	37	True				
+ANR	1328597	AssignmentExpression	buf [ 3 ] = 0		1328289	0		=			
+ANR	1328598	ArrayIndexing	buf [ 3 ]		1328289	0					
+ANR	1328599	Identifier	buf		1328289	0					
+ANR	1328600	PrimaryExpression	3		1328289	1					
+ANR	1328601	PrimaryExpression	0		1328289	1					
+ANR	1328602	ExpressionStatement	buf [ 4 ] = 0	119:12:1623:1633	1328289	38	True				
+ANR	1328603	AssignmentExpression	buf [ 4 ] = 0		1328289	0		=			
+ANR	1328604	ArrayIndexing	buf [ 4 ]		1328289	0					
+ANR	1328605	Identifier	buf		1328289	0					
+ANR	1328606	PrimaryExpression	4		1328289	1					
+ANR	1328607	PrimaryExpression	0		1328289	1					
+ANR	1328608	ExpressionStatement	buf [ 5 ] = 0	121:12:1648:1658	1328289	39	True				
+ANR	1328609	AssignmentExpression	buf [ 5 ] = 0		1328289	0		=			
+ANR	1328610	ArrayIndexing	buf [ 5 ]		1328289	0					
+ANR	1328611	Identifier	buf		1328289	0					
+ANR	1328612	PrimaryExpression	5		1328289	1					
+ANR	1328613	PrimaryExpression	0		1328289	1					
+ANR	1328614	ExpressionStatement	buf [ 6 ] = 0	123:12:1673:1683	1328289	40	True				
+ANR	1328615	AssignmentExpression	buf [ 6 ] = 0		1328289	0		=			
+ANR	1328616	ArrayIndexing	buf [ 6 ]		1328289	0					
+ANR	1328617	Identifier	buf		1328289	0					
+ANR	1328618	PrimaryExpression	6		1328289	1					
+ANR	1328619	PrimaryExpression	0		1328289	1					
+ANR	1328620	ExpressionStatement	buf [ 7 ] = 0	125:12:1698:1708	1328289	41	True				
+ANR	1328621	AssignmentExpression	buf [ 7 ] = 0		1328289	0		=			
+ANR	1328622	ArrayIndexing	buf [ 7 ]		1328289	0					
+ANR	1328623	Identifier	buf		1328289	0					
+ANR	1328624	PrimaryExpression	7		1328289	1					
+ANR	1328625	PrimaryExpression	0		1328289	1					
+ANR	1328626	ExpressionStatement	buf [ 8 ] = MODE_PAGE_CAPABILITIES	129:12:1725:1756	1328289	42	True				
+ANR	1328627	AssignmentExpression	buf [ 8 ] = MODE_PAGE_CAPABILITIES		1328289	0		=			
+ANR	1328628	ArrayIndexing	buf [ 8 ]		1328289	0					
+ANR	1328629	Identifier	buf		1328289	0					
+ANR	1328630	PrimaryExpression	8		1328289	1					
+ANR	1328631	Identifier	MODE_PAGE_CAPABILITIES		1328289	1					
+ANR	1328632	ExpressionStatement	buf [ 9 ] = 28 - 10	131:12:1771:1787	1328289	43	True				
+ANR	1328633	AssignmentExpression	buf [ 9 ] = 28 - 10		1328289	0		=			
+ANR	1328634	ArrayIndexing	buf [ 9 ]		1328289	0					
+ANR	1328635	Identifier	buf		1328289	0					
+ANR	1328636	PrimaryExpression	9		1328289	1					
+ANR	1328637	AdditiveExpression	28 - 10		1328289	1		-			
+ANR	1328638	PrimaryExpression	28		1328289	0					
+ANR	1328639	PrimaryExpression	10		1328289	1					
+ANR	1328640	ExpressionStatement	buf [ 10 ] = 0x00	133:12:1802:1816	1328289	44	True				
+ANR	1328641	AssignmentExpression	buf [ 10 ] = 0x00		1328289	0		=			
+ANR	1328642	ArrayIndexing	buf [ 10 ]		1328289	0					
+ANR	1328643	Identifier	buf		1328289	0					
+ANR	1328644	PrimaryExpression	10		1328289	1					
+ANR	1328645	PrimaryExpression	0x00		1328289	1					
+ANR	1328646	ExpressionStatement	buf [ 11 ] = 0x00	135:12:1831:1845	1328289	45	True				
+ANR	1328647	AssignmentExpression	buf [ 11 ] = 0x00		1328289	0		=			
+ANR	1328648	ArrayIndexing	buf [ 11 ]		1328289	0					
+ANR	1328649	Identifier	buf		1328289	0					
+ANR	1328650	PrimaryExpression	11		1328289	1					
+ANR	1328651	PrimaryExpression	0x00		1328289	1					
+ANR	1328652	ExpressionStatement	buf [ 12 ] = 0x71	143:12:1990:2004	1328289	46	True				
+ANR	1328653	AssignmentExpression	buf [ 12 ] = 0x71		1328289	0		=			
+ANR	1328654	ArrayIndexing	buf [ 12 ]		1328289	0					
+ANR	1328655	Identifier	buf		1328289	0					
+ANR	1328656	PrimaryExpression	12		1328289	1					
+ANR	1328657	PrimaryExpression	0x71		1328289	1					
+ANR	1328658	ExpressionStatement	buf [ 13 ] = 3 << 5	145:12:2019:2035	1328289	47	True				
+ANR	1328659	AssignmentExpression	buf [ 13 ] = 3 << 5		1328289	0		=			
+ANR	1328660	ArrayIndexing	buf [ 13 ]		1328289	0					
+ANR	1328661	Identifier	buf		1328289	0					
+ANR	1328662	PrimaryExpression	13		1328289	1					
+ANR	1328663	ShiftExpression	3 << 5		1328289	1		<<			
+ANR	1328664	PrimaryExpression	3		1328289	0					
+ANR	1328665	PrimaryExpression	5		1328289	1					
+ANR	1328666	ExpressionStatement	buf [ 14 ] = ( 1 << 0 ) | ( 1 << 3 ) | ( 1 << 5 )	147:12:2050:2090	1328289	48	True				
+ANR	1328667	AssignmentExpression	buf [ 14 ] = ( 1 << 0 ) | ( 1 << 3 ) | ( 1 << 5 )		1328289	0		=			
+ANR	1328668	ArrayIndexing	buf [ 14 ]		1328289	0					
+ANR	1328669	Identifier	buf		1328289	0					
+ANR	1328670	PrimaryExpression	14		1328289	1					
+ANR	1328671	InclusiveOrExpression	( 1 << 0 ) | ( 1 << 3 ) | ( 1 << 5 )		1328289	1		|			
+ANR	1328672	ShiftExpression	1 << 0		1328289	0		<<			
+ANR	1328673	PrimaryExpression	1		1328289	0					
+ANR	1328674	PrimaryExpression	0		1328289	1					
+ANR	1328675	InclusiveOrExpression	( 1 << 3 ) | ( 1 << 5 )		1328289	1		|			
+ANR	1328676	ShiftExpression	1 << 3		1328289	0		<<			
+ANR	1328677	PrimaryExpression	1		1328289	0					
+ANR	1328678	PrimaryExpression	3		1328289	1					
+ANR	1328679	ShiftExpression	1 << 5		1328289	1		<<			
+ANR	1328680	PrimaryExpression	1		1328289	0					
+ANR	1328681	PrimaryExpression	5		1328289	1					
+ANR	1328682	IfStatement	if ( s -> tray_locked )		1328289	49					
+ANR	1328683	Condition	s -> tray_locked	149:16:2109:2122	1328289	0	True				
+ANR	1328684	PtrMemberAccess	s -> tray_locked		1328289	0					
+ANR	1328685	Identifier	s		1328289	0					
+ANR	1328686	Identifier	tray_locked		1328289	1					
+ANR	1328687	CompoundStatement		147:32:2069:2069	1328289	1					
+ANR	1328688	ExpressionStatement	buf [ 6 ] |= 1 << 1	151:16:2144:2160	1328289	0	True				
+ANR	1328689	AssignmentExpression	buf [ 6 ] |= 1 << 1		1328289	0		|=			
+ANR	1328690	ArrayIndexing	buf [ 6 ]		1328289	0					
+ANR	1328691	Identifier	buf		1328289	0					
+ANR	1328692	PrimaryExpression	6		1328289	1					
+ANR	1328693	ShiftExpression	1 << 1		1328289	1		<<			
+ANR	1328694	PrimaryExpression	1		1328289	0					
+ANR	1328695	PrimaryExpression	1		1328289	1					
+ANR	1328696	ExpressionStatement	buf [ 15 ] = 0x00	155:12:2190:2204	1328289	50	True				
+ANR	1328697	AssignmentExpression	buf [ 15 ] = 0x00		1328289	0		=			
+ANR	1328698	ArrayIndexing	buf [ 15 ]		1328289	0					
+ANR	1328699	Identifier	buf		1328289	0					
+ANR	1328700	PrimaryExpression	15		1328289	1					
+ANR	1328701	PrimaryExpression	0x00		1328289	1					
+ANR	1328702	ExpressionStatement	"cpu_to_ube16 ( & buf [ 16 ] , 706 )"	157:12:2219:2246	1328289	51	True				
+ANR	1328703	CallExpression	"cpu_to_ube16 ( & buf [ 16 ] , 706 )"		1328289	0					
+ANR	1328704	Callee	cpu_to_ube16		1328289	0					
+ANR	1328705	Identifier	cpu_to_ube16		1328289	0					
+ANR	1328706	ArgumentList	& buf [ 16 ]		1328289	1					
+ANR	1328707	Argument	& buf [ 16 ]		1328289	0					
+ANR	1328708	UnaryOperationExpression	& buf [ 16 ]		1328289	0					
+ANR	1328709	UnaryOperator	&		1328289	0					
+ANR	1328710	ArrayIndexing	buf [ 16 ]		1328289	1					
+ANR	1328711	Identifier	buf		1328289	0					
+ANR	1328712	PrimaryExpression	16		1328289	1					
+ANR	1328713	Argument	706		1328289	1					
+ANR	1328714	PrimaryExpression	706		1328289	0					
+ANR	1328715	ExpressionStatement	buf [ 18 ] = 0	159:12:2261:2272	1328289	52	True				
+ANR	1328716	AssignmentExpression	buf [ 18 ] = 0		1328289	0		=			
+ANR	1328717	ArrayIndexing	buf [ 18 ]		1328289	0					
+ANR	1328718	Identifier	buf		1328289	0					
+ANR	1328719	PrimaryExpression	18		1328289	1					
+ANR	1328720	PrimaryExpression	0		1328289	1					
+ANR	1328721	ExpressionStatement	buf [ 19 ] = 2	161:12:2287:2298	1328289	53	True				
+ANR	1328722	AssignmentExpression	buf [ 19 ] = 2		1328289	0		=			
+ANR	1328723	ArrayIndexing	buf [ 19 ]		1328289	0					
+ANR	1328724	Identifier	buf		1328289	0					
+ANR	1328725	PrimaryExpression	19		1328289	1					
+ANR	1328726	PrimaryExpression	2		1328289	1					
+ANR	1328727	ExpressionStatement	"cpu_to_ube16 ( & buf [ 20 ] , 512 )"	163:12:2313:2340	1328289	54	True				
+ANR	1328728	CallExpression	"cpu_to_ube16 ( & buf [ 20 ] , 512 )"		1328289	0					
+ANR	1328729	Callee	cpu_to_ube16		1328289	0					
+ANR	1328730	Identifier	cpu_to_ube16		1328289	0					
+ANR	1328731	ArgumentList	& buf [ 20 ]		1328289	1					
+ANR	1328732	Argument	& buf [ 20 ]		1328289	0					
+ANR	1328733	UnaryOperationExpression	& buf [ 20 ]		1328289	0					
+ANR	1328734	UnaryOperator	&		1328289	0					
+ANR	1328735	ArrayIndexing	buf [ 20 ]		1328289	1					
+ANR	1328736	Identifier	buf		1328289	0					
+ANR	1328737	PrimaryExpression	20		1328289	1					
+ANR	1328738	Argument	512		1328289	1					
+ANR	1328739	PrimaryExpression	512		1328289	0					
+ANR	1328740	ExpressionStatement	"cpu_to_ube16 ( & buf [ 22 ] , 706 )"	165:12:2355:2382	1328289	55	True				
+ANR	1328741	CallExpression	"cpu_to_ube16 ( & buf [ 22 ] , 706 )"		1328289	0					
+ANR	1328742	Callee	cpu_to_ube16		1328289	0					
+ANR	1328743	Identifier	cpu_to_ube16		1328289	0					
+ANR	1328744	ArgumentList	& buf [ 22 ]		1328289	1					
+ANR	1328745	Argument	& buf [ 22 ]		1328289	0					
+ANR	1328746	UnaryOperationExpression	& buf [ 22 ]		1328289	0					
+ANR	1328747	UnaryOperator	&		1328289	0					
+ANR	1328748	ArrayIndexing	buf [ 22 ]		1328289	1					
+ANR	1328749	Identifier	buf		1328289	0					
+ANR	1328750	PrimaryExpression	22		1328289	1					
+ANR	1328751	Argument	706		1328289	1					
+ANR	1328752	PrimaryExpression	706		1328289	0					
+ANR	1328753	ExpressionStatement	buf [ 24 ] = 0	167:12:2397:2408	1328289	56	True				
+ANR	1328754	AssignmentExpression	buf [ 24 ] = 0		1328289	0		=			
+ANR	1328755	ArrayIndexing	buf [ 24 ]		1328289	0					
+ANR	1328756	Identifier	buf		1328289	0					
+ANR	1328757	PrimaryExpression	24		1328289	1					
+ANR	1328758	PrimaryExpression	0		1328289	1					
+ANR	1328759	ExpressionStatement	buf [ 25 ] = 0	169:12:2423:2434	1328289	57	True				
+ANR	1328760	AssignmentExpression	buf [ 25 ] = 0		1328289	0		=			
+ANR	1328761	ArrayIndexing	buf [ 25 ]		1328289	0					
+ANR	1328762	Identifier	buf		1328289	0					
+ANR	1328763	PrimaryExpression	25		1328289	1					
+ANR	1328764	PrimaryExpression	0		1328289	1					
+ANR	1328765	ExpressionStatement	buf [ 26 ] = 0	171:12:2449:2460	1328289	58	True				
+ANR	1328766	AssignmentExpression	buf [ 26 ] = 0		1328289	0		=			
+ANR	1328767	ArrayIndexing	buf [ 26 ]		1328289	0					
+ANR	1328768	Identifier	buf		1328289	0					
+ANR	1328769	PrimaryExpression	26		1328289	1					
+ANR	1328770	PrimaryExpression	0		1328289	1					
+ANR	1328771	ExpressionStatement	buf [ 27 ] = 0	173:12:2475:2486	1328289	59	True				
+ANR	1328772	AssignmentExpression	buf [ 27 ] = 0		1328289	0		=			
+ANR	1328773	ArrayIndexing	buf [ 27 ]		1328289	0					
+ANR	1328774	Identifier	buf		1328289	0					
+ANR	1328775	PrimaryExpression	27		1328289	1					
+ANR	1328776	PrimaryExpression	0		1328289	1					
+ANR	1328777	ExpressionStatement	"ide_atapi_cmd_reply ( s , 28 , max_len )"	175:12:2501:2536	1328289	60	True				
+ANR	1328778	CallExpression	"ide_atapi_cmd_reply ( s , 28 , max_len )"		1328289	0					
+ANR	1328779	Callee	ide_atapi_cmd_reply		1328289	0					
+ANR	1328780	Identifier	ide_atapi_cmd_reply		1328289	0					
+ANR	1328781	ArgumentList	s		1328289	1					
+ANR	1328782	Argument	s		1328289	0					
+ANR	1328783	Identifier	s		1328289	0					
+ANR	1328784	Argument	28		1328289	1					
+ANR	1328785	PrimaryExpression	28		1328289	0					
+ANR	1328786	Argument	max_len		1328289	2					
+ANR	1328787	Identifier	max_len		1328289	0					
+ANR	1328788	BreakStatement	break ;	177:12:2551:2556	1328289	61	True				
+ANR	1328789	Label	default :	179:8:2567:2574	1328289	62	True				
+ANR	1328790	Identifier	default		1328289	0					
+ANR	1328791	GotoStatement	goto error_cmd ;	181:12:2589:2603	1328289	63	True				
+ANR	1328792	Identifier	error_cmd		1328289	0					
+ANR	1328793	BreakStatement	break ;	185:8:2625:2630	1328289	2	True				
+ANR	1328794	Label	case 1 :	187:4:2637:2643	1328289	3	True				
+ANR	1328795	GotoStatement	goto error_cmd ;	189:8:2678:2692	1328289	4	True				
+ANR	1328796	Identifier	error_cmd		1328289	0					
+ANR	1328797	Label	case 2 :	191:4:2699:2705	1328289	5	True				
+ANR	1328798	GotoStatement	goto error_cmd ;	193:8:2737:2751	1328289	6	True				
+ANR	1328799	Identifier	error_cmd		1328289	0					
+ANR	1328800	Label	default :	195:4:2758:2765	1328289	7	True				
+ANR	1328801	Identifier	default		1328289	0					
+ANR	1328802	Label	case 3 :	197:4:2772:2778	1328289	8	True				
+ANR	1328803	ExpressionStatement	"ide_atapi_cmd_error ( s , ILLEGAL_REQUEST , ASC_SAVING_PARAMETERS_NOT_SUPPORTED )"	199:8:2808:2913	1328289	9	True				
+ANR	1328804	CallExpression	"ide_atapi_cmd_error ( s , ILLEGAL_REQUEST , ASC_SAVING_PARAMETERS_NOT_SUPPORTED )"		1328289	0					
+ANR	1328805	Callee	ide_atapi_cmd_error		1328289	0					
+ANR	1328806	Identifier	ide_atapi_cmd_error		1328289	0					
+ANR	1328807	ArgumentList	s		1328289	1					
+ANR	1328808	Argument	s		1328289	0					
+ANR	1328809	Identifier	s		1328289	0					
+ANR	1328810	Argument	ILLEGAL_REQUEST		1328289	1					
+ANR	1328811	Identifier	ILLEGAL_REQUEST		1328289	0					
+ANR	1328812	Argument	ASC_SAVING_PARAMETERS_NOT_SUPPORTED		1328289	2					
+ANR	1328813	Identifier	ASC_SAVING_PARAMETERS_NOT_SUPPORTED		1328289	0					
+ANR	1328814	BreakStatement	break ;	203:8:2924:2929	1328289	10	True				
+ANR	1328815	ReturnStatement	return ;	207:4:2943:2949	1328289	6	True				
+ANR	1328816	Label	error_cmd :	211:0:2954:2963	1328289	7	True				
+ANR	1328817	Identifier	error_cmd		1328289	0					
+ANR	1328818	ExpressionStatement	"ide_atapi_cmd_error ( s , ILLEGAL_REQUEST , ASC_INV_FIELD_IN_CMD_PACKET )"	213:4:2970:3038	1328289	8	True				
+ANR	1328819	CallExpression	"ide_atapi_cmd_error ( s , ILLEGAL_REQUEST , ASC_INV_FIELD_IN_CMD_PACKET )"		1328289	0					
+ANR	1328820	Callee	ide_atapi_cmd_error		1328289	0					
+ANR	1328821	Identifier	ide_atapi_cmd_error		1328289	0					
+ANR	1328822	ArgumentList	s		1328289	1					
+ANR	1328823	Argument	s		1328289	0					
+ANR	1328824	Identifier	s		1328289	0					
+ANR	1328825	Argument	ILLEGAL_REQUEST		1328289	1					
+ANR	1328826	Identifier	ILLEGAL_REQUEST		1328289	0					
+ANR	1328827	Argument	ASC_INV_FIELD_IN_CMD_PACKET		1328289	2					
+ANR	1328828	Identifier	ASC_INV_FIELD_IN_CMD_PACKET		1328289	0					
+ANR	1328829	ReturnType	static void		1328289	1					
+ANR	1328830	Identifier	cmd_mode_sense		1328289	2					
+ANR	1328831	ParameterList	"IDEState * s , uint8_t * buf"		1328289	3					
+ANR	1328832	Parameter	IDEState * s	1:27:27:37	1328289	0	True				
+ANR	1328833	ParameterType	IDEState *		1328289	0					
+ANR	1328834	Identifier	s		1328289	1					
+ANR	1328835	Parameter	uint8_t * buf	1:40:40:51	1328289	1	True				
+ANR	1328836	ParameterType	uint8_t *		1328289	0					
+ANR	1328837	Identifier	buf		1328289	1					
+ANR	1328838	CFGEntryNode	ENTRY		1328289		True				
+ANR	1328839	CFGExitNode	EXIT		1328289		True				
+ANR	1328840	Symbol	* buf		1328289						
+ANR	1328841	Symbol	code		1328289						
+ANR	1328842	Symbol	MODE_PAGE_CAPABILITIES		1328289						
+ANR	1328843	Symbol	s -> tray_locked		1328289						
+ANR	1328844	Symbol	max_len		1328289						
+ANR	1328845	Symbol	buf		1328289						
+ANR	1328846	Symbol	s		1328289						
+ANR	1328847	Symbol	ASC_INV_FIELD_IN_CMD_PACKET		1328289						
+ANR	1328848	Symbol	GPCMD_MODE_SENSE_10		1328289						
+ANR	1328849	Symbol	action		1328289						
+ANR	1328850	Symbol	MODE_PAGE_R_W_ERROR		1328289						
+ANR	1328851	Symbol	ILLEGAL_REQUEST		1328289						
+ANR	1328852	Symbol	ube16_to_cpu		1328289						
+ANR	1328853	Symbol	* s		1328289						
+ANR	1328854	Symbol	ASC_SAVING_PARAMETERS_NOT_SUPPORTED		1328289						
+ANR	1328855	Symbol	MODE_PAGE_AUDIO_CTL		1328289						

@@ -1,0 +1,291 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5171156	File	/home/p4ultr4n/workplace/ReVeal/raw_code/laio_submit_0.c								
+ANR	5171157	Function	laio_submit	1:0:0:1275							
+ANR	5171158	FunctionDef	"laio_submit (BlockDriverState * bs , void * aio_ctx , int fd , int64_t sector_num , QEMUIOVector * qiov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int type)"		5171157	0					
+ANR	5171159	CompoundStatement		7:0:205:1275	5171157	0					
+ANR	5171160	IdentifierDeclStatement	struct qemu_laio_state * s = aio_ctx ;	9:4:212:247	5171157	0	True				
+ANR	5171161	IdentifierDecl	* s = aio_ctx		5171157	0					
+ANR	5171162	IdentifierDeclType	struct qemu_laio_state *		5171157	0					
+ANR	5171163	Identifier	s		5171157	1					
+ANR	5171164	AssignmentExpression	* s = aio_ctx		5171157	2		=			
+ANR	5171165	Identifier	aio_ctx		5171157	0					
+ANR	5171166	Identifier	aio_ctx		5171157	1					
+ANR	5171167	IdentifierDeclStatement	struct qemu_laiocb * laiocb ;	11:4:254:280	5171157	1	True				
+ANR	5171168	IdentifierDecl	* laiocb		5171157	0					
+ANR	5171169	IdentifierDeclType	struct qemu_laiocb *		5171157	0					
+ANR	5171170	Identifier	laiocb		5171157	1					
+ANR	5171171	IdentifierDeclStatement	struct iocb * iocbs ;	13:4:287:305	5171157	2	True				
+ANR	5171172	IdentifierDecl	* iocbs		5171157	0					
+ANR	5171173	IdentifierDeclType	struct iocb *		5171157	0					
+ANR	5171174	Identifier	iocbs		5171157	1					
+ANR	5171175	IdentifierDeclStatement	off_t offset = sector_num * 512 ;	15:4:312:343	5171157	3	True				
+ANR	5171176	IdentifierDecl	offset = sector_num * 512		5171157	0					
+ANR	5171177	IdentifierDeclType	off_t		5171157	0					
+ANR	5171178	Identifier	offset		5171157	1					
+ANR	5171179	AssignmentExpression	offset = sector_num * 512		5171157	2		=			
+ANR	5171180	Identifier	offset		5171157	0					
+ANR	5171181	MultiplicativeExpression	sector_num * 512		5171157	1		*			
+ANR	5171182	Identifier	sector_num		5171157	0					
+ANR	5171183	PrimaryExpression	512		5171157	1					
+ANR	5171184	ExpressionStatement	"laiocb = qemu_aio_get ( & laio_pool , bs , cb , opaque )"	19:4:352:401	5171157	4	True				
+ANR	5171185	AssignmentExpression	"laiocb = qemu_aio_get ( & laio_pool , bs , cb , opaque )"		5171157	0		=			
+ANR	5171186	Identifier	laiocb		5171157	0					
+ANR	5171187	CallExpression	"qemu_aio_get ( & laio_pool , bs , cb , opaque )"		5171157	1					
+ANR	5171188	Callee	qemu_aio_get		5171157	0					
+ANR	5171189	Identifier	qemu_aio_get		5171157	0					
+ANR	5171190	ArgumentList	& laio_pool		5171157	1					
+ANR	5171191	Argument	& laio_pool		5171157	0					
+ANR	5171192	UnaryOperationExpression	& laio_pool		5171157	0					
+ANR	5171193	UnaryOperator	&		5171157	0					
+ANR	5171194	Identifier	laio_pool		5171157	1					
+ANR	5171195	Argument	bs		5171157	1					
+ANR	5171196	Identifier	bs		5171157	0					
+ANR	5171197	Argument	cb		5171157	2					
+ANR	5171198	Identifier	cb		5171157	0					
+ANR	5171199	Argument	opaque		5171157	3					
+ANR	5171200	Identifier	opaque		5171157	0					
+ANR	5171201	IfStatement	if ( ! laiocb )		5171157	5					
+ANR	5171202	Condition	! laiocb	21:8:412:418	5171157	0	True				
+ANR	5171203	UnaryOperationExpression	! laiocb		5171157	0					
+ANR	5171204	UnaryOperator	!		5171157	0					
+ANR	5171205	Identifier	laiocb		5171157	1					
+ANR	5171206	ReturnStatement	return NULL ;	23:8:430:441	5171157	1	True				
+ANR	5171207	Identifier	NULL		5171157	0					
+ANR	5171208	ExpressionStatement	laiocb -> nbytes = nb_sectors * 512	25:4:448:481	5171157	6	True				
+ANR	5171209	AssignmentExpression	laiocb -> nbytes = nb_sectors * 512		5171157	0		=			
+ANR	5171210	PtrMemberAccess	laiocb -> nbytes		5171157	0					
+ANR	5171211	Identifier	laiocb		5171157	0					
+ANR	5171212	Identifier	nbytes		5171157	1					
+ANR	5171213	MultiplicativeExpression	nb_sectors * 512		5171157	1		*			
+ANR	5171214	Identifier	nb_sectors		5171157	0					
+ANR	5171215	PrimaryExpression	512		5171157	1					
+ANR	5171216	ExpressionStatement	laiocb -> ctx = s	27:4:488:503	5171157	7	True				
+ANR	5171217	AssignmentExpression	laiocb -> ctx = s		5171157	0		=			
+ANR	5171218	PtrMemberAccess	laiocb -> ctx		5171157	0					
+ANR	5171219	Identifier	laiocb		5171157	0					
+ANR	5171220	Identifier	ctx		5171157	1					
+ANR	5171221	Identifier	s		5171157	1					
+ANR	5171222	ExpressionStatement	laiocb -> ret = - EINPROGRESS	29:4:510:536	5171157	8	True				
+ANR	5171223	AssignmentExpression	laiocb -> ret = - EINPROGRESS		5171157	0		=			
+ANR	5171224	PtrMemberAccess	laiocb -> ret		5171157	0					
+ANR	5171225	Identifier	laiocb		5171157	0					
+ANR	5171226	Identifier	ret		5171157	1					
+ANR	5171227	UnaryOperationExpression	- EINPROGRESS		5171157	1					
+ANR	5171228	UnaryOperator	-		5171157	0					
+ANR	5171229	Identifier	EINPROGRESS		5171157	1					
+ANR	5171230	ExpressionStatement	laiocb -> async_context_id = get_async_context_id ( )	31:4:543:592	5171157	9	True				
+ANR	5171231	AssignmentExpression	laiocb -> async_context_id = get_async_context_id ( )		5171157	0		=			
+ANR	5171232	PtrMemberAccess	laiocb -> async_context_id		5171157	0					
+ANR	5171233	Identifier	laiocb		5171157	0					
+ANR	5171234	Identifier	async_context_id		5171157	1					
+ANR	5171235	CallExpression	get_async_context_id ( )		5171157	1					
+ANR	5171236	Callee	get_async_context_id		5171157	0					
+ANR	5171237	Identifier	get_async_context_id		5171157	0					
+ANR	5171238	ArgumentList			5171157	1					
+ANR	5171239	ExpressionStatement	iocbs = & laiocb -> iocb	35:4:601:622	5171157	10	True				
+ANR	5171240	AssignmentExpression	iocbs = & laiocb -> iocb		5171157	0		=			
+ANR	5171241	Identifier	iocbs		5171157	0					
+ANR	5171242	UnaryOperationExpression	& laiocb -> iocb		5171157	1					
+ANR	5171243	UnaryOperator	&		5171157	0					
+ANR	5171244	PtrMemberAccess	laiocb -> iocb		5171157	1					
+ANR	5171245	Identifier	laiocb		5171157	0					
+ANR	5171246	Identifier	iocb		5171157	1					
+ANR	5171247	SwitchStatement	switch ( type )		5171157	11					
+ANR	5171248	Condition	type	39:12:639:642	5171157	0	True				
+ANR	5171249	Identifier	type		5171157	0					
+ANR	5171250	CompoundStatement		33:18:439:439	5171157	1					
+ANR	5171251	Label	case QEMU_AIO_WRITE :	41:4:652:671	5171157	0	True				
+ANR	5171252	Identifier	QEMU_AIO_WRITE		5171157	0					
+ANR	5171253	ExpressionStatement	"io_prep_pwritev ( iocbs , fd , qiov -> iov , qiov -> niov , offset )"	43:8:682:739	5171157	1	True				
+ANR	5171254	CallExpression	"io_prep_pwritev ( iocbs , fd , qiov -> iov , qiov -> niov , offset )"		5171157	0					
+ANR	5171255	Callee	io_prep_pwritev		5171157	0					
+ANR	5171256	Identifier	io_prep_pwritev		5171157	0					
+ANR	5171257	ArgumentList	iocbs		5171157	1					
+ANR	5171258	Argument	iocbs		5171157	0					
+ANR	5171259	Identifier	iocbs		5171157	0					
+ANR	5171260	Argument	fd		5171157	1					
+ANR	5171261	Identifier	fd		5171157	0					
+ANR	5171262	Argument	qiov -> iov		5171157	2					
+ANR	5171263	PtrMemberAccess	qiov -> iov		5171157	0					
+ANR	5171264	Identifier	qiov		5171157	0					
+ANR	5171265	Identifier	iov		5171157	1					
+ANR	5171266	Argument	qiov -> niov		5171157	3					
+ANR	5171267	PtrMemberAccess	qiov -> niov		5171157	0					
+ANR	5171268	Identifier	qiov		5171157	0					
+ANR	5171269	Identifier	niov		5171157	1					
+ANR	5171270	Argument	offset		5171157	4					
+ANR	5171271	Identifier	offset		5171157	0					
+ANR	5171272	BreakStatement	break ;	45:1:743:748	5171157	2	True				
+ANR	5171273	Label	case QEMU_AIO_READ :	47:4:755:773	5171157	3	True				
+ANR	5171274	Identifier	QEMU_AIO_READ		5171157	0					
+ANR	5171275	ExpressionStatement	"io_prep_preadv ( iocbs , fd , qiov -> iov , qiov -> niov , offset )"	49:8:784:840	5171157	4	True				
+ANR	5171276	CallExpression	"io_prep_preadv ( iocbs , fd , qiov -> iov , qiov -> niov , offset )"		5171157	0					
+ANR	5171277	Callee	io_prep_preadv		5171157	0					
+ANR	5171278	Identifier	io_prep_preadv		5171157	0					
+ANR	5171279	ArgumentList	iocbs		5171157	1					
+ANR	5171280	Argument	iocbs		5171157	0					
+ANR	5171281	Identifier	iocbs		5171157	0					
+ANR	5171282	Argument	fd		5171157	1					
+ANR	5171283	Identifier	fd		5171157	0					
+ANR	5171284	Argument	qiov -> iov		5171157	2					
+ANR	5171285	PtrMemberAccess	qiov -> iov		5171157	0					
+ANR	5171286	Identifier	qiov		5171157	0					
+ANR	5171287	Identifier	iov		5171157	1					
+ANR	5171288	Argument	qiov -> niov		5171157	3					
+ANR	5171289	PtrMemberAccess	qiov -> niov		5171157	0					
+ANR	5171290	Identifier	qiov		5171157	0					
+ANR	5171291	Identifier	niov		5171157	1					
+ANR	5171292	Argument	offset		5171157	4					
+ANR	5171293	Identifier	offset		5171157	0					
+ANR	5171294	BreakStatement	break ;	51:1:844:849	5171157	5	True				
+ANR	5171295	Label	default :	53:4:856:863	5171157	6	True				
+ANR	5171296	Identifier	default		5171157	0					
+ANR	5171297	ExpressionStatement	"fprintf ( stderr , ""%s: invalid AIO request type 0x%x.\\n"" , __func__ , type )"	55:8:874:970	5171157	7	True				
+ANR	5171298	CallExpression	"fprintf ( stderr , ""%s: invalid AIO request type 0x%x.\\n"" , __func__ , type )"		5171157	0					
+ANR	5171299	Callee	fprintf		5171157	0					
+ANR	5171300	Identifier	fprintf		5171157	0					
+ANR	5171301	ArgumentList	stderr		5171157	1					
+ANR	5171302	Argument	stderr		5171157	0					
+ANR	5171303	Identifier	stderr		5171157	0					
+ANR	5171304	Argument	"""%s: invalid AIO request type 0x%x.\\n"""		5171157	1					
+ANR	5171305	PrimaryExpression	"""%s: invalid AIO request type 0x%x.\\n"""		5171157	0					
+ANR	5171306	Argument	__func__		5171157	2					
+ANR	5171307	Identifier	__func__		5171157	0					
+ANR	5171308	Argument	type		5171157	3					
+ANR	5171309	Identifier	type		5171157	0					
+ANR	5171310	GotoStatement	goto out_free_aiocb ;	59:8:981:1000	5171157	8	True				
+ANR	5171311	Identifier	out_free_aiocb		5171157	0					
+ANR	5171312	ExpressionStatement	"io_set_eventfd ( & laiocb -> iocb , s -> efd )"	63:4:1014:1051	5171157	12	True				
+ANR	5171313	CallExpression	"io_set_eventfd ( & laiocb -> iocb , s -> efd )"		5171157	0					
+ANR	5171314	Callee	io_set_eventfd		5171157	0					
+ANR	5171315	Identifier	io_set_eventfd		5171157	0					
+ANR	5171316	ArgumentList	& laiocb -> iocb		5171157	1					
+ANR	5171317	Argument	& laiocb -> iocb		5171157	0					
+ANR	5171318	UnaryOperationExpression	& laiocb -> iocb		5171157	0					
+ANR	5171319	UnaryOperator	&		5171157	0					
+ANR	5171320	PtrMemberAccess	laiocb -> iocb		5171157	1					
+ANR	5171321	Identifier	laiocb		5171157	0					
+ANR	5171322	Identifier	iocb		5171157	1					
+ANR	5171323	Argument	s -> efd		5171157	1					
+ANR	5171324	PtrMemberAccess	s -> efd		5171157	0					
+ANR	5171325	Identifier	s		5171157	0					
+ANR	5171326	Identifier	efd		5171157	1					
+ANR	5171327	ExpressionStatement	s -> count ++	65:4:1058:1068	5171157	13	True				
+ANR	5171328	PostIncDecOperationExpression	s -> count ++		5171157	0					
+ANR	5171329	PtrMemberAccess	s -> count		5171157	0					
+ANR	5171330	Identifier	s		5171157	0					
+ANR	5171331	Identifier	count		5171157	1					
+ANR	5171332	IncDec	++		5171157	1					
+ANR	5171333	IfStatement	"if ( io_submit ( s -> ctx , 1 , & iocbs ) < 0 )"		5171157	14					
+ANR	5171334	Condition	"io_submit ( s -> ctx , 1 , & iocbs ) < 0"	69:8:1081:1112	5171157	0	True				
+ANR	5171335	RelationalExpression	"io_submit ( s -> ctx , 1 , & iocbs ) < 0"		5171157	0		<			
+ANR	5171336	CallExpression	"io_submit ( s -> ctx , 1 , & iocbs )"		5171157	0					
+ANR	5171337	Callee	io_submit		5171157	0					
+ANR	5171338	Identifier	io_submit		5171157	0					
+ANR	5171339	ArgumentList	s -> ctx		5171157	1					
+ANR	5171340	Argument	s -> ctx		5171157	0					
+ANR	5171341	PtrMemberAccess	s -> ctx		5171157	0					
+ANR	5171342	Identifier	s		5171157	0					
+ANR	5171343	Identifier	ctx		5171157	1					
+ANR	5171344	Argument	1		5171157	1					
+ANR	5171345	PrimaryExpression	1		5171157	0					
+ANR	5171346	Argument	& iocbs		5171157	2					
+ANR	5171347	UnaryOperationExpression	& iocbs		5171157	0					
+ANR	5171348	UnaryOperator	&		5171157	0					
+ANR	5171349	Identifier	iocbs		5171157	1					
+ANR	5171350	PrimaryExpression	0		5171157	1					
+ANR	5171351	GotoStatement	goto out_dec_count ;	71:8:1124:1142	5171157	1	True				
+ANR	5171352	Identifier	out_dec_count		5171157	0					
+ANR	5171353	ReturnStatement	return & laiocb -> common ;	73:4:1149:1171	5171157	15	True				
+ANR	5171354	UnaryOperationExpression	& laiocb -> common		5171157	0					
+ANR	5171355	UnaryOperator	&		5171157	0					
+ANR	5171356	PtrMemberAccess	laiocb -> common		5171157	1					
+ANR	5171357	Identifier	laiocb		5171157	0					
+ANR	5171358	Identifier	common		5171157	1					
+ANR	5171359	Label	out_free_aiocb :	77:0:1176:1190	5171157	16	True				
+ANR	5171360	Identifier	out_free_aiocb		5171157	0					
+ANR	5171361	ExpressionStatement	qemu_aio_release ( laiocb )	79:4:1197:1221	5171157	17	True				
+ANR	5171362	CallExpression	qemu_aio_release ( laiocb )		5171157	0					
+ANR	5171363	Callee	qemu_aio_release		5171157	0					
+ANR	5171364	Identifier	qemu_aio_release		5171157	0					
+ANR	5171365	ArgumentList	laiocb		5171157	1					
+ANR	5171366	Argument	laiocb		5171157	0					
+ANR	5171367	Identifier	laiocb		5171157	0					
+ANR	5171368	Label	out_dec_count :	81:0:1224:1237	5171157	18	True				
+ANR	5171369	Identifier	out_dec_count		5171157	0					
+ANR	5171370	ExpressionStatement	s -> count --	83:4:1244:1254	5171157	19	True				
+ANR	5171371	PostIncDecOperationExpression	s -> count --		5171157	0					
+ANR	5171372	PtrMemberAccess	s -> count		5171157	0					
+ANR	5171373	Identifier	s		5171157	0					
+ANR	5171374	Identifier	count		5171157	1					
+ANR	5171375	IncDec	--		5171157	1					
+ANR	5171376	ReturnStatement	return NULL ;	85:4:1261:1272	5171157	20	True				
+ANR	5171377	Identifier	NULL		5171157	0					
+ANR	5171378	ReturnType	BlockDriverAIOCB *		5171157	1					
+ANR	5171379	Identifier	laio_submit		5171157	2					
+ANR	5171380	ParameterList	"BlockDriverState * bs , void * aio_ctx , int fd , int64_t sector_num , QEMUIOVector * qiov , int nb_sectors , BlockDriverCompletionFunc * cb , void * opaque , int type"		5171157	3					
+ANR	5171381	Parameter	BlockDriverState * bs	1:30:30:49	5171157	0	True				
+ANR	5171382	ParameterType	BlockDriverState *		5171157	0					
+ANR	5171383	Identifier	bs		5171157	1					
+ANR	5171384	Parameter	void * aio_ctx	1:52:52:64	5171157	1	True				
+ANR	5171385	ParameterType	void *		5171157	0					
+ANR	5171386	Identifier	aio_ctx		5171157	1					
+ANR	5171387	Parameter	int fd	1:67:67:72	5171157	2	True				
+ANR	5171388	ParameterType	int		5171157	0					
+ANR	5171389	Identifier	fd		5171157	1					
+ANR	5171390	Parameter	int64_t sector_num	3:8:84:101	5171157	3	True				
+ANR	5171391	ParameterType	int64_t		5171157	0					
+ANR	5171392	Identifier	sector_num		5171157	1					
+ANR	5171393	Parameter	QEMUIOVector * qiov	3:28:104:121	5171157	4	True				
+ANR	5171394	ParameterType	QEMUIOVector *		5171157	0					
+ANR	5171395	Identifier	qiov		5171157	1					
+ANR	5171396	Parameter	int nb_sectors	3:48:124:137	5171157	5	True				
+ANR	5171397	ParameterType	int		5171157	0					
+ANR	5171398	Identifier	nb_sectors		5171157	1					
+ANR	5171399	Parameter	BlockDriverCompletionFunc * cb	5:8:149:177	5171157	6	True				
+ANR	5171400	ParameterType	BlockDriverCompletionFunc *		5171157	0					
+ANR	5171401	Identifier	cb		5171157	1					
+ANR	5171402	Parameter	void * opaque	5:39:180:191	5171157	7	True				
+ANR	5171403	ParameterType	void *		5171157	0					
+ANR	5171404	Identifier	opaque		5171157	1					
+ANR	5171405	Parameter	int type	5:53:194:201	5171157	8	True				
+ANR	5171406	ParameterType	int		5171157	0					
+ANR	5171407	Identifier	type		5171157	1					
+ANR	5171408	CFGEntryNode	ENTRY		5171157		True				
+ANR	5171409	CFGExitNode	EXIT		5171157		True				
+ANR	5171410	Symbol	nb_sectors		5171157						
+ANR	5171411	Symbol	get_async_context_id		5171157						
+ANR	5171412	Symbol	s -> count		5171157						
+ANR	5171413	Symbol	laiocb -> async_context_id		5171157						
+ANR	5171414	Symbol	qiov		5171157						
+ANR	5171415	Symbol	type		5171157						
+ANR	5171416	Symbol	bs		5171157						
+ANR	5171417	Symbol	io_submit		5171157						
+ANR	5171418	Symbol	& laiocb -> common		5171157						
+ANR	5171419	Symbol	* qiov		5171157						
+ANR	5171420	Symbol	& iocbs		5171157						
+ANR	5171421	Symbol	aio_ctx		5171157						
+ANR	5171422	Symbol	cb		5171157						
+ANR	5171423	Symbol	& laio_pool		5171157						
+ANR	5171424	Symbol	& laiocb -> iocb		5171157						
+ANR	5171425	Symbol	opaque		5171157						
+ANR	5171426	Symbol	NULL		5171157						
+ANR	5171427	Symbol	offset		5171157						
+ANR	5171428	Symbol	laiocb		5171157						
+ANR	5171429	Symbol	qemu_aio_get		5171157						
+ANR	5171430	Symbol	laiocb -> ret		5171157						
+ANR	5171431	Symbol	laiocb -> nbytes		5171157						
+ANR	5171432	Symbol	qiov -> niov		5171157						
+ANR	5171433	Symbol	stderr		5171157						
+ANR	5171434	Symbol	sector_num		5171157						
+ANR	5171435	Symbol	laiocb -> ctx		5171157						
+ANR	5171436	Symbol	s		5171157						
+ANR	5171437	Symbol	s -> efd		5171157						
+ANR	5171438	Symbol	iocbs		5171157						
+ANR	5171439	Symbol	qiov -> iov		5171157						
+ANR	5171440	Symbol	__func__		5171157						
+ANR	5171441	Symbol	s -> ctx		5171157						
+ANR	5171442	Symbol	* laiocb		5171157						
+ANR	5171443	Symbol	* s		5171157						
+ANR	5171444	Symbol	fd		5171157						
+ANR	5171445	Symbol	EINPROGRESS		5171157						

@@ -1,0 +1,522 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	3070175	File	/home/p4ultr4n/workplace/ReVeal/raw_code/escc_mem_write_0.c								
+ANR	3070176	Function	escc_mem_write	1:0:0:3055							
+ANR	3070177	FunctionDef	"escc_mem_write (void * opaque , target_phys_addr_t addr , uint64_t val , unsigned size)"		3070176	0					
+ANR	3070178	CompoundStatement		5:0:124:3055	3070176	0					
+ANR	3070179	IdentifierDeclStatement	SerialState * serial = opaque ;	7:4:131:159	3070176	0	True				
+ANR	3070180	IdentifierDecl	* serial = opaque		3070176	0					
+ANR	3070181	IdentifierDeclType	SerialState *		3070176	0					
+ANR	3070182	Identifier	serial		3070176	1					
+ANR	3070183	AssignmentExpression	* serial = opaque		3070176	2		=			
+ANR	3070184	Identifier	opaque		3070176	0					
+ANR	3070185	Identifier	opaque		3070176	1					
+ANR	3070186	IdentifierDeclStatement	ChannelState * s ;	9:4:166:181	3070176	1	True				
+ANR	3070187	IdentifierDecl	* s		3070176	0					
+ANR	3070188	IdentifierDeclType	ChannelState *		3070176	0					
+ANR	3070189	Identifier	s		3070176	1					
+ANR	3070190	IdentifierDeclStatement	uint32_t saddr ;	11:4:188:202	3070176	2	True				
+ANR	3070191	IdentifierDecl	saddr		3070176	0					
+ANR	3070192	IdentifierDeclType	uint32_t		3070176	0					
+ANR	3070193	Identifier	saddr		3070176	1					
+ANR	3070194	IdentifierDeclStatement	"int newreg , channel ;"	13:4:209:228	3070176	3	True				
+ANR	3070195	IdentifierDecl	newreg		3070176	0					
+ANR	3070196	IdentifierDeclType	int		3070176	0					
+ANR	3070197	Identifier	newreg		3070176	1					
+ANR	3070198	IdentifierDecl	channel		3070176	1					
+ANR	3070199	IdentifierDeclType	int		3070176	0					
+ANR	3070200	Identifier	channel		3070176	1					
+ANR	3070201	ExpressionStatement	val &= 0xff	17:4:237:248	3070176	4	True				
+ANR	3070202	AssignmentExpression	val &= 0xff		3070176	0		&=			
+ANR	3070203	Identifier	val		3070176	0					
+ANR	3070204	PrimaryExpression	0xff		3070176	1					
+ANR	3070205	ExpressionStatement	saddr = ( addr >> serial -> it_shift ) & 1	19:4:255:293	3070176	5	True				
+ANR	3070206	AssignmentExpression	saddr = ( addr >> serial -> it_shift ) & 1		3070176	0		=			
+ANR	3070207	Identifier	saddr		3070176	0					
+ANR	3070208	BitAndExpression	( addr >> serial -> it_shift ) & 1		3070176	1		&			
+ANR	3070209	ShiftExpression	addr >> serial -> it_shift		3070176	0		>>			
+ANR	3070210	Identifier	addr		3070176	0					
+ANR	3070211	PtrMemberAccess	serial -> it_shift		3070176	1					
+ANR	3070212	Identifier	serial		3070176	0					
+ANR	3070213	Identifier	it_shift		3070176	1					
+ANR	3070214	PrimaryExpression	1		3070176	1					
+ANR	3070215	ExpressionStatement	channel = ( addr >> ( serial -> it_shift + 1 ) ) & 1	21:4:300:346	3070176	6	True				
+ANR	3070216	AssignmentExpression	channel = ( addr >> ( serial -> it_shift + 1 ) ) & 1		3070176	0		=			
+ANR	3070217	Identifier	channel		3070176	0					
+ANR	3070218	BitAndExpression	( addr >> ( serial -> it_shift + 1 ) ) & 1		3070176	1		&			
+ANR	3070219	ShiftExpression	addr >> ( serial -> it_shift + 1 )		3070176	0		>>			
+ANR	3070220	Identifier	addr		3070176	0					
+ANR	3070221	AdditiveExpression	serial -> it_shift + 1		3070176	1		+			
+ANR	3070222	PtrMemberAccess	serial -> it_shift		3070176	0					
+ANR	3070223	Identifier	serial		3070176	0					
+ANR	3070224	Identifier	it_shift		3070176	1					
+ANR	3070225	PrimaryExpression	1		3070176	1					
+ANR	3070226	PrimaryExpression	1		3070176	1					
+ANR	3070227	ExpressionStatement	s = & serial -> chn [ channel ]	23:4:353:378	3070176	7	True				
+ANR	3070228	AssignmentExpression	s = & serial -> chn [ channel ]		3070176	0		=			
+ANR	3070229	Identifier	s		3070176	0					
+ANR	3070230	UnaryOperationExpression	& serial -> chn [ channel ]		3070176	1					
+ANR	3070231	UnaryOperator	&		3070176	0					
+ANR	3070232	ArrayIndexing	serial -> chn [ channel ]		3070176	1					
+ANR	3070233	PtrMemberAccess	serial -> chn		3070176	0					
+ANR	3070234	Identifier	serial		3070176	0					
+ANR	3070235	Identifier	chn		3070176	1					
+ANR	3070236	Identifier	channel		3070176	1					
+ANR	3070237	SwitchStatement	switch ( saddr )		3070176	8					
+ANR	3070238	Condition	saddr	25:12:393:397	3070176	0	True				
+ANR	3070239	Identifier	saddr		3070176	0					
+ANR	3070240	CompoundStatement		21:19:275:275	3070176	1					
+ANR	3070241	Label	case SERIAL_CTRL :	27:4:407:423	3070176	0	True				
+ANR	3070242	Identifier	SERIAL_CTRL		3070176	0					
+ANR	3070243	ExpressionStatement	"trace_escc_mem_writeb_ctrl ( CHN_C ( s ) , s -> reg , val & 0xff )"	29:8:434:490	3070176	1	True				
+ANR	3070244	CallExpression	"trace_escc_mem_writeb_ctrl ( CHN_C ( s ) , s -> reg , val & 0xff )"		3070176	0					
+ANR	3070245	Callee	trace_escc_mem_writeb_ctrl		3070176	0					
+ANR	3070246	Identifier	trace_escc_mem_writeb_ctrl		3070176	0					
+ANR	3070247	ArgumentList	CHN_C ( s )		3070176	1					
+ANR	3070248	Argument	CHN_C ( s )		3070176	0					
+ANR	3070249	CallExpression	CHN_C ( s )		3070176	0					
+ANR	3070250	Callee	CHN_C		3070176	0					
+ANR	3070251	Identifier	CHN_C		3070176	0					
+ANR	3070252	ArgumentList	s		3070176	1					
+ANR	3070253	Argument	s		3070176	0					
+ANR	3070254	Identifier	s		3070176	0					
+ANR	3070255	Argument	s -> reg		3070176	1					
+ANR	3070256	PtrMemberAccess	s -> reg		3070176	0					
+ANR	3070257	Identifier	s		3070176	0					
+ANR	3070258	Identifier	reg		3070176	1					
+ANR	3070259	Argument	val & 0xff		3070176	2					
+ANR	3070260	BitAndExpression	val & 0xff		3070176	0		&			
+ANR	3070261	Identifier	val		3070176	0					
+ANR	3070262	PrimaryExpression	0xff		3070176	1					
+ANR	3070263	ExpressionStatement	newreg = 0	31:8:501:511	3070176	2	True				
+ANR	3070264	AssignmentExpression	newreg = 0		3070176	0		=			
+ANR	3070265	Identifier	newreg		3070176	0					
+ANR	3070266	PrimaryExpression	0		3070176	1					
+ANR	3070267	SwitchStatement	switch ( s -> reg )		3070176	3					
+ANR	3070268	Condition	s -> reg	33:16:530:535	3070176	0	True				
+ANR	3070269	PtrMemberAccess	s -> reg		3070176	0					
+ANR	3070270	Identifier	s		3070176	0					
+ANR	3070271	Identifier	reg		3070176	1					
+ANR	3070272	CompoundStatement		29:24:413:413	3070176	1					
+ANR	3070273	Label	case W_CMD :	35:8:549:559	3070176	0	True				
+ANR	3070274	Identifier	W_CMD		3070176	0					
+ANR	3070275	ExpressionStatement	newreg = val & CMD_PTR_MASK	37:12:574:601	3070176	1	True				
+ANR	3070276	AssignmentExpression	newreg = val & CMD_PTR_MASK		3070176	0		=			
+ANR	3070277	Identifier	newreg		3070176	0					
+ANR	3070278	BitAndExpression	val & CMD_PTR_MASK		3070176	1		&			
+ANR	3070279	Identifier	val		3070176	0					
+ANR	3070280	Identifier	CMD_PTR_MASK		3070176	1					
+ANR	3070281	ExpressionStatement	val &= CMD_CMD_MASK	39:12:616:635	3070176	2	True				
+ANR	3070282	AssignmentExpression	val &= CMD_CMD_MASK		3070176	0		&=			
+ANR	3070283	Identifier	val		3070176	0					
+ANR	3070284	Identifier	CMD_CMD_MASK		3070176	1					
+ANR	3070285	SwitchStatement	switch ( val )		3070176	3					
+ANR	3070286	Condition	val	41:20:658:660	3070176	0	True				
+ANR	3070287	Identifier	val		3070176	0					
+ANR	3070288	CompoundStatement		37:25:538:538	3070176	1					
+ANR	3070289	Label	case CMD_HI :	43:12:678:689	3070176	0	True				
+ANR	3070290	Identifier	CMD_HI		3070176	0					
+ANR	3070291	ExpressionStatement	newreg |= CMD_HI	45:16:708:724	3070176	1	True				
+ANR	3070292	AssignmentExpression	newreg |= CMD_HI		3070176	0		|=			
+ANR	3070293	Identifier	newreg		3070176	0					
+ANR	3070294	Identifier	CMD_HI		3070176	1					
+ANR	3070295	BreakStatement	break ;	47:16:743:748	3070176	2	True				
+ANR	3070296	Label	case CMD_CLR_TXINT :	49:12:763:781	3070176	3	True				
+ANR	3070297	Identifier	CMD_CLR_TXINT		3070176	0					
+ANR	3070298	ExpressionStatement	clr_txint ( s )	51:16:800:812	3070176	4	True				
+ANR	3070299	CallExpression	clr_txint ( s )		3070176	0					
+ANR	3070300	Callee	clr_txint		3070176	0					
+ANR	3070301	Identifier	clr_txint		3070176	0					
+ANR	3070302	ArgumentList	s		3070176	1					
+ANR	3070303	Argument	s		3070176	0					
+ANR	3070304	Identifier	s		3070176	0					
+ANR	3070305	BreakStatement	break ;	53:16:831:836	3070176	5	True				
+ANR	3070306	Label	case CMD_CLR_IUS :	55:12:851:867	3070176	6	True				
+ANR	3070307	Identifier	CMD_CLR_IUS		3070176	0					
+ANR	3070308	IfStatement	if ( s -> rxint_under_svc )		3070176	7					
+ANR	3070309	Condition	s -> rxint_under_svc	57:20:890:907	3070176	0	True				
+ANR	3070310	PtrMemberAccess	s -> rxint_under_svc		3070176	0					
+ANR	3070311	Identifier	s		3070176	0					
+ANR	3070312	Identifier	rxint_under_svc		3070176	1					
+ANR	3070313	CompoundStatement		53:40:785:785	3070176	1					
+ANR	3070314	ExpressionStatement	s -> rxint_under_svc = 0	59:20:933:955	3070176	0	True				
+ANR	3070315	AssignmentExpression	s -> rxint_under_svc = 0		3070176	0		=			
+ANR	3070316	PtrMemberAccess	s -> rxint_under_svc		3070176	0					
+ANR	3070317	Identifier	s		3070176	0					
+ANR	3070318	Identifier	rxint_under_svc		3070176	1					
+ANR	3070319	PrimaryExpression	0		3070176	1					
+ANR	3070320	IfStatement	if ( s -> txint )		3070176	1					
+ANR	3070321	Condition	s -> txint	61:24:982:989	3070176	0	True				
+ANR	3070322	PtrMemberAccess	s -> txint		3070176	0					
+ANR	3070323	Identifier	s		3070176	0					
+ANR	3070324	Identifier	txint		3070176	1					
+ANR	3070325	CompoundStatement		57:34:867:867	3070176	1					
+ANR	3070326	ExpressionStatement	set_txint ( s )	63:24:1019:1031	3070176	0	True				
+ANR	3070327	CallExpression	set_txint ( s )		3070176	0					
+ANR	3070328	Callee	set_txint		3070176	0					
+ANR	3070329	Identifier	set_txint		3070176	0					
+ANR	3070330	ArgumentList	s		3070176	1					
+ANR	3070331	Argument	s		3070176	0					
+ANR	3070332	Identifier	s		3070176	0					
+ANR	3070333	ElseStatement	else		3070176	0					
+ANR	3070334	IfStatement	if ( s -> txint_under_svc )		3070176	0					
+ANR	3070335	Condition	s -> txint_under_svc	67:27:1084:1101	3070176	0	True				
+ANR	3070336	PtrMemberAccess	s -> txint_under_svc		3070176	0					
+ANR	3070337	Identifier	s		3070176	0					
+ANR	3070338	Identifier	txint_under_svc		3070176	1					
+ANR	3070339	CompoundStatement		63:47:979:979	3070176	1					
+ANR	3070340	ExpressionStatement	s -> txint_under_svc = 0	69:20:1127:1149	3070176	0	True				
+ANR	3070341	AssignmentExpression	s -> txint_under_svc = 0		3070176	0		=			
+ANR	3070342	PtrMemberAccess	s -> txint_under_svc		3070176	0					
+ANR	3070343	Identifier	s		3070176	0					
+ANR	3070344	Identifier	txint_under_svc		3070176	1					
+ANR	3070345	PrimaryExpression	0		3070176	1					
+ANR	3070346	ExpressionStatement	escc_update_irq ( s )	73:16:1187:1205	3070176	8	True				
+ANR	3070347	CallExpression	escc_update_irq ( s )		3070176	0					
+ANR	3070348	Callee	escc_update_irq		3070176	0					
+ANR	3070349	Identifier	escc_update_irq		3070176	0					
+ANR	3070350	ArgumentList	s		3070176	1					
+ANR	3070351	Argument	s		3070176	0					
+ANR	3070352	Identifier	s		3070176	0					
+ANR	3070353	BreakStatement	break ;	75:16:1224:1229	3070176	9	True				
+ANR	3070354	Label	default :	77:12:1244:1251	3070176	10	True				
+ANR	3070355	Identifier	default		3070176	0					
+ANR	3070356	BreakStatement	break ;	79:16:1270:1275	3070176	11	True				
+ANR	3070357	BreakStatement	break ;	83:12:1305:1310	3070176	4	True				
+ANR	3070358	Statement	case	85:8:1321:1324	3070176	5	True				
+ANR	3070359	Statement	W_INTR	85:13:1326:1331	3070176	6	True				
+ANR	3070360	Statement	...	85:20:1333:1335	3070176	7	True				
+ANR	3070361	Label	W_RXCTRL :	85:24:1337:1345	3070176	8	True				
+ANR	3070362	Identifier	W_RXCTRL		3070176	0					
+ANR	3070363	Statement	case	87:8:1356:1359	3070176	9	True				
+ANR	3070364	Statement	W_SYNC1	87:13:1361:1367	3070176	10	True				
+ANR	3070365	Statement	...	87:21:1369:1371	3070176	11	True				
+ANR	3070366	Label	W_TXBUF :	87:25:1373:1380	3070176	12	True				
+ANR	3070367	Identifier	W_TXBUF		3070176	0					
+ANR	3070368	Statement	case	89:8:1391:1394	3070176	13	True				
+ANR	3070369	Statement	W_MISC1	89:13:1396:1402	3070176	14	True				
+ANR	3070370	Statement	...	89:21:1404:1406	3070176	15	True				
+ANR	3070371	Label	W_CLOCK :	89:25:1408:1415	3070176	16	True				
+ANR	3070372	Identifier	W_CLOCK		3070176	0					
+ANR	3070373	Statement	case	91:8:1426:1429	3070176	17	True				
+ANR	3070374	Statement	W_MISC2	91:13:1431:1437	3070176	18	True				
+ANR	3070375	Statement	...	91:21:1439:1441	3070176	19	True				
+ANR	3070376	Label	W_EXTINT :	91:25:1443:1451	3070176	20	True				
+ANR	3070377	Identifier	W_EXTINT		3070176	0					
+ANR	3070378	ExpressionStatement	s -> wregs [ s -> reg ] = val	93:12:1466:1488	3070176	21	True				
+ANR	3070379	AssignmentExpression	s -> wregs [ s -> reg ] = val		3070176	0		=			
+ANR	3070380	ArrayIndexing	s -> wregs [ s -> reg ]		3070176	0					
+ANR	3070381	PtrMemberAccess	s -> wregs		3070176	0					
+ANR	3070382	Identifier	s		3070176	0					
+ANR	3070383	Identifier	wregs		3070176	1					
+ANR	3070384	PtrMemberAccess	s -> reg		3070176	1					
+ANR	3070385	Identifier	s		3070176	0					
+ANR	3070386	Identifier	reg		3070176	1					
+ANR	3070387	Identifier	val		3070176	1					
+ANR	3070388	BreakStatement	break ;	95:12:1503:1508	3070176	22	True				
+ANR	3070389	Label	case W_TXCTRL1 :	97:8:1519:1533	3070176	23	True				
+ANR	3070390	Identifier	W_TXCTRL1		3070176	0					
+ANR	3070391	Label	case W_TXCTRL2 :	99:8:1544:1558	3070176	24	True				
+ANR	3070392	Identifier	W_TXCTRL2		3070176	0					
+ANR	3070393	ExpressionStatement	s -> wregs [ s -> reg ] = val	101:12:1573:1595	3070176	25	True				
+ANR	3070394	AssignmentExpression	s -> wregs [ s -> reg ] = val		3070176	0		=			
+ANR	3070395	ArrayIndexing	s -> wregs [ s -> reg ]		3070176	0					
+ANR	3070396	PtrMemberAccess	s -> wregs		3070176	0					
+ANR	3070397	Identifier	s		3070176	0					
+ANR	3070398	Identifier	wregs		3070176	1					
+ANR	3070399	PtrMemberAccess	s -> reg		3070176	1					
+ANR	3070400	Identifier	s		3070176	0					
+ANR	3070401	Identifier	reg		3070176	1					
+ANR	3070402	Identifier	val		3070176	1					
+ANR	3070403	ExpressionStatement	escc_update_parameters ( s )	103:12:1610:1635	3070176	26	True				
+ANR	3070404	CallExpression	escc_update_parameters ( s )		3070176	0					
+ANR	3070405	Callee	escc_update_parameters		3070176	0					
+ANR	3070406	Identifier	escc_update_parameters		3070176	0					
+ANR	3070407	ArgumentList	s		3070176	1					
+ANR	3070408	Argument	s		3070176	0					
+ANR	3070409	Identifier	s		3070176	0					
+ANR	3070410	BreakStatement	break ;	105:12:1650:1655	3070176	27	True				
+ANR	3070411	Label	case W_BRGLO :	107:8:1666:1678	3070176	28	True				
+ANR	3070412	Identifier	W_BRGLO		3070176	0					
+ANR	3070413	Label	case W_BRGHI :	109:8:1689:1701	3070176	29	True				
+ANR	3070414	Identifier	W_BRGHI		3070176	0					
+ANR	3070415	ExpressionStatement	s -> wregs [ s -> reg ] = val	111:12:1716:1738	3070176	30	True				
+ANR	3070416	AssignmentExpression	s -> wregs [ s -> reg ] = val		3070176	0		=			
+ANR	3070417	ArrayIndexing	s -> wregs [ s -> reg ]		3070176	0					
+ANR	3070418	PtrMemberAccess	s -> wregs		3070176	0					
+ANR	3070419	Identifier	s		3070176	0					
+ANR	3070420	Identifier	wregs		3070176	1					
+ANR	3070421	PtrMemberAccess	s -> reg		3070176	1					
+ANR	3070422	Identifier	s		3070176	0					
+ANR	3070423	Identifier	reg		3070176	1					
+ANR	3070424	Identifier	val		3070176	1					
+ANR	3070425	ExpressionStatement	s -> rregs [ s -> reg ] = val	113:12:1753:1775	3070176	31	True				
+ANR	3070426	AssignmentExpression	s -> rregs [ s -> reg ] = val		3070176	0		=			
+ANR	3070427	ArrayIndexing	s -> rregs [ s -> reg ]		3070176	0					
+ANR	3070428	PtrMemberAccess	s -> rregs		3070176	0					
+ANR	3070429	Identifier	s		3070176	0					
+ANR	3070430	Identifier	rregs		3070176	1					
+ANR	3070431	PtrMemberAccess	s -> reg		3070176	1					
+ANR	3070432	Identifier	s		3070176	0					
+ANR	3070433	Identifier	reg		3070176	1					
+ANR	3070434	Identifier	val		3070176	1					
+ANR	3070435	ExpressionStatement	escc_update_parameters ( s )	115:12:1790:1815	3070176	32	True				
+ANR	3070436	CallExpression	escc_update_parameters ( s )		3070176	0					
+ANR	3070437	Callee	escc_update_parameters		3070176	0					
+ANR	3070438	Identifier	escc_update_parameters		3070176	0					
+ANR	3070439	ArgumentList	s		3070176	1					
+ANR	3070440	Argument	s		3070176	0					
+ANR	3070441	Identifier	s		3070176	0					
+ANR	3070442	BreakStatement	break ;	117:12:1830:1835	3070176	33	True				
+ANR	3070443	Label	case W_MINTR :	119:8:1846:1858	3070176	34	True				
+ANR	3070444	Identifier	W_MINTR		3070176	0					
+ANR	3070445	SwitchStatement	switch ( val & MINTR_RST_MASK )		3070176	35					
+ANR	3070446	Condition	val & MINTR_RST_MASK	121:20:1881:1900	3070176	0	True				
+ANR	3070447	BitAndExpression	val & MINTR_RST_MASK		3070176	0		&			
+ANR	3070448	Identifier	val		3070176	0					
+ANR	3070449	Identifier	MINTR_RST_MASK		3070176	1					
+ANR	3070450	CompoundStatement		117:42:1778:1778	3070176	1					
+ANR	3070451	Label	case 0 :	123:12:1918:1924	3070176	0	True				
+ANR	3070452	Label	default :	125:12:1939:1946	3070176	1	True				
+ANR	3070453	Identifier	default		3070176	0					
+ANR	3070454	BreakStatement	break ;	127:16:1965:1970	3070176	2	True				
+ANR	3070455	Label	case MINTR_RST_B :	129:12:1985:2001	3070176	3	True				
+ANR	3070456	Identifier	MINTR_RST_B		3070176	0					
+ANR	3070457	ExpressionStatement	escc_reset_chn ( & serial -> chn [ 0 ] )	131:16:2020:2051	3070176	4	True				
+ANR	3070458	CallExpression	escc_reset_chn ( & serial -> chn [ 0 ] )		3070176	0					
+ANR	3070459	Callee	escc_reset_chn		3070176	0					
+ANR	3070460	Identifier	escc_reset_chn		3070176	0					
+ANR	3070461	ArgumentList	& serial -> chn [ 0 ]		3070176	1					
+ANR	3070462	Argument	& serial -> chn [ 0 ]		3070176	0					
+ANR	3070463	UnaryOperationExpression	& serial -> chn [ 0 ]		3070176	0					
+ANR	3070464	UnaryOperator	&		3070176	0					
+ANR	3070465	ArrayIndexing	serial -> chn [ 0 ]		3070176	1					
+ANR	3070466	PtrMemberAccess	serial -> chn		3070176	0					
+ANR	3070467	Identifier	serial		3070176	0					
+ANR	3070468	Identifier	chn		3070176	1					
+ANR	3070469	PrimaryExpression	0		3070176	1					
+ANR	3070470	ReturnStatement	return ;	133:16:2070:2076	3070176	5	True				
+ANR	3070471	Label	case MINTR_RST_A :	135:12:2091:2107	3070176	6	True				
+ANR	3070472	Identifier	MINTR_RST_A		3070176	0					
+ANR	3070473	ExpressionStatement	escc_reset_chn ( & serial -> chn [ 1 ] )	137:16:2126:2157	3070176	7	True				
+ANR	3070474	CallExpression	escc_reset_chn ( & serial -> chn [ 1 ] )		3070176	0					
+ANR	3070475	Callee	escc_reset_chn		3070176	0					
+ANR	3070476	Identifier	escc_reset_chn		3070176	0					
+ANR	3070477	ArgumentList	& serial -> chn [ 1 ]		3070176	1					
+ANR	3070478	Argument	& serial -> chn [ 1 ]		3070176	0					
+ANR	3070479	UnaryOperationExpression	& serial -> chn [ 1 ]		3070176	0					
+ANR	3070480	UnaryOperator	&		3070176	0					
+ANR	3070481	ArrayIndexing	serial -> chn [ 1 ]		3070176	1					
+ANR	3070482	PtrMemberAccess	serial -> chn		3070176	0					
+ANR	3070483	Identifier	serial		3070176	0					
+ANR	3070484	Identifier	chn		3070176	1					
+ANR	3070485	PrimaryExpression	1		3070176	1					
+ANR	3070486	ReturnStatement	return ;	139:16:2176:2182	3070176	8	True				
+ANR	3070487	Label	case MINTR_RST_ALL :	141:12:2197:2215	3070176	9	True				
+ANR	3070488	Identifier	MINTR_RST_ALL		3070176	0					
+ANR	3070489	ExpressionStatement	escc_reset ( & serial -> busdev . qdev )	143:16:2234:2266	3070176	10	True				
+ANR	3070490	CallExpression	escc_reset ( & serial -> busdev . qdev )		3070176	0					
+ANR	3070491	Callee	escc_reset		3070176	0					
+ANR	3070492	Identifier	escc_reset		3070176	0					
+ANR	3070493	ArgumentList	& serial -> busdev . qdev		3070176	1					
+ANR	3070494	Argument	& serial -> busdev . qdev		3070176	0					
+ANR	3070495	UnaryOperationExpression	& serial -> busdev . qdev		3070176	0					
+ANR	3070496	UnaryOperator	&		3070176	0					
+ANR	3070497	MemberAccess	serial -> busdev . qdev		3070176	1					
+ANR	3070498	PtrMemberAccess	serial -> busdev		3070176	0					
+ANR	3070499	Identifier	serial		3070176	0					
+ANR	3070500	Identifier	busdev		3070176	1					
+ANR	3070501	Identifier	qdev		3070176	1					
+ANR	3070502	ReturnStatement	return ;	145:16:2285:2291	3070176	11	True				
+ANR	3070503	BreakStatement	break ;	149:12:2321:2326	3070176	36	True				
+ANR	3070504	Label	default :	151:8:2337:2344	3070176	37	True				
+ANR	3070505	Identifier	default		3070176	0					
+ANR	3070506	BreakStatement	break ;	153:12:2359:2364	3070176	38	True				
+ANR	3070507	IfStatement	if ( s -> reg == 0 )		3070176	4					
+ANR	3070508	Condition	s -> reg == 0	157:12:2390:2400	3070176	0	True				
+ANR	3070509	EqualityExpression	s -> reg == 0		3070176	0		==			
+ANR	3070510	PtrMemberAccess	s -> reg		3070176	0					
+ANR	3070511	Identifier	s		3070176	0					
+ANR	3070512	Identifier	reg		3070176	1					
+ANR	3070513	PrimaryExpression	0		3070176	1					
+ANR	3070514	ExpressionStatement	s -> reg = newreg	159:12:2416:2431	3070176	1	True				
+ANR	3070515	AssignmentExpression	s -> reg = newreg		3070176	0		=			
+ANR	3070516	PtrMemberAccess	s -> reg		3070176	0					
+ANR	3070517	Identifier	s		3070176	0					
+ANR	3070518	Identifier	reg		3070176	1					
+ANR	3070519	Identifier	newreg		3070176	1					
+ANR	3070520	ElseStatement	else		3070176	0					
+ANR	3070521	ExpressionStatement	s -> reg = 0	163:12:2460:2470	3070176	0	True				
+ANR	3070522	AssignmentExpression	s -> reg = 0		3070176	0		=			
+ANR	3070523	PtrMemberAccess	s -> reg		3070176	0					
+ANR	3070524	Identifier	s		3070176	0					
+ANR	3070525	Identifier	reg		3070176	1					
+ANR	3070526	PrimaryExpression	0		3070176	1					
+ANR	3070527	BreakStatement	break ;	165:8:2481:2486	3070176	5	True				
+ANR	3070528	Label	case SERIAL_DATA :	167:4:2493:2509	3070176	6	True				
+ANR	3070529	Identifier	SERIAL_DATA		3070176	0					
+ANR	3070530	ExpressionStatement	"trace_escc_mem_writeb_data ( CHN_C ( s ) , val )"	169:8:2520:2561	3070176	7	True				
+ANR	3070531	CallExpression	"trace_escc_mem_writeb_data ( CHN_C ( s ) , val )"		3070176	0					
+ANR	3070532	Callee	trace_escc_mem_writeb_data		3070176	0					
+ANR	3070533	Identifier	trace_escc_mem_writeb_data		3070176	0					
+ANR	3070534	ArgumentList	CHN_C ( s )		3070176	1					
+ANR	3070535	Argument	CHN_C ( s )		3070176	0					
+ANR	3070536	CallExpression	CHN_C ( s )		3070176	0					
+ANR	3070537	Callee	CHN_C		3070176	0					
+ANR	3070538	Identifier	CHN_C		3070176	0					
+ANR	3070539	ArgumentList	s		3070176	1					
+ANR	3070540	Argument	s		3070176	0					
+ANR	3070541	Identifier	s		3070176	0					
+ANR	3070542	Argument	val		3070176	1					
+ANR	3070543	Identifier	val		3070176	0					
+ANR	3070544	ExpressionStatement	s -> tx = val	171:8:2572:2583	3070176	8	True				
+ANR	3070545	AssignmentExpression	s -> tx = val		3070176	0		=			
+ANR	3070546	PtrMemberAccess	s -> tx		3070176	0					
+ANR	3070547	Identifier	s		3070176	0					
+ANR	3070548	Identifier	tx		3070176	1					
+ANR	3070549	Identifier	val		3070176	1					
+ANR	3070550	IfStatement	if ( s -> wregs [ W_TXCTRL2 ] & TXCTRL2_TXEN )		3070176	9					
+ANR	3070551	Condition	s -> wregs [ W_TXCTRL2 ] & TXCTRL2_TXEN	173:12:2598:2631	3070176	0	True				
+ANR	3070552	BitAndExpression	s -> wregs [ W_TXCTRL2 ] & TXCTRL2_TXEN		3070176	0		&			
+ANR	3070553	ArrayIndexing	s -> wregs [ W_TXCTRL2 ]		3070176	0					
+ANR	3070554	PtrMemberAccess	s -> wregs		3070176	0					
+ANR	3070555	Identifier	s		3070176	0					
+ANR	3070556	Identifier	wregs		3070176	1					
+ANR	3070557	Identifier	W_TXCTRL2		3070176	1					
+ANR	3070558	Identifier	TXCTRL2_TXEN		3070176	1					
+ANR	3070559	CompoundStatement		169:48:2509:2509	3070176	1					
+ANR	3070560	IfStatement	if ( s -> chr )		3070176	0					
+ANR	3070561	Condition	s -> chr	175:16:2667:2672	3070176	0	True				
+ANR	3070562	PtrMemberAccess	s -> chr		3070176	0					
+ANR	3070563	Identifier	s		3070176	0					
+ANR	3070564	Identifier	chr		3070176	1					
+ANR	3070565	ExpressionStatement	"qemu_chr_fe_write ( s -> chr , & s -> tx , 1 )"	177:16:2692:2728	3070176	1	True				
+ANR	3070566	CallExpression	"qemu_chr_fe_write ( s -> chr , & s -> tx , 1 )"		3070176	0					
+ANR	3070567	Callee	qemu_chr_fe_write		3070176	0					
+ANR	3070568	Identifier	qemu_chr_fe_write		3070176	0					
+ANR	3070569	ArgumentList	s -> chr		3070176	1					
+ANR	3070570	Argument	s -> chr		3070176	0					
+ANR	3070571	PtrMemberAccess	s -> chr		3070176	0					
+ANR	3070572	Identifier	s		3070176	0					
+ANR	3070573	Identifier	chr		3070176	1					
+ANR	3070574	Argument	& s -> tx		3070176	1					
+ANR	3070575	UnaryOperationExpression	& s -> tx		3070176	0					
+ANR	3070576	UnaryOperator	&		3070176	0					
+ANR	3070577	PtrMemberAccess	s -> tx		3070176	1					
+ANR	3070578	Identifier	s		3070176	0					
+ANR	3070579	Identifier	tx		3070176	1					
+ANR	3070580	Argument	1		3070176	2					
+ANR	3070581	PrimaryExpression	1		3070176	0					
+ANR	3070582	ElseStatement	else		3070176	0					
+ANR	3070583	IfStatement	if ( s -> type == kbd && ! s -> disabled )		3070176	0					
+ANR	3070584	Condition	s -> type == kbd && ! s -> disabled	179:21:2752:2781	3070176	0	True				
+ANR	3070585	AndExpression	s -> type == kbd && ! s -> disabled		3070176	0		&&			
+ANR	3070586	EqualityExpression	s -> type == kbd		3070176	0		==			
+ANR	3070587	PtrMemberAccess	s -> type		3070176	0					
+ANR	3070588	Identifier	s		3070176	0					
+ANR	3070589	Identifier	type		3070176	1					
+ANR	3070590	Identifier	kbd		3070176	1					
+ANR	3070591	UnaryOperationExpression	! s -> disabled		3070176	1					
+ANR	3070592	UnaryOperator	!		3070176	0					
+ANR	3070593	PtrMemberAccess	s -> disabled		3070176	1					
+ANR	3070594	Identifier	s		3070176	0					
+ANR	3070595	Identifier	disabled		3070176	1					
+ANR	3070596	CompoundStatement		175:53:2659:2659	3070176	1					
+ANR	3070597	ExpressionStatement	"handle_kbd_command ( s , val )"	181:16:2803:2829	3070176	0	True				
+ANR	3070598	CallExpression	"handle_kbd_command ( s , val )"		3070176	0					
+ANR	3070599	Callee	handle_kbd_command		3070176	0					
+ANR	3070600	Identifier	handle_kbd_command		3070176	0					
+ANR	3070601	ArgumentList	s		3070176	1					
+ANR	3070602	Argument	s		3070176	0					
+ANR	3070603	Identifier	s		3070176	0					
+ANR	3070604	Argument	val		3070176	1					
+ANR	3070605	Identifier	val		3070176	0					
+ANR	3070606	ExpressionStatement	s -> rregs [ R_STATUS ] |= STATUS_TXEMPTY	187:8:2866:2902	3070176	10	True				
+ANR	3070607	AssignmentExpression	s -> rregs [ R_STATUS ] |= STATUS_TXEMPTY		3070176	0		|=			
+ANR	3070608	ArrayIndexing	s -> rregs [ R_STATUS ]		3070176	0					
+ANR	3070609	PtrMemberAccess	s -> rregs		3070176	0					
+ANR	3070610	Identifier	s		3070176	0					
+ANR	3070611	Identifier	rregs		3070176	1					
+ANR	3070612	Identifier	R_STATUS		3070176	1					
+ANR	3070613	Identifier	STATUS_TXEMPTY		3070176	1					
+ANR	3070614	ExpressionStatement	s -> rregs [ R_SPEC ] |= SPEC_ALLSENT	189:8:2932:2964	3070176	11	True				
+ANR	3070615	AssignmentExpression	s -> rregs [ R_SPEC ] |= SPEC_ALLSENT		3070176	0		|=			
+ANR	3070616	ArrayIndexing	s -> rregs [ R_SPEC ]		3070176	0					
+ANR	3070617	PtrMemberAccess	s -> rregs		3070176	0					
+ANR	3070618	Identifier	s		3070176	0					
+ANR	3070619	Identifier	rregs		3070176	1					
+ANR	3070620	Identifier	R_SPEC		3070176	1					
+ANR	3070621	Identifier	SPEC_ALLSENT		3070176	1					
+ANR	3070622	ExpressionStatement	set_txint ( s )	191:8:2987:2999	3070176	12	True				
+ANR	3070623	CallExpression	set_txint ( s )		3070176	0					
+ANR	3070624	Callee	set_txint		3070176	0					
+ANR	3070625	Identifier	set_txint		3070176	0					
+ANR	3070626	ArgumentList	s		3070176	1					
+ANR	3070627	Argument	s		3070176	0					
+ANR	3070628	Identifier	s		3070176	0					
+ANR	3070629	BreakStatement	break ;	193:8:3010:3015	3070176	13	True				
+ANR	3070630	Label	default :	195:4:3022:3029	3070176	14	True				
+ANR	3070631	Identifier	default		3070176	0					
+ANR	3070632	BreakStatement	break ;	197:8:3040:3045	3070176	15	True				
+ANR	3070633	ReturnType	static void		3070176	1					
+ANR	3070634	Identifier	escc_mem_write		3070176	2					
+ANR	3070635	ParameterList	"void * opaque , target_phys_addr_t addr , uint64_t val , unsigned size"		3070176	3					
+ANR	3070636	Parameter	void * opaque	1:27:27:38	3070176	0	True				
+ANR	3070637	ParameterType	void *		3070176	0					
+ANR	3070638	Identifier	opaque		3070176	1					
+ANR	3070639	Parameter	target_phys_addr_t addr	1:41:41:63	3070176	1	True				
+ANR	3070640	ParameterType	target_phys_addr_t		3070176	0					
+ANR	3070641	Identifier	addr		3070176	1					
+ANR	3070642	Parameter	uint64_t val	3:27:94:105	3070176	2	True				
+ANR	3070643	ParameterType	uint64_t		3070176	0					
+ANR	3070644	Identifier	val		3070176	1					
+ANR	3070645	Parameter	unsigned size	3:41:108:120	3070176	3	True				
+ANR	3070646	ParameterType	unsigned		3070176	0					
+ANR	3070647	Identifier	size		3070176	1					
+ANR	3070648	CFGEntryNode	ENTRY		3070176		True				
+ANR	3070649	CFGExitNode	EXIT		3070176		True				
+ANR	3070650	Symbol	s -> reg		3070176						
+ANR	3070651	Symbol	& s -> tx		3070176						
+ANR	3070652	Symbol	MINTR_RST_MASK		3070176						
+ANR	3070653	Symbol	serial -> chn		3070176						
+ANR	3070654	Symbol	R_SPEC		3070176						
+ANR	3070655	Symbol	channel		3070176						
+ANR	3070656	Symbol	newreg		3070176						
+ANR	3070657	Symbol	STATUS_TXEMPTY		3070176						
+ANR	3070658	Symbol	TXCTRL2_TXEN		3070176						
+ANR	3070659	Symbol	R_STATUS		3070176						
+ANR	3070660	Symbol	* serial		3070176						
+ANR	3070661	Symbol	* s -> rregs		3070176						
+ANR	3070662	Symbol	s -> txint		3070176						
+ANR	3070663	Symbol	* s -> wregs		3070176						
+ANR	3070664	Symbol	s -> rregs		3070176						
+ANR	3070665	Symbol	* W_TXCTRL2		3070176						
+ANR	3070666	Symbol	* * s		3070176						
+ANR	3070667	Symbol	SPEC_ALLSENT		3070176						
+ANR	3070668	Symbol	addr		3070176						
+ANR	3070669	Symbol	s -> txint_under_svc		3070176						
+ANR	3070670	Symbol	& serial -> busdev		3070176						
+ANR	3070671	Symbol	CHN_C		3070176						
+ANR	3070672	Symbol	s -> disabled		3070176						
+ANR	3070673	Symbol	val		3070176						
+ANR	3070674	Symbol	opaque		3070176						
+ANR	3070675	Symbol	* s -> reg		3070176						
+ANR	3070676	Symbol	W_TXCTRL2		3070176						
+ANR	3070677	Symbol	saddr		3070176						
+ANR	3070678	Symbol	CMD_PTR_MASK		3070176						
+ANR	3070679	Symbol	s -> rxint_under_svc		3070176						
+ANR	3070680	Symbol	kbd		3070176						
+ANR	3070681	Symbol	& serial -> busdev . qdev		3070176						
+ANR	3070682	Symbol	CMD_CMD_MASK		3070176						
+ANR	3070683	Symbol	serial -> it_shift		3070176						
+ANR	3070684	Symbol	s		3070176						
+ANR	3070685	Symbol	serial -> busdev		3070176						
+ANR	3070686	Symbol	size		3070176						
+ANR	3070687	Symbol	CMD_HI		3070176						
+ANR	3070688	Symbol	s -> wregs		3070176						
+ANR	3070689	Symbol	serial		3070176						
+ANR	3070690	Symbol	s -> tx		3070176						
+ANR	3070691	Symbol	s -> chr		3070176						
+ANR	3070692	Symbol	* R_SPEC		3070176						
+ANR	3070693	Symbol	* s		3070176						
+ANR	3070694	Symbol	s -> type		3070176						
+ANR	3070695	Symbol	* R_STATUS		3070176						

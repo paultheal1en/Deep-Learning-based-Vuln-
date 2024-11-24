@@ -1,0 +1,153 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1115006	File	/home/p4ultr4n/workplace/ReVeal/raw_code/boot_sector_init_01_1.c								
+ANR	1115007	Function	boot_sector_init	1:0:0:678							
+ANR	1115008	FunctionDef	boot_sector_init (const char * fname)		1115007	0					
+ANR	1115009	CompoundStatement		3:0:41:678	1115007	0					
+ANR	1115010	IdentifierDeclStatement	"FILE * f = fopen ( fname , ""w"" ) ;"	5:4:48:75	1115007	0	True				
+ANR	1115011	IdentifierDecl	"* f = fopen ( fname , ""w"" )"		1115007	0					
+ANR	1115012	IdentifierDeclType	FILE *		1115007	0					
+ANR	1115013	Identifier	f		1115007	1					
+ANR	1115014	AssignmentExpression	"* f = fopen ( fname , ""w"" )"		1115007	2		=			
+ANR	1115015	Identifier	f		1115007	0					
+ANR	1115016	CallExpression	"fopen ( fname , ""w"" )"		1115007	1					
+ANR	1115017	Callee	fopen		1115007	0					
+ANR	1115018	Identifier	fopen		1115007	0					
+ANR	1115019	ArgumentList	fname		1115007	1					
+ANR	1115020	Argument	fname		1115007	0					
+ANR	1115021	Identifier	fname		1115007	0					
+ANR	1115022	Argument	"""w"""		1115007	1					
+ANR	1115023	PrimaryExpression	"""w"""		1115007	0					
+ANR	1115024	IdentifierDeclStatement	size_t len = sizeof boot_sector ;	7:4:82:113	1115007	1	True				
+ANR	1115025	IdentifierDecl	len = sizeof boot_sector		1115007	0					
+ANR	1115026	IdentifierDeclType	size_t		1115007	0					
+ANR	1115027	Identifier	len		1115007	1					
+ANR	1115028	AssignmentExpression	len = sizeof boot_sector		1115007	2		=			
+ANR	1115029	Identifier	len		1115007	0					
+ANR	1115030	SizeofExpression	sizeof boot_sector		1115007	1					
+ANR	1115031	Sizeof	sizeof		1115007	0					
+ANR	1115032	Identifier	boot_sector		1115007	1					
+ANR	1115033	IfStatement	if ( ! f )		1115007	2					
+ANR	1115034	Condition	! f	11:8:126:127	1115007	0	True				
+ANR	1115035	UnaryOperationExpression	! f		1115007	0					
+ANR	1115036	UnaryOperator	!		1115007	0					
+ANR	1115037	Identifier	f		1115007	1					
+ANR	1115038	CompoundStatement		9:12:88:88	1115007	1					
+ANR	1115039	ExpressionStatement	"fprintf ( stderr , ""Couldn't open \\""%s\\"": %s"" , fname , strerror ( errno ) )"	13:8:141:208	1115007	0	True				
+ANR	1115040	CallExpression	"fprintf ( stderr , ""Couldn't open \\""%s\\"": %s"" , fname , strerror ( errno ) )"		1115007	0					
+ANR	1115041	Callee	fprintf		1115007	0					
+ANR	1115042	Identifier	fprintf		1115007	0					
+ANR	1115043	ArgumentList	stderr		1115007	1					
+ANR	1115044	Argument	stderr		1115007	0					
+ANR	1115045	Identifier	stderr		1115007	0					
+ANR	1115046	Argument	"""Couldn't open \\""%s\\"": %s"""		1115007	1					
+ANR	1115047	PrimaryExpression	"""Couldn't open \\""%s\\"": %s"""		1115007	0					
+ANR	1115048	Argument	fname		1115007	2					
+ANR	1115049	Identifier	fname		1115007	0					
+ANR	1115050	Argument	strerror ( errno )		1115007	3					
+ANR	1115051	CallExpression	strerror ( errno )		1115007	0					
+ANR	1115052	Callee	strerror		1115007	0					
+ANR	1115053	Identifier	strerror		1115007	0					
+ANR	1115054	ArgumentList	errno		1115007	1					
+ANR	1115055	Argument	errno		1115007	0					
+ANR	1115056	Identifier	errno		1115007	0					
+ANR	1115057	ReturnStatement	return 1 ;	15:8:219:227	1115007	1	True				
+ANR	1115058	PrimaryExpression	1		1115007	0					
+ANR	1115059	IfStatement	"if ( strcmp ( qtest_get_arch ( ) , ""ppc64"" ) == 0 )"		1115007	3					
+ANR	1115060	Condition	"strcmp ( qtest_get_arch ( ) , ""ppc64"" ) == 0"	23:8:324:361	1115007	0	True				
+ANR	1115061	EqualityExpression	"strcmp ( qtest_get_arch ( ) , ""ppc64"" ) == 0"		1115007	0		==			
+ANR	1115062	CallExpression	"strcmp ( qtest_get_arch ( ) , ""ppc64"" )"		1115007	0					
+ANR	1115063	Callee	strcmp		1115007	0					
+ANR	1115064	Identifier	strcmp		1115007	0					
+ANR	1115065	ArgumentList	qtest_get_arch ( )		1115007	1					
+ANR	1115066	Argument	qtest_get_arch ( )		1115007	0					
+ANR	1115067	CallExpression	qtest_get_arch ( )		1115007	0					
+ANR	1115068	Callee	qtest_get_arch		1115007	0					
+ANR	1115069	Identifier	qtest_get_arch		1115007	0					
+ANR	1115070	ArgumentList			1115007	1					
+ANR	1115071	Argument	"""ppc64"""		1115007	1					
+ANR	1115072	PrimaryExpression	"""ppc64"""		1115007	0					
+ANR	1115073	PrimaryExpression	0		1115007	1					
+ANR	1115074	CompoundStatement		21:48:322:322	1115007	1					
+ANR	1115075	ExpressionStatement	"len = sprintf ( ( char * ) boot_sector , ""\\\\ Bootscript\\n%x %x c! %x %x c!\\n"" , LOW ( SIGNATURE ) , BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET , HIGH ( SIGNATURE ) , BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET + 1 )"	25:8:375:598	1115007	0	True				
+ANR	1115076	AssignmentExpression	"len = sprintf ( ( char * ) boot_sector , ""\\\\ Bootscript\\n%x %x c! %x %x c!\\n"" , LOW ( SIGNATURE ) , BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET , HIGH ( SIGNATURE ) , BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET + 1 )"		1115007	0		=			
+ANR	1115077	Identifier	len		1115007	0					
+ANR	1115078	CallExpression	"sprintf ( ( char * ) boot_sector , ""\\\\ Bootscript\\n%x %x c! %x %x c!\\n"" , LOW ( SIGNATURE ) , BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET , HIGH ( SIGNATURE ) , BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET + 1 )"		1115007	1					
+ANR	1115079	Callee	sprintf		1115007	0					
+ANR	1115080	Identifier	sprintf		1115007	0					
+ANR	1115081	ArgumentList	( char * ) boot_sector		1115007	1					
+ANR	1115082	Argument	( char * ) boot_sector		1115007	0					
+ANR	1115083	CastExpression	( char * ) boot_sector		1115007	0					
+ANR	1115084	CastTarget	char *		1115007	0					
+ANR	1115085	Identifier	boot_sector		1115007	1					
+ANR	1115086	Argument	"""\\\\ Bootscript\\n%x %x c! %x %x c!\\n"""		1115007	1					
+ANR	1115087	PrimaryExpression	"""\\\\ Bootscript\\n%x %x c! %x %x c!\\n"""		1115007	0					
+ANR	1115088	Argument	LOW ( SIGNATURE )		1115007	2					
+ANR	1115089	CallExpression	LOW ( SIGNATURE )		1115007	0					
+ANR	1115090	Callee	LOW		1115007	0					
+ANR	1115091	Identifier	LOW		1115007	0					
+ANR	1115092	ArgumentList	SIGNATURE		1115007	1					
+ANR	1115093	Argument	SIGNATURE		1115007	0					
+ANR	1115094	Identifier	SIGNATURE		1115007	0					
+ANR	1115095	Argument	BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET		1115007	3					
+ANR	1115096	AdditiveExpression	BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET		1115007	0		+			
+ANR	1115097	Identifier	BOOT_SECTOR_ADDRESS		1115007	0					
+ANR	1115098	Identifier	SIGNATURE_OFFSET		1115007	1					
+ANR	1115099	Argument	HIGH ( SIGNATURE )		1115007	4					
+ANR	1115100	CallExpression	HIGH ( SIGNATURE )		1115007	0					
+ANR	1115101	Callee	HIGH		1115007	0					
+ANR	1115102	Identifier	HIGH		1115007	0					
+ANR	1115103	ArgumentList	SIGNATURE		1115007	1					
+ANR	1115104	Argument	SIGNATURE		1115007	0					
+ANR	1115105	Identifier	SIGNATURE		1115007	0					
+ANR	1115106	Argument	BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET + 1		1115007	5					
+ANR	1115107	AdditiveExpression	BOOT_SECTOR_ADDRESS + SIGNATURE_OFFSET + 1		1115007	0		+			
+ANR	1115108	Identifier	BOOT_SECTOR_ADDRESS		1115007	0					
+ANR	1115109	AdditiveExpression	SIGNATURE_OFFSET + 1		1115007	1		+			
+ANR	1115110	Identifier	SIGNATURE_OFFSET		1115007	0					
+ANR	1115111	PrimaryExpression	1		1115007	1					
+ANR	1115112	ExpressionStatement	"fwrite ( boot_sector , 1 , len , f )"	35:4:614:644	1115007	4	True				
+ANR	1115113	CallExpression	"fwrite ( boot_sector , 1 , len , f )"		1115007	0					
+ANR	1115114	Callee	fwrite		1115007	0					
+ANR	1115115	Identifier	fwrite		1115007	0					
+ANR	1115116	ArgumentList	boot_sector		1115007	1					
+ANR	1115117	Argument	boot_sector		1115007	0					
+ANR	1115118	Identifier	boot_sector		1115007	0					
+ANR	1115119	Argument	1		1115007	1					
+ANR	1115120	PrimaryExpression	1		1115007	0					
+ANR	1115121	Argument	len		1115007	2					
+ANR	1115122	Identifier	len		1115007	0					
+ANR	1115123	Argument	f		1115007	3					
+ANR	1115124	Identifier	f		1115007	0					
+ANR	1115125	ExpressionStatement	fclose ( f )	37:4:651:660	1115007	5	True				
+ANR	1115126	CallExpression	fclose ( f )		1115007	0					
+ANR	1115127	Callee	fclose		1115007	0					
+ANR	1115128	Identifier	fclose		1115007	0					
+ANR	1115129	ArgumentList	f		1115007	1					
+ANR	1115130	Argument	f		1115007	0					
+ANR	1115131	Identifier	f		1115007	0					
+ANR	1115132	ReturnStatement	return 0 ;	39:4:667:675	1115007	6	True				
+ANR	1115133	PrimaryExpression	0		1115007	0					
+ANR	1115134	ReturnType	int		1115007	1					
+ANR	1115135	Identifier	boot_sector_init		1115007	2					
+ANR	1115136	ParameterList	const char * fname		1115007	3					
+ANR	1115137	Parameter	const char * fname	1:21:21:37	1115007	0	True				
+ANR	1115138	ParameterType	const char *		1115007	0					
+ANR	1115139	Identifier	fname		1115007	1					
+ANR	1115140	CFGEntryNode	ENTRY		1115007		True				
+ANR	1115141	CFGExitNode	EXIT		1115007		True				
+ANR	1115142	Symbol	strcmp		1115007						
+ANR	1115143	Symbol	fname		1115007						
+ANR	1115144	Symbol	fopen		1115007						
+ANR	1115145	Symbol	errno		1115007						
+ANR	1115146	Symbol	HIGH		1115007						
+ANR	1115147	Symbol	f		1115007						
+ANR	1115148	Symbol	stderr		1115007						
+ANR	1115149	Symbol	SIGNATURE		1115007						
+ANR	1115150	Symbol	sprintf		1115007						
+ANR	1115151	Symbol	strerror		1115007						
+ANR	1115152	Symbol	SIGNATURE_OFFSET		1115007						
+ANR	1115153	Symbol	len		1115007						
+ANR	1115154	Symbol	LOW		1115007						
+ANR	1115155	Symbol	qtest_get_arch		1115007						
+ANR	1115156	Symbol	boot_sector		1115007						
+ANR	1115157	Symbol	BOOT_SECTOR_ADDRESS		1115007						

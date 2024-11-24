@@ -1,0 +1,111 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7931268	File	/home/p4ultr4n/workplace/ReVeal/raw_code/spapr_msi_write_0.c								
+ANR	7931269	Function	spapr_msi_write	1:0:0:384							
+ANR	7931270	FunctionDef	"spapr_msi_write (void * opaque , hwaddr addr , uint64_t data , unsigned size)"		7931269	0					
+ANR	7931271	CompoundStatement		5:0:115:384	7931269	0					
+ANR	7931272	IdentifierDeclStatement	sPAPRPHBState * phb = opaque ;	7:4:122:149	7931269	0	True				
+ANR	7931273	IdentifierDecl	* phb = opaque		7931269	0					
+ANR	7931274	IdentifierDeclType	sPAPRPHBState *		7931269	0					
+ANR	7931275	Identifier	phb		7931269	1					
+ANR	7931276	AssignmentExpression	* phb = opaque		7931269	2		=			
+ANR	7931277	Identifier	opaque		7931269	0					
+ANR	7931278	Identifier	opaque		7931269	1					
+ANR	7931279	IdentifierDeclStatement	int ndev = addr >> 16 ;	9:4:156:177	7931269	1	True				
+ANR	7931280	IdentifierDecl	ndev = addr >> 16		7931269	0					
+ANR	7931281	IdentifierDeclType	int		7931269	0					
+ANR	7931282	Identifier	ndev		7931269	1					
+ANR	7931283	AssignmentExpression	ndev = addr >> 16		7931269	2		=			
+ANR	7931284	Identifier	ndev		7931269	0					
+ANR	7931285	ShiftExpression	addr >> 16		7931269	1		>>			
+ANR	7931286	Identifier	addr		7931269	0					
+ANR	7931287	PrimaryExpression	16		7931269	1					
+ANR	7931288	IdentifierDeclStatement	int vec = ( ( addr & 0xFFFF ) >> 2 ) | data ;	11:4:184:223	7931269	2	True				
+ANR	7931289	IdentifierDecl	vec = ( ( addr & 0xFFFF ) >> 2 ) | data		7931269	0					
+ANR	7931290	IdentifierDeclType	int		7931269	0					
+ANR	7931291	Identifier	vec		7931269	1					
+ANR	7931292	AssignmentExpression	vec = ( ( addr & 0xFFFF ) >> 2 ) | data		7931269	2		=			
+ANR	7931293	Identifier	vec		7931269	0					
+ANR	7931294	InclusiveOrExpression	( ( addr & 0xFFFF ) >> 2 ) | data		7931269	1		|			
+ANR	7931295	ShiftExpression	( addr & 0xFFFF ) >> 2		7931269	0		>>			
+ANR	7931296	BitAndExpression	addr & 0xFFFF		7931269	0		&			
+ANR	7931297	Identifier	addr		7931269	0					
+ANR	7931298	PrimaryExpression	0xFFFF		7931269	1					
+ANR	7931299	PrimaryExpression	2		7931269	1					
+ANR	7931300	Identifier	data		7931269	1					
+ANR	7931301	IdentifierDeclStatement	uint32_t irq = phb -> msi_table [ ndev ] . irq + vec ;	13:4:230:275	7931269	3	True				
+ANR	7931302	IdentifierDecl	irq = phb -> msi_table [ ndev ] . irq + vec		7931269	0					
+ANR	7931303	IdentifierDeclType	uint32_t		7931269	0					
+ANR	7931304	Identifier	irq		7931269	1					
+ANR	7931305	AssignmentExpression	irq = phb -> msi_table [ ndev ] . irq + vec		7931269	2		=			
+ANR	7931306	Identifier	irq		7931269	0					
+ANR	7931307	AdditiveExpression	phb -> msi_table [ ndev ] . irq + vec		7931269	1		+			
+ANR	7931308	MemberAccess	phb -> msi_table [ ndev ] . irq		7931269	0					
+ANR	7931309	ArrayIndexing	phb -> msi_table [ ndev ]		7931269	0					
+ANR	7931310	PtrMemberAccess	phb -> msi_table		7931269	0					
+ANR	7931311	Identifier	phb		7931269	0					
+ANR	7931312	Identifier	msi_table		7931269	1					
+ANR	7931313	Identifier	ndev		7931269	1					
+ANR	7931314	Identifier	irq		7931269	1					
+ANR	7931315	Identifier	vec		7931269	1					
+ANR	7931316	ExpressionStatement	"trace_spapr_pci_msi_write ( addr , data , irq )"	17:4:284:326	7931269	4	True				
+ANR	7931317	CallExpression	"trace_spapr_pci_msi_write ( addr , data , irq )"		7931269	0					
+ANR	7931318	Callee	trace_spapr_pci_msi_write		7931269	0					
+ANR	7931319	Identifier	trace_spapr_pci_msi_write		7931269	0					
+ANR	7931320	ArgumentList	addr		7931269	1					
+ANR	7931321	Argument	addr		7931269	0					
+ANR	7931322	Identifier	addr		7931269	0					
+ANR	7931323	Argument	data		7931269	1					
+ANR	7931324	Identifier	data		7931269	0					
+ANR	7931325	Argument	irq		7931269	2					
+ANR	7931326	Identifier	irq		7931269	0					
+ANR	7931327	ExpressionStatement	"qemu_irq_pulse ( xics_get_qirq ( spapr -> icp , irq ) )"	21:4:335:381	7931269	5	True				
+ANR	7931328	CallExpression	"qemu_irq_pulse ( xics_get_qirq ( spapr -> icp , irq ) )"		7931269	0					
+ANR	7931329	Callee	qemu_irq_pulse		7931269	0					
+ANR	7931330	Identifier	qemu_irq_pulse		7931269	0					
+ANR	7931331	ArgumentList	"xics_get_qirq ( spapr -> icp , irq )"		7931269	1					
+ANR	7931332	Argument	"xics_get_qirq ( spapr -> icp , irq )"		7931269	0					
+ANR	7931333	CallExpression	"xics_get_qirq ( spapr -> icp , irq )"		7931269	0					
+ANR	7931334	Callee	xics_get_qirq		7931269	0					
+ANR	7931335	Identifier	xics_get_qirq		7931269	0					
+ANR	7931336	ArgumentList	spapr -> icp		7931269	1					
+ANR	7931337	Argument	spapr -> icp		7931269	0					
+ANR	7931338	PtrMemberAccess	spapr -> icp		7931269	0					
+ANR	7931339	Identifier	spapr		7931269	0					
+ANR	7931340	Identifier	icp		7931269	1					
+ANR	7931341	Argument	irq		7931269	1					
+ANR	7931342	Identifier	irq		7931269	0					
+ANR	7931343	ReturnType	static void		7931269	1					
+ANR	7931344	Identifier	spapr_msi_write		7931269	2					
+ANR	7931345	ParameterList	"void * opaque , hwaddr addr , uint64_t data , unsigned size"		7931269	3					
+ANR	7931346	Parameter	void * opaque	1:28:28:39	7931269	0	True				
+ANR	7931347	ParameterType	void *		7931269	0					
+ANR	7931348	Identifier	opaque		7931269	1					
+ANR	7931349	Parameter	hwaddr addr	1:42:42:52	7931269	1	True				
+ANR	7931350	ParameterType	hwaddr		7931269	0					
+ANR	7931351	Identifier	addr		7931269	1					
+ANR	7931352	Parameter	uint64_t data	3:28:84:96	7931269	2	True				
+ANR	7931353	ParameterType	uint64_t		7931269	0					
+ANR	7931354	Identifier	data		7931269	1					
+ANR	7931355	Parameter	unsigned size	3:43:99:111	7931269	3	True				
+ANR	7931356	ParameterType	unsigned		7931269	0					
+ANR	7931357	Identifier	size		7931269	1					
+ANR	7931358	CFGEntryNode	ENTRY		7931269		True				
+ANR	7931359	CFGExitNode	EXIT		7931269		True				
+ANR	7931360	Symbol	opaque		7931269						
+ANR	7931361	Symbol	data		7931269						
+ANR	7931362	Symbol	irq		7931269						
+ANR	7931363	Symbol	phb		7931269						
+ANR	7931364	Symbol	spapr		7931269						
+ANR	7931365	Symbol	spapr -> icp		7931269						
+ANR	7931366	Symbol	xics_get_qirq		7931269						
+ANR	7931367	Symbol	size		7931269						
+ANR	7931368	Symbol	ndev		7931269						
+ANR	7931369	Symbol	* phb		7931269						
+ANR	7931370	Symbol	phb -> msi_table		7931269						
+ANR	7931371	Symbol	vec		7931269						
+ANR	7931372	Symbol	phb -> msi_table [ ndev ] . irq		7931269						
+ANR	7931373	Symbol	* phb -> msi_table		7931269						
+ANR	7931374	Symbol	* spapr		7931269						
+ANR	7931375	Symbol	addr		7931269						
+ANR	7931376	Symbol	* ndev		7931269						
+ANR	7931377	Symbol	* * phb		7931269						

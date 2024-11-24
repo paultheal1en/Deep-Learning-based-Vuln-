@@ -1,0 +1,201 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7663591	File	/home/p4ultr4n/workplace/ReVeal/raw_code/sd_co_discard_0.c								
+ANR	7663592	Function	sd_co_discard	1:0:0:964							
+ANR	7663593	FunctionDef	"sd_co_discard (BlockDriverState * bs , int64_t sector_num , int nb_sectors)"		7663592	0					
+ANR	7663594	CompoundStatement		5:0:136:964	7663592	0					
+ANR	7663595	IdentifierDeclStatement	SheepdogAIOCB * acb ;	7:4:143:161	7663592	0	True				
+ANR	7663596	IdentifierDecl	* acb		7663592	0					
+ANR	7663597	IdentifierDeclType	SheepdogAIOCB *		7663592	0					
+ANR	7663598	Identifier	acb		7663592	1					
+ANR	7663599	IdentifierDeclStatement	QEMUIOVector dummy ;	9:4:168:186	7663592	1	True				
+ANR	7663600	IdentifierDecl	dummy		7663592	0					
+ANR	7663601	IdentifierDeclType	QEMUIOVector		7663592	0					
+ANR	7663602	Identifier	dummy		7663592	1					
+ANR	7663603	IdentifierDeclStatement	BDRVSheepdogState * s = bs -> opaque ;	11:4:193:226	7663592	2	True				
+ANR	7663604	IdentifierDecl	* s = bs -> opaque		7663592	0					
+ANR	7663605	IdentifierDeclType	BDRVSheepdogState *		7663592	0					
+ANR	7663606	Identifier	s		7663592	1					
+ANR	7663607	AssignmentExpression	* s = bs -> opaque		7663592	2		=			
+ANR	7663608	Identifier	s		7663592	0					
+ANR	7663609	PtrMemberAccess	bs -> opaque		7663592	1					
+ANR	7663610	Identifier	bs		7663592	0					
+ANR	7663611	Identifier	opaque		7663592	1					
+ANR	7663612	IdentifierDeclStatement	int ret ;	13:4:233:240	7663592	3	True				
+ANR	7663613	IdentifierDecl	ret		7663592	0					
+ANR	7663614	IdentifierDeclType	int		7663592	0					
+ANR	7663615	Identifier	ret		7663592	1					
+ANR	7663616	IfStatement	if ( ! s -> discard_supported )		7663592	4					
+ANR	7663617	Condition	! s -> discard_supported	17:8:253:273	7663592	0	True				
+ANR	7663618	UnaryOperationExpression	! s -> discard_supported		7663592	0					
+ANR	7663619	UnaryOperator	!		7663592	0					
+ANR	7663620	PtrMemberAccess	s -> discard_supported		7663592	1					
+ANR	7663621	Identifier	s		7663592	0					
+ANR	7663622	Identifier	discard_supported		7663592	1					
+ANR	7663623	CompoundStatement		13:31:139:139	7663592	1					
+ANR	7663624	ReturnStatement	return 0 ;	19:12:291:299	7663592	0	True				
+ANR	7663625	PrimaryExpression	0		7663592	0					
+ANR	7663626	ExpressionStatement	"acb = sd_aio_setup ( bs , & dummy , sector_num , nb_sectors )"	25:4:315:369	7663592	5	True				
+ANR	7663627	AssignmentExpression	"acb = sd_aio_setup ( bs , & dummy , sector_num , nb_sectors )"		7663592	0		=			
+ANR	7663628	Identifier	acb		7663592	0					
+ANR	7663629	CallExpression	"sd_aio_setup ( bs , & dummy , sector_num , nb_sectors )"		7663592	1					
+ANR	7663630	Callee	sd_aio_setup		7663592	0					
+ANR	7663631	Identifier	sd_aio_setup		7663592	0					
+ANR	7663632	ArgumentList	bs		7663592	1					
+ANR	7663633	Argument	bs		7663592	0					
+ANR	7663634	Identifier	bs		7663592	0					
+ANR	7663635	Argument	& dummy		7663592	1					
+ANR	7663636	UnaryOperationExpression	& dummy		7663592	0					
+ANR	7663637	UnaryOperator	&		7663592	0					
+ANR	7663638	Identifier	dummy		7663592	1					
+ANR	7663639	Argument	sector_num		7663592	2					
+ANR	7663640	Identifier	sector_num		7663592	0					
+ANR	7663641	Argument	nb_sectors		7663592	3					
+ANR	7663642	Identifier	nb_sectors		7663592	0					
+ANR	7663643	ExpressionStatement	acb -> aiocb_type = AIOCB_DISCARD_OBJ	27:4:376:411	7663592	6	True				
+ANR	7663644	AssignmentExpression	acb -> aiocb_type = AIOCB_DISCARD_OBJ		7663592	0		=			
+ANR	7663645	PtrMemberAccess	acb -> aiocb_type		7663592	0					
+ANR	7663646	Identifier	acb		7663592	0					
+ANR	7663647	Identifier	aiocb_type		7663592	1					
+ANR	7663648	Identifier	AIOCB_DISCARD_OBJ		7663592	1					
+ANR	7663649	ExpressionStatement	acb -> aio_done_func = sd_finish_aiocb	29:4:418:454	7663592	7	True				
+ANR	7663650	AssignmentExpression	acb -> aio_done_func = sd_finish_aiocb		7663592	0		=			
+ANR	7663651	PtrMemberAccess	acb -> aio_done_func		7663592	0					
+ANR	7663652	Identifier	acb		7663592	0					
+ANR	7663653	Identifier	aio_done_func		7663592	1					
+ANR	7663654	Identifier	sd_finish_aiocb		7663592	1					
+ANR	7663655	Label	retry :	33:0:459:464	7663592	8	True				
+ANR	7663656	Identifier	retry		7663592	0					
+ANR	7663657	IfStatement	"if ( check_overwrapping_aiocb ( s , acb ) )"		7663592	9					
+ANR	7663658	Condition	"check_overwrapping_aiocb ( s , acb )"	35:8:475:506	7663592	0	True				
+ANR	7663659	CallExpression	"check_overwrapping_aiocb ( s , acb )"		7663592	0					
+ANR	7663660	Callee	check_overwrapping_aiocb		7663592	0					
+ANR	7663661	Identifier	check_overwrapping_aiocb		7663592	0					
+ANR	7663662	ArgumentList	s		7663592	1					
+ANR	7663663	Argument	s		7663592	0					
+ANR	7663664	Identifier	s		7663592	0					
+ANR	7663665	Argument	acb		7663592	1					
+ANR	7663666	Identifier	acb		7663592	0					
+ANR	7663667	CompoundStatement		31:42:372:372	7663592	1					
+ANR	7663668	ExpressionStatement	qemu_co_queue_wait ( & s -> overwrapping_queue )	37:8:520:562	7663592	0	True				
+ANR	7663669	CallExpression	qemu_co_queue_wait ( & s -> overwrapping_queue )		7663592	0					
+ANR	7663670	Callee	qemu_co_queue_wait		7663592	0					
+ANR	7663671	Identifier	qemu_co_queue_wait		7663592	0					
+ANR	7663672	ArgumentList	& s -> overwrapping_queue		7663592	1					
+ANR	7663673	Argument	& s -> overwrapping_queue		7663592	0					
+ANR	7663674	UnaryOperationExpression	& s -> overwrapping_queue		7663592	0					
+ANR	7663675	UnaryOperator	&		7663592	0					
+ANR	7663676	PtrMemberAccess	s -> overwrapping_queue		7663592	1					
+ANR	7663677	Identifier	s		7663592	0					
+ANR	7663678	Identifier	overwrapping_queue		7663592	1					
+ANR	7663679	GotoStatement	goto retry ;	39:8:573:583	7663592	1	True				
+ANR	7663680	Identifier	retry		7663592	0					
+ANR	7663681	ExpressionStatement	ret = sd_co_rw_vector ( acb )	45:4:599:625	7663592	10	True				
+ANR	7663682	AssignmentExpression	ret = sd_co_rw_vector ( acb )		7663592	0		=			
+ANR	7663683	Identifier	ret		7663592	0					
+ANR	7663684	CallExpression	sd_co_rw_vector ( acb )		7663592	1					
+ANR	7663685	Callee	sd_co_rw_vector		7663592	0					
+ANR	7663686	Identifier	sd_co_rw_vector		7663592	0					
+ANR	7663687	ArgumentList	acb		7663592	1					
+ANR	7663688	Argument	acb		7663592	0					
+ANR	7663689	Identifier	acb		7663592	0					
+ANR	7663690	IfStatement	if ( ret <= 0 )		7663592	11					
+ANR	7663691	Condition	ret <= 0	47:8:636:643	7663592	0	True				
+ANR	7663692	RelationalExpression	ret <= 0		7663592	0		<=			
+ANR	7663693	Identifier	ret		7663592	0					
+ANR	7663694	PrimaryExpression	0		7663592	1					
+ANR	7663695	CompoundStatement		43:18:509:509	7663592	1					
+ANR	7663696	ExpressionStatement	"QLIST_REMOVE ( acb , aiocb_siblings )"	49:8:657:690	7663592	0	True				
+ANR	7663697	CallExpression	"QLIST_REMOVE ( acb , aiocb_siblings )"		7663592	0					
+ANR	7663698	Callee	QLIST_REMOVE		7663592	0					
+ANR	7663699	Identifier	QLIST_REMOVE		7663592	0					
+ANR	7663700	ArgumentList	acb		7663592	1					
+ANR	7663701	Argument	acb		7663592	0					
+ANR	7663702	Identifier	acb		7663592	0					
+ANR	7663703	Argument	aiocb_siblings		7663592	1					
+ANR	7663704	Identifier	aiocb_siblings		7663592	0					
+ANR	7663705	ExpressionStatement	qemu_co_queue_restart_all ( & s -> overwrapping_queue )	51:8:701:750	7663592	1	True				
+ANR	7663706	CallExpression	qemu_co_queue_restart_all ( & s -> overwrapping_queue )		7663592	0					
+ANR	7663707	Callee	qemu_co_queue_restart_all		7663592	0					
+ANR	7663708	Identifier	qemu_co_queue_restart_all		7663592	0					
+ANR	7663709	ArgumentList	& s -> overwrapping_queue		7663592	1					
+ANR	7663710	Argument	& s -> overwrapping_queue		7663592	0					
+ANR	7663711	UnaryOperationExpression	& s -> overwrapping_queue		7663592	0					
+ANR	7663712	UnaryOperator	&		7663592	0					
+ANR	7663713	PtrMemberAccess	s -> overwrapping_queue		7663592	1					
+ANR	7663714	Identifier	s		7663592	0					
+ANR	7663715	Identifier	overwrapping_queue		7663592	1					
+ANR	7663716	ExpressionStatement	qemu_aio_unref ( acb )	53:8:761:780	7663592	2	True				
+ANR	7663717	CallExpression	qemu_aio_unref ( acb )		7663592	0					
+ANR	7663718	Callee	qemu_aio_unref		7663592	0					
+ANR	7663719	Identifier	qemu_aio_unref		7663592	0					
+ANR	7663720	ArgumentList	acb		7663592	1					
+ANR	7663721	Argument	acb		7663592	0					
+ANR	7663722	Identifier	acb		7663592	0					
+ANR	7663723	ReturnStatement	return ret ;	55:8:791:801	7663592	3	True				
+ANR	7663724	Identifier	ret		7663592	0					
+ANR	7663725	ExpressionStatement	qemu_coroutine_yield ( )	61:4:817:839	7663592	12	True				
+ANR	7663726	CallExpression	qemu_coroutine_yield ( )		7663592	0					
+ANR	7663727	Callee	qemu_coroutine_yield		7663592	0					
+ANR	7663728	Identifier	qemu_coroutine_yield		7663592	0					
+ANR	7663729	ArgumentList			7663592	1					
+ANR	7663730	ExpressionStatement	"QLIST_REMOVE ( acb , aiocb_siblings )"	65:4:848:881	7663592	13	True				
+ANR	7663731	CallExpression	"QLIST_REMOVE ( acb , aiocb_siblings )"		7663592	0					
+ANR	7663732	Callee	QLIST_REMOVE		7663592	0					
+ANR	7663733	Identifier	QLIST_REMOVE		7663592	0					
+ANR	7663734	ArgumentList	acb		7663592	1					
+ANR	7663735	Argument	acb		7663592	0					
+ANR	7663736	Identifier	acb		7663592	0					
+ANR	7663737	Argument	aiocb_siblings		7663592	1					
+ANR	7663738	Identifier	aiocb_siblings		7663592	0					
+ANR	7663739	ExpressionStatement	qemu_co_queue_restart_all ( & s -> overwrapping_queue )	67:4:888:937	7663592	14	True				
+ANR	7663740	CallExpression	qemu_co_queue_restart_all ( & s -> overwrapping_queue )		7663592	0					
+ANR	7663741	Callee	qemu_co_queue_restart_all		7663592	0					
+ANR	7663742	Identifier	qemu_co_queue_restart_all		7663592	0					
+ANR	7663743	ArgumentList	& s -> overwrapping_queue		7663592	1					
+ANR	7663744	Argument	& s -> overwrapping_queue		7663592	0					
+ANR	7663745	UnaryOperationExpression	& s -> overwrapping_queue		7663592	0					
+ANR	7663746	UnaryOperator	&		7663592	0					
+ANR	7663747	PtrMemberAccess	s -> overwrapping_queue		7663592	1					
+ANR	7663748	Identifier	s		7663592	0					
+ANR	7663749	Identifier	overwrapping_queue		7663592	1					
+ANR	7663750	ReturnStatement	return acb -> ret ;	71:4:946:961	7663592	15	True				
+ANR	7663751	PtrMemberAccess	acb -> ret		7663592	0					
+ANR	7663752	Identifier	acb		7663592	0					
+ANR	7663753	Identifier	ret		7663592	1					
+ANR	7663754	ReturnType	static coroutine_fn int		7663592	1					
+ANR	7663755	Identifier	sd_co_discard		7663592	2					
+ANR	7663756	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors"		7663592	3					
+ANR	7663757	Parameter	BlockDriverState * bs	1:38:38:57	7663592	0	True				
+ANR	7663758	ParameterType	BlockDriverState *		7663592	0					
+ANR	7663759	Identifier	bs		7663592	1					
+ANR	7663760	Parameter	int64_t sector_num	1:60:60:77	7663592	1	True				
+ANR	7663761	ParameterType	int64_t		7663592	0					
+ANR	7663762	Identifier	sector_num		7663592	1					
+ANR	7663763	Parameter	int nb_sectors	3:38:119:132	7663592	2	True				
+ANR	7663764	ParameterType	int		7663592	0					
+ANR	7663765	Identifier	nb_sectors		7663592	1					
+ANR	7663766	CFGEntryNode	ENTRY		7663592		True				
+ANR	7663767	CFGExitNode	EXIT		7663592		True				
+ANR	7663768	Symbol	ret		7663592						
+ANR	7663769	Symbol	acb		7663592						
+ANR	7663770	Symbol	nb_sectors		7663592						
+ANR	7663771	Symbol	bs -> opaque		7663592						
+ANR	7663772	Symbol	sd_co_rw_vector		7663592						
+ANR	7663773	Symbol	check_overwrapping_aiocb		7663592						
+ANR	7663774	Symbol	sector_num		7663592						
+ANR	7663775	Symbol	dummy		7663592						
+ANR	7663776	Symbol	bs		7663592						
+ANR	7663777	Symbol	& dummy		7663592						
+ANR	7663778	Symbol	s		7663592						
+ANR	7663779	Symbol	* bs		7663592						
+ANR	7663780	Symbol	sd_finish_aiocb		7663592						
+ANR	7663781	Symbol	& s -> overwrapping_queue		7663592						
+ANR	7663782	Symbol	* acb		7663592						
+ANR	7663783	Symbol	sd_aio_setup		7663592						
+ANR	7663784	Symbol	AIOCB_DISCARD_OBJ		7663592						
+ANR	7663785	Symbol	s -> discard_supported		7663592						
+ANR	7663786	Symbol	acb -> ret		7663592						
+ANR	7663787	Symbol	* s		7663592						
+ANR	7663788	Symbol	acb -> aiocb_type		7663592						
+ANR	7663789	Symbol	acb -> aio_done_func		7663592						
+ANR	7663790	Symbol	aiocb_siblings		7663592						

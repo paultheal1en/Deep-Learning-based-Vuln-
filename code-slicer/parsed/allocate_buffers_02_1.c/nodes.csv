@@ -1,0 +1,1167 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	531879	File	/home/p4ultr4n/workplace/ReVeal/raw_code/allocate_buffers_02_1.c								
+ANR	531880	Function	allocate_buffers	1:0:0:5992							
+ANR	531881	FunctionDef	allocate_buffers (AVCodecContext * avctx)		531880	0					
+ANR	531882	CompoundStatement		3:0:60:5992	531880	0					
+ANR	531883	IdentifierDeclStatement	"int blk , ch ;"	5:4:67:78	531880	0	True				
+ANR	531884	IdentifierDecl	blk		531880	0					
+ANR	531885	IdentifierDeclType	int		531880	0					
+ANR	531886	Identifier	blk		531880	1					
+ANR	531887	IdentifierDecl	ch		531880	1					
+ANR	531888	IdentifierDeclType	int		531880	0					
+ANR	531889	Identifier	ch		531880	1					
+ANR	531890	IdentifierDeclStatement	AC3EncodeContext * s = avctx -> priv_data ;	7:4:85:123	531880	1	True				
+ANR	531891	IdentifierDecl	* s = avctx -> priv_data		531880	0					
+ANR	531892	IdentifierDeclType	AC3EncodeContext *		531880	0					
+ANR	531893	Identifier	s		531880	1					
+ANR	531894	AssignmentExpression	* s = avctx -> priv_data		531880	2		=			
+ANR	531895	Identifier	s		531880	0					
+ANR	531896	PtrMemberAccess	avctx -> priv_data		531880	1					
+ANR	531897	Identifier	avctx		531880	0					
+ANR	531898	Identifier	priv_data		531880	1					
+ANR	531899	IdentifierDeclStatement	int channels = s -> channels + 1 ;	9:4:130:160	531880	2	True				
+ANR	531900	IdentifierDecl	channels = s -> channels + 1		531880	0					
+ANR	531901	IdentifierDeclType	int		531880	0					
+ANR	531902	Identifier	channels		531880	1					
+ANR	531903	AssignmentExpression	channels = s -> channels + 1		531880	2		=			
+ANR	531904	Identifier	channels		531880	0					
+ANR	531905	AdditiveExpression	s -> channels + 1		531880	1		+			
+ANR	531906	PtrMemberAccess	s -> channels		531880	0					
+ANR	531907	Identifier	s		531880	0					
+ANR	531908	Identifier	channels		531880	1					
+ANR	531909	PrimaryExpression	1		531880	1					
+ANR	531910	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> planar_samples , s -> channels * sizeof ( * s -> planar_samples ) , alloc_fail )"	13:4:201:319	531880	3	True				
+ANR	531911	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> planar_samples , s -> channels * sizeof ( * s -> planar_samples ) , alloc_fail )"		531880	0					
+ANR	531912	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	531913	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	531914	ArgumentList	avctx		531880	1					
+ANR	531915	Argument	avctx		531880	0					
+ANR	531916	Identifier	avctx		531880	0					
+ANR	531917	Argument	s -> planar_samples		531880	1					
+ANR	531918	PtrMemberAccess	s -> planar_samples		531880	0					
+ANR	531919	Identifier	s		531880	0					
+ANR	531920	Identifier	planar_samples		531880	1					
+ANR	531921	Argument	s -> channels * sizeof ( * s -> planar_samples )		531880	2					
+ANR	531922	MultiplicativeExpression	s -> channels * sizeof ( * s -> planar_samples )		531880	0		*			
+ANR	531923	PtrMemberAccess	s -> channels		531880	0					
+ANR	531924	Identifier	s		531880	0					
+ANR	531925	Identifier	channels		531880	1					
+ANR	531926	SizeofExpression	sizeof ( * s -> planar_samples )		531880	1					
+ANR	531927	Sizeof	sizeof		531880	0					
+ANR	531928	UnaryOperationExpression	* s -> planar_samples		531880	1					
+ANR	531929	UnaryOperator	*		531880	0					
+ANR	531930	PtrMemberAccess	s -> planar_samples		531880	1					
+ANR	531931	Identifier	s		531880	0					
+ANR	531932	Identifier	planar_samples		531880	1					
+ANR	531933	Argument	alloc_fail		531880	3					
+ANR	531934	Identifier	alloc_fail		531880	0					
+ANR	531935	ForStatement	for ( ch = 0 ; ch < s -> channels ; ch ++ )		531880	4					
+ANR	531936	ForInit	ch = 0 ;	17:9:331:337	531880	0	True				
+ANR	531937	AssignmentExpression	ch = 0		531880	0		=			
+ANR	531938	Identifier	ch		531880	0					
+ANR	531939	PrimaryExpression	0		531880	1					
+ANR	531940	Condition	ch < s -> channels	17:17:339:354	531880	1	True				
+ANR	531941	RelationalExpression	ch < s -> channels		531880	0		<			
+ANR	531942	Identifier	ch		531880	0					
+ANR	531943	PtrMemberAccess	s -> channels		531880	1					
+ANR	531944	Identifier	s		531880	0					
+ANR	531945	Identifier	channels		531880	1					
+ANR	531946	PostIncDecOperationExpression	ch ++	17:35:357:360	531880	2	True				
+ANR	531947	Identifier	ch		531880	0					
+ANR	531948	IncDec	++		531880	1					
+ANR	531949	CompoundStatement		15:41:302:302	531880	3					
+ANR	531950	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , s -> planar_samples [ ch ] , ( AC3_FRAME_SIZE + AC3_BLOCK_SIZE ) * sizeof ( * * s -> planar_samples ) , alloc_fail )"	19:8:374:550	531880	0	True				
+ANR	531951	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , s -> planar_samples [ ch ] , ( AC3_FRAME_SIZE + AC3_BLOCK_SIZE ) * sizeof ( * * s -> planar_samples ) , alloc_fail )"		531880	0					
+ANR	531952	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	531953	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	531954	ArgumentList	avctx		531880	1					
+ANR	531955	Argument	avctx		531880	0					
+ANR	531956	Identifier	avctx		531880	0					
+ANR	531957	Argument	s -> planar_samples [ ch ]		531880	1					
+ANR	531958	ArrayIndexing	s -> planar_samples [ ch ]		531880	0					
+ANR	531959	PtrMemberAccess	s -> planar_samples		531880	0					
+ANR	531960	Identifier	s		531880	0					
+ANR	531961	Identifier	planar_samples		531880	1					
+ANR	531962	Identifier	ch		531880	1					
+ANR	531963	Argument	( AC3_FRAME_SIZE + AC3_BLOCK_SIZE ) * sizeof ( * * s -> planar_samples )		531880	2					
+ANR	531964	MultiplicativeExpression	( AC3_FRAME_SIZE + AC3_BLOCK_SIZE ) * sizeof ( * * s -> planar_samples )		531880	0		*			
+ANR	531965	AdditiveExpression	AC3_FRAME_SIZE + AC3_BLOCK_SIZE		531880	0		+			
+ANR	531966	Identifier	AC3_FRAME_SIZE		531880	0					
+ANR	531967	Identifier	AC3_BLOCK_SIZE		531880	1					
+ANR	531968	SizeofExpression	sizeof ( * * s -> planar_samples )		531880	1					
+ANR	531969	Sizeof	sizeof		531880	0					
+ANR	531970	UnaryOperationExpression	* * s -> planar_samples		531880	1					
+ANR	531971	UnaryOperator	*		531880	0					
+ANR	531972	UnaryOperationExpression	* s -> planar_samples		531880	1					
+ANR	531973	UnaryOperator	*		531880	0					
+ANR	531974	PtrMemberAccess	s -> planar_samples		531880	1					
+ANR	531975	Identifier	s		531880	0					
+ANR	531976	Identifier	planar_samples		531880	1					
+ANR	531977	Argument	alloc_fail		531880	3					
+ANR	531978	Identifier	alloc_fail		531880	0					
+ANR	531979	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> bap_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap_buffer ) , alloc_fail )"	27:4:564:706	531880	5	True				
+ANR	531980	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> bap_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap_buffer ) , alloc_fail )"		531880	0					
+ANR	531981	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	531982	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	531983	ArgumentList	avctx		531880	1					
+ANR	531984	Argument	avctx		531880	0					
+ANR	531985	Identifier	avctx		531880	0					
+ANR	531986	Argument	s -> bap_buffer		531880	1					
+ANR	531987	PtrMemberAccess	s -> bap_buffer		531880	0					
+ANR	531988	Identifier	s		531880	0					
+ANR	531989	Identifier	bap_buffer		531880	1					
+ANR	531990	Argument	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap_buffer )		531880	2					
+ANR	531991	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap_buffer )		531880	0		*			
+ANR	531992	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	531993	MultiplicativeExpression	channels * AC3_MAX_COEFS * sizeof ( * s -> bap_buffer )		531880	1		*			
+ANR	531994	Identifier	channels		531880	0					
+ANR	531995	MultiplicativeExpression	AC3_MAX_COEFS * sizeof ( * s -> bap_buffer )		531880	1		*			
+ANR	531996	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	531997	SizeofExpression	sizeof ( * s -> bap_buffer )		531880	1					
+ANR	531998	Sizeof	sizeof		531880	0					
+ANR	531999	UnaryOperationExpression	* s -> bap_buffer		531880	1					
+ANR	532000	UnaryOperator	*		531880	0					
+ANR	532001	PtrMemberAccess	s -> bap_buffer		531880	1					
+ANR	532002	Identifier	s		531880	0					
+ANR	532003	Identifier	bap_buffer		531880	1					
+ANR	532004	Argument	alloc_fail		531880	3					
+ANR	532005	Identifier	alloc_fail		531880	0					
+ANR	532006	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> bap1_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap1_buffer ) , alloc_fail )"	31:4:713:855	531880	6	True				
+ANR	532007	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> bap1_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap1_buffer ) , alloc_fail )"		531880	0					
+ANR	532008	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532009	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532010	ArgumentList	avctx		531880	1					
+ANR	532011	Argument	avctx		531880	0					
+ANR	532012	Identifier	avctx		531880	0					
+ANR	532013	Argument	s -> bap1_buffer		531880	1					
+ANR	532014	PtrMemberAccess	s -> bap1_buffer		531880	0					
+ANR	532015	Identifier	s		531880	0					
+ANR	532016	Identifier	bap1_buffer		531880	1					
+ANR	532017	Argument	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap1_buffer )		531880	2					
+ANR	532018	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> bap1_buffer )		531880	0		*			
+ANR	532019	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532020	MultiplicativeExpression	channels * AC3_MAX_COEFS * sizeof ( * s -> bap1_buffer )		531880	1		*			
+ANR	532021	Identifier	channels		531880	0					
+ANR	532022	MultiplicativeExpression	AC3_MAX_COEFS * sizeof ( * s -> bap1_buffer )		531880	1		*			
+ANR	532023	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532024	SizeofExpression	sizeof ( * s -> bap1_buffer )		531880	1					
+ANR	532025	Sizeof	sizeof		531880	0					
+ANR	532026	UnaryOperationExpression	* s -> bap1_buffer		531880	1					
+ANR	532027	UnaryOperator	*		531880	0					
+ANR	532028	PtrMemberAccess	s -> bap1_buffer		531880	1					
+ANR	532029	Identifier	s		531880	0					
+ANR	532030	Identifier	bap1_buffer		531880	1					
+ANR	532031	Argument	alloc_fail		531880	3					
+ANR	532032	Identifier	alloc_fail		531880	0					
+ANR	532033	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> mdct_coef_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> mdct_coef_buffer ) , alloc_fail )"	35:4:862:1014	531880	7	True				
+ANR	532034	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> mdct_coef_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> mdct_coef_buffer ) , alloc_fail )"		531880	0					
+ANR	532035	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532036	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532037	ArgumentList	avctx		531880	1					
+ANR	532038	Argument	avctx		531880	0					
+ANR	532039	Identifier	avctx		531880	0					
+ANR	532040	Argument	s -> mdct_coef_buffer		531880	1					
+ANR	532041	PtrMemberAccess	s -> mdct_coef_buffer		531880	0					
+ANR	532042	Identifier	s		531880	0					
+ANR	532043	Identifier	mdct_coef_buffer		531880	1					
+ANR	532044	Argument	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> mdct_coef_buffer )		531880	2					
+ANR	532045	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> mdct_coef_buffer )		531880	0		*			
+ANR	532046	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532047	MultiplicativeExpression	channels * AC3_MAX_COEFS * sizeof ( * s -> mdct_coef_buffer )		531880	1		*			
+ANR	532048	Identifier	channels		531880	0					
+ANR	532049	MultiplicativeExpression	AC3_MAX_COEFS * sizeof ( * s -> mdct_coef_buffer )		531880	1		*			
+ANR	532050	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532051	SizeofExpression	sizeof ( * s -> mdct_coef_buffer )		531880	1					
+ANR	532052	Sizeof	sizeof		531880	0					
+ANR	532053	UnaryOperationExpression	* s -> mdct_coef_buffer		531880	1					
+ANR	532054	UnaryOperator	*		531880	0					
+ANR	532055	PtrMemberAccess	s -> mdct_coef_buffer		531880	1					
+ANR	532056	Identifier	s		531880	0					
+ANR	532057	Identifier	mdct_coef_buffer		531880	1					
+ANR	532058	Argument	alloc_fail		531880	3					
+ANR	532059	Identifier	alloc_fail		531880	0					
+ANR	532060	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> exp_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> exp_buffer ) , alloc_fail )"	39:4:1021:1161	531880	8	True				
+ANR	532061	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> exp_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> exp_buffer ) , alloc_fail )"		531880	0					
+ANR	532062	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532063	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532064	ArgumentList	avctx		531880	1					
+ANR	532065	Argument	avctx		531880	0					
+ANR	532066	Identifier	avctx		531880	0					
+ANR	532067	Argument	s -> exp_buffer		531880	1					
+ANR	532068	PtrMemberAccess	s -> exp_buffer		531880	0					
+ANR	532069	Identifier	s		531880	0					
+ANR	532070	Identifier	exp_buffer		531880	1					
+ANR	532071	Argument	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> exp_buffer )		531880	2					
+ANR	532072	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> exp_buffer )		531880	0		*			
+ANR	532073	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532074	MultiplicativeExpression	channels * AC3_MAX_COEFS * sizeof ( * s -> exp_buffer )		531880	1		*			
+ANR	532075	Identifier	channels		531880	0					
+ANR	532076	MultiplicativeExpression	AC3_MAX_COEFS * sizeof ( * s -> exp_buffer )		531880	1		*			
+ANR	532077	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532078	SizeofExpression	sizeof ( * s -> exp_buffer )		531880	1					
+ANR	532079	Sizeof	sizeof		531880	0					
+ANR	532080	UnaryOperationExpression	* s -> exp_buffer		531880	1					
+ANR	532081	UnaryOperator	*		531880	0					
+ANR	532082	PtrMemberAccess	s -> exp_buffer		531880	1					
+ANR	532083	Identifier	s		531880	0					
+ANR	532084	Identifier	exp_buffer		531880	1					
+ANR	532085	Argument	alloc_fail		531880	3					
+ANR	532086	Identifier	alloc_fail		531880	0					
+ANR	532087	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> grouped_exp_buffer , AC3_MAX_BLOCKS * channels * 128 * sizeof ( * s -> grouped_exp_buffer ) , alloc_fail )"	43:4:1168:1314	531880	9	True				
+ANR	532088	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> grouped_exp_buffer , AC3_MAX_BLOCKS * channels * 128 * sizeof ( * s -> grouped_exp_buffer ) , alloc_fail )"		531880	0					
+ANR	532089	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532090	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532091	ArgumentList	avctx		531880	1					
+ANR	532092	Argument	avctx		531880	0					
+ANR	532093	Identifier	avctx		531880	0					
+ANR	532094	Argument	s -> grouped_exp_buffer		531880	1					
+ANR	532095	PtrMemberAccess	s -> grouped_exp_buffer		531880	0					
+ANR	532096	Identifier	s		531880	0					
+ANR	532097	Identifier	grouped_exp_buffer		531880	1					
+ANR	532098	Argument	AC3_MAX_BLOCKS * channels * 128 * sizeof ( * s -> grouped_exp_buffer )		531880	2					
+ANR	532099	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * 128 * sizeof ( * s -> grouped_exp_buffer )		531880	0		*			
+ANR	532100	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532101	MultiplicativeExpression	channels * 128 * sizeof ( * s -> grouped_exp_buffer )		531880	1		*			
+ANR	532102	Identifier	channels		531880	0					
+ANR	532103	MultiplicativeExpression	128 * sizeof ( * s -> grouped_exp_buffer )		531880	1		*			
+ANR	532104	PrimaryExpression	128		531880	0					
+ANR	532105	SizeofExpression	sizeof ( * s -> grouped_exp_buffer )		531880	1					
+ANR	532106	Sizeof	sizeof		531880	0					
+ANR	532107	UnaryOperationExpression	* s -> grouped_exp_buffer		531880	1					
+ANR	532108	UnaryOperator	*		531880	0					
+ANR	532109	PtrMemberAccess	s -> grouped_exp_buffer		531880	1					
+ANR	532110	Identifier	s		531880	0					
+ANR	532111	Identifier	grouped_exp_buffer		531880	1					
+ANR	532112	Argument	alloc_fail		531880	3					
+ANR	532113	Identifier	alloc_fail		531880	0					
+ANR	532114	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> psd_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> psd_buffer ) , alloc_fail )"	47:4:1321:1461	531880	10	True				
+ANR	532115	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> psd_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> psd_buffer ) , alloc_fail )"		531880	0					
+ANR	532116	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532117	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532118	ArgumentList	avctx		531880	1					
+ANR	532119	Argument	avctx		531880	0					
+ANR	532120	Identifier	avctx		531880	0					
+ANR	532121	Argument	s -> psd_buffer		531880	1					
+ANR	532122	PtrMemberAccess	s -> psd_buffer		531880	0					
+ANR	532123	Identifier	s		531880	0					
+ANR	532124	Identifier	psd_buffer		531880	1					
+ANR	532125	Argument	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> psd_buffer )		531880	2					
+ANR	532126	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> psd_buffer )		531880	0		*			
+ANR	532127	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532128	MultiplicativeExpression	channels * AC3_MAX_COEFS * sizeof ( * s -> psd_buffer )		531880	1		*			
+ANR	532129	Identifier	channels		531880	0					
+ANR	532130	MultiplicativeExpression	AC3_MAX_COEFS * sizeof ( * s -> psd_buffer )		531880	1		*			
+ANR	532131	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532132	SizeofExpression	sizeof ( * s -> psd_buffer )		531880	1					
+ANR	532133	Sizeof	sizeof		531880	0					
+ANR	532134	UnaryOperationExpression	* s -> psd_buffer		531880	1					
+ANR	532135	UnaryOperator	*		531880	0					
+ANR	532136	PtrMemberAccess	s -> psd_buffer		531880	1					
+ANR	532137	Identifier	s		531880	0					
+ANR	532138	Identifier	psd_buffer		531880	1					
+ANR	532139	Argument	alloc_fail		531880	3					
+ANR	532140	Identifier	alloc_fail		531880	0					
+ANR	532141	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> band_psd_buffer , AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> band_psd_buffer ) , alloc_fail )"	51:4:1468:1607	531880	11	True				
+ANR	532142	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> band_psd_buffer , AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> band_psd_buffer ) , alloc_fail )"		531880	0					
+ANR	532143	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532144	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532145	ArgumentList	avctx		531880	1					
+ANR	532146	Argument	avctx		531880	0					
+ANR	532147	Identifier	avctx		531880	0					
+ANR	532148	Argument	s -> band_psd_buffer		531880	1					
+ANR	532149	PtrMemberAccess	s -> band_psd_buffer		531880	0					
+ANR	532150	Identifier	s		531880	0					
+ANR	532151	Identifier	band_psd_buffer		531880	1					
+ANR	532152	Argument	AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> band_psd_buffer )		531880	2					
+ANR	532153	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> band_psd_buffer )		531880	0		*			
+ANR	532154	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532155	MultiplicativeExpression	channels * 64 * sizeof ( * s -> band_psd_buffer )		531880	1		*			
+ANR	532156	Identifier	channels		531880	0					
+ANR	532157	MultiplicativeExpression	64 * sizeof ( * s -> band_psd_buffer )		531880	1		*			
+ANR	532158	PrimaryExpression	64		531880	0					
+ANR	532159	SizeofExpression	sizeof ( * s -> band_psd_buffer )		531880	1					
+ANR	532160	Sizeof	sizeof		531880	0					
+ANR	532161	UnaryOperationExpression	* s -> band_psd_buffer		531880	1					
+ANR	532162	UnaryOperator	*		531880	0					
+ANR	532163	PtrMemberAccess	s -> band_psd_buffer		531880	1					
+ANR	532164	Identifier	s		531880	0					
+ANR	532165	Identifier	band_psd_buffer		531880	1					
+ANR	532166	Argument	alloc_fail		531880	3					
+ANR	532167	Identifier	alloc_fail		531880	0					
+ANR	532168	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> mask_buffer , AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> mask_buffer ) , alloc_fail )"	55:4:1614:1745	531880	12	True				
+ANR	532169	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> mask_buffer , AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> mask_buffer ) , alloc_fail )"		531880	0					
+ANR	532170	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532171	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532172	ArgumentList	avctx		531880	1					
+ANR	532173	Argument	avctx		531880	0					
+ANR	532174	Identifier	avctx		531880	0					
+ANR	532175	Argument	s -> mask_buffer		531880	1					
+ANR	532176	PtrMemberAccess	s -> mask_buffer		531880	0					
+ANR	532177	Identifier	s		531880	0					
+ANR	532178	Identifier	mask_buffer		531880	1					
+ANR	532179	Argument	AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> mask_buffer )		531880	2					
+ANR	532180	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * 64 * sizeof ( * s -> mask_buffer )		531880	0		*			
+ANR	532181	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532182	MultiplicativeExpression	channels * 64 * sizeof ( * s -> mask_buffer )		531880	1		*			
+ANR	532183	Identifier	channels		531880	0					
+ANR	532184	MultiplicativeExpression	64 * sizeof ( * s -> mask_buffer )		531880	1		*			
+ANR	532185	PrimaryExpression	64		531880	0					
+ANR	532186	SizeofExpression	sizeof ( * s -> mask_buffer )		531880	1					
+ANR	532187	Sizeof	sizeof		531880	0					
+ANR	532188	UnaryOperationExpression	* s -> mask_buffer		531880	1					
+ANR	532189	UnaryOperator	*		531880	0					
+ANR	532190	PtrMemberAccess	s -> mask_buffer		531880	1					
+ANR	532191	Identifier	s		531880	0					
+ANR	532192	Identifier	mask_buffer		531880	1					
+ANR	532193	Argument	alloc_fail		531880	3					
+ANR	532194	Identifier	alloc_fail		531880	0					
+ANR	532195	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> qmant_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> qmant_buffer ) , alloc_fail )"	59:4:1752:1896	531880	13	True				
+ANR	532196	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> qmant_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> qmant_buffer ) , alloc_fail )"		531880	0					
+ANR	532197	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532198	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532199	ArgumentList	avctx		531880	1					
+ANR	532200	Argument	avctx		531880	0					
+ANR	532201	Identifier	avctx		531880	0					
+ANR	532202	Argument	s -> qmant_buffer		531880	1					
+ANR	532203	PtrMemberAccess	s -> qmant_buffer		531880	0					
+ANR	532204	Identifier	s		531880	0					
+ANR	532205	Identifier	qmant_buffer		531880	1					
+ANR	532206	Argument	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> qmant_buffer )		531880	2					
+ANR	532207	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> qmant_buffer )		531880	0		*			
+ANR	532208	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532209	MultiplicativeExpression	channels * AC3_MAX_COEFS * sizeof ( * s -> qmant_buffer )		531880	1		*			
+ANR	532210	Identifier	channels		531880	0					
+ANR	532211	MultiplicativeExpression	AC3_MAX_COEFS * sizeof ( * s -> qmant_buffer )		531880	1		*			
+ANR	532212	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532213	SizeofExpression	sizeof ( * s -> qmant_buffer )		531880	1					
+ANR	532214	Sizeof	sizeof		531880	0					
+ANR	532215	UnaryOperationExpression	* s -> qmant_buffer		531880	1					
+ANR	532216	UnaryOperator	*		531880	0					
+ANR	532217	PtrMemberAccess	s -> qmant_buffer		531880	1					
+ANR	532218	Identifier	s		531880	0					
+ANR	532219	Identifier	qmant_buffer		531880	1					
+ANR	532220	Argument	alloc_fail		531880	3					
+ANR	532221	Identifier	alloc_fail		531880	0					
+ANR	532222	IfStatement	if ( s -> cpl_enabled )		531880	14					
+ANR	532223	Condition	s -> cpl_enabled	63:8:1907:1920	531880	0	True				
+ANR	532224	PtrMemberAccess	s -> cpl_enabled		531880	0					
+ANR	532225	Identifier	s		531880	0					
+ANR	532226	Identifier	cpl_enabled		531880	1					
+ANR	532227	CompoundStatement		61:24:1862:1862	531880	1					
+ANR	532228	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> cpl_coord_exp_buffer , AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_exp_buffer ) , alloc_fail )"	65:8:1934:2087	531880	0	True				
+ANR	532229	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> cpl_coord_exp_buffer , AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_exp_buffer ) , alloc_fail )"		531880	0					
+ANR	532230	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532231	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532232	ArgumentList	avctx		531880	1					
+ANR	532233	Argument	avctx		531880	0					
+ANR	532234	Identifier	avctx		531880	0					
+ANR	532235	Argument	s -> cpl_coord_exp_buffer		531880	1					
+ANR	532236	PtrMemberAccess	s -> cpl_coord_exp_buffer		531880	0					
+ANR	532237	Identifier	s		531880	0					
+ANR	532238	Identifier	cpl_coord_exp_buffer		531880	1					
+ANR	532239	Argument	AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_exp_buffer )		531880	2					
+ANR	532240	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_exp_buffer )		531880	0		*			
+ANR	532241	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532242	MultiplicativeExpression	channels * 16 * sizeof ( * s -> cpl_coord_exp_buffer )		531880	1		*			
+ANR	532243	Identifier	channels		531880	0					
+ANR	532244	MultiplicativeExpression	16 * sizeof ( * s -> cpl_coord_exp_buffer )		531880	1		*			
+ANR	532245	PrimaryExpression	16		531880	0					
+ANR	532246	SizeofExpression	sizeof ( * s -> cpl_coord_exp_buffer )		531880	1					
+ANR	532247	Sizeof	sizeof		531880	0					
+ANR	532248	UnaryOperationExpression	* s -> cpl_coord_exp_buffer		531880	1					
+ANR	532249	UnaryOperator	*		531880	0					
+ANR	532250	PtrMemberAccess	s -> cpl_coord_exp_buffer		531880	1					
+ANR	532251	Identifier	s		531880	0					
+ANR	532252	Identifier	cpl_coord_exp_buffer		531880	1					
+ANR	532253	Argument	alloc_fail		531880	3					
+ANR	532254	Identifier	alloc_fail		531880	0					
+ANR	532255	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> cpl_coord_mant_buffer , AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_mant_buffer ) , alloc_fail )"	69:8:2098:2253	531880	1	True				
+ANR	532256	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> cpl_coord_mant_buffer , AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_mant_buffer ) , alloc_fail )"		531880	0					
+ANR	532257	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532258	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532259	ArgumentList	avctx		531880	1					
+ANR	532260	Argument	avctx		531880	0					
+ANR	532261	Identifier	avctx		531880	0					
+ANR	532262	Argument	s -> cpl_coord_mant_buffer		531880	1					
+ANR	532263	PtrMemberAccess	s -> cpl_coord_mant_buffer		531880	0					
+ANR	532264	Identifier	s		531880	0					
+ANR	532265	Identifier	cpl_coord_mant_buffer		531880	1					
+ANR	532266	Argument	AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_mant_buffer )		531880	2					
+ANR	532267	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * 16 * sizeof ( * s -> cpl_coord_mant_buffer )		531880	0		*			
+ANR	532268	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532269	MultiplicativeExpression	channels * 16 * sizeof ( * s -> cpl_coord_mant_buffer )		531880	1		*			
+ANR	532270	Identifier	channels		531880	0					
+ANR	532271	MultiplicativeExpression	16 * sizeof ( * s -> cpl_coord_mant_buffer )		531880	1		*			
+ANR	532272	PrimaryExpression	16		531880	0					
+ANR	532273	SizeofExpression	sizeof ( * s -> cpl_coord_mant_buffer )		531880	1					
+ANR	532274	Sizeof	sizeof		531880	0					
+ANR	532275	UnaryOperationExpression	* s -> cpl_coord_mant_buffer		531880	1					
+ANR	532276	UnaryOperator	*		531880	0					
+ANR	532277	PtrMemberAccess	s -> cpl_coord_mant_buffer		531880	1					
+ANR	532278	Identifier	s		531880	0					
+ANR	532279	Identifier	cpl_coord_mant_buffer		531880	1					
+ANR	532280	Argument	alloc_fail		531880	3					
+ANR	532281	Identifier	alloc_fail		531880	0					
+ANR	532282	ForStatement	for ( blk = 0 ; blk < AC3_MAX_BLOCKS ; blk ++ )		531880	15					
+ANR	532283	ForInit	blk = 0 ;	75:9:2272:2279	531880	0	True				
+ANR	532284	AssignmentExpression	blk = 0		531880	0		=			
+ANR	532285	Identifier	blk		531880	0					
+ANR	532286	PrimaryExpression	0		531880	1					
+ANR	532287	Condition	blk < AC3_MAX_BLOCKS	75:18:2281:2300	531880	1	True				
+ANR	532288	RelationalExpression	blk < AC3_MAX_BLOCKS		531880	0		<			
+ANR	532289	Identifier	blk		531880	0					
+ANR	532290	Identifier	AC3_MAX_BLOCKS		531880	1					
+ANR	532291	PostIncDecOperationExpression	blk ++	75:40:2303:2307	531880	2	True				
+ANR	532292	Identifier	blk		531880	0					
+ANR	532293	IncDec	++		531880	1					
+ANR	532294	CompoundStatement		75:8:2260:2293	531880	3					
+ANR	532295	IdentifierDeclStatement	AC3Block * block = & s -> blocks [ blk ] ;	77:8:2321:2354	531880	0	True				
+ANR	532296	IdentifierDecl	* block = & s -> blocks [ blk ]		531880	0					
+ANR	532297	IdentifierDeclType	AC3Block *		531880	0					
+ANR	532298	Identifier	block		531880	1					
+ANR	532299	AssignmentExpression	* block = & s -> blocks [ blk ]		531880	2		=			
+ANR	532300	Identifier	block		531880	0					
+ANR	532301	UnaryOperationExpression	& s -> blocks [ blk ]		531880	1					
+ANR	532302	UnaryOperator	&		531880	0					
+ANR	532303	ArrayIndexing	s -> blocks [ blk ]		531880	1					
+ANR	532304	PtrMemberAccess	s -> blocks		531880	0					
+ANR	532305	Identifier	s		531880	0					
+ANR	532306	Identifier	blocks		531880	1					
+ANR	532307	Identifier	blk		531880	1					
+ANR	532308	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , block -> bap , channels * sizeof ( * block -> bap ) , alloc_fail )"	79:8:2365:2470	531880	1	True				
+ANR	532309	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , block -> bap , channels * sizeof ( * block -> bap ) , alloc_fail )"		531880	0					
+ANR	532310	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532311	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532312	ArgumentList	avctx		531880	1					
+ANR	532313	Argument	avctx		531880	0					
+ANR	532314	Identifier	avctx		531880	0					
+ANR	532315	Argument	block -> bap		531880	1					
+ANR	532316	PtrMemberAccess	block -> bap		531880	0					
+ANR	532317	Identifier	block		531880	0					
+ANR	532318	Identifier	bap		531880	1					
+ANR	532319	Argument	channels * sizeof ( * block -> bap )		531880	2					
+ANR	532320	MultiplicativeExpression	channels * sizeof ( * block -> bap )		531880	0		*			
+ANR	532321	Identifier	channels		531880	0					
+ANR	532322	SizeofExpression	sizeof ( * block -> bap )		531880	1					
+ANR	532323	Sizeof	sizeof		531880	0					
+ANR	532324	UnaryOperationExpression	* block -> bap		531880	1					
+ANR	532325	UnaryOperator	*		531880	0					
+ANR	532326	PtrMemberAccess	block -> bap		531880	1					
+ANR	532327	Identifier	block		531880	0					
+ANR	532328	Identifier	bap		531880	1					
+ANR	532329	Argument	alloc_fail		531880	3					
+ANR	532330	Identifier	alloc_fail		531880	0					
+ANR	532331	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> mdct_coef , channels * sizeof ( * block -> mdct_coef ) , alloc_fail )"	83:8:2481:2600	531880	2	True				
+ANR	532332	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> mdct_coef , channels * sizeof ( * block -> mdct_coef ) , alloc_fail )"		531880	0					
+ANR	532333	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532334	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532335	ArgumentList	avctx		531880	1					
+ANR	532336	Argument	avctx		531880	0					
+ANR	532337	Identifier	avctx		531880	0					
+ANR	532338	Argument	block -> mdct_coef		531880	1					
+ANR	532339	PtrMemberAccess	block -> mdct_coef		531880	0					
+ANR	532340	Identifier	block		531880	0					
+ANR	532341	Identifier	mdct_coef		531880	1					
+ANR	532342	Argument	channels * sizeof ( * block -> mdct_coef )		531880	2					
+ANR	532343	MultiplicativeExpression	channels * sizeof ( * block -> mdct_coef )		531880	0		*			
+ANR	532344	Identifier	channels		531880	0					
+ANR	532345	SizeofExpression	sizeof ( * block -> mdct_coef )		531880	1					
+ANR	532346	Sizeof	sizeof		531880	0					
+ANR	532347	UnaryOperationExpression	* block -> mdct_coef		531880	1					
+ANR	532348	UnaryOperator	*		531880	0					
+ANR	532349	PtrMemberAccess	block -> mdct_coef		531880	1					
+ANR	532350	Identifier	block		531880	0					
+ANR	532351	Identifier	mdct_coef		531880	1					
+ANR	532352	Argument	alloc_fail		531880	3					
+ANR	532353	Identifier	alloc_fail		531880	0					
+ANR	532354	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> exp , channels * sizeof ( * block -> exp ) , alloc_fail )"	87:8:2611:2718	531880	3	True				
+ANR	532355	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> exp , channels * sizeof ( * block -> exp ) , alloc_fail )"		531880	0					
+ANR	532356	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532357	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532358	ArgumentList	avctx		531880	1					
+ANR	532359	Argument	avctx		531880	0					
+ANR	532360	Identifier	avctx		531880	0					
+ANR	532361	Argument	block -> exp		531880	1					
+ANR	532362	PtrMemberAccess	block -> exp		531880	0					
+ANR	532363	Identifier	block		531880	0					
+ANR	532364	Identifier	exp		531880	1					
+ANR	532365	Argument	channels * sizeof ( * block -> exp )		531880	2					
+ANR	532366	MultiplicativeExpression	channels * sizeof ( * block -> exp )		531880	0		*			
+ANR	532367	Identifier	channels		531880	0					
+ANR	532368	SizeofExpression	sizeof ( * block -> exp )		531880	1					
+ANR	532369	Sizeof	sizeof		531880	0					
+ANR	532370	UnaryOperationExpression	* block -> exp		531880	1					
+ANR	532371	UnaryOperator	*		531880	0					
+ANR	532372	PtrMemberAccess	block -> exp		531880	1					
+ANR	532373	Identifier	block		531880	0					
+ANR	532374	Identifier	exp		531880	1					
+ANR	532375	Argument	alloc_fail		531880	3					
+ANR	532376	Identifier	alloc_fail		531880	0					
+ANR	532377	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> grouped_exp , channels * sizeof ( * block -> grouped_exp ) , alloc_fail )"	91:8:2729:2852	531880	4	True				
+ANR	532378	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> grouped_exp , channels * sizeof ( * block -> grouped_exp ) , alloc_fail )"		531880	0					
+ANR	532379	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532380	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532381	ArgumentList	avctx		531880	1					
+ANR	532382	Argument	avctx		531880	0					
+ANR	532383	Identifier	avctx		531880	0					
+ANR	532384	Argument	block -> grouped_exp		531880	1					
+ANR	532385	PtrMemberAccess	block -> grouped_exp		531880	0					
+ANR	532386	Identifier	block		531880	0					
+ANR	532387	Identifier	grouped_exp		531880	1					
+ANR	532388	Argument	channels * sizeof ( * block -> grouped_exp )		531880	2					
+ANR	532389	MultiplicativeExpression	channels * sizeof ( * block -> grouped_exp )		531880	0		*			
+ANR	532390	Identifier	channels		531880	0					
+ANR	532391	SizeofExpression	sizeof ( * block -> grouped_exp )		531880	1					
+ANR	532392	Sizeof	sizeof		531880	0					
+ANR	532393	UnaryOperationExpression	* block -> grouped_exp		531880	1					
+ANR	532394	UnaryOperator	*		531880	0					
+ANR	532395	PtrMemberAccess	block -> grouped_exp		531880	1					
+ANR	532396	Identifier	block		531880	0					
+ANR	532397	Identifier	grouped_exp		531880	1					
+ANR	532398	Argument	alloc_fail		531880	3					
+ANR	532399	Identifier	alloc_fail		531880	0					
+ANR	532400	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> psd , channels * sizeof ( * block -> psd ) , alloc_fail )"	95:8:2863:2970	531880	5	True				
+ANR	532401	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> psd , channels * sizeof ( * block -> psd ) , alloc_fail )"		531880	0					
+ANR	532402	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532403	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532404	ArgumentList	avctx		531880	1					
+ANR	532405	Argument	avctx		531880	0					
+ANR	532406	Identifier	avctx		531880	0					
+ANR	532407	Argument	block -> psd		531880	1					
+ANR	532408	PtrMemberAccess	block -> psd		531880	0					
+ANR	532409	Identifier	block		531880	0					
+ANR	532410	Identifier	psd		531880	1					
+ANR	532411	Argument	channels * sizeof ( * block -> psd )		531880	2					
+ANR	532412	MultiplicativeExpression	channels * sizeof ( * block -> psd )		531880	0		*			
+ANR	532413	Identifier	channels		531880	0					
+ANR	532414	SizeofExpression	sizeof ( * block -> psd )		531880	1					
+ANR	532415	Sizeof	sizeof		531880	0					
+ANR	532416	UnaryOperationExpression	* block -> psd		531880	1					
+ANR	532417	UnaryOperator	*		531880	0					
+ANR	532418	PtrMemberAccess	block -> psd		531880	1					
+ANR	532419	Identifier	block		531880	0					
+ANR	532420	Identifier	psd		531880	1					
+ANR	532421	Argument	alloc_fail		531880	3					
+ANR	532422	Identifier	alloc_fail		531880	0					
+ANR	532423	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> band_psd , channels * sizeof ( * block -> band_psd ) , alloc_fail )"	99:8:2981:3098	531880	6	True				
+ANR	532424	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> band_psd , channels * sizeof ( * block -> band_psd ) , alloc_fail )"		531880	0					
+ANR	532425	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532426	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532427	ArgumentList	avctx		531880	1					
+ANR	532428	Argument	avctx		531880	0					
+ANR	532429	Identifier	avctx		531880	0					
+ANR	532430	Argument	block -> band_psd		531880	1					
+ANR	532431	PtrMemberAccess	block -> band_psd		531880	0					
+ANR	532432	Identifier	block		531880	0					
+ANR	532433	Identifier	band_psd		531880	1					
+ANR	532434	Argument	channels * sizeof ( * block -> band_psd )		531880	2					
+ANR	532435	MultiplicativeExpression	channels * sizeof ( * block -> band_psd )		531880	0		*			
+ANR	532436	Identifier	channels		531880	0					
+ANR	532437	SizeofExpression	sizeof ( * block -> band_psd )		531880	1					
+ANR	532438	Sizeof	sizeof		531880	0					
+ANR	532439	UnaryOperationExpression	* block -> band_psd		531880	1					
+ANR	532440	UnaryOperator	*		531880	0					
+ANR	532441	PtrMemberAccess	block -> band_psd		531880	1					
+ANR	532442	Identifier	block		531880	0					
+ANR	532443	Identifier	band_psd		531880	1					
+ANR	532444	Argument	alloc_fail		531880	3					
+ANR	532445	Identifier	alloc_fail		531880	0					
+ANR	532446	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> mask , channels * sizeof ( * block -> mask ) , alloc_fail )"	103:8:3109:3218	531880	7	True				
+ANR	532447	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> mask , channels * sizeof ( * block -> mask ) , alloc_fail )"		531880	0					
+ANR	532448	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532449	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532450	ArgumentList	avctx		531880	1					
+ANR	532451	Argument	avctx		531880	0					
+ANR	532452	Identifier	avctx		531880	0					
+ANR	532453	Argument	block -> mask		531880	1					
+ANR	532454	PtrMemberAccess	block -> mask		531880	0					
+ANR	532455	Identifier	block		531880	0					
+ANR	532456	Identifier	mask		531880	1					
+ANR	532457	Argument	channels * sizeof ( * block -> mask )		531880	2					
+ANR	532458	MultiplicativeExpression	channels * sizeof ( * block -> mask )		531880	0		*			
+ANR	532459	Identifier	channels		531880	0					
+ANR	532460	SizeofExpression	sizeof ( * block -> mask )		531880	1					
+ANR	532461	Sizeof	sizeof		531880	0					
+ANR	532462	UnaryOperationExpression	* block -> mask		531880	1					
+ANR	532463	UnaryOperator	*		531880	0					
+ANR	532464	PtrMemberAccess	block -> mask		531880	1					
+ANR	532465	Identifier	block		531880	0					
+ANR	532466	Identifier	mask		531880	1					
+ANR	532467	Argument	alloc_fail		531880	3					
+ANR	532468	Identifier	alloc_fail		531880	0					
+ANR	532469	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> qmant , channels * sizeof ( * block -> qmant ) , alloc_fail )"	107:8:3229:3340	531880	8	True				
+ANR	532470	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> qmant , channels * sizeof ( * block -> qmant ) , alloc_fail )"		531880	0					
+ANR	532471	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532472	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532473	ArgumentList	avctx		531880	1					
+ANR	532474	Argument	avctx		531880	0					
+ANR	532475	Identifier	avctx		531880	0					
+ANR	532476	Argument	block -> qmant		531880	1					
+ANR	532477	PtrMemberAccess	block -> qmant		531880	0					
+ANR	532478	Identifier	block		531880	0					
+ANR	532479	Identifier	qmant		531880	1					
+ANR	532480	Argument	channels * sizeof ( * block -> qmant )		531880	2					
+ANR	532481	MultiplicativeExpression	channels * sizeof ( * block -> qmant )		531880	0		*			
+ANR	532482	Identifier	channels		531880	0					
+ANR	532483	SizeofExpression	sizeof ( * block -> qmant )		531880	1					
+ANR	532484	Sizeof	sizeof		531880	0					
+ANR	532485	UnaryOperationExpression	* block -> qmant		531880	1					
+ANR	532486	UnaryOperator	*		531880	0					
+ANR	532487	PtrMemberAccess	block -> qmant		531880	1					
+ANR	532488	Identifier	block		531880	0					
+ANR	532489	Identifier	qmant		531880	1					
+ANR	532490	Argument	alloc_fail		531880	3					
+ANR	532491	Identifier	alloc_fail		531880	0					
+ANR	532492	IfStatement	if ( s -> cpl_enabled )		531880	9					
+ANR	532493	Condition	s -> cpl_enabled	111:12:3355:3368	531880	0	True				
+ANR	532494	PtrMemberAccess	s -> cpl_enabled		531880	0					
+ANR	532495	Identifier	s		531880	0					
+ANR	532496	Identifier	cpl_enabled		531880	1					
+ANR	532497	CompoundStatement		109:28:3310:3310	531880	1					
+ANR	532498	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> cpl_coord_exp , channels * sizeof ( * block -> cpl_coord_exp ) , alloc_fail )"	113:12:3386:3517	531880	0	True				
+ANR	532499	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> cpl_coord_exp , channels * sizeof ( * block -> cpl_coord_exp ) , alloc_fail )"		531880	0					
+ANR	532500	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532501	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532502	ArgumentList	avctx		531880	1					
+ANR	532503	Argument	avctx		531880	0					
+ANR	532504	Identifier	avctx		531880	0					
+ANR	532505	Argument	block -> cpl_coord_exp		531880	1					
+ANR	532506	PtrMemberAccess	block -> cpl_coord_exp		531880	0					
+ANR	532507	Identifier	block		531880	0					
+ANR	532508	Identifier	cpl_coord_exp		531880	1					
+ANR	532509	Argument	channels * sizeof ( * block -> cpl_coord_exp )		531880	2					
+ANR	532510	MultiplicativeExpression	channels * sizeof ( * block -> cpl_coord_exp )		531880	0		*			
+ANR	532511	Identifier	channels		531880	0					
+ANR	532512	SizeofExpression	sizeof ( * block -> cpl_coord_exp )		531880	1					
+ANR	532513	Sizeof	sizeof		531880	0					
+ANR	532514	UnaryOperationExpression	* block -> cpl_coord_exp		531880	1					
+ANR	532515	UnaryOperator	*		531880	0					
+ANR	532516	PtrMemberAccess	block -> cpl_coord_exp		531880	1					
+ANR	532517	Identifier	block		531880	0					
+ANR	532518	Identifier	cpl_coord_exp		531880	1					
+ANR	532519	Argument	alloc_fail		531880	3					
+ANR	532520	Identifier	alloc_fail		531880	0					
+ANR	532521	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> cpl_coord_mant , channels * sizeof ( * block -> cpl_coord_mant ) , alloc_fail )"	117:12:3532:3665	531880	1	True				
+ANR	532522	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> cpl_coord_mant , channels * sizeof ( * block -> cpl_coord_mant ) , alloc_fail )"		531880	0					
+ANR	532523	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532524	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532525	ArgumentList	avctx		531880	1					
+ANR	532526	Argument	avctx		531880	0					
+ANR	532527	Identifier	avctx		531880	0					
+ANR	532528	Argument	block -> cpl_coord_mant		531880	1					
+ANR	532529	PtrMemberAccess	block -> cpl_coord_mant		531880	0					
+ANR	532530	Identifier	block		531880	0					
+ANR	532531	Identifier	cpl_coord_mant		531880	1					
+ANR	532532	Argument	channels * sizeof ( * block -> cpl_coord_mant )		531880	2					
+ANR	532533	MultiplicativeExpression	channels * sizeof ( * block -> cpl_coord_mant )		531880	0		*			
+ANR	532534	Identifier	channels		531880	0					
+ANR	532535	SizeofExpression	sizeof ( * block -> cpl_coord_mant )		531880	1					
+ANR	532536	Sizeof	sizeof		531880	0					
+ANR	532537	UnaryOperationExpression	* block -> cpl_coord_mant		531880	1					
+ANR	532538	UnaryOperator	*		531880	0					
+ANR	532539	PtrMemberAccess	block -> cpl_coord_mant		531880	1					
+ANR	532540	Identifier	block		531880	0					
+ANR	532541	Identifier	cpl_coord_mant		531880	1					
+ANR	532542	Argument	alloc_fail		531880	3					
+ANR	532543	Identifier	alloc_fail		531880	0					
+ANR	532544	ForStatement	for ( ch = 0 ; ch < channels ; ch ++ )		531880	10					
+ANR	532545	ForInit	ch = 0 ;	125:13:3694:3700	531880	0	True				
+ANR	532546	AssignmentExpression	ch = 0		531880	0		=			
+ANR	532547	Identifier	ch		531880	0					
+ANR	532548	PrimaryExpression	0		531880	1					
+ANR	532549	Condition	ch < channels	125:21:3702:3714	531880	1	True				
+ANR	532550	RelationalExpression	ch < channels		531880	0		<			
+ANR	532551	Identifier	ch		531880	0					
+ANR	532552	Identifier	channels		531880	1					
+ANR	532553	PostIncDecOperationExpression	ch ++	125:36:3717:3720	531880	2	True				
+ANR	532554	Identifier	ch		531880	0					
+ANR	532555	IncDec	++		531880	1					
+ANR	532556	CompoundStatement		123:42:3662:3662	531880	3					
+ANR	532557	ExpressionStatement	block -> bap [ ch ] = & s -> bap_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]	129:12:3792:3878	531880	0	True				
+ANR	532558	AssignmentExpression	block -> bap [ ch ] = & s -> bap_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532559	ArrayIndexing	block -> bap [ ch ]		531880	0					
+ANR	532560	PtrMemberAccess	block -> bap		531880	0					
+ANR	532561	Identifier	block		531880	0					
+ANR	532562	Identifier	bap		531880	1					
+ANR	532563	Identifier	ch		531880	1					
+ANR	532564	UnaryOperationExpression	& s -> bap_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	1					
+ANR	532565	UnaryOperator	&		531880	0					
+ANR	532566	ArrayIndexing	s -> bap_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	1					
+ANR	532567	PtrMemberAccess	s -> bap_buffer		531880	0					
+ANR	532568	Identifier	s		531880	0					
+ANR	532569	Identifier	bap_buffer		531880	1					
+ANR	532570	MultiplicativeExpression	AC3_MAX_COEFS * ( blk * channels + ch )		531880	1		*			
+ANR	532571	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532572	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532573	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532574	Identifier	blk		531880	0					
+ANR	532575	Identifier	channels		531880	1					
+ANR	532576	Identifier	ch		531880	1					
+ANR	532577	ExpressionStatement	block -> grouped_exp [ ch ] = & s -> grouped_exp_buffer [ 128 * ( blk * channels + ch ) ]	131:12:3893:3979	531880	1	True				
+ANR	532578	AssignmentExpression	block -> grouped_exp [ ch ] = & s -> grouped_exp_buffer [ 128 * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532579	ArrayIndexing	block -> grouped_exp [ ch ]		531880	0					
+ANR	532580	PtrMemberAccess	block -> grouped_exp		531880	0					
+ANR	532581	Identifier	block		531880	0					
+ANR	532582	Identifier	grouped_exp		531880	1					
+ANR	532583	Identifier	ch		531880	1					
+ANR	532584	UnaryOperationExpression	& s -> grouped_exp_buffer [ 128 * ( blk * channels + ch ) ]		531880	1					
+ANR	532585	UnaryOperator	&		531880	0					
+ANR	532586	ArrayIndexing	s -> grouped_exp_buffer [ 128 * ( blk * channels + ch ) ]		531880	1					
+ANR	532587	PtrMemberAccess	s -> grouped_exp_buffer		531880	0					
+ANR	532588	Identifier	s		531880	0					
+ANR	532589	Identifier	grouped_exp_buffer		531880	1					
+ANR	532590	MultiplicativeExpression	128 * ( blk * channels + ch )		531880	1		*			
+ANR	532591	PrimaryExpression	128		531880	0					
+ANR	532592	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532593	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532594	Identifier	blk		531880	0					
+ANR	532595	Identifier	channels		531880	1					
+ANR	532596	Identifier	ch		531880	1					
+ANR	532597	ExpressionStatement	block -> psd [ ch ] = & s -> psd_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]	133:12:3994:4080	531880	2	True				
+ANR	532598	AssignmentExpression	block -> psd [ ch ] = & s -> psd_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532599	ArrayIndexing	block -> psd [ ch ]		531880	0					
+ANR	532600	PtrMemberAccess	block -> psd		531880	0					
+ANR	532601	Identifier	block		531880	0					
+ANR	532602	Identifier	psd		531880	1					
+ANR	532603	Identifier	ch		531880	1					
+ANR	532604	UnaryOperationExpression	& s -> psd_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	1					
+ANR	532605	UnaryOperator	&		531880	0					
+ANR	532606	ArrayIndexing	s -> psd_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	1					
+ANR	532607	PtrMemberAccess	s -> psd_buffer		531880	0					
+ANR	532608	Identifier	s		531880	0					
+ANR	532609	Identifier	psd_buffer		531880	1					
+ANR	532610	MultiplicativeExpression	AC3_MAX_COEFS * ( blk * channels + ch )		531880	1		*			
+ANR	532611	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532612	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532613	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532614	Identifier	blk		531880	0					
+ANR	532615	Identifier	channels		531880	1					
+ANR	532616	Identifier	ch		531880	1					
+ANR	532617	ExpressionStatement	block -> band_psd [ ch ] = & s -> band_psd_buffer [ 64 * ( blk * channels + ch ) ]	135:12:4095:4181	531880	3	True				
+ANR	532618	AssignmentExpression	block -> band_psd [ ch ] = & s -> band_psd_buffer [ 64 * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532619	ArrayIndexing	block -> band_psd [ ch ]		531880	0					
+ANR	532620	PtrMemberAccess	block -> band_psd		531880	0					
+ANR	532621	Identifier	block		531880	0					
+ANR	532622	Identifier	band_psd		531880	1					
+ANR	532623	Identifier	ch		531880	1					
+ANR	532624	UnaryOperationExpression	& s -> band_psd_buffer [ 64 * ( blk * channels + ch ) ]		531880	1					
+ANR	532625	UnaryOperator	&		531880	0					
+ANR	532626	ArrayIndexing	s -> band_psd_buffer [ 64 * ( blk * channels + ch ) ]		531880	1					
+ANR	532627	PtrMemberAccess	s -> band_psd_buffer		531880	0					
+ANR	532628	Identifier	s		531880	0					
+ANR	532629	Identifier	band_psd_buffer		531880	1					
+ANR	532630	MultiplicativeExpression	64 * ( blk * channels + ch )		531880	1		*			
+ANR	532631	PrimaryExpression	64		531880	0					
+ANR	532632	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532633	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532634	Identifier	blk		531880	0					
+ANR	532635	Identifier	channels		531880	1					
+ANR	532636	Identifier	ch		531880	1					
+ANR	532637	ExpressionStatement	block -> mask [ ch ] = & s -> mask_buffer [ 64 * ( blk * channels + ch ) ]	137:12:4196:4282	531880	4	True				
+ANR	532638	AssignmentExpression	block -> mask [ ch ] = & s -> mask_buffer [ 64 * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532639	ArrayIndexing	block -> mask [ ch ]		531880	0					
+ANR	532640	PtrMemberAccess	block -> mask		531880	0					
+ANR	532641	Identifier	block		531880	0					
+ANR	532642	Identifier	mask		531880	1					
+ANR	532643	Identifier	ch		531880	1					
+ANR	532644	UnaryOperationExpression	& s -> mask_buffer [ 64 * ( blk * channels + ch ) ]		531880	1					
+ANR	532645	UnaryOperator	&		531880	0					
+ANR	532646	ArrayIndexing	s -> mask_buffer [ 64 * ( blk * channels + ch ) ]		531880	1					
+ANR	532647	PtrMemberAccess	s -> mask_buffer		531880	0					
+ANR	532648	Identifier	s		531880	0					
+ANR	532649	Identifier	mask_buffer		531880	1					
+ANR	532650	MultiplicativeExpression	64 * ( blk * channels + ch )		531880	1		*			
+ANR	532651	PrimaryExpression	64		531880	0					
+ANR	532652	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532653	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532654	Identifier	blk		531880	0					
+ANR	532655	Identifier	channels		531880	1					
+ANR	532656	Identifier	ch		531880	1					
+ANR	532657	ExpressionStatement	block -> qmant [ ch ] = & s -> qmant_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]	139:12:4297:4383	531880	5	True				
+ANR	532658	AssignmentExpression	block -> qmant [ ch ] = & s -> qmant_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532659	ArrayIndexing	block -> qmant [ ch ]		531880	0					
+ANR	532660	PtrMemberAccess	block -> qmant		531880	0					
+ANR	532661	Identifier	block		531880	0					
+ANR	532662	Identifier	qmant		531880	1					
+ANR	532663	Identifier	ch		531880	1					
+ANR	532664	UnaryOperationExpression	& s -> qmant_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	1					
+ANR	532665	UnaryOperator	&		531880	0					
+ANR	532666	ArrayIndexing	s -> qmant_buffer [ AC3_MAX_COEFS * ( blk * channels + ch ) ]		531880	1					
+ANR	532667	PtrMemberAccess	s -> qmant_buffer		531880	0					
+ANR	532668	Identifier	s		531880	0					
+ANR	532669	Identifier	qmant_buffer		531880	1					
+ANR	532670	MultiplicativeExpression	AC3_MAX_COEFS * ( blk * channels + ch )		531880	1		*			
+ANR	532671	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532672	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532673	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532674	Identifier	blk		531880	0					
+ANR	532675	Identifier	channels		531880	1					
+ANR	532676	Identifier	ch		531880	1					
+ANR	532677	IfStatement	if ( s -> cpl_enabled )		531880	6					
+ANR	532678	Condition	s -> cpl_enabled	141:16:4402:4415	531880	0	True				
+ANR	532679	PtrMemberAccess	s -> cpl_enabled		531880	0					
+ANR	532680	Identifier	s		531880	0					
+ANR	532681	Identifier	cpl_enabled		531880	1					
+ANR	532682	CompoundStatement		139:32:4357:4357	531880	1					
+ANR	532683	ExpressionStatement	block -> cpl_coord_exp [ ch ] = & s -> cpl_coord_exp_buffer [ 16 * ( blk * channels + ch ) ]	143:16:4437:4519	531880	0	True				
+ANR	532684	AssignmentExpression	block -> cpl_coord_exp [ ch ] = & s -> cpl_coord_exp_buffer [ 16 * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532685	ArrayIndexing	block -> cpl_coord_exp [ ch ]		531880	0					
+ANR	532686	PtrMemberAccess	block -> cpl_coord_exp		531880	0					
+ANR	532687	Identifier	block		531880	0					
+ANR	532688	Identifier	cpl_coord_exp		531880	1					
+ANR	532689	Identifier	ch		531880	1					
+ANR	532690	UnaryOperationExpression	& s -> cpl_coord_exp_buffer [ 16 * ( blk * channels + ch ) ]		531880	1					
+ANR	532691	UnaryOperator	&		531880	0					
+ANR	532692	ArrayIndexing	s -> cpl_coord_exp_buffer [ 16 * ( blk * channels + ch ) ]		531880	1					
+ANR	532693	PtrMemberAccess	s -> cpl_coord_exp_buffer		531880	0					
+ANR	532694	Identifier	s		531880	0					
+ANR	532695	Identifier	cpl_coord_exp_buffer		531880	1					
+ANR	532696	MultiplicativeExpression	16 * ( blk * channels + ch )		531880	1		*			
+ANR	532697	PrimaryExpression	16		531880	0					
+ANR	532698	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532699	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532700	Identifier	blk		531880	0					
+ANR	532701	Identifier	channels		531880	1					
+ANR	532702	Identifier	ch		531880	1					
+ANR	532703	ExpressionStatement	block -> cpl_coord_mant [ ch ] = & s -> cpl_coord_mant_buffer [ 16 * ( blk * channels + ch ) ]	145:16:4538:4620	531880	1	True				
+ANR	532704	AssignmentExpression	block -> cpl_coord_mant [ ch ] = & s -> cpl_coord_mant_buffer [ 16 * ( blk * channels + ch ) ]		531880	0		=			
+ANR	532705	ArrayIndexing	block -> cpl_coord_mant [ ch ]		531880	0					
+ANR	532706	PtrMemberAccess	block -> cpl_coord_mant		531880	0					
+ANR	532707	Identifier	block		531880	0					
+ANR	532708	Identifier	cpl_coord_mant		531880	1					
+ANR	532709	Identifier	ch		531880	1					
+ANR	532710	UnaryOperationExpression	& s -> cpl_coord_mant_buffer [ 16 * ( blk * channels + ch ) ]		531880	1					
+ANR	532711	UnaryOperator	&		531880	0					
+ANR	532712	ArrayIndexing	s -> cpl_coord_mant_buffer [ 16 * ( blk * channels + ch ) ]		531880	1					
+ANR	532713	PtrMemberAccess	s -> cpl_coord_mant_buffer		531880	0					
+ANR	532714	Identifier	s		531880	0					
+ANR	532715	Identifier	cpl_coord_mant_buffer		531880	1					
+ANR	532716	MultiplicativeExpression	16 * ( blk * channels + ch )		531880	1		*			
+ANR	532717	PrimaryExpression	16		531880	0					
+ANR	532718	AdditiveExpression	blk * channels + ch		531880	1		+			
+ANR	532719	MultiplicativeExpression	blk * channels		531880	0		*			
+ANR	532720	Identifier	blk		531880	0					
+ANR	532721	Identifier	channels		531880	1					
+ANR	532722	Identifier	ch		531880	1					
+ANR	532723	ExpressionStatement	block -> exp [ ch ] = & s -> exp_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]	153:12:4706:4798	531880	7	True				
+ANR	532724	AssignmentExpression	block -> exp [ ch ] = & s -> exp_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	0		=			
+ANR	532725	ArrayIndexing	block -> exp [ ch ]		531880	0					
+ANR	532726	PtrMemberAccess	block -> exp		531880	0					
+ANR	532727	Identifier	block		531880	0					
+ANR	532728	Identifier	exp		531880	1					
+ANR	532729	Identifier	ch		531880	1					
+ANR	532730	UnaryOperationExpression	& s -> exp_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	1					
+ANR	532731	UnaryOperator	&		531880	0					
+ANR	532732	ArrayIndexing	s -> exp_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	1					
+ANR	532733	PtrMemberAccess	s -> exp_buffer		531880	0					
+ANR	532734	Identifier	s		531880	0					
+ANR	532735	Identifier	exp_buffer		531880	1					
+ANR	532736	MultiplicativeExpression	AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk )		531880	1		*			
+ANR	532737	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532738	AdditiveExpression	AC3_MAX_BLOCKS * ch + blk		531880	1		+			
+ANR	532739	MultiplicativeExpression	AC3_MAX_BLOCKS * ch		531880	0		*			
+ANR	532740	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532741	Identifier	ch		531880	1					
+ANR	532742	Identifier	blk		531880	1					
+ANR	532743	ExpressionStatement	block -> mdct_coef [ ch ] = & s -> mdct_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]	155:12:4813:4905	531880	8	True				
+ANR	532744	AssignmentExpression	block -> mdct_coef [ ch ] = & s -> mdct_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	0		=			
+ANR	532745	ArrayIndexing	block -> mdct_coef [ ch ]		531880	0					
+ANR	532746	PtrMemberAccess	block -> mdct_coef		531880	0					
+ANR	532747	Identifier	block		531880	0					
+ANR	532748	Identifier	mdct_coef		531880	1					
+ANR	532749	Identifier	ch		531880	1					
+ANR	532750	UnaryOperationExpression	& s -> mdct_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	1					
+ANR	532751	UnaryOperator	&		531880	0					
+ANR	532752	ArrayIndexing	s -> mdct_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	1					
+ANR	532753	PtrMemberAccess	s -> mdct_coef_buffer		531880	0					
+ANR	532754	Identifier	s		531880	0					
+ANR	532755	Identifier	mdct_coef_buffer		531880	1					
+ANR	532756	MultiplicativeExpression	AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk )		531880	1		*			
+ANR	532757	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532758	AdditiveExpression	AC3_MAX_BLOCKS * ch + blk		531880	1		+			
+ANR	532759	MultiplicativeExpression	AC3_MAX_BLOCKS * ch		531880	0		*			
+ANR	532760	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532761	Identifier	ch		531880	1					
+ANR	532762	Identifier	blk		531880	1					
+ANR	532763	IfStatement	if ( CONFIG_AC3ENC_FLOAT )		531880	16					
+ANR	532764	Condition	CONFIG_AC3ENC_FLOAT	163:8:4936:4954	531880	0	True				
+ANR	532765	Identifier	CONFIG_AC3ENC_FLOAT		531880	0					
+ANR	532766	CompoundStatement		161:29:4896:4896	531880	1					
+ANR	532767	ExpressionStatement	"FF_ALLOC_OR_GOTO ( avctx , s -> fixed_coef_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> fixed_coef_buffer ) , alloc_fail )"	165:8:4968:5126	531880	0	True				
+ANR	532768	CallExpression	"FF_ALLOC_OR_GOTO ( avctx , s -> fixed_coef_buffer , AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> fixed_coef_buffer ) , alloc_fail )"		531880	0					
+ANR	532769	Callee	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532770	Identifier	FF_ALLOC_OR_GOTO		531880	0					
+ANR	532771	ArgumentList	avctx		531880	1					
+ANR	532772	Argument	avctx		531880	0					
+ANR	532773	Identifier	avctx		531880	0					
+ANR	532774	Argument	s -> fixed_coef_buffer		531880	1					
+ANR	532775	PtrMemberAccess	s -> fixed_coef_buffer		531880	0					
+ANR	532776	Identifier	s		531880	0					
+ANR	532777	Identifier	fixed_coef_buffer		531880	1					
+ANR	532778	Argument	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> fixed_coef_buffer )		531880	2					
+ANR	532779	MultiplicativeExpression	AC3_MAX_BLOCKS * channels * AC3_MAX_COEFS * sizeof ( * s -> fixed_coef_buffer )		531880	0		*			
+ANR	532780	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532781	MultiplicativeExpression	channels * AC3_MAX_COEFS * sizeof ( * s -> fixed_coef_buffer )		531880	1		*			
+ANR	532782	Identifier	channels		531880	0					
+ANR	532783	MultiplicativeExpression	AC3_MAX_COEFS * sizeof ( * s -> fixed_coef_buffer )		531880	1		*			
+ANR	532784	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532785	SizeofExpression	sizeof ( * s -> fixed_coef_buffer )		531880	1					
+ANR	532786	Sizeof	sizeof		531880	0					
+ANR	532787	UnaryOperationExpression	* s -> fixed_coef_buffer		531880	1					
+ANR	532788	UnaryOperator	*		531880	0					
+ANR	532789	PtrMemberAccess	s -> fixed_coef_buffer		531880	1					
+ANR	532790	Identifier	s		531880	0					
+ANR	532791	Identifier	fixed_coef_buffer		531880	1					
+ANR	532792	Argument	alloc_fail		531880	3					
+ANR	532793	Identifier	alloc_fail		531880	0					
+ANR	532794	ForStatement	for ( blk = 0 ; blk < AC3_MAX_BLOCKS ; blk ++ )		531880	1					
+ANR	532795	ForInit	blk = 0 ;	169:13:5142:5149	531880	0	True				
+ANR	532796	AssignmentExpression	blk = 0		531880	0		=			
+ANR	532797	Identifier	blk		531880	0					
+ANR	532798	PrimaryExpression	0		531880	1					
+ANR	532799	Condition	blk < AC3_MAX_BLOCKS	169:22:5151:5170	531880	1	True				
+ANR	532800	RelationalExpression	blk < AC3_MAX_BLOCKS		531880	0		<			
+ANR	532801	Identifier	blk		531880	0					
+ANR	532802	Identifier	AC3_MAX_BLOCKS		531880	1					
+ANR	532803	PostIncDecOperationExpression	blk ++	169:44:5173:5177	531880	2	True				
+ANR	532804	Identifier	blk		531880	0					
+ANR	532805	IncDec	++		531880	1					
+ANR	532806	CompoundStatement		169:12:5134:5167	531880	3					
+ANR	532807	IdentifierDeclStatement	AC3Block * block = & s -> blocks [ blk ] ;	171:12:5195:5228	531880	0	True				
+ANR	532808	IdentifierDecl	* block = & s -> blocks [ blk ]		531880	0					
+ANR	532809	IdentifierDeclType	AC3Block *		531880	0					
+ANR	532810	Identifier	block		531880	1					
+ANR	532811	AssignmentExpression	* block = & s -> blocks [ blk ]		531880	2		=			
+ANR	532812	Identifier	block		531880	0					
+ANR	532813	UnaryOperationExpression	& s -> blocks [ blk ]		531880	1					
+ANR	532814	UnaryOperator	&		531880	0					
+ANR	532815	ArrayIndexing	s -> blocks [ blk ]		531880	1					
+ANR	532816	PtrMemberAccess	s -> blocks		531880	0					
+ANR	532817	Identifier	s		531880	0					
+ANR	532818	Identifier	blocks		531880	1					
+ANR	532819	Identifier	blk		531880	1					
+ANR	532820	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> fixed_coef , channels * sizeof ( * block -> fixed_coef ) , alloc_fail )"	173:12:5243:5368	531880	1	True				
+ANR	532821	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> fixed_coef , channels * sizeof ( * block -> fixed_coef ) , alloc_fail )"		531880	0					
+ANR	532822	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532823	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532824	ArgumentList	avctx		531880	1					
+ANR	532825	Argument	avctx		531880	0					
+ANR	532826	Identifier	avctx		531880	0					
+ANR	532827	Argument	block -> fixed_coef		531880	1					
+ANR	532828	PtrMemberAccess	block -> fixed_coef		531880	0					
+ANR	532829	Identifier	block		531880	0					
+ANR	532830	Identifier	fixed_coef		531880	1					
+ANR	532831	Argument	channels * sizeof ( * block -> fixed_coef )		531880	2					
+ANR	532832	MultiplicativeExpression	channels * sizeof ( * block -> fixed_coef )		531880	0		*			
+ANR	532833	Identifier	channels		531880	0					
+ANR	532834	SizeofExpression	sizeof ( * block -> fixed_coef )		531880	1					
+ANR	532835	Sizeof	sizeof		531880	0					
+ANR	532836	UnaryOperationExpression	* block -> fixed_coef		531880	1					
+ANR	532837	UnaryOperator	*		531880	0					
+ANR	532838	PtrMemberAccess	block -> fixed_coef		531880	1					
+ANR	532839	Identifier	block		531880	0					
+ANR	532840	Identifier	fixed_coef		531880	1					
+ANR	532841	Argument	alloc_fail		531880	3					
+ANR	532842	Identifier	alloc_fail		531880	0					
+ANR	532843	ForStatement	for ( ch = 0 ; ch < channels ; ch ++ )		531880	2					
+ANR	532844	ForInit	ch = 0 ;	177:17:5388:5394	531880	0	True				
+ANR	532845	AssignmentExpression	ch = 0		531880	0		=			
+ANR	532846	Identifier	ch		531880	0					
+ANR	532847	PrimaryExpression	0		531880	1					
+ANR	532848	Condition	ch < channels	177:25:5396:5408	531880	1	True				
+ANR	532849	RelationalExpression	ch < channels		531880	0		<			
+ANR	532850	Identifier	ch		531880	0					
+ANR	532851	Identifier	channels		531880	1					
+ANR	532852	PostIncDecOperationExpression	ch ++	177:40:5411:5414	531880	2	True				
+ANR	532853	Identifier	ch		531880	0					
+ANR	532854	IncDec	++		531880	1					
+ANR	532855	ExpressionStatement	block -> fixed_coef [ ch ] = & s -> fixed_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]	179:16:5434:5524	531880	3	True				
+ANR	532856	AssignmentExpression	block -> fixed_coef [ ch ] = & s -> fixed_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	0		=			
+ANR	532857	ArrayIndexing	block -> fixed_coef [ ch ]		531880	0					
+ANR	532858	PtrMemberAccess	block -> fixed_coef		531880	0					
+ANR	532859	Identifier	block		531880	0					
+ANR	532860	Identifier	fixed_coef		531880	1					
+ANR	532861	Identifier	ch		531880	1					
+ANR	532862	UnaryOperationExpression	& s -> fixed_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	1					
+ANR	532863	UnaryOperator	&		531880	0					
+ANR	532864	ArrayIndexing	s -> fixed_coef_buffer [ AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk ) ]		531880	1					
+ANR	532865	PtrMemberAccess	s -> fixed_coef_buffer		531880	0					
+ANR	532866	Identifier	s		531880	0					
+ANR	532867	Identifier	fixed_coef_buffer		531880	1					
+ANR	532868	MultiplicativeExpression	AC3_MAX_COEFS * ( AC3_MAX_BLOCKS * ch + blk )		531880	1		*			
+ANR	532869	Identifier	AC3_MAX_COEFS		531880	0					
+ANR	532870	AdditiveExpression	AC3_MAX_BLOCKS * ch + blk		531880	1		+			
+ANR	532871	MultiplicativeExpression	AC3_MAX_BLOCKS * ch		531880	0		*			
+ANR	532872	Identifier	AC3_MAX_BLOCKS		531880	0					
+ANR	532873	Identifier	ch		531880	1					
+ANR	532874	Identifier	blk		531880	1					
+ANR	532875	ElseStatement	else		531880	0					
+ANR	532876	CompoundStatement		181:11:5488:5488	531880	0					
+ANR	532877	ForStatement	for ( blk = 0 ; blk < AC3_MAX_BLOCKS ; blk ++ )		531880	0					
+ANR	532878	ForInit	blk = 0 ;	185:13:5565:5572	531880	0	True				
+ANR	532879	AssignmentExpression	blk = 0		531880	0		=			
+ANR	532880	Identifier	blk		531880	0					
+ANR	532881	PrimaryExpression	0		531880	1					
+ANR	532882	Condition	blk < AC3_MAX_BLOCKS	185:22:5574:5593	531880	1	True				
+ANR	532883	RelationalExpression	blk < AC3_MAX_BLOCKS		531880	0		<			
+ANR	532884	Identifier	blk		531880	0					
+ANR	532885	Identifier	AC3_MAX_BLOCKS		531880	1					
+ANR	532886	PostIncDecOperationExpression	blk ++	185:44:5596:5600	531880	2	True				
+ANR	532887	Identifier	blk		531880	0					
+ANR	532888	IncDec	++		531880	1					
+ANR	532889	CompoundStatement		185:12:5557:5590	531880	3					
+ANR	532890	IdentifierDeclStatement	AC3Block * block = & s -> blocks [ blk ] ;	187:12:5618:5651	531880	0	True				
+ANR	532891	IdentifierDecl	* block = & s -> blocks [ blk ]		531880	0					
+ANR	532892	IdentifierDeclType	AC3Block *		531880	0					
+ANR	532893	Identifier	block		531880	1					
+ANR	532894	AssignmentExpression	* block = & s -> blocks [ blk ]		531880	2		=			
+ANR	532895	Identifier	block		531880	0					
+ANR	532896	UnaryOperationExpression	& s -> blocks [ blk ]		531880	1					
+ANR	532897	UnaryOperator	&		531880	0					
+ANR	532898	ArrayIndexing	s -> blocks [ blk ]		531880	1					
+ANR	532899	PtrMemberAccess	s -> blocks		531880	0					
+ANR	532900	Identifier	s		531880	0					
+ANR	532901	Identifier	blocks		531880	1					
+ANR	532902	Identifier	blk		531880	1					
+ANR	532903	ExpressionStatement	"FF_ALLOCZ_OR_GOTO ( avctx , block -> fixed_coef , channels * sizeof ( * block -> fixed_coef ) , alloc_fail )"	189:12:5666:5791	531880	1	True				
+ANR	532904	CallExpression	"FF_ALLOCZ_OR_GOTO ( avctx , block -> fixed_coef , channels * sizeof ( * block -> fixed_coef ) , alloc_fail )"		531880	0					
+ANR	532905	Callee	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532906	Identifier	FF_ALLOCZ_OR_GOTO		531880	0					
+ANR	532907	ArgumentList	avctx		531880	1					
+ANR	532908	Argument	avctx		531880	0					
+ANR	532909	Identifier	avctx		531880	0					
+ANR	532910	Argument	block -> fixed_coef		531880	1					
+ANR	532911	PtrMemberAccess	block -> fixed_coef		531880	0					
+ANR	532912	Identifier	block		531880	0					
+ANR	532913	Identifier	fixed_coef		531880	1					
+ANR	532914	Argument	channels * sizeof ( * block -> fixed_coef )		531880	2					
+ANR	532915	MultiplicativeExpression	channels * sizeof ( * block -> fixed_coef )		531880	0		*			
+ANR	532916	Identifier	channels		531880	0					
+ANR	532917	SizeofExpression	sizeof ( * block -> fixed_coef )		531880	1					
+ANR	532918	Sizeof	sizeof		531880	0					
+ANR	532919	UnaryOperationExpression	* block -> fixed_coef		531880	1					
+ANR	532920	UnaryOperator	*		531880	0					
+ANR	532921	PtrMemberAccess	block -> fixed_coef		531880	1					
+ANR	532922	Identifier	block		531880	0					
+ANR	532923	Identifier	fixed_coef		531880	1					
+ANR	532924	Argument	alloc_fail		531880	3					
+ANR	532925	Identifier	alloc_fail		531880	0					
+ANR	532926	ForStatement	for ( ch = 0 ; ch < channels ; ch ++ )		531880	2					
+ANR	532927	ForInit	ch = 0 ;	193:17:5811:5817	531880	0	True				
+ANR	532928	AssignmentExpression	ch = 0		531880	0		=			
+ANR	532929	Identifier	ch		531880	0					
+ANR	532930	PrimaryExpression	0		531880	1					
+ANR	532931	Condition	ch < channels	193:25:5819:5831	531880	1	True				
+ANR	532932	RelationalExpression	ch < channels		531880	0		<			
+ANR	532933	Identifier	ch		531880	0					
+ANR	532934	Identifier	channels		531880	1					
+ANR	532935	PostIncDecOperationExpression	ch ++	193:40:5834:5837	531880	2	True				
+ANR	532936	Identifier	ch		531880	0					
+ANR	532937	IncDec	++		531880	1					
+ANR	532938	ExpressionStatement	block -> fixed_coef [ ch ] = ( int32_t * ) block -> mdct_coef [ ch ]	195:16:5857:5912	531880	3	True				
+ANR	532939	AssignmentExpression	block -> fixed_coef [ ch ] = ( int32_t * ) block -> mdct_coef [ ch ]		531880	0		=			
+ANR	532940	ArrayIndexing	block -> fixed_coef [ ch ]		531880	0					
+ANR	532941	PtrMemberAccess	block -> fixed_coef		531880	0					
+ANR	532942	Identifier	block		531880	0					
+ANR	532943	Identifier	fixed_coef		531880	1					
+ANR	532944	Identifier	ch		531880	1					
+ANR	532945	CastExpression	( int32_t * ) block -> mdct_coef [ ch ]		531880	1					
+ANR	532946	CastTarget	int32_t *		531880	0					
+ANR	532947	ArrayIndexing	block -> mdct_coef [ ch ]		531880	1					
+ANR	532948	PtrMemberAccess	block -> mdct_coef		531880	0					
+ANR	532949	Identifier	block		531880	0					
+ANR	532950	Identifier	mdct_coef		531880	1					
+ANR	532951	Identifier	ch		531880	1					
+ANR	532952	ReturnStatement	return 0 ;	203:4:5939:5947	531880	17	True				
+ANR	532953	PrimaryExpression	0		531880	0					
+ANR	532954	Label	alloc_fail :	205:0:5950:5960	531880	18	True				
+ANR	532955	Identifier	alloc_fail		531880	0					
+ANR	532956	ReturnStatement	return AVERROR ( ENOMEM ) ;	207:4:5967:5989	531880	19	True				
+ANR	532957	CallExpression	AVERROR ( ENOMEM )		531880	0					
+ANR	532958	Callee	AVERROR		531880	0					
+ANR	532959	Identifier	AVERROR		531880	0					
+ANR	532960	ArgumentList	ENOMEM		531880	1					
+ANR	532961	Argument	ENOMEM		531880	0					
+ANR	532962	Identifier	ENOMEM		531880	0					
+ANR	532963	ReturnType	static av_cold int		531880	1					
+ANR	532964	Identifier	allocate_buffers		531880	2					
+ANR	532965	ParameterList	AVCodecContext * avctx		531880	3					
+ANR	532966	Parameter	AVCodecContext * avctx	1:36:36:56	531880	0	True				
+ANR	532967	ParameterType	AVCodecContext *		531880	0					
+ANR	532968	Identifier	avctx		531880	1					
+ANR	532969	CFGEntryNode	ENTRY		531880		True				
+ANR	532970	CFGExitNode	EXIT		531880		True				
+ANR	532971	Symbol	ENOMEM		531880						
+ANR	532972	Symbol	AC3_FRAME_SIZE		531880						
+ANR	532973	Symbol	* ch		531880						
+ANR	532974	Symbol	s -> planar_samples		531880						
+ANR	532975	Symbol	block -> qmant		531880						
+ANR	532976	Symbol	s -> cpl_enabled		531880						
+ANR	532977	Symbol	* block -> mdct_coef		531880						
+ANR	532978	Symbol	AC3_MAX_BLOCKS		531880						
+ANR	532979	Symbol	s -> grouped_exp_buffer		531880						
+ANR	532980	Symbol	block -> cpl_coord_mant		531880						
+ANR	532981	Symbol	* s -> band_psd_buffer		531880						
+ANR	532982	Symbol	s -> band_psd_buffer		531880						
+ANR	532983	Symbol	block		531880						
+ANR	532984	Symbol	* block -> qmant		531880						
+ANR	532985	Symbol	s -> qmant_buffer		531880						
+ANR	532986	Symbol	* s -> qmant_buffer		531880						
+ANR	532987	Symbol	* s -> cpl_coord_mant_buffer		531880						
+ANR	532988	Symbol	* * s -> planar_samples		531880						
+ANR	532989	Symbol	* s -> fixed_coef_buffer		531880						
+ANR	532990	Symbol	s -> cpl_coord_exp_buffer		531880						
+ANR	532991	Symbol	s -> fixed_coef_buffer		531880						
+ANR	532992	Symbol	* * * s		531880						
+ANR	532993	Symbol	* block -> mask		531880						
+ANR	532994	Symbol	block -> psd		531880						
+ANR	532995	Symbol	* avctx		531880						
+ANR	532996	Symbol	channels		531880						
+ANR	532997	Symbol	alloc_fail		531880						
+ANR	532998	Symbol	* s -> grouped_exp_buffer		531880						
+ANR	532999	Symbol	s -> cpl_coord_mant_buffer		531880						
+ANR	533000	Symbol	* block -> cpl_coord_mant		531880						
+ANR	533001	Symbol	s -> mdct_coef_buffer		531880						
+ANR	533002	Symbol	* s -> cpl_coord_exp_buffer		531880						
+ANR	533003	Symbol	* block -> grouped_exp		531880						
+ANR	533004	Symbol	* s -> psd_buffer		531880						
+ANR	533005	Symbol	* block -> psd		531880						
+ANR	533006	Symbol	* block -> band_psd		531880						
+ANR	533007	Symbol	s -> blocks		531880						
+ANR	533008	Symbol	s -> channels		531880						
+ANR	533009	Symbol	* s -> planar_samples		531880						
+ANR	533010	Symbol	block -> mask		531880						
+ANR	533011	Symbol	s -> exp_buffer		531880						
+ANR	533012	Symbol	block -> mdct_coef		531880						
+ANR	533013	Symbol	block -> exp		531880						
+ANR	533014	Symbol	AC3_MAX_COEFS		531880						
+ANR	533015	Symbol	CONFIG_AC3ENC_FLOAT		531880						
+ANR	533016	Symbol	* * s		531880						
+ANR	533017	Symbol	s -> bap_buffer		531880						
+ANR	533018	Symbol	block -> fixed_coef		531880						
+ANR	533019	Symbol	* block -> cpl_coord_exp		531880						
+ANR	533020	Symbol	* s -> mdct_coef_buffer		531880						
+ANR	533021	Symbol	avctx		531880						
+ANR	533022	Symbol	blk		531880						
+ANR	533023	Symbol	* s -> mask_buffer		531880						
+ANR	533024	Symbol	block -> bap		531880						
+ANR	533025	Symbol	ch		531880						
+ANR	533026	Symbol	block -> grouped_exp		531880						
+ANR	533027	Symbol	s -> mask_buffer		531880						
+ANR	533028	Symbol	s -> bap1_buffer		531880						
+ANR	533029	Symbol	* s -> exp_buffer		531880						
+ANR	533030	Symbol	avctx -> priv_data		531880						
+ANR	533031	Symbol	s -> psd_buffer		531880						
+ANR	533032	Symbol	* block		531880						
+ANR	533033	Symbol	* block -> exp		531880						
+ANR	533034	Symbol	* s -> bap1_buffer		531880						
+ANR	533035	Symbol	s		531880						
+ANR	533036	Symbol	* block -> bap		531880						
+ANR	533037	Symbol	block -> cpl_coord_exp		531880						
+ANR	533038	Symbol	AC3_BLOCK_SIZE		531880						
+ANR	533039	Symbol	* s -> bap_buffer		531880						
+ANR	533040	Symbol	* * block		531880						
+ANR	533041	Symbol	AVERROR		531880						
+ANR	533042	Symbol	* s		531880						
+ANR	533043	Symbol	block -> band_psd		531880						
+ANR	533044	Symbol	* block -> fixed_coef		531880						

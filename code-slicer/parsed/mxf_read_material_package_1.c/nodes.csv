@@ -1,0 +1,136 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5881336	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mxf_read_material_package_1.c								
+ANR	5881337	Function	mxf_read_material_package	1:0:0:659							
+ANR	5881338	FunctionDef	"mxf_read_material_package (void * arg , AVIOContext * pb , int tag , int size , UID uid)"		5881337	0					
+ANR	5881339	CompoundStatement		3:0:94:659	5881337	0					
+ANR	5881340	IdentifierDeclStatement	MXFPackage * package = arg ;	5:4:101:126	5881337	0	True				
+ANR	5881341	IdentifierDecl	* package = arg		5881337	0					
+ANR	5881342	IdentifierDeclType	MXFPackage *		5881337	0					
+ANR	5881343	Identifier	package		5881337	1					
+ANR	5881344	AssignmentExpression	* package = arg		5881337	2		=			
+ANR	5881345	Identifier	arg		5881337	0					
+ANR	5881346	Identifier	arg		5881337	1					
+ANR	5881347	SwitchStatement	switch ( tag )		5881337	1					
+ANR	5881348	Condition	tag	7:11:140:142	5881337	0	True				
+ANR	5881349	Identifier	tag		5881337	0					
+ANR	5881350	CompoundStatement		5:16:50:50	5881337	1					
+ANR	5881351	Label	case 0x4403 :	9:4:152:163	5881337	0	True				
+ANR	5881352	ExpressionStatement	package -> tracks_count = avio_rb32 ( pb )	11:8:174:211	5881337	1	True				
+ANR	5881353	AssignmentExpression	package -> tracks_count = avio_rb32 ( pb )		5881337	0		=			
+ANR	5881354	PtrMemberAccess	package -> tracks_count		5881337	0					
+ANR	5881355	Identifier	package		5881337	0					
+ANR	5881356	Identifier	tracks_count		5881337	1					
+ANR	5881357	CallExpression	avio_rb32 ( pb )		5881337	1					
+ANR	5881358	Callee	avio_rb32		5881337	0					
+ANR	5881359	Identifier	avio_rb32		5881337	0					
+ANR	5881360	ArgumentList	pb		5881337	1					
+ANR	5881361	Argument	pb		5881337	0					
+ANR	5881362	Identifier	pb		5881337	0					
+ANR	5881363	IfStatement	if ( package -> tracks_count >= UINT_MAX / sizeof ( UID ) )		5881337	2					
+ANR	5881364	Condition	package -> tracks_count >= UINT_MAX / sizeof ( UID )	13:12:226:272	5881337	0	True				
+ANR	5881365	RelationalExpression	package -> tracks_count >= UINT_MAX / sizeof ( UID )		5881337	0		>=			
+ANR	5881366	PtrMemberAccess	package -> tracks_count		5881337	0					
+ANR	5881367	Identifier	package		5881337	0					
+ANR	5881368	Identifier	tracks_count		5881337	1					
+ANR	5881369	MultiplicativeExpression	UINT_MAX / sizeof ( UID )		5881337	1		/			
+ANR	5881370	Identifier	UINT_MAX		5881337	0					
+ANR	5881371	SizeofExpression	sizeof ( UID )		5881337	1					
+ANR	5881372	Sizeof	sizeof		5881337	0					
+ANR	5881373	SizeofOperand	UID		5881337	1					
+ANR	5881374	ReturnStatement	return - 1 ;	15:12:288:297	5881337	1	True				
+ANR	5881375	UnaryOperationExpression	- 1		5881337	0					
+ANR	5881376	UnaryOperator	-		5881337	0					
+ANR	5881377	PrimaryExpression	1		5881337	1					
+ANR	5881378	ExpressionStatement	package -> tracks_refs = av_malloc ( package -> tracks_count * sizeof ( UID ) )	17:8:308:377	5881337	3	True				
+ANR	5881379	AssignmentExpression	package -> tracks_refs = av_malloc ( package -> tracks_count * sizeof ( UID ) )		5881337	0		=			
+ANR	5881380	PtrMemberAccess	package -> tracks_refs		5881337	0					
+ANR	5881381	Identifier	package		5881337	0					
+ANR	5881382	Identifier	tracks_refs		5881337	1					
+ANR	5881383	CallExpression	av_malloc ( package -> tracks_count * sizeof ( UID ) )		5881337	1					
+ANR	5881384	Callee	av_malloc		5881337	0					
+ANR	5881385	Identifier	av_malloc		5881337	0					
+ANR	5881386	ArgumentList	package -> tracks_count * sizeof ( UID )		5881337	1					
+ANR	5881387	Argument	package -> tracks_count * sizeof ( UID )		5881337	0					
+ANR	5881388	MultiplicativeExpression	package -> tracks_count * sizeof ( UID )		5881337	0		*			
+ANR	5881389	PtrMemberAccess	package -> tracks_count		5881337	0					
+ANR	5881390	Identifier	package		5881337	0					
+ANR	5881391	Identifier	tracks_count		5881337	1					
+ANR	5881392	SizeofExpression	sizeof ( UID )		5881337	1					
+ANR	5881393	Sizeof	sizeof		5881337	0					
+ANR	5881394	SizeofOperand	UID		5881337	1					
+ANR	5881395	IfStatement	if ( ! package -> tracks_refs )		5881337	4					
+ANR	5881396	Condition	! package -> tracks_refs	19:12:392:412	5881337	0	True				
+ANR	5881397	UnaryOperationExpression	! package -> tracks_refs		5881337	0					
+ANR	5881398	UnaryOperator	!		5881337	0					
+ANR	5881399	PtrMemberAccess	package -> tracks_refs		5881337	1					
+ANR	5881400	Identifier	package		5881337	0					
+ANR	5881401	Identifier	tracks_refs		5881337	1					
+ANR	5881402	ReturnStatement	return - 1 ;	21:12:428:437	5881337	1	True				
+ANR	5881403	UnaryOperationExpression	- 1		5881337	0					
+ANR	5881404	UnaryOperator	-		5881337	0					
+ANR	5881405	PrimaryExpression	1		5881337	1					
+ANR	5881406	ExpressionStatement	"avio_skip ( pb , 4 )"	23:8:448:464	5881337	5	True				
+ANR	5881407	CallExpression	"avio_skip ( pb , 4 )"		5881337	0					
+ANR	5881408	Callee	avio_skip		5881337	0					
+ANR	5881409	Identifier	avio_skip		5881337	0					
+ANR	5881410	ArgumentList	pb		5881337	1					
+ANR	5881411	Argument	pb		5881337	0					
+ANR	5881412	Identifier	pb		5881337	0					
+ANR	5881413	Argument	4		5881337	1					
+ANR	5881414	PrimaryExpression	4		5881337	0					
+ANR	5881415	ExpressionStatement	"avio_read ( pb , ( uint8_t * ) package -> tracks_refs , package -> tracks_count * sizeof ( UID ) )"	25:8:535:618	5881337	6	True				
+ANR	5881416	CallExpression	"avio_read ( pb , ( uint8_t * ) package -> tracks_refs , package -> tracks_count * sizeof ( UID ) )"		5881337	0					
+ANR	5881417	Callee	avio_read		5881337	0					
+ANR	5881418	Identifier	avio_read		5881337	0					
+ANR	5881419	ArgumentList	pb		5881337	1					
+ANR	5881420	Argument	pb		5881337	0					
+ANR	5881421	Identifier	pb		5881337	0					
+ANR	5881422	Argument	( uint8_t * ) package -> tracks_refs		5881337	1					
+ANR	5881423	CastExpression	( uint8_t * ) package -> tracks_refs		5881337	0					
+ANR	5881424	CastTarget	uint8_t *		5881337	0					
+ANR	5881425	PtrMemberAccess	package -> tracks_refs		5881337	1					
+ANR	5881426	Identifier	package		5881337	0					
+ANR	5881427	Identifier	tracks_refs		5881337	1					
+ANR	5881428	Argument	package -> tracks_count * sizeof ( UID )		5881337	2					
+ANR	5881429	MultiplicativeExpression	package -> tracks_count * sizeof ( UID )		5881337	0		*			
+ANR	5881430	PtrMemberAccess	package -> tracks_count		5881337	0					
+ANR	5881431	Identifier	package		5881337	0					
+ANR	5881432	Identifier	tracks_count		5881337	1					
+ANR	5881433	SizeofExpression	sizeof ( UID )		5881337	1					
+ANR	5881434	Sizeof	sizeof		5881337	0					
+ANR	5881435	SizeofOperand	UID		5881337	1					
+ANR	5881436	BreakStatement	break ;	27:8:629:634	5881337	7	True				
+ANR	5881437	ReturnStatement	return 0 ;	31:4:648:656	5881337	2	True				
+ANR	5881438	PrimaryExpression	0		5881337	0					
+ANR	5881439	ReturnType	static int		5881337	1					
+ANR	5881440	Identifier	mxf_read_material_package		5881337	2					
+ANR	5881441	ParameterList	"void * arg , AVIOContext * pb , int tag , int size , UID uid"		5881337	3					
+ANR	5881442	Parameter	void * arg	1:37:37:45	5881337	0	True				
+ANR	5881443	ParameterType	void *		5881337	0					
+ANR	5881444	Identifier	arg		5881337	1					
+ANR	5881445	Parameter	AVIOContext * pb	1:48:48:62	5881337	1	True				
+ANR	5881446	ParameterType	AVIOContext *		5881337	0					
+ANR	5881447	Identifier	pb		5881337	1					
+ANR	5881448	Parameter	int tag	1:65:65:71	5881337	2	True				
+ANR	5881449	ParameterType	int		5881337	0					
+ANR	5881450	Identifier	tag		5881337	1					
+ANR	5881451	Parameter	int size	1:74:74:81	5881337	3	True				
+ANR	5881452	ParameterType	int		5881337	0					
+ANR	5881453	Identifier	size		5881337	1					
+ANR	5881454	Parameter	UID uid	1:84:84:90	5881337	4	True				
+ANR	5881455	ParameterType	UID		5881337	0					
+ANR	5881456	Identifier	uid		5881337	1					
+ANR	5881457	CFGEntryNode	ENTRY		5881337		True				
+ANR	5881458	CFGExitNode	EXIT		5881337		True				
+ANR	5881459	Symbol	av_malloc		5881337						
+ANR	5881460	Symbol	uid		5881337						
+ANR	5881461	Symbol	pb		5881337						
+ANR	5881462	Symbol	package		5881337						
+ANR	5881463	Symbol	avio_rb32		5881337						
+ANR	5881464	Symbol	size		5881337						
+ANR	5881465	Symbol	* package		5881337						
+ANR	5881466	Symbol	arg		5881337						
+ANR	5881467	Symbol	package -> tracks_count		5881337						
+ANR	5881468	Symbol	package -> tracks_refs		5881337						
+ANR	5881469	Symbol	tag		5881337						
+ANR	5881470	Symbol	UINT_MAX		5881337						

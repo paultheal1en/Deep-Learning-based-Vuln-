@@ -1,0 +1,413 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4080179	File	/home/p4ultr4n/workplace/ReVeal/raw_code/gem_write_01_0.c								
+ANR	4080180	Function	gem_write	1:0:0:2571							
+ANR	4080181	FunctionDef	"gem_write (void * opaque , hwaddr offset , uint64_t val , unsigned size)"		4080180	0					
+ANR	4080182	CompoundStatement		5:0:90:2571	4080180	0					
+ANR	4080183	IdentifierDeclStatement	GemState * s = ( GemState * ) opaque ;	7:4:97:129	4080180	0	True				
+ANR	4080184	IdentifierDecl	* s = ( GemState * ) opaque		4080180	0					
+ANR	4080185	IdentifierDeclType	GemState *		4080180	0					
+ANR	4080186	Identifier	s		4080180	1					
+ANR	4080187	AssignmentExpression	* s = ( GemState * ) opaque		4080180	2		=			
+ANR	4080188	Identifier	s		4080180	0					
+ANR	4080189	CastExpression	( GemState * ) opaque		4080180	1					
+ANR	4080190	CastTarget	GemState *		4080180	0					
+ANR	4080191	Identifier	opaque		4080180	1					
+ANR	4080192	IdentifierDeclStatement	uint32_t readonly ;	9:4:136:153	4080180	1	True				
+ANR	4080193	IdentifierDecl	readonly		4080180	0					
+ANR	4080194	IdentifierDeclType	uint32_t		4080180	0					
+ANR	4080195	Identifier	readonly		4080180	1					
+ANR	4080196	ExpressionStatement	"DB_PRINT ( ""offset: 0x%04x write: 0x%08x "" , ( unsigned ) offset , ( unsigned ) val )"	13:4:162:236	4080180	2	True				
+ANR	4080197	CallExpression	"DB_PRINT ( ""offset: 0x%04x write: 0x%08x "" , ( unsigned ) offset , ( unsigned ) val )"		4080180	0					
+ANR	4080198	Callee	DB_PRINT		4080180	0					
+ANR	4080199	Identifier	DB_PRINT		4080180	0					
+ANR	4080200	ArgumentList	"""offset: 0x%04x write: 0x%08x """		4080180	1					
+ANR	4080201	Argument	"""offset: 0x%04x write: 0x%08x """		4080180	0					
+ANR	4080202	PrimaryExpression	"""offset: 0x%04x write: 0x%08x """		4080180	0					
+ANR	4080203	Argument	( unsigned ) offset		4080180	1					
+ANR	4080204	CastExpression	( unsigned ) offset		4080180	0					
+ANR	4080205	CastTarget	unsigned		4080180	0					
+ANR	4080206	Identifier	offset		4080180	1					
+ANR	4080207	Argument	( unsigned ) val		4080180	2					
+ANR	4080208	CastExpression	( unsigned ) val		4080180	0					
+ANR	4080209	CastTarget	unsigned		4080180	0					
+ANR	4080210	Identifier	val		4080180	1					
+ANR	4080211	ExpressionStatement	offset >>= 2	15:4:243:255	4080180	3	True				
+ANR	4080212	AssignmentExpression	offset >>= 2		4080180	0		>>=			
+ANR	4080213	Identifier	offset		4080180	0					
+ANR	4080214	PrimaryExpression	2		4080180	1					
+ANR	4080215	ExpressionStatement	val &= ~ ( s -> regs_ro [ offset ] )	21:4:322:350	4080180	4	True				
+ANR	4080216	AssignmentExpression	val &= ~ ( s -> regs_ro [ offset ] )		4080180	0		&=			
+ANR	4080217	Identifier	val		4080180	0					
+ANR	4080218	UnaryOperationExpression	~ ( s -> regs_ro [ offset ] )		4080180	1					
+ANR	4080219	UnaryOperator	~		4080180	0					
+ANR	4080220	ArrayIndexing	s -> regs_ro [ offset ]		4080180	1					
+ANR	4080221	PtrMemberAccess	s -> regs_ro		4080180	0					
+ANR	4080222	Identifier	s		4080180	0					
+ANR	4080223	Identifier	regs_ro		4080180	1					
+ANR	4080224	Identifier	offset		4080180	1					
+ANR	4080225	ExpressionStatement	readonly = s -> regs [ offset ] & ( s -> regs_ro [ offset ] | s -> regs_w1c [ offset ] )	25:4:429:500	4080180	5	True				
+ANR	4080226	AssignmentExpression	readonly = s -> regs [ offset ] & ( s -> regs_ro [ offset ] | s -> regs_w1c [ offset ] )		4080180	0		=			
+ANR	4080227	Identifier	readonly		4080180	0					
+ANR	4080228	BitAndExpression	s -> regs [ offset ] & ( s -> regs_ro [ offset ] | s -> regs_w1c [ offset ] )		4080180	1		&			
+ANR	4080229	ArrayIndexing	s -> regs [ offset ]		4080180	0					
+ANR	4080230	PtrMemberAccess	s -> regs		4080180	0					
+ANR	4080231	Identifier	s		4080180	0					
+ANR	4080232	Identifier	regs		4080180	1					
+ANR	4080233	Identifier	offset		4080180	1					
+ANR	4080234	InclusiveOrExpression	s -> regs_ro [ offset ] | s -> regs_w1c [ offset ]		4080180	1		|			
+ANR	4080235	ArrayIndexing	s -> regs_ro [ offset ]		4080180	0					
+ANR	4080236	PtrMemberAccess	s -> regs_ro		4080180	0					
+ANR	4080237	Identifier	s		4080180	0					
+ANR	4080238	Identifier	regs_ro		4080180	1					
+ANR	4080239	Identifier	offset		4080180	1					
+ANR	4080240	ArrayIndexing	s -> regs_w1c [ offset ]		4080180	1					
+ANR	4080241	PtrMemberAccess	s -> regs_w1c		4080180	0					
+ANR	4080242	Identifier	s		4080180	0					
+ANR	4080243	Identifier	regs_w1c		4080180	1					
+ANR	4080244	Identifier	offset		4080180	1					
+ANR	4080245	ExpressionStatement	s -> regs [ offset ] = ( val & ~s -> regs_w1c [ offset ] ) | readonly	31:4:557:614	4080180	6	True				
+ANR	4080246	AssignmentExpression	s -> regs [ offset ] = ( val & ~s -> regs_w1c [ offset ] ) | readonly		4080180	0		=			
+ANR	4080247	ArrayIndexing	s -> regs [ offset ]		4080180	0					
+ANR	4080248	PtrMemberAccess	s -> regs		4080180	0					
+ANR	4080249	Identifier	s		4080180	0					
+ANR	4080250	Identifier	regs		4080180	1					
+ANR	4080251	Identifier	offset		4080180	1					
+ANR	4080252	InclusiveOrExpression	( val & ~s -> regs_w1c [ offset ] ) | readonly		4080180	1		|			
+ANR	4080253	BitAndExpression	val & ~s -> regs_w1c [ offset ]		4080180	0		&			
+ANR	4080254	Identifier	val		4080180	0					
+ANR	4080255	ArrayIndexing	~s -> regs_w1c [ offset ]		4080180	1					
+ANR	4080256	PtrMemberAccess	~s -> regs_w1c		4080180	0					
+ANR	4080257	Identifier	~s		4080180	0					
+ANR	4080258	Identifier	regs_w1c		4080180	1					
+ANR	4080259	Identifier	offset		4080180	1					
+ANR	4080260	Identifier	readonly		4080180	1					
+ANR	4080261	ExpressionStatement	s -> regs [ offset ] &= ~ ( s -> regs_w1c [ offset ] & val )	37:4:641:688	4080180	7	True				
+ANR	4080262	AssignmentExpression	s -> regs [ offset ] &= ~ ( s -> regs_w1c [ offset ] & val )		4080180	0		&=			
+ANR	4080263	ArrayIndexing	s -> regs [ offset ]		4080180	0					
+ANR	4080264	PtrMemberAccess	s -> regs		4080180	0					
+ANR	4080265	Identifier	s		4080180	0					
+ANR	4080266	Identifier	regs		4080180	1					
+ANR	4080267	Identifier	offset		4080180	1					
+ANR	4080268	UnaryOperationExpression	~ ( s -> regs_w1c [ offset ] & val )		4080180	1					
+ANR	4080269	UnaryOperator	~		4080180	0					
+ANR	4080270	BitAndExpression	s -> regs_w1c [ offset ] & val		4080180	1		&			
+ANR	4080271	ArrayIndexing	s -> regs_w1c [ offset ]		4080180	0					
+ANR	4080272	PtrMemberAccess	s -> regs_w1c		4080180	0					
+ANR	4080273	Identifier	s		4080180	0					
+ANR	4080274	Identifier	regs_w1c		4080180	1					
+ANR	4080275	Identifier	offset		4080180	1					
+ANR	4080276	Identifier	val		4080180	1					
+ANR	4080277	SwitchStatement	switch ( offset )		4080180	8					
+ANR	4080278	Condition	offset	43:12:751:756	4080180	0	True				
+ANR	4080279	Identifier	offset		4080180	0					
+ANR	4080280	CompoundStatement		39:20:668:668	4080180	1					
+ANR	4080281	Label	case GEM_NWCTRL :	45:4:766:781	4080180	0	True				
+ANR	4080282	Identifier	GEM_NWCTRL		4080180	0					
+ANR	4080283	IfStatement	if ( val & GEM_NWCTRL_RXENA )		4080180	1					
+ANR	4080284	Condition	val & GEM_NWCTRL_RXENA	47:12:796:817	4080180	0	True				
+ANR	4080285	BitAndExpression	val & GEM_NWCTRL_RXENA		4080180	0		&			
+ANR	4080286	Identifier	val		4080180	0					
+ANR	4080287	Identifier	GEM_NWCTRL_RXENA		4080180	1					
+ANR	4080288	CompoundStatement		43:36:729:729	4080180	1					
+ANR	4080289	ExpressionStatement	gem_get_rx_desc ( s )	49:12:835:853	4080180	0	True				
+ANR	4080290	CallExpression	gem_get_rx_desc ( s )		4080180	0					
+ANR	4080291	Callee	gem_get_rx_desc		4080180	0					
+ANR	4080292	Identifier	gem_get_rx_desc		4080180	0					
+ANR	4080293	ArgumentList	s		4080180	1					
+ANR	4080294	Argument	s		4080180	0					
+ANR	4080295	Identifier	s		4080180	0					
+ANR	4080296	IfStatement	if ( val & GEM_NWCTRL_TXSTART )		4080180	2					
+ANR	4080297	Condition	val & GEM_NWCTRL_TXSTART	53:12:879:902	4080180	0	True				
+ANR	4080298	BitAndExpression	val & GEM_NWCTRL_TXSTART		4080180	0		&			
+ANR	4080299	Identifier	val		4080180	0					
+ANR	4080300	Identifier	GEM_NWCTRL_TXSTART		4080180	1					
+ANR	4080301	CompoundStatement		49:38:814:814	4080180	1					
+ANR	4080302	ExpressionStatement	gem_transmit ( s )	55:12:920:935	4080180	0	True				
+ANR	4080303	CallExpression	gem_transmit ( s )		4080180	0					
+ANR	4080304	Callee	gem_transmit		4080180	0					
+ANR	4080305	Identifier	gem_transmit		4080180	0					
+ANR	4080306	ArgumentList	s		4080180	1					
+ANR	4080307	Argument	s		4080180	0					
+ANR	4080308	Identifier	s		4080180	0					
+ANR	4080309	IfStatement	if ( ! ( val & GEM_NWCTRL_TXENA ) )		4080180	3					
+ANR	4080310	Condition	! ( val & GEM_NWCTRL_TXENA )	59:12:961:985	4080180	0	True				
+ANR	4080311	UnaryOperationExpression	! ( val & GEM_NWCTRL_TXENA )		4080180	0					
+ANR	4080312	UnaryOperator	!		4080180	0					
+ANR	4080313	BitAndExpression	val & GEM_NWCTRL_TXENA		4080180	1		&			
+ANR	4080314	Identifier	val		4080180	0					
+ANR	4080315	Identifier	GEM_NWCTRL_TXENA		4080180	1					
+ANR	4080316	CompoundStatement		55:39:897:897	4080180	1					
+ANR	4080317	ExpressionStatement	s -> tx_desc_addr = s -> regs [ GEM_TXQBASE ]	63:12:1066:1104	4080180	0	True				
+ANR	4080318	AssignmentExpression	s -> tx_desc_addr = s -> regs [ GEM_TXQBASE ]		4080180	0		=			
+ANR	4080319	PtrMemberAccess	s -> tx_desc_addr		4080180	0					
+ANR	4080320	Identifier	s		4080180	0					
+ANR	4080321	Identifier	tx_desc_addr		4080180	1					
+ANR	4080322	ArrayIndexing	s -> regs [ GEM_TXQBASE ]		4080180	1					
+ANR	4080323	PtrMemberAccess	s -> regs		4080180	0					
+ANR	4080324	Identifier	s		4080180	0					
+ANR	4080325	Identifier	regs		4080180	1					
+ANR	4080326	Identifier	GEM_TXQBASE		4080180	1					
+ANR	4080327	IfStatement	if ( val & GEM_NWCTRL_RXENA )		4080180	4					
+ANR	4080328	Condition	val & GEM_NWCTRL_RXENA	67:12:1130:1151	4080180	0	True				
+ANR	4080329	BitAndExpression	val & GEM_NWCTRL_RXENA		4080180	0		&			
+ANR	4080330	Identifier	val		4080180	0					
+ANR	4080331	Identifier	GEM_NWCTRL_RXENA		4080180	1					
+ANR	4080332	CompoundStatement		63:36:1063:1063	4080180	1					
+ANR	4080333	ExpressionStatement	qemu_flush_queued_packets ( qemu_get_queue ( s -> nic ) )	69:12:1169:1218	4080180	0	True				
+ANR	4080334	CallExpression	qemu_flush_queued_packets ( qemu_get_queue ( s -> nic ) )		4080180	0					
+ANR	4080335	Callee	qemu_flush_queued_packets		4080180	0					
+ANR	4080336	Identifier	qemu_flush_queued_packets		4080180	0					
+ANR	4080337	ArgumentList	qemu_get_queue ( s -> nic )		4080180	1					
+ANR	4080338	Argument	qemu_get_queue ( s -> nic )		4080180	0					
+ANR	4080339	CallExpression	qemu_get_queue ( s -> nic )		4080180	0					
+ANR	4080340	Callee	qemu_get_queue		4080180	0					
+ANR	4080341	Identifier	qemu_get_queue		4080180	0					
+ANR	4080342	ArgumentList	s -> nic		4080180	1					
+ANR	4080343	Argument	s -> nic		4080180	0					
+ANR	4080344	PtrMemberAccess	s -> nic		4080180	0					
+ANR	4080345	Identifier	s		4080180	0					
+ANR	4080346	Identifier	nic		4080180	1					
+ANR	4080347	BreakStatement	break ;	73:8:1240:1245	4080180	5	True				
+ANR	4080348	Label	case GEM_TXSTATUS :	77:4:1254:1271	4080180	6	True				
+ANR	4080349	Identifier	GEM_TXSTATUS		4080180	0					
+ANR	4080350	ExpressionStatement	gem_update_int_status ( s )	79:8:1282:1306	4080180	7	True				
+ANR	4080351	CallExpression	gem_update_int_status ( s )		4080180	0					
+ANR	4080352	Callee	gem_update_int_status		4080180	0					
+ANR	4080353	Identifier	gem_update_int_status		4080180	0					
+ANR	4080354	ArgumentList	s		4080180	1					
+ANR	4080355	Argument	s		4080180	0					
+ANR	4080356	Identifier	s		4080180	0					
+ANR	4080357	BreakStatement	break ;	81:8:1317:1322	4080180	8	True				
+ANR	4080358	Label	case GEM_RXQBASE :	83:4:1329:1345	4080180	9	True				
+ANR	4080359	Identifier	GEM_RXQBASE		4080180	0					
+ANR	4080360	ExpressionStatement	s -> rx_desc_addr = val	85:8:1356:1377	4080180	10	True				
+ANR	4080361	AssignmentExpression	s -> rx_desc_addr = val		4080180	0		=			
+ANR	4080362	PtrMemberAccess	s -> rx_desc_addr		4080180	0					
+ANR	4080363	Identifier	s		4080180	0					
+ANR	4080364	Identifier	rx_desc_addr		4080180	1					
+ANR	4080365	Identifier	val		4080180	1					
+ANR	4080366	BreakStatement	break ;	87:8:1388:1393	4080180	11	True				
+ANR	4080367	Label	case GEM_TXQBASE :	89:4:1400:1416	4080180	12	True				
+ANR	4080368	Identifier	GEM_TXQBASE		4080180	0					
+ANR	4080369	ExpressionStatement	s -> tx_desc_addr = val	91:8:1427:1448	4080180	13	True				
+ANR	4080370	AssignmentExpression	s -> tx_desc_addr = val		4080180	0		=			
+ANR	4080371	PtrMemberAccess	s -> tx_desc_addr		4080180	0					
+ANR	4080372	Identifier	s		4080180	0					
+ANR	4080373	Identifier	tx_desc_addr		4080180	1					
+ANR	4080374	Identifier	val		4080180	1					
+ANR	4080375	BreakStatement	break ;	93:8:1459:1464	4080180	14	True				
+ANR	4080376	Label	case GEM_RXSTATUS :	95:4:1471:1488	4080180	15	True				
+ANR	4080377	Identifier	GEM_RXSTATUS		4080180	0					
+ANR	4080378	ExpressionStatement	gem_update_int_status ( s )	97:8:1499:1523	4080180	16	True				
+ANR	4080379	CallExpression	gem_update_int_status ( s )		4080180	0					
+ANR	4080380	Callee	gem_update_int_status		4080180	0					
+ANR	4080381	Identifier	gem_update_int_status		4080180	0					
+ANR	4080382	ArgumentList	s		4080180	1					
+ANR	4080383	Argument	s		4080180	0					
+ANR	4080384	Identifier	s		4080180	0					
+ANR	4080385	BreakStatement	break ;	99:8:1534:1539	4080180	17	True				
+ANR	4080386	Label	case GEM_IER :	101:4:1546:1558	4080180	18	True				
+ANR	4080387	Identifier	GEM_IER		4080180	0					
+ANR	4080388	ExpressionStatement	s -> regs [ GEM_IMR ] &= ~val	103:8:1569:1593	4080180	19	True				
+ANR	4080389	AssignmentExpression	s -> regs [ GEM_IMR ] &= ~val		4080180	0		&=			
+ANR	4080390	ArrayIndexing	s -> regs [ GEM_IMR ]		4080180	0					
+ANR	4080391	PtrMemberAccess	s -> regs		4080180	0					
+ANR	4080392	Identifier	s		4080180	0					
+ANR	4080393	Identifier	regs		4080180	1					
+ANR	4080394	Identifier	GEM_IMR		4080180	1					
+ANR	4080395	Identifier	~val		4080180	1					
+ANR	4080396	ExpressionStatement	gem_update_int_status ( s )	105:8:1604:1628	4080180	20	True				
+ANR	4080397	CallExpression	gem_update_int_status ( s )		4080180	0					
+ANR	4080398	Callee	gem_update_int_status		4080180	0					
+ANR	4080399	Identifier	gem_update_int_status		4080180	0					
+ANR	4080400	ArgumentList	s		4080180	1					
+ANR	4080401	Argument	s		4080180	0					
+ANR	4080402	Identifier	s		4080180	0					
+ANR	4080403	BreakStatement	break ;	107:8:1639:1644	4080180	21	True				
+ANR	4080404	Label	case GEM_IDR :	109:4:1651:1663	4080180	22	True				
+ANR	4080405	Identifier	GEM_IDR		4080180	0					
+ANR	4080406	ExpressionStatement	s -> regs [ GEM_IMR ] |= val	111:8:1674:1697	4080180	23	True				
+ANR	4080407	AssignmentExpression	s -> regs [ GEM_IMR ] |= val		4080180	0		|=			
+ANR	4080408	ArrayIndexing	s -> regs [ GEM_IMR ]		4080180	0					
+ANR	4080409	PtrMemberAccess	s -> regs		4080180	0					
+ANR	4080410	Identifier	s		4080180	0					
+ANR	4080411	Identifier	regs		4080180	1					
+ANR	4080412	Identifier	GEM_IMR		4080180	1					
+ANR	4080413	Identifier	val		4080180	1					
+ANR	4080414	ExpressionStatement	gem_update_int_status ( s )	113:8:1708:1732	4080180	24	True				
+ANR	4080415	CallExpression	gem_update_int_status ( s )		4080180	0					
+ANR	4080416	Callee	gem_update_int_status		4080180	0					
+ANR	4080417	Identifier	gem_update_int_status		4080180	0					
+ANR	4080418	ArgumentList	s		4080180	1					
+ANR	4080419	Argument	s		4080180	0					
+ANR	4080420	Identifier	s		4080180	0					
+ANR	4080421	BreakStatement	break ;	115:8:1743:1748	4080180	25	True				
+ANR	4080422	Label	case GEM_SPADDR1LO :	117:4:1755:1773	4080180	26	True				
+ANR	4080423	Identifier	GEM_SPADDR1LO		4080180	0					
+ANR	4080424	Label	case GEM_SPADDR2LO :	119:4:1780:1798	4080180	27	True				
+ANR	4080425	Identifier	GEM_SPADDR2LO		4080180	0					
+ANR	4080426	Label	case GEM_SPADDR3LO :	121:4:1805:1823	4080180	28	True				
+ANR	4080427	Identifier	GEM_SPADDR3LO		4080180	0					
+ANR	4080428	Label	case GEM_SPADDR4LO :	123:4:1830:1848	4080180	29	True				
+ANR	4080429	Identifier	GEM_SPADDR4LO		4080180	0					
+ANR	4080430	ExpressionStatement	s -> sar_active [ ( offset - GEM_SPADDR1LO ) / 2 ] = false	125:8:1859:1910	4080180	30	True				
+ANR	4080431	AssignmentExpression	s -> sar_active [ ( offset - GEM_SPADDR1LO ) / 2 ] = false		4080180	0		=			
+ANR	4080432	ArrayIndexing	s -> sar_active [ ( offset - GEM_SPADDR1LO ) / 2 ]		4080180	0					
+ANR	4080433	PtrMemberAccess	s -> sar_active		4080180	0					
+ANR	4080434	Identifier	s		4080180	0					
+ANR	4080435	Identifier	sar_active		4080180	1					
+ANR	4080436	MultiplicativeExpression	( offset - GEM_SPADDR1LO ) / 2		4080180	1		/			
+ANR	4080437	AdditiveExpression	offset - GEM_SPADDR1LO		4080180	0		-			
+ANR	4080438	Identifier	offset		4080180	0					
+ANR	4080439	Identifier	GEM_SPADDR1LO		4080180	1					
+ANR	4080440	PrimaryExpression	2		4080180	1					
+ANR	4080441	Identifier	false		4080180	1					
+ANR	4080442	BreakStatement	break ;	127:8:1921:1926	4080180	31	True				
+ANR	4080443	Label	case GEM_SPADDR1HI :	129:4:1933:1951	4080180	32	True				
+ANR	4080444	Identifier	GEM_SPADDR1HI		4080180	0					
+ANR	4080445	Label	case GEM_SPADDR2HI :	131:4:1958:1976	4080180	33	True				
+ANR	4080446	Identifier	GEM_SPADDR2HI		4080180	0					
+ANR	4080447	Label	case GEM_SPADDR3HI :	133:4:1983:2001	4080180	34	True				
+ANR	4080448	Identifier	GEM_SPADDR3HI		4080180	0					
+ANR	4080449	Label	case GEM_SPADDR4HI :	135:4:2008:2026	4080180	35	True				
+ANR	4080450	Identifier	GEM_SPADDR4HI		4080180	0					
+ANR	4080451	ExpressionStatement	s -> sar_active [ ( offset - GEM_SPADDR1HI ) / 2 ] = true	137:8:2037:2087	4080180	36	True				
+ANR	4080452	AssignmentExpression	s -> sar_active [ ( offset - GEM_SPADDR1HI ) / 2 ] = true		4080180	0		=			
+ANR	4080453	ArrayIndexing	s -> sar_active [ ( offset - GEM_SPADDR1HI ) / 2 ]		4080180	0					
+ANR	4080454	PtrMemberAccess	s -> sar_active		4080180	0					
+ANR	4080455	Identifier	s		4080180	0					
+ANR	4080456	Identifier	sar_active		4080180	1					
+ANR	4080457	MultiplicativeExpression	( offset - GEM_SPADDR1HI ) / 2		4080180	1		/			
+ANR	4080458	AdditiveExpression	offset - GEM_SPADDR1HI		4080180	0		-			
+ANR	4080459	Identifier	offset		4080180	0					
+ANR	4080460	Identifier	GEM_SPADDR1HI		4080180	1					
+ANR	4080461	PrimaryExpression	2		4080180	1					
+ANR	4080462	Identifier	true		4080180	1					
+ANR	4080463	BreakStatement	break ;	139:8:2098:2103	4080180	37	True				
+ANR	4080464	Label	case GEM_PHYMNTNC :	141:4:2110:2127	4080180	38	True				
+ANR	4080465	Identifier	GEM_PHYMNTNC		4080180	0					
+ANR	4080466	IfStatement	if ( val & GEM_PHYMNTNC_OP_W )		4080180	39					
+ANR	4080467	Condition	val & GEM_PHYMNTNC_OP_W	143:12:2142:2164	4080180	0	True				
+ANR	4080468	BitAndExpression	val & GEM_PHYMNTNC_OP_W		4080180	0		&			
+ANR	4080469	Identifier	val		4080180	0					
+ANR	4080470	Identifier	GEM_PHYMNTNC_OP_W		4080180	1					
+ANR	4080471	CompoundStatement		141:12:2091:2117	4080180	1					
+ANR	4080472	IdentifierDeclStatement	"uint32_t phy_addr , reg_num ;"	145:12:2182:2208	4080180	0	True				
+ANR	4080473	IdentifierDecl	phy_addr		4080180	0					
+ANR	4080474	IdentifierDeclType	uint32_t		4080180	0					
+ANR	4080475	Identifier	phy_addr		4080180	1					
+ANR	4080476	IdentifierDecl	reg_num		4080180	1					
+ANR	4080477	IdentifierDeclType	uint32_t		4080180	0					
+ANR	4080478	Identifier	reg_num		4080180	1					
+ANR	4080479	ExpressionStatement	phy_addr = ( val & GEM_PHYMNTNC_ADDR ) >> GEM_PHYMNTNC_ADDR_SHFT	149:12:2225:2287	4080180	1	True				
+ANR	4080480	AssignmentExpression	phy_addr = ( val & GEM_PHYMNTNC_ADDR ) >> GEM_PHYMNTNC_ADDR_SHFT		4080180	0		=			
+ANR	4080481	Identifier	phy_addr		4080180	0					
+ANR	4080482	ShiftExpression	( val & GEM_PHYMNTNC_ADDR ) >> GEM_PHYMNTNC_ADDR_SHFT		4080180	1		>>			
+ANR	4080483	BitAndExpression	val & GEM_PHYMNTNC_ADDR		4080180	0		&			
+ANR	4080484	Identifier	val		4080180	0					
+ANR	4080485	Identifier	GEM_PHYMNTNC_ADDR		4080180	1					
+ANR	4080486	Identifier	GEM_PHYMNTNC_ADDR_SHFT		4080180	1					
+ANR	4080487	IfStatement	if ( phy_addr == BOARD_PHY_ADDRESS )		4080180	2					
+ANR	4080488	Condition	phy_addr == BOARD_PHY_ADDRESS	151:16:2306:2334	4080180	0	True				
+ANR	4080489	EqualityExpression	phy_addr == BOARD_PHY_ADDRESS		4080180	0		==			
+ANR	4080490	Identifier	phy_addr		4080180	0					
+ANR	4080491	Identifier	BOARD_PHY_ADDRESS		4080180	1					
+ANR	4080492	CompoundStatement		147:47:2246:2246	4080180	1					
+ANR	4080493	ExpressionStatement	reg_num = ( val & GEM_PHYMNTNC_REG ) >> GEM_PHYMNTNC_REG_SHIFT	153:16:2356:2416	4080180	0	True				
+ANR	4080494	AssignmentExpression	reg_num = ( val & GEM_PHYMNTNC_REG ) >> GEM_PHYMNTNC_REG_SHIFT		4080180	0		=			
+ANR	4080495	Identifier	reg_num		4080180	0					
+ANR	4080496	ShiftExpression	( val & GEM_PHYMNTNC_REG ) >> GEM_PHYMNTNC_REG_SHIFT		4080180	1		>>			
+ANR	4080497	BitAndExpression	val & GEM_PHYMNTNC_REG		4080180	0		&			
+ANR	4080498	Identifier	val		4080180	0					
+ANR	4080499	Identifier	GEM_PHYMNTNC_REG		4080180	1					
+ANR	4080500	Identifier	GEM_PHYMNTNC_REG_SHIFT		4080180	1					
+ANR	4080501	ExpressionStatement	"gem_phy_write ( s , reg_num , val )"	155:16:2435:2465	4080180	1	True				
+ANR	4080502	CallExpression	"gem_phy_write ( s , reg_num , val )"		4080180	0					
+ANR	4080503	Callee	gem_phy_write		4080180	0					
+ANR	4080504	Identifier	gem_phy_write		4080180	0					
+ANR	4080505	ArgumentList	s		4080180	1					
+ANR	4080506	Argument	s		4080180	0					
+ANR	4080507	Identifier	s		4080180	0					
+ANR	4080508	Argument	reg_num		4080180	1					
+ANR	4080509	Identifier	reg_num		4080180	0					
+ANR	4080510	Argument	val		4080180	2					
+ANR	4080511	Identifier	val		4080180	0					
+ANR	4080512	BreakStatement	break ;	161:8:2502:2507	4080180	40	True				
+ANR	4080513	ExpressionStatement	"DB_PRINT ( ""newval: 0x%08x\\n"" , s -> regs [ offset ] )"	167:4:2523:2568	4080180	9	True				
+ANR	4080514	CallExpression	"DB_PRINT ( ""newval: 0x%08x\\n"" , s -> regs [ offset ] )"		4080180	0					
+ANR	4080515	Callee	DB_PRINT		4080180	0					
+ANR	4080516	Identifier	DB_PRINT		4080180	0					
+ANR	4080517	ArgumentList	"""newval: 0x%08x\\n"""		4080180	1					
+ANR	4080518	Argument	"""newval: 0x%08x\\n"""		4080180	0					
+ANR	4080519	PrimaryExpression	"""newval: 0x%08x\\n"""		4080180	0					
+ANR	4080520	Argument	s -> regs [ offset ]		4080180	1					
+ANR	4080521	ArrayIndexing	s -> regs [ offset ]		4080180	0					
+ANR	4080522	PtrMemberAccess	s -> regs		4080180	0					
+ANR	4080523	Identifier	s		4080180	0					
+ANR	4080524	Identifier	regs		4080180	1					
+ANR	4080525	Identifier	offset		4080180	1					
+ANR	4080526	ReturnType	static void		4080180	1					
+ANR	4080527	Identifier	gem_write		4080180	2					
+ANR	4080528	ParameterList	"void * opaque , hwaddr offset , uint64_t val , unsigned size"		4080180	3					
+ANR	4080529	Parameter	void * opaque	1:22:22:33	4080180	0	True				
+ANR	4080530	ParameterType	void *		4080180	0					
+ANR	4080531	Identifier	opaque		4080180	1					
+ANR	4080532	Parameter	hwaddr offset	1:36:36:48	4080180	1	True				
+ANR	4080533	ParameterType	hwaddr		4080180	0					
+ANR	4080534	Identifier	offset		4080180	1					
+ANR	4080535	Parameter	uint64_t val	1:51:51:62	4080180	2	True				
+ANR	4080536	ParameterType	uint64_t		4080180	0					
+ANR	4080537	Identifier	val		4080180	1					
+ANR	4080538	Parameter	unsigned size	3:8:74:86	4080180	3	True				
+ANR	4080539	ParameterType	unsigned		4080180	0					
+ANR	4080540	Identifier	size		4080180	1					
+ANR	4080541	CFGEntryNode	ENTRY		4080180		True				
+ANR	4080542	CFGExitNode	EXIT		4080180		True				
+ANR	4080543	Symbol	GEM_NWCTRL_TXSTART		4080180						
+ANR	4080544	Symbol	GEM_NWCTRL_RXENA		4080180						
+ANR	4080545	Symbol	phy_addr		4080180						
+ANR	4080546	Symbol	* ~s -> regs_w1c		4080180						
+ANR	4080547	Symbol	* GEM_TXQBASE		4080180						
+ANR	4080548	Symbol	* GEM_IMR		4080180						
+ANR	4080549	Symbol	* GEM_SPADDR1LO		4080180						
+ANR	4080550	Symbol	s -> rx_desc_addr		4080180						
+ANR	4080551	Symbol	readonly		4080180						
+ANR	4080552	Symbol	s -> nic		4080180						
+ANR	4080553	Symbol	GEM_PHYMNTNC_ADDR		4080180						
+ANR	4080554	Symbol	* * s		4080180						
+ANR	4080555	Symbol	~val		4080180						
+ANR	4080556	Symbol	qemu_get_queue		4080180						
+ANR	4080557	Symbol	BOARD_PHY_ADDRESS		4080180						
+ANR	4080558	Symbol	GEM_IMR		4080180						
+ANR	4080559	Symbol	s -> sar_active		4080180						
+ANR	4080560	Symbol	* s -> regs		4080180						
+ANR	4080561	Symbol	val		4080180						
+ANR	4080562	Symbol	s -> regs		4080180						
+ANR	4080563	Symbol	opaque		4080180						
+ANR	4080564	Symbol	* * ~s		4080180						
+ANR	4080565	Symbol	reg_num		4080180						
+ANR	4080566	Symbol	offset		4080180						
+ANR	4080567	Symbol	GEM_SPADDR1LO		4080180						
+ANR	4080568	Symbol	* s -> regs_w1c		4080180						
+ANR	4080569	Symbol	GEM_TXQBASE		4080180						
+ANR	4080570	Symbol	GEM_SPADDR1HI		4080180						
+ANR	4080571	Symbol	false		4080180						
+ANR	4080572	Symbol	~s -> regs_w1c		4080180						
+ANR	4080573	Symbol	GEM_NWCTRL_TXENA		4080180						
+ANR	4080574	Symbol	s -> regs_w1c		4080180						
+ANR	4080575	Symbol	GEM_PHYMNTNC_REG_SHIFT		4080180						
+ANR	4080576	Symbol	* GEM_SPADDR1HI		4080180						
+ANR	4080577	Symbol	GEM_PHYMNTNC_OP_W		4080180						
+ANR	4080578	Symbol	GEM_PHYMNTNC_REG		4080180						
+ANR	4080579	Symbol	s		4080180						
+ANR	4080580	Symbol	size		4080180						
+ANR	4080581	Symbol	* s -> sar_active		4080180						
+ANR	4080582	Symbol	~s		4080180						
+ANR	4080583	Symbol	GEM_PHYMNTNC_ADDR_SHFT		4080180						
+ANR	4080584	Symbol	* s -> regs_ro		4080180						
+ANR	4080585	Symbol	* ~s		4080180						
+ANR	4080586	Symbol	s -> tx_desc_addr		4080180						
+ANR	4080587	Symbol	true		4080180						
+ANR	4080588	Symbol	* offset		4080180						
+ANR	4080589	Symbol	* s		4080180						
+ANR	4080590	Symbol	s -> regs_ro		4080180						

@@ -1,0 +1,602 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6841860	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_co_pwritev_compressed_1.c								
+ANR	6841861	Function	qcow2_co_pwritev_compressed	1:0:0:2938							
+ANR	6841862	FunctionDef	"qcow2_co_pwritev_compressed (BlockDriverState * bs , uint64_t offset , uint64_t bytes , QEMUIOVector * qiov)"		6841861	0					
+ANR	6841863	CompoundStatement		5:0:133:2938	6841861	0					
+ANR	6841864	IdentifierDeclStatement	BDRVQcow2State * s = bs -> opaque ;	7:4:140:170	6841861	0	True				
+ANR	6841865	IdentifierDecl	* s = bs -> opaque		6841861	0					
+ANR	6841866	IdentifierDeclType	BDRVQcow2State *		6841861	0					
+ANR	6841867	Identifier	s		6841861	1					
+ANR	6841868	AssignmentExpression	* s = bs -> opaque		6841861	2		=			
+ANR	6841869	Identifier	s		6841861	0					
+ANR	6841870	PtrMemberAccess	bs -> opaque		6841861	1					
+ANR	6841871	Identifier	bs		6841861	0					
+ANR	6841872	Identifier	opaque		6841861	1					
+ANR	6841873	IdentifierDeclStatement	QEMUIOVector hd_qiov ;	9:4:177:197	6841861	1	True				
+ANR	6841874	IdentifierDecl	hd_qiov		6841861	0					
+ANR	6841875	IdentifierDeclType	QEMUIOVector		6841861	0					
+ANR	6841876	Identifier	hd_qiov		6841861	1					
+ANR	6841877	IdentifierDeclStatement	struct iovec iov ;	11:4:204:220	6841861	2	True				
+ANR	6841878	IdentifierDecl	iov		6841861	0					
+ANR	6841879	IdentifierDeclType	struct iovec		6841861	0					
+ANR	6841880	Identifier	iov		6841861	1					
+ANR	6841881	IdentifierDeclStatement	z_stream strm ;	13:4:227:240	6841861	3	True				
+ANR	6841882	IdentifierDecl	strm		6841861	0					
+ANR	6841883	IdentifierDeclType	z_stream		6841861	0					
+ANR	6841884	Identifier	strm		6841861	1					
+ANR	6841885	IdentifierDeclStatement	"int ret , out_len ;"	15:4:247:263	6841861	4	True				
+ANR	6841886	IdentifierDecl	ret		6841861	0					
+ANR	6841887	IdentifierDeclType	int		6841861	0					
+ANR	6841888	Identifier	ret		6841861	1					
+ANR	6841889	IdentifierDecl	out_len		6841861	1					
+ANR	6841890	IdentifierDeclType	int		6841861	0					
+ANR	6841891	Identifier	out_len		6841861	1					
+ANR	6841892	IdentifierDeclStatement	"uint8_t * buf , * out_buf ;"	17:4:270:292	6841861	5	True				
+ANR	6841893	IdentifierDecl	* buf		6841861	0					
+ANR	6841894	IdentifierDeclType	uint8_t *		6841861	0					
+ANR	6841895	Identifier	buf		6841861	1					
+ANR	6841896	IdentifierDecl	* out_buf		6841861	1					
+ANR	6841897	IdentifierDeclType	uint8_t *		6841861	0					
+ANR	6841898	Identifier	out_buf		6841861	1					
+ANR	6841899	IdentifierDeclStatement	uint64_t cluster_offset ;	19:4:299:322	6841861	6	True				
+ANR	6841900	IdentifierDecl	cluster_offset		6841861	0					
+ANR	6841901	IdentifierDeclType	uint64_t		6841861	0					
+ANR	6841902	Identifier	cluster_offset		6841861	1					
+ANR	6841903	IfStatement	if ( bytes == 0 )		6841861	7					
+ANR	6841904	Condition	bytes == 0	23:8:335:344	6841861	0	True				
+ANR	6841905	EqualityExpression	bytes == 0		6841861	0		==			
+ANR	6841906	Identifier	bytes		6841861	0					
+ANR	6841907	PrimaryExpression	0		6841861	1					
+ANR	6841908	CompoundStatement		19:20:213:213	6841861	1					
+ANR	6841909	ExpressionStatement	cluster_offset = bdrv_getlength ( bs -> file -> bs )	29:8:463:508	6841861	0	True				
+ANR	6841910	AssignmentExpression	cluster_offset = bdrv_getlength ( bs -> file -> bs )		6841861	0		=			
+ANR	6841911	Identifier	cluster_offset		6841861	0					
+ANR	6841912	CallExpression	bdrv_getlength ( bs -> file -> bs )		6841861	1					
+ANR	6841913	Callee	bdrv_getlength		6841861	0					
+ANR	6841914	Identifier	bdrv_getlength		6841861	0					
+ANR	6841915	ArgumentList	bs -> file -> bs		6841861	1					
+ANR	6841916	Argument	bs -> file -> bs		6841861	0					
+ANR	6841917	PtrMemberAccess	bs -> file -> bs		6841861	0					
+ANR	6841918	PtrMemberAccess	bs -> file		6841861	0					
+ANR	6841919	Identifier	bs		6841861	0					
+ANR	6841920	Identifier	file		6841861	1					
+ANR	6841921	Identifier	bs		6841861	1					
+ANR	6841922	ReturnStatement	"return bdrv_truncate ( bs -> file , cluster_offset , PREALLOC_MODE_OFF , NULL ) ;"	31:8:519:590	6841861	1	True				
+ANR	6841923	CallExpression	"bdrv_truncate ( bs -> file , cluster_offset , PREALLOC_MODE_OFF , NULL )"		6841861	0					
+ANR	6841924	Callee	bdrv_truncate		6841861	0					
+ANR	6841925	Identifier	bdrv_truncate		6841861	0					
+ANR	6841926	ArgumentList	bs -> file		6841861	1					
+ANR	6841927	Argument	bs -> file		6841861	0					
+ANR	6841928	PtrMemberAccess	bs -> file		6841861	0					
+ANR	6841929	Identifier	bs		6841861	0					
+ANR	6841930	Identifier	file		6841861	1					
+ANR	6841931	Argument	cluster_offset		6841861	1					
+ANR	6841932	Identifier	cluster_offset		6841861	0					
+ANR	6841933	Argument	PREALLOC_MODE_OFF		6841861	2					
+ANR	6841934	Identifier	PREALLOC_MODE_OFF		6841861	0					
+ANR	6841935	Argument	NULL		6841861	3					
+ANR	6841936	Identifier	NULL		6841861	0					
+ANR	6841937	ExpressionStatement	"buf = qemu_blockalign ( bs , s -> cluster_size )"	37:4:606:648	6841861	8	True				
+ANR	6841938	AssignmentExpression	"buf = qemu_blockalign ( bs , s -> cluster_size )"		6841861	0		=			
+ANR	6841939	Identifier	buf		6841861	0					
+ANR	6841940	CallExpression	"qemu_blockalign ( bs , s -> cluster_size )"		6841861	1					
+ANR	6841941	Callee	qemu_blockalign		6841861	0					
+ANR	6841942	Identifier	qemu_blockalign		6841861	0					
+ANR	6841943	ArgumentList	bs		6841861	1					
+ANR	6841944	Argument	bs		6841861	0					
+ANR	6841945	Identifier	bs		6841861	0					
+ANR	6841946	Argument	s -> cluster_size		6841861	1					
+ANR	6841947	PtrMemberAccess	s -> cluster_size		6841861	0					
+ANR	6841948	Identifier	s		6841861	0					
+ANR	6841949	Identifier	cluster_size		6841861	1					
+ANR	6841950	IfStatement	if ( bytes != s -> cluster_size )		6841861	9					
+ANR	6841951	Condition	bytes != s -> cluster_size	39:8:659:682	6841861	0	True				
+ANR	6841952	EqualityExpression	bytes != s -> cluster_size		6841861	0		!=			
+ANR	6841953	Identifier	bytes		6841861	0					
+ANR	6841954	PtrMemberAccess	s -> cluster_size		6841861	1					
+ANR	6841955	Identifier	s		6841861	0					
+ANR	6841956	Identifier	cluster_size		6841861	1					
+ANR	6841957	CompoundStatement		35:34:551:551	6841861	1					
+ANR	6841958	IfStatement	if ( bytes > s -> cluster_size || offset + bytes != bs -> total_sectors << BDRV_SECTOR_BITS )		6841861	0					
+ANR	6841959	Condition	bytes > s -> cluster_size || offset + bytes != bs -> total_sectors << BDRV_SECTOR_BITS	41:12:700:794	6841861	0	True				
+ANR	6841960	OrExpression	bytes > s -> cluster_size || offset + bytes != bs -> total_sectors << BDRV_SECTOR_BITS		6841861	0		||			
+ANR	6841961	RelationalExpression	bytes > s -> cluster_size		6841861	0		>			
+ANR	6841962	Identifier	bytes		6841861	0					
+ANR	6841963	PtrMemberAccess	s -> cluster_size		6841861	1					
+ANR	6841964	Identifier	s		6841861	0					
+ANR	6841965	Identifier	cluster_size		6841861	1					
+ANR	6841966	EqualityExpression	offset + bytes != bs -> total_sectors << BDRV_SECTOR_BITS		6841861	1		!=			
+ANR	6841967	AdditiveExpression	offset + bytes		6841861	0		+			
+ANR	6841968	Identifier	offset		6841861	0					
+ANR	6841969	Identifier	bytes		6841861	1					
+ANR	6841970	ShiftExpression	bs -> total_sectors << BDRV_SECTOR_BITS		6841861	1		<<			
+ANR	6841971	PtrMemberAccess	bs -> total_sectors		6841861	0					
+ANR	6841972	Identifier	bs		6841861	0					
+ANR	6841973	Identifier	total_sectors		6841861	1					
+ANR	6841974	Identifier	BDRV_SECTOR_BITS		6841861	1					
+ANR	6841975	CompoundStatement		41:8:672:672	6841861	1					
+ANR	6841976	ExpressionStatement	qemu_vfree ( buf )	47:12:821:836	6841861	0	True				
+ANR	6841977	CallExpression	qemu_vfree ( buf )		6841861	0					
+ANR	6841978	Callee	qemu_vfree		6841861	0					
+ANR	6841979	Identifier	qemu_vfree		6841861	0					
+ANR	6841980	ArgumentList	buf		6841861	1					
+ANR	6841981	Argument	buf		6841861	0					
+ANR	6841982	Identifier	buf		6841861	0					
+ANR	6841983	ReturnStatement	return - EINVAL ;	49:12:851:865	6841861	1	True				
+ANR	6841984	UnaryOperationExpression	- EINVAL		6841861	0					
+ANR	6841985	UnaryOperator	-		6841861	0					
+ANR	6841986	Identifier	EINVAL		6841861	1					
+ANR	6841987	ExpressionStatement	"memset ( buf + bytes , 0 , s -> cluster_size - bytes )"	55:8:959:1006	6841861	1	True				
+ANR	6841988	CallExpression	"memset ( buf + bytes , 0 , s -> cluster_size - bytes )"		6841861	0					
+ANR	6841989	Callee	memset		6841861	0					
+ANR	6841990	Identifier	memset		6841861	0					
+ANR	6841991	ArgumentList	buf + bytes		6841861	1					
+ANR	6841992	Argument	buf + bytes		6841861	0					
+ANR	6841993	AdditiveExpression	buf + bytes		6841861	0		+			
+ANR	6841994	Identifier	buf		6841861	0					
+ANR	6841995	Identifier	bytes		6841861	1					
+ANR	6841996	Argument	0		6841861	1					
+ANR	6841997	PrimaryExpression	0		6841861	0					
+ANR	6841998	Argument	s -> cluster_size - bytes		6841861	2					
+ANR	6841999	AdditiveExpression	s -> cluster_size - bytes		6841861	0		-			
+ANR	6842000	PtrMemberAccess	s -> cluster_size		6841861	0					
+ANR	6842001	Identifier	s		6841861	0					
+ANR	6842002	Identifier	cluster_size		6841861	1					
+ANR	6842003	Identifier	bytes		6841861	1					
+ANR	6842004	ExpressionStatement	"qemu_iovec_to_buf ( qiov , 0 , buf , bytes )"	59:4:1020:1058	6841861	10	True				
+ANR	6842005	CallExpression	"qemu_iovec_to_buf ( qiov , 0 , buf , bytes )"		6841861	0					
+ANR	6842006	Callee	qemu_iovec_to_buf		6841861	0					
+ANR	6842007	Identifier	qemu_iovec_to_buf		6841861	0					
+ANR	6842008	ArgumentList	qiov		6841861	1					
+ANR	6842009	Argument	qiov		6841861	0					
+ANR	6842010	Identifier	qiov		6841861	0					
+ANR	6842011	Argument	0		6841861	1					
+ANR	6842012	PrimaryExpression	0		6841861	0					
+ANR	6842013	Argument	buf		6841861	2					
+ANR	6842014	Identifier	buf		6841861	0					
+ANR	6842015	Argument	bytes		6841861	3					
+ANR	6842016	Identifier	bytes		6841861	0					
+ANR	6842017	ExpressionStatement	out_buf = g_malloc ( s -> cluster_size )	63:4:1067:1102	6841861	11	True				
+ANR	6842018	AssignmentExpression	out_buf = g_malloc ( s -> cluster_size )		6841861	0		=			
+ANR	6842019	Identifier	out_buf		6841861	0					
+ANR	6842020	CallExpression	g_malloc ( s -> cluster_size )		6841861	1					
+ANR	6842021	Callee	g_malloc		6841861	0					
+ANR	6842022	Identifier	g_malloc		6841861	0					
+ANR	6842023	ArgumentList	s -> cluster_size		6841861	1					
+ANR	6842024	Argument	s -> cluster_size		6841861	0					
+ANR	6842025	PtrMemberAccess	s -> cluster_size		6841861	0					
+ANR	6842026	Identifier	s		6841861	0					
+ANR	6842027	Identifier	cluster_size		6841861	1					
+ANR	6842028	ExpressionStatement	"memset ( & strm , 0 , sizeof ( strm ) )"	69:4:1169:1199	6841861	12	True				
+ANR	6842029	CallExpression	"memset ( & strm , 0 , sizeof ( strm ) )"		6841861	0					
+ANR	6842030	Callee	memset		6841861	0					
+ANR	6842031	Identifier	memset		6841861	0					
+ANR	6842032	ArgumentList	& strm		6841861	1					
+ANR	6842033	Argument	& strm		6841861	0					
+ANR	6842034	UnaryOperationExpression	& strm		6841861	0					
+ANR	6842035	UnaryOperator	&		6841861	0					
+ANR	6842036	Identifier	strm		6841861	1					
+ANR	6842037	Argument	0		6841861	1					
+ANR	6842038	PrimaryExpression	0		6841861	0					
+ANR	6842039	Argument	sizeof ( strm )		6841861	2					
+ANR	6842040	SizeofExpression	sizeof ( strm )		6841861	0					
+ANR	6842041	Sizeof	sizeof		6841861	0					
+ANR	6842042	SizeofOperand	strm		6841861	1					
+ANR	6842043	ExpressionStatement	"ret = deflateInit2 ( & strm , Z_DEFAULT_COMPRESSION , Z_DEFLATED , - 12 , 9 , Z_DEFAULT_STRATEGY )"	71:4:1206:1342	6841861	13	True				
+ANR	6842044	AssignmentExpression	"ret = deflateInit2 ( & strm , Z_DEFAULT_COMPRESSION , Z_DEFLATED , - 12 , 9 , Z_DEFAULT_STRATEGY )"		6841861	0		=			
+ANR	6842045	Identifier	ret		6841861	0					
+ANR	6842046	CallExpression	"deflateInit2 ( & strm , Z_DEFAULT_COMPRESSION , Z_DEFLATED , - 12 , 9 , Z_DEFAULT_STRATEGY )"		6841861	1					
+ANR	6842047	Callee	deflateInit2		6841861	0					
+ANR	6842048	Identifier	deflateInit2		6841861	0					
+ANR	6842049	ArgumentList	& strm		6841861	1					
+ANR	6842050	Argument	& strm		6841861	0					
+ANR	6842051	UnaryOperationExpression	& strm		6841861	0					
+ANR	6842052	UnaryOperator	&		6841861	0					
+ANR	6842053	Identifier	strm		6841861	1					
+ANR	6842054	Argument	Z_DEFAULT_COMPRESSION		6841861	1					
+ANR	6842055	Identifier	Z_DEFAULT_COMPRESSION		6841861	0					
+ANR	6842056	Argument	Z_DEFLATED		6841861	2					
+ANR	6842057	Identifier	Z_DEFLATED		6841861	0					
+ANR	6842058	Argument	- 12		6841861	3					
+ANR	6842059	UnaryOperationExpression	- 12		6841861	0					
+ANR	6842060	UnaryOperator	-		6841861	0					
+ANR	6842061	PrimaryExpression	12		6841861	1					
+ANR	6842062	Argument	9		6841861	4					
+ANR	6842063	PrimaryExpression	9		6841861	0					
+ANR	6842064	Argument	Z_DEFAULT_STRATEGY		6841861	5					
+ANR	6842065	Identifier	Z_DEFAULT_STRATEGY		6841861	0					
+ANR	6842066	IfStatement	if ( ret != 0 )		6841861	14					
+ANR	6842067	Condition	ret != 0	77:8:1353:1360	6841861	0	True				
+ANR	6842068	EqualityExpression	ret != 0		6841861	0		!=			
+ANR	6842069	Identifier	ret		6841861	0					
+ANR	6842070	PrimaryExpression	0		6841861	1					
+ANR	6842071	CompoundStatement		73:18:1229:1229	6841861	1					
+ANR	6842072	ExpressionStatement	ret = - EINVAL	79:8:1374:1387	6841861	0	True				
+ANR	6842073	AssignmentExpression	ret = - EINVAL		6841861	0		=			
+ANR	6842074	Identifier	ret		6841861	0					
+ANR	6842075	UnaryOperationExpression	- EINVAL		6841861	1					
+ANR	6842076	UnaryOperator	-		6841861	0					
+ANR	6842077	Identifier	EINVAL		6841861	1					
+ANR	6842078	GotoStatement	goto fail ;	81:8:1398:1407	6841861	1	True				
+ANR	6842079	Identifier	fail		6841861	0					
+ANR	6842080	ExpressionStatement	strm . avail_in = s -> cluster_size	87:4:1423:1454	6841861	15	True				
+ANR	6842081	AssignmentExpression	strm . avail_in = s -> cluster_size		6841861	0		=			
+ANR	6842082	MemberAccess	strm . avail_in		6841861	0					
+ANR	6842083	Identifier	strm		6841861	0					
+ANR	6842084	Identifier	avail_in		6841861	1					
+ANR	6842085	PtrMemberAccess	s -> cluster_size		6841861	1					
+ANR	6842086	Identifier	s		6841861	0					
+ANR	6842087	Identifier	cluster_size		6841861	1					
+ANR	6842088	ExpressionStatement	strm . next_in = ( uint8_t * ) buf	89:4:1461:1490	6841861	16	True				
+ANR	6842089	AssignmentExpression	strm . next_in = ( uint8_t * ) buf		6841861	0		=			
+ANR	6842090	MemberAccess	strm . next_in		6841861	0					
+ANR	6842091	Identifier	strm		6841861	0					
+ANR	6842092	Identifier	next_in		6841861	1					
+ANR	6842093	CastExpression	( uint8_t * ) buf		6841861	1					
+ANR	6842094	CastTarget	uint8_t *		6841861	0					
+ANR	6842095	Identifier	buf		6841861	1					
+ANR	6842096	ExpressionStatement	strm . avail_out = s -> cluster_size	91:4:1497:1529	6841861	17	True				
+ANR	6842097	AssignmentExpression	strm . avail_out = s -> cluster_size		6841861	0		=			
+ANR	6842098	MemberAccess	strm . avail_out		6841861	0					
+ANR	6842099	Identifier	strm		6841861	0					
+ANR	6842100	Identifier	avail_out		6841861	1					
+ANR	6842101	PtrMemberAccess	s -> cluster_size		6841861	1					
+ANR	6842102	Identifier	s		6841861	0					
+ANR	6842103	Identifier	cluster_size		6841861	1					
+ANR	6842104	ExpressionStatement	strm . next_out = out_buf	93:4:1536:1559	6841861	18	True				
+ANR	6842105	AssignmentExpression	strm . next_out = out_buf		6841861	0		=			
+ANR	6842106	MemberAccess	strm . next_out		6841861	0					
+ANR	6842107	Identifier	strm		6841861	0					
+ANR	6842108	Identifier	next_out		6841861	1					
+ANR	6842109	Identifier	out_buf		6841861	1					
+ANR	6842110	ExpressionStatement	"ret = deflate ( & strm , Z_FINISH )"	97:4:1568:1598	6841861	19	True				
+ANR	6842111	AssignmentExpression	"ret = deflate ( & strm , Z_FINISH )"		6841861	0		=			
+ANR	6842112	Identifier	ret		6841861	0					
+ANR	6842113	CallExpression	"deflate ( & strm , Z_FINISH )"		6841861	1					
+ANR	6842114	Callee	deflate		6841861	0					
+ANR	6842115	Identifier	deflate		6841861	0					
+ANR	6842116	ArgumentList	& strm		6841861	1					
+ANR	6842117	Argument	& strm		6841861	0					
+ANR	6842118	UnaryOperationExpression	& strm		6841861	0					
+ANR	6842119	UnaryOperator	&		6841861	0					
+ANR	6842120	Identifier	strm		6841861	1					
+ANR	6842121	Argument	Z_FINISH		6841861	1					
+ANR	6842122	Identifier	Z_FINISH		6841861	0					
+ANR	6842123	IfStatement	if ( ret != Z_STREAM_END && ret != Z_OK )		6841861	20					
+ANR	6842124	Condition	ret != Z_STREAM_END && ret != Z_OK	99:8:1609:1642	6841861	0	True				
+ANR	6842125	AndExpression	ret != Z_STREAM_END && ret != Z_OK		6841861	0		&&			
+ANR	6842126	EqualityExpression	ret != Z_STREAM_END		6841861	0		!=			
+ANR	6842127	Identifier	ret		6841861	0					
+ANR	6842128	Identifier	Z_STREAM_END		6841861	1					
+ANR	6842129	EqualityExpression	ret != Z_OK		6841861	1		!=			
+ANR	6842130	Identifier	ret		6841861	0					
+ANR	6842131	Identifier	Z_OK		6841861	1					
+ANR	6842132	CompoundStatement		95:44:1511:1511	6841861	1					
+ANR	6842133	ExpressionStatement	deflateEnd ( & strm )	101:8:1656:1673	6841861	0	True				
+ANR	6842134	CallExpression	deflateEnd ( & strm )		6841861	0					
+ANR	6842135	Callee	deflateEnd		6841861	0					
+ANR	6842136	Identifier	deflateEnd		6841861	0					
+ANR	6842137	ArgumentList	& strm		6841861	1					
+ANR	6842138	Argument	& strm		6841861	0					
+ANR	6842139	UnaryOperationExpression	& strm		6841861	0					
+ANR	6842140	UnaryOperator	&		6841861	0					
+ANR	6842141	Identifier	strm		6841861	1					
+ANR	6842142	ExpressionStatement	ret = - EINVAL	103:8:1684:1697	6841861	1	True				
+ANR	6842143	AssignmentExpression	ret = - EINVAL		6841861	0		=			
+ANR	6842144	Identifier	ret		6841861	0					
+ANR	6842145	UnaryOperationExpression	- EINVAL		6841861	1					
+ANR	6842146	UnaryOperator	-		6841861	0					
+ANR	6842147	Identifier	EINVAL		6841861	1					
+ANR	6842148	GotoStatement	goto fail ;	105:8:1708:1717	6841861	2	True				
+ANR	6842149	Identifier	fail		6841861	0					
+ANR	6842150	ExpressionStatement	out_len = strm . next_out - out_buf	109:4:1731:1764	6841861	21	True				
+ANR	6842151	AssignmentExpression	out_len = strm . next_out - out_buf		6841861	0		=			
+ANR	6842152	Identifier	out_len		6841861	0					
+ANR	6842153	AdditiveExpression	strm . next_out - out_buf		6841861	1		-			
+ANR	6842154	MemberAccess	strm . next_out		6841861	0					
+ANR	6842155	Identifier	strm		6841861	0					
+ANR	6842156	Identifier	next_out		6841861	1					
+ANR	6842157	Identifier	out_buf		6841861	1					
+ANR	6842158	ExpressionStatement	deflateEnd ( & strm )	113:4:1773:1790	6841861	22	True				
+ANR	6842159	CallExpression	deflateEnd ( & strm )		6841861	0					
+ANR	6842160	Callee	deflateEnd		6841861	0					
+ANR	6842161	Identifier	deflateEnd		6841861	0					
+ANR	6842162	ArgumentList	& strm		6841861	1					
+ANR	6842163	Argument	& strm		6841861	0					
+ANR	6842164	UnaryOperationExpression	& strm		6841861	0					
+ANR	6842165	UnaryOperator	&		6841861	0					
+ANR	6842166	Identifier	strm		6841861	1					
+ANR	6842167	IfStatement	if ( ret != Z_STREAM_END || out_len >= s -> cluster_size )		6841861	23					
+ANR	6842168	Condition	ret != Z_STREAM_END || out_len >= s -> cluster_size	117:8:1803:1851	6841861	0	True				
+ANR	6842169	OrExpression	ret != Z_STREAM_END || out_len >= s -> cluster_size		6841861	0		||			
+ANR	6842170	EqualityExpression	ret != Z_STREAM_END		6841861	0		!=			
+ANR	6842171	Identifier	ret		6841861	0					
+ANR	6842172	Identifier	Z_STREAM_END		6841861	1					
+ANR	6842173	RelationalExpression	out_len >= s -> cluster_size		6841861	1		>=			
+ANR	6842174	Identifier	out_len		6841861	0					
+ANR	6842175	PtrMemberAccess	s -> cluster_size		6841861	1					
+ANR	6842176	Identifier	s		6841861	0					
+ANR	6842177	Identifier	cluster_size		6841861	1					
+ANR	6842178	CompoundStatement		113:59:1720:1720	6841861	1					
+ANR	6842179	ExpressionStatement	"ret = qcow2_co_pwritev ( bs , offset , bytes , qiov , 0 )"	121:8:1921:1971	6841861	0	True				
+ANR	6842180	AssignmentExpression	"ret = qcow2_co_pwritev ( bs , offset , bytes , qiov , 0 )"		6841861	0		=			
+ANR	6842181	Identifier	ret		6841861	0					
+ANR	6842182	CallExpression	"qcow2_co_pwritev ( bs , offset , bytes , qiov , 0 )"		6841861	1					
+ANR	6842183	Callee	qcow2_co_pwritev		6841861	0					
+ANR	6842184	Identifier	qcow2_co_pwritev		6841861	0					
+ANR	6842185	ArgumentList	bs		6841861	1					
+ANR	6842186	Argument	bs		6841861	0					
+ANR	6842187	Identifier	bs		6841861	0					
+ANR	6842188	Argument	offset		6841861	1					
+ANR	6842189	Identifier	offset		6841861	0					
+ANR	6842190	Argument	bytes		6841861	2					
+ANR	6842191	Identifier	bytes		6841861	0					
+ANR	6842192	Argument	qiov		6841861	3					
+ANR	6842193	Identifier	qiov		6841861	0					
+ANR	6842194	Argument	0		6841861	4					
+ANR	6842195	PrimaryExpression	0		6841861	0					
+ANR	6842196	IfStatement	if ( ret < 0 )		6841861	1					
+ANR	6842197	Condition	ret < 0	123:12:1986:1992	6841861	0	True				
+ANR	6842198	RelationalExpression	ret < 0		6841861	0		<			
+ANR	6842199	Identifier	ret		6841861	0					
+ANR	6842200	PrimaryExpression	0		6841861	1					
+ANR	6842201	CompoundStatement		119:21:1861:1861	6841861	1					
+ANR	6842202	GotoStatement	goto fail ;	125:12:2010:2019	6841861	0	True				
+ANR	6842203	Identifier	fail		6841861	0					
+ANR	6842204	GotoStatement	goto success ;	129:8:2041:2053	6841861	2	True				
+ANR	6842205	Identifier	success		6841861	0					
+ANR	6842206	ExpressionStatement	qemu_co_mutex_lock ( & s -> lock )	135:4:2069:2097	6841861	24	True				
+ANR	6842207	CallExpression	qemu_co_mutex_lock ( & s -> lock )		6841861	0					
+ANR	6842208	Callee	qemu_co_mutex_lock		6841861	0					
+ANR	6842209	Identifier	qemu_co_mutex_lock		6841861	0					
+ANR	6842210	ArgumentList	& s -> lock		6841861	1					
+ANR	6842211	Argument	& s -> lock		6841861	0					
+ANR	6842212	UnaryOperationExpression	& s -> lock		6841861	0					
+ANR	6842213	UnaryOperator	&		6841861	0					
+ANR	6842214	PtrMemberAccess	s -> lock		6841861	1					
+ANR	6842215	Identifier	s		6841861	0					
+ANR	6842216	Identifier	lock		6841861	1					
+ANR	6842217	ExpressionStatement	"cluster_offset = qcow2_alloc_compressed_cluster_offset ( bs , offset , out_len )"	137:4:2104:2188	6841861	25	True				
+ANR	6842218	AssignmentExpression	"cluster_offset = qcow2_alloc_compressed_cluster_offset ( bs , offset , out_len )"		6841861	0		=			
+ANR	6842219	Identifier	cluster_offset		6841861	0					
+ANR	6842220	CallExpression	"qcow2_alloc_compressed_cluster_offset ( bs , offset , out_len )"		6841861	1					
+ANR	6842221	Callee	qcow2_alloc_compressed_cluster_offset		6841861	0					
+ANR	6842222	Identifier	qcow2_alloc_compressed_cluster_offset		6841861	0					
+ANR	6842223	ArgumentList	bs		6841861	1					
+ANR	6842224	Argument	bs		6841861	0					
+ANR	6842225	Identifier	bs		6841861	0					
+ANR	6842226	Argument	offset		6841861	1					
+ANR	6842227	Identifier	offset		6841861	0					
+ANR	6842228	Argument	out_len		6841861	2					
+ANR	6842229	Identifier	out_len		6841861	0					
+ANR	6842230	IfStatement	if ( ! cluster_offset )		6841861	26					
+ANR	6842231	Condition	! cluster_offset	141:8:2199:2213	6841861	0	True				
+ANR	6842232	UnaryOperationExpression	! cluster_offset		6841861	0					
+ANR	6842233	UnaryOperator	!		6841861	0					
+ANR	6842234	Identifier	cluster_offset		6841861	1					
+ANR	6842235	CompoundStatement		137:25:2082:2082	6841861	1					
+ANR	6842236	ExpressionStatement	qemu_co_mutex_unlock ( & s -> lock )	143:8:2227:2257	6841861	0	True				
+ANR	6842237	CallExpression	qemu_co_mutex_unlock ( & s -> lock )		6841861	0					
+ANR	6842238	Callee	qemu_co_mutex_unlock		6841861	0					
+ANR	6842239	Identifier	qemu_co_mutex_unlock		6841861	0					
+ANR	6842240	ArgumentList	& s -> lock		6841861	1					
+ANR	6842241	Argument	& s -> lock		6841861	0					
+ANR	6842242	UnaryOperationExpression	& s -> lock		6841861	0					
+ANR	6842243	UnaryOperator	&		6841861	0					
+ANR	6842244	PtrMemberAccess	s -> lock		6841861	1					
+ANR	6842245	Identifier	s		6841861	0					
+ANR	6842246	Identifier	lock		6841861	1					
+ANR	6842247	ExpressionStatement	ret = - EIO	145:8:2268:2278	6841861	1	True				
+ANR	6842248	AssignmentExpression	ret = - EIO		6841861	0		=			
+ANR	6842249	Identifier	ret		6841861	0					
+ANR	6842250	UnaryOperationExpression	- EIO		6841861	1					
+ANR	6842251	UnaryOperator	-		6841861	0					
+ANR	6842252	Identifier	EIO		6841861	1					
+ANR	6842253	GotoStatement	goto fail ;	147:8:2289:2298	6841861	2	True				
+ANR	6842254	Identifier	fail		6841861	0					
+ANR	6842255	ExpressionStatement	cluster_offset &= s -> cluster_offset_mask	151:4:2312:2352	6841861	27	True				
+ANR	6842256	AssignmentExpression	cluster_offset &= s -> cluster_offset_mask		6841861	0		&=			
+ANR	6842257	Identifier	cluster_offset		6841861	0					
+ANR	6842258	PtrMemberAccess	s -> cluster_offset_mask		6841861	1					
+ANR	6842259	Identifier	s		6841861	0					
+ANR	6842260	Identifier	cluster_offset_mask		6841861	1					
+ANR	6842261	ExpressionStatement	"ret = qcow2_pre_write_overlap_check ( bs , 0 , cluster_offset , out_len )"	155:4:2361:2428	6841861	28	True				
+ANR	6842262	AssignmentExpression	"ret = qcow2_pre_write_overlap_check ( bs , 0 , cluster_offset , out_len )"		6841861	0		=			
+ANR	6842263	Identifier	ret		6841861	0					
+ANR	6842264	CallExpression	"qcow2_pre_write_overlap_check ( bs , 0 , cluster_offset , out_len )"		6841861	1					
+ANR	6842265	Callee	qcow2_pre_write_overlap_check		6841861	0					
+ANR	6842266	Identifier	qcow2_pre_write_overlap_check		6841861	0					
+ANR	6842267	ArgumentList	bs		6841861	1					
+ANR	6842268	Argument	bs		6841861	0					
+ANR	6842269	Identifier	bs		6841861	0					
+ANR	6842270	Argument	0		6841861	1					
+ANR	6842271	PrimaryExpression	0		6841861	0					
+ANR	6842272	Argument	cluster_offset		6841861	2					
+ANR	6842273	Identifier	cluster_offset		6841861	0					
+ANR	6842274	Argument	out_len		6841861	3					
+ANR	6842275	Identifier	out_len		6841861	0					
+ANR	6842276	ExpressionStatement	qemu_co_mutex_unlock ( & s -> lock )	157:4:2435:2465	6841861	29	True				
+ANR	6842277	CallExpression	qemu_co_mutex_unlock ( & s -> lock )		6841861	0					
+ANR	6842278	Callee	qemu_co_mutex_unlock		6841861	0					
+ANR	6842279	Identifier	qemu_co_mutex_unlock		6841861	0					
+ANR	6842280	ArgumentList	& s -> lock		6841861	1					
+ANR	6842281	Argument	& s -> lock		6841861	0					
+ANR	6842282	UnaryOperationExpression	& s -> lock		6841861	0					
+ANR	6842283	UnaryOperator	&		6841861	0					
+ANR	6842284	PtrMemberAccess	s -> lock		6841861	1					
+ANR	6842285	Identifier	s		6841861	0					
+ANR	6842286	Identifier	lock		6841861	1					
+ANR	6842287	IfStatement	if ( ret < 0 )		6841861	30					
+ANR	6842288	Condition	ret < 0	159:8:2476:2482	6841861	0	True				
+ANR	6842289	RelationalExpression	ret < 0		6841861	0		<			
+ANR	6842290	Identifier	ret		6841861	0					
+ANR	6842291	PrimaryExpression	0		6841861	1					
+ANR	6842292	CompoundStatement		155:17:2351:2351	6841861	1					
+ANR	6842293	GotoStatement	goto fail ;	161:8:2496:2505	6841861	0	True				
+ANR	6842294	Identifier	fail		6841861	0					
+ANR	6842295	Statement	iov	167:4:2521:2523	6841861	31	True				
+ANR	6842296	Statement	=	167:8:2525:2525	6841861	32	True				
+ANR	6842297	Statement	(	167:10:2527:2527	6841861	33	True				
+ANR	6842298	Statement	struct	167:11:2528:2533	6841861	34	True				
+ANR	6842299	Statement	iovec	167:18:2535:2539	6841861	35	True				
+ANR	6842300	Statement	)	167:23:2540:2540	6841861	36	True				
+ANR	6842301	CompoundStatement		163:25:2408:2408	6841861	37					
+ANR	6842302	Statement	.	169:8:2553:2553	6841861	0	True				
+ANR	6842303	Statement	iov_base	169:9:2554:2561	6841861	1	True				
+ANR	6842304	Statement	=	169:20:2565:2565	6841861	2	True				
+ANR	6842305	Statement	out_buf	169:22:2567:2573	6841861	3	True				
+ANR	6842306	Statement	","	169:29:2574:2574	6841861	4	True				
+ANR	6842307	Statement	.	171:8:2585:2585	6841861	5	True				
+ANR	6842308	Statement	iov_len	171:9:2586:2592	6841861	6	True				
+ANR	6842309	Statement	=	171:20:2597:2597	6841861	7	True				
+ANR	6842310	Statement	out_len	171:22:2599:2605	6841861	8	True				
+ANR	6842311	Statement	","	171:29:2606:2606	6841861	9	True				
+ANR	6842312	ExpressionStatement		173:5:2614:2614	6841861	38	True				
+ANR	6842313	ExpressionStatement	"qemu_iovec_init_external ( & hd_qiov , & iov , 1 )"	175:4:2621:2664	6841861	39	True				
+ANR	6842314	CallExpression	"qemu_iovec_init_external ( & hd_qiov , & iov , 1 )"		6841861	0					
+ANR	6842315	Callee	qemu_iovec_init_external		6841861	0					
+ANR	6842316	Identifier	qemu_iovec_init_external		6841861	0					
+ANR	6842317	ArgumentList	& hd_qiov		6841861	1					
+ANR	6842318	Argument	& hd_qiov		6841861	0					
+ANR	6842319	UnaryOperationExpression	& hd_qiov		6841861	0					
+ANR	6842320	UnaryOperator	&		6841861	0					
+ANR	6842321	Identifier	hd_qiov		6841861	1					
+ANR	6842322	Argument	& iov		6841861	1					
+ANR	6842323	UnaryOperationExpression	& iov		6841861	0					
+ANR	6842324	UnaryOperator	&		6841861	0					
+ANR	6842325	Identifier	iov		6841861	1					
+ANR	6842326	Argument	1		6841861	2					
+ANR	6842327	PrimaryExpression	1		6841861	0					
+ANR	6842328	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_WRITE_COMPRESSED )"	179:4:2673:2720	6841861	40	True				
+ANR	6842329	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_WRITE_COMPRESSED )"		6841861	0					
+ANR	6842330	Callee	BLKDBG_EVENT		6841861	0					
+ANR	6842331	Identifier	BLKDBG_EVENT		6841861	0					
+ANR	6842332	ArgumentList	bs -> file		6841861	1					
+ANR	6842333	Argument	bs -> file		6841861	0					
+ANR	6842334	PtrMemberAccess	bs -> file		6841861	0					
+ANR	6842335	Identifier	bs		6841861	0					
+ANR	6842336	Identifier	file		6841861	1					
+ANR	6842337	Argument	BLKDBG_WRITE_COMPRESSED		6841861	1					
+ANR	6842338	Identifier	BLKDBG_WRITE_COMPRESSED		6841861	0					
+ANR	6842339	ExpressionStatement	"ret = bdrv_co_pwritev ( bs -> file , cluster_offset , out_len , & hd_qiov , 0 )"	181:4:2727:2796	6841861	41	True				
+ANR	6842340	AssignmentExpression	"ret = bdrv_co_pwritev ( bs -> file , cluster_offset , out_len , & hd_qiov , 0 )"		6841861	0		=			
+ANR	6842341	Identifier	ret		6841861	0					
+ANR	6842342	CallExpression	"bdrv_co_pwritev ( bs -> file , cluster_offset , out_len , & hd_qiov , 0 )"		6841861	1					
+ANR	6842343	Callee	bdrv_co_pwritev		6841861	0					
+ANR	6842344	Identifier	bdrv_co_pwritev		6841861	0					
+ANR	6842345	ArgumentList	bs -> file		6841861	1					
+ANR	6842346	Argument	bs -> file		6841861	0					
+ANR	6842347	PtrMemberAccess	bs -> file		6841861	0					
+ANR	6842348	Identifier	bs		6841861	0					
+ANR	6842349	Identifier	file		6841861	1					
+ANR	6842350	Argument	cluster_offset		6841861	1					
+ANR	6842351	Identifier	cluster_offset		6841861	0					
+ANR	6842352	Argument	out_len		6841861	2					
+ANR	6842353	Identifier	out_len		6841861	0					
+ANR	6842354	Argument	& hd_qiov		6841861	3					
+ANR	6842355	UnaryOperationExpression	& hd_qiov		6841861	0					
+ANR	6842356	UnaryOperator	&		6841861	0					
+ANR	6842357	Identifier	hd_qiov		6841861	1					
+ANR	6842358	Argument	0		6841861	4					
+ANR	6842359	PrimaryExpression	0		6841861	0					
+ANR	6842360	IfStatement	if ( ret < 0 )		6841861	42					
+ANR	6842361	Condition	ret < 0	183:8:2807:2813	6841861	0	True				
+ANR	6842362	RelationalExpression	ret < 0		6841861	0		<			
+ANR	6842363	Identifier	ret		6841861	0					
+ANR	6842364	PrimaryExpression	0		6841861	1					
+ANR	6842365	CompoundStatement		179:17:2682:2682	6841861	1					
+ANR	6842366	GotoStatement	goto fail ;	185:8:2827:2836	6841861	0	True				
+ANR	6842367	Identifier	fail		6841861	0					
+ANR	6842368	Label	success :	189:0:2846:2853	6841861	43	True				
+ANR	6842369	Identifier	success		6841861	0					
+ANR	6842370	ExpressionStatement	ret = 0	191:4:2860:2867	6841861	44	True				
+ANR	6842371	AssignmentExpression	ret = 0		6841861	0		=			
+ANR	6842372	Identifier	ret		6841861	0					
+ANR	6842373	PrimaryExpression	0		6841861	1					
+ANR	6842374	Label	fail :	193:0:2870:2874	6841861	45	True				
+ANR	6842375	Identifier	fail		6841861	0					
+ANR	6842376	ExpressionStatement	qemu_vfree ( buf )	195:4:2881:2896	6841861	46	True				
+ANR	6842377	CallExpression	qemu_vfree ( buf )		6841861	0					
+ANR	6842378	Callee	qemu_vfree		6841861	0					
+ANR	6842379	Identifier	qemu_vfree		6841861	0					
+ANR	6842380	ArgumentList	buf		6841861	1					
+ANR	6842381	Argument	buf		6841861	0					
+ANR	6842382	Identifier	buf		6841861	0					
+ANR	6842383	ExpressionStatement	g_free ( out_buf )	197:4:2903:2918	6841861	47	True				
+ANR	6842384	CallExpression	g_free ( out_buf )		6841861	0					
+ANR	6842385	Callee	g_free		6841861	0					
+ANR	6842386	Identifier	g_free		6841861	0					
+ANR	6842387	ArgumentList	out_buf		6841861	1					
+ANR	6842388	Argument	out_buf		6841861	0					
+ANR	6842389	Identifier	out_buf		6841861	0					
+ANR	6842390	ReturnStatement	return ret ;	199:4:2925:2935	6841861	48	True				
+ANR	6842391	Identifier	ret		6841861	0					
+ANR	6842392	Identifier	qcow2_co_pwritev_compressed		6841861	1					
+ANR	6842393	ParameterList	"BlockDriverState * bs , uint64_t offset , uint64_t bytes , QEMUIOVector * qiov"		6841861	2					
+ANR	6842394	Parameter	BlockDriverState * bs	1:28:28:47	6841861	0	True				
+ANR	6842395	ParameterType	BlockDriverState *		6841861	0					
+ANR	6842396	Identifier	bs		6841861	1					
+ANR	6842397	Parameter	uint64_t offset	1:50:50:64	6841861	1	True				
+ANR	6842398	ParameterType	uint64_t		6841861	0					
+ANR	6842399	Identifier	offset		6841861	1					
+ANR	6842400	Parameter	uint64_t bytes	3:28:96:109	6841861	2	True				
+ANR	6842401	ParameterType	uint64_t		6841861	0					
+ANR	6842402	Identifier	bytes		6841861	1					
+ANR	6842403	Parameter	QEMUIOVector * qiov	3:44:112:129	6841861	3	True				
+ANR	6842404	ParameterType	QEMUIOVector *		6841861	0					
+ANR	6842405	Identifier	qiov		6841861	1					
+ANR	6842406	CFGEntryNode	ENTRY		6841861		True				
+ANR	6842407	CFGExitNode	EXIT		6841861		True				
+ANR	6842408	Symbol	qemu_blockalign		6841861						
+ANR	6842409	Symbol	& hd_qiov		6841861						
+ANR	6842410	Symbol	bs -> file		6841861						
+ANR	6842411	Symbol	* bs -> file		6841861						
+ANR	6842412	Symbol	out_buf		6841861						
+ANR	6842413	Symbol	Z_DEFLATED		6841861						
+ANR	6842414	Symbol	s -> cluster_size		6841861						
+ANR	6842415	Symbol	strm . next_in		6841861						
+ANR	6842416	Symbol	iov		6841861						
+ANR	6842417	Symbol	* bs		6841861						
+ANR	6842418	Symbol	Z_STREAM_END		6841861						
+ANR	6842419	Symbol	bs -> file -> bs		6841861						
+ANR	6842420	Symbol	ret		6841861						
+ANR	6842421	Symbol	Z_DEFAULT_STRATEGY		6841861						
+ANR	6842422	Symbol	NULL		6841861						
+ANR	6842423	Symbol	offset		6841861						
+ANR	6842424	Symbol	bs -> total_sectors		6841861						
+ANR	6842425	Symbol	EIO		6841861						
+ANR	6842426	Symbol	& s -> lock		6841861						
+ANR	6842427	Symbol	out_len		6841861						
+ANR	6842428	Symbol	Z_FINISH		6841861						
+ANR	6842429	Symbol	& iov		6841861						
+ANR	6842430	Symbol	deflate		6841861						
+ANR	6842431	Symbol	s -> cluster_offset_mask		6841861						
+ANR	6842432	Symbol	strm . next_out		6841861						
+ANR	6842433	Symbol	* * bs		6841861						
+ANR	6842434	Symbol	PREALLOC_MODE_OFF		6841861						
+ANR	6842435	Symbol	strm . avail_in		6841861						
+ANR	6842436	Symbol	deflateInit2		6841861						
+ANR	6842437	Symbol	qcow2_pre_write_overlap_check		6841861						
+ANR	6842438	Symbol	& strm		6841861						
+ANR	6842439	Symbol	BLKDBG_WRITE_COMPRESSED		6841861						
+ANR	6842440	Symbol	qiov		6841861						
+ANR	6842441	Symbol	Z_OK		6841861						
+ANR	6842442	Symbol	bs		6841861						
+ANR	6842443	Symbol	g_malloc		6841861						
+ANR	6842444	Symbol	cluster_offset		6841861						
+ANR	6842445	Symbol	bdrv_getlength		6841861						
+ANR	6842446	Symbol	bs -> opaque		6841861						
+ANR	6842447	Symbol	bdrv_truncate		6841861						
+ANR	6842448	Symbol	BDRV_SECTOR_BITS		6841861						
+ANR	6842449	Symbol	strm		6841861						
+ANR	6842450	Symbol	qcow2_alloc_compressed_cluster_offset		6841861						
+ANR	6842451	Symbol	Z_DEFAULT_COMPRESSION		6841861						
+ANR	6842452	Symbol	EINVAL		6841861						
+ANR	6842453	Symbol	buf		6841861						
+ANR	6842454	Symbol	bdrv_co_pwritev		6841861						
+ANR	6842455	Symbol	s		6841861						
+ANR	6842456	Symbol	strm . avail_out		6841861						
+ANR	6842457	Symbol	bytes		6841861						
+ANR	6842458	Symbol	* s		6841861						
+ANR	6842459	Symbol	hd_qiov		6841861						
+ANR	6842460	Symbol	qcow2_co_pwritev		6841861						

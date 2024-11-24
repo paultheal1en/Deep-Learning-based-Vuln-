@@ -1,0 +1,122 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	986009	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_io_limits_intercept_0.c								
+ANR	986010	Function	bdrv_io_limits_intercept	1:0:0:890							
+ANR	986011	FunctionDef	"bdrv_io_limits_intercept (BlockDriverState * bs , unsigned int bytes , bool is_write)"		986010	0					
+ANR	986012	CompoundStatement		7:0:171:890	986010	0					
+ANR	986013	IdentifierDeclStatement	"bool must_wait = throttle_schedule_timer ( & bs -> throttle_state , is_write ) ;"	11:4:212:283	986010	0	True				
+ANR	986014	IdentifierDecl	"must_wait = throttle_schedule_timer ( & bs -> throttle_state , is_write )"		986010	0					
+ANR	986015	IdentifierDeclType	bool		986010	0					
+ANR	986016	Identifier	must_wait		986010	1					
+ANR	986017	AssignmentExpression	"must_wait = throttle_schedule_timer ( & bs -> throttle_state , is_write )"		986010	2		=			
+ANR	986018	Identifier	must_wait		986010	0					
+ANR	986019	CallExpression	"throttle_schedule_timer ( & bs -> throttle_state , is_write )"		986010	1					
+ANR	986020	Callee	throttle_schedule_timer		986010	0					
+ANR	986021	Identifier	throttle_schedule_timer		986010	0					
+ANR	986022	ArgumentList	& bs -> throttle_state		986010	1					
+ANR	986023	Argument	& bs -> throttle_state		986010	0					
+ANR	986024	UnaryOperationExpression	& bs -> throttle_state		986010	0					
+ANR	986025	UnaryOperator	&		986010	0					
+ANR	986026	PtrMemberAccess	bs -> throttle_state		986010	1					
+ANR	986027	Identifier	bs		986010	0					
+ANR	986028	Identifier	throttle_state		986010	1					
+ANR	986029	Argument	is_write		986010	1					
+ANR	986030	Identifier	is_write		986010	0					
+ANR	986031	IfStatement	if ( must_wait || ! qemu_co_queue_empty ( & bs -> throttled_reqs [ is_write ] ) )		986010	1					
+ANR	986032	Condition	must_wait || ! qemu_co_queue_empty ( & bs -> throttled_reqs [ is_write ] )	17:8:371:443	986010	0	True				
+ANR	986033	OrExpression	must_wait || ! qemu_co_queue_empty ( & bs -> throttled_reqs [ is_write ] )		986010	0		||			
+ANR	986034	Identifier	must_wait		986010	0					
+ANR	986035	UnaryOperationExpression	! qemu_co_queue_empty ( & bs -> throttled_reqs [ is_write ] )		986010	1					
+ANR	986036	UnaryOperator	!		986010	0					
+ANR	986037	CallExpression	qemu_co_queue_empty ( & bs -> throttled_reqs [ is_write ] )		986010	1					
+ANR	986038	Callee	qemu_co_queue_empty		986010	0					
+ANR	986039	Identifier	qemu_co_queue_empty		986010	0					
+ANR	986040	ArgumentList	& bs -> throttled_reqs [ is_write ]		986010	1					
+ANR	986041	Argument	& bs -> throttled_reqs [ is_write ]		986010	0					
+ANR	986042	UnaryOperationExpression	& bs -> throttled_reqs [ is_write ]		986010	0					
+ANR	986043	UnaryOperator	&		986010	0					
+ANR	986044	ArrayIndexing	bs -> throttled_reqs [ is_write ]		986010	1					
+ANR	986045	PtrMemberAccess	bs -> throttled_reqs		986010	0					
+ANR	986046	Identifier	bs		986010	0					
+ANR	986047	Identifier	throttled_reqs		986010	1					
+ANR	986048	Identifier	is_write		986010	1					
+ANR	986049	CompoundStatement		13:61:274:274	986010	1					
+ANR	986050	ExpressionStatement	qemu_co_queue_wait ( & bs -> throttled_reqs [ is_write ] )	21:8:457:506	986010	0	True				
+ANR	986051	CallExpression	qemu_co_queue_wait ( & bs -> throttled_reqs [ is_write ] )		986010	0					
+ANR	986052	Callee	qemu_co_queue_wait		986010	0					
+ANR	986053	Identifier	qemu_co_queue_wait		986010	0					
+ANR	986054	ArgumentList	& bs -> throttled_reqs [ is_write ]		986010	1					
+ANR	986055	Argument	& bs -> throttled_reqs [ is_write ]		986010	0					
+ANR	986056	UnaryOperationExpression	& bs -> throttled_reqs [ is_write ]		986010	0					
+ANR	986057	UnaryOperator	&		986010	0					
+ANR	986058	ArrayIndexing	bs -> throttled_reqs [ is_write ]		986010	1					
+ANR	986059	PtrMemberAccess	bs -> throttled_reqs		986010	0					
+ANR	986060	Identifier	bs		986010	0					
+ANR	986061	Identifier	throttled_reqs		986010	1					
+ANR	986062	Identifier	is_write		986010	1					
+ANR	986063	ExpressionStatement	"throttle_account ( & bs -> throttle_state , is_write , bytes )"	29:4:576:630	986010	2	True				
+ANR	986064	CallExpression	"throttle_account ( & bs -> throttle_state , is_write , bytes )"		986010	0					
+ANR	986065	Callee	throttle_account		986010	0					
+ANR	986066	Identifier	throttle_account		986010	0					
+ANR	986067	ArgumentList	& bs -> throttle_state		986010	1					
+ANR	986068	Argument	& bs -> throttle_state		986010	0					
+ANR	986069	UnaryOperationExpression	& bs -> throttle_state		986010	0					
+ANR	986070	UnaryOperator	&		986010	0					
+ANR	986071	PtrMemberAccess	bs -> throttle_state		986010	1					
+ANR	986072	Identifier	bs		986010	0					
+ANR	986073	Identifier	throttle_state		986010	1					
+ANR	986074	Argument	is_write		986010	1					
+ANR	986075	Identifier	is_write		986010	0					
+ANR	986076	Argument	bytes		986010	2					
+ANR	986077	Identifier	bytes		986010	0					
+ANR	986078	IfStatement	"if ( throttle_schedule_timer ( & bs -> throttle_state , is_write ) )"		986010	3					
+ANR	986079	Condition	"throttle_schedule_timer ( & bs -> throttle_state , is_write )"	37:8:700:753	986010	0	True				
+ANR	986080	CallExpression	"throttle_schedule_timer ( & bs -> throttle_state , is_write )"		986010	0					
+ANR	986081	Callee	throttle_schedule_timer		986010	0					
+ANR	986082	Identifier	throttle_schedule_timer		986010	0					
+ANR	986083	ArgumentList	& bs -> throttle_state		986010	1					
+ANR	986084	Argument	& bs -> throttle_state		986010	0					
+ANR	986085	UnaryOperationExpression	& bs -> throttle_state		986010	0					
+ANR	986086	UnaryOperator	&		986010	0					
+ANR	986087	PtrMemberAccess	bs -> throttle_state		986010	1					
+ANR	986088	Identifier	bs		986010	0					
+ANR	986089	Identifier	throttle_state		986010	1					
+ANR	986090	Argument	is_write		986010	1					
+ANR	986091	Identifier	is_write		986010	0					
+ANR	986092	CompoundStatement		31:64:584:584	986010	1					
+ANR	986093	ReturnStatement	return ;	39:8:767:773	986010	0	True				
+ANR	986094	ExpressionStatement	qemu_co_queue_next ( & bs -> throttled_reqs [ is_write ] )	47:4:838:887	986010	4	True				
+ANR	986095	CallExpression	qemu_co_queue_next ( & bs -> throttled_reqs [ is_write ] )		986010	0					
+ANR	986096	Callee	qemu_co_queue_next		986010	0					
+ANR	986097	Identifier	qemu_co_queue_next		986010	0					
+ANR	986098	ArgumentList	& bs -> throttled_reqs [ is_write ]		986010	1					
+ANR	986099	Argument	& bs -> throttled_reqs [ is_write ]		986010	0					
+ANR	986100	UnaryOperationExpression	& bs -> throttled_reqs [ is_write ]		986010	0					
+ANR	986101	UnaryOperator	&		986010	0					
+ANR	986102	ArrayIndexing	bs -> throttled_reqs [ is_write ]		986010	1					
+ANR	986103	PtrMemberAccess	bs -> throttled_reqs		986010	0					
+ANR	986104	Identifier	bs		986010	0					
+ANR	986105	Identifier	throttled_reqs		986010	1					
+ANR	986106	Identifier	is_write		986010	1					
+ANR	986107	ReturnType	static void		986010	1					
+ANR	986108	Identifier	bdrv_io_limits_intercept		986010	2					
+ANR	986109	ParameterList	"BlockDriverState * bs , unsigned int bytes , bool is_write"		986010	3					
+ANR	986110	Parameter	BlockDriverState * bs	1:37:37:56	986010	0	True				
+ANR	986111	ParameterType	BlockDriverState *		986010	0					
+ANR	986112	Identifier	bs		986010	1					
+ANR	986113	Parameter	unsigned int bytes	3:37:97:114	986010	1	True				
+ANR	986114	ParameterType	unsigned int		986010	0					
+ANR	986115	Identifier	bytes		986010	1					
+ANR	986116	Parameter	bool is_write	5:37:155:167	986010	2	True				
+ANR	986117	ParameterType	bool		986010	0					
+ANR	986118	Identifier	is_write		986010	1					
+ANR	986119	CFGEntryNode	ENTRY		986010		True				
+ANR	986120	CFGExitNode	EXIT		986010		True				
+ANR	986121	Symbol	bs		986010						
+ANR	986122	Symbol	bs -> throttled_reqs		986010						
+ANR	986123	Symbol	throttle_schedule_timer		986010						
+ANR	986124	Symbol	* bs		986010						
+ANR	986125	Symbol	& bs -> throttle_state		986010						
+ANR	986126	Symbol	bytes		986010						
+ANR	986127	Symbol	must_wait		986010						
+ANR	986128	Symbol	is_write		986010						
+ANR	986129	Symbol	qemu_co_queue_empty		986010						

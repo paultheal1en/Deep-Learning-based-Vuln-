@@ -1,0 +1,767 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	965687	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_co_pwritev_0.c								
+ANR	965688	Function	bdrv_co_pwritev	1:0:0:4008							
+ANR	965689	FunctionDef	"bdrv_co_pwritev (BlockDriverState * bs , int64_t offset , unsigned int bytes , QEMUIOVector * qiov , BdrvRequestFlags flags)"		965688	0					
+ANR	965690	CompoundStatement		7:0:146:4008	965688	0					
+ANR	965691	IdentifierDeclStatement	BdrvTrackedRequest req ;	9:4:153:175	965688	0	True				
+ANR	965692	IdentifierDecl	req		965688	0					
+ANR	965693	IdentifierDeclType	BdrvTrackedRequest		965688	0					
+ANR	965694	Identifier	req		965688	1					
+ANR	965695	IdentifierDeclStatement	uint64_t align = bs -> request_alignment ;	11:4:182:220	965688	1	True				
+ANR	965696	IdentifierDecl	align = bs -> request_alignment		965688	0					
+ANR	965697	IdentifierDeclType	uint64_t		965688	0					
+ANR	965698	Identifier	align		965688	1					
+ANR	965699	AssignmentExpression	align = bs -> request_alignment		965688	2		=			
+ANR	965700	Identifier	align		965688	0					
+ANR	965701	PtrMemberAccess	bs -> request_alignment		965688	1					
+ANR	965702	Identifier	bs		965688	0					
+ANR	965703	Identifier	request_alignment		965688	1					
+ANR	965704	IdentifierDeclStatement	uint8_t * head_buf = NULL ;	13:4:227:251	965688	2	True				
+ANR	965705	IdentifierDecl	* head_buf = NULL		965688	0					
+ANR	965706	IdentifierDeclType	uint8_t *		965688	0					
+ANR	965707	Identifier	head_buf		965688	1					
+ANR	965708	AssignmentExpression	* head_buf = NULL		965688	2		=			
+ANR	965709	Identifier	NULL		965688	0					
+ANR	965710	Identifier	NULL		965688	1					
+ANR	965711	IdentifierDeclStatement	uint8_t * tail_buf = NULL ;	15:4:258:282	965688	3	True				
+ANR	965712	IdentifierDecl	* tail_buf = NULL		965688	0					
+ANR	965713	IdentifierDeclType	uint8_t *		965688	0					
+ANR	965714	Identifier	tail_buf		965688	1					
+ANR	965715	AssignmentExpression	* tail_buf = NULL		965688	2		=			
+ANR	965716	Identifier	NULL		965688	0					
+ANR	965717	Identifier	NULL		965688	1					
+ANR	965718	IdentifierDeclStatement	QEMUIOVector local_qiov ;	17:4:289:312	965688	4	True				
+ANR	965719	IdentifierDecl	local_qiov		965688	0					
+ANR	965720	IdentifierDeclType	QEMUIOVector		965688	0					
+ANR	965721	Identifier	local_qiov		965688	1					
+ANR	965722	IdentifierDeclStatement	bool use_local_qiov = false ;	19:4:319:346	965688	5	True				
+ANR	965723	IdentifierDecl	use_local_qiov = false		965688	0					
+ANR	965724	IdentifierDeclType	bool		965688	0					
+ANR	965725	Identifier	use_local_qiov		965688	1					
+ANR	965726	AssignmentExpression	use_local_qiov = false		965688	2		=			
+ANR	965727	Identifier	false		965688	0					
+ANR	965728	Identifier	false		965688	1					
+ANR	965729	IdentifierDeclStatement	int ret ;	21:4:353:360	965688	6	True				
+ANR	965730	IdentifierDecl	ret		965688	0					
+ANR	965731	IdentifierDeclType	int		965688	0					
+ANR	965732	Identifier	ret		965688	1					
+ANR	965733	IfStatement	if ( ! bs -> drv )		965688	7					
+ANR	965734	Condition	! bs -> drv	25:8:373:380	965688	0	True				
+ANR	965735	UnaryOperationExpression	! bs -> drv		965688	0					
+ANR	965736	UnaryOperator	!		965688	0					
+ANR	965737	PtrMemberAccess	bs -> drv		965688	1					
+ANR	965738	Identifier	bs		965688	0					
+ANR	965739	Identifier	drv		965688	1					
+ANR	965740	CompoundStatement		19:18:236:236	965688	1					
+ANR	965741	ReturnStatement	return - ENOMEDIUM ;	27:8:394:411	965688	0	True				
+ANR	965742	UnaryOperationExpression	- ENOMEDIUM		965688	0					
+ANR	965743	UnaryOperator	-		965688	0					
+ANR	965744	Identifier	ENOMEDIUM		965688	1					
+ANR	965745	IfStatement	if ( bs -> read_only )		965688	8					
+ANR	965746	Condition	bs -> read_only	31:8:429:441	965688	0	True				
+ANR	965747	PtrMemberAccess	bs -> read_only		965688	0					
+ANR	965748	Identifier	bs		965688	0					
+ANR	965749	Identifier	read_only		965688	1					
+ANR	965750	CompoundStatement		25:23:297:297	965688	1					
+ANR	965751	ReturnStatement	return - EPERM ;	33:8:455:468	965688	0	True				
+ANR	965752	UnaryOperationExpression	- EPERM		965688	0					
+ANR	965753	UnaryOperator	-		965688	0					
+ANR	965754	Identifier	EPERM		965688	1					
+ANR	965755	ExpressionStatement	assert ( ! ( bs -> open_flags & BDRV_O_INACTIVE ) )	37:4:482:525	965688	9	True				
+ANR	965756	CallExpression	assert ( ! ( bs -> open_flags & BDRV_O_INACTIVE ) )		965688	0					
+ANR	965757	Callee	assert		965688	0					
+ANR	965758	Identifier	assert		965688	0					
+ANR	965759	ArgumentList	! ( bs -> open_flags & BDRV_O_INACTIVE )		965688	1					
+ANR	965760	Argument	! ( bs -> open_flags & BDRV_O_INACTIVE )		965688	0					
+ANR	965761	UnaryOperationExpression	! ( bs -> open_flags & BDRV_O_INACTIVE )		965688	0					
+ANR	965762	UnaryOperator	!		965688	0					
+ANR	965763	BitAndExpression	bs -> open_flags & BDRV_O_INACTIVE		965688	1		&			
+ANR	965764	PtrMemberAccess	bs -> open_flags		965688	0					
+ANR	965765	Identifier	bs		965688	0					
+ANR	965766	Identifier	open_flags		965688	1					
+ANR	965767	Identifier	BDRV_O_INACTIVE		965688	1					
+ANR	965768	ExpressionStatement	"ret = bdrv_check_byte_request ( bs , offset , bytes )"	41:4:534:582	965688	10	True				
+ANR	965769	AssignmentExpression	"ret = bdrv_check_byte_request ( bs , offset , bytes )"		965688	0		=			
+ANR	965770	Identifier	ret		965688	0					
+ANR	965771	CallExpression	"bdrv_check_byte_request ( bs , offset , bytes )"		965688	1					
+ANR	965772	Callee	bdrv_check_byte_request		965688	0					
+ANR	965773	Identifier	bdrv_check_byte_request		965688	0					
+ANR	965774	ArgumentList	bs		965688	1					
+ANR	965775	Argument	bs		965688	0					
+ANR	965776	Identifier	bs		965688	0					
+ANR	965777	Argument	offset		965688	1					
+ANR	965778	Identifier	offset		965688	0					
+ANR	965779	Argument	bytes		965688	2					
+ANR	965780	Identifier	bytes		965688	0					
+ANR	965781	IfStatement	if ( ret < 0 )		965688	11					
+ANR	965782	Condition	ret < 0	43:8:593:599	965688	0	True				
+ANR	965783	RelationalExpression	ret < 0		965688	0		<			
+ANR	965784	Identifier	ret		965688	0					
+ANR	965785	PrimaryExpression	0		965688	1					
+ANR	965786	CompoundStatement		37:17:455:455	965688	1					
+ANR	965787	ReturnStatement	return ret ;	45:8:613:623	965688	0	True				
+ANR	965788	Identifier	ret		965688	0					
+ANR	965789	ExpressionStatement	"tracked_request_begin ( & req , bs , offset , bytes , BDRV_TRACKED_WRITE )"	61:4:889:955	965688	12	True				
+ANR	965790	CallExpression	"tracked_request_begin ( & req , bs , offset , bytes , BDRV_TRACKED_WRITE )"		965688	0					
+ANR	965791	Callee	tracked_request_begin		965688	0					
+ANR	965792	Identifier	tracked_request_begin		965688	0					
+ANR	965793	ArgumentList	& req		965688	1					
+ANR	965794	Argument	& req		965688	0					
+ANR	965795	UnaryOperationExpression	& req		965688	0					
+ANR	965796	UnaryOperator	&		965688	0					
+ANR	965797	Identifier	req		965688	1					
+ANR	965798	Argument	bs		965688	1					
+ANR	965799	Identifier	bs		965688	0					
+ANR	965800	Argument	offset		965688	2					
+ANR	965801	Identifier	offset		965688	0					
+ANR	965802	Argument	bytes		965688	3					
+ANR	965803	Identifier	bytes		965688	0					
+ANR	965804	Argument	BDRV_TRACKED_WRITE		965688	4					
+ANR	965805	Identifier	BDRV_TRACKED_WRITE		965688	0					
+ANR	965806	IfStatement	if ( ! qiov )		965688	13					
+ANR	965807	Condition	! qiov	65:8:968:972	965688	0	True				
+ANR	965808	UnaryOperationExpression	! qiov		965688	0					
+ANR	965809	UnaryOperator	!		965688	0					
+ANR	965810	Identifier	qiov		965688	1					
+ANR	965811	CompoundStatement		59:15:828:828	965688	1					
+ANR	965812	ExpressionStatement	"ret = bdrv_co_do_zero_pwritev ( bs , offset , bytes , flags , & req )"	67:8:986:1047	965688	0	True				
+ANR	965813	AssignmentExpression	"ret = bdrv_co_do_zero_pwritev ( bs , offset , bytes , flags , & req )"		965688	0		=			
+ANR	965814	Identifier	ret		965688	0					
+ANR	965815	CallExpression	"bdrv_co_do_zero_pwritev ( bs , offset , bytes , flags , & req )"		965688	1					
+ANR	965816	Callee	bdrv_co_do_zero_pwritev		965688	0					
+ANR	965817	Identifier	bdrv_co_do_zero_pwritev		965688	0					
+ANR	965818	ArgumentList	bs		965688	1					
+ANR	965819	Argument	bs		965688	0					
+ANR	965820	Identifier	bs		965688	0					
+ANR	965821	Argument	offset		965688	1					
+ANR	965822	Identifier	offset		965688	0					
+ANR	965823	Argument	bytes		965688	2					
+ANR	965824	Identifier	bytes		965688	0					
+ANR	965825	Argument	flags		965688	3					
+ANR	965826	Identifier	flags		965688	0					
+ANR	965827	Argument	& req		965688	4					
+ANR	965828	UnaryOperationExpression	& req		965688	0					
+ANR	965829	UnaryOperator	&		965688	0					
+ANR	965830	Identifier	req		965688	1					
+ANR	965831	GotoStatement	goto out ;	69:8:1058:1066	965688	1	True				
+ANR	965832	Identifier	out		965688	0					
+ANR	965833	IfStatement	if ( offset & ( align - 1 ) )		965688	14					
+ANR	965834	Condition	offset & ( align - 1 )	75:8:1086:1105	965688	0	True				
+ANR	965835	BitAndExpression	offset & ( align - 1 )		965688	0		&			
+ANR	965836	Identifier	offset		965688	0					
+ANR	965837	AdditiveExpression	align - 1		965688	1		-			
+ANR	965838	Identifier	align		965688	0					
+ANR	965839	PrimaryExpression	1		965688	1					
+ANR	965840	CompoundStatement		73:8:1005:1026	965688	1					
+ANR	965841	IdentifierDeclStatement	QEMUIOVector head_qiov ;	77:8:1119:1141	965688	0	True				
+ANR	965842	IdentifierDecl	head_qiov		965688	0					
+ANR	965843	IdentifierDeclType	QEMUIOVector		965688	0					
+ANR	965844	Identifier	head_qiov		965688	1					
+ANR	965845	IdentifierDeclStatement	struct iovec head_iov ;	79:8:1152:1173	965688	1	True				
+ANR	965846	IdentifierDecl	head_iov		965688	0					
+ANR	965847	IdentifierDeclType	struct iovec		965688	0					
+ANR	965848	Identifier	head_iov		965688	1					
+ANR	965849	ExpressionStatement	"mark_request_serialising ( & req , align )"	83:8:1186:1223	965688	2	True				
+ANR	965850	CallExpression	"mark_request_serialising ( & req , align )"		965688	0					
+ANR	965851	Callee	mark_request_serialising		965688	0					
+ANR	965852	Identifier	mark_request_serialising		965688	0					
+ANR	965853	ArgumentList	& req		965688	1					
+ANR	965854	Argument	& req		965688	0					
+ANR	965855	UnaryOperationExpression	& req		965688	0					
+ANR	965856	UnaryOperator	&		965688	0					
+ANR	965857	Identifier	req		965688	1					
+ANR	965858	Argument	align		965688	1					
+ANR	965859	Identifier	align		965688	0					
+ANR	965860	ExpressionStatement	wait_serialising_requests ( & req )	85:8:1234:1265	965688	3	True				
+ANR	965861	CallExpression	wait_serialising_requests ( & req )		965688	0					
+ANR	965862	Callee	wait_serialising_requests		965688	0					
+ANR	965863	Identifier	wait_serialising_requests		965688	0					
+ANR	965864	ArgumentList	& req		965688	1					
+ANR	965865	Argument	& req		965688	0					
+ANR	965866	UnaryOperationExpression	& req		965688	0					
+ANR	965867	UnaryOperator	&		965688	0					
+ANR	965868	Identifier	req		965688	1					
+ANR	965869	ExpressionStatement	"head_buf = qemu_blockalign ( bs , align )"	89:8:1278:1315	965688	4	True				
+ANR	965870	AssignmentExpression	"head_buf = qemu_blockalign ( bs , align )"		965688	0		=			
+ANR	965871	Identifier	head_buf		965688	0					
+ANR	965872	CallExpression	"qemu_blockalign ( bs , align )"		965688	1					
+ANR	965873	Callee	qemu_blockalign		965688	0					
+ANR	965874	Identifier	qemu_blockalign		965688	0					
+ANR	965875	ArgumentList	bs		965688	1					
+ANR	965876	Argument	bs		965688	0					
+ANR	965877	Identifier	bs		965688	0					
+ANR	965878	Argument	align		965688	1					
+ANR	965879	Identifier	align		965688	0					
+ANR	965880	Statement	head_iov	91:8:1326:1333	965688	5	True				
+ANR	965881	Statement	=	91:17:1335:1335	965688	6	True				
+ANR	965882	Statement	(	91:19:1337:1337	965688	7	True				
+ANR	965883	Statement	struct	91:20:1338:1343	965688	8	True				
+ANR	965884	Statement	iovec	91:27:1345:1349	965688	9	True				
+ANR	965885	Statement	)	91:32:1350:1350	965688	10	True				
+ANR	965886	CompoundStatement		85:34:1205:1205	965688	11					
+ANR	965887	Statement	.	93:12:1367:1367	965688	0	True				
+ANR	965888	Statement	iov_base	93:13:1368:1375	965688	1	True				
+ANR	965889	Statement	=	93:24:1379:1379	965688	2	True				
+ANR	965890	Statement	head_buf	93:26:1381:1388	965688	3	True				
+ANR	965891	Statement	","	93:34:1389:1389	965688	4	True				
+ANR	965892	Statement	.	95:12:1404:1404	965688	5	True				
+ANR	965893	Statement	iov_len	95:13:1405:1411	965688	6	True				
+ANR	965894	Statement	=	95:24:1416:1416	965688	7	True				
+ANR	965895	Statement	align	95:26:1418:1422	965688	8	True				
+ANR	965896	Statement	","	95:31:1423:1423	965688	9	True				
+ANR	965897	ExpressionStatement		97:9:1435:1435	965688	12	True				
+ANR	965898	ExpressionStatement	"qemu_iovec_init_external ( & head_qiov , & head_iov , 1 )"	99:8:1446:1496	965688	13	True				
+ANR	965899	CallExpression	"qemu_iovec_init_external ( & head_qiov , & head_iov , 1 )"		965688	0					
+ANR	965900	Callee	qemu_iovec_init_external		965688	0					
+ANR	965901	Identifier	qemu_iovec_init_external		965688	0					
+ANR	965902	ArgumentList	& head_qiov		965688	1					
+ANR	965903	Argument	& head_qiov		965688	0					
+ANR	965904	UnaryOperationExpression	& head_qiov		965688	0					
+ANR	965905	UnaryOperator	&		965688	0					
+ANR	965906	Identifier	head_qiov		965688	1					
+ANR	965907	Argument	& head_iov		965688	1					
+ANR	965908	UnaryOperationExpression	& head_iov		965688	0					
+ANR	965909	UnaryOperator	&		965688	0					
+ANR	965910	Identifier	head_iov		965688	1					
+ANR	965911	Argument	1		965688	2					
+ANR	965912	PrimaryExpression	1		965688	0					
+ANR	965913	ExpressionStatement	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_HEAD )"	103:8:1509:1554	965688	14	True				
+ANR	965914	CallExpression	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_HEAD )"		965688	0					
+ANR	965915	Callee	bdrv_debug_event		965688	0					
+ANR	965916	Identifier	bdrv_debug_event		965688	0					
+ANR	965917	ArgumentList	bs		965688	1					
+ANR	965918	Argument	bs		965688	0					
+ANR	965919	Identifier	bs		965688	0					
+ANR	965920	Argument	BLKDBG_PWRITEV_RMW_HEAD		965688	1					
+ANR	965921	Identifier	BLKDBG_PWRITEV_RMW_HEAD		965688	0					
+ANR	965922	ExpressionStatement	"ret = bdrv_aligned_preadv ( bs , & req , offset & ~ ( align - 1 ) , align , align , & head_qiov , 0 )"	105:8:1565:1687	965688	15	True				
+ANR	965923	AssignmentExpression	"ret = bdrv_aligned_preadv ( bs , & req , offset & ~ ( align - 1 ) , align , align , & head_qiov , 0 )"		965688	0		=			
+ANR	965924	Identifier	ret		965688	0					
+ANR	965925	CallExpression	"bdrv_aligned_preadv ( bs , & req , offset & ~ ( align - 1 ) , align , align , & head_qiov , 0 )"		965688	1					
+ANR	965926	Callee	bdrv_aligned_preadv		965688	0					
+ANR	965927	Identifier	bdrv_aligned_preadv		965688	0					
+ANR	965928	ArgumentList	bs		965688	1					
+ANR	965929	Argument	bs		965688	0					
+ANR	965930	Identifier	bs		965688	0					
+ANR	965931	Argument	& req		965688	1					
+ANR	965932	UnaryOperationExpression	& req		965688	0					
+ANR	965933	UnaryOperator	&		965688	0					
+ANR	965934	Identifier	req		965688	1					
+ANR	965935	Argument	offset & ~ ( align - 1 )		965688	2					
+ANR	965936	BitAndExpression	offset & ~ ( align - 1 )		965688	0		&			
+ANR	965937	Identifier	offset		965688	0					
+ANR	965938	UnaryOperationExpression	~ ( align - 1 )		965688	1					
+ANR	965939	UnaryOperator	~		965688	0					
+ANR	965940	AdditiveExpression	align - 1		965688	1		-			
+ANR	965941	Identifier	align		965688	0					
+ANR	965942	PrimaryExpression	1		965688	1					
+ANR	965943	Argument	align		965688	3					
+ANR	965944	Identifier	align		965688	0					
+ANR	965945	Argument	align		965688	4					
+ANR	965946	Identifier	align		965688	0					
+ANR	965947	Argument	& head_qiov		965688	5					
+ANR	965948	UnaryOperationExpression	& head_qiov		965688	0					
+ANR	965949	UnaryOperator	&		965688	0					
+ANR	965950	Identifier	head_qiov		965688	1					
+ANR	965951	Argument	0		965688	6					
+ANR	965952	PrimaryExpression	0		965688	0					
+ANR	965953	IfStatement	if ( ret < 0 )		965688	16					
+ANR	965954	Condition	ret < 0	109:12:1702:1708	965688	0	True				
+ANR	965955	RelationalExpression	ret < 0		965688	0		<			
+ANR	965956	Identifier	ret		965688	0					
+ANR	965957	PrimaryExpression	0		965688	1					
+ANR	965958	CompoundStatement		103:21:1564:1564	965688	1					
+ANR	965959	GotoStatement	goto fail ;	111:12:1726:1735	965688	0	True				
+ANR	965960	Identifier	fail		965688	0					
+ANR	965961	ExpressionStatement	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_AFTER_HEAD )"	115:8:1757:1808	965688	17	True				
+ANR	965962	CallExpression	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_AFTER_HEAD )"		965688	0					
+ANR	965963	Callee	bdrv_debug_event		965688	0					
+ANR	965964	Identifier	bdrv_debug_event		965688	0					
+ANR	965965	ArgumentList	bs		965688	1					
+ANR	965966	Argument	bs		965688	0					
+ANR	965967	Identifier	bs		965688	0					
+ANR	965968	Argument	BLKDBG_PWRITEV_RMW_AFTER_HEAD		965688	1					
+ANR	965969	Identifier	BLKDBG_PWRITEV_RMW_AFTER_HEAD		965688	0					
+ANR	965970	ExpressionStatement	"qemu_iovec_init ( & local_qiov , qiov -> niov + 2 )"	119:8:1821:1865	965688	18	True				
+ANR	965971	CallExpression	"qemu_iovec_init ( & local_qiov , qiov -> niov + 2 )"		965688	0					
+ANR	965972	Callee	qemu_iovec_init		965688	0					
+ANR	965973	Identifier	qemu_iovec_init		965688	0					
+ANR	965974	ArgumentList	& local_qiov		965688	1					
+ANR	965975	Argument	& local_qiov		965688	0					
+ANR	965976	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	965977	UnaryOperator	&		965688	0					
+ANR	965978	Identifier	local_qiov		965688	1					
+ANR	965979	Argument	qiov -> niov + 2		965688	1					
+ANR	965980	AdditiveExpression	qiov -> niov + 2		965688	0		+			
+ANR	965981	PtrMemberAccess	qiov -> niov		965688	0					
+ANR	965982	Identifier	qiov		965688	0					
+ANR	965983	Identifier	niov		965688	1					
+ANR	965984	PrimaryExpression	2		965688	1					
+ANR	965985	ExpressionStatement	"qemu_iovec_add ( & local_qiov , head_buf , offset & ( align - 1 ) )"	121:8:1876:1935	965688	19	True				
+ANR	965986	CallExpression	"qemu_iovec_add ( & local_qiov , head_buf , offset & ( align - 1 ) )"		965688	0					
+ANR	965987	Callee	qemu_iovec_add		965688	0					
+ANR	965988	Identifier	qemu_iovec_add		965688	0					
+ANR	965989	ArgumentList	& local_qiov		965688	1					
+ANR	965990	Argument	& local_qiov		965688	0					
+ANR	965991	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	965992	UnaryOperator	&		965688	0					
+ANR	965993	Identifier	local_qiov		965688	1					
+ANR	965994	Argument	head_buf		965688	1					
+ANR	965995	Identifier	head_buf		965688	0					
+ANR	965996	Argument	offset & ( align - 1 )		965688	2					
+ANR	965997	BitAndExpression	offset & ( align - 1 )		965688	0		&			
+ANR	965998	Identifier	offset		965688	0					
+ANR	965999	AdditiveExpression	align - 1		965688	1		-			
+ANR	966000	Identifier	align		965688	0					
+ANR	966001	PrimaryExpression	1		965688	1					
+ANR	966002	ExpressionStatement	"qemu_iovec_concat ( & local_qiov , qiov , 0 , qiov -> size )"	123:8:1946:1997	965688	20	True				
+ANR	966003	CallExpression	"qemu_iovec_concat ( & local_qiov , qiov , 0 , qiov -> size )"		965688	0					
+ANR	966004	Callee	qemu_iovec_concat		965688	0					
+ANR	966005	Identifier	qemu_iovec_concat		965688	0					
+ANR	966006	ArgumentList	& local_qiov		965688	1					
+ANR	966007	Argument	& local_qiov		965688	0					
+ANR	966008	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	966009	UnaryOperator	&		965688	0					
+ANR	966010	Identifier	local_qiov		965688	1					
+ANR	966011	Argument	qiov		965688	1					
+ANR	966012	Identifier	qiov		965688	0					
+ANR	966013	Argument	0		965688	2					
+ANR	966014	PrimaryExpression	0		965688	0					
+ANR	966015	Argument	qiov -> size		965688	3					
+ANR	966016	PtrMemberAccess	qiov -> size		965688	0					
+ANR	966017	Identifier	qiov		965688	0					
+ANR	966018	Identifier	size		965688	1					
+ANR	966019	ExpressionStatement	use_local_qiov = true	125:8:2008:2029	965688	21	True				
+ANR	966020	AssignmentExpression	use_local_qiov = true		965688	0		=			
+ANR	966021	Identifier	use_local_qiov		965688	0					
+ANR	966022	Identifier	true		965688	1					
+ANR	966023	ExpressionStatement	bytes += offset & ( align - 1 )	129:8:2042:2071	965688	22	True				
+ANR	966024	AssignmentExpression	bytes += offset & ( align - 1 )		965688	0		+=			
+ANR	966025	Identifier	bytes		965688	0					
+ANR	966026	BitAndExpression	offset & ( align - 1 )		965688	1		&			
+ANR	966027	Identifier	offset		965688	0					
+ANR	966028	AdditiveExpression	align - 1		965688	1		-			
+ANR	966029	Identifier	align		965688	0					
+ANR	966030	PrimaryExpression	1		965688	1					
+ANR	966031	ExpressionStatement	offset = offset & ~ ( align - 1 )	131:8:2082:2112	965688	23	True				
+ANR	966032	AssignmentExpression	offset = offset & ~ ( align - 1 )		965688	0		=			
+ANR	966033	Identifier	offset		965688	0					
+ANR	966034	BitAndExpression	offset & ~ ( align - 1 )		965688	1		&			
+ANR	966035	Identifier	offset		965688	0					
+ANR	966036	UnaryOperationExpression	~ ( align - 1 )		965688	1					
+ANR	966037	UnaryOperator	~		965688	0					
+ANR	966038	AdditiveExpression	align - 1		965688	1		-			
+ANR	966039	Identifier	align		965688	0					
+ANR	966040	PrimaryExpression	1		965688	1					
+ANR	966041	IfStatement	if ( bytes < align )		965688	24					
+ANR	966042	Condition	bytes < align	141:12:2246:2258	965688	0	True				
+ANR	966043	RelationalExpression	bytes < align		965688	0		<			
+ANR	966044	Identifier	bytes		965688	0					
+ANR	966045	Identifier	align		965688	1					
+ANR	966046	CompoundStatement		135:27:2114:2114	965688	1					
+ANR	966047	ExpressionStatement	"qemu_iovec_add ( & local_qiov , head_buf + bytes , align - bytes )"	143:12:2276:2336	965688	0	True				
+ANR	966048	CallExpression	"qemu_iovec_add ( & local_qiov , head_buf + bytes , align - bytes )"		965688	0					
+ANR	966049	Callee	qemu_iovec_add		965688	0					
+ANR	966050	Identifier	qemu_iovec_add		965688	0					
+ANR	966051	ArgumentList	& local_qiov		965688	1					
+ANR	966052	Argument	& local_qiov		965688	0					
+ANR	966053	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	966054	UnaryOperator	&		965688	0					
+ANR	966055	Identifier	local_qiov		965688	1					
+ANR	966056	Argument	head_buf + bytes		965688	1					
+ANR	966057	AdditiveExpression	head_buf + bytes		965688	0		+			
+ANR	966058	Identifier	head_buf		965688	0					
+ANR	966059	Identifier	bytes		965688	1					
+ANR	966060	Argument	align - bytes		965688	2					
+ANR	966061	AdditiveExpression	align - bytes		965688	0		-			
+ANR	966062	Identifier	align		965688	0					
+ANR	966063	Identifier	bytes		965688	1					
+ANR	966064	ExpressionStatement	bytes = align	145:12:2351:2364	965688	1	True				
+ANR	966065	AssignmentExpression	bytes = align		965688	0		=			
+ANR	966066	Identifier	bytes		965688	0					
+ANR	966067	Identifier	align		965688	1					
+ANR	966068	IfStatement	if ( ( offset + bytes ) & ( align - 1 ) )		965688	15					
+ANR	966069	Condition	( offset + bytes ) & ( align - 1 )	153:8:2395:2424	965688	0	True				
+ANR	966070	BitAndExpression	( offset + bytes ) & ( align - 1 )		965688	0		&			
+ANR	966071	AdditiveExpression	offset + bytes		965688	0		+			
+ANR	966072	Identifier	offset		965688	0					
+ANR	966073	Identifier	bytes		965688	1					
+ANR	966074	AdditiveExpression	align - 1		965688	1		-			
+ANR	966075	Identifier	align		965688	0					
+ANR	966076	PrimaryExpression	1		965688	1					
+ANR	966077	CompoundStatement		155:8:2384:2395	965688	1					
+ANR	966078	IdentifierDeclStatement	QEMUIOVector tail_qiov ;	155:8:2438:2460	965688	0	True				
+ANR	966079	IdentifierDecl	tail_qiov		965688	0					
+ANR	966080	IdentifierDeclType	QEMUIOVector		965688	0					
+ANR	966081	Identifier	tail_qiov		965688	1					
+ANR	966082	IdentifierDeclStatement	struct iovec tail_iov ;	157:8:2471:2492	965688	1	True				
+ANR	966083	IdentifierDecl	tail_iov		965688	0					
+ANR	966084	IdentifierDeclType	struct iovec		965688	0					
+ANR	966085	Identifier	tail_iov		965688	1					
+ANR	966086	IdentifierDeclStatement	size_t tail_bytes ;	159:8:2503:2520	965688	2	True				
+ANR	966087	IdentifierDecl	tail_bytes		965688	0					
+ANR	966088	IdentifierDeclType	size_t		965688	0					
+ANR	966089	Identifier	tail_bytes		965688	1					
+ANR	966090	IdentifierDeclStatement	bool waited ;	161:8:2531:2542	965688	3	True				
+ANR	966091	IdentifierDecl	waited		965688	0					
+ANR	966092	IdentifierDeclType	bool		965688	0					
+ANR	966093	Identifier	waited		965688	1					
+ANR	966094	ExpressionStatement	"mark_request_serialising ( & req , align )"	165:8:2555:2592	965688	4	True				
+ANR	966095	CallExpression	"mark_request_serialising ( & req , align )"		965688	0					
+ANR	966096	Callee	mark_request_serialising		965688	0					
+ANR	966097	Identifier	mark_request_serialising		965688	0					
+ANR	966098	ArgumentList	& req		965688	1					
+ANR	966099	Argument	& req		965688	0					
+ANR	966100	UnaryOperationExpression	& req		965688	0					
+ANR	966101	UnaryOperator	&		965688	0					
+ANR	966102	Identifier	req		965688	1					
+ANR	966103	Argument	align		965688	1					
+ANR	966104	Identifier	align		965688	0					
+ANR	966105	ExpressionStatement	waited = wait_serialising_requests ( & req )	167:8:2603:2643	965688	5	True				
+ANR	966106	AssignmentExpression	waited = wait_serialising_requests ( & req )		965688	0		=			
+ANR	966107	Identifier	waited		965688	0					
+ANR	966108	CallExpression	wait_serialising_requests ( & req )		965688	1					
+ANR	966109	Callee	wait_serialising_requests		965688	0					
+ANR	966110	Identifier	wait_serialising_requests		965688	0					
+ANR	966111	ArgumentList	& req		965688	1					
+ANR	966112	Argument	& req		965688	0					
+ANR	966113	UnaryOperationExpression	& req		965688	0					
+ANR	966114	UnaryOperator	&		965688	0					
+ANR	966115	Identifier	req		965688	1					
+ANR	966116	ExpressionStatement	assert ( ! waited || ! use_local_qiov )	169:8:2654:2688	965688	6	True				
+ANR	966117	CallExpression	assert ( ! waited || ! use_local_qiov )		965688	0					
+ANR	966118	Callee	assert		965688	0					
+ANR	966119	Identifier	assert		965688	0					
+ANR	966120	ArgumentList	! waited || ! use_local_qiov		965688	1					
+ANR	966121	Argument	! waited || ! use_local_qiov		965688	0					
+ANR	966122	OrExpression	! waited || ! use_local_qiov		965688	0		||			
+ANR	966123	UnaryOperationExpression	! waited		965688	0					
+ANR	966124	UnaryOperator	!		965688	0					
+ANR	966125	Identifier	waited		965688	1					
+ANR	966126	UnaryOperationExpression	! use_local_qiov		965688	1					
+ANR	966127	UnaryOperator	!		965688	0					
+ANR	966128	Identifier	use_local_qiov		965688	1					
+ANR	966129	ExpressionStatement	"tail_buf = qemu_blockalign ( bs , align )"	173:8:2701:2738	965688	7	True				
+ANR	966130	AssignmentExpression	"tail_buf = qemu_blockalign ( bs , align )"		965688	0		=			
+ANR	966131	Identifier	tail_buf		965688	0					
+ANR	966132	CallExpression	"qemu_blockalign ( bs , align )"		965688	1					
+ANR	966133	Callee	qemu_blockalign		965688	0					
+ANR	966134	Identifier	qemu_blockalign		965688	0					
+ANR	966135	ArgumentList	bs		965688	1					
+ANR	966136	Argument	bs		965688	0					
+ANR	966137	Identifier	bs		965688	0					
+ANR	966138	Argument	align		965688	1					
+ANR	966139	Identifier	align		965688	0					
+ANR	966140	Statement	tail_iov	175:8:2749:2756	965688	8	True				
+ANR	966141	Statement	=	175:17:2758:2758	965688	9	True				
+ANR	966142	Statement	(	175:19:2760:2760	965688	10	True				
+ANR	966143	Statement	struct	175:20:2761:2766	965688	11	True				
+ANR	966144	Statement	iovec	175:27:2768:2772	965688	12	True				
+ANR	966145	Statement	)	175:32:2773:2773	965688	13	True				
+ANR	966146	CompoundStatement		169:34:2628:2628	965688	14					
+ANR	966147	Statement	.	177:12:2790:2790	965688	0	True				
+ANR	966148	Statement	iov_base	177:13:2791:2798	965688	1	True				
+ANR	966149	Statement	=	177:24:2802:2802	965688	2	True				
+ANR	966150	Statement	tail_buf	177:26:2804:2811	965688	3	True				
+ANR	966151	Statement	","	177:34:2812:2812	965688	4	True				
+ANR	966152	Statement	.	179:12:2827:2827	965688	5	True				
+ANR	966153	Statement	iov_len	179:13:2828:2834	965688	6	True				
+ANR	966154	Statement	=	179:24:2839:2839	965688	7	True				
+ANR	966155	Statement	align	179:26:2841:2845	965688	8	True				
+ANR	966156	Statement	","	179:31:2846:2846	965688	9	True				
+ANR	966157	ExpressionStatement		181:9:2858:2858	965688	15	True				
+ANR	966158	ExpressionStatement	"qemu_iovec_init_external ( & tail_qiov , & tail_iov , 1 )"	183:8:2869:2919	965688	16	True				
+ANR	966159	CallExpression	"qemu_iovec_init_external ( & tail_qiov , & tail_iov , 1 )"		965688	0					
+ANR	966160	Callee	qemu_iovec_init_external		965688	0					
+ANR	966161	Identifier	qemu_iovec_init_external		965688	0					
+ANR	966162	ArgumentList	& tail_qiov		965688	1					
+ANR	966163	Argument	& tail_qiov		965688	0					
+ANR	966164	UnaryOperationExpression	& tail_qiov		965688	0					
+ANR	966165	UnaryOperator	&		965688	0					
+ANR	966166	Identifier	tail_qiov		965688	1					
+ANR	966167	Argument	& tail_iov		965688	1					
+ANR	966168	UnaryOperationExpression	& tail_iov		965688	0					
+ANR	966169	UnaryOperator	&		965688	0					
+ANR	966170	Identifier	tail_iov		965688	1					
+ANR	966171	Argument	1		965688	2					
+ANR	966172	PrimaryExpression	1		965688	0					
+ANR	966173	ExpressionStatement	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_TAIL )"	187:8:2932:2977	965688	17	True				
+ANR	966174	CallExpression	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_TAIL )"		965688	0					
+ANR	966175	Callee	bdrv_debug_event		965688	0					
+ANR	966176	Identifier	bdrv_debug_event		965688	0					
+ANR	966177	ArgumentList	bs		965688	1					
+ANR	966178	Argument	bs		965688	0					
+ANR	966179	Identifier	bs		965688	0					
+ANR	966180	Argument	BLKDBG_PWRITEV_RMW_TAIL		965688	1					
+ANR	966181	Identifier	BLKDBG_PWRITEV_RMW_TAIL		965688	0					
+ANR	966182	ExpressionStatement	"ret = bdrv_aligned_preadv ( bs , & req , ( offset + bytes ) & ~ ( align - 1 ) , align , align , & tail_qiov , 0 )"	189:8:2988:3120	965688	18	True				
+ANR	966183	AssignmentExpression	"ret = bdrv_aligned_preadv ( bs , & req , ( offset + bytes ) & ~ ( align - 1 ) , align , align , & tail_qiov , 0 )"		965688	0		=			
+ANR	966184	Identifier	ret		965688	0					
+ANR	966185	CallExpression	"bdrv_aligned_preadv ( bs , & req , ( offset + bytes ) & ~ ( align - 1 ) , align , align , & tail_qiov , 0 )"		965688	1					
+ANR	966186	Callee	bdrv_aligned_preadv		965688	0					
+ANR	966187	Identifier	bdrv_aligned_preadv		965688	0					
+ANR	966188	ArgumentList	bs		965688	1					
+ANR	966189	Argument	bs		965688	0					
+ANR	966190	Identifier	bs		965688	0					
+ANR	966191	Argument	& req		965688	1					
+ANR	966192	UnaryOperationExpression	& req		965688	0					
+ANR	966193	UnaryOperator	&		965688	0					
+ANR	966194	Identifier	req		965688	1					
+ANR	966195	Argument	( offset + bytes ) & ~ ( align - 1 )		965688	2					
+ANR	966196	BitAndExpression	( offset + bytes ) & ~ ( align - 1 )		965688	0		&			
+ANR	966197	AdditiveExpression	offset + bytes		965688	0		+			
+ANR	966198	Identifier	offset		965688	0					
+ANR	966199	Identifier	bytes		965688	1					
+ANR	966200	UnaryOperationExpression	~ ( align - 1 )		965688	1					
+ANR	966201	UnaryOperator	~		965688	0					
+ANR	966202	AdditiveExpression	align - 1		965688	1		-			
+ANR	966203	Identifier	align		965688	0					
+ANR	966204	PrimaryExpression	1		965688	1					
+ANR	966205	Argument	align		965688	3					
+ANR	966206	Identifier	align		965688	0					
+ANR	966207	Argument	align		965688	4					
+ANR	966208	Identifier	align		965688	0					
+ANR	966209	Argument	& tail_qiov		965688	5					
+ANR	966210	UnaryOperationExpression	& tail_qiov		965688	0					
+ANR	966211	UnaryOperator	&		965688	0					
+ANR	966212	Identifier	tail_qiov		965688	1					
+ANR	966213	Argument	0		965688	6					
+ANR	966214	PrimaryExpression	0		965688	0					
+ANR	966215	IfStatement	if ( ret < 0 )		965688	19					
+ANR	966216	Condition	ret < 0	193:12:3135:3141	965688	0	True				
+ANR	966217	RelationalExpression	ret < 0		965688	0		<			
+ANR	966218	Identifier	ret		965688	0					
+ANR	966219	PrimaryExpression	0		965688	1					
+ANR	966220	CompoundStatement		187:21:2997:2997	965688	1					
+ANR	966221	GotoStatement	goto fail ;	195:12:3159:3168	965688	0	True				
+ANR	966222	Identifier	fail		965688	0					
+ANR	966223	ExpressionStatement	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_AFTER_TAIL )"	199:8:3190:3241	965688	20	True				
+ANR	966224	CallExpression	"bdrv_debug_event ( bs , BLKDBG_PWRITEV_RMW_AFTER_TAIL )"		965688	0					
+ANR	966225	Callee	bdrv_debug_event		965688	0					
+ANR	966226	Identifier	bdrv_debug_event		965688	0					
+ANR	966227	ArgumentList	bs		965688	1					
+ANR	966228	Argument	bs		965688	0					
+ANR	966229	Identifier	bs		965688	0					
+ANR	966230	Argument	BLKDBG_PWRITEV_RMW_AFTER_TAIL		965688	1					
+ANR	966231	Identifier	BLKDBG_PWRITEV_RMW_AFTER_TAIL		965688	0					
+ANR	966232	IfStatement	if ( ! use_local_qiov )		965688	21					
+ANR	966233	Condition	! use_local_qiov	203:12:3258:3272	965688	0	True				
+ANR	966234	UnaryOperationExpression	! use_local_qiov		965688	0					
+ANR	966235	UnaryOperator	!		965688	0					
+ANR	966236	Identifier	use_local_qiov		965688	1					
+ANR	966237	CompoundStatement		197:29:3128:3128	965688	1					
+ANR	966238	ExpressionStatement	"qemu_iovec_init ( & local_qiov , qiov -> niov + 1 )"	205:12:3290:3334	965688	0	True				
+ANR	966239	CallExpression	"qemu_iovec_init ( & local_qiov , qiov -> niov + 1 )"		965688	0					
+ANR	966240	Callee	qemu_iovec_init		965688	0					
+ANR	966241	Identifier	qemu_iovec_init		965688	0					
+ANR	966242	ArgumentList	& local_qiov		965688	1					
+ANR	966243	Argument	& local_qiov		965688	0					
+ANR	966244	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	966245	UnaryOperator	&		965688	0					
+ANR	966246	Identifier	local_qiov		965688	1					
+ANR	966247	Argument	qiov -> niov + 1		965688	1					
+ANR	966248	AdditiveExpression	qiov -> niov + 1		965688	0		+			
+ANR	966249	PtrMemberAccess	qiov -> niov		965688	0					
+ANR	966250	Identifier	qiov		965688	0					
+ANR	966251	Identifier	niov		965688	1					
+ANR	966252	PrimaryExpression	1		965688	1					
+ANR	966253	ExpressionStatement	"qemu_iovec_concat ( & local_qiov , qiov , 0 , qiov -> size )"	207:12:3349:3400	965688	1	True				
+ANR	966254	CallExpression	"qemu_iovec_concat ( & local_qiov , qiov , 0 , qiov -> size )"		965688	0					
+ANR	966255	Callee	qemu_iovec_concat		965688	0					
+ANR	966256	Identifier	qemu_iovec_concat		965688	0					
+ANR	966257	ArgumentList	& local_qiov		965688	1					
+ANR	966258	Argument	& local_qiov		965688	0					
+ANR	966259	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	966260	UnaryOperator	&		965688	0					
+ANR	966261	Identifier	local_qiov		965688	1					
+ANR	966262	Argument	qiov		965688	1					
+ANR	966263	Identifier	qiov		965688	0					
+ANR	966264	Argument	0		965688	2					
+ANR	966265	PrimaryExpression	0		965688	0					
+ANR	966266	Argument	qiov -> size		965688	3					
+ANR	966267	PtrMemberAccess	qiov -> size		965688	0					
+ANR	966268	Identifier	qiov		965688	0					
+ANR	966269	Identifier	size		965688	1					
+ANR	966270	ExpressionStatement	use_local_qiov = true	209:12:3415:3436	965688	2	True				
+ANR	966271	AssignmentExpression	use_local_qiov = true		965688	0		=			
+ANR	966272	Identifier	use_local_qiov		965688	0					
+ANR	966273	Identifier	true		965688	1					
+ANR	966274	ExpressionStatement	tail_bytes = ( offset + bytes ) & ( align - 1 )	215:8:3460:3503	965688	22	True				
+ANR	966275	AssignmentExpression	tail_bytes = ( offset + bytes ) & ( align - 1 )		965688	0		=			
+ANR	966276	Identifier	tail_bytes		965688	0					
+ANR	966277	BitAndExpression	( offset + bytes ) & ( align - 1 )		965688	1		&			
+ANR	966278	AdditiveExpression	offset + bytes		965688	0		+			
+ANR	966279	Identifier	offset		965688	0					
+ANR	966280	Identifier	bytes		965688	1					
+ANR	966281	AdditiveExpression	align - 1		965688	1		-			
+ANR	966282	Identifier	align		965688	0					
+ANR	966283	PrimaryExpression	1		965688	1					
+ANR	966284	ExpressionStatement	"qemu_iovec_add ( & local_qiov , tail_buf + tail_bytes , align - tail_bytes )"	217:8:3514:3584	965688	23	True				
+ANR	966285	CallExpression	"qemu_iovec_add ( & local_qiov , tail_buf + tail_bytes , align - tail_bytes )"		965688	0					
+ANR	966286	Callee	qemu_iovec_add		965688	0					
+ANR	966287	Identifier	qemu_iovec_add		965688	0					
+ANR	966288	ArgumentList	& local_qiov		965688	1					
+ANR	966289	Argument	& local_qiov		965688	0					
+ANR	966290	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	966291	UnaryOperator	&		965688	0					
+ANR	966292	Identifier	local_qiov		965688	1					
+ANR	966293	Argument	tail_buf + tail_bytes		965688	1					
+ANR	966294	AdditiveExpression	tail_buf + tail_bytes		965688	0		+			
+ANR	966295	Identifier	tail_buf		965688	0					
+ANR	966296	Identifier	tail_bytes		965688	1					
+ANR	966297	Argument	align - tail_bytes		965688	2					
+ANR	966298	AdditiveExpression	align - tail_bytes		965688	0		-			
+ANR	966299	Identifier	align		965688	0					
+ANR	966300	Identifier	tail_bytes		965688	1					
+ANR	966301	ExpressionStatement	"bytes = ROUND_UP ( bytes , align )"	221:8:3597:3627	965688	24	True				
+ANR	966302	AssignmentExpression	"bytes = ROUND_UP ( bytes , align )"		965688	0		=			
+ANR	966303	Identifier	bytes		965688	0					
+ANR	966304	CallExpression	"ROUND_UP ( bytes , align )"		965688	1					
+ANR	966305	Callee	ROUND_UP		965688	0					
+ANR	966306	Identifier	ROUND_UP		965688	0					
+ANR	966307	ArgumentList	bytes		965688	1					
+ANR	966308	Argument	bytes		965688	0					
+ANR	966309	Identifier	bytes		965688	0					
+ANR	966310	Argument	align		965688	1					
+ANR	966311	Identifier	align		965688	0					
+ANR	966312	ExpressionStatement	"ret = bdrv_aligned_pwritev ( bs , & req , offset , bytes , align , use_local_qiov ? & local_qiov : qiov , flags )"	227:4:3643:3809	965688	16	True				
+ANR	966313	AssignmentExpression	"ret = bdrv_aligned_pwritev ( bs , & req , offset , bytes , align , use_local_qiov ? & local_qiov : qiov , flags )"		965688	0		=			
+ANR	966314	Identifier	ret		965688	0					
+ANR	966315	CallExpression	"bdrv_aligned_pwritev ( bs , & req , offset , bytes , align , use_local_qiov ? & local_qiov : qiov , flags )"		965688	1					
+ANR	966316	Callee	bdrv_aligned_pwritev		965688	0					
+ANR	966317	Identifier	bdrv_aligned_pwritev		965688	0					
+ANR	966318	ArgumentList	bs		965688	1					
+ANR	966319	Argument	bs		965688	0					
+ANR	966320	Identifier	bs		965688	0					
+ANR	966321	Argument	& req		965688	1					
+ANR	966322	UnaryOperationExpression	& req		965688	0					
+ANR	966323	UnaryOperator	&		965688	0					
+ANR	966324	Identifier	req		965688	1					
+ANR	966325	Argument	offset		965688	2					
+ANR	966326	Identifier	offset		965688	0					
+ANR	966327	Argument	bytes		965688	3					
+ANR	966328	Identifier	bytes		965688	0					
+ANR	966329	Argument	align		965688	4					
+ANR	966330	Identifier	align		965688	0					
+ANR	966331	Argument	use_local_qiov ? & local_qiov : qiov		965688	5					
+ANR	966332	ConditionalExpression	use_local_qiov ? & local_qiov : qiov		965688	0					
+ANR	966333	Condition	use_local_qiov		965688	0					
+ANR	966334	Identifier	use_local_qiov		965688	0					
+ANR	966335	UnaryOperationExpression	& local_qiov		965688	1					
+ANR	966336	UnaryOperator	&		965688	0					
+ANR	966337	Identifier	local_qiov		965688	1					
+ANR	966338	Identifier	qiov		965688	2					
+ANR	966339	Argument	flags		965688	6					
+ANR	966340	Identifier	flags		965688	0					
+ANR	966341	Label	fail :	235:0:3814:3818	965688	17	True				
+ANR	966342	Identifier	fail		965688	0					
+ANR	966343	IfStatement	if ( use_local_qiov )		965688	18					
+ANR	966344	Condition	use_local_qiov	239:8:3831:3844	965688	0	True				
+ANR	966345	Identifier	use_local_qiov		965688	0					
+ANR	966346	CompoundStatement		233:24:3700:3700	965688	1					
+ANR	966347	ExpressionStatement	qemu_iovec_destroy ( & local_qiov )	241:8:3858:3889	965688	0	True				
+ANR	966348	CallExpression	qemu_iovec_destroy ( & local_qiov )		965688	0					
+ANR	966349	Callee	qemu_iovec_destroy		965688	0					
+ANR	966350	Identifier	qemu_iovec_destroy		965688	0					
+ANR	966351	ArgumentList	& local_qiov		965688	1					
+ANR	966352	Argument	& local_qiov		965688	0					
+ANR	966353	UnaryOperationExpression	& local_qiov		965688	0					
+ANR	966354	UnaryOperator	&		965688	0					
+ANR	966355	Identifier	local_qiov		965688	1					
+ANR	966356	ExpressionStatement	qemu_vfree ( head_buf )	245:4:3903:3923	965688	19	True				
+ANR	966357	CallExpression	qemu_vfree ( head_buf )		965688	0					
+ANR	966358	Callee	qemu_vfree		965688	0					
+ANR	966359	Identifier	qemu_vfree		965688	0					
+ANR	966360	ArgumentList	head_buf		965688	1					
+ANR	966361	Argument	head_buf		965688	0					
+ANR	966362	Identifier	head_buf		965688	0					
+ANR	966363	ExpressionStatement	qemu_vfree ( tail_buf )	247:4:3930:3950	965688	20	True				
+ANR	966364	CallExpression	qemu_vfree ( tail_buf )		965688	0					
+ANR	966365	Callee	qemu_vfree		965688	0					
+ANR	966366	Identifier	qemu_vfree		965688	0					
+ANR	966367	ArgumentList	tail_buf		965688	1					
+ANR	966368	Argument	tail_buf		965688	0					
+ANR	966369	Identifier	tail_buf		965688	0					
+ANR	966370	Label	out :	249:0:3953:3956	965688	21	True				
+ANR	966371	Identifier	out		965688	0					
+ANR	966372	ExpressionStatement	tracked_request_end ( & req )	251:4:3963:3988	965688	22	True				
+ANR	966373	CallExpression	tracked_request_end ( & req )		965688	0					
+ANR	966374	Callee	tracked_request_end		965688	0					
+ANR	966375	Identifier	tracked_request_end		965688	0					
+ANR	966376	ArgumentList	& req		965688	1					
+ANR	966377	Argument	& req		965688	0					
+ANR	966378	UnaryOperationExpression	& req		965688	0					
+ANR	966379	UnaryOperator	&		965688	0					
+ANR	966380	Identifier	req		965688	1					
+ANR	966381	ReturnStatement	return ret ;	253:4:3995:4005	965688	23	True				
+ANR	966382	Identifier	ret		965688	0					
+ANR	966383	ReturnType	int coroutine_fn		965688	1					
+ANR	966384	Identifier	bdrv_co_pwritev		965688	2					
+ANR	966385	ParameterList	"BlockDriverState * bs , int64_t offset , unsigned int bytes , QEMUIOVector * qiov , BdrvRequestFlags flags"		965688	3					
+ANR	966386	Parameter	BlockDriverState * bs	1:33:33:52	965688	0	True				
+ANR	966387	ParameterType	BlockDriverState *		965688	0					
+ANR	966388	Identifier	bs		965688	1					
+ANR	966389	Parameter	int64_t offset	3:4:60:73	965688	1	True				
+ANR	966390	ParameterType	int64_t		965688	0					
+ANR	966391	Identifier	offset		965688	1					
+ANR	966392	Parameter	unsigned int bytes	3:20:76:93	965688	2	True				
+ANR	966393	ParameterType	unsigned int		965688	0					
+ANR	966394	Identifier	bytes		965688	1					
+ANR	966395	Parameter	QEMUIOVector * qiov	3:40:96:113	965688	3	True				
+ANR	966396	ParameterType	QEMUIOVector *		965688	0					
+ANR	966397	Identifier	qiov		965688	1					
+ANR	966398	Parameter	BdrvRequestFlags flags	5:4:121:142	965688	4	True				
+ANR	966399	ParameterType	BdrvRequestFlags		965688	0					
+ANR	966400	Identifier	flags		965688	1					
+ANR	966401	CFGEntryNode	ENTRY		965688		True				
+ANR	966402	CFGExitNode	EXIT		965688		True				
+ANR	966403	Symbol	qemu_blockalign		965688						
+ANR	966404	Symbol	& req		965688						
+ANR	966405	Symbol	bdrv_check_byte_request		965688						
+ANR	966406	Symbol	BLKDBG_PWRITEV_RMW_HEAD		965688						
+ANR	966407	Symbol	head_qiov		965688						
+ANR	966408	Symbol	& tail_qiov		965688						
+ANR	966409	Symbol	align		965688						
+ANR	966410	Symbol	bs -> drv		965688						
+ANR	966411	Symbol	& head_qiov		965688						
+ANR	966412	Symbol	qiov -> size		965688						
+ANR	966413	Symbol	& head_iov		965688						
+ANR	966414	Symbol	* bs		965688						
+ANR	966415	Symbol	tail_buf		965688						
+ANR	966416	Symbol	* qiov		965688						
+ANR	966417	Symbol	head_buf		965688						
+ANR	966418	Symbol	BDRV_O_INACTIVE		965688						
+ANR	966419	Symbol	bs -> read_only		965688						
+ANR	966420	Symbol	BLKDBG_PWRITEV_RMW_TAIL		965688						
+ANR	966421	Symbol	req		965688						
+ANR	966422	Symbol	ret		965688						
+ANR	966423	Symbol	NULL		965688						
+ANR	966424	Symbol	offset		965688						
+ANR	966425	Symbol	& local_qiov		965688						
+ANR	966426	Symbol	ROUND_UP		965688						
+ANR	966427	Symbol	qiov -> niov		965688						
+ANR	966428	Symbol	bs -> open_flags		965688						
+ANR	966429	Symbol	wait_serialising_requests		965688						
+ANR	966430	Symbol	tail_iov		965688						
+ANR	966431	Symbol	head_iov		965688						
+ANR	966432	Symbol	true		965688						
+ANR	966433	Symbol	bs -> request_alignment		965688						
+ANR	966434	Symbol	EPERM		965688						
+ANR	966435	Symbol	flags		965688						
+ANR	966436	Symbol	BDRV_TRACKED_WRITE		965688						
+ANR	966437	Symbol	qiov		965688						
+ANR	966438	Symbol	waited		965688						
+ANR	966439	Symbol	bdrv_aligned_pwritev		965688						
+ANR	966440	Symbol	ENOMEDIUM		965688						
+ANR	966441	Symbol	bs		965688						
+ANR	966442	Symbol	tail_bytes		965688						
+ANR	966443	Symbol	& tail_iov		965688						
+ANR	966444	Symbol	local_qiov		965688						
+ANR	966445	Symbol	false		965688						
+ANR	966446	Symbol	use_local_qiov		965688						
+ANR	966447	Symbol	BLKDBG_PWRITEV_RMW_AFTER_HEAD		965688						
+ANR	966448	Symbol	tail_qiov		965688						
+ANR	966449	Symbol	bytes		965688						
+ANR	966450	Symbol	bdrv_co_do_zero_pwritev		965688						
+ANR	966451	Symbol	bdrv_aligned_preadv		965688						
+ANR	966452	Symbol	BLKDBG_PWRITEV_RMW_AFTER_TAIL		965688						

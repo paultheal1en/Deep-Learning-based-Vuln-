@@ -1,0 +1,168 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7688545	File	/home/p4ultr4n/workplace/ReVeal/raw_code/sdhci_end_transfer_1.c								
+ANR	7688546	Function	sdhci_end_transfer	1:0:0:924							
+ANR	7688547	FunctionDef	sdhci_end_transfer (SDHCIState * s)		7688546	0					
+ANR	7688548	CompoundStatement		3:0:47:924	7688546	0					
+ANR	7688549	IfStatement	if ( ( s -> trnmod & SDHC_TRNS_ACMD12 ) != 0 )		7688546	0					
+ANR	7688550	Condition	( s -> trnmod & SDHC_TRNS_ACMD12 ) != 0	7:8:132:166	7688546	0	True				
+ANR	7688551	EqualityExpression	( s -> trnmod & SDHC_TRNS_ACMD12 ) != 0		7688546	0		!=			
+ANR	7688552	BitAndExpression	s -> trnmod & SDHC_TRNS_ACMD12		7688546	0		&			
+ANR	7688553	PtrMemberAccess	s -> trnmod		7688546	0					
+ANR	7688554	Identifier	s		7688546	0					
+ANR	7688555	Identifier	trnmod		7688546	1					
+ANR	7688556	Identifier	SDHC_TRNS_ACMD12		7688546	1					
+ANR	7688557	PrimaryExpression	0		7688546	1					
+ANR	7688558	CompoundStatement		9:8:160:180	7688546	1					
+ANR	7688559	IdentifierDeclStatement	SDRequest request ;	9:8:180:197	7688546	0	True				
+ANR	7688560	IdentifierDecl	request		7688546	0					
+ANR	7688561	IdentifierDeclType	SDRequest		7688546	0					
+ANR	7688562	Identifier	request		7688546	1					
+ANR	7688563	IdentifierDeclStatement	uint8_t response [ 16 ] ;	11:8:208:228	7688546	1	True				
+ANR	7688564	IdentifierDecl	response [ 16 ]		7688546	0					
+ANR	7688565	IdentifierDeclType	uint8_t [ 16 ]		7688546	0					
+ANR	7688566	Identifier	response		7688546	1					
+ANR	7688567	PrimaryExpression	16		7688546	2					
+ANR	7688568	ExpressionStatement	request . cmd = 0x0C	15:8:241:259	7688546	2	True				
+ANR	7688569	AssignmentExpression	request . cmd = 0x0C		7688546	0		=			
+ANR	7688570	MemberAccess	request . cmd		7688546	0					
+ANR	7688571	Identifier	request		7688546	0					
+ANR	7688572	Identifier	cmd		7688546	1					
+ANR	7688573	PrimaryExpression	0x0C		7688546	1					
+ANR	7688574	ExpressionStatement	request . arg = 0	17:8:270:285	7688546	3	True				
+ANR	7688575	AssignmentExpression	request . arg = 0		7688546	0		=			
+ANR	7688576	MemberAccess	request . arg		7688546	0					
+ANR	7688577	Identifier	request		7688546	0					
+ANR	7688578	Identifier	arg		7688546	1					
+ANR	7688579	PrimaryExpression	0		7688546	1					
+ANR	7688580	ExpressionStatement	"DPRINT_L1 ( ""Automatically issue CMD%d %08x\\n"" , request . cmd , request . arg )"	19:8:296:367	7688546	4	True				
+ANR	7688581	CallExpression	"DPRINT_L1 ( ""Automatically issue CMD%d %08x\\n"" , request . cmd , request . arg )"		7688546	0					
+ANR	7688582	Callee	DPRINT_L1		7688546	0					
+ANR	7688583	Identifier	DPRINT_L1		7688546	0					
+ANR	7688584	ArgumentList	"""Automatically issue CMD%d %08x\\n"""		7688546	1					
+ANR	7688585	Argument	"""Automatically issue CMD%d %08x\\n"""		7688546	0					
+ANR	7688586	PrimaryExpression	"""Automatically issue CMD%d %08x\\n"""		7688546	0					
+ANR	7688587	Argument	request . cmd		7688546	1					
+ANR	7688588	MemberAccess	request . cmd		7688546	0					
+ANR	7688589	Identifier	request		7688546	0					
+ANR	7688590	Identifier	cmd		7688546	1					
+ANR	7688591	Argument	request . arg		7688546	2					
+ANR	7688592	MemberAccess	request . arg		7688546	0					
+ANR	7688593	Identifier	request		7688546	0					
+ANR	7688594	Identifier	arg		7688546	1					
+ANR	7688595	ExpressionStatement	"sdbus_do_command ( & s -> sdbus , & request , response )"	21:8:378:425	7688546	5	True				
+ANR	7688596	CallExpression	"sdbus_do_command ( & s -> sdbus , & request , response )"		7688546	0					
+ANR	7688597	Callee	sdbus_do_command		7688546	0					
+ANR	7688598	Identifier	sdbus_do_command		7688546	0					
+ANR	7688599	ArgumentList	& s -> sdbus		7688546	1					
+ANR	7688600	Argument	& s -> sdbus		7688546	0					
+ANR	7688601	UnaryOperationExpression	& s -> sdbus		7688546	0					
+ANR	7688602	UnaryOperator	&		7688546	0					
+ANR	7688603	PtrMemberAccess	s -> sdbus		7688546	1					
+ANR	7688604	Identifier	s		7688546	0					
+ANR	7688605	Identifier	sdbus		7688546	1					
+ANR	7688606	Argument	& request		7688546	1					
+ANR	7688607	UnaryOperationExpression	& request		7688546	0					
+ANR	7688608	UnaryOperator	&		7688546	0					
+ANR	7688609	Identifier	request		7688546	1					
+ANR	7688610	Argument	response		7688546	2					
+ANR	7688611	Identifier	response		7688546	0					
+ANR	7688612	ExpressionStatement	s -> rspreg [ 3 ] = ( response [ 0 ] << 24 ) | ( response [ 1 ] << 16 ) | ( response [ 2 ] << 8 ) | response [ 3 ]	25:8:507:615	7688546	6	True				
+ANR	7688613	AssignmentExpression	s -> rspreg [ 3 ] = ( response [ 0 ] << 24 ) | ( response [ 1 ] << 16 ) | ( response [ 2 ] << 8 ) | response [ 3 ]		7688546	0		=			
+ANR	7688614	ArrayIndexing	s -> rspreg [ 3 ]		7688546	0					
+ANR	7688615	PtrMemberAccess	s -> rspreg		7688546	0					
+ANR	7688616	Identifier	s		7688546	0					
+ANR	7688617	Identifier	rspreg		7688546	1					
+ANR	7688618	PrimaryExpression	3		7688546	1					
+ANR	7688619	InclusiveOrExpression	( response [ 0 ] << 24 ) | ( response [ 1 ] << 16 ) | ( response [ 2 ] << 8 ) | response [ 3 ]		7688546	1		|			
+ANR	7688620	ShiftExpression	response [ 0 ] << 24		7688546	0		<<			
+ANR	7688621	ArrayIndexing	response [ 0 ]		7688546	0					
+ANR	7688622	Identifier	response		7688546	0					
+ANR	7688623	PrimaryExpression	0		7688546	1					
+ANR	7688624	PrimaryExpression	24		7688546	1					
+ANR	7688625	InclusiveOrExpression	( response [ 1 ] << 16 ) | ( response [ 2 ] << 8 ) | response [ 3 ]		7688546	1		|			
+ANR	7688626	ShiftExpression	response [ 1 ] << 16		7688546	0		<<			
+ANR	7688627	ArrayIndexing	response [ 1 ]		7688546	0					
+ANR	7688628	Identifier	response		7688546	0					
+ANR	7688629	PrimaryExpression	1		7688546	1					
+ANR	7688630	PrimaryExpression	16		7688546	1					
+ANR	7688631	InclusiveOrExpression	( response [ 2 ] << 8 ) | response [ 3 ]		7688546	1		|			
+ANR	7688632	ShiftExpression	response [ 2 ] << 8		7688546	0		<<			
+ANR	7688633	ArrayIndexing	response [ 2 ]		7688546	0					
+ANR	7688634	Identifier	response		7688546	0					
+ANR	7688635	PrimaryExpression	2		7688546	1					
+ANR	7688636	PrimaryExpression	8		7688546	1					
+ANR	7688637	ArrayIndexing	response [ 3 ]		7688546	1					
+ANR	7688638	Identifier	response		7688546	0					
+ANR	7688639	PrimaryExpression	3		7688546	1					
+ANR	7688640	ExpressionStatement	s -> prnsts &= ~ ( SDHC_DOING_READ | SDHC_DOING_WRITE | SDHC_DAT_LINE_ACTIVE | SDHC_DATA_INHIBIT | SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE )	33:4:631:795	7688546	1	True				
+ANR	7688641	AssignmentExpression	s -> prnsts &= ~ ( SDHC_DOING_READ | SDHC_DOING_WRITE | SDHC_DAT_LINE_ACTIVE | SDHC_DATA_INHIBIT | SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE )		7688546	0		&=			
+ANR	7688642	PtrMemberAccess	s -> prnsts		7688546	0					
+ANR	7688643	Identifier	s		7688546	0					
+ANR	7688644	Identifier	prnsts		7688546	1					
+ANR	7688645	UnaryOperationExpression	~ ( SDHC_DOING_READ | SDHC_DOING_WRITE | SDHC_DAT_LINE_ACTIVE | SDHC_DATA_INHIBIT | SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE )		7688546	1					
+ANR	7688646	UnaryOperator	~		7688546	0					
+ANR	7688647	InclusiveOrExpression	SDHC_DOING_READ | SDHC_DOING_WRITE | SDHC_DAT_LINE_ACTIVE | SDHC_DATA_INHIBIT | SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE		7688546	1		|			
+ANR	7688648	Identifier	SDHC_DOING_READ		7688546	0					
+ANR	7688649	InclusiveOrExpression	SDHC_DOING_WRITE | SDHC_DAT_LINE_ACTIVE | SDHC_DATA_INHIBIT | SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE		7688546	1		|			
+ANR	7688650	Identifier	SDHC_DOING_WRITE		7688546	0					
+ANR	7688651	InclusiveOrExpression	SDHC_DAT_LINE_ACTIVE | SDHC_DATA_INHIBIT | SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE		7688546	1		|			
+ANR	7688652	Identifier	SDHC_DAT_LINE_ACTIVE		7688546	0					
+ANR	7688653	InclusiveOrExpression	SDHC_DATA_INHIBIT | SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE		7688546	1		|			
+ANR	7688654	Identifier	SDHC_DATA_INHIBIT		7688546	0					
+ANR	7688655	InclusiveOrExpression	SDHC_SPACE_AVAILABLE | SDHC_DATA_AVAILABLE		7688546	1		|			
+ANR	7688656	Identifier	SDHC_SPACE_AVAILABLE		7688546	0					
+ANR	7688657	Identifier	SDHC_DATA_AVAILABLE		7688546	1					
+ANR	7688658	IfStatement	if ( s -> norintstsen & SDHC_NISEN_TRSCMP )		7688546	2					
+ANR	7688659	Condition	s -> norintstsen & SDHC_NISEN_TRSCMP	41:8:808:841	7688546	0	True				
+ANR	7688660	BitAndExpression	s -> norintstsen & SDHC_NISEN_TRSCMP		7688546	0		&			
+ANR	7688661	PtrMemberAccess	s -> norintstsen		7688546	0					
+ANR	7688662	Identifier	s		7688546	0					
+ANR	7688663	Identifier	norintstsen		7688546	1					
+ANR	7688664	Identifier	SDHC_NISEN_TRSCMP		7688546	1					
+ANR	7688665	CompoundStatement		39:44:796:796	7688546	1					
+ANR	7688666	ExpressionStatement	s -> norintsts |= SDHC_NIS_TRSCMP	43:8:855:886	7688546	0	True				
+ANR	7688667	AssignmentExpression	s -> norintsts |= SDHC_NIS_TRSCMP		7688546	0		|=			
+ANR	7688668	PtrMemberAccess	s -> norintsts		7688546	0					
+ANR	7688669	Identifier	s		7688546	0					
+ANR	7688670	Identifier	norintsts		7688546	1					
+ANR	7688671	Identifier	SDHC_NIS_TRSCMP		7688546	1					
+ANR	7688672	ExpressionStatement	sdhci_update_irq ( s )	49:4:902:921	7688546	3	True				
+ANR	7688673	CallExpression	sdhci_update_irq ( s )		7688546	0					
+ANR	7688674	Callee	sdhci_update_irq		7688546	0					
+ANR	7688675	Identifier	sdhci_update_irq		7688546	0					
+ANR	7688676	ArgumentList	s		7688546	1					
+ANR	7688677	Argument	s		7688546	0					
+ANR	7688678	Identifier	s		7688546	0					
+ANR	7688679	ReturnType	static void		7688546	1					
+ANR	7688680	Identifier	sdhci_end_transfer		7688546	2					
+ANR	7688681	ParameterList	SDHCIState * s		7688546	3					
+ANR	7688682	Parameter	SDHCIState * s	1:31:31:43	7688546	0	True				
+ANR	7688683	ParameterType	SDHCIState *		7688546	0					
+ANR	7688684	Identifier	s		7688546	1					
+ANR	7688685	CFGEntryNode	ENTRY		7688546		True				
+ANR	7688686	CFGExitNode	EXIT		7688546		True				
+ANR	7688687	Symbol	request		7688546						
+ANR	7688688	Symbol	s -> norintstsen		7688546						
+ANR	7688689	Symbol	& request		7688546						
+ANR	7688690	Symbol	request . arg		7688546						
+ANR	7688691	Symbol	& s -> sdbus		7688546						
+ANR	7688692	Symbol	SDHC_SPACE_AVAILABLE		7688546						
+ANR	7688693	Symbol	SDHC_DATA_INHIBIT		7688546						
+ANR	7688694	Symbol	s -> rspreg		7688546						
+ANR	7688695	Symbol	* s -> rspreg		7688546						
+ANR	7688696	Symbol	* * s		7688546						
+ANR	7688697	Symbol	SDHC_DAT_LINE_ACTIVE		7688546						
+ANR	7688698	Symbol	SDHC_DOING_READ		7688546						
+ANR	7688699	Symbol	s -> trnmod		7688546						
+ANR	7688700	Symbol	s -> norintsts		7688546						
+ANR	7688701	Symbol	SDHC_TRNS_ACMD12		7688546						
+ANR	7688702	Symbol	SDHC_DATA_AVAILABLE		7688546						
+ANR	7688703	Symbol	* response		7688546						
+ANR	7688704	Symbol	request . cmd		7688546						
+ANR	7688705	Symbol	SDHC_NIS_TRSCMP		7688546						
+ANR	7688706	Symbol	s		7688546						
+ANR	7688707	Symbol	s -> prnsts		7688546						
+ANR	7688708	Symbol	response		7688546						
+ANR	7688709	Symbol	SDHC_NISEN_TRSCMP		7688546						
+ANR	7688710	Symbol	* s		7688546						
+ANR	7688711	Symbol	SDHC_DOING_WRITE		7688546						

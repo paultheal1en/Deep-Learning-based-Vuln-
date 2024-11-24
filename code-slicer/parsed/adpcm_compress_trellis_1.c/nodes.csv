@@ -1,0 +1,1486 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	409800	File	/home/p4ultr4n/workplace/ReVeal/raw_code/adpcm_compress_trellis_1.c								
+ANR	409801	Function	adpcm_compress_trellis	1:0:0:9296							
+ANR	409802	FunctionDef	"adpcm_compress_trellis (AVCodecContext * avctx , const int16_t * samples , uint8_t * dst , ADPCMChannelStatus * c , int n , int stride)"		409801	0					
+ANR	409803	CompoundStatement		7:0:211:9296	409801	0					
+ANR	409804	IdentifierDeclStatement	ADPCMEncodeContext * s = avctx -> priv_data ;	11:4:280:320	409801	0	True				
+ANR	409805	IdentifierDecl	* s = avctx -> priv_data		409801	0					
+ANR	409806	IdentifierDeclType	ADPCMEncodeContext *		409801	0					
+ANR	409807	Identifier	s		409801	1					
+ANR	409808	AssignmentExpression	* s = avctx -> priv_data		409801	2		=			
+ANR	409809	Identifier	s		409801	0					
+ANR	409810	PtrMemberAccess	avctx -> priv_data		409801	1					
+ANR	409811	Identifier	avctx		409801	0					
+ANR	409812	Identifier	priv_data		409801	1					
+ANR	409813	IdentifierDeclStatement	const int frontier = 1 << avctx -> trellis ;	13:4:327:367	409801	1	True				
+ANR	409814	IdentifierDecl	frontier = 1 << avctx -> trellis		409801	0					
+ANR	409815	IdentifierDeclType	const int		409801	0					
+ANR	409816	Identifier	frontier		409801	1					
+ANR	409817	AssignmentExpression	frontier = 1 << avctx -> trellis		409801	2		=			
+ANR	409818	Identifier	frontier		409801	0					
+ANR	409819	ShiftExpression	1 << avctx -> trellis		409801	1		<<			
+ANR	409820	PrimaryExpression	1		409801	0					
+ANR	409821	PtrMemberAccess	avctx -> trellis		409801	1					
+ANR	409822	Identifier	avctx		409801	0					
+ANR	409823	Identifier	trellis		409801	1					
+ANR	409824	IdentifierDeclStatement	const int version = avctx -> codec -> id ;	15:4:374:411	409801	2	True				
+ANR	409825	IdentifierDecl	version = avctx -> codec -> id		409801	0					
+ANR	409826	IdentifierDeclType	const int		409801	0					
+ANR	409827	Identifier	version		409801	1					
+ANR	409828	AssignmentExpression	version = avctx -> codec -> id		409801	2		=			
+ANR	409829	Identifier	version		409801	0					
+ANR	409830	PtrMemberAccess	avctx -> codec -> id		409801	1					
+ANR	409831	PtrMemberAccess	avctx -> codec		409801	0					
+ANR	409832	Identifier	avctx		409801	0					
+ANR	409833	Identifier	codec		409801	1					
+ANR	409834	Identifier	id		409801	1					
+ANR	409835	IdentifierDeclStatement	"TrellisPath * paths = s -> paths , * p ;"	17:4:418:457	409801	3	True				
+ANR	409836	IdentifierDecl	* paths = s -> paths		409801	0					
+ANR	409837	IdentifierDeclType	TrellisPath *		409801	0					
+ANR	409838	Identifier	paths		409801	1					
+ANR	409839	AssignmentExpression	* paths = s -> paths		409801	2		=			
+ANR	409840	Identifier	paths		409801	0					
+ANR	409841	PtrMemberAccess	s -> paths		409801	1					
+ANR	409842	Identifier	s		409801	0					
+ANR	409843	Identifier	paths		409801	1					
+ANR	409844	IdentifierDecl	* p		409801	1					
+ANR	409845	IdentifierDeclType	TrellisPath *		409801	0					
+ANR	409846	Identifier	p		409801	1					
+ANR	409847	IdentifierDeclStatement	TrellisNode * node_buf = s -> node_buf ;	19:4:464:502	409801	4	True				
+ANR	409848	IdentifierDecl	* node_buf = s -> node_buf		409801	0					
+ANR	409849	IdentifierDeclType	TrellisNode *		409801	0					
+ANR	409850	Identifier	node_buf		409801	1					
+ANR	409851	AssignmentExpression	* node_buf = s -> node_buf		409801	2		=			
+ANR	409852	Identifier	node_buf		409801	0					
+ANR	409853	PtrMemberAccess	s -> node_buf		409801	1					
+ANR	409854	Identifier	s		409801	0					
+ANR	409855	Identifier	node_buf		409801	1					
+ANR	409856	IdentifierDeclStatement	TrellisNode * * nodep_buf = s -> nodep_buf ;	21:4:509:548	409801	5	True				
+ANR	409857	IdentifierDecl	* * nodep_buf = s -> nodep_buf		409801	0					
+ANR	409858	IdentifierDeclType	TrellisNode * *		409801	0					
+ANR	409859	Identifier	nodep_buf		409801	1					
+ANR	409860	AssignmentExpression	* * nodep_buf = s -> nodep_buf		409801	2		=			
+ANR	409861	Identifier	nodep_buf		409801	0					
+ANR	409862	PtrMemberAccess	s -> nodep_buf		409801	1					
+ANR	409863	Identifier	s		409801	0					
+ANR	409864	Identifier	nodep_buf		409801	1					
+ANR	409865	IdentifierDeclStatement	TrellisNode * * nodes = nodep_buf ;	23:4:555:591	409801	6	True				
+ANR	409866	IdentifierDecl	* * nodes = nodep_buf		409801	0					
+ANR	409867	IdentifierDeclType	TrellisNode * *		409801	0					
+ANR	409868	Identifier	nodes		409801	1					
+ANR	409869	AssignmentExpression	* * nodes = nodep_buf		409801	2		=			
+ANR	409870	Identifier	nodep_buf		409801	0					
+ANR	409871	Identifier	nodep_buf		409801	1					
+ANR	409872	IdentifierDeclStatement	TrellisNode * * nodes_next = nodep_buf + frontier ;	25:4:634:681	409801	7	True				
+ANR	409873	IdentifierDecl	* * nodes_next = nodep_buf + frontier		409801	0					
+ANR	409874	IdentifierDeclType	TrellisNode * *		409801	0					
+ANR	409875	Identifier	nodes_next		409801	1					
+ANR	409876	AssignmentExpression	* * nodes_next = nodep_buf + frontier		409801	2		=			
+ANR	409877	Identifier	nodes_next		409801	0					
+ANR	409878	AdditiveExpression	nodep_buf + frontier		409801	1		+			
+ANR	409879	Identifier	nodep_buf		409801	0					
+ANR	409880	Identifier	frontier		409801	1					
+ANR	409881	IdentifierDeclStatement	"int pathn = 0 , froze = - 1 , i , j , k , generation = 0 ;"	27:4:688:738	409801	8	True				
+ANR	409882	IdentifierDecl	pathn = 0		409801	0					
+ANR	409883	IdentifierDeclType	int		409801	0					
+ANR	409884	Identifier	pathn		409801	1					
+ANR	409885	AssignmentExpression	pathn = 0		409801	2		=			
+ANR	409886	Identifier	pathn		409801	0					
+ANR	409887	PrimaryExpression	0		409801	1					
+ANR	409888	IdentifierDecl	froze = - 1		409801	1					
+ANR	409889	IdentifierDeclType	int		409801	0					
+ANR	409890	Identifier	froze		409801	1					
+ANR	409891	AssignmentExpression	froze = - 1		409801	2		=			
+ANR	409892	Identifier	froze		409801	0					
+ANR	409893	UnaryOperationExpression	- 1		409801	1					
+ANR	409894	UnaryOperator	-		409801	0					
+ANR	409895	PrimaryExpression	1		409801	1					
+ANR	409896	IdentifierDecl	i		409801	2					
+ANR	409897	IdentifierDeclType	int		409801	0					
+ANR	409898	Identifier	i		409801	1					
+ANR	409899	IdentifierDecl	j		409801	3					
+ANR	409900	IdentifierDeclType	int		409801	0					
+ANR	409901	Identifier	j		409801	1					
+ANR	409902	IdentifierDecl	k		409801	4					
+ANR	409903	IdentifierDeclType	int		409801	0					
+ANR	409904	Identifier	k		409801	1					
+ANR	409905	IdentifierDecl	generation = 0		409801	5					
+ANR	409906	IdentifierDeclType	int		409801	0					
+ANR	409907	Identifier	generation		409801	1					
+ANR	409908	AssignmentExpression	generation = 0		409801	2		=			
+ANR	409909	Identifier	generation		409801	0					
+ANR	409910	PrimaryExpression	0		409801	1					
+ANR	409911	IdentifierDeclStatement	uint8_t * hash = s -> trellis_hash ;	29:4:745:776	409801	9	True				
+ANR	409912	IdentifierDecl	* hash = s -> trellis_hash		409801	0					
+ANR	409913	IdentifierDeclType	uint8_t *		409801	0					
+ANR	409914	Identifier	hash		409801	1					
+ANR	409915	AssignmentExpression	* hash = s -> trellis_hash		409801	2		=			
+ANR	409916	Identifier	hash		409801	0					
+ANR	409917	PtrMemberAccess	s -> trellis_hash		409801	1					
+ANR	409918	Identifier	s		409801	0					
+ANR	409919	Identifier	trellis_hash		409801	1					
+ANR	409920	ExpressionStatement	"memset ( hash , 0xff , 65536 * sizeof ( * hash ) )"	31:4:783:824	409801	10	True				
+ANR	409921	CallExpression	"memset ( hash , 0xff , 65536 * sizeof ( * hash ) )"		409801	0					
+ANR	409922	Callee	memset		409801	0					
+ANR	409923	Identifier	memset		409801	0					
+ANR	409924	ArgumentList	hash		409801	1					
+ANR	409925	Argument	hash		409801	0					
+ANR	409926	Identifier	hash		409801	0					
+ANR	409927	Argument	0xff		409801	1					
+ANR	409928	PrimaryExpression	0xff		409801	0					
+ANR	409929	Argument	65536 * sizeof ( * hash )		409801	2					
+ANR	409930	MultiplicativeExpression	65536 * sizeof ( * hash )		409801	0		*			
+ANR	409931	PrimaryExpression	65536		409801	0					
+ANR	409932	SizeofExpression	sizeof ( * hash )		409801	1					
+ANR	409933	Sizeof	sizeof		409801	0					
+ANR	409934	UnaryOperationExpression	* hash		409801	1					
+ANR	409935	UnaryOperator	*		409801	0					
+ANR	409936	Identifier	hash		409801	1					
+ANR	409937	ExpressionStatement	"memset ( nodep_buf , 0 , 2 * frontier * sizeof ( * nodep_buf ) )"	35:4:833:888	409801	11	True				
+ANR	409938	CallExpression	"memset ( nodep_buf , 0 , 2 * frontier * sizeof ( * nodep_buf ) )"		409801	0					
+ANR	409939	Callee	memset		409801	0					
+ANR	409940	Identifier	memset		409801	0					
+ANR	409941	ArgumentList	nodep_buf		409801	1					
+ANR	409942	Argument	nodep_buf		409801	0					
+ANR	409943	Identifier	nodep_buf		409801	0					
+ANR	409944	Argument	0		409801	1					
+ANR	409945	PrimaryExpression	0		409801	0					
+ANR	409946	Argument	2 * frontier * sizeof ( * nodep_buf )		409801	2					
+ANR	409947	MultiplicativeExpression	2 * frontier * sizeof ( * nodep_buf )		409801	0		*			
+ANR	409948	PrimaryExpression	2		409801	0					
+ANR	409949	MultiplicativeExpression	frontier * sizeof ( * nodep_buf )		409801	1		*			
+ANR	409950	Identifier	frontier		409801	0					
+ANR	409951	SizeofExpression	sizeof ( * nodep_buf )		409801	1					
+ANR	409952	Sizeof	sizeof		409801	0					
+ANR	409953	UnaryOperationExpression	* nodep_buf		409801	1					
+ANR	409954	UnaryOperator	*		409801	0					
+ANR	409955	Identifier	nodep_buf		409801	1					
+ANR	409956	ExpressionStatement	nodes [ 0 ] = node_buf + frontier	37:4:895:934	409801	12	True				
+ANR	409957	AssignmentExpression	nodes [ 0 ] = node_buf + frontier		409801	0		=			
+ANR	409958	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	409959	Identifier	nodes		409801	0					
+ANR	409960	PrimaryExpression	0		409801	1					
+ANR	409961	AdditiveExpression	node_buf + frontier		409801	1		+			
+ANR	409962	Identifier	node_buf		409801	0					
+ANR	409963	Identifier	frontier		409801	1					
+ANR	409964	ExpressionStatement	nodes [ 0 ] -> ssd = 0	39:4:941:962	409801	13	True				
+ANR	409965	AssignmentExpression	nodes [ 0 ] -> ssd = 0		409801	0		=			
+ANR	409966	PtrMemberAccess	nodes [ 0 ] -> ssd		409801	0					
+ANR	409967	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	409968	Identifier	nodes		409801	0					
+ANR	409969	PrimaryExpression	0		409801	1					
+ANR	409970	Identifier	ssd		409801	1					
+ANR	409971	PrimaryExpression	0		409801	1					
+ANR	409972	ExpressionStatement	nodes [ 0 ] -> path = 0	41:4:969:990	409801	14	True				
+ANR	409973	AssignmentExpression	nodes [ 0 ] -> path = 0		409801	0		=			
+ANR	409974	PtrMemberAccess	nodes [ 0 ] -> path		409801	0					
+ANR	409975	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	409976	Identifier	nodes		409801	0					
+ANR	409977	PrimaryExpression	0		409801	1					
+ANR	409978	Identifier	path		409801	1					
+ANR	409979	PrimaryExpression	0		409801	1					
+ANR	409980	ExpressionStatement	nodes [ 0 ] -> step = c -> step_index	43:4:997:1030	409801	15	True				
+ANR	409981	AssignmentExpression	nodes [ 0 ] -> step = c -> step_index		409801	0		=			
+ANR	409982	PtrMemberAccess	nodes [ 0 ] -> step		409801	0					
+ANR	409983	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	409984	Identifier	nodes		409801	0					
+ANR	409985	PrimaryExpression	0		409801	1					
+ANR	409986	Identifier	step		409801	1					
+ANR	409987	PtrMemberAccess	c -> step_index		409801	1					
+ANR	409988	Identifier	c		409801	0					
+ANR	409989	Identifier	step_index		409801	1					
+ANR	409990	ExpressionStatement	nodes [ 0 ] -> sample1 = c -> sample1	45:4:1037:1067	409801	16	True				
+ANR	409991	AssignmentExpression	nodes [ 0 ] -> sample1 = c -> sample1		409801	0		=			
+ANR	409992	PtrMemberAccess	nodes [ 0 ] -> sample1		409801	0					
+ANR	409993	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	409994	Identifier	nodes		409801	0					
+ANR	409995	PrimaryExpression	0		409801	1					
+ANR	409996	Identifier	sample1		409801	1					
+ANR	409997	PtrMemberAccess	c -> sample1		409801	1					
+ANR	409998	Identifier	c		409801	0					
+ANR	409999	Identifier	sample1		409801	1					
+ANR	410000	ExpressionStatement	nodes [ 0 ] -> sample2 = c -> sample2	47:4:1074:1104	409801	17	True				
+ANR	410001	AssignmentExpression	nodes [ 0 ] -> sample2 = c -> sample2		409801	0		=			
+ANR	410002	PtrMemberAccess	nodes [ 0 ] -> sample2		409801	0					
+ANR	410003	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410004	Identifier	nodes		409801	0					
+ANR	410005	PrimaryExpression	0		409801	1					
+ANR	410006	Identifier	sample2		409801	1					
+ANR	410007	PtrMemberAccess	c -> sample2		409801	1					
+ANR	410008	Identifier	c		409801	0					
+ANR	410009	Identifier	sample2		409801	1					
+ANR	410010	IfStatement	if ( version == AV_CODEC_ID_ADPCM_IMA_WAV || version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF )		409801	18					
+ANR	410011	Condition	version == AV_CODEC_ID_ADPCM_IMA_WAV || version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF	49:8:1115:1244	409801	0	True				
+ANR	410012	OrExpression	version == AV_CODEC_ID_ADPCM_IMA_WAV || version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF		409801	0		||			
+ANR	410013	EqualityExpression	version == AV_CODEC_ID_ADPCM_IMA_WAV		409801	0		==			
+ANR	410014	Identifier	version		409801	0					
+ANR	410015	Identifier	AV_CODEC_ID_ADPCM_IMA_WAV		409801	1					
+ANR	410016	OrExpression	version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF		409801	1		||			
+ANR	410017	EqualityExpression	version == AV_CODEC_ID_ADPCM_IMA_QT		409801	0		==			
+ANR	410018	Identifier	version		409801	0					
+ANR	410019	Identifier	AV_CODEC_ID_ADPCM_IMA_QT		409801	1					
+ANR	410020	EqualityExpression	version == AV_CODEC_ID_ADPCM_SWF		409801	1		==			
+ANR	410021	Identifier	version		409801	0					
+ANR	410022	Identifier	AV_CODEC_ID_ADPCM_SWF		409801	1					
+ANR	410023	ExpressionStatement	nodes [ 0 ] -> sample1 = c -> prev_sample	55:8:1256:1290	409801	1	True				
+ANR	410024	AssignmentExpression	nodes [ 0 ] -> sample1 = c -> prev_sample		409801	0		=			
+ANR	410025	PtrMemberAccess	nodes [ 0 ] -> sample1		409801	0					
+ANR	410026	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410027	Identifier	nodes		409801	0					
+ANR	410028	PrimaryExpression	0		409801	1					
+ANR	410029	Identifier	sample1		409801	1					
+ANR	410030	PtrMemberAccess	c -> prev_sample		409801	1					
+ANR	410031	Identifier	c		409801	0					
+ANR	410032	Identifier	prev_sample		409801	1					
+ANR	410033	IfStatement	if ( version == AV_CODEC_ID_ADPCM_MS )		409801	19					
+ANR	410034	Condition	version == AV_CODEC_ID_ADPCM_MS	57:8:1301:1331	409801	0	True				
+ANR	410035	EqualityExpression	version == AV_CODEC_ID_ADPCM_MS		409801	0		==			
+ANR	410036	Identifier	version		409801	0					
+ANR	410037	Identifier	AV_CODEC_ID_ADPCM_MS		409801	1					
+ANR	410038	ExpressionStatement	nodes [ 0 ] -> step = c -> idelta	59:8:1343:1369	409801	1	True				
+ANR	410039	AssignmentExpression	nodes [ 0 ] -> step = c -> idelta		409801	0		=			
+ANR	410040	PtrMemberAccess	nodes [ 0 ] -> step		409801	0					
+ANR	410041	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410042	Identifier	nodes		409801	0					
+ANR	410043	PrimaryExpression	0		409801	1					
+ANR	410044	Identifier	step		409801	1					
+ANR	410045	PtrMemberAccess	c -> idelta		409801	1					
+ANR	410046	Identifier	c		409801	0					
+ANR	410047	Identifier	idelta		409801	1					
+ANR	410048	IfStatement	if ( version == AV_CODEC_ID_ADPCM_YAMAHA )		409801	20					
+ANR	410049	Condition	version == AV_CODEC_ID_ADPCM_YAMAHA	61:8:1380:1414	409801	0	True				
+ANR	410050	EqualityExpression	version == AV_CODEC_ID_ADPCM_YAMAHA		409801	0		==			
+ANR	410051	Identifier	version		409801	0					
+ANR	410052	Identifier	AV_CODEC_ID_ADPCM_YAMAHA		409801	1					
+ANR	410053	CompoundStatement		55:45:1205:1205	409801	1					
+ANR	410054	IfStatement	if ( c -> step == 0 )		409801	0					
+ANR	410055	Condition	c -> step == 0	63:12:1432:1443	409801	0	True				
+ANR	410056	EqualityExpression	c -> step == 0		409801	0		==			
+ANR	410057	PtrMemberAccess	c -> step		409801	0					
+ANR	410058	Identifier	c		409801	0					
+ANR	410059	Identifier	step		409801	1					
+ANR	410060	PrimaryExpression	0		409801	1					
+ANR	410061	CompoundStatement		57:26:1234:1234	409801	1					
+ANR	410062	ExpressionStatement	nodes [ 0 ] -> step = 127	65:12:1461:1484	409801	0	True				
+ANR	410063	AssignmentExpression	nodes [ 0 ] -> step = 127		409801	0		=			
+ANR	410064	PtrMemberAccess	nodes [ 0 ] -> step		409801	0					
+ANR	410065	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410066	Identifier	nodes		409801	0					
+ANR	410067	PrimaryExpression	0		409801	1					
+ANR	410068	Identifier	step		409801	1					
+ANR	410069	PrimaryExpression	127		409801	1					
+ANR	410070	ExpressionStatement	nodes [ 0 ] -> sample1 = 0	67:12:1499:1520	409801	1	True				
+ANR	410071	AssignmentExpression	nodes [ 0 ] -> sample1 = 0		409801	0		=			
+ANR	410072	PtrMemberAccess	nodes [ 0 ] -> sample1		409801	0					
+ANR	410073	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410074	Identifier	nodes		409801	0					
+ANR	410075	PrimaryExpression	0		409801	1					
+ANR	410076	Identifier	sample1		409801	1					
+ANR	410077	PrimaryExpression	0		409801	1					
+ANR	410078	ElseStatement	else		409801	0					
+ANR	410079	CompoundStatement		63:15:1326:1326	409801	0					
+ANR	410080	ExpressionStatement	nodes [ 0 ] -> step = c -> step	71:12:1553:1580	409801	0	True				
+ANR	410081	AssignmentExpression	nodes [ 0 ] -> step = c -> step		409801	0		=			
+ANR	410082	PtrMemberAccess	nodes [ 0 ] -> step		409801	0					
+ANR	410083	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410084	Identifier	nodes		409801	0					
+ANR	410085	PrimaryExpression	0		409801	1					
+ANR	410086	Identifier	step		409801	1					
+ANR	410087	PtrMemberAccess	c -> step		409801	1					
+ANR	410088	Identifier	c		409801	0					
+ANR	410089	Identifier	step		409801	1					
+ANR	410090	ExpressionStatement	nodes [ 0 ] -> sample1 = c -> predictor	73:12:1595:1627	409801	1	True				
+ANR	410091	AssignmentExpression	nodes [ 0 ] -> sample1 = c -> predictor		409801	0		=			
+ANR	410092	PtrMemberAccess	nodes [ 0 ] -> sample1		409801	0					
+ANR	410093	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410094	Identifier	nodes		409801	0					
+ANR	410095	PrimaryExpression	0		409801	1					
+ANR	410096	Identifier	sample1		409801	1					
+ANR	410097	PtrMemberAccess	c -> predictor		409801	1					
+ANR	410098	Identifier	c		409801	0					
+ANR	410099	Identifier	predictor		409801	1					
+ANR	410100	ForStatement	for ( i = 0 ; i < n ; i ++ )		409801	21					
+ANR	410101	ForInit	i = 0 ;	81:9:1659:1664	409801	0	True				
+ANR	410102	AssignmentExpression	i = 0		409801	0		=			
+ANR	410103	Identifier	i		409801	0					
+ANR	410104	PrimaryExpression	0		409801	1					
+ANR	410105	Condition	i < n	81:16:1666:1670	409801	1	True				
+ANR	410106	RelationalExpression	i < n		409801	0		<			
+ANR	410107	Identifier	i		409801	0					
+ANR	410108	Identifier	n		409801	1					
+ANR	410109	PostIncDecOperationExpression	i ++	81:23:1673:1675	409801	2	True				
+ANR	410110	Identifier	i		409801	0					
+ANR	410111	IncDec	++		409801	1					
+ANR	410112	CompoundStatement		83:8:1601:1617	409801	3					
+ANR	410113	IdentifierDeclStatement	TrellisNode * t = node_buf + frontier * ( i & 1 ) ;	83:8:1689:1731	409801	0	True				
+ANR	410114	IdentifierDecl	* t = node_buf + frontier * ( i & 1 )		409801	0					
+ANR	410115	IdentifierDeclType	TrellisNode *		409801	0					
+ANR	410116	Identifier	t		409801	1					
+ANR	410117	AssignmentExpression	* t = node_buf + frontier * ( i & 1 )		409801	2		=			
+ANR	410118	Identifier	t		409801	0					
+ANR	410119	AdditiveExpression	node_buf + frontier * ( i & 1 )		409801	1		+			
+ANR	410120	Identifier	node_buf		409801	0					
+ANR	410121	MultiplicativeExpression	frontier * ( i & 1 )		409801	1		*			
+ANR	410122	Identifier	frontier		409801	0					
+ANR	410123	BitAndExpression	i & 1		409801	1		&			
+ANR	410124	Identifier	i		409801	0					
+ANR	410125	PrimaryExpression	1		409801	1					
+ANR	410126	IdentifierDeclStatement	TrellisNode * * u ;	85:8:1742:1757	409801	1	True				
+ANR	410127	IdentifierDecl	* * u		409801	0					
+ANR	410128	IdentifierDeclType	TrellisNode * *		409801	0					
+ANR	410129	Identifier	u		409801	1					
+ANR	410130	IdentifierDeclStatement	int sample = samples [ i * stride ] ;	87:8:1768:1802	409801	2	True				
+ANR	410131	IdentifierDecl	sample = samples [ i * stride ]		409801	0					
+ANR	410132	IdentifierDeclType	int		409801	0					
+ANR	410133	Identifier	sample		409801	1					
+ANR	410134	AssignmentExpression	sample = samples [ i * stride ]		409801	2		=			
+ANR	410135	Identifier	sample		409801	0					
+ANR	410136	ArrayIndexing	samples [ i * stride ]		409801	1					
+ANR	410137	Identifier	samples		409801	0					
+ANR	410138	MultiplicativeExpression	i * stride		409801	1		*			
+ANR	410139	Identifier	i		409801	0					
+ANR	410140	Identifier	stride		409801	1					
+ANR	410141	IdentifierDeclStatement	int heap_pos = 0 ;	89:8:1813:1829	409801	3	True				
+ANR	410142	IdentifierDecl	heap_pos = 0		409801	0					
+ANR	410143	IdentifierDeclType	int		409801	0					
+ANR	410144	Identifier	heap_pos		409801	1					
+ANR	410145	AssignmentExpression	heap_pos = 0		409801	2		=			
+ANR	410146	Identifier	heap_pos		409801	0					
+ANR	410147	PrimaryExpression	0		409801	1					
+ANR	410148	ExpressionStatement	"memset ( nodes_next , 0 , frontier * sizeof ( TrellisNode * ) )"	91:8:1840:1894	409801	4	True				
+ANR	410149	CallExpression	"memset ( nodes_next , 0 , frontier * sizeof ( TrellisNode * ) )"		409801	0					
+ANR	410150	Callee	memset		409801	0					
+ANR	410151	Identifier	memset		409801	0					
+ANR	410152	ArgumentList	nodes_next		409801	1					
+ANR	410153	Argument	nodes_next		409801	0					
+ANR	410154	Identifier	nodes_next		409801	0					
+ANR	410155	Argument	0		409801	1					
+ANR	410156	PrimaryExpression	0		409801	0					
+ANR	410157	Argument	frontier * sizeof ( TrellisNode * )		409801	2					
+ANR	410158	MultiplicativeExpression	frontier * sizeof ( TrellisNode * )		409801	0		*			
+ANR	410159	Identifier	frontier		409801	0					
+ANR	410160	SizeofExpression	sizeof ( TrellisNode * )		409801	1					
+ANR	410161	Sizeof	sizeof		409801	0					
+ANR	410162	SizeofOperand	TrellisNode *		409801	1					
+ANR	410163	ForStatement	for ( j = 0 ; j < frontier && nodes [ j ] ; j ++ )		409801	5					
+ANR	410164	ForInit	j = 0 ;	93:13:1910:1915	409801	0	True				
+ANR	410165	AssignmentExpression	j = 0		409801	0		=			
+ANR	410166	Identifier	j		409801	0					
+ANR	410167	PrimaryExpression	0		409801	1					
+ANR	410168	Condition	j < frontier && nodes [ j ]	93:20:1917:1940	409801	1	True				
+ANR	410169	AndExpression	j < frontier && nodes [ j ]		409801	0		&&			
+ANR	410170	RelationalExpression	j < frontier		409801	0		<			
+ANR	410171	Identifier	j		409801	0					
+ANR	410172	Identifier	frontier		409801	1					
+ANR	410173	ArrayIndexing	nodes [ j ]		409801	1					
+ANR	410174	Identifier	nodes		409801	0					
+ANR	410175	Identifier	j		409801	1					
+ANR	410176	PostIncDecOperationExpression	j ++	93:46:1943:1945	409801	2	True				
+ANR	410177	Identifier	j		409801	0					
+ANR	410178	IncDec	++		409801	1					
+ANR	410179	CompoundStatement		97:12:1979:1987	409801	3					
+ANR	410180	IdentifierDeclStatement	const int range = ( j < frontier / 2 ) ? 1 : 0 ;	99:12:2085:2129	409801	0	True				
+ANR	410181	IdentifierDecl	range = ( j < frontier / 2 ) ? 1 : 0		409801	0					
+ANR	410182	IdentifierDeclType	const int		409801	0					
+ANR	410183	Identifier	range		409801	1					
+ANR	410184	AssignmentExpression	range = ( j < frontier / 2 ) ? 1 : 0		409801	2		=			
+ANR	410185	Identifier	range		409801	0					
+ANR	410186	ConditionalExpression	( j < frontier / 2 ) ? 1 : 0		409801	1					
+ANR	410187	Condition	j < frontier / 2		409801	0					
+ANR	410188	RelationalExpression	j < frontier / 2		409801	0		<			
+ANR	410189	Identifier	j		409801	0					
+ANR	410190	MultiplicativeExpression	frontier / 2		409801	1		/			
+ANR	410191	Identifier	frontier		409801	0					
+ANR	410192	PrimaryExpression	2		409801	1					
+ANR	410193	PrimaryExpression	1		409801	1					
+ANR	410194	PrimaryExpression	0		409801	2					
+ANR	410195	IdentifierDeclStatement	const int step = nodes [ j ] -> step ;	101:12:2144:2176	409801	1	True				
+ANR	410196	IdentifierDecl	step = nodes [ j ] -> step		409801	0					
+ANR	410197	IdentifierDeclType	const int		409801	0					
+ANR	410198	Identifier	step		409801	1					
+ANR	410199	AssignmentExpression	step = nodes [ j ] -> step		409801	2		=			
+ANR	410200	Identifier	step		409801	0					
+ANR	410201	PtrMemberAccess	nodes [ j ] -> step		409801	1					
+ANR	410202	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410203	Identifier	nodes		409801	0					
+ANR	410204	Identifier	j		409801	1					
+ANR	410205	Identifier	step		409801	1					
+ANR	410206	IdentifierDeclStatement	int nidx ;	103:12:2191:2199	409801	2	True				
+ANR	410207	IdentifierDecl	nidx		409801	0					
+ANR	410208	IdentifierDeclType	int		409801	0					
+ANR	410209	Identifier	nidx		409801	1					
+ANR	410210	IfStatement	if ( version == AV_CODEC_ID_ADPCM_MS )		409801	3					
+ANR	410211	Condition	version == AV_CODEC_ID_ADPCM_MS	105:16:2218:2248	409801	0	True				
+ANR	410212	EqualityExpression	version == AV_CODEC_ID_ADPCM_MS		409801	0		==			
+ANR	410213	Identifier	version		409801	0					
+ANR	410214	Identifier	AV_CODEC_ID_ADPCM_MS		409801	1					
+ANR	410215	CompoundStatement		109:16:2335:2377	409801	1					
+ANR	410216	IdentifierDeclStatement	const int predictor = ( ( nodes [ j ] -> sample1 * c -> coeff1 ) + ( nodes [ j ] -> sample2 * c -> coeff2 ) ) / 64 ;	107:16:2270:2404	409801	0	True				
+ANR	410217	IdentifierDecl	predictor = ( ( nodes [ j ] -> sample1 * c -> coeff1 ) + ( nodes [ j ] -> sample2 * c -> coeff2 ) ) / 64		409801	0					
+ANR	410218	IdentifierDeclType	const int		409801	0					
+ANR	410219	Identifier	predictor		409801	1					
+ANR	410220	AssignmentExpression	predictor = ( ( nodes [ j ] -> sample1 * c -> coeff1 ) + ( nodes [ j ] -> sample2 * c -> coeff2 ) ) / 64		409801	2		=			
+ANR	410221	Identifier	predictor		409801	0					
+ANR	410222	MultiplicativeExpression	( ( nodes [ j ] -> sample1 * c -> coeff1 ) + ( nodes [ j ] -> sample2 * c -> coeff2 ) ) / 64		409801	1		/			
+ANR	410223	AdditiveExpression	( nodes [ j ] -> sample1 * c -> coeff1 ) + ( nodes [ j ] -> sample2 * c -> coeff2 )		409801	0		+			
+ANR	410224	MultiplicativeExpression	nodes [ j ] -> sample1 * c -> coeff1		409801	0		*			
+ANR	410225	PtrMemberAccess	nodes [ j ] -> sample1		409801	0					
+ANR	410226	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410227	Identifier	nodes		409801	0					
+ANR	410228	Identifier	j		409801	1					
+ANR	410229	Identifier	sample1		409801	1					
+ANR	410230	PtrMemberAccess	c -> coeff1		409801	1					
+ANR	410231	Identifier	c		409801	0					
+ANR	410232	Identifier	coeff1		409801	1					
+ANR	410233	MultiplicativeExpression	nodes [ j ] -> sample2 * c -> coeff2		409801	1		*			
+ANR	410234	PtrMemberAccess	nodes [ j ] -> sample2		409801	0					
+ANR	410235	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410236	Identifier	nodes		409801	0					
+ANR	410237	Identifier	j		409801	1					
+ANR	410238	Identifier	sample2		409801	1					
+ANR	410239	PtrMemberAccess	c -> coeff2		409801	1					
+ANR	410240	Identifier	c		409801	0					
+ANR	410241	Identifier	coeff2		409801	1					
+ANR	410242	PrimaryExpression	64		409801	1					
+ANR	410243	IdentifierDeclStatement	const int div = ( sample - predictor ) / step ;	111:16:2423:2467	409801	1	True				
+ANR	410244	IdentifierDecl	div = ( sample - predictor ) / step		409801	0					
+ANR	410245	IdentifierDeclType	const int		409801	0					
+ANR	410246	Identifier	div		409801	1					
+ANR	410247	AssignmentExpression	div = ( sample - predictor ) / step		409801	2		=			
+ANR	410248	Identifier	div		409801	0					
+ANR	410249	MultiplicativeExpression	( sample - predictor ) / step		409801	1		/			
+ANR	410250	AdditiveExpression	sample - predictor		409801	0		-			
+ANR	410251	Identifier	sample		409801	0					
+ANR	410252	Identifier	predictor		409801	1					
+ANR	410253	Identifier	step		409801	1					
+ANR	410254	IdentifierDeclStatement	"const int nmin = av_clip ( div - range , - 8 , 6 ) ;"	113:16:2486:2528	409801	2	True				
+ANR	410255	IdentifierDecl	"nmin = av_clip ( div - range , - 8 , 6 )"		409801	0					
+ANR	410256	IdentifierDeclType	const int		409801	0					
+ANR	410257	Identifier	nmin		409801	1					
+ANR	410258	AssignmentExpression	"nmin = av_clip ( div - range , - 8 , 6 )"		409801	2		=			
+ANR	410259	Identifier	nmin		409801	0					
+ANR	410260	CallExpression	"av_clip ( div - range , - 8 , 6 )"		409801	1					
+ANR	410261	Callee	av_clip		409801	0					
+ANR	410262	Identifier	av_clip		409801	0					
+ANR	410263	ArgumentList	div - range		409801	1					
+ANR	410264	Argument	div - range		409801	0					
+ANR	410265	AdditiveExpression	div - range		409801	0		-			
+ANR	410266	Identifier	div		409801	0					
+ANR	410267	Identifier	range		409801	1					
+ANR	410268	Argument	- 8		409801	1					
+ANR	410269	UnaryOperationExpression	- 8		409801	0					
+ANR	410270	UnaryOperator	-		409801	0					
+ANR	410271	PrimaryExpression	8		409801	1					
+ANR	410272	Argument	6		409801	2					
+ANR	410273	PrimaryExpression	6		409801	0					
+ANR	410274	IdentifierDeclStatement	"const int nmax = av_clip ( div + range , - 7 , 7 ) ;"	115:16:2547:2589	409801	3	True				
+ANR	410275	IdentifierDecl	"nmax = av_clip ( div + range , - 7 , 7 )"		409801	0					
+ANR	410276	IdentifierDeclType	const int		409801	0					
+ANR	410277	Identifier	nmax		409801	1					
+ANR	410278	AssignmentExpression	"nmax = av_clip ( div + range , - 7 , 7 )"		409801	2		=			
+ANR	410279	Identifier	nmax		409801	0					
+ANR	410280	CallExpression	"av_clip ( div + range , - 7 , 7 )"		409801	1					
+ANR	410281	Callee	av_clip		409801	0					
+ANR	410282	Identifier	av_clip		409801	0					
+ANR	410283	ArgumentList	div + range		409801	1					
+ANR	410284	Argument	div + range		409801	0					
+ANR	410285	AdditiveExpression	div + range		409801	0		+			
+ANR	410286	Identifier	div		409801	0					
+ANR	410287	Identifier	range		409801	1					
+ANR	410288	Argument	- 7		409801	1					
+ANR	410289	UnaryOperationExpression	- 7		409801	0					
+ANR	410290	UnaryOperator	-		409801	0					
+ANR	410291	PrimaryExpression	7		409801	1					
+ANR	410292	Argument	7		409801	2					
+ANR	410293	PrimaryExpression	7		409801	0					
+ANR	410294	ForStatement	for ( nidx = nmin ; nidx <= nmax ; nidx ++ )		409801	4					
+ANR	410295	ForInit	nidx = nmin ;	117:21:2613:2624	409801	0	True				
+ANR	410296	AssignmentExpression	nidx = nmin		409801	0		=			
+ANR	410297	Identifier	nidx		409801	0					
+ANR	410298	Identifier	nmin		409801	1					
+ANR	410299	Condition	nidx <= nmax	117:34:2626:2637	409801	1	True				
+ANR	410300	RelationalExpression	nidx <= nmax		409801	0		<=			
+ANR	410301	Identifier	nidx		409801	0					
+ANR	410302	Identifier	nmax		409801	1					
+ANR	410303	PostIncDecOperationExpression	nidx ++	117:48:2640:2645	409801	2	True				
+ANR	410304	Identifier	nidx		409801	0					
+ANR	410305	IncDec	++		409801	1					
+ANR	410306	CompoundStatement		173:29:4283:4294	409801	3					
+ANR	410307	IdentifierDeclStatement	const int nibble = nidx & 0xf ;	119:20:2671:2700	409801	0	True				
+ANR	410308	IdentifierDecl	nibble = nidx & 0xf		409801	0					
+ANR	410309	IdentifierDeclType	const int		409801	0					
+ANR	410310	Identifier	nibble		409801	1					
+ANR	410311	AssignmentExpression	nibble = nidx & 0xf		409801	2		=			
+ANR	410312	Identifier	nibble		409801	0					
+ANR	410313	BitAndExpression	nidx & 0xf		409801	1		&			
+ANR	410314	Identifier	nidx		409801	0					
+ANR	410315	PrimaryExpression	0xf		409801	1					
+ANR	410316	IdentifierDeclStatement	int dec_sample = predictor + nidx * step ;	121:20:2723:2765	409801	1	True				
+ANR	410317	IdentifierDecl	dec_sample = predictor + nidx * step		409801	0					
+ANR	410318	IdentifierDeclType	int		409801	0					
+ANR	410319	Identifier	dec_sample		409801	1					
+ANR	410320	AssignmentExpression	dec_sample = predictor + nidx * step		409801	2		=			
+ANR	410321	Identifier	dec_sample		409801	0					
+ANR	410322	AdditiveExpression	predictor + nidx * step		409801	1		+			
+ANR	410323	Identifier	predictor		409801	0					
+ANR	410324	MultiplicativeExpression	nidx * step		409801	1		*			
+ANR	410325	Identifier	nidx		409801	0					
+ANR	410326	Identifier	step		409801	1					
+ANR	410327	Statement	define	123:1:2769:2774	409801	2	True				
+ANR	410328	Statement	STORE_NODE	123:8:2776:2785	409801	3	True				
+ANR	410329	Statement	(	123:18:2786:2786	409801	4	True				
+ANR	410330	Statement	NAME	123:19:2787:2790	409801	5	True				
+ANR	410331	Statement	","	123:23:2791:2791	409801	6	True				
+ANR	410332	Statement	STEP_INDEX	123:25:2793:2802	409801	7	True				
+ANR	410333	Statement	)	123:35:2803:2803	409801	8	True				
+ANR	410334	IdentifierDeclStatement	int d ;	125:20:2827:2832	409801	9	True				
+ANR	410335	IdentifierDecl	d		409801	0					
+ANR	410336	IdentifierDeclType	int		409801	0					
+ANR	410337	Identifier	d		409801	1					
+ANR	410338	IdentifierDeclStatement	uint32_t ssd ;	127:20:2856:2868	409801	10	True				
+ANR	410339	IdentifierDecl	ssd		409801	0					
+ANR	410340	IdentifierDeclType	uint32_t		409801	0					
+ANR	410341	Identifier	ssd		409801	1					
+ANR	410342	IdentifierDeclStatement	int pos ;	129:20:2892:2899	409801	11	True				
+ANR	410343	IdentifierDecl	pos		409801	0					
+ANR	410344	IdentifierDeclType	int		409801	0					
+ANR	410345	Identifier	pos		409801	1					
+ANR	410346	IdentifierDeclStatement	TrellisNode * u ;	131:20:2923:2937	409801	12	True				
+ANR	410347	IdentifierDecl	* u		409801	0					
+ANR	410348	IdentifierDeclType	TrellisNode *		409801	0					
+ANR	410349	Identifier	u		409801	1					
+ANR	410350	IdentifierDeclStatement	uint8_t * h ;	133:20:2961:2971	409801	13	True				
+ANR	410351	IdentifierDecl	* h		409801	0					
+ANR	410352	IdentifierDeclType	uint8_t *		409801	0					
+ANR	410353	Identifier	h		409801	1					
+ANR	410354	ExpressionStatement	dec_sample = av_clip_int16 ( dec_sample )	135:20:2995:3033	409801	14	True				
+ANR	410355	AssignmentExpression	dec_sample = av_clip_int16 ( dec_sample )		409801	0		=			
+ANR	410356	Identifier	dec_sample		409801	0					
+ANR	410357	CallExpression	av_clip_int16 ( dec_sample )		409801	1					
+ANR	410358	Callee	av_clip_int16		409801	0					
+ANR	410359	Identifier	av_clip_int16		409801	0					
+ANR	410360	ArgumentList	dec_sample		409801	1					
+ANR	410361	Argument	dec_sample		409801	0					
+ANR	410362	Identifier	dec_sample		409801	0					
+ANR	410363	ExpressionStatement	d = sample - dec_sample	137:20:3057:3080	409801	15	True				
+ANR	410364	AssignmentExpression	d = sample - dec_sample		409801	0		=			
+ANR	410365	Identifier	d		409801	0					
+ANR	410366	AdditiveExpression	sample - dec_sample		409801	1		-			
+ANR	410367	Identifier	sample		409801	0					
+ANR	410368	Identifier	dec_sample		409801	1					
+ANR	410369	ExpressionStatement	ssd = nodes [ j ] -> ssd + d * d	139:20:3104:3129	409801	16	True				
+ANR	410370	AssignmentExpression	ssd = nodes [ j ] -> ssd + d * d		409801	0		=			
+ANR	410371	Identifier	ssd		409801	0					
+ANR	410372	AdditiveExpression	nodes [ j ] -> ssd + d * d		409801	1		+			
+ANR	410373	PtrMemberAccess	nodes [ j ] -> ssd		409801	0					
+ANR	410374	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410375	Identifier	nodes		409801	0					
+ANR	410376	Identifier	j		409801	1					
+ANR	410377	Identifier	ssd		409801	1					
+ANR	410378	MultiplicativeExpression	d * d		409801	1		*			
+ANR	410379	Identifier	d		409801	0					
+ANR	410380	Identifier	d		409801	1					
+ANR	410381	IfStatement	if ( ssd < nodes [ j ] -> ssd )		409801	17					
+ANR	410382	Condition	ssd < nodes [ j ] -> ssd	149:24:3439:3457	409801	0	True				
+ANR	410383	RelationalExpression	ssd < nodes [ j ] -> ssd		409801	0		<			
+ANR	410384	Identifier	ssd		409801	0					
+ANR	410385	PtrMemberAccess	nodes [ j ] -> ssd		409801	1					
+ANR	410386	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410387	Identifier	nodes		409801	0					
+ANR	410388	Identifier	j		409801	1					
+ANR	410389	Identifier	ssd		409801	1					
+ANR	410390	Statement	goto	151:24:3486:3489	409801	1	True				
+ANR	410391	IdentifierDeclStatement	next_ NAME ;	151:29:3491:3502	409801	18	True				
+ANR	410392	IdentifierDecl	NAME		409801	0					
+ANR	410393	IdentifierDeclType	next_		409801	0					
+ANR	410394	Identifier	NAME		409801	1					
+ANR	410395	ExpressionStatement	h = & hash [ ( uint16_t ) dec_sample ]	175:20:4386:4418	409801	19	True				
+ANR	410396	AssignmentExpression	h = & hash [ ( uint16_t ) dec_sample ]		409801	0		=			
+ANR	410397	Identifier	h		409801	0					
+ANR	410398	UnaryOperationExpression	& hash [ ( uint16_t ) dec_sample ]		409801	1					
+ANR	410399	UnaryOperator	&		409801	0					
+ANR	410400	ArrayIndexing	hash [ ( uint16_t ) dec_sample ]		409801	1					
+ANR	410401	Identifier	hash		409801	0					
+ANR	410402	CastExpression	( uint16_t ) dec_sample		409801	1					
+ANR	410403	CastTarget	uint16_t		409801	0					
+ANR	410404	Identifier	dec_sample		409801	1					
+ANR	410405	IfStatement	if ( * h == generation )		409801	20					
+ANR	410406	Condition	* h == generation	177:24:4446:4461	409801	0	True				
+ANR	410407	EqualityExpression	* h == generation		409801	0		==			
+ANR	410408	UnaryOperationExpression	* h		409801	0					
+ANR	410409	UnaryOperator	*		409801	0					
+ANR	410410	Identifier	h		409801	1					
+ANR	410411	Identifier	generation		409801	1					
+ANR	410412	Statement	goto	179:24:4490:4493	409801	1	True				
+ANR	410413	IdentifierDeclStatement	next_ NAME ;	179:29:4495:4506	409801	21	True				
+ANR	410414	IdentifierDecl	NAME		409801	0					
+ANR	410415	IdentifierDeclType	next_		409801	0					
+ANR	410416	Identifier	NAME		409801	1					
+ANR	410417	IfStatement	if ( heap_pos < frontier )		409801	22					
+ANR	410418	Condition	heap_pos < frontier	181:24:4534:4552	409801	0	True				
+ANR	410419	RelationalExpression	heap_pos < frontier		409801	0		<			
+ANR	410420	Identifier	heap_pos		409801	0					
+ANR	410421	Identifier	frontier		409801	1					
+ANR	410422	CompoundStatement		175:45:4343:4343	409801	1					
+ANR	410423	ExpressionStatement	pos = heap_pos ++	183:24:4583:4599	409801	0	True				
+ANR	410424	AssignmentExpression	pos = heap_pos ++		409801	0		=			
+ANR	410425	Identifier	pos		409801	0					
+ANR	410426	PostIncDecOperationExpression	heap_pos ++		409801	1					
+ANR	410427	Identifier	heap_pos		409801	0					
+ANR	410428	IncDec	++		409801	1					
+ANR	410429	ElseStatement	else		409801	0					
+ANR	410430	CompoundStatement		191:33:4784:4795	409801	0					
+ANR	410431	ExpressionStatement	pos = ( frontier >> 1 ) + ( heap_pos & ( ( frontier >> 1 ) - 1 ) )	191:24:4811:4901	409801	0	True				
+ANR	410432	AssignmentExpression	pos = ( frontier >> 1 ) + ( heap_pos & ( ( frontier >> 1 ) - 1 ) )		409801	0		=			
+ANR	410433	Identifier	pos		409801	0					
+ANR	410434	AdditiveExpression	( frontier >> 1 ) + ( heap_pos & ( ( frontier >> 1 ) - 1 ) )		409801	1		+			
+ANR	410435	ShiftExpression	frontier >> 1		409801	0		>>			
+ANR	410436	Identifier	frontier		409801	0					
+ANR	410437	PrimaryExpression	1		409801	1					
+ANR	410438	BitAndExpression	heap_pos & ( ( frontier >> 1 ) - 1 )		409801	1		&			
+ANR	410439	Identifier	heap_pos		409801	0					
+ANR	410440	AdditiveExpression	( frontier >> 1 ) - 1		409801	1		-			
+ANR	410441	ShiftExpression	frontier >> 1		409801	0		>>			
+ANR	410442	Identifier	frontier		409801	0					
+ANR	410443	PrimaryExpression	1		409801	1					
+ANR	410444	PrimaryExpression	1		409801	1					
+ANR	410445	IfStatement	if ( ssd > nodes_next [ pos ] -> ssd )		409801	1					
+ANR	410446	Condition	ssd > nodes_next [ pos ] -> ssd	195:28:4933:4958	409801	0	True				
+ANR	410447	RelationalExpression	ssd > nodes_next [ pos ] -> ssd		409801	0		>			
+ANR	410448	Identifier	ssd		409801	0					
+ANR	410449	PtrMemberAccess	nodes_next [ pos ] -> ssd		409801	1					
+ANR	410450	ArrayIndexing	nodes_next [ pos ]		409801	0					
+ANR	410451	Identifier	nodes_next		409801	0					
+ANR	410452	Identifier	pos		409801	1					
+ANR	410453	Identifier	ssd		409801	1					
+ANR	410454	Statement	goto	197:28:4991:4994	409801	1	True				
+ANR	410455	IdentifierDeclStatement	next_ NAME ;	197:33:4996:5007	409801	2	True				
+ANR	410456	IdentifierDecl	NAME		409801	0					
+ANR	410457	IdentifierDeclType	next_		409801	0					
+ANR	410458	Identifier	NAME		409801	1					
+ANR	410459	ExpressionStatement	heap_pos ++	199:24:5035:5045	409801	3	True				
+ANR	410460	PostIncDecOperationExpression	heap_pos ++		409801	0					
+ANR	410461	Identifier	heap_pos		409801	0					
+ANR	410462	IncDec	++		409801	1					
+ANR	410463	ExpressionStatement	* h = generation	203:20:5093:5108	409801	23	True				
+ANR	410464	AssignmentExpression	* h = generation		409801	0		=			
+ANR	410465	UnaryOperationExpression	* h		409801	0					
+ANR	410466	UnaryOperator	*		409801	0					
+ANR	410467	Identifier	h		409801	1					
+ANR	410468	Identifier	generation		409801	1					
+ANR	410469	ExpressionStatement	u = nodes_next [ pos ]	205:20:5132:5152	409801	24	True				
+ANR	410470	AssignmentExpression	u = nodes_next [ pos ]		409801	0		=			
+ANR	410471	Identifier	u		409801	0					
+ANR	410472	ArrayIndexing	nodes_next [ pos ]		409801	1					
+ANR	410473	Identifier	nodes_next		409801	0					
+ANR	410474	Identifier	pos		409801	1					
+ANR	410475	IfStatement	if ( ! u )		409801	25					
+ANR	410476	Condition	! u	207:24:5180:5181	409801	0	True				
+ANR	410477	UnaryOperationExpression	! u		409801	0					
+ANR	410478	UnaryOperator	!		409801	0					
+ANR	410479	Identifier	u		409801	1					
+ANR	410480	CompoundStatement		201:28:4972:4972	409801	1					
+ANR	410481	ExpressionStatement	av_assert1 ( pathn < FREEZE_INTERVAL << avctx -> trellis )	209:24:5212:5265	409801	0	True				
+ANR	410482	CallExpression	av_assert1 ( pathn < FREEZE_INTERVAL << avctx -> trellis )		409801	0					
+ANR	410483	Callee	av_assert1		409801	0					
+ANR	410484	Identifier	av_assert1		409801	0					
+ANR	410485	ArgumentList	pathn < FREEZE_INTERVAL << avctx -> trellis		409801	1					
+ANR	410486	Argument	pathn < FREEZE_INTERVAL << avctx -> trellis		409801	0					
+ANR	410487	RelationalExpression	pathn < FREEZE_INTERVAL << avctx -> trellis		409801	0		<			
+ANR	410488	Identifier	pathn		409801	0					
+ANR	410489	ShiftExpression	FREEZE_INTERVAL << avctx -> trellis		409801	1		<<			
+ANR	410490	Identifier	FREEZE_INTERVAL		409801	0					
+ANR	410491	PtrMemberAccess	avctx -> trellis		409801	1					
+ANR	410492	Identifier	avctx		409801	0					
+ANR	410493	Identifier	trellis		409801	1					
+ANR	410494	ExpressionStatement	u = t ++	211:24:5293:5300	409801	1	True				
+ANR	410495	AssignmentExpression	u = t ++		409801	0		=			
+ANR	410496	Identifier	u		409801	0					
+ANR	410497	PostIncDecOperationExpression	t ++		409801	1					
+ANR	410498	Identifier	t		409801	0					
+ANR	410499	IncDec	++		409801	1					
+ANR	410500	ExpressionStatement	nodes_next [ pos ] = u	213:24:5328:5347	409801	2	True				
+ANR	410501	AssignmentExpression	nodes_next [ pos ] = u		409801	0		=			
+ANR	410502	ArrayIndexing	nodes_next [ pos ]		409801	0					
+ANR	410503	Identifier	nodes_next		409801	0					
+ANR	410504	Identifier	pos		409801	1					
+ANR	410505	Identifier	u		409801	1					
+ANR	410506	ExpressionStatement	u -> path = pathn ++	215:24:5375:5392	409801	3	True				
+ANR	410507	AssignmentExpression	u -> path = pathn ++		409801	0		=			
+ANR	410508	PtrMemberAccess	u -> path		409801	0					
+ANR	410509	Identifier	u		409801	0					
+ANR	410510	Identifier	path		409801	1					
+ANR	410511	PostIncDecOperationExpression	pathn ++		409801	1					
+ANR	410512	Identifier	pathn		409801	0					
+ANR	410513	IncDec	++		409801	1					
+ANR	410514	ExpressionStatement	u -> ssd = ssd	219:20:5440:5453	409801	26	True				
+ANR	410515	AssignmentExpression	u -> ssd = ssd		409801	0		=			
+ANR	410516	PtrMemberAccess	u -> ssd		409801	0					
+ANR	410517	Identifier	u		409801	0					
+ANR	410518	Identifier	ssd		409801	1					
+ANR	410519	Identifier	ssd		409801	1					
+ANR	410520	ExpressionStatement	u -> step = STEP_INDEX	221:20:5477:5497	409801	27	True				
+ANR	410521	AssignmentExpression	u -> step = STEP_INDEX		409801	0		=			
+ANR	410522	PtrMemberAccess	u -> step		409801	0					
+ANR	410523	Identifier	u		409801	0					
+ANR	410524	Identifier	step		409801	1					
+ANR	410525	Identifier	STEP_INDEX		409801	1					
+ANR	410526	ExpressionStatement	u -> sample2 = nodes [ j ] -> sample1	223:20:5521:5551	409801	28	True				
+ANR	410527	AssignmentExpression	u -> sample2 = nodes [ j ] -> sample1		409801	0		=			
+ANR	410528	PtrMemberAccess	u -> sample2		409801	0					
+ANR	410529	Identifier	u		409801	0					
+ANR	410530	Identifier	sample2		409801	1					
+ANR	410531	PtrMemberAccess	nodes [ j ] -> sample1		409801	1					
+ANR	410532	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410533	Identifier	nodes		409801	0					
+ANR	410534	Identifier	j		409801	1					
+ANR	410535	Identifier	sample1		409801	1					
+ANR	410536	ExpressionStatement	u -> sample1 = dec_sample	225:20:5575:5598	409801	29	True				
+ANR	410537	AssignmentExpression	u -> sample1 = dec_sample		409801	0		=			
+ANR	410538	PtrMemberAccess	u -> sample1		409801	0					
+ANR	410539	Identifier	u		409801	0					
+ANR	410540	Identifier	sample1		409801	1					
+ANR	410541	Identifier	dec_sample		409801	1					
+ANR	410542	ExpressionStatement	paths [ u -> path ] . nibble = nibble	227:20:5622:5652	409801	30	True				
+ANR	410543	AssignmentExpression	paths [ u -> path ] . nibble = nibble		409801	0		=			
+ANR	410544	MemberAccess	paths [ u -> path ] . nibble		409801	0					
+ANR	410545	ArrayIndexing	paths [ u -> path ]		409801	0					
+ANR	410546	Identifier	paths		409801	0					
+ANR	410547	PtrMemberAccess	u -> path		409801	1					
+ANR	410548	Identifier	u		409801	0					
+ANR	410549	Identifier	path		409801	1					
+ANR	410550	Identifier	nibble		409801	1					
+ANR	410551	Identifier	nibble		409801	1					
+ANR	410552	ExpressionStatement	paths [ u -> path ] . prev = nodes [ j ] -> path	229:20:5676:5714	409801	31	True				
+ANR	410553	AssignmentExpression	paths [ u -> path ] . prev = nodes [ j ] -> path		409801	0		=			
+ANR	410554	MemberAccess	paths [ u -> path ] . prev		409801	0					
+ANR	410555	ArrayIndexing	paths [ u -> path ]		409801	0					
+ANR	410556	Identifier	paths		409801	0					
+ANR	410557	PtrMemberAccess	u -> path		409801	1					
+ANR	410558	Identifier	u		409801	0					
+ANR	410559	Identifier	path		409801	1					
+ANR	410560	Identifier	prev		409801	1					
+ANR	410561	PtrMemberAccess	nodes [ j ] -> path		409801	1					
+ANR	410562	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410563	Identifier	nodes		409801	0					
+ANR	410564	Identifier	j		409801	1					
+ANR	410565	Identifier	path		409801	1					
+ANR	410566	WhileStatement	while ( pos > 0 )		409801	32					
+ANR	410567	Condition	pos > 0	235:27:5873:5879	409801	0	True				
+ANR	410568	RelationalExpression	pos > 0		409801	0		>			
+ANR	410569	Identifier	pos		409801	0					
+ANR	410570	PrimaryExpression	0		409801	1					
+ANR	410571	CompoundStatement		231:24:5698:5725	409801	1					
+ANR	410572	IdentifierDeclStatement	int parent = ( pos - 1 ) >> 1 ;	237:24:5910:5937	409801	0	True				
+ANR	410573	IdentifierDecl	parent = ( pos - 1 ) >> 1		409801	0					
+ANR	410574	IdentifierDeclType	int		409801	0					
+ANR	410575	Identifier	parent		409801	1					
+ANR	410576	AssignmentExpression	parent = ( pos - 1 ) >> 1		409801	2		=			
+ANR	410577	Identifier	parent		409801	0					
+ANR	410578	ShiftExpression	( pos - 1 ) >> 1		409801	1		>>			
+ANR	410579	AdditiveExpression	pos - 1		409801	0		-			
+ANR	410580	Identifier	pos		409801	0					
+ANR	410581	PrimaryExpression	1		409801	1					
+ANR	410582	PrimaryExpression	1		409801	1					
+ANR	410583	IfStatement	if ( nodes_next [ parent ] -> ssd <= ssd )		409801	1					
+ANR	410584	Condition	nodes_next [ parent ] -> ssd <= ssd	239:28:5969:5998	409801	0	True				
+ANR	410585	RelationalExpression	nodes_next [ parent ] -> ssd <= ssd		409801	0		<=			
+ANR	410586	PtrMemberAccess	nodes_next [ parent ] -> ssd		409801	0					
+ANR	410587	ArrayIndexing	nodes_next [ parent ]		409801	0					
+ANR	410588	Identifier	nodes_next		409801	0					
+ANR	410589	Identifier	parent		409801	1					
+ANR	410590	Identifier	ssd		409801	1					
+ANR	410591	Identifier	ssd		409801	1					
+ANR	410592	BreakStatement	break ;	241:28:6031:6036	409801	1	True				
+ANR	410593	Statement	FFSWAP	243:24:6064:6069	409801	2	True				
+ANR	410594	Statement	(	243:30:6070:6070	409801	3	True				
+ANR	410595	Statement	TrellisNode	243:31:6071:6081	409801	4	True				
+ANR	410596	Statement	*	243:42:6082:6082	409801	5	True				
+ANR	410597	Statement	","	243:43:6083:6083	409801	6	True				
+ANR	410598	Statement	nodes_next	243:45:6085:6094	409801	7	True				
+ANR	410599	Statement	[	243:55:6095:6095	409801	8	True				
+ANR	410600	Statement	parent	243:56:6096:6101	409801	9	True				
+ANR	410601	Statement	]	243:62:6102:6102	409801	10	True				
+ANR	410602	Statement	","	243:63:6103:6103	409801	11	True				
+ANR	410603	Statement	nodes_next	243:65:6105:6114	409801	12	True				
+ANR	410604	Statement	[	243:75:6115:6115	409801	13	True				
+ANR	410605	Statement	pos	243:76:6116:6118	409801	14	True				
+ANR	410606	Statement	]	243:79:6119:6119	409801	15	True				
+ANR	410607	Statement	)	243:80:6120:6120	409801	16	True				
+ANR	410608	ExpressionStatement		243:81:6121:6121	409801	17	True				
+ANR	410609	ExpressionStatement	pos = parent	245:24:6149:6161	409801	18	True				
+ANR	410610	AssignmentExpression	pos = parent		409801	0		=			
+ANR	410611	Identifier	pos		409801	0					
+ANR	410612	Identifier	parent		409801	1					
+ANR	410613	Statement	next_	249:20:6209:6213	409801	33	True				
+ANR	410614	Label	NAME :	249:27:6216:6220	409801	34	True				
+ANR	410615	Identifier	NAME		409801	0					
+ANR	410616	ExpressionStatement		249:32:6221:6221	409801	35	True				
+ANR	410617	ExpressionStatement	"STORE_NODE ( ms , FFMAX ( 16 , ( ff_adpcm_AdaptationTable [ nibble ] * step ) >> 8 ) )"	251:20:6244:6349	409801	36	True				
+ANR	410618	CallExpression	"STORE_NODE ( ms , FFMAX ( 16 , ( ff_adpcm_AdaptationTable [ nibble ] * step ) >> 8 ) )"		409801	0					
+ANR	410619	Callee	STORE_NODE		409801	0					
+ANR	410620	Identifier	STORE_NODE		409801	0					
+ANR	410621	ArgumentList	ms		409801	1					
+ANR	410622	Argument	ms		409801	0					
+ANR	410623	Identifier	ms		409801	0					
+ANR	410624	Argument	"FFMAX ( 16 , ( ff_adpcm_AdaptationTable [ nibble ] * step ) >> 8 )"		409801	1					
+ANR	410625	CallExpression	"FFMAX ( 16 , ( ff_adpcm_AdaptationTable [ nibble ] * step ) >> 8 )"		409801	0					
+ANR	410626	Callee	FFMAX		409801	0					
+ANR	410627	Identifier	FFMAX		409801	0					
+ANR	410628	ArgumentList	16		409801	1					
+ANR	410629	Argument	16		409801	0					
+ANR	410630	PrimaryExpression	16		409801	0					
+ANR	410631	Argument	( ff_adpcm_AdaptationTable [ nibble ] * step ) >> 8		409801	1					
+ANR	410632	ShiftExpression	( ff_adpcm_AdaptationTable [ nibble ] * step ) >> 8		409801	0		>>			
+ANR	410633	MultiplicativeExpression	ff_adpcm_AdaptationTable [ nibble ] * step		409801	0		*			
+ANR	410634	ArrayIndexing	ff_adpcm_AdaptationTable [ nibble ]		409801	0					
+ANR	410635	Identifier	ff_adpcm_AdaptationTable		409801	0					
+ANR	410636	Identifier	nibble		409801	1					
+ANR	410637	Identifier	step		409801	1					
+ANR	410638	PrimaryExpression	8		409801	1					
+ANR	410639	ElseStatement	else		409801	0					
+ANR	410640	IfStatement	if ( version == AV_CODEC_ID_ADPCM_IMA_WAV || version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF )		409801	0					
+ANR	410641	Condition	version == AV_CODEC_ID_ADPCM_IMA_WAV || version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF	257:23:6394:6553	409801	0	True				
+ANR	410642	OrExpression	version == AV_CODEC_ID_ADPCM_IMA_WAV || version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF		409801	0		||			
+ANR	410643	EqualityExpression	version == AV_CODEC_ID_ADPCM_IMA_WAV		409801	0		==			
+ANR	410644	Identifier	version		409801	0					
+ANR	410645	Identifier	AV_CODEC_ID_ADPCM_IMA_WAV		409801	1					
+ANR	410646	OrExpression	version == AV_CODEC_ID_ADPCM_IMA_QT || version == AV_CODEC_ID_ADPCM_SWF		409801	1		||			
+ANR	410647	EqualityExpression	version == AV_CODEC_ID_ADPCM_IMA_QT		409801	0		==			
+ANR	410648	Identifier	version		409801	0					
+ANR	410649	Identifier	AV_CODEC_ID_ADPCM_IMA_QT		409801	1					
+ANR	410650	EqualityExpression	version == AV_CODEC_ID_ADPCM_SWF		409801	1		==			
+ANR	410651	Identifier	version		409801	0					
+ANR	410652	Identifier	AV_CODEC_ID_ADPCM_SWF		409801	1					
+ANR	410653	CompoundStatement		265:16:6604:6642	409801	1					
+ANR	410654	Statement	define	263:1:6560:6565	409801	0	True				
+ANR	410655	Statement	LOOP_NODES	263:8:6567:6576	409801	1	True				
+ANR	410656	Statement	(	263:18:6577:6577	409801	2	True				
+ANR	410657	Statement	NAME	263:19:6578:6581	409801	3	True				
+ANR	410658	Statement	","	263:23:6582:6582	409801	4	True				
+ANR	410659	Statement	STEP_TABLE	263:25:6584:6593	409801	5	True				
+ANR	410660	Statement	","	263:35:6594:6594	409801	6	True				
+ANR	410661	Statement	STEP_INDEX	263:37:6596:6605	409801	7	True				
+ANR	410662	Statement	)	263:47:6606:6606	409801	8	True				
+ANR	410663	IdentifierDeclStatement	const int predictor = nodes [ j ] -> sample1 ;	265:16:6626:6665	409801	9	True				
+ANR	410664	IdentifierDecl	predictor = nodes [ j ] -> sample1		409801	0					
+ANR	410665	IdentifierDeclType	const int		409801	0					
+ANR	410666	Identifier	predictor		409801	1					
+ANR	410667	AssignmentExpression	predictor = nodes [ j ] -> sample1		409801	2		=			
+ANR	410668	Identifier	predictor		409801	0					
+ANR	410669	PtrMemberAccess	nodes [ j ] -> sample1		409801	1					
+ANR	410670	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410671	Identifier	nodes		409801	0					
+ANR	410672	Identifier	j		409801	1					
+ANR	410673	Identifier	sample1		409801	1					
+ANR	410674	IdentifierDeclStatement	const int div = ( sample - predictor ) * 4 / STEP_TABLE ;	267:16:6685:6738	409801	10	True				
+ANR	410675	IdentifierDecl	div = ( sample - predictor ) * 4 / STEP_TABLE		409801	0					
+ANR	410676	IdentifierDeclType	const int		409801	0					
+ANR	410677	Identifier	div		409801	1					
+ANR	410678	AssignmentExpression	div = ( sample - predictor ) * 4 / STEP_TABLE		409801	2		=			
+ANR	410679	Identifier	div		409801	0					
+ANR	410680	MultiplicativeExpression	( sample - predictor ) * 4 / STEP_TABLE		409801	1		*			
+ANR	410681	AdditiveExpression	sample - predictor		409801	0		-			
+ANR	410682	Identifier	sample		409801	0					
+ANR	410683	Identifier	predictor		409801	1					
+ANR	410684	MultiplicativeExpression	4 / STEP_TABLE		409801	1		/			
+ANR	410685	PrimaryExpression	4		409801	0					
+ANR	410686	Identifier	STEP_TABLE		409801	1					
+ANR	410687	IdentifierDeclStatement	"int nmin = av_clip ( div - range , - 7 , 6 ) ;"	269:16:6758:6796	409801	11	True				
+ANR	410688	IdentifierDecl	"nmin = av_clip ( div - range , - 7 , 6 )"		409801	0					
+ANR	410689	IdentifierDeclType	int		409801	0					
+ANR	410690	Identifier	nmin		409801	1					
+ANR	410691	AssignmentExpression	"nmin = av_clip ( div - range , - 7 , 6 )"		409801	2		=			
+ANR	410692	Identifier	nmin		409801	0					
+ANR	410693	CallExpression	"av_clip ( div - range , - 7 , 6 )"		409801	1					
+ANR	410694	Callee	av_clip		409801	0					
+ANR	410695	Identifier	av_clip		409801	0					
+ANR	410696	ArgumentList	div - range		409801	1					
+ANR	410697	Argument	div - range		409801	0					
+ANR	410698	AdditiveExpression	div - range		409801	0		-			
+ANR	410699	Identifier	div		409801	0					
+ANR	410700	Identifier	range		409801	1					
+ANR	410701	Argument	- 7		409801	1					
+ANR	410702	UnaryOperationExpression	- 7		409801	0					
+ANR	410703	UnaryOperator	-		409801	0					
+ANR	410704	PrimaryExpression	7		409801	1					
+ANR	410705	Argument	6		409801	2					
+ANR	410706	PrimaryExpression	6		409801	0					
+ANR	410707	IdentifierDeclStatement	"int nmax = av_clip ( div + range , - 6 , 7 ) ;"	271:16:6816:6854	409801	12	True				
+ANR	410708	IdentifierDecl	"nmax = av_clip ( div + range , - 6 , 7 )"		409801	0					
+ANR	410709	IdentifierDeclType	int		409801	0					
+ANR	410710	Identifier	nmax		409801	1					
+ANR	410711	AssignmentExpression	"nmax = av_clip ( div + range , - 6 , 7 )"		409801	2		=			
+ANR	410712	Identifier	nmax		409801	0					
+ANR	410713	CallExpression	"av_clip ( div + range , - 6 , 7 )"		409801	1					
+ANR	410714	Callee	av_clip		409801	0					
+ANR	410715	Identifier	av_clip		409801	0					
+ANR	410716	ArgumentList	div + range		409801	1					
+ANR	410717	Argument	div + range		409801	0					
+ANR	410718	AdditiveExpression	div + range		409801	0		+			
+ANR	410719	Identifier	div		409801	0					
+ANR	410720	Identifier	range		409801	1					
+ANR	410721	Argument	- 6		409801	1					
+ANR	410722	UnaryOperationExpression	- 6		409801	0					
+ANR	410723	UnaryOperator	-		409801	0					
+ANR	410724	PrimaryExpression	6		409801	1					
+ANR	410725	Argument	7		409801	2					
+ANR	410726	PrimaryExpression	7		409801	0					
+ANR	410727	IfStatement	if ( nmin <= 0 )		409801	13					
+ANR	410728	Condition	nmin <= 0	273:20:6878:6886	409801	0	True				
+ANR	410729	RelationalExpression	nmin <= 0		409801	0		<=			
+ANR	410730	Identifier	nmin		409801	0					
+ANR	410731	PrimaryExpression	0		409801	1					
+ANR	410732	ExpressionStatement	nmin --	275:20:6911:6917	409801	1	True				
+ANR	410733	PostIncDecOperationExpression	nmin --		409801	0					
+ANR	410734	Identifier	nmin		409801	0					
+ANR	410735	IncDec	--		409801	1					
+ANR	410736	IfStatement	if ( nmax < 0 )		409801	14					
+ANR	410737	Condition	nmax < 0	277:20:6970:6977	409801	0	True				
+ANR	410738	RelationalExpression	nmax < 0		409801	0		<			
+ANR	410739	Identifier	nmax		409801	0					
+ANR	410740	PrimaryExpression	0		409801	1					
+ANR	410741	ExpressionStatement	nmax --	279:20:7002:7008	409801	1	True				
+ANR	410742	PostIncDecOperationExpression	nmax --		409801	0					
+ANR	410743	Identifier	nmax		409801	0					
+ANR	410744	IncDec	--		409801	1					
+ANR	410745	ForStatement	for ( nidx = nmin ; nidx <= nmax ; nidx ++ )		409801	15					
+ANR	410746	ForInit	nidx = nmin ;	281:21:7033:7044	409801	0	True				
+ANR	410747	AssignmentExpression	nidx = nmin		409801	0		=			
+ANR	410748	Identifier	nidx		409801	0					
+ANR	410749	Identifier	nmin		409801	1					
+ANR	410750	Condition	nidx <= nmax	281:34:7046:7057	409801	1	True				
+ANR	410751	RelationalExpression	nidx <= nmax		409801	0		<=			
+ANR	410752	Identifier	nidx		409801	0					
+ANR	410753	Identifier	nmax		409801	1					
+ANR	410754	PostIncDecOperationExpression	nidx ++	281:48:7060:7065	409801	2	True				
+ANR	410755	Identifier	nidx		409801	0					
+ANR	410756	IncDec	++		409801	1					
+ANR	410757	CompoundStatement		279:20:6949:7108	409801	3					
+ANR	410758	IdentifierDeclStatement	const int nibble = nidx < 0 ? 7 - nidx : nidx ;	283:20:7092:7137	409801	0	True				
+ANR	410759	IdentifierDecl	nibble = nidx < 0 ? 7 - nidx : nidx		409801	0					
+ANR	410760	IdentifierDeclType	const int		409801	0					
+ANR	410761	Identifier	nibble		409801	1					
+ANR	410762	AssignmentExpression	nibble = nidx < 0 ? 7 - nidx : nidx		409801	2		=			
+ANR	410763	Identifier	nibble		409801	0					
+ANR	410764	ConditionalExpression	nidx < 0 ? 7 - nidx : nidx		409801	1					
+ANR	410765	Condition	nidx < 0		409801	0					
+ANR	410766	RelationalExpression	nidx < 0		409801	0		<			
+ANR	410767	Identifier	nidx		409801	0					
+ANR	410768	PrimaryExpression	0		409801	1					
+ANR	410769	AdditiveExpression	7 - nidx		409801	1		-			
+ANR	410770	PrimaryExpression	7		409801	0					
+ANR	410771	Identifier	nidx		409801	1					
+ANR	410772	Identifier	nidx		409801	2					
+ANR	410773	IdentifierDeclStatement	int dec_sample = predictor + ( STEP_TABLE * ff_adpcm_yamaha_difflookup [ nibble ] ) / 8 ;	285:20:7161:7320	409801	1	True				
+ANR	410774	IdentifierDecl	dec_sample = predictor + ( STEP_TABLE * ff_adpcm_yamaha_difflookup [ nibble ] ) / 8		409801	0					
+ANR	410775	IdentifierDeclType	int		409801	0					
+ANR	410776	Identifier	dec_sample		409801	1					
+ANR	410777	AssignmentExpression	dec_sample = predictor + ( STEP_TABLE * ff_adpcm_yamaha_difflookup [ nibble ] ) / 8		409801	2		=			
+ANR	410778	Identifier	dec_sample		409801	0					
+ANR	410779	AdditiveExpression	predictor + ( STEP_TABLE * ff_adpcm_yamaha_difflookup [ nibble ] ) / 8		409801	1		+			
+ANR	410780	Identifier	predictor		409801	0					
+ANR	410781	MultiplicativeExpression	( STEP_TABLE * ff_adpcm_yamaha_difflookup [ nibble ] ) / 8		409801	1		/			
+ANR	410782	MultiplicativeExpression	STEP_TABLE * ff_adpcm_yamaha_difflookup [ nibble ]		409801	0		*			
+ANR	410783	Identifier	STEP_TABLE		409801	0					
+ANR	410784	ArrayIndexing	ff_adpcm_yamaha_difflookup [ nibble ]		409801	1					
+ANR	410785	Identifier	ff_adpcm_yamaha_difflookup		409801	0					
+ANR	410786	Identifier	nibble		409801	1					
+ANR	410787	PrimaryExpression	8		409801	1					
+ANR	410788	ExpressionStatement	"STORE_NODE ( NAME , STEP_INDEX )"	291:20:7344:7372	409801	2	True				
+ANR	410789	CallExpression	"STORE_NODE ( NAME , STEP_INDEX )"		409801	0					
+ANR	410790	Callee	STORE_NODE		409801	0					
+ANR	410791	Identifier	STORE_NODE		409801	0					
+ANR	410792	ArgumentList	NAME		409801	1					
+ANR	410793	Argument	NAME		409801	0					
+ANR	410794	Identifier	NAME		409801	0					
+ANR	410795	Argument	STEP_INDEX		409801	1					
+ANR	410796	Identifier	STEP_INDEX		409801	0					
+ANR	410797	ExpressionStatement	"LOOP_NODES ( ima , ff_adpcm_step_table [ step ] , av_clip ( step + ff_adpcm_index_table [ nibble ] , 0 , 88 ) )"	295:16:7411:7534	409801	16	True				
+ANR	410798	CallExpression	"LOOP_NODES ( ima , ff_adpcm_step_table [ step ] , av_clip ( step + ff_adpcm_index_table [ nibble ] , 0 , 88 ) )"		409801	0					
+ANR	410799	Callee	LOOP_NODES		409801	0					
+ANR	410800	Identifier	LOOP_NODES		409801	0					
+ANR	410801	ArgumentList	ima		409801	1					
+ANR	410802	Argument	ima		409801	0					
+ANR	410803	Identifier	ima		409801	0					
+ANR	410804	Argument	ff_adpcm_step_table [ step ]		409801	1					
+ANR	410805	ArrayIndexing	ff_adpcm_step_table [ step ]		409801	0					
+ANR	410806	Identifier	ff_adpcm_step_table		409801	0					
+ANR	410807	Identifier	step		409801	1					
+ANR	410808	Argument	"av_clip ( step + ff_adpcm_index_table [ nibble ] , 0 , 88 )"		409801	2					
+ANR	410809	CallExpression	"av_clip ( step + ff_adpcm_index_table [ nibble ] , 0 , 88 )"		409801	0					
+ANR	410810	Callee	av_clip		409801	0					
+ANR	410811	Identifier	av_clip		409801	0					
+ANR	410812	ArgumentList	step + ff_adpcm_index_table [ nibble ]		409801	1					
+ANR	410813	Argument	step + ff_adpcm_index_table [ nibble ]		409801	0					
+ANR	410814	AdditiveExpression	step + ff_adpcm_index_table [ nibble ]		409801	0		+			
+ANR	410815	Identifier	step		409801	0					
+ANR	410816	ArrayIndexing	ff_adpcm_index_table [ nibble ]		409801	1					
+ANR	410817	Identifier	ff_adpcm_index_table		409801	0					
+ANR	410818	Identifier	nibble		409801	1					
+ANR	410819	Argument	0		409801	1					
+ANR	410820	PrimaryExpression	0		409801	0					
+ANR	410821	Argument	88		409801	2					
+ANR	410822	PrimaryExpression	88		409801	0					
+ANR	410823	ElseStatement	else		409801	0					
+ANR	410824	CompoundStatement		293:19:7344:7344	409801	0					
+ANR	410825	ExpressionStatement	"LOOP_NODES ( yamaha , step , av_clip ( ( step * ff_adpcm_yamaha_indexscale [ nibble ] ) >> 8 , 127 , 24567 ) )"	301:16:7602:7761	409801	0	True				
+ANR	410826	CallExpression	"LOOP_NODES ( yamaha , step , av_clip ( ( step * ff_adpcm_yamaha_indexscale [ nibble ] ) >> 8 , 127 , 24567 ) )"		409801	0					
+ANR	410827	Callee	LOOP_NODES		409801	0					
+ANR	410828	Identifier	LOOP_NODES		409801	0					
+ANR	410829	ArgumentList	yamaha		409801	1					
+ANR	410830	Argument	yamaha		409801	0					
+ANR	410831	Identifier	yamaha		409801	0					
+ANR	410832	Argument	step		409801	1					
+ANR	410833	Identifier	step		409801	0					
+ANR	410834	Argument	"av_clip ( ( step * ff_adpcm_yamaha_indexscale [ nibble ] ) >> 8 , 127 , 24567 )"		409801	2					
+ANR	410835	CallExpression	"av_clip ( ( step * ff_adpcm_yamaha_indexscale [ nibble ] ) >> 8 , 127 , 24567 )"		409801	0					
+ANR	410836	Callee	av_clip		409801	0					
+ANR	410837	Identifier	av_clip		409801	0					
+ANR	410838	ArgumentList	( step * ff_adpcm_yamaha_indexscale [ nibble ] ) >> 8		409801	1					
+ANR	410839	Argument	( step * ff_adpcm_yamaha_indexscale [ nibble ] ) >> 8		409801	0					
+ANR	410840	ShiftExpression	( step * ff_adpcm_yamaha_indexscale [ nibble ] ) >> 8		409801	0		>>			
+ANR	410841	MultiplicativeExpression	step * ff_adpcm_yamaha_indexscale [ nibble ]		409801	0		*			
+ANR	410842	Identifier	step		409801	0					
+ANR	410843	ArrayIndexing	ff_adpcm_yamaha_indexscale [ nibble ]		409801	1					
+ANR	410844	Identifier	ff_adpcm_yamaha_indexscale		409801	0					
+ANR	410845	Identifier	nibble		409801	1					
+ANR	410846	PrimaryExpression	8		409801	1					
+ANR	410847	Argument	127		409801	1					
+ANR	410848	PrimaryExpression	127		409801	0					
+ANR	410849	Argument	24567		409801	2					
+ANR	410850	PrimaryExpression	24567		409801	0					
+ANR	410851	Statement	undef	307:1:7765:7769	409801	1	True				
+ANR	410852	Statement	LOOP_NODES	307:7:7771:7780	409801	2	True				
+ANR	410853	Statement	undef	309:1:7784:7788	409801	3	True				
+ANR	410854	Statement	STORE_NODE	309:7:7790:7799	409801	4	True				
+ANR	410855	ExpressionStatement	u = nodes	317:8:7838:7847	409801	6	True				
+ANR	410856	AssignmentExpression	u = nodes		409801	0		=			
+ANR	410857	Identifier	u		409801	0					
+ANR	410858	Identifier	nodes		409801	1					
+ANR	410859	ExpressionStatement	nodes = nodes_next	319:8:7858:7876	409801	7	True				
+ANR	410860	AssignmentExpression	nodes = nodes_next		409801	0		=			
+ANR	410861	Identifier	nodes		409801	0					
+ANR	410862	Identifier	nodes_next		409801	1					
+ANR	410863	ExpressionStatement	nodes_next = u	321:8:7887:7901	409801	8	True				
+ANR	410864	AssignmentExpression	nodes_next = u		409801	0		=			
+ANR	410865	Identifier	nodes_next		409801	0					
+ANR	410866	Identifier	u		409801	1					
+ANR	410867	ExpressionStatement	generation ++	325:8:7914:7926	409801	9	True				
+ANR	410868	PostIncDecOperationExpression	generation ++		409801	0					
+ANR	410869	Identifier	generation		409801	0					
+ANR	410870	IncDec	++		409801	1					
+ANR	410871	IfStatement	if ( generation == 255 )		409801	10					
+ANR	410872	Condition	generation == 255	327:12:7941:7957	409801	0	True				
+ANR	410873	EqualityExpression	generation == 255		409801	0		==			
+ANR	410874	Identifier	generation		409801	0					
+ANR	410875	PrimaryExpression	255		409801	1					
+ANR	410876	CompoundStatement		321:31:7748:7748	409801	1					
+ANR	410877	ExpressionStatement	"memset ( hash , 0xff , 65536 * sizeof ( * hash ) )"	329:12:7975:8016	409801	0	True				
+ANR	410878	CallExpression	"memset ( hash , 0xff , 65536 * sizeof ( * hash ) )"		409801	0					
+ANR	410879	Callee	memset		409801	0					
+ANR	410880	Identifier	memset		409801	0					
+ANR	410881	ArgumentList	hash		409801	1					
+ANR	410882	Argument	hash		409801	0					
+ANR	410883	Identifier	hash		409801	0					
+ANR	410884	Argument	0xff		409801	1					
+ANR	410885	PrimaryExpression	0xff		409801	0					
+ANR	410886	Argument	65536 * sizeof ( * hash )		409801	2					
+ANR	410887	MultiplicativeExpression	65536 * sizeof ( * hash )		409801	0		*			
+ANR	410888	PrimaryExpression	65536		409801	0					
+ANR	410889	SizeofExpression	sizeof ( * hash )		409801	1					
+ANR	410890	Sizeof	sizeof		409801	0					
+ANR	410891	UnaryOperationExpression	* hash		409801	1					
+ANR	410892	UnaryOperator	*		409801	0					
+ANR	410893	Identifier	hash		409801	1					
+ANR	410894	ExpressionStatement	generation = 0	331:12:8031:8045	409801	1	True				
+ANR	410895	AssignmentExpression	generation = 0		409801	0		=			
+ANR	410896	Identifier	generation		409801	0					
+ANR	410897	PrimaryExpression	0		409801	1					
+ANR	410898	IfStatement	if ( nodes [ 0 ] -> ssd > ( 1 << 28 ) )		409801	11					
+ANR	410899	Condition	nodes [ 0 ] -> ssd > ( 1 << 28 )	339:12:8102:8126	409801	0	True				
+ANR	410900	RelationalExpression	nodes [ 0 ] -> ssd > ( 1 << 28 )		409801	0		>			
+ANR	410901	PtrMemberAccess	nodes [ 0 ] -> ssd		409801	0					
+ANR	410902	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410903	Identifier	nodes		409801	0					
+ANR	410904	PrimaryExpression	0		409801	1					
+ANR	410905	Identifier	ssd		409801	1					
+ANR	410906	ShiftExpression	1 << 28		409801	1		<<			
+ANR	410907	PrimaryExpression	1		409801	0					
+ANR	410908	PrimaryExpression	28		409801	1					
+ANR	410909	CompoundStatement		333:39:7917:7917	409801	1					
+ANR	410910	ForStatement	for ( j = 1 ; j < frontier && nodes [ j ] ; j ++ )		409801	0					
+ANR	410911	ForInit	j = 1 ;	341:17:8149:8154	409801	0	True				
+ANR	410912	AssignmentExpression	j = 1		409801	0		=			
+ANR	410913	Identifier	j		409801	0					
+ANR	410914	PrimaryExpression	1		409801	1					
+ANR	410915	Condition	j < frontier && nodes [ j ]	341:24:8156:8179	409801	1	True				
+ANR	410916	AndExpression	j < frontier && nodes [ j ]		409801	0		&&			
+ANR	410917	RelationalExpression	j < frontier		409801	0		<			
+ANR	410918	Identifier	j		409801	0					
+ANR	410919	Identifier	frontier		409801	1					
+ANR	410920	ArrayIndexing	nodes [ j ]		409801	1					
+ANR	410921	Identifier	nodes		409801	0					
+ANR	410922	Identifier	j		409801	1					
+ANR	410923	PostIncDecOperationExpression	j ++	341:50:8182:8184	409801	2	True				
+ANR	410924	Identifier	j		409801	0					
+ANR	410925	IncDec	++		409801	1					
+ANR	410926	ExpressionStatement	nodes [ j ] -> ssd -= nodes [ 0 ] -> ssd	343:16:8204:8234	409801	3	True				
+ANR	410927	AssignmentExpression	nodes [ j ] -> ssd -= nodes [ 0 ] -> ssd		409801	0		-=			
+ANR	410928	PtrMemberAccess	nodes [ j ] -> ssd		409801	0					
+ANR	410929	ArrayIndexing	nodes [ j ]		409801	0					
+ANR	410930	Identifier	nodes		409801	0					
+ANR	410931	Identifier	j		409801	1					
+ANR	410932	Identifier	ssd		409801	1					
+ANR	410933	PtrMemberAccess	nodes [ 0 ] -> ssd		409801	1					
+ANR	410934	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410935	Identifier	nodes		409801	0					
+ANR	410936	PrimaryExpression	0		409801	1					
+ANR	410937	Identifier	ssd		409801	1					
+ANR	410938	ExpressionStatement	nodes [ 0 ] -> ssd = 0	345:12:8249:8266	409801	1	True				
+ANR	410939	AssignmentExpression	nodes [ 0 ] -> ssd = 0		409801	0		=			
+ANR	410940	PtrMemberAccess	nodes [ 0 ] -> ssd		409801	0					
+ANR	410941	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410942	Identifier	nodes		409801	0					
+ANR	410943	PrimaryExpression	0		409801	1					
+ANR	410944	Identifier	ssd		409801	1					
+ANR	410945	PrimaryExpression	0		409801	1					
+ANR	410946	IfStatement	if ( i == froze + FREEZE_INTERVAL )		409801	12					
+ANR	410947	Condition	i == froze + FREEZE_INTERVAL	353:12:8337:8364	409801	0	True				
+ANR	410948	EqualityExpression	i == froze + FREEZE_INTERVAL		409801	0		==			
+ANR	410949	Identifier	i		409801	0					
+ANR	410950	AdditiveExpression	froze + FREEZE_INTERVAL		409801	1		+			
+ANR	410951	Identifier	froze		409801	0					
+ANR	410952	Identifier	FREEZE_INTERVAL		409801	1					
+ANR	410953	CompoundStatement		347:42:8155:8155	409801	1					
+ANR	410954	ExpressionStatement	p = & paths [ nodes [ 0 ] -> path ]	355:12:8382:8408	409801	0	True				
+ANR	410955	AssignmentExpression	p = & paths [ nodes [ 0 ] -> path ]		409801	0		=			
+ANR	410956	Identifier	p		409801	0					
+ANR	410957	UnaryOperationExpression	& paths [ nodes [ 0 ] -> path ]		409801	1					
+ANR	410958	UnaryOperator	&		409801	0					
+ANR	410959	ArrayIndexing	paths [ nodes [ 0 ] -> path ]		409801	1					
+ANR	410960	Identifier	paths		409801	0					
+ANR	410961	PtrMemberAccess	nodes [ 0 ] -> path		409801	1					
+ANR	410962	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	410963	Identifier	nodes		409801	0					
+ANR	410964	PrimaryExpression	0		409801	1					
+ANR	410965	Identifier	path		409801	1					
+ANR	410966	ForStatement	for ( k = i ; k > froze ; k -- )		409801	1					
+ANR	410967	ForInit	k = i ;	357:17:8428:8433	409801	0	True				
+ANR	410968	AssignmentExpression	k = i		409801	0		=			
+ANR	410969	Identifier	k		409801	0					
+ANR	410970	Identifier	i		409801	1					
+ANR	410971	Condition	k > froze	357:24:8435:8443	409801	1	True				
+ANR	410972	RelationalExpression	k > froze		409801	0		>			
+ANR	410973	Identifier	k		409801	0					
+ANR	410974	Identifier	froze		409801	1					
+ANR	410975	PostIncDecOperationExpression	k --	357:35:8446:8448	409801	2	True				
+ANR	410976	Identifier	k		409801	0					
+ANR	410977	IncDec	--		409801	1					
+ANR	410978	CompoundStatement		351:40:8239:8239	409801	3					
+ANR	410979	ExpressionStatement	dst [ k ] = p -> nibble	359:16:8470:8488	409801	0	True				
+ANR	410980	AssignmentExpression	dst [ k ] = p -> nibble		409801	0		=			
+ANR	410981	ArrayIndexing	dst [ k ]		409801	0					
+ANR	410982	Identifier	dst		409801	0					
+ANR	410983	Identifier	k		409801	1					
+ANR	410984	PtrMemberAccess	p -> nibble		409801	1					
+ANR	410985	Identifier	p		409801	0					
+ANR	410986	Identifier	nibble		409801	1					
+ANR	410987	ExpressionStatement	p = & paths [ p -> prev ]	361:16:8507:8526	409801	1	True				
+ANR	410988	AssignmentExpression	p = & paths [ p -> prev ]		409801	0		=			
+ANR	410989	Identifier	p		409801	0					
+ANR	410990	UnaryOperationExpression	& paths [ p -> prev ]		409801	1					
+ANR	410991	UnaryOperator	&		409801	0					
+ANR	410992	ArrayIndexing	paths [ p -> prev ]		409801	1					
+ANR	410993	Identifier	paths		409801	0					
+ANR	410994	PtrMemberAccess	p -> prev		409801	1					
+ANR	410995	Identifier	p		409801	0					
+ANR	410996	Identifier	prev		409801	1					
+ANR	410997	ExpressionStatement	froze = i	365:12:8556:8565	409801	2	True				
+ANR	410998	AssignmentExpression	froze = i		409801	0		=			
+ANR	410999	Identifier	froze		409801	0					
+ANR	411000	Identifier	i		409801	1					
+ANR	411001	ExpressionStatement	pathn = 0	367:12:8580:8589	409801	3	True				
+ANR	411002	AssignmentExpression	pathn = 0		409801	0		=			
+ANR	411003	Identifier	pathn		409801	0					
+ANR	411004	PrimaryExpression	0		409801	1					
+ANR	411005	ExpressionStatement	"memset ( nodes + 1 , 0 , ( frontier - 1 ) * sizeof ( TrellisNode * ) )"	375:12:8843:8902	409801	4	True				
+ANR	411006	CallExpression	"memset ( nodes + 1 , 0 , ( frontier - 1 ) * sizeof ( TrellisNode * ) )"		409801	0					
+ANR	411007	Callee	memset		409801	0					
+ANR	411008	Identifier	memset		409801	0					
+ANR	411009	ArgumentList	nodes + 1		409801	1					
+ANR	411010	Argument	nodes + 1		409801	0					
+ANR	411011	AdditiveExpression	nodes + 1		409801	0		+			
+ANR	411012	Identifier	nodes		409801	0					
+ANR	411013	PrimaryExpression	1		409801	1					
+ANR	411014	Argument	0		409801	1					
+ANR	411015	PrimaryExpression	0		409801	0					
+ANR	411016	Argument	( frontier - 1 ) * sizeof ( TrellisNode * )		409801	2					
+ANR	411017	MultiplicativeExpression	( frontier - 1 ) * sizeof ( TrellisNode * )		409801	0		*			
+ANR	411018	AdditiveExpression	frontier - 1		409801	0		-			
+ANR	411019	Identifier	frontier		409801	0					
+ANR	411020	PrimaryExpression	1		409801	1					
+ANR	411021	SizeofExpression	sizeof ( TrellisNode * )		409801	1					
+ANR	411022	Sizeof	sizeof		409801	0					
+ANR	411023	SizeofOperand	TrellisNode *		409801	1					
+ANR	411024	ExpressionStatement	p = & paths [ nodes [ 0 ] -> path ]	383:4:8929:8955	409801	22	True				
+ANR	411025	AssignmentExpression	p = & paths [ nodes [ 0 ] -> path ]		409801	0		=			
+ANR	411026	Identifier	p		409801	0					
+ANR	411027	UnaryOperationExpression	& paths [ nodes [ 0 ] -> path ]		409801	1					
+ANR	411028	UnaryOperator	&		409801	0					
+ANR	411029	ArrayIndexing	paths [ nodes [ 0 ] -> path ]		409801	1					
+ANR	411030	Identifier	paths		409801	0					
+ANR	411031	PtrMemberAccess	nodes [ 0 ] -> path		409801	1					
+ANR	411032	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	411033	Identifier	nodes		409801	0					
+ANR	411034	PrimaryExpression	0		409801	1					
+ANR	411035	Identifier	path		409801	1					
+ANR	411036	ForStatement	for ( i = n - 1 ; i > froze ; i -- )		409801	23					
+ANR	411037	ForInit	i = n - 1 ;	385:9:8967:8976	409801	0	True				
+ANR	411038	AssignmentExpression	i = n - 1		409801	0		=			
+ANR	411039	Identifier	i		409801	0					
+ANR	411040	AdditiveExpression	n - 1		409801	1		-			
+ANR	411041	Identifier	n		409801	0					
+ANR	411042	PrimaryExpression	1		409801	1					
+ANR	411043	Condition	i > froze	385:20:8978:8986	409801	1	True				
+ANR	411044	RelationalExpression	i > froze		409801	0		>			
+ANR	411045	Identifier	i		409801	0					
+ANR	411046	Identifier	froze		409801	1					
+ANR	411047	PostIncDecOperationExpression	i --	385:31:8989:8991	409801	2	True				
+ANR	411048	Identifier	i		409801	0					
+ANR	411049	IncDec	--		409801	1					
+ANR	411050	CompoundStatement		379:36:8782:8782	409801	3					
+ANR	411051	ExpressionStatement	dst [ i ] = p -> nibble	387:8:9005:9023	409801	0	True				
+ANR	411052	AssignmentExpression	dst [ i ] = p -> nibble		409801	0		=			
+ANR	411053	ArrayIndexing	dst [ i ]		409801	0					
+ANR	411054	Identifier	dst		409801	0					
+ANR	411055	Identifier	i		409801	1					
+ANR	411056	PtrMemberAccess	p -> nibble		409801	1					
+ANR	411057	Identifier	p		409801	0					
+ANR	411058	Identifier	nibble		409801	1					
+ANR	411059	ExpressionStatement	p = & paths [ p -> prev ]	389:8:9034:9053	409801	1	True				
+ANR	411060	AssignmentExpression	p = & paths [ p -> prev ]		409801	0		=			
+ANR	411061	Identifier	p		409801	0					
+ANR	411062	UnaryOperationExpression	& paths [ p -> prev ]		409801	1					
+ANR	411063	UnaryOperator	&		409801	0					
+ANR	411064	ArrayIndexing	paths [ p -> prev ]		409801	1					
+ANR	411065	Identifier	paths		409801	0					
+ANR	411066	PtrMemberAccess	p -> prev		409801	1					
+ANR	411067	Identifier	p		409801	0					
+ANR	411068	Identifier	prev		409801	1					
+ANR	411069	ExpressionStatement	c -> predictor = nodes [ 0 ] -> sample1	395:4:9069:9102	409801	24	True				
+ANR	411070	AssignmentExpression	c -> predictor = nodes [ 0 ] -> sample1		409801	0		=			
+ANR	411071	PtrMemberAccess	c -> predictor		409801	0					
+ANR	411072	Identifier	c		409801	0					
+ANR	411073	Identifier	predictor		409801	1					
+ANR	411074	PtrMemberAccess	nodes [ 0 ] -> sample1		409801	1					
+ANR	411075	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	411076	Identifier	nodes		409801	0					
+ANR	411077	PrimaryExpression	0		409801	1					
+ANR	411078	Identifier	sample1		409801	1					
+ANR	411079	ExpressionStatement	c -> sample1 = nodes [ 0 ] -> sample1	397:4:9109:9142	409801	25	True				
+ANR	411080	AssignmentExpression	c -> sample1 = nodes [ 0 ] -> sample1		409801	0		=			
+ANR	411081	PtrMemberAccess	c -> sample1		409801	0					
+ANR	411082	Identifier	c		409801	0					
+ANR	411083	Identifier	sample1		409801	1					
+ANR	411084	PtrMemberAccess	nodes [ 0 ] -> sample1		409801	1					
+ANR	411085	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	411086	Identifier	nodes		409801	0					
+ANR	411087	PrimaryExpression	0		409801	1					
+ANR	411088	Identifier	sample1		409801	1					
+ANR	411089	ExpressionStatement	c -> sample2 = nodes [ 0 ] -> sample2	399:4:9149:9182	409801	26	True				
+ANR	411090	AssignmentExpression	c -> sample2 = nodes [ 0 ] -> sample2		409801	0		=			
+ANR	411091	PtrMemberAccess	c -> sample2		409801	0					
+ANR	411092	Identifier	c		409801	0					
+ANR	411093	Identifier	sample2		409801	1					
+ANR	411094	PtrMemberAccess	nodes [ 0 ] -> sample2		409801	1					
+ANR	411095	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	411096	Identifier	nodes		409801	0					
+ANR	411097	PrimaryExpression	0		409801	1					
+ANR	411098	Identifier	sample2		409801	1					
+ANR	411099	ExpressionStatement	c -> step_index = nodes [ 0 ] -> step	401:4:9189:9219	409801	27	True				
+ANR	411100	AssignmentExpression	c -> step_index = nodes [ 0 ] -> step		409801	0		=			
+ANR	411101	PtrMemberAccess	c -> step_index		409801	0					
+ANR	411102	Identifier	c		409801	0					
+ANR	411103	Identifier	step_index		409801	1					
+ANR	411104	PtrMemberAccess	nodes [ 0 ] -> step		409801	1					
+ANR	411105	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	411106	Identifier	nodes		409801	0					
+ANR	411107	PrimaryExpression	0		409801	1					
+ANR	411108	Identifier	step		409801	1					
+ANR	411109	ExpressionStatement	c -> step = nodes [ 0 ] -> step	403:4:9226:9256	409801	28	True				
+ANR	411110	AssignmentExpression	c -> step = nodes [ 0 ] -> step		409801	0		=			
+ANR	411111	PtrMemberAccess	c -> step		409801	0					
+ANR	411112	Identifier	c		409801	0					
+ANR	411113	Identifier	step		409801	1					
+ANR	411114	PtrMemberAccess	nodes [ 0 ] -> step		409801	1					
+ANR	411115	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	411116	Identifier	nodes		409801	0					
+ANR	411117	PrimaryExpression	0		409801	1					
+ANR	411118	Identifier	step		409801	1					
+ANR	411119	ExpressionStatement	c -> idelta = nodes [ 0 ] -> step	405:4:9263:9293	409801	29	True				
+ANR	411120	AssignmentExpression	c -> idelta = nodes [ 0 ] -> step		409801	0		=			
+ANR	411121	PtrMemberAccess	c -> idelta		409801	0					
+ANR	411122	Identifier	c		409801	0					
+ANR	411123	Identifier	idelta		409801	1					
+ANR	411124	PtrMemberAccess	nodes [ 0 ] -> step		409801	1					
+ANR	411125	ArrayIndexing	nodes [ 0 ]		409801	0					
+ANR	411126	Identifier	nodes		409801	0					
+ANR	411127	PrimaryExpression	0		409801	1					
+ANR	411128	Identifier	step		409801	1					
+ANR	411129	ReturnType	static void		409801	1					
+ANR	411130	Identifier	adpcm_compress_trellis		409801	2					
+ANR	411131	ParameterList	"AVCodecContext * avctx , const int16_t * samples , uint8_t * dst , ADPCMChannelStatus * c , int n , int stride"		409801	3					
+ANR	411132	Parameter	AVCodecContext * avctx	1:35:35:55	409801	0	True				
+ANR	411133	ParameterType	AVCodecContext *		409801	0					
+ANR	411134	Identifier	avctx		409801	1					
+ANR	411135	Parameter	const int16_t * samples	3:35:94:115	409801	1	True				
+ANR	411136	ParameterType	const int16_t *		409801	0					
+ANR	411137	Identifier	samples		409801	1					
+ANR	411138	Parameter	uint8_t * dst	3:59:118:129	409801	2	True				
+ANR	411139	ParameterType	uint8_t *		409801	0					
+ANR	411140	Identifier	dst		409801	1					
+ANR	411141	Parameter	ADPCMChannelStatus * c	5:35:168:188	409801	3	True				
+ANR	411142	ParameterType	ADPCMChannelStatus *		409801	0					
+ANR	411143	Identifier	c		409801	1					
+ANR	411144	Parameter	int n	5:58:191:195	409801	4	True				
+ANR	411145	ParameterType	int		409801	0					
+ANR	411146	Identifier	n		409801	1					
+ANR	411147	Parameter	int stride	5:65:198:207	409801	5	True				
+ANR	411148	ParameterType	int		409801	0					
+ANR	411149	Identifier	stride		409801	1					
+ANR	411150	CFGEntryNode	ENTRY		409801		True				
+ANR	411151	CFGExitNode	EXIT		409801		True				
+ANR	411152	Symbol	* stride		409801						
+ANR	411153	Symbol	parent		409801						
+ANR	411154	Symbol	* parent		409801						
+ANR	411155	Symbol	nmax		409801						
+ANR	411156	Symbol	ssd		409801						
+ANR	411157	Symbol	nodes [ 0 ] -> step		409801						
+ANR	411158	Symbol	stride		409801						
+ANR	411159	Symbol	ff_adpcm_yamaha_indexscale		409801						
+ANR	411160	Symbol	FREEZE_INTERVAL		409801						
+ANR	411161	Symbol	c -> idelta		409801						
+ANR	411162	Symbol	nmin		409801						
+ANR	411163	Symbol	c -> coeff1		409801						
+ANR	411164	Symbol	c -> coeff2		409801						
+ANR	411165	Symbol	s -> paths		409801						
+ANR	411166	Symbol	av_clip		409801						
+ANR	411167	Symbol	* nodes_next		409801						
+ANR	411168	Symbol	ff_adpcm_yamaha_difflookup		409801						
+ANR	411169	Symbol	generation		409801						
+ANR	411170	Symbol	u -> path		409801						
+ANR	411171	Symbol	avctx -> codec		409801						
+ANR	411172	Symbol	c -> prev_sample		409801						
+ANR	411173	Symbol	ff_adpcm_index_table		409801						
+ANR	411174	Symbol	c -> sample1		409801						
+ANR	411175	Symbol	c -> sample2		409801						
+ANR	411176	Symbol	* * avctx		409801						
+ANR	411177	Symbol	* * pos		409801						
+ANR	411178	Symbol	version		409801						
+ANR	411179	Symbol	samples		409801						
+ANR	411180	Symbol	* ff_adpcm_yamaha_difflookup		409801						
+ANR	411181	Symbol	s -> nodep_buf		409801						
+ANR	411182	Symbol	av_clip_int16		409801						
+ANR	411183	Symbol	AV_CODEC_ID_ADPCM_IMA_WAV		409801						
+ANR	411184	Symbol	hash		409801						
+ANR	411185	Symbol	* pos		409801						
+ANR	411186	Symbol	node_buf		409801						
+ANR	411187	Symbol	* * nodes		409801						
+ANR	411188	Symbol	range		409801						
+ANR	411189	Symbol	nodes [ j ] -> path		409801						
+ANR	411190	Symbol	* u -> path		409801						
+ANR	411191	Symbol	nodes [ j ] -> ssd		409801						
+ANR	411192	Symbol	STEP_INDEX		409801						
+ANR	411193	Symbol	pos		409801						
+ANR	411194	Symbol	* * u		409801						
+ANR	411195	Symbol	avctx		409801						
+ANR	411196	Symbol	froze		409801						
+ANR	411197	Symbol	nibble		409801						
+ANR	411198	Symbol	* ff_adpcm_step_table		409801						
+ANR	411199	Symbol	c		409801						
+ANR	411200	Symbol	d		409801						
+ANR	411201	Symbol	s -> trellis_hash		409801						
+ANR	411202	Symbol	* ff_adpcm_yamaha_indexscale		409801						
+ANR	411203	Symbol	h		409801						
+ANR	411204	Symbol	* * parent		409801						
+ANR	411205	Symbol	i		409801						
+ANR	411206	Symbol	j		409801						
+ANR	411207	Symbol	k		409801						
+ANR	411208	Symbol	u -> sample2		409801						
+ANR	411209	Symbol	u -> sample1		409801						
+ANR	411210	Symbol	sample		409801						
+ANR	411211	Symbol	n		409801						
+ANR	411212	Symbol	p		409801						
+ANR	411213	Symbol	nodes_next		409801						
+ANR	411214	Symbol	avctx -> codec -> id		409801						
+ANR	411215	Symbol	s		409801						
+ANR	411216	Symbol	t		409801						
+ANR	411217	Symbol	u		409801						
+ANR	411218	Symbol	dec_sample		409801						
+ANR	411219	Symbol	AV_CODEC_ID_ADPCM_MS		409801						
+ANR	411220	Symbol	FFMAX		409801						
+ANR	411221	Symbol	nodes [ j ] -> sample2		409801						
+ANR	411222	Symbol	nodes [ j ] -> sample1		409801						
+ANR	411223	Symbol	s -> node_buf		409801						
+ANR	411224	Symbol	AV_CODEC_ID_ADPCM_YAMAHA		409801						
+ANR	411225	Symbol	div		409801						
+ANR	411226	Symbol	* dst		409801						
+ANR	411227	Symbol	c -> step_index		409801						
+ANR	411228	Symbol	yamaha		409801						
+ANR	411229	Symbol	* samples		409801						
+ANR	411230	Symbol	* avctx -> codec		409801						
+ANR	411231	Symbol	* nodes		409801						
+ANR	411232	Symbol	u -> step		409801						
+ANR	411233	Symbol	* * nodes_next		409801						
+ANR	411234	Symbol	* * j		409801						
+ANR	411235	Symbol	nodes_next [ parent ] -> ssd		409801						
+ANR	411236	Symbol	ms		409801						
+ANR	411237	Symbol	* step		409801						
+ANR	411238	Symbol	heap_pos		409801						
+ANR	411239	Symbol	p -> nibble		409801						
+ANR	411240	Symbol	NAME		409801						
+ANR	411241	Symbol	pathn		409801						
+ANR	411242	Symbol	* nodep_buf		409801						
+ANR	411243	Symbol	* avctx		409801						
+ANR	411244	Symbol	nodes [ 0 ] -> path		409801						
+ANR	411245	Symbol	paths		409801						
+ANR	411246	Symbol	AV_CODEC_ID_ADPCM_SWF		409801						
+ANR	411247	Symbol	STEP_TABLE		409801						
+ANR	411248	Symbol	nidx		409801						
+ANR	411249	Symbol	ima		409801						
+ANR	411250	Symbol	* paths		409801						
+ANR	411251	Symbol	p -> prev		409801						
+ANR	411252	Symbol	nodes [ 0 ] -> sample2		409801						
+ANR	411253	Symbol	* ff_adpcm_AdaptationTable		409801						
+ANR	411254	Symbol	dst		409801						
+ANR	411255	Symbol	c -> step		409801						
+ANR	411256	Symbol	* nibble		409801						
+ANR	411257	Symbol	nodep_buf		409801						
+ANR	411258	Symbol	paths [ u -> path ] . prev		409801						
+ANR	411259	Symbol	ff_adpcm_AdaptationTable		409801						
+ANR	411260	Symbol	nodes [ 0 ] -> ssd		409801						
+ANR	411261	Symbol	u -> ssd		409801						
+ANR	411262	Symbol	nodes_next [ pos ] -> ssd		409801						
+ANR	411263	Symbol	avctx -> trellis		409801						
+ANR	411264	Symbol	* ff_adpcm_index_table		409801						
+ANR	411265	Symbol	predictor		409801						
+ANR	411266	Symbol	* hash		409801						
+ANR	411267	Symbol	ff_adpcm_step_table		409801						
+ANR	411268	Symbol	frontier		409801						
+ANR	411269	Symbol	AV_CODEC_ID_ADPCM_IMA_QT		409801						
+ANR	411270	Symbol	avctx -> priv_data		409801						
+ANR	411271	Symbol	* c		409801						
+ANR	411272	Symbol	c -> predictor		409801						
+ANR	411273	Symbol	* h		409801						
+ANR	411274	Symbol	paths [ u -> path ] . nibble		409801						
+ANR	411275	Symbol	nodes		409801						
+ANR	411276	Symbol	* i		409801						
+ANR	411277	Symbol	* j		409801						
+ANR	411278	Symbol	* k		409801						
+ANR	411279	Symbol	step		409801						
+ANR	411280	Symbol	* p		409801						
+ANR	411281	Symbol	nodes [ 0 ] -> sample1		409801						
+ANR	411282	Symbol	* s		409801						
+ANR	411283	Symbol	nodes [ j ] -> step		409801						
+ANR	411284	Symbol	* u		409801						

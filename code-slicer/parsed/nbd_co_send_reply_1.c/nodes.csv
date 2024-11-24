@@ -1,0 +1,251 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5917449	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_co_send_reply_1.c								
+ANR	5917450	Function	nbd_co_send_reply	1:0:0:1103							
+ANR	5917451	FunctionDef	"nbd_co_send_reply (NBDRequest * req , struct nbd_reply * reply , int len)"		5917450	0					
+ANR	5917452	CompoundStatement		5:0:111:1103	5917450	0					
+ANR	5917453	IdentifierDeclStatement	NBDClient * client = req -> client ;	7:4:118:149	5917450	0	True				
+ANR	5917454	IdentifierDecl	* client = req -> client		5917450	0					
+ANR	5917455	IdentifierDeclType	NBDClient *		5917450	0					
+ANR	5917456	Identifier	client		5917450	1					
+ANR	5917457	AssignmentExpression	* client = req -> client		5917450	2		=			
+ANR	5917458	Identifier	client		5917450	0					
+ANR	5917459	PtrMemberAccess	req -> client		5917450	1					
+ANR	5917460	Identifier	req		5917450	0					
+ANR	5917461	Identifier	client		5917450	1					
+ANR	5917462	IdentifierDeclStatement	int csock = client -> sock ;	9:4:156:180	5917450	1	True				
+ANR	5917463	IdentifierDecl	csock = client -> sock		5917450	0					
+ANR	5917464	IdentifierDeclType	int		5917450	0					
+ANR	5917465	Identifier	csock		5917450	1					
+ANR	5917466	AssignmentExpression	csock = client -> sock		5917450	2		=			
+ANR	5917467	Identifier	csock		5917450	0					
+ANR	5917468	PtrMemberAccess	client -> sock		5917450	1					
+ANR	5917469	Identifier	client		5917450	0					
+ANR	5917470	Identifier	sock		5917450	1					
+ANR	5917471	IdentifierDeclStatement	"int rc , ret ;"	11:4:187:198	5917450	2	True				
+ANR	5917472	IdentifierDecl	rc		5917450	0					
+ANR	5917473	IdentifierDeclType	int		5917450	0					
+ANR	5917474	Identifier	rc		5917450	1					
+ANR	5917475	IdentifierDecl	ret		5917450	1					
+ANR	5917476	IdentifierDeclType	int		5917450	0					
+ANR	5917477	Identifier	ret		5917450	1					
+ANR	5917478	ExpressionStatement	qemu_co_mutex_lock ( & client -> send_lock )	15:4:207:245	5917450	3	True				
+ANR	5917479	CallExpression	qemu_co_mutex_lock ( & client -> send_lock )		5917450	0					
+ANR	5917480	Callee	qemu_co_mutex_lock		5917450	0					
+ANR	5917481	Identifier	qemu_co_mutex_lock		5917450	0					
+ANR	5917482	ArgumentList	& client -> send_lock		5917450	1					
+ANR	5917483	Argument	& client -> send_lock		5917450	0					
+ANR	5917484	UnaryOperationExpression	& client -> send_lock		5917450	0					
+ANR	5917485	UnaryOperator	&		5917450	0					
+ANR	5917486	PtrMemberAccess	client -> send_lock		5917450	1					
+ANR	5917487	Identifier	client		5917450	0					
+ANR	5917488	Identifier	send_lock		5917450	1					
+ANR	5917489	ExpressionStatement	"qemu_set_fd_handler2 ( csock , nbd_can_read , nbd_read , nbd_restart_write , client )"	17:4:252:356	5917450	4	True				
+ANR	5917490	CallExpression	"qemu_set_fd_handler2 ( csock , nbd_can_read , nbd_read , nbd_restart_write , client )"		5917450	0					
+ANR	5917491	Callee	qemu_set_fd_handler2		5917450	0					
+ANR	5917492	Identifier	qemu_set_fd_handler2		5917450	0					
+ANR	5917493	ArgumentList	csock		5917450	1					
+ANR	5917494	Argument	csock		5917450	0					
+ANR	5917495	Identifier	csock		5917450	0					
+ANR	5917496	Argument	nbd_can_read		5917450	1					
+ANR	5917497	Identifier	nbd_can_read		5917450	0					
+ANR	5917498	Argument	nbd_read		5917450	2					
+ANR	5917499	Identifier	nbd_read		5917450	0					
+ANR	5917500	Argument	nbd_restart_write		5917450	3					
+ANR	5917501	Identifier	nbd_restart_write		5917450	0					
+ANR	5917502	Argument	client		5917450	4					
+ANR	5917503	Identifier	client		5917450	0					
+ANR	5917504	ExpressionStatement	client -> send_coroutine = qemu_coroutine_self ( )	21:4:363:409	5917450	5	True				
+ANR	5917505	AssignmentExpression	client -> send_coroutine = qemu_coroutine_self ( )		5917450	0		=			
+ANR	5917506	PtrMemberAccess	client -> send_coroutine		5917450	0					
+ANR	5917507	Identifier	client		5917450	0					
+ANR	5917508	Identifier	send_coroutine		5917450	1					
+ANR	5917509	CallExpression	qemu_coroutine_self ( )		5917450	1					
+ANR	5917510	Callee	qemu_coroutine_self		5917450	0					
+ANR	5917511	Identifier	qemu_coroutine_self		5917450	0					
+ANR	5917512	ArgumentList			5917450	1					
+ANR	5917513	IfStatement	if ( ! len )		5917450	6					
+ANR	5917514	Condition	! len	25:8:422:425	5917450	0	True				
+ANR	5917515	UnaryOperationExpression	! len		5917450	0					
+ANR	5917516	UnaryOperator	!		5917450	0					
+ANR	5917517	Identifier	len		5917450	1					
+ANR	5917518	CompoundStatement		21:14:316:316	5917450	1					
+ANR	5917519	ExpressionStatement	"rc = nbd_send_reply ( csock , reply )"	27:8:439:472	5917450	0	True				
+ANR	5917520	AssignmentExpression	"rc = nbd_send_reply ( csock , reply )"		5917450	0		=			
+ANR	5917521	Identifier	rc		5917450	0					
+ANR	5917522	CallExpression	"nbd_send_reply ( csock , reply )"		5917450	1					
+ANR	5917523	Callee	nbd_send_reply		5917450	0					
+ANR	5917524	Identifier	nbd_send_reply		5917450	0					
+ANR	5917525	ArgumentList	csock		5917450	1					
+ANR	5917526	Argument	csock		5917450	0					
+ANR	5917527	Identifier	csock		5917450	0					
+ANR	5917528	Argument	reply		5917450	1					
+ANR	5917529	Identifier	reply		5917450	0					
+ANR	5917530	IfStatement	if ( rc == - 1 )		5917450	1					
+ANR	5917531	Condition	rc == - 1	29:12:487:494	5917450	0	True				
+ANR	5917532	EqualityExpression	rc == - 1		5917450	0		==			
+ANR	5917533	Identifier	rc		5917450	0					
+ANR	5917534	UnaryOperationExpression	- 1		5917450	1					
+ANR	5917535	UnaryOperator	-		5917450	0					
+ANR	5917536	PrimaryExpression	1		5917450	1					
+ANR	5917537	CompoundStatement		25:22:385:385	5917450	1					
+ANR	5917538	ExpressionStatement	rc = - errno	31:12:512:523	5917450	0	True				
+ANR	5917539	AssignmentExpression	rc = - errno		5917450	0		=			
+ANR	5917540	Identifier	rc		5917450	0					
+ANR	5917541	UnaryOperationExpression	- errno		5917450	1					
+ANR	5917542	UnaryOperator	-		5917450	0					
+ANR	5917543	Identifier	errno		5917450	1					
+ANR	5917544	ElseStatement	else		5917450	0					
+ANR	5917545	CompoundStatement		31:11:436:436	5917450	0					
+ANR	5917546	ExpressionStatement	"socket_set_cork ( csock , 1 )"	37:8:559:584	5917450	0	True				
+ANR	5917547	CallExpression	"socket_set_cork ( csock , 1 )"		5917450	0					
+ANR	5917548	Callee	socket_set_cork		5917450	0					
+ANR	5917549	Identifier	socket_set_cork		5917450	0					
+ANR	5917550	ArgumentList	csock		5917450	1					
+ANR	5917551	Argument	csock		5917450	0					
+ANR	5917552	Identifier	csock		5917450	0					
+ANR	5917553	Argument	1		5917450	1					
+ANR	5917554	PrimaryExpression	1		5917450	0					
+ANR	5917555	ExpressionStatement	"rc = nbd_send_reply ( csock , reply )"	39:8:595:628	5917450	1	True				
+ANR	5917556	AssignmentExpression	"rc = nbd_send_reply ( csock , reply )"		5917450	0		=			
+ANR	5917557	Identifier	rc		5917450	0					
+ANR	5917558	CallExpression	"nbd_send_reply ( csock , reply )"		5917450	1					
+ANR	5917559	Callee	nbd_send_reply		5917450	0					
+ANR	5917560	Identifier	nbd_send_reply		5917450	0					
+ANR	5917561	ArgumentList	csock		5917450	1					
+ANR	5917562	Argument	csock		5917450	0					
+ANR	5917563	Identifier	csock		5917450	0					
+ANR	5917564	Argument	reply		5917450	1					
+ANR	5917565	Identifier	reply		5917450	0					
+ANR	5917566	IfStatement	if ( rc != - 1 )		5917450	2					
+ANR	5917567	Condition	rc != - 1	41:12:643:650	5917450	0	True				
+ANR	5917568	EqualityExpression	rc != - 1		5917450	0		!=			
+ANR	5917569	Identifier	rc		5917450	0					
+ANR	5917570	UnaryOperationExpression	- 1		5917450	1					
+ANR	5917571	UnaryOperator	-		5917450	0					
+ANR	5917572	PrimaryExpression	1		5917450	1					
+ANR	5917573	CompoundStatement		37:22:541:541	5917450	1					
+ANR	5917574	ExpressionStatement	"ret = qemu_co_send ( csock , req -> data , len )"	43:12:668:709	5917450	0	True				
+ANR	5917575	AssignmentExpression	"ret = qemu_co_send ( csock , req -> data , len )"		5917450	0		=			
+ANR	5917576	Identifier	ret		5917450	0					
+ANR	5917577	CallExpression	"qemu_co_send ( csock , req -> data , len )"		5917450	1					
+ANR	5917578	Callee	qemu_co_send		5917450	0					
+ANR	5917579	Identifier	qemu_co_send		5917450	0					
+ANR	5917580	ArgumentList	csock		5917450	1					
+ANR	5917581	Argument	csock		5917450	0					
+ANR	5917582	Identifier	csock		5917450	0					
+ANR	5917583	Argument	req -> data		5917450	1					
+ANR	5917584	PtrMemberAccess	req -> data		5917450	0					
+ANR	5917585	Identifier	req		5917450	0					
+ANR	5917586	Identifier	data		5917450	1					
+ANR	5917587	Argument	len		5917450	2					
+ANR	5917588	Identifier	len		5917450	0					
+ANR	5917589	IfStatement	if ( ret != len )		5917450	1					
+ANR	5917590	Condition	ret != len	45:16:728:737	5917450	0	True				
+ANR	5917591	EqualityExpression	ret != len		5917450	0		!=			
+ANR	5917592	Identifier	ret		5917450	0					
+ANR	5917593	Identifier	len		5917450	1					
+ANR	5917594	CompoundStatement		41:28:628:628	5917450	1					
+ANR	5917595	ExpressionStatement	errno = EIO	47:16:759:770	5917450	0	True				
+ANR	5917596	AssignmentExpression	errno = EIO		5917450	0		=			
+ANR	5917597	Identifier	errno		5917450	0					
+ANR	5917598	Identifier	EIO		5917450	1					
+ANR	5917599	ExpressionStatement	rc = - 1	49:16:789:796	5917450	1	True				
+ANR	5917600	AssignmentExpression	rc = - 1		5917450	0		=			
+ANR	5917601	Identifier	rc		5917450	0					
+ANR	5917602	UnaryOperationExpression	- 1		5917450	1					
+ANR	5917603	UnaryOperator	-		5917450	0					
+ANR	5917604	PrimaryExpression	1		5917450	1					
+ANR	5917605	IfStatement	if ( rc == - 1 )		5917450	3					
+ANR	5917606	Condition	rc == - 1	55:12:837:844	5917450	0	True				
+ANR	5917607	EqualityExpression	rc == - 1		5917450	0		==			
+ANR	5917608	Identifier	rc		5917450	0					
+ANR	5917609	UnaryOperationExpression	- 1		5917450	1					
+ANR	5917610	UnaryOperator	-		5917450	0					
+ANR	5917611	PrimaryExpression	1		5917450	1					
+ANR	5917612	CompoundStatement		51:22:735:735	5917450	1					
+ANR	5917613	ExpressionStatement	rc = - errno	57:12:862:873	5917450	0	True				
+ANR	5917614	AssignmentExpression	rc = - errno		5917450	0		=			
+ANR	5917615	Identifier	rc		5917450	0					
+ANR	5917616	UnaryOperationExpression	- errno		5917450	1					
+ANR	5917617	UnaryOperator	-		5917450	0					
+ANR	5917618	Identifier	errno		5917450	1					
+ANR	5917619	ExpressionStatement	"socket_set_cork ( csock , 0 )"	61:8:895:920	5917450	4	True				
+ANR	5917620	CallExpression	"socket_set_cork ( csock , 0 )"		5917450	0					
+ANR	5917621	Callee	socket_set_cork		5917450	0					
+ANR	5917622	Identifier	socket_set_cork		5917450	0					
+ANR	5917623	ArgumentList	csock		5917450	1					
+ANR	5917624	Argument	csock		5917450	0					
+ANR	5917625	Identifier	csock		5917450	0					
+ANR	5917626	Argument	0		5917450	1					
+ANR	5917627	PrimaryExpression	0		5917450	0					
+ANR	5917628	ExpressionStatement	client -> send_coroutine = NULL	67:4:936:965	5917450	7	True				
+ANR	5917629	AssignmentExpression	client -> send_coroutine = NULL		5917450	0		=			
+ANR	5917630	PtrMemberAccess	client -> send_coroutine		5917450	0					
+ANR	5917631	Identifier	client		5917450	0					
+ANR	5917632	Identifier	send_coroutine		5917450	1					
+ANR	5917633	Identifier	NULL		5917450	1					
+ANR	5917634	ExpressionStatement	"qemu_set_fd_handler2 ( csock , nbd_can_read , nbd_read , NULL , client )"	69:4:972:1037	5917450	8	True				
+ANR	5917635	CallExpression	"qemu_set_fd_handler2 ( csock , nbd_can_read , nbd_read , NULL , client )"		5917450	0					
+ANR	5917636	Callee	qemu_set_fd_handler2		5917450	0					
+ANR	5917637	Identifier	qemu_set_fd_handler2		5917450	0					
+ANR	5917638	ArgumentList	csock		5917450	1					
+ANR	5917639	Argument	csock		5917450	0					
+ANR	5917640	Identifier	csock		5917450	0					
+ANR	5917641	Argument	nbd_can_read		5917450	1					
+ANR	5917642	Identifier	nbd_can_read		5917450	0					
+ANR	5917643	Argument	nbd_read		5917450	2					
+ANR	5917644	Identifier	nbd_read		5917450	0					
+ANR	5917645	Argument	NULL		5917450	3					
+ANR	5917646	Identifier	NULL		5917450	0					
+ANR	5917647	Argument	client		5917450	4					
+ANR	5917648	Identifier	client		5917450	0					
+ANR	5917649	ExpressionStatement	qemu_co_mutex_unlock ( & client -> send_lock )	71:4:1044:1084	5917450	9	True				
+ANR	5917650	CallExpression	qemu_co_mutex_unlock ( & client -> send_lock )		5917450	0					
+ANR	5917651	Callee	qemu_co_mutex_unlock		5917450	0					
+ANR	5917652	Identifier	qemu_co_mutex_unlock		5917450	0					
+ANR	5917653	ArgumentList	& client -> send_lock		5917450	1					
+ANR	5917654	Argument	& client -> send_lock		5917450	0					
+ANR	5917655	UnaryOperationExpression	& client -> send_lock		5917450	0					
+ANR	5917656	UnaryOperator	&		5917450	0					
+ANR	5917657	PtrMemberAccess	client -> send_lock		5917450	1					
+ANR	5917658	Identifier	client		5917450	0					
+ANR	5917659	Identifier	send_lock		5917450	1					
+ANR	5917660	ReturnStatement	return rc ;	73:4:1091:1100	5917450	10	True				
+ANR	5917661	Identifier	rc		5917450	0					
+ANR	5917662	ReturnType	static int		5917450	1					
+ANR	5917663	Identifier	nbd_co_send_reply		5917450	2					
+ANR	5917664	ParameterList	"NBDRequest * req , struct nbd_reply * reply , int len"		5917450	3					
+ANR	5917665	Parameter	NBDRequest * req	1:29:29:43	5917450	0	True				
+ANR	5917666	ParameterType	NBDRequest *		5917450	0					
+ANR	5917667	Identifier	req		5917450	1					
+ANR	5917668	Parameter	struct nbd_reply * reply	1:46:46:68	5917450	1	True				
+ANR	5917669	ParameterType	struct nbd_reply *		5917450	0					
+ANR	5917670	Identifier	reply		5917450	1					
+ANR	5917671	Parameter	int len	3:29:101:107	5917450	2	True				
+ANR	5917672	ParameterType	int		5917450	0					
+ANR	5917673	Identifier	len		5917450	1					
+ANR	5917674	CFGEntryNode	ENTRY		5917450		True				
+ANR	5917675	CFGExitNode	EXIT		5917450		True				
+ANR	5917676	Symbol	ret		5917450						
+ANR	5917677	Symbol	req -> client		5917450						
+ANR	5917678	Symbol	errno		5917450						
+ANR	5917679	Symbol	NULL		5917450						
+ANR	5917680	Symbol	* req		5917450						
+ANR	5917681	Symbol	client -> sock		5917450						
+ANR	5917682	Symbol	* client		5917450						
+ANR	5917683	Symbol	EIO		5917450						
+ANR	5917684	Symbol	csock		5917450						
+ANR	5917685	Symbol	nbd_restart_write		5917450						
+ANR	5917686	Symbol	& client -> send_lock		5917450						
+ANR	5917687	Symbol	rc		5917450						
+ANR	5917688	Symbol	len		5917450						
+ANR	5917689	Symbol	req -> data		5917450						
+ANR	5917690	Symbol	nbd_can_read		5917450						
+ANR	5917691	Symbol	client		5917450						
+ANR	5917692	Symbol	nbd_send_reply		5917450						
+ANR	5917693	Symbol	client -> send_coroutine		5917450						
+ANR	5917694	Symbol	qemu_coroutine_self		5917450						
+ANR	5917695	Symbol	qemu_co_send		5917450						
+ANR	5917696	Symbol	reply		5917450						
+ANR	5917697	Symbol	nbd_read		5917450						
+ANR	5917698	Symbol	req		5917450						

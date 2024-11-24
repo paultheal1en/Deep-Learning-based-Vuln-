@@ -1,0 +1,187 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5919482	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_co_writev_1_1.c								
+ANR	5919483	Function	nbd_co_writev_1	1:0:0:839							
+ANR	5919484	FunctionDef	"nbd_co_writev_1 (NbdClientSession * client , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov , int offset)"		5919483	0					
+ANR	5919485	CompoundStatement		7:0:178:839	5919483	0					
+ANR	5919486	IdentifierDeclStatement	struct nbd_request request ;	9:4:185:211	5919483	0	True				
+ANR	5919487	IdentifierDecl	request		5919483	0					
+ANR	5919488	IdentifierDeclType	struct nbd_request		5919483	0					
+ANR	5919489	Identifier	request		5919483	1					
+ANR	5919490	IdentifierDeclStatement	struct nbd_reply reply ;	11:4:218:240	5919483	1	True				
+ANR	5919491	IdentifierDecl	reply		5919483	0					
+ANR	5919492	IdentifierDeclType	struct nbd_reply		5919483	0					
+ANR	5919493	Identifier	reply		5919483	1					
+ANR	5919494	IdentifierDeclStatement	ssize_t ret ;	13:4:247:258	5919483	2	True				
+ANR	5919495	IdentifierDecl	ret		5919483	0					
+ANR	5919496	IdentifierDeclType	ssize_t		5919483	0					
+ANR	5919497	Identifier	ret		5919483	1					
+ANR	5919498	ExpressionStatement	request . type = NBD_CMD_WRITE	17:4:267:295	5919483	3	True				
+ANR	5919499	AssignmentExpression	request . type = NBD_CMD_WRITE		5919483	0		=			
+ANR	5919500	MemberAccess	request . type		5919483	0					
+ANR	5919501	Identifier	request		5919483	0					
+ANR	5919502	Identifier	type		5919483	1					
+ANR	5919503	Identifier	NBD_CMD_WRITE		5919483	1					
+ANR	5919504	IfStatement	if ( ! bdrv_enable_write_cache ( client -> bs ) && ( client -> nbdflags & NBD_FLAG_SEND_FUA ) )		5919483	4					
+ANR	5919505	Condition	! bdrv_enable_write_cache ( client -> bs ) && ( client -> nbdflags & NBD_FLAG_SEND_FUA )	19:8:306:392	5919483	0	True				
+ANR	5919506	AndExpression	! bdrv_enable_write_cache ( client -> bs ) && ( client -> nbdflags & NBD_FLAG_SEND_FUA )		5919483	0		&&			
+ANR	5919507	UnaryOperationExpression	! bdrv_enable_write_cache ( client -> bs )		5919483	0					
+ANR	5919508	UnaryOperator	!		5919483	0					
+ANR	5919509	CallExpression	bdrv_enable_write_cache ( client -> bs )		5919483	1					
+ANR	5919510	Callee	bdrv_enable_write_cache		5919483	0					
+ANR	5919511	Identifier	bdrv_enable_write_cache		5919483	0					
+ANR	5919512	ArgumentList	client -> bs		5919483	1					
+ANR	5919513	Argument	client -> bs		5919483	0					
+ANR	5919514	PtrMemberAccess	client -> bs		5919483	0					
+ANR	5919515	Identifier	client		5919483	0					
+ANR	5919516	Identifier	bs		5919483	1					
+ANR	5919517	BitAndExpression	client -> nbdflags & NBD_FLAG_SEND_FUA		5919483	1		&			
+ANR	5919518	PtrMemberAccess	client -> nbdflags		5919483	0					
+ANR	5919519	Identifier	client		5919483	0					
+ANR	5919520	Identifier	nbdflags		5919483	1					
+ANR	5919521	Identifier	NBD_FLAG_SEND_FUA		5919483	1					
+ANR	5919522	CompoundStatement		15:48:216:216	5919483	1					
+ANR	5919523	ExpressionStatement	request . type |= NBD_CMD_FLAG_FUA	23:8:406:438	5919483	0	True				
+ANR	5919524	AssignmentExpression	request . type |= NBD_CMD_FLAG_FUA		5919483	0		|=			
+ANR	5919525	MemberAccess	request . type		5919483	0					
+ANR	5919526	Identifier	request		5919483	0					
+ANR	5919527	Identifier	type		5919483	1					
+ANR	5919528	Identifier	NBD_CMD_FLAG_FUA		5919483	1					
+ANR	5919529	ExpressionStatement	request . from = sector_num * 512	29:4:454:485	5919483	5	True				
+ANR	5919530	AssignmentExpression	request . from = sector_num * 512		5919483	0		=			
+ANR	5919531	MemberAccess	request . from		5919483	0					
+ANR	5919532	Identifier	request		5919483	0					
+ANR	5919533	Identifier	from		5919483	1					
+ANR	5919534	MultiplicativeExpression	sector_num * 512		5919483	1		*			
+ANR	5919535	Identifier	sector_num		5919483	0					
+ANR	5919536	PrimaryExpression	512		5919483	1					
+ANR	5919537	ExpressionStatement	request . len = nb_sectors * 512	31:4:492:522	5919483	6	True				
+ANR	5919538	AssignmentExpression	request . len = nb_sectors * 512		5919483	0		=			
+ANR	5919539	MemberAccess	request . len		5919483	0					
+ANR	5919540	Identifier	request		5919483	0					
+ANR	5919541	Identifier	len		5919483	1					
+ANR	5919542	MultiplicativeExpression	nb_sectors * 512		5919483	1		*			
+ANR	5919543	Identifier	nb_sectors		5919483	0					
+ANR	5919544	PrimaryExpression	512		5919483	1					
+ANR	5919545	ExpressionStatement	"nbd_coroutine_start ( client , & request )"	35:4:531:568	5919483	7	True				
+ANR	5919546	CallExpression	"nbd_coroutine_start ( client , & request )"		5919483	0					
+ANR	5919547	Callee	nbd_coroutine_start		5919483	0					
+ANR	5919548	Identifier	nbd_coroutine_start		5919483	0					
+ANR	5919549	ArgumentList	client		5919483	1					
+ANR	5919550	Argument	client		5919483	0					
+ANR	5919551	Identifier	client		5919483	0					
+ANR	5919552	Argument	& request		5919483	1					
+ANR	5919553	UnaryOperationExpression	& request		5919483	0					
+ANR	5919554	UnaryOperator	&		5919483	0					
+ANR	5919555	Identifier	request		5919483	1					
+ANR	5919556	ExpressionStatement	"ret = nbd_co_send_request ( client , & request , qiov , offset )"	37:4:575:632	5919483	8	True				
+ANR	5919557	AssignmentExpression	"ret = nbd_co_send_request ( client , & request , qiov , offset )"		5919483	0		=			
+ANR	5919558	Identifier	ret		5919483	0					
+ANR	5919559	CallExpression	"nbd_co_send_request ( client , & request , qiov , offset )"		5919483	1					
+ANR	5919560	Callee	nbd_co_send_request		5919483	0					
+ANR	5919561	Identifier	nbd_co_send_request		5919483	0					
+ANR	5919562	ArgumentList	client		5919483	1					
+ANR	5919563	Argument	client		5919483	0					
+ANR	5919564	Identifier	client		5919483	0					
+ANR	5919565	Argument	& request		5919483	1					
+ANR	5919566	UnaryOperationExpression	& request		5919483	0					
+ANR	5919567	UnaryOperator	&		5919483	0					
+ANR	5919568	Identifier	request		5919483	1					
+ANR	5919569	Argument	qiov		5919483	2					
+ANR	5919570	Identifier	qiov		5919483	0					
+ANR	5919571	Argument	offset		5919483	3					
+ANR	5919572	Identifier	offset		5919483	0					
+ANR	5919573	IfStatement	if ( ret < 0 )		5919483	9					
+ANR	5919574	Condition	ret < 0	39:8:643:649	5919483	0	True				
+ANR	5919575	RelationalExpression	ret < 0		5919483	0		<			
+ANR	5919576	Identifier	ret		5919483	0					
+ANR	5919577	PrimaryExpression	0		5919483	1					
+ANR	5919578	CompoundStatement		33:17:473:473	5919483	1					
+ANR	5919579	ExpressionStatement	reply . error = - ret	41:8:663:681	5919483	0	True				
+ANR	5919580	AssignmentExpression	reply . error = - ret		5919483	0		=			
+ANR	5919581	MemberAccess	reply . error		5919483	0					
+ANR	5919582	Identifier	reply		5919483	0					
+ANR	5919583	Identifier	error		5919483	1					
+ANR	5919584	UnaryOperationExpression	- ret		5919483	1					
+ANR	5919585	UnaryOperator	-		5919483	0					
+ANR	5919586	Identifier	ret		5919483	1					
+ANR	5919587	ElseStatement	else		5919483	0					
+ANR	5919588	CompoundStatement		37:11:516:516	5919483	0					
+ANR	5919589	ExpressionStatement	"nbd_co_receive_reply ( client , & request , & reply , NULL , 0 )"	45:8:706:761	5919483	0	True				
+ANR	5919590	CallExpression	"nbd_co_receive_reply ( client , & request , & reply , NULL , 0 )"		5919483	0					
+ANR	5919591	Callee	nbd_co_receive_reply		5919483	0					
+ANR	5919592	Identifier	nbd_co_receive_reply		5919483	0					
+ANR	5919593	ArgumentList	client		5919483	1					
+ANR	5919594	Argument	client		5919483	0					
+ANR	5919595	Identifier	client		5919483	0					
+ANR	5919596	Argument	& request		5919483	1					
+ANR	5919597	UnaryOperationExpression	& request		5919483	0					
+ANR	5919598	UnaryOperator	&		5919483	0					
+ANR	5919599	Identifier	request		5919483	1					
+ANR	5919600	Argument	& reply		5919483	2					
+ANR	5919601	UnaryOperationExpression	& reply		5919483	0					
+ANR	5919602	UnaryOperator	&		5919483	0					
+ANR	5919603	Identifier	reply		5919483	1					
+ANR	5919604	Argument	NULL		5919483	3					
+ANR	5919605	Identifier	NULL		5919483	0					
+ANR	5919606	Argument	0		5919483	4					
+ANR	5919607	PrimaryExpression	0		5919483	0					
+ANR	5919608	ExpressionStatement	"nbd_coroutine_end ( client , & request )"	49:4:775:810	5919483	10	True				
+ANR	5919609	CallExpression	"nbd_coroutine_end ( client , & request )"		5919483	0					
+ANR	5919610	Callee	nbd_coroutine_end		5919483	0					
+ANR	5919611	Identifier	nbd_coroutine_end		5919483	0					
+ANR	5919612	ArgumentList	client		5919483	1					
+ANR	5919613	Argument	client		5919483	0					
+ANR	5919614	Identifier	client		5919483	0					
+ANR	5919615	Argument	& request		5919483	1					
+ANR	5919616	UnaryOperationExpression	& request		5919483	0					
+ANR	5919617	UnaryOperator	&		5919483	0					
+ANR	5919618	Identifier	request		5919483	1					
+ANR	5919619	ReturnStatement	return - reply . error ;	51:4:817:836	5919483	11	True				
+ANR	5919620	UnaryOperationExpression	- reply . error		5919483	0					
+ANR	5919621	UnaryOperator	-		5919483	0					
+ANR	5919622	MemberAccess	reply . error		5919483	1					
+ANR	5919623	Identifier	reply		5919483	0					
+ANR	5919624	Identifier	error		5919483	1					
+ANR	5919625	ReturnType	static int		5919483	1					
+ANR	5919626	Identifier	nbd_co_writev_1		5919483	2					
+ANR	5919627	ParameterList	"NbdClientSession * client , int64_t sector_num , int nb_sectors , QEMUIOVector * qiov , int offset"		5919483	3					
+ANR	5919628	Parameter	NbdClientSession * client	1:27:27:50	5919483	0	True				
+ANR	5919629	ParameterType	NbdClientSession *		5919483	0					
+ANR	5919630	Identifier	client		5919483	1					
+ANR	5919631	Parameter	int64_t sector_num	1:53:53:70	5919483	1	True				
+ANR	5919632	ParameterType	int64_t		5919483	0					
+ANR	5919633	Identifier	sector_num		5919483	1					
+ANR	5919634	Parameter	int nb_sectors	3:27:101:114	5919483	2	True				
+ANR	5919635	ParameterType	int		5919483	0					
+ANR	5919636	Identifier	nb_sectors		5919483	1					
+ANR	5919637	Parameter	QEMUIOVector * qiov	3:43:117:134	5919483	3	True				
+ANR	5919638	ParameterType	QEMUIOVector *		5919483	0					
+ANR	5919639	Identifier	qiov		5919483	1					
+ANR	5919640	Parameter	int offset	5:27:165:174	5919483	4	True				
+ANR	5919641	ParameterType	int		5919483	0					
+ANR	5919642	Identifier	offset		5919483	1					
+ANR	5919643	CFGEntryNode	ENTRY		5919483		True				
+ANR	5919644	CFGExitNode	EXIT		5919483		True				
+ANR	5919645	Symbol	ret		5919483						
+ANR	5919646	Symbol	request		5919483						
+ANR	5919647	Symbol	nb_sectors		5919483						
+ANR	5919648	Symbol	nbd_co_send_request		5919483						
+ANR	5919649	Symbol	NULL		5919483						
+ANR	5919650	Symbol	offset		5919483						
+ANR	5919651	Symbol	bdrv_enable_write_cache		5919483						
+ANR	5919652	Symbol	& request		5919483						
+ANR	5919653	Symbol	* client		5919483						
+ANR	5919654	Symbol	qiov		5919483						
+ANR	5919655	Symbol	client -> nbdflags		5919483						
+ANR	5919656	Symbol	& reply		5919483						
+ANR	5919657	Symbol	sector_num		5919483						
+ANR	5919658	Symbol	request . len		5919483						
+ANR	5919659	Symbol	NBD_FLAG_SEND_FUA		5919483						
+ANR	5919660	Symbol	request . from		5919483						
+ANR	5919661	Symbol	NBD_CMD_FLAG_FUA		5919483						
+ANR	5919662	Symbol	reply . error		5919483						
+ANR	5919663	Symbol	client -> bs		5919483						
+ANR	5919664	Symbol	client		5919483						
+ANR	5919665	Symbol	request . type		5919483						
+ANR	5919666	Symbol	NBD_CMD_WRITE		5919483						
+ANR	5919667	Symbol	reply		5919483						

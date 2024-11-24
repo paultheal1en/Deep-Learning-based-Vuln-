@@ -1,0 +1,705 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	920696	File	/home/p4ultr4n/workplace/ReVeal/raw_code/backup_job_create_0.c								
+ANR	920697	Function	backup_job_create	1:0:0:5472							
+ANR	920698	FunctionDef	"backup_job_create (const char * job_id , BlockDriverState * bs , BlockDriverState * target , int64_t speed , MirrorSyncMode sync_mode , BdrvDirtyBitmap * sync_bitmap , bool compress , BlockdevOnError on_source_error , BlockdevOnError on_target_error , int creation_flags , BlockCompletionFunc * cb , void * opaque , BlockJobTxn * txn , Error * * errp)"		920697	0					
+ANR	920699	CompoundStatement		19:0:492:5472	920697	0					
+ANR	920700	IdentifierDeclStatement	int64_t len ;	21:4:499:510	920697	0	True				
+ANR	920701	IdentifierDecl	len		920697	0					
+ANR	920702	IdentifierDeclType	int64_t		920697	0					
+ANR	920703	Identifier	len		920697	1					
+ANR	920704	IdentifierDeclStatement	BlockDriverInfo bdi ;	23:4:517:536	920697	1	True				
+ANR	920705	IdentifierDecl	bdi		920697	0					
+ANR	920706	IdentifierDeclType	BlockDriverInfo		920697	0					
+ANR	920707	Identifier	bdi		920697	1					
+ANR	920708	IdentifierDeclStatement	BackupBlockJob * job = NULL ;	25:4:543:569	920697	2	True				
+ANR	920709	IdentifierDecl	* job = NULL		920697	0					
+ANR	920710	IdentifierDeclType	BackupBlockJob *		920697	0					
+ANR	920711	Identifier	job		920697	1					
+ANR	920712	AssignmentExpression	* job = NULL		920697	2		=			
+ANR	920713	Identifier	NULL		920697	0					
+ANR	920714	Identifier	NULL		920697	1					
+ANR	920715	IdentifierDeclStatement	int ret ;	27:4:576:583	920697	3	True				
+ANR	920716	IdentifierDecl	ret		920697	0					
+ANR	920717	IdentifierDeclType	int		920697	0					
+ANR	920718	Identifier	ret		920697	1					
+ANR	920719	ExpressionStatement	assert ( bs )	31:4:592:602	920697	4	True				
+ANR	920720	CallExpression	assert ( bs )		920697	0					
+ANR	920721	Callee	assert		920697	0					
+ANR	920722	Identifier	assert		920697	0					
+ANR	920723	ArgumentList	bs		920697	1					
+ANR	920724	Argument	bs		920697	0					
+ANR	920725	Identifier	bs		920697	0					
+ANR	920726	ExpressionStatement	assert ( target )	33:4:609:623	920697	5	True				
+ANR	920727	CallExpression	assert ( target )		920697	0					
+ANR	920728	Callee	assert		920697	0					
+ANR	920729	Identifier	assert		920697	0					
+ANR	920730	ArgumentList	target		920697	1					
+ANR	920731	Argument	target		920697	0					
+ANR	920732	Identifier	target		920697	0					
+ANR	920733	IfStatement	if ( bs == target )		920697	6					
+ANR	920734	Condition	bs == target	37:8:636:647	920697	0	True				
+ANR	920735	EqualityExpression	bs == target		920697	0		==			
+ANR	920736	Identifier	bs		920697	0					
+ANR	920737	Identifier	target		920697	1					
+ANR	920738	CompoundStatement		19:22:157:157	920697	1					
+ANR	920739	ExpressionStatement	"error_setg ( errp , ""Source and target cannot be the same"" )"	39:8:661:717	920697	0	True				
+ANR	920740	CallExpression	"error_setg ( errp , ""Source and target cannot be the same"" )"		920697	0					
+ANR	920741	Callee	error_setg		920697	0					
+ANR	920742	Identifier	error_setg		920697	0					
+ANR	920743	ArgumentList	errp		920697	1					
+ANR	920744	Argument	errp		920697	0					
+ANR	920745	Identifier	errp		920697	0					
+ANR	920746	Argument	"""Source and target cannot be the same"""		920697	1					
+ANR	920747	PrimaryExpression	"""Source and target cannot be the same"""		920697	0					
+ANR	920748	ReturnStatement	return NULL ;	41:8:728:739	920697	1	True				
+ANR	920749	Identifier	NULL		920697	0					
+ANR	920750	IfStatement	if ( ! bdrv_is_inserted ( bs ) )		920697	7					
+ANR	920751	Condition	! bdrv_is_inserted ( bs )	47:8:759:779	920697	0	True				
+ANR	920752	UnaryOperationExpression	! bdrv_is_inserted ( bs )		920697	0					
+ANR	920753	UnaryOperator	!		920697	0					
+ANR	920754	CallExpression	bdrv_is_inserted ( bs )		920697	1					
+ANR	920755	Callee	bdrv_is_inserted		920697	0					
+ANR	920756	Identifier	bdrv_is_inserted		920697	0					
+ANR	920757	ArgumentList	bs		920697	1					
+ANR	920758	Argument	bs		920697	0					
+ANR	920759	Identifier	bs		920697	0					
+ANR	920760	CompoundStatement		29:31:289:289	920697	1					
+ANR	920761	ExpressionStatement	"error_setg ( errp , ""Device is not inserted: %s"" , bdrv_get_device_name ( bs ) )"	49:8:793:885	920697	0	True				
+ANR	920762	CallExpression	"error_setg ( errp , ""Device is not inserted: %s"" , bdrv_get_device_name ( bs ) )"		920697	0					
+ANR	920763	Callee	error_setg		920697	0					
+ANR	920764	Identifier	error_setg		920697	0					
+ANR	920765	ArgumentList	errp		920697	1					
+ANR	920766	Argument	errp		920697	0					
+ANR	920767	Identifier	errp		920697	0					
+ANR	920768	Argument	"""Device is not inserted: %s"""		920697	1					
+ANR	920769	PrimaryExpression	"""Device is not inserted: %s"""		920697	0					
+ANR	920770	Argument	bdrv_get_device_name ( bs )		920697	2					
+ANR	920771	CallExpression	bdrv_get_device_name ( bs )		920697	0					
+ANR	920772	Callee	bdrv_get_device_name		920697	0					
+ANR	920773	Identifier	bdrv_get_device_name		920697	0					
+ANR	920774	ArgumentList	bs		920697	1					
+ANR	920775	Argument	bs		920697	0					
+ANR	920776	Identifier	bs		920697	0					
+ANR	920777	ReturnStatement	return NULL ;	53:8:896:907	920697	1	True				
+ANR	920778	Identifier	NULL		920697	0					
+ANR	920779	IfStatement	if ( ! bdrv_is_inserted ( target ) )		920697	8					
+ANR	920780	Condition	! bdrv_is_inserted ( target )	59:8:927:951	920697	0	True				
+ANR	920781	UnaryOperationExpression	! bdrv_is_inserted ( target )		920697	0					
+ANR	920782	UnaryOperator	!		920697	0					
+ANR	920783	CallExpression	bdrv_is_inserted ( target )		920697	1					
+ANR	920784	Callee	bdrv_is_inserted		920697	0					
+ANR	920785	Identifier	bdrv_is_inserted		920697	0					
+ANR	920786	ArgumentList	target		920697	1					
+ANR	920787	Argument	target		920697	0					
+ANR	920788	Identifier	target		920697	0					
+ANR	920789	CompoundStatement		41:35:461:461	920697	1					
+ANR	920790	ExpressionStatement	"error_setg ( errp , ""Device is not inserted: %s"" , bdrv_get_device_name ( target ) )"	61:8:965:1061	920697	0	True				
+ANR	920791	CallExpression	"error_setg ( errp , ""Device is not inserted: %s"" , bdrv_get_device_name ( target ) )"		920697	0					
+ANR	920792	Callee	error_setg		920697	0					
+ANR	920793	Identifier	error_setg		920697	0					
+ANR	920794	ArgumentList	errp		920697	1					
+ANR	920795	Argument	errp		920697	0					
+ANR	920796	Identifier	errp		920697	0					
+ANR	920797	Argument	"""Device is not inserted: %s"""		920697	1					
+ANR	920798	PrimaryExpression	"""Device is not inserted: %s"""		920697	0					
+ANR	920799	Argument	bdrv_get_device_name ( target )		920697	2					
+ANR	920800	CallExpression	bdrv_get_device_name ( target )		920697	0					
+ANR	920801	Callee	bdrv_get_device_name		920697	0					
+ANR	920802	Identifier	bdrv_get_device_name		920697	0					
+ANR	920803	ArgumentList	target		920697	1					
+ANR	920804	Argument	target		920697	0					
+ANR	920805	Identifier	target		920697	0					
+ANR	920806	ReturnStatement	return NULL ;	65:8:1072:1083	920697	1	True				
+ANR	920807	Identifier	NULL		920697	0					
+ANR	920808	IfStatement	if ( compress && target -> drv -> bdrv_co_pwritev_compressed == NULL )		920697	9					
+ANR	920809	Condition	compress && target -> drv -> bdrv_co_pwritev_compressed == NULL	71:8:1103:1161	920697	0	True				
+ANR	920810	AndExpression	compress && target -> drv -> bdrv_co_pwritev_compressed == NULL		920697	0		&&			
+ANR	920811	Identifier	compress		920697	0					
+ANR	920812	EqualityExpression	target -> drv -> bdrv_co_pwritev_compressed == NULL		920697	1		==			
+ANR	920813	PtrMemberAccess	target -> drv -> bdrv_co_pwritev_compressed		920697	0					
+ANR	920814	PtrMemberAccess	target -> drv		920697	0					
+ANR	920815	Identifier	target		920697	0					
+ANR	920816	Identifier	drv		920697	1					
+ANR	920817	Identifier	bdrv_co_pwritev_compressed		920697	1					
+ANR	920818	Identifier	NULL		920697	1					
+ANR	920819	CompoundStatement		53:69:671:671	920697	1					
+ANR	920820	ExpressionStatement	"error_setg ( errp , ""Compression is not supported for this drive %s"" , bdrv_get_device_name ( target ) )"	73:8:1175:1291	920697	0	True				
+ANR	920821	CallExpression	"error_setg ( errp , ""Compression is not supported for this drive %s"" , bdrv_get_device_name ( target ) )"		920697	0					
+ANR	920822	Callee	error_setg		920697	0					
+ANR	920823	Identifier	error_setg		920697	0					
+ANR	920824	ArgumentList	errp		920697	1					
+ANR	920825	Argument	errp		920697	0					
+ANR	920826	Identifier	errp		920697	0					
+ANR	920827	Argument	"""Compression is not supported for this drive %s"""		920697	1					
+ANR	920828	PrimaryExpression	"""Compression is not supported for this drive %s"""		920697	0					
+ANR	920829	Argument	bdrv_get_device_name ( target )		920697	2					
+ANR	920830	CallExpression	bdrv_get_device_name ( target )		920697	0					
+ANR	920831	Callee	bdrv_get_device_name		920697	0					
+ANR	920832	Identifier	bdrv_get_device_name		920697	0					
+ANR	920833	ArgumentList	target		920697	1					
+ANR	920834	Argument	target		920697	0					
+ANR	920835	Identifier	target		920697	0					
+ANR	920836	ReturnStatement	return NULL ;	77:8:1302:1313	920697	1	True				
+ANR	920837	Identifier	NULL		920697	0					
+ANR	920838	IfStatement	"if ( bdrv_op_is_blocked ( bs , BLOCK_OP_TYPE_BACKUP_SOURCE , errp ) )"		920697	10					
+ANR	920839	Condition	"bdrv_op_is_blocked ( bs , BLOCK_OP_TYPE_BACKUP_SOURCE , errp )"	83:8:1333:1389	920697	0	True				
+ANR	920840	CallExpression	"bdrv_op_is_blocked ( bs , BLOCK_OP_TYPE_BACKUP_SOURCE , errp )"		920697	0					
+ANR	920841	Callee	bdrv_op_is_blocked		920697	0					
+ANR	920842	Identifier	bdrv_op_is_blocked		920697	0					
+ANR	920843	ArgumentList	bs		920697	1					
+ANR	920844	Argument	bs		920697	0					
+ANR	920845	Identifier	bs		920697	0					
+ANR	920846	Argument	BLOCK_OP_TYPE_BACKUP_SOURCE		920697	1					
+ANR	920847	Identifier	BLOCK_OP_TYPE_BACKUP_SOURCE		920697	0					
+ANR	920848	Argument	errp		920697	2					
+ANR	920849	Identifier	errp		920697	0					
+ANR	920850	CompoundStatement		65:67:899:899	920697	1					
+ANR	920851	ReturnStatement	return NULL ;	85:8:1403:1414	920697	0	True				
+ANR	920852	Identifier	NULL		920697	0					
+ANR	920853	IfStatement	"if ( bdrv_op_is_blocked ( target , BLOCK_OP_TYPE_BACKUP_TARGET , errp ) )"		920697	11					
+ANR	920854	Condition	"bdrv_op_is_blocked ( target , BLOCK_OP_TYPE_BACKUP_TARGET , errp )"	91:8:1434:1494	920697	0	True				
+ANR	920855	CallExpression	"bdrv_op_is_blocked ( target , BLOCK_OP_TYPE_BACKUP_TARGET , errp )"		920697	0					
+ANR	920856	Callee	bdrv_op_is_blocked		920697	0					
+ANR	920857	Identifier	bdrv_op_is_blocked		920697	0					
+ANR	920858	ArgumentList	target		920697	1					
+ANR	920859	Argument	target		920697	0					
+ANR	920860	Identifier	target		920697	0					
+ANR	920861	Argument	BLOCK_OP_TYPE_BACKUP_TARGET		920697	1					
+ANR	920862	Identifier	BLOCK_OP_TYPE_BACKUP_TARGET		920697	0					
+ANR	920863	Argument	errp		920697	2					
+ANR	920864	Identifier	errp		920697	0					
+ANR	920865	CompoundStatement		73:71:1004:1004	920697	1					
+ANR	920866	ReturnStatement	return NULL ;	93:8:1508:1519	920697	0	True				
+ANR	920867	Identifier	NULL		920697	0					
+ANR	920868	IfStatement	if ( sync_mode == MIRROR_SYNC_MODE_INCREMENTAL )		920697	12					
+ANR	920869	Condition	sync_mode == MIRROR_SYNC_MODE_INCREMENTAL	99:8:1539:1579	920697	0	True				
+ANR	920870	EqualityExpression	sync_mode == MIRROR_SYNC_MODE_INCREMENTAL		920697	0		==			
+ANR	920871	Identifier	sync_mode		920697	0					
+ANR	920872	Identifier	MIRROR_SYNC_MODE_INCREMENTAL		920697	1					
+ANR	920873	CompoundStatement		81:51:1089:1089	920697	1					
+ANR	920874	IfStatement	if ( ! sync_bitmap )		920697	0					
+ANR	920875	Condition	! sync_bitmap	101:12:1597:1608	920697	0	True				
+ANR	920876	UnaryOperationExpression	! sync_bitmap		920697	0					
+ANR	920877	UnaryOperator	!		920697	0					
+ANR	920878	Identifier	sync_bitmap		920697	1					
+ANR	920879	CompoundStatement		83:26:1118:1118	920697	1					
+ANR	920880	Statement	error_setg	103:12:1626:1635	920697	0	True				
+ANR	920881	Statement	(	103:22:1636:1636	920697	1	True				
+ANR	920882	Statement	errp	103:23:1637:1640	920697	2	True				
+ANR	920883	Statement	","	103:27:1641:1641	920697	3	True				
+ANR	920884	Statement	"""must provide a valid bitmap name for """	103:29:1643:1681	920697	4	True				
+ANR	920885	Statement	"""\\""incremental\\"" sync mode"""	105:29:1713:1739	920697	5	True				
+ANR	920886	Statement	)	105:56:1740:1740	920697	6	True				
+ANR	920887	ExpressionStatement		105:57:1741:1741	920697	7	True				
+ANR	920888	ReturnStatement	return NULL ;	107:12:1756:1767	920697	8	True				
+ANR	920889	Identifier	NULL		920697	0					
+ANR	920890	IfStatement	"if ( bdrv_dirty_bitmap_create_successor ( bs , sync_bitmap , errp ) < 0 )"		920697	1					
+ANR	920891	Condition	"bdrv_dirty_bitmap_create_successor ( bs , sync_bitmap , errp ) < 0"	115:12:1860:1920	920697	0	True				
+ANR	920892	RelationalExpression	"bdrv_dirty_bitmap_create_successor ( bs , sync_bitmap , errp ) < 0"		920697	0		<			
+ANR	920893	CallExpression	"bdrv_dirty_bitmap_create_successor ( bs , sync_bitmap , errp )"		920697	0					
+ANR	920894	Callee	bdrv_dirty_bitmap_create_successor		920697	0					
+ANR	920895	Identifier	bdrv_dirty_bitmap_create_successor		920697	0					
+ANR	920896	ArgumentList	bs		920697	1					
+ANR	920897	Argument	bs		920697	0					
+ANR	920898	Identifier	bs		920697	0					
+ANR	920899	Argument	sync_bitmap		920697	1					
+ANR	920900	Identifier	sync_bitmap		920697	0					
+ANR	920901	Argument	errp		920697	2					
+ANR	920902	Identifier	errp		920697	0					
+ANR	920903	PrimaryExpression	0		920697	1					
+ANR	920904	CompoundStatement		97:75:1430:1430	920697	1					
+ANR	920905	ReturnStatement	return NULL ;	117:12:1938:1949	920697	0	True				
+ANR	920906	Identifier	NULL		920697	0					
+ANR	920907	ElseStatement	else		920697	0					
+ANR	920908	IfStatement	if ( sync_bitmap )		920697	0					
+ANR	920909	Condition	sync_bitmap	121:15:1978:1988	920697	0	True				
+ANR	920910	Identifier	sync_bitmap		920697	0					
+ANR	920911	CompoundStatement		103:28:1498:1498	920697	1					
+ANR	920912	Statement	error_setg	123:8:2002:2011	920697	0	True				
+ANR	920913	Statement	(	123:18:2012:2012	920697	1	True				
+ANR	920914	Statement	errp	123:19:2013:2016	920697	2	True				
+ANR	920915	Statement	","	123:23:2017:2017	920697	3	True				
+ANR	920916	Statement	"""a sync_bitmap was provided to backup_run, """	125:19:2039:2082	920697	4	True				
+ANR	920917	Statement	"""but received an incompatible sync_mode (%s)"""	127:19:2104:2148	920697	5	True				
+ANR	920918	Statement	","	127:64:2149:2149	920697	6	True				
+ANR	920919	Statement	MirrorSyncMode_lookup	129:19:2171:2191	920697	7	True				
+ANR	920920	Statement	[	129:40:2192:2192	920697	8	True				
+ANR	920921	Statement	sync_mode	129:41:2193:2201	920697	9	True				
+ANR	920922	Statement	]	129:50:2202:2202	920697	10	True				
+ANR	920923	Statement	)	129:51:2203:2203	920697	11	True				
+ANR	920924	ExpressionStatement		129:52:2204:2204	920697	12	True				
+ANR	920925	ReturnStatement	return NULL ;	131:8:2215:2226	920697	13	True				
+ANR	920926	Identifier	NULL		920697	0					
+ANR	920927	ExpressionStatement	len = bdrv_getlength ( bs )	137:4:2242:2266	920697	13	True				
+ANR	920928	AssignmentExpression	len = bdrv_getlength ( bs )		920697	0		=			
+ANR	920929	Identifier	len		920697	0					
+ANR	920930	CallExpression	bdrv_getlength ( bs )		920697	1					
+ANR	920931	Callee	bdrv_getlength		920697	0					
+ANR	920932	Identifier	bdrv_getlength		920697	0					
+ANR	920933	ArgumentList	bs		920697	1					
+ANR	920934	Argument	bs		920697	0					
+ANR	920935	Identifier	bs		920697	0					
+ANR	920936	IfStatement	if ( len < 0 )		920697	14					
+ANR	920937	Condition	len < 0	139:8:2277:2283	920697	0	True				
+ANR	920938	RelationalExpression	len < 0		920697	0		<			
+ANR	920939	Identifier	len		920697	0					
+ANR	920940	PrimaryExpression	0		920697	1					
+ANR	920941	CompoundStatement		121:17:1793:1793	920697	1					
+ANR	920942	ExpressionStatement	"error_setg_errno ( errp , - len , ""unable to get length for '%s'"" , bdrv_get_device_name ( bs ) )"	141:8:2297:2410	920697	0	True				
+ANR	920943	CallExpression	"error_setg_errno ( errp , - len , ""unable to get length for '%s'"" , bdrv_get_device_name ( bs ) )"		920697	0					
+ANR	920944	Callee	error_setg_errno		920697	0					
+ANR	920945	Identifier	error_setg_errno		920697	0					
+ANR	920946	ArgumentList	errp		920697	1					
+ANR	920947	Argument	errp		920697	0					
+ANR	920948	Identifier	errp		920697	0					
+ANR	920949	Argument	- len		920697	1					
+ANR	920950	UnaryOperationExpression	- len		920697	0					
+ANR	920951	UnaryOperator	-		920697	0					
+ANR	920952	Identifier	len		920697	1					
+ANR	920953	Argument	"""unable to get length for '%s'"""		920697	2					
+ANR	920954	PrimaryExpression	"""unable to get length for '%s'"""		920697	0					
+ANR	920955	Argument	bdrv_get_device_name ( bs )		920697	3					
+ANR	920956	CallExpression	bdrv_get_device_name ( bs )		920697	0					
+ANR	920957	Callee	bdrv_get_device_name		920697	0					
+ANR	920958	Identifier	bdrv_get_device_name		920697	0					
+ANR	920959	ArgumentList	bs		920697	1					
+ANR	920960	Argument	bs		920697	0					
+ANR	920961	Identifier	bs		920697	0					
+ANR	920962	GotoStatement	goto error ;	145:8:2421:2431	920697	1	True				
+ANR	920963	Identifier	error		920697	0					
+ANR	920964	ExpressionStatement	"job = block_job_create ( job_id , & backup_job_driver , bs , BLK_PERM_CONSISTENT_READ , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD , speed , creation_flags , cb , opaque , errp )"	153:4:2509:2833	920697	15	True				
+ANR	920965	AssignmentExpression	"job = block_job_create ( job_id , & backup_job_driver , bs , BLK_PERM_CONSISTENT_READ , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD , speed , creation_flags , cb , opaque , errp )"		920697	0		=			
+ANR	920966	Identifier	job		920697	0					
+ANR	920967	CallExpression	"block_job_create ( job_id , & backup_job_driver , bs , BLK_PERM_CONSISTENT_READ , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD , speed , creation_flags , cb , opaque , errp )"		920697	1					
+ANR	920968	Callee	block_job_create		920697	0					
+ANR	920969	Identifier	block_job_create		920697	0					
+ANR	920970	ArgumentList	job_id		920697	1					
+ANR	920971	Argument	job_id		920697	0					
+ANR	920972	Identifier	job_id		920697	0					
+ANR	920973	Argument	& backup_job_driver		920697	1					
+ANR	920974	UnaryOperationExpression	& backup_job_driver		920697	0					
+ANR	920975	UnaryOperator	&		920697	0					
+ANR	920976	Identifier	backup_job_driver		920697	1					
+ANR	920977	Argument	bs		920697	2					
+ANR	920978	Identifier	bs		920697	0					
+ANR	920979	Argument	BLK_PERM_CONSISTENT_READ		920697	3					
+ANR	920980	Identifier	BLK_PERM_CONSISTENT_READ		920697	0					
+ANR	920981	Argument	BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	4					
+ANR	920982	InclusiveOrExpression	BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	0		|			
+ANR	920983	Identifier	BLK_PERM_CONSISTENT_READ		920697	0					
+ANR	920984	InclusiveOrExpression	BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	1		|			
+ANR	920985	Identifier	BLK_PERM_WRITE		920697	0					
+ANR	920986	InclusiveOrExpression	BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	1		|			
+ANR	920987	Identifier	BLK_PERM_WRITE_UNCHANGED		920697	0					
+ANR	920988	Identifier	BLK_PERM_GRAPH_MOD		920697	1					
+ANR	920989	Argument	speed		920697	5					
+ANR	920990	Identifier	speed		920697	0					
+ANR	920991	Argument	creation_flags		920697	6					
+ANR	920992	Identifier	creation_flags		920697	0					
+ANR	920993	Argument	cb		920697	7					
+ANR	920994	Identifier	cb		920697	0					
+ANR	920995	Argument	opaque		920697	8					
+ANR	920996	Identifier	opaque		920697	0					
+ANR	920997	Argument	errp		920697	9					
+ANR	920998	Identifier	errp		920697	0					
+ANR	920999	IfStatement	if ( ! job )		920697	16					
+ANR	921000	Condition	! job	163:8:2844:2847	920697	0	True				
+ANR	921001	UnaryOperationExpression	! job		920697	0					
+ANR	921002	UnaryOperator	!		920697	0					
+ANR	921003	Identifier	job		920697	1					
+ANR	921004	CompoundStatement		145:14:2357:2357	920697	1					
+ANR	921005	GotoStatement	goto error ;	165:8:2861:2871	920697	0	True				
+ANR	921006	Identifier	error		920697	0					
+ANR	921007	ExpressionStatement	"job -> target = blk_new ( BLK_PERM_WRITE , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD )"	173:4:2965:3147	920697	17	True				
+ANR	921008	AssignmentExpression	"job -> target = blk_new ( BLK_PERM_WRITE , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD )"		920697	0		=			
+ANR	921009	PtrMemberAccess	job -> target		920697	0					
+ANR	921010	Identifier	job		920697	0					
+ANR	921011	Identifier	target		920697	1					
+ANR	921012	CallExpression	"blk_new ( BLK_PERM_WRITE , BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD )"		920697	1					
+ANR	921013	Callee	blk_new		920697	0					
+ANR	921014	Identifier	blk_new		920697	0					
+ANR	921015	ArgumentList	BLK_PERM_WRITE		920697	1					
+ANR	921016	Argument	BLK_PERM_WRITE		920697	0					
+ANR	921017	Identifier	BLK_PERM_WRITE		920697	0					
+ANR	921018	Argument	BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	1					
+ANR	921019	InclusiveOrExpression	BLK_PERM_CONSISTENT_READ | BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	0		|			
+ANR	921020	Identifier	BLK_PERM_CONSISTENT_READ		920697	0					
+ANR	921021	InclusiveOrExpression	BLK_PERM_WRITE | BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	1		|			
+ANR	921022	Identifier	BLK_PERM_WRITE		920697	0					
+ANR	921023	InclusiveOrExpression	BLK_PERM_WRITE_UNCHANGED | BLK_PERM_GRAPH_MOD		920697	1		|			
+ANR	921024	Identifier	BLK_PERM_WRITE_UNCHANGED		920697	0					
+ANR	921025	Identifier	BLK_PERM_GRAPH_MOD		920697	1					
+ANR	921026	ExpressionStatement	"ret = blk_insert_bs ( job -> target , target , errp )"	179:4:3154:3200	920697	18	True				
+ANR	921027	AssignmentExpression	"ret = blk_insert_bs ( job -> target , target , errp )"		920697	0		=			
+ANR	921028	Identifier	ret		920697	0					
+ANR	921029	CallExpression	"blk_insert_bs ( job -> target , target , errp )"		920697	1					
+ANR	921030	Callee	blk_insert_bs		920697	0					
+ANR	921031	Identifier	blk_insert_bs		920697	0					
+ANR	921032	ArgumentList	job -> target		920697	1					
+ANR	921033	Argument	job -> target		920697	0					
+ANR	921034	PtrMemberAccess	job -> target		920697	0					
+ANR	921035	Identifier	job		920697	0					
+ANR	921036	Identifier	target		920697	1					
+ANR	921037	Argument	target		920697	1					
+ANR	921038	Identifier	target		920697	0					
+ANR	921039	Argument	errp		920697	2					
+ANR	921040	Identifier	errp		920697	0					
+ANR	921041	IfStatement	if ( ret < 0 )		920697	19					
+ANR	921042	Condition	ret < 0	181:8:3211:3217	920697	0	True				
+ANR	921043	RelationalExpression	ret < 0		920697	0		<			
+ANR	921044	Identifier	ret		920697	0					
+ANR	921045	PrimaryExpression	0		920697	1					
+ANR	921046	CompoundStatement		163:17:2727:2727	920697	1					
+ANR	921047	GotoStatement	goto error ;	183:8:3231:3241	920697	0	True				
+ANR	921048	Identifier	error		920697	0					
+ANR	921049	ExpressionStatement	job -> on_source_error = on_source_error	189:4:3257:3295	920697	20	True				
+ANR	921050	AssignmentExpression	job -> on_source_error = on_source_error		920697	0		=			
+ANR	921051	PtrMemberAccess	job -> on_source_error		920697	0					
+ANR	921052	Identifier	job		920697	0					
+ANR	921053	Identifier	on_source_error		920697	1					
+ANR	921054	Identifier	on_source_error		920697	1					
+ANR	921055	ExpressionStatement	job -> on_target_error = on_target_error	191:4:3302:3340	920697	21	True				
+ANR	921056	AssignmentExpression	job -> on_target_error = on_target_error		920697	0		=			
+ANR	921057	PtrMemberAccess	job -> on_target_error		920697	0					
+ANR	921058	Identifier	job		920697	0					
+ANR	921059	Identifier	on_target_error		920697	1					
+ANR	921060	Identifier	on_target_error		920697	1					
+ANR	921061	ExpressionStatement	job -> sync_mode = sync_mode	193:4:3347:3373	920697	22	True				
+ANR	921062	AssignmentExpression	job -> sync_mode = sync_mode		920697	0		=			
+ANR	921063	PtrMemberAccess	job -> sync_mode		920697	0					
+ANR	921064	Identifier	job		920697	0					
+ANR	921065	Identifier	sync_mode		920697	1					
+ANR	921066	Identifier	sync_mode		920697	1					
+ANR	921067	ExpressionStatement	job -> sync_bitmap = sync_mode == MIRROR_SYNC_MODE_INCREMENTAL ? sync_bitmap : NULL	195:4:3380:3485	920697	23	True				
+ANR	921068	AssignmentExpression	job -> sync_bitmap = sync_mode == MIRROR_SYNC_MODE_INCREMENTAL ? sync_bitmap : NULL		920697	0		=			
+ANR	921069	PtrMemberAccess	job -> sync_bitmap		920697	0					
+ANR	921070	Identifier	job		920697	0					
+ANR	921071	Identifier	sync_bitmap		920697	1					
+ANR	921072	ConditionalExpression	sync_mode == MIRROR_SYNC_MODE_INCREMENTAL ? sync_bitmap : NULL		920697	1					
+ANR	921073	Condition	sync_mode == MIRROR_SYNC_MODE_INCREMENTAL		920697	0					
+ANR	921074	EqualityExpression	sync_mode == MIRROR_SYNC_MODE_INCREMENTAL		920697	0		==			
+ANR	921075	Identifier	sync_mode		920697	0					
+ANR	921076	Identifier	MIRROR_SYNC_MODE_INCREMENTAL		920697	1					
+ANR	921077	Identifier	sync_bitmap		920697	1					
+ANR	921078	Identifier	NULL		920697	2					
+ANR	921079	ExpressionStatement	job -> compress = compress	199:4:3492:3516	920697	24	True				
+ANR	921080	AssignmentExpression	job -> compress = compress		920697	0		=			
+ANR	921081	PtrMemberAccess	job -> compress		920697	0					
+ANR	921082	Identifier	job		920697	0					
+ANR	921083	Identifier	compress		920697	1					
+ANR	921084	Identifier	compress		920697	1					
+ANR	921085	ExpressionStatement	"ret = bdrv_get_info ( target , & bdi )"	209:4:3753:3786	920697	25	True				
+ANR	921086	AssignmentExpression	"ret = bdrv_get_info ( target , & bdi )"		920697	0		=			
+ANR	921087	Identifier	ret		920697	0					
+ANR	921088	CallExpression	"bdrv_get_info ( target , & bdi )"		920697	1					
+ANR	921089	Callee	bdrv_get_info		920697	0					
+ANR	921090	Identifier	bdrv_get_info		920697	0					
+ANR	921091	ArgumentList	target		920697	1					
+ANR	921092	Argument	target		920697	0					
+ANR	921093	Identifier	target		920697	0					
+ANR	921094	Argument	& bdi		920697	1					
+ANR	921095	UnaryOperationExpression	& bdi		920697	0					
+ANR	921096	UnaryOperator	&		920697	0					
+ANR	921097	Identifier	bdi		920697	1					
+ANR	921098	IfStatement	if ( ret == - ENOTSUP && ! target -> backing )		920697	26					
+ANR	921099	Condition	ret == - ENOTSUP && ! target -> backing	211:8:3797:3831	920697	0	True				
+ANR	921100	AndExpression	ret == - ENOTSUP && ! target -> backing		920697	0		&&			
+ANR	921101	EqualityExpression	ret == - ENOTSUP		920697	0		==			
+ANR	921102	Identifier	ret		920697	0					
+ANR	921103	UnaryOperationExpression	- ENOTSUP		920697	1					
+ANR	921104	UnaryOperator	-		920697	0					
+ANR	921105	Identifier	ENOTSUP		920697	1					
+ANR	921106	UnaryOperationExpression	! target -> backing		920697	1					
+ANR	921107	UnaryOperator	!		920697	0					
+ANR	921108	PtrMemberAccess	target -> backing		920697	1					
+ANR	921109	Identifier	target		920697	0					
+ANR	921110	Identifier	backing		920697	1					
+ANR	921111	CompoundStatement		193:45:3341:3341	920697	1					
+ANR	921112	Statement	error_report	215:8:3888:3899	920697	0	True				
+ANR	921113	Statement	(	215:20:3900:3900	920697	1	True				
+ANR	921114	Statement	"""WARNING: The target block device doesn't provide """	215:21:3901:3951	920697	2	True				
+ANR	921115	Statement	"""information about the block size and it doesn't have a """	217:21:3975:4031	920697	3	True				
+ANR	921116	Statement	"""backing file. The default block size of %u bytes is """	219:21:4055:4108	920697	4	True				
+ANR	921117	Statement	"""used. If the actual block size of the target exceeds """	221:21:4132:4186	920697	5	True				
+ANR	921118	Statement	"""this default, the backup may be unusable"""	223:21:4210:4251	920697	6	True				
+ANR	921119	Statement	","	223:63:4252:4252	920697	7	True				
+ANR	921120	Statement	BACKUP_CLUSTER_SIZE_DEFAULT	225:21:4276:4302	920697	8	True				
+ANR	921121	Statement	)	225:48:4303:4303	920697	9	True				
+ANR	921122	ExpressionStatement		225:49:4304:4304	920697	10	True				
+ANR	921123	ExpressionStatement	job -> cluster_size = BACKUP_CLUSTER_SIZE_DEFAULT	227:8:4315:4362	920697	11	True				
+ANR	921124	AssignmentExpression	job -> cluster_size = BACKUP_CLUSTER_SIZE_DEFAULT		920697	0		=			
+ANR	921125	PtrMemberAccess	job -> cluster_size		920697	0					
+ANR	921126	Identifier	job		920697	0					
+ANR	921127	Identifier	cluster_size		920697	1					
+ANR	921128	Identifier	BACKUP_CLUSTER_SIZE_DEFAULT		920697	1					
+ANR	921129	ElseStatement	else		920697	0					
+ANR	921130	IfStatement	if ( ret < 0 && ! target -> backing )		920697	0					
+ANR	921131	Condition	ret < 0 && ! target -> backing	229:15:4380:4406	920697	0	True				
+ANR	921132	AndExpression	ret < 0 && ! target -> backing		920697	0		&&			
+ANR	921133	RelationalExpression	ret < 0		920697	0		<			
+ANR	921134	Identifier	ret		920697	0					
+ANR	921135	PrimaryExpression	0		920697	1					
+ANR	921136	UnaryOperationExpression	! target -> backing		920697	1					
+ANR	921137	UnaryOperator	!		920697	0					
+ANR	921138	PtrMemberAccess	target -> backing		920697	1					
+ANR	921139	Identifier	target		920697	0					
+ANR	921140	Identifier	backing		920697	1					
+ANR	921141	CompoundStatement		211:44:3916:3916	920697	1					
+ANR	921142	Statement	error_setg_errno	231:8:4420:4435	920697	0	True				
+ANR	921143	Statement	(	231:24:4436:4436	920697	1	True				
+ANR	921144	Statement	errp	231:25:4437:4440	920697	2	True				
+ANR	921145	Statement	","	231:29:4441:4441	920697	3	True				
+ANR	921146	Statement	-	231:31:4443:4443	920697	4	True				
+ANR	921147	Statement	ret	231:32:4444:4446	920697	5	True				
+ANR	921148	Statement	","	231:35:4447:4447	920697	6	True				
+ANR	921149	Statement	"""Couldn't determine the cluster size of the target image, """	233:12:4462:4520	920697	7	True				
+ANR	921150	Statement	"""which has no backing file"""	235:12:4535:4561	920697	8	True				
+ANR	921151	Statement	)	235:39:4562:4562	920697	9	True				
+ANR	921152	ExpressionStatement		235:40:4563:4563	920697	10	True				
+ANR	921153	ExpressionStatement	"error_append_hint ( errp , ""Aborting, since this may create an unusable destination image\\n"" )"	237:8:4574:4677	920697	11	True				
+ANR	921154	CallExpression	"error_append_hint ( errp , ""Aborting, since this may create an unusable destination image\\n"" )"		920697	0					
+ANR	921155	Callee	error_append_hint		920697	0					
+ANR	921156	Identifier	error_append_hint		920697	0					
+ANR	921157	ArgumentList	errp		920697	1					
+ANR	921158	Argument	errp		920697	0					
+ANR	921159	Identifier	errp		920697	0					
+ANR	921160	Argument	"""Aborting, since this may create an unusable destination image\\n"""		920697	1					
+ANR	921161	PrimaryExpression	"""Aborting, since this may create an unusable destination image\\n"""		920697	0					
+ANR	921162	GotoStatement	goto error ;	241:8:4688:4698	920697	12	True				
+ANR	921163	Identifier	error		920697	0					
+ANR	921164	ElseStatement	else		920697	0					
+ANR	921165	IfStatement	if ( ret < 0 && target -> backing )		920697	0					
+ANR	921166	Condition	ret < 0 && target -> backing	243:15:4716:4741	920697	0	True				
+ANR	921167	AndExpression	ret < 0 && target -> backing		920697	0		&&			
+ANR	921168	RelationalExpression	ret < 0		920697	0		<			
+ANR	921169	Identifier	ret		920697	0					
+ANR	921170	PrimaryExpression	0		920697	1					
+ANR	921171	PtrMemberAccess	target -> backing		920697	1					
+ANR	921172	Identifier	target		920697	0					
+ANR	921173	Identifier	backing		920697	1					
+ANR	921174	CompoundStatement		225:43:4251:4251	920697	1					
+ANR	921175	ExpressionStatement	job -> cluster_size = BACKUP_CLUSTER_SIZE_DEFAULT	247:8:4803:4850	920697	0	True				
+ANR	921176	AssignmentExpression	job -> cluster_size = BACKUP_CLUSTER_SIZE_DEFAULT		920697	0		=			
+ANR	921177	PtrMemberAccess	job -> cluster_size		920697	0					
+ANR	921178	Identifier	job		920697	0					
+ANR	921179	Identifier	cluster_size		920697	1					
+ANR	921180	Identifier	BACKUP_CLUSTER_SIZE_DEFAULT		920697	1					
+ANR	921181	ElseStatement	else		920697	0					
+ANR	921182	CompoundStatement		231:11:4371:4371	920697	0					
+ANR	921183	ExpressionStatement	"job -> cluster_size = MAX ( BACKUP_CLUSTER_SIZE_DEFAULT , bdi . cluster_size )"	251:8:4875:4945	920697	0	True				
+ANR	921184	AssignmentExpression	"job -> cluster_size = MAX ( BACKUP_CLUSTER_SIZE_DEFAULT , bdi . cluster_size )"		920697	0		=			
+ANR	921185	PtrMemberAccess	job -> cluster_size		920697	0					
+ANR	921186	Identifier	job		920697	0					
+ANR	921187	Identifier	cluster_size		920697	1					
+ANR	921188	CallExpression	"MAX ( BACKUP_CLUSTER_SIZE_DEFAULT , bdi . cluster_size )"		920697	1					
+ANR	921189	Callee	MAX		920697	0					
+ANR	921190	Identifier	MAX		920697	0					
+ANR	921191	ArgumentList	BACKUP_CLUSTER_SIZE_DEFAULT		920697	1					
+ANR	921192	Argument	BACKUP_CLUSTER_SIZE_DEFAULT		920697	0					
+ANR	921193	Identifier	BACKUP_CLUSTER_SIZE_DEFAULT		920697	0					
+ANR	921194	Argument	bdi . cluster_size		920697	1					
+ANR	921195	MemberAccess	bdi . cluster_size		920697	0					
+ANR	921196	Identifier	bdi		920697	0					
+ANR	921197	Identifier	cluster_size		920697	1					
+ANR	921198	ExpressionStatement	"block_job_add_bdrv ( & job -> common , ""target"" , target , 0 , BLK_PERM_ALL , & error_abort )"	259:4:5035:5140	920697	27	True				
+ANR	921199	CallExpression	"block_job_add_bdrv ( & job -> common , ""target"" , target , 0 , BLK_PERM_ALL , & error_abort )"		920697	0					
+ANR	921200	Callee	block_job_add_bdrv		920697	0					
+ANR	921201	Identifier	block_job_add_bdrv		920697	0					
+ANR	921202	ArgumentList	& job -> common		920697	1					
+ANR	921203	Argument	& job -> common		920697	0					
+ANR	921204	UnaryOperationExpression	& job -> common		920697	0					
+ANR	921205	UnaryOperator	&		920697	0					
+ANR	921206	PtrMemberAccess	job -> common		920697	1					
+ANR	921207	Identifier	job		920697	0					
+ANR	921208	Identifier	common		920697	1					
+ANR	921209	Argument	"""target"""		920697	1					
+ANR	921210	PrimaryExpression	"""target"""		920697	0					
+ANR	921211	Argument	target		920697	2					
+ANR	921212	Identifier	target		920697	0					
+ANR	921213	Argument	0		920697	3					
+ANR	921214	PrimaryExpression	0		920697	0					
+ANR	921215	Argument	BLK_PERM_ALL		920697	4					
+ANR	921216	Identifier	BLK_PERM_ALL		920697	0					
+ANR	921217	Argument	& error_abort		920697	5					
+ANR	921218	UnaryOperationExpression	& error_abort		920697	0					
+ANR	921219	UnaryOperator	&		920697	0					
+ANR	921220	Identifier	error_abort		920697	1					
+ANR	921221	ExpressionStatement	job -> common . len = len	263:4:5147:5168	920697	28	True				
+ANR	921222	AssignmentExpression	job -> common . len = len		920697	0		=			
+ANR	921223	MemberAccess	job -> common . len		920697	0					
+ANR	921224	PtrMemberAccess	job -> common		920697	0					
+ANR	921225	Identifier	job		920697	0					
+ANR	921226	Identifier	common		920697	1					
+ANR	921227	Identifier	len		920697	1					
+ANR	921228	Identifier	len		920697	1					
+ANR	921229	ExpressionStatement	"block_job_txn_add_job ( txn , & job -> common )"	265:4:5175:5215	920697	29	True				
+ANR	921230	CallExpression	"block_job_txn_add_job ( txn , & job -> common )"		920697	0					
+ANR	921231	Callee	block_job_txn_add_job		920697	0					
+ANR	921232	Identifier	block_job_txn_add_job		920697	0					
+ANR	921233	ArgumentList	txn		920697	1					
+ANR	921234	Argument	txn		920697	0					
+ANR	921235	Identifier	txn		920697	0					
+ANR	921236	Argument	& job -> common		920697	1					
+ANR	921237	UnaryOperationExpression	& job -> common		920697	0					
+ANR	921238	UnaryOperator	&		920697	0					
+ANR	921239	PtrMemberAccess	job -> common		920697	1					
+ANR	921240	Identifier	job		920697	0					
+ANR	921241	Identifier	common		920697	1					
+ANR	921242	ReturnStatement	return & job -> common ;	269:4:5224:5243	920697	30	True				
+ANR	921243	UnaryOperationExpression	& job -> common		920697	0					
+ANR	921244	UnaryOperator	&		920697	0					
+ANR	921245	PtrMemberAccess	job -> common		920697	1					
+ANR	921246	Identifier	job		920697	0					
+ANR	921247	Identifier	common		920697	1					
+ANR	921248	Label	error :	273:1:5249:5254	920697	31	True				
+ANR	921249	Identifier	error		920697	0					
+ANR	921250	IfStatement	if ( sync_bitmap )		920697	32					
+ANR	921251	Condition	sync_bitmap	275:8:5265:5275	920697	0	True				
+ANR	921252	Identifier	sync_bitmap		920697	0					
+ANR	921253	CompoundStatement		257:21:4785:4785	920697	1					
+ANR	921254	ExpressionStatement	"bdrv_reclaim_dirty_bitmap ( bs , sync_bitmap , NULL )"	277:8:5289:5337	920697	0	True				
+ANR	921255	CallExpression	"bdrv_reclaim_dirty_bitmap ( bs , sync_bitmap , NULL )"		920697	0					
+ANR	921256	Callee	bdrv_reclaim_dirty_bitmap		920697	0					
+ANR	921257	Identifier	bdrv_reclaim_dirty_bitmap		920697	0					
+ANR	921258	ArgumentList	bs		920697	1					
+ANR	921259	Argument	bs		920697	0					
+ANR	921260	Identifier	bs		920697	0					
+ANR	921261	Argument	sync_bitmap		920697	1					
+ANR	921262	Identifier	sync_bitmap		920697	0					
+ANR	921263	Argument	NULL		920697	2					
+ANR	921264	Identifier	NULL		920697	0					
+ANR	921265	IfStatement	if ( job )		920697	33					
+ANR	921266	Condition	job	281:8:5355:5357	920697	0	True				
+ANR	921267	Identifier	job		920697	0					
+ANR	921268	CompoundStatement		263:13:4867:4867	920697	1					
+ANR	921269	ExpressionStatement	backup_clean ( & job -> common )	283:8:5371:5397	920697	0	True				
+ANR	921270	CallExpression	backup_clean ( & job -> common )		920697	0					
+ANR	921271	Callee	backup_clean		920697	0					
+ANR	921272	Identifier	backup_clean		920697	0					
+ANR	921273	ArgumentList	& job -> common		920697	1					
+ANR	921274	Argument	& job -> common		920697	0					
+ANR	921275	UnaryOperationExpression	& job -> common		920697	0					
+ANR	921276	UnaryOperator	&		920697	0					
+ANR	921277	PtrMemberAccess	job -> common		920697	1					
+ANR	921278	Identifier	job		920697	0					
+ANR	921279	Identifier	common		920697	1					
+ANR	921280	ExpressionStatement	block_job_early_fail ( & job -> common )	285:8:5408:5442	920697	1	True				
+ANR	921281	CallExpression	block_job_early_fail ( & job -> common )		920697	0					
+ANR	921282	Callee	block_job_early_fail		920697	0					
+ANR	921283	Identifier	block_job_early_fail		920697	0					
+ANR	921284	ArgumentList	& job -> common		920697	1					
+ANR	921285	Argument	& job -> common		920697	0					
+ANR	921286	UnaryOperationExpression	& job -> common		920697	0					
+ANR	921287	UnaryOperator	&		920697	0					
+ANR	921288	PtrMemberAccess	job -> common		920697	1					
+ANR	921289	Identifier	job		920697	0					
+ANR	921290	Identifier	common		920697	1					
+ANR	921291	ReturnStatement	return NULL ;	291:4:5458:5469	920697	34	True				
+ANR	921292	Identifier	NULL		920697	0					
+ANR	921293	ReturnType	BlockJob *		920697	1					
+ANR	921294	Identifier	backup_job_create		920697	2					
+ANR	921295	ParameterList	"const char * job_id , BlockDriverState * bs , BlockDriverState * target , int64_t speed , MirrorSyncMode sync_mode , BdrvDirtyBitmap * sync_bitmap , bool compress , BlockdevOnError on_source_error , BlockdevOnError on_target_error , int creation_flags , BlockCompletionFunc * cb , void * opaque , BlockJobTxn * txn , Error * * errp"		920697	3					
+ANR	921296	Parameter	const char * job_id	1:28:28:45	920697	0	True				
+ANR	921297	ParameterType	const char *		920697	0					
+ANR	921298	Identifier	job_id		920697	1					
+ANR	921299	Parameter	BlockDriverState * bs	1:48:48:67	920697	1	True				
+ANR	921300	ParameterType	BlockDriverState *		920697	0					
+ANR	921301	Identifier	bs		920697	1					
+ANR	921302	Parameter	BlockDriverState * target	3:18:89:112	920697	2	True				
+ANR	921303	ParameterType	BlockDriverState *		920697	0					
+ANR	921304	Identifier	target		920697	1					
+ANR	921305	Parameter	int64_t speed	3:44:115:127	920697	3	True				
+ANR	921306	ParameterType	int64_t		920697	0					
+ANR	921307	Identifier	speed		920697	1					
+ANR	921308	Parameter	MirrorSyncMode sync_mode	5:18:149:172	920697	4	True				
+ANR	921309	ParameterType	MirrorSyncMode		920697	0					
+ANR	921310	Identifier	sync_mode		920697	1					
+ANR	921311	Parameter	BdrvDirtyBitmap * sync_bitmap	5:44:175:202	920697	5	True				
+ANR	921312	ParameterType	BdrvDirtyBitmap *		920697	0					
+ANR	921313	Identifier	sync_bitmap		920697	1					
+ANR	921314	Parameter	bool compress	7:18:224:236	920697	6	True				
+ANR	921315	ParameterType	bool		920697	0					
+ANR	921316	Identifier	compress		920697	1					
+ANR	921317	Parameter	BlockdevOnError on_source_error	9:18:258:288	920697	7	True				
+ANR	921318	ParameterType	BlockdevOnError		920697	0					
+ANR	921319	Identifier	on_source_error		920697	1					
+ANR	921320	Parameter	BlockdevOnError on_target_error	11:18:310:340	920697	8	True				
+ANR	921321	ParameterType	BlockdevOnError		920697	0					
+ANR	921322	Identifier	on_target_error		920697	1					
+ANR	921323	Parameter	int creation_flags	13:18:362:379	920697	9	True				
+ANR	921324	ParameterType	int		920697	0					
+ANR	921325	Identifier	creation_flags		920697	1					
+ANR	921326	Parameter	BlockCompletionFunc * cb	15:18:401:423	920697	10	True				
+ANR	921327	ParameterType	BlockCompletionFunc *		920697	0					
+ANR	921328	Identifier	cb		920697	1					
+ANR	921329	Parameter	void * opaque	15:43:426:437	920697	11	True				
+ANR	921330	ParameterType	void *		920697	0					
+ANR	921331	Identifier	opaque		920697	1					
+ANR	921332	Parameter	BlockJobTxn * txn	17:18:459:474	920697	12	True				
+ANR	921333	ParameterType	BlockJobTxn *		920697	0					
+ANR	921334	Identifier	txn		920697	1					
+ANR	921335	Parameter	Error * * errp	17:36:477:488	920697	13	True				
+ANR	921336	ParameterType	Error * *		920697	0					
+ANR	921337	Identifier	errp		920697	1					
+ANR	921338	CFGEntryNode	ENTRY		920697		True				
+ANR	921339	CFGExitNode	EXIT		920697		True				
+ANR	921340	Symbol	errp		920697						
+ANR	921341	Symbol	BLOCK_OP_TYPE_BACKUP_TARGET		920697						
+ANR	921342	Symbol	job -> sync_mode		920697						
+ANR	921343	Symbol	ENOTSUP		920697						
+ANR	921344	Symbol	MIRROR_SYNC_MODE_INCREMENTAL		920697						
+ANR	921345	Symbol	target -> drv		920697						
+ANR	921346	Symbol	job -> common		920697						
+ANR	921347	Symbol	len		920697						
+ANR	921348	Symbol	creation_flags		920697						
+ANR	921349	Symbol	bdrv_dirty_bitmap_create_successor		920697						
+ANR	921350	Symbol	job -> common . len		920697						
+ANR	921351	Symbol	BLK_PERM_WRITE_UNCHANGED		920697						
+ANR	921352	Symbol	on_source_error		920697						
+ANR	921353	Symbol	ret		920697						
+ANR	921354	Symbol	& backup_job_driver		920697						
+ANR	921355	Symbol	BLK_PERM_WRITE		920697						
+ANR	921356	Symbol	NULL		920697						
+ANR	921357	Symbol	compress		920697						
+ANR	921358	Symbol	* job		920697						
+ANR	921359	Symbol	* * target		920697						
+ANR	921360	Symbol	BLK_PERM_ALL		920697						
+ANR	921361	Symbol	sync_mode		920697						
+ANR	921362	Symbol	bdrv_get_device_name		920697						
+ANR	921363	Symbol	bdi . cluster_size		920697						
+ANR	921364	Symbol	job -> compress		920697						
+ANR	921365	Symbol	job		920697						
+ANR	921366	Symbol	blk_new		920697						
+ANR	921367	Symbol	blk_insert_bs		920697						
+ANR	921368	Symbol	sync_bitmap		920697						
+ANR	921369	Symbol	MAX		920697						
+ANR	921370	Symbol	on_target_error		920697						
+ANR	921371	Symbol	bdrv_is_inserted		920697						
+ANR	921372	Symbol	target -> drv -> bdrv_co_pwritev_compressed		920697						
+ANR	921373	Symbol	block_job_create		920697						
+ANR	921374	Symbol	job -> on_source_error		920697						
+ANR	921375	Symbol	& bdi		920697						
+ANR	921376	Symbol	speed		920697						
+ANR	921377	Symbol	bs		920697						
+ANR	921378	Symbol	BACKUP_CLUSTER_SIZE_DEFAULT		920697						
+ANR	921379	Symbol	bdrv_op_is_blocked		920697						
+ANR	921380	Symbol	bdrv_getlength		920697						
+ANR	921381	Symbol	cb		920697						
+ANR	921382	Symbol	job -> cluster_size		920697						
+ANR	921383	Symbol	bdrv_get_info		920697						
+ANR	921384	Symbol	BLK_PERM_CONSISTENT_READ		920697						
+ANR	921385	Symbol	opaque		920697						
+ANR	921386	Symbol	job -> target		920697						
+ANR	921387	Symbol	& error_abort		920697						
+ANR	921388	Symbol	bdi		920697						
+ANR	921389	Symbol	txn		920697						
+ANR	921390	Symbol	* target -> drv		920697						
+ANR	921391	Symbol	target		920697						
+ANR	921392	Symbol	* target		920697						
+ANR	921393	Symbol	job -> sync_bitmap		920697						
+ANR	921394	Symbol	job_id		920697						
+ANR	921395	Symbol	BLK_PERM_GRAPH_MOD		920697						
+ANR	921396	Symbol	BLOCK_OP_TYPE_BACKUP_SOURCE		920697						
+ANR	921397	Symbol	job -> on_target_error		920697						
+ANR	921398	Symbol	target -> backing		920697						
+ANR	921399	Symbol	& job -> common		920697						

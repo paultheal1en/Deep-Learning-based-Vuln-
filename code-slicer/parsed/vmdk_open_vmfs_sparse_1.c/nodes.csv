@@ -1,0 +1,200 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9175783	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vmdk_open_vmfs_sparse_1.c								
+ANR	9175784	Function	vmdk_open_vmfs_sparse	1:0:0:1177							
+ANR	9175785	FunctionDef	"vmdk_open_vmfs_sparse (BlockDriverState * bs , BlockDriverState * file , int flags , Error * * errp)"		9175784	0					
+ANR	9175786	CompoundStatement		7:0:173:1177	9175784	0					
+ANR	9175787	IdentifierDeclStatement	int ret ;	9:4:180:187	9175784	0	True				
+ANR	9175788	IdentifierDecl	ret		9175784	0					
+ANR	9175789	IdentifierDeclType	int		9175784	0					
+ANR	9175790	Identifier	ret		9175784	1					
+ANR	9175791	IdentifierDeclStatement	uint32_t magic ;	11:4:194:208	9175784	1	True				
+ANR	9175792	IdentifierDecl	magic		9175784	0					
+ANR	9175793	IdentifierDeclType	uint32_t		9175784	0					
+ANR	9175794	Identifier	magic		9175784	1					
+ANR	9175795	IdentifierDeclStatement	VMDK3Header header ;	13:4:215:233	9175784	2	True				
+ANR	9175796	IdentifierDecl	header		9175784	0					
+ANR	9175797	IdentifierDeclType	VMDK3Header		9175784	0					
+ANR	9175798	Identifier	header		9175784	1					
+ANR	9175799	IdentifierDeclStatement	VmdkExtent * extent ;	15:4:240:258	9175784	3	True				
+ANR	9175800	IdentifierDecl	* extent		9175784	0					
+ANR	9175801	IdentifierDeclType	VmdkExtent *		9175784	0					
+ANR	9175802	Identifier	extent		9175784	1					
+ANR	9175803	ExpressionStatement	"ret = bdrv_pread ( file , sizeof ( magic ) , & header , sizeof ( header ) )"	19:4:267:329	9175784	4	True				
+ANR	9175804	AssignmentExpression	"ret = bdrv_pread ( file , sizeof ( magic ) , & header , sizeof ( header ) )"		9175784	0		=			
+ANR	9175805	Identifier	ret		9175784	0					
+ANR	9175806	CallExpression	"bdrv_pread ( file , sizeof ( magic ) , & header , sizeof ( header ) )"		9175784	1					
+ANR	9175807	Callee	bdrv_pread		9175784	0					
+ANR	9175808	Identifier	bdrv_pread		9175784	0					
+ANR	9175809	ArgumentList	file		9175784	1					
+ANR	9175810	Argument	file		9175784	0					
+ANR	9175811	Identifier	file		9175784	0					
+ANR	9175812	Argument	sizeof ( magic )		9175784	1					
+ANR	9175813	SizeofExpression	sizeof ( magic )		9175784	0					
+ANR	9175814	Sizeof	sizeof		9175784	0					
+ANR	9175815	SizeofOperand	magic		9175784	1					
+ANR	9175816	Argument	& header		9175784	2					
+ANR	9175817	UnaryOperationExpression	& header		9175784	0					
+ANR	9175818	UnaryOperator	&		9175784	0					
+ANR	9175819	Identifier	header		9175784	1					
+ANR	9175820	Argument	sizeof ( header )		9175784	3					
+ANR	9175821	SizeofExpression	sizeof ( header )		9175784	0					
+ANR	9175822	Sizeof	sizeof		9175784	0					
+ANR	9175823	SizeofOperand	header		9175784	1					
+ANR	9175824	IfStatement	if ( ret < 0 )		9175784	5					
+ANR	9175825	Condition	ret < 0	21:8:340:346	9175784	0	True				
+ANR	9175826	RelationalExpression	ret < 0		9175784	0		<			
+ANR	9175827	Identifier	ret		9175784	0					
+ANR	9175828	PrimaryExpression	0		9175784	1					
+ANR	9175829	CompoundStatement		15:17:175:175	9175784	1					
+ANR	9175830	ExpressionStatement	"error_setg_errno ( errp , - ret , ""Could not read header from file '%s'"" , file -> filename )"	23:8:360:496	9175784	0	True				
+ANR	9175831	CallExpression	"error_setg_errno ( errp , - ret , ""Could not read header from file '%s'"" , file -> filename )"		9175784	0					
+ANR	9175832	Callee	error_setg_errno		9175784	0					
+ANR	9175833	Identifier	error_setg_errno		9175784	0					
+ANR	9175834	ArgumentList	errp		9175784	1					
+ANR	9175835	Argument	errp		9175784	0					
+ANR	9175836	Identifier	errp		9175784	0					
+ANR	9175837	Argument	- ret		9175784	1					
+ANR	9175838	UnaryOperationExpression	- ret		9175784	0					
+ANR	9175839	UnaryOperator	-		9175784	0					
+ANR	9175840	Identifier	ret		9175784	1					
+ANR	9175841	Argument	"""Could not read header from file '%s'"""		9175784	2					
+ANR	9175842	PrimaryExpression	"""Could not read header from file '%s'"""		9175784	0					
+ANR	9175843	Argument	file -> filename		9175784	3					
+ANR	9175844	PtrMemberAccess	file -> filename		9175784	0					
+ANR	9175845	Identifier	file		9175784	0					
+ANR	9175846	Identifier	filename		9175784	1					
+ANR	9175847	ReturnStatement	return ret ;	29:8:507:517	9175784	1	True				
+ANR	9175848	Identifier	ret		9175784	0					
+ANR	9175849	ExpressionStatement	"ret = vmdk_add_extent ( bs , file , false , le32_to_cpu ( header . disk_sectors ) , le32_to_cpu ( header . l1dir_offset ) << 9 , 0 , le32_to_cpu ( header . l1dir_size ) , 4096 , le32_to_cpu ( header . granularity ) , & extent , errp )"	33:4:531:947	9175784	6	True				
+ANR	9175850	AssignmentExpression	"ret = vmdk_add_extent ( bs , file , false , le32_to_cpu ( header . disk_sectors ) , le32_to_cpu ( header . l1dir_offset ) << 9 , 0 , le32_to_cpu ( header . l1dir_size ) , 4096 , le32_to_cpu ( header . granularity ) , & extent , errp )"		9175784	0		=			
+ANR	9175851	Identifier	ret		9175784	0					
+ANR	9175852	CallExpression	"vmdk_add_extent ( bs , file , false , le32_to_cpu ( header . disk_sectors ) , le32_to_cpu ( header . l1dir_offset ) << 9 , 0 , le32_to_cpu ( header . l1dir_size ) , 4096 , le32_to_cpu ( header . granularity ) , & extent , errp )"		9175784	1					
+ANR	9175853	Callee	vmdk_add_extent		9175784	0					
+ANR	9175854	Identifier	vmdk_add_extent		9175784	0					
+ANR	9175855	ArgumentList	bs		9175784	1					
+ANR	9175856	Argument	bs		9175784	0					
+ANR	9175857	Identifier	bs		9175784	0					
+ANR	9175858	Argument	file		9175784	1					
+ANR	9175859	Identifier	file		9175784	0					
+ANR	9175860	Argument	false		9175784	2					
+ANR	9175861	Identifier	false		9175784	0					
+ANR	9175862	Argument	le32_to_cpu ( header . disk_sectors )		9175784	3					
+ANR	9175863	CallExpression	le32_to_cpu ( header . disk_sectors )		9175784	0					
+ANR	9175864	Callee	le32_to_cpu		9175784	0					
+ANR	9175865	Identifier	le32_to_cpu		9175784	0					
+ANR	9175866	ArgumentList	header . disk_sectors		9175784	1					
+ANR	9175867	Argument	header . disk_sectors		9175784	0					
+ANR	9175868	MemberAccess	header . disk_sectors		9175784	0					
+ANR	9175869	Identifier	header		9175784	0					
+ANR	9175870	Identifier	disk_sectors		9175784	1					
+ANR	9175871	Argument	le32_to_cpu ( header . l1dir_offset ) << 9		9175784	4					
+ANR	9175872	ShiftExpression	le32_to_cpu ( header . l1dir_offset ) << 9		9175784	0		<<			
+ANR	9175873	CallExpression	le32_to_cpu ( header . l1dir_offset )		9175784	0					
+ANR	9175874	Callee	le32_to_cpu		9175784	0					
+ANR	9175875	Identifier	le32_to_cpu		9175784	0					
+ANR	9175876	ArgumentList	header . l1dir_offset		9175784	1					
+ANR	9175877	Argument	header . l1dir_offset		9175784	0					
+ANR	9175878	MemberAccess	header . l1dir_offset		9175784	0					
+ANR	9175879	Identifier	header		9175784	0					
+ANR	9175880	Identifier	l1dir_offset		9175784	1					
+ANR	9175881	PrimaryExpression	9		9175784	1					
+ANR	9175882	Argument	0		9175784	5					
+ANR	9175883	PrimaryExpression	0		9175784	0					
+ANR	9175884	Argument	le32_to_cpu ( header . l1dir_size )		9175784	6					
+ANR	9175885	CallExpression	le32_to_cpu ( header . l1dir_size )		9175784	0					
+ANR	9175886	Callee	le32_to_cpu		9175784	0					
+ANR	9175887	Identifier	le32_to_cpu		9175784	0					
+ANR	9175888	ArgumentList	header . l1dir_size		9175784	1					
+ANR	9175889	Argument	header . l1dir_size		9175784	0					
+ANR	9175890	MemberAccess	header . l1dir_size		9175784	0					
+ANR	9175891	Identifier	header		9175784	0					
+ANR	9175892	Identifier	l1dir_size		9175784	1					
+ANR	9175893	Argument	4096		9175784	7					
+ANR	9175894	PrimaryExpression	4096		9175784	0					
+ANR	9175895	Argument	le32_to_cpu ( header . granularity )		9175784	8					
+ANR	9175896	CallExpression	le32_to_cpu ( header . granularity )		9175784	0					
+ANR	9175897	Callee	le32_to_cpu		9175784	0					
+ANR	9175898	Identifier	le32_to_cpu		9175784	0					
+ANR	9175899	ArgumentList	header . granularity		9175784	1					
+ANR	9175900	Argument	header . granularity		9175784	0					
+ANR	9175901	MemberAccess	header . granularity		9175784	0					
+ANR	9175902	Identifier	header		9175784	0					
+ANR	9175903	Identifier	granularity		9175784	1					
+ANR	9175904	Argument	& extent		9175784	9					
+ANR	9175905	UnaryOperationExpression	& extent		9175784	0					
+ANR	9175906	UnaryOperator	&		9175784	0					
+ANR	9175907	Identifier	extent		9175784	1					
+ANR	9175908	Argument	errp		9175784	10					
+ANR	9175909	Identifier	errp		9175784	0					
+ANR	9175910	IfStatement	if ( ret < 0 )		9175784	7					
+ANR	9175911	Condition	ret < 0	51:8:958:964	9175784	0	True				
+ANR	9175912	RelationalExpression	ret < 0		9175784	0		<			
+ANR	9175913	Identifier	ret		9175784	0					
+ANR	9175914	PrimaryExpression	0		9175784	1					
+ANR	9175915	CompoundStatement		45:17:793:793	9175784	1					
+ANR	9175916	ReturnStatement	return ret ;	53:8:978:988	9175784	0	True				
+ANR	9175917	Identifier	ret		9175784	0					
+ANR	9175918	ExpressionStatement	"ret = vmdk_init_tables ( bs , extent , errp )"	57:4:1002:1042	9175784	8	True				
+ANR	9175919	AssignmentExpression	"ret = vmdk_init_tables ( bs , extent , errp )"		9175784	0		=			
+ANR	9175920	Identifier	ret		9175784	0					
+ANR	9175921	CallExpression	"vmdk_init_tables ( bs , extent , errp )"		9175784	1					
+ANR	9175922	Callee	vmdk_init_tables		9175784	0					
+ANR	9175923	Identifier	vmdk_init_tables		9175784	0					
+ANR	9175924	ArgumentList	bs		9175784	1					
+ANR	9175925	Argument	bs		9175784	0					
+ANR	9175926	Identifier	bs		9175784	0					
+ANR	9175927	Argument	extent		9175784	1					
+ANR	9175928	Identifier	extent		9175784	0					
+ANR	9175929	Argument	errp		9175784	2					
+ANR	9175930	Identifier	errp		9175784	0					
+ANR	9175931	IfStatement	if ( ret )		9175784	9					
+ANR	9175932	Condition	ret	59:8:1053:1055	9175784	0	True				
+ANR	9175933	Identifier	ret		9175784	0					
+ANR	9175934	CompoundStatement		53:13:884:884	9175784	1					
+ANR	9175935	ExpressionStatement	vmdk_free_last_extent ( bs )	63:8:1125:1150	9175784	0	True				
+ANR	9175936	CallExpression	vmdk_free_last_extent ( bs )		9175784	0					
+ANR	9175937	Callee	vmdk_free_last_extent		9175784	0					
+ANR	9175938	Identifier	vmdk_free_last_extent		9175784	0					
+ANR	9175939	ArgumentList	bs		9175784	1					
+ANR	9175940	Argument	bs		9175784	0					
+ANR	9175941	Identifier	bs		9175784	0					
+ANR	9175942	ReturnStatement	return ret ;	67:4:1164:1174	9175784	10	True				
+ANR	9175943	Identifier	ret		9175784	0					
+ANR	9175944	ReturnType	static int		9175784	1					
+ANR	9175945	Identifier	vmdk_open_vmfs_sparse		9175784	2					
+ANR	9175946	ParameterList	"BlockDriverState * bs , BlockDriverState * file , int flags , Error * * errp"		9175784	3					
+ANR	9175947	Parameter	BlockDriverState * bs	1:33:33:52	9175784	0	True				
+ANR	9175948	ParameterType	BlockDriverState *		9175784	0					
+ANR	9175949	Identifier	bs		9175784	1					
+ANR	9175950	Parameter	BlockDriverState * file	3:33:89:110	9175784	1	True				
+ANR	9175951	ParameterType	BlockDriverState *		9175784	0					
+ANR	9175952	Identifier	file		9175784	1					
+ANR	9175953	Parameter	int flags	5:33:147:155	9175784	2	True				
+ANR	9175954	ParameterType	int		9175784	0					
+ANR	9175955	Identifier	flags		9175784	1					
+ANR	9175956	Parameter	Error * * errp	5:44:158:169	9175784	3	True				
+ANR	9175957	ParameterType	Error * *		9175784	0					
+ANR	9175958	Identifier	errp		9175784	1					
+ANR	9175959	CFGEntryNode	ENTRY		9175784		True				
+ANR	9175960	CFGExitNode	EXIT		9175784		True				
+ANR	9175961	Symbol	ret		9175784						
+ANR	9175962	Symbol	magic		9175784						
+ANR	9175963	Symbol	extent		9175784						
+ANR	9175964	Symbol	file -> filename		9175784						
+ANR	9175965	Symbol	header . disk_sectors		9175784						
+ANR	9175966	Symbol	errp		9175784						
+ANR	9175967	Symbol	header . granularity		9175784						
+ANR	9175968	Symbol	flags		9175784						
+ANR	9175969	Symbol	false		9175784						
+ANR	9175970	Symbol	vmdk_init_tables		9175784						
+ANR	9175971	Symbol	* file		9175784						
+ANR	9175972	Symbol	& header		9175784						
+ANR	9175973	Symbol	bs		9175784						
+ANR	9175974	Symbol	file		9175784						
+ANR	9175975	Symbol	bdrv_pread		9175784						
+ANR	9175976	Symbol	le32_to_cpu		9175784						
+ANR	9175977	Symbol	vmdk_add_extent		9175784						
+ANR	9175978	Symbol	header		9175784						
+ANR	9175979	Symbol	header . l1dir_size		9175784						
+ANR	9175980	Symbol	& extent		9175784						
+ANR	9175981	Symbol	header . l1dir_offset		9175784						

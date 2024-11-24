@@ -1,0 +1,693 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6833888	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_check_refcounts_0.c								
+ANR	6833889	Function	qcow2_check_refcounts	1:0:0:4306							
+ANR	6833890	FunctionDef	"qcow2_check_refcounts (BlockDriverState * bs , BdrvCheckResult * res , BdrvCheckMode fix)"		6833889	0					
+ANR	6833891	CompoundStatement		5:0:117:4306	6833889	0					
+ANR	6833892	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	7:4:124:153	6833889	0	True				
+ANR	6833893	IdentifierDecl	* s = bs -> opaque		6833889	0					
+ANR	6833894	IdentifierDeclType	BDRVQcowState *		6833889	0					
+ANR	6833895	Identifier	s		6833889	1					
+ANR	6833896	AssignmentExpression	* s = bs -> opaque		6833889	2		=			
+ANR	6833897	Identifier	s		6833889	0					
+ANR	6833898	PtrMemberAccess	bs -> opaque		6833889	1					
+ANR	6833899	Identifier	bs		6833889	0					
+ANR	6833900	Identifier	opaque		6833889	1					
+ANR	6833901	IdentifierDeclStatement	"int64_t size , i , highest_cluster ;"	9:4:160:192	6833889	1	True				
+ANR	6833902	IdentifierDecl	size		6833889	0					
+ANR	6833903	IdentifierDeclType	int64_t		6833889	0					
+ANR	6833904	Identifier	size		6833889	1					
+ANR	6833905	IdentifierDecl	i		6833889	1					
+ANR	6833906	IdentifierDeclType	int64_t		6833889	0					
+ANR	6833907	Identifier	i		6833889	1					
+ANR	6833908	IdentifierDecl	highest_cluster		6833889	2					
+ANR	6833909	IdentifierDeclType	int64_t		6833889	0					
+ANR	6833910	Identifier	highest_cluster		6833889	1					
+ANR	6833911	IdentifierDeclStatement	"int nb_clusters , refcount1 , refcount2 ;"	11:4:199:236	6833889	2	True				
+ANR	6833912	IdentifierDecl	nb_clusters		6833889	0					
+ANR	6833913	IdentifierDeclType	int		6833889	0					
+ANR	6833914	Identifier	nb_clusters		6833889	1					
+ANR	6833915	IdentifierDecl	refcount1		6833889	1					
+ANR	6833916	IdentifierDeclType	int		6833889	0					
+ANR	6833917	Identifier	refcount1		6833889	1					
+ANR	6833918	IdentifierDecl	refcount2		6833889	2					
+ANR	6833919	IdentifierDeclType	int		6833889	0					
+ANR	6833920	Identifier	refcount2		6833889	1					
+ANR	6833921	IdentifierDeclStatement	QCowSnapshot * sn ;	13:4:243:259	6833889	3	True				
+ANR	6833922	IdentifierDecl	* sn		6833889	0					
+ANR	6833923	IdentifierDeclType	QCowSnapshot *		6833889	0					
+ANR	6833924	Identifier	sn		6833889	1					
+ANR	6833925	IdentifierDeclStatement	uint16_t * refcount_table ;	15:4:266:290	6833889	4	True				
+ANR	6833926	IdentifierDecl	* refcount_table		6833889	0					
+ANR	6833927	IdentifierDeclType	uint16_t *		6833889	0					
+ANR	6833928	Identifier	refcount_table		6833889	1					
+ANR	6833929	IdentifierDeclStatement	int ret ;	17:4:297:304	6833889	5	True				
+ANR	6833930	IdentifierDecl	ret		6833889	0					
+ANR	6833931	IdentifierDeclType	int		6833889	0					
+ANR	6833932	Identifier	ret		6833889	1					
+ANR	6833933	ExpressionStatement	size = bdrv_getlength ( bs -> file )	21:4:313:344	6833889	6	True				
+ANR	6833934	AssignmentExpression	size = bdrv_getlength ( bs -> file )		6833889	0		=			
+ANR	6833935	Identifier	size		6833889	0					
+ANR	6833936	CallExpression	bdrv_getlength ( bs -> file )		6833889	1					
+ANR	6833937	Callee	bdrv_getlength		6833889	0					
+ANR	6833938	Identifier	bdrv_getlength		6833889	0					
+ANR	6833939	ArgumentList	bs -> file		6833889	1					
+ANR	6833940	Argument	bs -> file		6833889	0					
+ANR	6833941	PtrMemberAccess	bs -> file		6833889	0					
+ANR	6833942	Identifier	bs		6833889	0					
+ANR	6833943	Identifier	file		6833889	1					
+ANR	6833944	ExpressionStatement	"nb_clusters = size_to_clusters ( s , size )"	23:4:351:390	6833889	7	True				
+ANR	6833945	AssignmentExpression	"nb_clusters = size_to_clusters ( s , size )"		6833889	0		=			
+ANR	6833946	Identifier	nb_clusters		6833889	0					
+ANR	6833947	CallExpression	"size_to_clusters ( s , size )"		6833889	1					
+ANR	6833948	Callee	size_to_clusters		6833889	0					
+ANR	6833949	Identifier	size_to_clusters		6833889	0					
+ANR	6833950	ArgumentList	s		6833889	1					
+ANR	6833951	Argument	s		6833889	0					
+ANR	6833952	Identifier	s		6833889	0					
+ANR	6833953	Argument	size		6833889	1					
+ANR	6833954	Identifier	size		6833889	0					
+ANR	6833955	ExpressionStatement	refcount_table = g_malloc0 ( nb_clusters * sizeof ( uint16_t ) )	25:4:397:455	6833889	8	True				
+ANR	6833956	AssignmentExpression	refcount_table = g_malloc0 ( nb_clusters * sizeof ( uint16_t ) )		6833889	0		=			
+ANR	6833957	Identifier	refcount_table		6833889	0					
+ANR	6833958	CallExpression	g_malloc0 ( nb_clusters * sizeof ( uint16_t ) )		6833889	1					
+ANR	6833959	Callee	g_malloc0		6833889	0					
+ANR	6833960	Identifier	g_malloc0		6833889	0					
+ANR	6833961	ArgumentList	nb_clusters * sizeof ( uint16_t )		6833889	1					
+ANR	6833962	Argument	nb_clusters * sizeof ( uint16_t )		6833889	0					
+ANR	6833963	MultiplicativeExpression	nb_clusters * sizeof ( uint16_t )		6833889	0		*			
+ANR	6833964	Identifier	nb_clusters		6833889	0					
+ANR	6833965	SizeofExpression	sizeof ( uint16_t )		6833889	1					
+ANR	6833966	Sizeof	sizeof		6833889	0					
+ANR	6833967	SizeofOperand	uint16_t		6833889	1					
+ANR	6833968	ExpressionStatement	"inc_refcounts ( bs , res , refcount_table , nb_clusters , 0 , s -> cluster_size )"	31:4:482:562	6833889	9	True				
+ANR	6833969	CallExpression	"inc_refcounts ( bs , res , refcount_table , nb_clusters , 0 , s -> cluster_size )"		6833889	0					
+ANR	6833970	Callee	inc_refcounts		6833889	0					
+ANR	6833971	Identifier	inc_refcounts		6833889	0					
+ANR	6833972	ArgumentList	bs		6833889	1					
+ANR	6833973	Argument	bs		6833889	0					
+ANR	6833974	Identifier	bs		6833889	0					
+ANR	6833975	Argument	res		6833889	1					
+ANR	6833976	Identifier	res		6833889	0					
+ANR	6833977	Argument	refcount_table		6833889	2					
+ANR	6833978	Identifier	refcount_table		6833889	0					
+ANR	6833979	Argument	nb_clusters		6833889	3					
+ANR	6833980	Identifier	nb_clusters		6833889	0					
+ANR	6833981	Argument	0		6833889	4					
+ANR	6833982	PrimaryExpression	0		6833889	0					
+ANR	6833983	Argument	s -> cluster_size		6833889	5					
+ANR	6833984	PtrMemberAccess	s -> cluster_size		6833889	0					
+ANR	6833985	Identifier	s		6833889	0					
+ANR	6833986	Identifier	cluster_size		6833889	1					
+ANR	6833987	ExpressionStatement	"ret = check_refcounts_l1 ( bs , res , refcount_table , nb_clusters , s -> l1_table_offset , s -> l1_size , 1 )"	39:4:599:720	6833889	10	True				
+ANR	6833988	AssignmentExpression	"ret = check_refcounts_l1 ( bs , res , refcount_table , nb_clusters , s -> l1_table_offset , s -> l1_size , 1 )"		6833889	0		=			
+ANR	6833989	Identifier	ret		6833889	0					
+ANR	6833990	CallExpression	"check_refcounts_l1 ( bs , res , refcount_table , nb_clusters , s -> l1_table_offset , s -> l1_size , 1 )"		6833889	1					
+ANR	6833991	Callee	check_refcounts_l1		6833889	0					
+ANR	6833992	Identifier	check_refcounts_l1		6833889	0					
+ANR	6833993	ArgumentList	bs		6833889	1					
+ANR	6833994	Argument	bs		6833889	0					
+ANR	6833995	Identifier	bs		6833889	0					
+ANR	6833996	Argument	res		6833889	1					
+ANR	6833997	Identifier	res		6833889	0					
+ANR	6833998	Argument	refcount_table		6833889	2					
+ANR	6833999	Identifier	refcount_table		6833889	0					
+ANR	6834000	Argument	nb_clusters		6833889	3					
+ANR	6834001	Identifier	nb_clusters		6833889	0					
+ANR	6834002	Argument	s -> l1_table_offset		6833889	4					
+ANR	6834003	PtrMemberAccess	s -> l1_table_offset		6833889	0					
+ANR	6834004	Identifier	s		6833889	0					
+ANR	6834005	Identifier	l1_table_offset		6833889	1					
+ANR	6834006	Argument	s -> l1_size		6833889	5					
+ANR	6834007	PtrMemberAccess	s -> l1_size		6833889	0					
+ANR	6834008	Identifier	s		6833889	0					
+ANR	6834009	Identifier	l1_size		6833889	1					
+ANR	6834010	Argument	1		6833889	6					
+ANR	6834011	PrimaryExpression	1		6833889	0					
+ANR	6834012	IfStatement	if ( ret < 0 )		6833889	11					
+ANR	6834013	Condition	ret < 0	43:8:731:737	6833889	0	True				
+ANR	6834014	RelationalExpression	ret < 0		6833889	0		<			
+ANR	6834015	Identifier	ret		6833889	0					
+ANR	6834016	PrimaryExpression	0		6833889	1					
+ANR	6834017	CompoundStatement		39:17:622:622	6833889	1					
+ANR	6834018	GotoStatement	goto fail ;	45:8:751:760	6833889	0	True				
+ANR	6834019	Identifier	fail		6833889	0					
+ANR	6834020	ForStatement	for ( i = 0 ; i < s -> nb_snapshots ; i ++ )		6833889	12					
+ANR	6834021	ForInit	i = 0 ;	53:8:801:806	6833889	0	True				
+ANR	6834022	AssignmentExpression	i = 0		6833889	0		=			
+ANR	6834023	Identifier	i		6833889	0					
+ANR	6834024	PrimaryExpression	0		6833889	1					
+ANR	6834025	Condition	i < s -> nb_snapshots	53:15:808:826	6833889	1	True				
+ANR	6834026	RelationalExpression	i < s -> nb_snapshots		6833889	0		<			
+ANR	6834027	Identifier	i		6833889	0					
+ANR	6834028	PtrMemberAccess	s -> nb_snapshots		6833889	1					
+ANR	6834029	Identifier	s		6833889	0					
+ANR	6834030	Identifier	nb_snapshots		6833889	1					
+ANR	6834031	PostIncDecOperationExpression	i ++	53:36:829:831	6833889	2	True				
+ANR	6834032	Identifier	i		6833889	0					
+ANR	6834033	IncDec	++		6833889	1					
+ANR	6834034	CompoundStatement		49:41:716:716	6833889	3					
+ANR	6834035	ExpressionStatement	sn = s -> snapshots + i	55:8:845:866	6833889	0	True				
+ANR	6834036	AssignmentExpression	sn = s -> snapshots + i		6833889	0		=			
+ANR	6834037	Identifier	sn		6833889	0					
+ANR	6834038	AdditiveExpression	s -> snapshots + i		6833889	1		+			
+ANR	6834039	PtrMemberAccess	s -> snapshots		6833889	0					
+ANR	6834040	Identifier	s		6833889	0					
+ANR	6834041	Identifier	snapshots		6833889	1					
+ANR	6834042	Identifier	i		6833889	1					
+ANR	6834043	ExpressionStatement	"ret = check_refcounts_l1 ( bs , res , refcount_table , nb_clusters , sn -> l1_table_offset , sn -> l1_size , 0 )"	57:8:877:989	6833889	1	True				
+ANR	6834044	AssignmentExpression	"ret = check_refcounts_l1 ( bs , res , refcount_table , nb_clusters , sn -> l1_table_offset , sn -> l1_size , 0 )"		6833889	0		=			
+ANR	6834045	Identifier	ret		6833889	0					
+ANR	6834046	CallExpression	"check_refcounts_l1 ( bs , res , refcount_table , nb_clusters , sn -> l1_table_offset , sn -> l1_size , 0 )"		6833889	1					
+ANR	6834047	Callee	check_refcounts_l1		6833889	0					
+ANR	6834048	Identifier	check_refcounts_l1		6833889	0					
+ANR	6834049	ArgumentList	bs		6833889	1					
+ANR	6834050	Argument	bs		6833889	0					
+ANR	6834051	Identifier	bs		6833889	0					
+ANR	6834052	Argument	res		6833889	1					
+ANR	6834053	Identifier	res		6833889	0					
+ANR	6834054	Argument	refcount_table		6833889	2					
+ANR	6834055	Identifier	refcount_table		6833889	0					
+ANR	6834056	Argument	nb_clusters		6833889	3					
+ANR	6834057	Identifier	nb_clusters		6833889	0					
+ANR	6834058	Argument	sn -> l1_table_offset		6833889	4					
+ANR	6834059	PtrMemberAccess	sn -> l1_table_offset		6833889	0					
+ANR	6834060	Identifier	sn		6833889	0					
+ANR	6834061	Identifier	l1_table_offset		6833889	1					
+ANR	6834062	Argument	sn -> l1_size		6833889	5					
+ANR	6834063	PtrMemberAccess	sn -> l1_size		6833889	0					
+ANR	6834064	Identifier	sn		6833889	0					
+ANR	6834065	Identifier	l1_size		6833889	1					
+ANR	6834066	Argument	0		6833889	6					
+ANR	6834067	PrimaryExpression	0		6833889	0					
+ANR	6834068	IfStatement	if ( ret < 0 )		6833889	2					
+ANR	6834069	Condition	ret < 0	61:12:1004:1010	6833889	0	True				
+ANR	6834070	RelationalExpression	ret < 0		6833889	0		<			
+ANR	6834071	Identifier	ret		6833889	0					
+ANR	6834072	PrimaryExpression	0		6833889	1					
+ANR	6834073	CompoundStatement		57:21:895:895	6833889	1					
+ANR	6834074	GotoStatement	goto fail ;	63:12:1028:1037	6833889	0	True				
+ANR	6834075	Identifier	fail		6833889	0					
+ANR	6834076	ExpressionStatement	"inc_refcounts ( bs , res , refcount_table , nb_clusters , s -> snapshots_offset , s -> snapshots_size )"	69:4:1062:1162	6833889	13	True				
+ANR	6834077	CallExpression	"inc_refcounts ( bs , res , refcount_table , nb_clusters , s -> snapshots_offset , s -> snapshots_size )"		6833889	0					
+ANR	6834078	Callee	inc_refcounts		6833889	0					
+ANR	6834079	Identifier	inc_refcounts		6833889	0					
+ANR	6834080	ArgumentList	bs		6833889	1					
+ANR	6834081	Argument	bs		6833889	0					
+ANR	6834082	Identifier	bs		6833889	0					
+ANR	6834083	Argument	res		6833889	1					
+ANR	6834084	Identifier	res		6833889	0					
+ANR	6834085	Argument	refcount_table		6833889	2					
+ANR	6834086	Identifier	refcount_table		6833889	0					
+ANR	6834087	Argument	nb_clusters		6833889	3					
+ANR	6834088	Identifier	nb_clusters		6833889	0					
+ANR	6834089	Argument	s -> snapshots_offset		6833889	4					
+ANR	6834090	PtrMemberAccess	s -> snapshots_offset		6833889	0					
+ANR	6834091	Identifier	s		6833889	0					
+ANR	6834092	Identifier	snapshots_offset		6833889	1					
+ANR	6834093	Argument	s -> snapshots_size		6833889	5					
+ANR	6834094	PtrMemberAccess	s -> snapshots_size		6833889	0					
+ANR	6834095	Identifier	s		6833889	0					
+ANR	6834096	Identifier	snapshots_size		6833889	1					
+ANR	6834097	ExpressionStatement	"inc_refcounts ( bs , res , refcount_table , nb_clusters , s -> refcount_table_offset , s -> refcount_table_size * sizeof ( uint64_t ) )"	77:4:1196:1334	6833889	14	True				
+ANR	6834098	CallExpression	"inc_refcounts ( bs , res , refcount_table , nb_clusters , s -> refcount_table_offset , s -> refcount_table_size * sizeof ( uint64_t ) )"		6833889	0					
+ANR	6834099	Callee	inc_refcounts		6833889	0					
+ANR	6834100	Identifier	inc_refcounts		6833889	0					
+ANR	6834101	ArgumentList	bs		6833889	1					
+ANR	6834102	Argument	bs		6833889	0					
+ANR	6834103	Identifier	bs		6833889	0					
+ANR	6834104	Argument	res		6833889	1					
+ANR	6834105	Identifier	res		6833889	0					
+ANR	6834106	Argument	refcount_table		6833889	2					
+ANR	6834107	Identifier	refcount_table		6833889	0					
+ANR	6834108	Argument	nb_clusters		6833889	3					
+ANR	6834109	Identifier	nb_clusters		6833889	0					
+ANR	6834110	Argument	s -> refcount_table_offset		6833889	4					
+ANR	6834111	PtrMemberAccess	s -> refcount_table_offset		6833889	0					
+ANR	6834112	Identifier	s		6833889	0					
+ANR	6834113	Identifier	refcount_table_offset		6833889	1					
+ANR	6834114	Argument	s -> refcount_table_size * sizeof ( uint64_t )		6833889	5					
+ANR	6834115	MultiplicativeExpression	s -> refcount_table_size * sizeof ( uint64_t )		6833889	0		*			
+ANR	6834116	PtrMemberAccess	s -> refcount_table_size		6833889	0					
+ANR	6834117	Identifier	s		6833889	0					
+ANR	6834118	Identifier	refcount_table_size		6833889	1					
+ANR	6834119	SizeofExpression	sizeof ( uint64_t )		6833889	1					
+ANR	6834120	Sizeof	sizeof		6833889	0					
+ANR	6834121	SizeofOperand	uint64_t		6833889	1					
+ANR	6834122	ForStatement	for ( i = 0 ; i < s -> refcount_table_size ; i ++ )		6833889	15					
+ANR	6834123	ForInit	i = 0 ;	85:8:1347:1352	6833889	0	True				
+ANR	6834124	AssignmentExpression	i = 0		6833889	0		=			
+ANR	6834125	Identifier	i		6833889	0					
+ANR	6834126	PrimaryExpression	0		6833889	1					
+ANR	6834127	Condition	i < s -> refcount_table_size	85:15:1354:1379	6833889	1	True				
+ANR	6834128	RelationalExpression	i < s -> refcount_table_size		6833889	0		<			
+ANR	6834129	Identifier	i		6833889	0					
+ANR	6834130	PtrMemberAccess	s -> refcount_table_size		6833889	1					
+ANR	6834131	Identifier	s		6833889	0					
+ANR	6834132	Identifier	refcount_table_size		6833889	1					
+ANR	6834133	PostIncDecOperationExpression	i ++	85:43:1382:1384	6833889	2	True				
+ANR	6834134	Identifier	i		6833889	0					
+ANR	6834135	IncDec	++		6833889	1					
+ANR	6834136	CompoundStatement		83:8:1280:1304	6833889	3					
+ANR	6834137	IdentifierDeclStatement	"uint64_t offset , cluster ;"	87:8:1398:1422	6833889	0	True				
+ANR	6834138	IdentifierDecl	offset		6833889	0					
+ANR	6834139	IdentifierDeclType	uint64_t		6833889	0					
+ANR	6834140	Identifier	offset		6833889	1					
+ANR	6834141	IdentifierDecl	cluster		6833889	1					
+ANR	6834142	IdentifierDeclType	uint64_t		6833889	0					
+ANR	6834143	Identifier	cluster		6833889	1					
+ANR	6834144	ExpressionStatement	offset = s -> refcount_table [ i ]	89:8:1433:1462	6833889	1	True				
+ANR	6834145	AssignmentExpression	offset = s -> refcount_table [ i ]		6833889	0		=			
+ANR	6834146	Identifier	offset		6833889	0					
+ANR	6834147	ArrayIndexing	s -> refcount_table [ i ]		6833889	1					
+ANR	6834148	PtrMemberAccess	s -> refcount_table		6833889	0					
+ANR	6834149	Identifier	s		6833889	0					
+ANR	6834150	Identifier	refcount_table		6833889	1					
+ANR	6834151	Identifier	i		6833889	1					
+ANR	6834152	ExpressionStatement	cluster = offset >> s -> cluster_bits	91:8:1473:1508	6833889	2	True				
+ANR	6834153	AssignmentExpression	cluster = offset >> s -> cluster_bits		6833889	0		=			
+ANR	6834154	Identifier	cluster		6833889	0					
+ANR	6834155	ShiftExpression	offset >> s -> cluster_bits		6833889	1		>>			
+ANR	6834156	Identifier	offset		6833889	0					
+ANR	6834157	PtrMemberAccess	s -> cluster_bits		6833889	1					
+ANR	6834158	Identifier	s		6833889	0					
+ANR	6834159	Identifier	cluster_bits		6833889	1					
+ANR	6834160	IfStatement	if ( offset & ( s -> cluster_size - 1 ) )		6833889	3					
+ANR	6834161	Condition	offset & ( s -> cluster_size - 1 )	97:12:1576:1605	6833889	0	True				
+ANR	6834162	BitAndExpression	offset & ( s -> cluster_size - 1 )		6833889	0		&			
+ANR	6834163	Identifier	offset		6833889	0					
+ANR	6834164	AdditiveExpression	s -> cluster_size - 1		6833889	1		-			
+ANR	6834165	PtrMemberAccess	s -> cluster_size		6833889	0					
+ANR	6834166	Identifier	s		6833889	0					
+ANR	6834167	Identifier	cluster_size		6833889	1					
+ANR	6834168	PrimaryExpression	1		6833889	1					
+ANR	6834169	CompoundStatement		93:44:1490:1490	6833889	1					
+ANR	6834170	Statement	fprintf	99:12:1623:1629	6833889	0	True				
+ANR	6834171	Statement	(	99:19:1630:1630	6833889	1	True				
+ANR	6834172	Statement	stderr	99:20:1631:1636	6833889	2	True				
+ANR	6834173	Statement	","	99:26:1637:1637	6833889	3	True				
+ANR	6834174	Statement	"""ERROR refcount block %"""	99:28:1639:1662	6833889	4	True				
+ANR	6834175	Statement	PRId64	99:53:1664:1669	6833889	5	True				
+ANR	6834176	Statement	""" is not """	99:60:1671:1680	6833889	6	True				
+ANR	6834177	Statement	"""cluster aligned; refcount table entry corrupted\\n"""	101:16:1699:1749	6833889	7	True				
+ANR	6834178	Statement	","	101:67:1750:1750	6833889	8	True				
+ANR	6834179	Statement	i	101:69:1752:1752	6833889	9	True				
+ANR	6834180	Statement	)	101:70:1753:1753	6833889	10	True				
+ANR	6834181	ExpressionStatement		101:71:1754:1754	6833889	11	True				
+ANR	6834182	ExpressionStatement	res -> corruptions ++	103:12:1769:1787	6833889	12	True				
+ANR	6834183	PostIncDecOperationExpression	res -> corruptions ++		6833889	0					
+ANR	6834184	PtrMemberAccess	res -> corruptions		6833889	0					
+ANR	6834185	Identifier	res		6833889	0					
+ANR	6834186	Identifier	corruptions		6833889	1					
+ANR	6834187	IncDec	++		6833889	1					
+ANR	6834188	ContinueStatement	continue ;	105:12:1802:1810	6833889	13	True				
+ANR	6834189	IfStatement	if ( cluster >= nb_clusters )		6833889	4					
+ANR	6834190	Condition	cluster >= nb_clusters	111:12:1838:1859	6833889	0	True				
+ANR	6834191	RelationalExpression	cluster >= nb_clusters		6833889	0		>=			
+ANR	6834192	Identifier	cluster		6833889	0					
+ANR	6834193	Identifier	nb_clusters		6833889	1					
+ANR	6834194	CompoundStatement		107:36:1744:1744	6833889	1					
+ANR	6834195	Statement	fprintf	113:12:1877:1883	6833889	0	True				
+ANR	6834196	Statement	(	113:19:1884:1884	6833889	1	True				
+ANR	6834197	Statement	stderr	113:20:1885:1890	6833889	2	True				
+ANR	6834198	Statement	","	113:26:1891:1891	6833889	3	True				
+ANR	6834199	Statement	"""ERROR refcount block %"""	113:28:1893:1916	6833889	4	True				
+ANR	6834200	Statement	PRId64	113:53:1918:1923	6833889	5	True				
+ANR	6834201	Statement	""" is outside image\\n"""	115:20:1946:1966	6833889	6	True				
+ANR	6834202	Statement	","	115:41:1967:1967	6833889	7	True				
+ANR	6834203	Statement	i	115:43:1969:1969	6833889	8	True				
+ANR	6834204	Statement	)	115:44:1970:1970	6833889	9	True				
+ANR	6834205	ExpressionStatement		115:45:1971:1971	6833889	10	True				
+ANR	6834206	ExpressionStatement	res -> corruptions ++	117:12:1986:2004	6833889	11	True				
+ANR	6834207	PostIncDecOperationExpression	res -> corruptions ++		6833889	0					
+ANR	6834208	PtrMemberAccess	res -> corruptions		6833889	0					
+ANR	6834209	Identifier	res		6833889	0					
+ANR	6834210	Identifier	corruptions		6833889	1					
+ANR	6834211	IncDec	++		6833889	1					
+ANR	6834212	ContinueStatement	continue ;	119:12:2019:2027	6833889	12	True				
+ANR	6834213	IfStatement	if ( offset != 0 )		6833889	5					
+ANR	6834214	Condition	offset != 0	125:12:2055:2065	6833889	0	True				
+ANR	6834215	EqualityExpression	offset != 0		6833889	0		!=			
+ANR	6834216	Identifier	offset		6833889	0					
+ANR	6834217	PrimaryExpression	0		6833889	1					
+ANR	6834218	CompoundStatement		121:25:1950:1950	6833889	1					
+ANR	6834219	ExpressionStatement	"inc_refcounts ( bs , res , refcount_table , nb_clusters , offset , s -> cluster_size )"	127:12:2083:2176	6833889	0	True				
+ANR	6834220	CallExpression	"inc_refcounts ( bs , res , refcount_table , nb_clusters , offset , s -> cluster_size )"		6833889	0					
+ANR	6834221	Callee	inc_refcounts		6833889	0					
+ANR	6834222	Identifier	inc_refcounts		6833889	0					
+ANR	6834223	ArgumentList	bs		6833889	1					
+ANR	6834224	Argument	bs		6833889	0					
+ANR	6834225	Identifier	bs		6833889	0					
+ANR	6834226	Argument	res		6833889	1					
+ANR	6834227	Identifier	res		6833889	0					
+ANR	6834228	Argument	refcount_table		6833889	2					
+ANR	6834229	Identifier	refcount_table		6833889	0					
+ANR	6834230	Argument	nb_clusters		6833889	3					
+ANR	6834231	Identifier	nb_clusters		6833889	0					
+ANR	6834232	Argument	offset		6833889	4					
+ANR	6834233	Identifier	offset		6833889	0					
+ANR	6834234	Argument	s -> cluster_size		6833889	5					
+ANR	6834235	PtrMemberAccess	s -> cluster_size		6833889	0					
+ANR	6834236	Identifier	s		6833889	0					
+ANR	6834237	Identifier	cluster_size		6833889	1					
+ANR	6834238	IfStatement	if ( refcount_table [ cluster ] != 1 )		6833889	1					
+ANR	6834239	Condition	refcount_table [ cluster ] != 1	131:16:2195:2222	6833889	0	True				
+ANR	6834240	EqualityExpression	refcount_table [ cluster ] != 1		6833889	0		!=			
+ANR	6834241	ArrayIndexing	refcount_table [ cluster ]		6833889	0					
+ANR	6834242	Identifier	refcount_table		6833889	0					
+ANR	6834243	Identifier	cluster		6833889	1					
+ANR	6834244	PrimaryExpression	1		6833889	1					
+ANR	6834245	CompoundStatement		127:46:2107:2107	6833889	1					
+ANR	6834246	Statement	fprintf	133:16:2244:2250	6833889	0	True				
+ANR	6834247	Statement	(	133:23:2251:2251	6833889	1	True				
+ANR	6834248	Statement	stderr	133:24:2252:2257	6833889	2	True				
+ANR	6834249	Statement	","	133:30:2258:2258	6833889	3	True				
+ANR	6834250	Statement	"""ERROR refcount block %"""	133:32:2260:2283	6833889	4	True				
+ANR	6834251	Statement	PRId64	133:57:2285:2290	6833889	5	True				
+ANR	6834252	Statement	""" refcount=%d\\n"""	135:20:2313:2328	6833889	6	True				
+ANR	6834253	Statement	","	135:36:2329:2329	6833889	7	True				
+ANR	6834254	Statement	i	137:20:2352:2352	6833889	8	True				
+ANR	6834255	Statement	","	137:21:2353:2353	6833889	9	True				
+ANR	6834256	Statement	refcount_table	137:23:2355:2368	6833889	10	True				
+ANR	6834257	Statement	[	137:37:2369:2369	6833889	11	True				
+ANR	6834258	Statement	cluster	137:38:2370:2376	6833889	12	True				
+ANR	6834259	Statement	]	137:45:2377:2377	6833889	13	True				
+ANR	6834260	Statement	)	137:46:2378:2378	6833889	14	True				
+ANR	6834261	ExpressionStatement		137:47:2379:2379	6833889	15	True				
+ANR	6834262	ExpressionStatement	res -> corruptions ++	139:16:2398:2416	6833889	16	True				
+ANR	6834263	PostIncDecOperationExpression	res -> corruptions ++		6833889	0					
+ANR	6834264	PtrMemberAccess	res -> corruptions		6833889	0					
+ANR	6834265	Identifier	res		6833889	0					
+ANR	6834266	Identifier	corruptions		6833889	1					
+ANR	6834267	IncDec	++		6833889	1					
+ANR	6834268	ForStatement	"for ( i = 0 , highest_cluster = 0 ; i < nb_clusters ; i ++ )"		6833889	16					
+ANR	6834269	ForInit	"i = 0 , highest_cluster = 0 ;"	151:9:2493:2519	6833889	0	True				
+ANR	6834270	Expression	"i = 0 , highest_cluster = 0"		6833889	0					
+ANR	6834271	AssignmentExpression	i = 0		6833889	0		=			
+ANR	6834272	Identifier	i		6833889	0					
+ANR	6834273	PrimaryExpression	0		6833889	1					
+ANR	6834274	AssignmentExpression	highest_cluster = 0		6833889	1		=			
+ANR	6834275	Identifier	highest_cluster		6833889	0					
+ANR	6834276	PrimaryExpression	0		6833889	1					
+ANR	6834277	Condition	i < nb_clusters	151:37:2521:2535	6833889	1	True				
+ANR	6834278	RelationalExpression	i < nb_clusters		6833889	0		<			
+ANR	6834279	Identifier	i		6833889	0					
+ANR	6834280	Identifier	nb_clusters		6833889	1					
+ANR	6834281	PostIncDecOperationExpression	i ++	151:54:2538:2540	6833889	2	True				
+ANR	6834282	Identifier	i		6833889	0					
+ANR	6834283	IncDec	++		6833889	1					
+ANR	6834284	CompoundStatement		147:59:2425:2425	6833889	3					
+ANR	6834285	ExpressionStatement	"refcount1 = get_refcount ( bs , i )"	153:8:2554:2585	6833889	0	True				
+ANR	6834286	AssignmentExpression	"refcount1 = get_refcount ( bs , i )"		6833889	0		=			
+ANR	6834287	Identifier	refcount1		6833889	0					
+ANR	6834288	CallExpression	"get_refcount ( bs , i )"		6833889	1					
+ANR	6834289	Callee	get_refcount		6833889	0					
+ANR	6834290	Identifier	get_refcount		6833889	0					
+ANR	6834291	ArgumentList	bs		6833889	1					
+ANR	6834292	Argument	bs		6833889	0					
+ANR	6834293	Identifier	bs		6833889	0					
+ANR	6834294	Argument	i		6833889	1					
+ANR	6834295	Identifier	i		6833889	0					
+ANR	6834296	IfStatement	if ( refcount1 < 0 )		6833889	1					
+ANR	6834297	Condition	refcount1 < 0	155:12:2600:2612	6833889	0	True				
+ANR	6834298	RelationalExpression	refcount1 < 0		6833889	0		<			
+ANR	6834299	Identifier	refcount1		6833889	0					
+ANR	6834300	PrimaryExpression	0		6833889	1					
+ANR	6834301	CompoundStatement		151:27:2497:2497	6833889	1					
+ANR	6834302	Statement	fprintf	157:12:2630:2636	6833889	0	True				
+ANR	6834303	Statement	(	157:19:2637:2637	6833889	1	True				
+ANR	6834304	Statement	stderr	157:20:2638:2643	6833889	2	True				
+ANR	6834305	Statement	","	157:26:2644:2644	6833889	3	True				
+ANR	6834306	Statement	"""Can't get refcount for cluster %"""	157:28:2646:2679	6833889	4	True				
+ANR	6834307	Statement	PRId64	157:63:2681:2686	6833889	5	True				
+ANR	6834308	Statement	""": %s\\n"""	157:70:2688:2695	6833889	6	True				
+ANR	6834309	Statement	","	157:78:2696:2696	6833889	7	True				
+ANR	6834310	Statement	i	159:16:2715:2715	6833889	8	True				
+ANR	6834311	Statement	","	159:17:2716:2716	6833889	9	True				
+ANR	6834312	Statement	strerror	159:19:2718:2725	6833889	10	True				
+ANR	6834313	Statement	(	159:27:2726:2726	6833889	11	True				
+ANR	6834314	Statement	-	159:28:2727:2727	6833889	12	True				
+ANR	6834315	Statement	refcount1	159:29:2728:2736	6833889	13	True				
+ANR	6834316	Statement	)	159:38:2737:2737	6833889	14	True				
+ANR	6834317	Statement	)	159:39:2738:2738	6833889	15	True				
+ANR	6834318	ExpressionStatement		159:40:2739:2739	6833889	16	True				
+ANR	6834319	ExpressionStatement	res -> check_errors ++	161:12:2754:2773	6833889	17	True				
+ANR	6834320	PostIncDecOperationExpression	res -> check_errors ++		6833889	0					
+ANR	6834321	PtrMemberAccess	res -> check_errors		6833889	0					
+ANR	6834322	Identifier	res		6833889	0					
+ANR	6834323	Identifier	check_errors		6833889	1					
+ANR	6834324	IncDec	++		6833889	1					
+ANR	6834325	ContinueStatement	continue ;	163:12:2788:2796	6833889	18	True				
+ANR	6834326	ExpressionStatement	refcount2 = refcount_table [ i ]	169:8:2820:2849	6833889	2	True				
+ANR	6834327	AssignmentExpression	refcount2 = refcount_table [ i ]		6833889	0		=			
+ANR	6834328	Identifier	refcount2		6833889	0					
+ANR	6834329	ArrayIndexing	refcount_table [ i ]		6833889	1					
+ANR	6834330	Identifier	refcount_table		6833889	0					
+ANR	6834331	Identifier	i		6833889	1					
+ANR	6834332	IfStatement	if ( refcount1 > 0 || refcount2 > 0 )		6833889	3					
+ANR	6834333	Condition	refcount1 > 0 || refcount2 > 0	173:12:2866:2895	6833889	0	True				
+ANR	6834334	OrExpression	refcount1 > 0 || refcount2 > 0		6833889	0		||			
+ANR	6834335	RelationalExpression	refcount1 > 0		6833889	0		>			
+ANR	6834336	Identifier	refcount1		6833889	0					
+ANR	6834337	PrimaryExpression	0		6833889	1					
+ANR	6834338	RelationalExpression	refcount2 > 0		6833889	1		>			
+ANR	6834339	Identifier	refcount2		6833889	0					
+ANR	6834340	PrimaryExpression	0		6833889	1					
+ANR	6834341	CompoundStatement		169:44:2780:2780	6833889	1					
+ANR	6834342	ExpressionStatement	highest_cluster = i	175:12:2913:2932	6833889	0	True				
+ANR	6834343	AssignmentExpression	highest_cluster = i		6833889	0		=			
+ANR	6834344	Identifier	highest_cluster		6833889	0					
+ANR	6834345	Identifier	i		6833889	1					
+ANR	6834346	IfStatement	if ( refcount1 != refcount2 )		6833889	4					
+ANR	6834347	Condition	refcount1 != refcount2	181:12:2960:2981	6833889	0	True				
+ANR	6834348	EqualityExpression	refcount1 != refcount2		6833889	0		!=			
+ANR	6834349	Identifier	refcount1		6833889	0					
+ANR	6834350	Identifier	refcount2		6833889	1					
+ANR	6834351	CompoundStatement		183:12:2945:2966	6833889	1					
+ANR	6834352	IdentifierDeclStatement	int * num_fixed = NULL ;	187:12:3063:3084	6833889	0	True				
+ANR	6834353	IdentifierDecl	* num_fixed = NULL		6833889	0					
+ANR	6834354	IdentifierDeclType	int *		6833889	0					
+ANR	6834355	Identifier	num_fixed		6833889	1					
+ANR	6834356	AssignmentExpression	* num_fixed = NULL		6833889	2		=			
+ANR	6834357	Identifier	NULL		6833889	0					
+ANR	6834358	Identifier	NULL		6833889	1					
+ANR	6834359	IfStatement	if ( refcount1 > refcount2 && ( fix & BDRV_FIX_LEAKS ) )		6833889	1					
+ANR	6834360	Condition	refcount1 > refcount2 && ( fix & BDRV_FIX_LEAKS )	189:16:3103:3149	6833889	0	True				
+ANR	6834361	AndExpression	refcount1 > refcount2 && ( fix & BDRV_FIX_LEAKS )		6833889	0		&&			
+ANR	6834362	RelationalExpression	refcount1 > refcount2		6833889	0		>			
+ANR	6834363	Identifier	refcount1		6833889	0					
+ANR	6834364	Identifier	refcount2		6833889	1					
+ANR	6834365	BitAndExpression	fix & BDRV_FIX_LEAKS		6833889	1		&			
+ANR	6834366	Identifier	fix		6833889	0					
+ANR	6834367	Identifier	BDRV_FIX_LEAKS		6833889	1					
+ANR	6834368	CompoundStatement		185:65:3034:3034	6833889	1					
+ANR	6834369	ExpressionStatement	num_fixed = & res -> leaks_fixed	191:16:3171:3200	6833889	0	True				
+ANR	6834370	AssignmentExpression	num_fixed = & res -> leaks_fixed		6833889	0		=			
+ANR	6834371	Identifier	num_fixed		6833889	0					
+ANR	6834372	UnaryOperationExpression	& res -> leaks_fixed		6833889	1					
+ANR	6834373	UnaryOperator	&		6833889	0					
+ANR	6834374	PtrMemberAccess	res -> leaks_fixed		6833889	1					
+ANR	6834375	Identifier	res		6833889	0					
+ANR	6834376	Identifier	leaks_fixed		6833889	1					
+ANR	6834377	ElseStatement	else		6833889	0					
+ANR	6834378	IfStatement	if ( refcount1 < refcount2 && ( fix & BDRV_FIX_ERRORS ) )		6833889	0					
+ANR	6834379	Condition	refcount1 < refcount2 && ( fix & BDRV_FIX_ERRORS )	193:23:3226:3273	6833889	0	True				
+ANR	6834380	AndExpression	refcount1 < refcount2 && ( fix & BDRV_FIX_ERRORS )		6833889	0		&&			
+ANR	6834381	RelationalExpression	refcount1 < refcount2		6833889	0		<			
+ANR	6834382	Identifier	refcount1		6833889	0					
+ANR	6834383	Identifier	refcount2		6833889	1					
+ANR	6834384	BitAndExpression	fix & BDRV_FIX_ERRORS		6833889	1		&			
+ANR	6834385	Identifier	fix		6833889	0					
+ANR	6834386	Identifier	BDRV_FIX_ERRORS		6833889	1					
+ANR	6834387	CompoundStatement		189:73:3158:3158	6833889	1					
+ANR	6834388	ExpressionStatement	num_fixed = & res -> corruptions_fixed	195:16:3295:3330	6833889	0	True				
+ANR	6834389	AssignmentExpression	num_fixed = & res -> corruptions_fixed		6833889	0		=			
+ANR	6834390	Identifier	num_fixed		6833889	0					
+ANR	6834391	UnaryOperationExpression	& res -> corruptions_fixed		6833889	1					
+ANR	6834392	UnaryOperator	&		6833889	0					
+ANR	6834393	PtrMemberAccess	res -> corruptions_fixed		6833889	1					
+ANR	6834394	Identifier	res		6833889	0					
+ANR	6834395	Identifier	corruptions_fixed		6833889	1					
+ANR	6834396	Statement	fprintf	201:12:3362:3368	6833889	2	True				
+ANR	6834397	Statement	(	201:19:3369:3369	6833889	3	True				
+ANR	6834398	Statement	stderr	201:20:3370:3375	6833889	4	True				
+ANR	6834399	Statement	","	201:26:3376:3376	6833889	5	True				
+ANR	6834400	Statement	"""%s cluster %"""	201:28:3378:3391	6833889	6	True				
+ANR	6834401	Statement	PRId64	201:43:3393:3398	6833889	7	True				
+ANR	6834402	Statement	""" refcount=%d reference=%d\\n"""	201:50:3400:3428	6833889	8	True				
+ANR	6834403	Statement	","	201:79:3429:3429	6833889	9	True				
+ANR	6834404	Statement	num_fixed	203:19:3451:3459	6833889	10	True				
+ANR	6834405	Statement	!=	203:29:3461:3462	6833889	11	True				
+ANR	6834406	Statement	NULL	203:32:3464:3467	6833889	12	True				
+ANR	6834407	Statement	?	203:41:3473:3473	6833889	13	True				
+ANR	6834408	Statement	"""Repairing"""	203:43:3475:3485	6833889	14	True				
+ANR	6834409	Statement	:	203:55:3487:3487	6833889	15	True				
+ANR	6834410	Statement	refcount1	205:19:3509:3517	6833889	16	True				
+ANR	6834411	Statement	<	205:29:3519:3519	6833889	17	True				
+ANR	6834412	Statement	refcount2	205:31:3521:3529	6833889	18	True				
+ANR	6834413	Statement	?	205:41:3531:3531	6833889	19	True				
+ANR	6834414	Statement	"""ERROR"""	205:43:3533:3539	6833889	20	True				
+ANR	6834415	Statement	:	205:51:3541:3541	6833889	21	True				
+ANR	6834416	Statement	"""Leaked"""	207:43:3587:3594	6833889	22	True				
+ANR	6834417	Statement	","	207:51:3595:3595	6833889	23	True				
+ANR	6834418	Statement	i	209:19:3617:3617	6833889	24	True				
+ANR	6834419	Statement	","	209:20:3618:3618	6833889	25	True				
+ANR	6834420	Statement	refcount1	209:22:3620:3628	6833889	26	True				
+ANR	6834421	Statement	","	209:31:3629:3629	6833889	27	True				
+ANR	6834422	Statement	refcount2	209:33:3631:3639	6833889	28	True				
+ANR	6834423	Statement	)	209:42:3640:3640	6833889	29	True				
+ANR	6834424	ExpressionStatement		209:43:3641:3641	6833889	30	True				
+ANR	6834425	IfStatement	if ( num_fixed )		6833889	31					
+ANR	6834426	Condition	num_fixed	213:16:3662:3670	6833889	0	True				
+ANR	6834427	Identifier	num_fixed		6833889	0					
+ANR	6834428	CompoundStatement		209:27:3555:3555	6833889	1					
+ANR	6834429	ExpressionStatement	"ret = update_refcount ( bs , i << s -> cluster_bits , 1 , refcount2 - refcount1 )"	215:16:3692:3804	6833889	0	True				
+ANR	6834430	AssignmentExpression	"ret = update_refcount ( bs , i << s -> cluster_bits , 1 , refcount2 - refcount1 )"		6833889	0		=			
+ANR	6834431	Identifier	ret		6833889	0					
+ANR	6834432	CallExpression	"update_refcount ( bs , i << s -> cluster_bits , 1 , refcount2 - refcount1 )"		6833889	1					
+ANR	6834433	Callee	update_refcount		6833889	0					
+ANR	6834434	Identifier	update_refcount		6833889	0					
+ANR	6834435	ArgumentList	bs		6833889	1					
+ANR	6834436	Argument	bs		6833889	0					
+ANR	6834437	Identifier	bs		6833889	0					
+ANR	6834438	Argument	i << s -> cluster_bits		6833889	1					
+ANR	6834439	ShiftExpression	i << s -> cluster_bits		6833889	0		<<			
+ANR	6834440	Identifier	i		6833889	0					
+ANR	6834441	PtrMemberAccess	s -> cluster_bits		6833889	1					
+ANR	6834442	Identifier	s		6833889	0					
+ANR	6834443	Identifier	cluster_bits		6833889	1					
+ANR	6834444	Argument	1		6833889	2					
+ANR	6834445	PrimaryExpression	1		6833889	0					
+ANR	6834446	Argument	refcount2 - refcount1		6833889	3					
+ANR	6834447	AdditiveExpression	refcount2 - refcount1		6833889	0		-			
+ANR	6834448	Identifier	refcount2		6833889	0					
+ANR	6834449	Identifier	refcount1		6833889	1					
+ANR	6834450	IfStatement	if ( ret >= 0 )		6833889	1					
+ANR	6834451	Condition	ret >= 0	219:20:3827:3834	6833889	0	True				
+ANR	6834452	RelationalExpression	ret >= 0		6833889	0		>=			
+ANR	6834453	Identifier	ret		6833889	0					
+ANR	6834454	PrimaryExpression	0		6833889	1					
+ANR	6834455	CompoundStatement		215:30:3719:3719	6833889	1					
+ANR	6834456	ExpressionStatement	( * num_fixed ) ++	221:20:3860:3874	6833889	0	True				
+ANR	6834457	PostIncDecOperationExpression	( * num_fixed ) ++		6833889	0					
+ANR	6834458	UnaryOperationExpression	* num_fixed		6833889	0					
+ANR	6834459	UnaryOperator	*		6833889	0					
+ANR	6834460	Identifier	num_fixed		6833889	1					
+ANR	6834461	IncDec	++		6833889	1					
+ANR	6834462	ContinueStatement	continue ;	223:20:3897:3905	6833889	1	True				
+ANR	6834463	IfStatement	if ( refcount1 < refcount2 )		6833889	32					
+ANR	6834464	Condition	refcount1 < refcount2	233:16:4014:4034	6833889	0	True				
+ANR	6834465	RelationalExpression	refcount1 < refcount2		6833889	0		<			
+ANR	6834466	Identifier	refcount1		6833889	0					
+ANR	6834467	Identifier	refcount2		6833889	1					
+ANR	6834468	CompoundStatement		229:39:3919:3919	6833889	1					
+ANR	6834469	ExpressionStatement	res -> corruptions ++	235:16:4056:4074	6833889	0	True				
+ANR	6834470	PostIncDecOperationExpression	res -> corruptions ++		6833889	0					
+ANR	6834471	PtrMemberAccess	res -> corruptions		6833889	0					
+ANR	6834472	Identifier	res		6833889	0					
+ANR	6834473	Identifier	corruptions		6833889	1					
+ANR	6834474	IncDec	++		6833889	1					
+ANR	6834475	ElseStatement	else		6833889	0					
+ANR	6834476	CompoundStatement		233:19:3978:3978	6833889	0					
+ANR	6834477	ExpressionStatement	res -> leaks ++	239:16:4115:4127	6833889	0	True				
+ANR	6834478	PostIncDecOperationExpression	res -> leaks ++		6833889	0					
+ANR	6834479	PtrMemberAccess	res -> leaks		6833889	0					
+ANR	6834480	Identifier	res		6833889	0					
+ANR	6834481	Identifier	leaks		6833889	1					
+ANR	6834482	IncDec	++		6833889	1					
+ANR	6834483	ExpressionStatement	res -> image_end_offset = ( highest_cluster + 1 ) * s -> cluster_size	249:4:4169:4232	6833889	17	True				
+ANR	6834484	AssignmentExpression	res -> image_end_offset = ( highest_cluster + 1 ) * s -> cluster_size		6833889	0		=			
+ANR	6834485	PtrMemberAccess	res -> image_end_offset		6833889	0					
+ANR	6834486	Identifier	res		6833889	0					
+ANR	6834487	Identifier	image_end_offset		6833889	1					
+ANR	6834488	MultiplicativeExpression	( highest_cluster + 1 ) * s -> cluster_size		6833889	1		*			
+ANR	6834489	AdditiveExpression	highest_cluster + 1		6833889	0		+			
+ANR	6834490	Identifier	highest_cluster		6833889	0					
+ANR	6834491	PrimaryExpression	1		6833889	1					
+ANR	6834492	PtrMemberAccess	s -> cluster_size		6833889	1					
+ANR	6834493	Identifier	s		6833889	0					
+ANR	6834494	Identifier	cluster_size		6833889	1					
+ANR	6834495	ExpressionStatement	ret = 0	251:4:4239:4246	6833889	18	True				
+ANR	6834496	AssignmentExpression	ret = 0		6833889	0		=			
+ANR	6834497	Identifier	ret		6833889	0					
+ANR	6834498	PrimaryExpression	0		6833889	1					
+ANR	6834499	Label	fail :	255:0:4251:4255	6833889	19	True				
+ANR	6834500	Identifier	fail		6833889	0					
+ANR	6834501	ExpressionStatement	g_free ( refcount_table )	257:4:4262:4284	6833889	20	True				
+ANR	6834502	CallExpression	g_free ( refcount_table )		6833889	0					
+ANR	6834503	Callee	g_free		6833889	0					
+ANR	6834504	Identifier	g_free		6833889	0					
+ANR	6834505	ArgumentList	refcount_table		6833889	1					
+ANR	6834506	Argument	refcount_table		6833889	0					
+ANR	6834507	Identifier	refcount_table		6833889	0					
+ANR	6834508	ReturnStatement	return ret ;	261:4:4293:4303	6833889	21	True				
+ANR	6834509	Identifier	ret		6833889	0					
+ANR	6834510	ReturnType	int		6833889	1					
+ANR	6834511	Identifier	qcow2_check_refcounts		6833889	2					
+ANR	6834512	ParameterList	"BlockDriverState * bs , BdrvCheckResult * res , BdrvCheckMode fix"		6833889	3					
+ANR	6834513	Parameter	BlockDriverState * bs	1:26:26:45	6833889	0	True				
+ANR	6834514	ParameterType	BlockDriverState *		6833889	0					
+ANR	6834515	Identifier	bs		6833889	1					
+ANR	6834516	Parameter	BdrvCheckResult * res	1:48:48:67	6833889	1	True				
+ANR	6834517	ParameterType	BdrvCheckResult *		6833889	0					
+ANR	6834518	Identifier	res		6833889	1					
+ANR	6834519	Parameter	BdrvCheckMode fix	3:26:97:113	6833889	2	True				
+ANR	6834520	ParameterType	BdrvCheckMode		6833889	0					
+ANR	6834521	Identifier	fix		6833889	1					
+ANR	6834522	CFGEntryNode	ENTRY		6833889		True				
+ANR	6834523	CFGExitNode	EXIT		6833889		True				
+ANR	6834524	Symbol	sn -> l1_table_offset		6833889						
+ANR	6834525	Symbol	cluster		6833889						
+ANR	6834526	Symbol	res -> check_errors		6833889						
+ANR	6834527	Symbol	* sn		6833889						
+ANR	6834528	Symbol	bs -> file		6833889						
+ANR	6834529	Symbol	* refcount_table		6833889						
+ANR	6834530	Symbol	update_refcount		6833889						
+ANR	6834531	Symbol	s -> cluster_size		6833889						
+ANR	6834532	Symbol	fix		6833889						
+ANR	6834533	Symbol	* bs		6833889						
+ANR	6834534	Symbol	get_refcount		6833889						
+ANR	6834535	Symbol	refcount2		6833889						
+ANR	6834536	Symbol	BDRV_FIX_ERRORS		6833889						
+ANR	6834537	Symbol	refcount1		6833889						
+ANR	6834538	Symbol	check_refcounts_l1		6833889						
+ANR	6834539	Symbol	highest_cluster		6833889						
+ANR	6834540	Symbol	ret		6833889						
+ANR	6834541	Symbol	s -> snapshots		6833889						
+ANR	6834542	Symbol	res		6833889						
+ANR	6834543	Symbol	NULL		6833889						
+ANR	6834544	Symbol	offset		6833889						
+ANR	6834545	Symbol	size_to_clusters		6833889						
+ANR	6834546	Symbol	refcount_table		6833889						
+ANR	6834547	Symbol	sn -> l1_size		6833889						
+ANR	6834548	Symbol	res -> image_end_offset		6833889						
+ANR	6834549	Symbol	s -> l1_size		6833889						
+ANR	6834550	Symbol	size		6833889						
+ANR	6834551	Symbol	res -> leaks		6833889						
+ANR	6834552	Symbol	& res -> leaks_fixed		6833889						
+ANR	6834553	Symbol	num_fixed		6833889						
+ANR	6834554	Symbol	g_malloc0		6833889						
+ANR	6834555	Symbol	s -> refcount_table_size		6833889						
+ANR	6834556	Symbol	s -> refcount_table_offset		6833889						
+ANR	6834557	Symbol	& res -> corruptions_fixed		6833889						
+ANR	6834558	Symbol	nb_clusters		6833889						
+ANR	6834559	Symbol	* res		6833889						
+ANR	6834560	Symbol	bs		6833889						
+ANR	6834561	Symbol	* s -> refcount_table		6833889						
+ANR	6834562	Symbol	* * s		6833889						
+ANR	6834563	Symbol	res -> corruptions		6833889						
+ANR	6834564	Symbol	sn		6833889						
+ANR	6834565	Symbol	bdrv_getlength		6833889						
+ANR	6834566	Symbol	* cluster		6833889						
+ANR	6834567	Symbol	bs -> opaque		6833889						
+ANR	6834568	Symbol	i		6833889						
+ANR	6834569	Symbol	s -> snapshots_size		6833889						
+ANR	6834570	Symbol	s -> nb_snapshots		6833889						
+ANR	6834571	Symbol	s -> cluster_bits		6833889						
+ANR	6834572	Symbol	* num_fixed		6833889						
+ANR	6834573	Symbol	s		6833889						
+ANR	6834574	Symbol	* i		6833889						
+ANR	6834575	Symbol	s -> l1_table_offset		6833889						
+ANR	6834576	Symbol	s -> snapshots_offset		6833889						
+ANR	6834577	Symbol	s -> refcount_table		6833889						
+ANR	6834578	Symbol	* s		6833889						
+ANR	6834579	Symbol	BDRV_FIX_LEAKS		6833889						

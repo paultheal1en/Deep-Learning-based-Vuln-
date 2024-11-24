@@ -1,0 +1,129 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5875388	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mxf_read_content_storage_02_1.c								
+ANR	5875389	Function	mxf_read_content_storage	1:0:0:592							
+ANR	5875390	FunctionDef	"mxf_read_content_storage (void * arg , AVIOContext * pb , int tag , int size , UID uid , int64_t klv_offset)"		5875389	0					
+ANR	5875391	CompoundStatement		3:0:113:592	5875389	0					
+ANR	5875392	IdentifierDeclStatement	MXFContext * mxf = arg ;	5:4:120:141	5875389	0	True				
+ANR	5875393	IdentifierDecl	* mxf = arg		5875389	0					
+ANR	5875394	IdentifierDeclType	MXFContext *		5875389	0					
+ANR	5875395	Identifier	mxf		5875389	1					
+ANR	5875396	AssignmentExpression	* mxf = arg		5875389	2		=			
+ANR	5875397	Identifier	arg		5875389	0					
+ANR	5875398	Identifier	arg		5875389	1					
+ANR	5875399	SwitchStatement	switch ( tag )		5875389	1					
+ANR	5875400	Condition	tag	7:12:156:158	5875389	0	True				
+ANR	5875401	Identifier	tag		5875389	0					
+ANR	5875402	CompoundStatement		5:17:47:47	5875389	1					
+ANR	5875403	Label	case 0x1901 :	9:4:168:179	5875389	0	True				
+ANR	5875404	ExpressionStatement	mxf -> packages_count = avio_rb32 ( pb )	14:8:193:228	5875389	1	True				
+ANR	5875405	AssignmentExpression	mxf -> packages_count = avio_rb32 ( pb )		5875389	0		=			
+ANR	5875406	PtrMemberAccess	mxf -> packages_count		5875389	0					
+ANR	5875407	Identifier	mxf		5875389	0					
+ANR	5875408	Identifier	packages_count		5875389	1					
+ANR	5875409	CallExpression	avio_rb32 ( pb )		5875389	1					
+ANR	5875410	Callee	avio_rb32		5875389	0					
+ANR	5875411	Identifier	avio_rb32		5875389	0					
+ANR	5875412	ArgumentList	pb		5875389	1					
+ANR	5875413	Argument	pb		5875389	0					
+ANR	5875414	Identifier	pb		5875389	0					
+ANR	5875415	ExpressionStatement	"mxf -> packages_refs = av_calloc ( mxf -> packages_count , sizeof ( UID ) )"	16:8:239:303	5875389	2	True				
+ANR	5875416	AssignmentExpression	"mxf -> packages_refs = av_calloc ( mxf -> packages_count , sizeof ( UID ) )"		5875389	0		=			
+ANR	5875417	PtrMemberAccess	mxf -> packages_refs		5875389	0					
+ANR	5875418	Identifier	mxf		5875389	0					
+ANR	5875419	Identifier	packages_refs		5875389	1					
+ANR	5875420	CallExpression	"av_calloc ( mxf -> packages_count , sizeof ( UID ) )"		5875389	1					
+ANR	5875421	Callee	av_calloc		5875389	0					
+ANR	5875422	Identifier	av_calloc		5875389	0					
+ANR	5875423	ArgumentList	mxf -> packages_count		5875389	1					
+ANR	5875424	Argument	mxf -> packages_count		5875389	0					
+ANR	5875425	PtrMemberAccess	mxf -> packages_count		5875389	0					
+ANR	5875426	Identifier	mxf		5875389	0					
+ANR	5875427	Identifier	packages_count		5875389	1					
+ANR	5875428	Argument	sizeof ( UID )		5875389	1					
+ANR	5875429	SizeofExpression	sizeof ( UID )		5875389	0					
+ANR	5875430	Sizeof	sizeof		5875389	0					
+ANR	5875431	SizeofOperand	UID		5875389	1					
+ANR	5875432	IfStatement	if ( ! mxf -> packages_refs )		5875389	3					
+ANR	5875433	Condition	! mxf -> packages_refs	18:12:318:336	5875389	0	True				
+ANR	5875434	UnaryOperationExpression	! mxf -> packages_refs		5875389	0					
+ANR	5875435	UnaryOperator	!		5875389	0					
+ANR	5875436	PtrMemberAccess	mxf -> packages_refs		5875389	1					
+ANR	5875437	Identifier	mxf		5875389	0					
+ANR	5875438	Identifier	packages_refs		5875389	1					
+ANR	5875439	ReturnStatement	return AVERROR ( ENOMEM ) ;	20:12:352:374	5875389	1	True				
+ANR	5875440	CallExpression	AVERROR ( ENOMEM )		5875389	0					
+ANR	5875441	Callee	AVERROR		5875389	0					
+ANR	5875442	Identifier	AVERROR		5875389	0					
+ANR	5875443	ArgumentList	ENOMEM		5875389	1					
+ANR	5875444	Argument	ENOMEM		5875389	0					
+ANR	5875445	Identifier	ENOMEM		5875389	0					
+ANR	5875446	ExpressionStatement	"avio_skip ( pb , 4 )"	22:8:385:401	5875389	4	True				
+ANR	5875447	CallExpression	"avio_skip ( pb , 4 )"		5875389	0					
+ANR	5875448	Callee	avio_skip		5875389	0					
+ANR	5875449	Identifier	avio_skip		5875389	0					
+ANR	5875450	ArgumentList	pb		5875389	1					
+ANR	5875451	Argument	pb		5875389	0					
+ANR	5875452	Identifier	pb		5875389	0					
+ANR	5875453	Argument	4		5875389	1					
+ANR	5875454	PrimaryExpression	4		5875389	0					
+ANR	5875455	ExpressionStatement	"avio_read ( pb , ( uint8_t * ) mxf -> packages_refs , mxf -> packages_count * sizeof ( UID ) )"	24:8:472:551	5875389	5	True				
+ANR	5875456	CallExpression	"avio_read ( pb , ( uint8_t * ) mxf -> packages_refs , mxf -> packages_count * sizeof ( UID ) )"		5875389	0					
+ANR	5875457	Callee	avio_read		5875389	0					
+ANR	5875458	Identifier	avio_read		5875389	0					
+ANR	5875459	ArgumentList	pb		5875389	1					
+ANR	5875460	Argument	pb		5875389	0					
+ANR	5875461	Identifier	pb		5875389	0					
+ANR	5875462	Argument	( uint8_t * ) mxf -> packages_refs		5875389	1					
+ANR	5875463	CastExpression	( uint8_t * ) mxf -> packages_refs		5875389	0					
+ANR	5875464	CastTarget	uint8_t *		5875389	0					
+ANR	5875465	PtrMemberAccess	mxf -> packages_refs		5875389	1					
+ANR	5875466	Identifier	mxf		5875389	0					
+ANR	5875467	Identifier	packages_refs		5875389	1					
+ANR	5875468	Argument	mxf -> packages_count * sizeof ( UID )		5875389	2					
+ANR	5875469	MultiplicativeExpression	mxf -> packages_count * sizeof ( UID )		5875389	0		*			
+ANR	5875470	PtrMemberAccess	mxf -> packages_count		5875389	0					
+ANR	5875471	Identifier	mxf		5875389	0					
+ANR	5875472	Identifier	packages_count		5875389	1					
+ANR	5875473	SizeofExpression	sizeof ( UID )		5875389	1					
+ANR	5875474	Sizeof	sizeof		5875389	0					
+ANR	5875475	SizeofOperand	UID		5875389	1					
+ANR	5875476	BreakStatement	break ;	26:8:562:567	5875389	6	True				
+ANR	5875477	ReturnStatement	return 0 ;	30:4:581:589	5875389	2	True				
+ANR	5875478	PrimaryExpression	0		5875389	0					
+ANR	5875479	ReturnType	static int		5875389	1					
+ANR	5875480	Identifier	mxf_read_content_storage		5875389	2					
+ANR	5875481	ParameterList	"void * arg , AVIOContext * pb , int tag , int size , UID uid , int64_t klv_offset"		5875389	3					
+ANR	5875482	Parameter	void * arg	1:36:36:44	5875389	0	True				
+ANR	5875483	ParameterType	void *		5875389	0					
+ANR	5875484	Identifier	arg		5875389	1					
+ANR	5875485	Parameter	AVIOContext * pb	1:47:47:61	5875389	1	True				
+ANR	5875486	ParameterType	AVIOContext *		5875389	0					
+ANR	5875487	Identifier	pb		5875389	1					
+ANR	5875488	Parameter	int tag	1:64:64:70	5875389	2	True				
+ANR	5875489	ParameterType	int		5875389	0					
+ANR	5875490	Identifier	tag		5875389	1					
+ANR	5875491	Parameter	int size	1:73:73:80	5875389	3	True				
+ANR	5875492	ParameterType	int		5875389	0					
+ANR	5875493	Identifier	size		5875389	1					
+ANR	5875494	Parameter	UID uid	1:83:83:89	5875389	4	True				
+ANR	5875495	ParameterType	UID		5875389	0					
+ANR	5875496	Identifier	uid		5875389	1					
+ANR	5875497	Parameter	int64_t klv_offset	1:92:92:109	5875389	5	True				
+ANR	5875498	ParameterType	int64_t		5875389	0					
+ANR	5875499	Identifier	klv_offset		5875389	1					
+ANR	5875500	CFGEntryNode	ENTRY		5875389		True				
+ANR	5875501	CFGExitNode	EXIT		5875389		True				
+ANR	5875502	Symbol	ENOMEM		5875389						
+ANR	5875503	Symbol	* mxf		5875389						
+ANR	5875504	Symbol	uid		5875389						
+ANR	5875505	Symbol	pb		5875389						
+ANR	5875506	Symbol	avio_rb32		5875389						
+ANR	5875507	Symbol	mxf -> packages_count		5875389						
+ANR	5875508	Symbol	size		5875389						
+ANR	5875509	Symbol	arg		5875389						
+ANR	5875510	Symbol	mxf		5875389						
+ANR	5875511	Symbol	mxf -> packages_refs		5875389						
+ANR	5875512	Symbol	tag		5875389						
+ANR	5875513	Symbol	AVERROR		5875389						
+ANR	5875514	Symbol	klv_offset		5875389						
+ANR	5875515	Symbol	av_calloc		5875389						

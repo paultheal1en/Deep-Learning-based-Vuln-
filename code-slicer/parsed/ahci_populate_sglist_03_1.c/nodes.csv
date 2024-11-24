@@ -1,0 +1,583 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	478033	File	/home/p4ultr4n/workplace/ReVeal/raw_code/ahci_populate_sglist_03_1.c								
+ANR	478034	Function	ahci_populate_sglist	1:0:0:3267							
+ANR	478035	FunctionDef	"ahci_populate_sglist (AHCIDevice * ad , QEMUSGList * sglist , AHCICmdHdr * cmd , int64_t limit , int32_t offset)"		478034	0					
+ANR	478036	CompoundStatement		5:0:150:3267	478034	0					
+ANR	478037	IdentifierDeclStatement	uint16_t opts = le16_to_cpu ( cmd -> opts ) ;	7:4:157:195	478034	0	True				
+ANR	478038	IdentifierDecl	opts = le16_to_cpu ( cmd -> opts )		478034	0					
+ANR	478039	IdentifierDeclType	uint16_t		478034	0					
+ANR	478040	Identifier	opts		478034	1					
+ANR	478041	AssignmentExpression	opts = le16_to_cpu ( cmd -> opts )		478034	2		=			
+ANR	478042	Identifier	opts		478034	0					
+ANR	478043	CallExpression	le16_to_cpu ( cmd -> opts )		478034	1					
+ANR	478044	Callee	le16_to_cpu		478034	0					
+ANR	478045	Identifier	le16_to_cpu		478034	0					
+ANR	478046	ArgumentList	cmd -> opts		478034	1					
+ANR	478047	Argument	cmd -> opts		478034	0					
+ANR	478048	PtrMemberAccess	cmd -> opts		478034	0					
+ANR	478049	Identifier	cmd		478034	0					
+ANR	478050	Identifier	opts		478034	1					
+ANR	478051	IdentifierDeclStatement	uint16_t prdtl = le16_to_cpu ( cmd -> prdtl ) ;	9:4:202:242	478034	1	True				
+ANR	478052	IdentifierDecl	prdtl = le16_to_cpu ( cmd -> prdtl )		478034	0					
+ANR	478053	IdentifierDeclType	uint16_t		478034	0					
+ANR	478054	Identifier	prdtl		478034	1					
+ANR	478055	AssignmentExpression	prdtl = le16_to_cpu ( cmd -> prdtl )		478034	2		=			
+ANR	478056	Identifier	prdtl		478034	0					
+ANR	478057	CallExpression	le16_to_cpu ( cmd -> prdtl )		478034	1					
+ANR	478058	Callee	le16_to_cpu		478034	0					
+ANR	478059	Identifier	le16_to_cpu		478034	0					
+ANR	478060	ArgumentList	cmd -> prdtl		478034	1					
+ANR	478061	Argument	cmd -> prdtl		478034	0					
+ANR	478062	PtrMemberAccess	cmd -> prdtl		478034	0					
+ANR	478063	Identifier	cmd		478034	0					
+ANR	478064	Identifier	prdtl		478034	1					
+ANR	478065	IdentifierDeclStatement	uint64_t cfis_addr = le64_to_cpu ( cmd -> tbl_addr ) ;	11:4:249:296	478034	2	True				
+ANR	478066	IdentifierDecl	cfis_addr = le64_to_cpu ( cmd -> tbl_addr )		478034	0					
+ANR	478067	IdentifierDeclType	uint64_t		478034	0					
+ANR	478068	Identifier	cfis_addr		478034	1					
+ANR	478069	AssignmentExpression	cfis_addr = le64_to_cpu ( cmd -> tbl_addr )		478034	2		=			
+ANR	478070	Identifier	cfis_addr		478034	0					
+ANR	478071	CallExpression	le64_to_cpu ( cmd -> tbl_addr )		478034	1					
+ANR	478072	Callee	le64_to_cpu		478034	0					
+ANR	478073	Identifier	le64_to_cpu		478034	0					
+ANR	478074	ArgumentList	cmd -> tbl_addr		478034	1					
+ANR	478075	Argument	cmd -> tbl_addr		478034	0					
+ANR	478076	PtrMemberAccess	cmd -> tbl_addr		478034	0					
+ANR	478077	Identifier	cmd		478034	0					
+ANR	478078	Identifier	tbl_addr		478034	1					
+ANR	478079	IdentifierDeclStatement	uint64_t prdt_addr = cfis_addr + 0x80 ;	13:4:303:340	478034	3	True				
+ANR	478080	IdentifierDecl	prdt_addr = cfis_addr + 0x80		478034	0					
+ANR	478081	IdentifierDeclType	uint64_t		478034	0					
+ANR	478082	Identifier	prdt_addr		478034	1					
+ANR	478083	AssignmentExpression	prdt_addr = cfis_addr + 0x80		478034	2		=			
+ANR	478084	Identifier	prdt_addr		478034	0					
+ANR	478085	AdditiveExpression	cfis_addr + 0x80		478034	1		+			
+ANR	478086	Identifier	cfis_addr		478034	0					
+ANR	478087	PrimaryExpression	0x80		478034	1					
+ANR	478088	IdentifierDeclStatement	dma_addr_t prdt_len = ( prdtl * sizeof ( AHCI_SG ) ) ;	15:4:347:394	478034	4	True				
+ANR	478089	IdentifierDecl	prdt_len = ( prdtl * sizeof ( AHCI_SG ) )		478034	0					
+ANR	478090	IdentifierDeclType	dma_addr_t		478034	0					
+ANR	478091	Identifier	prdt_len		478034	1					
+ANR	478092	AssignmentExpression	prdt_len = ( prdtl * sizeof ( AHCI_SG ) )		478034	2		=			
+ANR	478093	Identifier	prdt_len		478034	0					
+ANR	478094	MultiplicativeExpression	prdtl * sizeof ( AHCI_SG )		478034	1		*			
+ANR	478095	Identifier	prdtl		478034	0					
+ANR	478096	SizeofExpression	sizeof ( AHCI_SG )		478034	1					
+ANR	478097	Sizeof	sizeof		478034	0					
+ANR	478098	SizeofOperand	AHCI_SG		478034	1					
+ANR	478099	IdentifierDeclStatement	dma_addr_t real_prdt_len = prdt_len ;	17:4:401:436	478034	5	True				
+ANR	478100	IdentifierDecl	real_prdt_len = prdt_len		478034	0					
+ANR	478101	IdentifierDeclType	dma_addr_t		478034	0					
+ANR	478102	Identifier	real_prdt_len		478034	1					
+ANR	478103	AssignmentExpression	real_prdt_len = prdt_len		478034	2		=			
+ANR	478104	Identifier	prdt_len		478034	0					
+ANR	478105	Identifier	prdt_len		478034	1					
+ANR	478106	IdentifierDeclStatement	uint8_t * prdt ;	19:4:443:456	478034	6	True				
+ANR	478107	IdentifierDecl	* prdt		478034	0					
+ANR	478108	IdentifierDeclType	uint8_t *		478034	0					
+ANR	478109	Identifier	prdt		478034	1					
+ANR	478110	IdentifierDeclStatement	int i ;	21:4:463:468	478034	7	True				
+ANR	478111	IdentifierDecl	i		478034	0					
+ANR	478112	IdentifierDeclType	int		478034	0					
+ANR	478113	Identifier	i		478034	1					
+ANR	478114	IdentifierDeclStatement	int r = 0 ;	23:4:475:484	478034	8	True				
+ANR	478115	IdentifierDecl	r = 0		478034	0					
+ANR	478116	IdentifierDeclType	int		478034	0					
+ANR	478117	Identifier	r		478034	1					
+ANR	478118	AssignmentExpression	r = 0		478034	2		=			
+ANR	478119	Identifier	r		478034	0					
+ANR	478120	PrimaryExpression	0		478034	1					
+ANR	478121	IdentifierDeclStatement	uint64_t sum = 0 ;	25:4:491:507	478034	9	True				
+ANR	478122	IdentifierDecl	sum = 0		478034	0					
+ANR	478123	IdentifierDeclType	uint64_t		478034	0					
+ANR	478124	Identifier	sum		478034	1					
+ANR	478125	AssignmentExpression	sum = 0		478034	2		=			
+ANR	478126	Identifier	sum		478034	0					
+ANR	478127	PrimaryExpression	0		478034	1					
+ANR	478128	IdentifierDeclStatement	int off_idx = - 1 ;	27:4:514:530	478034	10	True				
+ANR	478129	IdentifierDecl	off_idx = - 1		478034	0					
+ANR	478130	IdentifierDeclType	int		478034	0					
+ANR	478131	Identifier	off_idx		478034	1					
+ANR	478132	AssignmentExpression	off_idx = - 1		478034	2		=			
+ANR	478133	Identifier	off_idx		478034	0					
+ANR	478134	UnaryOperationExpression	- 1		478034	1					
+ANR	478135	UnaryOperator	-		478034	0					
+ANR	478136	PrimaryExpression	1		478034	1					
+ANR	478137	IdentifierDeclStatement	int64_t off_pos = - 1 ;	29:4:537:557	478034	11	True				
+ANR	478138	IdentifierDecl	off_pos = - 1		478034	0					
+ANR	478139	IdentifierDeclType	int64_t		478034	0					
+ANR	478140	Identifier	off_pos		478034	1					
+ANR	478141	AssignmentExpression	off_pos = - 1		478034	2		=			
+ANR	478142	Identifier	off_pos		478034	0					
+ANR	478143	UnaryOperationExpression	- 1		478034	1					
+ANR	478144	UnaryOperator	-		478034	0					
+ANR	478145	PrimaryExpression	1		478034	1					
+ANR	478146	IdentifierDeclStatement	int tbl_entry_size ;	31:4:564:582	478034	12	True				
+ANR	478147	IdentifierDecl	tbl_entry_size		478034	0					
+ANR	478148	IdentifierDeclType	int		478034	0					
+ANR	478149	Identifier	tbl_entry_size		478034	1					
+ANR	478150	IdentifierDeclStatement	IDEBus * bus = & ad -> port ;	33:4:589:612	478034	13	True				
+ANR	478151	IdentifierDecl	* bus = & ad -> port		478034	0					
+ANR	478152	IdentifierDeclType	IDEBus *		478034	0					
+ANR	478153	Identifier	bus		478034	1					
+ANR	478154	AssignmentExpression	* bus = & ad -> port		478034	2		=			
+ANR	478155	Identifier	bus		478034	0					
+ANR	478156	UnaryOperationExpression	& ad -> port		478034	1					
+ANR	478157	UnaryOperator	&		478034	0					
+ANR	478158	PtrMemberAccess	ad -> port		478034	1					
+ANR	478159	Identifier	ad		478034	0					
+ANR	478160	Identifier	port		478034	1					
+ANR	478161	IdentifierDeclStatement	BusState * qbus = BUS ( bus ) ;	35:4:619:644	478034	14	True				
+ANR	478162	IdentifierDecl	* qbus = BUS ( bus )		478034	0					
+ANR	478163	IdentifierDeclType	BusState *		478034	0					
+ANR	478164	Identifier	qbus		478034	1					
+ANR	478165	AssignmentExpression	* qbus = BUS ( bus )		478034	2		=			
+ANR	478166	Identifier	qbus		478034	0					
+ANR	478167	CallExpression	BUS ( bus )		478034	1					
+ANR	478168	Callee	BUS		478034	0					
+ANR	478169	Identifier	BUS		478034	0					
+ANR	478170	ArgumentList	bus		478034	1					
+ANR	478171	Argument	bus		478034	0					
+ANR	478172	Identifier	bus		478034	0					
+ANR	478173	IfStatement	if ( ! prdtl )		478034	15					
+ANR	478174	Condition	! prdtl	55:8:1014:1019	478034	0	True				
+ANR	478175	UnaryOperationExpression	! prdtl		478034	0					
+ANR	478176	UnaryOperator	!		478034	0					
+ANR	478177	Identifier	prdtl		478034	1					
+ANR	478178	CompoundStatement		51:16:871:871	478034	1					
+ANR	478179	ExpressionStatement	"DPRINTF ( ad -> port_no , ""no sg list given by guest: 0x%08x\\n"" , opts )"	57:8:1033:1098	478034	0	True				
+ANR	478180	CallExpression	"DPRINTF ( ad -> port_no , ""no sg list given by guest: 0x%08x\\n"" , opts )"		478034	0					
+ANR	478181	Callee	DPRINTF		478034	0					
+ANR	478182	Identifier	DPRINTF		478034	0					
+ANR	478183	ArgumentList	ad -> port_no		478034	1					
+ANR	478184	Argument	ad -> port_no		478034	0					
+ANR	478185	PtrMemberAccess	ad -> port_no		478034	0					
+ANR	478186	Identifier	ad		478034	0					
+ANR	478187	Identifier	port_no		478034	1					
+ANR	478188	Argument	"""no sg list given by guest: 0x%08x\\n"""		478034	1					
+ANR	478189	PrimaryExpression	"""no sg list given by guest: 0x%08x\\n"""		478034	0					
+ANR	478190	Argument	opts		478034	2					
+ANR	478191	Identifier	opts		478034	0					
+ANR	478192	ReturnStatement	return - 1 ;	59:8:1109:1118	478034	1	True				
+ANR	478193	UnaryOperationExpression	- 1		478034	0					
+ANR	478194	UnaryOperator	-		478034	0					
+ANR	478195	PrimaryExpression	1		478034	1					
+ANR	478196	IfStatement	"if ( ! ( prdt = dma_memory_map ( ad -> hba -> as , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE ) ) )"		478034	16					
+ANR	478197	Condition	"! ( prdt = dma_memory_map ( ad -> hba -> as , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE ) )"	67:8:1158:1274	478034	0	True				
+ANR	478198	UnaryOperationExpression	"! ( prdt = dma_memory_map ( ad -> hba -> as , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE ) )"		478034	0					
+ANR	478199	UnaryOperator	!		478034	0					
+ANR	478200	AssignmentExpression	"prdt = dma_memory_map ( ad -> hba -> as , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE )"		478034	1		=			
+ANR	478201	Identifier	prdt		478034	0					
+ANR	478202	CallExpression	"dma_memory_map ( ad -> hba -> as , prdt_addr , & prdt_len , DMA_DIRECTION_TO_DEVICE )"		478034	1					
+ANR	478203	Callee	dma_memory_map		478034	0					
+ANR	478204	Identifier	dma_memory_map		478034	0					
+ANR	478205	ArgumentList	ad -> hba -> as		478034	1					
+ANR	478206	Argument	ad -> hba -> as		478034	0					
+ANR	478207	PtrMemberAccess	ad -> hba -> as		478034	0					
+ANR	478208	PtrMemberAccess	ad -> hba		478034	0					
+ANR	478209	Identifier	ad		478034	0					
+ANR	478210	Identifier	hba		478034	1					
+ANR	478211	Identifier	as		478034	1					
+ANR	478212	Argument	prdt_addr		478034	1					
+ANR	478213	Identifier	prdt_addr		478034	0					
+ANR	478214	Argument	& prdt_len		478034	2					
+ANR	478215	UnaryOperationExpression	& prdt_len		478034	0					
+ANR	478216	UnaryOperator	&		478034	0					
+ANR	478217	Identifier	prdt_len		478034	1					
+ANR	478218	Argument	DMA_DIRECTION_TO_DEVICE		478034	3					
+ANR	478219	Identifier	DMA_DIRECTION_TO_DEVICE		478034	0					
+ANR	478220	CompoundStatement		65:58:1125:1125	478034	1					
+ANR	478221	ExpressionStatement	"DPRINTF ( ad -> port_no , ""map failed\\n"" )"	71:8:1287:1323	478034	0	True				
+ANR	478222	CallExpression	"DPRINTF ( ad -> port_no , ""map failed\\n"" )"		478034	0					
+ANR	478223	Callee	DPRINTF		478034	0					
+ANR	478224	Identifier	DPRINTF		478034	0					
+ANR	478225	ArgumentList	ad -> port_no		478034	1					
+ANR	478226	Argument	ad -> port_no		478034	0					
+ANR	478227	PtrMemberAccess	ad -> port_no		478034	0					
+ANR	478228	Identifier	ad		478034	0					
+ANR	478229	Identifier	port_no		478034	1					
+ANR	478230	Argument	"""map failed\\n"""		478034	1					
+ANR	478231	PrimaryExpression	"""map failed\\n"""		478034	0					
+ANR	478232	ReturnStatement	return - 1 ;	73:8:1334:1343	478034	1	True				
+ANR	478233	UnaryOperationExpression	- 1		478034	0					
+ANR	478234	UnaryOperator	-		478034	0					
+ANR	478235	PrimaryExpression	1		478034	1					
+ANR	478236	IfStatement	if ( prdt_len < real_prdt_len )		478034	17					
+ANR	478237	Condition	prdt_len < real_prdt_len	79:8:1363:1386	478034	0	True				
+ANR	478238	RelationalExpression	prdt_len < real_prdt_len		478034	0		<			
+ANR	478239	Identifier	prdt_len		478034	0					
+ANR	478240	Identifier	real_prdt_len		478034	1					
+ANR	478241	CompoundStatement		75:34:1238:1238	478034	1					
+ANR	478242	ExpressionStatement	"DPRINTF ( ad -> port_no , ""mapped less than expected\\n"" )"	81:8:1400:1451	478034	0	True				
+ANR	478243	CallExpression	"DPRINTF ( ad -> port_no , ""mapped less than expected\\n"" )"		478034	0					
+ANR	478244	Callee	DPRINTF		478034	0					
+ANR	478245	Identifier	DPRINTF		478034	0					
+ANR	478246	ArgumentList	ad -> port_no		478034	1					
+ANR	478247	Argument	ad -> port_no		478034	0					
+ANR	478248	PtrMemberAccess	ad -> port_no		478034	0					
+ANR	478249	Identifier	ad		478034	0					
+ANR	478250	Identifier	port_no		478034	1					
+ANR	478251	Argument	"""mapped less than expected\\n"""		478034	1					
+ANR	478252	PrimaryExpression	"""mapped less than expected\\n"""		478034	0					
+ANR	478253	ExpressionStatement	r = - 1	83:8:1462:1468	478034	1	True				
+ANR	478254	AssignmentExpression	r = - 1		478034	0		=			
+ANR	478255	Identifier	r		478034	0					
+ANR	478256	UnaryOperationExpression	- 1		478034	1					
+ANR	478257	UnaryOperator	-		478034	0					
+ANR	478258	PrimaryExpression	1		478034	1					
+ANR	478259	GotoStatement	goto out ;	85:8:1479:1487	478034	2	True				
+ANR	478260	Identifier	out		478034	0					
+ANR	478261	IfStatement	if ( prdtl > 0 )		478034	18					
+ANR	478262	Condition	prdtl > 0	93:8:1574:1582	478034	0	True				
+ANR	478263	RelationalExpression	prdtl > 0		478034	0		>			
+ANR	478264	Identifier	prdtl		478034	0					
+ANR	478265	PrimaryExpression	0		478034	1					
+ANR	478266	CompoundStatement		91:8:1445:1475	478034	1					
+ANR	478267	IdentifierDeclStatement	AHCI_SG * tbl = ( AHCI_SG * ) prdt ;	95:8:1596:1626	478034	0	True				
+ANR	478268	IdentifierDecl	* tbl = ( AHCI_SG * ) prdt		478034	0					
+ANR	478269	IdentifierDeclType	AHCI_SG *		478034	0					
+ANR	478270	Identifier	tbl		478034	1					
+ANR	478271	AssignmentExpression	* tbl = ( AHCI_SG * ) prdt		478034	2		=			
+ANR	478272	Identifier	tbl		478034	0					
+ANR	478273	CastExpression	( AHCI_SG * ) prdt		478034	1					
+ANR	478274	CastTarget	AHCI_SG *		478034	0					
+ANR	478275	Identifier	prdt		478034	1					
+ANR	478276	ExpressionStatement	sum = 0	97:8:1637:1644	478034	1	True				
+ANR	478277	AssignmentExpression	sum = 0		478034	0		=			
+ANR	478278	Identifier	sum		478034	0					
+ANR	478279	PrimaryExpression	0		478034	1					
+ANR	478280	ForStatement	for ( i = 0 ; i < prdtl ; i ++ )		478034	2					
+ANR	478281	ForInit	i = 0 ;	99:13:1660:1665	478034	0	True				
+ANR	478282	AssignmentExpression	i = 0		478034	0		=			
+ANR	478283	Identifier	i		478034	0					
+ANR	478284	PrimaryExpression	0		478034	1					
+ANR	478285	Condition	i < prdtl	99:20:1667:1675	478034	1	True				
+ANR	478286	RelationalExpression	i < prdtl		478034	0		<			
+ANR	478287	Identifier	i		478034	0					
+ANR	478288	Identifier	prdtl		478034	1					
+ANR	478289	PostIncDecOperationExpression	i ++	99:31:1678:1680	478034	2	True				
+ANR	478290	Identifier	i		478034	0					
+ANR	478291	IncDec	++		478034	1					
+ANR	478292	CompoundStatement		95:36:1532:1532	478034	3					
+ANR	478293	ExpressionStatement	tbl_entry_size = prdt_tbl_entry_size ( & tbl [ i ] )	101:12:1698:1743	478034	0	True				
+ANR	478294	AssignmentExpression	tbl_entry_size = prdt_tbl_entry_size ( & tbl [ i ] )		478034	0		=			
+ANR	478295	Identifier	tbl_entry_size		478034	0					
+ANR	478296	CallExpression	prdt_tbl_entry_size ( & tbl [ i ] )		478034	1					
+ANR	478297	Callee	prdt_tbl_entry_size		478034	0					
+ANR	478298	Identifier	prdt_tbl_entry_size		478034	0					
+ANR	478299	ArgumentList	& tbl [ i ]		478034	1					
+ANR	478300	Argument	& tbl [ i ]		478034	0					
+ANR	478301	UnaryOperationExpression	& tbl [ i ]		478034	0					
+ANR	478302	UnaryOperator	&		478034	0					
+ANR	478303	ArrayIndexing	tbl [ i ]		478034	1					
+ANR	478304	Identifier	tbl		478034	0					
+ANR	478305	Identifier	i		478034	1					
+ANR	478306	IfStatement	if ( offset < ( sum + tbl_entry_size ) )		478034	1					
+ANR	478307	Condition	offset < ( sum + tbl_entry_size )	103:16:1762:1792	478034	0	True				
+ANR	478308	RelationalExpression	offset < ( sum + tbl_entry_size )		478034	0		<			
+ANR	478309	Identifier	offset		478034	0					
+ANR	478310	AdditiveExpression	sum + tbl_entry_size		478034	1		+			
+ANR	478311	Identifier	sum		478034	0					
+ANR	478312	Identifier	tbl_entry_size		478034	1					
+ANR	478313	CompoundStatement		99:49:1644:1644	478034	1					
+ANR	478314	ExpressionStatement	off_idx = i	105:16:1814:1825	478034	0	True				
+ANR	478315	AssignmentExpression	off_idx = i		478034	0		=			
+ANR	478316	Identifier	off_idx		478034	0					
+ANR	478317	Identifier	i		478034	1					
+ANR	478318	ExpressionStatement	off_pos = offset - sum	107:16:1844:1866	478034	1	True				
+ANR	478319	AssignmentExpression	off_pos = offset - sum		478034	0		=			
+ANR	478320	Identifier	off_pos		478034	0					
+ANR	478321	AdditiveExpression	offset - sum		478034	1		-			
+ANR	478322	Identifier	offset		478034	0					
+ANR	478323	Identifier	sum		478034	1					
+ANR	478324	BreakStatement	break ;	109:16:1885:1890	478034	2	True				
+ANR	478325	ExpressionStatement	sum += tbl_entry_size	113:12:1920:1941	478034	2	True				
+ANR	478326	AssignmentExpression	sum += tbl_entry_size		478034	0		+=			
+ANR	478327	Identifier	sum		478034	0					
+ANR	478328	Identifier	tbl_entry_size		478034	1					
+ANR	478329	IfStatement	if ( ( off_idx == - 1 ) || ( off_pos < 0 ) || ( off_pos > tbl_entry_size ) )		478034	3					
+ANR	478330	Condition	( off_idx == - 1 ) || ( off_pos < 0 ) || ( off_pos > tbl_entry_size )	117:12:1967:2028	478034	0	True				
+ANR	478331	OrExpression	( off_idx == - 1 ) || ( off_pos < 0 ) || ( off_pos > tbl_entry_size )		478034	0		||			
+ANR	478332	EqualityExpression	off_idx == - 1		478034	0		==			
+ANR	478333	Identifier	off_idx		478034	0					
+ANR	478334	UnaryOperationExpression	- 1		478034	1					
+ANR	478335	UnaryOperator	-		478034	0					
+ANR	478336	PrimaryExpression	1		478034	1					
+ANR	478337	OrExpression	( off_pos < 0 ) || ( off_pos > tbl_entry_size )		478034	1		||			
+ANR	478338	RelationalExpression	off_pos < 0		478034	0		<			
+ANR	478339	Identifier	off_pos		478034	0					
+ANR	478340	PrimaryExpression	0		478034	1					
+ANR	478341	RelationalExpression	off_pos > tbl_entry_size		478034	1		>			
+ANR	478342	Identifier	off_pos		478034	0					
+ANR	478343	Identifier	tbl_entry_size		478034	1					
+ANR	478344	CompoundStatement		113:76:1880:1880	478034	1					
+ANR	478345	Statement	DPRINTF	119:12:2046:2052	478034	0	True				
+ANR	478346	Statement	(	119:19:2053:2053	478034	1	True				
+ANR	478347	Statement	ad	119:20:2054:2055	478034	2	True				
+ANR	478348	Statement	->	119:22:2056:2057	478034	3	True				
+ANR	478349	Statement	port_no	119:24:2058:2064	478034	4	True				
+ANR	478350	Statement	","	119:31:2065:2065	478034	5	True				
+ANR	478351	Statement	"""%s: Incorrect offset! """	119:33:2067:2090	478034	6	True				
+ANR	478352	Statement	"""off_idx: %d, off_pos: %"""	121:28:2121:2145	478034	7	True				
+ANR	478353	Statement	PRId64	121:53:2146:2151	478034	8	True				
+ANR	478354	Statement	"""\\n"""	121:59:2152:2155	478034	9	True				
+ANR	478355	Statement	","	121:63:2156:2156	478034	10	True				
+ANR	478356	Statement	__func__	123:28:2187:2194	478034	11	True				
+ANR	478357	Statement	","	123:36:2195:2195	478034	12	True				
+ANR	478358	Statement	off_idx	123:38:2197:2203	478034	13	True				
+ANR	478359	Statement	","	123:45:2204:2204	478034	14	True				
+ANR	478360	Statement	off_pos	123:47:2206:2212	478034	15	True				
+ANR	478361	Statement	)	123:54:2213:2213	478034	16	True				
+ANR	478362	ExpressionStatement		123:55:2214:2214	478034	17	True				
+ANR	478363	ExpressionStatement	r = - 1	125:12:2229:2235	478034	18	True				
+ANR	478364	AssignmentExpression	r = - 1		478034	0		=			
+ANR	478365	Identifier	r		478034	0					
+ANR	478366	UnaryOperationExpression	- 1		478034	1					
+ANR	478367	UnaryOperator	-		478034	0					
+ANR	478368	PrimaryExpression	1		478034	1					
+ANR	478369	GotoStatement	goto out ;	127:12:2250:2258	478034	19	True				
+ANR	478370	Identifier	out		478034	0					
+ANR	478371	ExpressionStatement	"qemu_sglist_init ( sglist , qbus -> parent , ( prdtl - off_idx ) , ad -> hba -> as )"	133:8:2282:2378	478034	4	True				
+ANR	478372	CallExpression	"qemu_sglist_init ( sglist , qbus -> parent , ( prdtl - off_idx ) , ad -> hba -> as )"		478034	0					
+ANR	478373	Callee	qemu_sglist_init		478034	0					
+ANR	478374	Identifier	qemu_sglist_init		478034	0					
+ANR	478375	ArgumentList	sglist		478034	1					
+ANR	478376	Argument	sglist		478034	0					
+ANR	478377	Identifier	sglist		478034	0					
+ANR	478378	Argument	qbus -> parent		478034	1					
+ANR	478379	PtrMemberAccess	qbus -> parent		478034	0					
+ANR	478380	Identifier	qbus		478034	0					
+ANR	478381	Identifier	parent		478034	1					
+ANR	478382	Argument	prdtl - off_idx		478034	2					
+ANR	478383	AdditiveExpression	prdtl - off_idx		478034	0		-			
+ANR	478384	Identifier	prdtl		478034	0					
+ANR	478385	Identifier	off_idx		478034	1					
+ANR	478386	Argument	ad -> hba -> as		478034	3					
+ANR	478387	PtrMemberAccess	ad -> hba -> as		478034	0					
+ANR	478388	PtrMemberAccess	ad -> hba		478034	0					
+ANR	478389	Identifier	ad		478034	0					
+ANR	478390	Identifier	hba		478034	1					
+ANR	478391	Identifier	as		478034	1					
+ANR	478392	ExpressionStatement	"qemu_sglist_add ( sglist , le64_to_cpu ( tbl [ off_idx ] . addr ) + off_pos , MIN ( prdt_tbl_entry_size ( & tbl [ off_idx ] ) - off_pos , limit ) )"	137:8:2389:2566	478034	5	True				
+ANR	478393	CallExpression	"qemu_sglist_add ( sglist , le64_to_cpu ( tbl [ off_idx ] . addr ) + off_pos , MIN ( prdt_tbl_entry_size ( & tbl [ off_idx ] ) - off_pos , limit ) )"		478034	0					
+ANR	478394	Callee	qemu_sglist_add		478034	0					
+ANR	478395	Identifier	qemu_sglist_add		478034	0					
+ANR	478396	ArgumentList	sglist		478034	1					
+ANR	478397	Argument	sglist		478034	0					
+ANR	478398	Identifier	sglist		478034	0					
+ANR	478399	Argument	le64_to_cpu ( tbl [ off_idx ] . addr ) + off_pos		478034	1					
+ANR	478400	AdditiveExpression	le64_to_cpu ( tbl [ off_idx ] . addr ) + off_pos		478034	0		+			
+ANR	478401	CallExpression	le64_to_cpu ( tbl [ off_idx ] . addr )		478034	0					
+ANR	478402	Callee	le64_to_cpu		478034	0					
+ANR	478403	Identifier	le64_to_cpu		478034	0					
+ANR	478404	ArgumentList	tbl [ off_idx ] . addr		478034	1					
+ANR	478405	Argument	tbl [ off_idx ] . addr		478034	0					
+ANR	478406	MemberAccess	tbl [ off_idx ] . addr		478034	0					
+ANR	478407	ArrayIndexing	tbl [ off_idx ]		478034	0					
+ANR	478408	Identifier	tbl		478034	0					
+ANR	478409	Identifier	off_idx		478034	1					
+ANR	478410	Identifier	addr		478034	1					
+ANR	478411	Identifier	off_pos		478034	1					
+ANR	478412	Argument	"MIN ( prdt_tbl_entry_size ( & tbl [ off_idx ] ) - off_pos , limit )"		478034	2					
+ANR	478413	CallExpression	"MIN ( prdt_tbl_entry_size ( & tbl [ off_idx ] ) - off_pos , limit )"		478034	0					
+ANR	478414	Callee	MIN		478034	0					
+ANR	478415	Identifier	MIN		478034	0					
+ANR	478416	ArgumentList	prdt_tbl_entry_size ( & tbl [ off_idx ] ) - off_pos		478034	1					
+ANR	478417	Argument	prdt_tbl_entry_size ( & tbl [ off_idx ] ) - off_pos		478034	0					
+ANR	478418	AdditiveExpression	prdt_tbl_entry_size ( & tbl [ off_idx ] ) - off_pos		478034	0		-			
+ANR	478419	CallExpression	prdt_tbl_entry_size ( & tbl [ off_idx ] )		478034	0					
+ANR	478420	Callee	prdt_tbl_entry_size		478034	0					
+ANR	478421	Identifier	prdt_tbl_entry_size		478034	0					
+ANR	478422	ArgumentList	& tbl [ off_idx ]		478034	1					
+ANR	478423	Argument	& tbl [ off_idx ]		478034	0					
+ANR	478424	UnaryOperationExpression	& tbl [ off_idx ]		478034	0					
+ANR	478425	UnaryOperator	&		478034	0					
+ANR	478426	ArrayIndexing	tbl [ off_idx ]		478034	1					
+ANR	478427	Identifier	tbl		478034	0					
+ANR	478428	Identifier	off_idx		478034	1					
+ANR	478429	Identifier	off_pos		478034	1					
+ANR	478430	Argument	limit		478034	1					
+ANR	478431	Identifier	limit		478034	0					
+ANR	478432	ForStatement	for ( i = off_idx + 1 ; i < prdtl && sglist -> size < limit ; i ++ )		478034	6					
+ANR	478433	ForInit	i = off_idx + 1 ;	145:13:2584:2599	478034	0	True				
+ANR	478434	AssignmentExpression	i = off_idx + 1		478034	0		=			
+ANR	478435	Identifier	i		478034	0					
+ANR	478436	AdditiveExpression	off_idx + 1		478034	1		+			
+ANR	478437	Identifier	off_idx		478034	0					
+ANR	478438	PrimaryExpression	1		478034	1					
+ANR	478439	Condition	i < prdtl && sglist -> size < limit	145:30:2601:2633	478034	1	True				
+ANR	478440	AndExpression	i < prdtl && sglist -> size < limit		478034	0		&&			
+ANR	478441	RelationalExpression	i < prdtl		478034	0		<			
+ANR	478442	Identifier	i		478034	0					
+ANR	478443	Identifier	prdtl		478034	1					
+ANR	478444	RelationalExpression	sglist -> size < limit		478034	1		<			
+ANR	478445	PtrMemberAccess	sglist -> size		478034	0					
+ANR	478446	Identifier	sglist		478034	0					
+ANR	478447	Identifier	size		478034	1					
+ANR	478448	Identifier	limit		478034	1					
+ANR	478449	PostIncDecOperationExpression	i ++	145:65:2636:2638	478034	2	True				
+ANR	478450	Identifier	i		478034	0					
+ANR	478451	IncDec	++		478034	1					
+ANR	478452	CompoundStatement		141:70:2490:2490	478034	3					
+ANR	478453	ExpressionStatement	"qemu_sglist_add ( sglist , le64_to_cpu ( tbl [ i ] . addr ) , MIN ( prdt_tbl_entry_size ( & tbl [ i ] ) , limit - sglist -> size ) )"	147:12:2656:2824	478034	0	True				
+ANR	478454	CallExpression	"qemu_sglist_add ( sglist , le64_to_cpu ( tbl [ i ] . addr ) , MIN ( prdt_tbl_entry_size ( & tbl [ i ] ) , limit - sglist -> size ) )"		478034	0					
+ANR	478455	Callee	qemu_sglist_add		478034	0					
+ANR	478456	Identifier	qemu_sglist_add		478034	0					
+ANR	478457	ArgumentList	sglist		478034	1					
+ANR	478458	Argument	sglist		478034	0					
+ANR	478459	Identifier	sglist		478034	0					
+ANR	478460	Argument	le64_to_cpu ( tbl [ i ] . addr )		478034	1					
+ANR	478461	CallExpression	le64_to_cpu ( tbl [ i ] . addr )		478034	0					
+ANR	478462	Callee	le64_to_cpu		478034	0					
+ANR	478463	Identifier	le64_to_cpu		478034	0					
+ANR	478464	ArgumentList	tbl [ i ] . addr		478034	1					
+ANR	478465	Argument	tbl [ i ] . addr		478034	0					
+ANR	478466	MemberAccess	tbl [ i ] . addr		478034	0					
+ANR	478467	ArrayIndexing	tbl [ i ]		478034	0					
+ANR	478468	Identifier	tbl		478034	0					
+ANR	478469	Identifier	i		478034	1					
+ANR	478470	Identifier	addr		478034	1					
+ANR	478471	Argument	"MIN ( prdt_tbl_entry_size ( & tbl [ i ] ) , limit - sglist -> size )"		478034	2					
+ANR	478472	CallExpression	"MIN ( prdt_tbl_entry_size ( & tbl [ i ] ) , limit - sglist -> size )"		478034	0					
+ANR	478473	Callee	MIN		478034	0					
+ANR	478474	Identifier	MIN		478034	0					
+ANR	478475	ArgumentList	prdt_tbl_entry_size ( & tbl [ i ] )		478034	1					
+ANR	478476	Argument	prdt_tbl_entry_size ( & tbl [ i ] )		478034	0					
+ANR	478477	CallExpression	prdt_tbl_entry_size ( & tbl [ i ] )		478034	0					
+ANR	478478	Callee	prdt_tbl_entry_size		478034	0					
+ANR	478479	Identifier	prdt_tbl_entry_size		478034	0					
+ANR	478480	ArgumentList	& tbl [ i ]		478034	1					
+ANR	478481	Argument	& tbl [ i ]		478034	0					
+ANR	478482	UnaryOperationExpression	& tbl [ i ]		478034	0					
+ANR	478483	UnaryOperator	&		478034	0					
+ANR	478484	ArrayIndexing	tbl [ i ]		478034	1					
+ANR	478485	Identifier	tbl		478034	0					
+ANR	478486	Identifier	i		478034	1					
+ANR	478487	Argument	limit - sglist -> size		478034	1					
+ANR	478488	AdditiveExpression	limit - sglist -> size		478034	0		-			
+ANR	478489	Identifier	limit		478034	0					
+ANR	478490	PtrMemberAccess	sglist -> size		478034	1					
+ANR	478491	Identifier	sglist		478034	0					
+ANR	478492	Identifier	size		478034	1					
+ANR	478493	IfStatement	if ( sglist -> size > INT32_MAX )		478034	1					
+ANR	478494	Condition	sglist -> size > INT32_MAX	153:16:2843:2866	478034	0	True				
+ANR	478495	RelationalExpression	sglist -> size > INT32_MAX		478034	0		>			
+ANR	478496	PtrMemberAccess	sglist -> size		478034	0					
+ANR	478497	Identifier	sglist		478034	0					
+ANR	478498	Identifier	size		478034	1					
+ANR	478499	Identifier	INT32_MAX		478034	1					
+ANR	478500	CompoundStatement		149:42:2718:2718	478034	1					
+ANR	478501	Statement	error_report	155:16:2888:2899	478034	0	True				
+ANR	478502	Statement	(	155:28:2900:2900	478034	1	True				
+ANR	478503	Statement	"""AHCI Physical Region Descriptor Table describes """	155:29:2901:2950	478034	2	True				
+ANR	478504	Statement	"""more than 2 GiB."""	157:29:2982:2999	478034	3	True				
+ANR	478505	Statement	)	157:47:3000:3000	478034	4	True				
+ANR	478506	ExpressionStatement		157:48:3001:3001	478034	5	True				
+ANR	478507	ExpressionStatement	qemu_sglist_destroy ( sglist )	159:16:3020:3047	478034	6	True				
+ANR	478508	CallExpression	qemu_sglist_destroy ( sglist )		478034	0					
+ANR	478509	Callee	qemu_sglist_destroy		478034	0					
+ANR	478510	Identifier	qemu_sglist_destroy		478034	0					
+ANR	478511	ArgumentList	sglist		478034	1					
+ANR	478512	Argument	sglist		478034	0					
+ANR	478513	Identifier	sglist		478034	0					
+ANR	478514	ExpressionStatement	r = - 1	161:16:3066:3072	478034	7	True				
+ANR	478515	AssignmentExpression	r = - 1		478034	0		=			
+ANR	478516	Identifier	r		478034	0					
+ANR	478517	UnaryOperationExpression	- 1		478034	1					
+ANR	478518	UnaryOperator	-		478034	0					
+ANR	478519	PrimaryExpression	1		478034	1					
+ANR	478520	GotoStatement	goto out ;	163:16:3091:3099	478034	8	True				
+ANR	478521	Identifier	out		478034	0					
+ANR	478522	Label	out :	173:0:3137:3140	478034	19	True				
+ANR	478523	Identifier	out		478034	0					
+ANR	478524	ExpressionStatement	"dma_memory_unmap ( ad -> hba -> as , prdt , prdt_len , DMA_DIRECTION_TO_DEVICE , prdt_len )"	175:4:3147:3249	478034	20	True				
+ANR	478525	CallExpression	"dma_memory_unmap ( ad -> hba -> as , prdt , prdt_len , DMA_DIRECTION_TO_DEVICE , prdt_len )"		478034	0					
+ANR	478526	Callee	dma_memory_unmap		478034	0					
+ANR	478527	Identifier	dma_memory_unmap		478034	0					
+ANR	478528	ArgumentList	ad -> hba -> as		478034	1					
+ANR	478529	Argument	ad -> hba -> as		478034	0					
+ANR	478530	PtrMemberAccess	ad -> hba -> as		478034	0					
+ANR	478531	PtrMemberAccess	ad -> hba		478034	0					
+ANR	478532	Identifier	ad		478034	0					
+ANR	478533	Identifier	hba		478034	1					
+ANR	478534	Identifier	as		478034	1					
+ANR	478535	Argument	prdt		478034	1					
+ANR	478536	Identifier	prdt		478034	0					
+ANR	478537	Argument	prdt_len		478034	2					
+ANR	478538	Identifier	prdt_len		478034	0					
+ANR	478539	Argument	DMA_DIRECTION_TO_DEVICE		478034	3					
+ANR	478540	Identifier	DMA_DIRECTION_TO_DEVICE		478034	0					
+ANR	478541	Argument	prdt_len		478034	4					
+ANR	478542	Identifier	prdt_len		478034	0					
+ANR	478543	ReturnStatement	return r ;	179:4:3256:3264	478034	21	True				
+ANR	478544	Identifier	r		478034	0					
+ANR	478545	ReturnType	static int		478034	1					
+ANR	478546	Identifier	ahci_populate_sglist		478034	2					
+ANR	478547	ParameterList	"AHCIDevice * ad , QEMUSGList * sglist , AHCICmdHdr * cmd , int64_t limit , int32_t offset"		478034	3					
+ANR	478548	Parameter	AHCIDevice * ad	1:32:32:45	478034	0	True				
+ANR	478549	ParameterType	AHCIDevice *		478034	0					
+ANR	478550	Identifier	ad		478034	1					
+ANR	478551	Parameter	QEMUSGList * sglist	1:48:48:65	478034	1	True				
+ANR	478552	ParameterType	QEMUSGList *		478034	0					
+ANR	478553	Identifier	sglist		478034	1					
+ANR	478554	Parameter	AHCICmdHdr * cmd	3:32:101:115	478034	2	True				
+ANR	478555	ParameterType	AHCICmdHdr *		478034	0					
+ANR	478556	Identifier	cmd		478034	1					
+ANR	478557	Parameter	int64_t limit	3:49:118:130	478034	3	True				
+ANR	478558	ParameterType	int64_t		478034	0					
+ANR	478559	Identifier	limit		478034	1					
+ANR	478560	Parameter	int32_t offset	3:64:133:146	478034	4	True				
+ANR	478561	ParameterType	int32_t		478034	0					
+ANR	478562	Identifier	offset		478034	1					
+ANR	478563	CFGEntryNode	ENTRY		478034		True				
+ANR	478564	CFGExitNode	EXIT		478034		True				
+ANR	478565	Symbol	bus		478034						
+ANR	478566	Symbol	* qbus		478034						
+ANR	478567	Symbol	* * ad		478034						
+ANR	478568	Symbol	ad -> port_no		478034						
+ANR	478569	Symbol	& prdt_len		478034						
+ANR	478570	Symbol	opts		478034						
+ANR	478571	Symbol	ad -> hba -> as		478034						
+ANR	478572	Symbol	limit		478034						
+ANR	478573	Symbol	sglist -> size		478034						
+ANR	478574	Symbol	cmd -> opts		478034						
+ANR	478575	Symbol	* cmd		478034						
+ANR	478576	Symbol	tbl_entry_size		478034						
+ANR	478577	Symbol	ad		478034						
+ANR	478578	Symbol	offset		478034						
+ANR	478579	Symbol	qbus -> parent		478034						
+ANR	478580	Symbol	prdt		478034						
+ANR	478581	Symbol	off_pos		478034						
+ANR	478582	Symbol	prdt_tbl_entry_size		478034						
+ANR	478583	Symbol	* tbl		478034						
+ANR	478584	Symbol	& ad -> port		478034						
+ANR	478585	Symbol	cmd -> prdtl		478034						
+ANR	478586	Symbol	MIN		478034						
+ANR	478587	Symbol	dma_memory_map		478034						
+ANR	478588	Symbol	cmd		478034						
+ANR	478589	Symbol	ad -> hba		478034						
+ANR	478590	Symbol	tbl		478034						
+ANR	478591	Symbol	off_idx		478034						
+ANR	478592	Symbol	DMA_DIRECTION_TO_DEVICE		478034						
+ANR	478593	Symbol	prdtl		478034						
+ANR	478594	Symbol	sum		478034						
+ANR	478595	Symbol	* ad		478034						
+ANR	478596	Symbol	tbl [ off_idx ] . addr		478034						
+ANR	478597	Symbol	tbl [ i ] . addr		478034						
+ANR	478598	Symbol	prdt_len		478034						
+ANR	478599	Symbol	qbus		478034						
+ANR	478600	Symbol	real_prdt_len		478034						
+ANR	478601	Symbol	le16_to_cpu		478034						
+ANR	478602	Symbol	le64_to_cpu		478034						
+ANR	478603	Symbol	cfis_addr		478034						
+ANR	478604	Symbol	BUS		478034						
+ANR	478605	Symbol	sglist		478034						
+ANR	478606	Symbol	i		478034						
+ANR	478607	Symbol	INT32_MAX		478034						
+ANR	478608	Symbol	cmd -> tbl_addr		478034						
+ANR	478609	Symbol	r		478034						
+ANR	478610	Symbol	* i		478034						
+ANR	478611	Symbol	* off_idx		478034						
+ANR	478612	Symbol	* sglist		478034						
+ANR	478613	Symbol	* ad -> hba		478034						
+ANR	478614	Symbol	prdt_addr		478034						

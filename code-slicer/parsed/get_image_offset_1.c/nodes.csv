@@ -1,0 +1,175 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4363700	File	/home/p4ultr4n/workplace/ReVeal/raw_code/get_image_offset_1.c								
+ANR	4363701	Function	get_image_offset	1:0:0:1283							
+ANR	4363702	FunctionDef	"get_image_offset (BlockDriverState * bs , uint64_t offset , bool write)"		4363701	0					
+ANR	4363703	CompoundStatement		5:0:131:1283	4363701	0					
+ANR	4363704	IdentifierDeclStatement	BDRVVPCState * s = bs -> opaque ;	7:4:138:166	4363701	0	True				
+ANR	4363705	IdentifierDecl	* s = bs -> opaque		4363701	0					
+ANR	4363706	IdentifierDeclType	BDRVVPCState *		4363701	0					
+ANR	4363707	Identifier	s		4363701	1					
+ANR	4363708	AssignmentExpression	* s = bs -> opaque		4363701	2		=			
+ANR	4363709	Identifier	s		4363701	0					
+ANR	4363710	PtrMemberAccess	bs -> opaque		4363701	1					
+ANR	4363711	Identifier	bs		4363701	0					
+ANR	4363712	Identifier	opaque		4363701	1					
+ANR	4363713	IdentifierDeclStatement	"uint64_t bitmap_offset , block_offset ;"	9:4:173:209	4363701	1	True				
+ANR	4363714	IdentifierDecl	bitmap_offset		4363701	0					
+ANR	4363715	IdentifierDeclType	uint64_t		4363701	0					
+ANR	4363716	Identifier	bitmap_offset		4363701	1					
+ANR	4363717	IdentifierDecl	block_offset		4363701	1					
+ANR	4363718	IdentifierDeclType	uint64_t		4363701	0					
+ANR	4363719	Identifier	block_offset		4363701	1					
+ANR	4363720	IdentifierDeclStatement	"uint32_t pagetable_index , offset_in_block ;"	11:4:216:257	4363701	2	True				
+ANR	4363721	IdentifierDecl	pagetable_index		4363701	0					
+ANR	4363722	IdentifierDeclType	uint32_t		4363701	0					
+ANR	4363723	Identifier	pagetable_index		4363701	1					
+ANR	4363724	IdentifierDecl	offset_in_block		4363701	1					
+ANR	4363725	IdentifierDeclType	uint32_t		4363701	0					
+ANR	4363726	Identifier	offset_in_block		4363701	1					
+ANR	4363727	ExpressionStatement	pagetable_index = offset / s -> block_size	15:4:266:306	4363701	3	True				
+ANR	4363728	AssignmentExpression	pagetable_index = offset / s -> block_size		4363701	0		=			
+ANR	4363729	Identifier	pagetable_index		4363701	0					
+ANR	4363730	MultiplicativeExpression	offset / s -> block_size		4363701	1		/			
+ANR	4363731	Identifier	offset		4363701	0					
+ANR	4363732	PtrMemberAccess	s -> block_size		4363701	1					
+ANR	4363733	Identifier	s		4363701	0					
+ANR	4363734	Identifier	block_size		4363701	1					
+ANR	4363735	ExpressionStatement	offset_in_block = offset % s -> block_size	17:4:313:353	4363701	4	True				
+ANR	4363736	AssignmentExpression	offset_in_block = offset % s -> block_size		4363701	0		=			
+ANR	4363737	Identifier	offset_in_block		4363701	0					
+ANR	4363738	MultiplicativeExpression	offset % s -> block_size		4363701	1		%			
+ANR	4363739	Identifier	offset		4363701	0					
+ANR	4363740	PtrMemberAccess	s -> block_size		4363701	1					
+ANR	4363741	Identifier	s		4363701	0					
+ANR	4363742	Identifier	block_size		4363701	1					
+ANR	4363743	IfStatement	if ( pagetable_index >= s -> max_table_entries || s -> pagetable [ pagetable_index ] == 0xffffffff )		4363701	5					
+ANR	4363744	Condition	pagetable_index >= s -> max_table_entries || s -> pagetable [ pagetable_index ] == 0xffffffff	21:8:366:451	4363701	0	True				
+ANR	4363745	OrExpression	pagetable_index >= s -> max_table_entries || s -> pagetable [ pagetable_index ] == 0xffffffff		4363701	0		||			
+ANR	4363746	RelationalExpression	pagetable_index >= s -> max_table_entries		4363701	0		>=			
+ANR	4363747	Identifier	pagetable_index		4363701	0					
+ANR	4363748	PtrMemberAccess	s -> max_table_entries		4363701	1					
+ANR	4363749	Identifier	s		4363701	0					
+ANR	4363750	Identifier	max_table_entries		4363701	1					
+ANR	4363751	EqualityExpression	s -> pagetable [ pagetable_index ] == 0xffffffff		4363701	1		==			
+ANR	4363752	ArrayIndexing	s -> pagetable [ pagetable_index ]		4363701	0					
+ANR	4363753	PtrMemberAccess	s -> pagetable		4363701	0					
+ANR	4363754	Identifier	s		4363701	0					
+ANR	4363755	Identifier	pagetable		4363701	1					
+ANR	4363756	Identifier	pagetable_index		4363701	1					
+ANR	4363757	PrimaryExpression	0xffffffff		4363701	1					
+ANR	4363758	ReturnStatement	return - 1 ;	23:8:463:472	4363701	1	True				
+ANR	4363759	UnaryOperationExpression	- 1		4363701	0					
+ANR	4363760	UnaryOperator	-		4363701	0					
+ANR	4363761	PrimaryExpression	1		4363701	1					
+ANR	4363762	ExpressionStatement	bitmap_offset = 512 * ( uint64_t ) s -> pagetable [ pagetable_index ]	27:4:501:563	4363701	6	True				
+ANR	4363763	AssignmentExpression	bitmap_offset = 512 * ( uint64_t ) s -> pagetable [ pagetable_index ]		4363701	0		=			
+ANR	4363764	Identifier	bitmap_offset		4363701	0					
+ANR	4363765	MultiplicativeExpression	512 * ( uint64_t ) s -> pagetable [ pagetable_index ]		4363701	1		*			
+ANR	4363766	PrimaryExpression	512		4363701	0					
+ANR	4363767	CastExpression	( uint64_t ) s -> pagetable [ pagetable_index ]		4363701	1					
+ANR	4363768	CastTarget	uint64_t		4363701	0					
+ANR	4363769	ArrayIndexing	s -> pagetable [ pagetable_index ]		4363701	1					
+ANR	4363770	PtrMemberAccess	s -> pagetable		4363701	0					
+ANR	4363771	Identifier	s		4363701	0					
+ANR	4363772	Identifier	pagetable		4363701	1					
+ANR	4363773	Identifier	pagetable_index		4363701	1					
+ANR	4363774	ExpressionStatement	block_offset = bitmap_offset + s -> bitmap_size + offset_in_block	29:4:570:633	4363701	7	True				
+ANR	4363775	AssignmentExpression	block_offset = bitmap_offset + s -> bitmap_size + offset_in_block		4363701	0		=			
+ANR	4363776	Identifier	block_offset		4363701	0					
+ANR	4363777	AdditiveExpression	bitmap_offset + s -> bitmap_size + offset_in_block		4363701	1		+			
+ANR	4363778	Identifier	bitmap_offset		4363701	0					
+ANR	4363779	AdditiveExpression	s -> bitmap_size + offset_in_block		4363701	1		+			
+ANR	4363780	PtrMemberAccess	s -> bitmap_size		4363701	0					
+ANR	4363781	Identifier	s		4363701	0					
+ANR	4363782	Identifier	bitmap_size		4363701	1					
+ANR	4363783	Identifier	offset_in_block		4363701	1					
+ANR	4363784	IfStatement	if ( write && ( s -> last_bitmap_offset != bitmap_offset ) )		4363701	8					
+ANR	4363785	Condition	write && ( s -> last_bitmap_offset != bitmap_offset )	43:8:980:1028	4363701	0	True				
+ANR	4363786	AndExpression	write && ( s -> last_bitmap_offset != bitmap_offset )		4363701	0		&&			
+ANR	4363787	Identifier	write		4363701	0					
+ANR	4363788	EqualityExpression	s -> last_bitmap_offset != bitmap_offset		4363701	1		!=			
+ANR	4363789	PtrMemberAccess	s -> last_bitmap_offset		4363701	0					
+ANR	4363790	Identifier	s		4363701	0					
+ANR	4363791	Identifier	last_bitmap_offset		4363701	1					
+ANR	4363792	Identifier	bitmap_offset		4363701	1					
+ANR	4363793	CompoundStatement		41:8:910:940	4363701	1					
+ANR	4363794	IdentifierDeclStatement	uint8_t bitmap [ s -> bitmap_size ] ;	45:8:1042:1072	4363701	0	True				
+ANR	4363795	IdentifierDecl	bitmap [ s -> bitmap_size ]		4363701	0					
+ANR	4363796	IdentifierDeclType	uint8_t [ s -> bitmap_size ]		4363701	0					
+ANR	4363797	Identifier	bitmap		4363701	1					
+ANR	4363798	PtrMemberAccess	s -> bitmap_size		4363701	2					
+ANR	4363799	Identifier	s		4363701	0					
+ANR	4363800	Identifier	bitmap_size		4363701	1					
+ANR	4363801	ExpressionStatement	s -> last_bitmap_offset = bitmap_offset	49:8:1085:1122	4363701	1	True				
+ANR	4363802	AssignmentExpression	s -> last_bitmap_offset = bitmap_offset		4363701	0		=			
+ANR	4363803	PtrMemberAccess	s -> last_bitmap_offset		4363701	0					
+ANR	4363804	Identifier	s		4363701	0					
+ANR	4363805	Identifier	last_bitmap_offset		4363701	1					
+ANR	4363806	Identifier	bitmap_offset		4363701	1					
+ANR	4363807	ExpressionStatement	"memset ( bitmap , 0xff , s -> bitmap_size )"	51:8:1133:1169	4363701	2	True				
+ANR	4363808	CallExpression	"memset ( bitmap , 0xff , s -> bitmap_size )"		4363701	0					
+ANR	4363809	Callee	memset		4363701	0					
+ANR	4363810	Identifier	memset		4363701	0					
+ANR	4363811	ArgumentList	bitmap		4363701	1					
+ANR	4363812	Argument	bitmap		4363701	0					
+ANR	4363813	Identifier	bitmap		4363701	0					
+ANR	4363814	Argument	0xff		4363701	1					
+ANR	4363815	PrimaryExpression	0xff		4363701	0					
+ANR	4363816	Argument	s -> bitmap_size		4363701	2					
+ANR	4363817	PtrMemberAccess	s -> bitmap_size		4363701	0					
+ANR	4363818	Identifier	s		4363701	0					
+ANR	4363819	Identifier	bitmap_size		4363701	1					
+ANR	4363820	ExpressionStatement	"bdrv_pwrite_sync ( bs -> file , bitmap_offset , bitmap , s -> bitmap_size )"	53:8:1180:1245	4363701	3	True				
+ANR	4363821	CallExpression	"bdrv_pwrite_sync ( bs -> file , bitmap_offset , bitmap , s -> bitmap_size )"		4363701	0					
+ANR	4363822	Callee	bdrv_pwrite_sync		4363701	0					
+ANR	4363823	Identifier	bdrv_pwrite_sync		4363701	0					
+ANR	4363824	ArgumentList	bs -> file		4363701	1					
+ANR	4363825	Argument	bs -> file		4363701	0					
+ANR	4363826	PtrMemberAccess	bs -> file		4363701	0					
+ANR	4363827	Identifier	bs		4363701	0					
+ANR	4363828	Identifier	file		4363701	1					
+ANR	4363829	Argument	bitmap_offset		4363701	1					
+ANR	4363830	Identifier	bitmap_offset		4363701	0					
+ANR	4363831	Argument	bitmap		4363701	2					
+ANR	4363832	Identifier	bitmap		4363701	0					
+ANR	4363833	Argument	s -> bitmap_size		4363701	3					
+ANR	4363834	PtrMemberAccess	s -> bitmap_size		4363701	0					
+ANR	4363835	Identifier	s		4363701	0					
+ANR	4363836	Identifier	bitmap_size		4363701	1					
+ANR	4363837	ReturnStatement	return block_offset ;	59:4:1261:1280	4363701	9	True				
+ANR	4363838	Identifier	block_offset		4363701	0					
+ANR	4363839	ReturnType	static inline int64_t		4363701	1					
+ANR	4363840	Identifier	get_image_offset		4363701	2					
+ANR	4363841	ParameterList	"BlockDriverState * bs , uint64_t offset , bool write"		4363701	3					
+ANR	4363842	Parameter	BlockDriverState * bs	1:39:39:58	4363701	0	True				
+ANR	4363843	ParameterType	BlockDriverState *		4363701	0					
+ANR	4363844	Identifier	bs		4363701	1					
+ANR	4363845	Parameter	uint64_t offset	1:61:61:75	4363701	1	True				
+ANR	4363846	ParameterType	uint64_t		4363701	0					
+ANR	4363847	Identifier	offset		4363701	1					
+ANR	4363848	Parameter	bool write	3:39:118:127	4363701	2	True				
+ANR	4363849	ParameterType	bool		4363701	0					
+ANR	4363850	Identifier	write		4363701	1					
+ANR	4363851	CFGEntryNode	ENTRY		4363701		True				
+ANR	4363852	CFGExitNode	EXIT		4363701		True				
+ANR	4363853	Symbol	offset		4363701						
+ANR	4363854	Symbol	bs -> opaque		4363701						
+ANR	4363855	Symbol	* s -> pagetable		4363701						
+ANR	4363856	Symbol	bs -> file		4363701						
+ANR	4363857	Symbol	s -> pagetable		4363701						
+ANR	4363858	Symbol	bitmap_offset		4363701						
+ANR	4363859	Symbol	s -> block_size		4363701						
+ANR	4363860	Symbol	s -> max_table_entries		4363701						
+ANR	4363861	Symbol	bs		4363701						
+ANR	4363862	Symbol	s -> last_bitmap_offset		4363701						
+ANR	4363863	Symbol	s		4363701						
+ANR	4363864	Symbol	* bs		4363701						
+ANR	4363865	Symbol	block_offset		4363701						
+ANR	4363866	Symbol	s -> bitmap_size		4363701						
+ANR	4363867	Symbol	bitmap		4363701						
+ANR	4363868	Symbol	offset_in_block		4363701						
+ANR	4363869	Symbol	* * s		4363701						
+ANR	4363870	Symbol	pagetable_index		4363701						
+ANR	4363871	Symbol	write		4363701						
+ANR	4363872	Symbol	* s		4363701						
+ANR	4363873	Symbol	* pagetable_index		4363701						

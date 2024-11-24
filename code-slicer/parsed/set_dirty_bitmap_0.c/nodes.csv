@@ -1,0 +1,135 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7761935	File	/home/p4ultr4n/workplace/ReVeal/raw_code/set_dirty_bitmap_0.c								
+ANR	7761936	Function	set_dirty_bitmap	1:0:0:662							
+ANR	7761937	FunctionDef	"set_dirty_bitmap (BlockDriverState * bs , int64_t sector_num , int nb_sectors , int dirty)"		7761936	0					
+ANR	7761938	CompoundStatement		5:0:129:662	7761936	0					
+ANR	7761939	IdentifierDeclStatement	"int64_t start , end ;"	7:4:136:154	7761936	0	True				
+ANR	7761940	IdentifierDecl	start		7761936	0					
+ANR	7761941	IdentifierDeclType	int64_t		7761936	0					
+ANR	7761942	Identifier	start		7761936	1					
+ANR	7761943	IdentifierDecl	end		7761936	1					
+ANR	7761944	IdentifierDeclType	int64_t		7761936	0					
+ANR	7761945	Identifier	end		7761936	1					
+ANR	7761946	IdentifierDeclStatement	"unsigned long val , idx , bit ;"	9:4:161:188	7761936	1	True				
+ANR	7761947	IdentifierDecl	val		7761936	0					
+ANR	7761948	IdentifierDeclType	unsigned long		7761936	0					
+ANR	7761949	Identifier	val		7761936	1					
+ANR	7761950	IdentifierDecl	idx		7761936	1					
+ANR	7761951	IdentifierDeclType	unsigned long		7761936	0					
+ANR	7761952	Identifier	idx		7761936	1					
+ANR	7761953	IdentifierDecl	bit		7761936	2					
+ANR	7761954	IdentifierDeclType	unsigned long		7761936	0					
+ANR	7761955	Identifier	bit		7761936	1					
+ANR	7761956	ExpressionStatement	start = sector_num / BDRV_SECTORS_PER_DIRTY_CHUNK	13:4:197:246	7761936	2	True				
+ANR	7761957	AssignmentExpression	start = sector_num / BDRV_SECTORS_PER_DIRTY_CHUNK		7761936	0		=			
+ANR	7761958	Identifier	start		7761936	0					
+ANR	7761959	MultiplicativeExpression	sector_num / BDRV_SECTORS_PER_DIRTY_CHUNK		7761936	1		/			
+ANR	7761960	Identifier	sector_num		7761936	0					
+ANR	7761961	Identifier	BDRV_SECTORS_PER_DIRTY_CHUNK		7761936	1					
+ANR	7761962	ExpressionStatement	end = ( sector_num + nb_sectors - 1 ) / BDRV_SECTORS_PER_DIRTY_CHUNK	15:4:253:319	7761936	3	True				
+ANR	7761963	AssignmentExpression	end = ( sector_num + nb_sectors - 1 ) / BDRV_SECTORS_PER_DIRTY_CHUNK		7761936	0		=			
+ANR	7761964	Identifier	end		7761936	0					
+ANR	7761965	MultiplicativeExpression	( sector_num + nb_sectors - 1 ) / BDRV_SECTORS_PER_DIRTY_CHUNK		7761936	1		/			
+ANR	7761966	AdditiveExpression	sector_num + nb_sectors - 1		7761936	0		+			
+ANR	7761967	Identifier	sector_num		7761936	0					
+ANR	7761968	AdditiveExpression	nb_sectors - 1		7761936	1		-			
+ANR	7761969	Identifier	nb_sectors		7761936	0					
+ANR	7761970	PrimaryExpression	1		7761936	1					
+ANR	7761971	Identifier	BDRV_SECTORS_PER_DIRTY_CHUNK		7761936	1					
+ANR	7761972	ForStatement	for ( ; start <= end ; start ++ )		7761936	4					
+ANR	7761973	Condition	start <= end	19:11:335:346	7761936	0	True				
+ANR	7761974	RelationalExpression	start <= end		7761936	0		<=			
+ANR	7761975	Identifier	start		7761936	0					
+ANR	7761976	Identifier	end		7761936	1					
+ANR	7761977	PostIncDecOperationExpression	start ++	19:25:349:355	7761936	1	True				
+ANR	7761978	Identifier	start		7761936	0					
+ANR	7761979	IncDec	++		7761936	1					
+ANR	7761980	CompoundStatement		15:34:228:228	7761936	2					
+ANR	7761981	ExpressionStatement	idx = start / ( sizeof ( unsigned long ) * 8 )	21:8:369:410	7761936	0	True				
+ANR	7761982	AssignmentExpression	idx = start / ( sizeof ( unsigned long ) * 8 )		7761936	0		=			
+ANR	7761983	Identifier	idx		7761936	0					
+ANR	7761984	MultiplicativeExpression	start / ( sizeof ( unsigned long ) * 8 )		7761936	1		/			
+ANR	7761985	Identifier	start		7761936	0					
+ANR	7761986	MultiplicativeExpression	sizeof ( unsigned long ) * 8		7761936	1		*			
+ANR	7761987	SizeofExpression	sizeof ( unsigned long )		7761936	0					
+ANR	7761988	Sizeof	sizeof		7761936	0					
+ANR	7761989	SizeofOperand	unsigned long		7761936	1					
+ANR	7761990	PrimaryExpression	8		7761936	1					
+ANR	7761991	ExpressionStatement	bit = start % ( sizeof ( unsigned long ) * 8 )	23:8:421:462	7761936	1	True				
+ANR	7761992	AssignmentExpression	bit = start % ( sizeof ( unsigned long ) * 8 )		7761936	0		=			
+ANR	7761993	Identifier	bit		7761936	0					
+ANR	7761994	MultiplicativeExpression	start % ( sizeof ( unsigned long ) * 8 )		7761936	1		%			
+ANR	7761995	Identifier	start		7761936	0					
+ANR	7761996	MultiplicativeExpression	sizeof ( unsigned long ) * 8		7761936	1		*			
+ANR	7761997	SizeofExpression	sizeof ( unsigned long )		7761936	0					
+ANR	7761998	Sizeof	sizeof		7761936	0					
+ANR	7761999	SizeofOperand	unsigned long		7761936	1					
+ANR	7762000	PrimaryExpression	8		7761936	1					
+ANR	7762001	ExpressionStatement	val = bs -> dirty_bitmap [ idx ]	25:8:473:500	7761936	2	True				
+ANR	7762002	AssignmentExpression	val = bs -> dirty_bitmap [ idx ]		7761936	0		=			
+ANR	7762003	Identifier	val		7761936	0					
+ANR	7762004	ArrayIndexing	bs -> dirty_bitmap [ idx ]		7761936	1					
+ANR	7762005	PtrMemberAccess	bs -> dirty_bitmap		7761936	0					
+ANR	7762006	Identifier	bs		7761936	0					
+ANR	7762007	Identifier	dirty_bitmap		7761936	1					
+ANR	7762008	Identifier	idx		7761936	1					
+ANR	7762009	IfStatement	if ( dirty )		7761936	3					
+ANR	7762010	Condition	dirty	27:12:515:519	7761936	0	True				
+ANR	7762011	Identifier	dirty		7761936	0					
+ANR	7762012	CompoundStatement		23:19:392:392	7761936	1					
+ANR	7762013	ExpressionStatement	val |= 1 << bit	29:12:537:552	7761936	0	True				
+ANR	7762014	AssignmentExpression	val |= 1 << bit		7761936	0		|=			
+ANR	7762015	Identifier	val		7761936	0					
+ANR	7762016	ShiftExpression	1 << bit		7761936	1		<<			
+ANR	7762017	PrimaryExpression	1		7761936	0					
+ANR	7762018	Identifier	bit		7761936	1					
+ANR	7762019	ElseStatement	else		7761936	0					
+ANR	7762020	CompoundStatement		27:15:440:440	7761936	0					
+ANR	7762021	ExpressionStatement	val &= ~ ( 1 << bit )	33:12:585:603	7761936	0	True				
+ANR	7762022	AssignmentExpression	val &= ~ ( 1 << bit )		7761936	0		&=			
+ANR	7762023	Identifier	val		7761936	0					
+ANR	7762024	UnaryOperationExpression	~ ( 1 << bit )		7761936	1					
+ANR	7762025	UnaryOperator	~		7761936	0					
+ANR	7762026	ShiftExpression	1 << bit		7761936	1		<<			
+ANR	7762027	PrimaryExpression	1		7761936	0					
+ANR	7762028	Identifier	bit		7761936	1					
+ANR	7762029	ExpressionStatement	bs -> dirty_bitmap [ idx ] = val	37:8:625:652	7761936	4	True				
+ANR	7762030	AssignmentExpression	bs -> dirty_bitmap [ idx ] = val		7761936	0		=			
+ANR	7762031	ArrayIndexing	bs -> dirty_bitmap [ idx ]		7761936	0					
+ANR	7762032	PtrMemberAccess	bs -> dirty_bitmap		7761936	0					
+ANR	7762033	Identifier	bs		7761936	0					
+ANR	7762034	Identifier	dirty_bitmap		7761936	1					
+ANR	7762035	Identifier	idx		7761936	1					
+ANR	7762036	Identifier	val		7761936	1					
+ANR	7762037	ReturnType	static void		7761936	1					
+ANR	7762038	Identifier	set_dirty_bitmap		7761936	2					
+ANR	7762039	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , int dirty"		7761936	3					
+ANR	7762040	Parameter	BlockDriverState * bs	1:29:29:48	7761936	0	True				
+ANR	7762041	ParameterType	BlockDriverState *		7761936	0					
+ANR	7762042	Identifier	bs		7761936	1					
+ANR	7762043	Parameter	int64_t sector_num	1:51:51:68	7761936	1	True				
+ANR	7762044	ParameterType	int64_t		7761936	0					
+ANR	7762045	Identifier	sector_num		7761936	1					
+ANR	7762046	Parameter	int nb_sectors	3:29:101:114	7761936	2	True				
+ANR	7762047	ParameterType	int		7761936	0					
+ANR	7762048	Identifier	nb_sectors		7761936	1					
+ANR	7762049	Parameter	int dirty	3:45:117:125	7761936	3	True				
+ANR	7762050	ParameterType	int		7761936	0					
+ANR	7762051	Identifier	dirty		7761936	1					
+ANR	7762052	CFGEntryNode	ENTRY		7761936		True				
+ANR	7762053	CFGExitNode	EXIT		7761936		True				
+ANR	7762054	Symbol	dirty		7761936						
+ANR	7762055	Symbol	val		7761936						
+ANR	7762056	Symbol	nb_sectors		7761936						
+ANR	7762057	Symbol	BDRV_SECTORS_PER_DIRTY_CHUNK		7761936						
+ANR	7762058	Symbol	start		7761936						
+ANR	7762059	Symbol	bit		7761936						
+ANR	7762060	Symbol	sector_num		7761936						
+ANR	7762061	Symbol	bs -> dirty_bitmap		7761936						
+ANR	7762062	Symbol	bs		7761936						
+ANR	7762063	Symbol	* bs		7761936						
+ANR	7762064	Symbol	* bs -> dirty_bitmap		7761936						
+ANR	7762065	Symbol	* idx		7761936						
+ANR	7762066	Symbol	end		7761936						
+ANR	7762067	Symbol	idx		7761936						
+ANR	7762068	Symbol	* * bs		7761936						

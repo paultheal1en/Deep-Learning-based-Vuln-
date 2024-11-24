@@ -1,0 +1,871 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9174323	File	/home/p4ultr4n/workplace/ReVeal/raw_code/vmdk_open_vmdk4_01_0.c								
+ANR	9174324	Function	vmdk_open_vmdk4	1:0:0:5623							
+ANR	9174325	FunctionDef	"vmdk_open_vmdk4 (BlockDriverState * bs , BlockDriverState * file , int flags , Error * * errp)"		9174324	0					
+ANR	9174326	CompoundStatement		7:0:155:5623	9174324	0					
+ANR	9174327	IdentifierDeclStatement	int ret ;	9:4:162:169	9174324	0	True				
+ANR	9174328	IdentifierDecl	ret		9174324	0					
+ANR	9174329	IdentifierDeclType	int		9174324	0					
+ANR	9174330	Identifier	ret		9174324	1					
+ANR	9174331	IdentifierDeclStatement	uint32_t magic ;	11:4:176:190	9174324	1	True				
+ANR	9174332	IdentifierDecl	magic		9174324	0					
+ANR	9174333	IdentifierDeclType	uint32_t		9174324	0					
+ANR	9174334	Identifier	magic		9174324	1					
+ANR	9174335	IdentifierDeclStatement	"uint32_t l1_size , l1_entry_sectors ;"	13:4:197:231	9174324	2	True				
+ANR	9174336	IdentifierDecl	l1_size		9174324	0					
+ANR	9174337	IdentifierDeclType	uint32_t		9174324	0					
+ANR	9174338	Identifier	l1_size		9174324	1					
+ANR	9174339	IdentifierDecl	l1_entry_sectors		9174324	1					
+ANR	9174340	IdentifierDeclType	uint32_t		9174324	0					
+ANR	9174341	Identifier	l1_entry_sectors		9174324	1					
+ANR	9174342	IdentifierDeclStatement	VMDK4Header header ;	15:4:238:256	9174324	3	True				
+ANR	9174343	IdentifierDecl	header		9174324	0					
+ANR	9174344	IdentifierDeclType	VMDK4Header		9174324	0					
+ANR	9174345	Identifier	header		9174324	1					
+ANR	9174346	IdentifierDeclStatement	VmdkExtent * extent ;	17:4:263:281	9174324	4	True				
+ANR	9174347	IdentifierDecl	* extent		9174324	0					
+ANR	9174348	IdentifierDeclType	VmdkExtent *		9174324	0					
+ANR	9174349	Identifier	extent		9174324	1					
+ANR	9174350	IdentifierDeclStatement	BDRVVmdkState * s = bs -> opaque ;	19:4:288:317	9174324	5	True				
+ANR	9174351	IdentifierDecl	* s = bs -> opaque		9174324	0					
+ANR	9174352	IdentifierDeclType	BDRVVmdkState *		9174324	0					
+ANR	9174353	Identifier	s		9174324	1					
+ANR	9174354	AssignmentExpression	* s = bs -> opaque		9174324	2		=			
+ANR	9174355	Identifier	s		9174324	0					
+ANR	9174356	PtrMemberAccess	bs -> opaque		9174324	1					
+ANR	9174357	Identifier	bs		9174324	0					
+ANR	9174358	Identifier	opaque		9174324	1					
+ANR	9174359	IdentifierDeclStatement	int64_t l1_backup_offset = 0 ;	21:4:324:352	9174324	6	True				
+ANR	9174360	IdentifierDecl	l1_backup_offset = 0		9174324	0					
+ANR	9174361	IdentifierDeclType	int64_t		9174324	0					
+ANR	9174362	Identifier	l1_backup_offset		9174324	1					
+ANR	9174363	AssignmentExpression	l1_backup_offset = 0		9174324	2		=			
+ANR	9174364	Identifier	l1_backup_offset		9174324	0					
+ANR	9174365	PrimaryExpression	0		9174324	1					
+ANR	9174366	ExpressionStatement	"ret = bdrv_pread ( file , sizeof ( magic ) , & header , sizeof ( header ) )"	25:4:361:423	9174324	7	True				
+ANR	9174367	AssignmentExpression	"ret = bdrv_pread ( file , sizeof ( magic ) , & header , sizeof ( header ) )"		9174324	0		=			
+ANR	9174368	Identifier	ret		9174324	0					
+ANR	9174369	CallExpression	"bdrv_pread ( file , sizeof ( magic ) , & header , sizeof ( header ) )"		9174324	1					
+ANR	9174370	Callee	bdrv_pread		9174324	0					
+ANR	9174371	Identifier	bdrv_pread		9174324	0					
+ANR	9174372	ArgumentList	file		9174324	1					
+ANR	9174373	Argument	file		9174324	0					
+ANR	9174374	Identifier	file		9174324	0					
+ANR	9174375	Argument	sizeof ( magic )		9174324	1					
+ANR	9174376	SizeofExpression	sizeof ( magic )		9174324	0					
+ANR	9174377	Sizeof	sizeof		9174324	0					
+ANR	9174378	SizeofOperand	magic		9174324	1					
+ANR	9174379	Argument	& header		9174324	2					
+ANR	9174380	UnaryOperationExpression	& header		9174324	0					
+ANR	9174381	UnaryOperator	&		9174324	0					
+ANR	9174382	Identifier	header		9174324	1					
+ANR	9174383	Argument	sizeof ( header )		9174324	3					
+ANR	9174384	SizeofExpression	sizeof ( header )		9174324	0					
+ANR	9174385	Sizeof	sizeof		9174324	0					
+ANR	9174386	SizeofOperand	header		9174324	1					
+ANR	9174387	IfStatement	if ( ret < 0 )		9174324	8					
+ANR	9174388	Condition	ret < 0	27:8:434:440	9174324	0	True				
+ANR	9174389	RelationalExpression	ret < 0		9174324	0		<			
+ANR	9174390	Identifier	ret		9174324	0					
+ANR	9174391	PrimaryExpression	0		9174324	1					
+ANR	9174392	CompoundStatement		21:17:287:287	9174324	1					
+ANR	9174393	ExpressionStatement	"error_setg_errno ( errp , - ret , ""Could not read header from file '%s'"" , file -> filename )"	29:8:454:590	9174324	0	True				
+ANR	9174394	CallExpression	"error_setg_errno ( errp , - ret , ""Could not read header from file '%s'"" , file -> filename )"		9174324	0					
+ANR	9174395	Callee	error_setg_errno		9174324	0					
+ANR	9174396	Identifier	error_setg_errno		9174324	0					
+ANR	9174397	ArgumentList	errp		9174324	1					
+ANR	9174398	Argument	errp		9174324	0					
+ANR	9174399	Identifier	errp		9174324	0					
+ANR	9174400	Argument	- ret		9174324	1					
+ANR	9174401	UnaryOperationExpression	- ret		9174324	0					
+ANR	9174402	UnaryOperator	-		9174324	0					
+ANR	9174403	Identifier	ret		9174324	1					
+ANR	9174404	Argument	"""Could not read header from file '%s'"""		9174324	2					
+ANR	9174405	PrimaryExpression	"""Could not read header from file '%s'"""		9174324	0					
+ANR	9174406	Argument	file -> filename		9174324	3					
+ANR	9174407	PtrMemberAccess	file -> filename		9174324	0					
+ANR	9174408	Identifier	file		9174324	0					
+ANR	9174409	Identifier	filename		9174324	1					
+ANR	9174410	ReturnStatement	return - EINVAL ;	35:8:601:615	9174324	1	True				
+ANR	9174411	UnaryOperationExpression	- EINVAL		9174324	0					
+ANR	9174412	UnaryOperator	-		9174324	0					
+ANR	9174413	Identifier	EINVAL		9174324	1					
+ANR	9174414	IfStatement	if ( header . capacity == 0 )		9174324	9					
+ANR	9174415	Condition	header . capacity == 0	39:8:633:652	9174324	0	True				
+ANR	9174416	EqualityExpression	header . capacity == 0		9174324	0		==			
+ANR	9174417	MemberAccess	header . capacity		9174324	0					
+ANR	9174418	Identifier	header		9174324	0					
+ANR	9174419	Identifier	capacity		9174324	1					
+ANR	9174420	PrimaryExpression	0		9174324	1					
+ANR	9174421	CompoundStatement		35:8:510:564	9174324	1					
+ANR	9174422	IdentifierDeclStatement	uint64_t desc_offset = le64_to_cpu ( header . desc_offset ) ;	41:8:666:720	9174324	0	True				
+ANR	9174423	IdentifierDecl	desc_offset = le64_to_cpu ( header . desc_offset )		9174324	0					
+ANR	9174424	IdentifierDeclType	uint64_t		9174324	0					
+ANR	9174425	Identifier	desc_offset		9174324	1					
+ANR	9174426	AssignmentExpression	desc_offset = le64_to_cpu ( header . desc_offset )		9174324	2		=			
+ANR	9174427	Identifier	desc_offset		9174324	0					
+ANR	9174428	CallExpression	le64_to_cpu ( header . desc_offset )		9174324	1					
+ANR	9174429	Callee	le64_to_cpu		9174324	0					
+ANR	9174430	Identifier	le64_to_cpu		9174324	0					
+ANR	9174431	ArgumentList	header . desc_offset		9174324	1					
+ANR	9174432	Argument	header . desc_offset		9174324	0					
+ANR	9174433	MemberAccess	header . desc_offset		9174324	0					
+ANR	9174434	Identifier	header		9174324	0					
+ANR	9174435	Identifier	desc_offset		9174324	1					
+ANR	9174436	IfStatement	if ( desc_offset )		9174324	1					
+ANR	9174437	Condition	desc_offset	43:12:735:745	9174324	0	True				
+ANR	9174438	Identifier	desc_offset		9174324	0					
+ANR	9174439	CompoundStatement		39:12:607:663	9174324	1					
+ANR	9174440	IdentifierDeclStatement	"char * buf = vmdk_read_desc ( file , desc_offset << 9 , errp ) ;"	45:12:763:819	9174324	0	True				
+ANR	9174441	IdentifierDecl	"* buf = vmdk_read_desc ( file , desc_offset << 9 , errp )"		9174324	0					
+ANR	9174442	IdentifierDeclType	char *		9174324	0					
+ANR	9174443	Identifier	buf		9174324	1					
+ANR	9174444	AssignmentExpression	"* buf = vmdk_read_desc ( file , desc_offset << 9 , errp )"		9174324	2		=			
+ANR	9174445	Identifier	buf		9174324	0					
+ANR	9174446	CallExpression	"vmdk_read_desc ( file , desc_offset << 9 , errp )"		9174324	1					
+ANR	9174447	Callee	vmdk_read_desc		9174324	0					
+ANR	9174448	Identifier	vmdk_read_desc		9174324	0					
+ANR	9174449	ArgumentList	file		9174324	1					
+ANR	9174450	Argument	file		9174324	0					
+ANR	9174451	Identifier	file		9174324	0					
+ANR	9174452	Argument	desc_offset << 9		9174324	1					
+ANR	9174453	ShiftExpression	desc_offset << 9		9174324	0		<<			
+ANR	9174454	Identifier	desc_offset		9174324	0					
+ANR	9174455	PrimaryExpression	9		9174324	1					
+ANR	9174456	Argument	errp		9174324	2					
+ANR	9174457	Identifier	errp		9174324	0					
+ANR	9174458	IfStatement	if ( ! buf )		9174324	1					
+ANR	9174459	Condition	! buf	47:16:838:841	9174324	0	True				
+ANR	9174460	UnaryOperationExpression	! buf		9174324	0					
+ANR	9174461	UnaryOperator	!		9174324	0					
+ANR	9174462	Identifier	buf		9174324	1					
+ANR	9174463	CompoundStatement		41:22:688:688	9174324	1					
+ANR	9174464	ReturnStatement	return - EINVAL ;	49:16:863:877	9174324	0	True				
+ANR	9174465	UnaryOperationExpression	- EINVAL		9174324	0					
+ANR	9174466	UnaryOperator	-		9174324	0					
+ANR	9174467	Identifier	EINVAL		9174324	1					
+ANR	9174468	ExpressionStatement	"ret = vmdk_open_desc_file ( bs , flags , buf , errp )"	53:12:907:954	9174324	2	True				
+ANR	9174469	AssignmentExpression	"ret = vmdk_open_desc_file ( bs , flags , buf , errp )"		9174324	0		=			
+ANR	9174470	Identifier	ret		9174324	0					
+ANR	9174471	CallExpression	"vmdk_open_desc_file ( bs , flags , buf , errp )"		9174324	1					
+ANR	9174472	Callee	vmdk_open_desc_file		9174324	0					
+ANR	9174473	Identifier	vmdk_open_desc_file		9174324	0					
+ANR	9174474	ArgumentList	bs		9174324	1					
+ANR	9174475	Argument	bs		9174324	0					
+ANR	9174476	Identifier	bs		9174324	0					
+ANR	9174477	Argument	flags		9174324	1					
+ANR	9174478	Identifier	flags		9174324	0					
+ANR	9174479	Argument	buf		9174324	2					
+ANR	9174480	Identifier	buf		9174324	0					
+ANR	9174481	Argument	errp		9174324	3					
+ANR	9174482	Identifier	errp		9174324	0					
+ANR	9174483	ExpressionStatement	g_free ( buf )	55:12:969:980	9174324	3	True				
+ANR	9174484	CallExpression	g_free ( buf )		9174324	0					
+ANR	9174485	Callee	g_free		9174324	0					
+ANR	9174486	Identifier	g_free		9174324	0					
+ANR	9174487	ArgumentList	buf		9174324	1					
+ANR	9174488	Argument	buf		9174324	0					
+ANR	9174489	Identifier	buf		9174324	0					
+ANR	9174490	ReturnStatement	return ret ;	57:12:995:1005	9174324	4	True				
+ANR	9174491	Identifier	ret		9174324	0					
+ANR	9174492	IfStatement	if ( ! s -> create_type )		9174324	10					
+ANR	9174493	Condition	! s -> create_type	65:8:1036:1050	9174324	0	True				
+ANR	9174494	UnaryOperationExpression	! s -> create_type		9174324	0					
+ANR	9174495	UnaryOperator	!		9174324	0					
+ANR	9174496	PtrMemberAccess	s -> create_type		9174324	1					
+ANR	9174497	Identifier	s		9174324	0					
+ANR	9174498	Identifier	create_type		9174324	1					
+ANR	9174499	CompoundStatement		59:25:897:897	9174324	1					
+ANR	9174500	ExpressionStatement	"s -> create_type = g_strdup ( ""monolithicSparse"" )"	67:8:1064:1109	9174324	0	True				
+ANR	9174501	AssignmentExpression	"s -> create_type = g_strdup ( ""monolithicSparse"" )"		9174324	0		=			
+ANR	9174502	PtrMemberAccess	s -> create_type		9174324	0					
+ANR	9174503	Identifier	s		9174324	0					
+ANR	9174504	Identifier	create_type		9174324	1					
+ANR	9174505	CallExpression	"g_strdup ( ""monolithicSparse"" )"		9174324	1					
+ANR	9174506	Callee	g_strdup		9174324	0					
+ANR	9174507	Identifier	g_strdup		9174324	0					
+ANR	9174508	ArgumentList	"""monolithicSparse"""		9174324	1					
+ANR	9174509	Argument	"""monolithicSparse"""		9174324	0					
+ANR	9174510	PrimaryExpression	"""monolithicSparse"""		9174324	0					
+ANR	9174511	IfStatement	if ( le64_to_cpu ( header . gd_offset ) == VMDK4_GD_AT_END )		9174324	11					
+ANR	9174512	Condition	le64_to_cpu ( header . gd_offset ) == VMDK4_GD_AT_END	73:8:1129:1176	9174324	0	True				
+ANR	9174513	EqualityExpression	le64_to_cpu ( header . gd_offset ) == VMDK4_GD_AT_END		9174324	0		==			
+ANR	9174514	CallExpression	le64_to_cpu ( header . gd_offset )		9174324	0					
+ANR	9174515	Callee	le64_to_cpu		9174324	0					
+ANR	9174516	Identifier	le64_to_cpu		9174324	0					
+ANR	9174517	ArgumentList	header . gd_offset		9174324	1					
+ANR	9174518	Argument	header . gd_offset		9174324	0					
+ANR	9174519	MemberAccess	header . gd_offset		9174324	0					
+ANR	9174520	Identifier	header		9174324	0					
+ANR	9174521	Identifier	gd_offset		9174324	1					
+ANR	9174522	Identifier	VMDK4_GD_AT_END		9174324	1					
+ANR	9174523	CompoundStatement		115:10:1814:1832	9174324	1					
+ANR	9174524	ClassDefStatement	struct { struct { uint64_t val ; uint32_t size ; uint32_t type ; uint8_t pad [ 512 - 16 ] ; } QEMU_PACKED footer_marker ; uint32_t magic ; VMDK4Header header ; uint8_t pad [ 512 - 4 - sizeof ( VMDK4Header ) ] ; struct { uint64_t val ; uint32_t size ; uint32_t type ; uint8_t pad [ 512 - 16 ] ; } QEMU_PACKED eos_marker ; }	85:8:1432:1968	9174324	0	True				
+ANR	9174525	IdentifierDeclStatement	QEMU_PACKED footer ;	121:10:1970:1988	9174324	1	True				
+ANR	9174526	IdentifierDecl	footer		9174324	0					
+ANR	9174527	IdentifierDeclType	QEMU_PACKED		9174324	0					
+ANR	9174528	Identifier	footer		9174324	1					
+ANR	9174529	ExpressionStatement	"ret = bdrv_pread ( file , bs -> file -> total_sectors * 512 - 1536 , & footer , sizeof ( footer ) )"	125:8:2001:2112	9174324	2	True				
+ANR	9174530	AssignmentExpression	"ret = bdrv_pread ( file , bs -> file -> total_sectors * 512 - 1536 , & footer , sizeof ( footer ) )"		9174324	0		=			
+ANR	9174531	Identifier	ret		9174324	0					
+ANR	9174532	CallExpression	"bdrv_pread ( file , bs -> file -> total_sectors * 512 - 1536 , & footer , sizeof ( footer ) )"		9174324	1					
+ANR	9174533	Callee	bdrv_pread		9174324	0					
+ANR	9174534	Identifier	bdrv_pread		9174324	0					
+ANR	9174535	ArgumentList	file		9174324	1					
+ANR	9174536	Argument	file		9174324	0					
+ANR	9174537	Identifier	file		9174324	0					
+ANR	9174538	Argument	bs -> file -> total_sectors * 512 - 1536		9174324	1					
+ANR	9174539	AdditiveExpression	bs -> file -> total_sectors * 512 - 1536		9174324	0		-			
+ANR	9174540	MultiplicativeExpression	bs -> file -> total_sectors * 512		9174324	0		*			
+ANR	9174541	PtrMemberAccess	bs -> file -> total_sectors		9174324	0					
+ANR	9174542	PtrMemberAccess	bs -> file		9174324	0					
+ANR	9174543	Identifier	bs		9174324	0					
+ANR	9174544	Identifier	file		9174324	1					
+ANR	9174545	Identifier	total_sectors		9174324	1					
+ANR	9174546	PrimaryExpression	512		9174324	1					
+ANR	9174547	PrimaryExpression	1536		9174324	1					
+ANR	9174548	Argument	& footer		9174324	2					
+ANR	9174549	UnaryOperationExpression	& footer		9174324	0					
+ANR	9174550	UnaryOperator	&		9174324	0					
+ANR	9174551	Identifier	footer		9174324	1					
+ANR	9174552	Argument	sizeof ( footer )		9174324	3					
+ANR	9174553	SizeofExpression	sizeof ( footer )		9174324	0					
+ANR	9174554	Sizeof	sizeof		9174324	0					
+ANR	9174555	SizeofOperand	footer		9174324	1					
+ANR	9174556	IfStatement	if ( ret < 0 )		9174324	3					
+ANR	9174557	Condition	ret < 0	131:12:2127:2133	9174324	0	True				
+ANR	9174558	RelationalExpression	ret < 0		9174324	0		<			
+ANR	9174559	Identifier	ret		9174324	0					
+ANR	9174560	PrimaryExpression	0		9174324	1					
+ANR	9174561	CompoundStatement		125:21:1980:1980	9174324	1					
+ANR	9174562	ExpressionStatement	"error_setg_errno ( errp , - ret , ""Failed to read footer"" )"	133:12:2151:2204	9174324	0	True				
+ANR	9174563	CallExpression	"error_setg_errno ( errp , - ret , ""Failed to read footer"" )"		9174324	0					
+ANR	9174564	Callee	error_setg_errno		9174324	0					
+ANR	9174565	Identifier	error_setg_errno		9174324	0					
+ANR	9174566	ArgumentList	errp		9174324	1					
+ANR	9174567	Argument	errp		9174324	0					
+ANR	9174568	Identifier	errp		9174324	0					
+ANR	9174569	Argument	- ret		9174324	1					
+ANR	9174570	UnaryOperationExpression	- ret		9174324	0					
+ANR	9174571	UnaryOperator	-		9174324	0					
+ANR	9174572	Identifier	ret		9174324	1					
+ANR	9174573	Argument	"""Failed to read footer"""		9174324	2					
+ANR	9174574	PrimaryExpression	"""Failed to read footer"""		9174324	0					
+ANR	9174575	ReturnStatement	return ret ;	135:12:2219:2229	9174324	1	True				
+ANR	9174576	Identifier	ret		9174324	0					
+ANR	9174577	IfStatement	if ( be32_to_cpu ( footer . magic ) != VMDK4_MAGIC || le32_to_cpu ( footer . footer_marker . size ) != 0 || le32_to_cpu ( footer . footer_marker . type ) != MARKER_FOOTER || le64_to_cpu ( footer . eos_marker . val ) != 0 || le32_to_cpu ( footer . eos_marker . size ) != 0 || le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM )		9174324	4					
+ANR	9174578	Condition	be32_to_cpu ( footer . magic ) != VMDK4_MAGIC || le32_to_cpu ( footer . footer_marker . size ) != 0 || le32_to_cpu ( footer . footer_marker . type ) != MARKER_FOOTER || le64_to_cpu ( footer . eos_marker . val ) != 0 || le32_to_cpu ( footer . eos_marker . size ) != 0 || le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM	143:12:2306:2669	9174324	0	True				
+ANR	9174579	OrExpression	be32_to_cpu ( footer . magic ) != VMDK4_MAGIC || le32_to_cpu ( footer . footer_marker . size ) != 0 || le32_to_cpu ( footer . footer_marker . type ) != MARKER_FOOTER || le64_to_cpu ( footer . eos_marker . val ) != 0 || le32_to_cpu ( footer . eos_marker . size ) != 0 || le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM		9174324	0		||			
+ANR	9174580	EqualityExpression	be32_to_cpu ( footer . magic ) != VMDK4_MAGIC		9174324	0		!=			
+ANR	9174581	CallExpression	be32_to_cpu ( footer . magic )		9174324	0					
+ANR	9174582	Callee	be32_to_cpu		9174324	0					
+ANR	9174583	Identifier	be32_to_cpu		9174324	0					
+ANR	9174584	ArgumentList	footer . magic		9174324	1					
+ANR	9174585	Argument	footer . magic		9174324	0					
+ANR	9174586	MemberAccess	footer . magic		9174324	0					
+ANR	9174587	Identifier	footer		9174324	0					
+ANR	9174588	Identifier	magic		9174324	1					
+ANR	9174589	Identifier	VMDK4_MAGIC		9174324	1					
+ANR	9174590	OrExpression	le32_to_cpu ( footer . footer_marker . size ) != 0 || le32_to_cpu ( footer . footer_marker . type ) != MARKER_FOOTER || le64_to_cpu ( footer . eos_marker . val ) != 0 || le32_to_cpu ( footer . eos_marker . size ) != 0 || le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM		9174324	1		||			
+ANR	9174591	EqualityExpression	le32_to_cpu ( footer . footer_marker . size ) != 0		9174324	0		!=			
+ANR	9174592	CallExpression	le32_to_cpu ( footer . footer_marker . size )		9174324	0					
+ANR	9174593	Callee	le32_to_cpu		9174324	0					
+ANR	9174594	Identifier	le32_to_cpu		9174324	0					
+ANR	9174595	ArgumentList	footer . footer_marker . size		9174324	1					
+ANR	9174596	Argument	footer . footer_marker . size		9174324	0					
+ANR	9174597	MemberAccess	footer . footer_marker . size		9174324	0					
+ANR	9174598	MemberAccess	footer . footer_marker		9174324	0					
+ANR	9174599	Identifier	footer		9174324	0					
+ANR	9174600	Identifier	footer_marker		9174324	1					
+ANR	9174601	Identifier	size		9174324	1					
+ANR	9174602	PrimaryExpression	0		9174324	1					
+ANR	9174603	OrExpression	le32_to_cpu ( footer . footer_marker . type ) != MARKER_FOOTER || le64_to_cpu ( footer . eos_marker . val ) != 0 || le32_to_cpu ( footer . eos_marker . size ) != 0 || le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM		9174324	1		||			
+ANR	9174604	EqualityExpression	le32_to_cpu ( footer . footer_marker . type ) != MARKER_FOOTER		9174324	0		!=			
+ANR	9174605	CallExpression	le32_to_cpu ( footer . footer_marker . type )		9174324	0					
+ANR	9174606	Callee	le32_to_cpu		9174324	0					
+ANR	9174607	Identifier	le32_to_cpu		9174324	0					
+ANR	9174608	ArgumentList	footer . footer_marker . type		9174324	1					
+ANR	9174609	Argument	footer . footer_marker . type		9174324	0					
+ANR	9174610	MemberAccess	footer . footer_marker . type		9174324	0					
+ANR	9174611	MemberAccess	footer . footer_marker		9174324	0					
+ANR	9174612	Identifier	footer		9174324	0					
+ANR	9174613	Identifier	footer_marker		9174324	1					
+ANR	9174614	Identifier	type		9174324	1					
+ANR	9174615	Identifier	MARKER_FOOTER		9174324	1					
+ANR	9174616	OrExpression	le64_to_cpu ( footer . eos_marker . val ) != 0 || le32_to_cpu ( footer . eos_marker . size ) != 0 || le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM		9174324	1		||			
+ANR	9174617	EqualityExpression	le64_to_cpu ( footer . eos_marker . val ) != 0		9174324	0		!=			
+ANR	9174618	CallExpression	le64_to_cpu ( footer . eos_marker . val )		9174324	0					
+ANR	9174619	Callee	le64_to_cpu		9174324	0					
+ANR	9174620	Identifier	le64_to_cpu		9174324	0					
+ANR	9174621	ArgumentList	footer . eos_marker . val		9174324	1					
+ANR	9174622	Argument	footer . eos_marker . val		9174324	0					
+ANR	9174623	MemberAccess	footer . eos_marker . val		9174324	0					
+ANR	9174624	MemberAccess	footer . eos_marker		9174324	0					
+ANR	9174625	Identifier	footer		9174324	0					
+ANR	9174626	Identifier	eos_marker		9174324	1					
+ANR	9174627	Identifier	val		9174324	1					
+ANR	9174628	PrimaryExpression	0		9174324	1					
+ANR	9174629	OrExpression	le32_to_cpu ( footer . eos_marker . size ) != 0 || le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM		9174324	1		||			
+ANR	9174630	EqualityExpression	le32_to_cpu ( footer . eos_marker . size ) != 0		9174324	0		!=			
+ANR	9174631	CallExpression	le32_to_cpu ( footer . eos_marker . size )		9174324	0					
+ANR	9174632	Callee	le32_to_cpu		9174324	0					
+ANR	9174633	Identifier	le32_to_cpu		9174324	0					
+ANR	9174634	ArgumentList	footer . eos_marker . size		9174324	1					
+ANR	9174635	Argument	footer . eos_marker . size		9174324	0					
+ANR	9174636	MemberAccess	footer . eos_marker . size		9174324	0					
+ANR	9174637	MemberAccess	footer . eos_marker		9174324	0					
+ANR	9174638	Identifier	footer		9174324	0					
+ANR	9174639	Identifier	eos_marker		9174324	1					
+ANR	9174640	Identifier	size		9174324	1					
+ANR	9174641	PrimaryExpression	0		9174324	1					
+ANR	9174642	EqualityExpression	le32_to_cpu ( footer . eos_marker . type ) != MARKER_END_OF_STREAM		9174324	1		!=			
+ANR	9174643	CallExpression	le32_to_cpu ( footer . eos_marker . type )		9174324	0					
+ANR	9174644	Callee	le32_to_cpu		9174324	0					
+ANR	9174645	Identifier	le32_to_cpu		9174324	0					
+ANR	9174646	ArgumentList	footer . eos_marker . type		9174324	1					
+ANR	9174647	Argument	footer . eos_marker . type		9174324	0					
+ANR	9174648	MemberAccess	footer . eos_marker . type		9174324	0					
+ANR	9174649	MemberAccess	footer . eos_marker		9174324	0					
+ANR	9174650	Identifier	footer		9174324	0					
+ANR	9174651	Identifier	eos_marker		9174324	1					
+ANR	9174652	Identifier	type		9174324	1					
+ANR	9174653	Identifier	MARKER_END_OF_STREAM		9174324	1					
+ANR	9174654	CompoundStatement		149:8:2525:2525	9174324	1					
+ANR	9174655	ExpressionStatement	"error_setg ( errp , ""Invalid footer"" )"	157:12:2696:2730	9174324	0	True				
+ANR	9174656	CallExpression	"error_setg ( errp , ""Invalid footer"" )"		9174324	0					
+ANR	9174657	Callee	error_setg		9174324	0					
+ANR	9174658	Identifier	error_setg		9174324	0					
+ANR	9174659	ArgumentList	errp		9174324	1					
+ANR	9174660	Argument	errp		9174324	0					
+ANR	9174661	Identifier	errp		9174324	0					
+ANR	9174662	Argument	"""Invalid footer"""		9174324	1					
+ANR	9174663	PrimaryExpression	"""Invalid footer"""		9174324	0					
+ANR	9174664	ReturnStatement	return - EINVAL ;	159:12:2745:2759	9174324	1	True				
+ANR	9174665	UnaryOperationExpression	- EINVAL		9174324	0					
+ANR	9174666	UnaryOperator	-		9174324	0					
+ANR	9174667	Identifier	EINVAL		9174324	1					
+ANR	9174668	ExpressionStatement	header = footer . header	165:8:2783:2805	9174324	5	True				
+ANR	9174669	AssignmentExpression	header = footer . header		9174324	0		=			
+ANR	9174670	Identifier	header		9174324	0					
+ANR	9174671	MemberAccess	footer . header		9174324	1					
+ANR	9174672	Identifier	footer		9174324	0					
+ANR	9174673	Identifier	header		9174324	1					
+ANR	9174674	IfStatement	if ( le32_to_cpu ( header . version ) > 3 )		9174324	12					
+ANR	9174675	Condition	le32_to_cpu ( header . version ) > 3	171:8:2825:2855	9174324	0	True				
+ANR	9174676	RelationalExpression	le32_to_cpu ( header . version ) > 3		9174324	0		>			
+ANR	9174677	CallExpression	le32_to_cpu ( header . version )		9174324	0					
+ANR	9174678	Callee	le32_to_cpu		9174324	0					
+ANR	9174679	Identifier	le32_to_cpu		9174324	0					
+ANR	9174680	ArgumentList	header . version		9174324	1					
+ANR	9174681	Argument	header . version		9174324	0					
+ANR	9174682	MemberAccess	header . version		9174324	0					
+ANR	9174683	Identifier	header		9174324	0					
+ANR	9174684	Identifier	version		9174324	1					
+ANR	9174685	PrimaryExpression	3		9174324	1					
+ANR	9174686	CompoundStatement		167:8:2713:2725	9174324	1					
+ANR	9174687	IdentifierDeclStatement	char buf [ 64 ] ;	173:8:2869:2881	9174324	0	True				
+ANR	9174688	IdentifierDecl	buf [ 64 ]		9174324	0					
+ANR	9174689	IdentifierDeclType	char [ 64 ]		9174324	0					
+ANR	9174690	Identifier	buf		9174324	1					
+ANR	9174691	PrimaryExpression	64		9174324	2					
+ANR	9174692	Statement	snprintf	175:8:2892:2899	9174324	1	True				
+ANR	9174693	Statement	(	175:16:2900:2900	9174324	2	True				
+ANR	9174694	Statement	buf	175:17:2901:2903	9174324	3	True				
+ANR	9174695	Statement	","	175:20:2904:2904	9174324	4	True				
+ANR	9174696	Statement	sizeof	175:22:2906:2911	9174324	5	True				
+ANR	9174697	Statement	(	175:28:2912:2912	9174324	6	True				
+ANR	9174698	Statement	buf	175:29:2913:2915	9174324	7	True				
+ANR	9174699	Statement	)	175:32:2916:2916	9174324	8	True				
+ANR	9174700	Statement	","	175:33:2917:2917	9174324	9	True				
+ANR	9174701	Statement	"""VMDK version %"""	175:35:2919:2934	9174324	10	True				
+ANR	9174702	Statement	PRId32	175:52:2936:2941	9174324	11	True				
+ANR	9174703	Statement	","	175:58:2942:2942	9174324	12	True				
+ANR	9174704	Statement	le32_to_cpu	177:17:2962:2972	9174324	13	True				
+ANR	9174705	Statement	(	177:28:2973:2973	9174324	14	True				
+ANR	9174706	Statement	header	177:29:2974:2979	9174324	15	True				
+ANR	9174707	Statement	.	177:35:2980:2980	9174324	16	True				
+ANR	9174708	Statement	version	177:36:2981:2987	9174324	17	True				
+ANR	9174709	Statement	)	177:43:2988:2988	9174324	18	True				
+ANR	9174710	Statement	)	177:44:2989:2989	9174324	19	True				
+ANR	9174711	ExpressionStatement		177:45:2990:2990	9174324	20	True				
+ANR	9174712	ExpressionStatement	"error_set ( errp , QERR_UNKNOWN_BLOCK_FORMAT_FEATURE , bdrv_get_device_or_node_name ( bs ) , ""vmdk"" , buf )"	179:8:3001:3117	9174324	21	True				
+ANR	9174713	CallExpression	"error_set ( errp , QERR_UNKNOWN_BLOCK_FORMAT_FEATURE , bdrv_get_device_or_node_name ( bs ) , ""vmdk"" , buf )"		9174324	0					
+ANR	9174714	Callee	error_set		9174324	0					
+ANR	9174715	Identifier	error_set		9174324	0					
+ANR	9174716	ArgumentList	errp		9174324	1					
+ANR	9174717	Argument	errp		9174324	0					
+ANR	9174718	Identifier	errp		9174324	0					
+ANR	9174719	Argument	QERR_UNKNOWN_BLOCK_FORMAT_FEATURE		9174324	1					
+ANR	9174720	Identifier	QERR_UNKNOWN_BLOCK_FORMAT_FEATURE		9174324	0					
+ANR	9174721	Argument	bdrv_get_device_or_node_name ( bs )		9174324	2					
+ANR	9174722	CallExpression	bdrv_get_device_or_node_name ( bs )		9174324	0					
+ANR	9174723	Callee	bdrv_get_device_or_node_name		9174324	0					
+ANR	9174724	Identifier	bdrv_get_device_or_node_name		9174324	0					
+ANR	9174725	ArgumentList	bs		9174324	1					
+ANR	9174726	Argument	bs		9174324	0					
+ANR	9174727	Identifier	bs		9174324	0					
+ANR	9174728	Argument	"""vmdk"""		9174324	3					
+ANR	9174729	PrimaryExpression	"""vmdk"""		9174324	0					
+ANR	9174730	Argument	buf		9174324	4					
+ANR	9174731	Identifier	buf		9174324	0					
+ANR	9174732	ReturnStatement	return - ENOTSUP ;	183:8:3128:3143	9174324	22	True				
+ANR	9174733	UnaryOperationExpression	- ENOTSUP		9174324	0					
+ANR	9174734	UnaryOperator	-		9174324	0					
+ANR	9174735	Identifier	ENOTSUP		9174324	1					
+ANR	9174736	ElseStatement	else		9174324	0					
+ANR	9174737	IfStatement	if ( le32_to_cpu ( header . version ) == 3 && ( flags & BDRV_O_RDWR ) )		9174324	0					
+ANR	9174738	Condition	le32_to_cpu ( header . version ) == 3 && ( flags & BDRV_O_RDWR )	185:15:3161:3217	9174324	0	True				
+ANR	9174739	AndExpression	le32_to_cpu ( header . version ) == 3 && ( flags & BDRV_O_RDWR )		9174324	0		&&			
+ANR	9174740	EqualityExpression	le32_to_cpu ( header . version ) == 3		9174324	0		==			
+ANR	9174741	CallExpression	le32_to_cpu ( header . version )		9174324	0					
+ANR	9174742	Callee	le32_to_cpu		9174324	0					
+ANR	9174743	Identifier	le32_to_cpu		9174324	0					
+ANR	9174744	ArgumentList	header . version		9174324	1					
+ANR	9174745	Argument	header . version		9174324	0					
+ANR	9174746	MemberAccess	header . version		9174324	0					
+ANR	9174747	Identifier	header		9174324	0					
+ANR	9174748	Identifier	version		9174324	1					
+ANR	9174749	PrimaryExpression	3		9174324	1					
+ANR	9174750	BitAndExpression	flags & BDRV_O_RDWR		9174324	1		&			
+ANR	9174751	Identifier	flags		9174324	0					
+ANR	9174752	Identifier	BDRV_O_RDWR		9174324	1					
+ANR	9174753	CompoundStatement		179:74:3064:3064	9174324	1					
+ANR	9174754	ExpressionStatement	"error_setg ( errp , ""VMDK version 3 must be read only"" )"	195:8:3519:3571	9174324	0	True				
+ANR	9174755	CallExpression	"error_setg ( errp , ""VMDK version 3 must be read only"" )"		9174324	0					
+ANR	9174756	Callee	error_setg		9174324	0					
+ANR	9174757	Identifier	error_setg		9174324	0					
+ANR	9174758	ArgumentList	errp		9174324	1					
+ANR	9174759	Argument	errp		9174324	0					
+ANR	9174760	Identifier	errp		9174324	0					
+ANR	9174761	Argument	"""VMDK version 3 must be read only"""		9174324	1					
+ANR	9174762	PrimaryExpression	"""VMDK version 3 must be read only"""		9174324	0					
+ANR	9174763	ReturnStatement	return - EINVAL ;	197:8:3582:3596	9174324	1	True				
+ANR	9174764	UnaryOperationExpression	- EINVAL		9174324	0					
+ANR	9174765	UnaryOperator	-		9174324	0					
+ANR	9174766	Identifier	EINVAL		9174324	1					
+ANR	9174767	IfStatement	if ( le32_to_cpu ( header . num_gtes_per_gt ) > 512 )		9174324	13					
+ANR	9174768	Condition	le32_to_cpu ( header . num_gtes_per_gt ) > 512	203:8:3616:3656	9174324	0	True				
+ANR	9174769	RelationalExpression	le32_to_cpu ( header . num_gtes_per_gt ) > 512		9174324	0		>			
+ANR	9174770	CallExpression	le32_to_cpu ( header . num_gtes_per_gt )		9174324	0					
+ANR	9174771	Callee	le32_to_cpu		9174324	0					
+ANR	9174772	Identifier	le32_to_cpu		9174324	0					
+ANR	9174773	ArgumentList	header . num_gtes_per_gt		9174324	1					
+ANR	9174774	Argument	header . num_gtes_per_gt		9174324	0					
+ANR	9174775	MemberAccess	header . num_gtes_per_gt		9174324	0					
+ANR	9174776	Identifier	header		9174324	0					
+ANR	9174777	Identifier	num_gtes_per_gt		9174324	1					
+ANR	9174778	PrimaryExpression	512		9174324	1					
+ANR	9174779	CompoundStatement		197:51:3503:3503	9174324	1					
+ANR	9174780	ExpressionStatement	"error_setg ( errp , ""L2 table size too big"" )"	205:8:3670:3711	9174324	0	True				
+ANR	9174781	CallExpression	"error_setg ( errp , ""L2 table size too big"" )"		9174324	0					
+ANR	9174782	Callee	error_setg		9174324	0					
+ANR	9174783	Identifier	error_setg		9174324	0					
+ANR	9174784	ArgumentList	errp		9174324	1					
+ANR	9174785	Argument	errp		9174324	0					
+ANR	9174786	Identifier	errp		9174324	0					
+ANR	9174787	Argument	"""L2 table size too big"""		9174324	1					
+ANR	9174788	PrimaryExpression	"""L2 table size too big"""		9174324	0					
+ANR	9174789	ReturnStatement	return - EINVAL ;	207:8:3722:3736	9174324	1	True				
+ANR	9174790	UnaryOperationExpression	- EINVAL		9174324	0					
+ANR	9174791	UnaryOperator	-		9174324	0					
+ANR	9174792	Identifier	EINVAL		9174324	1					
+ANR	9174793	ExpressionStatement	l1_entry_sectors = le32_to_cpu ( header . num_gtes_per_gt ) * le64_to_cpu ( header . granularity )	213:4:3752:3865	9174324	14	True				
+ANR	9174794	AssignmentExpression	l1_entry_sectors = le32_to_cpu ( header . num_gtes_per_gt ) * le64_to_cpu ( header . granularity )		9174324	0		=			
+ANR	9174795	Identifier	l1_entry_sectors		9174324	0					
+ANR	9174796	MultiplicativeExpression	le32_to_cpu ( header . num_gtes_per_gt ) * le64_to_cpu ( header . granularity )		9174324	1		*			
+ANR	9174797	CallExpression	le32_to_cpu ( header . num_gtes_per_gt )		9174324	0					
+ANR	9174798	Callee	le32_to_cpu		9174324	0					
+ANR	9174799	Identifier	le32_to_cpu		9174324	0					
+ANR	9174800	ArgumentList	header . num_gtes_per_gt		9174324	1					
+ANR	9174801	Argument	header . num_gtes_per_gt		9174324	0					
+ANR	9174802	MemberAccess	header . num_gtes_per_gt		9174324	0					
+ANR	9174803	Identifier	header		9174324	0					
+ANR	9174804	Identifier	num_gtes_per_gt		9174324	1					
+ANR	9174805	CallExpression	le64_to_cpu ( header . granularity )		9174324	1					
+ANR	9174806	Callee	le64_to_cpu		9174324	0					
+ANR	9174807	Identifier	le64_to_cpu		9174324	0					
+ANR	9174808	ArgumentList	header . granularity		9174324	1					
+ANR	9174809	Argument	header . granularity		9174324	0					
+ANR	9174810	MemberAccess	header . granularity		9174324	0					
+ANR	9174811	Identifier	header		9174324	0					
+ANR	9174812	Identifier	granularity		9174324	1					
+ANR	9174813	IfStatement	if ( l1_entry_sectors == 0 )		9174324	15					
+ANR	9174814	Condition	l1_entry_sectors == 0	217:8:3876:3896	9174324	0	True				
+ANR	9174815	EqualityExpression	l1_entry_sectors == 0		9174324	0		==			
+ANR	9174816	Identifier	l1_entry_sectors		9174324	0					
+ANR	9174817	PrimaryExpression	0		9174324	1					
+ANR	9174818	CompoundStatement		211:31:3743:3743	9174324	1					
+ANR	9174819	ExpressionStatement	"error_setg ( errp , ""L1 entry size is invalid"" )"	219:8:3910:3954	9174324	0	True				
+ANR	9174820	CallExpression	"error_setg ( errp , ""L1 entry size is invalid"" )"		9174324	0					
+ANR	9174821	Callee	error_setg		9174324	0					
+ANR	9174822	Identifier	error_setg		9174324	0					
+ANR	9174823	ArgumentList	errp		9174324	1					
+ANR	9174824	Argument	errp		9174324	0					
+ANR	9174825	Identifier	errp		9174324	0					
+ANR	9174826	Argument	"""L1 entry size is invalid"""		9174324	1					
+ANR	9174827	PrimaryExpression	"""L1 entry size is invalid"""		9174324	0					
+ANR	9174828	ReturnStatement	return - EINVAL ;	221:8:3965:3979	9174324	1	True				
+ANR	9174829	UnaryOperationExpression	- EINVAL		9174324	0					
+ANR	9174830	UnaryOperator	-		9174324	0					
+ANR	9174831	Identifier	EINVAL		9174324	1					
+ANR	9174832	ExpressionStatement	l1_size = ( le64_to_cpu ( header . capacity ) + l1_entry_sectors - 1 ) / l1_entry_sectors	225:4:3993:4092	9174324	16	True				
+ANR	9174833	AssignmentExpression	l1_size = ( le64_to_cpu ( header . capacity ) + l1_entry_sectors - 1 ) / l1_entry_sectors		9174324	0		=			
+ANR	9174834	Identifier	l1_size		9174324	0					
+ANR	9174835	MultiplicativeExpression	( le64_to_cpu ( header . capacity ) + l1_entry_sectors - 1 ) / l1_entry_sectors		9174324	1		/			
+ANR	9174836	AdditiveExpression	le64_to_cpu ( header . capacity ) + l1_entry_sectors - 1		9174324	0		+			
+ANR	9174837	CallExpression	le64_to_cpu ( header . capacity )		9174324	0					
+ANR	9174838	Callee	le64_to_cpu		9174324	0					
+ANR	9174839	Identifier	le64_to_cpu		9174324	0					
+ANR	9174840	ArgumentList	header . capacity		9174324	1					
+ANR	9174841	Argument	header . capacity		9174324	0					
+ANR	9174842	MemberAccess	header . capacity		9174324	0					
+ANR	9174843	Identifier	header		9174324	0					
+ANR	9174844	Identifier	capacity		9174324	1					
+ANR	9174845	AdditiveExpression	l1_entry_sectors - 1		9174324	1		-			
+ANR	9174846	Identifier	l1_entry_sectors		9174324	0					
+ANR	9174847	PrimaryExpression	1		9174324	1					
+ANR	9174848	Identifier	l1_entry_sectors		9174324	1					
+ANR	9174849	IfStatement	if ( le32_to_cpu ( header . flags ) & VMDK4_FLAG_RGD )		9174324	17					
+ANR	9174850	Condition	le32_to_cpu ( header . flags ) & VMDK4_FLAG_RGD	229:8:4103:4144	9174324	0	True				
+ANR	9174851	BitAndExpression	le32_to_cpu ( header . flags ) & VMDK4_FLAG_RGD		9174324	0		&			
+ANR	9174852	CallExpression	le32_to_cpu ( header . flags )		9174324	0					
+ANR	9174853	Callee	le32_to_cpu		9174324	0					
+ANR	9174854	Identifier	le32_to_cpu		9174324	0					
+ANR	9174855	ArgumentList	header . flags		9174324	1					
+ANR	9174856	Argument	header . flags		9174324	0					
+ANR	9174857	MemberAccess	header . flags		9174324	0					
+ANR	9174858	Identifier	header		9174324	0					
+ANR	9174859	Identifier	flags		9174324	1					
+ANR	9174860	Identifier	VMDK4_FLAG_RGD		9174324	1					
+ANR	9174861	CompoundStatement		223:52:3991:3991	9174324	1					
+ANR	9174862	ExpressionStatement	l1_backup_offset = le64_to_cpu ( header . rgd_offset ) << 9	231:8:4158:4212	9174324	0	True				
+ANR	9174863	AssignmentExpression	l1_backup_offset = le64_to_cpu ( header . rgd_offset ) << 9		9174324	0		=			
+ANR	9174864	Identifier	l1_backup_offset		9174324	0					
+ANR	9174865	ShiftExpression	le64_to_cpu ( header . rgd_offset ) << 9		9174324	1		<<			
+ANR	9174866	CallExpression	le64_to_cpu ( header . rgd_offset )		9174324	0					
+ANR	9174867	Callee	le64_to_cpu		9174324	0					
+ANR	9174868	Identifier	le64_to_cpu		9174324	0					
+ANR	9174869	ArgumentList	header . rgd_offset		9174324	1					
+ANR	9174870	Argument	header . rgd_offset		9174324	0					
+ANR	9174871	MemberAccess	header . rgd_offset		9174324	0					
+ANR	9174872	Identifier	header		9174324	0					
+ANR	9174873	Identifier	rgd_offset		9174324	1					
+ANR	9174874	PrimaryExpression	9		9174324	1					
+ANR	9174875	IfStatement	if ( bdrv_nb_sectors ( file ) < le64_to_cpu ( header . grain_offset ) )		9174324	18					
+ANR	9174876	Condition	bdrv_nb_sectors ( file ) < le64_to_cpu ( header . grain_offset )	235:8:4230:4285	9174324	0	True				
+ANR	9174877	RelationalExpression	bdrv_nb_sectors ( file ) < le64_to_cpu ( header . grain_offset )		9174324	0		<			
+ANR	9174878	CallExpression	bdrv_nb_sectors ( file )		9174324	0					
+ANR	9174879	Callee	bdrv_nb_sectors		9174324	0					
+ANR	9174880	Identifier	bdrv_nb_sectors		9174324	0					
+ANR	9174881	ArgumentList	file		9174324	1					
+ANR	9174882	Argument	file		9174324	0					
+ANR	9174883	Identifier	file		9174324	0					
+ANR	9174884	CallExpression	le64_to_cpu ( header . grain_offset )		9174324	1					
+ANR	9174885	Callee	le64_to_cpu		9174324	0					
+ANR	9174886	Identifier	le64_to_cpu		9174324	0					
+ANR	9174887	ArgumentList	header . grain_offset		9174324	1					
+ANR	9174888	Argument	header . grain_offset		9174324	0					
+ANR	9174889	MemberAccess	header . grain_offset		9174324	0					
+ANR	9174890	Identifier	header		9174324	0					
+ANR	9174891	Identifier	grain_offset		9174324	1					
+ANR	9174892	CompoundStatement		229:66:4132:4132	9174324	1					
+ANR	9174893	Statement	error_setg	237:8:4299:4308	9174324	0	True				
+ANR	9174894	Statement	(	237:18:4309:4309	9174324	1	True				
+ANR	9174895	Statement	errp	237:19:4310:4313	9174324	2	True				
+ANR	9174896	Statement	","	237:23:4314:4314	9174324	3	True				
+ANR	9174897	Statement	"""File truncated, expecting at least %"""	237:25:4316:4353	9174324	4	True				
+ANR	9174898	Statement	PRId64	237:64:4355:4360	9174324	5	True				
+ANR	9174899	Statement	""" bytes"""	237:71:4362:4369	9174324	6	True				
+ANR	9174900	Statement	","	237:79:4370:4370	9174324	7	True				
+ANR	9174901	Statement	(	239:19:4392:4392	9174324	8	True				
+ANR	9174902	Statement	int64_t	239:20:4393:4399	9174324	9	True				
+ANR	9174903	Statement	)	239:27:4400:4400	9174324	10	True				
+ANR	9174904	Statement	(	239:28:4401:4401	9174324	11	True				
+ANR	9174905	Statement	le64_to_cpu	239:29:4402:4412	9174324	12	True				
+ANR	9174906	Statement	(	239:40:4413:4413	9174324	13	True				
+ANR	9174907	Statement	header	239:41:4414:4419	9174324	14	True				
+ANR	9174908	Statement	.	239:47:4420:4420	9174324	15	True				
+ANR	9174909	Statement	grain_offset	239:48:4421:4432	9174324	16	True				
+ANR	9174910	Statement	)	239:60:4433:4433	9174324	17	True				
+ANR	9174911	Statement	*	241:29:4465:4465	9174324	18	True				
+ANR	9174912	Statement	BDRV_SECTOR_SIZE	241:31:4467:4482	9174324	19	True				
+ANR	9174913	Statement	)	241:47:4483:4483	9174324	20	True				
+ANR	9174914	Statement	)	241:48:4484:4484	9174324	21	True				
+ANR	9174915	ExpressionStatement		241:49:4485:4485	9174324	22	True				
+ANR	9174916	ReturnStatement	return - EINVAL ;	243:8:4496:4510	9174324	23	True				
+ANR	9174917	UnaryOperationExpression	- EINVAL		9174324	0					
+ANR	9174918	UnaryOperator	-		9174324	0					
+ANR	9174919	Identifier	EINVAL		9174324	1					
+ANR	9174920	ExpressionStatement	"ret = vmdk_add_extent ( bs , file , false , le64_to_cpu ( header . capacity ) , le64_to_cpu ( header . gd_offset ) << 9 , l1_backup_offset , l1_size , le32_to_cpu ( header . num_gtes_per_gt ) , le64_to_cpu ( header . granularity ) , & extent , errp )"	249:4:4526:4958	9174324	19	True				
+ANR	9174921	AssignmentExpression	"ret = vmdk_add_extent ( bs , file , false , le64_to_cpu ( header . capacity ) , le64_to_cpu ( header . gd_offset ) << 9 , l1_backup_offset , l1_size , le32_to_cpu ( header . num_gtes_per_gt ) , le64_to_cpu ( header . granularity ) , & extent , errp )"		9174324	0		=			
+ANR	9174922	Identifier	ret		9174324	0					
+ANR	9174923	CallExpression	"vmdk_add_extent ( bs , file , false , le64_to_cpu ( header . capacity ) , le64_to_cpu ( header . gd_offset ) << 9 , l1_backup_offset , l1_size , le32_to_cpu ( header . num_gtes_per_gt ) , le64_to_cpu ( header . granularity ) , & extent , errp )"		9174324	1					
+ANR	9174924	Callee	vmdk_add_extent		9174324	0					
+ANR	9174925	Identifier	vmdk_add_extent		9174324	0					
+ANR	9174926	ArgumentList	bs		9174324	1					
+ANR	9174927	Argument	bs		9174324	0					
+ANR	9174928	Identifier	bs		9174324	0					
+ANR	9174929	Argument	file		9174324	1					
+ANR	9174930	Identifier	file		9174324	0					
+ANR	9174931	Argument	false		9174324	2					
+ANR	9174932	Identifier	false		9174324	0					
+ANR	9174933	Argument	le64_to_cpu ( header . capacity )		9174324	3					
+ANR	9174934	CallExpression	le64_to_cpu ( header . capacity )		9174324	0					
+ANR	9174935	Callee	le64_to_cpu		9174324	0					
+ANR	9174936	Identifier	le64_to_cpu		9174324	0					
+ANR	9174937	ArgumentList	header . capacity		9174324	1					
+ANR	9174938	Argument	header . capacity		9174324	0					
+ANR	9174939	MemberAccess	header . capacity		9174324	0					
+ANR	9174940	Identifier	header		9174324	0					
+ANR	9174941	Identifier	capacity		9174324	1					
+ANR	9174942	Argument	le64_to_cpu ( header . gd_offset ) << 9		9174324	4					
+ANR	9174943	ShiftExpression	le64_to_cpu ( header . gd_offset ) << 9		9174324	0		<<			
+ANR	9174944	CallExpression	le64_to_cpu ( header . gd_offset )		9174324	0					
+ANR	9174945	Callee	le64_to_cpu		9174324	0					
+ANR	9174946	Identifier	le64_to_cpu		9174324	0					
+ANR	9174947	ArgumentList	header . gd_offset		9174324	1					
+ANR	9174948	Argument	header . gd_offset		9174324	0					
+ANR	9174949	MemberAccess	header . gd_offset		9174324	0					
+ANR	9174950	Identifier	header		9174324	0					
+ANR	9174951	Identifier	gd_offset		9174324	1					
+ANR	9174952	PrimaryExpression	9		9174324	1					
+ANR	9174953	Argument	l1_backup_offset		9174324	5					
+ANR	9174954	Identifier	l1_backup_offset		9174324	0					
+ANR	9174955	Argument	l1_size		9174324	6					
+ANR	9174956	Identifier	l1_size		9174324	0					
+ANR	9174957	Argument	le32_to_cpu ( header . num_gtes_per_gt )		9174324	7					
+ANR	9174958	CallExpression	le32_to_cpu ( header . num_gtes_per_gt )		9174324	0					
+ANR	9174959	Callee	le32_to_cpu		9174324	0					
+ANR	9174960	Identifier	le32_to_cpu		9174324	0					
+ANR	9174961	ArgumentList	header . num_gtes_per_gt		9174324	1					
+ANR	9174962	Argument	header . num_gtes_per_gt		9174324	0					
+ANR	9174963	MemberAccess	header . num_gtes_per_gt		9174324	0					
+ANR	9174964	Identifier	header		9174324	0					
+ANR	9174965	Identifier	num_gtes_per_gt		9174324	1					
+ANR	9174966	Argument	le64_to_cpu ( header . granularity )		9174324	8					
+ANR	9174967	CallExpression	le64_to_cpu ( header . granularity )		9174324	0					
+ANR	9174968	Callee	le64_to_cpu		9174324	0					
+ANR	9174969	Identifier	le64_to_cpu		9174324	0					
+ANR	9174970	ArgumentList	header . granularity		9174324	1					
+ANR	9174971	Argument	header . granularity		9174324	0					
+ANR	9174972	MemberAccess	header . granularity		9174324	0					
+ANR	9174973	Identifier	header		9174324	0					
+ANR	9174974	Identifier	granularity		9174324	1					
+ANR	9174975	Argument	& extent		9174324	9					
+ANR	9174976	UnaryOperationExpression	& extent		9174324	0					
+ANR	9174977	UnaryOperator	&		9174324	0					
+ANR	9174978	Identifier	extent		9174324	1					
+ANR	9174979	Argument	errp		9174324	10					
+ANR	9174980	Identifier	errp		9174324	0					
+ANR	9174981	IfStatement	if ( ret < 0 )		9174324	20					
+ANR	9174982	Condition	ret < 0	267:8:4969:4975	9174324	0	True				
+ANR	9174983	RelationalExpression	ret < 0		9174324	0		<			
+ANR	9174984	Identifier	ret		9174324	0					
+ANR	9174985	PrimaryExpression	0		9174324	1					
+ANR	9174986	CompoundStatement		261:17:4822:4822	9174324	1					
+ANR	9174987	ReturnStatement	return ret ;	269:8:4989:4999	9174324	0	True				
+ANR	9174988	Identifier	ret		9174324	0					
+ANR	9174989	ExpressionStatement	extent -> compressed = le16_to_cpu ( header . compressAlgorithm ) == VMDK4_COMPRESSION_DEFLATE	273:4:5013:5109	9174324	21	True				
+ANR	9174990	AssignmentExpression	extent -> compressed = le16_to_cpu ( header . compressAlgorithm ) == VMDK4_COMPRESSION_DEFLATE		9174324	0		=			
+ANR	9174991	PtrMemberAccess	extent -> compressed		9174324	0					
+ANR	9174992	Identifier	extent		9174324	0					
+ANR	9174993	Identifier	compressed		9174324	1					
+ANR	9174994	EqualityExpression	le16_to_cpu ( header . compressAlgorithm ) == VMDK4_COMPRESSION_DEFLATE		9174324	1		==			
+ANR	9174995	CallExpression	le16_to_cpu ( header . compressAlgorithm )		9174324	0					
+ANR	9174996	Callee	le16_to_cpu		9174324	0					
+ANR	9174997	Identifier	le16_to_cpu		9174324	0					
+ANR	9174998	ArgumentList	header . compressAlgorithm		9174324	1					
+ANR	9174999	Argument	header . compressAlgorithm		9174324	0					
+ANR	9175000	MemberAccess	header . compressAlgorithm		9174324	0					
+ANR	9175001	Identifier	header		9174324	0					
+ANR	9175002	Identifier	compressAlgorithm		9174324	1					
+ANR	9175003	Identifier	VMDK4_COMPRESSION_DEFLATE		9174324	1					
+ANR	9175004	IfStatement	if ( extent -> compressed )		9174324	22					
+ANR	9175005	Condition	extent -> compressed	277:8:5120:5137	9174324	0	True				
+ANR	9175006	PtrMemberAccess	extent -> compressed		9174324	0					
+ANR	9175007	Identifier	extent		9174324	0					
+ANR	9175008	Identifier	compressed		9174324	1					
+ANR	9175009	CompoundStatement		271:28:4984:4984	9174324	1					
+ANR	9175010	ExpressionStatement	g_free ( s -> create_type )	279:8:5151:5173	9174324	0	True				
+ANR	9175011	CallExpression	g_free ( s -> create_type )		9174324	0					
+ANR	9175012	Callee	g_free		9174324	0					
+ANR	9175013	Identifier	g_free		9174324	0					
+ANR	9175014	ArgumentList	s -> create_type		9174324	1					
+ANR	9175015	Argument	s -> create_type		9174324	0					
+ANR	9175016	PtrMemberAccess	s -> create_type		9174324	0					
+ANR	9175017	Identifier	s		9174324	0					
+ANR	9175018	Identifier	create_type		9174324	1					
+ANR	9175019	ExpressionStatement	"s -> create_type = g_strdup ( ""streamOptimized"" )"	281:8:5184:5228	9174324	1	True				
+ANR	9175020	AssignmentExpression	"s -> create_type = g_strdup ( ""streamOptimized"" )"		9174324	0		=			
+ANR	9175021	PtrMemberAccess	s -> create_type		9174324	0					
+ANR	9175022	Identifier	s		9174324	0					
+ANR	9175023	Identifier	create_type		9174324	1					
+ANR	9175024	CallExpression	"g_strdup ( ""streamOptimized"" )"		9174324	1					
+ANR	9175025	Callee	g_strdup		9174324	0					
+ANR	9175026	Identifier	g_strdup		9174324	0					
+ANR	9175027	ArgumentList	"""streamOptimized"""		9174324	1					
+ANR	9175028	Argument	"""streamOptimized"""		9174324	0					
+ANR	9175029	PrimaryExpression	"""streamOptimized"""		9174324	0					
+ANR	9175030	ExpressionStatement	extent -> has_marker = le32_to_cpu ( header . flags ) & VMDK4_FLAG_MARKER	285:4:5242:5308	9174324	23	True				
+ANR	9175031	AssignmentExpression	extent -> has_marker = le32_to_cpu ( header . flags ) & VMDK4_FLAG_MARKER		9174324	0		=			
+ANR	9175032	PtrMemberAccess	extent -> has_marker		9174324	0					
+ANR	9175033	Identifier	extent		9174324	0					
+ANR	9175034	Identifier	has_marker		9174324	1					
+ANR	9175035	BitAndExpression	le32_to_cpu ( header . flags ) & VMDK4_FLAG_MARKER		9174324	1		&			
+ANR	9175036	CallExpression	le32_to_cpu ( header . flags )		9174324	0					
+ANR	9175037	Callee	le32_to_cpu		9174324	0					
+ANR	9175038	Identifier	le32_to_cpu		9174324	0					
+ANR	9175039	ArgumentList	header . flags		9174324	1					
+ANR	9175040	Argument	header . flags		9174324	0					
+ANR	9175041	MemberAccess	header . flags		9174324	0					
+ANR	9175042	Identifier	header		9174324	0					
+ANR	9175043	Identifier	flags		9174324	1					
+ANR	9175044	Identifier	VMDK4_FLAG_MARKER		9174324	1					
+ANR	9175045	ExpressionStatement	extent -> version = le32_to_cpu ( header . version )	287:4:5315:5360	9174324	24	True				
+ANR	9175046	AssignmentExpression	extent -> version = le32_to_cpu ( header . version )		9174324	0		=			
+ANR	9175047	PtrMemberAccess	extent -> version		9174324	0					
+ANR	9175048	Identifier	extent		9174324	0					
+ANR	9175049	Identifier	version		9174324	1					
+ANR	9175050	CallExpression	le32_to_cpu ( header . version )		9174324	1					
+ANR	9175051	Callee	le32_to_cpu		9174324	0					
+ANR	9175052	Identifier	le32_to_cpu		9174324	0					
+ANR	9175053	ArgumentList	header . version		9174324	1					
+ANR	9175054	Argument	header . version		9174324	0					
+ANR	9175055	MemberAccess	header . version		9174324	0					
+ANR	9175056	Identifier	header		9174324	0					
+ANR	9175057	Identifier	version		9174324	1					
+ANR	9175058	ExpressionStatement	extent -> has_zero_grain = le32_to_cpu ( header . flags ) & VMDK4_FLAG_ZERO_GRAIN	289:4:5367:5441	9174324	25	True				
+ANR	9175059	AssignmentExpression	extent -> has_zero_grain = le32_to_cpu ( header . flags ) & VMDK4_FLAG_ZERO_GRAIN		9174324	0		=			
+ANR	9175060	PtrMemberAccess	extent -> has_zero_grain		9174324	0					
+ANR	9175061	Identifier	extent		9174324	0					
+ANR	9175062	Identifier	has_zero_grain		9174324	1					
+ANR	9175063	BitAndExpression	le32_to_cpu ( header . flags ) & VMDK4_FLAG_ZERO_GRAIN		9174324	1		&			
+ANR	9175064	CallExpression	le32_to_cpu ( header . flags )		9174324	0					
+ANR	9175065	Callee	le32_to_cpu		9174324	0					
+ANR	9175066	Identifier	le32_to_cpu		9174324	0					
+ANR	9175067	ArgumentList	header . flags		9174324	1					
+ANR	9175068	Argument	header . flags		9174324	0					
+ANR	9175069	MemberAccess	header . flags		9174324	0					
+ANR	9175070	Identifier	header		9174324	0					
+ANR	9175071	Identifier	flags		9174324	1					
+ANR	9175072	Identifier	VMDK4_FLAG_ZERO_GRAIN		9174324	1					
+ANR	9175073	ExpressionStatement	"ret = vmdk_init_tables ( bs , extent , errp )"	291:4:5448:5488	9174324	26	True				
+ANR	9175074	AssignmentExpression	"ret = vmdk_init_tables ( bs , extent , errp )"		9174324	0		=			
+ANR	9175075	Identifier	ret		9174324	0					
+ANR	9175076	CallExpression	"vmdk_init_tables ( bs , extent , errp )"		9174324	1					
+ANR	9175077	Callee	vmdk_init_tables		9174324	0					
+ANR	9175078	Identifier	vmdk_init_tables		9174324	0					
+ANR	9175079	ArgumentList	bs		9174324	1					
+ANR	9175080	Argument	bs		9174324	0					
+ANR	9175081	Identifier	bs		9174324	0					
+ANR	9175082	Argument	extent		9174324	1					
+ANR	9175083	Identifier	extent		9174324	0					
+ANR	9175084	Argument	errp		9174324	2					
+ANR	9175085	Identifier	errp		9174324	0					
+ANR	9175086	IfStatement	if ( ret )		9174324	27					
+ANR	9175087	Condition	ret	293:8:5499:5501	9174324	0	True				
+ANR	9175088	Identifier	ret		9174324	0					
+ANR	9175089	CompoundStatement		287:13:5348:5348	9174324	1					
+ANR	9175090	ExpressionStatement	vmdk_free_last_extent ( bs )	297:8:5571:5596	9174324	0	True				
+ANR	9175091	CallExpression	vmdk_free_last_extent ( bs )		9174324	0					
+ANR	9175092	Callee	vmdk_free_last_extent		9174324	0					
+ANR	9175093	Identifier	vmdk_free_last_extent		9174324	0					
+ANR	9175094	ArgumentList	bs		9174324	1					
+ANR	9175095	Argument	bs		9174324	0					
+ANR	9175096	Identifier	bs		9174324	0					
+ANR	9175097	ReturnStatement	return ret ;	301:4:5610:5620	9174324	28	True				
+ANR	9175098	Identifier	ret		9174324	0					
+ANR	9175099	ReturnType	static int		9174324	1					
+ANR	9175100	Identifier	vmdk_open_vmdk4		9174324	2					
+ANR	9175101	ParameterList	"BlockDriverState * bs , BlockDriverState * file , int flags , Error * * errp"		9174324	3					
+ANR	9175102	Parameter	BlockDriverState * bs	1:27:27:46	9174324	0	True				
+ANR	9175103	ParameterType	BlockDriverState *		9174324	0					
+ANR	9175104	Identifier	bs		9174324	1					
+ANR	9175105	Parameter	BlockDriverState * file	3:27:77:98	9174324	1	True				
+ANR	9175106	ParameterType	BlockDriverState *		9174324	0					
+ANR	9175107	Identifier	file		9174324	1					
+ANR	9175108	Parameter	int flags	5:27:129:137	9174324	2	True				
+ANR	9175109	ParameterType	int		9174324	0					
+ANR	9175110	Identifier	flags		9174324	1					
+ANR	9175111	Parameter	Error * * errp	5:38:140:151	9174324	3	True				
+ANR	9175112	ParameterType	Error * *		9174324	0					
+ANR	9175113	Identifier	errp		9174324	1					
+ANR	9175114	CFGEntryNode	ENTRY		9174324		True				
+ANR	9175115	CFGExitNode	EXIT		9174324		True				
+ANR	9175116	Symbol	magic		9174324						
+ANR	9175117	Symbol	extent		9174324						
+ANR	9175118	Symbol	* extent		9174324						
+ANR	9175119	Symbol	errp		9174324						
+ANR	9175120	Symbol	bs -> file		9174324						
+ANR	9175121	Symbol	* bs -> file		9174324						
+ANR	9175122	Symbol	ENOTSUP		9174324						
+ANR	9175123	Symbol	bdrv_get_device_or_node_name		9174324						
+ANR	9175124	Symbol	footer . eos_marker . type		9174324						
+ANR	9175125	Symbol	l1_entry_sectors		9174324						
+ANR	9175126	Symbol	header . gd_offset		9174324						
+ANR	9175127	Symbol	s -> create_type		9174324						
+ANR	9175128	Symbol	VMDK4_COMPRESSION_DEFLATE		9174324						
+ANR	9175129	Symbol	extent -> compressed		9174324						
+ANR	9175130	Symbol	l1_size		9174324						
+ANR	9175131	Symbol	* bs		9174324						
+ANR	9175132	Symbol	vmdk_add_extent		9174324						
+ANR	9175133	Symbol	footer . footer_marker		9174324						
+ANR	9175134	Symbol	header . compressAlgorithm		9174324						
+ANR	9175135	Symbol	header . version		9174324						
+ANR	9175136	Symbol	ret		9174324						
+ANR	9175137	Symbol	file -> filename		9174324						
+ANR	9175138	Symbol	header . desc_offset		9174324						
+ANR	9175139	Symbol	VMDK4_GD_AT_END		9174324						
+ANR	9175140	Symbol	footer . eos_marker		9174324						
+ANR	9175141	Symbol	footer . magic		9174324						
+ANR	9175142	Symbol	extent -> has_zero_grain		9174324						
+ANR	9175143	Symbol	* file		9174324						
+ANR	9175144	Symbol	be32_to_cpu		9174324						
+ANR	9175145	Symbol	& header		9174324						
+ANR	9175146	Symbol	header . capacity		9174324						
+ANR	9175147	Symbol	bdrv_pread		9174324						
+ANR	9175148	Symbol	header . grain_offset		9174324						
+ANR	9175149	Symbol	header		9174324						
+ANR	9175150	Symbol	& extent		9174324						
+ANR	9175151	Symbol	footer . footer_marker . type		9174324						
+ANR	9175152	Symbol	* * bs		9174324						
+ANR	9175153	Symbol	vmdk_open_desc_file		9174324						
+ANR	9175154	Symbol	vmdk_read_desc		9174324						
+ANR	9175155	Symbol	footer . eos_marker . size		9174324						
+ANR	9175156	Symbol	header . num_gtes_per_gt		9174324						
+ANR	9175157	Symbol	footer		9174324						
+ANR	9175158	Symbol	header . granularity		9174324						
+ANR	9175159	Symbol	& footer		9174324						
+ANR	9175160	Symbol	header . rgd_offset		9174324						
+ANR	9175161	Symbol	flags		9174324						
+ANR	9175162	Symbol	desc_offset		9174324						
+ANR	9175163	Symbol	VMDK4_MAGIC		9174324						
+ANR	9175164	Symbol	QERR_UNKNOWN_BLOCK_FORMAT_FEATURE		9174324						
+ANR	9175165	Symbol	MARKER_END_OF_STREAM		9174324						
+ANR	9175166	Symbol	bs		9174324						
+ANR	9175167	Symbol	header . flags		9174324						
+ANR	9175168	Symbol	VMDK4_FLAG_MARKER		9174324						
+ANR	9175169	Symbol	l1_backup_offset		9174324						
+ANR	9175170	Symbol	file		9174324						
+ANR	9175171	Symbol	VMDK4_FLAG_RGD		9174324						
+ANR	9175172	Symbol	extent -> version		9174324						
+ANR	9175173	Symbol	le32_to_cpu		9174324						
+ANR	9175174	Symbol	g_strdup		9174324						
+ANR	9175175	Symbol	le16_to_cpu		9174324						
+ANR	9175176	Symbol	footer . eos_marker . val		9174324						
+ANR	9175177	Symbol	le64_to_cpu		9174324						
+ANR	9175178	Symbol	bdrv_nb_sectors		9174324						
+ANR	9175179	Symbol	bs -> opaque		9174324						
+ANR	9175180	Symbol	VMDK4_FLAG_ZERO_GRAIN		9174324						
+ANR	9175181	Symbol	false		9174324						
+ANR	9175182	Symbol	vmdk_init_tables		9174324						
+ANR	9175183	Symbol	bs -> file -> total_sectors		9174324						
+ANR	9175184	Symbol	extent -> has_marker		9174324						
+ANR	9175185	Symbol	EINVAL		9174324						
+ANR	9175186	Symbol	footer . header		9174324						
+ANR	9175187	Symbol	footer . footer_marker . size		9174324						
+ANR	9175188	Symbol	buf		9174324						
+ANR	9175189	Symbol	s		9174324						
+ANR	9175190	Symbol	* s		9174324						
+ANR	9175191	Symbol	MARKER_FOOTER		9174324						
+ANR	9175192	Symbol	BDRV_O_RDWR		9174324						

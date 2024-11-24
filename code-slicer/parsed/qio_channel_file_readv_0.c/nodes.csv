@@ -1,0 +1,121 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7065652	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qio_channel_file_readv_0.c								
+ANR	7065653	Function	qio_channel_file_readv	1:0:0:802							
+ANR	7065654	FunctionDef	"qio_channel_file_readv (QIOChannel * ioc , const struct iovec * iov , size_t niov , int * * fds , size_t * nfds , Error * * errp)"		7065653	0					
+ANR	7065655	CompoundStatement		13:0:328:802	7065653	0					
+ANR	7065656	IdentifierDeclStatement	QIOChannelFile * fioc = QIO_CHANNEL_FILE ( ioc ) ;	15:4:335:379	7065653	0	True				
+ANR	7065657	IdentifierDecl	* fioc = QIO_CHANNEL_FILE ( ioc )		7065653	0					
+ANR	7065658	IdentifierDeclType	QIOChannelFile *		7065653	0					
+ANR	7065659	Identifier	fioc		7065653	1					
+ANR	7065660	AssignmentExpression	* fioc = QIO_CHANNEL_FILE ( ioc )		7065653	2		=			
+ANR	7065661	Identifier	fioc		7065653	0					
+ANR	7065662	CallExpression	QIO_CHANNEL_FILE ( ioc )		7065653	1					
+ANR	7065663	Callee	QIO_CHANNEL_FILE		7065653	0					
+ANR	7065664	Identifier	QIO_CHANNEL_FILE		7065653	0					
+ANR	7065665	ArgumentList	ioc		7065653	1					
+ANR	7065666	Argument	ioc		7065653	0					
+ANR	7065667	Identifier	ioc		7065653	0					
+ANR	7065668	IdentifierDeclStatement	ssize_t ret ;	17:4:386:397	7065653	1	True				
+ANR	7065669	IdentifierDecl	ret		7065653	0					
+ANR	7065670	IdentifierDeclType	ssize_t		7065653	0					
+ANR	7065671	Identifier	ret		7065653	1					
+ANR	7065672	Label	retry :	21:1:403:408	7065653	2	True				
+ANR	7065673	Identifier	retry		7065653	0					
+ANR	7065674	ExpressionStatement	"ret = readv ( fioc -> fd , iov , niov )"	23:4:415:447	7065653	3	True				
+ANR	7065675	AssignmentExpression	"ret = readv ( fioc -> fd , iov , niov )"		7065653	0		=			
+ANR	7065676	Identifier	ret		7065653	0					
+ANR	7065677	CallExpression	"readv ( fioc -> fd , iov , niov )"		7065653	1					
+ANR	7065678	Callee	readv		7065653	0					
+ANR	7065679	Identifier	readv		7065653	0					
+ANR	7065680	ArgumentList	fioc -> fd		7065653	1					
+ANR	7065681	Argument	fioc -> fd		7065653	0					
+ANR	7065682	PtrMemberAccess	fioc -> fd		7065653	0					
+ANR	7065683	Identifier	fioc		7065653	0					
+ANR	7065684	Identifier	fd		7065653	1					
+ANR	7065685	Argument	iov		7065653	1					
+ANR	7065686	Identifier	iov		7065653	0					
+ANR	7065687	Argument	niov		7065653	2					
+ANR	7065688	Identifier	niov		7065653	0					
+ANR	7065689	IfStatement	if ( ret < 0 )		7065653	4					
+ANR	7065690	Condition	ret < 0	25:8:458:464	7065653	0	True				
+ANR	7065691	RelationalExpression	ret < 0		7065653	0		<			
+ANR	7065692	Identifier	ret		7065653	0					
+ANR	7065693	PrimaryExpression	0		7065653	1					
+ANR	7065694	CompoundStatement		13:17:138:138	7065653	1					
+ANR	7065695	IfStatement	if ( errno == EAGAIN || errno == EWOULDBLOCK )		7065653	0					
+ANR	7065696	Condition	errno == EAGAIN || errno == EWOULDBLOCK	27:12:482:533	7065653	0	True				
+ANR	7065697	OrExpression	errno == EAGAIN || errno == EWOULDBLOCK		7065653	0		||			
+ANR	7065698	EqualityExpression	errno == EAGAIN		7065653	0		==			
+ANR	7065699	Identifier	errno		7065653	0					
+ANR	7065700	Identifier	EAGAIN		7065653	1					
+ANR	7065701	EqualityExpression	errno == EWOULDBLOCK		7065653	1		==			
+ANR	7065702	Identifier	errno		7065653	0					
+ANR	7065703	Identifier	EWOULDBLOCK		7065653	1					
+ANR	7065704	CompoundStatement		17:34:207:207	7065653	1					
+ANR	7065705	ReturnStatement	return QIO_CHANNEL_ERR_BLOCK ;	31:12:551:579	7065653	0	True				
+ANR	7065706	Identifier	QIO_CHANNEL_ERR_BLOCK		7065653	0					
+ANR	7065707	IfStatement	if ( errno == EINTR )		7065653	1					
+ANR	7065708	Condition	errno == EINTR	35:12:605:618	7065653	0	True				
+ANR	7065709	EqualityExpression	errno == EINTR		7065653	0		==			
+ANR	7065710	Identifier	errno		7065653	0					
+ANR	7065711	Identifier	EINTR		7065653	1					
+ANR	7065712	CompoundStatement		23:28:292:292	7065653	1					
+ANR	7065713	GotoStatement	goto retry ;	37:12:636:646	7065653	0	True				
+ANR	7065714	Identifier	retry		7065653	0					
+ANR	7065715	ExpressionStatement	"error_setg_errno ( errp , errno , ""Unable to read from file"" )"	43:8:670:753	7065653	2	True				
+ANR	7065716	CallExpression	"error_setg_errno ( errp , errno , ""Unable to read from file"" )"		7065653	0					
+ANR	7065717	Callee	error_setg_errno		7065653	0					
+ANR	7065718	Identifier	error_setg_errno		7065653	0					
+ANR	7065719	ArgumentList	errp		7065653	1					
+ANR	7065720	Argument	errp		7065653	0					
+ANR	7065721	Identifier	errp		7065653	0					
+ANR	7065722	Argument	errno		7065653	1					
+ANR	7065723	Identifier	errno		7065653	0					
+ANR	7065724	Argument	"""Unable to read from file"""		7065653	2					
+ANR	7065725	PrimaryExpression	"""Unable to read from file"""		7065653	0					
+ANR	7065726	ReturnStatement	return - 1 ;	47:8:764:773	7065653	3	True				
+ANR	7065727	UnaryOperationExpression	- 1		7065653	0					
+ANR	7065728	UnaryOperator	-		7065653	0					
+ANR	7065729	PrimaryExpression	1		7065653	1					
+ANR	7065730	ReturnStatement	return ret ;	53:4:789:799	7065653	5	True				
+ANR	7065731	Identifier	ret		7065653	0					
+ANR	7065732	ReturnType	static ssize_t		7065653	1					
+ANR	7065733	Identifier	qio_channel_file_readv		7065653	2					
+ANR	7065734	ParameterList	"QIOChannel * ioc , const struct iovec * iov , size_t niov , int * * fds , size_t * nfds , Error * * errp"		7065653	3					
+ANR	7065735	Parameter	QIOChannel * ioc	1:38:38:52	7065653	0	True				
+ANR	7065736	ParameterType	QIOChannel *		7065653	0					
+ANR	7065737	Identifier	ioc		7065653	1					
+ANR	7065738	Parameter	const struct iovec * iov	3:38:94:116	7065653	1	True				
+ANR	7065739	ParameterType	const struct iovec *		7065653	0					
+ANR	7065740	Identifier	iov		7065653	1					
+ANR	7065741	Parameter	size_t niov	5:38:158:168	7065653	2	True				
+ANR	7065742	ParameterType	size_t		7065653	0					
+ANR	7065743	Identifier	niov		7065653	1					
+ANR	7065744	Parameter	int * * fds	7:38:210:218	7065653	3	True				
+ANR	7065745	ParameterType	int * *		7065653	0					
+ANR	7065746	Identifier	fds		7065653	1					
+ANR	7065747	Parameter	size_t * nfds	9:38:260:271	7065653	4	True				
+ANR	7065748	ParameterType	size_t *		7065653	0					
+ANR	7065749	Identifier	nfds		7065653	1					
+ANR	7065750	Parameter	Error * * errp	11:38:313:324	7065653	5	True				
+ANR	7065751	ParameterType	Error * *		7065653	0					
+ANR	7065752	Identifier	errp		7065653	1					
+ANR	7065753	CFGEntryNode	ENTRY		7065653		True				
+ANR	7065754	CFGExitNode	EXIT		7065653		True				
+ANR	7065755	Symbol	ret		7065653						
+ANR	7065756	Symbol	QIO_CHANNEL_ERR_BLOCK		7065653						
+ANR	7065757	Symbol	errno		7065653						
+ANR	7065758	Symbol	errp		7065653						
+ANR	7065759	Symbol	EINTR		7065653						
+ANR	7065760	Symbol	EAGAIN		7065653						
+ANR	7065761	Symbol	QIO_CHANNEL_FILE		7065653						
+ANR	7065762	Symbol	iov		7065653						
+ANR	7065763	Symbol	niov		7065653						
+ANR	7065764	Symbol	* fioc		7065653						
+ANR	7065765	Symbol	fds		7065653						
+ANR	7065766	Symbol	nfds		7065653						
+ANR	7065767	Symbol	fioc -> fd		7065653						
+ANR	7065768	Symbol	readv		7065653						
+ANR	7065769	Symbol	fioc		7065653						
+ANR	7065770	Symbol	EWOULDBLOCK		7065653						
+ANR	7065771	Symbol	ioc		7065653						

@@ -1,0 +1,162 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5908304	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_client_co_pdiscard_01_1.c								
+ANR	5908305	Function	nbd_client_co_pdiscard	1:0:0:672							
+ANR	5908306	FunctionDef	"nbd_client_co_pdiscard (BlockDriverState * bs , int64_t offset , int count)"		5908305	0					
+ANR	5908307	CompoundStatement		3:0:77:672	5908305	0					
+ANR	5908308	IdentifierDeclStatement	NBDClientSession * client = nbd_get_client_session ( bs ) ;	5:4:84:137	5908305	0	True				
+ANR	5908309	IdentifierDecl	* client = nbd_get_client_session ( bs )		5908305	0					
+ANR	5908310	IdentifierDeclType	NBDClientSession *		5908305	0					
+ANR	5908311	Identifier	client		5908305	1					
+ANR	5908312	AssignmentExpression	* client = nbd_get_client_session ( bs )		5908305	2		=			
+ANR	5908313	Identifier	client		5908305	0					
+ANR	5908314	CallExpression	nbd_get_client_session ( bs )		5908305	1					
+ANR	5908315	Callee	nbd_get_client_session		5908305	0					
+ANR	5908316	Identifier	nbd_get_client_session		5908305	0					
+ANR	5908317	ArgumentList	bs		5908305	1					
+ANR	5908318	Argument	bs		5908305	0					
+ANR	5908319	Identifier	bs		5908305	0					
+ANR	5908320	Statement	NBDRequest	7:4:144:153	5908305	1	True				
+ANR	5908321	Statement	request	7:15:155:161	5908305	2	True				
+ANR	5908322	Statement	=	7:23:163:163	5908305	3	True				
+ANR	5908323	CompoundStatement		5:25:87:87	5908305	4					
+ANR	5908324	Statement	.	9:8:176:176	5908305	0	True				
+ANR	5908325	Statement	type	9:9:177:180	5908305	1	True				
+ANR	5908326	Statement	=	9:14:182:182	5908305	2	True				
+ANR	5908327	Statement	NBD_CMD_TRIM	9:16:184:195	5908305	3	True				
+ANR	5908328	Statement	","	9:28:196:196	5908305	4	True				
+ANR	5908329	Statement	.	11:8:207:207	5908305	5	True				
+ANR	5908330	Statement	from	11:9:208:211	5908305	6	True				
+ANR	5908331	Statement	=	11:14:213:213	5908305	7	True				
+ANR	5908332	Statement	offset	11:16:215:220	5908305	8	True				
+ANR	5908333	Statement	","	11:22:221:221	5908305	9	True				
+ANR	5908334	Statement	.	13:8:232:232	5908305	10	True				
+ANR	5908335	Statement	len	13:9:233:235	5908305	11	True				
+ANR	5908336	Statement	=	13:13:237:237	5908305	12	True				
+ANR	5908337	Statement	count	13:15:239:243	5908305	13	True				
+ANR	5908338	Statement	","	13:20:244:244	5908305	14	True				
+ANR	5908339	ExpressionStatement		15:5:252:252	5908305	5	True				
+ANR	5908340	IdentifierDeclStatement	NBDReply reply ;	17:4:259:273	5908305	6	True				
+ANR	5908341	IdentifierDecl	reply		5908305	0					
+ANR	5908342	IdentifierDeclType	NBDReply		5908305	0					
+ANR	5908343	Identifier	reply		5908305	1					
+ANR	5908344	IdentifierDeclStatement	ssize_t ret ;	19:4:280:291	5908305	7	True				
+ANR	5908345	IdentifierDecl	ret		5908305	0					
+ANR	5908346	IdentifierDeclType	ssize_t		5908305	0					
+ANR	5908347	Identifier	ret		5908305	1					
+ANR	5908348	IfStatement	if ( ! ( client -> nbdflags & NBD_FLAG_SEND_TRIM ) )		5908305	8					
+ANR	5908349	Condition	! ( client -> nbdflags & NBD_FLAG_SEND_TRIM )	23:8:304:343	5908305	0	True				
+ANR	5908350	UnaryOperationExpression	! ( client -> nbdflags & NBD_FLAG_SEND_TRIM )		5908305	0					
+ANR	5908351	UnaryOperator	!		5908305	0					
+ANR	5908352	BitAndExpression	client -> nbdflags & NBD_FLAG_SEND_TRIM		5908305	1		&			
+ANR	5908353	PtrMemberAccess	client -> nbdflags		5908305	0					
+ANR	5908354	Identifier	client		5908305	0					
+ANR	5908355	Identifier	nbdflags		5908305	1					
+ANR	5908356	Identifier	NBD_FLAG_SEND_TRIM		5908305	1					
+ANR	5908357	CompoundStatement		21:50:268:268	5908305	1					
+ANR	5908358	ReturnStatement	return 0 ;	25:8:357:365	5908305	0	True				
+ANR	5908359	PrimaryExpression	0		5908305	0					
+ANR	5908360	ExpressionStatement	"nbd_coroutine_start ( client , & request )"	31:4:381:418	5908305	9	True				
+ANR	5908361	CallExpression	"nbd_coroutine_start ( client , & request )"		5908305	0					
+ANR	5908362	Callee	nbd_coroutine_start		5908305	0					
+ANR	5908363	Identifier	nbd_coroutine_start		5908305	0					
+ANR	5908364	ArgumentList	client		5908305	1					
+ANR	5908365	Argument	client		5908305	0					
+ANR	5908366	Identifier	client		5908305	0					
+ANR	5908367	Argument	& request		5908305	1					
+ANR	5908368	UnaryOperationExpression	& request		5908305	0					
+ANR	5908369	UnaryOperator	&		5908305	0					
+ANR	5908370	Identifier	request		5908305	1					
+ANR	5908371	ExpressionStatement	"ret = nbd_co_send_request ( bs , & request , NULL )"	33:4:425:470	5908305	10	True				
+ANR	5908372	AssignmentExpression	"ret = nbd_co_send_request ( bs , & request , NULL )"		5908305	0		=			
+ANR	5908373	Identifier	ret		5908305	0					
+ANR	5908374	CallExpression	"nbd_co_send_request ( bs , & request , NULL )"		5908305	1					
+ANR	5908375	Callee	nbd_co_send_request		5908305	0					
+ANR	5908376	Identifier	nbd_co_send_request		5908305	0					
+ANR	5908377	ArgumentList	bs		5908305	1					
+ANR	5908378	Argument	bs		5908305	0					
+ANR	5908379	Identifier	bs		5908305	0					
+ANR	5908380	Argument	& request		5908305	1					
+ANR	5908381	UnaryOperationExpression	& request		5908305	0					
+ANR	5908382	UnaryOperator	&		5908305	0					
+ANR	5908383	Identifier	request		5908305	1					
+ANR	5908384	Argument	NULL		5908305	2					
+ANR	5908385	Identifier	NULL		5908305	0					
+ANR	5908386	IfStatement	if ( ret < 0 )		5908305	11					
+ANR	5908387	Condition	ret < 0	35:8:481:487	5908305	0	True				
+ANR	5908388	RelationalExpression	ret < 0		5908305	0		<			
+ANR	5908389	Identifier	ret		5908305	0					
+ANR	5908390	PrimaryExpression	0		5908305	1					
+ANR	5908391	CompoundStatement		33:17:412:412	5908305	1					
+ANR	5908392	ExpressionStatement	reply . error = - ret	37:8:501:519	5908305	0	True				
+ANR	5908393	AssignmentExpression	reply . error = - ret		5908305	0		=			
+ANR	5908394	MemberAccess	reply . error		5908305	0					
+ANR	5908395	Identifier	reply		5908305	0					
+ANR	5908396	Identifier	error		5908305	1					
+ANR	5908397	UnaryOperationExpression	- ret		5908305	1					
+ANR	5908398	UnaryOperator	-		5908305	0					
+ANR	5908399	Identifier	ret		5908305	1					
+ANR	5908400	ElseStatement	else		5908305	0					
+ANR	5908401	CompoundStatement		37:11:455:455	5908305	0					
+ANR	5908402	ExpressionStatement	"nbd_co_receive_reply ( client , & request , & reply , NULL )"	41:8:544:596	5908305	0	True				
+ANR	5908403	CallExpression	"nbd_co_receive_reply ( client , & request , & reply , NULL )"		5908305	0					
+ANR	5908404	Callee	nbd_co_receive_reply		5908305	0					
+ANR	5908405	Identifier	nbd_co_receive_reply		5908305	0					
+ANR	5908406	ArgumentList	client		5908305	1					
+ANR	5908407	Argument	client		5908305	0					
+ANR	5908408	Identifier	client		5908305	0					
+ANR	5908409	Argument	& request		5908305	1					
+ANR	5908410	UnaryOperationExpression	& request		5908305	0					
+ANR	5908411	UnaryOperator	&		5908305	0					
+ANR	5908412	Identifier	request		5908305	1					
+ANR	5908413	Argument	& reply		5908305	2					
+ANR	5908414	UnaryOperationExpression	& reply		5908305	0					
+ANR	5908415	UnaryOperator	&		5908305	0					
+ANR	5908416	Identifier	reply		5908305	1					
+ANR	5908417	Argument	NULL		5908305	3					
+ANR	5908418	Identifier	NULL		5908305	0					
+ANR	5908419	ExpressionStatement	"nbd_coroutine_end ( bs , & request )"	45:4:610:641	5908305	12	True				
+ANR	5908420	CallExpression	"nbd_coroutine_end ( bs , & request )"		5908305	0					
+ANR	5908421	Callee	nbd_coroutine_end		5908305	0					
+ANR	5908422	Identifier	nbd_coroutine_end		5908305	0					
+ANR	5908423	ArgumentList	bs		5908305	1					
+ANR	5908424	Argument	bs		5908305	0					
+ANR	5908425	Identifier	bs		5908305	0					
+ANR	5908426	Argument	& request		5908305	1					
+ANR	5908427	UnaryOperationExpression	& request		5908305	0					
+ANR	5908428	UnaryOperator	&		5908305	0					
+ANR	5908429	Identifier	request		5908305	1					
+ANR	5908430	ReturnStatement	return - reply . error ;	47:4:648:667	5908305	13	True				
+ANR	5908431	UnaryOperationExpression	- reply . error		5908305	0					
+ANR	5908432	UnaryOperator	-		5908305	0					
+ANR	5908433	MemberAccess	reply . error		5908305	1					
+ANR	5908434	Identifier	reply		5908305	0					
+ANR	5908435	Identifier	error		5908305	1					
+ANR	5908436	ReturnType	int		5908305	1					
+ANR	5908437	Identifier	nbd_client_co_pdiscard		5908305	2					
+ANR	5908438	ParameterList	"BlockDriverState * bs , int64_t offset , int count"		5908305	3					
+ANR	5908439	Parameter	BlockDriverState * bs	1:27:27:46	5908305	0	True				
+ANR	5908440	ParameterType	BlockDriverState *		5908305	0					
+ANR	5908441	Identifier	bs		5908305	1					
+ANR	5908442	Parameter	int64_t offset	1:49:49:62	5908305	1	True				
+ANR	5908443	ParameterType	int64_t		5908305	0					
+ANR	5908444	Identifier	offset		5908305	1					
+ANR	5908445	Parameter	int count	1:65:65:73	5908305	2	True				
+ANR	5908446	ParameterType	int		5908305	0					
+ANR	5908447	Identifier	count		5908305	1					
+ANR	5908448	CFGEntryNode	ENTRY		5908305		True				
+ANR	5908449	CFGExitNode	EXIT		5908305		True				
+ANR	5908450	Symbol	ret		5908305						
+ANR	5908451	Symbol	nbd_co_send_request		5908305						
+ANR	5908452	Symbol	NULL		5908305						
+ANR	5908453	Symbol	offset		5908305						
+ANR	5908454	Symbol	NBD_FLAG_SEND_TRIM		5908305						
+ANR	5908455	Symbol	count		5908305						
+ANR	5908456	Symbol	& request		5908305						
+ANR	5908457	Symbol	* client		5908305						
+ANR	5908458	Symbol	client -> nbdflags		5908305						
+ANR	5908459	Symbol	& reply		5908305						
+ANR	5908460	Symbol	bs		5908305						
+ANR	5908461	Symbol	reply . error		5908305						
+ANR	5908462	Symbol	client		5908305						
+ANR	5908463	Symbol	reply		5908305						
+ANR	5908464	Symbol	nbd_get_client_session		5908305						

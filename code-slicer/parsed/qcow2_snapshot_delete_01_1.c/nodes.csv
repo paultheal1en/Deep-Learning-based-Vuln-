@@ -1,0 +1,311 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6879471	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_snapshot_delete_01_1.c								
+ANR	6879472	Function	qcow2_snapshot_delete	1:0:0:2038							
+ANR	6879473	FunctionDef	"qcow2_snapshot_delete (BlockDriverState * bs , const char * snapshot_id , const char * name , Error * * errp)"		6879472	0					
+ANR	6879474	CompoundStatement		9:0:187:2038	6879472	0					
+ANR	6879475	IdentifierDeclStatement	BDRVQcowState * s = bs -> opaque ;	11:4:194:223	6879472	0	True				
+ANR	6879476	IdentifierDecl	* s = bs -> opaque		6879472	0					
+ANR	6879477	IdentifierDeclType	BDRVQcowState *		6879472	0					
+ANR	6879478	Identifier	s		6879472	1					
+ANR	6879479	AssignmentExpression	* s = bs -> opaque		6879472	2		=			
+ANR	6879480	Identifier	s		6879472	0					
+ANR	6879481	PtrMemberAccess	bs -> opaque		6879472	1					
+ANR	6879482	Identifier	bs		6879472	0					
+ANR	6879483	Identifier	opaque		6879472	1					
+ANR	6879484	IdentifierDeclStatement	QCowSnapshot sn ;	13:4:230:245	6879472	1	True				
+ANR	6879485	IdentifierDecl	sn		6879472	0					
+ANR	6879486	IdentifierDeclType	QCowSnapshot		6879472	0					
+ANR	6879487	Identifier	sn		6879472	1					
+ANR	6879488	IdentifierDeclStatement	"int snapshot_index , ret ;"	15:4:252:275	6879472	2	True				
+ANR	6879489	IdentifierDecl	snapshot_index		6879472	0					
+ANR	6879490	IdentifierDeclType	int		6879472	0					
+ANR	6879491	Identifier	snapshot_index		6879472	1					
+ANR	6879492	IdentifierDecl	ret		6879472	1					
+ANR	6879493	IdentifierDeclType	int		6879472	0					
+ANR	6879494	Identifier	ret		6879472	1					
+ANR	6879495	ExpressionStatement	"snapshot_index = find_snapshot_by_id_and_name ( bs , snapshot_id , name )"	21:4:315:383	6879472	3	True				
+ANR	6879496	AssignmentExpression	"snapshot_index = find_snapshot_by_id_and_name ( bs , snapshot_id , name )"		6879472	0		=			
+ANR	6879497	Identifier	snapshot_index		6879472	0					
+ANR	6879498	CallExpression	"find_snapshot_by_id_and_name ( bs , snapshot_id , name )"		6879472	1					
+ANR	6879499	Callee	find_snapshot_by_id_and_name		6879472	0					
+ANR	6879500	Identifier	find_snapshot_by_id_and_name		6879472	0					
+ANR	6879501	ArgumentList	bs		6879472	1					
+ANR	6879502	Argument	bs		6879472	0					
+ANR	6879503	Identifier	bs		6879472	0					
+ANR	6879504	Argument	snapshot_id		6879472	1					
+ANR	6879505	Identifier	snapshot_id		6879472	0					
+ANR	6879506	Argument	name		6879472	2					
+ANR	6879507	Identifier	name		6879472	0					
+ANR	6879508	IfStatement	if ( snapshot_index < 0 )		6879472	4					
+ANR	6879509	Condition	snapshot_index < 0	23:8:394:411	6879472	0	True				
+ANR	6879510	RelationalExpression	snapshot_index < 0		6879472	0		<			
+ANR	6879511	Identifier	snapshot_index		6879472	0					
+ANR	6879512	PrimaryExpression	0		6879472	1					
+ANR	6879513	CompoundStatement		15:28:226:226	6879472	1					
+ANR	6879514	ExpressionStatement	"error_setg ( errp , ""Can't find the snapshot"" )"	25:8:425:468	6879472	0	True				
+ANR	6879515	CallExpression	"error_setg ( errp , ""Can't find the snapshot"" )"		6879472	0					
+ANR	6879516	Callee	error_setg		6879472	0					
+ANR	6879517	Identifier	error_setg		6879472	0					
+ANR	6879518	ArgumentList	errp		6879472	1					
+ANR	6879519	Argument	errp		6879472	0					
+ANR	6879520	Identifier	errp		6879472	0					
+ANR	6879521	Argument	"""Can't find the snapshot"""		6879472	1					
+ANR	6879522	PrimaryExpression	"""Can't find the snapshot"""		6879472	0					
+ANR	6879523	ReturnStatement	return - ENOENT ;	27:8:479:493	6879472	1	True				
+ANR	6879524	UnaryOperationExpression	- ENOENT		6879472	0					
+ANR	6879525	UnaryOperator	-		6879472	0					
+ANR	6879526	Identifier	ENOENT		6879472	1					
+ANR	6879527	ExpressionStatement	sn = s -> snapshots [ snapshot_index ]	31:4:507:540	6879472	5	True				
+ANR	6879528	AssignmentExpression	sn = s -> snapshots [ snapshot_index ]		6879472	0		=			
+ANR	6879529	Identifier	sn		6879472	0					
+ANR	6879530	ArrayIndexing	s -> snapshots [ snapshot_index ]		6879472	1					
+ANR	6879531	PtrMemberAccess	s -> snapshots		6879472	0					
+ANR	6879532	Identifier	s		6879472	0					
+ANR	6879533	Identifier	snapshots		6879472	1					
+ANR	6879534	Identifier	snapshot_index		6879472	1					
+ANR	6879535	ExpressionStatement	"memmove ( s -> snapshots + snapshot_index , s -> snapshots + snapshot_index + 1 , ( s -> nb_snapshots - snapshot_index - 1 ) * sizeof ( sn ) )"	37:4:593:745	6879472	6	True				
+ANR	6879536	CallExpression	"memmove ( s -> snapshots + snapshot_index , s -> snapshots + snapshot_index + 1 , ( s -> nb_snapshots - snapshot_index - 1 ) * sizeof ( sn ) )"		6879472	0					
+ANR	6879537	Callee	memmove		6879472	0					
+ANR	6879538	Identifier	memmove		6879472	0					
+ANR	6879539	ArgumentList	s -> snapshots + snapshot_index		6879472	1					
+ANR	6879540	Argument	s -> snapshots + snapshot_index		6879472	0					
+ANR	6879541	AdditiveExpression	s -> snapshots + snapshot_index		6879472	0		+			
+ANR	6879542	PtrMemberAccess	s -> snapshots		6879472	0					
+ANR	6879543	Identifier	s		6879472	0					
+ANR	6879544	Identifier	snapshots		6879472	1					
+ANR	6879545	Identifier	snapshot_index		6879472	1					
+ANR	6879546	Argument	s -> snapshots + snapshot_index + 1		6879472	1					
+ANR	6879547	AdditiveExpression	s -> snapshots + snapshot_index + 1		6879472	0		+			
+ANR	6879548	PtrMemberAccess	s -> snapshots		6879472	0					
+ANR	6879549	Identifier	s		6879472	0					
+ANR	6879550	Identifier	snapshots		6879472	1					
+ANR	6879551	AdditiveExpression	snapshot_index + 1		6879472	1		+			
+ANR	6879552	Identifier	snapshot_index		6879472	0					
+ANR	6879553	PrimaryExpression	1		6879472	1					
+ANR	6879554	Argument	( s -> nb_snapshots - snapshot_index - 1 ) * sizeof ( sn )		6879472	2					
+ANR	6879555	MultiplicativeExpression	( s -> nb_snapshots - snapshot_index - 1 ) * sizeof ( sn )		6879472	0		*			
+ANR	6879556	AdditiveExpression	s -> nb_snapshots - snapshot_index - 1		6879472	0		-			
+ANR	6879557	PtrMemberAccess	s -> nb_snapshots		6879472	0					
+ANR	6879558	Identifier	s		6879472	0					
+ANR	6879559	Identifier	nb_snapshots		6879472	1					
+ANR	6879560	AdditiveExpression	snapshot_index - 1		6879472	1		-			
+ANR	6879561	Identifier	snapshot_index		6879472	0					
+ANR	6879562	PrimaryExpression	1		6879472	1					
+ANR	6879563	SizeofExpression	sizeof ( sn )		6879472	1					
+ANR	6879564	Sizeof	sizeof		6879472	0					
+ANR	6879565	SizeofOperand	sn		6879472	1					
+ANR	6879566	ExpressionStatement	s -> nb_snapshots --	43:4:752:769	6879472	7	True				
+ANR	6879567	PostIncDecOperationExpression	s -> nb_snapshots --		6879472	0					
+ANR	6879568	PtrMemberAccess	s -> nb_snapshots		6879472	0					
+ANR	6879569	Identifier	s		6879472	0					
+ANR	6879570	Identifier	nb_snapshots		6879472	1					
+ANR	6879571	IncDec	--		6879472	1					
+ANR	6879572	ExpressionStatement	ret = qcow2_write_snapshots ( bs )	45:4:776:807	6879472	8	True				
+ANR	6879573	AssignmentExpression	ret = qcow2_write_snapshots ( bs )		6879472	0		=			
+ANR	6879574	Identifier	ret		6879472	0					
+ANR	6879575	CallExpression	qcow2_write_snapshots ( bs )		6879472	1					
+ANR	6879576	Callee	qcow2_write_snapshots		6879472	0					
+ANR	6879577	Identifier	qcow2_write_snapshots		6879472	0					
+ANR	6879578	ArgumentList	bs		6879472	1					
+ANR	6879579	Argument	bs		6879472	0					
+ANR	6879580	Identifier	bs		6879472	0					
+ANR	6879581	IfStatement	if ( ret < 0 )		6879472	9					
+ANR	6879582	Condition	ret < 0	47:8:818:824	6879472	0	True				
+ANR	6879583	RelationalExpression	ret < 0		6879472	0		<			
+ANR	6879584	Identifier	ret		6879472	0					
+ANR	6879585	PrimaryExpression	0		6879472	1					
+ANR	6879586	CompoundStatement		39:17:639:639	6879472	1					
+ANR	6879587	ExpressionStatement	"error_setg ( errp , ""Failed to remove snapshot from snapshot list"" )"	49:8:838:902	6879472	0	True				
+ANR	6879588	CallExpression	"error_setg ( errp , ""Failed to remove snapshot from snapshot list"" )"		6879472	0					
+ANR	6879589	Callee	error_setg		6879472	0					
+ANR	6879590	Identifier	error_setg		6879472	0					
+ANR	6879591	ArgumentList	errp		6879472	1					
+ANR	6879592	Argument	errp		6879472	0					
+ANR	6879593	Identifier	errp		6879472	0					
+ANR	6879594	Argument	"""Failed to remove snapshot from snapshot list"""		6879472	1					
+ANR	6879595	PrimaryExpression	"""Failed to remove snapshot from snapshot list"""		6879472	0					
+ANR	6879596	ReturnStatement	return ret ;	51:8:913:923	6879472	1	True				
+ANR	6879597	Identifier	ret		6879472	0					
+ANR	6879598	ExpressionStatement	g_free ( sn . id_str )	65:4:1080:1097	6879472	10	True				
+ANR	6879599	CallExpression	g_free ( sn . id_str )		6879472	0					
+ANR	6879600	Callee	g_free		6879472	0					
+ANR	6879601	Identifier	g_free		6879472	0					
+ANR	6879602	ArgumentList	sn . id_str		6879472	1					
+ANR	6879603	Argument	sn . id_str		6879472	0					
+ANR	6879604	MemberAccess	sn . id_str		6879472	0					
+ANR	6879605	Identifier	sn		6879472	0					
+ANR	6879606	Identifier	id_str		6879472	1					
+ANR	6879607	ExpressionStatement	g_free ( sn . name )	67:4:1104:1119	6879472	11	True				
+ANR	6879608	CallExpression	g_free ( sn . name )		6879472	0					
+ANR	6879609	Callee	g_free		6879472	0					
+ANR	6879610	Identifier	g_free		6879472	0					
+ANR	6879611	ArgumentList	sn . name		6879472	1					
+ANR	6879612	Argument	sn . name		6879472	0					
+ANR	6879613	MemberAccess	sn . name		6879472	0					
+ANR	6879614	Identifier	sn		6879472	0					
+ANR	6879615	Identifier	name		6879472	1					
+ANR	6879616	ExpressionStatement	"ret = qcow2_update_snapshot_refcount ( bs , sn . l1_table_offset , sn . l1_size , - 1 )"	79:4:1250:1368	6879472	12	True				
+ANR	6879617	AssignmentExpression	"ret = qcow2_update_snapshot_refcount ( bs , sn . l1_table_offset , sn . l1_size , - 1 )"		6879472	0		=			
+ANR	6879618	Identifier	ret		6879472	0					
+ANR	6879619	CallExpression	"qcow2_update_snapshot_refcount ( bs , sn . l1_table_offset , sn . l1_size , - 1 )"		6879472	1					
+ANR	6879620	Callee	qcow2_update_snapshot_refcount		6879472	0					
+ANR	6879621	Identifier	qcow2_update_snapshot_refcount		6879472	0					
+ANR	6879622	ArgumentList	bs		6879472	1					
+ANR	6879623	Argument	bs		6879472	0					
+ANR	6879624	Identifier	bs		6879472	0					
+ANR	6879625	Argument	sn . l1_table_offset		6879472	1					
+ANR	6879626	MemberAccess	sn . l1_table_offset		6879472	0					
+ANR	6879627	Identifier	sn		6879472	0					
+ANR	6879628	Identifier	l1_table_offset		6879472	1					
+ANR	6879629	Argument	sn . l1_size		6879472	2					
+ANR	6879630	MemberAccess	sn . l1_size		6879472	0					
+ANR	6879631	Identifier	sn		6879472	0					
+ANR	6879632	Identifier	l1_size		6879472	1					
+ANR	6879633	Argument	- 1		6879472	3					
+ANR	6879634	UnaryOperationExpression	- 1		6879472	0					
+ANR	6879635	UnaryOperator	-		6879472	0					
+ANR	6879636	PrimaryExpression	1		6879472	1					
+ANR	6879637	IfStatement	if ( ret < 0 )		6879472	13					
+ANR	6879638	Condition	ret < 0	83:8:1379:1385	6879472	0	True				
+ANR	6879639	RelationalExpression	ret < 0		6879472	0		<			
+ANR	6879640	Identifier	ret		6879472	0					
+ANR	6879641	PrimaryExpression	0		6879472	1					
+ANR	6879642	CompoundStatement		75:17:1200:1200	6879472	1					
+ANR	6879643	ExpressionStatement	"error_setg ( errp , ""Failed to free the cluster and L1 table"" )"	85:8:1399:1458	6879472	0	True				
+ANR	6879644	CallExpression	"error_setg ( errp , ""Failed to free the cluster and L1 table"" )"		6879472	0					
+ANR	6879645	Callee	error_setg		6879472	0					
+ANR	6879646	Identifier	error_setg		6879472	0					
+ANR	6879647	ArgumentList	errp		6879472	1					
+ANR	6879648	Argument	errp		6879472	0					
+ANR	6879649	Identifier	errp		6879472	0					
+ANR	6879650	Argument	"""Failed to free the cluster and L1 table"""		6879472	1					
+ANR	6879651	PrimaryExpression	"""Failed to free the cluster and L1 table"""		6879472	0					
+ANR	6879652	ReturnStatement	return ret ;	87:8:1469:1479	6879472	1	True				
+ANR	6879653	Identifier	ret		6879472	0					
+ANR	6879654	ExpressionStatement	"qcow2_free_clusters ( bs , sn . l1_table_offset , sn . l1_size * sizeof ( uint64_t ) , QCOW2_DISCARD_SNAPSHOT )"	91:4:1493:1616	6879472	14	True				
+ANR	6879655	CallExpression	"qcow2_free_clusters ( bs , sn . l1_table_offset , sn . l1_size * sizeof ( uint64_t ) , QCOW2_DISCARD_SNAPSHOT )"		6879472	0					
+ANR	6879656	Callee	qcow2_free_clusters		6879472	0					
+ANR	6879657	Identifier	qcow2_free_clusters		6879472	0					
+ANR	6879658	ArgumentList	bs		6879472	1					
+ANR	6879659	Argument	bs		6879472	0					
+ANR	6879660	Identifier	bs		6879472	0					
+ANR	6879661	Argument	sn . l1_table_offset		6879472	1					
+ANR	6879662	MemberAccess	sn . l1_table_offset		6879472	0					
+ANR	6879663	Identifier	sn		6879472	0					
+ANR	6879664	Identifier	l1_table_offset		6879472	1					
+ANR	6879665	Argument	sn . l1_size * sizeof ( uint64_t )		6879472	2					
+ANR	6879666	MultiplicativeExpression	sn . l1_size * sizeof ( uint64_t )		6879472	0		*			
+ANR	6879667	MemberAccess	sn . l1_size		6879472	0					
+ANR	6879668	Identifier	sn		6879472	0					
+ANR	6879669	Identifier	l1_size		6879472	1					
+ANR	6879670	SizeofExpression	sizeof ( uint64_t )		6879472	1					
+ANR	6879671	Sizeof	sizeof		6879472	0					
+ANR	6879672	SizeofOperand	uint64_t		6879472	1					
+ANR	6879673	Argument	QCOW2_DISCARD_SNAPSHOT		6879472	3					
+ANR	6879674	Identifier	QCOW2_DISCARD_SNAPSHOT		6879472	0					
+ANR	6879675	ExpressionStatement	"ret = qcow2_update_snapshot_refcount ( bs , s -> l1_table_offset , s -> l1_size , 0 )"	99:4:1695:1770	6879472	15	True				
+ANR	6879676	AssignmentExpression	"ret = qcow2_update_snapshot_refcount ( bs , s -> l1_table_offset , s -> l1_size , 0 )"		6879472	0		=			
+ANR	6879677	Identifier	ret		6879472	0					
+ANR	6879678	CallExpression	"qcow2_update_snapshot_refcount ( bs , s -> l1_table_offset , s -> l1_size , 0 )"		6879472	1					
+ANR	6879679	Callee	qcow2_update_snapshot_refcount		6879472	0					
+ANR	6879680	Identifier	qcow2_update_snapshot_refcount		6879472	0					
+ANR	6879681	ArgumentList	bs		6879472	1					
+ANR	6879682	Argument	bs		6879472	0					
+ANR	6879683	Identifier	bs		6879472	0					
+ANR	6879684	Argument	s -> l1_table_offset		6879472	1					
+ANR	6879685	PtrMemberAccess	s -> l1_table_offset		6879472	0					
+ANR	6879686	Identifier	s		6879472	0					
+ANR	6879687	Identifier	l1_table_offset		6879472	1					
+ANR	6879688	Argument	s -> l1_size		6879472	2					
+ANR	6879689	PtrMemberAccess	s -> l1_size		6879472	0					
+ANR	6879690	Identifier	s		6879472	0					
+ANR	6879691	Identifier	l1_size		6879472	1					
+ANR	6879692	Argument	0		6879472	3					
+ANR	6879693	PrimaryExpression	0		6879472	0					
+ANR	6879694	IfStatement	if ( ret < 0 )		6879472	16					
+ANR	6879695	Condition	ret < 0	101:8:1781:1787	6879472	0	True				
+ANR	6879696	RelationalExpression	ret < 0		6879472	0		<			
+ANR	6879697	Identifier	ret		6879472	0					
+ANR	6879698	PrimaryExpression	0		6879472	1					
+ANR	6879699	CompoundStatement		93:17:1602:1602	6879472	1					
+ANR	6879700	ExpressionStatement	"error_setg ( errp , ""Failed to update snapshot status in disk"" )"	103:8:1801:1861	6879472	0	True				
+ANR	6879701	CallExpression	"error_setg ( errp , ""Failed to update snapshot status in disk"" )"		6879472	0					
+ANR	6879702	Callee	error_setg		6879472	0					
+ANR	6879703	Identifier	error_setg		6879472	0					
+ANR	6879704	ArgumentList	errp		6879472	1					
+ANR	6879705	Argument	errp		6879472	0					
+ANR	6879706	Identifier	errp		6879472	0					
+ANR	6879707	Argument	"""Failed to update snapshot status in disk"""		6879472	1					
+ANR	6879708	PrimaryExpression	"""Failed to update snapshot status in disk"""		6879472	0					
+ANR	6879709	ReturnStatement	return ret ;	105:8:1872:1882	6879472	1	True				
+ANR	6879710	Identifier	ret		6879472	0					
+ANR	6879711	CompoundStatement		107:8:1741:1769	6879472	17					
+ANR	6879712	IdentifierDeclStatement	BdrvCheckResult result = { 0 } ;	115:8:1929:1957	6879472	0	True				
+ANR	6879713	IdentifierDecl	result = { 0 }		6879472	0					
+ANR	6879714	IdentifierDeclType	BdrvCheckResult		6879472	0					
+ANR	6879715	Identifier	result		6879472	1					
+ANR	6879716	AssignmentExpression	result = { 0 }		6879472	2		=			
+ANR	6879717	Identifier	result		6879472	0					
+ANR	6879718	InitializerList	0		6879472	1					
+ANR	6879719	PrimaryExpression	0		6879472	0					
+ANR	6879720	ExpressionStatement	"qcow2_check_refcounts ( bs , & result , 0 )"	117:8:1968:2005	6879472	1	True				
+ANR	6879721	CallExpression	"qcow2_check_refcounts ( bs , & result , 0 )"		6879472	0					
+ANR	6879722	Callee	qcow2_check_refcounts		6879472	0					
+ANR	6879723	Identifier	qcow2_check_refcounts		6879472	0					
+ANR	6879724	ArgumentList	bs		6879472	1					
+ANR	6879725	Argument	bs		6879472	0					
+ANR	6879726	Identifier	bs		6879472	0					
+ANR	6879727	Argument	& result		6879472	1					
+ANR	6879728	UnaryOperationExpression	& result		6879472	0					
+ANR	6879729	UnaryOperator	&		6879472	0					
+ANR	6879730	Identifier	result		6879472	1					
+ANR	6879731	Argument	0		6879472	2					
+ANR	6879732	PrimaryExpression	0		6879472	0					
+ANR	6879733	ReturnStatement	return 0 ;	123:4:2027:2035	6879472	18	True				
+ANR	6879734	PrimaryExpression	0		6879472	0					
+ANR	6879735	ReturnType	int		6879472	1					
+ANR	6879736	Identifier	qcow2_snapshot_delete		6879472	2					
+ANR	6879737	ParameterList	"BlockDriverState * bs , const char * snapshot_id , const char * name , Error * * errp"		6879472	3					
+ANR	6879738	Parameter	BlockDriverState * bs	1:26:26:45	6879472	0	True				
+ANR	6879739	ParameterType	BlockDriverState *		6879472	0					
+ANR	6879740	Identifier	bs		6879472	1					
+ANR	6879741	Parameter	const char * snapshot_id	3:26:75:97	6879472	1	True				
+ANR	6879742	ParameterType	const char *		6879472	0					
+ANR	6879743	Identifier	snapshot_id		6879472	1					
+ANR	6879744	Parameter	const char * name	5:26:127:142	6879472	2	True				
+ANR	6879745	ParameterType	const char *		6879472	0					
+ANR	6879746	Identifier	name		6879472	1					
+ANR	6879747	Parameter	Error * * errp	7:26:172:183	6879472	3	True				
+ANR	6879748	ParameterType	Error * *		6879472	0					
+ANR	6879749	Identifier	errp		6879472	1					
+ANR	6879750	CFGEntryNode	ENTRY		6879472		True				
+ANR	6879751	CFGExitNode	EXIT		6879472		True				
+ANR	6879752	Symbol	errp		6879472						
+ANR	6879753	Symbol	snapshot_id		6879472						
+ANR	6879754	Symbol	qcow2_update_snapshot_refcount		6879472						
+ANR	6879755	Symbol	find_snapshot_by_id_and_name		6879472						
+ANR	6879756	Symbol	* s -> snapshots		6879472						
+ANR	6879757	Symbol	sn . l1_table_offset		6879472						
+ANR	6879758	Symbol	result		6879472						
+ANR	6879759	Symbol	bs		6879472						
+ANR	6879760	Symbol	QCOW2_DISCARD_SNAPSHOT		6879472						
+ANR	6879761	Symbol	* bs		6879472						
+ANR	6879762	Symbol	sn . id_str		6879472						
+ANR	6879763	Symbol	& result		6879472						
+ANR	6879764	Symbol	* * s		6879472						
+ANR	6879765	Symbol	sn . name		6879472						
+ANR	6879766	Symbol	sn		6879472						
+ANR	6879767	Symbol	ret		6879472						
+ANR	6879768	Symbol	s -> snapshots		6879472						
+ANR	6879769	Symbol	bs -> opaque		6879472						
+ANR	6879770	Symbol	sn . l1_size		6879472						
+ANR	6879771	Symbol	ENOENT		6879472						
+ANR	6879772	Symbol	s -> l1_size		6879472						
+ANR	6879773	Symbol	s -> nb_snapshots		6879472						
+ANR	6879774	Symbol	* snapshot_index		6879472						
+ANR	6879775	Symbol	s		6879472						
+ANR	6879776	Symbol	snapshot_index		6879472						
+ANR	6879777	Symbol	s -> l1_table_offset		6879472						
+ANR	6879778	Symbol	name		6879472						
+ANR	6879779	Symbol	qcow2_write_snapshots		6879472						
+ANR	6879780	Symbol	* s		6879472						

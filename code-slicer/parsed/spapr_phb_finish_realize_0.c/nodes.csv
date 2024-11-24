@@ -1,0 +1,110 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7933733	File	/home/p4ultr4n/workplace/ReVeal/raw_code/spapr_phb_finish_realize_0.c								
+ANR	7933734	Function	spapr_phb_finish_realize	1:0:0:547							
+ANR	7933735	FunctionDef	"spapr_phb_finish_realize (sPAPRPHBState * sphb , Error * * errp)"		7933734	0					
+ANR	7933736	CompoundStatement		3:0:73:547	7933734	0					
+ANR	7933737	ExpressionStatement	sphb -> dma_window_start = 0	5:4:80:106	7933734	0	True				
+ANR	7933738	AssignmentExpression	sphb -> dma_window_start = 0		7933734	0		=			
+ANR	7933739	PtrMemberAccess	sphb -> dma_window_start		7933734	0					
+ANR	7933740	Identifier	sphb		7933734	0					
+ANR	7933741	Identifier	dma_window_start		7933734	1					
+ANR	7933742	PrimaryExpression	0		7933734	1					
+ANR	7933743	ExpressionStatement	sphb -> dma_window_size = 0x40000000	7:4:113:147	7933734	1	True				
+ANR	7933744	AssignmentExpression	sphb -> dma_window_size = 0x40000000		7933734	0		=			
+ANR	7933745	PtrMemberAccess	sphb -> dma_window_size		7933734	0					
+ANR	7933746	Identifier	sphb		7933734	0					
+ANR	7933747	Identifier	dma_window_size		7933734	1					
+ANR	7933748	PrimaryExpression	0x40000000		7933734	1					
+ANR	7933749	ExpressionStatement	"sphb -> tcet = spapr_tce_new_table ( DEVICE ( sphb ) , sphb -> dma_liobn , sphb -> dma_window_size )"	9:4:154:278	7933734	2	True				
+ANR	7933750	AssignmentExpression	"sphb -> tcet = spapr_tce_new_table ( DEVICE ( sphb ) , sphb -> dma_liobn , sphb -> dma_window_size )"		7933734	0		=			
+ANR	7933751	PtrMemberAccess	sphb -> tcet		7933734	0					
+ANR	7933752	Identifier	sphb		7933734	0					
+ANR	7933753	Identifier	tcet		7933734	1					
+ANR	7933754	CallExpression	"spapr_tce_new_table ( DEVICE ( sphb ) , sphb -> dma_liobn , sphb -> dma_window_size )"		7933734	1					
+ANR	7933755	Callee	spapr_tce_new_table		7933734	0					
+ANR	7933756	Identifier	spapr_tce_new_table		7933734	0					
+ANR	7933757	ArgumentList	DEVICE ( sphb )		7933734	1					
+ANR	7933758	Argument	DEVICE ( sphb )		7933734	0					
+ANR	7933759	CallExpression	DEVICE ( sphb )		7933734	0					
+ANR	7933760	Callee	DEVICE		7933734	0					
+ANR	7933761	Identifier	DEVICE		7933734	0					
+ANR	7933762	ArgumentList	sphb		7933734	1					
+ANR	7933763	Argument	sphb		7933734	0					
+ANR	7933764	Identifier	sphb		7933734	0					
+ANR	7933765	Argument	sphb -> dma_liobn		7933734	1					
+ANR	7933766	PtrMemberAccess	sphb -> dma_liobn		7933734	0					
+ANR	7933767	Identifier	sphb		7933734	0					
+ANR	7933768	Identifier	dma_liobn		7933734	1					
+ANR	7933769	Argument	sphb -> dma_window_size		7933734	2					
+ANR	7933770	PtrMemberAccess	sphb -> dma_window_size		7933734	0					
+ANR	7933771	Identifier	sphb		7933734	0					
+ANR	7933772	Identifier	dma_window_size		7933734	1					
+ANR	7933773	IfStatement	if ( ! sphb -> tcet )		7933734	3					
+ANR	7933774	Condition	! sphb -> tcet	13:8:289:299	7933734	0	True				
+ANR	7933775	UnaryOperationExpression	! sphb -> tcet		7933734	0					
+ANR	7933776	UnaryOperator	!		7933734	0					
+ANR	7933777	PtrMemberAccess	sphb -> tcet		7933734	1					
+ANR	7933778	Identifier	sphb		7933734	0					
+ANR	7933779	Identifier	tcet		7933734	1					
+ANR	7933780	CompoundStatement		11:21:228:228	7933734	1					
+ANR	7933781	ExpressionStatement	"error_setg ( errp , ""Unable to create TCE table for %s"" , sphb -> dtbusname )"	15:8:313:403	7933734	0	True				
+ANR	7933782	CallExpression	"error_setg ( errp , ""Unable to create TCE table for %s"" , sphb -> dtbusname )"		7933734	0					
+ANR	7933783	Callee	error_setg		7933734	0					
+ANR	7933784	Identifier	error_setg		7933734	0					
+ANR	7933785	ArgumentList	errp		7933734	1					
+ANR	7933786	Argument	errp		7933734	0					
+ANR	7933787	Identifier	errp		7933734	0					
+ANR	7933788	Argument	"""Unable to create TCE table for %s"""		7933734	1					
+ANR	7933789	PrimaryExpression	"""Unable to create TCE table for %s"""		7933734	0					
+ANR	7933790	Argument	sphb -> dtbusname		7933734	2					
+ANR	7933791	PtrMemberAccess	sphb -> dtbusname		7933734	0					
+ANR	7933792	Identifier	sphb		7933734	0					
+ANR	7933793	Identifier	dtbusname		7933734	1					
+ANR	7933794	ReturnStatement	return ;	19:8:414:421	7933734	1	True				
+ANR	7933795	ExpressionStatement	"address_space_init ( & sphb -> iommu_as , spapr_tce_get_iommu ( sphb -> tcet ) , sphb -> dtbusname )"	23:4:435:544	7933734	4	True				
+ANR	7933796	CallExpression	"address_space_init ( & sphb -> iommu_as , spapr_tce_get_iommu ( sphb -> tcet ) , sphb -> dtbusname )"		7933734	0					
+ANR	7933797	Callee	address_space_init		7933734	0					
+ANR	7933798	Identifier	address_space_init		7933734	0					
+ANR	7933799	ArgumentList	& sphb -> iommu_as		7933734	1					
+ANR	7933800	Argument	& sphb -> iommu_as		7933734	0					
+ANR	7933801	UnaryOperationExpression	& sphb -> iommu_as		7933734	0					
+ANR	7933802	UnaryOperator	&		7933734	0					
+ANR	7933803	PtrMemberAccess	sphb -> iommu_as		7933734	1					
+ANR	7933804	Identifier	sphb		7933734	0					
+ANR	7933805	Identifier	iommu_as		7933734	1					
+ANR	7933806	Argument	spapr_tce_get_iommu ( sphb -> tcet )		7933734	1					
+ANR	7933807	CallExpression	spapr_tce_get_iommu ( sphb -> tcet )		7933734	0					
+ANR	7933808	Callee	spapr_tce_get_iommu		7933734	0					
+ANR	7933809	Identifier	spapr_tce_get_iommu		7933734	0					
+ANR	7933810	ArgumentList	sphb -> tcet		7933734	1					
+ANR	7933811	Argument	sphb -> tcet		7933734	0					
+ANR	7933812	PtrMemberAccess	sphb -> tcet		7933734	0					
+ANR	7933813	Identifier	sphb		7933734	0					
+ANR	7933814	Identifier	tcet		7933734	1					
+ANR	7933815	Argument	sphb -> dtbusname		7933734	2					
+ANR	7933816	PtrMemberAccess	sphb -> dtbusname		7933734	0					
+ANR	7933817	Identifier	sphb		7933734	0					
+ANR	7933818	Identifier	dtbusname		7933734	1					
+ANR	7933819	ReturnType	static void		7933734	1					
+ANR	7933820	Identifier	spapr_phb_finish_realize		7933734	2					
+ANR	7933821	ParameterList	"sPAPRPHBState * sphb , Error * * errp"		7933734	3					
+ANR	7933822	Parameter	sPAPRPHBState * sphb	1:37:37:55	7933734	0	True				
+ANR	7933823	ParameterType	sPAPRPHBState *		7933734	0					
+ANR	7933824	Identifier	sphb		7933734	1					
+ANR	7933825	Parameter	Error * * errp	1:58:58:69	7933734	1	True				
+ANR	7933826	ParameterType	Error * *		7933734	0					
+ANR	7933827	Identifier	errp		7933734	1					
+ANR	7933828	CFGEntryNode	ENTRY		7933734		True				
+ANR	7933829	CFGExitNode	EXIT		7933734		True				
+ANR	7933830	Symbol	sphb -> dma_window_start		7933734						
+ANR	7933831	Symbol	spapr_tce_new_table		7933734						
+ANR	7933832	Symbol	spapr_tce_get_iommu		7933734						
+ANR	7933833	Symbol	sphb		7933734						
+ANR	7933834	Symbol	& sphb -> iommu_as		7933734						
+ANR	7933835	Symbol	sphb -> tcet		7933734						
+ANR	7933836	Symbol	errp		7933734						
+ANR	7933837	Symbol	DEVICE		7933734						
+ANR	7933838	Symbol	* sphb		7933734						
+ANR	7933839	Symbol	sphb -> dma_window_size		7933734						
+ANR	7933840	Symbol	sphb -> dtbusname		7933734						
+ANR	7933841	Symbol	sphb -> dma_liobn		7933734						

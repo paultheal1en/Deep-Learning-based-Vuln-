@@ -1,0 +1,337 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	612002	File	/home/p4ultr4n/workplace/ReVeal/raw_code/armv7m_nvic_set_pending_0.c								
+ANR	612003	Function	armv7m_nvic_set_pending	1:0:0:3330							
+ANR	612004	FunctionDef	"armv7m_nvic_set_pending (void * opaque , int irq , bool secure)"		612003	0					
+ANR	612005	CompoundStatement		3:0:66:3330	612003	0					
+ANR	612006	IdentifierDeclStatement	NVICState * s = ( NVICState * ) opaque ;	5:4:73:107	612003	0	True				
+ANR	612007	IdentifierDecl	* s = ( NVICState * ) opaque		612003	0					
+ANR	612008	IdentifierDeclType	NVICState *		612003	0					
+ANR	612009	Identifier	s		612003	1					
+ANR	612010	AssignmentExpression	* s = ( NVICState * ) opaque		612003	2		=			
+ANR	612011	Identifier	s		612003	0					
+ANR	612012	CastExpression	( NVICState * ) opaque		612003	1					
+ANR	612013	CastTarget	NVICState *		612003	0					
+ANR	612014	Identifier	opaque		612003	1					
+ANR	612015	IdentifierDeclStatement	bool banked = exc_is_banked ( irq ) ;	7:4:114:146	612003	1	True				
+ANR	612016	IdentifierDecl	banked = exc_is_banked ( irq )		612003	0					
+ANR	612017	IdentifierDeclType	bool		612003	0					
+ANR	612018	Identifier	banked		612003	1					
+ANR	612019	AssignmentExpression	banked = exc_is_banked ( irq )		612003	2		=			
+ANR	612020	Identifier	banked		612003	0					
+ANR	612021	CallExpression	exc_is_banked ( irq )		612003	1					
+ANR	612022	Callee	exc_is_banked		612003	0					
+ANR	612023	Identifier	exc_is_banked		612003	0					
+ANR	612024	ArgumentList	irq		612003	1					
+ANR	612025	Argument	irq		612003	0					
+ANR	612026	Identifier	irq		612003	0					
+ANR	612027	IdentifierDeclStatement	VecInfo * vec ;	9:4:153:165	612003	2	True				
+ANR	612028	IdentifierDecl	* vec		612003	0					
+ANR	612029	IdentifierDeclType	VecInfo *		612003	0					
+ANR	612030	Identifier	vec		612003	1					
+ANR	612031	ExpressionStatement	assert ( irq > ARMV7M_EXCP_RESET && irq < s -> num_irq )	13:4:174:225	612003	3	True				
+ANR	612032	CallExpression	assert ( irq > ARMV7M_EXCP_RESET && irq < s -> num_irq )		612003	0					
+ANR	612033	Callee	assert		612003	0					
+ANR	612034	Identifier	assert		612003	0					
+ANR	612035	ArgumentList	irq > ARMV7M_EXCP_RESET && irq < s -> num_irq		612003	1					
+ANR	612036	Argument	irq > ARMV7M_EXCP_RESET && irq < s -> num_irq		612003	0					
+ANR	612037	AndExpression	irq > ARMV7M_EXCP_RESET && irq < s -> num_irq		612003	0		&&			
+ANR	612038	RelationalExpression	irq > ARMV7M_EXCP_RESET		612003	0		>			
+ANR	612039	Identifier	irq		612003	0					
+ANR	612040	Identifier	ARMV7M_EXCP_RESET		612003	1					
+ANR	612041	RelationalExpression	irq < s -> num_irq		612003	1		<			
+ANR	612042	Identifier	irq		612003	0					
+ANR	612043	PtrMemberAccess	s -> num_irq		612003	1					
+ANR	612044	Identifier	s		612003	0					
+ANR	612045	Identifier	num_irq		612003	1					
+ANR	612046	ExpressionStatement	assert ( ! secure || banked )	15:4:232:257	612003	4	True				
+ANR	612047	CallExpression	assert ( ! secure || banked )		612003	0					
+ANR	612048	Callee	assert		612003	0					
+ANR	612049	Identifier	assert		612003	0					
+ANR	612050	ArgumentList	! secure || banked		612003	1					
+ANR	612051	Argument	! secure || banked		612003	0					
+ANR	612052	OrExpression	! secure || banked		612003	0		||			
+ANR	612053	UnaryOperationExpression	! secure		612003	0					
+ANR	612054	UnaryOperator	!		612003	0					
+ANR	612055	Identifier	secure		612003	1					
+ANR	612056	Identifier	banked		612003	1					
+ANR	612057	ExpressionStatement	vec = ( banked && secure ) ? & s -> sec_vectors [ irq ] : & s -> vectors [ irq ]	19:4:266:332	612003	5	True				
+ANR	612058	AssignmentExpression	vec = ( banked && secure ) ? & s -> sec_vectors [ irq ] : & s -> vectors [ irq ]		612003	0		=			
+ANR	612059	Identifier	vec		612003	0					
+ANR	612060	ConditionalExpression	( banked && secure ) ? & s -> sec_vectors [ irq ] : & s -> vectors [ irq ]		612003	1					
+ANR	612061	Condition	banked && secure		612003	0					
+ANR	612062	AndExpression	banked && secure		612003	0		&&			
+ANR	612063	Identifier	banked		612003	0					
+ANR	612064	Identifier	secure		612003	1					
+ANR	612065	UnaryOperationExpression	& s -> sec_vectors [ irq ]		612003	1					
+ANR	612066	UnaryOperator	&		612003	0					
+ANR	612067	ArrayIndexing	s -> sec_vectors [ irq ]		612003	1					
+ANR	612068	PtrMemberAccess	s -> sec_vectors		612003	0					
+ANR	612069	Identifier	s		612003	0					
+ANR	612070	Identifier	sec_vectors		612003	1					
+ANR	612071	Identifier	irq		612003	1					
+ANR	612072	UnaryOperationExpression	& s -> vectors [ irq ]		612003	2					
+ANR	612073	UnaryOperator	&		612003	0					
+ANR	612074	ArrayIndexing	s -> vectors [ irq ]		612003	1					
+ANR	612075	PtrMemberAccess	s -> vectors		612003	0					
+ANR	612076	Identifier	s		612003	0					
+ANR	612077	Identifier	vectors		612003	1					
+ANR	612078	Identifier	irq		612003	1					
+ANR	612079	ExpressionStatement	"trace_nvic_set_pending ( irq , secure , vec -> enabled , vec -> prio )"	23:4:341:401	612003	6	True				
+ANR	612080	CallExpression	"trace_nvic_set_pending ( irq , secure , vec -> enabled , vec -> prio )"		612003	0					
+ANR	612081	Callee	trace_nvic_set_pending		612003	0					
+ANR	612082	Identifier	trace_nvic_set_pending		612003	0					
+ANR	612083	ArgumentList	irq		612003	1					
+ANR	612084	Argument	irq		612003	0					
+ANR	612085	Identifier	irq		612003	0					
+ANR	612086	Argument	secure		612003	1					
+ANR	612087	Identifier	secure		612003	0					
+ANR	612088	Argument	vec -> enabled		612003	2					
+ANR	612089	PtrMemberAccess	vec -> enabled		612003	0					
+ANR	612090	Identifier	vec		612003	0					
+ANR	612091	Identifier	enabled		612003	1					
+ANR	612092	Argument	vec -> prio		612003	3					
+ANR	612093	PtrMemberAccess	vec -> prio		612003	0					
+ANR	612094	Identifier	vec		612003	0					
+ANR	612095	Identifier	prio		612003	1					
+ANR	612096	IfStatement	if ( irq >= ARMV7M_EXCP_HARD && irq < ARMV7M_EXCP_PENDSV )		612003	7					
+ANR	612097	Condition	irq >= ARMV7M_EXCP_HARD && irq < ARMV7M_EXCP_PENDSV	27:8:414:464	612003	0	True				
+ANR	612098	AndExpression	irq >= ARMV7M_EXCP_HARD && irq < ARMV7M_EXCP_PENDSV		612003	0		&&			
+ANR	612099	RelationalExpression	irq >= ARMV7M_EXCP_HARD		612003	0		>=			
+ANR	612100	Identifier	irq		612003	0					
+ANR	612101	Identifier	ARMV7M_EXCP_HARD		612003	1					
+ANR	612102	RelationalExpression	irq < ARMV7M_EXCP_PENDSV		612003	1		<			
+ANR	612103	Identifier	irq		612003	0					
+ANR	612104	Identifier	ARMV7M_EXCP_PENDSV		612003	1					
+ANR	612105	CompoundStatement		69:8:1555:1576	612003	1					
+ANR	612106	IdentifierDeclStatement	int running = nvic_exec_prio ( s ) ;	69:8:1580:1611	612003	0	True				
+ANR	612107	IdentifierDecl	running = nvic_exec_prio ( s )		612003	0					
+ANR	612108	IdentifierDeclType	int		612003	0					
+ANR	612109	Identifier	running		612003	1					
+ANR	612110	AssignmentExpression	running = nvic_exec_prio ( s )		612003	2		=			
+ANR	612111	Identifier	running		612003	0					
+ANR	612112	CallExpression	nvic_exec_prio ( s )		612003	1					
+ANR	612113	Callee	nvic_exec_prio		612003	0					
+ANR	612114	Identifier	nvic_exec_prio		612003	0					
+ANR	612115	ArgumentList	s		612003	1					
+ANR	612116	Argument	s		612003	0					
+ANR	612117	Identifier	s		612003	0					
+ANR	612118	IdentifierDeclStatement	bool escalate = false ;	71:8:1622:1643	612003	1	True				
+ANR	612119	IdentifierDecl	escalate = false		612003	0					
+ANR	612120	IdentifierDeclType	bool		612003	0					
+ANR	612121	Identifier	escalate		612003	1					
+ANR	612122	AssignmentExpression	escalate = false		612003	2		=			
+ANR	612123	Identifier	false		612003	0					
+ANR	612124	Identifier	false		612003	1					
+ANR	612125	IfStatement	if ( vec -> prio >= running )		612003	2					
+ANR	612126	Condition	vec -> prio >= running	75:12:1660:1679	612003	0	True				
+ANR	612127	RelationalExpression	vec -> prio >= running		612003	0		>=			
+ANR	612128	PtrMemberAccess	vec -> prio		612003	0					
+ANR	612129	Identifier	vec		612003	0					
+ANR	612130	Identifier	prio		612003	1					
+ANR	612131	Identifier	running		612003	1					
+ANR	612132	CompoundStatement		73:34:1615:1615	612003	1					
+ANR	612133	ExpressionStatement	"trace_nvic_escalate_prio ( irq , vec -> prio , running )"	77:12:1697:1746	612003	0	True				
+ANR	612134	CallExpression	"trace_nvic_escalate_prio ( irq , vec -> prio , running )"		612003	0					
+ANR	612135	Callee	trace_nvic_escalate_prio		612003	0					
+ANR	612136	Identifier	trace_nvic_escalate_prio		612003	0					
+ANR	612137	ArgumentList	irq		612003	1					
+ANR	612138	Argument	irq		612003	0					
+ANR	612139	Identifier	irq		612003	0					
+ANR	612140	Argument	vec -> prio		612003	1					
+ANR	612141	PtrMemberAccess	vec -> prio		612003	0					
+ANR	612142	Identifier	vec		612003	0					
+ANR	612143	Identifier	prio		612003	1					
+ANR	612144	Argument	running		612003	2					
+ANR	612145	Identifier	running		612003	0					
+ANR	612146	ExpressionStatement	escalate = true	79:12:1761:1776	612003	1	True				
+ANR	612147	AssignmentExpression	escalate = true		612003	0		=			
+ANR	612148	Identifier	escalate		612003	0					
+ANR	612149	Identifier	true		612003	1					
+ANR	612150	ElseStatement	else		612003	0					
+ANR	612151	IfStatement	if ( ! vec -> enabled )		612003	0					
+ANR	612152	Condition	! vec -> enabled	81:19:1798:1810	612003	0	True				
+ANR	612153	UnaryOperationExpression	! vec -> enabled		612003	0					
+ANR	612154	UnaryOperator	!		612003	0					
+ANR	612155	PtrMemberAccess	vec -> enabled		612003	1					
+ANR	612156	Identifier	vec		612003	0					
+ANR	612157	Identifier	enabled		612003	1					
+ANR	612158	CompoundStatement		79:34:1746:1746	612003	1					
+ANR	612159	ExpressionStatement	trace_nvic_escalate_disabled ( irq )	83:12:1828:1861	612003	0	True				
+ANR	612160	CallExpression	trace_nvic_escalate_disabled ( irq )		612003	0					
+ANR	612161	Callee	trace_nvic_escalate_disabled		612003	0					
+ANR	612162	Identifier	trace_nvic_escalate_disabled		612003	0					
+ANR	612163	ArgumentList	irq		612003	1					
+ANR	612164	Argument	irq		612003	0					
+ANR	612165	Identifier	irq		612003	0					
+ANR	612166	ExpressionStatement	escalate = true	85:12:1876:1891	612003	1	True				
+ANR	612167	AssignmentExpression	escalate = true		612003	0		=			
+ANR	612168	Identifier	escalate		612003	0					
+ANR	612169	Identifier	true		612003	1					
+ANR	612170	IfStatement	if ( escalate )		612003	3					
+ANR	612171	Condition	escalate	91:12:1919:1926	612003	0	True				
+ANR	612172	Identifier	escalate		612003	0					
+ANR	612173	CompoundStatement		89:22:1862:1862	612003	1					
+ANR	612174	IfStatement	if ( running < 0 )		612003	0					
+ANR	612175	Condition	running < 0	93:16:1948:1958	612003	0	True				
+ANR	612176	RelationalExpression	running < 0		612003	0		<			
+ANR	612177	Identifier	running		612003	0					
+ANR	612178	PrimaryExpression	0		612003	1					
+ANR	612179	CompoundStatement		91:29:1894:1894	612003	1					
+ANR	612180	Statement	cpu_abort	105:16:2283:2291	612003	0	True				
+ANR	612181	Statement	(	105:25:2292:2292	612003	1	True				
+ANR	612182	Statement	&	105:26:2293:2293	612003	2	True				
+ANR	612183	Statement	s	105:27:2294:2294	612003	3	True				
+ANR	612184	Statement	->	105:28:2295:2296	612003	4	True				
+ANR	612185	Statement	cpu	105:30:2297:2299	612003	5	True				
+ANR	612186	Statement	->	105:33:2300:2301	612003	6	True				
+ANR	612187	Statement	parent_obj	105:35:2302:2311	612003	7	True				
+ANR	612188	Statement	","	105:45:2312:2312	612003	8	True				
+ANR	612189	Statement	"""Lockup: can't escalate %d to HardFault """	107:26:2341:2381	612003	9	True				
+ANR	612190	Statement	"""(current priority %d)\\n"""	109:26:2410:2434	612003	10	True				
+ANR	612191	Statement	","	109:51:2435:2435	612003	11	True				
+ANR	612192	Statement	irq	109:53:2437:2439	612003	12	True				
+ANR	612193	Statement	","	109:56:2440:2440	612003	13	True				
+ANR	612194	Statement	running	109:58:2442:2448	612003	14	True				
+ANR	612195	Statement	)	109:65:2449:2449	612003	15	True				
+ANR	612196	ExpressionStatement		109:66:2450:2450	612003	16	True				
+ANR	612197	ExpressionStatement	irq = ARMV7M_EXCP_HARD	125:12:2768:2790	612003	1	True				
+ANR	612198	AssignmentExpression	irq = ARMV7M_EXCP_HARD		612003	0		=			
+ANR	612199	Identifier	irq		612003	0					
+ANR	612200	Identifier	ARMV7M_EXCP_HARD		612003	1					
+ANR	612201	IfStatement	"if ( arm_feature ( & s -> cpu -> env , ARM_FEATURE_M_SECURITY ) && ( secure || ! ( s -> cpu -> env . v7m . aircr & R_V7M_AIRCR_BFHFNMINS_MASK ) ) )"		612003	2					
+ANR	612202	Condition	"arm_feature ( & s -> cpu -> env , ARM_FEATURE_M_SECURITY ) && ( secure || ! ( s -> cpu -> env . v7m . aircr & R_V7M_AIRCR_BFHFNMINS_MASK ) )"	127:16:2809:2961	612003	0	True				
+ANR	612203	AndExpression	"arm_feature ( & s -> cpu -> env , ARM_FEATURE_M_SECURITY ) && ( secure || ! ( s -> cpu -> env . v7m . aircr & R_V7M_AIRCR_BFHFNMINS_MASK ) )"		612003	0		&&			
+ANR	612204	CallExpression	"arm_feature ( & s -> cpu -> env , ARM_FEATURE_M_SECURITY )"		612003	0					
+ANR	612205	Callee	arm_feature		612003	0					
+ANR	612206	Identifier	arm_feature		612003	0					
+ANR	612207	ArgumentList	& s -> cpu -> env		612003	1					
+ANR	612208	Argument	& s -> cpu -> env		612003	0					
+ANR	612209	UnaryOperationExpression	& s -> cpu -> env		612003	0					
+ANR	612210	UnaryOperator	&		612003	0					
+ANR	612211	PtrMemberAccess	s -> cpu -> env		612003	1					
+ANR	612212	PtrMemberAccess	s -> cpu		612003	0					
+ANR	612213	Identifier	s		612003	0					
+ANR	612214	Identifier	cpu		612003	1					
+ANR	612215	Identifier	env		612003	1					
+ANR	612216	Argument	ARM_FEATURE_M_SECURITY		612003	1					
+ANR	612217	Identifier	ARM_FEATURE_M_SECURITY		612003	0					
+ANR	612218	OrExpression	secure || ! ( s -> cpu -> env . v7m . aircr & R_V7M_AIRCR_BFHFNMINS_MASK )		612003	1		||			
+ANR	612219	Identifier	secure		612003	0					
+ANR	612220	UnaryOperationExpression	! ( s -> cpu -> env . v7m . aircr & R_V7M_AIRCR_BFHFNMINS_MASK )		612003	1					
+ANR	612221	UnaryOperator	!		612003	0					
+ANR	612222	BitAndExpression	s -> cpu -> env . v7m . aircr & R_V7M_AIRCR_BFHFNMINS_MASK		612003	1		&			
+ANR	612223	MemberAccess	s -> cpu -> env . v7m . aircr		612003	0					
+ANR	612224	MemberAccess	s -> cpu -> env . v7m		612003	0					
+ANR	612225	PtrMemberAccess	s -> cpu -> env		612003	0					
+ANR	612226	PtrMemberAccess	s -> cpu		612003	0					
+ANR	612227	Identifier	s		612003	0					
+ANR	612228	Identifier	cpu		612003	1					
+ANR	612229	Identifier	env		612003	1					
+ANR	612230	Identifier	v7m		612003	1					
+ANR	612231	Identifier	aircr		612003	1					
+ANR	612232	Identifier	R_V7M_AIRCR_BFHFNMINS_MASK		612003	1					
+ANR	612233	CompoundStatement		129:73:2897:2897	612003	1					
+ANR	612234	ExpressionStatement	vec = & s -> sec_vectors [ irq ]	133:16:2983:3009	612003	0	True				
+ANR	612235	AssignmentExpression	vec = & s -> sec_vectors [ irq ]		612003	0		=			
+ANR	612236	Identifier	vec		612003	0					
+ANR	612237	UnaryOperationExpression	& s -> sec_vectors [ irq ]		612003	1					
+ANR	612238	UnaryOperator	&		612003	0					
+ANR	612239	ArrayIndexing	s -> sec_vectors [ irq ]		612003	1					
+ANR	612240	PtrMemberAccess	s -> sec_vectors		612003	0					
+ANR	612241	Identifier	s		612003	0					
+ANR	612242	Identifier	sec_vectors		612003	1					
+ANR	612243	Identifier	irq		612003	1					
+ANR	612244	ElseStatement	else		612003	0					
+ANR	612245	CompoundStatement		133:19:2964:2964	612003	0					
+ANR	612246	ExpressionStatement	vec = & s -> vectors [ irq ]	137:16:3050:3072	612003	0	True				
+ANR	612247	AssignmentExpression	vec = & s -> vectors [ irq ]		612003	0		=			
+ANR	612248	Identifier	vec		612003	0					
+ANR	612249	UnaryOperationExpression	& s -> vectors [ irq ]		612003	1					
+ANR	612250	UnaryOperator	&		612003	0					
+ANR	612251	ArrayIndexing	s -> vectors [ irq ]		612003	1					
+ANR	612252	PtrMemberAccess	s -> vectors		612003	0					
+ANR	612253	Identifier	s		612003	0					
+ANR	612254	Identifier	vectors		612003	1					
+ANR	612255	Identifier	irq		612003	1					
+ANR	612256	ExpressionStatement	s -> cpu -> env . v7m . hfsr |= R_V7M_HFSR_FORCED_MASK	143:12:3172:3218	612003	3	True				
+ANR	612257	AssignmentExpression	s -> cpu -> env . v7m . hfsr |= R_V7M_HFSR_FORCED_MASK		612003	0		|=			
+ANR	612258	MemberAccess	s -> cpu -> env . v7m . hfsr		612003	0					
+ANR	612259	MemberAccess	s -> cpu -> env . v7m		612003	0					
+ANR	612260	PtrMemberAccess	s -> cpu -> env		612003	0					
+ANR	612261	PtrMemberAccess	s -> cpu		612003	0					
+ANR	612262	Identifier	s		612003	0					
+ANR	612263	Identifier	cpu		612003	1					
+ANR	612264	Identifier	env		612003	1					
+ANR	612265	Identifier	v7m		612003	1					
+ANR	612266	Identifier	hfsr		612003	1					
+ANR	612267	Identifier	R_V7M_HFSR_FORCED_MASK		612003	1					
+ANR	612268	IfStatement	if ( ! vec -> pending )		612003	8					
+ANR	612269	Condition	! vec -> pending	151:8:3249:3261	612003	0	True				
+ANR	612270	UnaryOperationExpression	! vec -> pending		612003	0					
+ANR	612271	UnaryOperator	!		612003	0					
+ANR	612272	PtrMemberAccess	vec -> pending		612003	1					
+ANR	612273	Identifier	vec		612003	0					
+ANR	612274	Identifier	pending		612003	1					
+ANR	612275	CompoundStatement		149:23:3197:3197	612003	1					
+ANR	612276	ExpressionStatement	vec -> pending = 1	153:8:3275:3291	612003	0	True				
+ANR	612277	AssignmentExpression	vec -> pending = 1		612003	0		=			
+ANR	612278	PtrMemberAccess	vec -> pending		612003	0					
+ANR	612279	Identifier	vec		612003	0					
+ANR	612280	Identifier	pending		612003	1					
+ANR	612281	PrimaryExpression	1		612003	1					
+ANR	612282	ExpressionStatement	nvic_irq_update ( s )	155:8:3302:3320	612003	1	True				
+ANR	612283	CallExpression	nvic_irq_update ( s )		612003	0					
+ANR	612284	Callee	nvic_irq_update		612003	0					
+ANR	612285	Identifier	nvic_irq_update		612003	0					
+ANR	612286	ArgumentList	s		612003	1					
+ANR	612287	Argument	s		612003	0					
+ANR	612288	Identifier	s		612003	0					
+ANR	612289	ReturnType	void		612003	1					
+ANR	612290	Identifier	armv7m_nvic_set_pending		612003	2					
+ANR	612291	ParameterList	"void * opaque , int irq , bool secure"		612003	3					
+ANR	612292	Parameter	void * opaque	1:29:29:40	612003	0	True				
+ANR	612293	ParameterType	void *		612003	0					
+ANR	612294	Identifier	opaque		612003	1					
+ANR	612295	Parameter	int irq	1:43:43:49	612003	1	True				
+ANR	612296	ParameterType	int		612003	0					
+ANR	612297	Identifier	irq		612003	1					
+ANR	612298	Parameter	bool secure	1:52:52:62	612003	2	True				
+ANR	612299	ParameterType	bool		612003	0					
+ANR	612300	Identifier	secure		612003	1					
+ANR	612301	CFGEntryNode	ENTRY		612003		True				
+ANR	612302	CFGExitNode	EXIT		612003		True				
+ANR	612303	Symbol	ARMV7M_EXCP_HARD		612003						
+ANR	612304	Symbol	R_V7M_HFSR_FORCED_MASK		612003						
+ANR	612305	Symbol	s -> vectors		612003						
+ANR	612306	Symbol	s -> num_irq		612003						
+ANR	612307	Symbol	secure		612003						
+ANR	612308	Symbol	s -> cpu -> env . v7m . hfsr		612003						
+ANR	612309	Symbol	ARMV7M_EXCP_PENDSV		612003						
+ANR	612310	Symbol	R_V7M_AIRCR_BFHFNMINS_MASK		612003						
+ANR	612311	Symbol	escalate		612003						
+ANR	612312	Symbol	s -> cpu -> env . v7m . aircr		612003						
+ANR	612313	Symbol	running		612003						
+ANR	612314	Symbol	vec -> pending		612003						
+ANR	612315	Symbol	vec		612003						
+ANR	612316	Symbol	vec -> prio		612003						
+ANR	612317	Symbol	* * s		612003						
+ANR	612318	Symbol	ARMV7M_EXCP_RESET		612003						
+ANR	612319	Symbol	banked		612003						
+ANR	612320	Symbol	s -> cpu -> env		612003						
+ANR	612321	Symbol	arm_feature		612003						
+ANR	612322	Symbol	opaque		612003						
+ANR	612323	Symbol	false		612003						
+ANR	612324	Symbol	irq		612003						
+ANR	612325	Symbol	s -> cpu -> env . v7m		612003						
+ANR	612326	Symbol	* s -> cpu		612003						
+ANR	612327	Symbol	s		612003						
+ANR	612328	Symbol	& s -> cpu -> env		612003						
+ANR	612329	Symbol	s -> cpu		612003						
+ANR	612330	Symbol	exc_is_banked		612003						
+ANR	612331	Symbol	vec -> enabled		612003						
+ANR	612332	Symbol	nvic_exec_prio		612003						
+ANR	612333	Symbol	true		612003						
+ANR	612334	Symbol	* s		612003						
+ANR	612335	Symbol	* vec		612003						
+ANR	612336	Symbol	ARM_FEATURE_M_SECURITY		612003						
+ANR	612337	Symbol	s -> sec_vectors		612003						

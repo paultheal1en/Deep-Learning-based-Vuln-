@@ -1,0 +1,802 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5455764	File	/home/p4ultr4n/workplace/ReVeal/raw_code/mimic_decode_frame_01_1.c								
+ANR	5455765	Function	mimic_decode_frame	1:0:0:3625							
+ANR	5455766	FunctionDef	"mimic_decode_frame (AVCodecContext * avctx , void * data , int * data_size , AVPacket * avpkt)"		5455765	0					
+ANR	5455767	CompoundStatement		5:0:130:3625	5455765	0					
+ANR	5455768	IdentifierDeclStatement	const uint8_t * buf = avpkt -> data ;	7:4:137:169	5455765	0	True				
+ANR	5455769	IdentifierDecl	* buf = avpkt -> data		5455765	0					
+ANR	5455770	IdentifierDeclType	const uint8_t *		5455765	0					
+ANR	5455771	Identifier	buf		5455765	1					
+ANR	5455772	AssignmentExpression	* buf = avpkt -> data		5455765	2		=			
+ANR	5455773	Identifier	buf		5455765	0					
+ANR	5455774	PtrMemberAccess	avpkt -> data		5455765	1					
+ANR	5455775	Identifier	avpkt		5455765	0					
+ANR	5455776	Identifier	data		5455765	1					
+ANR	5455777	IdentifierDeclStatement	int buf_size = avpkt -> size ;	9:4:176:202	5455765	1	True				
+ANR	5455778	IdentifierDecl	buf_size = avpkt -> size		5455765	0					
+ANR	5455779	IdentifierDeclType	int		5455765	0					
+ANR	5455780	Identifier	buf_size		5455765	1					
+ANR	5455781	AssignmentExpression	buf_size = avpkt -> size		5455765	2		=			
+ANR	5455782	Identifier	buf_size		5455765	0					
+ANR	5455783	PtrMemberAccess	avpkt -> size		5455765	1					
+ANR	5455784	Identifier	avpkt		5455765	0					
+ANR	5455785	Identifier	size		5455765	1					
+ANR	5455786	IdentifierDeclStatement	MimicContext * ctx = avctx -> priv_data ;	11:4:209:245	5455765	2	True				
+ANR	5455787	IdentifierDecl	* ctx = avctx -> priv_data		5455765	0					
+ANR	5455788	IdentifierDeclType	MimicContext *		5455765	0					
+ANR	5455789	Identifier	ctx		5455765	1					
+ANR	5455790	AssignmentExpression	* ctx = avctx -> priv_data		5455765	2		=			
+ANR	5455791	Identifier	ctx		5455765	0					
+ANR	5455792	PtrMemberAccess	avctx -> priv_data		5455765	1					
+ANR	5455793	Identifier	avctx		5455765	0					
+ANR	5455794	Identifier	priv_data		5455765	1					
+ANR	5455795	IdentifierDeclStatement	GetByteContext gb ;	13:4:252:269	5455765	3	True				
+ANR	5455796	IdentifierDecl	gb		5455765	0					
+ANR	5455797	IdentifierDeclType	GetByteContext		5455765	0					
+ANR	5455798	Identifier	gb		5455765	1					
+ANR	5455799	IdentifierDeclStatement	int is_pframe ;	15:4:276:289	5455765	4	True				
+ANR	5455800	IdentifierDecl	is_pframe		5455765	0					
+ANR	5455801	IdentifierDeclType	int		5455765	0					
+ANR	5455802	Identifier	is_pframe		5455765	1					
+ANR	5455803	IdentifierDeclStatement	"int width , height ;"	17:4:296:313	5455765	5	True				
+ANR	5455804	IdentifierDecl	width		5455765	0					
+ANR	5455805	IdentifierDeclType	int		5455765	0					
+ANR	5455806	Identifier	width		5455765	1					
+ANR	5455807	IdentifierDecl	height		5455765	1					
+ANR	5455808	IdentifierDeclType	int		5455765	0					
+ANR	5455809	Identifier	height		5455765	1					
+ANR	5455810	IdentifierDeclStatement	"int quality , num_coeffs ;"	19:4:320:343	5455765	6	True				
+ANR	5455811	IdentifierDecl	quality		5455765	0					
+ANR	5455812	IdentifierDeclType	int		5455765	0					
+ANR	5455813	Identifier	quality		5455765	1					
+ANR	5455814	IdentifierDecl	num_coeffs		5455765	1					
+ANR	5455815	IdentifierDeclType	int		5455765	0					
+ANR	5455816	Identifier	num_coeffs		5455765	1					
+ANR	5455817	IdentifierDeclStatement	int swap_buf_size = buf_size - MIMIC_HEADER_SIZE ;	21:4:350:398	5455765	7	True				
+ANR	5455818	IdentifierDecl	swap_buf_size = buf_size - MIMIC_HEADER_SIZE		5455765	0					
+ANR	5455819	IdentifierDeclType	int		5455765	0					
+ANR	5455820	Identifier	swap_buf_size		5455765	1					
+ANR	5455821	AssignmentExpression	swap_buf_size = buf_size - MIMIC_HEADER_SIZE		5455765	2		=			
+ANR	5455822	Identifier	swap_buf_size		5455765	0					
+ANR	5455823	AdditiveExpression	buf_size - MIMIC_HEADER_SIZE		5455765	1		-			
+ANR	5455824	Identifier	buf_size		5455765	0					
+ANR	5455825	Identifier	MIMIC_HEADER_SIZE		5455765	1					
+ANR	5455826	IfStatement	if ( buf_size <= MIMIC_HEADER_SIZE )		5455765	8					
+ANR	5455827	Condition	buf_size <= MIMIC_HEADER_SIZE	25:8:411:439	5455765	0	True				
+ANR	5455828	RelationalExpression	buf_size <= MIMIC_HEADER_SIZE		5455765	0		<=			
+ANR	5455829	Identifier	buf_size		5455765	0					
+ANR	5455830	Identifier	MIMIC_HEADER_SIZE		5455765	1					
+ANR	5455831	CompoundStatement		21:39:311:311	5455765	1					
+ANR	5455832	ExpressionStatement	"av_log ( avctx , AV_LOG_ERROR , ""insufficient data\\n"" )"	27:8:453:503	5455765	0	True				
+ANR	5455833	CallExpression	"av_log ( avctx , AV_LOG_ERROR , ""insufficient data\\n"" )"		5455765	0					
+ANR	5455834	Callee	av_log		5455765	0					
+ANR	5455835	Identifier	av_log		5455765	0					
+ANR	5455836	ArgumentList	avctx		5455765	1					
+ANR	5455837	Argument	avctx		5455765	0					
+ANR	5455838	Identifier	avctx		5455765	0					
+ANR	5455839	Argument	AV_LOG_ERROR		5455765	1					
+ANR	5455840	Identifier	AV_LOG_ERROR		5455765	0					
+ANR	5455841	Argument	"""insufficient data\\n"""		5455765	2					
+ANR	5455842	PrimaryExpression	"""insufficient data\\n"""		5455765	0					
+ANR	5455843	ReturnStatement	return - 1 ;	29:8:514:523	5455765	1	True				
+ANR	5455844	UnaryOperationExpression	- 1		5455765	0					
+ANR	5455845	UnaryOperator	-		5455765	0					
+ANR	5455846	PrimaryExpression	1		5455765	1					
+ANR	5455847	ExpressionStatement	"bytestream2_init ( & gb , buf , MIMIC_HEADER_SIZE )"	35:4:539:584	5455765	9	True				
+ANR	5455848	CallExpression	"bytestream2_init ( & gb , buf , MIMIC_HEADER_SIZE )"		5455765	0					
+ANR	5455849	Callee	bytestream2_init		5455765	0					
+ANR	5455850	Identifier	bytestream2_init		5455765	0					
+ANR	5455851	ArgumentList	& gb		5455765	1					
+ANR	5455852	Argument	& gb		5455765	0					
+ANR	5455853	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455854	UnaryOperator	&		5455765	0					
+ANR	5455855	Identifier	gb		5455765	1					
+ANR	5455856	Argument	buf		5455765	1					
+ANR	5455857	Identifier	buf		5455765	0					
+ANR	5455858	Argument	MIMIC_HEADER_SIZE		5455765	2					
+ANR	5455859	Identifier	MIMIC_HEADER_SIZE		5455765	0					
+ANR	5455860	ExpressionStatement	"bytestream2_skip ( & gb , 2 )"	37:4:591:615	5455765	10	True				
+ANR	5455861	CallExpression	"bytestream2_skip ( & gb , 2 )"		5455765	0					
+ANR	5455862	Callee	bytestream2_skip		5455765	0					
+ANR	5455863	Identifier	bytestream2_skip		5455765	0					
+ANR	5455864	ArgumentList	& gb		5455765	1					
+ANR	5455865	Argument	& gb		5455765	0					
+ANR	5455866	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455867	UnaryOperator	&		5455765	0					
+ANR	5455868	Identifier	gb		5455765	1					
+ANR	5455869	Argument	2		5455765	1					
+ANR	5455870	PrimaryExpression	2		5455765	0					
+ANR	5455871	ExpressionStatement	quality = bytestream2_get_le16u ( & gb )	39:4:655:694	5455765	11	True				
+ANR	5455872	AssignmentExpression	quality = bytestream2_get_le16u ( & gb )		5455765	0		=			
+ANR	5455873	Identifier	quality		5455765	0					
+ANR	5455874	CallExpression	bytestream2_get_le16u ( & gb )		5455765	1					
+ANR	5455875	Callee	bytestream2_get_le16u		5455765	0					
+ANR	5455876	Identifier	bytestream2_get_le16u		5455765	0					
+ANR	5455877	ArgumentList	& gb		5455765	1					
+ANR	5455878	Argument	& gb		5455765	0					
+ANR	5455879	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455880	UnaryOperator	&		5455765	0					
+ANR	5455881	Identifier	gb		5455765	1					
+ANR	5455882	ExpressionStatement	width = bytestream2_get_le16u ( & gb )	41:4:701:740	5455765	12	True				
+ANR	5455883	AssignmentExpression	width = bytestream2_get_le16u ( & gb )		5455765	0		=			
+ANR	5455884	Identifier	width		5455765	0					
+ANR	5455885	CallExpression	bytestream2_get_le16u ( & gb )		5455765	1					
+ANR	5455886	Callee	bytestream2_get_le16u		5455765	0					
+ANR	5455887	Identifier	bytestream2_get_le16u		5455765	0					
+ANR	5455888	ArgumentList	& gb		5455765	1					
+ANR	5455889	Argument	& gb		5455765	0					
+ANR	5455890	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455891	UnaryOperator	&		5455765	0					
+ANR	5455892	Identifier	gb		5455765	1					
+ANR	5455893	ExpressionStatement	height = bytestream2_get_le16u ( & gb )	43:4:747:786	5455765	13	True				
+ANR	5455894	AssignmentExpression	height = bytestream2_get_le16u ( & gb )		5455765	0		=			
+ANR	5455895	Identifier	height		5455765	0					
+ANR	5455896	CallExpression	bytestream2_get_le16u ( & gb )		5455765	1					
+ANR	5455897	Callee	bytestream2_get_le16u		5455765	0					
+ANR	5455898	Identifier	bytestream2_get_le16u		5455765	0					
+ANR	5455899	ArgumentList	& gb		5455765	1					
+ANR	5455900	Argument	& gb		5455765	0					
+ANR	5455901	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455902	UnaryOperator	&		5455765	0					
+ANR	5455903	Identifier	gb		5455765	1					
+ANR	5455904	ExpressionStatement	"bytestream2_skip ( & gb , 4 )"	45:4:793:817	5455765	14	True				
+ANR	5455905	CallExpression	"bytestream2_skip ( & gb , 4 )"		5455765	0					
+ANR	5455906	Callee	bytestream2_skip		5455765	0					
+ANR	5455907	Identifier	bytestream2_skip		5455765	0					
+ANR	5455908	ArgumentList	& gb		5455765	1					
+ANR	5455909	Argument	& gb		5455765	0					
+ANR	5455910	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455911	UnaryOperator	&		5455765	0					
+ANR	5455912	Identifier	gb		5455765	1					
+ANR	5455913	Argument	4		5455765	1					
+ANR	5455914	PrimaryExpression	4		5455765	0					
+ANR	5455915	ExpressionStatement	is_pframe = bytestream2_get_le32u ( & gb )	47:4:844:883	5455765	15	True				
+ANR	5455916	AssignmentExpression	is_pframe = bytestream2_get_le32u ( & gb )		5455765	0		=			
+ANR	5455917	Identifier	is_pframe		5455765	0					
+ANR	5455918	CallExpression	bytestream2_get_le32u ( & gb )		5455765	1					
+ANR	5455919	Callee	bytestream2_get_le32u		5455765	0					
+ANR	5455920	Identifier	bytestream2_get_le32u		5455765	0					
+ANR	5455921	ArgumentList	& gb		5455765	1					
+ANR	5455922	Argument	& gb		5455765	0					
+ANR	5455923	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455924	UnaryOperator	&		5455765	0					
+ANR	5455925	Identifier	gb		5455765	1					
+ANR	5455926	ExpressionStatement	num_coeffs = bytestream2_get_byteu ( & gb )	49:4:890:929	5455765	16	True				
+ANR	5455927	AssignmentExpression	num_coeffs = bytestream2_get_byteu ( & gb )		5455765	0		=			
+ANR	5455928	Identifier	num_coeffs		5455765	0					
+ANR	5455929	CallExpression	bytestream2_get_byteu ( & gb )		5455765	1					
+ANR	5455930	Callee	bytestream2_get_byteu		5455765	0					
+ANR	5455931	Identifier	bytestream2_get_byteu		5455765	0					
+ANR	5455932	ArgumentList	& gb		5455765	1					
+ANR	5455933	Argument	& gb		5455765	0					
+ANR	5455934	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455935	UnaryOperator	&		5455765	0					
+ANR	5455936	Identifier	gb		5455765	1					
+ANR	5455937	ExpressionStatement	"bytestream2_skip ( & gb , 3 )"	51:4:936:960	5455765	17	True				
+ANR	5455938	CallExpression	"bytestream2_skip ( & gb , 3 )"		5455765	0					
+ANR	5455939	Callee	bytestream2_skip		5455765	0					
+ANR	5455940	Identifier	bytestream2_skip		5455765	0					
+ANR	5455941	ArgumentList	& gb		5455765	1					
+ANR	5455942	Argument	& gb		5455765	0					
+ANR	5455943	UnaryOperationExpression	& gb		5455765	0					
+ANR	5455944	UnaryOperator	&		5455765	0					
+ANR	5455945	Identifier	gb		5455765	1					
+ANR	5455946	Argument	3		5455765	1					
+ANR	5455947	PrimaryExpression	3		5455765	0					
+ANR	5455948	IfStatement	if ( ! ctx -> avctx )		5455765	18					
+ANR	5455949	Condition	! ctx -> avctx	55:7:992:1002	5455765	0	True				
+ANR	5455950	UnaryOperationExpression	! ctx -> avctx		5455765	0					
+ANR	5455951	UnaryOperator	!		5455765	0					
+ANR	5455952	PtrMemberAccess	ctx -> avctx		5455765	1					
+ANR	5455953	Identifier	ctx		5455765	0					
+ANR	5455954	Identifier	avctx		5455765	1					
+ANR	5455955	CompoundStatement		53:8:885:890	5455765	1					
+ANR	5455956	IdentifierDeclStatement	int i ;	57:8:1016:1021	5455765	0	True				
+ANR	5455957	IdentifierDecl	i		5455765	0					
+ANR	5455958	IdentifierDeclType	int		5455765	0					
+ANR	5455959	Identifier	i		5455765	1					
+ANR	5455960	IfStatement	if ( ! ( width == 160 && height == 120 ) && ! ( width == 320 && height == 240 ) )		5455765	1					
+ANR	5455961	Condition	! ( width == 160 && height == 120 ) && ! ( width == 320 && height == 240 )	61:11:1037:1116	5455765	0	True				
+ANR	5455962	AndExpression	! ( width == 160 && height == 120 ) && ! ( width == 320 && height == 240 )		5455765	0		&&			
+ANR	5455963	UnaryOperationExpression	! ( width == 160 && height == 120 )		5455765	0					
+ANR	5455964	UnaryOperator	!		5455765	0					
+ANR	5455965	AndExpression	width == 160 && height == 120		5455765	1		&&			
+ANR	5455966	EqualityExpression	width == 160		5455765	0		==			
+ANR	5455967	Identifier	width		5455765	0					
+ANR	5455968	PrimaryExpression	160		5455765	1					
+ANR	5455969	EqualityExpression	height == 120		5455765	1		==			
+ANR	5455970	Identifier	height		5455765	0					
+ANR	5455971	PrimaryExpression	120		5455765	1					
+ANR	5455972	UnaryOperationExpression	! ( width == 320 && height == 240 )		5455765	1					
+ANR	5455973	UnaryOperator	!		5455765	0					
+ANR	5455974	AndExpression	width == 320 && height == 240		5455765	1		&&			
+ANR	5455975	EqualityExpression	width == 320		5455765	0		==			
+ANR	5455976	Identifier	width		5455765	0					
+ANR	5455977	PrimaryExpression	320		5455765	1					
+ANR	5455978	EqualityExpression	height == 240		5455765	1		==			
+ANR	5455979	Identifier	height		5455765	0					
+ANR	5455980	PrimaryExpression	240		5455765	1					
+ANR	5455981	CompoundStatement		59:45:988:988	5455765	1					
+ANR	5455982	ExpressionStatement	"av_log ( avctx , AV_LOG_ERROR , ""invalid width/height!\\n"" )"	65:12:1134:1188	5455765	0	True				
+ANR	5455983	CallExpression	"av_log ( avctx , AV_LOG_ERROR , ""invalid width/height!\\n"" )"		5455765	0					
+ANR	5455984	Callee	av_log		5455765	0					
+ANR	5455985	Identifier	av_log		5455765	0					
+ANR	5455986	ArgumentList	avctx		5455765	1					
+ANR	5455987	Argument	avctx		5455765	0					
+ANR	5455988	Identifier	avctx		5455765	0					
+ANR	5455989	Argument	AV_LOG_ERROR		5455765	1					
+ANR	5455990	Identifier	AV_LOG_ERROR		5455765	0					
+ANR	5455991	Argument	"""invalid width/height!\\n"""		5455765	2					
+ANR	5455992	PrimaryExpression	"""invalid width/height!\\n"""		5455765	0					
+ANR	5455993	ReturnStatement	return - 1 ;	67:12:1203:1212	5455765	1	True				
+ANR	5455994	UnaryOperationExpression	- 1		5455765	0					
+ANR	5455995	UnaryOperator	-		5455765	0					
+ANR	5455996	PrimaryExpression	1		5455765	1					
+ANR	5455997	ExpressionStatement	ctx -> avctx = avctx	73:8:1236:1258	5455765	2	True				
+ANR	5455998	AssignmentExpression	ctx -> avctx = avctx		5455765	0		=			
+ANR	5455999	PtrMemberAccess	ctx -> avctx		5455765	0					
+ANR	5456000	Identifier	ctx		5455765	0					
+ANR	5456001	Identifier	avctx		5455765	1					
+ANR	5456002	Identifier	avctx		5455765	1					
+ANR	5456003	ExpressionStatement	avctx -> width = width	75:8:1269:1291	5455765	3	True				
+ANR	5456004	AssignmentExpression	avctx -> width = width		5455765	0		=			
+ANR	5456005	PtrMemberAccess	avctx -> width		5455765	0					
+ANR	5456006	Identifier	avctx		5455765	0					
+ANR	5456007	Identifier	width		5455765	1					
+ANR	5456008	Identifier	width		5455765	1					
+ANR	5456009	ExpressionStatement	avctx -> height = height	77:8:1302:1325	5455765	4	True				
+ANR	5456010	AssignmentExpression	avctx -> height = height		5455765	0		=			
+ANR	5456011	PtrMemberAccess	avctx -> height		5455765	0					
+ANR	5456012	Identifier	avctx		5455765	0					
+ANR	5456013	Identifier	height		5455765	1					
+ANR	5456014	Identifier	height		5455765	1					
+ANR	5456015	ExpressionStatement	avctx -> pix_fmt = PIX_FMT_YUV420P	79:8:1336:1368	5455765	5	True				
+ANR	5456016	AssignmentExpression	avctx -> pix_fmt = PIX_FMT_YUV420P		5455765	0		=			
+ANR	5456017	PtrMemberAccess	avctx -> pix_fmt		5455765	0					
+ANR	5456018	Identifier	avctx		5455765	0					
+ANR	5456019	Identifier	pix_fmt		5455765	1					
+ANR	5456020	Identifier	PIX_FMT_YUV420P		5455765	1					
+ANR	5456021	ForStatement	for ( i = 0 ; i < 3 ; i ++ )		5455765	6					
+ANR	5456022	ForInit	i = 0 ;	81:12:1383:1388	5455765	0	True				
+ANR	5456023	AssignmentExpression	i = 0		5455765	0		=			
+ANR	5456024	Identifier	i		5455765	0					
+ANR	5456025	PrimaryExpression	0		5455765	1					
+ANR	5456026	Condition	i < 3	81:19:1390:1394	5455765	1	True				
+ANR	5456027	RelationalExpression	i < 3		5455765	0		<			
+ANR	5456028	Identifier	i		5455765	0					
+ANR	5456029	PrimaryExpression	3		5455765	1					
+ANR	5456030	PostIncDecOperationExpression	i ++	81:26:1397:1399	5455765	2	True				
+ANR	5456031	Identifier	i		5455765	0					
+ANR	5456032	IncDec	++		5455765	1					
+ANR	5456033	CompoundStatement		77:31:1271:1271	5455765	3					
+ANR	5456034	ExpressionStatement	ctx -> num_vblocks [ i ] = - ( ( - height ) >> ( 3 + ! ! i ) )	83:12:1417:1464	5455765	0	True				
+ANR	5456035	AssignmentExpression	ctx -> num_vblocks [ i ] = - ( ( - height ) >> ( 3 + ! ! i ) )		5455765	0		=			
+ANR	5456036	ArrayIndexing	ctx -> num_vblocks [ i ]		5455765	0					
+ANR	5456037	PtrMemberAccess	ctx -> num_vblocks		5455765	0					
+ANR	5456038	Identifier	ctx		5455765	0					
+ANR	5456039	Identifier	num_vblocks		5455765	1					
+ANR	5456040	Identifier	i		5455765	1					
+ANR	5456041	UnaryOperationExpression	- ( ( - height ) >> ( 3 + ! ! i ) )		5455765	1					
+ANR	5456042	UnaryOperator	-		5455765	0					
+ANR	5456043	ShiftExpression	( - height ) >> ( 3 + ! ! i )		5455765	1		>>			
+ANR	5456044	UnaryOperationExpression	- height		5455765	0					
+ANR	5456045	UnaryOperator	-		5455765	0					
+ANR	5456046	Identifier	height		5455765	1					
+ANR	5456047	AdditiveExpression	3 + ! ! i		5455765	1		+			
+ANR	5456048	PrimaryExpression	3		5455765	0					
+ANR	5456049	UnaryOperationExpression	! ! i		5455765	1					
+ANR	5456050	UnaryOperator	!		5455765	0					
+ANR	5456051	UnaryOperationExpression	! i		5455765	1					
+ANR	5456052	UnaryOperator	!		5455765	0					
+ANR	5456053	Identifier	i		5455765	1					
+ANR	5456054	ExpressionStatement	ctx -> num_hblocks [ i ] = width >> ( 3 + ! ! i )	85:12:1479:1526	5455765	1	True				
+ANR	5456055	AssignmentExpression	ctx -> num_hblocks [ i ] = width >> ( 3 + ! ! i )		5455765	0		=			
+ANR	5456056	ArrayIndexing	ctx -> num_hblocks [ i ]		5455765	0					
+ANR	5456057	PtrMemberAccess	ctx -> num_hblocks		5455765	0					
+ANR	5456058	Identifier	ctx		5455765	0					
+ANR	5456059	Identifier	num_hblocks		5455765	1					
+ANR	5456060	Identifier	i		5455765	1					
+ANR	5456061	ShiftExpression	width >> ( 3 + ! ! i )		5455765	1		>>			
+ANR	5456062	Identifier	width		5455765	0					
+ANR	5456063	AdditiveExpression	3 + ! ! i		5455765	1		+			
+ANR	5456064	PrimaryExpression	3		5455765	0					
+ANR	5456065	UnaryOperationExpression	! ! i		5455765	1					
+ANR	5456066	UnaryOperator	!		5455765	0					
+ANR	5456067	UnaryOperationExpression	! i		5455765	1					
+ANR	5456068	UnaryOperator	!		5455765	0					
+ANR	5456069	Identifier	i		5455765	1					
+ANR	5456070	ElseStatement	else		5455765	0					
+ANR	5456071	IfStatement	if ( width != ctx -> avctx -> width || height != ctx -> avctx -> height )		5455765	0					
+ANR	5456072	Condition	width != ctx -> avctx -> width || height != ctx -> avctx -> height	89:14:1554:1611	5455765	0	True				
+ANR	5456073	OrExpression	width != ctx -> avctx -> width || height != ctx -> avctx -> height		5455765	0		||			
+ANR	5456074	EqualityExpression	width != ctx -> avctx -> width		5455765	0		!=			
+ANR	5456075	Identifier	width		5455765	0					
+ANR	5456076	PtrMemberAccess	ctx -> avctx -> width		5455765	1					
+ANR	5456077	PtrMemberAccess	ctx -> avctx		5455765	0					
+ANR	5456078	Identifier	ctx		5455765	0					
+ANR	5456079	Identifier	avctx		5455765	1					
+ANR	5456080	Identifier	width		5455765	1					
+ANR	5456081	EqualityExpression	height != ctx -> avctx -> height		5455765	1		!=			
+ANR	5456082	Identifier	height		5455765	0					
+ANR	5456083	PtrMemberAccess	ctx -> avctx -> height		5455765	1					
+ANR	5456084	PtrMemberAccess	ctx -> avctx		5455765	0					
+ANR	5456085	Identifier	ctx		5455765	0					
+ANR	5456086	Identifier	avctx		5455765	1					
+ANR	5456087	Identifier	height		5455765	1					
+ANR	5456088	CompoundStatement		85:74:1483:1483	5455765	1					
+ANR	5456089	ExpressionStatement	"av_log ( avctx , AV_LOG_ERROR , ""resolution changing is not supported\\n"" )"	91:8:1625:1694	5455765	0	True				
+ANR	5456090	CallExpression	"av_log ( avctx , AV_LOG_ERROR , ""resolution changing is not supported\\n"" )"		5455765	0					
+ANR	5456091	Callee	av_log		5455765	0					
+ANR	5456092	Identifier	av_log		5455765	0					
+ANR	5456093	ArgumentList	avctx		5455765	1					
+ANR	5456094	Argument	avctx		5455765	0					
+ANR	5456095	Identifier	avctx		5455765	0					
+ANR	5456096	Argument	AV_LOG_ERROR		5455765	1					
+ANR	5456097	Identifier	AV_LOG_ERROR		5455765	0					
+ANR	5456098	Argument	"""resolution changing is not supported\\n"""		5455765	2					
+ANR	5456099	PrimaryExpression	"""resolution changing is not supported\\n"""		5455765	0					
+ANR	5456100	ReturnStatement	return - 1 ;	93:8:1705:1714	5455765	1	True				
+ANR	5456101	UnaryOperationExpression	- 1		5455765	0					
+ANR	5456102	UnaryOperator	-		5455765	0					
+ANR	5456103	PrimaryExpression	1		5455765	1					
+ANR	5456104	IfStatement	if ( is_pframe && ! ctx -> buf_ptrs [ ctx -> prev_index ] . data [ 0 ] )		5455765	19					
+ANR	5456105	Condition	is_pframe && ! ctx -> buf_ptrs [ ctx -> prev_index ] . data [ 0 ]	99:7:1733:1784	5455765	0	True				
+ANR	5456106	AndExpression	is_pframe && ! ctx -> buf_ptrs [ ctx -> prev_index ] . data [ 0 ]		5455765	0		&&			
+ANR	5456107	Identifier	is_pframe		5455765	0					
+ANR	5456108	UnaryOperationExpression	! ctx -> buf_ptrs [ ctx -> prev_index ] . data [ 0 ]		5455765	1					
+ANR	5456109	UnaryOperator	!		5455765	0					
+ANR	5456110	ArrayIndexing	ctx -> buf_ptrs [ ctx -> prev_index ] . data [ 0 ]		5455765	1					
+ANR	5456111	MemberAccess	ctx -> buf_ptrs [ ctx -> prev_index ] . data		5455765	0					
+ANR	5456112	ArrayIndexing	ctx -> buf_ptrs [ ctx -> prev_index ]		5455765	0					
+ANR	5456113	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456114	Identifier	ctx		5455765	0					
+ANR	5456115	Identifier	buf_ptrs		5455765	1					
+ANR	5456116	PtrMemberAccess	ctx -> prev_index		5455765	1					
+ANR	5456117	Identifier	ctx		5455765	0					
+ANR	5456118	Identifier	prev_index		5455765	1					
+ANR	5456119	Identifier	data		5455765	1					
+ANR	5456120	PrimaryExpression	0		5455765	1					
+ANR	5456121	CompoundStatement		95:61:1656:1656	5455765	1					
+ANR	5456122	ExpressionStatement	"av_log ( avctx , AV_LOG_ERROR , ""decoding must start with keyframe\\n"" )"	101:8:1798:1864	5455765	0	True				
+ANR	5456123	CallExpression	"av_log ( avctx , AV_LOG_ERROR , ""decoding must start with keyframe\\n"" )"		5455765	0					
+ANR	5456124	Callee	av_log		5455765	0					
+ANR	5456125	Identifier	av_log		5455765	0					
+ANR	5456126	ArgumentList	avctx		5455765	1					
+ANR	5456127	Argument	avctx		5455765	0					
+ANR	5456128	Identifier	avctx		5455765	0					
+ANR	5456129	Argument	AV_LOG_ERROR		5455765	1					
+ANR	5456130	Identifier	AV_LOG_ERROR		5455765	0					
+ANR	5456131	Argument	"""decoding must start with keyframe\\n"""		5455765	2					
+ANR	5456132	PrimaryExpression	"""decoding must start with keyframe\\n"""		5455765	0					
+ANR	5456133	ReturnStatement	return - 1 ;	103:8:1875:1884	5455765	1	True				
+ANR	5456134	UnaryOperationExpression	- 1		5455765	0					
+ANR	5456135	UnaryOperator	-		5455765	0					
+ANR	5456136	PrimaryExpression	1		5455765	1					
+ANR	5456137	ExpressionStatement	ctx -> buf_ptrs [ ctx -> cur_index ] . reference = 1	109:4:1900:1943	5455765	20	True				
+ANR	5456138	AssignmentExpression	ctx -> buf_ptrs [ ctx -> cur_index ] . reference = 1		5455765	0		=			
+ANR	5456139	MemberAccess	ctx -> buf_ptrs [ ctx -> cur_index ] . reference		5455765	0					
+ANR	5456140	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456141	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456142	Identifier	ctx		5455765	0					
+ANR	5456143	Identifier	buf_ptrs		5455765	1					
+ANR	5456144	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456145	Identifier	ctx		5455765	0					
+ANR	5456146	Identifier	cur_index		5455765	1					
+ANR	5456147	Identifier	reference		5455765	1					
+ANR	5456148	PrimaryExpression	1		5455765	1					
+ANR	5456149	ExpressionStatement	ctx -> buf_ptrs [ ctx -> cur_index ] . pict_type = is_pframe ? AV_PICTURE_TYPE_P : AV_PICTURE_TYPE_I	111:4:1950:2039	5455765	21	True				
+ANR	5456150	AssignmentExpression	ctx -> buf_ptrs [ ctx -> cur_index ] . pict_type = is_pframe ? AV_PICTURE_TYPE_P : AV_PICTURE_TYPE_I		5455765	0		=			
+ANR	5456151	MemberAccess	ctx -> buf_ptrs [ ctx -> cur_index ] . pict_type		5455765	0					
+ANR	5456152	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456153	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456154	Identifier	ctx		5455765	0					
+ANR	5456155	Identifier	buf_ptrs		5455765	1					
+ANR	5456156	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456157	Identifier	ctx		5455765	0					
+ANR	5456158	Identifier	cur_index		5455765	1					
+ANR	5456159	Identifier	pict_type		5455765	1					
+ANR	5456160	ConditionalExpression	is_pframe ? AV_PICTURE_TYPE_P : AV_PICTURE_TYPE_I		5455765	1					
+ANR	5456161	Condition	is_pframe		5455765	0					
+ANR	5456162	Identifier	is_pframe		5455765	0					
+ANR	5456163	Identifier	AV_PICTURE_TYPE_P		5455765	1					
+ANR	5456164	Identifier	AV_PICTURE_TYPE_I		5455765	2					
+ANR	5456165	IfStatement	"if ( ff_thread_get_buffer ( avctx , & ctx -> buf_ptrs [ ctx -> cur_index ] ) )"		5455765	22					
+ANR	5456166	Condition	"ff_thread_get_buffer ( avctx , & ctx -> buf_ptrs [ ctx -> cur_index ] )"	113:7:2049:2107	5455765	0	True				
+ANR	5456167	CallExpression	"ff_thread_get_buffer ( avctx , & ctx -> buf_ptrs [ ctx -> cur_index ] )"		5455765	0					
+ANR	5456168	Callee	ff_thread_get_buffer		5455765	0					
+ANR	5456169	Identifier	ff_thread_get_buffer		5455765	0					
+ANR	5456170	ArgumentList	avctx		5455765	1					
+ANR	5456171	Argument	avctx		5455765	0					
+ANR	5456172	Identifier	avctx		5455765	0					
+ANR	5456173	Argument	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456174	UnaryOperationExpression	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456175	UnaryOperator	&		5455765	0					
+ANR	5456176	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456177	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456178	Identifier	ctx		5455765	0					
+ANR	5456179	Identifier	buf_ptrs		5455765	1					
+ANR	5456180	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456181	Identifier	ctx		5455765	0					
+ANR	5456182	Identifier	cur_index		5455765	1					
+ANR	5456183	CompoundStatement		109:68:1979:1979	5455765	1					
+ANR	5456184	ExpressionStatement	"av_log ( avctx , AV_LOG_ERROR , ""get_buffer() failed\\n"" )"	115:8:2121:2173	5455765	0	True				
+ANR	5456185	CallExpression	"av_log ( avctx , AV_LOG_ERROR , ""get_buffer() failed\\n"" )"		5455765	0					
+ANR	5456186	Callee	av_log		5455765	0					
+ANR	5456187	Identifier	av_log		5455765	0					
+ANR	5456188	ArgumentList	avctx		5455765	1					
+ANR	5456189	Argument	avctx		5455765	0					
+ANR	5456190	Identifier	avctx		5455765	0					
+ANR	5456191	Argument	AV_LOG_ERROR		5455765	1					
+ANR	5456192	Identifier	AV_LOG_ERROR		5455765	0					
+ANR	5456193	Argument	"""get_buffer() failed\\n"""		5455765	2					
+ANR	5456194	PrimaryExpression	"""get_buffer() failed\\n"""		5455765	0					
+ANR	5456195	ReturnStatement	return - 1 ;	117:8:2184:2193	5455765	1	True				
+ANR	5456196	UnaryOperationExpression	- 1		5455765	0					
+ANR	5456197	UnaryOperator	-		5455765	0					
+ANR	5456198	PrimaryExpression	1		5455765	1					
+ANR	5456199	ExpressionStatement	ctx -> next_prev_index = ctx -> cur_index	123:4:2209:2246	5455765	23	True				
+ANR	5456200	AssignmentExpression	ctx -> next_prev_index = ctx -> cur_index		5455765	0		=			
+ANR	5456201	PtrMemberAccess	ctx -> next_prev_index		5455765	0					
+ANR	5456202	Identifier	ctx		5455765	0					
+ANR	5456203	Identifier	next_prev_index		5455765	1					
+ANR	5456204	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456205	Identifier	ctx		5455765	0					
+ANR	5456206	Identifier	cur_index		5455765	1					
+ANR	5456207	ExpressionStatement	ctx -> next_cur_index = ( ctx -> cur_index - 1 ) & 15	125:4:2253:2301	5455765	24	True				
+ANR	5456208	AssignmentExpression	ctx -> next_cur_index = ( ctx -> cur_index - 1 ) & 15		5455765	0		=			
+ANR	5456209	PtrMemberAccess	ctx -> next_cur_index		5455765	0					
+ANR	5456210	Identifier	ctx		5455765	0					
+ANR	5456211	Identifier	next_cur_index		5455765	1					
+ANR	5456212	BitAndExpression	( ctx -> cur_index - 1 ) & 15		5455765	1		&			
+ANR	5456213	AdditiveExpression	ctx -> cur_index - 1		5455765	0		-			
+ANR	5456214	PtrMemberAccess	ctx -> cur_index		5455765	0					
+ANR	5456215	Identifier	ctx		5455765	0					
+ANR	5456216	Identifier	cur_index		5455765	1					
+ANR	5456217	PrimaryExpression	1		5455765	1					
+ANR	5456218	PrimaryExpression	15		5455765	1					
+ANR	5456219	ExpressionStatement	"prepare_avpic ( ctx , & ctx -> flipped_ptrs [ ctx -> cur_index ] , ( AVPicture * ) & ctx -> buf_ptrs [ ctx -> cur_index ] )"	129:4:2310:2428	5455765	25	True				
+ANR	5456220	CallExpression	"prepare_avpic ( ctx , & ctx -> flipped_ptrs [ ctx -> cur_index ] , ( AVPicture * ) & ctx -> buf_ptrs [ ctx -> cur_index ] )"		5455765	0					
+ANR	5456221	Callee	prepare_avpic		5455765	0					
+ANR	5456222	Identifier	prepare_avpic		5455765	0					
+ANR	5456223	ArgumentList	ctx		5455765	1					
+ANR	5456224	Argument	ctx		5455765	0					
+ANR	5456225	Identifier	ctx		5455765	0					
+ANR	5456226	Argument	& ctx -> flipped_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456227	UnaryOperationExpression	& ctx -> flipped_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456228	UnaryOperator	&		5455765	0					
+ANR	5456229	ArrayIndexing	ctx -> flipped_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456230	PtrMemberAccess	ctx -> flipped_ptrs		5455765	0					
+ANR	5456231	Identifier	ctx		5455765	0					
+ANR	5456232	Identifier	flipped_ptrs		5455765	1					
+ANR	5456233	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456234	Identifier	ctx		5455765	0					
+ANR	5456235	Identifier	cur_index		5455765	1					
+ANR	5456236	Argument	( AVPicture * ) & ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	2					
+ANR	5456237	CastExpression	( AVPicture * ) & ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456238	CastTarget	AVPicture *		5455765	0					
+ANR	5456239	UnaryOperationExpression	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456240	UnaryOperator	&		5455765	0					
+ANR	5456241	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456242	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456243	Identifier	ctx		5455765	0					
+ANR	5456244	Identifier	buf_ptrs		5455765	1					
+ANR	5456245	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456246	Identifier	ctx		5455765	0					
+ANR	5456247	Identifier	cur_index		5455765	1					
+ANR	5456248	ExpressionStatement	ff_thread_finish_setup ( avctx )	135:4:2437:2466	5455765	26	True				
+ANR	5456249	CallExpression	ff_thread_finish_setup ( avctx )		5455765	0					
+ANR	5456250	Callee	ff_thread_finish_setup		5455765	0					
+ANR	5456251	Identifier	ff_thread_finish_setup		5455765	0					
+ANR	5456252	ArgumentList	avctx		5455765	1					
+ANR	5456253	Argument	avctx		5455765	0					
+ANR	5456254	Identifier	avctx		5455765	0					
+ANR	5456255	ExpressionStatement	"av_fast_malloc ( & ctx -> swap_buf , & ctx -> swap_buf_size , swap_buf_size + FF_INPUT_BUFFER_PADDING_SIZE )"	139:4:2475:2606	5455765	27	True				
+ANR	5456256	CallExpression	"av_fast_malloc ( & ctx -> swap_buf , & ctx -> swap_buf_size , swap_buf_size + FF_INPUT_BUFFER_PADDING_SIZE )"		5455765	0					
+ANR	5456257	Callee	av_fast_malloc		5455765	0					
+ANR	5456258	Identifier	av_fast_malloc		5455765	0					
+ANR	5456259	ArgumentList	& ctx -> swap_buf		5455765	1					
+ANR	5456260	Argument	& ctx -> swap_buf		5455765	0					
+ANR	5456261	UnaryOperationExpression	& ctx -> swap_buf		5455765	0					
+ANR	5456262	UnaryOperator	&		5455765	0					
+ANR	5456263	PtrMemberAccess	ctx -> swap_buf		5455765	1					
+ANR	5456264	Identifier	ctx		5455765	0					
+ANR	5456265	Identifier	swap_buf		5455765	1					
+ANR	5456266	Argument	& ctx -> swap_buf_size		5455765	1					
+ANR	5456267	UnaryOperationExpression	& ctx -> swap_buf_size		5455765	0					
+ANR	5456268	UnaryOperator	&		5455765	0					
+ANR	5456269	PtrMemberAccess	ctx -> swap_buf_size		5455765	1					
+ANR	5456270	Identifier	ctx		5455765	0					
+ANR	5456271	Identifier	swap_buf_size		5455765	1					
+ANR	5456272	Argument	swap_buf_size + FF_INPUT_BUFFER_PADDING_SIZE		5455765	2					
+ANR	5456273	AdditiveExpression	swap_buf_size + FF_INPUT_BUFFER_PADDING_SIZE		5455765	0		+			
+ANR	5456274	Identifier	swap_buf_size		5455765	0					
+ANR	5456275	Identifier	FF_INPUT_BUFFER_PADDING_SIZE		5455765	1					
+ANR	5456276	IfStatement	if ( ! ctx -> swap_buf )		5455765	28					
+ANR	5456277	Condition	! ctx -> swap_buf	143:7:2616:2629	5455765	0	True				
+ANR	5456278	UnaryOperationExpression	! ctx -> swap_buf		5455765	0					
+ANR	5456279	UnaryOperator	!		5455765	0					
+ANR	5456280	PtrMemberAccess	ctx -> swap_buf		5455765	1					
+ANR	5456281	Identifier	ctx		5455765	0					
+ANR	5456282	Identifier	swap_buf		5455765	1					
+ANR	5456283	ReturnStatement	return AVERROR ( ENOMEM ) ;	145:8:2641:2663	5455765	1	True				
+ANR	5456284	CallExpression	AVERROR ( ENOMEM )		5455765	0					
+ANR	5456285	Callee	AVERROR		5455765	0					
+ANR	5456286	Identifier	AVERROR		5455765	0					
+ANR	5456287	ArgumentList	ENOMEM		5455765	1					
+ANR	5456288	Argument	ENOMEM		5455765	0					
+ANR	5456289	Identifier	ENOMEM		5455765	0					
+ANR	5456290	ExpressionStatement	"ctx -> dsp . bswap_buf ( ctx -> swap_buf , ( const uint32_t * ) ( buf + MIMIC_HEADER_SIZE ) , swap_buf_size >> 2 )"	149:4:2672:2818	5455765	29	True				
+ANR	5456291	CallExpression	"ctx -> dsp . bswap_buf ( ctx -> swap_buf , ( const uint32_t * ) ( buf + MIMIC_HEADER_SIZE ) , swap_buf_size >> 2 )"		5455765	0					
+ANR	5456292	Callee	ctx -> dsp . bswap_buf		5455765	0					
+ANR	5456293	MemberAccess	ctx -> dsp . bswap_buf		5455765	0					
+ANR	5456294	PtrMemberAccess	ctx -> dsp		5455765	0					
+ANR	5456295	Identifier	ctx		5455765	0					
+ANR	5456296	Identifier	dsp		5455765	1					
+ANR	5456297	Identifier	bswap_buf		5455765	1					
+ANR	5456298	ArgumentList	ctx -> swap_buf		5455765	1					
+ANR	5456299	Argument	ctx -> swap_buf		5455765	0					
+ANR	5456300	PtrMemberAccess	ctx -> swap_buf		5455765	0					
+ANR	5456301	Identifier	ctx		5455765	0					
+ANR	5456302	Identifier	swap_buf		5455765	1					
+ANR	5456303	Argument	( const uint32_t * ) ( buf + MIMIC_HEADER_SIZE )		5455765	1					
+ANR	5456304	CastExpression	( const uint32_t * ) ( buf + MIMIC_HEADER_SIZE )		5455765	0					
+ANR	5456305	CastTarget	const uint32_t *		5455765	0					
+ANR	5456306	AdditiveExpression	buf + MIMIC_HEADER_SIZE		5455765	1		+			
+ANR	5456307	Identifier	buf		5455765	0					
+ANR	5456308	Identifier	MIMIC_HEADER_SIZE		5455765	1					
+ANR	5456309	Argument	swap_buf_size >> 2		5455765	2					
+ANR	5456310	ShiftExpression	swap_buf_size >> 2		5455765	0		>>			
+ANR	5456311	Identifier	swap_buf_size		5455765	0					
+ANR	5456312	PrimaryExpression	2		5455765	1					
+ANR	5456313	ExpressionStatement	"init_get_bits ( & ctx -> gb , ctx -> swap_buf , swap_buf_size << 3 )"	155:4:2825:2883	5455765	30	True				
+ANR	5456314	CallExpression	"init_get_bits ( & ctx -> gb , ctx -> swap_buf , swap_buf_size << 3 )"		5455765	0					
+ANR	5456315	Callee	init_get_bits		5455765	0					
+ANR	5456316	Identifier	init_get_bits		5455765	0					
+ANR	5456317	ArgumentList	& ctx -> gb		5455765	1					
+ANR	5456318	Argument	& ctx -> gb		5455765	0					
+ANR	5456319	UnaryOperationExpression	& ctx -> gb		5455765	0					
+ANR	5456320	UnaryOperator	&		5455765	0					
+ANR	5456321	PtrMemberAccess	ctx -> gb		5455765	1					
+ANR	5456322	Identifier	ctx		5455765	0					
+ANR	5456323	Identifier	gb		5455765	1					
+ANR	5456324	Argument	ctx -> swap_buf		5455765	1					
+ANR	5456325	PtrMemberAccess	ctx -> swap_buf		5455765	0					
+ANR	5456326	Identifier	ctx		5455765	0					
+ANR	5456327	Identifier	swap_buf		5455765	1					
+ANR	5456328	Argument	swap_buf_size << 3		5455765	2					
+ANR	5456329	ShiftExpression	swap_buf_size << 3		5455765	0		<<			
+ANR	5456330	Identifier	swap_buf_size		5455765	0					
+ANR	5456331	PrimaryExpression	3		5455765	1					
+ANR	5456332	IfStatement	"if ( ! decode ( ctx , quality , num_coeffs , ! is_pframe ) )"		5455765	31					
+ANR	5456333	Condition	"! decode ( ctx , quality , num_coeffs , ! is_pframe )"	159:7:2895:2939	5455765	0	True				
+ANR	5456334	UnaryOperationExpression	"! decode ( ctx , quality , num_coeffs , ! is_pframe )"		5455765	0					
+ANR	5456335	UnaryOperator	!		5455765	0					
+ANR	5456336	CallExpression	"decode ( ctx , quality , num_coeffs , ! is_pframe )"		5455765	1					
+ANR	5456337	Callee	decode		5455765	0					
+ANR	5456338	Identifier	decode		5455765	0					
+ANR	5456339	ArgumentList	ctx		5455765	1					
+ANR	5456340	Argument	ctx		5455765	0					
+ANR	5456341	Identifier	ctx		5455765	0					
+ANR	5456342	Argument	quality		5455765	1					
+ANR	5456343	Identifier	quality		5455765	0					
+ANR	5456344	Argument	num_coeffs		5455765	2					
+ANR	5456345	Identifier	num_coeffs		5455765	0					
+ANR	5456346	Argument	! is_pframe		5455765	3					
+ANR	5456347	UnaryOperationExpression	! is_pframe		5455765	0					
+ANR	5456348	UnaryOperator	!		5455765	0					
+ANR	5456349	Identifier	is_pframe		5455765	1					
+ANR	5456350	CompoundStatement		155:54:2811:2811	5455765	1					
+ANR	5456351	IfStatement	if ( avctx -> active_thread_type & FF_THREAD_FRAME )		5455765	0					
+ANR	5456352	Condition	avctx -> active_thread_type & FF_THREAD_FRAME	161:12:2957:2997	5455765	0	True				
+ANR	5456353	BitAndExpression	avctx -> active_thread_type & FF_THREAD_FRAME		5455765	0		&			
+ANR	5456354	PtrMemberAccess	avctx -> active_thread_type		5455765	0					
+ANR	5456355	Identifier	avctx		5455765	0					
+ANR	5456356	Identifier	active_thread_type		5455765	1					
+ANR	5456357	Identifier	FF_THREAD_FRAME		5455765	1					
+ANR	5456358	ExpressionStatement	"ff_thread_report_progress ( & ctx -> buf_ptrs [ ctx -> cur_index ] , INT_MAX , 0 )"	163:12:3013:3082	5455765	1	True				
+ANR	5456359	CallExpression	"ff_thread_report_progress ( & ctx -> buf_ptrs [ ctx -> cur_index ] , INT_MAX , 0 )"		5455765	0					
+ANR	5456360	Callee	ff_thread_report_progress		5455765	0					
+ANR	5456361	Identifier	ff_thread_report_progress		5455765	0					
+ANR	5456362	ArgumentList	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456363	Argument	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456364	UnaryOperationExpression	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456365	UnaryOperator	&		5455765	0					
+ANR	5456366	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456367	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456368	Identifier	ctx		5455765	0					
+ANR	5456369	Identifier	buf_ptrs		5455765	1					
+ANR	5456370	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456371	Identifier	ctx		5455765	0					
+ANR	5456372	Identifier	cur_index		5455765	1					
+ANR	5456373	Argument	INT_MAX		5455765	1					
+ANR	5456374	Identifier	INT_MAX		5455765	0					
+ANR	5456375	Argument	0		5455765	2					
+ANR	5456376	PrimaryExpression	0		5455765	0					
+ANR	5456377	ElseStatement	else		5455765	0					
+ANR	5456378	CompoundStatement		161:13:2967:2967	5455765	0					
+ANR	5456379	ExpressionStatement	"ff_thread_release_buffer ( avctx , & ctx -> buf_ptrs [ ctx -> cur_index ] )"	167:12:3113:3176	5455765	0	True				
+ANR	5456380	CallExpression	"ff_thread_release_buffer ( avctx , & ctx -> buf_ptrs [ ctx -> cur_index ] )"		5455765	0					
+ANR	5456381	Callee	ff_thread_release_buffer		5455765	0					
+ANR	5456382	Identifier	ff_thread_release_buffer		5455765	0					
+ANR	5456383	ArgumentList	avctx		5455765	1					
+ANR	5456384	Argument	avctx		5455765	0					
+ANR	5456385	Identifier	avctx		5455765	0					
+ANR	5456386	Argument	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456387	UnaryOperationExpression	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456388	UnaryOperator	&		5455765	0					
+ANR	5456389	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456390	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456391	Identifier	ctx		5455765	0					
+ANR	5456392	Identifier	buf_ptrs		5455765	1					
+ANR	5456393	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456394	Identifier	ctx		5455765	0					
+ANR	5456395	Identifier	cur_index		5455765	1					
+ANR	5456396	ReturnStatement	return - 1 ;	169:12:3191:3200	5455765	1	True				
+ANR	5456397	UnaryOperationExpression	- 1		5455765	0					
+ANR	5456398	UnaryOperator	-		5455765	0					
+ANR	5456399	PrimaryExpression	1		5455765	1					
+ANR	5456400	ExpressionStatement	* ( AVFrame * ) data = ctx -> buf_ptrs [ ctx -> cur_index ]	177:4:3227:3274	5455765	32	True				
+ANR	5456401	AssignmentExpression	* ( AVFrame * ) data = ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0		=			
+ANR	5456402	UnaryOperationExpression	* ( AVFrame * ) data		5455765	0					
+ANR	5456403	UnaryOperator	*		5455765	0					
+ANR	5456404	CastExpression	( AVFrame * ) data		5455765	1					
+ANR	5456405	CastTarget	AVFrame *		5455765	0					
+ANR	5456406	Identifier	data		5455765	1					
+ANR	5456407	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456408	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456409	Identifier	ctx		5455765	0					
+ANR	5456410	Identifier	buf_ptrs		5455765	1					
+ANR	5456411	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456412	Identifier	ctx		5455765	0					
+ANR	5456413	Identifier	cur_index		5455765	1					
+ANR	5456414	ExpressionStatement	* data_size = sizeof ( AVFrame )	179:4:3281:3309	5455765	33	True				
+ANR	5456415	AssignmentExpression	* data_size = sizeof ( AVFrame )		5455765	0		=			
+ANR	5456416	UnaryOperationExpression	* data_size		5455765	0					
+ANR	5456417	UnaryOperator	*		5455765	0					
+ANR	5456418	Identifier	data_size		5455765	1					
+ANR	5456419	SizeofExpression	sizeof ( AVFrame )		5455765	1					
+ANR	5456420	Sizeof	sizeof		5455765	0					
+ANR	5456421	SizeofOperand	AVFrame		5455765	1					
+ANR	5456422	ExpressionStatement	ctx -> prev_index = ctx -> next_prev_index	183:4:3318:3356	5455765	34	True				
+ANR	5456423	AssignmentExpression	ctx -> prev_index = ctx -> next_prev_index		5455765	0		=			
+ANR	5456424	PtrMemberAccess	ctx -> prev_index		5455765	0					
+ANR	5456425	Identifier	ctx		5455765	0					
+ANR	5456426	Identifier	prev_index		5455765	1					
+ANR	5456427	PtrMemberAccess	ctx -> next_prev_index		5455765	1					
+ANR	5456428	Identifier	ctx		5455765	0					
+ANR	5456429	Identifier	next_prev_index		5455765	1					
+ANR	5456430	ExpressionStatement	ctx -> cur_index = ctx -> next_cur_index	185:4:3363:3400	5455765	35	True				
+ANR	5456431	AssignmentExpression	ctx -> cur_index = ctx -> next_cur_index		5455765	0		=			
+ANR	5456432	PtrMemberAccess	ctx -> cur_index		5455765	0					
+ANR	5456433	Identifier	ctx		5455765	0					
+ANR	5456434	Identifier	cur_index		5455765	1					
+ANR	5456435	PtrMemberAccess	ctx -> next_cur_index		5455765	1					
+ANR	5456436	Identifier	ctx		5455765	0					
+ANR	5456437	Identifier	next_cur_index		5455765	1					
+ANR	5456438	IfStatement	if ( ctx -> buf_ptrs [ ctx -> cur_index ] . data [ 0 ] )		5455765	36					
+ANR	5456439	Condition	ctx -> buf_ptrs [ ctx -> cur_index ] . data [ 0 ]	191:7:3487:3523	5455765	0	True				
+ANR	5456440	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ] . data [ 0 ]		5455765	0					
+ANR	5456441	MemberAccess	ctx -> buf_ptrs [ ctx -> cur_index ] . data		5455765	0					
+ANR	5456442	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456443	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456444	Identifier	ctx		5455765	0					
+ANR	5456445	Identifier	buf_ptrs		5455765	1					
+ANR	5456446	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456447	Identifier	ctx		5455765	0					
+ANR	5456448	Identifier	cur_index		5455765	1					
+ANR	5456449	Identifier	data		5455765	1					
+ANR	5456450	PrimaryExpression	0		5455765	1					
+ANR	5456451	ExpressionStatement	"ff_thread_release_buffer ( avctx , & ctx -> buf_ptrs [ ctx -> cur_index ] )"	193:8:3535:3598	5455765	1	True				
+ANR	5456452	CallExpression	"ff_thread_release_buffer ( avctx , & ctx -> buf_ptrs [ ctx -> cur_index ] )"		5455765	0					
+ANR	5456453	Callee	ff_thread_release_buffer		5455765	0					
+ANR	5456454	Identifier	ff_thread_release_buffer		5455765	0					
+ANR	5456455	ArgumentList	avctx		5455765	1					
+ANR	5456456	Argument	avctx		5455765	0					
+ANR	5456457	Identifier	avctx		5455765	0					
+ANR	5456458	Argument	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456459	UnaryOperationExpression	& ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	0					
+ANR	5456460	UnaryOperator	&		5455765	0					
+ANR	5456461	ArrayIndexing	ctx -> buf_ptrs [ ctx -> cur_index ]		5455765	1					
+ANR	5456462	PtrMemberAccess	ctx -> buf_ptrs		5455765	0					
+ANR	5456463	Identifier	ctx		5455765	0					
+ANR	5456464	Identifier	buf_ptrs		5455765	1					
+ANR	5456465	PtrMemberAccess	ctx -> cur_index		5455765	1					
+ANR	5456466	Identifier	ctx		5455765	0					
+ANR	5456467	Identifier	cur_index		5455765	1					
+ANR	5456468	ReturnStatement	return buf_size ;	197:4:3607:3622	5455765	37	True				
+ANR	5456469	Identifier	buf_size		5455765	0					
+ANR	5456470	ReturnType	static int		5455765	1					
+ANR	5456471	Identifier	mimic_decode_frame		5455765	2					
+ANR	5456472	ParameterList	"AVCodecContext * avctx , void * data , int * data_size , AVPacket * avpkt"		5455765	3					
+ANR	5456473	Parameter	AVCodecContext * avctx	1:30:30:50	5455765	0	True				
+ANR	5456474	ParameterType	AVCodecContext *		5455765	0					
+ANR	5456475	Identifier	avctx		5455765	1					
+ANR	5456476	Parameter	void * data	1:53:53:62	5455765	1	True				
+ANR	5456477	ParameterType	void *		5455765	0					
+ANR	5456478	Identifier	data		5455765	1					
+ANR	5456479	Parameter	int * data_size	3:30:96:109	5455765	2	True				
+ANR	5456480	ParameterType	int *		5455765	0					
+ANR	5456481	Identifier	data_size		5455765	1					
+ANR	5456482	Parameter	AVPacket * avpkt	3:46:112:126	5455765	3	True				
+ANR	5456483	ParameterType	AVPacket *		5455765	0					
+ANR	5456484	Identifier	avpkt		5455765	1					
+ANR	5456485	CFGEntryNode	ENTRY		5455765		True				
+ANR	5456486	CFGExitNode	EXIT		5455765		True				
+ANR	5456487	Symbol	ENOMEM		5455765						
+ANR	5456488	Symbol	* * ctx -> buf_ptrs		5455765						
+ANR	5456489	Symbol	data		5455765						
+ANR	5456490	Symbol	& gb		5455765						
+ANR	5456491	Symbol	avctx -> active_thread_type		5455765						
+ANR	5456492	Symbol	avpkt		5455765						
+ANR	5456493	Symbol	ctx -> next_cur_index		5455765						
+ANR	5456494	Symbol	* data_size		5455765						
+ANR	5456495	Symbol	decode		5455765						
+ANR	5456496	Symbol	ctx -> buf_ptrs [ ctx -> cur_index ] . pict_type		5455765						
+ANR	5456497	Symbol	num_coeffs		5455765						
+ANR	5456498	Symbol	PIX_FMT_YUV420P		5455765						
+ANR	5456499	Symbol	ctx -> buf_ptrs [ ctx -> cur_index ] . reference		5455765						
+ANR	5456500	Symbol	ctx -> avctx -> width		5455765						
+ANR	5456501	Symbol	* ctx -> buf_ptrs [ ctx -> cur_index ] . data		5455765						
+ANR	5456502	Symbol	height		5455765						
+ANR	5456503	Symbol	data_size		5455765						
+ANR	5456504	Symbol	* ctx -> avctx		5455765						
+ANR	5456505	Symbol	ctx -> buf_ptrs [ ctx -> cur_index ] . data		5455765						
+ANR	5456506	Symbol	buf_size		5455765						
+ANR	5456507	Symbol	ctx		5455765						
+ANR	5456508	Symbol	is_pframe		5455765						
+ANR	5456509	Symbol	quality		5455765						
+ANR	5456510	Symbol	* avctx		5455765						
+ANR	5456511	Symbol	ctx -> avctx		5455765						
+ANR	5456512	Symbol	* ctx -> buf_ptrs		5455765						
+ANR	5456513	Symbol	& ctx -> swap_buf_size		5455765						
+ANR	5456514	Symbol	avpkt -> data		5455765						
+ANR	5456515	Symbol	avctx -> pix_fmt		5455765						
+ANR	5456516	Symbol	ctx -> flipped_ptrs		5455765						
+ANR	5456517	Symbol	FF_THREAD_FRAME		5455765						
+ANR	5456518	Symbol	* ctx -> prev_index		5455765						
+ANR	5456519	Symbol	ctx -> buf_ptrs [ ctx -> prev_index ] . data		5455765						
+ANR	5456520	Symbol	AV_PICTURE_TYPE_P		5455765						
+ANR	5456521	Symbol	avctx -> width		5455765						
+ANR	5456522	Symbol	ctx -> num_vblocks		5455765						
+ANR	5456523	Symbol	ctx -> buf_ptrs		5455765						
+ANR	5456524	Symbol	& ctx -> gb		5455765						
+ANR	5456525	Symbol	ctx -> cur_index		5455765						
+ANR	5456526	Symbol	* ctx -> buf_ptrs [ ctx -> prev_index ] . data		5455765						
+ANR	5456527	Symbol	bytestream2_get_le32u		5455765						
+ANR	5456528	Symbol	ctx -> next_prev_index		5455765						
+ANR	5456529	Symbol	ctx -> swap_buf		5455765						
+ANR	5456530	Symbol	ctx -> num_hblocks		5455765						
+ANR	5456531	Symbol	avctx -> height		5455765						
+ANR	5456532	Symbol	FF_INPUT_BUFFER_PADDING_SIZE		5455765						
+ANR	5456533	Symbol	* ctx -> cur_index		5455765						
+ANR	5456534	Symbol	* * ctx -> cur_index		5455765						
+ANR	5456535	Symbol	bytestream2_get_le16u		5455765						
+ANR	5456536	Symbol	INT_MAX		5455765						
+ANR	5456537	Symbol	avpkt -> size		5455765						
+ANR	5456538	Symbol	AV_PICTURE_TYPE_I		5455765						
+ANR	5456539	Symbol	gb		5455765						
+ANR	5456540	Symbol	avctx		5455765						
+ANR	5456541	Symbol	* * ctx -> prev_index		5455765						
+ANR	5456542	Symbol	* ctx -> num_vblocks		5455765						
+ANR	5456543	Symbol	* avpkt		5455765						
+ANR	5456544	Symbol	bytestream2_get_byteu		5455765						
+ANR	5456545	Symbol	& ctx -> swap_buf		5455765						
+ANR	5456546	Symbol	AV_LOG_ERROR		5455765						
+ANR	5456547	Symbol	* * * ctx		5455765						
+ANR	5456548	Symbol	ff_thread_get_buffer		5455765						
+ANR	5456549	Symbol	i		5455765						
+ANR	5456550	Symbol	ctx -> dsp		5455765						
+ANR	5456551	Symbol	avctx -> priv_data		5455765						
+ANR	5456552	Symbol	* ctx		5455765						
+ANR	5456553	Symbol	swap_buf_size		5455765						
+ANR	5456554	Symbol	MIMIC_HEADER_SIZE		5455765						
+ANR	5456555	Symbol	buf		5455765						
+ANR	5456556	Symbol	* ctx -> num_hblocks		5455765						
+ANR	5456557	Symbol	* i		5455765						
+ANR	5456558	Symbol	ctx -> prev_index		5455765						
+ANR	5456559	Symbol	width		5455765						
+ANR	5456560	Symbol	* * ctx		5455765						
+ANR	5456561	Symbol	AVERROR		5455765						
+ANR	5456562	Symbol	* ( AVFrame * ) data		5455765						
+ANR	5456563	Symbol	ctx -> avctx -> height		5455765						
+ANR	5456564	Symbol	* data		5455765						

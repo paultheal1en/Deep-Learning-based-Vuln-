@@ -1,0 +1,266 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4568348	File	/home/p4ultr4n/workplace/ReVeal/raw_code/handle_intercept_01_1.c								
+ANR	4568349	Function	handle_intercept	1:0:0:1674							
+ANR	4568350	FunctionDef	handle_intercept (S390CPU * cpu)		4568349	0					
+ANR	4568351	CompoundStatement		3:0:43:1674	4568349	0					
+ANR	4568352	IdentifierDeclStatement	CPUState * cs = CPU ( cpu ) ;	5:4:50:73	4568349	0	True				
+ANR	4568353	IdentifierDecl	* cs = CPU ( cpu )		4568349	0					
+ANR	4568354	IdentifierDeclType	CPUState *		4568349	0					
+ANR	4568355	Identifier	cs		4568349	1					
+ANR	4568356	AssignmentExpression	* cs = CPU ( cpu )		4568349	2		=			
+ANR	4568357	Identifier	cs		4568349	0					
+ANR	4568358	CallExpression	CPU ( cpu )		4568349	1					
+ANR	4568359	Callee	CPU		4568349	0					
+ANR	4568360	Identifier	CPU		4568349	0					
+ANR	4568361	ArgumentList	cpu		4568349	1					
+ANR	4568362	Argument	cpu		4568349	0					
+ANR	4568363	Identifier	cpu		4568349	0					
+ANR	4568364	IdentifierDeclStatement	struct kvm_run * run = cs -> kvm_run ;	7:4:80:113	4568349	1	True				
+ANR	4568365	IdentifierDecl	* run = cs -> kvm_run		4568349	0					
+ANR	4568366	IdentifierDeclType	struct kvm_run *		4568349	0					
+ANR	4568367	Identifier	run		4568349	1					
+ANR	4568368	AssignmentExpression	* run = cs -> kvm_run		4568349	2		=			
+ANR	4568369	Identifier	run		4568349	0					
+ANR	4568370	PtrMemberAccess	cs -> kvm_run		4568349	1					
+ANR	4568371	Identifier	cs		4568349	0					
+ANR	4568372	Identifier	kvm_run		4568349	1					
+ANR	4568373	IdentifierDeclStatement	int icpt_code = run -> s390_sieic . icptcode ;	9:4:120:160	4568349	2	True				
+ANR	4568374	IdentifierDecl	icpt_code = run -> s390_sieic . icptcode		4568349	0					
+ANR	4568375	IdentifierDeclType	int		4568349	0					
+ANR	4568376	Identifier	icpt_code		4568349	1					
+ANR	4568377	AssignmentExpression	icpt_code = run -> s390_sieic . icptcode		4568349	2		=			
+ANR	4568378	Identifier	icpt_code		4568349	0					
+ANR	4568379	MemberAccess	run -> s390_sieic . icptcode		4568349	1					
+ANR	4568380	PtrMemberAccess	run -> s390_sieic		4568349	0					
+ANR	4568381	Identifier	run		4568349	0					
+ANR	4568382	Identifier	s390_sieic		4568349	1					
+ANR	4568383	Identifier	icptcode		4568349	1					
+ANR	4568384	IdentifierDeclStatement	int r = 0 ;	11:4:167:176	4568349	3	True				
+ANR	4568385	IdentifierDecl	r = 0		4568349	0					
+ANR	4568386	IdentifierDeclType	int		4568349	0					
+ANR	4568387	Identifier	r		4568349	1					
+ANR	4568388	AssignmentExpression	r = 0		4568349	2		=			
+ANR	4568389	Identifier	r		4568349	0					
+ANR	4568390	PrimaryExpression	0		4568349	1					
+ANR	4568391	ExpressionStatement	"DPRINTF ( ""intercept: 0x%x (at 0x%lx)\\n"" , icpt_code , ( long ) cs -> kvm_run -> psw_addr )"	15:4:185:277	4568349	4	True				
+ANR	4568392	CallExpression	"DPRINTF ( ""intercept: 0x%x (at 0x%lx)\\n"" , icpt_code , ( long ) cs -> kvm_run -> psw_addr )"		4568349	0					
+ANR	4568393	Callee	DPRINTF		4568349	0					
+ANR	4568394	Identifier	DPRINTF		4568349	0					
+ANR	4568395	ArgumentList	"""intercept: 0x%x (at 0x%lx)\\n"""		4568349	1					
+ANR	4568396	Argument	"""intercept: 0x%x (at 0x%lx)\\n"""		4568349	0					
+ANR	4568397	PrimaryExpression	"""intercept: 0x%x (at 0x%lx)\\n"""		4568349	0					
+ANR	4568398	Argument	icpt_code		4568349	1					
+ANR	4568399	Identifier	icpt_code		4568349	0					
+ANR	4568400	Argument	( long ) cs -> kvm_run -> psw_addr		4568349	2					
+ANR	4568401	CastExpression	( long ) cs -> kvm_run -> psw_addr		4568349	0					
+ANR	4568402	CastTarget	long		4568349	0					
+ANR	4568403	PtrMemberAccess	cs -> kvm_run -> psw_addr		4568349	1					
+ANR	4568404	PtrMemberAccess	cs -> kvm_run		4568349	0					
+ANR	4568405	Identifier	cs		4568349	0					
+ANR	4568406	Identifier	kvm_run		4568349	1					
+ANR	4568407	Identifier	psw_addr		4568349	1					
+ANR	4568408	SwitchStatement	switch ( icpt_code )		4568349	5					
+ANR	4568409	Condition	icpt_code	19:12:292:300	4568349	0	True				
+ANR	4568410	Identifier	icpt_code		4568349	0					
+ANR	4568411	CompoundStatement		17:23:259:259	4568349	1					
+ANR	4568412	Label	case ICPT_INSTRUCTION :	21:8:314:335	4568349	0	True				
+ANR	4568413	Identifier	ICPT_INSTRUCTION		4568349	0					
+ANR	4568414	ExpressionStatement	"r = handle_instruction ( cpu , run )"	23:12:350:382	4568349	1	True				
+ANR	4568415	AssignmentExpression	"r = handle_instruction ( cpu , run )"		4568349	0		=			
+ANR	4568416	Identifier	r		4568349	0					
+ANR	4568417	CallExpression	"handle_instruction ( cpu , run )"		4568349	1					
+ANR	4568418	Callee	handle_instruction		4568349	0					
+ANR	4568419	Identifier	handle_instruction		4568349	0					
+ANR	4568420	ArgumentList	cpu		4568349	1					
+ANR	4568421	Argument	cpu		4568349	0					
+ANR	4568422	Identifier	cpu		4568349	0					
+ANR	4568423	Argument	run		4568349	1					
+ANR	4568424	Identifier	run		4568349	0					
+ANR	4568425	BreakStatement	break ;	25:12:397:402	4568349	2	True				
+ANR	4568426	Label	case ICPT_WAITPSW :	27:8:413:430	4568349	3	True				
+ANR	4568427	Identifier	ICPT_WAITPSW		4568349	0					
+ANR	4568428	IfStatement	if ( s390_del_running_cpu ( cpu ) == 0 )		4568349	4					
+ANR	4568429	Condition	s390_del_running_cpu ( cpu ) == 0	31:16:523:552	4568349	0	True				
+ANR	4568430	EqualityExpression	s390_del_running_cpu ( cpu ) == 0		4568349	0		==			
+ANR	4568431	CallExpression	s390_del_running_cpu ( cpu )		4568349	0					
+ANR	4568432	Callee	s390_del_running_cpu		4568349	0					
+ANR	4568433	Identifier	s390_del_running_cpu		4568349	0					
+ANR	4568434	ArgumentList	cpu		4568349	1					
+ANR	4568435	Argument	cpu		4568349	0					
+ANR	4568436	Identifier	cpu		4568349	0					
+ANR	4568437	PrimaryExpression	0		4568349	1					
+ANR	4568438	CompoundStatement		29:48:511:511	4568349	1					
+ANR	4568439	IfStatement	if ( is_special_wait_psw ( cs ) )		4568349	0					
+ANR	4568440	Condition	is_special_wait_psw ( cs )	33:20:578:600	4568349	0	True				
+ANR	4568441	CallExpression	is_special_wait_psw ( cs )		4568349	0					
+ANR	4568442	Callee	is_special_wait_psw		4568349	0					
+ANR	4568443	Identifier	is_special_wait_psw		4568349	0					
+ANR	4568444	ArgumentList	cs		4568349	1					
+ANR	4568445	Argument	cs		4568349	0					
+ANR	4568446	Identifier	cs		4568349	0					
+ANR	4568447	CompoundStatement		31:45:559:559	4568349	1					
+ANR	4568448	ExpressionStatement	qemu_system_shutdown_request ( )	35:20:626:656	4568349	0	True				
+ANR	4568449	CallExpression	qemu_system_shutdown_request ( )		4568349	0					
+ANR	4568450	Callee	qemu_system_shutdown_request		4568349	0					
+ANR	4568451	Identifier	qemu_system_shutdown_request		4568349	0					
+ANR	4568452	ArgumentList			4568349	1					
+ANR	4568453	ElseStatement	else		4568349	0					
+ANR	4568454	CompoundStatement		37:20:661:674	4568349	0					
+ANR	4568455	IdentifierDeclStatement	QObject * data ;	39:20:705:718	4568349	0	True				
+ANR	4568456	IdentifierDecl	* data		4568349	0					
+ANR	4568457	IdentifierDeclType	QObject *		4568349	0					
+ANR	4568458	Identifier	data		4568349	1					
+ANR	4568459	ExpressionStatement	"data = qobject_from_jsonf ( ""{ 'action': %s }"" , ""pause"" )"	43:20:743:797	4568349	1	True				
+ANR	4568460	AssignmentExpression	"data = qobject_from_jsonf ( ""{ 'action': %s }"" , ""pause"" )"		4568349	0		=			
+ANR	4568461	Identifier	data		4568349	0					
+ANR	4568462	CallExpression	"qobject_from_jsonf ( ""{ 'action': %s }"" , ""pause"" )"		4568349	1					
+ANR	4568463	Callee	qobject_from_jsonf		4568349	0					
+ANR	4568464	Identifier	qobject_from_jsonf		4568349	0					
+ANR	4568465	ArgumentList	"""{ 'action': %s }"""		4568349	1					
+ANR	4568466	Argument	"""{ 'action': %s }"""		4568349	0					
+ANR	4568467	PrimaryExpression	"""{ 'action': %s }"""		4568349	0					
+ANR	4568468	Argument	"""pause"""		4568349	1					
+ANR	4568469	PrimaryExpression	"""pause"""		4568349	0					
+ANR	4568470	ExpressionStatement	"monitor_protocol_event ( QEVENT_GUEST_PANICKED , data )"	45:20:820:871	4568349	2	True				
+ANR	4568471	CallExpression	"monitor_protocol_event ( QEVENT_GUEST_PANICKED , data )"		4568349	0					
+ANR	4568472	Callee	monitor_protocol_event		4568349	0					
+ANR	4568473	Identifier	monitor_protocol_event		4568349	0					
+ANR	4568474	ArgumentList	QEVENT_GUEST_PANICKED		4568349	1					
+ANR	4568475	Argument	QEVENT_GUEST_PANICKED		4568349	0					
+ANR	4568476	Identifier	QEVENT_GUEST_PANICKED		4568349	0					
+ANR	4568477	Argument	data		4568349	1					
+ANR	4568478	Identifier	data		4568349	0					
+ANR	4568479	ExpressionStatement	qobject_decref ( data )	47:20:894:914	4568349	3	True				
+ANR	4568480	CallExpression	qobject_decref ( data )		4568349	0					
+ANR	4568481	Callee	qobject_decref		4568349	0					
+ANR	4568482	Identifier	qobject_decref		4568349	0					
+ANR	4568483	ArgumentList	data		4568349	1					
+ANR	4568484	Argument	data		4568349	0					
+ANR	4568485	Identifier	data		4568349	0					
+ANR	4568486	ExpressionStatement	vm_stop ( RUN_STATE_GUEST_PANICKED )	49:20:937:970	4568349	4	True				
+ANR	4568487	CallExpression	vm_stop ( RUN_STATE_GUEST_PANICKED )		4568349	0					
+ANR	4568488	Callee	vm_stop		4568349	0					
+ANR	4568489	Identifier	vm_stop		4568349	0					
+ANR	4568490	ArgumentList	RUN_STATE_GUEST_PANICKED		4568349	1					
+ANR	4568491	Argument	RUN_STATE_GUEST_PANICKED		4568349	0					
+ANR	4568492	Identifier	RUN_STATE_GUEST_PANICKED		4568349	0					
+ANR	4568493	ExpressionStatement	r = EXCP_HALTED	55:12:1019:1034	4568349	5	True				
+ANR	4568494	AssignmentExpression	r = EXCP_HALTED		4568349	0		=			
+ANR	4568495	Identifier	r		4568349	0					
+ANR	4568496	Identifier	EXCP_HALTED		4568349	1					
+ANR	4568497	BreakStatement	break ;	57:12:1049:1054	4568349	6	True				
+ANR	4568498	Label	case ICPT_CPU_STOP :	59:8:1065:1083	4568349	7	True				
+ANR	4568499	Identifier	ICPT_CPU_STOP		4568349	0					
+ANR	4568500	IfStatement	if ( s390_del_running_cpu ( cpu ) == 0 )		4568349	8					
+ANR	4568501	Condition	s390_del_running_cpu ( cpu ) == 0	61:16:1102:1131	4568349	0	True				
+ANR	4568502	EqualityExpression	s390_del_running_cpu ( cpu ) == 0		4568349	0		==			
+ANR	4568503	CallExpression	s390_del_running_cpu ( cpu )		4568349	0					
+ANR	4568504	Callee	s390_del_running_cpu		4568349	0					
+ANR	4568505	Identifier	s390_del_running_cpu		4568349	0					
+ANR	4568506	ArgumentList	cpu		4568349	1					
+ANR	4568507	Argument	cpu		4568349	0					
+ANR	4568508	Identifier	cpu		4568349	0					
+ANR	4568509	PrimaryExpression	0		4568349	1					
+ANR	4568510	CompoundStatement		59:48:1090:1090	4568349	1					
+ANR	4568511	ExpressionStatement	qemu_system_shutdown_request ( )	63:16:1153:1183	4568349	0	True				
+ANR	4568512	CallExpression	qemu_system_shutdown_request ( )		4568349	0					
+ANR	4568513	Callee	qemu_system_shutdown_request		4568349	0					
+ANR	4568514	Identifier	qemu_system_shutdown_request		4568349	0					
+ANR	4568515	ArgumentList			4568349	1					
+ANR	4568516	ExpressionStatement	r = EXCP_HALTED	67:12:1213:1228	4568349	9	True				
+ANR	4568517	AssignmentExpression	r = EXCP_HALTED		4568349	0		=			
+ANR	4568518	Identifier	r		4568349	0					
+ANR	4568519	Identifier	EXCP_HALTED		4568349	1					
+ANR	4568520	BreakStatement	break ;	69:12:1243:1248	4568349	10	True				
+ANR	4568521	Label	case ICPT_SOFT_INTERCEPT :	71:8:1259:1283	4568349	11	True				
+ANR	4568522	Identifier	ICPT_SOFT_INTERCEPT		4568349	0					
+ANR	4568523	ExpressionStatement	"fprintf ( stderr , ""KVM unimplemented icpt SOFT\\n"" )"	73:12:1298:1346	4568349	12	True				
+ANR	4568524	CallExpression	"fprintf ( stderr , ""KVM unimplemented icpt SOFT\\n"" )"		4568349	0					
+ANR	4568525	Callee	fprintf		4568349	0					
+ANR	4568526	Identifier	fprintf		4568349	0					
+ANR	4568527	ArgumentList	stderr		4568349	1					
+ANR	4568528	Argument	stderr		4568349	0					
+ANR	4568529	Identifier	stderr		4568349	0					
+ANR	4568530	Argument	"""KVM unimplemented icpt SOFT\\n"""		4568349	1					
+ANR	4568531	PrimaryExpression	"""KVM unimplemented icpt SOFT\\n"""		4568349	0					
+ANR	4568532	ExpressionStatement	exit ( 1 )	75:12:1361:1368	4568349	13	True				
+ANR	4568533	CallExpression	exit ( 1 )		4568349	0					
+ANR	4568534	Callee	exit		4568349	0					
+ANR	4568535	Identifier	exit		4568349	0					
+ANR	4568536	ArgumentList	1		4568349	1					
+ANR	4568537	Argument	1		4568349	0					
+ANR	4568538	PrimaryExpression	1		4568349	0					
+ANR	4568539	BreakStatement	break ;	77:12:1383:1388	4568349	14	True				
+ANR	4568540	Label	case ICPT_IO :	79:8:1399:1411	4568349	15	True				
+ANR	4568541	Identifier	ICPT_IO		4568349	0					
+ANR	4568542	ExpressionStatement	"fprintf ( stderr , ""KVM unimplemented icpt IO\\n"" )"	81:12:1426:1472	4568349	16	True				
+ANR	4568543	CallExpression	"fprintf ( stderr , ""KVM unimplemented icpt IO\\n"" )"		4568349	0					
+ANR	4568544	Callee	fprintf		4568349	0					
+ANR	4568545	Identifier	fprintf		4568349	0					
+ANR	4568546	ArgumentList	stderr		4568349	1					
+ANR	4568547	Argument	stderr		4568349	0					
+ANR	4568548	Identifier	stderr		4568349	0					
+ANR	4568549	Argument	"""KVM unimplemented icpt IO\\n"""		4568349	1					
+ANR	4568550	PrimaryExpression	"""KVM unimplemented icpt IO\\n"""		4568349	0					
+ANR	4568551	ExpressionStatement	exit ( 1 )	83:12:1487:1494	4568349	17	True				
+ANR	4568552	CallExpression	exit ( 1 )		4568349	0					
+ANR	4568553	Callee	exit		4568349	0					
+ANR	4568554	Identifier	exit		4568349	0					
+ANR	4568555	ArgumentList	1		4568349	1					
+ANR	4568556	Argument	1		4568349	0					
+ANR	4568557	PrimaryExpression	1		4568349	0					
+ANR	4568558	BreakStatement	break ;	85:12:1509:1514	4568349	18	True				
+ANR	4568559	Label	default :	87:8:1525:1532	4568349	19	True				
+ANR	4568560	Identifier	default		4568349	0					
+ANR	4568561	ExpressionStatement	"fprintf ( stderr , ""Unknown intercept code: %d\\n"" , icpt_code )"	89:12:1547:1605	4568349	20	True				
+ANR	4568562	CallExpression	"fprintf ( stderr , ""Unknown intercept code: %d\\n"" , icpt_code )"		4568349	0					
+ANR	4568563	Callee	fprintf		4568349	0					
+ANR	4568564	Identifier	fprintf		4568349	0					
+ANR	4568565	ArgumentList	stderr		4568349	1					
+ANR	4568566	Argument	stderr		4568349	0					
+ANR	4568567	Identifier	stderr		4568349	0					
+ANR	4568568	Argument	"""Unknown intercept code: %d\\n"""		4568349	1					
+ANR	4568569	PrimaryExpression	"""Unknown intercept code: %d\\n"""		4568349	0					
+ANR	4568570	Argument	icpt_code		4568349	2					
+ANR	4568571	Identifier	icpt_code		4568349	0					
+ANR	4568572	ExpressionStatement	exit ( 1 )	91:12:1620:1627	4568349	21	True				
+ANR	4568573	CallExpression	exit ( 1 )		4568349	0					
+ANR	4568574	Callee	exit		4568349	0					
+ANR	4568575	Identifier	exit		4568349	0					
+ANR	4568576	ArgumentList	1		4568349	1					
+ANR	4568577	Argument	1		4568349	0					
+ANR	4568578	PrimaryExpression	1		4568349	0					
+ANR	4568579	BreakStatement	break ;	93:12:1642:1647	4568349	22	True				
+ANR	4568580	ReturnStatement	return r ;	99:4:1663:1671	4568349	6	True				
+ANR	4568581	Identifier	r		4568349	0					
+ANR	4568582	ReturnType	static int		4568349	1					
+ANR	4568583	Identifier	handle_intercept		4568349	2					
+ANR	4568584	ParameterList	S390CPU * cpu		4568349	3					
+ANR	4568585	Parameter	S390CPU * cpu	1:28:28:39	4568349	0	True				
+ANR	4568586	ParameterType	S390CPU *		4568349	0					
+ANR	4568587	Identifier	cpu		4568349	1					
+ANR	4568588	CFGEntryNode	ENTRY		4568349		True				
+ANR	4568589	CFGExitNode	EXIT		4568349		True				
+ANR	4568590	Symbol	data		4568349						
+ANR	4568591	Symbol	RUN_STATE_GUEST_PANICKED		4568349						
+ANR	4568592	Symbol	cpu		4568349						
+ANR	4568593	Symbol	CPU		4568349						
+ANR	4568594	Symbol	QEVENT_GUEST_PANICKED		4568349						
+ANR	4568595	Symbol	run		4568349						
+ANR	4568596	Symbol	is_special_wait_psw		4568349						
+ANR	4568597	Symbol	qobject_from_jsonf		4568349						
+ANR	4568598	Symbol	stderr		4568349						
+ANR	4568599	Symbol	cs		4568349						
+ANR	4568600	Symbol	EXCP_HALTED		4568349						
+ANR	4568601	Symbol	r		4568349						
+ANR	4568602	Symbol	run -> s390_sieic . icptcode		4568349						
+ANR	4568603	Symbol	cs -> kvm_run -> psw_addr		4568349						
+ANR	4568604	Symbol	* cs		4568349						
+ANR	4568605	Symbol	icpt_code		4568349						
+ANR	4568606	Symbol	* run		4568349						
+ANR	4568607	Symbol	* cs -> kvm_run		4568349						
+ANR	4568608	Symbol	cs -> kvm_run		4568349						
+ANR	4568609	Symbol	handle_instruction		4568349						
+ANR	4568610	Symbol	s390_del_running_cpu		4568349						
+ANR	4568611	Symbol	* * cs		4568349						
+ANR	4568612	Symbol	run -> s390_sieic		4568349						

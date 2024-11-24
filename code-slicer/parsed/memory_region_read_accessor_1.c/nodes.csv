@@ -1,0 +1,148 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5433817	File	/home/p4ultr4n/workplace/ReVeal/raw_code/memory_region_read_accessor_1.c								
+ANR	5433818	Function	memory_region_read_accessor	1:0:0:912							
+ANR	5433819	FunctionDef	"memory_region_read_accessor (MemoryRegion * mr , hwaddr addr , uint64_t * value , unsigned size , unsigned shift , uint64_t mask , MemTxAttrs attrs)"		5433818	0					
+ANR	5433820	CompoundStatement		15:0:455:912	5433818	0					
+ANR	5433821	IdentifierDeclStatement	uint64_t tmp ;	17:4:462:474	5433818	0	True				
+ANR	5433822	IdentifierDecl	tmp		5433818	0					
+ANR	5433823	IdentifierDeclType	uint64_t		5433818	0					
+ANR	5433824	Identifier	tmp		5433818	1					
+ANR	5433825	ExpressionStatement	"tmp = mr -> ops -> read ( mr -> opaque , addr , size )"	21:4:483:526	5433818	1	True				
+ANR	5433826	AssignmentExpression	"tmp = mr -> ops -> read ( mr -> opaque , addr , size )"		5433818	0		=			
+ANR	5433827	Identifier	tmp		5433818	0					
+ANR	5433828	CallExpression	"mr -> ops -> read ( mr -> opaque , addr , size )"		5433818	1					
+ANR	5433829	Callee	mr -> ops -> read		5433818	0					
+ANR	5433830	PtrMemberAccess	mr -> ops -> read		5433818	0					
+ANR	5433831	PtrMemberAccess	mr -> ops		5433818	0					
+ANR	5433832	Identifier	mr		5433818	0					
+ANR	5433833	Identifier	ops		5433818	1					
+ANR	5433834	Identifier	read		5433818	1					
+ANR	5433835	ArgumentList	mr -> opaque		5433818	1					
+ANR	5433836	Argument	mr -> opaque		5433818	0					
+ANR	5433837	PtrMemberAccess	mr -> opaque		5433818	0					
+ANR	5433838	Identifier	mr		5433818	0					
+ANR	5433839	Identifier	opaque		5433818	1					
+ANR	5433840	Argument	addr		5433818	1					
+ANR	5433841	Identifier	addr		5433818	0					
+ANR	5433842	Argument	size		5433818	2					
+ANR	5433843	Identifier	size		5433818	0					
+ANR	5433844	IfStatement	if ( mr -> subpage )		5433818	2					
+ANR	5433845	Condition	mr -> subpage	23:8:537:547	5433818	0	True				
+ANR	5433846	PtrMemberAccess	mr -> subpage		5433818	0					
+ANR	5433847	Identifier	mr		5433818	0					
+ANR	5433848	Identifier	subpage		5433818	1					
+ANR	5433849	CompoundStatement		9:21:94:94	5433818	1					
+ANR	5433850	ExpressionStatement	"trace_memory_region_subpage_read ( get_cpu_index ( ) , mr , addr , tmp , size )"	25:8:561:631	5433818	0	True				
+ANR	5433851	CallExpression	"trace_memory_region_subpage_read ( get_cpu_index ( ) , mr , addr , tmp , size )"		5433818	0					
+ANR	5433852	Callee	trace_memory_region_subpage_read		5433818	0					
+ANR	5433853	Identifier	trace_memory_region_subpage_read		5433818	0					
+ANR	5433854	ArgumentList	get_cpu_index ( )		5433818	1					
+ANR	5433855	Argument	get_cpu_index ( )		5433818	0					
+ANR	5433856	CallExpression	get_cpu_index ( )		5433818	0					
+ANR	5433857	Callee	get_cpu_index		5433818	0					
+ANR	5433858	Identifier	get_cpu_index		5433818	0					
+ANR	5433859	ArgumentList			5433818	1					
+ANR	5433860	Argument	mr		5433818	1					
+ANR	5433861	Identifier	mr		5433818	0					
+ANR	5433862	Argument	addr		5433818	2					
+ANR	5433863	Identifier	addr		5433818	0					
+ANR	5433864	Argument	tmp		5433818	3					
+ANR	5433865	Identifier	tmp		5433818	0					
+ANR	5433866	Argument	size		5433818	4					
+ANR	5433867	Identifier	size		5433818	0					
+ANR	5433868	ElseStatement	else		5433818	0					
+ANR	5433869	IfStatement	if ( TRACE_MEMORY_REGION_OPS_READ_ENABLED )		5433818	0					
+ANR	5433870	Condition	TRACE_MEMORY_REGION_OPS_READ_ENABLED	32:15:654:689	5433818	0	True				
+ANR	5433871	Identifier	TRACE_MEMORY_REGION_OPS_READ_ENABLED		5433818	0					
+ANR	5433872	CompoundStatement		20:8:247:305	5433818	1					
+ANR	5433873	IdentifierDeclStatement	"hwaddr abs_addr = memory_region_to_absolute_addr ( mr , addr ) ;"	34:8:703:761	5433818	0	True				
+ANR	5433874	IdentifierDecl	"abs_addr = memory_region_to_absolute_addr ( mr , addr )"		5433818	0					
+ANR	5433875	IdentifierDeclType	hwaddr		5433818	0					
+ANR	5433876	Identifier	abs_addr		5433818	1					
+ANR	5433877	AssignmentExpression	"abs_addr = memory_region_to_absolute_addr ( mr , addr )"		5433818	2		=			
+ANR	5433878	Identifier	abs_addr		5433818	0					
+ANR	5433879	CallExpression	"memory_region_to_absolute_addr ( mr , addr )"		5433818	1					
+ANR	5433880	Callee	memory_region_to_absolute_addr		5433818	0					
+ANR	5433881	Identifier	memory_region_to_absolute_addr		5433818	0					
+ANR	5433882	ArgumentList	mr		5433818	1					
+ANR	5433883	Argument	mr		5433818	0					
+ANR	5433884	Identifier	mr		5433818	0					
+ANR	5433885	Argument	addr		5433818	1					
+ANR	5433886	Identifier	addr		5433818	0					
+ANR	5433887	ExpressionStatement	"trace_memory_region_ops_read ( get_cpu_index ( ) , mr , abs_addr , tmp , size )"	36:8:772:842	5433818	1	True				
+ANR	5433888	CallExpression	"trace_memory_region_ops_read ( get_cpu_index ( ) , mr , abs_addr , tmp , size )"		5433818	0					
+ANR	5433889	Callee	trace_memory_region_ops_read		5433818	0					
+ANR	5433890	Identifier	trace_memory_region_ops_read		5433818	0					
+ANR	5433891	ArgumentList	get_cpu_index ( )		5433818	1					
+ANR	5433892	Argument	get_cpu_index ( )		5433818	0					
+ANR	5433893	CallExpression	get_cpu_index ( )		5433818	0					
+ANR	5433894	Callee	get_cpu_index		5433818	0					
+ANR	5433895	Identifier	get_cpu_index		5433818	0					
+ANR	5433896	ArgumentList			5433818	1					
+ANR	5433897	Argument	mr		5433818	1					
+ANR	5433898	Identifier	mr		5433818	0					
+ANR	5433899	Argument	abs_addr		5433818	2					
+ANR	5433900	Identifier	abs_addr		5433818	0					
+ANR	5433901	Argument	tmp		5433818	3					
+ANR	5433902	Identifier	tmp		5433818	0					
+ANR	5433903	Argument	size		5433818	4					
+ANR	5433904	Identifier	size		5433818	0					
+ANR	5433905	ExpressionStatement	* value |= ( tmp & mask ) << shift	40:4:856:887	5433818	3	True				
+ANR	5433906	AssignmentExpression	* value |= ( tmp & mask ) << shift		5433818	0		|=			
+ANR	5433907	UnaryOperationExpression	* value		5433818	0					
+ANR	5433908	UnaryOperator	*		5433818	0					
+ANR	5433909	Identifier	value		5433818	1					
+ANR	5433910	ShiftExpression	( tmp & mask ) << shift		5433818	1		<<			
+ANR	5433911	BitAndExpression	tmp & mask		5433818	0		&			
+ANR	5433912	Identifier	tmp		5433818	0					
+ANR	5433913	Identifier	mask		5433818	1					
+ANR	5433914	Identifier	shift		5433818	1					
+ANR	5433915	ReturnStatement	return MEMTX_OK ;	42:4:894:909	5433818	4	True				
+ANR	5433916	Identifier	MEMTX_OK		5433818	0					
+ANR	5433917	ReturnType	static MemTxResult		5433818	1					
+ANR	5433918	Identifier	memory_region_read_accessor		5433818	2					
+ANR	5433919	ParameterList	"MemoryRegion * mr , hwaddr addr , uint64_t * value , unsigned size , unsigned shift , uint64_t mask , MemTxAttrs attrs"		5433818	3					
+ANR	5433920	Parameter	MemoryRegion * mr	1:48:48:63	5433818	0	True				
+ANR	5433921	ParameterType	MemoryRegion *		5433818	0					
+ANR	5433922	Identifier	mr		5433818	1					
+ANR	5433923	Parameter	hwaddr addr	3:48:115:125	5433818	1	True				
+ANR	5433924	ParameterType	hwaddr		5433818	0					
+ANR	5433925	Identifier	addr		5433818	1					
+ANR	5433926	Parameter	uint64_t * value	5:48:177:191	5433818	2	True				
+ANR	5433927	ParameterType	uint64_t *		5433818	0					
+ANR	5433928	Identifier	value		5433818	1					
+ANR	5433929	Parameter	unsigned size	7:48:243:255	5433818	3	True				
+ANR	5433930	ParameterType	unsigned		5433818	0					
+ANR	5433931	Identifier	size		5433818	1					
+ANR	5433932	Parameter	unsigned shift	9:48:307:320	5433818	4	True				
+ANR	5433933	ParameterType	unsigned		5433818	0					
+ANR	5433934	Identifier	shift		5433818	1					
+ANR	5433935	Parameter	uint64_t mask	11:48:372:384	5433818	5	True				
+ANR	5433936	ParameterType	uint64_t		5433818	0					
+ANR	5433937	Identifier	mask		5433818	1					
+ANR	5433938	Parameter	MemTxAttrs attrs	13:48:436:451	5433818	6	True				
+ANR	5433939	ParameterType	MemTxAttrs		5433818	0					
+ANR	5433940	Identifier	attrs		5433818	1					
+ANR	5433941	CFGEntryNode	ENTRY		5433818		True				
+ANR	5433942	CFGExitNode	EXIT		5433818		True				
+ANR	5433943	Symbol	* mr -> ops		5433818						
+ANR	5433944	Symbol	abs_addr		5433818						
+ANR	5433945	Symbol	mr		5433818						
+ANR	5433946	Symbol	shift		5433818						
+ANR	5433947	Symbol	* mr		5433818						
+ANR	5433948	Symbol	TRACE_MEMORY_REGION_OPS_READ_ENABLED		5433818						
+ANR	5433949	Symbol	get_cpu_index		5433818						
+ANR	5433950	Symbol	mr -> ops		5433818						
+ANR	5433951	Symbol	mr -> ops -> read		5433818						
+ANR	5433952	Symbol	attrs		5433818						
+ANR	5433953	Symbol	mr -> subpage		5433818						
+ANR	5433954	Symbol	* * mr		5433818						
+ANR	5433955	Symbol	size		5433818						
+ANR	5433956	Symbol	MEMTX_OK		5433818						
+ANR	5433957	Symbol	tmp		5433818						
+ANR	5433958	Symbol	* value		5433818						
+ANR	5433959	Symbol	mr -> opaque		5433818						
+ANR	5433960	Symbol	addr		5433818						
+ANR	5433961	Symbol	value		5433818						
+ANR	5433962	Symbol	memory_region_to_absolute_addr		5433818						
+ANR	5433963	Symbol	mask		5433818						

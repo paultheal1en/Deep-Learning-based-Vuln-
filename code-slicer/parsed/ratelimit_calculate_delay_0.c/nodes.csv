@@ -1,0 +1,98 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7232752	File	/home/p4ultr4n/workplace/ReVeal/raw_code/ratelimit_calculate_delay_0.c								
+ANR	7232753	Function	ratelimit_calculate_delay	1:0:0:465							
+ANR	7232754	FunctionDef	"ratelimit_calculate_delay (RateLimit * limit , uint64_t n)"		7232753	0					
+ANR	7232755	CompoundStatement		3:0:72:465	7232753	0					
+ANR	7232756	IdentifierDeclStatement	int64_t delay_ns = 0 ;	5:4:79:99	7232753	0	True				
+ANR	7232757	IdentifierDecl	delay_ns = 0		7232753	0					
+ANR	7232758	IdentifierDeclType	int64_t		7232753	0					
+ANR	7232759	Identifier	delay_ns		7232753	1					
+ANR	7232760	AssignmentExpression	delay_ns = 0		7232753	2		=			
+ANR	7232761	Identifier	delay_ns		7232753	0					
+ANR	7232762	PrimaryExpression	0		7232753	1					
+ANR	7232763	IdentifierDeclStatement	int64_t now = qemu_get_clock_ns ( rt_clock ) ;	7:4:106:147	7232753	1	True				
+ANR	7232764	IdentifierDecl	now = qemu_get_clock_ns ( rt_clock )		7232753	0					
+ANR	7232765	IdentifierDeclType	int64_t		7232753	0					
+ANR	7232766	Identifier	now		7232753	1					
+ANR	7232767	AssignmentExpression	now = qemu_get_clock_ns ( rt_clock )		7232753	2		=			
+ANR	7232768	Identifier	now		7232753	0					
+ANR	7232769	CallExpression	qemu_get_clock_ns ( rt_clock )		7232753	1					
+ANR	7232770	Callee	qemu_get_clock_ns		7232753	0					
+ANR	7232771	Identifier	qemu_get_clock_ns		7232753	0					
+ANR	7232772	ArgumentList	rt_clock		7232753	1					
+ANR	7232773	Argument	rt_clock		7232753	0					
+ANR	7232774	Identifier	rt_clock		7232753	0					
+ANR	7232775	IfStatement	if ( limit -> next_slice_time < now )		7232753	2					
+ANR	7232776	Condition	limit -> next_slice_time < now	11:8:160:187	7232753	0	True				
+ANR	7232777	RelationalExpression	limit -> next_slice_time < now		7232753	0		<			
+ANR	7232778	PtrMemberAccess	limit -> next_slice_time		7232753	0					
+ANR	7232779	Identifier	limit		7232753	0					
+ANR	7232780	Identifier	next_slice_time		7232753	1					
+ANR	7232781	Identifier	now		7232753	1					
+ANR	7232782	CompoundStatement		9:38:117:117	7232753	1					
+ANR	7232783	ExpressionStatement	limit -> next_slice_time = now + SLICE_TIME	13:8:201:242	7232753	0	True				
+ANR	7232784	AssignmentExpression	limit -> next_slice_time = now + SLICE_TIME		7232753	0		=			
+ANR	7232785	PtrMemberAccess	limit -> next_slice_time		7232753	0					
+ANR	7232786	Identifier	limit		7232753	0					
+ANR	7232787	Identifier	next_slice_time		7232753	1					
+ANR	7232788	AdditiveExpression	now + SLICE_TIME		7232753	1		+			
+ANR	7232789	Identifier	now		7232753	0					
+ANR	7232790	Identifier	SLICE_TIME		7232753	1					
+ANR	7232791	ExpressionStatement	limit -> dispatched = 0	15:8:253:274	7232753	1	True				
+ANR	7232792	AssignmentExpression	limit -> dispatched = 0		7232753	0		=			
+ANR	7232793	PtrMemberAccess	limit -> dispatched		7232753	0					
+ANR	7232794	Identifier	limit		7232753	0					
+ANR	7232795	Identifier	dispatched		7232753	1					
+ANR	7232796	PrimaryExpression	0		7232753	1					
+ANR	7232797	IfStatement	if ( limit -> dispatched + n > limit -> slice_quota )		7232753	3					
+ANR	7232798	Condition	limit -> dispatched + n > limit -> slice_quota	19:8:292:333	7232753	0	True				
+ANR	7232799	RelationalExpression	limit -> dispatched + n > limit -> slice_quota		7232753	0		>			
+ANR	7232800	AdditiveExpression	limit -> dispatched + n		7232753	0		+			
+ANR	7232801	PtrMemberAccess	limit -> dispatched		7232753	0					
+ANR	7232802	Identifier	limit		7232753	0					
+ANR	7232803	Identifier	dispatched		7232753	1					
+ANR	7232804	Identifier	n		7232753	1					
+ANR	7232805	PtrMemberAccess	limit -> slice_quota		7232753	1					
+ANR	7232806	Identifier	limit		7232753	0					
+ANR	7232807	Identifier	slice_quota		7232753	1					
+ANR	7232808	CompoundStatement		17:52:263:263	7232753	1					
+ANR	7232809	ExpressionStatement	delay_ns = limit -> next_slice_time - now	21:8:347:386	7232753	0	True				
+ANR	7232810	AssignmentExpression	delay_ns = limit -> next_slice_time - now		7232753	0		=			
+ANR	7232811	Identifier	delay_ns		7232753	0					
+ANR	7232812	AdditiveExpression	limit -> next_slice_time - now		7232753	1		-			
+ANR	7232813	PtrMemberAccess	limit -> next_slice_time		7232753	0					
+ANR	7232814	Identifier	limit		7232753	0					
+ANR	7232815	Identifier	next_slice_time		7232753	1					
+ANR	7232816	Identifier	now		7232753	1					
+ANR	7232817	ElseStatement	else		7232753	0					
+ANR	7232818	CompoundStatement		21:11:327:327	7232753	0					
+ANR	7232819	ExpressionStatement	limit -> dispatched += n	25:8:411:433	7232753	0	True				
+ANR	7232820	AssignmentExpression	limit -> dispatched += n		7232753	0		+=			
+ANR	7232821	PtrMemberAccess	limit -> dispatched		7232753	0					
+ANR	7232822	Identifier	limit		7232753	0					
+ANR	7232823	Identifier	dispatched		7232753	1					
+ANR	7232824	Identifier	n		7232753	1					
+ANR	7232825	ReturnStatement	return delay_ns ;	29:4:447:462	7232753	4	True				
+ANR	7232826	Identifier	delay_ns		7232753	0					
+ANR	7232827	ReturnType	static int64_t		7232753	1					
+ANR	7232828	Identifier	ratelimit_calculate_delay		7232753	2					
+ANR	7232829	ParameterList	"RateLimit * limit , uint64_t n"		7232753	3					
+ANR	7232830	Parameter	RateLimit * limit	1:41:41:56	7232753	0	True				
+ANR	7232831	ParameterType	RateLimit *		7232753	0					
+ANR	7232832	Identifier	limit		7232753	1					
+ANR	7232833	Parameter	uint64_t n	1:59:59:68	7232753	1	True				
+ANR	7232834	ParameterType	uint64_t		7232753	0					
+ANR	7232835	Identifier	n		7232753	1					
+ANR	7232836	CFGEntryNode	ENTRY		7232753		True				
+ANR	7232837	CFGExitNode	EXIT		7232753		True				
+ANR	7232838	Symbol	* limit		7232753						
+ANR	7232839	Symbol	limit -> dispatched		7232753						
+ANR	7232840	Symbol	limit -> next_slice_time		7232753						
+ANR	7232841	Symbol	SLICE_TIME		7232753						
+ANR	7232842	Symbol	limit -> slice_quota		7232753						
+ANR	7232843	Symbol	delay_ns		7232753						
+ANR	7232844	Symbol	qemu_get_clock_ns		7232753						
+ANR	7232845	Symbol	now		7232753						
+ANR	7232846	Symbol	limit		7232753						
+ANR	7232847	Symbol	rt_clock		7232753						
+ANR	7232848	Symbol	n		7232753						

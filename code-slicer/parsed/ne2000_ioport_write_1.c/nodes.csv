@@ -1,0 +1,434 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5956784	File	/home/p4ultr4n/workplace/ReVeal/raw_code/ne2000_ioport_write_1.c								
+ANR	5956785	Function	ne2000_ioport_write	1:0:0:2557							
+ANR	5956786	FunctionDef	"ne2000_ioport_write (void * opaque , uint32_t addr , uint32_t val)"		5956785	0					
+ANR	5956787	CompoundStatement		3:0:76:2557	5956785	0					
+ANR	5956788	IdentifierDeclStatement	NE2000State * s = opaque ;	5:4:83:106	5956785	0	True				
+ANR	5956789	IdentifierDecl	* s = opaque		5956785	0					
+ANR	5956790	IdentifierDeclType	NE2000State *		5956785	0					
+ANR	5956791	Identifier	s		5956785	1					
+ANR	5956792	AssignmentExpression	* s = opaque		5956785	2		=			
+ANR	5956793	Identifier	opaque		5956785	0					
+ANR	5956794	Identifier	opaque		5956785	1					
+ANR	5956795	IdentifierDeclStatement	"int offset , page ;"	7:4:113:129	5956785	1	True				
+ANR	5956796	IdentifierDecl	offset		5956785	0					
+ANR	5956797	IdentifierDeclType	int		5956785	0					
+ANR	5956798	Identifier	offset		5956785	1					
+ANR	5956799	IdentifierDecl	page		5956785	1					
+ANR	5956800	IdentifierDeclType	int		5956785	0					
+ANR	5956801	Identifier	page		5956785	1					
+ANR	5956802	ExpressionStatement	addr &= 0xf	11:4:138:149	5956785	2	True				
+ANR	5956803	AssignmentExpression	addr &= 0xf		5956785	0		&=			
+ANR	5956804	Identifier	addr		5956785	0					
+ANR	5956805	PrimaryExpression	0xf		5956785	1					
+ANR	5956806	ExpressionStatement	"printf ( ""NE2000: write addr=0x%x val=0x%02x\\n"" , addr , val )"	15:4:177:234	5956785	3	True				
+ANR	5956807	CallExpression	"printf ( ""NE2000: write addr=0x%x val=0x%02x\\n"" , addr , val )"		5956785	0					
+ANR	5956808	Callee	printf		5956785	0					
+ANR	5956809	Identifier	printf		5956785	0					
+ANR	5956810	ArgumentList	"""NE2000: write addr=0x%x val=0x%02x\\n"""		5956785	1					
+ANR	5956811	Argument	"""NE2000: write addr=0x%x val=0x%02x\\n"""		5956785	0					
+ANR	5956812	PrimaryExpression	"""NE2000: write addr=0x%x val=0x%02x\\n"""		5956785	0					
+ANR	5956813	Argument	addr		5956785	1					
+ANR	5956814	Identifier	addr		5956785	0					
+ANR	5956815	Argument	val		5956785	2					
+ANR	5956816	Identifier	val		5956785	0					
+ANR	5956817	IfStatement	if ( addr == E8390_CMD )		5956785	4					
+ANR	5956818	Condition	addr == E8390_CMD	19:8:253:269	5956785	0	True				
+ANR	5956819	EqualityExpression	addr == E8390_CMD		5956785	0		==			
+ANR	5956820	Identifier	addr		5956785	0					
+ANR	5956821	Identifier	E8390_CMD		5956785	1					
+ANR	5956822	CompoundStatement		17:27:195:195	5956785	1					
+ANR	5956823	ExpressionStatement	s -> cmd = val	23:8:315:327	5956785	0	True				
+ANR	5956824	AssignmentExpression	s -> cmd = val		5956785	0		=			
+ANR	5956825	PtrMemberAccess	s -> cmd		5956785	0					
+ANR	5956826	Identifier	s		5956785	0					
+ANR	5956827	Identifier	cmd		5956785	1					
+ANR	5956828	Identifier	val		5956785	1					
+ANR	5956829	IfStatement	if ( val & E8390_START )		5956785	1					
+ANR	5956830	Condition	val & E8390_START	25:12:342:358	5956785	0	True				
+ANR	5956831	BitAndExpression	val & E8390_START		5956785	0		&			
+ANR	5956832	Identifier	val		5956785	0					
+ANR	5956833	Identifier	E8390_START		5956785	1					
+ANR	5956834	CompoundStatement		23:31:284:284	5956785	1					
+ANR	5956835	ExpressionStatement	s -> isr &= ~ENISR_RESET	27:12:376:398	5956785	0	True				
+ANR	5956836	AssignmentExpression	s -> isr &= ~ENISR_RESET		5956785	0		&=			
+ANR	5956837	PtrMemberAccess	s -> isr		5956785	0					
+ANR	5956838	Identifier	s		5956785	0					
+ANR	5956839	Identifier	isr		5956785	1					
+ANR	5956840	Identifier	~ENISR_RESET		5956785	1					
+ANR	5956841	IfStatement	if ( ( val & ( E8390_RREAD | E8390_RWRITE ) ) && s -> rcnt == 0 )		5956785	1					
+ANR	5956842	Condition	( val & ( E8390_RREAD | E8390_RWRITE ) ) && s -> rcnt == 0	31:16:478:546	5956785	0	True				
+ANR	5956843	AndExpression	( val & ( E8390_RREAD | E8390_RWRITE ) ) && s -> rcnt == 0		5956785	0		&&			
+ANR	5956844	BitAndExpression	val & ( E8390_RREAD | E8390_RWRITE )		5956785	0		&			
+ANR	5956845	Identifier	val		5956785	0					
+ANR	5956846	InclusiveOrExpression	E8390_RREAD | E8390_RWRITE		5956785	1		|			
+ANR	5956847	Identifier	E8390_RREAD		5956785	0					
+ANR	5956848	Identifier	E8390_RWRITE		5956785	1					
+ANR	5956849	EqualityExpression	s -> rcnt == 0		5956785	1		==			
+ANR	5956850	PtrMemberAccess	s -> rcnt		5956785	0					
+ANR	5956851	Identifier	s		5956785	0					
+ANR	5956852	Identifier	rcnt		5956785	1					
+ANR	5956853	PrimaryExpression	0		5956785	1					
+ANR	5956854	CompoundStatement		31:30:472:472	5956785	1					
+ANR	5956855	ExpressionStatement	s -> isr |= ENISR_RDC	35:16:568:587	5956785	0	True				
+ANR	5956856	AssignmentExpression	s -> isr |= ENISR_RDC		5956785	0		|=			
+ANR	5956857	PtrMemberAccess	s -> isr		5956785	0					
+ANR	5956858	Identifier	s		5956785	0					
+ANR	5956859	Identifier	isr		5956785	1					
+ANR	5956860	Identifier	ENISR_RDC		5956785	1					
+ANR	5956861	ExpressionStatement	ne2000_update_irq ( s )	37:16:606:626	5956785	1	True				
+ANR	5956862	CallExpression	ne2000_update_irq ( s )		5956785	0					
+ANR	5956863	Callee	ne2000_update_irq		5956785	0					
+ANR	5956864	Identifier	ne2000_update_irq		5956785	0					
+ANR	5956865	ArgumentList	s		5956785	1					
+ANR	5956866	Argument	s		5956785	0					
+ANR	5956867	Identifier	s		5956785	0					
+ANR	5956868	IfStatement	if ( val & E8390_TRANS )		5956785	2					
+ANR	5956869	Condition	val & E8390_TRANS	41:16:660:676	5956785	0	True				
+ANR	5956870	BitAndExpression	val & E8390_TRANS		5956785	0		&			
+ANR	5956871	Identifier	val		5956785	0					
+ANR	5956872	Identifier	E8390_TRANS		5956785	1					
+ANR	5956873	CompoundStatement		39:35:602:602	5956785	1					
+ANR	5956874	ExpressionStatement	"qemu_send_packet ( s -> nd , s -> mem + ( s -> tpsr << 8 ) , s -> tcnt )"	43:16:698:755	5956785	0	True				
+ANR	5956875	CallExpression	"qemu_send_packet ( s -> nd , s -> mem + ( s -> tpsr << 8 ) , s -> tcnt )"		5956785	0					
+ANR	5956876	Callee	qemu_send_packet		5956785	0					
+ANR	5956877	Identifier	qemu_send_packet		5956785	0					
+ANR	5956878	ArgumentList	s -> nd		5956785	1					
+ANR	5956879	Argument	s -> nd		5956785	0					
+ANR	5956880	PtrMemberAccess	s -> nd		5956785	0					
+ANR	5956881	Identifier	s		5956785	0					
+ANR	5956882	Identifier	nd		5956785	1					
+ANR	5956883	Argument	s -> mem + ( s -> tpsr << 8 )		5956785	1					
+ANR	5956884	AdditiveExpression	s -> mem + ( s -> tpsr << 8 )		5956785	0		+			
+ANR	5956885	PtrMemberAccess	s -> mem		5956785	0					
+ANR	5956886	Identifier	s		5956785	0					
+ANR	5956887	Identifier	mem		5956785	1					
+ANR	5956888	ShiftExpression	s -> tpsr << 8		5956785	1		<<			
+ANR	5956889	PtrMemberAccess	s -> tpsr		5956785	0					
+ANR	5956890	Identifier	s		5956785	0					
+ANR	5956891	Identifier	tpsr		5956785	1					
+ANR	5956892	PrimaryExpression	8		5956785	1					
+ANR	5956893	Argument	s -> tcnt		5956785	2					
+ANR	5956894	PtrMemberAccess	s -> tcnt		5956785	0					
+ANR	5956895	Identifier	s		5956785	0					
+ANR	5956896	Identifier	tcnt		5956785	1					
+ANR	5956897	ExpressionStatement	s -> tsr = ENTSR_PTX	47:16:821:839	5956785	1	True				
+ANR	5956898	AssignmentExpression	s -> tsr = ENTSR_PTX		5956785	0		=			
+ANR	5956899	PtrMemberAccess	s -> tsr		5956785	0					
+ANR	5956900	Identifier	s		5956785	0					
+ANR	5956901	Identifier	tsr		5956785	1					
+ANR	5956902	Identifier	ENTSR_PTX		5956785	1					
+ANR	5956903	ExpressionStatement	s -> isr |= ENISR_TX	49:16:858:876	5956785	2	True				
+ANR	5956904	AssignmentExpression	s -> isr |= ENISR_TX		5956785	0		|=			
+ANR	5956905	PtrMemberAccess	s -> isr		5956785	0					
+ANR	5956906	Identifier	s		5956785	0					
+ANR	5956907	Identifier	isr		5956785	1					
+ANR	5956908	Identifier	ENISR_TX		5956785	1					
+ANR	5956909	ExpressionStatement	ne2000_update_irq ( s )	51:16:895:915	5956785	3	True				
+ANR	5956910	CallExpression	ne2000_update_irq ( s )		5956785	0					
+ANR	5956911	Callee	ne2000_update_irq		5956785	0					
+ANR	5956912	Identifier	ne2000_update_irq		5956785	0					
+ANR	5956913	ArgumentList	s		5956785	1					
+ANR	5956914	Argument	s		5956785	0					
+ANR	5956915	Identifier	s		5956785	0					
+ANR	5956916	ElseStatement	else		5956785	0					
+ANR	5956917	CompoundStatement		55:11:878:878	5956785	0					
+ANR	5956918	ExpressionStatement	page = s -> cmd >> 6	59:8:966:984	5956785	0	True				
+ANR	5956919	AssignmentExpression	page = s -> cmd >> 6		5956785	0		=			
+ANR	5956920	Identifier	page		5956785	0					
+ANR	5956921	ShiftExpression	s -> cmd >> 6		5956785	1		>>			
+ANR	5956922	PtrMemberAccess	s -> cmd		5956785	0					
+ANR	5956923	Identifier	s		5956785	0					
+ANR	5956924	Identifier	cmd		5956785	1					
+ANR	5956925	PrimaryExpression	6		5956785	1					
+ANR	5956926	ExpressionStatement	offset = addr | ( page << 4 )	61:8:995:1022	5956785	1	True				
+ANR	5956927	AssignmentExpression	offset = addr | ( page << 4 )		5956785	0		=			
+ANR	5956928	Identifier	offset		5956785	0					
+ANR	5956929	InclusiveOrExpression	addr | ( page << 4 )		5956785	1		|			
+ANR	5956930	Identifier	addr		5956785	0					
+ANR	5956931	ShiftExpression	page << 4		5956785	1		<<			
+ANR	5956932	Identifier	page		5956785	0					
+ANR	5956933	PrimaryExpression	4		5956785	1					
+ANR	5956934	SwitchStatement	switch ( offset )		5956785	2					
+ANR	5956935	Condition	offset	63:15:1040:1045	5956785	0	True				
+ANR	5956936	Identifier	offset		5956785	0					
+ANR	5956937	CompoundStatement		61:23:971:971	5956785	1					
+ANR	5956938	Label	case EN0_STARTPG :	65:8:1059:1075	5956785	0	True				
+ANR	5956939	Identifier	EN0_STARTPG		5956785	0					
+ANR	5956940	ExpressionStatement	s -> start = val << 8	67:12:1090:1109	5956785	1	True				
+ANR	5956941	AssignmentExpression	s -> start = val << 8		5956785	0		=			
+ANR	5956942	PtrMemberAccess	s -> start		5956785	0					
+ANR	5956943	Identifier	s		5956785	0					
+ANR	5956944	Identifier	start		5956785	1					
+ANR	5956945	ShiftExpression	val << 8		5956785	1		<<			
+ANR	5956946	Identifier	val		5956785	0					
+ANR	5956947	PrimaryExpression	8		5956785	1					
+ANR	5956948	BreakStatement	break ;	69:12:1124:1129	5956785	2	True				
+ANR	5956949	Label	case EN0_STOPPG :	71:8:1140:1155	5956785	3	True				
+ANR	5956950	Identifier	EN0_STOPPG		5956785	0					
+ANR	5956951	ExpressionStatement	s -> stop = val << 8	73:12:1170:1188	5956785	4	True				
+ANR	5956952	AssignmentExpression	s -> stop = val << 8		5956785	0		=			
+ANR	5956953	PtrMemberAccess	s -> stop		5956785	0					
+ANR	5956954	Identifier	s		5956785	0					
+ANR	5956955	Identifier	stop		5956785	1					
+ANR	5956956	ShiftExpression	val << 8		5956785	1		<<			
+ANR	5956957	Identifier	val		5956785	0					
+ANR	5956958	PrimaryExpression	8		5956785	1					
+ANR	5956959	BreakStatement	break ;	75:12:1203:1208	5956785	5	True				
+ANR	5956960	Label	case EN0_BOUNDARY :	77:8:1219:1236	5956785	6	True				
+ANR	5956961	Identifier	EN0_BOUNDARY		5956785	0					
+ANR	5956962	ExpressionStatement	s -> boundary = val	79:12:1251:1268	5956785	7	True				
+ANR	5956963	AssignmentExpression	s -> boundary = val		5956785	0		=			
+ANR	5956964	PtrMemberAccess	s -> boundary		5956785	0					
+ANR	5956965	Identifier	s		5956785	0					
+ANR	5956966	Identifier	boundary		5956785	1					
+ANR	5956967	Identifier	val		5956785	1					
+ANR	5956968	BreakStatement	break ;	81:12:1283:1288	5956785	8	True				
+ANR	5956969	Label	case EN0_IMR :	83:8:1299:1311	5956785	9	True				
+ANR	5956970	Identifier	EN0_IMR		5956785	0					
+ANR	5956971	ExpressionStatement	s -> imr = val	85:12:1326:1338	5956785	10	True				
+ANR	5956972	AssignmentExpression	s -> imr = val		5956785	0		=			
+ANR	5956973	PtrMemberAccess	s -> imr		5956785	0					
+ANR	5956974	Identifier	s		5956785	0					
+ANR	5956975	Identifier	imr		5956785	1					
+ANR	5956976	Identifier	val		5956785	1					
+ANR	5956977	ExpressionStatement	ne2000_update_irq ( s )	87:12:1353:1373	5956785	11	True				
+ANR	5956978	CallExpression	ne2000_update_irq ( s )		5956785	0					
+ANR	5956979	Callee	ne2000_update_irq		5956785	0					
+ANR	5956980	Identifier	ne2000_update_irq		5956785	0					
+ANR	5956981	ArgumentList	s		5956785	1					
+ANR	5956982	Argument	s		5956785	0					
+ANR	5956983	Identifier	s		5956785	0					
+ANR	5956984	BreakStatement	break ;	89:12:1388:1393	5956785	12	True				
+ANR	5956985	Label	case EN0_TPSR :	91:8:1404:1417	5956785	13	True				
+ANR	5956986	Identifier	EN0_TPSR		5956785	0					
+ANR	5956987	ExpressionStatement	s -> tpsr = val	93:12:1432:1445	5956785	14	True				
+ANR	5956988	AssignmentExpression	s -> tpsr = val		5956785	0		=			
+ANR	5956989	PtrMemberAccess	s -> tpsr		5956785	0					
+ANR	5956990	Identifier	s		5956785	0					
+ANR	5956991	Identifier	tpsr		5956785	1					
+ANR	5956992	Identifier	val		5956785	1					
+ANR	5956993	BreakStatement	break ;	95:12:1460:1465	5956785	15	True				
+ANR	5956994	Label	case EN0_TCNTLO :	97:8:1476:1491	5956785	16	True				
+ANR	5956995	Identifier	EN0_TCNTLO		5956785	0					
+ANR	5956996	ExpressionStatement	s -> tcnt = ( s -> tcnt & 0xff00 ) | val	99:12:1506:1540	5956785	17	True				
+ANR	5956997	AssignmentExpression	s -> tcnt = ( s -> tcnt & 0xff00 ) | val		5956785	0		=			
+ANR	5956998	PtrMemberAccess	s -> tcnt		5956785	0					
+ANR	5956999	Identifier	s		5956785	0					
+ANR	5957000	Identifier	tcnt		5956785	1					
+ANR	5957001	InclusiveOrExpression	( s -> tcnt & 0xff00 ) | val		5956785	1		|			
+ANR	5957002	BitAndExpression	s -> tcnt & 0xff00		5956785	0		&			
+ANR	5957003	PtrMemberAccess	s -> tcnt		5956785	0					
+ANR	5957004	Identifier	s		5956785	0					
+ANR	5957005	Identifier	tcnt		5956785	1					
+ANR	5957006	PrimaryExpression	0xff00		5956785	1					
+ANR	5957007	Identifier	val		5956785	1					
+ANR	5957008	BreakStatement	break ;	101:12:1555:1560	5956785	18	True				
+ANR	5957009	Label	case EN0_TCNTHI :	103:8:1571:1586	5956785	19	True				
+ANR	5957010	Identifier	EN0_TCNTHI		5956785	0					
+ANR	5957011	ExpressionStatement	s -> tcnt = ( s -> tcnt & 0x00ff ) | ( val << 8 )	105:12:1601:1642	5956785	20	True				
+ANR	5957012	AssignmentExpression	s -> tcnt = ( s -> tcnt & 0x00ff ) | ( val << 8 )		5956785	0		=			
+ANR	5957013	PtrMemberAccess	s -> tcnt		5956785	0					
+ANR	5957014	Identifier	s		5956785	0					
+ANR	5957015	Identifier	tcnt		5956785	1					
+ANR	5957016	InclusiveOrExpression	( s -> tcnt & 0x00ff ) | ( val << 8 )		5956785	1		|			
+ANR	5957017	BitAndExpression	s -> tcnt & 0x00ff		5956785	0		&			
+ANR	5957018	PtrMemberAccess	s -> tcnt		5956785	0					
+ANR	5957019	Identifier	s		5956785	0					
+ANR	5957020	Identifier	tcnt		5956785	1					
+ANR	5957021	PrimaryExpression	0x00ff		5956785	1					
+ANR	5957022	ShiftExpression	val << 8		5956785	1		<<			
+ANR	5957023	Identifier	val		5956785	0					
+ANR	5957024	PrimaryExpression	8		5956785	1					
+ANR	5957025	BreakStatement	break ;	107:12:1657:1662	5956785	21	True				
+ANR	5957026	Label	case EN0_RSARLO :	109:8:1673:1688	5956785	22	True				
+ANR	5957027	Identifier	EN0_RSARLO		5956785	0					
+ANR	5957028	ExpressionStatement	s -> rsar = ( s -> rsar & 0xff00 ) | val	111:12:1703:1737	5956785	23	True				
+ANR	5957029	AssignmentExpression	s -> rsar = ( s -> rsar & 0xff00 ) | val		5956785	0		=			
+ANR	5957030	PtrMemberAccess	s -> rsar		5956785	0					
+ANR	5957031	Identifier	s		5956785	0					
+ANR	5957032	Identifier	rsar		5956785	1					
+ANR	5957033	InclusiveOrExpression	( s -> rsar & 0xff00 ) | val		5956785	1		|			
+ANR	5957034	BitAndExpression	s -> rsar & 0xff00		5956785	0		&			
+ANR	5957035	PtrMemberAccess	s -> rsar		5956785	0					
+ANR	5957036	Identifier	s		5956785	0					
+ANR	5957037	Identifier	rsar		5956785	1					
+ANR	5957038	PrimaryExpression	0xff00		5956785	1					
+ANR	5957039	Identifier	val		5956785	1					
+ANR	5957040	BreakStatement	break ;	113:12:1752:1757	5956785	24	True				
+ANR	5957041	Label	case EN0_RSARHI :	115:8:1768:1783	5956785	25	True				
+ANR	5957042	Identifier	EN0_RSARHI		5956785	0					
+ANR	5957043	ExpressionStatement	s -> rsar = ( s -> rsar & 0x00ff ) | ( val << 8 )	117:12:1798:1839	5956785	26	True				
+ANR	5957044	AssignmentExpression	s -> rsar = ( s -> rsar & 0x00ff ) | ( val << 8 )		5956785	0		=			
+ANR	5957045	PtrMemberAccess	s -> rsar		5956785	0					
+ANR	5957046	Identifier	s		5956785	0					
+ANR	5957047	Identifier	rsar		5956785	1					
+ANR	5957048	InclusiveOrExpression	( s -> rsar & 0x00ff ) | ( val << 8 )		5956785	1		|			
+ANR	5957049	BitAndExpression	s -> rsar & 0x00ff		5956785	0		&			
+ANR	5957050	PtrMemberAccess	s -> rsar		5956785	0					
+ANR	5957051	Identifier	s		5956785	0					
+ANR	5957052	Identifier	rsar		5956785	1					
+ANR	5957053	PrimaryExpression	0x00ff		5956785	1					
+ANR	5957054	ShiftExpression	val << 8		5956785	1		<<			
+ANR	5957055	Identifier	val		5956785	0					
+ANR	5957056	PrimaryExpression	8		5956785	1					
+ANR	5957057	BreakStatement	break ;	119:12:1854:1859	5956785	27	True				
+ANR	5957058	Label	case EN0_RCNTLO :	121:8:1870:1885	5956785	28	True				
+ANR	5957059	Identifier	EN0_RCNTLO		5956785	0					
+ANR	5957060	ExpressionStatement	s -> rcnt = ( s -> rcnt & 0xff00 ) | val	123:12:1900:1934	5956785	29	True				
+ANR	5957061	AssignmentExpression	s -> rcnt = ( s -> rcnt & 0xff00 ) | val		5956785	0		=			
+ANR	5957062	PtrMemberAccess	s -> rcnt		5956785	0					
+ANR	5957063	Identifier	s		5956785	0					
+ANR	5957064	Identifier	rcnt		5956785	1					
+ANR	5957065	InclusiveOrExpression	( s -> rcnt & 0xff00 ) | val		5956785	1		|			
+ANR	5957066	BitAndExpression	s -> rcnt & 0xff00		5956785	0		&			
+ANR	5957067	PtrMemberAccess	s -> rcnt		5956785	0					
+ANR	5957068	Identifier	s		5956785	0					
+ANR	5957069	Identifier	rcnt		5956785	1					
+ANR	5957070	PrimaryExpression	0xff00		5956785	1					
+ANR	5957071	Identifier	val		5956785	1					
+ANR	5957072	BreakStatement	break ;	125:12:1949:1954	5956785	30	True				
+ANR	5957073	Label	case EN0_RCNTHI :	127:8:1965:1980	5956785	31	True				
+ANR	5957074	Identifier	EN0_RCNTHI		5956785	0					
+ANR	5957075	ExpressionStatement	s -> rcnt = ( s -> rcnt & 0x00ff ) | ( val << 8 )	129:12:1995:2036	5956785	32	True				
+ANR	5957076	AssignmentExpression	s -> rcnt = ( s -> rcnt & 0x00ff ) | ( val << 8 )		5956785	0		=			
+ANR	5957077	PtrMemberAccess	s -> rcnt		5956785	0					
+ANR	5957078	Identifier	s		5956785	0					
+ANR	5957079	Identifier	rcnt		5956785	1					
+ANR	5957080	InclusiveOrExpression	( s -> rcnt & 0x00ff ) | ( val << 8 )		5956785	1		|			
+ANR	5957081	BitAndExpression	s -> rcnt & 0x00ff		5956785	0		&			
+ANR	5957082	PtrMemberAccess	s -> rcnt		5956785	0					
+ANR	5957083	Identifier	s		5956785	0					
+ANR	5957084	Identifier	rcnt		5956785	1					
+ANR	5957085	PrimaryExpression	0x00ff		5956785	1					
+ANR	5957086	ShiftExpression	val << 8		5956785	1		<<			
+ANR	5957087	Identifier	val		5956785	0					
+ANR	5957088	PrimaryExpression	8		5956785	1					
+ANR	5957089	BreakStatement	break ;	131:12:2051:2056	5956785	33	True				
+ANR	5957090	Label	case EN0_DCFG :	133:8:2067:2080	5956785	34	True				
+ANR	5957091	Identifier	EN0_DCFG		5956785	0					
+ANR	5957092	ExpressionStatement	s -> dcfg = val	135:12:2095:2108	5956785	35	True				
+ANR	5957093	AssignmentExpression	s -> dcfg = val		5956785	0		=			
+ANR	5957094	PtrMemberAccess	s -> dcfg		5956785	0					
+ANR	5957095	Identifier	s		5956785	0					
+ANR	5957096	Identifier	dcfg		5956785	1					
+ANR	5957097	Identifier	val		5956785	1					
+ANR	5957098	BreakStatement	break ;	137:12:2123:2128	5956785	36	True				
+ANR	5957099	Label	case EN0_ISR :	139:8:2139:2151	5956785	37	True				
+ANR	5957100	Identifier	EN0_ISR		5956785	0					
+ANR	5957101	ExpressionStatement	s -> isr &= ~ ( val & 0x7f )	141:12:2166:2189	5956785	38	True				
+ANR	5957102	AssignmentExpression	s -> isr &= ~ ( val & 0x7f )		5956785	0		&=			
+ANR	5957103	PtrMemberAccess	s -> isr		5956785	0					
+ANR	5957104	Identifier	s		5956785	0					
+ANR	5957105	Identifier	isr		5956785	1					
+ANR	5957106	UnaryOperationExpression	~ ( val & 0x7f )		5956785	1					
+ANR	5957107	UnaryOperator	~		5956785	0					
+ANR	5957108	BitAndExpression	val & 0x7f		5956785	1		&			
+ANR	5957109	Identifier	val		5956785	0					
+ANR	5957110	PrimaryExpression	0x7f		5956785	1					
+ANR	5957111	ExpressionStatement	ne2000_update_irq ( s )	143:12:2204:2224	5956785	39	True				
+ANR	5957112	CallExpression	ne2000_update_irq ( s )		5956785	0					
+ANR	5957113	Callee	ne2000_update_irq		5956785	0					
+ANR	5957114	Identifier	ne2000_update_irq		5956785	0					
+ANR	5957115	ArgumentList	s		5956785	1					
+ANR	5957116	Argument	s		5956785	0					
+ANR	5957117	Identifier	s		5956785	0					
+ANR	5957118	BreakStatement	break ;	145:12:2239:2244	5956785	40	True				
+ANR	5957119	Statement	case	147:8:2255:2258	5956785	41	True				
+ANR	5957120	Statement	EN1_PHYS	147:13:2260:2267	5956785	42	True				
+ANR	5957121	Statement	...	147:22:2269:2271	5956785	43	True				
+ANR	5957122	Statement	EN1_PHYS	147:26:2273:2280	5956785	44	True				
+ANR	5957123	Statement	+	147:35:2282:2282	5956785	45	True				
+ANR	5957124	Label	5 :	147:37:2284:2285	5956785	46	True				
+ANR	5957125	ExpressionStatement	s -> phys [ offset - EN1_PHYS ] = val	149:12:2300:2332	5956785	47	True				
+ANR	5957126	AssignmentExpression	s -> phys [ offset - EN1_PHYS ] = val		5956785	0		=			
+ANR	5957127	ArrayIndexing	s -> phys [ offset - EN1_PHYS ]		5956785	0					
+ANR	5957128	PtrMemberAccess	s -> phys		5956785	0					
+ANR	5957129	Identifier	s		5956785	0					
+ANR	5957130	Identifier	phys		5956785	1					
+ANR	5957131	AdditiveExpression	offset - EN1_PHYS		5956785	1		-			
+ANR	5957132	Identifier	offset		5956785	0					
+ANR	5957133	Identifier	EN1_PHYS		5956785	1					
+ANR	5957134	Identifier	val		5956785	1					
+ANR	5957135	BreakStatement	break ;	151:12:2347:2352	5956785	48	True				
+ANR	5957136	Label	case EN1_CURPAG :	153:8:2363:2378	5956785	49	True				
+ANR	5957137	Identifier	EN1_CURPAG		5956785	0					
+ANR	5957138	ExpressionStatement	s -> curpag = val	155:12:2393:2408	5956785	50	True				
+ANR	5957139	AssignmentExpression	s -> curpag = val		5956785	0		=			
+ANR	5957140	PtrMemberAccess	s -> curpag		5956785	0					
+ANR	5957141	Identifier	s		5956785	0					
+ANR	5957142	Identifier	curpag		5956785	1					
+ANR	5957143	Identifier	val		5956785	1					
+ANR	5957144	BreakStatement	break ;	157:12:2423:2428	5956785	51	True				
+ANR	5957145	Statement	case	159:8:2439:2442	5956785	52	True				
+ANR	5957146	Statement	EN1_MULT	159:13:2444:2451	5956785	53	True				
+ANR	5957147	Statement	...	159:22:2453:2455	5956785	54	True				
+ANR	5957148	Statement	EN1_MULT	159:26:2457:2464	5956785	55	True				
+ANR	5957149	Statement	+	159:35:2466:2466	5956785	56	True				
+ANR	5957150	Label	7 :	159:37:2468:2469	5956785	57	True				
+ANR	5957151	ExpressionStatement	s -> mult [ offset - EN1_MULT ] = val	161:12:2484:2516	5956785	58	True				
+ANR	5957152	AssignmentExpression	s -> mult [ offset - EN1_MULT ] = val		5956785	0		=			
+ANR	5957153	ArrayIndexing	s -> mult [ offset - EN1_MULT ]		5956785	0					
+ANR	5957154	PtrMemberAccess	s -> mult		5956785	0					
+ANR	5957155	Identifier	s		5956785	0					
+ANR	5957156	Identifier	mult		5956785	1					
+ANR	5957157	AdditiveExpression	offset - EN1_MULT		5956785	1		-			
+ANR	5957158	Identifier	offset		5956785	0					
+ANR	5957159	Identifier	EN1_MULT		5956785	1					
+ANR	5957160	Identifier	val		5956785	1					
+ANR	5957161	BreakStatement	break ;	163:12:2531:2536	5956785	59	True				
+ANR	5957162	ReturnType	static void		5956785	1					
+ANR	5957163	Identifier	ne2000_ioport_write		5956785	2					
+ANR	5957164	ParameterList	"void * opaque , uint32_t addr , uint32_t val"		5956785	3					
+ANR	5957165	Parameter	void * opaque	1:32:32:43	5956785	0	True				
+ANR	5957166	ParameterType	void *		5956785	0					
+ANR	5957167	Identifier	opaque		5956785	1					
+ANR	5957168	Parameter	uint32_t addr	1:46:46:58	5956785	1	True				
+ANR	5957169	ParameterType	uint32_t		5956785	0					
+ANR	5957170	Identifier	addr		5956785	1					
+ANR	5957171	Parameter	uint32_t val	1:61:61:72	5956785	2	True				
+ANR	5957172	ParameterType	uint32_t		5956785	0					
+ANR	5957173	Identifier	val		5956785	1					
+ANR	5957174	CFGEntryNode	ENTRY		5956785		True				
+ANR	5957175	CFGExitNode	EXIT		5956785		True				
+ANR	5957176	Symbol	s -> mem		5956785						
+ANR	5957177	Symbol	s -> tsr		5956785						
+ANR	5957178	Symbol	ENISR_TX		5956785						
+ANR	5957179	Symbol	s -> stop		5956785						
+ANR	5957180	Symbol	s -> nd		5956785						
+ANR	5957181	Symbol	s -> start		5956785						
+ANR	5957182	Symbol	s -> boundary		5956785						
+ANR	5957183	Symbol	s -> mult		5956785						
+ANR	5957184	Symbol	* s -> mult		5956785						
+ANR	5957185	Symbol	* EN1_PHYS		5956785						
+ANR	5957186	Symbol	E8390_CMD		5956785						
+ANR	5957187	Symbol	s -> isr		5956785						
+ANR	5957188	Symbol	ENTSR_PTX		5956785						
+ANR	5957189	Symbol	E8390_RWRITE		5956785						
+ANR	5957190	Symbol	* * s		5956785						
+ANR	5957191	Symbol	addr		5956785						
+ANR	5957192	Symbol	s -> tpsr		5956785						
+ANR	5957193	Symbol	EN1_PHYS		5956785						
+ANR	5957194	Symbol	s -> imr		5956785						
+ANR	5957195	Symbol	val		5956785						
+ANR	5957196	Symbol	E8390_START		5956785						
+ANR	5957197	Symbol	s -> curpag		5956785						
+ANR	5957198	Symbol	opaque		5956785						
+ANR	5957199	Symbol	offset		5956785						
+ANR	5957200	Symbol	E8390_TRANS		5956785						
+ANR	5957201	Symbol	~ENISR_RESET		5956785						
+ANR	5957202	Symbol	s -> cmd		5956785						
+ANR	5957203	Symbol	E8390_RREAD		5956785						
+ANR	5957204	Symbol	s -> phys		5956785						
+ANR	5957205	Symbol	* s -> phys		5956785						
+ANR	5957206	Symbol	s		5956785						
+ANR	5957207	Symbol	* EN1_MULT		5956785						
+ANR	5957208	Symbol	s -> rsar		5956785						
+ANR	5957209	Symbol	EN1_MULT		5956785						
+ANR	5957210	Symbol	s -> tcnt		5956785						
+ANR	5957211	Symbol	ENISR_RDC		5956785						
+ANR	5957212	Symbol	s -> dcfg		5956785						
+ANR	5957213	Symbol	s -> rcnt		5956785						
+ANR	5957214	Symbol	* offset		5956785						
+ANR	5957215	Symbol	page		5956785						
+ANR	5957216	Symbol	* s		5956785						

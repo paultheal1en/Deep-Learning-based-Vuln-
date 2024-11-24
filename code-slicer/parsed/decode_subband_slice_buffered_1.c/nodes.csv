@@ -1,0 +1,349 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	2071226	File	/home/p4ultr4n/workplace/ReVeal/raw_code/decode_subband_slice_buffered_1.c								
+ANR	2071227	Function	decode_subband_slice_buffered	1:0:0:1305							
+ANR	2071228	FunctionDef	"decode_subband_slice_buffered (SnowContext * s , SubBand * b , slice_buffer * sb , int start_y , int h , int save_state [ 1 ])"		2071227	0					
+ANR	2071229	CompoundStatement		1:134:134:1305	2071227	0					
+ANR	2071230	IdentifierDeclStatement	const int w = b -> width ;	3:4:141:162	2071227	0	True				
+ANR	2071231	IdentifierDecl	w = b -> width		2071227	0					
+ANR	2071232	IdentifierDeclType	const int		2071227	0					
+ANR	2071233	Identifier	w		2071227	1					
+ANR	2071234	AssignmentExpression	w = b -> width		2071227	2		=			
+ANR	2071235	Identifier	w		2071227	0					
+ANR	2071236	PtrMemberAccess	b -> width		2071227	1					
+ANR	2071237	Identifier	b		2071227	0					
+ANR	2071238	Identifier	width		2071227	1					
+ANR	2071239	IdentifierDeclStatement	int y ;	5:4:169:174	2071227	1	True				
+ANR	2071240	IdentifierDecl	y		2071227	0					
+ANR	2071241	IdentifierDeclType	int		2071227	0					
+ANR	2071242	Identifier	y		2071227	1					
+ANR	2071243	IdentifierDeclStatement	"const int qlog = av_clip ( s -> qlog + b -> qlog , 0 , QROOT * 16 ) ;"	7:4:181:236	2071227	2	True				
+ANR	2071244	IdentifierDecl	"qlog = av_clip ( s -> qlog + b -> qlog , 0 , QROOT * 16 )"		2071227	0					
+ANR	2071245	IdentifierDeclType	const int		2071227	0					
+ANR	2071246	Identifier	qlog		2071227	1					
+ANR	2071247	AssignmentExpression	"qlog = av_clip ( s -> qlog + b -> qlog , 0 , QROOT * 16 )"		2071227	2		=			
+ANR	2071248	Identifier	qlog		2071227	0					
+ANR	2071249	CallExpression	"av_clip ( s -> qlog + b -> qlog , 0 , QROOT * 16 )"		2071227	1					
+ANR	2071250	Callee	av_clip		2071227	0					
+ANR	2071251	Identifier	av_clip		2071227	0					
+ANR	2071252	ArgumentList	s -> qlog + b -> qlog		2071227	1					
+ANR	2071253	Argument	s -> qlog + b -> qlog		2071227	0					
+ANR	2071254	AdditiveExpression	s -> qlog + b -> qlog		2071227	0		+			
+ANR	2071255	PtrMemberAccess	s -> qlog		2071227	0					
+ANR	2071256	Identifier	s		2071227	0					
+ANR	2071257	Identifier	qlog		2071227	1					
+ANR	2071258	PtrMemberAccess	b -> qlog		2071227	1					
+ANR	2071259	Identifier	b		2071227	0					
+ANR	2071260	Identifier	qlog		2071227	1					
+ANR	2071261	Argument	0		2071227	1					
+ANR	2071262	PrimaryExpression	0		2071227	0					
+ANR	2071263	Argument	QROOT * 16		2071227	2					
+ANR	2071264	MultiplicativeExpression	QROOT * 16		2071227	0		*			
+ANR	2071265	Identifier	QROOT		2071227	0					
+ANR	2071266	PrimaryExpression	16		2071227	1					
+ANR	2071267	IdentifierDeclStatement	int qmul = ff_qexp [ qlog & ( QROOT - 1 ) ] << ( qlog >> QSHIFT ) ;	9:4:243:292	2071227	3	True				
+ANR	2071268	IdentifierDecl	qmul = ff_qexp [ qlog & ( QROOT - 1 ) ] << ( qlog >> QSHIFT )		2071227	0					
+ANR	2071269	IdentifierDeclType	int		2071227	0					
+ANR	2071270	Identifier	qmul		2071227	1					
+ANR	2071271	AssignmentExpression	qmul = ff_qexp [ qlog & ( QROOT - 1 ) ] << ( qlog >> QSHIFT )		2071227	2		=			
+ANR	2071272	Identifier	qmul		2071227	0					
+ANR	2071273	ShiftExpression	ff_qexp [ qlog & ( QROOT - 1 ) ] << ( qlog >> QSHIFT )		2071227	1		<<			
+ANR	2071274	ArrayIndexing	ff_qexp [ qlog & ( QROOT - 1 ) ]		2071227	0					
+ANR	2071275	Identifier	ff_qexp		2071227	0					
+ANR	2071276	BitAndExpression	qlog & ( QROOT - 1 )		2071227	1		&			
+ANR	2071277	Identifier	qlog		2071227	0					
+ANR	2071278	AdditiveExpression	QROOT - 1		2071227	1		-			
+ANR	2071279	Identifier	QROOT		2071227	0					
+ANR	2071280	PrimaryExpression	1		2071227	1					
+ANR	2071281	ShiftExpression	qlog >> QSHIFT		2071227	1		>>			
+ANR	2071282	Identifier	qlog		2071227	0					
+ANR	2071283	Identifier	QSHIFT		2071227	1					
+ANR	2071284	IdentifierDeclStatement	int qadd = ( s -> qbias * qmul ) >> QBIAS_SHIFT ;	11:4:299:337	2071227	4	True				
+ANR	2071285	IdentifierDecl	qadd = ( s -> qbias * qmul ) >> QBIAS_SHIFT		2071227	0					
+ANR	2071286	IdentifierDeclType	int		2071227	0					
+ANR	2071287	Identifier	qadd		2071227	1					
+ANR	2071288	AssignmentExpression	qadd = ( s -> qbias * qmul ) >> QBIAS_SHIFT		2071227	2		=			
+ANR	2071289	Identifier	qadd		2071227	0					
+ANR	2071290	ShiftExpression	( s -> qbias * qmul ) >> QBIAS_SHIFT		2071227	1		>>			
+ANR	2071291	MultiplicativeExpression	s -> qbias * qmul		2071227	0		*			
+ANR	2071292	PtrMemberAccess	s -> qbias		2071227	0					
+ANR	2071293	Identifier	s		2071227	0					
+ANR	2071294	Identifier	qbias		2071227	1					
+ANR	2071295	Identifier	qmul		2071227	1					
+ANR	2071296	Identifier	QBIAS_SHIFT		2071227	1					
+ANR	2071297	IdentifierDeclStatement	int new_index = 0 ;	13:4:344:361	2071227	5	True				
+ANR	2071298	IdentifierDecl	new_index = 0		2071227	0					
+ANR	2071299	IdentifierDeclType	int		2071227	0					
+ANR	2071300	Identifier	new_index		2071227	1					
+ANR	2071301	AssignmentExpression	new_index = 0		2071227	2		=			
+ANR	2071302	Identifier	new_index		2071227	0					
+ANR	2071303	PrimaryExpression	0		2071227	1					
+ANR	2071304	IfStatement	if ( b -> ibuf == s -> spatial_idwt_buffer || s -> qlog == LOSSLESS_QLOG )		2071227	6					
+ANR	2071305	Condition	b -> ibuf == s -> spatial_idwt_buffer || s -> qlog == LOSSLESS_QLOG	17:7:373:433	2071227	0	True				
+ANR	2071306	OrExpression	b -> ibuf == s -> spatial_idwt_buffer || s -> qlog == LOSSLESS_QLOG		2071227	0		||			
+ANR	2071307	EqualityExpression	b -> ibuf == s -> spatial_idwt_buffer		2071227	0		==			
+ANR	2071308	PtrMemberAccess	b -> ibuf		2071227	0					
+ANR	2071309	Identifier	b		2071227	0					
+ANR	2071310	Identifier	ibuf		2071227	1					
+ANR	2071311	PtrMemberAccess	s -> spatial_idwt_buffer		2071227	1					
+ANR	2071312	Identifier	s		2071227	0					
+ANR	2071313	Identifier	spatial_idwt_buffer		2071227	1					
+ANR	2071314	EqualityExpression	s -> qlog == LOSSLESS_QLOG		2071227	1		==			
+ANR	2071315	PtrMemberAccess	s -> qlog		2071227	0					
+ANR	2071316	Identifier	s		2071227	0					
+ANR	2071317	Identifier	qlog		2071227	1					
+ANR	2071318	Identifier	LOSSLESS_QLOG		2071227	1					
+ANR	2071319	CompoundStatement		17:69:300:300	2071227	1					
+ANR	2071320	ExpressionStatement	qadd = 0	19:8:446:453	2071227	0	True				
+ANR	2071321	AssignmentExpression	qadd = 0		2071227	0		=			
+ANR	2071322	Identifier	qadd		2071227	0					
+ANR	2071323	PrimaryExpression	0		2071227	1					
+ANR	2071324	ExpressionStatement	qmul = 1 << QEXPSHIFT	21:8:464:482	2071227	1	True				
+ANR	2071325	AssignmentExpression	qmul = 1 << QEXPSHIFT		2071227	0		=			
+ANR	2071326	Identifier	qmul		2071227	0					
+ANR	2071327	ShiftExpression	1 << QEXPSHIFT		2071227	1		<<			
+ANR	2071328	PrimaryExpression	1		2071227	0					
+ANR	2071329	Identifier	QEXPSHIFT		2071227	1					
+ANR	2071330	IfStatement	if ( start_y != 0 )		2071227	7					
+ANR	2071331	Condition	start_y != 0	29:8:572:583	2071227	0	True				
+ANR	2071332	EqualityExpression	start_y != 0		2071227	0		!=			
+ANR	2071333	Identifier	start_y		2071227	0					
+ANR	2071334	PrimaryExpression	0		2071227	1					
+ANR	2071335	ExpressionStatement	new_index = save_state [ 0 ]	31:8:595:620	2071227	1	True				
+ANR	2071336	AssignmentExpression	new_index = save_state [ 0 ]		2071227	0		=			
+ANR	2071337	Identifier	new_index		2071227	0					
+ANR	2071338	ArrayIndexing	save_state [ 0 ]		2071227	1					
+ANR	2071339	Identifier	save_state		2071227	0					
+ANR	2071340	PrimaryExpression	0		2071227	1					
+ANR	2071341	ForStatement	for ( y = start_y ; y < h ; y ++ )		2071227	8					
+ANR	2071342	ForInit	y = start_y ;	37:8:635:644	2071227	0	True				
+ANR	2071343	AssignmentExpression	y = start_y		2071227	0		=			
+ANR	2071344	Identifier	y		2071227	0					
+ANR	2071345	Identifier	start_y		2071227	1					
+ANR	2071346	Condition	y < h	37:19:646:648	2071227	1	True				
+ANR	2071347	RelationalExpression	y < h		2071227	0		<			
+ANR	2071348	Identifier	y		2071227	0					
+ANR	2071349	Identifier	h		2071227	1					
+ANR	2071350	PostIncDecOperationExpression	y ++	37:24:651:653	2071227	2	True				
+ANR	2071351	Identifier	y		2071227	0					
+ANR	2071352	IncDec	++		2071227	1					
+ANR	2071353	CompoundStatement		43:8:567:666	2071227	3					
+ANR	2071354	IdentifierDeclStatement	int x = 0 ;	39:8:666:675	2071227	0	True				
+ANR	2071355	IdentifierDecl	x = 0		2071227	0					
+ANR	2071356	IdentifierDeclType	int		2071227	0					
+ANR	2071357	Identifier	x		2071227	1					
+ANR	2071358	AssignmentExpression	x = 0		2071227	2		=			
+ANR	2071359	Identifier	x		2071227	0					
+ANR	2071360	PrimaryExpression	0		2071227	1					
+ANR	2071361	IdentifierDeclStatement	int v ;	41:8:686:691	2071227	1	True				
+ANR	2071362	IdentifierDecl	v		2071227	0					
+ANR	2071363	IdentifierDeclType	int		2071227	0					
+ANR	2071364	Identifier	v		2071227	1					
+ANR	2071365	IdentifierDeclStatement	"IDWTELEM * line = slice_buffer_get_line ( sb , y * b -> stride_line + b -> buf_y_offset ) + b -> buf_x_offset ;"	43:8:702:801	2071227	2	True				
+ANR	2071366	IdentifierDecl	"* line = slice_buffer_get_line ( sb , y * b -> stride_line + b -> buf_y_offset ) + b -> buf_x_offset"		2071227	0					
+ANR	2071367	IdentifierDeclType	IDWTELEM *		2071227	0					
+ANR	2071368	Identifier	line		2071227	1					
+ANR	2071369	AssignmentExpression	"* line = slice_buffer_get_line ( sb , y * b -> stride_line + b -> buf_y_offset ) + b -> buf_x_offset"		2071227	2		=			
+ANR	2071370	Identifier	line		2071227	0					
+ANR	2071371	AdditiveExpression	"slice_buffer_get_line ( sb , y * b -> stride_line + b -> buf_y_offset ) + b -> buf_x_offset"		2071227	1		+			
+ANR	2071372	CallExpression	"slice_buffer_get_line ( sb , y * b -> stride_line + b -> buf_y_offset )"		2071227	0					
+ANR	2071373	Callee	slice_buffer_get_line		2071227	0					
+ANR	2071374	Identifier	slice_buffer_get_line		2071227	0					
+ANR	2071375	ArgumentList	sb		2071227	1					
+ANR	2071376	Argument	sb		2071227	0					
+ANR	2071377	Identifier	sb		2071227	0					
+ANR	2071378	Argument	y * b -> stride_line + b -> buf_y_offset		2071227	1					
+ANR	2071379	AdditiveExpression	y * b -> stride_line + b -> buf_y_offset		2071227	0		+			
+ANR	2071380	MultiplicativeExpression	y * b -> stride_line		2071227	0		*			
+ANR	2071381	Identifier	y		2071227	0					
+ANR	2071382	PtrMemberAccess	b -> stride_line		2071227	1					
+ANR	2071383	Identifier	b		2071227	0					
+ANR	2071384	Identifier	stride_line		2071227	1					
+ANR	2071385	PtrMemberAccess	b -> buf_y_offset		2071227	1					
+ANR	2071386	Identifier	b		2071227	0					
+ANR	2071387	Identifier	buf_y_offset		2071227	1					
+ANR	2071388	PtrMemberAccess	b -> buf_x_offset		2071227	1					
+ANR	2071389	Identifier	b		2071227	0					
+ANR	2071390	Identifier	buf_x_offset		2071227	1					
+ANR	2071391	ExpressionStatement	"memset ( line , 0 , b -> width * sizeof ( IDWTELEM ) )"	45:8:812:854	2071227	3	True				
+ANR	2071392	CallExpression	"memset ( line , 0 , b -> width * sizeof ( IDWTELEM ) )"		2071227	0					
+ANR	2071393	Callee	memset		2071227	0					
+ANR	2071394	Identifier	memset		2071227	0					
+ANR	2071395	ArgumentList	line		2071227	1					
+ANR	2071396	Argument	line		2071227	0					
+ANR	2071397	Identifier	line		2071227	0					
+ANR	2071398	Argument	0		2071227	1					
+ANR	2071399	PrimaryExpression	0		2071227	0					
+ANR	2071400	Argument	b -> width * sizeof ( IDWTELEM )		2071227	2					
+ANR	2071401	MultiplicativeExpression	b -> width * sizeof ( IDWTELEM )		2071227	0		*			
+ANR	2071402	PtrMemberAccess	b -> width		2071227	0					
+ANR	2071403	Identifier	b		2071227	0					
+ANR	2071404	Identifier	width		2071227	1					
+ANR	2071405	SizeofExpression	sizeof ( IDWTELEM )		2071227	1					
+ANR	2071406	Sizeof	sizeof		2071227	0					
+ANR	2071407	SizeofOperand	IDWTELEM		2071227	1					
+ANR	2071408	ExpressionStatement	v = b -> x_coeff [ new_index ] . coeff	47:8:865:896	2071227	4	True				
+ANR	2071409	AssignmentExpression	v = b -> x_coeff [ new_index ] . coeff		2071227	0		=			
+ANR	2071410	Identifier	v		2071227	0					
+ANR	2071411	MemberAccess	b -> x_coeff [ new_index ] . coeff		2071227	1					
+ANR	2071412	ArrayIndexing	b -> x_coeff [ new_index ]		2071227	0					
+ANR	2071413	PtrMemberAccess	b -> x_coeff		2071227	0					
+ANR	2071414	Identifier	b		2071227	0					
+ANR	2071415	Identifier	x_coeff		2071227	1					
+ANR	2071416	Identifier	new_index		2071227	1					
+ANR	2071417	Identifier	coeff		2071227	1					
+ANR	2071418	ExpressionStatement	x = b -> x_coeff [ new_index ++ ] . x	49:8:907:936	2071227	5	True				
+ANR	2071419	AssignmentExpression	x = b -> x_coeff [ new_index ++ ] . x		2071227	0		=			
+ANR	2071420	Identifier	x		2071227	0					
+ANR	2071421	MemberAccess	b -> x_coeff [ new_index ++ ] . x		2071227	1					
+ANR	2071422	ArrayIndexing	b -> x_coeff [ new_index ++ ]		2071227	0					
+ANR	2071423	PtrMemberAccess	b -> x_coeff		2071227	0					
+ANR	2071424	Identifier	b		2071227	0					
+ANR	2071425	Identifier	x_coeff		2071227	1					
+ANR	2071426	PostIncDecOperationExpression	new_index ++		2071227	1					
+ANR	2071427	Identifier	new_index		2071227	0					
+ANR	2071428	IncDec	++		2071227	1					
+ANR	2071429	Identifier	x		2071227	1					
+ANR	2071430	WhileStatement	while ( x < w )		2071227	6					
+ANR	2071431	Condition	x < w	51:14:953:957	2071227	0	True				
+ANR	2071432	RelationalExpression	x < w		2071227	0		<			
+ANR	2071433	Identifier	x		2071227	0					
+ANR	2071434	Identifier	w		2071227	1					
+ANR	2071435	CompoundStatement		55:21:911:924	2071227	1					
+ANR	2071436	Statement	register	53:12:974:981	2071227	0	True				
+ANR	2071437	IdentifierDeclStatement	int t = ( ( v >> 1 ) * qmul + qadd ) >> QEXPSHIFT ;	53:21:983:1022	2071227	1	True				
+ANR	2071438	IdentifierDecl	t = ( ( v >> 1 ) * qmul + qadd ) >> QEXPSHIFT		2071227	0					
+ANR	2071439	IdentifierDeclType	int		2071227	0					
+ANR	2071440	Identifier	t		2071227	1					
+ANR	2071441	AssignmentExpression	t = ( ( v >> 1 ) * qmul + qadd ) >> QEXPSHIFT		2071227	2		=			
+ANR	2071442	Identifier	t		2071227	0					
+ANR	2071443	ShiftExpression	( ( v >> 1 ) * qmul + qadd ) >> QEXPSHIFT		2071227	1		>>			
+ANR	2071444	AdditiveExpression	( v >> 1 ) * qmul + qadd		2071227	0		+			
+ANR	2071445	MultiplicativeExpression	( v >> 1 ) * qmul		2071227	0		*			
+ANR	2071446	ShiftExpression	v >> 1		2071227	0		>>			
+ANR	2071447	Identifier	v		2071227	0					
+ANR	2071448	PrimaryExpression	1		2071227	1					
+ANR	2071449	Identifier	qmul		2071227	1					
+ANR	2071450	Identifier	qadd		2071227	1					
+ANR	2071451	Identifier	QEXPSHIFT		2071227	1					
+ANR	2071452	Statement	register	55:12:1037:1044	2071227	2	True				
+ANR	2071453	IdentifierDeclStatement	int u = - ( v & 1 ) ;	55:21:1046:1059	2071227	3	True				
+ANR	2071454	IdentifierDecl	u = - ( v & 1 )		2071227	0					
+ANR	2071455	IdentifierDeclType	int		2071227	0					
+ANR	2071456	Identifier	u		2071227	1					
+ANR	2071457	AssignmentExpression	u = - ( v & 1 )		2071227	2		=			
+ANR	2071458	Identifier	u		2071227	0					
+ANR	2071459	UnaryOperationExpression	- ( v & 1 )		2071227	1					
+ANR	2071460	UnaryOperator	-		2071227	0					
+ANR	2071461	BitAndExpression	v & 1		2071227	1		&			
+ANR	2071462	Identifier	v		2071227	0					
+ANR	2071463	PrimaryExpression	1		2071227	1					
+ANR	2071464	ExpressionStatement	line [ x ] = ( t ^ u ) - u	57:12:1074:1093	2071227	4	True				
+ANR	2071465	AssignmentExpression	line [ x ] = ( t ^ u ) - u		2071227	0		=			
+ANR	2071466	ArrayIndexing	line [ x ]		2071227	0					
+ANR	2071467	Identifier	line		2071227	0					
+ANR	2071468	Identifier	x		2071227	1					
+ANR	2071469	AdditiveExpression	( t ^ u ) - u		2071227	1		-			
+ANR	2071470	ExclusiveOrExpression	t ^ u		2071227	0		^			
+ANR	2071471	Identifier	t		2071227	0					
+ANR	2071472	Identifier	u		2071227	1					
+ANR	2071473	Identifier	u		2071227	1					
+ANR	2071474	ExpressionStatement	v = b -> x_coeff [ new_index ] . coeff	61:12:1110:1141	2071227	5	True				
+ANR	2071475	AssignmentExpression	v = b -> x_coeff [ new_index ] . coeff		2071227	0		=			
+ANR	2071476	Identifier	v		2071227	0					
+ANR	2071477	MemberAccess	b -> x_coeff [ new_index ] . coeff		2071227	1					
+ANR	2071478	ArrayIndexing	b -> x_coeff [ new_index ]		2071227	0					
+ANR	2071479	PtrMemberAccess	b -> x_coeff		2071227	0					
+ANR	2071480	Identifier	b		2071227	0					
+ANR	2071481	Identifier	x_coeff		2071227	1					
+ANR	2071482	Identifier	new_index		2071227	1					
+ANR	2071483	Identifier	coeff		2071227	1					
+ANR	2071484	ExpressionStatement	x = b -> x_coeff [ new_index ++ ] . x	63:12:1156:1185	2071227	6	True				
+ANR	2071485	AssignmentExpression	x = b -> x_coeff [ new_index ++ ] . x		2071227	0		=			
+ANR	2071486	Identifier	x		2071227	0					
+ANR	2071487	MemberAccess	b -> x_coeff [ new_index ++ ] . x		2071227	1					
+ANR	2071488	ArrayIndexing	b -> x_coeff [ new_index ++ ]		2071227	0					
+ANR	2071489	PtrMemberAccess	b -> x_coeff		2071227	0					
+ANR	2071490	Identifier	b		2071227	0					
+ANR	2071491	Identifier	x_coeff		2071227	1					
+ANR	2071492	PostIncDecOperationExpression	new_index ++		2071227	1					
+ANR	2071493	Identifier	new_index		2071227	0					
+ANR	2071494	IncDec	++		2071227	1					
+ANR	2071495	Identifier	x		2071227	1					
+ANR	2071496	ExpressionStatement	save_state [ 0 ] = new_index	73:4:1262:1287	2071227	9	True				
+ANR	2071497	AssignmentExpression	save_state [ 0 ] = new_index		2071227	0		=			
+ANR	2071498	ArrayIndexing	save_state [ 0 ]		2071227	0					
+ANR	2071499	Identifier	save_state		2071227	0					
+ANR	2071500	PrimaryExpression	0		2071227	1					
+ANR	2071501	Identifier	new_index		2071227	1					
+ANR	2071502	ReturnStatement	return ;	77:4:1296:1302	2071227	10	True				
+ANR	2071503	ReturnType	static inline void		2071227	1					
+ANR	2071504	Identifier	decode_subband_slice_buffered		2071227	2					
+ANR	2071505	ParameterList	"SnowContext * s , SubBand * b , slice_buffer * sb , int start_y , int h , int save_state [ 1 ]"		2071227	3					
+ANR	2071506	Parameter	SnowContext * s	1:49:49:62	2071227	0	True				
+ANR	2071507	ParameterType	SnowContext *		2071227	0					
+ANR	2071508	Identifier	s		2071227	1					
+ANR	2071509	Parameter	SubBand * b	1:65:65:74	2071227	1	True				
+ANR	2071510	ParameterType	SubBand *		2071227	0					
+ANR	2071511	Identifier	b		2071227	1					
+ANR	2071512	Parameter	slice_buffer * sb	1:77:77:93	2071227	2	True				
+ANR	2071513	ParameterType	slice_buffer *		2071227	0					
+ANR	2071514	Identifier	sb		2071227	1					
+ANR	2071515	Parameter	int start_y	1:96:96:106	2071227	3	True				
+ANR	2071516	ParameterType	int		2071227	0					
+ANR	2071517	Identifier	start_y		2071227	1					
+ANR	2071518	Parameter	int h	1:109:109:113	2071227	4	True				
+ANR	2071519	ParameterType	int		2071227	0					
+ANR	2071520	Identifier	h		2071227	1					
+ANR	2071521	Parameter	int save_state [ 1 ]	1:116:116:132	2071227	5	True				
+ANR	2071522	ParameterType	int [ 1 ]		2071227	0					
+ANR	2071523	Identifier	save_state		2071227	1					
+ANR	2071524	CFGEntryNode	ENTRY		2071227		True				
+ANR	2071525	CFGExitNode	EXIT		2071227		True				
+ANR	2071526	Symbol	* QROOT		2071227						
+ANR	2071527	Symbol	LOSSLESS_QLOG		2071227						
+ANR	2071528	Symbol	* x		2071227						
+ANR	2071529	Symbol	qlog		2071227						
+ANR	2071530	Symbol	qmul		2071227						
+ANR	2071531	Symbol	line		2071227						
+ANR	2071532	Symbol	slice_buffer_get_line		2071227						
+ANR	2071533	Symbol	b -> buf_y_offset		2071227						
+ANR	2071534	Symbol	* qlog		2071227						
+ANR	2071535	Symbol	* line		2071227						
+ANR	2071536	Symbol	b -> width		2071227						
+ANR	2071537	Symbol	sb		2071227						
+ANR	2071538	Symbol	b -> qlog		2071227						
+ANR	2071539	Symbol	ff_qexp		2071227						
+ANR	2071540	Symbol	s -> spatial_idwt_buffer		2071227						
+ANR	2071541	Symbol	b -> stride_line		2071227						
+ANR	2071542	Symbol	b -> buf_x_offset		2071227						
+ANR	2071543	Symbol	QSHIFT		2071227						
+ANR	2071544	Symbol	av_clip		2071227						
+ANR	2071545	Symbol	* b -> x_coeff		2071227						
+ANR	2071546	Symbol	QBIAS_SHIFT		2071227						
+ANR	2071547	Symbol	b		2071227						
+ANR	2071548	Symbol	qadd		2071227						
+ANR	2071549	Symbol	QEXPSHIFT		2071227						
+ANR	2071550	Symbol	b -> x_coeff [ new_index ++ ] . x		2071227						
+ANR	2071551	Symbol	h		2071227						
+ANR	2071552	Symbol	QROOT		2071227						
+ANR	2071553	Symbol	new_index		2071227						
+ANR	2071554	Symbol	* * b		2071227						
+ANR	2071555	Symbol	b -> x_coeff		2071227						
+ANR	2071556	Symbol	b -> ibuf		2071227						
+ANR	2071557	Symbol	* save_state		2071227						
+ANR	2071558	Symbol	* b		2071227						
+ANR	2071559	Symbol	* ff_qexp		2071227						
+ANR	2071560	Symbol	s -> qbias		2071227						
+ANR	2071561	Symbol	b -> x_coeff [ new_index ] . coeff		2071227						
+ANR	2071562	Symbol	s		2071227						
+ANR	2071563	Symbol	* new_index		2071227						
+ANR	2071564	Symbol	t		2071227						
+ANR	2071565	Symbol	s -> qlog		2071227						
+ANR	2071566	Symbol	u		2071227						
+ANR	2071567	Symbol	v		2071227						
+ANR	2071568	Symbol	start_y		2071227						
+ANR	2071569	Symbol	w		2071227						
+ANR	2071570	Symbol	x		2071227						
+ANR	2071571	Symbol	y		2071227						
+ANR	2071572	Symbol	save_state		2071227						
+ANR	2071573	Symbol	* s		2071227						

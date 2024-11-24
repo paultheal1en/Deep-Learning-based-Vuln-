@@ -1,0 +1,294 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6008351	File	/home/p4ultr4n/workplace/ReVeal/raw_code/net_tx_pkt_build_vheader_0.c								
+ANR	6008352	Function	net_tx_pkt_build_vheader	1:0:0:1716							
+ANR	6008353	FunctionDef	"net_tx_pkt_build_vheader (struct NetTxPkt * pkt , bool tso_enable , bool csum_enable , uint32_t gso_size)"		6008352	0					
+ANR	6008354	CompoundStatement		5:0:112:1716	6008352	0					
+ANR	6008355	IdentifierDeclStatement	struct tcp_hdr l4hdr ;	7:4:119:139	6008352	0	True				
+ANR	6008356	IdentifierDecl	l4hdr		6008352	0					
+ANR	6008357	IdentifierDeclType	struct tcp_hdr		6008352	0					
+ANR	6008358	Identifier	l4hdr		6008352	1					
+ANR	6008359	ExpressionStatement	assert ( pkt )	9:4:146:157	6008352	1	True				
+ANR	6008360	CallExpression	assert ( pkt )		6008352	0					
+ANR	6008361	Callee	assert		6008352	0					
+ANR	6008362	Identifier	assert		6008352	0					
+ANR	6008363	ArgumentList	pkt		6008352	1					
+ANR	6008364	Argument	pkt		6008352	0					
+ANR	6008365	Identifier	pkt		6008352	0					
+ANR	6008366	ExpressionStatement	assert ( csum_enable || ! tso_enable )	15:4:211:245	6008352	2	True				
+ANR	6008367	CallExpression	assert ( csum_enable || ! tso_enable )		6008352	0					
+ANR	6008368	Callee	assert		6008352	0					
+ANR	6008369	Identifier	assert		6008352	0					
+ANR	6008370	ArgumentList	csum_enable || ! tso_enable		6008352	1					
+ANR	6008371	Argument	csum_enable || ! tso_enable		6008352	0					
+ANR	6008372	OrExpression	csum_enable || ! tso_enable		6008352	0		||			
+ANR	6008373	Identifier	csum_enable		6008352	0					
+ANR	6008374	UnaryOperationExpression	! tso_enable		6008352	1					
+ANR	6008375	UnaryOperator	!		6008352	0					
+ANR	6008376	Identifier	tso_enable		6008352	1					
+ANR	6008377	ExpressionStatement	"pkt -> virt_hdr . gso_type = net_tx_pkt_get_gso_type ( pkt , tso_enable )"	19:4:254:319	6008352	3	True				
+ANR	6008378	AssignmentExpression	"pkt -> virt_hdr . gso_type = net_tx_pkt_get_gso_type ( pkt , tso_enable )"		6008352	0		=			
+ANR	6008379	MemberAccess	pkt -> virt_hdr . gso_type		6008352	0					
+ANR	6008380	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008381	Identifier	pkt		6008352	0					
+ANR	6008382	Identifier	virt_hdr		6008352	1					
+ANR	6008383	Identifier	gso_type		6008352	1					
+ANR	6008384	CallExpression	"net_tx_pkt_get_gso_type ( pkt , tso_enable )"		6008352	1					
+ANR	6008385	Callee	net_tx_pkt_get_gso_type		6008352	0					
+ANR	6008386	Identifier	net_tx_pkt_get_gso_type		6008352	0					
+ANR	6008387	ArgumentList	pkt		6008352	1					
+ANR	6008388	Argument	pkt		6008352	0					
+ANR	6008389	Identifier	pkt		6008352	0					
+ANR	6008390	Argument	tso_enable		6008352	1					
+ANR	6008391	Identifier	tso_enable		6008352	0					
+ANR	6008392	SwitchStatement	switch ( pkt -> virt_hdr . gso_type & ~VIRTIO_NET_HDR_GSO_ECN )		6008352	4					
+ANR	6008393	Condition	pkt -> virt_hdr . gso_type & ~VIRTIO_NET_HDR_GSO_ECN	23:12:336:383	6008352	0	True				
+ANR	6008394	BitAndExpression	pkt -> virt_hdr . gso_type & ~VIRTIO_NET_HDR_GSO_ECN		6008352	0		&			
+ANR	6008395	MemberAccess	pkt -> virt_hdr . gso_type		6008352	0					
+ANR	6008396	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008397	Identifier	pkt		6008352	0					
+ANR	6008398	Identifier	virt_hdr		6008352	1					
+ANR	6008399	Identifier	gso_type		6008352	1					
+ANR	6008400	Identifier	~VIRTIO_NET_HDR_GSO_ECN		6008352	1					
+ANR	6008401	CompoundStatement		19:62:273:273	6008352	1					
+ANR	6008402	Label	case VIRTIO_NET_HDR_GSO_NONE :	25:4:393:421	6008352	0	True				
+ANR	6008403	Identifier	VIRTIO_NET_HDR_GSO_NONE		6008352	0					
+ANR	6008404	ExpressionStatement	pkt -> virt_hdr . hdr_len = 0	27:8:432:457	6008352	1	True				
+ANR	6008405	AssignmentExpression	pkt -> virt_hdr . hdr_len = 0		6008352	0		=			
+ANR	6008406	MemberAccess	pkt -> virt_hdr . hdr_len		6008352	0					
+ANR	6008407	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008408	Identifier	pkt		6008352	0					
+ANR	6008409	Identifier	virt_hdr		6008352	1					
+ANR	6008410	Identifier	hdr_len		6008352	1					
+ANR	6008411	PrimaryExpression	0		6008352	1					
+ANR	6008412	ExpressionStatement	pkt -> virt_hdr . gso_size = 0	29:8:468:494	6008352	2	True				
+ANR	6008413	AssignmentExpression	pkt -> virt_hdr . gso_size = 0		6008352	0		=			
+ANR	6008414	MemberAccess	pkt -> virt_hdr . gso_size		6008352	0					
+ANR	6008415	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008416	Identifier	pkt		6008352	0					
+ANR	6008417	Identifier	virt_hdr		6008352	1					
+ANR	6008418	Identifier	gso_size		6008352	1					
+ANR	6008419	PrimaryExpression	0		6008352	1					
+ANR	6008420	BreakStatement	break ;	31:8:505:510	6008352	3	True				
+ANR	6008421	Label	case VIRTIO_NET_HDR_GSO_UDP :	35:4:519:546	6008352	4	True				
+ANR	6008422	Identifier	VIRTIO_NET_HDR_GSO_UDP		6008352	0					
+ANR	6008423	ExpressionStatement	pkt -> virt_hdr . gso_size = IP_FRAG_ALIGN_SIZE ( gso_size )	37:8:557:610	6008352	5	True				
+ANR	6008424	AssignmentExpression	pkt -> virt_hdr . gso_size = IP_FRAG_ALIGN_SIZE ( gso_size )		6008352	0		=			
+ANR	6008425	MemberAccess	pkt -> virt_hdr . gso_size		6008352	0					
+ANR	6008426	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008427	Identifier	pkt		6008352	0					
+ANR	6008428	Identifier	virt_hdr		6008352	1					
+ANR	6008429	Identifier	gso_size		6008352	1					
+ANR	6008430	CallExpression	IP_FRAG_ALIGN_SIZE ( gso_size )		6008352	1					
+ANR	6008431	Callee	IP_FRAG_ALIGN_SIZE		6008352	0					
+ANR	6008432	Identifier	IP_FRAG_ALIGN_SIZE		6008352	0					
+ANR	6008433	ArgumentList	gso_size		6008352	1					
+ANR	6008434	Argument	gso_size		6008352	0					
+ANR	6008435	Identifier	gso_size		6008352	0					
+ANR	6008436	ExpressionStatement	pkt -> virt_hdr . hdr_len = pkt -> hdr_len + sizeof ( struct udp_header )	39:8:621:685	6008352	6	True				
+ANR	6008437	AssignmentExpression	pkt -> virt_hdr . hdr_len = pkt -> hdr_len + sizeof ( struct udp_header )		6008352	0		=			
+ANR	6008438	MemberAccess	pkt -> virt_hdr . hdr_len		6008352	0					
+ANR	6008439	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008440	Identifier	pkt		6008352	0					
+ANR	6008441	Identifier	virt_hdr		6008352	1					
+ANR	6008442	Identifier	hdr_len		6008352	1					
+ANR	6008443	AdditiveExpression	pkt -> hdr_len + sizeof ( struct udp_header )		6008352	1		+			
+ANR	6008444	PtrMemberAccess	pkt -> hdr_len		6008352	0					
+ANR	6008445	Identifier	pkt		6008352	0					
+ANR	6008446	Identifier	hdr_len		6008352	1					
+ANR	6008447	SizeofExpression	sizeof ( struct udp_header )		6008352	1					
+ANR	6008448	Sizeof	sizeof		6008352	0					
+ANR	6008449	SizeofOperand	struct udp_header		6008352	1					
+ANR	6008450	BreakStatement	break ;	41:8:696:701	6008352	7	True				
+ANR	6008451	Label	case VIRTIO_NET_HDR_GSO_TCPV4 :	45:4:710:739	6008352	8	True				
+ANR	6008452	Identifier	VIRTIO_NET_HDR_GSO_TCPV4		6008352	0					
+ANR	6008453	Label	case VIRTIO_NET_HDR_GSO_TCPV6 :	47:4:746:775	6008352	9	True				
+ANR	6008454	Identifier	VIRTIO_NET_HDR_GSO_TCPV6		6008352	0					
+ANR	6008455	ExpressionStatement	"iov_to_buf ( & pkt -> vec [ NET_TX_PKT_PL_START_FRAG ] , pkt -> payload_frags , 0 , & l4hdr , sizeof ( l4hdr ) )"	49:8:786:899	6008352	10	True				
+ANR	6008456	CallExpression	"iov_to_buf ( & pkt -> vec [ NET_TX_PKT_PL_START_FRAG ] , pkt -> payload_frags , 0 , & l4hdr , sizeof ( l4hdr ) )"		6008352	0					
+ANR	6008457	Callee	iov_to_buf		6008352	0					
+ANR	6008458	Identifier	iov_to_buf		6008352	0					
+ANR	6008459	ArgumentList	& pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6008352	1					
+ANR	6008460	Argument	& pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6008352	0					
+ANR	6008461	UnaryOperationExpression	& pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6008352	0					
+ANR	6008462	UnaryOperator	&		6008352	0					
+ANR	6008463	ArrayIndexing	pkt -> vec [ NET_TX_PKT_PL_START_FRAG ]		6008352	1					
+ANR	6008464	PtrMemberAccess	pkt -> vec		6008352	0					
+ANR	6008465	Identifier	pkt		6008352	0					
+ANR	6008466	Identifier	vec		6008352	1					
+ANR	6008467	Identifier	NET_TX_PKT_PL_START_FRAG		6008352	1					
+ANR	6008468	Argument	pkt -> payload_frags		6008352	1					
+ANR	6008469	PtrMemberAccess	pkt -> payload_frags		6008352	0					
+ANR	6008470	Identifier	pkt		6008352	0					
+ANR	6008471	Identifier	payload_frags		6008352	1					
+ANR	6008472	Argument	0		6008352	2					
+ANR	6008473	PrimaryExpression	0		6008352	0					
+ANR	6008474	Argument	& l4hdr		6008352	3					
+ANR	6008475	UnaryOperationExpression	& l4hdr		6008352	0					
+ANR	6008476	UnaryOperator	&		6008352	0					
+ANR	6008477	Identifier	l4hdr		6008352	1					
+ANR	6008478	Argument	sizeof ( l4hdr )		6008352	4					
+ANR	6008479	SizeofExpression	sizeof ( l4hdr )		6008352	0					
+ANR	6008480	Sizeof	sizeof		6008352	0					
+ANR	6008481	SizeofOperand	l4hdr		6008352	1					
+ANR	6008482	ExpressionStatement	pkt -> virt_hdr . hdr_len = pkt -> hdr_len + l4hdr . th_off * sizeof ( uint32_t )	53:8:910:980	6008352	11	True				
+ANR	6008483	AssignmentExpression	pkt -> virt_hdr . hdr_len = pkt -> hdr_len + l4hdr . th_off * sizeof ( uint32_t )		6008352	0		=			
+ANR	6008484	MemberAccess	pkt -> virt_hdr . hdr_len		6008352	0					
+ANR	6008485	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008486	Identifier	pkt		6008352	0					
+ANR	6008487	Identifier	virt_hdr		6008352	1					
+ANR	6008488	Identifier	hdr_len		6008352	1					
+ANR	6008489	AdditiveExpression	pkt -> hdr_len + l4hdr . th_off * sizeof ( uint32_t )		6008352	1		+			
+ANR	6008490	PtrMemberAccess	pkt -> hdr_len		6008352	0					
+ANR	6008491	Identifier	pkt		6008352	0					
+ANR	6008492	Identifier	hdr_len		6008352	1					
+ANR	6008493	MultiplicativeExpression	l4hdr . th_off * sizeof ( uint32_t )		6008352	1		*			
+ANR	6008494	MemberAccess	l4hdr . th_off		6008352	0					
+ANR	6008495	Identifier	l4hdr		6008352	0					
+ANR	6008496	Identifier	th_off		6008352	1					
+ANR	6008497	SizeofExpression	sizeof ( uint32_t )		6008352	1					
+ANR	6008498	Sizeof	sizeof		6008352	0					
+ANR	6008499	SizeofOperand	uint32_t		6008352	1					
+ANR	6008500	ExpressionStatement	pkt -> virt_hdr . gso_size = IP_FRAG_ALIGN_SIZE ( gso_size )	55:8:991:1044	6008352	12	True				
+ANR	6008501	AssignmentExpression	pkt -> virt_hdr . gso_size = IP_FRAG_ALIGN_SIZE ( gso_size )		6008352	0		=			
+ANR	6008502	MemberAccess	pkt -> virt_hdr . gso_size		6008352	0					
+ANR	6008503	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008504	Identifier	pkt		6008352	0					
+ANR	6008505	Identifier	virt_hdr		6008352	1					
+ANR	6008506	Identifier	gso_size		6008352	1					
+ANR	6008507	CallExpression	IP_FRAG_ALIGN_SIZE ( gso_size )		6008352	1					
+ANR	6008508	Callee	IP_FRAG_ALIGN_SIZE		6008352	0					
+ANR	6008509	Identifier	IP_FRAG_ALIGN_SIZE		6008352	0					
+ANR	6008510	ArgumentList	gso_size		6008352	1					
+ANR	6008511	Argument	gso_size		6008352	0					
+ANR	6008512	Identifier	gso_size		6008352	0					
+ANR	6008513	BreakStatement	break ;	57:8:1055:1060	6008352	13	True				
+ANR	6008514	Label	default :	61:4:1069:1076	6008352	14	True				
+ANR	6008515	Identifier	default		6008352	0					
+ANR	6008516	ExpressionStatement	g_assert_not_reached ( )	63:8:1087:1109	6008352	15	True				
+ANR	6008517	CallExpression	g_assert_not_reached ( )		6008352	0					
+ANR	6008518	Callee	g_assert_not_reached		6008352	0					
+ANR	6008519	Identifier	g_assert_not_reached		6008352	0					
+ANR	6008520	ArgumentList			6008352	1					
+ANR	6008521	IfStatement	if ( csum_enable )		6008352	5					
+ANR	6008522	Condition	csum_enable	69:8:1129:1139	6008352	0	True				
+ANR	6008523	Identifier	csum_enable		6008352	0					
+ANR	6008524	CompoundStatement		65:21:1029:1029	6008352	1					
+ANR	6008525	SwitchStatement	switch ( pkt -> l4proto )		6008352	0					
+ANR	6008526	Condition	pkt -> l4proto	71:16:1161:1172	6008352	0	True				
+ANR	6008527	PtrMemberAccess	pkt -> l4proto		6008352	0					
+ANR	6008528	Identifier	pkt		6008352	0					
+ANR	6008529	Identifier	l4proto		6008352	1					
+ANR	6008530	CompoundStatement		67:30:1062:1062	6008352	1					
+ANR	6008531	Label	case IP_PROTO_TCP :	73:8:1186:1203	6008352	0	True				
+ANR	6008532	Identifier	IP_PROTO_TCP		6008352	0					
+ANR	6008533	ExpressionStatement	pkt -> virt_hdr . flags = VIRTIO_NET_HDR_F_NEEDS_CSUM	75:12:1218:1267	6008352	1	True				
+ANR	6008534	AssignmentExpression	pkt -> virt_hdr . flags = VIRTIO_NET_HDR_F_NEEDS_CSUM		6008352	0		=			
+ANR	6008535	MemberAccess	pkt -> virt_hdr . flags		6008352	0					
+ANR	6008536	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008537	Identifier	pkt		6008352	0					
+ANR	6008538	Identifier	virt_hdr		6008352	1					
+ANR	6008539	Identifier	flags		6008352	1					
+ANR	6008540	Identifier	VIRTIO_NET_HDR_F_NEEDS_CSUM		6008352	1					
+ANR	6008541	ExpressionStatement	pkt -> virt_hdr . csum_start = pkt -> hdr_len	77:12:1282:1321	6008352	2	True				
+ANR	6008542	AssignmentExpression	pkt -> virt_hdr . csum_start = pkt -> hdr_len		6008352	0		=			
+ANR	6008543	MemberAccess	pkt -> virt_hdr . csum_start		6008352	0					
+ANR	6008544	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008545	Identifier	pkt		6008352	0					
+ANR	6008546	Identifier	virt_hdr		6008352	1					
+ANR	6008547	Identifier	csum_start		6008352	1					
+ANR	6008548	PtrMemberAccess	pkt -> hdr_len		6008352	1					
+ANR	6008549	Identifier	pkt		6008352	0					
+ANR	6008550	Identifier	hdr_len		6008352	1					
+ANR	6008551	Statement	pkt	79:12:1336:1338	6008352	3	True				
+ANR	6008552	Statement	->	79:15:1339:1340	6008352	4	True				
+ANR	6008553	Statement	virt_hdr	79:17:1341:1348	6008352	5	True				
+ANR	6008554	Statement	.	79:25:1349:1349	6008352	6	True				
+ANR	6008555	Statement	csum_offset	79:26:1350:1360	6008352	7	True				
+ANR	6008556	Statement	=	79:38:1362:1362	6008352	8	True				
+ANR	6008557	Statement	offsetof	79:40:1364:1371	6008352	9	True				
+ANR	6008558	Statement	(	79:48:1372:1372	6008352	10	True				
+ANR	6008559	Statement	struct	79:49:1373:1378	6008352	11	True				
+ANR	6008560	Statement	tcp_hdr	79:56:1380:1386	6008352	12	True				
+ANR	6008561	Statement	","	79:63:1387:1387	6008352	13	True				
+ANR	6008562	Statement	th_sum	79:65:1389:1394	6008352	14	True				
+ANR	6008563	Statement	)	79:71:1395:1395	6008352	15	True				
+ANR	6008564	ExpressionStatement		79:72:1396:1396	6008352	16	True				
+ANR	6008565	BreakStatement	break ;	81:12:1411:1416	6008352	17	True				
+ANR	6008566	Label	case IP_PROTO_UDP :	83:8:1427:1444	6008352	18	True				
+ANR	6008567	Identifier	IP_PROTO_UDP		6008352	0					
+ANR	6008568	ExpressionStatement	pkt -> virt_hdr . flags = VIRTIO_NET_HDR_F_NEEDS_CSUM	85:12:1459:1508	6008352	19	True				
+ANR	6008569	AssignmentExpression	pkt -> virt_hdr . flags = VIRTIO_NET_HDR_F_NEEDS_CSUM		6008352	0		=			
+ANR	6008570	MemberAccess	pkt -> virt_hdr . flags		6008352	0					
+ANR	6008571	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008572	Identifier	pkt		6008352	0					
+ANR	6008573	Identifier	virt_hdr		6008352	1					
+ANR	6008574	Identifier	flags		6008352	1					
+ANR	6008575	Identifier	VIRTIO_NET_HDR_F_NEEDS_CSUM		6008352	1					
+ANR	6008576	ExpressionStatement	pkt -> virt_hdr . csum_start = pkt -> hdr_len	87:12:1523:1562	6008352	20	True				
+ANR	6008577	AssignmentExpression	pkt -> virt_hdr . csum_start = pkt -> hdr_len		6008352	0		=			
+ANR	6008578	MemberAccess	pkt -> virt_hdr . csum_start		6008352	0					
+ANR	6008579	PtrMemberAccess	pkt -> virt_hdr		6008352	0					
+ANR	6008580	Identifier	pkt		6008352	0					
+ANR	6008581	Identifier	virt_hdr		6008352	1					
+ANR	6008582	Identifier	csum_start		6008352	1					
+ANR	6008583	PtrMemberAccess	pkt -> hdr_len		6008352	1					
+ANR	6008584	Identifier	pkt		6008352	0					
+ANR	6008585	Identifier	hdr_len		6008352	1					
+ANR	6008586	Statement	pkt	89:12:1577:1579	6008352	21	True				
+ANR	6008587	Statement	->	89:15:1580:1581	6008352	22	True				
+ANR	6008588	Statement	virt_hdr	89:17:1582:1589	6008352	23	True				
+ANR	6008589	Statement	.	89:25:1590:1590	6008352	24	True				
+ANR	6008590	Statement	csum_offset	89:26:1591:1601	6008352	25	True				
+ANR	6008591	Statement	=	89:38:1603:1603	6008352	26	True				
+ANR	6008592	Statement	offsetof	89:40:1605:1612	6008352	27	True				
+ANR	6008593	Statement	(	89:48:1613:1613	6008352	28	True				
+ANR	6008594	Statement	struct	89:49:1614:1619	6008352	29	True				
+ANR	6008595	Statement	udp_hdr	89:56:1621:1627	6008352	30	True				
+ANR	6008596	Statement	","	89:63:1628:1628	6008352	31	True				
+ANR	6008597	Statement	uh_sum	89:65:1630:1635	6008352	32	True				
+ANR	6008598	Statement	)	89:71:1636:1636	6008352	33	True				
+ANR	6008599	ExpressionStatement		89:72:1637:1637	6008352	34	True				
+ANR	6008600	BreakStatement	break ;	91:12:1652:1657	6008352	35	True				
+ANR	6008601	Label	default :	93:8:1668:1675	6008352	36	True				
+ANR	6008602	Identifier	default		6008352	0					
+ANR	6008603	BreakStatement	break ;	95:12:1690:1695	6008352	37	True				
+ANR	6008604	ReturnType	void		6008352	1					
+ANR	6008605	Identifier	net_tx_pkt_build_vheader		6008352	2					
+ANR	6008606	ParameterList	"struct NetTxPkt * pkt , bool tso_enable , bool csum_enable , uint32_t gso_size"		6008352	3					
+ANR	6008607	Parameter	struct NetTxPkt * pkt	1:30:30:49	6008352	0	True				
+ANR	6008608	ParameterType	struct NetTxPkt *		6008352	0					
+ANR	6008609	Identifier	pkt		6008352	1					
+ANR	6008610	Parameter	bool tso_enable	1:52:52:66	6008352	1	True				
+ANR	6008611	ParameterType	bool		6008352	0					
+ANR	6008612	Identifier	tso_enable		6008352	1					
+ANR	6008613	Parameter	bool csum_enable	3:4:74:89	6008352	2	True				
+ANR	6008614	ParameterType	bool		6008352	0					
+ANR	6008615	Identifier	csum_enable		6008352	1					
+ANR	6008616	Parameter	uint32_t gso_size	3:22:92:108	6008352	3	True				
+ANR	6008617	ParameterType	uint32_t		6008352	0					
+ANR	6008618	Identifier	gso_size		6008352	1					
+ANR	6008619	CFGEntryNode	ENTRY		6008352		True				
+ANR	6008620	CFGExitNode	EXIT		6008352		True				
+ANR	6008621	Symbol	csum_enable		6008352						
+ANR	6008622	Symbol	* pkt		6008352						
+ANR	6008623	Symbol	pkt -> vec		6008352						
+ANR	6008624	Symbol	VIRTIO_NET_HDR_F_NEEDS_CSUM		6008352						
+ANR	6008625	Symbol	pkt -> virt_hdr . hdr_len		6008352						
+ANR	6008626	Symbol	l4hdr		6008352						
+ANR	6008627	Symbol	pkt -> hdr_len		6008352						
+ANR	6008628	Symbol	pkt -> payload_frags		6008352						
+ANR	6008629	Symbol	& l4hdr		6008352						
+ANR	6008630	Symbol	pkt -> l4proto		6008352						
+ANR	6008631	Symbol	net_tx_pkt_get_gso_type		6008352						
+ANR	6008632	Symbol	NET_TX_PKT_PL_START_FRAG		6008352						
+ANR	6008633	Symbol	pkt -> virt_hdr . gso_type		6008352						
+ANR	6008634	Symbol	pkt -> virt_hdr . gso_size		6008352						
+ANR	6008635	Symbol	l4hdr . th_off		6008352						
+ANR	6008636	Symbol	pkt -> virt_hdr . csum_start		6008352						
+ANR	6008637	Symbol	pkt -> virt_hdr		6008352						
+ANR	6008638	Symbol	~VIRTIO_NET_HDR_GSO_ECN		6008352						
+ANR	6008639	Symbol	IP_FRAG_ALIGN_SIZE		6008352						
+ANR	6008640	Symbol	pkt		6008352						
+ANR	6008641	Symbol	pkt -> virt_hdr . flags		6008352						
+ANR	6008642	Symbol	gso_size		6008352						
+ANR	6008643	Symbol	tso_enable		6008352						

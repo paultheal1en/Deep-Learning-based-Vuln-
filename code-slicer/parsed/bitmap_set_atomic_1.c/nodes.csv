@@ -1,0 +1,166 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1046538	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bitmap_set_atomic_1.c								
+ANR	1046539	Function	bitmap_set_atomic	1:0:0:964							
+ANR	1046540	FunctionDef	"bitmap_set_atomic (unsigned long * map , long start , long nr)"		1046539	0					
+ANR	1046541	CompoundStatement		2:0:64:964	1046539	0					
+ANR	1046542	IdentifierDeclStatement	unsigned long * p = map + BIT_WORD ( start ) ;	3:4:70:110	1046539	0	True				
+ANR	1046543	IdentifierDecl	* p = map + BIT_WORD ( start )		1046539	0					
+ANR	1046544	IdentifierDeclType	unsigned long *		1046539	0					
+ANR	1046545	Identifier	p		1046539	1					
+ANR	1046546	AssignmentExpression	* p = map + BIT_WORD ( start )		1046539	2		=			
+ANR	1046547	Identifier	p		1046539	0					
+ANR	1046548	AdditiveExpression	map + BIT_WORD ( start )		1046539	1		+			
+ANR	1046549	Identifier	map		1046539	0					
+ANR	1046550	CallExpression	BIT_WORD ( start )		1046539	1					
+ANR	1046551	Callee	BIT_WORD		1046539	0					
+ANR	1046552	Identifier	BIT_WORD		1046539	0					
+ANR	1046553	ArgumentList	start		1046539	1					
+ANR	1046554	Argument	start		1046539	0					
+ANR	1046555	Identifier	start		1046539	0					
+ANR	1046556	IdentifierDeclStatement	const long size = start + nr ;	4:4:116:144	1046539	1	True				
+ANR	1046557	IdentifierDecl	size = start + nr		1046539	0					
+ANR	1046558	IdentifierDeclType	const long		1046539	0					
+ANR	1046559	Identifier	size		1046539	1					
+ANR	1046560	AssignmentExpression	size = start + nr		1046539	2		=			
+ANR	1046561	Identifier	size		1046539	0					
+ANR	1046562	AdditiveExpression	start + nr		1046539	1		+			
+ANR	1046563	Identifier	start		1046539	0					
+ANR	1046564	Identifier	nr		1046539	1					
+ANR	1046565	IdentifierDeclStatement	int bits_to_set = BITS_PER_LONG - ( start % BITS_PER_LONG ) ;	5:4:150:207	1046539	2	True				
+ANR	1046566	IdentifierDecl	bits_to_set = BITS_PER_LONG - ( start % BITS_PER_LONG )		1046539	0					
+ANR	1046567	IdentifierDeclType	int		1046539	0					
+ANR	1046568	Identifier	bits_to_set		1046539	1					
+ANR	1046569	AssignmentExpression	bits_to_set = BITS_PER_LONG - ( start % BITS_PER_LONG )		1046539	2		=			
+ANR	1046570	Identifier	bits_to_set		1046539	0					
+ANR	1046571	AdditiveExpression	BITS_PER_LONG - ( start % BITS_PER_LONG )		1046539	1		-			
+ANR	1046572	Identifier	BITS_PER_LONG		1046539	0					
+ANR	1046573	MultiplicativeExpression	start % BITS_PER_LONG		1046539	1		%			
+ANR	1046574	Identifier	start		1046539	0					
+ANR	1046575	Identifier	BITS_PER_LONG		1046539	1					
+ANR	1046576	IdentifierDeclStatement	unsigned long mask_to_set = BITMAP_FIRST_WORD_MASK ( start ) ;	6:4:213:270	1046539	3	True				
+ANR	1046577	IdentifierDecl	mask_to_set = BITMAP_FIRST_WORD_MASK ( start )		1046539	0					
+ANR	1046578	IdentifierDeclType	unsigned long		1046539	0					
+ANR	1046579	Identifier	mask_to_set		1046539	1					
+ANR	1046580	AssignmentExpression	mask_to_set = BITMAP_FIRST_WORD_MASK ( start )		1046539	2		=			
+ANR	1046581	Identifier	mask_to_set		1046539	0					
+ANR	1046582	CallExpression	BITMAP_FIRST_WORD_MASK ( start )		1046539	1					
+ANR	1046583	Callee	BITMAP_FIRST_WORD_MASK		1046539	0					
+ANR	1046584	Identifier	BITMAP_FIRST_WORD_MASK		1046539	0					
+ANR	1046585	ArgumentList	start		1046539	1					
+ANR	1046586	Argument	start		1046539	0					
+ANR	1046587	Identifier	start		1046539	0					
+ANR	1046588	IfStatement	if ( nr - bits_to_set > 0 )		1046539	4					
+ANR	1046589	Condition	nr - bits_to_set > 0	8:8:301:320	1046539	0	True				
+ANR	1046590	RelationalExpression	nr - bits_to_set > 0		1046539	0		>			
+ANR	1046591	AdditiveExpression	nr - bits_to_set		1046539	0		-			
+ANR	1046592	Identifier	nr		1046539	0					
+ANR	1046593	Identifier	bits_to_set		1046539	1					
+ANR	1046594	PrimaryExpression	0		1046539	1					
+ANR	1046595	CompoundStatement		7:30:258:258	1046539	1					
+ANR	1046596	ExpressionStatement	"atomic_or ( p , mask_to_set )"	9:8:333:358	1046539	0	True				
+ANR	1046597	CallExpression	"atomic_or ( p , mask_to_set )"		1046539	0					
+ANR	1046598	Callee	atomic_or		1046539	0					
+ANR	1046599	Identifier	atomic_or		1046539	0					
+ANR	1046600	ArgumentList	p		1046539	1					
+ANR	1046601	Argument	p		1046539	0					
+ANR	1046602	Identifier	p		1046539	0					
+ANR	1046603	Argument	mask_to_set		1046539	1					
+ANR	1046604	Identifier	mask_to_set		1046539	0					
+ANR	1046605	ExpressionStatement	nr -= bits_to_set	10:8:368:385	1046539	1	True				
+ANR	1046606	AssignmentExpression	nr -= bits_to_set		1046539	0		-=			
+ANR	1046607	Identifier	nr		1046539	0					
+ANR	1046608	Identifier	bits_to_set		1046539	1					
+ANR	1046609	ExpressionStatement	bits_to_set = BITS_PER_LONG	11:8:395:422	1046539	2	True				
+ANR	1046610	AssignmentExpression	bits_to_set = BITS_PER_LONG		1046539	0		=			
+ANR	1046611	Identifier	bits_to_set		1046539	0					
+ANR	1046612	Identifier	BITS_PER_LONG		1046539	1					
+ANR	1046613	ExpressionStatement	mask_to_set = ~0UL	12:8:432:450	1046539	3	True				
+ANR	1046614	AssignmentExpression	mask_to_set = ~0UL		1046539	0		=			
+ANR	1046615	Identifier	mask_to_set		1046539	0					
+ANR	1046616	Identifier	~0UL		1046539	1					
+ANR	1046617	ExpressionStatement	p ++	13:8:460:463	1046539	4	True				
+ANR	1046618	PostIncDecOperationExpression	p ++		1046539	0					
+ANR	1046619	Identifier	p		1046539	0					
+ANR	1046620	IncDec	++		1046539	1					
+ANR	1046621	IfStatement	if ( bits_to_set == BITS_PER_LONG )		1046539	5					
+ANR	1046622	Condition	bits_to_set == BITS_PER_LONG	16:8:500:527	1046539	0	True				
+ANR	1046623	EqualityExpression	bits_to_set == BITS_PER_LONG		1046539	0		==			
+ANR	1046624	Identifier	bits_to_set		1046539	0					
+ANR	1046625	Identifier	BITS_PER_LONG		1046539	1					
+ANR	1046626	CompoundStatement		15:38:465:465	1046539	1					
+ANR	1046627	WhileStatement	while ( nr >= BITS_PER_LONG )		1046539	0					
+ANR	1046628	Condition	nr >= BITS_PER_LONG	17:15:547:565	1046539	0	True				
+ANR	1046629	RelationalExpression	nr >= BITS_PER_LONG		1046539	0		>=			
+ANR	1046630	Identifier	nr		1046539	0					
+ANR	1046631	Identifier	BITS_PER_LONG		1046539	1					
+ANR	1046632	CompoundStatement		16:36:503:503	1046539	1					
+ANR	1046633	ExpressionStatement	* p = ~0UL	18:12:582:591	1046539	0	True				
+ANR	1046634	AssignmentExpression	* p = ~0UL		1046539	0		=			
+ANR	1046635	UnaryOperationExpression	* p		1046539	0					
+ANR	1046636	UnaryOperator	*		1046539	0					
+ANR	1046637	Identifier	p		1046539	1					
+ANR	1046638	Identifier	~0UL		1046539	1					
+ANR	1046639	ExpressionStatement	nr -= BITS_PER_LONG	19:12:605:624	1046539	1	True				
+ANR	1046640	AssignmentExpression	nr -= BITS_PER_LONG		1046539	0		-=			
+ANR	1046641	Identifier	nr		1046539	0					
+ANR	1046642	Identifier	BITS_PER_LONG		1046539	1					
+ANR	1046643	ExpressionStatement	p ++	20:12:638:641	1046539	2	True				
+ANR	1046644	PostIncDecOperationExpression	p ++		1046539	0					
+ANR	1046645	Identifier	p		1046539	0					
+ANR	1046646	IncDec	++		1046539	1					
+ANR	1046647	IfStatement	if ( nr )		1046539	6					
+ANR	1046648	Condition	nr	24:8:687:688	1046539	0	True				
+ANR	1046649	Identifier	nr		1046539	0					
+ANR	1046650	CompoundStatement		23:12:626:626	1046539	1					
+ANR	1046651	ExpressionStatement	mask_to_set &= BITMAP_LAST_WORD_MASK ( size )	25:8:701:743	1046539	0	True				
+ANR	1046652	AssignmentExpression	mask_to_set &= BITMAP_LAST_WORD_MASK ( size )		1046539	0		&=			
+ANR	1046653	Identifier	mask_to_set		1046539	0					
+ANR	1046654	CallExpression	BITMAP_LAST_WORD_MASK ( size )		1046539	1					
+ANR	1046655	Callee	BITMAP_LAST_WORD_MASK		1046539	0					
+ANR	1046656	Identifier	BITMAP_LAST_WORD_MASK		1046539	0					
+ANR	1046657	ArgumentList	size		1046539	1					
+ANR	1046658	Argument	size		1046539	0					
+ANR	1046659	Identifier	size		1046539	0					
+ANR	1046660	ExpressionStatement	"atomic_or ( p , mask_to_set )"	26:8:753:778	1046539	1	True				
+ANR	1046661	CallExpression	"atomic_or ( p , mask_to_set )"		1046539	0					
+ANR	1046662	Callee	atomic_or		1046539	0					
+ANR	1046663	Identifier	atomic_or		1046539	0					
+ANR	1046664	ArgumentList	p		1046539	1					
+ANR	1046665	Argument	p		1046539	0					
+ANR	1046666	Identifier	p		1046539	0					
+ANR	1046667	Argument	mask_to_set		1046539	1					
+ANR	1046668	Identifier	mask_to_set		1046539	0					
+ANR	1046669	ElseStatement	else		1046539	0					
+ANR	1046670	CompoundStatement		26:11:726:726	1046539	0					
+ANR	1046671	ExpressionStatement	smp_mb ( )	31:8:948:956	1046539	0	True				
+ANR	1046672	CallExpression	smp_mb ( )		1046539	0					
+ANR	1046673	Callee	smp_mb		1046539	0					
+ANR	1046674	Identifier	smp_mb		1046539	0					
+ANR	1046675	ArgumentList			1046539	1					
+ANR	1046676	ReturnType	void		1046539	1					
+ANR	1046677	Identifier	bitmap_set_atomic		1046539	2					
+ANR	1046678	ParameterList	"unsigned long * map , long start , long nr"		1046539	3					
+ANR	1046679	Parameter	unsigned long * map	1:23:23:40	1046539	0	True				
+ANR	1046680	ParameterType	unsigned long *		1046539	0					
+ANR	1046681	Identifier	map		1046539	1					
+ANR	1046682	Parameter	long start	1:43:43:52	1046539	1	True				
+ANR	1046683	ParameterType	long		1046539	0					
+ANR	1046684	Identifier	start		1046539	1					
+ANR	1046685	Parameter	long nr	1:55:55:61	1046539	2	True				
+ANR	1046686	ParameterType	long		1046539	0					
+ANR	1046687	Identifier	nr		1046539	1					
+ANR	1046688	CFGEntryNode	ENTRY		1046539		True				
+ANR	1046689	CFGExitNode	EXIT		1046539		True				
+ANR	1046690	Symbol	BITMAP_LAST_WORD_MASK		1046539						
+ANR	1046691	Symbol	nr		1046539						
+ANR	1046692	Symbol	start		1046539						
+ANR	1046693	Symbol	mask_to_set		1046539						
+ANR	1046694	Symbol	p		1046539						
+ANR	1046695	Symbol	BITS_PER_LONG		1046539						
+ANR	1046696	Symbol	BITMAP_FIRST_WORD_MASK		1046539						
+ANR	1046697	Symbol	BIT_WORD		1046539						
+ANR	1046698	Symbol	~0UL		1046539						
+ANR	1046699	Symbol	size		1046539						
+ANR	1046700	Symbol	bits_to_set		1046539						
+ANR	1046701	Symbol	* p		1046539						
+ANR	1046702	Symbol	map		1046539						

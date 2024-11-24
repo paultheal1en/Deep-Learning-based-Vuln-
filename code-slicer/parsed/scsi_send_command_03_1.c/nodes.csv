@@ -1,0 +1,2703 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7649740	File	/home/p4ultr4n/workplace/ReVeal/raw_code/scsi_send_command_03_1.c								
+ANR	7649741	Function	scsi_send_command	1:0:0:18258							
+ANR	7649742	FunctionDef	"scsi_send_command (SCSIDevice * d , uint32_t tag , uint8_t * buf , int lun)"		7649741	0					
+ANR	7649743	CompoundStatement		5:0:120:18258	7649741	0					
+ANR	7649744	IdentifierDeclStatement	SCSIDeviceState * s = d -> state ;	7:4:127:156	7649741	0	True				
+ANR	7649745	IdentifierDecl	* s = d -> state		7649741	0					
+ANR	7649746	IdentifierDeclType	SCSIDeviceState *		7649741	0					
+ANR	7649747	Identifier	s		7649741	1					
+ANR	7649748	AssignmentExpression	* s = d -> state		7649741	2		=			
+ANR	7649749	Identifier	s		7649741	0					
+ANR	7649750	PtrMemberAccess	d -> state		7649741	1					
+ANR	7649751	Identifier	d		7649741	0					
+ANR	7649752	Identifier	state		7649741	1					
+ANR	7649753	IdentifierDeclStatement	uint64_t nb_sectors ;	9:4:163:182	7649741	1	True				
+ANR	7649754	IdentifierDecl	nb_sectors		7649741	0					
+ANR	7649755	IdentifierDeclType	uint64_t		7649741	0					
+ANR	7649756	Identifier	nb_sectors		7649741	1					
+ANR	7649757	IdentifierDeclStatement	uint32_t lba ;	11:4:189:201	7649741	2	True				
+ANR	7649758	IdentifierDecl	lba		7649741	0					
+ANR	7649759	IdentifierDeclType	uint32_t		7649741	0					
+ANR	7649760	Identifier	lba		7649741	1					
+ANR	7649761	IdentifierDeclStatement	uint32_t len ;	13:4:208:220	7649741	3	True				
+ANR	7649762	IdentifierDecl	len		7649741	0					
+ANR	7649763	IdentifierDeclType	uint32_t		7649741	0					
+ANR	7649764	Identifier	len		7649741	1					
+ANR	7649765	IdentifierDeclStatement	int cmdlen ;	15:4:227:237	7649741	4	True				
+ANR	7649766	IdentifierDecl	cmdlen		7649741	0					
+ANR	7649767	IdentifierDeclType	int		7649741	0					
+ANR	7649768	Identifier	cmdlen		7649741	1					
+ANR	7649769	IdentifierDeclStatement	int is_write ;	17:4:244:256	7649741	5	True				
+ANR	7649770	IdentifierDecl	is_write		7649741	0					
+ANR	7649771	IdentifierDeclType	int		7649741	0					
+ANR	7649772	Identifier	is_write		7649741	1					
+ANR	7649773	IdentifierDeclStatement	uint8_t command ;	19:4:263:278	7649741	6	True				
+ANR	7649774	IdentifierDecl	command		7649741	0					
+ANR	7649775	IdentifierDeclType	uint8_t		7649741	0					
+ANR	7649776	Identifier	command		7649741	1					
+ANR	7649777	IdentifierDeclStatement	uint8_t * outbuf ;	21:4:285:300	7649741	7	True				
+ANR	7649778	IdentifierDecl	* outbuf		7649741	0					
+ANR	7649779	IdentifierDeclType	uint8_t *		7649741	0					
+ANR	7649780	Identifier	outbuf		7649741	1					
+ANR	7649781	IdentifierDeclStatement	SCSIRequest * r ;	23:4:307:321	7649741	8	True				
+ANR	7649782	IdentifierDecl	* r		7649741	0					
+ANR	7649783	IdentifierDeclType	SCSIRequest *		7649741	0					
+ANR	7649784	Identifier	r		7649741	1					
+ANR	7649785	ExpressionStatement	command = buf [ 0 ]	27:4:330:346	7649741	9	True				
+ANR	7649786	AssignmentExpression	command = buf [ 0 ]		7649741	0		=			
+ANR	7649787	Identifier	command		7649741	0					
+ANR	7649788	ArrayIndexing	buf [ 0 ]		7649741	1					
+ANR	7649789	Identifier	buf		7649741	0					
+ANR	7649790	PrimaryExpression	0		7649741	1					
+ANR	7649791	ExpressionStatement	"r = scsi_find_request ( s , tag )"	29:4:353:382	7649741	10	True				
+ANR	7649792	AssignmentExpression	"r = scsi_find_request ( s , tag )"		7649741	0		=			
+ANR	7649793	Identifier	r		7649741	0					
+ANR	7649794	CallExpression	"scsi_find_request ( s , tag )"		7649741	1					
+ANR	7649795	Callee	scsi_find_request		7649741	0					
+ANR	7649796	Identifier	scsi_find_request		7649741	0					
+ANR	7649797	ArgumentList	s		7649741	1					
+ANR	7649798	Argument	s		7649741	0					
+ANR	7649799	Identifier	s		7649741	0					
+ANR	7649800	Argument	tag		7649741	1					
+ANR	7649801	Identifier	tag		7649741	0					
+ANR	7649802	IfStatement	if ( r )		7649741	11					
+ANR	7649803	Condition	r	31:8:393:393	7649741	0	True				
+ANR	7649804	Identifier	r		7649741	0					
+ANR	7649805	CompoundStatement		27:11:275:275	7649741	1					
+ANR	7649806	ExpressionStatement	"BADF ( ""Tag 0x%x already in use\\n"" , tag )"	33:8:407:445	7649741	0	True				
+ANR	7649807	CallExpression	"BADF ( ""Tag 0x%x already in use\\n"" , tag )"		7649741	0					
+ANR	7649808	Callee	BADF		7649741	0					
+ANR	7649809	Identifier	BADF		7649741	0					
+ANR	7649810	ArgumentList	"""Tag 0x%x already in use\\n"""		7649741	1					
+ANR	7649811	Argument	"""Tag 0x%x already in use\\n"""		7649741	0					
+ANR	7649812	PrimaryExpression	"""Tag 0x%x already in use\\n"""		7649741	0					
+ANR	7649813	Argument	tag		7649741	1					
+ANR	7649814	Identifier	tag		7649741	0					
+ANR	7649815	ExpressionStatement	"scsi_cancel_io ( d , tag )"	35:8:456:478	7649741	1	True				
+ANR	7649816	CallExpression	"scsi_cancel_io ( d , tag )"		7649741	0					
+ANR	7649817	Callee	scsi_cancel_io		7649741	0					
+ANR	7649818	Identifier	scsi_cancel_io		7649741	0					
+ANR	7649819	ArgumentList	d		7649741	1					
+ANR	7649820	Argument	d		7649741	0					
+ANR	7649821	Identifier	d		7649741	0					
+ANR	7649822	Argument	tag		7649741	1					
+ANR	7649823	Identifier	tag		7649741	0					
+ANR	7649824	ExpressionStatement	"r = scsi_new_request ( s , tag )"	43:4:616:644	7649741	12	True				
+ANR	7649825	AssignmentExpression	"r = scsi_new_request ( s , tag )"		7649741	0		=			
+ANR	7649826	Identifier	r		7649741	0					
+ANR	7649827	CallExpression	"scsi_new_request ( s , tag )"		7649741	1					
+ANR	7649828	Callee	scsi_new_request		7649741	0					
+ANR	7649829	Identifier	scsi_new_request		7649741	0					
+ANR	7649830	ArgumentList	s		7649741	1					
+ANR	7649831	Argument	s		7649741	0					
+ANR	7649832	Identifier	s		7649741	0					
+ANR	7649833	Argument	tag		7649741	1					
+ANR	7649834	Identifier	tag		7649741	0					
+ANR	7649835	ExpressionStatement	outbuf = r -> dma_buf	45:4:651:670	7649741	13	True				
+ANR	7649836	AssignmentExpression	outbuf = r -> dma_buf		7649741	0		=			
+ANR	7649837	Identifier	outbuf		7649741	0					
+ANR	7649838	PtrMemberAccess	r -> dma_buf		7649741	1					
+ANR	7649839	Identifier	r		7649741	0					
+ANR	7649840	Identifier	dma_buf		7649741	1					
+ANR	7649841	ExpressionStatement	is_write = 0	47:4:677:689	7649741	14	True				
+ANR	7649842	AssignmentExpression	is_write = 0		7649741	0		=			
+ANR	7649843	Identifier	is_write		7649741	0					
+ANR	7649844	PrimaryExpression	0		7649741	1					
+ANR	7649845	ExpressionStatement	"DPRINTF ( ""Command: lun=%d tag=0x%x data=0x%02x"" , lun , tag , buf [ 0 ] )"	49:4:696:761	7649741	15	True				
+ANR	7649846	CallExpression	"DPRINTF ( ""Command: lun=%d tag=0x%x data=0x%02x"" , lun , tag , buf [ 0 ] )"		7649741	0					
+ANR	7649847	Callee	DPRINTF		7649741	0					
+ANR	7649848	Identifier	DPRINTF		7649741	0					
+ANR	7649849	ArgumentList	"""Command: lun=%d tag=0x%x data=0x%02x"""		7649741	1					
+ANR	7649850	Argument	"""Command: lun=%d tag=0x%x data=0x%02x"""		7649741	0					
+ANR	7649851	PrimaryExpression	"""Command: lun=%d tag=0x%x data=0x%02x"""		7649741	0					
+ANR	7649852	Argument	lun		7649741	1					
+ANR	7649853	Identifier	lun		7649741	0					
+ANR	7649854	Argument	tag		7649741	2					
+ANR	7649855	Identifier	tag		7649741	0					
+ANR	7649856	Argument	buf [ 0 ]		7649741	3					
+ANR	7649857	ArrayIndexing	buf [ 0 ]		7649741	0					
+ANR	7649858	Identifier	buf		7649741	0					
+ANR	7649859	PrimaryExpression	0		7649741	1					
+ANR	7649860	SwitchStatement	switch ( command >> 5 )		7649741	16					
+ANR	7649861	Condition	command >> 5	51:12:776:787	7649741	0	True				
+ANR	7649862	ShiftExpression	command >> 5		7649741	0		>>			
+ANR	7649863	Identifier	command		7649741	0					
+ANR	7649864	PrimaryExpression	5		7649741	1					
+ANR	7649865	CompoundStatement		47:26:669:669	7649741	1					
+ANR	7649866	Label	case 0 :	53:4:797:803	7649741	0	True				
+ANR	7649867	ExpressionStatement	lba = buf [ 3 ] | ( buf [ 2 ] << 8 ) | ( ( buf [ 1 ] & 0x1f ) << 16 )	55:8:814:868	7649741	1	True				
+ANR	7649868	AssignmentExpression	lba = buf [ 3 ] | ( buf [ 2 ] << 8 ) | ( ( buf [ 1 ] & 0x1f ) << 16 )		7649741	0		=			
+ANR	7649869	Identifier	lba		7649741	0					
+ANR	7649870	InclusiveOrExpression	buf [ 3 ] | ( buf [ 2 ] << 8 ) | ( ( buf [ 1 ] & 0x1f ) << 16 )		7649741	1		|			
+ANR	7649871	ArrayIndexing	buf [ 3 ]		7649741	0					
+ANR	7649872	Identifier	buf		7649741	0					
+ANR	7649873	PrimaryExpression	3		7649741	1					
+ANR	7649874	InclusiveOrExpression	( buf [ 2 ] << 8 ) | ( ( buf [ 1 ] & 0x1f ) << 16 )		7649741	1		|			
+ANR	7649875	ShiftExpression	buf [ 2 ] << 8		7649741	0		<<			
+ANR	7649876	ArrayIndexing	buf [ 2 ]		7649741	0					
+ANR	7649877	Identifier	buf		7649741	0					
+ANR	7649878	PrimaryExpression	2		7649741	1					
+ANR	7649879	PrimaryExpression	8		7649741	1					
+ANR	7649880	ShiftExpression	( buf [ 1 ] & 0x1f ) << 16		7649741	1		<<			
+ANR	7649881	BitAndExpression	buf [ 1 ] & 0x1f		7649741	0		&			
+ANR	7649882	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7649883	Identifier	buf		7649741	0					
+ANR	7649884	PrimaryExpression	1		7649741	1					
+ANR	7649885	PrimaryExpression	0x1f		7649741	1					
+ANR	7649886	PrimaryExpression	16		7649741	1					
+ANR	7649887	ExpressionStatement	len = buf [ 4 ]	57:8:879:891	7649741	2	True				
+ANR	7649888	AssignmentExpression	len = buf [ 4 ]		7649741	0		=			
+ANR	7649889	Identifier	len		7649741	0					
+ANR	7649890	ArrayIndexing	buf [ 4 ]		7649741	1					
+ANR	7649891	Identifier	buf		7649741	0					
+ANR	7649892	PrimaryExpression	4		7649741	1					
+ANR	7649893	ExpressionStatement	cmdlen = 6	59:8:902:912	7649741	3	True				
+ANR	7649894	AssignmentExpression	cmdlen = 6		7649741	0		=			
+ANR	7649895	Identifier	cmdlen		7649741	0					
+ANR	7649896	PrimaryExpression	6		7649741	1					
+ANR	7649897	BreakStatement	break ;	61:8:923:928	7649741	4	True				
+ANR	7649898	Label	case 1 :	63:4:935:941	7649741	5	True				
+ANR	7649899	Label	case 2 :	65:4:948:954	7649741	6	True				
+ANR	7649900	ExpressionStatement	lba = buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )	67:8:965:1027	7649741	7	True				
+ANR	7649901	AssignmentExpression	lba = buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	0		=			
+ANR	7649902	Identifier	lba		7649741	0					
+ANR	7649903	InclusiveOrExpression	buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7649904	ArrayIndexing	buf [ 5 ]		7649741	0					
+ANR	7649905	Identifier	buf		7649741	0					
+ANR	7649906	PrimaryExpression	5		7649741	1					
+ANR	7649907	InclusiveOrExpression	( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7649908	ShiftExpression	buf [ 4 ] << 8		7649741	0		<<			
+ANR	7649909	ArrayIndexing	buf [ 4 ]		7649741	0					
+ANR	7649910	Identifier	buf		7649741	0					
+ANR	7649911	PrimaryExpression	4		7649741	1					
+ANR	7649912	PrimaryExpression	8		7649741	1					
+ANR	7649913	InclusiveOrExpression	( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7649914	ShiftExpression	buf [ 3 ] << 16		7649741	0		<<			
+ANR	7649915	ArrayIndexing	buf [ 3 ]		7649741	0					
+ANR	7649916	Identifier	buf		7649741	0					
+ANR	7649917	PrimaryExpression	3		7649741	1					
+ANR	7649918	PrimaryExpression	16		7649741	1					
+ANR	7649919	ShiftExpression	buf [ 2 ] << 24		7649741	1		<<			
+ANR	7649920	ArrayIndexing	buf [ 2 ]		7649741	0					
+ANR	7649921	Identifier	buf		7649741	0					
+ANR	7649922	PrimaryExpression	2		7649741	1					
+ANR	7649923	PrimaryExpression	24		7649741	1					
+ANR	7649924	ExpressionStatement	len = buf [ 8 ] | ( buf [ 7 ] << 8 )	69:8:1038:1066	7649741	8	True				
+ANR	7649925	AssignmentExpression	len = buf [ 8 ] | ( buf [ 7 ] << 8 )		7649741	0		=			
+ANR	7649926	Identifier	len		7649741	0					
+ANR	7649927	InclusiveOrExpression	buf [ 8 ] | ( buf [ 7 ] << 8 )		7649741	1		|			
+ANR	7649928	ArrayIndexing	buf [ 8 ]		7649741	0					
+ANR	7649929	Identifier	buf		7649741	0					
+ANR	7649930	PrimaryExpression	8		7649741	1					
+ANR	7649931	ShiftExpression	buf [ 7 ] << 8		7649741	1		<<			
+ANR	7649932	ArrayIndexing	buf [ 7 ]		7649741	0					
+ANR	7649933	Identifier	buf		7649741	0					
+ANR	7649934	PrimaryExpression	7		7649741	1					
+ANR	7649935	PrimaryExpression	8		7649741	1					
+ANR	7649936	ExpressionStatement	cmdlen = 10	71:8:1077:1088	7649741	9	True				
+ANR	7649937	AssignmentExpression	cmdlen = 10		7649741	0		=			
+ANR	7649938	Identifier	cmdlen		7649741	0					
+ANR	7649939	PrimaryExpression	10		7649741	1					
+ANR	7649940	BreakStatement	break ;	73:8:1099:1104	7649741	10	True				
+ANR	7649941	Label	case 4 :	75:4:1111:1117	7649741	11	True				
+ANR	7649942	ExpressionStatement	lba = buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )	77:8:1128:1190	7649741	12	True				
+ANR	7649943	AssignmentExpression	lba = buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	0		=			
+ANR	7649944	Identifier	lba		7649741	0					
+ANR	7649945	InclusiveOrExpression	buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7649946	ArrayIndexing	buf [ 5 ]		7649741	0					
+ANR	7649947	Identifier	buf		7649741	0					
+ANR	7649948	PrimaryExpression	5		7649741	1					
+ANR	7649949	InclusiveOrExpression	( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7649950	ShiftExpression	buf [ 4 ] << 8		7649741	0		<<			
+ANR	7649951	ArrayIndexing	buf [ 4 ]		7649741	0					
+ANR	7649952	Identifier	buf		7649741	0					
+ANR	7649953	PrimaryExpression	4		7649741	1					
+ANR	7649954	PrimaryExpression	8		7649741	1					
+ANR	7649955	InclusiveOrExpression	( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7649956	ShiftExpression	buf [ 3 ] << 16		7649741	0		<<			
+ANR	7649957	ArrayIndexing	buf [ 3 ]		7649741	0					
+ANR	7649958	Identifier	buf		7649741	0					
+ANR	7649959	PrimaryExpression	3		7649741	1					
+ANR	7649960	PrimaryExpression	16		7649741	1					
+ANR	7649961	ShiftExpression	buf [ 2 ] << 24		7649741	1		<<			
+ANR	7649962	ArrayIndexing	buf [ 2 ]		7649741	0					
+ANR	7649963	Identifier	buf		7649741	0					
+ANR	7649964	PrimaryExpression	2		7649741	1					
+ANR	7649965	PrimaryExpression	24		7649741	1					
+ANR	7649966	ExpressionStatement	len = buf [ 13 ] | ( buf [ 12 ] << 8 ) | ( buf [ 11 ] << 16 ) | ( buf [ 10 ] << 24 )	79:8:1201:1267	7649741	13	True				
+ANR	7649967	AssignmentExpression	len = buf [ 13 ] | ( buf [ 12 ] << 8 ) | ( buf [ 11 ] << 16 ) | ( buf [ 10 ] << 24 )		7649741	0		=			
+ANR	7649968	Identifier	len		7649741	0					
+ANR	7649969	InclusiveOrExpression	buf [ 13 ] | ( buf [ 12 ] << 8 ) | ( buf [ 11 ] << 16 ) | ( buf [ 10 ] << 24 )		7649741	1		|			
+ANR	7649970	ArrayIndexing	buf [ 13 ]		7649741	0					
+ANR	7649971	Identifier	buf		7649741	0					
+ANR	7649972	PrimaryExpression	13		7649741	1					
+ANR	7649973	InclusiveOrExpression	( buf [ 12 ] << 8 ) | ( buf [ 11 ] << 16 ) | ( buf [ 10 ] << 24 )		7649741	1		|			
+ANR	7649974	ShiftExpression	buf [ 12 ] << 8		7649741	0		<<			
+ANR	7649975	ArrayIndexing	buf [ 12 ]		7649741	0					
+ANR	7649976	Identifier	buf		7649741	0					
+ANR	7649977	PrimaryExpression	12		7649741	1					
+ANR	7649978	PrimaryExpression	8		7649741	1					
+ANR	7649979	InclusiveOrExpression	( buf [ 11 ] << 16 ) | ( buf [ 10 ] << 24 )		7649741	1		|			
+ANR	7649980	ShiftExpression	buf [ 11 ] << 16		7649741	0		<<			
+ANR	7649981	ArrayIndexing	buf [ 11 ]		7649741	0					
+ANR	7649982	Identifier	buf		7649741	0					
+ANR	7649983	PrimaryExpression	11		7649741	1					
+ANR	7649984	PrimaryExpression	16		7649741	1					
+ANR	7649985	ShiftExpression	buf [ 10 ] << 24		7649741	1		<<			
+ANR	7649986	ArrayIndexing	buf [ 10 ]		7649741	0					
+ANR	7649987	Identifier	buf		7649741	0					
+ANR	7649988	PrimaryExpression	10		7649741	1					
+ANR	7649989	PrimaryExpression	24		7649741	1					
+ANR	7649990	ExpressionStatement	cmdlen = 16	81:8:1278:1289	7649741	14	True				
+ANR	7649991	AssignmentExpression	cmdlen = 16		7649741	0		=			
+ANR	7649992	Identifier	cmdlen		7649741	0					
+ANR	7649993	PrimaryExpression	16		7649741	1					
+ANR	7649994	BreakStatement	break ;	83:8:1300:1305	7649741	15	True				
+ANR	7649995	Label	case 5 :	85:4:1312:1318	7649741	16	True				
+ANR	7649996	ExpressionStatement	lba = buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )	87:8:1329:1391	7649741	17	True				
+ANR	7649997	AssignmentExpression	lba = buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	0		=			
+ANR	7649998	Identifier	lba		7649741	0					
+ANR	7649999	InclusiveOrExpression	buf [ 5 ] | ( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7650000	ArrayIndexing	buf [ 5 ]		7649741	0					
+ANR	7650001	Identifier	buf		7649741	0					
+ANR	7650002	PrimaryExpression	5		7649741	1					
+ANR	7650003	InclusiveOrExpression	( buf [ 4 ] << 8 ) | ( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7650004	ShiftExpression	buf [ 4 ] << 8		7649741	0		<<			
+ANR	7650005	ArrayIndexing	buf [ 4 ]		7649741	0					
+ANR	7650006	Identifier	buf		7649741	0					
+ANR	7650007	PrimaryExpression	4		7649741	1					
+ANR	7650008	PrimaryExpression	8		7649741	1					
+ANR	7650009	InclusiveOrExpression	( buf [ 3 ] << 16 ) | ( buf [ 2 ] << 24 )		7649741	1		|			
+ANR	7650010	ShiftExpression	buf [ 3 ] << 16		7649741	0		<<			
+ANR	7650011	ArrayIndexing	buf [ 3 ]		7649741	0					
+ANR	7650012	Identifier	buf		7649741	0					
+ANR	7650013	PrimaryExpression	3		7649741	1					
+ANR	7650014	PrimaryExpression	16		7649741	1					
+ANR	7650015	ShiftExpression	buf [ 2 ] << 24		7649741	1		<<			
+ANR	7650016	ArrayIndexing	buf [ 2 ]		7649741	0					
+ANR	7650017	Identifier	buf		7649741	0					
+ANR	7650018	PrimaryExpression	2		7649741	1					
+ANR	7650019	PrimaryExpression	24		7649741	1					
+ANR	7650020	ExpressionStatement	len = buf [ 9 ] | ( buf [ 8 ] << 8 ) | ( buf [ 7 ] << 16 ) | ( buf [ 6 ] << 24 )	89:8:1402:1464	7649741	18	True				
+ANR	7650021	AssignmentExpression	len = buf [ 9 ] | ( buf [ 8 ] << 8 ) | ( buf [ 7 ] << 16 ) | ( buf [ 6 ] << 24 )		7649741	0		=			
+ANR	7650022	Identifier	len		7649741	0					
+ANR	7650023	InclusiveOrExpression	buf [ 9 ] | ( buf [ 8 ] << 8 ) | ( buf [ 7 ] << 16 ) | ( buf [ 6 ] << 24 )		7649741	1		|			
+ANR	7650024	ArrayIndexing	buf [ 9 ]		7649741	0					
+ANR	7650025	Identifier	buf		7649741	0					
+ANR	7650026	PrimaryExpression	9		7649741	1					
+ANR	7650027	InclusiveOrExpression	( buf [ 8 ] << 8 ) | ( buf [ 7 ] << 16 ) | ( buf [ 6 ] << 24 )		7649741	1		|			
+ANR	7650028	ShiftExpression	buf [ 8 ] << 8		7649741	0		<<			
+ANR	7650029	ArrayIndexing	buf [ 8 ]		7649741	0					
+ANR	7650030	Identifier	buf		7649741	0					
+ANR	7650031	PrimaryExpression	8		7649741	1					
+ANR	7650032	PrimaryExpression	8		7649741	1					
+ANR	7650033	InclusiveOrExpression	( buf [ 7 ] << 16 ) | ( buf [ 6 ] << 24 )		7649741	1		|			
+ANR	7650034	ShiftExpression	buf [ 7 ] << 16		7649741	0		<<			
+ANR	7650035	ArrayIndexing	buf [ 7 ]		7649741	0					
+ANR	7650036	Identifier	buf		7649741	0					
+ANR	7650037	PrimaryExpression	7		7649741	1					
+ANR	7650038	PrimaryExpression	16		7649741	1					
+ANR	7650039	ShiftExpression	buf [ 6 ] << 24		7649741	1		<<			
+ANR	7650040	ArrayIndexing	buf [ 6 ]		7649741	0					
+ANR	7650041	Identifier	buf		7649741	0					
+ANR	7650042	PrimaryExpression	6		7649741	1					
+ANR	7650043	PrimaryExpression	24		7649741	1					
+ANR	7650044	ExpressionStatement	cmdlen = 12	91:8:1475:1486	7649741	19	True				
+ANR	7650045	AssignmentExpression	cmdlen = 12		7649741	0		=			
+ANR	7650046	Identifier	cmdlen		7649741	0					
+ANR	7650047	PrimaryExpression	12		7649741	1					
+ANR	7650048	BreakStatement	break ;	93:8:1497:1502	7649741	20	True				
+ANR	7650049	Label	default :	95:4:1509:1516	7649741	21	True				
+ANR	7650050	Identifier	default		7649741	0					
+ANR	7650051	ExpressionStatement	"BADF ( ""Unsupported command length, command %x\\n"" , command )"	97:8:1527:1584	7649741	22	True				
+ANR	7650052	CallExpression	"BADF ( ""Unsupported command length, command %x\\n"" , command )"		7649741	0					
+ANR	7650053	Callee	BADF		7649741	0					
+ANR	7650054	Identifier	BADF		7649741	0					
+ANR	7650055	ArgumentList	"""Unsupported command length, command %x\\n"""		7649741	1					
+ANR	7650056	Argument	"""Unsupported command length, command %x\\n"""		7649741	0					
+ANR	7650057	PrimaryExpression	"""Unsupported command length, command %x\\n"""		7649741	0					
+ANR	7650058	Argument	command		7649741	1					
+ANR	7650059	Identifier	command		7649741	0					
+ANR	7650060	GotoStatement	goto fail ;	99:8:1595:1604	7649741	23	True				
+ANR	7650061	Identifier	fail		7649741	0					
+ANR	7650062	CompoundStatement		103:8:1527:1532	7649741	17					
+ANR	7650063	IdentifierDeclStatement	int i ;	107:8:1648:1653	7649741	0	True				
+ANR	7650064	IdentifierDecl	i		7649741	0					
+ANR	7650065	IdentifierDeclType	int		7649741	0					
+ANR	7650066	Identifier	i		7649741	1					
+ANR	7650067	ForStatement	for ( i = 1 ; i < cmdlen ; i ++ )		7649741	1					
+ANR	7650068	ForInit	i = 1 ;	109:13:1669:1674	7649741	0	True				
+ANR	7650069	AssignmentExpression	i = 1		7649741	0		=			
+ANR	7650070	Identifier	i		7649741	0					
+ANR	7650071	PrimaryExpression	1		7649741	1					
+ANR	7650072	Condition	i < cmdlen	109:20:1676:1685	7649741	1	True				
+ANR	7650073	RelationalExpression	i < cmdlen		7649741	0		<			
+ANR	7650074	Identifier	i		7649741	0					
+ANR	7650075	Identifier	cmdlen		7649741	1					
+ANR	7650076	PostIncDecOperationExpression	i ++	109:32:1688:1690	7649741	2	True				
+ANR	7650077	Identifier	i		7649741	0					
+ANR	7650078	IncDec	++		7649741	1					
+ANR	7650079	CompoundStatement		105:37:1572:1572	7649741	3					
+ANR	7650080	ExpressionStatement	"printf ( "" 0x%02x"" , buf [ i ] )"	111:12:1708:1733	7649741	0	True				
+ANR	7650081	CallExpression	"printf ( "" 0x%02x"" , buf [ i ] )"		7649741	0					
+ANR	7650082	Callee	printf		7649741	0					
+ANR	7650083	Identifier	printf		7649741	0					
+ANR	7650084	ArgumentList	""" 0x%02x"""		7649741	1					
+ANR	7650085	Argument	""" 0x%02x"""		7649741	0					
+ANR	7650086	PrimaryExpression	""" 0x%02x"""		7649741	0					
+ANR	7650087	Argument	buf [ i ]		7649741	1					
+ANR	7650088	ArrayIndexing	buf [ i ]		7649741	0					
+ANR	7650089	Identifier	buf		7649741	0					
+ANR	7650090	Identifier	i		7649741	1					
+ANR	7650091	ExpressionStatement	"printf ( ""\\n"" )"	115:8:1755:1767	7649741	2	True				
+ANR	7650092	CallExpression	"printf ( ""\\n"" )"		7649741	0					
+ANR	7650093	Callee	printf		7649741	0					
+ANR	7650094	Identifier	printf		7649741	0					
+ANR	7650095	ArgumentList	"""\\n"""		7649741	1					
+ANR	7650096	Argument	"""\\n"""		7649741	0					
+ANR	7650097	PrimaryExpression	"""\\n"""		7649741	0					
+ANR	7650098	IfStatement	if ( lun || buf [ 1 ] >> 5 )		7649741	18					
+ANR	7650099	Condition	lun || buf [ 1 ] >> 5	121:8:1793:1810	7649741	0	True				
+ANR	7650100	OrExpression	lun || buf [ 1 ] >> 5		7649741	0		||			
+ANR	7650101	Identifier	lun		7649741	0					
+ANR	7650102	ShiftExpression	buf [ 1 ] >> 5		7649741	1		>>			
+ANR	7650103	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7650104	Identifier	buf		7649741	0					
+ANR	7650105	PrimaryExpression	1		7649741	1					
+ANR	7650106	PrimaryExpression	5		7649741	1					
+ANR	7650107	CompoundStatement		117:28:1692:1692	7649741	1					
+ANR	7650108	ExpressionStatement	"DPRINTF ( ""Unimplemented LUN %d\\n"" , lun ? lun : buf [ 1 ] >> 5 )"	125:8:1862:1920	7649741	0	True				
+ANR	7650109	CallExpression	"DPRINTF ( ""Unimplemented LUN %d\\n"" , lun ? lun : buf [ 1 ] >> 5 )"		7649741	0					
+ANR	7650110	Callee	DPRINTF		7649741	0					
+ANR	7650111	Identifier	DPRINTF		7649741	0					
+ANR	7650112	ArgumentList	"""Unimplemented LUN %d\\n"""		7649741	1					
+ANR	7650113	Argument	"""Unimplemented LUN %d\\n"""		7649741	0					
+ANR	7650114	PrimaryExpression	"""Unimplemented LUN %d\\n"""		7649741	0					
+ANR	7650115	Argument	lun ? lun : buf [ 1 ] >> 5		7649741	1					
+ANR	7650116	ConditionalExpression	lun ? lun : buf [ 1 ] >> 5		7649741	0					
+ANR	7650117	Condition	lun		7649741	0					
+ANR	7650118	Identifier	lun		7649741	0					
+ANR	7650119	Identifier	lun		7649741	1					
+ANR	7650120	ShiftExpression	buf [ 1 ] >> 5		7649741	2		>>			
+ANR	7650121	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7650122	Identifier	buf		7649741	0					
+ANR	7650123	PrimaryExpression	1		7649741	1					
+ANR	7650124	PrimaryExpression	5		7649741	1					
+ANR	7650125	IfStatement	if ( command != 0x03 && command != 0x12 )		7649741	1					
+ANR	7650126	Condition	command != 0x03 && command != 0x12	127:12:1935:1968	7649741	0	True				
+ANR	7650127	AndExpression	command != 0x03 && command != 0x12		7649741	0		&&			
+ANR	7650128	EqualityExpression	command != 0x03		7649741	0		!=			
+ANR	7650129	Identifier	command		7649741	0					
+ANR	7650130	PrimaryExpression	0x03		7649741	1					
+ANR	7650131	EqualityExpression	command != 0x12		7649741	1		!=			
+ANR	7650132	Identifier	command		7649741	0					
+ANR	7650133	PrimaryExpression	0x12		7649741	1					
+ANR	7650134	GotoStatement	goto fail ;	129:12:2016:2025	7649741	1	True				
+ANR	7650135	Identifier	fail		7649741	0					
+ANR	7650136	SwitchStatement	switch ( command )		7649741	19					
+ANR	7650137	Condition	command	133:12:2047:2053	7649741	0	True				
+ANR	7650138	Identifier	command		7649741	0					
+ANR	7650139	CompoundStatement		129:21:1935:1935	7649741	1					
+ANR	7650140	Label	case 0x0 :	135:4:2063:2071	7649741	0	True				
+ANR	7650141	ExpressionStatement	"DPRINTF ( ""Test Unit Ready\\n"" )"	137:1:2075:2103	7649741	1	True				
+ANR	7650142	CallExpression	"DPRINTF ( ""Test Unit Ready\\n"" )"		7649741	0					
+ANR	7650143	Callee	DPRINTF		7649741	0					
+ANR	7650144	Identifier	DPRINTF		7649741	0					
+ANR	7650145	ArgumentList	"""Test Unit Ready\\n"""		7649741	1					
+ANR	7650146	Argument	"""Test Unit Ready\\n"""		7649741	0					
+ANR	7650147	PrimaryExpression	"""Test Unit Ready\\n"""		7649741	0					
+ANR	7650148	BreakStatement	break ;	139:1:2107:2112	7649741	2	True				
+ANR	7650149	Label	case 0x03 :	141:4:2119:2128	7649741	3	True				
+ANR	7650150	ExpressionStatement	"DPRINTF ( ""Request Sense (len %d)\\n"" , len )"	143:8:2139:2179	7649741	4	True				
+ANR	7650151	CallExpression	"DPRINTF ( ""Request Sense (len %d)\\n"" , len )"		7649741	0					
+ANR	7650152	Callee	DPRINTF		7649741	0					
+ANR	7650153	Identifier	DPRINTF		7649741	0					
+ANR	7650154	ArgumentList	"""Request Sense (len %d)\\n"""		7649741	1					
+ANR	7650155	Argument	"""Request Sense (len %d)\\n"""		7649741	0					
+ANR	7650156	PrimaryExpression	"""Request Sense (len %d)\\n"""		7649741	0					
+ANR	7650157	Argument	len		7649741	1					
+ANR	7650158	Identifier	len		7649741	0					
+ANR	7650159	IfStatement	if ( len < 4 )		7649741	5					
+ANR	7650160	Condition	len < 4	145:12:2194:2200	7649741	0	True				
+ANR	7650161	RelationalExpression	len < 4		7649741	0		<			
+ANR	7650162	Identifier	len		7649741	0					
+ANR	7650163	PrimaryExpression	4		7649741	1					
+ANR	7650164	GotoStatement	goto fail ;	147:12:2216:2225	7649741	1	True				
+ANR	7650165	Identifier	fail		7649741	0					
+ANR	7650166	ExpressionStatement	"memset ( outbuf , 0 , 4 )"	149:8:2236:2256	7649741	6	True				
+ANR	7650167	CallExpression	"memset ( outbuf , 0 , 4 )"		7649741	0					
+ANR	7650168	Callee	memset		7649741	0					
+ANR	7650169	Identifier	memset		7649741	0					
+ANR	7650170	ArgumentList	outbuf		7649741	1					
+ANR	7650171	Argument	outbuf		7649741	0					
+ANR	7650172	Identifier	outbuf		7649741	0					
+ANR	7650173	Argument	0		7649741	1					
+ANR	7650174	PrimaryExpression	0		7649741	0					
+ANR	7650175	Argument	4		7649741	2					
+ANR	7650176	PrimaryExpression	4		7649741	0					
+ANR	7650177	ExpressionStatement	outbuf [ 0 ] = 0xf0	151:8:2267:2283	7649741	7	True				
+ANR	7650178	AssignmentExpression	outbuf [ 0 ] = 0xf0		7649741	0		=			
+ANR	7650179	ArrayIndexing	outbuf [ 0 ]		7649741	0					
+ANR	7650180	Identifier	outbuf		7649741	0					
+ANR	7650181	PrimaryExpression	0		7649741	1					
+ANR	7650182	PrimaryExpression	0xf0		7649741	1					
+ANR	7650183	ExpressionStatement	outbuf [ 1 ] = 0	153:8:2294:2307	7649741	8	True				
+ANR	7650184	AssignmentExpression	outbuf [ 1 ] = 0		7649741	0		=			
+ANR	7650185	ArrayIndexing	outbuf [ 1 ]		7649741	0					
+ANR	7650186	Identifier	outbuf		7649741	0					
+ANR	7650187	PrimaryExpression	1		7649741	1					
+ANR	7650188	PrimaryExpression	0		7649741	1					
+ANR	7650189	ExpressionStatement	outbuf [ 2 ] = s -> sense	155:8:2318:2338	7649741	9	True				
+ANR	7650190	AssignmentExpression	outbuf [ 2 ] = s -> sense		7649741	0		=			
+ANR	7650191	ArrayIndexing	outbuf [ 2 ]		7649741	0					
+ANR	7650192	Identifier	outbuf		7649741	0					
+ANR	7650193	PrimaryExpression	2		7649741	1					
+ANR	7650194	PtrMemberAccess	s -> sense		7649741	1					
+ANR	7650195	Identifier	s		7649741	0					
+ANR	7650196	Identifier	sense		7649741	1					
+ANR	7650197	ExpressionStatement	r -> buf_len = 4	157:8:2349:2363	7649741	10	True				
+ANR	7650198	AssignmentExpression	r -> buf_len = 4		7649741	0		=			
+ANR	7650199	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650200	Identifier	r		7649741	0					
+ANR	7650201	Identifier	buf_len		7649741	1					
+ANR	7650202	PrimaryExpression	4		7649741	1					
+ANR	7650203	BreakStatement	break ;	159:8:2374:2379	7649741	11	True				
+ANR	7650204	Label	case 0x12 :	161:4:2386:2395	7649741	12	True				
+ANR	7650205	ExpressionStatement	"DPRINTF ( ""Inquiry (len %d)\\n"" , len )"	163:8:2406:2440	7649741	13	True				
+ANR	7650206	CallExpression	"DPRINTF ( ""Inquiry (len %d)\\n"" , len )"		7649741	0					
+ANR	7650207	Callee	DPRINTF		7649741	0					
+ANR	7650208	Identifier	DPRINTF		7649741	0					
+ANR	7650209	ArgumentList	"""Inquiry (len %d)\\n"""		7649741	1					
+ANR	7650210	Argument	"""Inquiry (len %d)\\n"""		7649741	0					
+ANR	7650211	PrimaryExpression	"""Inquiry (len %d)\\n"""		7649741	0					
+ANR	7650212	Argument	len		7649741	1					
+ANR	7650213	Identifier	len		7649741	0					
+ANR	7650214	IfStatement	if ( buf [ 1 ] & 0x2 )		7649741	14					
+ANR	7650215	Condition	buf [ 1 ] & 0x2	165:12:2455:2466	7649741	0	True				
+ANR	7650216	BitAndExpression	buf [ 1 ] & 0x2		7649741	0		&			
+ANR	7650217	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7650218	Identifier	buf		7649741	0					
+ANR	7650219	PrimaryExpression	1		7649741	1					
+ANR	7650220	PrimaryExpression	0x2		7649741	1					
+ANR	7650221	CompoundStatement		161:26:2348:2348	7649741	1					
+ANR	7650222	ExpressionStatement	"BADF ( ""optional INQUIRY command support request not implemented\\n"" )"	169:12:2552:2618	7649741	0	True				
+ANR	7650223	CallExpression	"BADF ( ""optional INQUIRY command support request not implemented\\n"" )"		7649741	0					
+ANR	7650224	Callee	BADF		7649741	0					
+ANR	7650225	Identifier	BADF		7649741	0					
+ANR	7650226	ArgumentList	"""optional INQUIRY command support request not implemented\\n"""		7649741	1					
+ANR	7650227	Argument	"""optional INQUIRY command support request not implemented\\n"""		7649741	0					
+ANR	7650228	PrimaryExpression	"""optional INQUIRY command support request not implemented\\n"""		7649741	0					
+ANR	7650229	GotoStatement	goto fail ;	171:12:2633:2642	7649741	1	True				
+ANR	7650230	Identifier	fail		7649741	0					
+ANR	7650231	ElseStatement	else		7649741	0					
+ANR	7650232	IfStatement	if ( buf [ 1 ] & 0x1 )		7649741	0					
+ANR	7650233	Condition	buf [ 1 ] & 0x1	175:17:2673:2684	7649741	0	True				
+ANR	7650234	BitAndExpression	buf [ 1 ] & 0x1		7649741	0		&			
+ANR	7650235	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7650236	Identifier	buf		7649741	0					
+ANR	7650237	PrimaryExpression	1		7649741	1					
+ANR	7650238	PrimaryExpression	0x1		7649741	1					
+ANR	7650239	CompoundStatement		175:12:2619:2645	7649741	1					
+ANR	7650240	IdentifierDeclStatement	uint8_t page_code = buf [ 2 ] ;	179:12:2740:2766	7649741	0	True				
+ANR	7650241	IdentifierDecl	page_code = buf [ 2 ]		7649741	0					
+ANR	7650242	IdentifierDeclType	uint8_t		7649741	0					
+ANR	7650243	Identifier	page_code		7649741	1					
+ANR	7650244	AssignmentExpression	page_code = buf [ 2 ]		7649741	2		=			
+ANR	7650245	Identifier	page_code		7649741	0					
+ANR	7650246	ArrayIndexing	buf [ 2 ]		7649741	1					
+ANR	7650247	Identifier	buf		7649741	0					
+ANR	7650248	PrimaryExpression	2		7649741	1					
+ANR	7650249	IfStatement	if ( len < 4 )		7649741	1					
+ANR	7650250	Condition	len < 4	181:16:2785:2791	7649741	0	True				
+ANR	7650251	RelationalExpression	len < 4		7649741	0		<			
+ANR	7650252	Identifier	len		7649741	0					
+ANR	7650253	PrimaryExpression	4		7649741	1					
+ANR	7650254	CompoundStatement		177:25:2673:2673	7649741	1					
+ANR	7650255	Statement	BADF	183:16:2813:2816	7649741	0	True				
+ANR	7650256	Statement	(	183:20:2817:2817	7649741	1	True				
+ANR	7650257	Statement	"""Error: Inquiry (EVPD[%02X]) buffer size %d is """	183:21:2818:2865	7649741	2	True				
+ANR	7650258	Statement	"""less than 4\\n"""	185:21:2889:2903	7649741	3	True				
+ANR	7650259	Statement	","	185:36:2904:2904	7649741	4	True				
+ANR	7650260	Statement	page_code	185:38:2906:2914	7649741	5	True				
+ANR	7650261	Statement	","	185:47:2915:2915	7649741	6	True				
+ANR	7650262	Statement	len	185:49:2917:2919	7649741	7	True				
+ANR	7650263	Statement	)	185:52:2920:2920	7649741	8	True				
+ANR	7650264	ExpressionStatement		185:53:2921:2921	7649741	9	True				
+ANR	7650265	GotoStatement	goto fail ;	187:16:2940:2949	7649741	10	True				
+ANR	7650266	Identifier	fail		7649741	0					
+ANR	7650267	SwitchStatement	switch ( page_code )		7649741	2					
+ANR	7650268	Condition	page_code	193:20:2989:2997	7649741	0	True				
+ANR	7650269	Identifier	page_code		7649741	0					
+ANR	7650270	CompoundStatement		189:31:2879:2879	7649741	1					
+ANR	7650271	Label	case 0x00 :	195:16:3019:3028	7649741	0	True				
+ANR	7650272	CompoundStatement		193:20:2930:2930	7649741	1					
+ANR	7650273	Statement	DPRINTF	201:24:3141:3147	7649741	0	True				
+ANR	7650274	Statement	(	201:31:3148:3148	7649741	1	True				
+ANR	7650275	Statement	"""Inquiry EVPD[Supported pages] """	201:32:3149:3180	7649741	2	True				
+ANR	7650276	Statement	"""buffer size %d\\n"""	203:32:3215:3232	7649741	3	True				
+ANR	7650277	Statement	","	203:50:3233:3233	7649741	4	True				
+ANR	7650278	Statement	len	203:52:3235:3237	7649741	5	True				
+ANR	7650279	Statement	)	203:55:3238:3238	7649741	6	True				
+ANR	7650280	ExpressionStatement		203:56:3239:3239	7649741	7	True				
+ANR	7650281	ExpressionStatement	r -> buf_len = 0	207:24:3268:3282	7649741	8	True				
+ANR	7650282	AssignmentExpression	r -> buf_len = 0		7649741	0		=			
+ANR	7650283	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650284	Identifier	r		7649741	0					
+ANR	7650285	Identifier	buf_len		7649741	1					
+ANR	7650286	PrimaryExpression	0		7649741	1					
+ANR	7650287	IfStatement	if ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM )		7649741	9					
+ANR	7650288	Condition	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM	211:28:3315:3360	7649741	0	True				
+ANR	7650289	EqualityExpression	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM		7649741	0		==			
+ANR	7650290	CallExpression	bdrv_get_type_hint ( s -> bdrv )		7649741	0					
+ANR	7650291	Callee	bdrv_get_type_hint		7649741	0					
+ANR	7650292	Identifier	bdrv_get_type_hint		7649741	0					
+ANR	7650293	ArgumentList	s -> bdrv		7649741	1					
+ANR	7650294	Argument	s -> bdrv		7649741	0					
+ANR	7650295	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7650296	Identifier	s		7649741	0					
+ANR	7650297	Identifier	bdrv		7649741	1					
+ANR	7650298	Identifier	BDRV_TYPE_CDROM		7649741	1					
+ANR	7650299	CompoundStatement		207:76:3242:3242	7649741	1					
+ANR	7650300	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 5	213:28:3394:3418	7649741	0	True				
+ANR	7650301	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 5		7649741	0		=			
+ANR	7650302	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650303	Identifier	outbuf		7649741	0					
+ANR	7650304	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650305	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650306	Identifier	r		7649741	0					
+ANR	7650307	Identifier	buf_len		7649741	1					
+ANR	7650308	IncDec	++		7649741	1					
+ANR	7650309	PrimaryExpression	5		7649741	1					
+ANR	7650310	ElseStatement	else		7649741	0					
+ANR	7650311	CompoundStatement		211:31:3331:3331	7649741	0					
+ANR	7650312	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0	217:28:3483:3507	7649741	0	True				
+ANR	7650313	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0		7649741	0		=			
+ANR	7650314	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650315	Identifier	outbuf		7649741	0					
+ANR	7650316	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650317	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650318	Identifier	r		7649741	0					
+ANR	7650319	Identifier	buf_len		7649741	1					
+ANR	7650320	IncDec	++		7649741	1					
+ANR	7650321	PrimaryExpression	0		7649741	1					
+ANR	7650322	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x00	223:24:3563:3590	7649741	10	True				
+ANR	7650323	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x00		7649741	0		=			
+ANR	7650324	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650325	Identifier	outbuf		7649741	0					
+ANR	7650326	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650327	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650328	Identifier	r		7649741	0					
+ANR	7650329	Identifier	buf_len		7649741	1					
+ANR	7650330	IncDec	++		7649741	1					
+ANR	7650331	PrimaryExpression	0x00		7649741	1					
+ANR	7650332	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x00	225:24:3630:3657	7649741	11	True				
+ANR	7650333	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x00		7649741	0		=			
+ANR	7650334	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650335	Identifier	outbuf		7649741	0					
+ANR	7650336	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650337	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650338	Identifier	r		7649741	0					
+ANR	7650339	Identifier	buf_len		7649741	1					
+ANR	7650340	IncDec	++		7649741	1					
+ANR	7650341	PrimaryExpression	0x00		7649741	1					
+ANR	7650342	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 3	227:24:3684:3708	7649741	12	True				
+ANR	7650343	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 3		7649741	0		=			
+ANR	7650344	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650345	Identifier	outbuf		7649741	0					
+ANR	7650346	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650347	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650348	Identifier	r		7649741	0					
+ANR	7650349	Identifier	buf_len		7649741	1					
+ANR	7650350	IncDec	++		7649741	1					
+ANR	7650351	PrimaryExpression	3		7649741	1					
+ANR	7650352	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x00	229:24:3757:3784	7649741	13	True				
+ANR	7650353	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x00		7649741	0		=			
+ANR	7650354	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650355	Identifier	outbuf		7649741	0					
+ANR	7650356	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650357	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650358	Identifier	r		7649741	0					
+ANR	7650359	Identifier	buf_len		7649741	1					
+ANR	7650360	IncDec	++		7649741	1					
+ANR	7650361	PrimaryExpression	0x00		7649741	1					
+ANR	7650362	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x80	231:24:3850:3877	7649741	14	True				
+ANR	7650363	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x80		7649741	0		=			
+ANR	7650364	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650365	Identifier	outbuf		7649741	0					
+ANR	7650366	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650367	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650368	Identifier	r		7649741	0					
+ANR	7650369	Identifier	buf_len		7649741	1					
+ANR	7650370	IncDec	++		7649741	1					
+ANR	7650371	PrimaryExpression	0x80		7649741	1					
+ANR	7650372	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x83	233:24:3926:3953	7649741	15	True				
+ANR	7650373	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x83		7649741	0		=			
+ANR	7650374	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650375	Identifier	outbuf		7649741	0					
+ANR	7650376	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650377	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650378	Identifier	r		7649741	0					
+ANR	7650379	Identifier	buf_len		7649741	1					
+ANR	7650380	IncDec	++		7649741	1					
+ANR	7650381	PrimaryExpression	0x83		7649741	1					
+ANR	7650382	BreakStatement	break ;	237:20:4024:4029	7649741	2	True				
+ANR	7650383	Label	case 0x80 :	239:16:4048:4057	7649741	3	True				
+ANR	7650384	CompoundStatement		237:20:3959:3959	7649741	4					
+ANR	7650385	IfStatement	if ( len < 4 )		7649741	0					
+ANR	7650386	Condition	len < 4	245:28:4173:4179	7649741	0	True				
+ANR	7650387	RelationalExpression	len < 4		7649741	0		<			
+ANR	7650388	Identifier	len		7649741	0					
+ANR	7650389	PrimaryExpression	4		7649741	1					
+ANR	7650390	CompoundStatement		241:37:4061:4061	7649741	1					
+ANR	7650391	Statement	BADF	247:28:4213:4216	7649741	0	True				
+ANR	7650392	Statement	(	247:32:4217:4217	7649741	1	True				
+ANR	7650393	Statement	"""Error: EVPD[Serial number] Inquiry buffer """	247:33:4218:4261	7649741	2	True				
+ANR	7650394	Statement	"""size %d too small, %d needed\\n"""	249:33:4297:4328	7649741	3	True				
+ANR	7650395	Statement	","	249:65:4329:4329	7649741	4	True				
+ANR	7650396	Statement	len	249:67:4331:4333	7649741	5	True				
+ANR	7650397	Statement	","	249:70:4334:4334	7649741	6	True				
+ANR	7650398	Statement	4	249:72:4336:4336	7649741	7	True				
+ANR	7650399	Statement	)	249:73:4337:4337	7649741	8	True				
+ANR	7650400	ExpressionStatement		249:74:4338:4338	7649741	9	True				
+ANR	7650401	GotoStatement	goto fail ;	251:28:4369:4378	7649741	10	True				
+ANR	7650402	Identifier	fail		7649741	0					
+ANR	7650403	ExpressionStatement	"DPRINTF ( ""Inquiry EVPD[Serial number] buffer size %d\\n"" , len )"	257:24:4434:4494	7649741	1	True				
+ANR	7650404	CallExpression	"DPRINTF ( ""Inquiry EVPD[Serial number] buffer size %d\\n"" , len )"		7649741	0					
+ANR	7650405	Callee	DPRINTF		7649741	0					
+ANR	7650406	Identifier	DPRINTF		7649741	0					
+ANR	7650407	ArgumentList	"""Inquiry EVPD[Serial number] buffer size %d\\n"""		7649741	1					
+ANR	7650408	Argument	"""Inquiry EVPD[Serial number] buffer size %d\\n"""		7649741	0					
+ANR	7650409	PrimaryExpression	"""Inquiry EVPD[Serial number] buffer size %d\\n"""		7649741	0					
+ANR	7650410	Argument	len		7649741	1					
+ANR	7650411	Identifier	len		7649741	0					
+ANR	7650412	ExpressionStatement	r -> buf_len = 0	261:24:4523:4537	7649741	2	True				
+ANR	7650413	AssignmentExpression	r -> buf_len = 0		7649741	0		=			
+ANR	7650414	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650415	Identifier	r		7649741	0					
+ANR	7650416	Identifier	buf_len		7649741	1					
+ANR	7650417	PrimaryExpression	0		7649741	1					
+ANR	7650418	IfStatement	if ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM )		7649741	3					
+ANR	7650419	Condition	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM	267:28:4622:4667	7649741	0	True				
+ANR	7650420	EqualityExpression	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM		7649741	0		==			
+ANR	7650421	CallExpression	bdrv_get_type_hint ( s -> bdrv )		7649741	0					
+ANR	7650422	Callee	bdrv_get_type_hint		7649741	0					
+ANR	7650423	Identifier	bdrv_get_type_hint		7649741	0					
+ANR	7650424	ArgumentList	s -> bdrv		7649741	1					
+ANR	7650425	Argument	s -> bdrv		7649741	0					
+ANR	7650426	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7650427	Identifier	s		7649741	0					
+ANR	7650428	Identifier	bdrv		7649741	1					
+ANR	7650429	Identifier	BDRV_TYPE_CDROM		7649741	1					
+ANR	7650430	CompoundStatement		263:76:4549:4549	7649741	1					
+ANR	7650431	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 5	269:28:4701:4725	7649741	0	True				
+ANR	7650432	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 5		7649741	0		=			
+ANR	7650433	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650434	Identifier	outbuf		7649741	0					
+ANR	7650435	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650436	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650437	Identifier	r		7649741	0					
+ANR	7650438	Identifier	buf_len		7649741	1					
+ANR	7650439	IncDec	++		7649741	1					
+ANR	7650440	PrimaryExpression	5		7649741	1					
+ANR	7650441	ElseStatement	else		7649741	0					
+ANR	7650442	CompoundStatement		267:31:4638:4638	7649741	0					
+ANR	7650443	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0	273:28:4790:4814	7649741	0	True				
+ANR	7650444	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0		7649741	0		=			
+ANR	7650445	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650446	Identifier	outbuf		7649741	0					
+ANR	7650447	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650448	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650449	Identifier	r		7649741	0					
+ANR	7650450	Identifier	buf_len		7649741	1					
+ANR	7650451	IncDec	++		7649741	1					
+ANR	7650452	PrimaryExpression	0		7649741	1					
+ANR	7650453	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x80	279:24:4870:4897	7649741	4	True				
+ANR	7650454	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x80		7649741	0		=			
+ANR	7650455	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650456	Identifier	outbuf		7649741	0					
+ANR	7650457	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650458	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650459	Identifier	r		7649741	0					
+ANR	7650460	Identifier	buf_len		7649741	1					
+ANR	7650461	IncDec	++		7649741	1					
+ANR	7650462	PrimaryExpression	0x80		7649741	1					
+ANR	7650463	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x00	281:24:4937:4964	7649741	5	True				
+ANR	7650464	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x00		7649741	0		=			
+ANR	7650465	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650466	Identifier	outbuf		7649741	0					
+ANR	7650467	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650468	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650469	Identifier	r		7649741	0					
+ANR	7650470	Identifier	buf_len		7649741	1					
+ANR	7650471	IncDec	++		7649741	1					
+ANR	7650472	PrimaryExpression	0x00		7649741	1					
+ANR	7650473	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x01	283:24:4991:5018	7649741	6	True				
+ANR	7650474	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x01		7649741	0		=			
+ANR	7650475	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650476	Identifier	outbuf		7649741	0					
+ANR	7650477	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650478	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650479	Identifier	r		7649741	0					
+ANR	7650480	Identifier	buf_len		7649741	1					
+ANR	7650481	IncDec	++		7649741	1					
+ANR	7650482	PrimaryExpression	0x01		7649741	1					
+ANR	7650483	ExpressionStatement	outbuf [ r -> buf_len ++ ] = '0'	287:24:5069:5095	7649741	7	True				
+ANR	7650484	AssignmentExpression	outbuf [ r -> buf_len ++ ] = '0'		7649741	0		=			
+ANR	7650485	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650486	Identifier	outbuf		7649741	0					
+ANR	7650487	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650488	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650489	Identifier	r		7649741	0					
+ANR	7650490	Identifier	buf_len		7649741	1					
+ANR	7650491	IncDec	++		7649741	1					
+ANR	7650492	PrimaryExpression	'0'		7649741	1					
+ANR	7650493	BreakStatement	break ;	293:20:5167:5172	7649741	5	True				
+ANR	7650494	Label	case 0x83 :	295:16:5191:5200	7649741	6	True				
+ANR	7650495	CompoundStatement		299:24:5246:5296	7649741	7					
+ANR	7650496	IdentifierDeclStatement	int max_len = 255 - 8 ;	301:24:5319:5340	7649741	0	True				
+ANR	7650497	IdentifierDecl	max_len = 255 - 8		7649741	0					
+ANR	7650498	IdentifierDeclType	int		7649741	0					
+ANR	7650499	Identifier	max_len		7649741	1					
+ANR	7650500	AssignmentExpression	max_len = 255 - 8		7649741	2		=			
+ANR	7650501	Identifier	max_len		7649741	0					
+ANR	7650502	AdditiveExpression	255 - 8		7649741	1		-			
+ANR	7650503	PrimaryExpression	255		7649741	0					
+ANR	7650504	PrimaryExpression	8		7649741	1					
+ANR	7650505	IdentifierDeclStatement	int id_len = strlen ( bdrv_get_device_name ( s -> bdrv ) ) ;	303:24:5367:5417	7649741	1	True				
+ANR	7650506	IdentifierDecl	id_len = strlen ( bdrv_get_device_name ( s -> bdrv ) )		7649741	0					
+ANR	7650507	IdentifierDeclType	int		7649741	0					
+ANR	7650508	Identifier	id_len		7649741	1					
+ANR	7650509	AssignmentExpression	id_len = strlen ( bdrv_get_device_name ( s -> bdrv ) )		7649741	2		=			
+ANR	7650510	Identifier	id_len		7649741	0					
+ANR	7650511	CallExpression	strlen ( bdrv_get_device_name ( s -> bdrv ) )		7649741	1					
+ANR	7650512	Callee	strlen		7649741	0					
+ANR	7650513	Identifier	strlen		7649741	0					
+ANR	7650514	ArgumentList	bdrv_get_device_name ( s -> bdrv )		7649741	1					
+ANR	7650515	Argument	bdrv_get_device_name ( s -> bdrv )		7649741	0					
+ANR	7650516	CallExpression	bdrv_get_device_name ( s -> bdrv )		7649741	0					
+ANR	7650517	Callee	bdrv_get_device_name		7649741	0					
+ANR	7650518	Identifier	bdrv_get_device_name		7649741	0					
+ANR	7650519	ArgumentList	s -> bdrv		7649741	1					
+ANR	7650520	Argument	s -> bdrv		7649741	0					
+ANR	7650521	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7650522	Identifier	s		7649741	0					
+ANR	7650523	Identifier	bdrv		7649741	1					
+ANR	7650524	IfStatement	if ( id_len > max_len )		7649741	2					
+ANR	7650525	Condition	id_len > max_len	305:28:5448:5463	7649741	0	True				
+ANR	7650526	RelationalExpression	id_len > max_len		7649741	0		>			
+ANR	7650527	Identifier	id_len		7649741	0					
+ANR	7650528	Identifier	max_len		7649741	1					
+ANR	7650529	ExpressionStatement	id_len = max_len	307:28:5495:5511	7649741	1	True				
+ANR	7650530	AssignmentExpression	id_len = max_len		7649741	0		=			
+ANR	7650531	Identifier	id_len		7649741	0					
+ANR	7650532	Identifier	max_len		7649741	1					
+ANR	7650533	Statement	DPRINTF	311:24:5540:5546	7649741	3	True				
+ANR	7650534	Statement	(	311:31:5547:5547	7649741	4	True				
+ANR	7650535	Statement	"""Inquiry EVPD[Device identification] """	311:32:5548:5585	7649741	5	True				
+ANR	7650536	Statement	"""buffer size %d\\n"""	313:32:5620:5637	7649741	6	True				
+ANR	7650537	Statement	","	313:50:5638:5638	7649741	7	True				
+ANR	7650538	Statement	len	313:52:5640:5642	7649741	8	True				
+ANR	7650539	Statement	)	313:55:5643:5643	7649741	9	True				
+ANR	7650540	ExpressionStatement		313:56:5644:5644	7649741	10	True				
+ANR	7650541	ExpressionStatement	r -> buf_len = 0	315:24:5671:5685	7649741	11	True				
+ANR	7650542	AssignmentExpression	r -> buf_len = 0		7649741	0		=			
+ANR	7650543	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650544	Identifier	r		7649741	0					
+ANR	7650545	Identifier	buf_len		7649741	1					
+ANR	7650546	PrimaryExpression	0		7649741	1					
+ANR	7650547	IfStatement	if ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM )		7649741	12					
+ANR	7650548	Condition	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM	317:28:5716:5761	7649741	0	True				
+ANR	7650549	EqualityExpression	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM		7649741	0		==			
+ANR	7650550	CallExpression	bdrv_get_type_hint ( s -> bdrv )		7649741	0					
+ANR	7650551	Callee	bdrv_get_type_hint		7649741	0					
+ANR	7650552	Identifier	bdrv_get_type_hint		7649741	0					
+ANR	7650553	ArgumentList	s -> bdrv		7649741	1					
+ANR	7650554	Argument	s -> bdrv		7649741	0					
+ANR	7650555	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7650556	Identifier	s		7649741	0					
+ANR	7650557	Identifier	bdrv		7649741	1					
+ANR	7650558	Identifier	BDRV_TYPE_CDROM		7649741	1					
+ANR	7650559	CompoundStatement		313:76:5643:5643	7649741	1					
+ANR	7650560	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 5	319:28:5795:5819	7649741	0	True				
+ANR	7650561	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 5		7649741	0		=			
+ANR	7650562	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650563	Identifier	outbuf		7649741	0					
+ANR	7650564	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650565	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650566	Identifier	r		7649741	0					
+ANR	7650567	Identifier	buf_len		7649741	1					
+ANR	7650568	IncDec	++		7649741	1					
+ANR	7650569	PrimaryExpression	5		7649741	1					
+ANR	7650570	ElseStatement	else		7649741	0					
+ANR	7650571	CompoundStatement		317:31:5732:5732	7649741	0					
+ANR	7650572	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0	323:28:5884:5908	7649741	0	True				
+ANR	7650573	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0		7649741	0		=			
+ANR	7650574	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650575	Identifier	outbuf		7649741	0					
+ANR	7650576	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650577	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650578	Identifier	r		7649741	0					
+ANR	7650579	Identifier	buf_len		7649741	1					
+ANR	7650580	IncDec	++		7649741	1					
+ANR	7650581	PrimaryExpression	0		7649741	1					
+ANR	7650582	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x83	329:24:5964:5991	7649741	13	True				
+ANR	7650583	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x83		7649741	0		=			
+ANR	7650584	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650585	Identifier	outbuf		7649741	0					
+ANR	7650586	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650587	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650588	Identifier	r		7649741	0					
+ANR	7650589	Identifier	buf_len		7649741	1					
+ANR	7650590	IncDec	++		7649741	1					
+ANR	7650591	PrimaryExpression	0x83		7649741	1					
+ANR	7650592	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x00	331:24:6031:6058	7649741	14	True				
+ANR	7650593	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x00		7649741	0		=			
+ANR	7650594	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650595	Identifier	outbuf		7649741	0					
+ANR	7650596	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650597	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650598	Identifier	r		7649741	0					
+ANR	7650599	Identifier	buf_len		7649741	1					
+ANR	7650600	IncDec	++		7649741	1					
+ANR	7650601	PrimaryExpression	0x00		7649741	1					
+ANR	7650602	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 3 + id_len	333:24:6085:6118	7649741	15	True				
+ANR	7650603	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 3 + id_len		7649741	0		=			
+ANR	7650604	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650605	Identifier	outbuf		7649741	0					
+ANR	7650606	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650607	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650608	Identifier	r		7649741	0					
+ANR	7650609	Identifier	buf_len		7649741	1					
+ANR	7650610	IncDec	++		7649741	1					
+ANR	7650611	AdditiveExpression	3 + id_len		7649741	1		+			
+ANR	7650612	PrimaryExpression	3		7649741	0					
+ANR	7650613	Identifier	id_len		7649741	1					
+ANR	7650614	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0x2	337:24:6147:6173	7649741	16	True				
+ANR	7650615	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0x2		7649741	0		=			
+ANR	7650616	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650617	Identifier	outbuf		7649741	0					
+ANR	7650618	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650619	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650620	Identifier	r		7649741	0					
+ANR	7650621	Identifier	buf_len		7649741	1					
+ANR	7650622	IncDec	++		7649741	1					
+ANR	7650623	PrimaryExpression	0x2		7649741	1					
+ANR	7650624	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0	339:24:6209:6233	7649741	17	True				
+ANR	7650625	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0		7649741	0		=			
+ANR	7650626	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650627	Identifier	outbuf		7649741	0					
+ANR	7650628	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650629	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650630	Identifier	r		7649741	0					
+ANR	7650631	Identifier	buf_len		7649741	1					
+ANR	7650632	IncDec	++		7649741	1					
+ANR	7650633	PrimaryExpression	0		7649741	1					
+ANR	7650634	ExpressionStatement	outbuf [ r -> buf_len ++ ] = 0	341:24:6289:6313	7649741	18	True				
+ANR	7650635	AssignmentExpression	outbuf [ r -> buf_len ++ ] = 0		7649741	0		=			
+ANR	7650636	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650637	Identifier	outbuf		7649741	0					
+ANR	7650638	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650639	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650640	Identifier	r		7649741	0					
+ANR	7650641	Identifier	buf_len		7649741	1					
+ANR	7650642	IncDec	++		7649741	1					
+ANR	7650643	PrimaryExpression	0		7649741	1					
+ANR	7650644	ExpressionStatement	outbuf [ r -> buf_len ++ ] = id_len	343:24:6354:6383	7649741	19	True				
+ANR	7650645	AssignmentExpression	outbuf [ r -> buf_len ++ ] = id_len		7649741	0		=			
+ANR	7650646	ArrayIndexing	outbuf [ r -> buf_len ++ ]		7649741	0					
+ANR	7650647	Identifier	outbuf		7649741	0					
+ANR	7650648	PostIncDecOperationExpression	r -> buf_len ++		7649741	1					
+ANR	7650649	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650650	Identifier	r		7649741	0					
+ANR	7650651	Identifier	buf_len		7649741	1					
+ANR	7650652	IncDec	++		7649741	1					
+ANR	7650653	Identifier	id_len		7649741	1					
+ANR	7650654	ExpressionStatement	"memcpy ( & outbuf [ r -> buf_len ] , bdrv_get_device_name ( s -> bdrv ) , id_len )"	347:24:6440:6538	7649741	20	True				
+ANR	7650655	CallExpression	"memcpy ( & outbuf [ r -> buf_len ] , bdrv_get_device_name ( s -> bdrv ) , id_len )"		7649741	0					
+ANR	7650656	Callee	memcpy		7649741	0					
+ANR	7650657	Identifier	memcpy		7649741	0					
+ANR	7650658	ArgumentList	& outbuf [ r -> buf_len ]		7649741	1					
+ANR	7650659	Argument	& outbuf [ r -> buf_len ]		7649741	0					
+ANR	7650660	UnaryOperationExpression	& outbuf [ r -> buf_len ]		7649741	0					
+ANR	7650661	UnaryOperator	&		7649741	0					
+ANR	7650662	ArrayIndexing	outbuf [ r -> buf_len ]		7649741	1					
+ANR	7650663	Identifier	outbuf		7649741	0					
+ANR	7650664	PtrMemberAccess	r -> buf_len		7649741	1					
+ANR	7650665	Identifier	r		7649741	0					
+ANR	7650666	Identifier	buf_len		7649741	1					
+ANR	7650667	Argument	bdrv_get_device_name ( s -> bdrv )		7649741	1					
+ANR	7650668	CallExpression	bdrv_get_device_name ( s -> bdrv )		7649741	0					
+ANR	7650669	Callee	bdrv_get_device_name		7649741	0					
+ANR	7650670	Identifier	bdrv_get_device_name		7649741	0					
+ANR	7650671	ArgumentList	s -> bdrv		7649741	1					
+ANR	7650672	Argument	s -> bdrv		7649741	0					
+ANR	7650673	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7650674	Identifier	s		7649741	0					
+ANR	7650675	Identifier	bdrv		7649741	1					
+ANR	7650676	Argument	id_len		7649741	2					
+ANR	7650677	Identifier	id_len		7649741	0					
+ANR	7650678	ExpressionStatement	r -> buf_len += id_len	351:24:6565:6585	7649741	21	True				
+ANR	7650679	AssignmentExpression	r -> buf_len += id_len		7649741	0		+=			
+ANR	7650680	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650681	Identifier	r		7649741	0					
+ANR	7650682	Identifier	buf_len		7649741	1					
+ANR	7650683	Identifier	id_len		7649741	1					
+ANR	7650684	BreakStatement	break ;	355:20:6631:6636	7649741	8	True				
+ANR	7650685	Label	default :	357:16:6655:6662	7649741	9	True				
+ANR	7650686	Identifier	default		7649741	0					
+ANR	7650687	Statement	BADF	359:20:6685:6688	7649741	10	True				
+ANR	7650688	Statement	(	359:24:6689:6689	7649741	11	True				
+ANR	7650689	Statement	"""Error: unsupported Inquiry (EVPD[%02X]) """	359:25:6690:6731	7649741	12	True				
+ANR	7650690	Statement	"""buffer size %d\\n"""	361:25:6759:6776	7649741	13	True				
+ANR	7650691	Statement	","	361:43:6777:6777	7649741	14	True				
+ANR	7650692	Statement	page_code	361:45:6779:6787	7649741	15	True				
+ANR	7650693	Statement	","	361:54:6788:6788	7649741	16	True				
+ANR	7650694	Statement	len	361:56:6790:6792	7649741	17	True				
+ANR	7650695	Statement	)	361:59:6793:6793	7649741	18	True				
+ANR	7650696	ExpressionStatement		361:60:6794:6794	7649741	19	True				
+ANR	7650697	GotoStatement	goto fail ;	363:20:6817:6826	7649741	20	True				
+ANR	7650698	Identifier	fail		7649741	0					
+ANR	7650699	BreakStatement	break ;	369:12:6890:6895	7649741	3	True				
+ANR	7650700	ElseStatement	else		7649741	0					
+ANR	7650701	CompoundStatement		369:13:6801:6801	7649741	0					
+ANR	7650702	IfStatement	if ( buf [ 2 ] != 0 )		7649741	0					
+ANR	7650703	Condition	buf [ 2 ] != 0	377:16:6982:6992	7649741	0	True				
+ANR	7650704	EqualityExpression	buf [ 2 ] != 0		7649741	0		!=			
+ANR	7650705	ArrayIndexing	buf [ 2 ]		7649741	0					
+ANR	7650706	Identifier	buf		7649741	0					
+ANR	7650707	PrimaryExpression	2		7649741	1					
+ANR	7650708	PrimaryExpression	0		7649741	1					
+ANR	7650709	CompoundStatement		373:29:6874:6874	7649741	1					
+ANR	7650710	Statement	BADF	379:16:7014:7017	7649741	0	True				
+ANR	7650711	Statement	(	379:20:7018:7018	7649741	1	True				
+ANR	7650712	Statement	"""Error: Inquiry (STANDARD) page or code """	379:21:7019:7059	7649741	2	True				
+ANR	7650713	Statement	"""is non-zero [%02X]\\n"""	381:21:7083:7104	7649741	3	True				
+ANR	7650714	Statement	","	381:43:7105:7105	7649741	4	True				
+ANR	7650715	Statement	buf	381:45:7107:7109	7649741	5	True				
+ANR	7650716	Statement	[	381:48:7110:7110	7649741	6	True				
+ANR	7650717	Statement	2	381:49:7111:7111	7649741	7	True				
+ANR	7650718	Statement	]	381:50:7112:7112	7649741	8	True				
+ANR	7650719	Statement	)	381:51:7113:7113	7649741	9	True				
+ANR	7650720	ExpressionStatement		381:52:7114:7114	7649741	10	True				
+ANR	7650721	GotoStatement	goto fail ;	383:16:7133:7142	7649741	11	True				
+ANR	7650722	Identifier	fail		7649741	0					
+ANR	7650723	IfStatement	if ( len < 5 )		7649741	1					
+ANR	7650724	Condition	len < 5	391:16:7212:7218	7649741	0	True				
+ANR	7650725	RelationalExpression	len < 5		7649741	0		<			
+ANR	7650726	Identifier	len		7649741	0					
+ANR	7650727	PrimaryExpression	5		7649741	1					
+ANR	7650728	CompoundStatement		387:25:7100:7100	7649741	1					
+ANR	7650729	Statement	BADF	393:16:7240:7243	7649741	0	True				
+ANR	7650730	Statement	(	393:20:7244:7244	7649741	1	True				
+ANR	7650731	Statement	"""Error: Inquiry (STANDARD) buffer size %d """	393:21:7245:7287	7649741	2	True				
+ANR	7650732	Statement	"""is less than 5\\n"""	395:21:7311:7328	7649741	3	True				
+ANR	7650733	Statement	","	395:39:7329:7329	7649741	4	True				
+ANR	7650734	Statement	len	395:41:7331:7333	7649741	5	True				
+ANR	7650735	Statement	)	395:44:7334:7334	7649741	6	True				
+ANR	7650736	ExpressionStatement		395:45:7335:7335	7649741	7	True				
+ANR	7650737	GotoStatement	goto fail ;	397:16:7354:7363	7649741	8	True				
+ANR	7650738	Identifier	fail		7649741	0					
+ANR	7650739	IfStatement	if ( len < 36 )		7649741	2					
+ANR	7650740	Condition	len < 36	403:16:7399:7406	7649741	0	True				
+ANR	7650741	RelationalExpression	len < 36		7649741	0		<			
+ANR	7650742	Identifier	len		7649741	0					
+ANR	7650743	PrimaryExpression	36		7649741	1					
+ANR	7650744	CompoundStatement		399:26:7288:7288	7649741	1					
+ANR	7650745	Statement	BADF	405:16:7428:7431	7649741	0	True				
+ANR	7650746	Statement	(	405:20:7432:7432	7649741	1	True				
+ANR	7650747	Statement	"""Error: Inquiry (STANDARD) buffer size %d """	405:21:7433:7475	7649741	2	True				
+ANR	7650748	Statement	"""is less than 36 (TODO: only 5 required)\\n"""	407:21:7499:7541	7649741	3	True				
+ANR	7650749	Statement	","	407:64:7542:7542	7649741	4	True				
+ANR	7650750	Statement	len	407:66:7544:7546	7649741	5	True				
+ANR	7650751	Statement	)	407:69:7547:7547	7649741	6	True				
+ANR	7650752	ExpressionStatement		407:70:7548:7548	7649741	7	True				
+ANR	7650753	ExpressionStatement	"memset ( outbuf , 0 , 36 )"	413:1:7578:7599	7649741	15	True				
+ANR	7650754	CallExpression	"memset ( outbuf , 0 , 36 )"		7649741	0					
+ANR	7650755	Callee	memset		7649741	0					
+ANR	7650756	Identifier	memset		7649741	0					
+ANR	7650757	ArgumentList	outbuf		7649741	1					
+ANR	7650758	Argument	outbuf		7649741	0					
+ANR	7650759	Identifier	outbuf		7649741	0					
+ANR	7650760	Argument	0		7649741	1					
+ANR	7650761	PrimaryExpression	0		7649741	0					
+ANR	7650762	Argument	36		7649741	2					
+ANR	7650763	PrimaryExpression	36		7649741	0					
+ANR	7650764	IfStatement	if ( lun || buf [ 1 ] >> 5 )		7649741	16					
+ANR	7650765	Condition	lun || buf [ 1 ] >> 5	417:12:7616:7633	7649741	0	True				
+ANR	7650766	OrExpression	lun || buf [ 1 ] >> 5		7649741	0		||			
+ANR	7650767	Identifier	lun		7649741	0					
+ANR	7650768	ShiftExpression	buf [ 1 ] >> 5		7649741	1		>>			
+ANR	7650769	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7650770	Identifier	buf		7649741	0					
+ANR	7650771	PrimaryExpression	1		7649741	1					
+ANR	7650772	PrimaryExpression	5		7649741	1					
+ANR	7650773	CompoundStatement		413:32:7515:7515	7649741	1					
+ANR	7650774	ExpressionStatement	outbuf [ 0 ] = 0x7f	419:12:7651:7667	7649741	0	True				
+ANR	7650775	AssignmentExpression	outbuf [ 0 ] = 0x7f		7649741	0		=			
+ANR	7650776	ArrayIndexing	outbuf [ 0 ]		7649741	0					
+ANR	7650777	Identifier	outbuf		7649741	0					
+ANR	7650778	PrimaryExpression	0		7649741	1					
+ANR	7650779	PrimaryExpression	0x7f		7649741	1					
+ANR	7650780	ElseStatement	else		7649741	0					
+ANR	7650781	IfStatement	if ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM )		7649741	0					
+ANR	7650782	Condition	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM	421:12:7706:7751	7649741	0	True				
+ANR	7650783	EqualityExpression	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM		7649741	0		==			
+ANR	7650784	CallExpression	bdrv_get_type_hint ( s -> bdrv )		7649741	0					
+ANR	7650785	Callee	bdrv_get_type_hint		7649741	0					
+ANR	7650786	Identifier	bdrv_get_type_hint		7649741	0					
+ANR	7650787	ArgumentList	s -> bdrv		7649741	1					
+ANR	7650788	Argument	s -> bdrv		7649741	0					
+ANR	7650789	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7650790	Identifier	s		7649741	0					
+ANR	7650791	Identifier	bdrv		7649741	1					
+ANR	7650792	Identifier	BDRV_TYPE_CDROM		7649741	1					
+ANR	7650793	CompoundStatement		417:60:7633:7633	7649741	1					
+ANR	7650794	ExpressionStatement	outbuf [ 0 ] = 5	423:5:7762:7775	7649741	0	True				
+ANR	7650795	AssignmentExpression	outbuf [ 0 ] = 5		7649741	0		=			
+ANR	7650796	ArrayIndexing	outbuf [ 0 ]		7649741	0					
+ANR	7650797	Identifier	outbuf		7649741	0					
+ANR	7650798	PrimaryExpression	0		7649741	1					
+ANR	7650799	PrimaryExpression	5		7649741	1					
+ANR	7650800	ExpressionStatement	outbuf [ 1 ] = 0x80	425:12:7790:7806	7649741	1	True				
+ANR	7650801	AssignmentExpression	outbuf [ 1 ] = 0x80		7649741	0		=			
+ANR	7650802	ArrayIndexing	outbuf [ 1 ]		7649741	0					
+ANR	7650803	Identifier	outbuf		7649741	0					
+ANR	7650804	PrimaryExpression	1		7649741	1					
+ANR	7650805	PrimaryExpression	0x80		7649741	1					
+ANR	7650806	ExpressionStatement	"memcpy ( & outbuf [ 16 ] , ""QEMU CD-ROM    "" , 16 )"	427:5:7814:7856	7649741	2	True				
+ANR	7650807	CallExpression	"memcpy ( & outbuf [ 16 ] , ""QEMU CD-ROM    "" , 16 )"		7649741	0					
+ANR	7650808	Callee	memcpy		7649741	0					
+ANR	7650809	Identifier	memcpy		7649741	0					
+ANR	7650810	ArgumentList	& outbuf [ 16 ]		7649741	1					
+ANR	7650811	Argument	& outbuf [ 16 ]		7649741	0					
+ANR	7650812	UnaryOperationExpression	& outbuf [ 16 ]		7649741	0					
+ANR	7650813	UnaryOperator	&		7649741	0					
+ANR	7650814	ArrayIndexing	outbuf [ 16 ]		7649741	1					
+ANR	7650815	Identifier	outbuf		7649741	0					
+ANR	7650816	PrimaryExpression	16		7649741	1					
+ANR	7650817	Argument	"""QEMU CD-ROM    """		7649741	1					
+ANR	7650818	PrimaryExpression	"""QEMU CD-ROM    """		7649741	0					
+ANR	7650819	Argument	16		7649741	2					
+ANR	7650820	PrimaryExpression	16		7649741	0					
+ANR	7650821	ElseStatement	else		7649741	0					
+ANR	7650822	CompoundStatement		425:8:7746:7746	7649741	0					
+ANR	7650823	ExpressionStatement	outbuf [ 0 ] = 0	431:5:7875:7888	7649741	0	True				
+ANR	7650824	AssignmentExpression	outbuf [ 0 ] = 0		7649741	0		=			
+ANR	7650825	ArrayIndexing	outbuf [ 0 ]		7649741	0					
+ANR	7650826	Identifier	outbuf		7649741	0					
+ANR	7650827	PrimaryExpression	0		7649741	1					
+ANR	7650828	PrimaryExpression	0		7649741	1					
+ANR	7650829	ExpressionStatement	"memcpy ( & outbuf [ 16 ] , ""QEMU HARDDISK  "" , 16 )"	433:5:7896:7938	7649741	1	True				
+ANR	7650830	CallExpression	"memcpy ( & outbuf [ 16 ] , ""QEMU HARDDISK  "" , 16 )"		7649741	0					
+ANR	7650831	Callee	memcpy		7649741	0					
+ANR	7650832	Identifier	memcpy		7649741	0					
+ANR	7650833	ArgumentList	& outbuf [ 16 ]		7649741	1					
+ANR	7650834	Argument	& outbuf [ 16 ]		7649741	0					
+ANR	7650835	UnaryOperationExpression	& outbuf [ 16 ]		7649741	0					
+ANR	7650836	UnaryOperator	&		7649741	0					
+ANR	7650837	ArrayIndexing	outbuf [ 16 ]		7649741	1					
+ANR	7650838	Identifier	outbuf		7649741	0					
+ANR	7650839	PrimaryExpression	16		7649741	1					
+ANR	7650840	Argument	"""QEMU HARDDISK  """		7649741	1					
+ANR	7650841	PrimaryExpression	"""QEMU HARDDISK  """		7649741	0					
+ANR	7650842	Argument	16		7649741	2					
+ANR	7650843	PrimaryExpression	16		7649741	0					
+ANR	7650844	ExpressionStatement	"memcpy ( & outbuf [ 8 ] , ""QEMU   "" , 8 )"	437:1:7946:7978	7649741	17	True				
+ANR	7650845	CallExpression	"memcpy ( & outbuf [ 8 ] , ""QEMU   "" , 8 )"		7649741	0					
+ANR	7650846	Callee	memcpy		7649741	0					
+ANR	7650847	Identifier	memcpy		7649741	0					
+ANR	7650848	ArgumentList	& outbuf [ 8 ]		7649741	1					
+ANR	7650849	Argument	& outbuf [ 8 ]		7649741	0					
+ANR	7650850	UnaryOperationExpression	& outbuf [ 8 ]		7649741	0					
+ANR	7650851	UnaryOperator	&		7649741	0					
+ANR	7650852	ArrayIndexing	outbuf [ 8 ]		7649741	1					
+ANR	7650853	Identifier	outbuf		7649741	0					
+ANR	7650854	PrimaryExpression	8		7649741	1					
+ANR	7650855	Argument	"""QEMU   """		7649741	1					
+ANR	7650856	PrimaryExpression	"""QEMU   """		7649741	0					
+ANR	7650857	Argument	8		7649741	2					
+ANR	7650858	PrimaryExpression	8		7649741	0					
+ANR	7650859	ExpressionStatement	"memcpy ( & outbuf [ 32 ] , QEMU_VERSION , 4 )"	439:8:7989:8025	7649741	18	True				
+ANR	7650860	CallExpression	"memcpy ( & outbuf [ 32 ] , QEMU_VERSION , 4 )"		7649741	0					
+ANR	7650861	Callee	memcpy		7649741	0					
+ANR	7650862	Identifier	memcpy		7649741	0					
+ANR	7650863	ArgumentList	& outbuf [ 32 ]		7649741	1					
+ANR	7650864	Argument	& outbuf [ 32 ]		7649741	0					
+ANR	7650865	UnaryOperationExpression	& outbuf [ 32 ]		7649741	0					
+ANR	7650866	UnaryOperator	&		7649741	0					
+ANR	7650867	ArrayIndexing	outbuf [ 32 ]		7649741	1					
+ANR	7650868	Identifier	outbuf		7649741	0					
+ANR	7650869	PrimaryExpression	32		7649741	1					
+ANR	7650870	Argument	QEMU_VERSION		7649741	1					
+ANR	7650871	Identifier	QEMU_VERSION		7649741	0					
+ANR	7650872	Argument	4		7649741	2					
+ANR	7650873	PrimaryExpression	4		7649741	0					
+ANR	7650874	ExpressionStatement	outbuf [ 2 ] = 3	445:1:8131:8144	7649741	19	True				
+ANR	7650875	AssignmentExpression	outbuf [ 2 ] = 3		7649741	0		=			
+ANR	7650876	ArrayIndexing	outbuf [ 2 ]		7649741	0					
+ANR	7650877	Identifier	outbuf		7649741	0					
+ANR	7650878	PrimaryExpression	2		7649741	1					
+ANR	7650879	PrimaryExpression	3		7649741	1					
+ANR	7650880	ExpressionStatement	outbuf [ 3 ] = 2	447:1:8148:8161	7649741	20	True				
+ANR	7650881	AssignmentExpression	outbuf [ 3 ] = 2		7649741	0		=			
+ANR	7650882	ArrayIndexing	outbuf [ 3 ]		7649741	0					
+ANR	7650883	Identifier	outbuf		7649741	0					
+ANR	7650884	PrimaryExpression	3		7649741	1					
+ANR	7650885	PrimaryExpression	2		7649741	1					
+ANR	7650886	ExpressionStatement	outbuf [ 4 ] = 31	449:1:8180:8194	7649741	21	True				
+ANR	7650887	AssignmentExpression	outbuf [ 4 ] = 31		7649741	0		=			
+ANR	7650888	ArrayIndexing	outbuf [ 4 ]		7649741	0					
+ANR	7650889	Identifier	outbuf		7649741	0					
+ANR	7650890	PrimaryExpression	4		7649741	1					
+ANR	7650891	PrimaryExpression	31		7649741	1					
+ANR	7650892	ExpressionStatement	outbuf [ 7 ] = 0x10 | ( s -> tcq ? 0x02 : 0 )	453:8:8249:8287	7649741	22	True				
+ANR	7650893	AssignmentExpression	outbuf [ 7 ] = 0x10 | ( s -> tcq ? 0x02 : 0 )		7649741	0		=			
+ANR	7650894	ArrayIndexing	outbuf [ 7 ]		7649741	0					
+ANR	7650895	Identifier	outbuf		7649741	0					
+ANR	7650896	PrimaryExpression	7		7649741	1					
+ANR	7650897	InclusiveOrExpression	0x10 | ( s -> tcq ? 0x02 : 0 )		7649741	1		|			
+ANR	7650898	PrimaryExpression	0x10		7649741	0					
+ANR	7650899	ConditionalExpression	s -> tcq ? 0x02 : 0		7649741	1					
+ANR	7650900	Condition	s -> tcq		7649741	0					
+ANR	7650901	PtrMemberAccess	s -> tcq		7649741	0					
+ANR	7650902	Identifier	s		7649741	0					
+ANR	7650903	Identifier	tcq		7649741	1					
+ANR	7650904	PrimaryExpression	0x02		7649741	1					
+ANR	7650905	PrimaryExpression	0		7649741	2					
+ANR	7650906	ExpressionStatement	r -> buf_len = 36	455:1:8291:8306	7649741	23	True				
+ANR	7650907	AssignmentExpression	r -> buf_len = 36		7649741	0		=			
+ANR	7650908	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7650909	Identifier	r		7649741	0					
+ANR	7650910	Identifier	buf_len		7649741	1					
+ANR	7650911	PrimaryExpression	36		7649741	1					
+ANR	7650912	BreakStatement	break ;	457:1:8310:8315	7649741	24	True				
+ANR	7650913	Label	case 0x16 :	459:4:8322:8331	7649741	25	True				
+ANR	7650914	ExpressionStatement	"DPRINTF ( ""Reserve(6)\\n"" )"	461:8:8342:8365	7649741	26	True				
+ANR	7650915	CallExpression	"DPRINTF ( ""Reserve(6)\\n"" )"		7649741	0					
+ANR	7650916	Callee	DPRINTF		7649741	0					
+ANR	7650917	Identifier	DPRINTF		7649741	0					
+ANR	7650918	ArgumentList	"""Reserve(6)\\n"""		7649741	1					
+ANR	7650919	Argument	"""Reserve(6)\\n"""		7649741	0					
+ANR	7650920	PrimaryExpression	"""Reserve(6)\\n"""		7649741	0					
+ANR	7650921	IfStatement	if ( buf [ 1 ] & 1 )		7649741	27					
+ANR	7650922	Condition	buf [ 1 ] & 1	463:12:8380:8389	7649741	0	True				
+ANR	7650923	BitAndExpression	buf [ 1 ] & 1		7649741	0		&			
+ANR	7650924	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7650925	Identifier	buf		7649741	0					
+ANR	7650926	PrimaryExpression	1		7649741	1					
+ANR	7650927	PrimaryExpression	1		7649741	1					
+ANR	7650928	GotoStatement	goto fail ;	465:12:8405:8414	7649741	1	True				
+ANR	7650929	Identifier	fail		7649741	0					
+ANR	7650930	BreakStatement	break ;	467:8:8425:8430	7649741	28	True				
+ANR	7650931	Label	case 0x17 :	469:4:8437:8446	7649741	29	True				
+ANR	7650932	ExpressionStatement	"DPRINTF ( ""Release(6)\\n"" )"	471:8:8457:8480	7649741	30	True				
+ANR	7650933	CallExpression	"DPRINTF ( ""Release(6)\\n"" )"		7649741	0					
+ANR	7650934	Callee	DPRINTF		7649741	0					
+ANR	7650935	Identifier	DPRINTF		7649741	0					
+ANR	7650936	ArgumentList	"""Release(6)\\n"""		7649741	1					
+ANR	7650937	Argument	"""Release(6)\\n"""		7649741	0					
+ANR	7650938	PrimaryExpression	"""Release(6)\\n"""		7649741	0					
+ANR	7650939	IfStatement	if ( buf [ 1 ] & 1 )		7649741	31					
+ANR	7650940	Condition	buf [ 1 ] & 1	473:12:8495:8504	7649741	0	True				
+ANR	7650941	BitAndExpression	buf [ 1 ] & 1		7649741	0		&			
+ANR	7650942	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7650943	Identifier	buf		7649741	0					
+ANR	7650944	PrimaryExpression	1		7649741	1					
+ANR	7650945	PrimaryExpression	1		7649741	1					
+ANR	7650946	GotoStatement	goto fail ;	475:12:8520:8529	7649741	1	True				
+ANR	7650947	Identifier	fail		7649741	0					
+ANR	7650948	BreakStatement	break ;	477:8:8540:8545	7649741	32	True				
+ANR	7650949	Label	case 0x1a :	479:4:8552:8561	7649741	33	True				
+ANR	7650950	Label	case 0x5a :	481:4:8568:8577	7649741	34	True				
+ANR	7650951	CompoundStatement		483:12:8507:8515	7649741	35					
+ANR	7650952	IdentifierDeclStatement	uint8_t * p ;	485:12:8603:8613	7649741	0	True				
+ANR	7650953	IdentifierDecl	* p		7649741	0					
+ANR	7650954	IdentifierDeclType	uint8_t *		7649741	0					
+ANR	7650955	Identifier	p		7649741	1					
+ANR	7650956	IdentifierDeclStatement	int page ;	487:12:8628:8636	7649741	1	True				
+ANR	7650957	IdentifierDecl	page		7649741	0					
+ANR	7650958	IdentifierDeclType	int		7649741	0					
+ANR	7650959	Identifier	page		7649741	1					
+ANR	7650960	ExpressionStatement	page = buf [ 2 ] & 0x3f	491:12:8653:8673	7649741	2	True				
+ANR	7650961	AssignmentExpression	page = buf [ 2 ] & 0x3f		7649741	0		=			
+ANR	7650962	Identifier	page		7649741	0					
+ANR	7650963	BitAndExpression	buf [ 2 ] & 0x3f		7649741	1		&			
+ANR	7650964	ArrayIndexing	buf [ 2 ]		7649741	0					
+ANR	7650965	Identifier	buf		7649741	0					
+ANR	7650966	PrimaryExpression	2		7649741	1					
+ANR	7650967	PrimaryExpression	0x3f		7649741	1					
+ANR	7650968	ExpressionStatement	"DPRINTF ( ""Mode Sense (page %d, len %d)\\n"" , page , len )"	493:12:8688:8740	7649741	3	True				
+ANR	7650969	CallExpression	"DPRINTF ( ""Mode Sense (page %d, len %d)\\n"" , page , len )"		7649741	0					
+ANR	7650970	Callee	DPRINTF		7649741	0					
+ANR	7650971	Identifier	DPRINTF		7649741	0					
+ANR	7650972	ArgumentList	"""Mode Sense (page %d, len %d)\\n"""		7649741	1					
+ANR	7650973	Argument	"""Mode Sense (page %d, len %d)\\n"""		7649741	0					
+ANR	7650974	PrimaryExpression	"""Mode Sense (page %d, len %d)\\n"""		7649741	0					
+ANR	7650975	Argument	page		7649741	1					
+ANR	7650976	Identifier	page		7649741	0					
+ANR	7650977	Argument	len		7649741	2					
+ANR	7650978	Identifier	len		7649741	0					
+ANR	7650979	ExpressionStatement	p = outbuf	495:12:8755:8765	7649741	4	True				
+ANR	7650980	AssignmentExpression	p = outbuf		7649741	0		=			
+ANR	7650981	Identifier	p		7649741	0					
+ANR	7650982	Identifier	outbuf		7649741	1					
+ANR	7650983	ExpressionStatement	"memset ( p , 0 , 4 )"	497:12:8780:8795	7649741	5	True				
+ANR	7650984	CallExpression	"memset ( p , 0 , 4 )"		7649741	0					
+ANR	7650985	Callee	memset		7649741	0					
+ANR	7650986	Identifier	memset		7649741	0					
+ANR	7650987	ArgumentList	p		7649741	1					
+ANR	7650988	Argument	p		7649741	0					
+ANR	7650989	Identifier	p		7649741	0					
+ANR	7650990	Argument	0		7649741	1					
+ANR	7650991	PrimaryExpression	0		7649741	0					
+ANR	7650992	Argument	4		7649741	2					
+ANR	7650993	PrimaryExpression	4		7649741	0					
+ANR	7650994	ExpressionStatement	outbuf [ 1 ] = 0	499:12:8810:8823	7649741	6	True				
+ANR	7650995	AssignmentExpression	outbuf [ 1 ] = 0		7649741	0		=			
+ANR	7650996	ArrayIndexing	outbuf [ 1 ]		7649741	0					
+ANR	7650997	Identifier	outbuf		7649741	0					
+ANR	7650998	PrimaryExpression	1		7649741	1					
+ANR	7650999	PrimaryExpression	0		7649741	1					
+ANR	7651000	ExpressionStatement	outbuf [ 3 ] = 0	501:12:8865:8878	7649741	7	True				
+ANR	7651001	AssignmentExpression	outbuf [ 3 ] = 0		7649741	0		=			
+ANR	7651002	ArrayIndexing	outbuf [ 3 ]		7649741	0					
+ANR	7651003	Identifier	outbuf		7649741	0					
+ANR	7651004	PrimaryExpression	3		7649741	1					
+ANR	7651005	PrimaryExpression	0		7649741	1					
+ANR	7651006	IfStatement	if ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM )		7649741	8					
+ANR	7651007	Condition	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM	503:16:8929:8974	7649741	0	True				
+ANR	7651008	EqualityExpression	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM		7649741	0		==			
+ANR	7651009	CallExpression	bdrv_get_type_hint ( s -> bdrv )		7649741	0					
+ANR	7651010	Callee	bdrv_get_type_hint		7649741	0					
+ANR	7651011	Identifier	bdrv_get_type_hint		7649741	0					
+ANR	7651012	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651013	Argument	s -> bdrv		7649741	0					
+ANR	7651014	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651015	Identifier	s		7649741	0					
+ANR	7651016	Identifier	bdrv		7649741	1					
+ANR	7651017	Identifier	BDRV_TYPE_CDROM		7649741	1					
+ANR	7651018	CompoundStatement		499:64:8856:8856	7649741	1					
+ANR	7651019	ExpressionStatement	outbuf [ 2 ] = 0x80	505:16:8996:9012	7649741	0	True				
+ANR	7651020	AssignmentExpression	outbuf [ 2 ] = 0x80		7649741	0		=			
+ANR	7651021	ArrayIndexing	outbuf [ 2 ]		7649741	0					
+ANR	7651022	Identifier	outbuf		7649741	0					
+ANR	7651023	PrimaryExpression	2		7649741	1					
+ANR	7651024	PrimaryExpression	0x80		7649741	1					
+ANR	7651025	ExpressionStatement	p += 4	509:12:9059:9065	7649741	9	True				
+ANR	7651026	AssignmentExpression	p += 4		7649741	0		+=			
+ANR	7651027	Identifier	p		7649741	0					
+ANR	7651028	PrimaryExpression	4		7649741	1					
+ANR	7651029	IfStatement	if ( page == 4 )		7649741	10					
+ANR	7651030	Condition	page == 4	511:16:9084:9092	7649741	0	True				
+ANR	7651031	EqualityExpression	page == 4		7649741	0		==			
+ANR	7651032	Identifier	page		7649741	0					
+ANR	7651033	PrimaryExpression	4		7649741	1					
+ANR	7651034	CompoundStatement		509:16:8993:9019	7649741	1					
+ANR	7651035	IdentifierDeclStatement	"int cylinders , heads , secs ;"	513:16:9114:9140	7649741	0	True				
+ANR	7651036	IdentifierDecl	cylinders		7649741	0					
+ANR	7651037	IdentifierDeclType	int		7649741	0					
+ANR	7651038	Identifier	cylinders		7649741	1					
+ANR	7651039	IdentifierDecl	heads		7649741	1					
+ANR	7651040	IdentifierDeclType	int		7649741	0					
+ANR	7651041	Identifier	heads		7649741	1					
+ANR	7651042	IdentifierDecl	secs		7649741	2					
+ANR	7651043	IdentifierDeclType	int		7649741	0					
+ANR	7651044	Identifier	secs		7649741	1					
+ANR	7651045	ExpressionStatement	p [ 0 ] = 4	519:16:9217:9225	7649741	1	True				
+ANR	7651046	AssignmentExpression	p [ 0 ] = 4		7649741	0		=			
+ANR	7651047	ArrayIndexing	p [ 0 ]		7649741	0					
+ANR	7651048	Identifier	p		7649741	0					
+ANR	7651049	PrimaryExpression	0		7649741	1					
+ANR	7651050	PrimaryExpression	4		7649741	1					
+ANR	7651051	ExpressionStatement	p [ 1 ] = 0x16	521:16:9244:9255	7649741	2	True				
+ANR	7651052	AssignmentExpression	p [ 1 ] = 0x16		7649741	0		=			
+ANR	7651053	ArrayIndexing	p [ 1 ]		7649741	0					
+ANR	7651054	Identifier	p		7649741	0					
+ANR	7651055	PrimaryExpression	1		7649741	1					
+ANR	7651056	PrimaryExpression	0x16		7649741	1					
+ANR	7651057	ExpressionStatement	"bdrv_get_geometry_hint ( s -> bdrv , & cylinders , & heads , & secs )"	525:16:9337:9395	7649741	3	True				
+ANR	7651058	CallExpression	"bdrv_get_geometry_hint ( s -> bdrv , & cylinders , & heads , & secs )"		7649741	0					
+ANR	7651059	Callee	bdrv_get_geometry_hint		7649741	0					
+ANR	7651060	Identifier	bdrv_get_geometry_hint		7649741	0					
+ANR	7651061	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651062	Argument	s -> bdrv		7649741	0					
+ANR	7651063	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651064	Identifier	s		7649741	0					
+ANR	7651065	Identifier	bdrv		7649741	1					
+ANR	7651066	Argument	& cylinders		7649741	1					
+ANR	7651067	UnaryOperationExpression	& cylinders		7649741	0					
+ANR	7651068	UnaryOperator	&		7649741	0					
+ANR	7651069	Identifier	cylinders		7649741	1					
+ANR	7651070	Argument	& heads		7649741	2					
+ANR	7651071	UnaryOperationExpression	& heads		7649741	0					
+ANR	7651072	UnaryOperator	&		7649741	0					
+ANR	7651073	Identifier	heads		7649741	1					
+ANR	7651074	Argument	& secs		7649741	3					
+ANR	7651075	UnaryOperationExpression	& secs		7649741	0					
+ANR	7651076	UnaryOperator	&		7649741	0					
+ANR	7651077	Identifier	secs		7649741	1					
+ANR	7651078	ExpressionStatement	p [ 2 ] = ( cylinders >> 16 ) & 0xff	527:16:9414:9445	7649741	4	True				
+ANR	7651079	AssignmentExpression	p [ 2 ] = ( cylinders >> 16 ) & 0xff		7649741	0		=			
+ANR	7651080	ArrayIndexing	p [ 2 ]		7649741	0					
+ANR	7651081	Identifier	p		7649741	0					
+ANR	7651082	PrimaryExpression	2		7649741	1					
+ANR	7651083	BitAndExpression	( cylinders >> 16 ) & 0xff		7649741	1		&			
+ANR	7651084	ShiftExpression	cylinders >> 16		7649741	0		>>			
+ANR	7651085	Identifier	cylinders		7649741	0					
+ANR	7651086	PrimaryExpression	16		7649741	1					
+ANR	7651087	PrimaryExpression	0xff		7649741	1					
+ANR	7651088	ExpressionStatement	p [ 3 ] = ( cylinders >> 8 ) & 0xff	529:16:9464:9494	7649741	5	True				
+ANR	7651089	AssignmentExpression	p [ 3 ] = ( cylinders >> 8 ) & 0xff		7649741	0		=			
+ANR	7651090	ArrayIndexing	p [ 3 ]		7649741	0					
+ANR	7651091	Identifier	p		7649741	0					
+ANR	7651092	PrimaryExpression	3		7649741	1					
+ANR	7651093	BitAndExpression	( cylinders >> 8 ) & 0xff		7649741	1		&			
+ANR	7651094	ShiftExpression	cylinders >> 8		7649741	0		>>			
+ANR	7651095	Identifier	cylinders		7649741	0					
+ANR	7651096	PrimaryExpression	8		7649741	1					
+ANR	7651097	PrimaryExpression	0xff		7649741	1					
+ANR	7651098	ExpressionStatement	p [ 4 ] = cylinders & 0xff	531:16:9513:9536	7649741	6	True				
+ANR	7651099	AssignmentExpression	p [ 4 ] = cylinders & 0xff		7649741	0		=			
+ANR	7651100	ArrayIndexing	p [ 4 ]		7649741	0					
+ANR	7651101	Identifier	p		7649741	0					
+ANR	7651102	PrimaryExpression	4		7649741	1					
+ANR	7651103	BitAndExpression	cylinders & 0xff		7649741	1		&			
+ANR	7651104	Identifier	cylinders		7649741	0					
+ANR	7651105	PrimaryExpression	0xff		7649741	1					
+ANR	7651106	ExpressionStatement	p [ 5 ] = heads & 0xff	533:16:9555:9574	7649741	7	True				
+ANR	7651107	AssignmentExpression	p [ 5 ] = heads & 0xff		7649741	0		=			
+ANR	7651108	ArrayIndexing	p [ 5 ]		7649741	0					
+ANR	7651109	Identifier	p		7649741	0					
+ANR	7651110	PrimaryExpression	5		7649741	1					
+ANR	7651111	BitAndExpression	heads & 0xff		7649741	1		&			
+ANR	7651112	Identifier	heads		7649741	0					
+ANR	7651113	PrimaryExpression	0xff		7649741	1					
+ANR	7651114	ExpressionStatement	p [ 6 ] = ( cylinders >> 16 ) & 0xff	537:16:9655:9686	7649741	8	True				
+ANR	7651115	AssignmentExpression	p [ 6 ] = ( cylinders >> 16 ) & 0xff		7649741	0		=			
+ANR	7651116	ArrayIndexing	p [ 6 ]		7649741	0					
+ANR	7651117	Identifier	p		7649741	0					
+ANR	7651118	PrimaryExpression	6		7649741	1					
+ANR	7651119	BitAndExpression	( cylinders >> 16 ) & 0xff		7649741	1		&			
+ANR	7651120	ShiftExpression	cylinders >> 16		7649741	0		>>			
+ANR	7651121	Identifier	cylinders		7649741	0					
+ANR	7651122	PrimaryExpression	16		7649741	1					
+ANR	7651123	PrimaryExpression	0xff		7649741	1					
+ANR	7651124	ExpressionStatement	p [ 7 ] = ( cylinders >> 8 ) & 0xff	539:16:9705:9735	7649741	9	True				
+ANR	7651125	AssignmentExpression	p [ 7 ] = ( cylinders >> 8 ) & 0xff		7649741	0		=			
+ANR	7651126	ArrayIndexing	p [ 7 ]		7649741	0					
+ANR	7651127	Identifier	p		7649741	0					
+ANR	7651128	PrimaryExpression	7		7649741	1					
+ANR	7651129	BitAndExpression	( cylinders >> 8 ) & 0xff		7649741	1		&			
+ANR	7651130	ShiftExpression	cylinders >> 8		7649741	0		>>			
+ANR	7651131	Identifier	cylinders		7649741	0					
+ANR	7651132	PrimaryExpression	8		7649741	1					
+ANR	7651133	PrimaryExpression	0xff		7649741	1					
+ANR	7651134	ExpressionStatement	p [ 8 ] = cylinders & 0xff	541:16:9754:9777	7649741	10	True				
+ANR	7651135	AssignmentExpression	p [ 8 ] = cylinders & 0xff		7649741	0		=			
+ANR	7651136	ArrayIndexing	p [ 8 ]		7649741	0					
+ANR	7651137	Identifier	p		7649741	0					
+ANR	7651138	PrimaryExpression	8		7649741	1					
+ANR	7651139	BitAndExpression	cylinders & 0xff		7649741	1		&			
+ANR	7651140	Identifier	cylinders		7649741	0					
+ANR	7651141	PrimaryExpression	0xff		7649741	1					
+ANR	7651142	ExpressionStatement	p [ 9 ] = ( cylinders >> 16 ) & 0xff	545:16:9860:9891	7649741	11	True				
+ANR	7651143	AssignmentExpression	p [ 9 ] = ( cylinders >> 16 ) & 0xff		7649741	0		=			
+ANR	7651144	ArrayIndexing	p [ 9 ]		7649741	0					
+ANR	7651145	Identifier	p		7649741	0					
+ANR	7651146	PrimaryExpression	9		7649741	1					
+ANR	7651147	BitAndExpression	( cylinders >> 16 ) & 0xff		7649741	1		&			
+ANR	7651148	ShiftExpression	cylinders >> 16		7649741	0		>>			
+ANR	7651149	Identifier	cylinders		7649741	0					
+ANR	7651150	PrimaryExpression	16		7649741	1					
+ANR	7651151	PrimaryExpression	0xff		7649741	1					
+ANR	7651152	ExpressionStatement	p [ 10 ] = ( cylinders >> 8 ) & 0xff	547:16:9910:9941	7649741	12	True				
+ANR	7651153	AssignmentExpression	p [ 10 ] = ( cylinders >> 8 ) & 0xff		7649741	0		=			
+ANR	7651154	ArrayIndexing	p [ 10 ]		7649741	0					
+ANR	7651155	Identifier	p		7649741	0					
+ANR	7651156	PrimaryExpression	10		7649741	1					
+ANR	7651157	BitAndExpression	( cylinders >> 8 ) & 0xff		7649741	1		&			
+ANR	7651158	ShiftExpression	cylinders >> 8		7649741	0		>>			
+ANR	7651159	Identifier	cylinders		7649741	0					
+ANR	7651160	PrimaryExpression	8		7649741	1					
+ANR	7651161	PrimaryExpression	0xff		7649741	1					
+ANR	7651162	ExpressionStatement	p [ 11 ] = cylinders & 0xff	549:16:9960:9984	7649741	13	True				
+ANR	7651163	AssignmentExpression	p [ 11 ] = cylinders & 0xff		7649741	0		=			
+ANR	7651164	ArrayIndexing	p [ 11 ]		7649741	0					
+ANR	7651165	Identifier	p		7649741	0					
+ANR	7651166	PrimaryExpression	11		7649741	1					
+ANR	7651167	BitAndExpression	cylinders & 0xff		7649741	1		&			
+ANR	7651168	Identifier	cylinders		7649741	0					
+ANR	7651169	PrimaryExpression	0xff		7649741	1					
+ANR	7651170	ExpressionStatement	p [ 12 ] = 0	553:16:10055:10064	7649741	14	True				
+ANR	7651171	AssignmentExpression	p [ 12 ] = 0		7649741	0		=			
+ANR	7651172	ArrayIndexing	p [ 12 ]		7649741	0					
+ANR	7651173	Identifier	p		7649741	0					
+ANR	7651174	PrimaryExpression	12		7649741	1					
+ANR	7651175	PrimaryExpression	0		7649741	1					
+ANR	7651176	ExpressionStatement	p [ 13 ] = 200	555:16:10083:10094	7649741	15	True				
+ANR	7651177	AssignmentExpression	p [ 13 ] = 200		7649741	0		=			
+ANR	7651178	ArrayIndexing	p [ 13 ]		7649741	0					
+ANR	7651179	Identifier	p		7649741	0					
+ANR	7651180	PrimaryExpression	13		7649741	1					
+ANR	7651181	PrimaryExpression	200		7649741	1					
+ANR	7651182	ExpressionStatement	p [ 14 ] = 0xff	559:16:10158:10170	7649741	16	True				
+ANR	7651183	AssignmentExpression	p [ 14 ] = 0xff		7649741	0		=			
+ANR	7651184	ArrayIndexing	p [ 14 ]		7649741	0					
+ANR	7651185	Identifier	p		7649741	0					
+ANR	7651186	PrimaryExpression	14		7649741	1					
+ANR	7651187	PrimaryExpression	0xff		7649741	1					
+ANR	7651188	ExpressionStatement	p [ 15 ] = 0xff	561:16:10189:10202	7649741	17	True				
+ANR	7651189	AssignmentExpression	p [ 15 ] = 0xff		7649741	0		=			
+ANR	7651190	ArrayIndexing	p [ 15 ]		7649741	0					
+ANR	7651191	Identifier	p		7649741	0					
+ANR	7651192	PrimaryExpression	15		7649741	1					
+ANR	7651193	PrimaryExpression	0xff		7649741	1					
+ANR	7651194	ExpressionStatement	p [ 16 ] = 0xff	563:16:10221:10233	7649741	18	True				
+ANR	7651195	AssignmentExpression	p [ 16 ] = 0xff		7649741	0		=			
+ANR	7651196	ArrayIndexing	p [ 16 ]		7649741	0					
+ANR	7651197	Identifier	p		7649741	0					
+ANR	7651198	PrimaryExpression	16		7649741	1					
+ANR	7651199	PrimaryExpression	0xff		7649741	1					
+ANR	7651200	ExpressionStatement	p [ 20 ] = ( 5400 >> 8 ) & 0xff	567:16:10312:10338	7649741	19	True				
+ANR	7651201	AssignmentExpression	p [ 20 ] = ( 5400 >> 8 ) & 0xff		7649741	0		=			
+ANR	7651202	ArrayIndexing	p [ 20 ]		7649741	0					
+ANR	7651203	Identifier	p		7649741	0					
+ANR	7651204	PrimaryExpression	20		7649741	1					
+ANR	7651205	BitAndExpression	( 5400 >> 8 ) & 0xff		7649741	1		&			
+ANR	7651206	ShiftExpression	5400 >> 8		7649741	0		>>			
+ANR	7651207	PrimaryExpression	5400		7649741	0					
+ANR	7651208	PrimaryExpression	8		7649741	1					
+ANR	7651209	PrimaryExpression	0xff		7649741	1					
+ANR	7651210	ExpressionStatement	p [ 21 ] = 5400 & 0xff	569:16:10357:10376	7649741	20	True				
+ANR	7651211	AssignmentExpression	p [ 21 ] = 5400 & 0xff		7649741	0		=			
+ANR	7651212	ArrayIndexing	p [ 21 ]		7649741	0					
+ANR	7651213	Identifier	p		7649741	0					
+ANR	7651214	PrimaryExpression	21		7649741	1					
+ANR	7651215	BitAndExpression	5400 & 0xff		7649741	1		&			
+ANR	7651216	PrimaryExpression	5400		7649741	0					
+ANR	7651217	PrimaryExpression	0xff		7649741	1					
+ANR	7651218	ExpressionStatement	p += 0x16	571:16:10395:10404	7649741	21	True				
+ANR	7651219	AssignmentExpression	p += 0x16		7649741	0		+=			
+ANR	7651220	Identifier	p		7649741	0					
+ANR	7651221	PrimaryExpression	0x16		7649741	1					
+ANR	7651222	ElseStatement	else		7649741	0					
+ANR	7651223	IfStatement	if ( page == 5 )		7649741	0					
+ANR	7651224	Condition	page == 5	573:23:10430:10438	7649741	0	True				
+ANR	7651225	EqualityExpression	page == 5		7649741	0		==			
+ANR	7651226	Identifier	page		7649741	0					
+ANR	7651227	PrimaryExpression	5		7649741	1					
+ANR	7651228	CompoundStatement		571:16:10339:10365	7649741	1					
+ANR	7651229	IdentifierDeclStatement	"int cylinders , heads , secs ;"	575:16:10460:10486	7649741	0	True				
+ANR	7651230	IdentifierDecl	cylinders		7649741	0					
+ANR	7651231	IdentifierDeclType	int		7649741	0					
+ANR	7651232	Identifier	cylinders		7649741	1					
+ANR	7651233	IdentifierDecl	heads		7649741	1					
+ANR	7651234	IdentifierDeclType	int		7649741	0					
+ANR	7651235	Identifier	heads		7649741	1					
+ANR	7651236	IdentifierDecl	secs		7649741	2					
+ANR	7651237	IdentifierDeclType	int		7649741	0					
+ANR	7651238	Identifier	secs		7649741	1					
+ANR	7651239	ExpressionStatement	p [ 0 ] = 5	581:16:10566:10574	7649741	1	True				
+ANR	7651240	AssignmentExpression	p [ 0 ] = 5		7649741	0		=			
+ANR	7651241	ArrayIndexing	p [ 0 ]		7649741	0					
+ANR	7651242	Identifier	p		7649741	0					
+ANR	7651243	PrimaryExpression	0		7649741	1					
+ANR	7651244	PrimaryExpression	5		7649741	1					
+ANR	7651245	ExpressionStatement	p [ 1 ] = 0x1e	583:16:10593:10604	7649741	2	True				
+ANR	7651246	AssignmentExpression	p [ 1 ] = 0x1e		7649741	0		=			
+ANR	7651247	ArrayIndexing	p [ 1 ]		7649741	0					
+ANR	7651248	Identifier	p		7649741	0					
+ANR	7651249	PrimaryExpression	1		7649741	1					
+ANR	7651250	PrimaryExpression	0x1e		7649741	1					
+ANR	7651251	ExpressionStatement	p [ 2 ] = 5000 >> 8	587:16:10678:10694	7649741	3	True				
+ANR	7651252	AssignmentExpression	p [ 2 ] = 5000 >> 8		7649741	0		=			
+ANR	7651253	ArrayIndexing	p [ 2 ]		7649741	0					
+ANR	7651254	Identifier	p		7649741	0					
+ANR	7651255	PrimaryExpression	2		7649741	1					
+ANR	7651256	ShiftExpression	5000 >> 8		7649741	1		>>			
+ANR	7651257	PrimaryExpression	5000		7649741	0					
+ANR	7651258	PrimaryExpression	8		7649741	1					
+ANR	7651259	ExpressionStatement	p [ 3 ] = 5000 & 0xff	589:16:10713:10731	7649741	4	True				
+ANR	7651260	AssignmentExpression	p [ 3 ] = 5000 & 0xff		7649741	0		=			
+ANR	7651261	ArrayIndexing	p [ 3 ]		7649741	0					
+ANR	7651262	Identifier	p		7649741	0					
+ANR	7651263	PrimaryExpression	3		7649741	1					
+ANR	7651264	BitAndExpression	5000 & 0xff		7649741	1		&			
+ANR	7651265	PrimaryExpression	5000		7649741	0					
+ANR	7651266	PrimaryExpression	0xff		7649741	1					
+ANR	7651267	ExpressionStatement	"bdrv_get_geometry_hint ( s -> bdrv , & cylinders , & heads , & secs )"	593:16:10813:10871	7649741	5	True				
+ANR	7651268	CallExpression	"bdrv_get_geometry_hint ( s -> bdrv , & cylinders , & heads , & secs )"		7649741	0					
+ANR	7651269	Callee	bdrv_get_geometry_hint		7649741	0					
+ANR	7651270	Identifier	bdrv_get_geometry_hint		7649741	0					
+ANR	7651271	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651272	Argument	s -> bdrv		7649741	0					
+ANR	7651273	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651274	Identifier	s		7649741	0					
+ANR	7651275	Identifier	bdrv		7649741	1					
+ANR	7651276	Argument	& cylinders		7649741	1					
+ANR	7651277	UnaryOperationExpression	& cylinders		7649741	0					
+ANR	7651278	UnaryOperator	&		7649741	0					
+ANR	7651279	Identifier	cylinders		7649741	1					
+ANR	7651280	Argument	& heads		7649741	2					
+ANR	7651281	UnaryOperationExpression	& heads		7649741	0					
+ANR	7651282	UnaryOperator	&		7649741	0					
+ANR	7651283	Identifier	heads		7649741	1					
+ANR	7651284	Argument	& secs		7649741	3					
+ANR	7651285	UnaryOperationExpression	& secs		7649741	0					
+ANR	7651286	UnaryOperator	&		7649741	0					
+ANR	7651287	Identifier	secs		7649741	1					
+ANR	7651288	ExpressionStatement	p [ 4 ] = heads & 0xff	595:16:10890:10909	7649741	6	True				
+ANR	7651289	AssignmentExpression	p [ 4 ] = heads & 0xff		7649741	0		=			
+ANR	7651290	ArrayIndexing	p [ 4 ]		7649741	0					
+ANR	7651291	Identifier	p		7649741	0					
+ANR	7651292	PrimaryExpression	4		7649741	1					
+ANR	7651293	BitAndExpression	heads & 0xff		7649741	1		&			
+ANR	7651294	Identifier	heads		7649741	0					
+ANR	7651295	PrimaryExpression	0xff		7649741	1					
+ANR	7651296	ExpressionStatement	p [ 5 ] = secs & 0xff	597:16:10928:10946	7649741	7	True				
+ANR	7651297	AssignmentExpression	p [ 5 ] = secs & 0xff		7649741	0		=			
+ANR	7651298	ArrayIndexing	p [ 5 ]		7649741	0					
+ANR	7651299	Identifier	p		7649741	0					
+ANR	7651300	PrimaryExpression	5		7649741	1					
+ANR	7651301	BitAndExpression	secs & 0xff		7649741	1		&			
+ANR	7651302	Identifier	secs		7649741	0					
+ANR	7651303	PrimaryExpression	0xff		7649741	1					
+ANR	7651304	ExpressionStatement	p [ 6 ] = s -> cluster_size * 2	599:16:10965:10991	7649741	8	True				
+ANR	7651305	AssignmentExpression	p [ 6 ] = s -> cluster_size * 2		7649741	0		=			
+ANR	7651306	ArrayIndexing	p [ 6 ]		7649741	0					
+ANR	7651307	Identifier	p		7649741	0					
+ANR	7651308	PrimaryExpression	6		7649741	1					
+ANR	7651309	MultiplicativeExpression	s -> cluster_size * 2		7649741	1		*			
+ANR	7651310	PtrMemberAccess	s -> cluster_size		7649741	0					
+ANR	7651311	Identifier	s		7649741	0					
+ANR	7651312	Identifier	cluster_size		7649741	1					
+ANR	7651313	PrimaryExpression	2		7649741	1					
+ANR	7651314	ExpressionStatement	p [ 8 ] = ( cylinders >> 8 ) & 0xff	601:16:11010:11040	7649741	9	True				
+ANR	7651315	AssignmentExpression	p [ 8 ] = ( cylinders >> 8 ) & 0xff		7649741	0		=			
+ANR	7651316	ArrayIndexing	p [ 8 ]		7649741	0					
+ANR	7651317	Identifier	p		7649741	0					
+ANR	7651318	PrimaryExpression	8		7649741	1					
+ANR	7651319	BitAndExpression	( cylinders >> 8 ) & 0xff		7649741	1		&			
+ANR	7651320	ShiftExpression	cylinders >> 8		7649741	0		>>			
+ANR	7651321	Identifier	cylinders		7649741	0					
+ANR	7651322	PrimaryExpression	8		7649741	1					
+ANR	7651323	PrimaryExpression	0xff		7649741	1					
+ANR	7651324	ExpressionStatement	p [ 9 ] = cylinders & 0xff	603:16:11059:11082	7649741	10	True				
+ANR	7651325	AssignmentExpression	p [ 9 ] = cylinders & 0xff		7649741	0		=			
+ANR	7651326	ArrayIndexing	p [ 9 ]		7649741	0					
+ANR	7651327	Identifier	p		7649741	0					
+ANR	7651328	PrimaryExpression	9		7649741	1					
+ANR	7651329	BitAndExpression	cylinders & 0xff		7649741	1		&			
+ANR	7651330	Identifier	cylinders		7649741	0					
+ANR	7651331	PrimaryExpression	0xff		7649741	1					
+ANR	7651332	ExpressionStatement	p [ 10 ] = ( cylinders >> 8 ) & 0xff	607:16:11163:11194	7649741	11	True				
+ANR	7651333	AssignmentExpression	p [ 10 ] = ( cylinders >> 8 ) & 0xff		7649741	0		=			
+ANR	7651334	ArrayIndexing	p [ 10 ]		7649741	0					
+ANR	7651335	Identifier	p		7649741	0					
+ANR	7651336	PrimaryExpression	10		7649741	1					
+ANR	7651337	BitAndExpression	( cylinders >> 8 ) & 0xff		7649741	1		&			
+ANR	7651338	ShiftExpression	cylinders >> 8		7649741	0		>>			
+ANR	7651339	Identifier	cylinders		7649741	0					
+ANR	7651340	PrimaryExpression	8		7649741	1					
+ANR	7651341	PrimaryExpression	0xff		7649741	1					
+ANR	7651342	ExpressionStatement	p [ 11 ] = cylinders & 0xff	609:16:11213:11237	7649741	12	True				
+ANR	7651343	AssignmentExpression	p [ 11 ] = cylinders & 0xff		7649741	0		=			
+ANR	7651344	ArrayIndexing	p [ 11 ]		7649741	0					
+ANR	7651345	Identifier	p		7649741	0					
+ANR	7651346	PrimaryExpression	11		7649741	1					
+ANR	7651347	BitAndExpression	cylinders & 0xff		7649741	1		&			
+ANR	7651348	Identifier	cylinders		7649741	0					
+ANR	7651349	PrimaryExpression	0xff		7649741	1					
+ANR	7651350	ExpressionStatement	p [ 12 ] = ( cylinders >> 8 ) & 0xff	613:16:11320:11351	7649741	13	True				
+ANR	7651351	AssignmentExpression	p [ 12 ] = ( cylinders >> 8 ) & 0xff		7649741	0		=			
+ANR	7651352	ArrayIndexing	p [ 12 ]		7649741	0					
+ANR	7651353	Identifier	p		7649741	0					
+ANR	7651354	PrimaryExpression	12		7649741	1					
+ANR	7651355	BitAndExpression	( cylinders >> 8 ) & 0xff		7649741	1		&			
+ANR	7651356	ShiftExpression	cylinders >> 8		7649741	0		>>			
+ANR	7651357	Identifier	cylinders		7649741	0					
+ANR	7651358	PrimaryExpression	8		7649741	1					
+ANR	7651359	PrimaryExpression	0xff		7649741	1					
+ANR	7651360	ExpressionStatement	p [ 13 ] = cylinders & 0xff	615:16:11370:11394	7649741	14	True				
+ANR	7651361	AssignmentExpression	p [ 13 ] = cylinders & 0xff		7649741	0		=			
+ANR	7651362	ArrayIndexing	p [ 13 ]		7649741	0					
+ANR	7651363	Identifier	p		7649741	0					
+ANR	7651364	PrimaryExpression	13		7649741	1					
+ANR	7651365	BitAndExpression	cylinders & 0xff		7649741	1		&			
+ANR	7651366	Identifier	cylinders		7649741	0					
+ANR	7651367	PrimaryExpression	0xff		7649741	1					
+ANR	7651368	ExpressionStatement	p [ 14 ] = 0	619:16:11468:11477	7649741	15	True				
+ANR	7651369	AssignmentExpression	p [ 14 ] = 0		7649741	0		=			
+ANR	7651370	ArrayIndexing	p [ 14 ]		7649741	0					
+ANR	7651371	Identifier	p		7649741	0					
+ANR	7651372	PrimaryExpression	14		7649741	1					
+ANR	7651373	PrimaryExpression	0		7649741	1					
+ANR	7651374	ExpressionStatement	p [ 15 ] = 1	621:16:11496:11505	7649741	16	True				
+ANR	7651375	AssignmentExpression	p [ 15 ] = 1		7649741	0		=			
+ANR	7651376	ArrayIndexing	p [ 15 ]		7649741	0					
+ANR	7651377	Identifier	p		7649741	0					
+ANR	7651378	PrimaryExpression	15		7649741	1					
+ANR	7651379	PrimaryExpression	1		7649741	1					
+ANR	7651380	ExpressionStatement	p [ 16 ] = 1	625:16:11581:11590	7649741	17	True				
+ANR	7651381	AssignmentExpression	p [ 16 ] = 1		7649741	0		=			
+ANR	7651382	ArrayIndexing	p [ 16 ]		7649741	0					
+ANR	7651383	Identifier	p		7649741	0					
+ANR	7651384	PrimaryExpression	16		7649741	1					
+ANR	7651385	PrimaryExpression	1		7649741	1					
+ANR	7651386	ExpressionStatement	p [ 17 ] = 0	629:16:11672:11681	7649741	18	True				
+ANR	7651387	AssignmentExpression	p [ 17 ] = 0		7649741	0		=			
+ANR	7651388	ArrayIndexing	p [ 17 ]		7649741	0					
+ANR	7651389	Identifier	p		7649741	0					
+ANR	7651390	PrimaryExpression	17		7649741	1					
+ANR	7651391	PrimaryExpression	0		7649741	1					
+ANR	7651392	ExpressionStatement	p [ 18 ] = 1	631:16:11700:11709	7649741	19	True				
+ANR	7651393	AssignmentExpression	p [ 18 ] = 1		7649741	0		=			
+ANR	7651394	ArrayIndexing	p [ 18 ]		7649741	0					
+ANR	7651395	Identifier	p		7649741	0					
+ANR	7651396	PrimaryExpression	18		7649741	1					
+ANR	7651397	PrimaryExpression	1		7649741	1					
+ANR	7651398	ExpressionStatement	p [ 19 ] = 1	635:16:11779:11788	7649741	20	True				
+ANR	7651399	AssignmentExpression	p [ 19 ] = 1		7649741	0		=			
+ANR	7651400	ArrayIndexing	p [ 19 ]		7649741	0					
+ANR	7651401	Identifier	p		7649741	0					
+ANR	7651402	PrimaryExpression	19		7649741	1					
+ANR	7651403	PrimaryExpression	1		7649741	1					
+ANR	7651404	ExpressionStatement	p [ 20 ] = 1	639:16:11859:11868	7649741	21	True				
+ANR	7651405	AssignmentExpression	p [ 20 ] = 1		7649741	0		=			
+ANR	7651406	ArrayIndexing	p [ 20 ]		7649741	0					
+ANR	7651407	Identifier	p		7649741	0					
+ANR	7651408	PrimaryExpression	20		7649741	1					
+ANR	7651409	PrimaryExpression	1		7649741	1					
+ANR	7651410	ExpressionStatement	p [ 28 ] = ( 5400 >> 8 ) & 0xff	643:16:11947:11973	7649741	22	True				
+ANR	7651411	AssignmentExpression	p [ 28 ] = ( 5400 >> 8 ) & 0xff		7649741	0		=			
+ANR	7651412	ArrayIndexing	p [ 28 ]		7649741	0					
+ANR	7651413	Identifier	p		7649741	0					
+ANR	7651414	PrimaryExpression	28		7649741	1					
+ANR	7651415	BitAndExpression	( 5400 >> 8 ) & 0xff		7649741	1		&			
+ANR	7651416	ShiftExpression	5400 >> 8		7649741	0		>>			
+ANR	7651417	PrimaryExpression	5400		7649741	0					
+ANR	7651418	PrimaryExpression	8		7649741	1					
+ANR	7651419	PrimaryExpression	0xff		7649741	1					
+ANR	7651420	ExpressionStatement	p [ 29 ] = 5400 & 0xff	645:16:11992:12011	7649741	23	True				
+ANR	7651421	AssignmentExpression	p [ 29 ] = 5400 & 0xff		7649741	0		=			
+ANR	7651422	ArrayIndexing	p [ 29 ]		7649741	0					
+ANR	7651423	Identifier	p		7649741	0					
+ANR	7651424	PrimaryExpression	29		7649741	1					
+ANR	7651425	BitAndExpression	5400 & 0xff		7649741	1		&			
+ANR	7651426	PrimaryExpression	5400		7649741	0					
+ANR	7651427	PrimaryExpression	0xff		7649741	1					
+ANR	7651428	ExpressionStatement	p += 0x1e	647:16:12030:12039	7649741	24	True				
+ANR	7651429	AssignmentExpression	p += 0x1e		7649741	0		+=			
+ANR	7651430	Identifier	p		7649741	0					
+ANR	7651431	PrimaryExpression	0x1e		7649741	1					
+ANR	7651432	ElseStatement	else		7649741	0					
+ANR	7651433	IfStatement	if ( ( page == 8 || page == 0x3f ) )		7649741	0					
+ANR	7651434	Condition	page == 8 || page == 0x3f	649:23:12065:12091	7649741	0	True				
+ANR	7651435	OrExpression	page == 8 || page == 0x3f		7649741	0		||			
+ANR	7651436	EqualityExpression	page == 8		7649741	0		==			
+ANR	7651437	Identifier	page		7649741	0					
+ANR	7651438	PrimaryExpression	8		7649741	1					
+ANR	7651439	EqualityExpression	page == 0x3f		7649741	1		==			
+ANR	7651440	Identifier	page		7649741	0					
+ANR	7651441	PrimaryExpression	0x3f		7649741	1					
+ANR	7651442	CompoundStatement		645:52:11973:11973	7649741	1					
+ANR	7651443	ExpressionStatement	"memset ( p , 0 , 20 )"	653:16:12151:12165	7649741	0	True				
+ANR	7651444	CallExpression	"memset ( p , 0 , 20 )"		7649741	0					
+ANR	7651445	Callee	memset		7649741	0					
+ANR	7651446	Identifier	memset		7649741	0					
+ANR	7651447	ArgumentList	p		7649741	1					
+ANR	7651448	Argument	p		7649741	0					
+ANR	7651449	Identifier	p		7649741	0					
+ANR	7651450	Argument	0		7649741	1					
+ANR	7651451	PrimaryExpression	0		7649741	0					
+ANR	7651452	Argument	20		7649741	2					
+ANR	7651453	PrimaryExpression	20		7649741	0					
+ANR	7651454	ExpressionStatement	p [ 0 ] = 8	655:16:12184:12192	7649741	1	True				
+ANR	7651455	AssignmentExpression	p [ 0 ] = 8		7649741	0		=			
+ANR	7651456	ArrayIndexing	p [ 0 ]		7649741	0					
+ANR	7651457	Identifier	p		7649741	0					
+ANR	7651458	PrimaryExpression	0		7649741	1					
+ANR	7651459	PrimaryExpression	8		7649741	1					
+ANR	7651460	ExpressionStatement	p [ 1 ] = 0x12	657:16:12211:12222	7649741	2	True				
+ANR	7651461	AssignmentExpression	p [ 1 ] = 0x12		7649741	0		=			
+ANR	7651462	ArrayIndexing	p [ 1 ]		7649741	0					
+ANR	7651463	Identifier	p		7649741	0					
+ANR	7651464	PrimaryExpression	1		7649741	1					
+ANR	7651465	PrimaryExpression	0x12		7649741	1					
+ANR	7651466	ExpressionStatement	p [ 2 ] = 4	659:16:12241:12249	7649741	3	True				
+ANR	7651467	AssignmentExpression	p [ 2 ] = 4		7649741	0		=			
+ANR	7651468	ArrayIndexing	p [ 2 ]		7649741	0					
+ANR	7651469	Identifier	p		7649741	0					
+ANR	7651470	PrimaryExpression	2		7649741	1					
+ANR	7651471	PrimaryExpression	4		7649741	1					
+ANR	7651472	ExpressionStatement	p += 20	661:16:12278:12285	7649741	4	True				
+ANR	7651473	AssignmentExpression	p += 20		7649741	0		+=			
+ANR	7651474	Identifier	p		7649741	0					
+ANR	7651475	PrimaryExpression	20		7649741	1					
+ANR	7651476	IfStatement	if ( ( page == 0x3f || page == 0x2a ) && ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM ) )		7649741	11					
+ANR	7651477	Condition	( page == 0x3f || page == 0x2a ) && ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM )	665:16:12319:12421	7649741	0	True				
+ANR	7651478	AndExpression	( page == 0x3f || page == 0x2a ) && ( bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM )		7649741	0		&&			
+ANR	7651479	OrExpression	page == 0x3f || page == 0x2a		7649741	0		||			
+ANR	7651480	EqualityExpression	page == 0x3f		7649741	0		==			
+ANR	7651481	Identifier	page		7649741	0					
+ANR	7651482	PrimaryExpression	0x3f		7649741	1					
+ANR	7651483	EqualityExpression	page == 0x2a		7649741	1		==			
+ANR	7651484	Identifier	page		7649741	0					
+ANR	7651485	PrimaryExpression	0x2a		7649741	1					
+ANR	7651486	EqualityExpression	bdrv_get_type_hint ( s -> bdrv ) == BDRV_TYPE_CDROM		7649741	1		==			
+ANR	7651487	CallExpression	bdrv_get_type_hint ( s -> bdrv )		7649741	0					
+ANR	7651488	Callee	bdrv_get_type_hint		7649741	0					
+ANR	7651489	Identifier	bdrv_get_type_hint		7649741	0					
+ANR	7651490	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651491	Argument	s -> bdrv		7649741	0					
+ANR	7651492	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651493	Identifier	s		7649741	0					
+ANR	7651494	Identifier	bdrv		7649741	1					
+ANR	7651495	Identifier	BDRV_TYPE_CDROM		7649741	1					
+ANR	7651496	CompoundStatement		663:73:12303:12303	7649741	1					
+ANR	7651497	ExpressionStatement	p [ 0 ] = 0x2a	671:16:12510:12521	7649741	0	True				
+ANR	7651498	AssignmentExpression	p [ 0 ] = 0x2a		7649741	0		=			
+ANR	7651499	ArrayIndexing	p [ 0 ]		7649741	0					
+ANR	7651500	Identifier	p		7649741	0					
+ANR	7651501	PrimaryExpression	0		7649741	1					
+ANR	7651502	PrimaryExpression	0x2a		7649741	1					
+ANR	7651503	ExpressionStatement	p [ 1 ] = 0x14	673:16:12540:12551	7649741	1	True				
+ANR	7651504	AssignmentExpression	p [ 1 ] = 0x14		7649741	0		=			
+ANR	7651505	ArrayIndexing	p [ 1 ]		7649741	0					
+ANR	7651506	Identifier	p		7649741	0					
+ANR	7651507	PrimaryExpression	1		7649741	1					
+ANR	7651508	PrimaryExpression	0x14		7649741	1					
+ANR	7651509	ExpressionStatement	p [ 2 ] = 3	675:16:12570:12578	7649741	2	True				
+ANR	7651510	AssignmentExpression	p [ 2 ] = 3		7649741	0		=			
+ANR	7651511	ArrayIndexing	p [ 2 ]		7649741	0					
+ANR	7651512	Identifier	p		7649741	0					
+ANR	7651513	PrimaryExpression	2		7649741	1					
+ANR	7651514	PrimaryExpression	3		7649741	1					
+ANR	7651515	ExpressionStatement	p [ 3 ] = 0	677:16:12618:12626	7649741	3	True				
+ANR	7651516	AssignmentExpression	p [ 3 ] = 0		7649741	0		=			
+ANR	7651517	ArrayIndexing	p [ 3 ]		7649741	0					
+ANR	7651518	Identifier	p		7649741	0					
+ANR	7651519	PrimaryExpression	3		7649741	1					
+ANR	7651520	PrimaryExpression	0		7649741	1					
+ANR	7651521	ExpressionStatement	p [ 4 ] = 0x7f	679:16:12670:12681	7649741	4	True				
+ANR	7651522	AssignmentExpression	p [ 4 ] = 0x7f		7649741	0		=			
+ANR	7651523	ArrayIndexing	p [ 4 ]		7649741	0					
+ANR	7651524	Identifier	p		7649741	0					
+ANR	7651525	PrimaryExpression	4		7649741	1					
+ANR	7651526	PrimaryExpression	0x7f		7649741	1					
+ANR	7651527	ExpressionStatement	p [ 5 ] = 0xff	683:16:12810:12821	7649741	5	True				
+ANR	7651528	AssignmentExpression	p [ 5 ] = 0xff		7649741	0		=			
+ANR	7651529	ArrayIndexing	p [ 5 ]		7649741	0					
+ANR	7651530	Identifier	p		7649741	0					
+ANR	7651531	PrimaryExpression	5		7649741	1					
+ANR	7651532	PrimaryExpression	0xff		7649741	1					
+ANR	7651533	ExpressionStatement	p [ 6 ] = 0x2d | ( bdrv_is_locked ( s -> bdrv ) ? 2 : 0 )	689:16:13009:13055	7649741	6	True				
+ANR	7651534	AssignmentExpression	p [ 6 ] = 0x2d | ( bdrv_is_locked ( s -> bdrv ) ? 2 : 0 )		7649741	0		=			
+ANR	7651535	ArrayIndexing	p [ 6 ]		7649741	0					
+ANR	7651536	Identifier	p		7649741	0					
+ANR	7651537	PrimaryExpression	6		7649741	1					
+ANR	7651538	InclusiveOrExpression	0x2d | ( bdrv_is_locked ( s -> bdrv ) ? 2 : 0 )		7649741	1		|			
+ANR	7651539	PrimaryExpression	0x2d		7649741	0					
+ANR	7651540	ConditionalExpression	bdrv_is_locked ( s -> bdrv ) ? 2 : 0		7649741	1					
+ANR	7651541	Condition	bdrv_is_locked ( s -> bdrv )		7649741	0					
+ANR	7651542	CallExpression	bdrv_is_locked ( s -> bdrv )		7649741	0					
+ANR	7651543	Callee	bdrv_is_locked		7649741	0					
+ANR	7651544	Identifier	bdrv_is_locked		7649741	0					
+ANR	7651545	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651546	Argument	s -> bdrv		7649741	0					
+ANR	7651547	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651548	Identifier	s		7649741	0					
+ANR	7651549	Identifier	bdrv		7649741	1					
+ANR	7651550	PrimaryExpression	2		7649741	1					
+ANR	7651551	PrimaryExpression	0		7649741	2					
+ANR	7651552	ExpressionStatement	p [ 7 ] = 0	693:16:13144:13152	7649741	7	True				
+ANR	7651553	AssignmentExpression	p [ 7 ] = 0		7649741	0		=			
+ANR	7651554	ArrayIndexing	p [ 7 ]		7649741	0					
+ANR	7651555	Identifier	p		7649741	0					
+ANR	7651556	PrimaryExpression	7		7649741	1					
+ANR	7651557	PrimaryExpression	0		7649741	1					
+ANR	7651558	ExpressionStatement	p [ 8 ] = ( 50 * 176 ) >> 8	697:16:13253:13275	7649741	8	True				
+ANR	7651559	AssignmentExpression	p [ 8 ] = ( 50 * 176 ) >> 8		7649741	0		=			
+ANR	7651560	ArrayIndexing	p [ 8 ]		7649741	0					
+ANR	7651561	Identifier	p		7649741	0					
+ANR	7651562	PrimaryExpression	8		7649741	1					
+ANR	7651563	ShiftExpression	( 50 * 176 ) >> 8		7649741	1		>>			
+ANR	7651564	MultiplicativeExpression	50 * 176		7649741	0		*			
+ANR	7651565	PrimaryExpression	50		7649741	0					
+ANR	7651566	PrimaryExpression	176		7649741	1					
+ANR	7651567	PrimaryExpression	8		7649741	1					
+ANR	7651568	ExpressionStatement	p [ 9 ] = ( 50 * 176 ) & 0xff	699:16:13312:13336	7649741	9	True				
+ANR	7651569	AssignmentExpression	p [ 9 ] = ( 50 * 176 ) & 0xff		7649741	0		=			
+ANR	7651570	ArrayIndexing	p [ 9 ]		7649741	0					
+ANR	7651571	Identifier	p		7649741	0					
+ANR	7651572	PrimaryExpression	9		7649741	1					
+ANR	7651573	BitAndExpression	( 50 * 176 ) & 0xff		7649741	1		&			
+ANR	7651574	MultiplicativeExpression	50 * 176		7649741	0		*			
+ANR	7651575	PrimaryExpression	50		7649741	0					
+ANR	7651576	PrimaryExpression	176		7649741	1					
+ANR	7651577	PrimaryExpression	0xff		7649741	1					
+ANR	7651578	ExpressionStatement	p [ 10 ] = 0 >> 8	701:16:13355:13369	7649741	10	True				
+ANR	7651579	AssignmentExpression	p [ 10 ] = 0 >> 8		7649741	0		=			
+ANR	7651580	ArrayIndexing	p [ 10 ]		7649741	0					
+ANR	7651581	Identifier	p		7649741	0					
+ANR	7651582	PrimaryExpression	10		7649741	1					
+ANR	7651583	ShiftExpression	0 >> 8		7649741	1		>>			
+ANR	7651584	PrimaryExpression	0		7649741	0					
+ANR	7651585	PrimaryExpression	8		7649741	1					
+ANR	7651586	ExpressionStatement	p [ 11 ] = 0 & 0xff	703:16:13401:13417	7649741	11	True				
+ANR	7651587	AssignmentExpression	p [ 11 ] = 0 & 0xff		7649741	0		=			
+ANR	7651588	ArrayIndexing	p [ 11 ]		7649741	0					
+ANR	7651589	Identifier	p		7649741	0					
+ANR	7651590	PrimaryExpression	11		7649741	1					
+ANR	7651591	BitAndExpression	0 & 0xff		7649741	1		&			
+ANR	7651592	PrimaryExpression	0		7649741	0					
+ANR	7651593	PrimaryExpression	0xff		7649741	1					
+ANR	7651594	ExpressionStatement	p [ 12 ] = 2048 >> 8	705:16:13436:13453	7649741	12	True				
+ANR	7651595	AssignmentExpression	p [ 12 ] = 2048 >> 8		7649741	0		=			
+ANR	7651596	ArrayIndexing	p [ 12 ]		7649741	0					
+ANR	7651597	Identifier	p		7649741	0					
+ANR	7651598	PrimaryExpression	12		7649741	1					
+ANR	7651599	ShiftExpression	2048 >> 8		7649741	1		>>			
+ANR	7651600	PrimaryExpression	2048		7649741	0					
+ANR	7651601	PrimaryExpression	8		7649741	1					
+ANR	7651602	ExpressionStatement	p [ 13 ] = 2048 & 0xff	707:16:13485:13504	7649741	13	True				
+ANR	7651603	AssignmentExpression	p [ 13 ] = 2048 & 0xff		7649741	0		=			
+ANR	7651604	ArrayIndexing	p [ 13 ]		7649741	0					
+ANR	7651605	Identifier	p		7649741	0					
+ANR	7651606	PrimaryExpression	13		7649741	1					
+ANR	7651607	BitAndExpression	2048 & 0xff		7649741	1		&			
+ANR	7651608	PrimaryExpression	2048		7649741	0					
+ANR	7651609	PrimaryExpression	0xff		7649741	1					
+ANR	7651610	ExpressionStatement	p [ 14 ] = ( 16 * 176 ) >> 8	709:16:13523:13546	7649741	14	True				
+ANR	7651611	AssignmentExpression	p [ 14 ] = ( 16 * 176 ) >> 8		7649741	0		=			
+ANR	7651612	ArrayIndexing	p [ 14 ]		7649741	0					
+ANR	7651613	Identifier	p		7649741	0					
+ANR	7651614	PrimaryExpression	14		7649741	1					
+ANR	7651615	ShiftExpression	( 16 * 176 ) >> 8		7649741	1		>>			
+ANR	7651616	MultiplicativeExpression	16 * 176		7649741	0		*			
+ANR	7651617	PrimaryExpression	16		7649741	0					
+ANR	7651618	PrimaryExpression	176		7649741	1					
+ANR	7651619	PrimaryExpression	8		7649741	1					
+ANR	7651620	ExpressionStatement	p [ 15 ] = ( 16 * 176 ) & 0xff	711:16:13591:13616	7649741	15	True				
+ANR	7651621	AssignmentExpression	p [ 15 ] = ( 16 * 176 ) & 0xff		7649741	0		=			
+ANR	7651622	ArrayIndexing	p [ 15 ]		7649741	0					
+ANR	7651623	Identifier	p		7649741	0					
+ANR	7651624	PrimaryExpression	15		7649741	1					
+ANR	7651625	BitAndExpression	( 16 * 176 ) & 0xff		7649741	1		&			
+ANR	7651626	MultiplicativeExpression	16 * 176		7649741	0		*			
+ANR	7651627	PrimaryExpression	16		7649741	0					
+ANR	7651628	PrimaryExpression	176		7649741	1					
+ANR	7651629	PrimaryExpression	0xff		7649741	1					
+ANR	7651630	ExpressionStatement	p [ 18 ] = ( 16 * 176 ) >> 8	713:16:13635:13658	7649741	16	True				
+ANR	7651631	AssignmentExpression	p [ 18 ] = ( 16 * 176 ) >> 8		7649741	0		=			
+ANR	7651632	ArrayIndexing	p [ 18 ]		7649741	0					
+ANR	7651633	Identifier	p		7649741	0					
+ANR	7651634	PrimaryExpression	18		7649741	1					
+ANR	7651635	ShiftExpression	( 16 * 176 ) >> 8		7649741	1		>>			
+ANR	7651636	MultiplicativeExpression	16 * 176		7649741	0		*			
+ANR	7651637	PrimaryExpression	16		7649741	0					
+ANR	7651638	PrimaryExpression	176		7649741	1					
+ANR	7651639	PrimaryExpression	8		7649741	1					
+ANR	7651640	ExpressionStatement	p [ 19 ] = ( 16 * 176 ) & 0xff	715:16:13696:13721	7649741	17	True				
+ANR	7651641	AssignmentExpression	p [ 19 ] = ( 16 * 176 ) & 0xff		7649741	0		=			
+ANR	7651642	ArrayIndexing	p [ 19 ]		7649741	0					
+ANR	7651643	Identifier	p		7649741	0					
+ANR	7651644	PrimaryExpression	19		7649741	1					
+ANR	7651645	BitAndExpression	( 16 * 176 ) & 0xff		7649741	1		&			
+ANR	7651646	MultiplicativeExpression	16 * 176		7649741	0		*			
+ANR	7651647	PrimaryExpression	16		7649741	0					
+ANR	7651648	PrimaryExpression	176		7649741	1					
+ANR	7651649	PrimaryExpression	0xff		7649741	1					
+ANR	7651650	ExpressionStatement	p [ 20 ] = ( 16 * 176 ) >> 8	717:16:13740:13763	7649741	18	True				
+ANR	7651651	AssignmentExpression	p [ 20 ] = ( 16 * 176 ) >> 8		7649741	0		=			
+ANR	7651652	ArrayIndexing	p [ 20 ]		7649741	0					
+ANR	7651653	Identifier	p		7649741	0					
+ANR	7651654	PrimaryExpression	20		7649741	1					
+ANR	7651655	ShiftExpression	( 16 * 176 ) >> 8		7649741	1		>>			
+ANR	7651656	MultiplicativeExpression	16 * 176		7649741	0		*			
+ANR	7651657	PrimaryExpression	16		7649741	0					
+ANR	7651658	PrimaryExpression	176		7649741	1					
+ANR	7651659	PrimaryExpression	8		7649741	1					
+ANR	7651660	ExpressionStatement	p [ 21 ] = ( 16 * 176 ) & 0xff	719:16:13809:13834	7649741	19	True				
+ANR	7651661	AssignmentExpression	p [ 21 ] = ( 16 * 176 ) & 0xff		7649741	0		=			
+ANR	7651662	ArrayIndexing	p [ 21 ]		7649741	0					
+ANR	7651663	Identifier	p		7649741	0					
+ANR	7651664	PrimaryExpression	21		7649741	1					
+ANR	7651665	BitAndExpression	( 16 * 176 ) & 0xff		7649741	1		&			
+ANR	7651666	MultiplicativeExpression	16 * 176		7649741	0		*			
+ANR	7651667	PrimaryExpression	16		7649741	0					
+ANR	7651668	PrimaryExpression	176		7649741	1					
+ANR	7651669	PrimaryExpression	0xff		7649741	1					
+ANR	7651670	ExpressionStatement	p += 22	721:16:13853:13860	7649741	20	True				
+ANR	7651671	AssignmentExpression	p += 22		7649741	0		+=			
+ANR	7651672	Identifier	p		7649741	0					
+ANR	7651673	PrimaryExpression	22		7649741	1					
+ANR	7651674	ExpressionStatement	r -> buf_len = p - outbuf	725:12:13890:13913	7649741	12	True				
+ANR	7651675	AssignmentExpression	r -> buf_len = p - outbuf		7649741	0		=			
+ANR	7651676	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7651677	Identifier	r		7649741	0					
+ANR	7651678	Identifier	buf_len		7649741	1					
+ANR	7651679	AdditiveExpression	p - outbuf		7649741	1		-			
+ANR	7651680	Identifier	p		7649741	0					
+ANR	7651681	Identifier	outbuf		7649741	1					
+ANR	7651682	ExpressionStatement	outbuf [ 0 ] = r -> buf_len - 4	727:12:13928:13954	7649741	13	True				
+ANR	7651683	AssignmentExpression	outbuf [ 0 ] = r -> buf_len - 4		7649741	0		=			
+ANR	7651684	ArrayIndexing	outbuf [ 0 ]		7649741	0					
+ANR	7651685	Identifier	outbuf		7649741	0					
+ANR	7651686	PrimaryExpression	0		7649741	1					
+ANR	7651687	AdditiveExpression	r -> buf_len - 4		7649741	1		-			
+ANR	7651688	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7651689	Identifier	r		7649741	0					
+ANR	7651690	Identifier	buf_len		7649741	1					
+ANR	7651691	PrimaryExpression	4		7649741	1					
+ANR	7651692	IfStatement	if ( r -> buf_len > len )		7649741	14					
+ANR	7651693	Condition	r -> buf_len > len	729:16:13973:13988	7649741	0	True				
+ANR	7651694	RelationalExpression	r -> buf_len > len		7649741	0		>			
+ANR	7651695	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7651696	Identifier	r		7649741	0					
+ANR	7651697	Identifier	buf_len		7649741	1					
+ANR	7651698	Identifier	len		7649741	1					
+ANR	7651699	ExpressionStatement	r -> buf_len = len	731:16:14008:14024	7649741	1	True				
+ANR	7651700	AssignmentExpression	r -> buf_len = len		7649741	0		=			
+ANR	7651701	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7651702	Identifier	r		7649741	0					
+ANR	7651703	Identifier	buf_len		7649741	1					
+ANR	7651704	Identifier	len		7649741	1					
+ANR	7651705	BreakStatement	break ;	735:8:14046:14051	7649741	36	True				
+ANR	7651706	Label	case 0x1b :	737:4:14058:14067	7649741	37	True				
+ANR	7651707	ExpressionStatement	"DPRINTF ( ""Start Stop Unit\\n"" )"	739:8:14078:14106	7649741	38	True				
+ANR	7651708	CallExpression	"DPRINTF ( ""Start Stop Unit\\n"" )"		7649741	0					
+ANR	7651709	Callee	DPRINTF		7649741	0					
+ANR	7651710	Identifier	DPRINTF		7649741	0					
+ANR	7651711	ArgumentList	"""Start Stop Unit\\n"""		7649741	1					
+ANR	7651712	Argument	"""Start Stop Unit\\n"""		7649741	0					
+ANR	7651713	PrimaryExpression	"""Start Stop Unit\\n"""		7649741	0					
+ANR	7651714	BreakStatement	break ;	741:1:14110:14115	7649741	39	True				
+ANR	7651715	Label	case 0x1e :	743:4:14122:14131	7649741	40	True				
+ANR	7651716	ExpressionStatement	"DPRINTF ( ""Prevent Allow Medium Removal (prevent = %d)\\n"" , buf [ 4 ] & 3 )"	745:8:14142:14210	7649741	41	True				
+ANR	7651717	CallExpression	"DPRINTF ( ""Prevent Allow Medium Removal (prevent = %d)\\n"" , buf [ 4 ] & 3 )"		7649741	0					
+ANR	7651718	Callee	DPRINTF		7649741	0					
+ANR	7651719	Identifier	DPRINTF		7649741	0					
+ANR	7651720	ArgumentList	"""Prevent Allow Medium Removal (prevent = %d)\\n"""		7649741	1					
+ANR	7651721	Argument	"""Prevent Allow Medium Removal (prevent = %d)\\n"""		7649741	0					
+ANR	7651722	PrimaryExpression	"""Prevent Allow Medium Removal (prevent = %d)\\n"""		7649741	0					
+ANR	7651723	Argument	buf [ 4 ] & 3		7649741	1					
+ANR	7651724	BitAndExpression	buf [ 4 ] & 3		7649741	0		&			
+ANR	7651725	ArrayIndexing	buf [ 4 ]		7649741	0					
+ANR	7651726	Identifier	buf		7649741	0					
+ANR	7651727	PrimaryExpression	4		7649741	1					
+ANR	7651728	PrimaryExpression	3		7649741	1					
+ANR	7651729	ExpressionStatement	"bdrv_set_locked ( s -> bdrv , buf [ 4 ] & 1 )"	747:8:14221:14257	7649741	42	True				
+ANR	7651730	CallExpression	"bdrv_set_locked ( s -> bdrv , buf [ 4 ] & 1 )"		7649741	0					
+ANR	7651731	Callee	bdrv_set_locked		7649741	0					
+ANR	7651732	Identifier	bdrv_set_locked		7649741	0					
+ANR	7651733	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651734	Argument	s -> bdrv		7649741	0					
+ANR	7651735	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651736	Identifier	s		7649741	0					
+ANR	7651737	Identifier	bdrv		7649741	1					
+ANR	7651738	Argument	buf [ 4 ] & 1		7649741	1					
+ANR	7651739	BitAndExpression	buf [ 4 ] & 1		7649741	0		&			
+ANR	7651740	ArrayIndexing	buf [ 4 ]		7649741	0					
+ANR	7651741	Identifier	buf		7649741	0					
+ANR	7651742	PrimaryExpression	4		7649741	1					
+ANR	7651743	PrimaryExpression	1		7649741	1					
+ANR	7651744	BreakStatement	break ;	749:1:14261:14266	7649741	43	True				
+ANR	7651745	Label	case 0x25 :	751:4:14273:14282	7649741	44	True				
+ANR	7651746	ExpressionStatement	"DPRINTF ( ""Read Capacity\\n"" )"	753:1:14286:14312	7649741	45	True				
+ANR	7651747	CallExpression	"DPRINTF ( ""Read Capacity\\n"" )"		7649741	0					
+ANR	7651748	Callee	DPRINTF		7649741	0					
+ANR	7651749	Identifier	DPRINTF		7649741	0					
+ANR	7651750	ArgumentList	"""Read Capacity\\n"""		7649741	1					
+ANR	7651751	Argument	"""Read Capacity\\n"""		7649741	0					
+ANR	7651752	PrimaryExpression	"""Read Capacity\\n"""		7649741	0					
+ANR	7651753	ExpressionStatement	"memset ( outbuf , 0 , 8 )"	757:1:14379:14399	7649741	46	True				
+ANR	7651754	CallExpression	"memset ( outbuf , 0 , 8 )"		7649741	0					
+ANR	7651755	Callee	memset		7649741	0					
+ANR	7651756	Identifier	memset		7649741	0					
+ANR	7651757	ArgumentList	outbuf		7649741	1					
+ANR	7651758	Argument	outbuf		7649741	0					
+ANR	7651759	Identifier	outbuf		7649741	0					
+ANR	7651760	Argument	0		7649741	1					
+ANR	7651761	PrimaryExpression	0		7649741	0					
+ANR	7651762	Argument	8		7649741	2					
+ANR	7651763	PrimaryExpression	8		7649741	0					
+ANR	7651764	ExpressionStatement	"bdrv_get_geometry ( s -> bdrv , & nb_sectors )"	759:1:14403:14442	7649741	47	True				
+ANR	7651765	CallExpression	"bdrv_get_geometry ( s -> bdrv , & nb_sectors )"		7649741	0					
+ANR	7651766	Callee	bdrv_get_geometry		7649741	0					
+ANR	7651767	Identifier	bdrv_get_geometry		7649741	0					
+ANR	7651768	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651769	Argument	s -> bdrv		7649741	0					
+ANR	7651770	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651771	Identifier	s		7649741	0					
+ANR	7651772	Identifier	bdrv		7649741	1					
+ANR	7651773	Argument	& nb_sectors		7649741	1					
+ANR	7651774	UnaryOperationExpression	& nb_sectors		7649741	0					
+ANR	7651775	UnaryOperator	&		7649741	0					
+ANR	7651776	Identifier	nb_sectors		7649741	1					
+ANR	7651777	IfStatement	if ( nb_sectors )		7649741	48					
+ANR	7651778	Condition	nb_sectors	763:12:14523:14532	7649741	0	True				
+ANR	7651779	Identifier	nb_sectors		7649741	0					
+ANR	7651780	CompoundStatement		759:24:14414:14414	7649741	1					
+ANR	7651781	ExpressionStatement	nb_sectors --	765:12:14550:14562	7649741	0	True				
+ANR	7651782	PostIncDecOperationExpression	nb_sectors --		7649741	0					
+ANR	7651783	Identifier	nb_sectors		7649741	0					
+ANR	7651784	IncDec	--		7649741	1					
+ANR	7651785	ExpressionStatement	outbuf [ 0 ] = ( nb_sectors >> 24 ) & 0xff	767:12:14577:14614	7649741	1	True				
+ANR	7651786	AssignmentExpression	outbuf [ 0 ] = ( nb_sectors >> 24 ) & 0xff		7649741	0		=			
+ANR	7651787	ArrayIndexing	outbuf [ 0 ]		7649741	0					
+ANR	7651788	Identifier	outbuf		7649741	0					
+ANR	7651789	PrimaryExpression	0		7649741	1					
+ANR	7651790	BitAndExpression	( nb_sectors >> 24 ) & 0xff		7649741	1		&			
+ANR	7651791	ShiftExpression	nb_sectors >> 24		7649741	0		>>			
+ANR	7651792	Identifier	nb_sectors		7649741	0					
+ANR	7651793	PrimaryExpression	24		7649741	1					
+ANR	7651794	PrimaryExpression	0xff		7649741	1					
+ANR	7651795	ExpressionStatement	outbuf [ 1 ] = ( nb_sectors >> 16 ) & 0xff	769:12:14629:14666	7649741	2	True				
+ANR	7651796	AssignmentExpression	outbuf [ 1 ] = ( nb_sectors >> 16 ) & 0xff		7649741	0		=			
+ANR	7651797	ArrayIndexing	outbuf [ 1 ]		7649741	0					
+ANR	7651798	Identifier	outbuf		7649741	0					
+ANR	7651799	PrimaryExpression	1		7649741	1					
+ANR	7651800	BitAndExpression	( nb_sectors >> 16 ) & 0xff		7649741	1		&			
+ANR	7651801	ShiftExpression	nb_sectors >> 16		7649741	0		>>			
+ANR	7651802	Identifier	nb_sectors		7649741	0					
+ANR	7651803	PrimaryExpression	16		7649741	1					
+ANR	7651804	PrimaryExpression	0xff		7649741	1					
+ANR	7651805	ExpressionStatement	outbuf [ 2 ] = ( nb_sectors >> 8 ) & 0xff	771:12:14681:14717	7649741	3	True				
+ANR	7651806	AssignmentExpression	outbuf [ 2 ] = ( nb_sectors >> 8 ) & 0xff		7649741	0		=			
+ANR	7651807	ArrayIndexing	outbuf [ 2 ]		7649741	0					
+ANR	7651808	Identifier	outbuf		7649741	0					
+ANR	7651809	PrimaryExpression	2		7649741	1					
+ANR	7651810	BitAndExpression	( nb_sectors >> 8 ) & 0xff		7649741	1		&			
+ANR	7651811	ShiftExpression	nb_sectors >> 8		7649741	0		>>			
+ANR	7651812	Identifier	nb_sectors		7649741	0					
+ANR	7651813	PrimaryExpression	8		7649741	1					
+ANR	7651814	PrimaryExpression	0xff		7649741	1					
+ANR	7651815	ExpressionStatement	outbuf [ 3 ] = nb_sectors & 0xff	773:12:14732:14761	7649741	4	True				
+ANR	7651816	AssignmentExpression	outbuf [ 3 ] = nb_sectors & 0xff		7649741	0		=			
+ANR	7651817	ArrayIndexing	outbuf [ 3 ]		7649741	0					
+ANR	7651818	Identifier	outbuf		7649741	0					
+ANR	7651819	PrimaryExpression	3		7649741	1					
+ANR	7651820	BitAndExpression	nb_sectors & 0xff		7649741	1		&			
+ANR	7651821	Identifier	nb_sectors		7649741	0					
+ANR	7651822	PrimaryExpression	0xff		7649741	1					
+ANR	7651823	ExpressionStatement	outbuf [ 4 ] = 0	775:12:14776:14789	7649741	5	True				
+ANR	7651824	AssignmentExpression	outbuf [ 4 ] = 0		7649741	0		=			
+ANR	7651825	ArrayIndexing	outbuf [ 4 ]		7649741	0					
+ANR	7651826	Identifier	outbuf		7649741	0					
+ANR	7651827	PrimaryExpression	4		7649741	1					
+ANR	7651828	PrimaryExpression	0		7649741	1					
+ANR	7651829	ExpressionStatement	outbuf [ 5 ] = 0	777:12:14804:14817	7649741	6	True				
+ANR	7651830	AssignmentExpression	outbuf [ 5 ] = 0		7649741	0		=			
+ANR	7651831	ArrayIndexing	outbuf [ 5 ]		7649741	0					
+ANR	7651832	Identifier	outbuf		7649741	0					
+ANR	7651833	PrimaryExpression	5		7649741	1					
+ANR	7651834	PrimaryExpression	0		7649741	1					
+ANR	7651835	ExpressionStatement	outbuf [ 6 ] = s -> cluster_size * 2	779:12:14832:14863	7649741	7	True				
+ANR	7651836	AssignmentExpression	outbuf [ 6 ] = s -> cluster_size * 2		7649741	0		=			
+ANR	7651837	ArrayIndexing	outbuf [ 6 ]		7649741	0					
+ANR	7651838	Identifier	outbuf		7649741	0					
+ANR	7651839	PrimaryExpression	6		7649741	1					
+ANR	7651840	MultiplicativeExpression	s -> cluster_size * 2		7649741	1		*			
+ANR	7651841	PtrMemberAccess	s -> cluster_size		7649741	0					
+ANR	7651842	Identifier	s		7649741	0					
+ANR	7651843	Identifier	cluster_size		7649741	1					
+ANR	7651844	PrimaryExpression	2		7649741	1					
+ANR	7651845	ExpressionStatement	outbuf [ 7 ] = 0	781:12:14878:14891	7649741	8	True				
+ANR	7651846	AssignmentExpression	outbuf [ 7 ] = 0		7649741	0		=			
+ANR	7651847	ArrayIndexing	outbuf [ 7 ]		7649741	0					
+ANR	7651848	Identifier	outbuf		7649741	0					
+ANR	7651849	PrimaryExpression	7		7649741	1					
+ANR	7651850	PrimaryExpression	0		7649741	1					
+ANR	7651851	ExpressionStatement	r -> buf_len = 8	783:12:14906:14920	7649741	9	True				
+ANR	7651852	AssignmentExpression	r -> buf_len = 8		7649741	0		=			
+ANR	7651853	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7651854	Identifier	r		7649741	0					
+ANR	7651855	Identifier	buf_len		7649741	1					
+ANR	7651856	PrimaryExpression	8		7649741	1					
+ANR	7651857	ElseStatement	else		7649741	0					
+ANR	7651858	CompoundStatement		781:15:14817:14817	7649741	0					
+ANR	7651859	ExpressionStatement	"scsi_command_complete ( r , STATUS_CHECK_CONDITION , SENSE_NOT_READY )"	787:12:14953:15018	7649741	0	True				
+ANR	7651860	CallExpression	"scsi_command_complete ( r , STATUS_CHECK_CONDITION , SENSE_NOT_READY )"		7649741	0					
+ANR	7651861	Callee	scsi_command_complete		7649741	0					
+ANR	7651862	Identifier	scsi_command_complete		7649741	0					
+ANR	7651863	ArgumentList	r		7649741	1					
+ANR	7651864	Argument	r		7649741	0					
+ANR	7651865	Identifier	r		7649741	0					
+ANR	7651866	Argument	STATUS_CHECK_CONDITION		7649741	1					
+ANR	7651867	Identifier	STATUS_CHECK_CONDITION		7649741	0					
+ANR	7651868	Argument	SENSE_NOT_READY		7649741	2					
+ANR	7651869	Identifier	SENSE_NOT_READY		7649741	0					
+ANR	7651870	ReturnStatement	return 0 ;	789:12:15033:15041	7649741	1	True				
+ANR	7651871	PrimaryExpression	0		7649741	0					
+ANR	7651872	BreakStatement	break ;	793:1:15056:15061	7649741	49	True				
+ANR	7651873	Label	case 0x08 :	795:4:15068:15077	7649741	50	True				
+ANR	7651874	Label	case 0x28 :	797:4:15084:15093	7649741	51	True				
+ANR	7651875	ExpressionStatement	"DPRINTF ( ""Read (sector %d, count %d)\\n"" , lba , len )"	799:8:15104:15153	7649741	52	True				
+ANR	7651876	CallExpression	"DPRINTF ( ""Read (sector %d, count %d)\\n"" , lba , len )"		7649741	0					
+ANR	7651877	Callee	DPRINTF		7649741	0					
+ANR	7651878	Identifier	DPRINTF		7649741	0					
+ANR	7651879	ArgumentList	"""Read (sector %d, count %d)\\n"""		7649741	1					
+ANR	7651880	Argument	"""Read (sector %d, count %d)\\n"""		7649741	0					
+ANR	7651881	PrimaryExpression	"""Read (sector %d, count %d)\\n"""		7649741	0					
+ANR	7651882	Argument	lba		7649741	1					
+ANR	7651883	Identifier	lba		7649741	0					
+ANR	7651884	Argument	len		7649741	2					
+ANR	7651885	Identifier	len		7649741	0					
+ANR	7651886	ExpressionStatement	r -> sector = lba * s -> cluster_size	801:8:15164:15197	7649741	53	True				
+ANR	7651887	AssignmentExpression	r -> sector = lba * s -> cluster_size		7649741	0		=			
+ANR	7651888	PtrMemberAccess	r -> sector		7649741	0					
+ANR	7651889	Identifier	r		7649741	0					
+ANR	7651890	Identifier	sector		7649741	1					
+ANR	7651891	MultiplicativeExpression	lba * s -> cluster_size		7649741	1		*			
+ANR	7651892	Identifier	lba		7649741	0					
+ANR	7651893	PtrMemberAccess	s -> cluster_size		7649741	1					
+ANR	7651894	Identifier	s		7649741	0					
+ANR	7651895	Identifier	cluster_size		7649741	1					
+ANR	7651896	ExpressionStatement	r -> sector_count = len * s -> cluster_size	803:8:15208:15247	7649741	54	True				
+ANR	7651897	AssignmentExpression	r -> sector_count = len * s -> cluster_size		7649741	0		=			
+ANR	7651898	PtrMemberAccess	r -> sector_count		7649741	0					
+ANR	7651899	Identifier	r		7649741	0					
+ANR	7651900	Identifier	sector_count		7649741	1					
+ANR	7651901	MultiplicativeExpression	len * s -> cluster_size		7649741	1		*			
+ANR	7651902	Identifier	len		7649741	0					
+ANR	7651903	PtrMemberAccess	s -> cluster_size		7649741	1					
+ANR	7651904	Identifier	s		7649741	0					
+ANR	7651905	Identifier	cluster_size		7649741	1					
+ANR	7651906	BreakStatement	break ;	805:8:15258:15263	7649741	55	True				
+ANR	7651907	Label	case 0x0a :	807:4:15270:15279	7649741	56	True				
+ANR	7651908	Label	case 0x2a :	809:4:15286:15295	7649741	57	True				
+ANR	7651909	ExpressionStatement	"DPRINTF ( ""Write (sector %d, count %d)\\n"" , lba , len )"	811:8:15306:15356	7649741	58	True				
+ANR	7651910	CallExpression	"DPRINTF ( ""Write (sector %d, count %d)\\n"" , lba , len )"		7649741	0					
+ANR	7651911	Callee	DPRINTF		7649741	0					
+ANR	7651912	Identifier	DPRINTF		7649741	0					
+ANR	7651913	ArgumentList	"""Write (sector %d, count %d)\\n"""		7649741	1					
+ANR	7651914	Argument	"""Write (sector %d, count %d)\\n"""		7649741	0					
+ANR	7651915	PrimaryExpression	"""Write (sector %d, count %d)\\n"""		7649741	0					
+ANR	7651916	Argument	lba		7649741	1					
+ANR	7651917	Identifier	lba		7649741	0					
+ANR	7651918	Argument	len		7649741	2					
+ANR	7651919	Identifier	len		7649741	0					
+ANR	7651920	ExpressionStatement	r -> sector = lba * s -> cluster_size	813:8:15367:15400	7649741	59	True				
+ANR	7651921	AssignmentExpression	r -> sector = lba * s -> cluster_size		7649741	0		=			
+ANR	7651922	PtrMemberAccess	r -> sector		7649741	0					
+ANR	7651923	Identifier	r		7649741	0					
+ANR	7651924	Identifier	sector		7649741	1					
+ANR	7651925	MultiplicativeExpression	lba * s -> cluster_size		7649741	1		*			
+ANR	7651926	Identifier	lba		7649741	0					
+ANR	7651927	PtrMemberAccess	s -> cluster_size		7649741	1					
+ANR	7651928	Identifier	s		7649741	0					
+ANR	7651929	Identifier	cluster_size		7649741	1					
+ANR	7651930	ExpressionStatement	r -> sector_count = len * s -> cluster_size	815:8:15411:15450	7649741	60	True				
+ANR	7651931	AssignmentExpression	r -> sector_count = len * s -> cluster_size		7649741	0		=			
+ANR	7651932	PtrMemberAccess	r -> sector_count		7649741	0					
+ANR	7651933	Identifier	r		7649741	0					
+ANR	7651934	Identifier	sector_count		7649741	1					
+ANR	7651935	MultiplicativeExpression	len * s -> cluster_size		7649741	1		*			
+ANR	7651936	Identifier	len		7649741	0					
+ANR	7651937	PtrMemberAccess	s -> cluster_size		7649741	1					
+ANR	7651938	Identifier	s		7649741	0					
+ANR	7651939	Identifier	cluster_size		7649741	1					
+ANR	7651940	ExpressionStatement	is_write = 1	817:8:15461:15473	7649741	61	True				
+ANR	7651941	AssignmentExpression	is_write = 1		7649741	0		=			
+ANR	7651942	Identifier	is_write		7649741	0					
+ANR	7651943	PrimaryExpression	1		7649741	1					
+ANR	7651944	BreakStatement	break ;	819:8:15484:15489	7649741	62	True				
+ANR	7651945	Label	case 0x35 :	821:4:15496:15505	7649741	63	True				
+ANR	7651946	ExpressionStatement	"DPRINTF ( ""Synchronise cache (sector %d, count %d)\\n"" , lba , len )"	823:8:15516:15578	7649741	64	True				
+ANR	7651947	CallExpression	"DPRINTF ( ""Synchronise cache (sector %d, count %d)\\n"" , lba , len )"		7649741	0					
+ANR	7651948	Callee	DPRINTF		7649741	0					
+ANR	7651949	Identifier	DPRINTF		7649741	0					
+ANR	7651950	ArgumentList	"""Synchronise cache (sector %d, count %d)\\n"""		7649741	1					
+ANR	7651951	Argument	"""Synchronise cache (sector %d, count %d)\\n"""		7649741	0					
+ANR	7651952	PrimaryExpression	"""Synchronise cache (sector %d, count %d)\\n"""		7649741	0					
+ANR	7651953	Argument	lba		7649741	1					
+ANR	7651954	Identifier	lba		7649741	0					
+ANR	7651955	Argument	len		7649741	2					
+ANR	7651956	Identifier	len		7649741	0					
+ANR	7651957	ExpressionStatement	bdrv_flush ( s -> bdrv )	825:8:15589:15608	7649741	65	True				
+ANR	7651958	CallExpression	bdrv_flush ( s -> bdrv )		7649741	0					
+ANR	7651959	Callee	bdrv_flush		7649741	0					
+ANR	7651960	Identifier	bdrv_flush		7649741	0					
+ANR	7651961	ArgumentList	s -> bdrv		7649741	1					
+ANR	7651962	Argument	s -> bdrv		7649741	0					
+ANR	7651963	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7651964	Identifier	s		7649741	0					
+ANR	7651965	Identifier	bdrv		7649741	1					
+ANR	7651966	BreakStatement	break ;	827:8:15619:15624	7649741	66	True				
+ANR	7651967	Label	case 0x43 :	829:4:15631:15640	7649741	67	True				
+ANR	7651968	CompoundStatement		829:12:15545:15581	7649741	68					
+ANR	7651969	IdentifierDeclStatement	"int start_track , format , msf , toclen ;"	833:12:15666:15702	7649741	0	True				
+ANR	7651970	IdentifierDecl	start_track		7649741	0					
+ANR	7651971	IdentifierDeclType	int		7649741	0					
+ANR	7651972	Identifier	start_track		7649741	1					
+ANR	7651973	IdentifierDecl	format		7649741	1					
+ANR	7651974	IdentifierDeclType	int		7649741	0					
+ANR	7651975	Identifier	format		7649741	1					
+ANR	7651976	IdentifierDecl	msf		7649741	2					
+ANR	7651977	IdentifierDeclType	int		7649741	0					
+ANR	7651978	Identifier	msf		7649741	1					
+ANR	7651979	IdentifierDecl	toclen		7649741	3					
+ANR	7651980	IdentifierDeclType	int		7649741	0					
+ANR	7651981	Identifier	toclen		7649741	1					
+ANR	7651982	ExpressionStatement	msf = buf [ 1 ] & 2	837:12:15719:15735	7649741	1	True				
+ANR	7651983	AssignmentExpression	msf = buf [ 1 ] & 2		7649741	0		=			
+ANR	7651984	Identifier	msf		7649741	0					
+ANR	7651985	BitAndExpression	buf [ 1 ] & 2		7649741	1		&			
+ANR	7651986	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7651987	Identifier	buf		7649741	0					
+ANR	7651988	PrimaryExpression	1		7649741	1					
+ANR	7651989	PrimaryExpression	2		7649741	1					
+ANR	7651990	ExpressionStatement	format = buf [ 2 ] & 0xf	839:12:15750:15771	7649741	2	True				
+ANR	7651991	AssignmentExpression	format = buf [ 2 ] & 0xf		7649741	0		=			
+ANR	7651992	Identifier	format		7649741	0					
+ANR	7651993	BitAndExpression	buf [ 2 ] & 0xf		7649741	1		&			
+ANR	7651994	ArrayIndexing	buf [ 2 ]		7649741	0					
+ANR	7651995	Identifier	buf		7649741	0					
+ANR	7651996	PrimaryExpression	2		7649741	1					
+ANR	7651997	PrimaryExpression	0xf		7649741	1					
+ANR	7651998	ExpressionStatement	start_track = buf [ 6 ]	841:12:15786:15806	7649741	3	True				
+ANR	7651999	AssignmentExpression	start_track = buf [ 6 ]		7649741	0		=			
+ANR	7652000	Identifier	start_track		7649741	0					
+ANR	7652001	ArrayIndexing	buf [ 6 ]		7649741	1					
+ANR	7652002	Identifier	buf		7649741	0					
+ANR	7652003	PrimaryExpression	6		7649741	1					
+ANR	7652004	ExpressionStatement	"bdrv_get_geometry ( s -> bdrv , & nb_sectors )"	843:12:15821:15860	7649741	4	True				
+ANR	7652005	CallExpression	"bdrv_get_geometry ( s -> bdrv , & nb_sectors )"		7649741	0					
+ANR	7652006	Callee	bdrv_get_geometry		7649741	0					
+ANR	7652007	Identifier	bdrv_get_geometry		7649741	0					
+ANR	7652008	ArgumentList	s -> bdrv		7649741	1					
+ANR	7652009	Argument	s -> bdrv		7649741	0					
+ANR	7652010	PtrMemberAccess	s -> bdrv		7649741	0					
+ANR	7652011	Identifier	s		7649741	0					
+ANR	7652012	Identifier	bdrv		7649741	1					
+ANR	7652013	Argument	& nb_sectors		7649741	1					
+ANR	7652014	UnaryOperationExpression	& nb_sectors		7649741	0					
+ANR	7652015	UnaryOperator	&		7649741	0					
+ANR	7652016	Identifier	nb_sectors		7649741	1					
+ANR	7652017	ExpressionStatement	"DPRINTF ( ""Read TOC (track %d format %d msf %d)\\n"" , start_track , format , msf >> 1 )"	845:12:15875:15955	7649741	5	True				
+ANR	7652018	CallExpression	"DPRINTF ( ""Read TOC (track %d format %d msf %d)\\n"" , start_track , format , msf >> 1 )"		7649741	0					
+ANR	7652019	Callee	DPRINTF		7649741	0					
+ANR	7652020	Identifier	DPRINTF		7649741	0					
+ANR	7652021	ArgumentList	"""Read TOC (track %d format %d msf %d)\\n"""		7649741	1					
+ANR	7652022	Argument	"""Read TOC (track %d format %d msf %d)\\n"""		7649741	0					
+ANR	7652023	PrimaryExpression	"""Read TOC (track %d format %d msf %d)\\n"""		7649741	0					
+ANR	7652024	Argument	start_track		7649741	1					
+ANR	7652025	Identifier	start_track		7649741	0					
+ANR	7652026	Argument	format		7649741	2					
+ANR	7652027	Identifier	format		7649741	0					
+ANR	7652028	Argument	msf >> 1		7649741	3					
+ANR	7652029	ShiftExpression	msf >> 1		7649741	0		>>			
+ANR	7652030	Identifier	msf		7649741	0					
+ANR	7652031	PrimaryExpression	1		7649741	1					
+ANR	7652032	SwitchStatement	switch ( format )		7649741	6					
+ANR	7652033	Condition	format	847:19:15977:15982	7649741	0	True				
+ANR	7652034	Identifier	format		7649741	0					
+ANR	7652035	CompoundStatement		843:27:15864:15864	7649741	1					
+ANR	7652036	Label	case 0 :	849:12:16000:16006	7649741	0	True				
+ANR	7652037	ExpressionStatement	"toclen = cdrom_read_toc ( nb_sectors , outbuf , msf , start_track )"	851:16:16025:16086	7649741	1	True				
+ANR	7652038	AssignmentExpression	"toclen = cdrom_read_toc ( nb_sectors , outbuf , msf , start_track )"		7649741	0		=			
+ANR	7652039	Identifier	toclen		7649741	0					
+ANR	7652040	CallExpression	"cdrom_read_toc ( nb_sectors , outbuf , msf , start_track )"		7649741	1					
+ANR	7652041	Callee	cdrom_read_toc		7649741	0					
+ANR	7652042	Identifier	cdrom_read_toc		7649741	0					
+ANR	7652043	ArgumentList	nb_sectors		7649741	1					
+ANR	7652044	Argument	nb_sectors		7649741	0					
+ANR	7652045	Identifier	nb_sectors		7649741	0					
+ANR	7652046	Argument	outbuf		7649741	1					
+ANR	7652047	Identifier	outbuf		7649741	0					
+ANR	7652048	Argument	msf		7649741	2					
+ANR	7652049	Identifier	msf		7649741	0					
+ANR	7652050	Argument	start_track		7649741	3					
+ANR	7652051	Identifier	start_track		7649741	0					
+ANR	7652052	BreakStatement	break ;	853:16:16105:16110	7649741	2	True				
+ANR	7652053	Label	case 1 :	855:12:16125:16131	7649741	3	True				
+ANR	7652054	ExpressionStatement	toclen = 12	859:16:16219:16230	7649741	4	True				
+ANR	7652055	AssignmentExpression	toclen = 12		7649741	0		=			
+ANR	7652056	Identifier	toclen		7649741	0					
+ANR	7652057	PrimaryExpression	12		7649741	1					
+ANR	7652058	ExpressionStatement	"memset ( outbuf , 0 , 12 )"	861:16:16249:16270	7649741	5	True				
+ANR	7652059	CallExpression	"memset ( outbuf , 0 , 12 )"		7649741	0					
+ANR	7652060	Callee	memset		7649741	0					
+ANR	7652061	Identifier	memset		7649741	0					
+ANR	7652062	ArgumentList	outbuf		7649741	1					
+ANR	7652063	Argument	outbuf		7649741	0					
+ANR	7652064	Identifier	outbuf		7649741	0					
+ANR	7652065	Argument	0		7649741	1					
+ANR	7652066	PrimaryExpression	0		7649741	0					
+ANR	7652067	Argument	12		7649741	2					
+ANR	7652068	PrimaryExpression	12		7649741	0					
+ANR	7652069	ExpressionStatement	outbuf [ 1 ] = 0x0a	863:16:16289:16305	7649741	6	True				
+ANR	7652070	AssignmentExpression	outbuf [ 1 ] = 0x0a		7649741	0		=			
+ANR	7652071	ArrayIndexing	outbuf [ 1 ]		7649741	0					
+ANR	7652072	Identifier	outbuf		7649741	0					
+ANR	7652073	PrimaryExpression	1		7649741	1					
+ANR	7652074	PrimaryExpression	0x0a		7649741	1					
+ANR	7652075	ExpressionStatement	outbuf [ 2 ] = 0x01	865:16:16324:16340	7649741	7	True				
+ANR	7652076	AssignmentExpression	outbuf [ 2 ] = 0x01		7649741	0		=			
+ANR	7652077	ArrayIndexing	outbuf [ 2 ]		7649741	0					
+ANR	7652078	Identifier	outbuf		7649741	0					
+ANR	7652079	PrimaryExpression	2		7649741	1					
+ANR	7652080	PrimaryExpression	0x01		7649741	1					
+ANR	7652081	ExpressionStatement	outbuf [ 3 ] = 0x01	867:16:16359:16375	7649741	8	True				
+ANR	7652082	AssignmentExpression	outbuf [ 3 ] = 0x01		7649741	0		=			
+ANR	7652083	ArrayIndexing	outbuf [ 3 ]		7649741	0					
+ANR	7652084	Identifier	outbuf		7649741	0					
+ANR	7652085	PrimaryExpression	3		7649741	1					
+ANR	7652086	PrimaryExpression	0x01		7649741	1					
+ANR	7652087	BreakStatement	break ;	869:16:16394:16399	7649741	9	True				
+ANR	7652088	Label	case 2 :	871:12:16414:16420	7649741	10	True				
+ANR	7652089	ExpressionStatement	"toclen = cdrom_read_toc_raw ( nb_sectors , outbuf , msf , start_track )"	873:16:16439:16504	7649741	11	True				
+ANR	7652090	AssignmentExpression	"toclen = cdrom_read_toc_raw ( nb_sectors , outbuf , msf , start_track )"		7649741	0		=			
+ANR	7652091	Identifier	toclen		7649741	0					
+ANR	7652092	CallExpression	"cdrom_read_toc_raw ( nb_sectors , outbuf , msf , start_track )"		7649741	1					
+ANR	7652093	Callee	cdrom_read_toc_raw		7649741	0					
+ANR	7652094	Identifier	cdrom_read_toc_raw		7649741	0					
+ANR	7652095	ArgumentList	nb_sectors		7649741	1					
+ANR	7652096	Argument	nb_sectors		7649741	0					
+ANR	7652097	Identifier	nb_sectors		7649741	0					
+ANR	7652098	Argument	outbuf		7649741	1					
+ANR	7652099	Identifier	outbuf		7649741	0					
+ANR	7652100	Argument	msf		7649741	2					
+ANR	7652101	Identifier	msf		7649741	0					
+ANR	7652102	Argument	start_track		7649741	3					
+ANR	7652103	Identifier	start_track		7649741	0					
+ANR	7652104	BreakStatement	break ;	875:16:16523:16528	7649741	12	True				
+ANR	7652105	Label	default :	877:12:16543:16550	7649741	13	True				
+ANR	7652106	Identifier	default		7649741	0					
+ANR	7652107	GotoStatement	goto error_cmd ;	879:16:16569:16583	7649741	14	True				
+ANR	7652108	Identifier	error_cmd		7649741	0					
+ANR	7652109	IfStatement	if ( toclen > 0 )		7649741	7					
+ANR	7652110	Condition	toclen > 0	883:16:16617:16626	7649741	0	True				
+ANR	7652111	RelationalExpression	toclen > 0		7649741	0		>			
+ANR	7652112	Identifier	toclen		7649741	0					
+ANR	7652113	PrimaryExpression	0		7649741	1					
+ANR	7652114	CompoundStatement		879:28:16508:16508	7649741	1					
+ANR	7652115	IfStatement	if ( len > toclen )		7649741	0					
+ANR	7652116	Condition	len > toclen	885:20:16652:16663	7649741	0	True				
+ANR	7652117	RelationalExpression	len > toclen		7649741	0		>			
+ANR	7652118	Identifier	len		7649741	0					
+ANR	7652119	Identifier	toclen		7649741	1					
+ANR	7652120	ExpressionStatement	len = toclen	887:18:16685:16697	7649741	1	True				
+ANR	7652121	AssignmentExpression	len = toclen		7649741	0		=			
+ANR	7652122	Identifier	len		7649741	0					
+ANR	7652123	Identifier	toclen		7649741	1					
+ANR	7652124	ExpressionStatement	r -> buf_len = len	889:16:16716:16732	7649741	1	True				
+ANR	7652125	AssignmentExpression	r -> buf_len = len		7649741	0		=			
+ANR	7652126	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7652127	Identifier	r		7649741	0					
+ANR	7652128	Identifier	buf_len		7649741	1					
+ANR	7652129	Identifier	len		7649741	1					
+ANR	7652130	BreakStatement	break ;	891:16:16751:16756	7649741	2	True				
+ANR	7652131	Label	error_cmd :	895:8:16782:16791	7649741	8	True				
+ANR	7652132	Identifier	error_cmd		7649741	0					
+ANR	7652133	ExpressionStatement	"DPRINTF ( ""Read TOC error\\n"" )"	897:12:16806:16833	7649741	9	True				
+ANR	7652134	CallExpression	"DPRINTF ( ""Read TOC error\\n"" )"		7649741	0					
+ANR	7652135	Callee	DPRINTF		7649741	0					
+ANR	7652136	Identifier	DPRINTF		7649741	0					
+ANR	7652137	ArgumentList	"""Read TOC error\\n"""		7649741	1					
+ANR	7652138	Argument	"""Read TOC error\\n"""		7649741	0					
+ANR	7652139	PrimaryExpression	"""Read TOC error\\n"""		7649741	0					
+ANR	7652140	GotoStatement	goto fail ;	899:12:16848:16857	7649741	10	True				
+ANR	7652141	Identifier	fail		7649741	0					
+ANR	7652142	Label	case 0x46 :	903:4:16875:16884	7649741	69	True				
+ANR	7652143	ExpressionStatement	"DPRINTF ( ""Get Configuration (rt %d, maxlen %d)\\n"" , buf [ 1 ] & 3 , len )"	905:8:16895:16961	7649741	70	True				
+ANR	7652144	CallExpression	"DPRINTF ( ""Get Configuration (rt %d, maxlen %d)\\n"" , buf [ 1 ] & 3 , len )"		7649741	0					
+ANR	7652145	Callee	DPRINTF		7649741	0					
+ANR	7652146	Identifier	DPRINTF		7649741	0					
+ANR	7652147	ArgumentList	"""Get Configuration (rt %d, maxlen %d)\\n"""		7649741	1					
+ANR	7652148	Argument	"""Get Configuration (rt %d, maxlen %d)\\n"""		7649741	0					
+ANR	7652149	PrimaryExpression	"""Get Configuration (rt %d, maxlen %d)\\n"""		7649741	0					
+ANR	7652150	Argument	buf [ 1 ] & 3		7649741	1					
+ANR	7652151	BitAndExpression	buf [ 1 ] & 3		7649741	0		&			
+ANR	7652152	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7652153	Identifier	buf		7649741	0					
+ANR	7652154	PrimaryExpression	1		7649741	1					
+ANR	7652155	PrimaryExpression	3		7649741	1					
+ANR	7652156	Argument	len		7649741	2					
+ANR	7652157	Identifier	len		7649741	0					
+ANR	7652158	ExpressionStatement	"memset ( outbuf , 0 , 8 )"	907:8:16972:16992	7649741	71	True				
+ANR	7652159	CallExpression	"memset ( outbuf , 0 , 8 )"		7649741	0					
+ANR	7652160	Callee	memset		7649741	0					
+ANR	7652161	Identifier	memset		7649741	0					
+ANR	7652162	ArgumentList	outbuf		7649741	1					
+ANR	7652163	Argument	outbuf		7649741	0					
+ANR	7652164	Identifier	outbuf		7649741	0					
+ANR	7652165	Argument	0		7649741	1					
+ANR	7652166	PrimaryExpression	0		7649741	0					
+ANR	7652167	Argument	8		7649741	2					
+ANR	7652168	PrimaryExpression	8		7649741	0					
+ANR	7652169	ExpressionStatement	outbuf [ 7 ] = 8	913:8:17155:17168	7649741	72	True				
+ANR	7652170	AssignmentExpression	outbuf [ 7 ] = 8		7649741	0		=			
+ANR	7652171	ArrayIndexing	outbuf [ 7 ]		7649741	0					
+ANR	7652172	Identifier	outbuf		7649741	0					
+ANR	7652173	PrimaryExpression	7		7649741	1					
+ANR	7652174	PrimaryExpression	8		7649741	1					
+ANR	7652175	ExpressionStatement	r -> buf_len = 8	915:8:17189:17203	7649741	73	True				
+ANR	7652176	AssignmentExpression	r -> buf_len = 8		7649741	0		=			
+ANR	7652177	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7652178	Identifier	r		7649741	0					
+ANR	7652179	Identifier	buf_len		7649741	1					
+ANR	7652180	PrimaryExpression	8		7649741	1					
+ANR	7652181	BreakStatement	break ;	917:8:17214:17219	7649741	74	True				
+ANR	7652182	Label	case 0x56 :	919:4:17226:17235	7649741	75	True				
+ANR	7652183	ExpressionStatement	"DPRINTF ( ""Reserve(10)\\n"" )"	921:8:17246:17270	7649741	76	True				
+ANR	7652184	CallExpression	"DPRINTF ( ""Reserve(10)\\n"" )"		7649741	0					
+ANR	7652185	Callee	DPRINTF		7649741	0					
+ANR	7652186	Identifier	DPRINTF		7649741	0					
+ANR	7652187	ArgumentList	"""Reserve(10)\\n"""		7649741	1					
+ANR	7652188	Argument	"""Reserve(10)\\n"""		7649741	0					
+ANR	7652189	PrimaryExpression	"""Reserve(10)\\n"""		7649741	0					
+ANR	7652190	IfStatement	if ( buf [ 1 ] & 3 )		7649741	77					
+ANR	7652191	Condition	buf [ 1 ] & 3	923:12:17285:17294	7649741	0	True				
+ANR	7652192	BitAndExpression	buf [ 1 ] & 3		7649741	0		&			
+ANR	7652193	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7652194	Identifier	buf		7649741	0					
+ANR	7652195	PrimaryExpression	1		7649741	1					
+ANR	7652196	PrimaryExpression	3		7649741	1					
+ANR	7652197	GotoStatement	goto fail ;	925:12:17310:17319	7649741	1	True				
+ANR	7652198	Identifier	fail		7649741	0					
+ANR	7652199	BreakStatement	break ;	927:8:17330:17335	7649741	78	True				
+ANR	7652200	Label	case 0x57 :	929:4:17342:17351	7649741	79	True				
+ANR	7652201	ExpressionStatement	"DPRINTF ( ""Release(10)\\n"" )"	931:8:17362:17386	7649741	80	True				
+ANR	7652202	CallExpression	"DPRINTF ( ""Release(10)\\n"" )"		7649741	0					
+ANR	7652203	Callee	DPRINTF		7649741	0					
+ANR	7652204	Identifier	DPRINTF		7649741	0					
+ANR	7652205	ArgumentList	"""Release(10)\\n"""		7649741	1					
+ANR	7652206	Argument	"""Release(10)\\n"""		7649741	0					
+ANR	7652207	PrimaryExpression	"""Release(10)\\n"""		7649741	0					
+ANR	7652208	IfStatement	if ( buf [ 1 ] & 3 )		7649741	81					
+ANR	7652209	Condition	buf [ 1 ] & 3	933:12:17401:17410	7649741	0	True				
+ANR	7652210	BitAndExpression	buf [ 1 ] & 3		7649741	0		&			
+ANR	7652211	ArrayIndexing	buf [ 1 ]		7649741	0					
+ANR	7652212	Identifier	buf		7649741	0					
+ANR	7652213	PrimaryExpression	1		7649741	1					
+ANR	7652214	PrimaryExpression	3		7649741	1					
+ANR	7652215	GotoStatement	goto fail ;	935:12:17426:17435	7649741	1	True				
+ANR	7652216	Identifier	fail		7649741	0					
+ANR	7652217	BreakStatement	break ;	937:8:17446:17451	7649741	82	True				
+ANR	7652218	Label	case 0xa0 :	939:4:17458:17467	7649741	83	True				
+ANR	7652219	ExpressionStatement	"DPRINTF ( ""Report LUNs (len %d)\\n"" , len )"	941:8:17478:17516	7649741	84	True				
+ANR	7652220	CallExpression	"DPRINTF ( ""Report LUNs (len %d)\\n"" , len )"		7649741	0					
+ANR	7652221	Callee	DPRINTF		7649741	0					
+ANR	7652222	Identifier	DPRINTF		7649741	0					
+ANR	7652223	ArgumentList	"""Report LUNs (len %d)\\n"""		7649741	1					
+ANR	7652224	Argument	"""Report LUNs (len %d)\\n"""		7649741	0					
+ANR	7652225	PrimaryExpression	"""Report LUNs (len %d)\\n"""		7649741	0					
+ANR	7652226	Argument	len		7649741	1					
+ANR	7652227	Identifier	len		7649741	0					
+ANR	7652228	IfStatement	if ( len < 16 )		7649741	85					
+ANR	7652229	Condition	len < 16	943:12:17531:17538	7649741	0	True				
+ANR	7652230	RelationalExpression	len < 16		7649741	0		<			
+ANR	7652231	Identifier	len		7649741	0					
+ANR	7652232	PrimaryExpression	16		7649741	1					
+ANR	7652233	GotoStatement	goto fail ;	945:12:17554:17563	7649741	1	True				
+ANR	7652234	Identifier	fail		7649741	0					
+ANR	7652235	ExpressionStatement	"memset ( outbuf , 0 , 16 )"	947:8:17574:17595	7649741	86	True				
+ANR	7652236	CallExpression	"memset ( outbuf , 0 , 16 )"		7649741	0					
+ANR	7652237	Callee	memset		7649741	0					
+ANR	7652238	Identifier	memset		7649741	0					
+ANR	7652239	ArgumentList	outbuf		7649741	1					
+ANR	7652240	Argument	outbuf		7649741	0					
+ANR	7652241	Identifier	outbuf		7649741	0					
+ANR	7652242	Argument	0		7649741	1					
+ANR	7652243	PrimaryExpression	0		7649741	0					
+ANR	7652244	Argument	16		7649741	2					
+ANR	7652245	PrimaryExpression	16		7649741	0					
+ANR	7652246	ExpressionStatement	outbuf [ 3 ] = 8	949:8:17606:17619	7649741	87	True				
+ANR	7652247	AssignmentExpression	outbuf [ 3 ] = 8		7649741	0		=			
+ANR	7652248	ArrayIndexing	outbuf [ 3 ]		7649741	0					
+ANR	7652249	Identifier	outbuf		7649741	0					
+ANR	7652250	PrimaryExpression	3		7649741	1					
+ANR	7652251	PrimaryExpression	8		7649741	1					
+ANR	7652252	ExpressionStatement	r -> buf_len = 16	951:8:17630:17645	7649741	88	True				
+ANR	7652253	AssignmentExpression	r -> buf_len = 16		7649741	0		=			
+ANR	7652254	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7652255	Identifier	r		7649741	0					
+ANR	7652256	Identifier	buf_len		7649741	1					
+ANR	7652257	PrimaryExpression	16		7649741	1					
+ANR	7652258	BreakStatement	break ;	953:8:17656:17661	7649741	89	True				
+ANR	7652259	Label	case 0x2f :	955:4:17668:17677	7649741	90	True				
+ANR	7652260	ExpressionStatement	"DPRINTF ( ""Verify (sector %d, count %d)\\n"" , lba , len )"	957:8:17688:17739	7649741	91	True				
+ANR	7652261	CallExpression	"DPRINTF ( ""Verify (sector %d, count %d)\\n"" , lba , len )"		7649741	0					
+ANR	7652262	Callee	DPRINTF		7649741	0					
+ANR	7652263	Identifier	DPRINTF		7649741	0					
+ANR	7652264	ArgumentList	"""Verify (sector %d, count %d)\\n"""		7649741	1					
+ANR	7652265	Argument	"""Verify (sector %d, count %d)\\n"""		7649741	0					
+ANR	7652266	PrimaryExpression	"""Verify (sector %d, count %d)\\n"""		7649741	0					
+ANR	7652267	Argument	lba		7649741	1					
+ANR	7652268	Identifier	lba		7649741	0					
+ANR	7652269	Argument	len		7649741	2					
+ANR	7652270	Identifier	len		7649741	0					
+ANR	7652271	BreakStatement	break ;	959:8:17750:17755	7649741	92	True				
+ANR	7652272	Label	default :	961:4:17762:17769	7649741	93	True				
+ANR	7652273	Identifier	default		7649741	0					
+ANR	7652274	ExpressionStatement	"DPRINTF ( ""Unknown SCSI command (%2.2x)\\n"" , buf [ 0 ] )"	963:1:17773:17822	7649741	94	True				
+ANR	7652275	CallExpression	"DPRINTF ( ""Unknown SCSI command (%2.2x)\\n"" , buf [ 0 ] )"		7649741	0					
+ANR	7652276	Callee	DPRINTF		7649741	0					
+ANR	7652277	Identifier	DPRINTF		7649741	0					
+ANR	7652278	ArgumentList	"""Unknown SCSI command (%2.2x)\\n"""		7649741	1					
+ANR	7652279	Argument	"""Unknown SCSI command (%2.2x)\\n"""		7649741	0					
+ANR	7652280	PrimaryExpression	"""Unknown SCSI command (%2.2x)\\n"""		7649741	0					
+ANR	7652281	Argument	buf [ 0 ]		7649741	1					
+ANR	7652282	ArrayIndexing	buf [ 0 ]		7649741	0					
+ANR	7652283	Identifier	buf		7649741	0					
+ANR	7652284	PrimaryExpression	0		7649741	1					
+ANR	7652285	Label	fail :	965:4:17829:17833	7649741	95	True				
+ANR	7652286	Identifier	fail		7649741	0					
+ANR	7652287	ExpressionStatement	"scsi_command_complete ( r , STATUS_CHECK_CONDITION , SENSE_ILLEGAL_REQUEST )"	967:8:17844:17915	7649741	96	True				
+ANR	7652288	CallExpression	"scsi_command_complete ( r , STATUS_CHECK_CONDITION , SENSE_ILLEGAL_REQUEST )"		7649741	0					
+ANR	7652289	Callee	scsi_command_complete		7649741	0					
+ANR	7652290	Identifier	scsi_command_complete		7649741	0					
+ANR	7652291	ArgumentList	r		7649741	1					
+ANR	7652292	Argument	r		7649741	0					
+ANR	7652293	Identifier	r		7649741	0					
+ANR	7652294	Argument	STATUS_CHECK_CONDITION		7649741	1					
+ANR	7652295	Identifier	STATUS_CHECK_CONDITION		7649741	0					
+ANR	7652296	Argument	SENSE_ILLEGAL_REQUEST		7649741	2					
+ANR	7652297	Identifier	SENSE_ILLEGAL_REQUEST		7649741	0					
+ANR	7652298	ReturnStatement	return 0 ;	969:1:17919:17927	7649741	97	True				
+ANR	7652299	PrimaryExpression	0		7649741	0					
+ANR	7652300	IfStatement	if ( r -> sector_count == 0 && r -> buf_len == 0 )		7649741	20					
+ANR	7652301	Condition	r -> sector_count == 0 && r -> buf_len == 0	973:8:17945:17983	7649741	0	True				
+ANR	7652302	AndExpression	r -> sector_count == 0 && r -> buf_len == 0		7649741	0		&&			
+ANR	7652303	EqualityExpression	r -> sector_count == 0		7649741	0		==			
+ANR	7652304	PtrMemberAccess	r -> sector_count		7649741	0					
+ANR	7652305	Identifier	r		7649741	0					
+ANR	7652306	Identifier	sector_count		7649741	1					
+ANR	7652307	PrimaryExpression	0		7649741	1					
+ANR	7652308	EqualityExpression	r -> buf_len == 0		7649741	1		==			
+ANR	7652309	PtrMemberAccess	r -> buf_len		7649741	0					
+ANR	7652310	Identifier	r		7649741	0					
+ANR	7652311	Identifier	buf_len		7649741	1					
+ANR	7652312	PrimaryExpression	0		7649741	1					
+ANR	7652313	CompoundStatement		969:49:17865:17865	7649741	1					
+ANR	7652314	ExpressionStatement	"scsi_command_complete ( r , STATUS_GOOD , SENSE_NO_SENSE )"	975:8:17997:18050	7649741	0	True				
+ANR	7652315	CallExpression	"scsi_command_complete ( r , STATUS_GOOD , SENSE_NO_SENSE )"		7649741	0					
+ANR	7652316	Callee	scsi_command_complete		7649741	0					
+ANR	7652317	Identifier	scsi_command_complete		7649741	0					
+ANR	7652318	ArgumentList	r		7649741	1					
+ANR	7652319	Argument	r		7649741	0					
+ANR	7652320	Identifier	r		7649741	0					
+ANR	7652321	Argument	STATUS_GOOD		7649741	1					
+ANR	7652322	Identifier	STATUS_GOOD		7649741	0					
+ANR	7652323	Argument	SENSE_NO_SENSE		7649741	2					
+ANR	7652324	Identifier	SENSE_NO_SENSE		7649741	0					
+ANR	7652325	ExpressionStatement	len = r -> sector_count * 512 + r -> buf_len	979:4:18064:18104	7649741	21	True				
+ANR	7652326	AssignmentExpression	len = r -> sector_count * 512 + r -> buf_len		7649741	0		=			
+ANR	7652327	Identifier	len		7649741	0					
+ANR	7652328	AdditiveExpression	r -> sector_count * 512 + r -> buf_len		7649741	1		+			
+ANR	7652329	MultiplicativeExpression	r -> sector_count * 512		7649741	0		*			
+ANR	7652330	PtrMemberAccess	r -> sector_count		7649741	0					
+ANR	7652331	Identifier	r		7649741	0					
+ANR	7652332	Identifier	sector_count		7649741	1					
+ANR	7652333	PrimaryExpression	512		7649741	1					
+ANR	7652334	PtrMemberAccess	r -> buf_len		7649741	1					
+ANR	7652335	Identifier	r		7649741	0					
+ANR	7652336	Identifier	buf_len		7649741	1					
+ANR	7652337	IfStatement	if ( is_write )		7649741	22					
+ANR	7652338	Condition	is_write	981:8:18115:18122	7649741	0	True				
+ANR	7652339	Identifier	is_write		7649741	0					
+ANR	7652340	CompoundStatement		977:18:18004:18004	7649741	1					
+ANR	7652341	ReturnStatement	return - len ;	983:8:18136:18147	7649741	0	True				
+ANR	7652342	UnaryOperationExpression	- len		7649741	0					
+ANR	7652343	UnaryOperator	-		7649741	0					
+ANR	7652344	Identifier	len		7649741	1					
+ANR	7652345	ElseStatement	else		7649741	0					
+ANR	7652346	CompoundStatement		981:11:18040:18040	7649741	0					
+ANR	7652347	IfStatement	if ( ! r -> sector_count )		7649741	0					
+ANR	7652348	Condition	! r -> sector_count	987:12:18176:18191	7649741	0	True				
+ANR	7652349	UnaryOperationExpression	! r -> sector_count		7649741	0					
+ANR	7652350	UnaryOperator	!		7649741	0					
+ANR	7652351	PtrMemberAccess	r -> sector_count		7649741	1					
+ANR	7652352	Identifier	r		7649741	0					
+ANR	7652353	Identifier	sector_count		7649741	1					
+ANR	7652354	ExpressionStatement	r -> sector_count = - 1	989:12:18207:18227	7649741	1	True				
+ANR	7652355	AssignmentExpression	r -> sector_count = - 1		7649741	0		=			
+ANR	7652356	PtrMemberAccess	r -> sector_count		7649741	0					
+ANR	7652357	Identifier	r		7649741	0					
+ANR	7652358	Identifier	sector_count		7649741	1					
+ANR	7652359	UnaryOperationExpression	- 1		7649741	1					
+ANR	7652360	UnaryOperator	-		7649741	0					
+ANR	7652361	PrimaryExpression	1		7649741	1					
+ANR	7652362	ReturnStatement	return len ;	991:8:18238:18248	7649741	1	True				
+ANR	7652363	Identifier	len		7649741	0					
+ANR	7652364	ReturnType	static int32_t		7649741	1					
+ANR	7652365	Identifier	scsi_send_command		7649741	2					
+ANR	7652366	ParameterList	"SCSIDevice * d , uint32_t tag , uint8_t * buf , int lun"		7649741	3					
+ANR	7652367	Parameter	SCSIDevice * d	1:33:33:45	7649741	0	True				
+ANR	7652368	ParameterType	SCSIDevice *		7649741	0					
+ANR	7652369	Identifier	d		7649741	1					
+ANR	7652370	Parameter	uint32_t tag	1:48:48:59	7649741	1	True				
+ANR	7652371	ParameterType	uint32_t		7649741	0					
+ANR	7652372	Identifier	tag		7649741	1					
+ANR	7652373	Parameter	uint8_t * buf	3:33:96:107	7649741	2	True				
+ANR	7652374	ParameterType	uint8_t *		7649741	0					
+ANR	7652375	Identifier	buf		7649741	1					
+ANR	7652376	Parameter	int lun	3:47:110:116	7649741	3	True				
+ANR	7652377	ParameterType	int		7649741	0					
+ANR	7652378	Identifier	lun		7649741	1					
+ANR	7652379	CFGEntryNode	ENTRY		7649741		True				
+ANR	7652380	CFGExitNode	EXIT		7649741		True				
+ANR	7652381	Symbol	msf		7649741						
+ANR	7652382	Symbol	nb_sectors		7649741						
+ANR	7652383	Symbol	lun		7649741						
+ANR	7652384	Symbol	cmdlen		7649741						
+ANR	7652385	Symbol	SENSE_NO_SENSE		7649741						
+ANR	7652386	Symbol	s -> sense		7649741						
+ANR	7652387	Symbol	s -> cluster_size		7649741						
+ANR	7652388	Symbol	start_track		7649741						
+ANR	7652389	Symbol	strlen		7649741						
+ANR	7652390	Symbol	len		7649741						
+ANR	7652391	Symbol	STATUS_GOOD		7649741						
+ANR	7652392	Symbol	tag		7649741						
+ANR	7652393	Symbol	scsi_find_request		7649741						
+ANR	7652394	Symbol	* buf		7649741						
+ANR	7652395	Symbol	d -> state		7649741						
+ANR	7652396	Symbol	format		7649741						
+ANR	7652397	Symbol	& heads		7649741						
+ANR	7652398	Symbol	lba		7649741						
+ANR	7652399	Symbol	id_len		7649741						
+ANR	7652400	Symbol	is_write		7649741						
+ANR	7652401	Symbol	& secs		7649741						
+ANR	7652402	Symbol	cylinders		7649741						
+ANR	7652403	Symbol	r -> buf_len		7649741						
+ANR	7652404	Symbol	r -> sector_count		7649741						
+ANR	7652405	Symbol	bdrv_get_device_name		7649741						
+ANR	7652406	Symbol	page_code		7649741						
+ANR	7652407	Symbol	page		7649741						
+ANR	7652408	Symbol	cdrom_read_toc		7649741						
+ANR	7652409	Symbol	SENSE_ILLEGAL_REQUEST		7649741						
+ANR	7652410	Symbol	cdrom_read_toc_raw		7649741						
+ANR	7652411	Symbol	& nb_sectors		7649741						
+ANR	7652412	Symbol	QEMU_VERSION		7649741						
+ANR	7652413	Symbol	scsi_new_request		7649741						
+ANR	7652414	Symbol	* outbuf		7649741						
+ANR	7652415	Symbol	STATUS_CHECK_CONDITION		7649741						
+ANR	7652416	Symbol	bdrv_is_locked		7649741						
+ANR	7652417	Symbol	r -> sector		7649741						
+ANR	7652418	Symbol	d		7649741						
+ANR	7652419	Symbol	i		7649741						
+ANR	7652420	Symbol	r -> dma_buf		7649741						
+ANR	7652421	Symbol	* d		7649741						
+ANR	7652422	Symbol	command		7649741						
+ANR	7652423	Symbol	max_len		7649741						
+ANR	7652424	Symbol	p		7649741						
+ANR	7652425	Symbol	SENSE_NOT_READY		7649741						
+ANR	7652426	Symbol	s -> bdrv		7649741						
+ANR	7652427	Symbol	toclen		7649741						
+ANR	7652428	Symbol	buf		7649741						
+ANR	7652429	Symbol	r		7649741						
+ANR	7652430	Symbol	bdrv_get_type_hint		7649741						
+ANR	7652431	Symbol	s -> tcq		7649741						
+ANR	7652432	Symbol	s		7649741						
+ANR	7652433	Symbol	* i		7649741						
+ANR	7652434	Symbol	& cylinders		7649741						
+ANR	7652435	Symbol	outbuf		7649741						
+ANR	7652436	Symbol	secs		7649741						
+ANR	7652437	Symbol	BDRV_TYPE_CDROM		7649741						
+ANR	7652438	Symbol	* p		7649741						
+ANR	7652439	Symbol	heads		7649741						
+ANR	7652440	Symbol	* r		7649741						
+ANR	7652441	Symbol	* s		7649741						

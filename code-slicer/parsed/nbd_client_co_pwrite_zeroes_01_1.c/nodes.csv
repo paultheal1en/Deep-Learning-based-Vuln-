@@ -1,0 +1,213 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5908637	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_client_co_pwrite_zeroes_01_1.c								
+ANR	5908638	Function	nbd_client_co_pwrite_zeroes	1:0:0:993							
+ANR	5908639	FunctionDef	"nbd_client_co_pwrite_zeroes (BlockDriverState * bs , int64_t offset , int count , BdrvRequestFlags flags)"		5908638	0					
+ANR	5908640	CompoundStatement		5:0:139:993	5908638	0					
+ANR	5908641	IdentifierDeclStatement	ssize_t ret ;	7:4:146:157	5908638	0	True				
+ANR	5908642	IdentifierDecl	ret		5908638	0					
+ANR	5908643	IdentifierDeclType	ssize_t		5908638	0					
+ANR	5908644	Identifier	ret		5908638	1					
+ANR	5908645	IdentifierDeclStatement	NBDClientSession * client = nbd_get_client_session ( bs ) ;	9:4:164:217	5908638	1	True				
+ANR	5908646	IdentifierDecl	* client = nbd_get_client_session ( bs )		5908638	0					
+ANR	5908647	IdentifierDeclType	NBDClientSession *		5908638	0					
+ANR	5908648	Identifier	client		5908638	1					
+ANR	5908649	AssignmentExpression	* client = nbd_get_client_session ( bs )		5908638	2		=			
+ANR	5908650	Identifier	client		5908638	0					
+ANR	5908651	CallExpression	nbd_get_client_session ( bs )		5908638	1					
+ANR	5908652	Callee	nbd_get_client_session		5908638	0					
+ANR	5908653	Identifier	nbd_get_client_session		5908638	0					
+ANR	5908654	ArgumentList	bs		5908638	1					
+ANR	5908655	Argument	bs		5908638	0					
+ANR	5908656	Identifier	bs		5908638	0					
+ANR	5908657	Statement	NBDRequest	11:4:224:233	5908638	2	True				
+ANR	5908658	Statement	request	11:15:235:241	5908638	3	True				
+ANR	5908659	Statement	=	11:23:243:243	5908638	4	True				
+ANR	5908660	CompoundStatement		7:25:105:105	5908638	5					
+ANR	5908661	Statement	.	13:8:256:256	5908638	0	True				
+ANR	5908662	Statement	type	13:9:257:260	5908638	1	True				
+ANR	5908663	Statement	=	13:14:262:262	5908638	2	True				
+ANR	5908664	Statement	NBD_CMD_WRITE_ZEROES	13:16:264:283	5908638	3	True				
+ANR	5908665	Statement	","	13:36:284:284	5908638	4	True				
+ANR	5908666	Statement	.	15:8:295:295	5908638	5	True				
+ANR	5908667	Statement	from	15:9:296:299	5908638	6	True				
+ANR	5908668	Statement	=	15:14:301:301	5908638	7	True				
+ANR	5908669	Statement	offset	15:16:303:308	5908638	8	True				
+ANR	5908670	Statement	","	15:22:309:309	5908638	9	True				
+ANR	5908671	Statement	.	17:8:320:320	5908638	10	True				
+ANR	5908672	Statement	len	17:9:321:323	5908638	11	True				
+ANR	5908673	Statement	=	17:13:325:325	5908638	12	True				
+ANR	5908674	Statement	count	17:15:327:331	5908638	13	True				
+ANR	5908675	Statement	","	17:20:332:332	5908638	14	True				
+ANR	5908676	ExpressionStatement		19:5:340:340	5908638	6	True				
+ANR	5908677	IdentifierDeclStatement	NBDReply reply ;	21:4:347:361	5908638	7	True				
+ANR	5908678	IdentifierDecl	reply		5908638	0					
+ANR	5908679	IdentifierDeclType	NBDReply		5908638	0					
+ANR	5908680	Identifier	reply		5908638	1					
+ANR	5908681	IfStatement	if ( ! ( client -> nbdflags & NBD_FLAG_SEND_WRITE_ZEROES ) )		5908638	8					
+ANR	5908682	Condition	! ( client -> nbdflags & NBD_FLAG_SEND_WRITE_ZEROES )	25:8:374:421	5908638	0	True				
+ANR	5908683	UnaryOperationExpression	! ( client -> nbdflags & NBD_FLAG_SEND_WRITE_ZEROES )		5908638	0					
+ANR	5908684	UnaryOperator	!		5908638	0					
+ANR	5908685	BitAndExpression	client -> nbdflags & NBD_FLAG_SEND_WRITE_ZEROES		5908638	1		&			
+ANR	5908686	PtrMemberAccess	client -> nbdflags		5908638	0					
+ANR	5908687	Identifier	client		5908638	0					
+ANR	5908688	Identifier	nbdflags		5908638	1					
+ANR	5908689	Identifier	NBD_FLAG_SEND_WRITE_ZEROES		5908638	1					
+ANR	5908690	CompoundStatement		21:58:284:284	5908638	1					
+ANR	5908691	ReturnStatement	return - ENOTSUP ;	27:8:435:450	5908638	0	True				
+ANR	5908692	UnaryOperationExpression	- ENOTSUP		5908638	0					
+ANR	5908693	UnaryOperator	-		5908638	0					
+ANR	5908694	Identifier	ENOTSUP		5908638	1					
+ANR	5908695	IfStatement	if ( flags & BDRV_REQ_FUA )		5908638	9					
+ANR	5908696	Condition	flags & BDRV_REQ_FUA	33:8:470:489	5908638	0	True				
+ANR	5908697	BitAndExpression	flags & BDRV_REQ_FUA		5908638	0		&			
+ANR	5908698	Identifier	flags		5908638	0					
+ANR	5908699	Identifier	BDRV_REQ_FUA		5908638	1					
+ANR	5908700	CompoundStatement		29:30:352:352	5908638	1					
+ANR	5908701	ExpressionStatement	assert ( client -> nbdflags & NBD_FLAG_SEND_FUA )	35:8:503:547	5908638	0	True				
+ANR	5908702	CallExpression	assert ( client -> nbdflags & NBD_FLAG_SEND_FUA )		5908638	0					
+ANR	5908703	Callee	assert		5908638	0					
+ANR	5908704	Identifier	assert		5908638	0					
+ANR	5908705	ArgumentList	client -> nbdflags & NBD_FLAG_SEND_FUA		5908638	1					
+ANR	5908706	Argument	client -> nbdflags & NBD_FLAG_SEND_FUA		5908638	0					
+ANR	5908707	BitAndExpression	client -> nbdflags & NBD_FLAG_SEND_FUA		5908638	0		&			
+ANR	5908708	PtrMemberAccess	client -> nbdflags		5908638	0					
+ANR	5908709	Identifier	client		5908638	0					
+ANR	5908710	Identifier	nbdflags		5908638	1					
+ANR	5908711	Identifier	NBD_FLAG_SEND_FUA		5908638	1					
+ANR	5908712	ExpressionStatement	request . flags |= NBD_CMD_FLAG_FUA	37:8:558:591	5908638	1	True				
+ANR	5908713	AssignmentExpression	request . flags |= NBD_CMD_FLAG_FUA		5908638	0		|=			
+ANR	5908714	MemberAccess	request . flags		5908638	0					
+ANR	5908715	Identifier	request		5908638	0					
+ANR	5908716	Identifier	flags		5908638	1					
+ANR	5908717	Identifier	NBD_CMD_FLAG_FUA		5908638	1					
+ANR	5908718	IfStatement	if ( ! ( flags & BDRV_REQ_MAY_UNMAP ) )		5908638	10					
+ANR	5908719	Condition	! ( flags & BDRV_REQ_MAY_UNMAP )	41:8:609:637	5908638	0	True				
+ANR	5908720	UnaryOperationExpression	! ( flags & BDRV_REQ_MAY_UNMAP )		5908638	0					
+ANR	5908721	UnaryOperator	!		5908638	0					
+ANR	5908722	BitAndExpression	flags & BDRV_REQ_MAY_UNMAP		5908638	1		&			
+ANR	5908723	Identifier	flags		5908638	0					
+ANR	5908724	Identifier	BDRV_REQ_MAY_UNMAP		5908638	1					
+ANR	5908725	CompoundStatement		37:39:500:500	5908638	1					
+ANR	5908726	ExpressionStatement	request . flags |= NBD_CMD_FLAG_NO_HOLE	43:8:651:688	5908638	0	True				
+ANR	5908727	AssignmentExpression	request . flags |= NBD_CMD_FLAG_NO_HOLE		5908638	0		|=			
+ANR	5908728	MemberAccess	request . flags		5908638	0					
+ANR	5908729	Identifier	request		5908638	0					
+ANR	5908730	Identifier	flags		5908638	1					
+ANR	5908731	Identifier	NBD_CMD_FLAG_NO_HOLE		5908638	1					
+ANR	5908732	ExpressionStatement	"nbd_coroutine_start ( client , & request )"	49:4:704:741	5908638	11	True				
+ANR	5908733	CallExpression	"nbd_coroutine_start ( client , & request )"		5908638	0					
+ANR	5908734	Callee	nbd_coroutine_start		5908638	0					
+ANR	5908735	Identifier	nbd_coroutine_start		5908638	0					
+ANR	5908736	ArgumentList	client		5908638	1					
+ANR	5908737	Argument	client		5908638	0					
+ANR	5908738	Identifier	client		5908638	0					
+ANR	5908739	Argument	& request		5908638	1					
+ANR	5908740	UnaryOperationExpression	& request		5908638	0					
+ANR	5908741	UnaryOperator	&		5908638	0					
+ANR	5908742	Identifier	request		5908638	1					
+ANR	5908743	ExpressionStatement	"ret = nbd_co_send_request ( bs , & request , NULL )"	51:4:748:793	5908638	12	True				
+ANR	5908744	AssignmentExpression	"ret = nbd_co_send_request ( bs , & request , NULL )"		5908638	0		=			
+ANR	5908745	Identifier	ret		5908638	0					
+ANR	5908746	CallExpression	"nbd_co_send_request ( bs , & request , NULL )"		5908638	1					
+ANR	5908747	Callee	nbd_co_send_request		5908638	0					
+ANR	5908748	Identifier	nbd_co_send_request		5908638	0					
+ANR	5908749	ArgumentList	bs		5908638	1					
+ANR	5908750	Argument	bs		5908638	0					
+ANR	5908751	Identifier	bs		5908638	0					
+ANR	5908752	Argument	& request		5908638	1					
+ANR	5908753	UnaryOperationExpression	& request		5908638	0					
+ANR	5908754	UnaryOperator	&		5908638	0					
+ANR	5908755	Identifier	request		5908638	1					
+ANR	5908756	Argument	NULL		5908638	2					
+ANR	5908757	Identifier	NULL		5908638	0					
+ANR	5908758	IfStatement	if ( ret < 0 )		5908638	13					
+ANR	5908759	Condition	ret < 0	53:8:804:810	5908638	0	True				
+ANR	5908760	RelationalExpression	ret < 0		5908638	0		<			
+ANR	5908761	Identifier	ret		5908638	0					
+ANR	5908762	PrimaryExpression	0		5908638	1					
+ANR	5908763	CompoundStatement		49:17:673:673	5908638	1					
+ANR	5908764	ExpressionStatement	reply . error = - ret	55:8:824:842	5908638	0	True				
+ANR	5908765	AssignmentExpression	reply . error = - ret		5908638	0		=			
+ANR	5908766	MemberAccess	reply . error		5908638	0					
+ANR	5908767	Identifier	reply		5908638	0					
+ANR	5908768	Identifier	error		5908638	1					
+ANR	5908769	UnaryOperationExpression	- ret		5908638	1					
+ANR	5908770	UnaryOperator	-		5908638	0					
+ANR	5908771	Identifier	ret		5908638	1					
+ANR	5908772	ElseStatement	else		5908638	0					
+ANR	5908773	CompoundStatement		53:11:716:716	5908638	0					
+ANR	5908774	ExpressionStatement	"nbd_co_receive_reply ( client , & request , & reply , NULL )"	59:8:867:919	5908638	0	True				
+ANR	5908775	CallExpression	"nbd_co_receive_reply ( client , & request , & reply , NULL )"		5908638	0					
+ANR	5908776	Callee	nbd_co_receive_reply		5908638	0					
+ANR	5908777	Identifier	nbd_co_receive_reply		5908638	0					
+ANR	5908778	ArgumentList	client		5908638	1					
+ANR	5908779	Argument	client		5908638	0					
+ANR	5908780	Identifier	client		5908638	0					
+ANR	5908781	Argument	& request		5908638	1					
+ANR	5908782	UnaryOperationExpression	& request		5908638	0					
+ANR	5908783	UnaryOperator	&		5908638	0					
+ANR	5908784	Identifier	request		5908638	1					
+ANR	5908785	Argument	& reply		5908638	2					
+ANR	5908786	UnaryOperationExpression	& reply		5908638	0					
+ANR	5908787	UnaryOperator	&		5908638	0					
+ANR	5908788	Identifier	reply		5908638	1					
+ANR	5908789	Argument	NULL		5908638	3					
+ANR	5908790	Identifier	NULL		5908638	0					
+ANR	5908791	ExpressionStatement	"nbd_coroutine_end ( bs , & request )"	63:4:933:964	5908638	14	True				
+ANR	5908792	CallExpression	"nbd_coroutine_end ( bs , & request )"		5908638	0					
+ANR	5908793	Callee	nbd_coroutine_end		5908638	0					
+ANR	5908794	Identifier	nbd_coroutine_end		5908638	0					
+ANR	5908795	ArgumentList	bs		5908638	1					
+ANR	5908796	Argument	bs		5908638	0					
+ANR	5908797	Identifier	bs		5908638	0					
+ANR	5908798	Argument	& request		5908638	1					
+ANR	5908799	UnaryOperationExpression	& request		5908638	0					
+ANR	5908800	UnaryOperator	&		5908638	0					
+ANR	5908801	Identifier	request		5908638	1					
+ANR	5908802	ReturnStatement	return - reply . error ;	65:4:971:990	5908638	15	True				
+ANR	5908803	UnaryOperationExpression	- reply . error		5908638	0					
+ANR	5908804	UnaryOperator	-		5908638	0					
+ANR	5908805	MemberAccess	reply . error		5908638	1					
+ANR	5908806	Identifier	reply		5908638	0					
+ANR	5908807	Identifier	error		5908638	1					
+ANR	5908808	ReturnType	int		5908638	1					
+ANR	5908809	Identifier	nbd_client_co_pwrite_zeroes		5908638	2					
+ANR	5908810	ParameterList	"BlockDriverState * bs , int64_t offset , int count , BdrvRequestFlags flags"		5908638	3					
+ANR	5908811	Parameter	BlockDriverState * bs	1:32:32:51	5908638	0	True				
+ANR	5908812	ParameterType	BlockDriverState *		5908638	0					
+ANR	5908813	Identifier	bs		5908638	1					
+ANR	5908814	Parameter	int64_t offset	1:54:54:67	5908638	1	True				
+ANR	5908815	ParameterType	int64_t		5908638	0					
+ANR	5908816	Identifier	offset		5908638	1					
+ANR	5908817	Parameter	int count	3:32:103:111	5908638	2	True				
+ANR	5908818	ParameterType	int		5908638	0					
+ANR	5908819	Identifier	count		5908638	1					
+ANR	5908820	Parameter	BdrvRequestFlags flags	3:43:114:135	5908638	3	True				
+ANR	5908821	ParameterType	BdrvRequestFlags		5908638	0					
+ANR	5908822	Identifier	flags		5908638	1					
+ANR	5908823	CFGEntryNode	ENTRY		5908638		True				
+ANR	5908824	CFGExitNode	EXIT		5908638		True				
+ANR	5908825	Symbol	ret		5908638						
+ANR	5908826	Symbol	request		5908638						
+ANR	5908827	Symbol	request . flags		5908638						
+ANR	5908828	Symbol	nbd_co_send_request		5908638						
+ANR	5908829	Symbol	NULL		5908638						
+ANR	5908830	Symbol	offset		5908638						
+ANR	5908831	Symbol	BDRV_REQ_MAY_UNMAP		5908638						
+ANR	5908832	Symbol	BDRV_REQ_FUA		5908638						
+ANR	5908833	Symbol	count		5908638						
+ANR	5908834	Symbol	flags		5908638						
+ANR	5908835	Symbol	ENOTSUP		5908638						
+ANR	5908836	Symbol	& request		5908638						
+ANR	5908837	Symbol	* client		5908638						
+ANR	5908838	Symbol	NBD_CMD_FLAG_NO_HOLE		5908638						
+ANR	5908839	Symbol	client -> nbdflags		5908638						
+ANR	5908840	Symbol	& reply		5908638						
+ANR	5908841	Symbol	NBD_FLAG_SEND_WRITE_ZEROES		5908638						
+ANR	5908842	Symbol	bs		5908638						
+ANR	5908843	Symbol	NBD_FLAG_SEND_FUA		5908638						
+ANR	5908844	Symbol	NBD_CMD_FLAG_FUA		5908638						
+ANR	5908845	Symbol	reply . error		5908638						
+ANR	5908846	Symbol	client		5908638						
+ANR	5908847	Symbol	reply		5908638						
+ANR	5908848	Symbol	nbd_get_client_session		5908638						

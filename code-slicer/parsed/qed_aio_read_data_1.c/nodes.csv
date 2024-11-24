@@ -1,0 +1,254 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6936779	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qed_aio_read_data_1.c								
+ANR	6936780	Function	qed_aio_read_data	1:0:0:1183							
+ANR	6936781	FunctionDef	"qed_aio_read_data (void * opaque , int ret , uint64_t offset , size_t len)"		6936780	0					
+ANR	6936782	CompoundStatement		5:0:114:1183	6936780	0					
+ANR	6936783	IdentifierDeclStatement	QEDAIOCB * acb = opaque ;	7:4:121:143	6936780	0	True				
+ANR	6936784	IdentifierDecl	* acb = opaque		6936780	0					
+ANR	6936785	IdentifierDeclType	QEDAIOCB *		6936780	0					
+ANR	6936786	Identifier	acb		6936780	1					
+ANR	6936787	AssignmentExpression	* acb = opaque		6936780	2		=			
+ANR	6936788	Identifier	opaque		6936780	0					
+ANR	6936789	Identifier	opaque		6936780	1					
+ANR	6936790	IdentifierDeclStatement	BDRVQEDState * s = acb_to_s ( acb ) ;	9:4:150:181	6936780	1	True				
+ANR	6936791	IdentifierDecl	* s = acb_to_s ( acb )		6936780	0					
+ANR	6936792	IdentifierDeclType	BDRVQEDState *		6936780	0					
+ANR	6936793	Identifier	s		6936780	1					
+ANR	6936794	AssignmentExpression	* s = acb_to_s ( acb )		6936780	2		=			
+ANR	6936795	Identifier	s		6936780	0					
+ANR	6936796	CallExpression	acb_to_s ( acb )		6936780	1					
+ANR	6936797	Callee	acb_to_s		6936780	0					
+ANR	6936798	Identifier	acb_to_s		6936780	0					
+ANR	6936799	ArgumentList	acb		6936780	1					
+ANR	6936800	Argument	acb		6936780	0					
+ANR	6936801	Identifier	acb		6936780	0					
+ANR	6936802	IdentifierDeclStatement	BlockDriverState * bs = acb -> common . bs ;	11:4:188:225	6936780	2	True				
+ANR	6936803	IdentifierDecl	* bs = acb -> common . bs		6936780	0					
+ANR	6936804	IdentifierDeclType	BlockDriverState *		6936780	0					
+ANR	6936805	Identifier	bs		6936780	1					
+ANR	6936806	AssignmentExpression	* bs = acb -> common . bs		6936780	2		=			
+ANR	6936807	Identifier	bs		6936780	0					
+ANR	6936808	MemberAccess	acb -> common . bs		6936780	1					
+ANR	6936809	PtrMemberAccess	acb -> common		6936780	0					
+ANR	6936810	Identifier	acb		6936780	0					
+ANR	6936811	Identifier	common		6936780	1					
+ANR	6936812	Identifier	bs		6936780	1					
+ANR	6936813	ExpressionStatement	"offset += qed_offset_into_cluster ( s , acb -> cur_pos )"	17:4:272:322	6936780	3	True				
+ANR	6936814	AssignmentExpression	"offset += qed_offset_into_cluster ( s , acb -> cur_pos )"		6936780	0		+=			
+ANR	6936815	Identifier	offset		6936780	0					
+ANR	6936816	CallExpression	"qed_offset_into_cluster ( s , acb -> cur_pos )"		6936780	1					
+ANR	6936817	Callee	qed_offset_into_cluster		6936780	0					
+ANR	6936818	Identifier	qed_offset_into_cluster		6936780	0					
+ANR	6936819	ArgumentList	s		6936780	1					
+ANR	6936820	Argument	s		6936780	0					
+ANR	6936821	Identifier	s		6936780	0					
+ANR	6936822	Argument	acb -> cur_pos		6936780	1					
+ANR	6936823	PtrMemberAccess	acb -> cur_pos		6936780	0					
+ANR	6936824	Identifier	acb		6936780	0					
+ANR	6936825	Identifier	cur_pos		6936780	1					
+ANR	6936826	ExpressionStatement	"trace_qed_aio_read_data ( s , acb , ret , offset , len )"	21:4:331:380	6936780	4	True				
+ANR	6936827	CallExpression	"trace_qed_aio_read_data ( s , acb , ret , offset , len )"		6936780	0					
+ANR	6936828	Callee	trace_qed_aio_read_data		6936780	0					
+ANR	6936829	Identifier	trace_qed_aio_read_data		6936780	0					
+ANR	6936830	ArgumentList	s		6936780	1					
+ANR	6936831	Argument	s		6936780	0					
+ANR	6936832	Identifier	s		6936780	0					
+ANR	6936833	Argument	acb		6936780	1					
+ANR	6936834	Identifier	acb		6936780	0					
+ANR	6936835	Argument	ret		6936780	2					
+ANR	6936836	Identifier	ret		6936780	0					
+ANR	6936837	Argument	offset		6936780	3					
+ANR	6936838	Identifier	offset		6936780	0					
+ANR	6936839	Argument	len		6936780	4					
+ANR	6936840	Identifier	len		6936780	0					
+ANR	6936841	IfStatement	if ( ret < 0 )		6936780	5					
+ANR	6936842	Condition	ret < 0	25:8:393:399	6936780	0	True				
+ANR	6936843	RelationalExpression	ret < 0		6936780	0		<			
+ANR	6936844	Identifier	ret		6936780	0					
+ANR	6936845	PrimaryExpression	0		6936780	1					
+ANR	6936846	CompoundStatement		21:17:287:287	6936780	1					
+ANR	6936847	GotoStatement	goto err ;	27:8:413:421	6936780	0	True				
+ANR	6936848	Identifier	err		6936780	0					
+ANR	6936849	ExpressionStatement	"qemu_iovec_concat ( & acb -> cur_qiov , acb -> qiov , acb -> qiov_offset , len )"	33:4:437:504	6936780	6	True				
+ANR	6936850	CallExpression	"qemu_iovec_concat ( & acb -> cur_qiov , acb -> qiov , acb -> qiov_offset , len )"		6936780	0					
+ANR	6936851	Callee	qemu_iovec_concat		6936780	0					
+ANR	6936852	Identifier	qemu_iovec_concat		6936780	0					
+ANR	6936853	ArgumentList	& acb -> cur_qiov		6936780	1					
+ANR	6936854	Argument	& acb -> cur_qiov		6936780	0					
+ANR	6936855	UnaryOperationExpression	& acb -> cur_qiov		6936780	0					
+ANR	6936856	UnaryOperator	&		6936780	0					
+ANR	6936857	PtrMemberAccess	acb -> cur_qiov		6936780	1					
+ANR	6936858	Identifier	acb		6936780	0					
+ANR	6936859	Identifier	cur_qiov		6936780	1					
+ANR	6936860	Argument	acb -> qiov		6936780	1					
+ANR	6936861	PtrMemberAccess	acb -> qiov		6936780	0					
+ANR	6936862	Identifier	acb		6936780	0					
+ANR	6936863	Identifier	qiov		6936780	1					
+ANR	6936864	Argument	acb -> qiov_offset		6936780	2					
+ANR	6936865	PtrMemberAccess	acb -> qiov_offset		6936780	0					
+ANR	6936866	Identifier	acb		6936780	0					
+ANR	6936867	Identifier	qiov_offset		6936780	1					
+ANR	6936868	Argument	len		6936780	3					
+ANR	6936869	Identifier	len		6936780	0					
+ANR	6936870	IfStatement	if ( ret == QED_CLUSTER_ZERO )		6936780	7					
+ANR	6936871	Condition	ret == QED_CLUSTER_ZERO	39:8:571:593	6936780	0	True				
+ANR	6936872	EqualityExpression	ret == QED_CLUSTER_ZERO		6936780	0		==			
+ANR	6936873	Identifier	ret		6936780	0					
+ANR	6936874	Identifier	QED_CLUSTER_ZERO		6936780	1					
+ANR	6936875	CompoundStatement		35:33:481:481	6936780	1					
+ANR	6936876	ExpressionStatement	"qemu_iovec_memset ( & acb -> cur_qiov , 0 , 0 , acb -> cur_qiov . size )"	41:8:607:666	6936780	0	True				
+ANR	6936877	CallExpression	"qemu_iovec_memset ( & acb -> cur_qiov , 0 , 0 , acb -> cur_qiov . size )"		6936780	0					
+ANR	6936878	Callee	qemu_iovec_memset		6936780	0					
+ANR	6936879	Identifier	qemu_iovec_memset		6936780	0					
+ANR	6936880	ArgumentList	& acb -> cur_qiov		6936780	1					
+ANR	6936881	Argument	& acb -> cur_qiov		6936780	0					
+ANR	6936882	UnaryOperationExpression	& acb -> cur_qiov		6936780	0					
+ANR	6936883	UnaryOperator	&		6936780	0					
+ANR	6936884	PtrMemberAccess	acb -> cur_qiov		6936780	1					
+ANR	6936885	Identifier	acb		6936780	0					
+ANR	6936886	Identifier	cur_qiov		6936780	1					
+ANR	6936887	Argument	0		6936780	1					
+ANR	6936888	PrimaryExpression	0		6936780	0					
+ANR	6936889	Argument	0		6936780	2					
+ANR	6936890	PrimaryExpression	0		6936780	0					
+ANR	6936891	Argument	acb -> cur_qiov . size		6936780	3					
+ANR	6936892	MemberAccess	acb -> cur_qiov . size		6936780	0					
+ANR	6936893	PtrMemberAccess	acb -> cur_qiov		6936780	0					
+ANR	6936894	Identifier	acb		6936780	0					
+ANR	6936895	Identifier	cur_qiov		6936780	1					
+ANR	6936896	Identifier	size		6936780	1					
+ANR	6936897	ExpressionStatement	"qed_aio_next_io ( acb , 0 )"	43:8:677:700	6936780	1	True				
+ANR	6936898	CallExpression	"qed_aio_next_io ( acb , 0 )"		6936780	0					
+ANR	6936899	Callee	qed_aio_next_io		6936780	0					
+ANR	6936900	Identifier	qed_aio_next_io		6936780	0					
+ANR	6936901	ArgumentList	acb		6936780	1					
+ANR	6936902	Argument	acb		6936780	0					
+ANR	6936903	Identifier	acb		6936780	0					
+ANR	6936904	Argument	0		6936780	1					
+ANR	6936905	PrimaryExpression	0		6936780	0					
+ANR	6936906	ReturnStatement	return ;	45:8:711:717	6936780	2	True				
+ANR	6936907	ElseStatement	else		6936780	0					
+ANR	6936908	IfStatement	if ( ret != QED_CLUSTER_FOUND )		6936780	0					
+ANR	6936909	Condition	ret != QED_CLUSTER_FOUND	47:15:735:758	6936780	0	True				
+ANR	6936910	EqualityExpression	ret != QED_CLUSTER_FOUND		6936780	0		!=			
+ANR	6936911	Identifier	ret		6936780	0					
+ANR	6936912	Identifier	QED_CLUSTER_FOUND		6936780	1					
+ANR	6936913	CompoundStatement		43:41:646:646	6936780	1					
+ANR	6936914	ExpressionStatement	"qed_read_backing_file ( s , acb -> cur_pos , & acb -> cur_qiov , qed_aio_next_io , acb )"	49:8:772:879	6936780	0	True				
+ANR	6936915	CallExpression	"qed_read_backing_file ( s , acb -> cur_pos , & acb -> cur_qiov , qed_aio_next_io , acb )"		6936780	0					
+ANR	6936916	Callee	qed_read_backing_file		6936780	0					
+ANR	6936917	Identifier	qed_read_backing_file		6936780	0					
+ANR	6936918	ArgumentList	s		6936780	1					
+ANR	6936919	Argument	s		6936780	0					
+ANR	6936920	Identifier	s		6936780	0					
+ANR	6936921	Argument	acb -> cur_pos		6936780	1					
+ANR	6936922	PtrMemberAccess	acb -> cur_pos		6936780	0					
+ANR	6936923	Identifier	acb		6936780	0					
+ANR	6936924	Identifier	cur_pos		6936780	1					
+ANR	6936925	Argument	& acb -> cur_qiov		6936780	2					
+ANR	6936926	UnaryOperationExpression	& acb -> cur_qiov		6936780	0					
+ANR	6936927	UnaryOperator	&		6936780	0					
+ANR	6936928	PtrMemberAccess	acb -> cur_qiov		6936780	1					
+ANR	6936929	Identifier	acb		6936780	0					
+ANR	6936930	Identifier	cur_qiov		6936780	1					
+ANR	6936931	Argument	qed_aio_next_io		6936780	3					
+ANR	6936932	Identifier	qed_aio_next_io		6936780	0					
+ANR	6936933	Argument	acb		6936780	4					
+ANR	6936934	Identifier	acb		6936780	0					
+ANR	6936935	ReturnStatement	return ;	53:8:890:896	6936780	1	True				
+ANR	6936936	ExpressionStatement	"BLKDBG_EVENT ( bs -> file , BLKDBG_READ_AIO )"	59:4:912:951	6936780	8	True				
+ANR	6936937	CallExpression	"BLKDBG_EVENT ( bs -> file , BLKDBG_READ_AIO )"		6936780	0					
+ANR	6936938	Callee	BLKDBG_EVENT		6936780	0					
+ANR	6936939	Identifier	BLKDBG_EVENT		6936780	0					
+ANR	6936940	ArgumentList	bs -> file		6936780	1					
+ANR	6936941	Argument	bs -> file		6936780	0					
+ANR	6936942	PtrMemberAccess	bs -> file		6936780	0					
+ANR	6936943	Identifier	bs		6936780	0					
+ANR	6936944	Identifier	file		6936780	1					
+ANR	6936945	Argument	BLKDBG_READ_AIO		6936780	1					
+ANR	6936946	Identifier	BLKDBG_READ_AIO		6936780	0					
+ANR	6936947	ExpressionStatement	"bdrv_aio_readv ( bs -> file , offset / BDRV_SECTOR_SIZE , & acb -> cur_qiov , acb -> cur_qiov . size / BDRV_SECTOR_SIZE , qed_aio_next_io , acb )"	61:4:958:1126	6936780	9	True				
+ANR	6936948	CallExpression	"bdrv_aio_readv ( bs -> file , offset / BDRV_SECTOR_SIZE , & acb -> cur_qiov , acb -> cur_qiov . size / BDRV_SECTOR_SIZE , qed_aio_next_io , acb )"		6936780	0					
+ANR	6936949	Callee	bdrv_aio_readv		6936780	0					
+ANR	6936950	Identifier	bdrv_aio_readv		6936780	0					
+ANR	6936951	ArgumentList	bs -> file		6936780	1					
+ANR	6936952	Argument	bs -> file		6936780	0					
+ANR	6936953	PtrMemberAccess	bs -> file		6936780	0					
+ANR	6936954	Identifier	bs		6936780	0					
+ANR	6936955	Identifier	file		6936780	1					
+ANR	6936956	Argument	offset / BDRV_SECTOR_SIZE		6936780	1					
+ANR	6936957	MultiplicativeExpression	offset / BDRV_SECTOR_SIZE		6936780	0		/			
+ANR	6936958	Identifier	offset		6936780	0					
+ANR	6936959	Identifier	BDRV_SECTOR_SIZE		6936780	1					
+ANR	6936960	Argument	& acb -> cur_qiov		6936780	2					
+ANR	6936961	UnaryOperationExpression	& acb -> cur_qiov		6936780	0					
+ANR	6936962	UnaryOperator	&		6936780	0					
+ANR	6936963	PtrMemberAccess	acb -> cur_qiov		6936780	1					
+ANR	6936964	Identifier	acb		6936780	0					
+ANR	6936965	Identifier	cur_qiov		6936780	1					
+ANR	6936966	Argument	acb -> cur_qiov . size / BDRV_SECTOR_SIZE		6936780	3					
+ANR	6936967	MultiplicativeExpression	acb -> cur_qiov . size / BDRV_SECTOR_SIZE		6936780	0		/			
+ANR	6936968	MemberAccess	acb -> cur_qiov . size		6936780	0					
+ANR	6936969	PtrMemberAccess	acb -> cur_qiov		6936780	0					
+ANR	6936970	Identifier	acb		6936780	0					
+ANR	6936971	Identifier	cur_qiov		6936780	1					
+ANR	6936972	Identifier	size		6936780	1					
+ANR	6936973	Identifier	BDRV_SECTOR_SIZE		6936780	1					
+ANR	6936974	Argument	qed_aio_next_io		6936780	4					
+ANR	6936975	Identifier	qed_aio_next_io		6936780	0					
+ANR	6936976	Argument	acb		6936780	5					
+ANR	6936977	Identifier	acb		6936780	0					
+ANR	6936978	ReturnStatement	return ;	67:4:1133:1139	6936780	10	True				
+ANR	6936979	Label	err :	71:0:1144:1147	6936780	11	True				
+ANR	6936980	Identifier	err		6936780	0					
+ANR	6936981	ExpressionStatement	"qed_aio_complete ( acb , ret )"	73:4:1154:1180	6936780	12	True				
+ANR	6936982	CallExpression	"qed_aio_complete ( acb , ret )"		6936780	0					
+ANR	6936983	Callee	qed_aio_complete		6936780	0					
+ANR	6936984	Identifier	qed_aio_complete		6936780	0					
+ANR	6936985	ArgumentList	acb		6936780	1					
+ANR	6936986	Argument	acb		6936780	0					
+ANR	6936987	Identifier	acb		6936780	0					
+ANR	6936988	Argument	ret		6936780	1					
+ANR	6936989	Identifier	ret		6936780	0					
+ANR	6936990	ReturnType	static void		6936780	1					
+ANR	6936991	Identifier	qed_aio_read_data		6936780	2					
+ANR	6936992	ParameterList	"void * opaque , int ret , uint64_t offset , size_t len"		6936780	3					
+ANR	6936993	Parameter	void * opaque	1:30:30:41	6936780	0	True				
+ANR	6936994	ParameterType	void *		6936780	0					
+ANR	6936995	Identifier	opaque		6936780	1					
+ANR	6936996	Parameter	int ret	1:44:44:50	6936780	1	True				
+ANR	6936997	ParameterType	int		6936780	0					
+ANR	6936998	Identifier	ret		6936780	1					
+ANR	6936999	Parameter	uint64_t offset	3:30:84:98	6936780	2	True				
+ANR	6937000	ParameterType	uint64_t		6936780	0					
+ANR	6937001	Identifier	offset		6936780	1					
+ANR	6937002	Parameter	size_t len	3:47:101:110	6936780	3	True				
+ANR	6937003	ParameterType	size_t		6936780	0					
+ANR	6937004	Identifier	len		6936780	1					
+ANR	6937005	CFGEntryNode	ENTRY		6936780		True				
+ANR	6937006	CFGExitNode	EXIT		6936780		True				
+ANR	6937007	Symbol	acb		6936780						
+ANR	6937008	Symbol	QED_CLUSTER_FOUND		6936780						
+ANR	6937009	Symbol	bs -> file		6936780						
+ANR	6937010	Symbol	acb_to_s		6936780						
+ANR	6937011	Symbol	BLKDBG_READ_AIO		6936780						
+ANR	6937012	Symbol	acb -> qiov		6936780						
+ANR	6937013	Symbol	QED_CLUSTER_ZERO		6936780						
+ANR	6937014	Symbol	bs		6936780						
+ANR	6937015	Symbol	len		6936780						
+ANR	6937016	Symbol	* bs		6936780						
+ANR	6937017	Symbol	* acb		6936780						
+ANR	6937018	Symbol	acb -> cur_pos		6936780						
+ANR	6937019	Symbol	acb -> cur_qiov		6936780						
+ANR	6937020	Symbol	& acb -> cur_qiov		6936780						
+ANR	6937021	Symbol	qed_aio_next_io		6936780						
+ANR	6937022	Symbol	acb -> qiov_offset		6936780						
+ANR	6937023	Symbol	acb -> common . bs		6936780						
+ANR	6937024	Symbol	ret		6936780						
+ANR	6937025	Symbol	qed_offset_into_cluster		6936780						
+ANR	6937026	Symbol	opaque		6936780						
+ANR	6937027	Symbol	offset		6936780						
+ANR	6937028	Symbol	s		6936780						
+ANR	6937029	Symbol	acb -> common		6936780						
+ANR	6937030	Symbol	BDRV_SECTOR_SIZE		6936780						
+ANR	6937031	Symbol	acb -> cur_qiov . size		6936780						

@@ -1,0 +1,179 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7726620	File	/home/p4ultr4n/workplace/ReVeal/raw_code/seek_to_sector_01_1.c								
+ANR	7726621	Function	seek_to_sector	1:0:0:941							
+ANR	7726622	FunctionDef	"seek_to_sector (BlockDriverState * bs , int64_t sector_num)"		7726621	0					
+ANR	7726623	CompoundStatement		3:0:73:941	7726621	0					
+ANR	7726624	IdentifierDeclStatement	BDRVBochsState * s = bs -> opaque ;	5:4:80:110	7726621	0	True				
+ANR	7726625	IdentifierDecl	* s = bs -> opaque		7726621	0					
+ANR	7726626	IdentifierDeclType	BDRVBochsState *		7726621	0					
+ANR	7726627	Identifier	s		7726621	1					
+ANR	7726628	AssignmentExpression	* s = bs -> opaque		7726621	2		=			
+ANR	7726629	Identifier	s		7726621	0					
+ANR	7726630	PtrMemberAccess	bs -> opaque		7726621	1					
+ANR	7726631	Identifier	bs		7726621	0					
+ANR	7726632	Identifier	opaque		7726621	1					
+ANR	7726633	IdentifierDeclStatement	int64_t offset = sector_num * 512 ;	7:4:117:150	7726621	1	True				
+ANR	7726634	IdentifierDecl	offset = sector_num * 512		7726621	0					
+ANR	7726635	IdentifierDeclType	int64_t		7726621	0					
+ANR	7726636	Identifier	offset		7726621	1					
+ANR	7726637	AssignmentExpression	offset = sector_num * 512		7726621	2		=			
+ANR	7726638	Identifier	offset		7726621	0					
+ANR	7726639	MultiplicativeExpression	sector_num * 512		7726621	1		*			
+ANR	7726640	Identifier	sector_num		7726621	0					
+ANR	7726641	PrimaryExpression	512		7726621	1					
+ANR	7726642	IdentifierDeclStatement	"int64_t extent_index , extent_offset , bitmap_offset ;"	9:4:157:207	7726621	2	True				
+ANR	7726643	IdentifierDecl	extent_index		7726621	0					
+ANR	7726644	IdentifierDeclType	int64_t		7726621	0					
+ANR	7726645	Identifier	extent_index		7726621	1					
+ANR	7726646	IdentifierDecl	extent_offset		7726621	1					
+ANR	7726647	IdentifierDeclType	int64_t		7726621	0					
+ANR	7726648	Identifier	extent_offset		7726621	1					
+ANR	7726649	IdentifierDecl	bitmap_offset		7726621	2					
+ANR	7726650	IdentifierDeclType	int64_t		7726621	0					
+ANR	7726651	Identifier	bitmap_offset		7726621	1					
+ANR	7726652	IdentifierDeclStatement	char bitmap_entry ;	11:4:214:231	7726621	3	True				
+ANR	7726653	IdentifierDecl	bitmap_entry		7726621	0					
+ANR	7726654	IdentifierDeclType	char		7726621	0					
+ANR	7726655	Identifier	bitmap_entry		7726621	1					
+ANR	7726656	ExpressionStatement	extent_index = offset / s -> extent_size	17:4:263:301	7726621	4	True				
+ANR	7726657	AssignmentExpression	extent_index = offset / s -> extent_size		7726621	0		=			
+ANR	7726658	Identifier	extent_index		7726621	0					
+ANR	7726659	MultiplicativeExpression	offset / s -> extent_size		7726621	1		/			
+ANR	7726660	Identifier	offset		7726621	0					
+ANR	7726661	PtrMemberAccess	s -> extent_size		7726621	1					
+ANR	7726662	Identifier	s		7726621	0					
+ANR	7726663	Identifier	extent_size		7726621	1					
+ANR	7726664	ExpressionStatement	extent_offset = ( offset % s -> extent_size ) / 512	19:4:308:355	7726621	5	True				
+ANR	7726665	AssignmentExpression	extent_offset = ( offset % s -> extent_size ) / 512		7726621	0		=			
+ANR	7726666	Identifier	extent_offset		7726621	0					
+ANR	7726667	MultiplicativeExpression	( offset % s -> extent_size ) / 512		7726621	1		/			
+ANR	7726668	MultiplicativeExpression	offset % s -> extent_size		7726621	0		%			
+ANR	7726669	Identifier	offset		7726621	0					
+ANR	7726670	PtrMemberAccess	s -> extent_size		7726621	1					
+ANR	7726671	Identifier	s		7726621	0					
+ANR	7726672	Identifier	extent_size		7726621	1					
+ANR	7726673	PrimaryExpression	512		7726621	1					
+ANR	7726674	IfStatement	if ( s -> catalog_bitmap [ extent_index ] == 0xffffffff )		7726621	6					
+ANR	7726675	Condition	s -> catalog_bitmap [ extent_index ] == 0xffffffff	23:8:368:412	7726621	0	True				
+ANR	7726676	EqualityExpression	s -> catalog_bitmap [ extent_index ] == 0xffffffff		7726621	0		==			
+ANR	7726677	ArrayIndexing	s -> catalog_bitmap [ extent_index ]		7726621	0					
+ANR	7726678	PtrMemberAccess	s -> catalog_bitmap		7726621	0					
+ANR	7726679	Identifier	s		7726621	0					
+ANR	7726680	Identifier	catalog_bitmap		7726621	1					
+ANR	7726681	Identifier	extent_index		7726621	1					
+ANR	7726682	PrimaryExpression	0xffffffff		7726621	1					
+ANR	7726683	CompoundStatement		21:55:341:341	7726621	1					
+ANR	7726684	ReturnStatement	return - 1 ;	25:1:419:428	7726621	0	True				
+ANR	7726685	UnaryOperationExpression	- 1		7726621	0					
+ANR	7726686	UnaryOperator	-		7726621	0					
+ANR	7726687	PrimaryExpression	1		7726621	1					
+ANR	7726688	ExpressionStatement	bitmap_offset = s -> data_offset + ( 512 * s -> catalog_bitmap [ extent_index ] * ( s -> extent_blocks + s -> bitmap_blocks ) )	31:4:464:578	7726621	7	True				
+ANR	7726689	AssignmentExpression	bitmap_offset = s -> data_offset + ( 512 * s -> catalog_bitmap [ extent_index ] * ( s -> extent_blocks + s -> bitmap_blocks ) )		7726621	0		=			
+ANR	7726690	Identifier	bitmap_offset		7726621	0					
+ANR	7726691	AdditiveExpression	s -> data_offset + ( 512 * s -> catalog_bitmap [ extent_index ] * ( s -> extent_blocks + s -> bitmap_blocks ) )		7726621	1		+			
+ANR	7726692	PtrMemberAccess	s -> data_offset		7726621	0					
+ANR	7726693	Identifier	s		7726621	0					
+ANR	7726694	Identifier	data_offset		7726621	1					
+ANR	7726695	MultiplicativeExpression	512 * s -> catalog_bitmap [ extent_index ] * ( s -> extent_blocks + s -> bitmap_blocks )		7726621	1		*			
+ANR	7726696	PrimaryExpression	512		7726621	0					
+ANR	7726697	MultiplicativeExpression	s -> catalog_bitmap [ extent_index ] * ( s -> extent_blocks + s -> bitmap_blocks )		7726621	1		*			
+ANR	7726698	ArrayIndexing	s -> catalog_bitmap [ extent_index ]		7726621	0					
+ANR	7726699	PtrMemberAccess	s -> catalog_bitmap		7726621	0					
+ANR	7726700	Identifier	s		7726621	0					
+ANR	7726701	Identifier	catalog_bitmap		7726621	1					
+ANR	7726702	Identifier	extent_index		7726621	1					
+ANR	7726703	AdditiveExpression	s -> extent_blocks + s -> bitmap_blocks		7726621	1		+			
+ANR	7726704	PtrMemberAccess	s -> extent_blocks		7726621	0					
+ANR	7726705	Identifier	s		7726621	0					
+ANR	7726706	Identifier	extent_blocks		7726621	1					
+ANR	7726707	PtrMemberAccess	s -> bitmap_blocks		7726621	1					
+ANR	7726708	Identifier	s		7726621	0					
+ANR	7726709	Identifier	bitmap_blocks		7726621	1					
+ANR	7726710	IfStatement	"if ( bdrv_pread ( bs -> file , bitmap_offset + ( extent_offset / 8 ) , & bitmap_entry , 1 ) != 1 )"		7726621	8					
+ANR	7726711	Condition	"bdrv_pread ( bs -> file , bitmap_offset + ( extent_offset / 8 ) , & bitmap_entry , 1 ) != 1"	39:8:636:735	7726621	0	True				
+ANR	7726712	EqualityExpression	"bdrv_pread ( bs -> file , bitmap_offset + ( extent_offset / 8 ) , & bitmap_entry , 1 ) != 1"		7726621	0		!=			
+ANR	7726713	CallExpression	"bdrv_pread ( bs -> file , bitmap_offset + ( extent_offset / 8 ) , & bitmap_entry , 1 )"		7726621	0					
+ANR	7726714	Callee	bdrv_pread		7726621	0					
+ANR	7726715	Identifier	bdrv_pread		7726621	0					
+ANR	7726716	ArgumentList	bs -> file		7726621	1					
+ANR	7726717	Argument	bs -> file		7726621	0					
+ANR	7726718	PtrMemberAccess	bs -> file		7726621	0					
+ANR	7726719	Identifier	bs		7726621	0					
+ANR	7726720	Identifier	file		7726621	1					
+ANR	7726721	Argument	bitmap_offset + ( extent_offset / 8 )		7726621	1					
+ANR	7726722	AdditiveExpression	bitmap_offset + ( extent_offset / 8 )		7726621	0		+			
+ANR	7726723	Identifier	bitmap_offset		7726621	0					
+ANR	7726724	MultiplicativeExpression	extent_offset / 8		7726621	1		/			
+ANR	7726725	Identifier	extent_offset		7726621	0					
+ANR	7726726	PrimaryExpression	8		7726621	1					
+ANR	7726727	Argument	& bitmap_entry		7726621	2					
+ANR	7726728	UnaryOperationExpression	& bitmap_entry		7726621	0					
+ANR	7726729	UnaryOperator	&		7726621	0					
+ANR	7726730	Identifier	bitmap_entry		7726621	1					
+ANR	7726731	Argument	1		7726621	3					
+ANR	7726732	PrimaryExpression	1		7726621	0					
+ANR	7726733	PrimaryExpression	1		7726621	1					
+ANR	7726734	CompoundStatement		39:43:664:664	7726621	1					
+ANR	7726735	ReturnStatement	return - 1 ;	43:8:749:758	7726621	0	True				
+ANR	7726736	UnaryOperationExpression	- 1		7726621	0					
+ANR	7726737	UnaryOperator	-		7726621	0					
+ANR	7726738	PrimaryExpression	1		7726621	1					
+ANR	7726739	IfStatement	if ( ! ( ( bitmap_entry >> ( extent_offset % 8 ) ) & 1 ) )		7726621	9					
+ANR	7726740	Condition	! ( ( bitmap_entry >> ( extent_offset % 8 ) ) & 1 )	49:8:778:821	7726621	0	True				
+ANR	7726741	UnaryOperationExpression	! ( ( bitmap_entry >> ( extent_offset % 8 ) ) & 1 )		7726621	0					
+ANR	7726742	UnaryOperator	!		7726621	0					
+ANR	7726743	BitAndExpression	( bitmap_entry >> ( extent_offset % 8 ) ) & 1		7726621	1		&			
+ANR	7726744	ShiftExpression	bitmap_entry >> ( extent_offset % 8 )		7726621	0		>>			
+ANR	7726745	Identifier	bitmap_entry		7726621	0					
+ANR	7726746	MultiplicativeExpression	extent_offset % 8		7726621	1		%			
+ANR	7726747	Identifier	extent_offset		7726621	0					
+ANR	7726748	PrimaryExpression	8		7726621	1					
+ANR	7726749	PrimaryExpression	1		7726621	1					
+ANR	7726750	CompoundStatement		47:54:750:750	7726621	1					
+ANR	7726751	ReturnStatement	return - 1 ;	51:1:828:837	7726621	0	True				
+ANR	7726752	UnaryOperationExpression	- 1		7726621	0					
+ANR	7726753	UnaryOperator	-		7726621	0					
+ANR	7726754	PrimaryExpression	1		7726621	1					
+ANR	7726755	ReturnStatement	return bitmap_offset + ( 512 * ( s -> bitmap_blocks + extent_offset ) ) ;	57:4:873:938	7726621	10	True				
+ANR	7726756	AdditiveExpression	bitmap_offset + ( 512 * ( s -> bitmap_blocks + extent_offset ) )		7726621	0		+			
+ANR	7726757	Identifier	bitmap_offset		7726621	0					
+ANR	7726758	MultiplicativeExpression	512 * ( s -> bitmap_blocks + extent_offset )		7726621	1		*			
+ANR	7726759	PrimaryExpression	512		7726621	0					
+ANR	7726760	AdditiveExpression	s -> bitmap_blocks + extent_offset		7726621	1		+			
+ANR	7726761	PtrMemberAccess	s -> bitmap_blocks		7726621	0					
+ANR	7726762	Identifier	s		7726621	0					
+ANR	7726763	Identifier	bitmap_blocks		7726621	1					
+ANR	7726764	Identifier	extent_offset		7726621	1					
+ANR	7726765	ReturnType	static int64_t		7726621	1					
+ANR	7726766	Identifier	seek_to_sector		7726621	2					
+ANR	7726767	ParameterList	"BlockDriverState * bs , int64_t sector_num"		7726621	3					
+ANR	7726768	Parameter	BlockDriverState * bs	1:30:30:49	7726621	0	True				
+ANR	7726769	ParameterType	BlockDriverState *		7726621	0					
+ANR	7726770	Identifier	bs		7726621	1					
+ANR	7726771	Parameter	int64_t sector_num	1:52:52:69	7726621	1	True				
+ANR	7726772	ParameterType	int64_t		7726621	0					
+ANR	7726773	Identifier	sector_num		7726621	1					
+ANR	7726774	CFGEntryNode	ENTRY		7726621		True				
+ANR	7726775	CFGExitNode	EXIT		7726621		True				
+ANR	7726776	Symbol	s -> data_offset		7726621						
+ANR	7726777	Symbol	extent_offset		7726621						
+ANR	7726778	Symbol	extent_index		7726621						
+ANR	7726779	Symbol	bs -> opaque		7726621						
+ANR	7726780	Symbol	offset		7726621						
+ANR	7726781	Symbol	bs -> file		7726621						
+ANR	7726782	Symbol	s -> extent_size		7726621						
+ANR	7726783	Symbol	bitmap_entry		7726621						
+ANR	7726784	Symbol	bitmap_offset		7726621						
+ANR	7726785	Symbol	s -> bitmap_blocks		7726621						
+ANR	7726786	Symbol	s -> catalog_bitmap		7726621						
+ANR	7726787	Symbol	& bitmap_entry		7726621						
+ANR	7726788	Symbol	s -> extent_blocks		7726621						
+ANR	7726789	Symbol	sector_num		7726621						
+ANR	7726790	Symbol	* s -> catalog_bitmap		7726621						
+ANR	7726791	Symbol	bs		7726621						
+ANR	7726792	Symbol	s		7726621						
+ANR	7726793	Symbol	* extent_index		7726621						
+ANR	7726794	Symbol	* bs		7726621						
+ANR	7726795	Symbol	bdrv_pread		7726621						
+ANR	7726796	Symbol	* * s		7726621						
+ANR	7726797	Symbol	* s		7726621						

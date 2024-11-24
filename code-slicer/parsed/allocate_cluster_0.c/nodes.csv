@@ -1,0 +1,274 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	533322	File	/home/p4ultr4n/workplace/ReVeal/raw_code/allocate_cluster_0.c								
+ANR	533323	Function	allocate_cluster	1:0:0:1131							
+ANR	533324	FunctionDef	"allocate_cluster (BlockDriverState * bs , int64_t sector_num)"		533323	0					
+ANR	533325	CompoundStatement		3:0:75:1131	533323	0					
+ANR	533326	IdentifierDeclStatement	BDRVParallelsState * s = bs -> opaque ;	5:4:82:116	533323	0	True				
+ANR	533327	IdentifierDecl	* s = bs -> opaque		533323	0					
+ANR	533328	IdentifierDeclType	BDRVParallelsState *		533323	0					
+ANR	533329	Identifier	s		533323	1					
+ANR	533330	AssignmentExpression	* s = bs -> opaque		533323	2		=			
+ANR	533331	Identifier	s		533323	0					
+ANR	533332	PtrMemberAccess	bs -> opaque		533323	1					
+ANR	533333	Identifier	bs		533323	0					
+ANR	533334	Identifier	opaque		533323	1					
+ANR	533335	IdentifierDeclStatement	"uint32_t idx , offset , tmp ;"	7:4:123:148	533323	1	True				
+ANR	533336	IdentifierDecl	idx		533323	0					
+ANR	533337	IdentifierDeclType	uint32_t		533323	0					
+ANR	533338	Identifier	idx		533323	1					
+ANR	533339	IdentifierDecl	offset		533323	1					
+ANR	533340	IdentifierDeclType	uint32_t		533323	0					
+ANR	533341	Identifier	offset		533323	1					
+ANR	533342	IdentifierDecl	tmp		533323	2					
+ANR	533343	IdentifierDeclType	uint32_t		533323	0					
+ANR	533344	Identifier	tmp		533323	1					
+ANR	533345	IdentifierDeclStatement	int64_t pos ;	9:4:155:166	533323	2	True				
+ANR	533346	IdentifierDecl	pos		533323	0					
+ANR	533347	IdentifierDeclType	int64_t		533323	0					
+ANR	533348	Identifier	pos		533323	1					
+ANR	533349	IdentifierDeclStatement	int ret ;	11:4:173:180	533323	3	True				
+ANR	533350	IdentifierDecl	ret		533323	0					
+ANR	533351	IdentifierDeclType	int		533323	0					
+ANR	533352	Identifier	ret		533323	1					
+ANR	533353	ExpressionStatement	idx = sector_num / s -> tracks	15:4:189:217	533323	4	True				
+ANR	533354	AssignmentExpression	idx = sector_num / s -> tracks		533323	0		=			
+ANR	533355	Identifier	idx		533323	0					
+ANR	533356	MultiplicativeExpression	sector_num / s -> tracks		533323	1		/			
+ANR	533357	Identifier	sector_num		533323	0					
+ANR	533358	PtrMemberAccess	s -> tracks		533323	1					
+ANR	533359	Identifier	s		533323	0					
+ANR	533360	Identifier	tracks		533323	1					
+ANR	533361	ExpressionStatement	offset = sector_num % s -> tracks	17:4:224:255	533323	5	True				
+ANR	533362	AssignmentExpression	offset = sector_num % s -> tracks		533323	0		=			
+ANR	533363	Identifier	offset		533323	0					
+ANR	533364	MultiplicativeExpression	sector_num % s -> tracks		533323	1		%			
+ANR	533365	Identifier	sector_num		533323	0					
+ANR	533366	PtrMemberAccess	s -> tracks		533323	1					
+ANR	533367	Identifier	s		533323	0					
+ANR	533368	Identifier	tracks		533323	1					
+ANR	533369	IfStatement	if ( idx >= s -> catalog_size )		533323	6					
+ANR	533370	Condition	idx >= s -> catalog_size	21:8:268:289	533323	0	True				
+ANR	533371	RelationalExpression	idx >= s -> catalog_size		533323	0		>=			
+ANR	533372	Identifier	idx		533323	0					
+ANR	533373	PtrMemberAccess	s -> catalog_size		533323	1					
+ANR	533374	Identifier	s		533323	0					
+ANR	533375	Identifier	catalog_size		533323	1					
+ANR	533376	CompoundStatement		19:32:216:216	533323	1					
+ANR	533377	ReturnStatement	return - EINVAL ;	23:8:303:317	533323	0	True				
+ANR	533378	UnaryOperationExpression	- EINVAL		533323	0					
+ANR	533379	UnaryOperator	-		533323	0					
+ANR	533380	Identifier	EINVAL		533323	1					
+ANR	533381	IfStatement	if ( s -> catalog_bitmap [ idx ] != 0 )		533323	7					
+ANR	533382	Condition	s -> catalog_bitmap [ idx ] != 0	27:8:335:361	533323	0	True				
+ANR	533383	EqualityExpression	s -> catalog_bitmap [ idx ] != 0		533323	0		!=			
+ANR	533384	ArrayIndexing	s -> catalog_bitmap [ idx ]		533323	0					
+ANR	533385	PtrMemberAccess	s -> catalog_bitmap		533323	0					
+ANR	533386	Identifier	s		533323	0					
+ANR	533387	Identifier	catalog_bitmap		533323	1					
+ANR	533388	Identifier	idx		533323	1					
+ANR	533389	PrimaryExpression	0		533323	1					
+ANR	533390	CompoundStatement		25:37:288:288	533323	1					
+ANR	533391	ReturnStatement	return ( uint64_t ) s -> catalog_bitmap [ idx ] * s -> off_multiplier + offset ;	29:8:375:443	533323	0	True				
+ANR	533392	AdditiveExpression	( uint64_t ) s -> catalog_bitmap [ idx ] * s -> off_multiplier + offset		533323	0		+			
+ANR	533393	MultiplicativeExpression	( uint64_t ) s -> catalog_bitmap [ idx ] * s -> off_multiplier		533323	0		*			
+ANR	533394	CastExpression	( uint64_t ) s -> catalog_bitmap [ idx ]		533323	0					
+ANR	533395	CastTarget	uint64_t		533323	0					
+ANR	533396	ArrayIndexing	s -> catalog_bitmap [ idx ]		533323	1					
+ANR	533397	PtrMemberAccess	s -> catalog_bitmap		533323	0					
+ANR	533398	Identifier	s		533323	0					
+ANR	533399	Identifier	catalog_bitmap		533323	1					
+ANR	533400	Identifier	idx		533323	1					
+ANR	533401	PtrMemberAccess	s -> off_multiplier		533323	1					
+ANR	533402	Identifier	s		533323	0					
+ANR	533403	Identifier	off_multiplier		533323	1					
+ANR	533404	Identifier	offset		533323	1					
+ANR	533405	ExpressionStatement	pos = bdrv_getlength ( bs -> file ) >> BDRV_SECTOR_BITS	35:4:459:509	533323	8	True				
+ANR	533406	AssignmentExpression	pos = bdrv_getlength ( bs -> file ) >> BDRV_SECTOR_BITS		533323	0		=			
+ANR	533407	Identifier	pos		533323	0					
+ANR	533408	ShiftExpression	bdrv_getlength ( bs -> file ) >> BDRV_SECTOR_BITS		533323	1		>>			
+ANR	533409	CallExpression	bdrv_getlength ( bs -> file )		533323	0					
+ANR	533410	Callee	bdrv_getlength		533323	0					
+ANR	533411	Identifier	bdrv_getlength		533323	0					
+ANR	533412	ArgumentList	bs -> file		533323	1					
+ANR	533413	Argument	bs -> file		533323	0					
+ANR	533414	PtrMemberAccess	bs -> file		533323	0					
+ANR	533415	Identifier	bs		533323	0					
+ANR	533416	Identifier	file		533323	1					
+ANR	533417	Identifier	BDRV_SECTOR_BITS		533323	1					
+ANR	533418	IfStatement	if ( s -> has_truncate )		533323	9					
+ANR	533419	Condition	s -> has_truncate	37:8:520:534	533323	0	True				
+ANR	533420	PtrMemberAccess	s -> has_truncate		533323	0					
+ANR	533421	Identifier	s		533323	0					
+ANR	533422	Identifier	has_truncate		533323	1					
+ANR	533423	CompoundStatement		35:25:461:461	533323	1					
+ANR	533424	ExpressionStatement	"ret = bdrv_truncate ( bs -> file , ( pos + s -> tracks ) << BDRV_SECTOR_BITS )"	39:8:548:616	533323	0	True				
+ANR	533425	AssignmentExpression	"ret = bdrv_truncate ( bs -> file , ( pos + s -> tracks ) << BDRV_SECTOR_BITS )"		533323	0		=			
+ANR	533426	Identifier	ret		533323	0					
+ANR	533427	CallExpression	"bdrv_truncate ( bs -> file , ( pos + s -> tracks ) << BDRV_SECTOR_BITS )"		533323	1					
+ANR	533428	Callee	bdrv_truncate		533323	0					
+ANR	533429	Identifier	bdrv_truncate		533323	0					
+ANR	533430	ArgumentList	bs -> file		533323	1					
+ANR	533431	Argument	bs -> file		533323	0					
+ANR	533432	PtrMemberAccess	bs -> file		533323	0					
+ANR	533433	Identifier	bs		533323	0					
+ANR	533434	Identifier	file		533323	1					
+ANR	533435	Argument	( pos + s -> tracks ) << BDRV_SECTOR_BITS		533323	1					
+ANR	533436	ShiftExpression	( pos + s -> tracks ) << BDRV_SECTOR_BITS		533323	0		<<			
+ANR	533437	AdditiveExpression	pos + s -> tracks		533323	0		+			
+ANR	533438	Identifier	pos		533323	0					
+ANR	533439	PtrMemberAccess	s -> tracks		533323	1					
+ANR	533440	Identifier	s		533323	0					
+ANR	533441	Identifier	tracks		533323	1					
+ANR	533442	Identifier	BDRV_SECTOR_BITS		533323	1					
+ANR	533443	ElseStatement	else		533323	0					
+ANR	533444	CompoundStatement		39:11:554:554	533323	0					
+ANR	533445	ExpressionStatement	"ret = bdrv_write_zeroes ( bs -> file , pos , s -> tracks , 0 )"	43:8:641:693	533323	0	True				
+ANR	533446	AssignmentExpression	"ret = bdrv_write_zeroes ( bs -> file , pos , s -> tracks , 0 )"		533323	0		=			
+ANR	533447	Identifier	ret		533323	0					
+ANR	533448	CallExpression	"bdrv_write_zeroes ( bs -> file , pos , s -> tracks , 0 )"		533323	1					
+ANR	533449	Callee	bdrv_write_zeroes		533323	0					
+ANR	533450	Identifier	bdrv_write_zeroes		533323	0					
+ANR	533451	ArgumentList	bs -> file		533323	1					
+ANR	533452	Argument	bs -> file		533323	0					
+ANR	533453	PtrMemberAccess	bs -> file		533323	0					
+ANR	533454	Identifier	bs		533323	0					
+ANR	533455	Identifier	file		533323	1					
+ANR	533456	Argument	pos		533323	1					
+ANR	533457	Identifier	pos		533323	0					
+ANR	533458	Argument	s -> tracks		533323	2					
+ANR	533459	PtrMemberAccess	s -> tracks		533323	0					
+ANR	533460	Identifier	s		533323	0					
+ANR	533461	Identifier	tracks		533323	1					
+ANR	533462	Argument	0		533323	3					
+ANR	533463	PrimaryExpression	0		533323	0					
+ANR	533464	IfStatement	if ( ret < 0 )		533323	10					
+ANR	533465	Condition	ret < 0	47:8:711:717	533323	0	True				
+ANR	533466	RelationalExpression	ret < 0		533323	0		<			
+ANR	533467	Identifier	ret		533323	0					
+ANR	533468	PrimaryExpression	0		533323	1					
+ANR	533469	CompoundStatement		45:17:644:644	533323	1					
+ANR	533470	ReturnStatement	return ret ;	49:8:731:741	533323	0	True				
+ANR	533471	Identifier	ret		533323	0					
+ANR	533472	ExpressionStatement	s -> catalog_bitmap [ idx ] = pos / s -> off_multiplier	55:4:757:805	533323	11	True				
+ANR	533473	AssignmentExpression	s -> catalog_bitmap [ idx ] = pos / s -> off_multiplier		533323	0		=			
+ANR	533474	ArrayIndexing	s -> catalog_bitmap [ idx ]		533323	0					
+ANR	533475	PtrMemberAccess	s -> catalog_bitmap		533323	0					
+ANR	533476	Identifier	s		533323	0					
+ANR	533477	Identifier	catalog_bitmap		533323	1					
+ANR	533478	Identifier	idx		533323	1					
+ANR	533479	MultiplicativeExpression	pos / s -> off_multiplier		533323	1		/			
+ANR	533480	Identifier	pos		533323	0					
+ANR	533481	PtrMemberAccess	s -> off_multiplier		533323	1					
+ANR	533482	Identifier	s		533323	0					
+ANR	533483	Identifier	off_multiplier		533323	1					
+ANR	533484	ExpressionStatement	tmp = cpu_to_le32 ( s -> catalog_bitmap [ idx ] )	59:4:814:855	533323	12	True				
+ANR	533485	AssignmentExpression	tmp = cpu_to_le32 ( s -> catalog_bitmap [ idx ] )		533323	0		=			
+ANR	533486	Identifier	tmp		533323	0					
+ANR	533487	CallExpression	cpu_to_le32 ( s -> catalog_bitmap [ idx ] )		533323	1					
+ANR	533488	Callee	cpu_to_le32		533323	0					
+ANR	533489	Identifier	cpu_to_le32		533323	0					
+ANR	533490	ArgumentList	s -> catalog_bitmap [ idx ]		533323	1					
+ANR	533491	Argument	s -> catalog_bitmap [ idx ]		533323	0					
+ANR	533492	ArrayIndexing	s -> catalog_bitmap [ idx ]		533323	0					
+ANR	533493	PtrMemberAccess	s -> catalog_bitmap		533323	0					
+ANR	533494	Identifier	s		533323	0					
+ANR	533495	Identifier	catalog_bitmap		533323	1					
+ANR	533496	Identifier	idx		533323	1					
+ANR	533497	ExpressionStatement	"ret = bdrv_pwrite ( bs -> file , sizeof ( ParallelsHeader ) + idx * sizeof ( tmp ) , & tmp , sizeof ( tmp ) )"	63:4:864:968	533323	13	True				
+ANR	533498	AssignmentExpression	"ret = bdrv_pwrite ( bs -> file , sizeof ( ParallelsHeader ) + idx * sizeof ( tmp ) , & tmp , sizeof ( tmp ) )"		533323	0		=			
+ANR	533499	Identifier	ret		533323	0					
+ANR	533500	CallExpression	"bdrv_pwrite ( bs -> file , sizeof ( ParallelsHeader ) + idx * sizeof ( tmp ) , & tmp , sizeof ( tmp ) )"		533323	1					
+ANR	533501	Callee	bdrv_pwrite		533323	0					
+ANR	533502	Identifier	bdrv_pwrite		533323	0					
+ANR	533503	ArgumentList	bs -> file		533323	1					
+ANR	533504	Argument	bs -> file		533323	0					
+ANR	533505	PtrMemberAccess	bs -> file		533323	0					
+ANR	533506	Identifier	bs		533323	0					
+ANR	533507	Identifier	file		533323	1					
+ANR	533508	Argument	sizeof ( ParallelsHeader ) + idx * sizeof ( tmp )		533323	1					
+ANR	533509	AdditiveExpression	sizeof ( ParallelsHeader ) + idx * sizeof ( tmp )		533323	0		+			
+ANR	533510	SizeofExpression	sizeof ( ParallelsHeader )		533323	0					
+ANR	533511	Sizeof	sizeof		533323	0					
+ANR	533512	SizeofOperand	ParallelsHeader		533323	1					
+ANR	533513	MultiplicativeExpression	idx * sizeof ( tmp )		533323	1		*			
+ANR	533514	Identifier	idx		533323	0					
+ANR	533515	SizeofExpression	sizeof ( tmp )		533323	1					
+ANR	533516	Sizeof	sizeof		533323	0					
+ANR	533517	SizeofOperand	tmp		533323	1					
+ANR	533518	Argument	& tmp		533323	2					
+ANR	533519	UnaryOperationExpression	& tmp		533323	0					
+ANR	533520	UnaryOperator	&		533323	0					
+ANR	533521	Identifier	tmp		533323	1					
+ANR	533522	Argument	sizeof ( tmp )		533323	3					
+ANR	533523	SizeofExpression	sizeof ( tmp )		533323	0					
+ANR	533524	Sizeof	sizeof		533323	0					
+ANR	533525	SizeofOperand	tmp		533323	1					
+ANR	533526	IfStatement	if ( ret < 0 )		533323	14					
+ANR	533527	Condition	ret < 0	67:8:979:985	533323	0	True				
+ANR	533528	RelationalExpression	ret < 0		533323	0		<			
+ANR	533529	Identifier	ret		533323	0					
+ANR	533530	PrimaryExpression	0		533323	1					
+ANR	533531	CompoundStatement		65:17:912:912	533323	1					
+ANR	533532	ExpressionStatement	s -> catalog_bitmap [ idx ] = 0	69:8:999:1025	533323	0	True				
+ANR	533533	AssignmentExpression	s -> catalog_bitmap [ idx ] = 0		533323	0		=			
+ANR	533534	ArrayIndexing	s -> catalog_bitmap [ idx ]		533323	0					
+ANR	533535	PtrMemberAccess	s -> catalog_bitmap		533323	0					
+ANR	533536	Identifier	s		533323	0					
+ANR	533537	Identifier	catalog_bitmap		533323	1					
+ANR	533538	Identifier	idx		533323	1					
+ANR	533539	PrimaryExpression	0		533323	1					
+ANR	533540	ReturnStatement	return ret ;	71:8:1036:1046	533323	1	True				
+ANR	533541	Identifier	ret		533323	0					
+ANR	533542	ReturnStatement	return ( uint64_t ) s -> catalog_bitmap [ idx ] * s -> off_multiplier + offset ;	75:4:1060:1128	533323	15	True				
+ANR	533543	AdditiveExpression	( uint64_t ) s -> catalog_bitmap [ idx ] * s -> off_multiplier + offset		533323	0		+			
+ANR	533544	MultiplicativeExpression	( uint64_t ) s -> catalog_bitmap [ idx ] * s -> off_multiplier		533323	0		*			
+ANR	533545	CastExpression	( uint64_t ) s -> catalog_bitmap [ idx ]		533323	0					
+ANR	533546	CastTarget	uint64_t		533323	0					
+ANR	533547	ArrayIndexing	s -> catalog_bitmap [ idx ]		533323	1					
+ANR	533548	PtrMemberAccess	s -> catalog_bitmap		533323	0					
+ANR	533549	Identifier	s		533323	0					
+ANR	533550	Identifier	catalog_bitmap		533323	1					
+ANR	533551	Identifier	idx		533323	1					
+ANR	533552	PtrMemberAccess	s -> off_multiplier		533323	1					
+ANR	533553	Identifier	s		533323	0					
+ANR	533554	Identifier	off_multiplier		533323	1					
+ANR	533555	Identifier	offset		533323	1					
+ANR	533556	ReturnType	static int64_t		533323	1					
+ANR	533557	Identifier	allocate_cluster		533323	2					
+ANR	533558	ParameterList	"BlockDriverState * bs , int64_t sector_num"		533323	3					
+ANR	533559	Parameter	BlockDriverState * bs	1:32:32:51	533323	0	True				
+ANR	533560	ParameterType	BlockDriverState *		533323	0					
+ANR	533561	Identifier	bs		533323	1					
+ANR	533562	Parameter	int64_t sector_num	1:54:54:71	533323	1	True				
+ANR	533563	ParameterType	int64_t		533323	0					
+ANR	533564	Identifier	sector_num		533323	1					
+ANR	533565	CFGEntryNode	ENTRY		533323		True				
+ANR	533566	CFGExitNode	EXIT		533323		True				
+ANR	533567	Symbol	s -> tracks		533323						
+ANR	533568	Symbol	s -> catalog_size		533323						
+ANR	533569	Symbol	bs -> file		533323						
+ANR	533570	Symbol	bs		533323						
+ANR	533571	Symbol	s -> has_truncate		533323						
+ANR	533572	Symbol	* bs		533323						
+ANR	533573	Symbol	pos		533323						
+ANR	533574	Symbol	tmp		533323						
+ANR	533575	Symbol	bdrv_write_zeroes		533323						
+ANR	533576	Symbol	cpu_to_le32		533323						
+ANR	533577	Symbol	* idx		533323						
+ANR	533578	Symbol	* * s		533323						
+ANR	533579	Symbol	bdrv_pwrite		533323						
+ANR	533580	Symbol	bdrv_getlength		533323						
+ANR	533581	Symbol	ret		533323						
+ANR	533582	Symbol	bs -> opaque		533323						
+ANR	533583	Symbol	offset		533323						
+ANR	533584	Symbol	s -> catalog_bitmap		533323						
+ANR	533585	Symbol	BDRV_SECTOR_BITS		533323						
+ANR	533586	Symbol	bdrv_truncate		533323						
+ANR	533587	Symbol	sector_num		533323						
+ANR	533588	Symbol	EINVAL		533323						
+ANR	533589	Symbol	* s -> catalog_bitmap		533323						
+ANR	533590	Symbol	s		533323						
+ANR	533591	Symbol	& tmp		533323						
+ANR	533592	Symbol	idx		533323						
+ANR	533593	Symbol	s -> off_multiplier		533323						
+ANR	533594	Symbol	* s		533323						

@@ -1,0 +1,333 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	533595	File	/home/p4ultr4n/workplace/ReVeal/raw_code/allocate_clusters_1.c								
+ANR	533596	Function	allocate_clusters	1:0:0:1494							
+ANR	533597	FunctionDef	"allocate_clusters (BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum)"		533596	0					
+ANR	533598	CompoundStatement		5:0:137:1494	533596	0					
+ANR	533599	IdentifierDeclStatement	BDRVParallelsState * s = bs -> opaque ;	7:4:144:178	533596	0	True				
+ANR	533600	IdentifierDecl	* s = bs -> opaque		533596	0					
+ANR	533601	IdentifierDeclType	BDRVParallelsState *		533596	0					
+ANR	533602	Identifier	s		533596	1					
+ANR	533603	AssignmentExpression	* s = bs -> opaque		533596	2		=			
+ANR	533604	Identifier	s		533596	0					
+ANR	533605	PtrMemberAccess	bs -> opaque		533596	1					
+ANR	533606	Identifier	bs		533596	0					
+ANR	533607	Identifier	opaque		533596	1					
+ANR	533608	IdentifierDeclStatement	"uint32_t idx , to_allocate , i ;"	9:4:185:213	533596	1	True				
+ANR	533609	IdentifierDecl	idx		533596	0					
+ANR	533610	IdentifierDeclType	uint32_t		533596	0					
+ANR	533611	Identifier	idx		533596	1					
+ANR	533612	IdentifierDecl	to_allocate		533596	1					
+ANR	533613	IdentifierDeclType	uint32_t		533596	0					
+ANR	533614	Identifier	to_allocate		533596	1					
+ANR	533615	IdentifierDecl	i		533596	2					
+ANR	533616	IdentifierDeclType	uint32_t		533596	0					
+ANR	533617	Identifier	i		533596	1					
+ANR	533618	IdentifierDeclStatement	"int64_t pos , space ;"	11:4:220:238	533596	2	True				
+ANR	533619	IdentifierDecl	pos		533596	0					
+ANR	533620	IdentifierDeclType	int64_t		533596	0					
+ANR	533621	Identifier	pos		533596	1					
+ANR	533622	IdentifierDecl	space		533596	1					
+ANR	533623	IdentifierDeclType	int64_t		533596	0					
+ANR	533624	Identifier	space		533596	1					
+ANR	533625	ExpressionStatement	"pos = block_status ( s , sector_num , nb_sectors , pnum )"	15:4:247:298	533596	3	True				
+ANR	533626	AssignmentExpression	"pos = block_status ( s , sector_num , nb_sectors , pnum )"		533596	0		=			
+ANR	533627	Identifier	pos		533596	0					
+ANR	533628	CallExpression	"block_status ( s , sector_num , nb_sectors , pnum )"		533596	1					
+ANR	533629	Callee	block_status		533596	0					
+ANR	533630	Identifier	block_status		533596	0					
+ANR	533631	ArgumentList	s		533596	1					
+ANR	533632	Argument	s		533596	0					
+ANR	533633	Identifier	s		533596	0					
+ANR	533634	Argument	sector_num		533596	1					
+ANR	533635	Identifier	sector_num		533596	0					
+ANR	533636	Argument	nb_sectors		533596	2					
+ANR	533637	Identifier	nb_sectors		533596	0					
+ANR	533638	Argument	pnum		533596	3					
+ANR	533639	Identifier	pnum		533596	0					
+ANR	533640	IfStatement	if ( pos > 0 )		533596	4					
+ANR	533641	Condition	pos > 0	17:8:309:315	533596	0	True				
+ANR	533642	RelationalExpression	pos > 0		533596	0		>			
+ANR	533643	Identifier	pos		533596	0					
+ANR	533644	PrimaryExpression	0		533596	1					
+ANR	533645	CompoundStatement		13:17:180:180	533596	1					
+ANR	533646	ReturnStatement	return pos ;	19:8:329:339	533596	0	True				
+ANR	533647	Identifier	pos		533596	0					
+ANR	533648	ExpressionStatement	idx = sector_num / s -> tracks	25:4:355:383	533596	5	True				
+ANR	533649	AssignmentExpression	idx = sector_num / s -> tracks		533596	0		=			
+ANR	533650	Identifier	idx		533596	0					
+ANR	533651	MultiplicativeExpression	sector_num / s -> tracks		533596	1		/			
+ANR	533652	Identifier	sector_num		533596	0					
+ANR	533653	PtrMemberAccess	s -> tracks		533596	1					
+ANR	533654	Identifier	s		533596	0					
+ANR	533655	Identifier	tracks		533596	1					
+ANR	533656	IfStatement	if ( idx >= s -> bat_size )		533596	6					
+ANR	533657	Condition	idx >= s -> bat_size	27:8:394:411	533596	0	True				
+ANR	533658	RelationalExpression	idx >= s -> bat_size		533596	0		>=			
+ANR	533659	Identifier	idx		533596	0					
+ANR	533660	PtrMemberAccess	s -> bat_size		533596	1					
+ANR	533661	Identifier	s		533596	0					
+ANR	533662	Identifier	bat_size		533596	1					
+ANR	533663	CompoundStatement		23:28:276:276	533596	1					
+ANR	533664	ReturnStatement	return - EINVAL ;	29:8:425:439	533596	0	True				
+ANR	533665	UnaryOperationExpression	- EINVAL		533596	0					
+ANR	533666	UnaryOperator	-		533596	0					
+ANR	533667	Identifier	EINVAL		533596	1					
+ANR	533668	ExpressionStatement	"to_allocate = DIV_ROUND_UP ( sector_num + * pnum , s -> tracks ) - idx"	35:4:455:518	533596	7	True				
+ANR	533669	AssignmentExpression	"to_allocate = DIV_ROUND_UP ( sector_num + * pnum , s -> tracks ) - idx"		533596	0		=			
+ANR	533670	Identifier	to_allocate		533596	0					
+ANR	533671	AdditiveExpression	"DIV_ROUND_UP ( sector_num + * pnum , s -> tracks ) - idx"		533596	1		-			
+ANR	533672	CallExpression	"DIV_ROUND_UP ( sector_num + * pnum , s -> tracks )"		533596	0					
+ANR	533673	Callee	DIV_ROUND_UP		533596	0					
+ANR	533674	Identifier	DIV_ROUND_UP		533596	0					
+ANR	533675	ArgumentList	sector_num + * pnum		533596	1					
+ANR	533676	Argument	sector_num + * pnum		533596	0					
+ANR	533677	AdditiveExpression	sector_num + * pnum		533596	0		+			
+ANR	533678	Identifier	sector_num		533596	0					
+ANR	533679	UnaryOperationExpression	* pnum		533596	1					
+ANR	533680	UnaryOperator	*		533596	0					
+ANR	533681	Identifier	pnum		533596	1					
+ANR	533682	Argument	s -> tracks		533596	1					
+ANR	533683	PtrMemberAccess	s -> tracks		533596	0					
+ANR	533684	Identifier	s		533596	0					
+ANR	533685	Identifier	tracks		533596	1					
+ANR	533686	Identifier	idx		533596	1					
+ANR	533687	ExpressionStatement	space = to_allocate * s -> tracks	37:4:525:556	533596	8	True				
+ANR	533688	AssignmentExpression	space = to_allocate * s -> tracks		533596	0		=			
+ANR	533689	Identifier	space		533596	0					
+ANR	533690	MultiplicativeExpression	to_allocate * s -> tracks		533596	1		*			
+ANR	533691	Identifier	to_allocate		533596	0					
+ANR	533692	PtrMemberAccess	s -> tracks		533596	1					
+ANR	533693	Identifier	s		533596	0					
+ANR	533694	Identifier	tracks		533596	1					
+ANR	533695	IfStatement	if ( s -> data_end + space > bdrv_getlength ( bs -> file -> bs ) >> BDRV_SECTOR_BITS )		533596	9					
+ANR	533696	Condition	s -> data_end + space > bdrv_getlength ( bs -> file -> bs ) >> BDRV_SECTOR_BITS	39:8:567:636	533596	0	True				
+ANR	533697	RelationalExpression	s -> data_end + space > bdrv_getlength ( bs -> file -> bs ) >> BDRV_SECTOR_BITS		533596	0		>			
+ANR	533698	AdditiveExpression	s -> data_end + space		533596	0		+			
+ANR	533699	PtrMemberAccess	s -> data_end		533596	0					
+ANR	533700	Identifier	s		533596	0					
+ANR	533701	Identifier	data_end		533596	1					
+ANR	533702	Identifier	space		533596	1					
+ANR	533703	ShiftExpression	bdrv_getlength ( bs -> file -> bs ) >> BDRV_SECTOR_BITS		533596	1		>>			
+ANR	533704	CallExpression	bdrv_getlength ( bs -> file -> bs )		533596	0					
+ANR	533705	Callee	bdrv_getlength		533596	0					
+ANR	533706	Identifier	bdrv_getlength		533596	0					
+ANR	533707	ArgumentList	bs -> file -> bs		533596	1					
+ANR	533708	Argument	bs -> file -> bs		533596	0					
+ANR	533709	PtrMemberAccess	bs -> file -> bs		533596	0					
+ANR	533710	PtrMemberAccess	bs -> file		533596	0					
+ANR	533711	Identifier	bs		533596	0					
+ANR	533712	Identifier	file		533596	1					
+ANR	533713	Identifier	bs		533596	1					
+ANR	533714	Identifier	BDRV_SECTOR_BITS		533596	1					
+ANR	533715	CompoundStatement		37:8:512:519	533596	1					
+ANR	533716	IdentifierDeclStatement	int ret ;	41:8:650:657	533596	0	True				
+ANR	533717	IdentifierDecl	ret		533596	0					
+ANR	533718	IdentifierDeclType	int		533596	0					
+ANR	533719	Identifier	ret		533596	1					
+ANR	533720	ExpressionStatement	space += s -> prealloc_size	43:8:668:693	533596	1	True				
+ANR	533721	AssignmentExpression	space += s -> prealloc_size		533596	0		+=			
+ANR	533722	Identifier	space		533596	0					
+ANR	533723	PtrMemberAccess	s -> prealloc_size		533596	1					
+ANR	533724	Identifier	s		533596	0					
+ANR	533725	Identifier	prealloc_size		533596	1					
+ANR	533726	IfStatement	if ( s -> prealloc_mode == PRL_PREALLOC_MODE_FALLOCATE )		533596	2					
+ANR	533727	Condition	s -> prealloc_mode == PRL_PREALLOC_MODE_FALLOCATE	45:12:708:754	533596	0	True				
+ANR	533728	EqualityExpression	s -> prealloc_mode == PRL_PREALLOC_MODE_FALLOCATE		533596	0		==			
+ANR	533729	PtrMemberAccess	s -> prealloc_mode		533596	0					
+ANR	533730	Identifier	s		533596	0					
+ANR	533731	Identifier	prealloc_mode		533596	1					
+ANR	533732	Identifier	PRL_PREALLOC_MODE_FALLOCATE		533596	1					
+ANR	533733	CompoundStatement		41:61:619:619	533596	1					
+ANR	533734	ExpressionStatement	"ret = bdrv_pwrite_zeroes ( bs -> file , s -> data_end << BDRV_SECTOR_BITS , space << BDRV_SECTOR_BITS , 0 )"	47:12:772:945	533596	0	True				
+ANR	533735	AssignmentExpression	"ret = bdrv_pwrite_zeroes ( bs -> file , s -> data_end << BDRV_SECTOR_BITS , space << BDRV_SECTOR_BITS , 0 )"		533596	0		=			
+ANR	533736	Identifier	ret		533596	0					
+ANR	533737	CallExpression	"bdrv_pwrite_zeroes ( bs -> file , s -> data_end << BDRV_SECTOR_BITS , space << BDRV_SECTOR_BITS , 0 )"		533596	1					
+ANR	533738	Callee	bdrv_pwrite_zeroes		533596	0					
+ANR	533739	Identifier	bdrv_pwrite_zeroes		533596	0					
+ANR	533740	ArgumentList	bs -> file		533596	1					
+ANR	533741	Argument	bs -> file		533596	0					
+ANR	533742	PtrMemberAccess	bs -> file		533596	0					
+ANR	533743	Identifier	bs		533596	0					
+ANR	533744	Identifier	file		533596	1					
+ANR	533745	Argument	s -> data_end << BDRV_SECTOR_BITS		533596	1					
+ANR	533746	ShiftExpression	s -> data_end << BDRV_SECTOR_BITS		533596	0		<<			
+ANR	533747	PtrMemberAccess	s -> data_end		533596	0					
+ANR	533748	Identifier	s		533596	0					
+ANR	533749	Identifier	data_end		533596	1					
+ANR	533750	Identifier	BDRV_SECTOR_BITS		533596	1					
+ANR	533751	Argument	space << BDRV_SECTOR_BITS		533596	2					
+ANR	533752	ShiftExpression	space << BDRV_SECTOR_BITS		533596	0		<<			
+ANR	533753	Identifier	space		533596	0					
+ANR	533754	Identifier	BDRV_SECTOR_BITS		533596	1					
+ANR	533755	Argument	0		533596	3					
+ANR	533756	PrimaryExpression	0		533596	0					
+ANR	533757	ElseStatement	else		533596	0					
+ANR	533758	CompoundStatement		49:15:825:825	533596	0					
+ANR	533759	ExpressionStatement	"ret = bdrv_truncate ( bs -> file , ( s -> data_end + space ) << BDRV_SECTOR_BITS )"	55:12:978:1083	533596	0	True				
+ANR	533760	AssignmentExpression	"ret = bdrv_truncate ( bs -> file , ( s -> data_end + space ) << BDRV_SECTOR_BITS )"		533596	0		=			
+ANR	533761	Identifier	ret		533596	0					
+ANR	533762	CallExpression	"bdrv_truncate ( bs -> file , ( s -> data_end + space ) << BDRV_SECTOR_BITS )"		533596	1					
+ANR	533763	Callee	bdrv_truncate		533596	0					
+ANR	533764	Identifier	bdrv_truncate		533596	0					
+ANR	533765	ArgumentList	bs -> file		533596	1					
+ANR	533766	Argument	bs -> file		533596	0					
+ANR	533767	PtrMemberAccess	bs -> file		533596	0					
+ANR	533768	Identifier	bs		533596	0					
+ANR	533769	Identifier	file		533596	1					
+ANR	533770	Argument	( s -> data_end + space ) << BDRV_SECTOR_BITS		533596	1					
+ANR	533771	ShiftExpression	( s -> data_end + space ) << BDRV_SECTOR_BITS		533596	0		<<			
+ANR	533772	AdditiveExpression	s -> data_end + space		533596	0		+			
+ANR	533773	PtrMemberAccess	s -> data_end		533596	0					
+ANR	533774	Identifier	s		533596	0					
+ANR	533775	Identifier	data_end		533596	1					
+ANR	533776	Identifier	space		533596	1					
+ANR	533777	Identifier	BDRV_SECTOR_BITS		533596	1					
+ANR	533778	IfStatement	if ( ret < 0 )		533596	3					
+ANR	533779	Condition	ret < 0	61:12:1109:1115	533596	0	True				
+ANR	533780	RelationalExpression	ret < 0		533596	0		<			
+ANR	533781	Identifier	ret		533596	0					
+ANR	533782	PrimaryExpression	0		533596	1					
+ANR	533783	CompoundStatement		57:21:980:980	533596	1					
+ANR	533784	ReturnStatement	return ret ;	63:12:1133:1143	533596	0	True				
+ANR	533785	Identifier	ret		533596	0					
+ANR	533786	ForStatement	for ( i = 0 ; i < to_allocate ; i ++ )		533596	10					
+ANR	533787	ForInit	i = 0 ;	71:9:1175:1180	533596	0	True				
+ANR	533788	AssignmentExpression	i = 0		533596	0		=			
+ANR	533789	Identifier	i		533596	0					
+ANR	533790	PrimaryExpression	0		533596	1					
+ANR	533791	Condition	i < to_allocate	71:16:1182:1196	533596	1	True				
+ANR	533792	RelationalExpression	i < to_allocate		533596	0		<			
+ANR	533793	Identifier	i		533596	0					
+ANR	533794	Identifier	to_allocate		533596	1					
+ANR	533795	PostIncDecOperationExpression	i ++	71:33:1199:1201	533596	2	True				
+ANR	533796	Identifier	i		533596	0					
+ANR	533797	IncDec	++		533596	1					
+ANR	533798	CompoundStatement		67:38:1066:1066	533596	3					
+ANR	533799	ExpressionStatement	s -> bat_bitmap [ idx + i ] = cpu_to_le32 ( s -> data_end / s -> off_multiplier )	73:8:1215:1284	533596	0	True				
+ANR	533800	AssignmentExpression	s -> bat_bitmap [ idx + i ] = cpu_to_le32 ( s -> data_end / s -> off_multiplier )		533596	0		=			
+ANR	533801	ArrayIndexing	s -> bat_bitmap [ idx + i ]		533596	0					
+ANR	533802	PtrMemberAccess	s -> bat_bitmap		533596	0					
+ANR	533803	Identifier	s		533596	0					
+ANR	533804	Identifier	bat_bitmap		533596	1					
+ANR	533805	AdditiveExpression	idx + i		533596	1		+			
+ANR	533806	Identifier	idx		533596	0					
+ANR	533807	Identifier	i		533596	1					
+ANR	533808	CallExpression	cpu_to_le32 ( s -> data_end / s -> off_multiplier )		533596	1					
+ANR	533809	Callee	cpu_to_le32		533596	0					
+ANR	533810	Identifier	cpu_to_le32		533596	0					
+ANR	533811	ArgumentList	s -> data_end / s -> off_multiplier		533596	1					
+ANR	533812	Argument	s -> data_end / s -> off_multiplier		533596	0					
+ANR	533813	MultiplicativeExpression	s -> data_end / s -> off_multiplier		533596	0		/			
+ANR	533814	PtrMemberAccess	s -> data_end		533596	0					
+ANR	533815	Identifier	s		533596	0					
+ANR	533816	Identifier	data_end		533596	1					
+ANR	533817	PtrMemberAccess	s -> off_multiplier		533596	1					
+ANR	533818	Identifier	s		533596	0					
+ANR	533819	Identifier	off_multiplier		533596	1					
+ANR	533820	ExpressionStatement	s -> data_end += s -> tracks	75:8:1295:1319	533596	1	True				
+ANR	533821	AssignmentExpression	s -> data_end += s -> tracks		533596	0		+=			
+ANR	533822	PtrMemberAccess	s -> data_end		533596	0					
+ANR	533823	Identifier	s		533596	0					
+ANR	533824	Identifier	data_end		533596	1					
+ANR	533825	PtrMemberAccess	s -> tracks		533596	1					
+ANR	533826	Identifier	s		533596	0					
+ANR	533827	Identifier	tracks		533596	1					
+ANR	533828	ExpressionStatement	"bitmap_set ( s -> bat_dirty_bmap , bat_entry_off ( idx + i ) / s -> bat_dirty_block , 1 )"	77:8:1330:1427	533596	2	True				
+ANR	533829	CallExpression	"bitmap_set ( s -> bat_dirty_bmap , bat_entry_off ( idx + i ) / s -> bat_dirty_block , 1 )"		533596	0					
+ANR	533830	Callee	bitmap_set		533596	0					
+ANR	533831	Identifier	bitmap_set		533596	0					
+ANR	533832	ArgumentList	s -> bat_dirty_bmap		533596	1					
+ANR	533833	Argument	s -> bat_dirty_bmap		533596	0					
+ANR	533834	PtrMemberAccess	s -> bat_dirty_bmap		533596	0					
+ANR	533835	Identifier	s		533596	0					
+ANR	533836	Identifier	bat_dirty_bmap		533596	1					
+ANR	533837	Argument	bat_entry_off ( idx + i ) / s -> bat_dirty_block		533596	1					
+ANR	533838	MultiplicativeExpression	bat_entry_off ( idx + i ) / s -> bat_dirty_block		533596	0		/			
+ANR	533839	CallExpression	bat_entry_off ( idx + i )		533596	0					
+ANR	533840	Callee	bat_entry_off		533596	0					
+ANR	533841	Identifier	bat_entry_off		533596	0					
+ANR	533842	ArgumentList	idx + i		533596	1					
+ANR	533843	Argument	idx + i		533596	0					
+ANR	533844	AdditiveExpression	idx + i		533596	0		+			
+ANR	533845	Identifier	idx		533596	0					
+ANR	533846	Identifier	i		533596	1					
+ANR	533847	PtrMemberAccess	s -> bat_dirty_block		533596	1					
+ANR	533848	Identifier	s		533596	0					
+ANR	533849	Identifier	bat_dirty_block		533596	1					
+ANR	533850	Argument	1		533596	2					
+ANR	533851	PrimaryExpression	1		533596	0					
+ANR	533852	ReturnStatement	"return bat2sect ( s , idx ) + sector_num % s -> tracks ;"	85:4:1443:1491	533596	11	True				
+ANR	533853	AdditiveExpression	"bat2sect ( s , idx ) + sector_num % s -> tracks"		533596	0		+			
+ANR	533854	CallExpression	"bat2sect ( s , idx )"		533596	0					
+ANR	533855	Callee	bat2sect		533596	0					
+ANR	533856	Identifier	bat2sect		533596	0					
+ANR	533857	ArgumentList	s		533596	1					
+ANR	533858	Argument	s		533596	0					
+ANR	533859	Identifier	s		533596	0					
+ANR	533860	Argument	idx		533596	1					
+ANR	533861	Identifier	idx		533596	0					
+ANR	533862	MultiplicativeExpression	sector_num % s -> tracks		533596	1		%			
+ANR	533863	Identifier	sector_num		533596	0					
+ANR	533864	PtrMemberAccess	s -> tracks		533596	1					
+ANR	533865	Identifier	s		533596	0					
+ANR	533866	Identifier	tracks		533596	1					
+ANR	533867	ReturnType	static int64_t		533596	1					
+ANR	533868	Identifier	allocate_clusters		533596	2					
+ANR	533869	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , int * pnum"		533596	3					
+ANR	533870	Parameter	BlockDriverState * bs	1:33:33:52	533596	0	True				
+ANR	533871	ParameterType	BlockDriverState *		533596	0					
+ANR	533872	Identifier	bs		533596	1					
+ANR	533873	Parameter	int64_t sector_num	1:55:55:72	533596	1	True				
+ANR	533874	ParameterType	int64_t		533596	0					
+ANR	533875	Identifier	sector_num		533596	1					
+ANR	533876	Parameter	int nb_sectors	3:33:109:122	533596	2	True				
+ANR	533877	ParameterType	int		533596	0					
+ANR	533878	Identifier	nb_sectors		533596	1					
+ANR	533879	Parameter	int * pnum	3:49:125:133	533596	3	True				
+ANR	533880	ParameterType	int *		533596	0					
+ANR	533881	Identifier	pnum		533596	1					
+ANR	533882	CFGEntryNode	ENTRY		533596		True				
+ANR	533883	CFGExitNode	EXIT		533596		True				
+ANR	533884	Symbol	* s -> bat_bitmap		533596						
+ANR	533885	Symbol	s -> bat_dirty_block		533596						
+ANR	533886	Symbol	nb_sectors		533596						
+ANR	533887	Symbol	s -> tracks		533596						
+ANR	533888	Symbol	block_status		533596						
+ANR	533889	Symbol	bs -> file		533596						
+ANR	533890	Symbol	DIV_ROUND_UP		533596						
+ANR	533891	Symbol	* bs -> file		533596						
+ANR	533892	Symbol	space		533596						
+ANR	533893	Symbol	s -> bat_bitmap		533596						
+ANR	533894	Symbol	bs		533596						
+ANR	533895	Symbol	PRL_PREALLOC_MODE_FALLOCATE		533596						
+ANR	533896	Symbol	* bs		533596						
+ANR	533897	Symbol	pos		533596						
+ANR	533898	Symbol	cpu_to_le32		533596						
+ANR	533899	Symbol	* idx		533596						
+ANR	533900	Symbol	* * s		533596						
+ANR	533901	Symbol	bat2sect		533596						
+ANR	533902	Symbol	s -> bat_dirty_bmap		533596						
+ANR	533903	Symbol	bs -> file -> bs		533596						
+ANR	533904	Symbol	bdrv_getlength		533596						
+ANR	533905	Symbol	bdrv_pwrite_zeroes		533596						
+ANR	533906	Symbol	s -> prealloc_size		533596						
+ANR	533907	Symbol	s -> bat_size		533596						
+ANR	533908	Symbol	ret		533596						
+ANR	533909	Symbol	pnum		533596						
+ANR	533910	Symbol	bs -> opaque		533596						
+ANR	533911	Symbol	to_allocate		533596						
+ANR	533912	Symbol	i		533596						
+ANR	533913	Symbol	BDRV_SECTOR_BITS		533596						
+ANR	533914	Symbol	bdrv_truncate		533596						
+ANR	533915	Symbol	s -> data_end		533596						
+ANR	533916	Symbol	sector_num		533596						
+ANR	533917	Symbol	* pnum		533596						
+ANR	533918	Symbol	EINVAL		533596						
+ANR	533919	Symbol	s		533596						
+ANR	533920	Symbol	* i		533596						
+ANR	533921	Symbol	bat_entry_off		533596						
+ANR	533922	Symbol	idx		533596						
+ANR	533923	Symbol	s -> off_multiplier		533596						
+ANR	533924	Symbol	* s		533596						
+ANR	533925	Symbol	* * bs		533596						
+ANR	533926	Symbol	s -> prealloc_mode		533596						

@@ -1,0 +1,651 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	2916763	File	/home/p4ultr4n/workplace/ReVeal/raw_code/e1000e_write_packet_to_guest_0.c								
+ANR	2916764	Function	e1000e_write_packet_to_guest	1:0:0:4475							
+ANR	2916765	FunctionDef	"e1000e_write_packet_to_guest (E1000ECore * core , struct NetRxPkt * pkt , const E1000E_RxRing * rxr , const E1000E_RSSInfo * rss_info)"		2916764	0					
+ANR	2916766	CompoundStatement		7:0:188:4475	2916764	0					
+ANR	2916767	IdentifierDeclStatement	PCIDevice * d = core -> owner ;	9:4:195:221	2916764	0	True				
+ANR	2916768	IdentifierDecl	* d = core -> owner		2916764	0					
+ANR	2916769	IdentifierDeclType	PCIDevice *		2916764	0					
+ANR	2916770	Identifier	d		2916764	1					
+ANR	2916771	AssignmentExpression	* d = core -> owner		2916764	2		=			
+ANR	2916772	Identifier	d		2916764	0					
+ANR	2916773	PtrMemberAccess	core -> owner		2916764	1					
+ANR	2916774	Identifier	core		2916764	0					
+ANR	2916775	Identifier	owner		2916764	1					
+ANR	2916776	IdentifierDeclStatement	dma_addr_t base ;	11:4:228:243	2916764	1	True				
+ANR	2916777	IdentifierDecl	base		2916764	0					
+ANR	2916778	IdentifierDeclType	dma_addr_t		2916764	0					
+ANR	2916779	Identifier	base		2916764	1					
+ANR	2916780	IdentifierDeclStatement	uint8_t desc [ E1000_MAX_RX_DESC_LEN ] ;	13:4:250:285	2916764	2	True				
+ANR	2916781	IdentifierDecl	desc [ E1000_MAX_RX_DESC_LEN ]		2916764	0					
+ANR	2916782	IdentifierDeclType	uint8_t [ E1000_MAX_RX_DESC_LEN ]		2916764	0					
+ANR	2916783	Identifier	desc		2916764	1					
+ANR	2916784	Identifier	E1000_MAX_RX_DESC_LEN		2916764	2					
+ANR	2916785	IdentifierDeclStatement	size_t desc_size ;	15:4:292:308	2916764	3	True				
+ANR	2916786	IdentifierDecl	desc_size		2916764	0					
+ANR	2916787	IdentifierDeclType	size_t		2916764	0					
+ANR	2916788	Identifier	desc_size		2916764	1					
+ANR	2916789	IdentifierDeclStatement	size_t desc_offset = 0 ;	17:4:315:337	2916764	4	True				
+ANR	2916790	IdentifierDecl	desc_offset = 0		2916764	0					
+ANR	2916791	IdentifierDeclType	size_t		2916764	0					
+ANR	2916792	Identifier	desc_offset		2916764	1					
+ANR	2916793	AssignmentExpression	desc_offset = 0		2916764	2		=			
+ANR	2916794	Identifier	desc_offset		2916764	0					
+ANR	2916795	PrimaryExpression	0		2916764	1					
+ANR	2916796	IdentifierDeclStatement	size_t iov_ofs = 0 ;	19:4:344:362	2916764	5	True				
+ANR	2916797	IdentifierDecl	iov_ofs = 0		2916764	0					
+ANR	2916798	IdentifierDeclType	size_t		2916764	0					
+ANR	2916799	Identifier	iov_ofs		2916764	1					
+ANR	2916800	AssignmentExpression	iov_ofs = 0		2916764	2		=			
+ANR	2916801	Identifier	iov_ofs		2916764	0					
+ANR	2916802	PrimaryExpression	0		2916764	1					
+ANR	2916803	IdentifierDeclStatement	struct iovec * iov = net_rx_pkt_get_iovec ( pkt ) ;	23:4:371:416	2916764	6	True				
+ANR	2916804	IdentifierDecl	* iov = net_rx_pkt_get_iovec ( pkt )		2916764	0					
+ANR	2916805	IdentifierDeclType	struct iovec *		2916764	0					
+ANR	2916806	Identifier	iov		2916764	1					
+ANR	2916807	AssignmentExpression	* iov = net_rx_pkt_get_iovec ( pkt )		2916764	2		=			
+ANR	2916808	Identifier	iov		2916764	0					
+ANR	2916809	CallExpression	net_rx_pkt_get_iovec ( pkt )		2916764	1					
+ANR	2916810	Callee	net_rx_pkt_get_iovec		2916764	0					
+ANR	2916811	Identifier	net_rx_pkt_get_iovec		2916764	0					
+ANR	2916812	ArgumentList	pkt		2916764	1					
+ANR	2916813	Argument	pkt		2916764	0					
+ANR	2916814	Identifier	pkt		2916764	0					
+ANR	2916815	IdentifierDeclStatement	size_t size = net_rx_pkt_get_total_len ( pkt ) ;	25:4:423:466	2916764	7	True				
+ANR	2916816	IdentifierDecl	size = net_rx_pkt_get_total_len ( pkt )		2916764	0					
+ANR	2916817	IdentifierDeclType	size_t		2916764	0					
+ANR	2916818	Identifier	size		2916764	1					
+ANR	2916819	AssignmentExpression	size = net_rx_pkt_get_total_len ( pkt )		2916764	2		=			
+ANR	2916820	Identifier	size		2916764	0					
+ANR	2916821	CallExpression	net_rx_pkt_get_total_len ( pkt )		2916764	1					
+ANR	2916822	Callee	net_rx_pkt_get_total_len		2916764	0					
+ANR	2916823	Identifier	net_rx_pkt_get_total_len		2916764	0					
+ANR	2916824	ArgumentList	pkt		2916764	1					
+ANR	2916825	Argument	pkt		2916764	0					
+ANR	2916826	Identifier	pkt		2916764	0					
+ANR	2916827	IdentifierDeclStatement	size_t total_size = size + e1000x_fcs_len ( core -> mac ) ;	27:4:473:525	2916764	8	True				
+ANR	2916828	IdentifierDecl	total_size = size + e1000x_fcs_len ( core -> mac )		2916764	0					
+ANR	2916829	IdentifierDeclType	size_t		2916764	0					
+ANR	2916830	Identifier	total_size		2916764	1					
+ANR	2916831	AssignmentExpression	total_size = size + e1000x_fcs_len ( core -> mac )		2916764	2		=			
+ANR	2916832	Identifier	total_size		2916764	0					
+ANR	2916833	AdditiveExpression	size + e1000x_fcs_len ( core -> mac )		2916764	1		+			
+ANR	2916834	Identifier	size		2916764	0					
+ANR	2916835	CallExpression	e1000x_fcs_len ( core -> mac )		2916764	1					
+ANR	2916836	Callee	e1000x_fcs_len		2916764	0					
+ANR	2916837	Identifier	e1000x_fcs_len		2916764	0					
+ANR	2916838	ArgumentList	core -> mac		2916764	1					
+ANR	2916839	Argument	core -> mac		2916764	0					
+ANR	2916840	PtrMemberAccess	core -> mac		2916764	0					
+ANR	2916841	Identifier	core		2916764	0					
+ANR	2916842	Identifier	mac		2916764	1					
+ANR	2916843	IdentifierDeclStatement	const E1000E_RingInfo * rxi ;	29:4:532:558	2916764	9	True				
+ANR	2916844	IdentifierDecl	* rxi		2916764	0					
+ANR	2916845	IdentifierDeclType	const E1000E_RingInfo *		2916764	0					
+ANR	2916846	Identifier	rxi		2916764	1					
+ANR	2916847	IdentifierDeclStatement	size_t ps_hdr_len = 0 ;	31:4:565:586	2916764	10	True				
+ANR	2916848	IdentifierDecl	ps_hdr_len = 0		2916764	0					
+ANR	2916849	IdentifierDeclType	size_t		2916764	0					
+ANR	2916850	Identifier	ps_hdr_len		2916764	1					
+ANR	2916851	AssignmentExpression	ps_hdr_len = 0		2916764	2		=			
+ANR	2916852	Identifier	ps_hdr_len		2916764	0					
+ANR	2916853	PrimaryExpression	0		2916764	1					
+ANR	2916854	IdentifierDeclStatement	"bool do_ps = e1000e_do_ps ( core , pkt , & ps_hdr_len ) ;"	33:4:593:642	2916764	11	True				
+ANR	2916855	IdentifierDecl	"do_ps = e1000e_do_ps ( core , pkt , & ps_hdr_len )"		2916764	0					
+ANR	2916856	IdentifierDeclType	bool		2916764	0					
+ANR	2916857	Identifier	do_ps		2916764	1					
+ANR	2916858	AssignmentExpression	"do_ps = e1000e_do_ps ( core , pkt , & ps_hdr_len )"		2916764	2		=			
+ANR	2916859	Identifier	do_ps		2916764	0					
+ANR	2916860	CallExpression	"e1000e_do_ps ( core , pkt , & ps_hdr_len )"		2916764	1					
+ANR	2916861	Callee	e1000e_do_ps		2916764	0					
+ANR	2916862	Identifier	e1000e_do_ps		2916764	0					
+ANR	2916863	ArgumentList	core		2916764	1					
+ANR	2916864	Argument	core		2916764	0					
+ANR	2916865	Identifier	core		2916764	0					
+ANR	2916866	Argument	pkt		2916764	1					
+ANR	2916867	Identifier	pkt		2916764	0					
+ANR	2916868	Argument	& ps_hdr_len		2916764	2					
+ANR	2916869	UnaryOperationExpression	& ps_hdr_len		2916764	0					
+ANR	2916870	UnaryOperator	&		2916764	0					
+ANR	2916871	Identifier	ps_hdr_len		2916764	1					
+ANR	2916872	ExpressionStatement	rxi = rxr -> i	37:4:651:663	2916764	12	True				
+ANR	2916873	AssignmentExpression	rxi = rxr -> i		2916764	0		=			
+ANR	2916874	Identifier	rxi		2916764	0					
+ANR	2916875	PtrMemberAccess	rxr -> i		2916764	1					
+ANR	2916876	Identifier	rxr		2916764	0					
+ANR	2916877	Identifier	i		2916764	1					
+ANR	2916878	DoStatement	do		2916764	13					
+ANR	2916879	CompoundStatement		43:8:610:630	2916764	0					
+ANR	2916880	IdentifierDeclStatement	hwaddr ba [ MAX_PS_BUFFERS ] ;	43:8:686:711	2916764	0	True				
+ANR	2916881	IdentifierDecl	ba [ MAX_PS_BUFFERS ]		2916764	0					
+ANR	2916882	IdentifierDeclType	hwaddr [ MAX_PS_BUFFERS ]		2916764	0					
+ANR	2916883	Identifier	ba		2916764	1					
+ANR	2916884	Identifier	MAX_PS_BUFFERS		2916764	2					
+ANR	2916885	IdentifierDeclStatement	e1000e_ba_state bastate = { { 0 } } ;	45:8:722:757	2916764	1	True				
+ANR	2916886	IdentifierDecl	bastate = { { 0 } }		2916764	0					
+ANR	2916887	IdentifierDeclType	e1000e_ba_state		2916764	0					
+ANR	2916888	Identifier	bastate		2916764	1					
+ANR	2916889	AssignmentExpression	bastate = { { 0 } }		2916764	2		=			
+ANR	2916890	Identifier	bastate		2916764	0					
+ANR	2916891	InitializerList	0		2916764	1					
+ANR	2916892	InitializerList	0		2916764	0					
+ANR	2916893	PrimaryExpression	0		2916764	0					
+ANR	2916894	IdentifierDeclStatement	bool is_last = false ;	47:8:768:788	2916764	2	True				
+ANR	2916895	IdentifierDecl	is_last = false		2916764	0					
+ANR	2916896	IdentifierDeclType	bool		2916764	0					
+ANR	2916897	Identifier	is_last		2916764	1					
+ANR	2916898	AssignmentExpression	is_last = false		2916764	2		=			
+ANR	2916899	Identifier	false		2916764	0					
+ANR	2916900	Identifier	false		2916764	1					
+ANR	2916901	IdentifierDeclStatement	bool is_first = true ;	49:8:799:819	2916764	3	True				
+ANR	2916902	IdentifierDecl	is_first = true		2916764	0					
+ANR	2916903	IdentifierDeclType	bool		2916764	0					
+ANR	2916904	Identifier	is_first		2916764	1					
+ANR	2916905	AssignmentExpression	is_first = true		2916764	2		=			
+ANR	2916906	Identifier	true		2916764	0					
+ANR	2916907	Identifier	true		2916764	1					
+ANR	2916908	ExpressionStatement	desc_size = total_size - desc_offset	53:8:832:868	2916764	4	True				
+ANR	2916909	AssignmentExpression	desc_size = total_size - desc_offset		2916764	0		=			
+ANR	2916910	Identifier	desc_size		2916764	0					
+ANR	2916911	AdditiveExpression	total_size - desc_offset		2916764	1		-			
+ANR	2916912	Identifier	total_size		2916764	0					
+ANR	2916913	Identifier	desc_offset		2916764	1					
+ANR	2916914	IfStatement	if ( desc_size > core -> rx_desc_buf_size )		2916764	5					
+ANR	2916915	Condition	desc_size > core -> rx_desc_buf_size	57:12:885:918	2916764	0	True				
+ANR	2916916	RelationalExpression	desc_size > core -> rx_desc_buf_size		2916764	0		>			
+ANR	2916917	Identifier	desc_size		2916764	0					
+ANR	2916918	PtrMemberAccess	core -> rx_desc_buf_size		2916764	1					
+ANR	2916919	Identifier	core		2916764	0					
+ANR	2916920	Identifier	rx_desc_buf_size		2916764	1					
+ANR	2916921	CompoundStatement		51:48:732:732	2916764	1					
+ANR	2916922	ExpressionStatement	desc_size = core -> rx_desc_buf_size	59:12:936:970	2916764	0	True				
+ANR	2916923	AssignmentExpression	desc_size = core -> rx_desc_buf_size		2916764	0		=			
+ANR	2916924	Identifier	desc_size		2916764	0					
+ANR	2916925	PtrMemberAccess	core -> rx_desc_buf_size		2916764	1					
+ANR	2916926	Identifier	core		2916764	0					
+ANR	2916927	Identifier	rx_desc_buf_size		2916764	1					
+ANR	2916928	ExpressionStatement	"base = e1000e_ring_head_descr ( core , rxi )"	65:8:994:1034	2916764	6	True				
+ANR	2916929	AssignmentExpression	"base = e1000e_ring_head_descr ( core , rxi )"		2916764	0		=			
+ANR	2916930	Identifier	base		2916764	0					
+ANR	2916931	CallExpression	"e1000e_ring_head_descr ( core , rxi )"		2916764	1					
+ANR	2916932	Callee	e1000e_ring_head_descr		2916764	0					
+ANR	2916933	Identifier	e1000e_ring_head_descr		2916764	0					
+ANR	2916934	ArgumentList	core		2916764	1					
+ANR	2916935	Argument	core		2916764	0					
+ANR	2916936	Identifier	core		2916764	0					
+ANR	2916937	Argument	rxi		2916764	1					
+ANR	2916938	Identifier	rxi		2916764	0					
+ANR	2916939	ExpressionStatement	"pci_dma_read ( d , base , & desc , core -> rx_desc_len )"	69:8:1047:1094	2916764	7	True				
+ANR	2916940	CallExpression	"pci_dma_read ( d , base , & desc , core -> rx_desc_len )"		2916764	0					
+ANR	2916941	Callee	pci_dma_read		2916764	0					
+ANR	2916942	Identifier	pci_dma_read		2916764	0					
+ANR	2916943	ArgumentList	d		2916764	1					
+ANR	2916944	Argument	d		2916764	0					
+ANR	2916945	Identifier	d		2916764	0					
+ANR	2916946	Argument	base		2916764	1					
+ANR	2916947	Identifier	base		2916764	0					
+ANR	2916948	Argument	& desc		2916764	2					
+ANR	2916949	UnaryOperationExpression	& desc		2916764	0					
+ANR	2916950	UnaryOperator	&		2916764	0					
+ANR	2916951	Identifier	desc		2916764	1					
+ANR	2916952	Argument	core -> rx_desc_len		2916764	3					
+ANR	2916953	PtrMemberAccess	core -> rx_desc_len		2916764	0					
+ANR	2916954	Identifier	core		2916764	0					
+ANR	2916955	Identifier	rx_desc_len		2916764	1					
+ANR	2916956	ExpressionStatement	"trace_e1000e_rx_descr ( rxi -> idx , base , core -> rx_desc_len )"	73:8:1107:1163	2916764	8	True				
+ANR	2916957	CallExpression	"trace_e1000e_rx_descr ( rxi -> idx , base , core -> rx_desc_len )"		2916764	0					
+ANR	2916958	Callee	trace_e1000e_rx_descr		2916764	0					
+ANR	2916959	Identifier	trace_e1000e_rx_descr		2916764	0					
+ANR	2916960	ArgumentList	rxi -> idx		2916764	1					
+ANR	2916961	Argument	rxi -> idx		2916764	0					
+ANR	2916962	PtrMemberAccess	rxi -> idx		2916764	0					
+ANR	2916963	Identifier	rxi		2916764	0					
+ANR	2916964	Identifier	idx		2916764	1					
+ANR	2916965	Argument	base		2916764	1					
+ANR	2916966	Identifier	base		2916764	0					
+ANR	2916967	Argument	core -> rx_desc_len		2916764	2					
+ANR	2916968	PtrMemberAccess	core -> rx_desc_len		2916764	0					
+ANR	2916969	Identifier	core		2916764	0					
+ANR	2916970	Identifier	rx_desc_len		2916764	1					
+ANR	2916971	ExpressionStatement	"e1000e_read_rx_descr ( core , desc , & ba )"	77:8:1176:1213	2916764	9	True				
+ANR	2916972	CallExpression	"e1000e_read_rx_descr ( core , desc , & ba )"		2916764	0					
+ANR	2916973	Callee	e1000e_read_rx_descr		2916764	0					
+ANR	2916974	Identifier	e1000e_read_rx_descr		2916764	0					
+ANR	2916975	ArgumentList	core		2916764	1					
+ANR	2916976	Argument	core		2916764	0					
+ANR	2916977	Identifier	core		2916764	0					
+ANR	2916978	Argument	desc		2916764	1					
+ANR	2916979	Identifier	desc		2916764	0					
+ANR	2916980	Argument	& ba		2916764	2					
+ANR	2916981	UnaryOperationExpression	& ba		2916764	0					
+ANR	2916982	UnaryOperator	&		2916764	0					
+ANR	2916983	Identifier	ba		2916764	1					
+ANR	2916984	IfStatement	if ( ba [ 0 ] )		2916764	10					
+ANR	2916985	Condition	ba [ 0 ]	81:12:1230:1234	2916764	0	True				
+ANR	2916986	ArrayIndexing	ba [ 0 ]		2916764	0					
+ANR	2916987	Identifier	ba		2916764	0					
+ANR	2916988	PrimaryExpression	0		2916764	1					
+ANR	2916989	CompoundStatement		75:19:1048:1048	2916764	1					
+ANR	2916990	IfStatement	if ( desc_offset < size )		2916764	0					
+ANR	2916991	Condition	desc_offset < size	83:16:1256:1273	2916764	0	True				
+ANR	2916992	RelationalExpression	desc_offset < size		2916764	0		<			
+ANR	2916993	Identifier	desc_offset		2916764	0					
+ANR	2916994	Identifier	size		2916764	1					
+ANR	2916995	CompoundStatement		83:16:1188:1225	2916764	1					
+ANR	2916996	Statement	static	85:16:1295:1300	2916764	0	True				
+ANR	2916997	IdentifierDeclStatement	const uint32_t fcs_pad ;	85:23:1302:1324	2916764	1	True				
+ANR	2916998	IdentifierDecl	fcs_pad		2916764	0					
+ANR	2916999	IdentifierDeclType	const uint32_t		2916764	0					
+ANR	2917000	Identifier	fcs_pad		2916764	1					
+ANR	2917001	IdentifierDeclStatement	size_t iov_copy ;	87:16:1343:1358	2916764	2	True				
+ANR	2917002	IdentifierDecl	iov_copy		2916764	0					
+ANR	2917003	IdentifierDeclType	size_t		2916764	0					
+ANR	2917004	Identifier	iov_copy		2916764	1					
+ANR	2917005	IdentifierDeclStatement	size_t copy_size = size - desc_offset ;	89:16:1377:1414	2916764	3	True				
+ANR	2917006	IdentifierDecl	copy_size = size - desc_offset		2916764	0					
+ANR	2917007	IdentifierDeclType	size_t		2916764	0					
+ANR	2917008	Identifier	copy_size		2916764	1					
+ANR	2917009	AssignmentExpression	copy_size = size - desc_offset		2916764	2		=			
+ANR	2917010	Identifier	copy_size		2916764	0					
+ANR	2917011	AdditiveExpression	size - desc_offset		2916764	1		-			
+ANR	2917012	Identifier	size		2916764	0					
+ANR	2917013	Identifier	desc_offset		2916764	1					
+ANR	2917014	IfStatement	if ( copy_size > core -> rx_desc_buf_size )		2916764	4					
+ANR	2917015	Condition	copy_size > core -> rx_desc_buf_size	91:20:1437:1470	2916764	0	True				
+ANR	2917016	RelationalExpression	copy_size > core -> rx_desc_buf_size		2916764	0		>			
+ANR	2917017	Identifier	copy_size		2916764	0					
+ANR	2917018	PtrMemberAccess	core -> rx_desc_buf_size		2916764	1					
+ANR	2917019	Identifier	core		2916764	0					
+ANR	2917020	Identifier	rx_desc_buf_size		2916764	1					
+ANR	2917021	CompoundStatement		85:56:1284:1284	2916764	1					
+ANR	2917022	ExpressionStatement	copy_size = core -> rx_desc_buf_size	93:20:1496:1530	2916764	0	True				
+ANR	2917023	AssignmentExpression	copy_size = core -> rx_desc_buf_size		2916764	0		=			
+ANR	2917024	Identifier	copy_size		2916764	0					
+ANR	2917025	PtrMemberAccess	core -> rx_desc_buf_size		2916764	1					
+ANR	2917026	Identifier	core		2916764	0					
+ANR	2917027	Identifier	rx_desc_buf_size		2916764	1					
+ANR	2917028	IfStatement	if ( do_ps )		2916764	5					
+ANR	2917029	Condition	do_ps	101:20:1638:1642	2916764	0	True				
+ANR	2917030	Identifier	do_ps		2916764	0					
+ANR	2917031	CompoundStatement		95:27:1456:1456	2916764	1					
+ANR	2917032	IfStatement	if ( is_first )		2916764	0					
+ANR	2917033	Condition	is_first	103:24:1672:1679	2916764	0	True				
+ANR	2917034	Identifier	is_first		2916764	0					
+ANR	2917035	CompoundStatement		99:24:1520:1544	2916764	1					
+ANR	2917036	IdentifierDeclStatement	size_t ps_hdr_copied = 0 ;	105:24:1709:1733	2916764	0	True				
+ANR	2917037	IdentifierDecl	ps_hdr_copied = 0		2916764	0					
+ANR	2917038	IdentifierDeclType	size_t		2916764	0					
+ANR	2917039	Identifier	ps_hdr_copied		2916764	1					
+ANR	2917040	AssignmentExpression	ps_hdr_copied = 0		2916764	2		=			
+ANR	2917041	Identifier	ps_hdr_copied		2916764	0					
+ANR	2917042	PrimaryExpression	0		2916764	1					
+ANR	2917043	DoStatement	do		2916764	1					
+ANR	2917044	CompoundStatement		101:27:1574:1574	2916764	0					
+ANR	2917045	ExpressionStatement	"iov_copy = MIN ( ps_hdr_len - ps_hdr_copied , iov -> iov_len - iov_ofs )"	109:28:1794:1904	2916764	0	True				
+ANR	2917046	AssignmentExpression	"iov_copy = MIN ( ps_hdr_len - ps_hdr_copied , iov -> iov_len - iov_ofs )"		2916764	0		=			
+ANR	2917047	Identifier	iov_copy		2916764	0					
+ANR	2917048	CallExpression	"MIN ( ps_hdr_len - ps_hdr_copied , iov -> iov_len - iov_ofs )"		2916764	1					
+ANR	2917049	Callee	MIN		2916764	0					
+ANR	2917050	Identifier	MIN		2916764	0					
+ANR	2917051	ArgumentList	ps_hdr_len - ps_hdr_copied		2916764	1					
+ANR	2917052	Argument	ps_hdr_len - ps_hdr_copied		2916764	0					
+ANR	2917053	AdditiveExpression	ps_hdr_len - ps_hdr_copied		2916764	0		-			
+ANR	2917054	Identifier	ps_hdr_len		2916764	0					
+ANR	2917055	Identifier	ps_hdr_copied		2916764	1					
+ANR	2917056	Argument	iov -> iov_len - iov_ofs		2916764	1					
+ANR	2917057	AdditiveExpression	iov -> iov_len - iov_ofs		2916764	0		-			
+ANR	2917058	PtrMemberAccess	iov -> iov_len		2916764	0					
+ANR	2917059	Identifier	iov		2916764	0					
+ANR	2917060	Identifier	iov_len		2916764	1					
+ANR	2917061	Identifier	iov_ofs		2916764	1					
+ANR	2917062	ExpressionStatement	"e1000e_write_hdr_to_rx_buffers ( core , & ba , & bastate , iov -> iov_base , iov_copy )"	115:28:1937:2068	2916764	1	True				
+ANR	2917063	CallExpression	"e1000e_write_hdr_to_rx_buffers ( core , & ba , & bastate , iov -> iov_base , iov_copy )"		2916764	0					
+ANR	2917064	Callee	e1000e_write_hdr_to_rx_buffers		2916764	0					
+ANR	2917065	Identifier	e1000e_write_hdr_to_rx_buffers		2916764	0					
+ANR	2917066	ArgumentList	core		2916764	1					
+ANR	2917067	Argument	core		2916764	0					
+ANR	2917068	Identifier	core		2916764	0					
+ANR	2917069	Argument	& ba		2916764	1					
+ANR	2917070	UnaryOperationExpression	& ba		2916764	0					
+ANR	2917071	UnaryOperator	&		2916764	0					
+ANR	2917072	Identifier	ba		2916764	1					
+ANR	2917073	Argument	& bastate		2916764	2					
+ANR	2917074	UnaryOperationExpression	& bastate		2916764	0					
+ANR	2917075	UnaryOperator	&		2916764	0					
+ANR	2917076	Identifier	bastate		2916764	1					
+ANR	2917077	Argument	iov -> iov_base		2916764	3					
+ANR	2917078	PtrMemberAccess	iov -> iov_base		2916764	0					
+ANR	2917079	Identifier	iov		2916764	0					
+ANR	2917080	Identifier	iov_base		2916764	1					
+ANR	2917081	Argument	iov_copy		2916764	4					
+ANR	2917082	Identifier	iov_copy		2916764	0					
+ANR	2917083	ExpressionStatement	copy_size -= iov_copy	121:28:2101:2122	2916764	2	True				
+ANR	2917084	AssignmentExpression	copy_size -= iov_copy		2916764	0		-=			
+ANR	2917085	Identifier	copy_size		2916764	0					
+ANR	2917086	Identifier	iov_copy		2916764	1					
+ANR	2917087	ExpressionStatement	ps_hdr_copied += iov_copy	123:28:2153:2178	2916764	3	True				
+ANR	2917088	AssignmentExpression	ps_hdr_copied += iov_copy		2916764	0		+=			
+ANR	2917089	Identifier	ps_hdr_copied		2916764	0					
+ANR	2917090	Identifier	iov_copy		2916764	1					
+ANR	2917091	ExpressionStatement	iov_ofs += iov_copy	127:28:2211:2230	2916764	4	True				
+ANR	2917092	AssignmentExpression	iov_ofs += iov_copy		2916764	0		+=			
+ANR	2917093	Identifier	iov_ofs		2916764	0					
+ANR	2917094	Identifier	iov_copy		2916764	1					
+ANR	2917095	IfStatement	if ( iov_ofs == iov -> iov_len )		2916764	5					
+ANR	2917096	Condition	iov_ofs == iov -> iov_len	129:32:2265:2287	2916764	0	True				
+ANR	2917097	EqualityExpression	iov_ofs == iov -> iov_len		2916764	0		==			
+ANR	2917098	Identifier	iov_ofs		2916764	0					
+ANR	2917099	PtrMemberAccess	iov -> iov_len		2916764	1					
+ANR	2917100	Identifier	iov		2916764	0					
+ANR	2917101	Identifier	iov_len		2916764	1					
+ANR	2917102	CompoundStatement		123:57:2101:2101	2916764	1					
+ANR	2917103	ExpressionStatement	iov ++	131:32:2325:2330	2916764	0	True				
+ANR	2917104	PostIncDecOperationExpression	iov ++		2916764	0					
+ANR	2917105	Identifier	iov		2916764	0					
+ANR	2917106	IncDec	++		2916764	1					
+ANR	2917107	ExpressionStatement	iov_ofs = 0	133:32:2365:2376	2916764	1	True				
+ANR	2917108	AssignmentExpression	iov_ofs = 0		2916764	0		=			
+ANR	2917109	Identifier	iov_ofs		2916764	0					
+ANR	2917110	PrimaryExpression	0		2916764	1					
+ANR	2917111	Condition	ps_hdr_copied < ps_hdr_len	137:33:2443:2468	2916764	1	True				
+ANR	2917112	RelationalExpression	ps_hdr_copied < ps_hdr_len		2916764	0		<			
+ANR	2917113	Identifier	ps_hdr_copied		2916764	0					
+ANR	2917114	Identifier	ps_hdr_len		2916764	1					
+ANR	2917115	ExpressionStatement	is_first = false	141:24:2499:2515	2916764	2	True				
+ANR	2917116	AssignmentExpression	is_first = false		2916764	0		=			
+ANR	2917117	Identifier	is_first		2916764	0					
+ANR	2917118	Identifier	false		2916764	1					
+ANR	2917119	ElseStatement	else		2916764	0					
+ANR	2917120	CompoundStatement		137:27:2356:2356	2916764	0					
+ANR	2917121	ExpressionStatement	"e1000e_write_hdr_to_rx_buffers ( core , & ba , & bastate , NULL , 0 )"	149:24:2728:2844	2916764	0	True				
+ANR	2917122	CallExpression	"e1000e_write_hdr_to_rx_buffers ( core , & ba , & bastate , NULL , 0 )"		2916764	0					
+ANR	2917123	Callee	e1000e_write_hdr_to_rx_buffers		2916764	0					
+ANR	2917124	Identifier	e1000e_write_hdr_to_rx_buffers		2916764	0					
+ANR	2917125	ArgumentList	core		2916764	1					
+ANR	2917126	Argument	core		2916764	0					
+ANR	2917127	Identifier	core		2916764	0					
+ANR	2917128	Argument	& ba		2916764	1					
+ANR	2917129	UnaryOperationExpression	& ba		2916764	0					
+ANR	2917130	UnaryOperator	&		2916764	0					
+ANR	2917131	Identifier	ba		2916764	1					
+ANR	2917132	Argument	& bastate		2916764	2					
+ANR	2917133	UnaryOperationExpression	& bastate		2916764	0					
+ANR	2917134	UnaryOperator	&		2916764	0					
+ANR	2917135	Identifier	bastate		2916764	1					
+ANR	2917136	Argument	NULL		2916764	3					
+ANR	2917137	Identifier	NULL		2916764	0					
+ANR	2917138	Argument	0		2916764	4					
+ANR	2917139	PrimaryExpression	0		2916764	0					
+ANR	2917140	WhileStatement	while ( copy_size )		2916764	6					
+ANR	2917141	Condition	copy_size	161:23:2957:2965	2916764	0	True				
+ANR	2917142	Identifier	copy_size		2916764	0					
+ANR	2917143	CompoundStatement		155:34:2779:2779	2916764	1					
+ANR	2917144	ExpressionStatement	"iov_copy = MIN ( copy_size , iov -> iov_len - iov_ofs )"	163:20:2991:3040	2916764	0	True				
+ANR	2917145	AssignmentExpression	"iov_copy = MIN ( copy_size , iov -> iov_len - iov_ofs )"		2916764	0		=			
+ANR	2917146	Identifier	iov_copy		2916764	0					
+ANR	2917147	CallExpression	"MIN ( copy_size , iov -> iov_len - iov_ofs )"		2916764	1					
+ANR	2917148	Callee	MIN		2916764	0					
+ANR	2917149	Identifier	MIN		2916764	0					
+ANR	2917150	ArgumentList	copy_size		2916764	1					
+ANR	2917151	Argument	copy_size		2916764	0					
+ANR	2917152	Identifier	copy_size		2916764	0					
+ANR	2917153	Argument	iov -> iov_len - iov_ofs		2916764	1					
+ANR	2917154	AdditiveExpression	iov -> iov_len - iov_ofs		2916764	0		-			
+ANR	2917155	PtrMemberAccess	iov -> iov_len		2916764	0					
+ANR	2917156	Identifier	iov		2916764	0					
+ANR	2917157	Identifier	iov_len		2916764	1					
+ANR	2917158	Identifier	iov_ofs		2916764	1					
+ANR	2917159	ExpressionStatement	"e1000e_write_to_rx_buffers ( core , & ba , & bastate , iov -> iov_base + iov_ofs , iov_copy )"	167:20:3065:3192	2916764	1	True				
+ANR	2917160	CallExpression	"e1000e_write_to_rx_buffers ( core , & ba , & bastate , iov -> iov_base + iov_ofs , iov_copy )"		2916764	0					
+ANR	2917161	Callee	e1000e_write_to_rx_buffers		2916764	0					
+ANR	2917162	Identifier	e1000e_write_to_rx_buffers		2916764	0					
+ANR	2917163	ArgumentList	core		2916764	1					
+ANR	2917164	Argument	core		2916764	0					
+ANR	2917165	Identifier	core		2916764	0					
+ANR	2917166	Argument	& ba		2916764	1					
+ANR	2917167	UnaryOperationExpression	& ba		2916764	0					
+ANR	2917168	UnaryOperator	&		2916764	0					
+ANR	2917169	Identifier	ba		2916764	1					
+ANR	2917170	Argument	& bastate		2916764	2					
+ANR	2917171	UnaryOperationExpression	& bastate		2916764	0					
+ANR	2917172	UnaryOperator	&		2916764	0					
+ANR	2917173	Identifier	bastate		2916764	1					
+ANR	2917174	Argument	iov -> iov_base + iov_ofs		2916764	3					
+ANR	2917175	AdditiveExpression	iov -> iov_base + iov_ofs		2916764	0		+			
+ANR	2917176	PtrMemberAccess	iov -> iov_base		2916764	0					
+ANR	2917177	Identifier	iov		2916764	0					
+ANR	2917178	Identifier	iov_base		2916764	1					
+ANR	2917179	Identifier	iov_ofs		2916764	1					
+ANR	2917180	Argument	iov_copy		2916764	4					
+ANR	2917181	Identifier	iov_copy		2916764	0					
+ANR	2917182	ExpressionStatement	copy_size -= iov_copy	173:20:3217:3238	2916764	2	True				
+ANR	2917183	AssignmentExpression	copy_size -= iov_copy		2916764	0		-=			
+ANR	2917184	Identifier	copy_size		2916764	0					
+ANR	2917185	Identifier	iov_copy		2916764	1					
+ANR	2917186	ExpressionStatement	iov_ofs += iov_copy	175:20:3261:3280	2916764	3	True				
+ANR	2917187	AssignmentExpression	iov_ofs += iov_copy		2916764	0		+=			
+ANR	2917188	Identifier	iov_ofs		2916764	0					
+ANR	2917189	Identifier	iov_copy		2916764	1					
+ANR	2917190	IfStatement	if ( iov_ofs == iov -> iov_len )		2916764	4					
+ANR	2917191	Condition	iov_ofs == iov -> iov_len	177:24:3307:3329	2916764	0	True				
+ANR	2917192	EqualityExpression	iov_ofs == iov -> iov_len		2916764	0		==			
+ANR	2917193	Identifier	iov_ofs		2916764	0					
+ANR	2917194	PtrMemberAccess	iov -> iov_len		2916764	1					
+ANR	2917195	Identifier	iov		2916764	0					
+ANR	2917196	Identifier	iov_len		2916764	1					
+ANR	2917197	CompoundStatement		171:49:3143:3143	2916764	1					
+ANR	2917198	ExpressionStatement	iov ++	179:24:3359:3364	2916764	0	True				
+ANR	2917199	PostIncDecOperationExpression	iov ++		2916764	0					
+ANR	2917200	Identifier	iov		2916764	0					
+ANR	2917201	IncDec	++		2916764	1					
+ANR	2917202	ExpressionStatement	iov_ofs = 0	181:24:3391:3402	2916764	1	True				
+ANR	2917203	AssignmentExpression	iov_ofs = 0		2916764	0		=			
+ANR	2917204	Identifier	iov_ofs		2916764	0					
+ANR	2917205	PrimaryExpression	0		2916764	1					
+ANR	2917206	IfStatement	if ( desc_offset + desc_size >= total_size )		2916764	7					
+ANR	2917207	Condition	desc_offset + desc_size >= total_size	189:20:3469:3505	2916764	0	True				
+ANR	2917208	RelationalExpression	desc_offset + desc_size >= total_size		2916764	0		>=			
+ANR	2917209	AdditiveExpression	desc_offset + desc_size		2916764	0		+			
+ANR	2917210	Identifier	desc_offset		2916764	0					
+ANR	2917211	Identifier	desc_size		2916764	1					
+ANR	2917212	Identifier	total_size		2916764	1					
+ANR	2917213	CompoundStatement		183:59:3319:3319	2916764	1					
+ANR	2917214	ExpressionStatement	"e1000e_write_to_rx_buffers ( core , & ba , & bastate , ( const char * ) & fcs_pad , e1000x_fcs_len ( core -> mac ) )"	193:20:3612:3738	2916764	0	True				
+ANR	2917215	CallExpression	"e1000e_write_to_rx_buffers ( core , & ba , & bastate , ( const char * ) & fcs_pad , e1000x_fcs_len ( core -> mac ) )"		2916764	0					
+ANR	2917216	Callee	e1000e_write_to_rx_buffers		2916764	0					
+ANR	2917217	Identifier	e1000e_write_to_rx_buffers		2916764	0					
+ANR	2917218	ArgumentList	core		2916764	1					
+ANR	2917219	Argument	core		2916764	0					
+ANR	2917220	Identifier	core		2916764	0					
+ANR	2917221	Argument	& ba		2916764	1					
+ANR	2917222	UnaryOperationExpression	& ba		2916764	0					
+ANR	2917223	UnaryOperator	&		2916764	0					
+ANR	2917224	Identifier	ba		2916764	1					
+ANR	2917225	Argument	& bastate		2916764	2					
+ANR	2917226	UnaryOperationExpression	& bastate		2916764	0					
+ANR	2917227	UnaryOperator	&		2916764	0					
+ANR	2917228	Identifier	bastate		2916764	1					
+ANR	2917229	Argument	( const char * ) & fcs_pad		2916764	3					
+ANR	2917230	CastExpression	( const char * ) & fcs_pad		2916764	0					
+ANR	2917231	CastTarget	const char *		2916764	0					
+ANR	2917232	UnaryOperationExpression	& fcs_pad		2916764	1					
+ANR	2917233	UnaryOperator	&		2916764	0					
+ANR	2917234	Identifier	fcs_pad		2916764	1					
+ANR	2917235	Argument	e1000x_fcs_len ( core -> mac )		2916764	4					
+ANR	2917236	CallExpression	e1000x_fcs_len ( core -> mac )		2916764	0					
+ANR	2917237	Callee	e1000x_fcs_len		2916764	0					
+ANR	2917238	Identifier	e1000x_fcs_len		2916764	0					
+ANR	2917239	ArgumentList	core -> mac		2916764	1					
+ANR	2917240	Argument	core -> mac		2916764	0					
+ANR	2917241	PtrMemberAccess	core -> mac		2916764	0					
+ANR	2917242	Identifier	core		2916764	0					
+ANR	2917243	Identifier	mac		2916764	1					
+ANR	2917244	ExpressionStatement	desc_offset += desc_size	201:12:3787:3811	2916764	1	True				
+ANR	2917245	AssignmentExpression	desc_offset += desc_size		2916764	0		+=			
+ANR	2917246	Identifier	desc_offset		2916764	0					
+ANR	2917247	Identifier	desc_size		2916764	1					
+ANR	2917248	IfStatement	if ( desc_offset >= total_size )		2916764	2					
+ANR	2917249	Condition	desc_offset >= total_size	203:16:3830:3854	2916764	0	True				
+ANR	2917250	RelationalExpression	desc_offset >= total_size		2916764	0		>=			
+ANR	2917251	Identifier	desc_offset		2916764	0					
+ANR	2917252	Identifier	total_size		2916764	1					
+ANR	2917253	CompoundStatement		197:43:3668:3668	2916764	1					
+ANR	2917254	ExpressionStatement	is_last = true	205:16:3876:3890	2916764	0	True				
+ANR	2917255	AssignmentExpression	is_last = true		2916764	0		=			
+ANR	2917256	Identifier	is_last		2916764	0					
+ANR	2917257	Identifier	true		2916764	1					
+ANR	2917258	ElseStatement	else		2916764	0					
+ANR	2917259	CompoundStatement		203:15:3734:3734	2916764	0					
+ANR	2917260	ExpressionStatement	trace_e1000e_rx_null_descriptor ( )	211:12:3999:4032	2916764	0	True				
+ANR	2917261	CallExpression	trace_e1000e_rx_null_descriptor ( )		2916764	0					
+ANR	2917262	Callee	trace_e1000e_rx_null_descriptor		2916764	0					
+ANR	2917263	Identifier	trace_e1000e_rx_null_descriptor		2916764	0					
+ANR	2917264	ArgumentList			2916764	1					
+ANR	2917265	ExpressionStatement	"e1000e_write_rx_descr ( core , desc , is_last ? core -> rx_pkt : NULL , rss_info , do_ps ? ps_hdr_len : 0 , & bastate . written )"	217:8:4056:4200	2916764	11	True				
+ANR	2917266	CallExpression	"e1000e_write_rx_descr ( core , desc , is_last ? core -> rx_pkt : NULL , rss_info , do_ps ? ps_hdr_len : 0 , & bastate . written )"		2916764	0					
+ANR	2917267	Callee	e1000e_write_rx_descr		2916764	0					
+ANR	2917268	Identifier	e1000e_write_rx_descr		2916764	0					
+ANR	2917269	ArgumentList	core		2916764	1					
+ANR	2917270	Argument	core		2916764	0					
+ANR	2917271	Identifier	core		2916764	0					
+ANR	2917272	Argument	desc		2916764	1					
+ANR	2917273	Identifier	desc		2916764	0					
+ANR	2917274	Argument	is_last ? core -> rx_pkt : NULL		2916764	2					
+ANR	2917275	ConditionalExpression	is_last ? core -> rx_pkt : NULL		2916764	0					
+ANR	2917276	Condition	is_last		2916764	0					
+ANR	2917277	Identifier	is_last		2916764	0					
+ANR	2917278	PtrMemberAccess	core -> rx_pkt		2916764	1					
+ANR	2917279	Identifier	core		2916764	0					
+ANR	2917280	Identifier	rx_pkt		2916764	1					
+ANR	2917281	Identifier	NULL		2916764	2					
+ANR	2917282	Argument	rss_info		2916764	3					
+ANR	2917283	Identifier	rss_info		2916764	0					
+ANR	2917284	Argument	do_ps ? ps_hdr_len : 0		2916764	4					
+ANR	2917285	ConditionalExpression	do_ps ? ps_hdr_len : 0		2916764	0					
+ANR	2917286	Condition	do_ps		2916764	0					
+ANR	2917287	Identifier	do_ps		2916764	0					
+ANR	2917288	Identifier	ps_hdr_len		2916764	1					
+ANR	2917289	PrimaryExpression	0		2916764	2					
+ANR	2917290	Argument	& bastate . written		2916764	5					
+ANR	2917291	UnaryOperationExpression	& bastate . written		2916764	0					
+ANR	2917292	UnaryOperator	&		2916764	0					
+ANR	2917293	MemberAccess	bastate . written		2916764	1					
+ANR	2917294	Identifier	bastate		2916764	0					
+ANR	2917295	Identifier	written		2916764	1					
+ANR	2917296	ExpressionStatement	"pci_dma_write ( d , base , & desc , core -> rx_desc_len )"	221:8:4211:4259	2916764	12	True				
+ANR	2917297	CallExpression	"pci_dma_write ( d , base , & desc , core -> rx_desc_len )"		2916764	0					
+ANR	2917298	Callee	pci_dma_write		2916764	0					
+ANR	2917299	Identifier	pci_dma_write		2916764	0					
+ANR	2917300	ArgumentList	d		2916764	1					
+ANR	2917301	Argument	d		2916764	0					
+ANR	2917302	Identifier	d		2916764	0					
+ANR	2917303	Argument	base		2916764	1					
+ANR	2917304	Identifier	base		2916764	0					
+ANR	2917305	Argument	& desc		2916764	2					
+ANR	2917306	UnaryOperationExpression	& desc		2916764	0					
+ANR	2917307	UnaryOperator	&		2916764	0					
+ANR	2917308	Identifier	desc		2916764	1					
+ANR	2917309	Argument	core -> rx_desc_len		2916764	3					
+ANR	2917310	PtrMemberAccess	core -> rx_desc_len		2916764	0					
+ANR	2917311	Identifier	core		2916764	0					
+ANR	2917312	Identifier	rx_desc_len		2916764	1					
+ANR	2917313	ExpressionStatement	"e1000e_ring_advance ( core , rxi , core -> rx_desc_len / E1000_MIN_RX_DESC_LEN )"	225:8:4272:4374	2916764	13	True				
+ANR	2917314	CallExpression	"e1000e_ring_advance ( core , rxi , core -> rx_desc_len / E1000_MIN_RX_DESC_LEN )"		2916764	0					
+ANR	2917315	Callee	e1000e_ring_advance		2916764	0					
+ANR	2917316	Identifier	e1000e_ring_advance		2916764	0					
+ANR	2917317	ArgumentList	core		2916764	1					
+ANR	2917318	Argument	core		2916764	0					
+ANR	2917319	Identifier	core		2916764	0					
+ANR	2917320	Argument	rxi		2916764	1					
+ANR	2917321	Identifier	rxi		2916764	0					
+ANR	2917322	Argument	core -> rx_desc_len / E1000_MIN_RX_DESC_LEN		2916764	2					
+ANR	2917323	MultiplicativeExpression	core -> rx_desc_len / E1000_MIN_RX_DESC_LEN		2916764	0		/			
+ANR	2917324	PtrMemberAccess	core -> rx_desc_len		2916764	0					
+ANR	2917325	Identifier	core		2916764	0					
+ANR	2917326	Identifier	rx_desc_len		2916764	1					
+ANR	2917327	Identifier	E1000_MIN_RX_DESC_LEN		2916764	1					
+ANR	2917328	Condition	desc_offset < total_size	231:13:4392:4415	2916764	1	True				
+ANR	2917329	RelationalExpression	desc_offset < total_size		2916764	0		<			
+ANR	2917330	Identifier	desc_offset		2916764	0					
+ANR	2917331	Identifier	total_size		2916764	1					
+ANR	2917332	ExpressionStatement	"e1000e_update_rx_stats ( core , size , total_size )"	235:4:4426:4472	2916764	14	True				
+ANR	2917333	CallExpression	"e1000e_update_rx_stats ( core , size , total_size )"		2916764	0					
+ANR	2917334	Callee	e1000e_update_rx_stats		2916764	0					
+ANR	2917335	Identifier	e1000e_update_rx_stats		2916764	0					
+ANR	2917336	ArgumentList	core		2916764	1					
+ANR	2917337	Argument	core		2916764	0					
+ANR	2917338	Identifier	core		2916764	0					
+ANR	2917339	Argument	size		2916764	1					
+ANR	2917340	Identifier	size		2916764	0					
+ANR	2917341	Argument	total_size		2916764	2					
+ANR	2917342	Identifier	total_size		2916764	0					
+ANR	2917343	Identifier	e1000e_write_packet_to_guest		2916764	1					
+ANR	2917344	ParameterList	"E1000ECore * core , struct NetRxPkt * pkt , const E1000E_RxRing * rxr , const E1000E_RSSInfo * rss_info"		2916764	2					
+ANR	2917345	Parameter	E1000ECore * core	1:29:29:44	2916764	0	True				
+ANR	2917346	ParameterType	E1000ECore *		2916764	0					
+ANR	2917347	Identifier	core		2916764	1					
+ANR	2917348	Parameter	struct NetRxPkt * pkt	1:47:47:66	2916764	1	True				
+ANR	2917349	ParameterType	struct NetRxPkt *		2916764	0					
+ANR	2917350	Identifier	pkt		2916764	1					
+ANR	2917351	Parameter	const E1000E_RxRing * rxr	3:29:99:122	2916764	2	True				
+ANR	2917352	ParameterType	const E1000E_RxRing *		2916764	0					
+ANR	2917353	Identifier	rxr		2916764	1					
+ANR	2917354	Parameter	const E1000E_RSSInfo * rss_info	5:29:155:184	2916764	3	True				
+ANR	2917355	ParameterType	const E1000E_RSSInfo *		2916764	0					
+ANR	2917356	Identifier	rss_info		2916764	1					
+ANR	2917357	CFGEntryNode	ENTRY		2916764		True				
+ANR	2917358	CFGExitNode	EXIT		2916764		True				
+ANR	2917359	Symbol	bastate		2916764						
+ANR	2917360	Symbol	& desc		2916764						
+ANR	2917361	Symbol	do_ps		2916764						
+ANR	2917362	Symbol	core -> rx_desc_buf_size		2916764						
+ANR	2917363	Symbol	rxi -> idx		2916764						
+ANR	2917364	Symbol	fcs_pad		2916764						
+ANR	2917365	Symbol	net_rx_pkt_get_iovec		2916764						
+ANR	2917366	Symbol	* rxi		2916764						
+ANR	2917367	Symbol	iov		2916764						
+ANR	2917368	Symbol	is_last		2916764						
+ANR	2917369	Symbol	* rxr		2916764						
+ANR	2917370	Symbol	ps_hdr_len		2916764						
+ANR	2917371	Symbol	NULL		2916764						
+ANR	2917372	Symbol	core -> mac		2916764						
+ANR	2917373	Symbol	rss_info		2916764						
+ANR	2917374	Symbol	E1000_MIN_RX_DESC_LEN		2916764						
+ANR	2917375	Symbol	core -> rx_pkt		2916764						
+ANR	2917376	Symbol	desc_size		2916764						
+ANR	2917377	Symbol	iov_copy		2916764						
+ANR	2917378	Symbol	core		2916764						
+ANR	2917379	Symbol	core -> owner		2916764						
+ANR	2917380	Symbol	MIN		2916764						
+ANR	2917381	Symbol	size		2916764						
+ANR	2917382	Symbol	copy_size		2916764						
+ANR	2917383	Symbol	true		2916764						
+ANR	2917384	Symbol	e1000e_ring_head_descr		2916764						
+ANR	2917385	Symbol	& bastate		2916764						
+ANR	2917386	Symbol	desc		2916764						
+ANR	2917387	Symbol	ba		2916764						
+ANR	2917388	Symbol	* iov		2916764						
+ANR	2917389	Symbol	* core		2916764						
+ANR	2917390	Symbol	desc_offset		2916764						
+ANR	2917391	Symbol	& ps_hdr_len		2916764						
+ANR	2917392	Symbol	& fcs_pad		2916764						
+ANR	2917393	Symbol	e1000e_do_ps		2916764						
+ANR	2917394	Symbol	net_rx_pkt_get_total_len		2916764						
+ANR	2917395	Symbol	iov_ofs		2916764						
+ANR	2917396	Symbol	& bastate . written		2916764						
+ANR	2917397	Symbol	pkt		2916764						
+ANR	2917398	Symbol	iov -> iov_base		2916764						
+ANR	2917399	Symbol	rxi		2916764						
+ANR	2917400	Symbol	iov -> iov_len		2916764						
+ANR	2917401	Symbol	d		2916764						
+ANR	2917402	Symbol	* ba		2916764						
+ANR	2917403	Symbol	total_size		2916764						
+ANR	2917404	Symbol	false		2916764						
+ANR	2917405	Symbol	is_first		2916764						
+ANR	2917406	Symbol	& ba		2916764						
+ANR	2917407	Symbol	rxr		2916764						
+ANR	2917408	Symbol	ps_hdr_copied		2916764						
+ANR	2917409	Symbol	core -> rx_desc_len		2916764						
+ANR	2917410	Symbol	e1000x_fcs_len		2916764						
+ANR	2917411	Symbol	rxr -> i		2916764						
+ANR	2917412	Symbol	base		2916764						

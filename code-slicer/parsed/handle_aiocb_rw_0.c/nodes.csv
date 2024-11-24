@@ -1,0 +1,315 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4555273	File	/home/p4ultr4n/workplace/ReVeal/raw_code/handle_aiocb_rw_0.c								
+ANR	4555274	Function	handle_aiocb_rw	1:0:0:2127							
+ANR	4555275	FunctionDef	handle_aiocb_rw (struct qemu_paiocb * aiocb)		4555274	0					
+ANR	4555276	CompoundStatement		3:0:58:2127	4555274	0					
+ANR	4555277	IdentifierDeclStatement	size_t nbytes ;	5:4:65:78	4555274	0	True				
+ANR	4555278	IdentifierDecl	nbytes		4555274	0					
+ANR	4555279	IdentifierDeclType	size_t		4555274	0					
+ANR	4555280	Identifier	nbytes		4555274	1					
+ANR	4555281	IdentifierDeclStatement	char * buf ;	7:4:85:94	4555274	1	True				
+ANR	4555282	IdentifierDecl	* buf		4555274	0					
+ANR	4555283	IdentifierDeclType	char *		4555274	0					
+ANR	4555284	Identifier	buf		4555274	1					
+ANR	4555285	IfStatement	if ( ! ( aiocb -> aio_type & QEMU_AIO_MISALIGNED ) )		4555274	2					
+ANR	4555286	Condition	! ( aiocb -> aio_type & QEMU_AIO_MISALIGNED )	11:8:107:146	4555274	0	True				
+ANR	4555287	UnaryOperationExpression	! ( aiocb -> aio_type & QEMU_AIO_MISALIGNED )		4555274	0					
+ANR	4555288	UnaryOperator	!		4555274	0					
+ANR	4555289	BitAndExpression	aiocb -> aio_type & QEMU_AIO_MISALIGNED		4555274	1		&			
+ANR	4555290	PtrMemberAccess	aiocb -> aio_type		4555274	0					
+ANR	4555291	Identifier	aiocb		4555274	0					
+ANR	4555292	Identifier	aio_type		4555274	1					
+ANR	4555293	Identifier	QEMU_AIO_MISALIGNED		4555274	1					
+ANR	4555294	CompoundStatement		9:50:90:90	4555274	1					
+ANR	4555295	IfStatement	if ( aiocb -> aio_niov == 1 )		4555274	0					
+ANR	4555296	Condition	aiocb -> aio_niov == 1	21:12:331:350	4555274	0	True				
+ANR	4555297	EqualityExpression	aiocb -> aio_niov == 1		4555274	0		==			
+ANR	4555298	PtrMemberAccess	aiocb -> aio_niov		4555274	0					
+ANR	4555299	Identifier	aiocb		4555274	0					
+ANR	4555300	Identifier	aio_niov		4555274	1					
+ANR	4555301	PrimaryExpression	1		4555274	1					
+ANR	4555302	ReturnStatement	"return handle_aiocb_rw_linear ( aiocb , aiocb -> aio_iov -> iov_base ) ;"	23:13:367:429	4555274	1	True				
+ANR	4555303	CallExpression	"handle_aiocb_rw_linear ( aiocb , aiocb -> aio_iov -> iov_base )"		4555274	0					
+ANR	4555304	Callee	handle_aiocb_rw_linear		4555274	0					
+ANR	4555305	Identifier	handle_aiocb_rw_linear		4555274	0					
+ANR	4555306	ArgumentList	aiocb		4555274	1					
+ANR	4555307	Argument	aiocb		4555274	0					
+ANR	4555308	Identifier	aiocb		4555274	0					
+ANR	4555309	Argument	aiocb -> aio_iov -> iov_base		4555274	1					
+ANR	4555310	PtrMemberAccess	aiocb -> aio_iov -> iov_base		4555274	0					
+ANR	4555311	PtrMemberAccess	aiocb -> aio_iov		4555274	0					
+ANR	4555312	Identifier	aiocb		4555274	0					
+ANR	4555313	Identifier	aio_iov		4555274	1					
+ANR	4555314	Identifier	iov_base		4555274	1					
+ANR	4555315	IfStatement	if ( preadv_present )		4555274	1					
+ANR	4555316	Condition	preadv_present	39:5:659:672	4555274	0	True				
+ANR	4555317	Identifier	preadv_present		4555274	0					
+ANR	4555318	CompoundStatement		37:21:616:616	4555274	1					
+ANR	4555319	ExpressionStatement	nbytes = handle_aiocb_rw_vector ( aiocb )	41:12:690:728	4555274	0	True				
+ANR	4555320	AssignmentExpression	nbytes = handle_aiocb_rw_vector ( aiocb )		4555274	0		=			
+ANR	4555321	Identifier	nbytes		4555274	0					
+ANR	4555322	CallExpression	handle_aiocb_rw_vector ( aiocb )		4555274	1					
+ANR	4555323	Callee	handle_aiocb_rw_vector		4555274	0					
+ANR	4555324	Identifier	handle_aiocb_rw_vector		4555274	0					
+ANR	4555325	ArgumentList	aiocb		4555274	1					
+ANR	4555326	Argument	aiocb		4555274	0					
+ANR	4555327	Identifier	aiocb		4555274	0					
+ANR	4555328	IfStatement	if ( nbytes == aiocb -> aio_nbytes )		4555274	1					
+ANR	4555329	Condition	nbytes == aiocb -> aio_nbytes	43:16:747:773	4555274	0	True				
+ANR	4555330	EqualityExpression	nbytes == aiocb -> aio_nbytes		4555274	0		==			
+ANR	4555331	Identifier	nbytes		4555274	0					
+ANR	4555332	PtrMemberAccess	aiocb -> aio_nbytes		4555274	1					
+ANR	4555333	Identifier	aiocb		4555274	0					
+ANR	4555334	Identifier	aio_nbytes		4555274	1					
+ANR	4555335	ReturnStatement	return nbytes ;	45:9:786:799	4555274	1	True				
+ANR	4555336	Identifier	nbytes		4555274	0					
+ANR	4555337	IfStatement	if ( nbytes < 0 && nbytes != - ENOSYS )		4555274	2					
+ANR	4555338	Condition	nbytes < 0 && nbytes != - ENOSYS	47:16:818:848	4555274	0	True				
+ANR	4555339	AndExpression	nbytes < 0 && nbytes != - ENOSYS		4555274	0		&&			
+ANR	4555340	RelationalExpression	nbytes < 0		4555274	0		<			
+ANR	4555341	Identifier	nbytes		4555274	0					
+ANR	4555342	PrimaryExpression	0		4555274	1					
+ANR	4555343	EqualityExpression	nbytes != - ENOSYS		4555274	1		!=			
+ANR	4555344	Identifier	nbytes		4555274	0					
+ANR	4555345	UnaryOperationExpression	- ENOSYS		4555274	1					
+ANR	4555346	UnaryOperator	-		4555274	0					
+ANR	4555347	Identifier	ENOSYS		4555274	1					
+ANR	4555348	ReturnStatement	return nbytes ;	49:16:868:881	4555274	1	True				
+ANR	4555349	Identifier	nbytes		4555274	0					
+ANR	4555350	ExpressionStatement	preadv_present = 0	51:12:896:914	4555274	3	True				
+ANR	4555351	AssignmentExpression	preadv_present = 0		4555274	0		=			
+ANR	4555352	Identifier	preadv_present		4555274	0					
+ANR	4555353	PrimaryExpression	0		4555274	1					
+ANR	4555354	ExpressionStatement	"buf = qemu_memalign ( 512 , aiocb -> aio_nbytes )"	79:4:1249:1292	4555274	3	True				
+ANR	4555355	AssignmentExpression	"buf = qemu_memalign ( 512 , aiocb -> aio_nbytes )"		4555274	0		=			
+ANR	4555356	Identifier	buf		4555274	0					
+ANR	4555357	CallExpression	"qemu_memalign ( 512 , aiocb -> aio_nbytes )"		4555274	1					
+ANR	4555358	Callee	qemu_memalign		4555274	0					
+ANR	4555359	Identifier	qemu_memalign		4555274	0					
+ANR	4555360	ArgumentList	512		4555274	1					
+ANR	4555361	Argument	512		4555274	0					
+ANR	4555362	PrimaryExpression	512		4555274	0					
+ANR	4555363	Argument	aiocb -> aio_nbytes		4555274	1					
+ANR	4555364	PtrMemberAccess	aiocb -> aio_nbytes		4555274	0					
+ANR	4555365	Identifier	aiocb		4555274	0					
+ANR	4555366	Identifier	aio_nbytes		4555274	1					
+ANR	4555367	IfStatement	if ( aiocb -> aio_type & QEMU_AIO_WRITE )		4555274	4					
+ANR	4555368	Condition	aiocb -> aio_type & QEMU_AIO_WRITE	81:8:1303:1334	4555274	0	True				
+ANR	4555369	BitAndExpression	aiocb -> aio_type & QEMU_AIO_WRITE		4555274	0		&			
+ANR	4555370	PtrMemberAccess	aiocb -> aio_type		4555274	0					
+ANR	4555371	Identifier	aiocb		4555274	0					
+ANR	4555372	Identifier	aio_type		4555274	1					
+ANR	4555373	Identifier	QEMU_AIO_WRITE		4555274	1					
+ANR	4555374	CompoundStatement		83:8:1313:1318	4555274	1					
+ANR	4555375	IdentifierDeclStatement	char * p = buf ;	83:8:1348:1361	4555274	0	True				
+ANR	4555376	IdentifierDecl	* p = buf		4555274	0					
+ANR	4555377	IdentifierDeclType	char *		4555274	0					
+ANR	4555378	Identifier	p		4555274	1					
+ANR	4555379	AssignmentExpression	* p = buf		4555274	2		=			
+ANR	4555380	Identifier	buf		4555274	0					
+ANR	4555381	Identifier	buf		4555274	1					
+ANR	4555382	IdentifierDeclStatement	int i ;	85:8:1372:1377	4555274	1	True				
+ANR	4555383	IdentifierDecl	i		4555274	0					
+ANR	4555384	IdentifierDeclType	int		4555274	0					
+ANR	4555385	Identifier	i		4555274	1					
+ANR	4555386	ForStatement	for ( i = 0 ; i < aiocb -> aio_niov ; ++ i )		4555274	2					
+ANR	4555387	ForInit	i = 0 ;	89:13:1395:1400	4555274	0	True				
+ANR	4555388	AssignmentExpression	i = 0		4555274	0		=			
+ANR	4555389	Identifier	i		4555274	0					
+ANR	4555390	PrimaryExpression	0		4555274	1					
+ANR	4555391	Condition	i < aiocb -> aio_niov	89:20:1402:1420	4555274	1	True				
+ANR	4555392	RelationalExpression	i < aiocb -> aio_niov		4555274	0		<			
+ANR	4555393	Identifier	i		4555274	0					
+ANR	4555394	PtrMemberAccess	aiocb -> aio_niov		4555274	1					
+ANR	4555395	Identifier	aiocb		4555274	0					
+ANR	4555396	Identifier	aio_niov		4555274	1					
+ANR	4555397	UnaryExpression	++ i	89:41:1423:1425	4555274	2	True				
+ANR	4555398	IncDec	++		4555274	0					
+ANR	4555399	Identifier	i		4555274	1					
+ANR	4555400	CompoundStatement		87:46:1369:1369	4555274	3					
+ANR	4555401	ExpressionStatement	"memcpy ( p , aiocb -> aio_iov [ i ] . iov_base , aiocb -> aio_iov [ i ] . iov_len )"	91:12:1443:1507	4555274	0	True				
+ANR	4555402	CallExpression	"memcpy ( p , aiocb -> aio_iov [ i ] . iov_base , aiocb -> aio_iov [ i ] . iov_len )"		4555274	0					
+ANR	4555403	Callee	memcpy		4555274	0					
+ANR	4555404	Identifier	memcpy		4555274	0					
+ANR	4555405	ArgumentList	p		4555274	1					
+ANR	4555406	Argument	p		4555274	0					
+ANR	4555407	Identifier	p		4555274	0					
+ANR	4555408	Argument	aiocb -> aio_iov [ i ] . iov_base		4555274	1					
+ANR	4555409	MemberAccess	aiocb -> aio_iov [ i ] . iov_base		4555274	0					
+ANR	4555410	ArrayIndexing	aiocb -> aio_iov [ i ]		4555274	0					
+ANR	4555411	PtrMemberAccess	aiocb -> aio_iov		4555274	0					
+ANR	4555412	Identifier	aiocb		4555274	0					
+ANR	4555413	Identifier	aio_iov		4555274	1					
+ANR	4555414	Identifier	i		4555274	1					
+ANR	4555415	Identifier	iov_base		4555274	1					
+ANR	4555416	Argument	aiocb -> aio_iov [ i ] . iov_len		4555274	2					
+ANR	4555417	MemberAccess	aiocb -> aio_iov [ i ] . iov_len		4555274	0					
+ANR	4555418	ArrayIndexing	aiocb -> aio_iov [ i ]		4555274	0					
+ANR	4555419	PtrMemberAccess	aiocb -> aio_iov		4555274	0					
+ANR	4555420	Identifier	aiocb		4555274	0					
+ANR	4555421	Identifier	aio_iov		4555274	1					
+ANR	4555422	Identifier	i		4555274	1					
+ANR	4555423	Identifier	iov_len		4555274	1					
+ANR	4555424	ExpressionStatement	p += aiocb -> aio_iov [ i ] . iov_len	93:12:1522:1552	4555274	1	True				
+ANR	4555425	AssignmentExpression	p += aiocb -> aio_iov [ i ] . iov_len		4555274	0		+=			
+ANR	4555426	Identifier	p		4555274	0					
+ANR	4555427	MemberAccess	aiocb -> aio_iov [ i ] . iov_len		4555274	1					
+ANR	4555428	ArrayIndexing	aiocb -> aio_iov [ i ]		4555274	0					
+ANR	4555429	PtrMemberAccess	aiocb -> aio_iov		4555274	0					
+ANR	4555430	Identifier	aiocb		4555274	0					
+ANR	4555431	Identifier	aio_iov		4555274	1					
+ANR	4555432	Identifier	i		4555274	1					
+ANR	4555433	Identifier	iov_len		4555274	1					
+ANR	4555434	ExpressionStatement	"nbytes = handle_aiocb_rw_linear ( aiocb , buf )"	101:4:1579:1622	4555274	5	True				
+ANR	4555435	AssignmentExpression	"nbytes = handle_aiocb_rw_linear ( aiocb , buf )"		4555274	0		=			
+ANR	4555436	Identifier	nbytes		4555274	0					
+ANR	4555437	CallExpression	"handle_aiocb_rw_linear ( aiocb , buf )"		4555274	1					
+ANR	4555438	Callee	handle_aiocb_rw_linear		4555274	0					
+ANR	4555439	Identifier	handle_aiocb_rw_linear		4555274	0					
+ANR	4555440	ArgumentList	aiocb		4555274	1					
+ANR	4555441	Argument	aiocb		4555274	0					
+ANR	4555442	Identifier	aiocb		4555274	0					
+ANR	4555443	Argument	buf		4555274	1					
+ANR	4555444	Identifier	buf		4555274	0					
+ANR	4555445	IfStatement	if ( ! ( aiocb -> aio_type & QEMU_AIO_WRITE ) )		4555274	6					
+ANR	4555446	Condition	! ( aiocb -> aio_type & QEMU_AIO_WRITE )	103:8:1633:1667	4555274	0	True				
+ANR	4555447	UnaryOperationExpression	! ( aiocb -> aio_type & QEMU_AIO_WRITE )		4555274	0					
+ANR	4555448	UnaryOperator	!		4555274	0					
+ANR	4555449	BitAndExpression	aiocb -> aio_type & QEMU_AIO_WRITE		4555274	1		&			
+ANR	4555450	PtrMemberAccess	aiocb -> aio_type		4555274	0					
+ANR	4555451	Identifier	aiocb		4555274	0					
+ANR	4555452	Identifier	aio_type		4555274	1					
+ANR	4555453	Identifier	QEMU_AIO_WRITE		4555274	1					
+ANR	4555454	CompoundStatement		107:8:1695:1700	4555274	1					
+ANR	4555455	IdentifierDeclStatement	char * p = buf ;	105:8:1681:1694	4555274	0	True				
+ANR	4555456	IdentifierDecl	* p = buf		4555274	0					
+ANR	4555457	IdentifierDeclType	char *		4555274	0					
+ANR	4555458	Identifier	p		4555274	1					
+ANR	4555459	AssignmentExpression	* p = buf		4555274	2		=			
+ANR	4555460	Identifier	buf		4555274	0					
+ANR	4555461	Identifier	buf		4555274	1					
+ANR	4555462	IdentifierDeclStatement	"size_t count = aiocb -> aio_nbytes , copy ;"	107:8:1705:1743	4555274	1	True				
+ANR	4555463	IdentifierDecl	count = aiocb -> aio_nbytes		4555274	0					
+ANR	4555464	IdentifierDeclType	size_t		4555274	0					
+ANR	4555465	Identifier	count		4555274	1					
+ANR	4555466	AssignmentExpression	count = aiocb -> aio_nbytes		4555274	2		=			
+ANR	4555467	Identifier	count		4555274	0					
+ANR	4555468	PtrMemberAccess	aiocb -> aio_nbytes		4555274	1					
+ANR	4555469	Identifier	aiocb		4555274	0					
+ANR	4555470	Identifier	aio_nbytes		4555274	1					
+ANR	4555471	IdentifierDecl	copy		4555274	1					
+ANR	4555472	IdentifierDeclType	size_t		4555274	0					
+ANR	4555473	Identifier	copy		4555274	1					
+ANR	4555474	IdentifierDeclStatement	int i ;	109:8:1754:1759	4555274	2	True				
+ANR	4555475	IdentifierDecl	i		4555274	0					
+ANR	4555476	IdentifierDeclType	int		4555274	0					
+ANR	4555477	Identifier	i		4555274	1					
+ANR	4555478	ForStatement	for ( i = 0 ; i < aiocb -> aio_niov && count ; ++ i )		4555274	3					
+ANR	4555479	ForInit	i = 0 ;	113:13:1777:1782	4555274	0	True				
+ANR	4555480	AssignmentExpression	i = 0		4555274	0		=			
+ANR	4555481	Identifier	i		4555274	0					
+ANR	4555482	PrimaryExpression	0		4555274	1					
+ANR	4555483	Condition	i < aiocb -> aio_niov && count	113:20:1784:1811	4555274	1	True				
+ANR	4555484	AndExpression	i < aiocb -> aio_niov && count		4555274	0		&&			
+ANR	4555485	RelationalExpression	i < aiocb -> aio_niov		4555274	0		<			
+ANR	4555486	Identifier	i		4555274	0					
+ANR	4555487	PtrMemberAccess	aiocb -> aio_niov		4555274	1					
+ANR	4555488	Identifier	aiocb		4555274	0					
+ANR	4555489	Identifier	aio_niov		4555274	1					
+ANR	4555490	Identifier	count		4555274	1					
+ANR	4555491	UnaryExpression	++ i	113:50:1814:1816	4555274	2	True				
+ANR	4555492	IncDec	++		4555274	0					
+ANR	4555493	Identifier	i		4555274	1					
+ANR	4555494	CompoundStatement		111:55:1760:1760	4555274	3					
+ANR	4555495	ExpressionStatement	copy = count	115:12:1834:1846	4555274	0	True				
+ANR	4555496	AssignmentExpression	copy = count		4555274	0		=			
+ANR	4555497	Identifier	copy		4555274	0					
+ANR	4555498	Identifier	count		4555274	1					
+ANR	4555499	IfStatement	if ( copy > aiocb -> aio_iov [ i ] . iov_len )		4555274	1					
+ANR	4555500	Condition	copy > aiocb -> aio_iov [ i ] . iov_len	117:16:1865:1896	4555274	0	True				
+ANR	4555501	RelationalExpression	copy > aiocb -> aio_iov [ i ] . iov_len		4555274	0		>			
+ANR	4555502	Identifier	copy		4555274	0					
+ANR	4555503	MemberAccess	aiocb -> aio_iov [ i ] . iov_len		4555274	1					
+ANR	4555504	ArrayIndexing	aiocb -> aio_iov [ i ]		4555274	0					
+ANR	4555505	PtrMemberAccess	aiocb -> aio_iov		4555274	0					
+ANR	4555506	Identifier	aiocb		4555274	0					
+ANR	4555507	Identifier	aio_iov		4555274	1					
+ANR	4555508	Identifier	i		4555274	1					
+ANR	4555509	Identifier	iov_len		4555274	1					
+ANR	4555510	ExpressionStatement	copy = aiocb -> aio_iov [ i ] . iov_len	119:16:1916:1948	4555274	1	True				
+ANR	4555511	AssignmentExpression	copy = aiocb -> aio_iov [ i ] . iov_len		4555274	0		=			
+ANR	4555512	Identifier	copy		4555274	0					
+ANR	4555513	MemberAccess	aiocb -> aio_iov [ i ] . iov_len		4555274	1					
+ANR	4555514	ArrayIndexing	aiocb -> aio_iov [ i ]		4555274	0					
+ANR	4555515	PtrMemberAccess	aiocb -> aio_iov		4555274	0					
+ANR	4555516	Identifier	aiocb		4555274	0					
+ANR	4555517	Identifier	aio_iov		4555274	1					
+ANR	4555518	Identifier	i		4555274	1					
+ANR	4555519	Identifier	iov_len		4555274	1					
+ANR	4555520	ExpressionStatement	"memcpy ( aiocb -> aio_iov [ i ] . iov_base , p , copy )"	121:12:1963:2006	4555274	2	True				
+ANR	4555521	CallExpression	"memcpy ( aiocb -> aio_iov [ i ] . iov_base , p , copy )"		4555274	0					
+ANR	4555522	Callee	memcpy		4555274	0					
+ANR	4555523	Identifier	memcpy		4555274	0					
+ANR	4555524	ArgumentList	aiocb -> aio_iov [ i ] . iov_base		4555274	1					
+ANR	4555525	Argument	aiocb -> aio_iov [ i ] . iov_base		4555274	0					
+ANR	4555526	MemberAccess	aiocb -> aio_iov [ i ] . iov_base		4555274	0					
+ANR	4555527	ArrayIndexing	aiocb -> aio_iov [ i ]		4555274	0					
+ANR	4555528	PtrMemberAccess	aiocb -> aio_iov		4555274	0					
+ANR	4555529	Identifier	aiocb		4555274	0					
+ANR	4555530	Identifier	aio_iov		4555274	1					
+ANR	4555531	Identifier	i		4555274	1					
+ANR	4555532	Identifier	iov_base		4555274	1					
+ANR	4555533	Argument	p		4555274	1					
+ANR	4555534	Identifier	p		4555274	0					
+ANR	4555535	Argument	copy		4555274	2					
+ANR	4555536	Identifier	copy		4555274	0					
+ANR	4555537	ExpressionStatement	p += copy	123:12:2021:2034	4555274	3	True				
+ANR	4555538	AssignmentExpression	p += copy		4555274	0		+=			
+ANR	4555539	Identifier	p		4555274	0					
+ANR	4555540	Identifier	copy		4555274	1					
+ANR	4555541	ExpressionStatement	count -= copy	125:12:2049:2062	4555274	4	True				
+ANR	4555542	AssignmentExpression	count -= copy		4555274	0		-=			
+ANR	4555543	Identifier	count		4555274	0					
+ANR	4555544	Identifier	copy		4555274	1					
+ANR	4555545	ExpressionStatement	qemu_vfree ( buf )	131:4:2087:2102	4555274	7	True				
+ANR	4555546	CallExpression	qemu_vfree ( buf )		4555274	0					
+ANR	4555547	Callee	qemu_vfree		4555274	0					
+ANR	4555548	Identifier	qemu_vfree		4555274	0					
+ANR	4555549	ArgumentList	buf		4555274	1					
+ANR	4555550	Argument	buf		4555274	0					
+ANR	4555551	Identifier	buf		4555274	0					
+ANR	4555552	ReturnStatement	return nbytes ;	135:4:2111:2124	4555274	8	True				
+ANR	4555553	Identifier	nbytes		4555274	0					
+ANR	4555554	ReturnType	static size_t		4555274	1					
+ANR	4555555	Identifier	handle_aiocb_rw		4555274	2					
+ANR	4555556	ParameterList	struct qemu_paiocb * aiocb		4555274	3					
+ANR	4555557	Parameter	struct qemu_paiocb * aiocb	1:30:30:54	4555274	0	True				
+ANR	4555558	ParameterType	struct qemu_paiocb *		4555274	0					
+ANR	4555559	Identifier	aiocb		4555274	1					
+ANR	4555560	CFGEntryNode	ENTRY		4555274		True				
+ANR	4555561	CFGExitNode	EXIT		4555274		True				
+ANR	4555562	Symbol	ENOSYS		4555274						
+ANR	4555563	Symbol	aiocb -> aio_nbytes		4555274						
+ANR	4555564	Symbol	* aiocb		4555274						
+ANR	4555565	Symbol	QEMU_AIO_MISALIGNED		4555274						
+ANR	4555566	Symbol	aiocb -> aio_type		4555274						
+ANR	4555567	Symbol	copy		4555274						
+ANR	4555568	Symbol	preadv_present		4555274						
+ANR	4555569	Symbol	aiocb -> aio_iov [ i ] . iov_len		4555274						
+ANR	4555570	Symbol	handle_aiocb_rw_vector		4555274						
+ANR	4555571	Symbol	aiocb -> aio_iov		4555274						
+ANR	4555572	Symbol	count		4555274						
+ANR	4555573	Symbol	i		4555274						
+ANR	4555574	Symbol	aiocb -> aio_iov -> iov_base		4555274						
+ANR	4555575	Symbol	aiocb		4555274						
+ANR	4555576	Symbol	nbytes		4555274						
+ANR	4555577	Symbol	QEMU_AIO_WRITE		4555274						
+ANR	4555578	Symbol	p		4555274						
+ANR	4555579	Symbol	buf		4555274						
+ANR	4555580	Symbol	* * aiocb		4555274						
+ANR	4555581	Symbol	qemu_memalign		4555274						
+ANR	4555582	Symbol	aiocb -> aio_iov [ i ] . iov_base		4555274						
+ANR	4555583	Symbol	* i		4555274						
+ANR	4555584	Symbol	aiocb -> aio_niov		4555274						
+ANR	4555585	Symbol	handle_aiocb_rw_linear		4555274						
+ANR	4555586	Symbol	* aiocb -> aio_iov		4555274						

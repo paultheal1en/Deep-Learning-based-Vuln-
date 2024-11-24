@@ -1,0 +1,116 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4432513	File	/home/p4ultr4n/workplace/ReVeal/raw_code/gic_cpu_write_1.c								
+ANR	4432514	Function	gic_cpu_write	1:0:0:677							
+ANR	4432515	FunctionDef	"gic_cpu_write (gic_state * s , int cpu , int offset , uint32_t value)"		4432514	0					
+ANR	4432516	CompoundStatement		3:0:78:677	4432514	0					
+ANR	4432517	SwitchStatement	switch ( offset )		4432514	0					
+ANR	4432518	Condition	offset	5:12:93:98	4432514	0	True				
+ANR	4432519	Identifier	offset		4432514	0					
+ANR	4432520	CompoundStatement		3:20:22:22	4432514	1					
+ANR	4432521	Label	case 0x00 :	7:4:108:117	4432514	0	True				
+ANR	4432522	ExpressionStatement	s -> cpu_enabled [ cpu ] = ( value & 1 )	9:8:142:175	4432514	1	True				
+ANR	4432523	AssignmentExpression	s -> cpu_enabled [ cpu ] = ( value & 1 )		4432514	0		=			
+ANR	4432524	ArrayIndexing	s -> cpu_enabled [ cpu ]		4432514	0					
+ANR	4432525	PtrMemberAccess	s -> cpu_enabled		4432514	0					
+ANR	4432526	Identifier	s		4432514	0					
+ANR	4432527	Identifier	cpu_enabled		4432514	1					
+ANR	4432528	Identifier	cpu		4432514	1					
+ANR	4432529	BitAndExpression	value & 1		4432514	1		&			
+ANR	4432530	Identifier	value		4432514	0					
+ANR	4432531	PrimaryExpression	1		4432514	1					
+ANR	4432532	ExpressionStatement	"DPRINTF ( ""CPU %d %sabled\\n"" , cpu , s -> cpu_enabled ? ""En"" : ""Dis"" )"	11:8:186:249	4432514	2	True				
+ANR	4432533	CallExpression	"DPRINTF ( ""CPU %d %sabled\\n"" , cpu , s -> cpu_enabled ? ""En"" : ""Dis"" )"		4432514	0					
+ANR	4432534	Callee	DPRINTF		4432514	0					
+ANR	4432535	Identifier	DPRINTF		4432514	0					
+ANR	4432536	ArgumentList	"""CPU %d %sabled\\n"""		4432514	1					
+ANR	4432537	Argument	"""CPU %d %sabled\\n"""		4432514	0					
+ANR	4432538	PrimaryExpression	"""CPU %d %sabled\\n"""		4432514	0					
+ANR	4432539	Argument	cpu		4432514	1					
+ANR	4432540	Identifier	cpu		4432514	0					
+ANR	4432541	Argument	"s -> cpu_enabled ? ""En"" : ""Dis"""		4432514	2					
+ANR	4432542	ConditionalExpression	"s -> cpu_enabled ? ""En"" : ""Dis"""		4432514	0					
+ANR	4432543	Condition	s -> cpu_enabled		4432514	0					
+ANR	4432544	PtrMemberAccess	s -> cpu_enabled		4432514	0					
+ANR	4432545	Identifier	s		4432514	0					
+ANR	4432546	Identifier	cpu_enabled		4432514	1					
+ANR	4432547	PrimaryExpression	"""En"""		4432514	1					
+ANR	4432548	PrimaryExpression	"""Dis"""		4432514	2					
+ANR	4432549	BreakStatement	break ;	13:8:260:265	4432514	3	True				
+ANR	4432550	Label	case 0x04 :	15:4:272:281	4432514	4	True				
+ANR	4432551	ExpressionStatement	s -> priority_mask [ cpu ] = ( value & 0xff )	17:8:312:350	4432514	5	True				
+ANR	4432552	AssignmentExpression	s -> priority_mask [ cpu ] = ( value & 0xff )		4432514	0		=			
+ANR	4432553	ArrayIndexing	s -> priority_mask [ cpu ]		4432514	0					
+ANR	4432554	PtrMemberAccess	s -> priority_mask		4432514	0					
+ANR	4432555	Identifier	s		4432514	0					
+ANR	4432556	Identifier	priority_mask		4432514	1					
+ANR	4432557	Identifier	cpu		4432514	1					
+ANR	4432558	BitAndExpression	value & 0xff		4432514	1		&			
+ANR	4432559	Identifier	value		4432514	0					
+ANR	4432560	PrimaryExpression	0xff		4432514	1					
+ANR	4432561	BreakStatement	break ;	19:8:361:366	4432514	6	True				
+ANR	4432562	Label	case 0x08 :	21:4:373:382	4432514	7	True				
+ANR	4432563	BreakStatement	break ;	25:8:449:454	4432514	8	True				
+ANR	4432564	Label	case 0x10 :	27:4:461:470	4432514	9	True				
+ANR	4432565	ReturnStatement	"return gic_complete_irq ( s , cpu , value & 0x3ff ) ;"	29:8:504:550	4432514	10	True				
+ANR	4432566	CallExpression	"gic_complete_irq ( s , cpu , value & 0x3ff )"		4432514	0					
+ANR	4432567	Callee	gic_complete_irq		4432514	0					
+ANR	4432568	Identifier	gic_complete_irq		4432514	0					
+ANR	4432569	ArgumentList	s		4432514	1					
+ANR	4432570	Argument	s		4432514	0					
+ANR	4432571	Identifier	s		4432514	0					
+ANR	4432572	Argument	cpu		4432514	1					
+ANR	4432573	Identifier	cpu		4432514	0					
+ANR	4432574	Argument	value & 0x3ff		4432514	2					
+ANR	4432575	BitAndExpression	value & 0x3ff		4432514	0		&			
+ANR	4432576	Identifier	value		4432514	0					
+ANR	4432577	PrimaryExpression	0x3ff		4432514	1					
+ANR	4432578	Label	default :	31:4:557:564	4432514	11	True				
+ANR	4432579	Identifier	default		4432514	0					
+ANR	4432580	ExpressionStatement	"hw_error ( ""gic_cpu_write: Bad offset %x\\n"" , ( int ) offset )"	33:8:575:630	4432514	12	True				
+ANR	4432581	CallExpression	"hw_error ( ""gic_cpu_write: Bad offset %x\\n"" , ( int ) offset )"		4432514	0					
+ANR	4432582	Callee	hw_error		4432514	0					
+ANR	4432583	Identifier	hw_error		4432514	0					
+ANR	4432584	ArgumentList	"""gic_cpu_write: Bad offset %x\\n"""		4432514	1					
+ANR	4432585	Argument	"""gic_cpu_write: Bad offset %x\\n"""		4432514	0					
+ANR	4432586	PrimaryExpression	"""gic_cpu_write: Bad offset %x\\n"""		4432514	0					
+ANR	4432587	Argument	( int ) offset		4432514	1					
+ANR	4432588	CastExpression	( int ) offset		4432514	0					
+ANR	4432589	CastTarget	int		4432514	0					
+ANR	4432590	Identifier	offset		4432514	1					
+ANR	4432591	ReturnStatement	return ;	35:8:641:647	4432514	13	True				
+ANR	4432592	ExpressionStatement	gic_update ( s )	39:4:661:674	4432514	1	True				
+ANR	4432593	CallExpression	gic_update ( s )		4432514	0					
+ANR	4432594	Callee	gic_update		4432514	0					
+ANR	4432595	Identifier	gic_update		4432514	0					
+ANR	4432596	ArgumentList	s		4432514	1					
+ANR	4432597	Argument	s		4432514	0					
+ANR	4432598	Identifier	s		4432514	0					
+ANR	4432599	ReturnType	static void		4432514	1					
+ANR	4432600	Identifier	gic_cpu_write		4432514	2					
+ANR	4432601	ParameterList	"gic_state * s , int cpu , int offset , uint32_t value"		4432514	3					
+ANR	4432602	Parameter	gic_state * s	1:26:26:37	4432514	0	True				
+ANR	4432603	ParameterType	gic_state *		4432514	0					
+ANR	4432604	Identifier	s		4432514	1					
+ANR	4432605	Parameter	int cpu	1:40:40:46	4432514	1	True				
+ANR	4432606	ParameterType	int		4432514	0					
+ANR	4432607	Identifier	cpu		4432514	1					
+ANR	4432608	Parameter	int offset	1:49:49:58	4432514	2	True				
+ANR	4432609	ParameterType	int		4432514	0					
+ANR	4432610	Identifier	offset		4432514	1					
+ANR	4432611	Parameter	uint32_t value	1:61:61:74	4432514	3	True				
+ANR	4432612	ParameterType	uint32_t		4432514	0					
+ANR	4432613	Identifier	value		4432514	1					
+ANR	4432614	CFGEntryNode	ENTRY		4432514		True				
+ANR	4432615	CFGExitNode	EXIT		4432514		True				
+ANR	4432616	Symbol	s -> cpu_enabled		4432514						
+ANR	4432617	Symbol	s		4432514						
+ANR	4432618	Symbol	offset		4432514						
+ANR	4432619	Symbol	gic_complete_irq		4432514						
+ANR	4432620	Symbol	* * s		4432514						
+ANR	4432621	Symbol	cpu		4432514						
+ANR	4432622	Symbol	* s -> priority_mask		4432514						
+ANR	4432623	Symbol	* s -> cpu_enabled		4432514						
+ANR	4432624	Symbol	value		4432514						
+ANR	4432625	Symbol	* cpu		4432514						
+ANR	4432626	Symbol	* s		4432514						
+ANR	4432627	Symbol	s -> priority_mask		4432514						

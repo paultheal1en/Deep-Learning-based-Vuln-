@@ -1,0 +1,1035 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5410813	File	/home/p4ultr4n/workplace/ReVeal/raw_code/megasas_ctrl_get_info_0.c								
+ANR	5410814	Function	megasas_ctrl_get_info	1:0:0:5122							
+ANR	5410815	FunctionDef	"megasas_ctrl_get_info (MegasasState * s , MegasasCmd * cmd)"		5410814	0					
+ANR	5410816	CompoundStatement		3:0:68:5122	5410814	0					
+ANR	5410817	IdentifierDeclStatement	PCIDevice * pci_dev = PCI_DEVICE ( s ) ;	5:4:75:109	5410814	0	True				
+ANR	5410818	IdentifierDecl	* pci_dev = PCI_DEVICE ( s )		5410814	0					
+ANR	5410819	IdentifierDeclType	PCIDevice *		5410814	0					
+ANR	5410820	Identifier	pci_dev		5410814	1					
+ANR	5410821	AssignmentExpression	* pci_dev = PCI_DEVICE ( s )		5410814	2		=			
+ANR	5410822	Identifier	pci_dev		5410814	0					
+ANR	5410823	CallExpression	PCI_DEVICE ( s )		5410814	1					
+ANR	5410824	Callee	PCI_DEVICE		5410814	0					
+ANR	5410825	Identifier	PCI_DEVICE		5410814	0					
+ANR	5410826	ArgumentList	s		5410814	1					
+ANR	5410827	Argument	s		5410814	0					
+ANR	5410828	Identifier	s		5410814	0					
+ANR	5410829	IdentifierDeclStatement	struct mfi_ctrl_info info ;	7:4:116:141	5410814	1	True				
+ANR	5410830	IdentifierDecl	info		5410814	0					
+ANR	5410831	IdentifierDeclType	struct mfi_ctrl_info		5410814	0					
+ANR	5410832	Identifier	info		5410814	1					
+ANR	5410833	IdentifierDeclStatement	size_t dcmd_size = sizeof ( info ) ;	9:4:148:179	5410814	2	True				
+ANR	5410834	IdentifierDecl	dcmd_size = sizeof ( info )		5410814	0					
+ANR	5410835	IdentifierDeclType	size_t		5410814	0					
+ANR	5410836	Identifier	dcmd_size		5410814	1					
+ANR	5410837	AssignmentExpression	dcmd_size = sizeof ( info )		5410814	2		=			
+ANR	5410838	Identifier	dcmd_size		5410814	0					
+ANR	5410839	SizeofExpression	sizeof ( info )		5410814	1					
+ANR	5410840	Sizeof	sizeof		5410814	0					
+ANR	5410841	SizeofOperand	info		5410814	1					
+ANR	5410842	IdentifierDeclStatement	BusChild * kid ;	11:4:186:199	5410814	3	True				
+ANR	5410843	IdentifierDecl	* kid		5410814	0					
+ANR	5410844	IdentifierDeclType	BusChild *		5410814	0					
+ANR	5410845	Identifier	kid		5410814	1					
+ANR	5410846	IdentifierDeclStatement	int num_ld_disks = 0 ;	13:4:206:226	5410814	4	True				
+ANR	5410847	IdentifierDecl	num_ld_disks = 0		5410814	0					
+ANR	5410848	IdentifierDeclType	int		5410814	0					
+ANR	5410849	Identifier	num_ld_disks		5410814	1					
+ANR	5410850	AssignmentExpression	num_ld_disks = 0		5410814	2		=			
+ANR	5410851	Identifier	num_ld_disks		5410814	0					
+ANR	5410852	PrimaryExpression	0		5410814	1					
+ANR	5410853	IdentifierDeclStatement	uint16_t sdev_id ;	15:4:233:249	5410814	5	True				
+ANR	5410854	IdentifierDecl	sdev_id		5410814	0					
+ANR	5410855	IdentifierDeclType	uint16_t		5410814	0					
+ANR	5410856	Identifier	sdev_id		5410814	1					
+ANR	5410857	ExpressionStatement	"memset ( & info , 0x0 , cmd -> iov_size )"	19:4:258:291	5410814	6	True				
+ANR	5410858	CallExpression	"memset ( & info , 0x0 , cmd -> iov_size )"		5410814	0					
+ANR	5410859	Callee	memset		5410814	0					
+ANR	5410860	Identifier	memset		5410814	0					
+ANR	5410861	ArgumentList	& info		5410814	1					
+ANR	5410862	Argument	& info		5410814	0					
+ANR	5410863	UnaryOperationExpression	& info		5410814	0					
+ANR	5410864	UnaryOperator	&		5410814	0					
+ANR	5410865	Identifier	info		5410814	1					
+ANR	5410866	Argument	0x0		5410814	1					
+ANR	5410867	PrimaryExpression	0x0		5410814	0					
+ANR	5410868	Argument	cmd -> iov_size		5410814	2					
+ANR	5410869	PtrMemberAccess	cmd -> iov_size		5410814	0					
+ANR	5410870	Identifier	cmd		5410814	0					
+ANR	5410871	Identifier	iov_size		5410814	1					
+ANR	5410872	IfStatement	if ( cmd -> iov_size < dcmd_size )		5410814	7					
+ANR	5410873	Condition	cmd -> iov_size < dcmd_size	21:8:302:326	5410814	0	True				
+ANR	5410874	RelationalExpression	cmd -> iov_size < dcmd_size		5410814	0		<			
+ANR	5410875	PtrMemberAccess	cmd -> iov_size		5410814	0					
+ANR	5410876	Identifier	cmd		5410814	0					
+ANR	5410877	Identifier	iov_size		5410814	1					
+ANR	5410878	Identifier	dcmd_size		5410814	1					
+ANR	5410879	CompoundStatement		19:35:260:260	5410814	1					
+ANR	5410880	ExpressionStatement	"trace_megasas_dcmd_invalid_xfer_len ( cmd -> index , cmd -> iov_size , dcmd_size )"	23:8:340:458	5410814	0	True				
+ANR	5410881	CallExpression	"trace_megasas_dcmd_invalid_xfer_len ( cmd -> index , cmd -> iov_size , dcmd_size )"		5410814	0					
+ANR	5410882	Callee	trace_megasas_dcmd_invalid_xfer_len		5410814	0					
+ANR	5410883	Identifier	trace_megasas_dcmd_invalid_xfer_len		5410814	0					
+ANR	5410884	ArgumentList	cmd -> index		5410814	1					
+ANR	5410885	Argument	cmd -> index		5410814	0					
+ANR	5410886	PtrMemberAccess	cmd -> index		5410814	0					
+ANR	5410887	Identifier	cmd		5410814	0					
+ANR	5410888	Identifier	index		5410814	1					
+ANR	5410889	Argument	cmd -> iov_size		5410814	1					
+ANR	5410890	PtrMemberAccess	cmd -> iov_size		5410814	0					
+ANR	5410891	Identifier	cmd		5410814	0					
+ANR	5410892	Identifier	iov_size		5410814	1					
+ANR	5410893	Argument	dcmd_size		5410814	2					
+ANR	5410894	Identifier	dcmd_size		5410814	0					
+ANR	5410895	ReturnStatement	return MFI_STAT_INVALID_PARAMETER ;	27:8:469:502	5410814	1	True				
+ANR	5410896	Identifier	MFI_STAT_INVALID_PARAMETER		5410814	0					
+ANR	5410897	ExpressionStatement	info . pci . vendor = cpu_to_le16 ( PCI_VENDOR_ID_LSI_LOGIC )	33:4:518:572	5410814	8	True				
+ANR	5410898	AssignmentExpression	info . pci . vendor = cpu_to_le16 ( PCI_VENDOR_ID_LSI_LOGIC )		5410814	0		=			
+ANR	5410899	MemberAccess	info . pci . vendor		5410814	0					
+ANR	5410900	MemberAccess	info . pci		5410814	0					
+ANR	5410901	Identifier	info		5410814	0					
+ANR	5410902	Identifier	pci		5410814	1					
+ANR	5410903	Identifier	vendor		5410814	1					
+ANR	5410904	CallExpression	cpu_to_le16 ( PCI_VENDOR_ID_LSI_LOGIC )		5410814	1					
+ANR	5410905	Callee	cpu_to_le16		5410814	0					
+ANR	5410906	Identifier	cpu_to_le16		5410814	0					
+ANR	5410907	ArgumentList	PCI_VENDOR_ID_LSI_LOGIC		5410814	1					
+ANR	5410908	Argument	PCI_VENDOR_ID_LSI_LOGIC		5410814	0					
+ANR	5410909	Identifier	PCI_VENDOR_ID_LSI_LOGIC		5410814	0					
+ANR	5410910	ExpressionStatement	info . pci . device = cpu_to_le16 ( PCI_DEVICE_ID_LSI_SAS1078 )	35:4:579:635	5410814	9	True				
+ANR	5410911	AssignmentExpression	info . pci . device = cpu_to_le16 ( PCI_DEVICE_ID_LSI_SAS1078 )		5410814	0		=			
+ANR	5410912	MemberAccess	info . pci . device		5410814	0					
+ANR	5410913	MemberAccess	info . pci		5410814	0					
+ANR	5410914	Identifier	info		5410814	0					
+ANR	5410915	Identifier	pci		5410814	1					
+ANR	5410916	Identifier	device		5410814	1					
+ANR	5410917	CallExpression	cpu_to_le16 ( PCI_DEVICE_ID_LSI_SAS1078 )		5410814	1					
+ANR	5410918	Callee	cpu_to_le16		5410814	0					
+ANR	5410919	Identifier	cpu_to_le16		5410814	0					
+ANR	5410920	ArgumentList	PCI_DEVICE_ID_LSI_SAS1078		5410814	1					
+ANR	5410921	Argument	PCI_DEVICE_ID_LSI_SAS1078		5410814	0					
+ANR	5410922	Identifier	PCI_DEVICE_ID_LSI_SAS1078		5410814	0					
+ANR	5410923	ExpressionStatement	info . pci . subvendor = cpu_to_le16 ( PCI_VENDOR_ID_LSI_LOGIC )	37:4:642:699	5410814	10	True				
+ANR	5410924	AssignmentExpression	info . pci . subvendor = cpu_to_le16 ( PCI_VENDOR_ID_LSI_LOGIC )		5410814	0		=			
+ANR	5410925	MemberAccess	info . pci . subvendor		5410814	0					
+ANR	5410926	MemberAccess	info . pci		5410814	0					
+ANR	5410927	Identifier	info		5410814	0					
+ANR	5410928	Identifier	pci		5410814	1					
+ANR	5410929	Identifier	subvendor		5410814	1					
+ANR	5410930	CallExpression	cpu_to_le16 ( PCI_VENDOR_ID_LSI_LOGIC )		5410814	1					
+ANR	5410931	Callee	cpu_to_le16		5410814	0					
+ANR	5410932	Identifier	cpu_to_le16		5410814	0					
+ANR	5410933	ArgumentList	PCI_VENDOR_ID_LSI_LOGIC		5410814	1					
+ANR	5410934	Argument	PCI_VENDOR_ID_LSI_LOGIC		5410814	0					
+ANR	5410935	Identifier	PCI_VENDOR_ID_LSI_LOGIC		5410814	0					
+ANR	5410936	ExpressionStatement	info . pci . subdevice = cpu_to_le16 ( 0x1013 )	39:4:706:746	5410814	11	True				
+ANR	5410937	AssignmentExpression	info . pci . subdevice = cpu_to_le16 ( 0x1013 )		5410814	0		=			
+ANR	5410938	MemberAccess	info . pci . subdevice		5410814	0					
+ANR	5410939	MemberAccess	info . pci		5410814	0					
+ANR	5410940	Identifier	info		5410814	0					
+ANR	5410941	Identifier	pci		5410814	1					
+ANR	5410942	Identifier	subdevice		5410814	1					
+ANR	5410943	CallExpression	cpu_to_le16 ( 0x1013 )		5410814	1					
+ANR	5410944	Callee	cpu_to_le16		5410814	0					
+ANR	5410945	Identifier	cpu_to_le16		5410814	0					
+ANR	5410946	ArgumentList	0x1013		5410814	1					
+ANR	5410947	Argument	0x1013		5410814	0					
+ANR	5410948	PrimaryExpression	0x1013		5410814	0					
+ANR	5410949	ExpressionStatement	info . host . type = MFI_INFO_HOST_PCIE	63:4:1100:1135	5410814	12	True				
+ANR	5410950	AssignmentExpression	info . host . type = MFI_INFO_HOST_PCIE		5410814	0		=			
+ANR	5410951	MemberAccess	info . host . type		5410814	0					
+ANR	5410952	MemberAccess	info . host		5410814	0					
+ANR	5410953	Identifier	info		5410814	0					
+ANR	5410954	Identifier	host		5410814	1					
+ANR	5410955	Identifier	type		5410814	1					
+ANR	5410956	Identifier	MFI_INFO_HOST_PCIE		5410814	1					
+ANR	5410957	ExpressionStatement	info . device . type = MFI_INFO_DEV_SAS3G	65:4:1142:1179	5410814	13	True				
+ANR	5410958	AssignmentExpression	info . device . type = MFI_INFO_DEV_SAS3G		5410814	0		=			
+ANR	5410959	MemberAccess	info . device . type		5410814	0					
+ANR	5410960	MemberAccess	info . device		5410814	0					
+ANR	5410961	Identifier	info		5410814	0					
+ANR	5410962	Identifier	device		5410814	1					
+ANR	5410963	Identifier	type		5410814	1					
+ANR	5410964	Identifier	MFI_INFO_DEV_SAS3G		5410814	1					
+ANR	5410965	ExpressionStatement	info . device . port_count = 8	67:4:1186:1212	5410814	14	True				
+ANR	5410966	AssignmentExpression	info . device . port_count = 8		5410814	0		=			
+ANR	5410967	MemberAccess	info . device . port_count		5410814	0					
+ANR	5410968	MemberAccess	info . device		5410814	0					
+ANR	5410969	Identifier	info		5410814	0					
+ANR	5410970	Identifier	device		5410814	1					
+ANR	5410971	Identifier	port_count		5410814	1					
+ANR	5410972	PrimaryExpression	8		5410814	1					
+ANR	5410973	Statement	QTAILQ_FOREACH	69:4:1219:1232	5410814	15	True				
+ANR	5410974	Statement	(	69:18:1233:1233	5410814	16	True				
+ANR	5410975	Statement	kid	69:19:1234:1236	5410814	17	True				
+ANR	5410976	Statement	","	69:22:1237:1237	5410814	18	True				
+ANR	5410977	Statement	&	69:24:1239:1239	5410814	19	True				
+ANR	5410978	Statement	s	69:25:1240:1240	5410814	20	True				
+ANR	5410979	Statement	->	69:26:1241:1242	5410814	21	True				
+ANR	5410980	Statement	bus	69:28:1243:1245	5410814	22	True				
+ANR	5410981	Statement	.	69:31:1246:1246	5410814	23	True				
+ANR	5410982	Statement	qbus	69:32:1247:1250	5410814	24	True				
+ANR	5410983	Statement	.	69:36:1251:1251	5410814	25	True				
+ANR	5410984	Statement	children	69:37:1252:1259	5410814	26	True				
+ANR	5410985	Statement	","	69:45:1260:1260	5410814	27	True				
+ANR	5410986	Statement	sibling	69:47:1262:1268	5410814	28	True				
+ANR	5410987	Statement	)	69:54:1269:1269	5410814	29	True				
+ANR	5410988	CompoundStatement		69:8:1213:1271	5410814	30					
+ANR	5410989	IdentifierDeclStatement	"SCSIDevice * sdev = DO_UPCAST ( SCSIDevice , qdev , kid -> child ) ;"	71:8:1282:1340	5410814	0	True				
+ANR	5410990	IdentifierDecl	"* sdev = DO_UPCAST ( SCSIDevice , qdev , kid -> child )"		5410814	0					
+ANR	5410991	IdentifierDeclType	SCSIDevice *		5410814	0					
+ANR	5410992	Identifier	sdev		5410814	1					
+ANR	5410993	AssignmentExpression	"* sdev = DO_UPCAST ( SCSIDevice , qdev , kid -> child )"		5410814	2		=			
+ANR	5410994	Identifier	sdev		5410814	0					
+ANR	5410995	CallExpression	"DO_UPCAST ( SCSIDevice , qdev , kid -> child )"		5410814	1					
+ANR	5410996	Callee	DO_UPCAST		5410814	0					
+ANR	5410997	Identifier	DO_UPCAST		5410814	0					
+ANR	5410998	ArgumentList	SCSIDevice		5410814	1					
+ANR	5410999	Argument	SCSIDevice		5410814	0					
+ANR	5411000	Identifier	SCSIDevice		5410814	0					
+ANR	5411001	Argument	qdev		5410814	1					
+ANR	5411002	Identifier	qdev		5410814	0					
+ANR	5411003	Argument	kid -> child		5410814	2					
+ANR	5411004	PtrMemberAccess	kid -> child		5410814	0					
+ANR	5411005	Identifier	kid		5410814	0					
+ANR	5411006	Identifier	child		5410814	1					
+ANR	5411007	IfStatement	if ( num_ld_disks < 8 )		5410814	1					
+ANR	5411008	Condition	num_ld_disks < 8	75:12:1357:1372	5410814	0	True				
+ANR	5411009	RelationalExpression	num_ld_disks < 8		5410814	0		<			
+ANR	5411010	Identifier	num_ld_disks		5410814	0					
+ANR	5411011	PrimaryExpression	8		5410814	1					
+ANR	5411012	CompoundStatement		73:30:1306:1306	5410814	1					
+ANR	5411013	ExpressionStatement	sdev_id = ( ( sdev -> id & 0xFF ) >> 8 ) | ( sdev -> lun & 0xFF )	77:12:1390:1445	5410814	0	True				
+ANR	5411014	AssignmentExpression	sdev_id = ( ( sdev -> id & 0xFF ) >> 8 ) | ( sdev -> lun & 0xFF )		5410814	0		=			
+ANR	5411015	Identifier	sdev_id		5410814	0					
+ANR	5411016	InclusiveOrExpression	( ( sdev -> id & 0xFF ) >> 8 ) | ( sdev -> lun & 0xFF )		5410814	1		|			
+ANR	5411017	ShiftExpression	( sdev -> id & 0xFF ) >> 8		5410814	0		>>			
+ANR	5411018	BitAndExpression	sdev -> id & 0xFF		5410814	0		&			
+ANR	5411019	PtrMemberAccess	sdev -> id		5410814	0					
+ANR	5411020	Identifier	sdev		5410814	0					
+ANR	5411021	Identifier	id		5410814	1					
+ANR	5411022	PrimaryExpression	0xFF		5410814	1					
+ANR	5411023	PrimaryExpression	8		5410814	1					
+ANR	5411024	BitAndExpression	sdev -> lun & 0xFF		5410814	1		&			
+ANR	5411025	PtrMemberAccess	sdev -> lun		5410814	0					
+ANR	5411026	Identifier	sdev		5410814	0					
+ANR	5411027	Identifier	lun		5410814	1					
+ANR	5411028	PrimaryExpression	0xFF		5410814	1					
+ANR	5411029	ExpressionStatement	info . device . port_addr [ num_ld_disks ] = cpu_to_le64 ( megasas_get_sata_addr ( sdev_id ) )	79:12:1460:1558	5410814	1	True				
+ANR	5411030	AssignmentExpression	info . device . port_addr [ num_ld_disks ] = cpu_to_le64 ( megasas_get_sata_addr ( sdev_id ) )		5410814	0		=			
+ANR	5411031	ArrayIndexing	info . device . port_addr [ num_ld_disks ]		5410814	0					
+ANR	5411032	MemberAccess	info . device . port_addr		5410814	0					
+ANR	5411033	MemberAccess	info . device		5410814	0					
+ANR	5411034	Identifier	info		5410814	0					
+ANR	5411035	Identifier	device		5410814	1					
+ANR	5411036	Identifier	port_addr		5410814	1					
+ANR	5411037	Identifier	num_ld_disks		5410814	1					
+ANR	5411038	CallExpression	cpu_to_le64 ( megasas_get_sata_addr ( sdev_id ) )		5410814	1					
+ANR	5411039	Callee	cpu_to_le64		5410814	0					
+ANR	5411040	Identifier	cpu_to_le64		5410814	0					
+ANR	5411041	ArgumentList	megasas_get_sata_addr ( sdev_id )		5410814	1					
+ANR	5411042	Argument	megasas_get_sata_addr ( sdev_id )		5410814	0					
+ANR	5411043	CallExpression	megasas_get_sata_addr ( sdev_id )		5410814	0					
+ANR	5411044	Callee	megasas_get_sata_addr		5410814	0					
+ANR	5411045	Identifier	megasas_get_sata_addr		5410814	0					
+ANR	5411046	ArgumentList	sdev_id		5410814	1					
+ANR	5411047	Argument	sdev_id		5410814	0					
+ANR	5411048	Identifier	sdev_id		5410814	0					
+ANR	5411049	ExpressionStatement	num_ld_disks ++	85:8:1580:1594	5410814	2	True				
+ANR	5411050	PostIncDecOperationExpression	num_ld_disks ++		5410814	0					
+ANR	5411051	Identifier	num_ld_disks		5410814	0					
+ANR	5411052	IncDec	++		5410814	1					
+ANR	5411053	ExpressionStatement	"memcpy ( info . product_name , ""MegaRAID SAS 8708EM2"" , 20 )"	91:4:1610:1663	5410814	31	True				
+ANR	5411054	CallExpression	"memcpy ( info . product_name , ""MegaRAID SAS 8708EM2"" , 20 )"		5410814	0					
+ANR	5411055	Callee	memcpy		5410814	0					
+ANR	5411056	Identifier	memcpy		5410814	0					
+ANR	5411057	ArgumentList	info . product_name		5410814	1					
+ANR	5411058	Argument	info . product_name		5410814	0					
+ANR	5411059	MemberAccess	info . product_name		5410814	0					
+ANR	5411060	Identifier	info		5410814	0					
+ANR	5411061	Identifier	product_name		5410814	1					
+ANR	5411062	Argument	"""MegaRAID SAS 8708EM2"""		5410814	1					
+ANR	5411063	PrimaryExpression	"""MegaRAID SAS 8708EM2"""		5410814	0					
+ANR	5411064	Argument	20		5410814	2					
+ANR	5411065	PrimaryExpression	20		5410814	0					
+ANR	5411066	ExpressionStatement	"snprintf ( info . serial_number , 32 , ""%s"" , s -> hba_serial )"	93:4:1670:1723	5410814	32	True				
+ANR	5411067	CallExpression	"snprintf ( info . serial_number , 32 , ""%s"" , s -> hba_serial )"		5410814	0					
+ANR	5411068	Callee	snprintf		5410814	0					
+ANR	5411069	Identifier	snprintf		5410814	0					
+ANR	5411070	ArgumentList	info . serial_number		5410814	1					
+ANR	5411071	Argument	info . serial_number		5410814	0					
+ANR	5411072	MemberAccess	info . serial_number		5410814	0					
+ANR	5411073	Identifier	info		5410814	0					
+ANR	5411074	Identifier	serial_number		5410814	1					
+ANR	5411075	Argument	32		5410814	1					
+ANR	5411076	PrimaryExpression	32		5410814	0					
+ANR	5411077	Argument	"""%s"""		5410814	2					
+ANR	5411078	PrimaryExpression	"""%s"""		5410814	0					
+ANR	5411079	Argument	s -> hba_serial		5410814	3					
+ANR	5411080	PtrMemberAccess	s -> hba_serial		5410814	0					
+ANR	5411081	Identifier	s		5410814	0					
+ANR	5411082	Identifier	hba_serial		5410814	1					
+ANR	5411083	ExpressionStatement	"snprintf ( info . package_version , 0x60 , ""%s-QEMU"" , QEMU_VERSION )"	95:4:1730:1791	5410814	33	True				
+ANR	5411084	CallExpression	"snprintf ( info . package_version , 0x60 , ""%s-QEMU"" , QEMU_VERSION )"		5410814	0					
+ANR	5411085	Callee	snprintf		5410814	0					
+ANR	5411086	Identifier	snprintf		5410814	0					
+ANR	5411087	ArgumentList	info . package_version		5410814	1					
+ANR	5411088	Argument	info . package_version		5410814	0					
+ANR	5411089	MemberAccess	info . package_version		5410814	0					
+ANR	5411090	Identifier	info		5410814	0					
+ANR	5411091	Identifier	package_version		5410814	1					
+ANR	5411092	Argument	0x60		5410814	1					
+ANR	5411093	PrimaryExpression	0x60		5410814	0					
+ANR	5411094	Argument	"""%s-QEMU"""		5410814	2					
+ANR	5411095	PrimaryExpression	"""%s-QEMU"""		5410814	0					
+ANR	5411096	Argument	QEMU_VERSION		5410814	3					
+ANR	5411097	Identifier	QEMU_VERSION		5410814	0					
+ANR	5411098	ExpressionStatement	"memcpy ( info . image_component [ 0 ] . name , ""APP"" , 3 )"	97:4:1798:1844	5410814	34	True				
+ANR	5411099	CallExpression	"memcpy ( info . image_component [ 0 ] . name , ""APP"" , 3 )"		5410814	0					
+ANR	5411100	Callee	memcpy		5410814	0					
+ANR	5411101	Identifier	memcpy		5410814	0					
+ANR	5411102	ArgumentList	info . image_component [ 0 ] . name		5410814	1					
+ANR	5411103	Argument	info . image_component [ 0 ] . name		5410814	0					
+ANR	5411104	MemberAccess	info . image_component [ 0 ] . name		5410814	0					
+ANR	5411105	ArrayIndexing	info . image_component [ 0 ]		5410814	0					
+ANR	5411106	MemberAccess	info . image_component		5410814	0					
+ANR	5411107	Identifier	info		5410814	0					
+ANR	5411108	Identifier	image_component		5410814	1					
+ANR	5411109	PrimaryExpression	0		5410814	1					
+ANR	5411110	Identifier	name		5410814	1					
+ANR	5411111	Argument	"""APP"""		5410814	1					
+ANR	5411112	PrimaryExpression	"""APP"""		5410814	0					
+ANR	5411113	Argument	3		5410814	2					
+ANR	5411114	PrimaryExpression	3		5410814	0					
+ANR	5411115	Statement	memcpy	99:4:1851:1856	5410814	35	True				
+ANR	5411116	Statement	(	99:10:1857:1857	5410814	36	True				
+ANR	5411117	Statement	info	99:11:1858:1861	5410814	37	True				
+ANR	5411118	Statement	.	99:15:1862:1862	5410814	38	True				
+ANR	5411119	Statement	image_component	99:16:1863:1877	5410814	39	True				
+ANR	5411120	Statement	[	99:31:1878:1878	5410814	40	True				
+ANR	5411121	Statement	0	99:32:1879:1879	5410814	41	True				
+ANR	5411122	Statement	]	99:33:1880:1880	5410814	42	True				
+ANR	5411123	Statement	.	99:34:1881:1881	5410814	43	True				
+ANR	5411124	Statement	version	99:35:1882:1888	5410814	44	True				
+ANR	5411125	Statement	","	99:42:1889:1889	5410814	45	True				
+ANR	5411126	Statement	MEGASAS_VERSION	99:44:1891:1905	5410814	46	True				
+ANR	5411127	Statement	"""-QEMU"""	99:60:1907:1913	5410814	47	True				
+ANR	5411128	Statement	","	99:67:1914:1914	5410814	48	True				
+ANR	5411129	Statement	9	99:69:1916:1916	5410814	49	True				
+ANR	5411130	Statement	)	99:70:1917:1917	5410814	50	True				
+ANR	5411131	ExpressionStatement		99:71:1918:1918	5410814	51	True				
+ANR	5411132	ExpressionStatement	"memcpy ( info . image_component [ 0 ] . build_date , __DATE__ , 11 )"	101:4:1925:1981	5410814	52	True				
+ANR	5411133	CallExpression	"memcpy ( info . image_component [ 0 ] . build_date , __DATE__ , 11 )"		5410814	0					
+ANR	5411134	Callee	memcpy		5410814	0					
+ANR	5411135	Identifier	memcpy		5410814	0					
+ANR	5411136	ArgumentList	info . image_component [ 0 ] . build_date		5410814	1					
+ANR	5411137	Argument	info . image_component [ 0 ] . build_date		5410814	0					
+ANR	5411138	MemberAccess	info . image_component [ 0 ] . build_date		5410814	0					
+ANR	5411139	ArrayIndexing	info . image_component [ 0 ]		5410814	0					
+ANR	5411140	MemberAccess	info . image_component		5410814	0					
+ANR	5411141	Identifier	info		5410814	0					
+ANR	5411142	Identifier	image_component		5410814	1					
+ANR	5411143	PrimaryExpression	0		5410814	1					
+ANR	5411144	Identifier	build_date		5410814	1					
+ANR	5411145	Argument	__DATE__		5410814	1					
+ANR	5411146	Identifier	__DATE__		5410814	0					
+ANR	5411147	Argument	11		5410814	2					
+ANR	5411148	PrimaryExpression	11		5410814	0					
+ANR	5411149	ExpressionStatement	"memcpy ( info . image_component [ 0 ] . build_time , __TIME__ , 8 )"	103:4:1988:2043	5410814	53	True				
+ANR	5411150	CallExpression	"memcpy ( info . image_component [ 0 ] . build_time , __TIME__ , 8 )"		5410814	0					
+ANR	5411151	Callee	memcpy		5410814	0					
+ANR	5411152	Identifier	memcpy		5410814	0					
+ANR	5411153	ArgumentList	info . image_component [ 0 ] . build_time		5410814	1					
+ANR	5411154	Argument	info . image_component [ 0 ] . build_time		5410814	0					
+ANR	5411155	MemberAccess	info . image_component [ 0 ] . build_time		5410814	0					
+ANR	5411156	ArrayIndexing	info . image_component [ 0 ]		5410814	0					
+ANR	5411157	MemberAccess	info . image_component		5410814	0					
+ANR	5411158	Identifier	info		5410814	0					
+ANR	5411159	Identifier	image_component		5410814	1					
+ANR	5411160	PrimaryExpression	0		5410814	1					
+ANR	5411161	Identifier	build_time		5410814	1					
+ANR	5411162	Argument	__TIME__		5410814	1					
+ANR	5411163	Identifier	__TIME__		5410814	0					
+ANR	5411164	Argument	8		5410814	2					
+ANR	5411165	PrimaryExpression	8		5410814	0					
+ANR	5411166	ExpressionStatement	info . image_component_count = 1	105:4:2050:2080	5410814	54	True				
+ANR	5411167	AssignmentExpression	info . image_component_count = 1		5410814	0		=			
+ANR	5411168	MemberAccess	info . image_component_count		5410814	0					
+ANR	5411169	Identifier	info		5410814	0					
+ANR	5411170	Identifier	image_component_count		5410814	1					
+ANR	5411171	PrimaryExpression	1		5410814	1					
+ANR	5411172	IfStatement	if ( pci_dev -> has_rom )		5410814	55					
+ANR	5411173	Condition	pci_dev -> has_rom	107:8:2091:2106	5410814	0	True				
+ANR	5411174	PtrMemberAccess	pci_dev -> has_rom		5410814	0					
+ANR	5411175	Identifier	pci_dev		5410814	0					
+ANR	5411176	Identifier	has_rom		5410814	1					
+ANR	5411177	CompoundStatement		109:8:2081:2093	5410814	1					
+ANR	5411178	IdentifierDeclStatement	uint8_t biosver [ 32 ] ;	109:8:2120:2139	5410814	0	True				
+ANR	5411179	IdentifierDecl	biosver [ 32 ]		5410814	0					
+ANR	5411180	IdentifierDeclType	uint8_t [ 32 ]		5410814	0					
+ANR	5411181	Identifier	biosver		5410814	1					
+ANR	5411182	PrimaryExpression	32		5410814	2					
+ANR	5411183	IdentifierDeclStatement	uint8_t * ptr ;	111:8:2150:2162	5410814	1	True				
+ANR	5411184	IdentifierDecl	* ptr		5410814	0					
+ANR	5411185	IdentifierDeclType	uint8_t *		5410814	0					
+ANR	5411186	Identifier	ptr		5410814	1					
+ANR	5411187	ExpressionStatement	ptr = memory_region_get_ram_ptr ( & pci_dev -> rom )	115:8:2175:2221	5410814	2	True				
+ANR	5411188	AssignmentExpression	ptr = memory_region_get_ram_ptr ( & pci_dev -> rom )		5410814	0		=			
+ANR	5411189	Identifier	ptr		5410814	0					
+ANR	5411190	CallExpression	memory_region_get_ram_ptr ( & pci_dev -> rom )		5410814	1					
+ANR	5411191	Callee	memory_region_get_ram_ptr		5410814	0					
+ANR	5411192	Identifier	memory_region_get_ram_ptr		5410814	0					
+ANR	5411193	ArgumentList	& pci_dev -> rom		5410814	1					
+ANR	5411194	Argument	& pci_dev -> rom		5410814	0					
+ANR	5411195	UnaryOperationExpression	& pci_dev -> rom		5410814	0					
+ANR	5411196	UnaryOperator	&		5410814	0					
+ANR	5411197	PtrMemberAccess	pci_dev -> rom		5410814	1					
+ANR	5411198	Identifier	pci_dev		5410814	0					
+ANR	5411199	Identifier	rom		5410814	1					
+ANR	5411200	ExpressionStatement	"memcpy ( biosver , ptr + 0x41 , 31 )"	117:8:2232:2263	5410814	3	True				
+ANR	5411201	CallExpression	"memcpy ( biosver , ptr + 0x41 , 31 )"		5410814	0					
+ANR	5411202	Callee	memcpy		5410814	0					
+ANR	5411203	Identifier	memcpy		5410814	0					
+ANR	5411204	ArgumentList	biosver		5410814	1					
+ANR	5411205	Argument	biosver		5410814	0					
+ANR	5411206	Identifier	biosver		5410814	0					
+ANR	5411207	Argument	ptr + 0x41		5410814	1					
+ANR	5411208	AdditiveExpression	ptr + 0x41		5410814	0		+			
+ANR	5411209	Identifier	ptr		5410814	0					
+ANR	5411210	PrimaryExpression	0x41		5410814	1					
+ANR	5411211	Argument	31		5410814	2					
+ANR	5411212	PrimaryExpression	31		5410814	0					
+ANR	5411213	ExpressionStatement	"memcpy ( info . image_component [ 1 ] . name , ""BIOS"" , 4 )"	119:8:2274:2321	5410814	4	True				
+ANR	5411214	CallExpression	"memcpy ( info . image_component [ 1 ] . name , ""BIOS"" , 4 )"		5410814	0					
+ANR	5411215	Callee	memcpy		5410814	0					
+ANR	5411216	Identifier	memcpy		5410814	0					
+ANR	5411217	ArgumentList	info . image_component [ 1 ] . name		5410814	1					
+ANR	5411218	Argument	info . image_component [ 1 ] . name		5410814	0					
+ANR	5411219	MemberAccess	info . image_component [ 1 ] . name		5410814	0					
+ANR	5411220	ArrayIndexing	info . image_component [ 1 ]		5410814	0					
+ANR	5411221	MemberAccess	info . image_component		5410814	0					
+ANR	5411222	Identifier	info		5410814	0					
+ANR	5411223	Identifier	image_component		5410814	1					
+ANR	5411224	PrimaryExpression	1		5410814	1					
+ANR	5411225	Identifier	name		5410814	1					
+ANR	5411226	Argument	"""BIOS"""		5410814	1					
+ANR	5411227	PrimaryExpression	"""BIOS"""		5410814	0					
+ANR	5411228	Argument	4		5410814	2					
+ANR	5411229	PrimaryExpression	4		5410814	0					
+ANR	5411230	ExpressionStatement	"memcpy ( info . image_component [ 1 ] . version , biosver , strlen ( ( const char * ) biosver ) )"	121:8:2332:2427	5410814	5	True				
+ANR	5411231	CallExpression	"memcpy ( info . image_component [ 1 ] . version , biosver , strlen ( ( const char * ) biosver ) )"		5410814	0					
+ANR	5411232	Callee	memcpy		5410814	0					
+ANR	5411233	Identifier	memcpy		5410814	0					
+ANR	5411234	ArgumentList	info . image_component [ 1 ] . version		5410814	1					
+ANR	5411235	Argument	info . image_component [ 1 ] . version		5410814	0					
+ANR	5411236	MemberAccess	info . image_component [ 1 ] . version		5410814	0					
+ANR	5411237	ArrayIndexing	info . image_component [ 1 ]		5410814	0					
+ANR	5411238	MemberAccess	info . image_component		5410814	0					
+ANR	5411239	Identifier	info		5410814	0					
+ANR	5411240	Identifier	image_component		5410814	1					
+ANR	5411241	PrimaryExpression	1		5410814	1					
+ANR	5411242	Identifier	version		5410814	1					
+ANR	5411243	Argument	biosver		5410814	1					
+ANR	5411244	Identifier	biosver		5410814	0					
+ANR	5411245	Argument	strlen ( ( const char * ) biosver )		5410814	2					
+ANR	5411246	CallExpression	strlen ( ( const char * ) biosver )		5410814	0					
+ANR	5411247	Callee	strlen		5410814	0					
+ANR	5411248	Identifier	strlen		5410814	0					
+ANR	5411249	ArgumentList	( const char * ) biosver		5410814	1					
+ANR	5411250	Argument	( const char * ) biosver		5410814	0					
+ANR	5411251	CastExpression	( const char * ) biosver		5410814	0					
+ANR	5411252	CastTarget	const char *		5410814	0					
+ANR	5411253	Identifier	biosver		5410814	1					
+ANR	5411254	ExpressionStatement	info . image_component_count ++	125:8:2438:2466	5410814	6	True				
+ANR	5411255	PostIncDecOperationExpression	info . image_component_count ++		5410814	0					
+ANR	5411256	MemberAccess	info . image_component_count		5410814	0					
+ANR	5411257	Identifier	info		5410814	0					
+ANR	5411258	Identifier	image_component_count		5410814	1					
+ANR	5411259	IncDec	++		5410814	1					
+ANR	5411260	ExpressionStatement	info . current_fw_time = cpu_to_le32 ( megasas_fw_time ( ) )	129:4:2480:2533	5410814	56	True				
+ANR	5411261	AssignmentExpression	info . current_fw_time = cpu_to_le32 ( megasas_fw_time ( ) )		5410814	0		=			
+ANR	5411262	MemberAccess	info . current_fw_time		5410814	0					
+ANR	5411263	Identifier	info		5410814	0					
+ANR	5411264	Identifier	current_fw_time		5410814	1					
+ANR	5411265	CallExpression	cpu_to_le32 ( megasas_fw_time ( ) )		5410814	1					
+ANR	5411266	Callee	cpu_to_le32		5410814	0					
+ANR	5411267	Identifier	cpu_to_le32		5410814	0					
+ANR	5411268	ArgumentList	megasas_fw_time ( )		5410814	1					
+ANR	5411269	Argument	megasas_fw_time ( )		5410814	0					
+ANR	5411270	CallExpression	megasas_fw_time ( )		5410814	0					
+ANR	5411271	Callee	megasas_fw_time		5410814	0					
+ANR	5411272	Identifier	megasas_fw_time		5410814	0					
+ANR	5411273	ArgumentList			5410814	1					
+ANR	5411274	ExpressionStatement	info . max_arms = 32	131:4:2540:2558	5410814	57	True				
+ANR	5411275	AssignmentExpression	info . max_arms = 32		5410814	0		=			
+ANR	5411276	MemberAccess	info . max_arms		5410814	0					
+ANR	5411277	Identifier	info		5410814	0					
+ANR	5411278	Identifier	max_arms		5410814	1					
+ANR	5411279	PrimaryExpression	32		5410814	1					
+ANR	5411280	ExpressionStatement	info . max_spans = 8	133:4:2565:2583	5410814	58	True				
+ANR	5411281	AssignmentExpression	info . max_spans = 8		5410814	0		=			
+ANR	5411282	MemberAccess	info . max_spans		5410814	0					
+ANR	5411283	Identifier	info		5410814	0					
+ANR	5411284	Identifier	max_spans		5410814	1					
+ANR	5411285	PrimaryExpression	8		5410814	1					
+ANR	5411286	ExpressionStatement	info . max_arrays = MEGASAS_MAX_ARRAYS	135:4:2590:2626	5410814	59	True				
+ANR	5411287	AssignmentExpression	info . max_arrays = MEGASAS_MAX_ARRAYS		5410814	0		=			
+ANR	5411288	MemberAccess	info . max_arrays		5410814	0					
+ANR	5411289	Identifier	info		5410814	0					
+ANR	5411290	Identifier	max_arrays		5410814	1					
+ANR	5411291	Identifier	MEGASAS_MAX_ARRAYS		5410814	1					
+ANR	5411292	ExpressionStatement	info . max_lds = s -> fw_luns	137:4:2633:2658	5410814	60	True				
+ANR	5411293	AssignmentExpression	info . max_lds = s -> fw_luns		5410814	0		=			
+ANR	5411294	MemberAccess	info . max_lds		5410814	0					
+ANR	5411295	Identifier	info		5410814	0					
+ANR	5411296	Identifier	max_lds		5410814	1					
+ANR	5411297	PtrMemberAccess	s -> fw_luns		5410814	1					
+ANR	5411298	Identifier	s		5410814	0					
+ANR	5411299	Identifier	fw_luns		5410814	1					
+ANR	5411300	ExpressionStatement	info . max_cmds = cpu_to_le16 ( s -> fw_cmds )	139:4:2665:2704	5410814	61	True				
+ANR	5411301	AssignmentExpression	info . max_cmds = cpu_to_le16 ( s -> fw_cmds )		5410814	0		=			
+ANR	5411302	MemberAccess	info . max_cmds		5410814	0					
+ANR	5411303	Identifier	info		5410814	0					
+ANR	5411304	Identifier	max_cmds		5410814	1					
+ANR	5411305	CallExpression	cpu_to_le16 ( s -> fw_cmds )		5410814	1					
+ANR	5411306	Callee	cpu_to_le16		5410814	0					
+ANR	5411307	Identifier	cpu_to_le16		5410814	0					
+ANR	5411308	ArgumentList	s -> fw_cmds		5410814	1					
+ANR	5411309	Argument	s -> fw_cmds		5410814	0					
+ANR	5411310	PtrMemberAccess	s -> fw_cmds		5410814	0					
+ANR	5411311	Identifier	s		5410814	0					
+ANR	5411312	Identifier	fw_cmds		5410814	1					
+ANR	5411313	ExpressionStatement	info . max_sg_elements = cpu_to_le16 ( s -> fw_sge )	141:4:2711:2756	5410814	62	True				
+ANR	5411314	AssignmentExpression	info . max_sg_elements = cpu_to_le16 ( s -> fw_sge )		5410814	0		=			
+ANR	5411315	MemberAccess	info . max_sg_elements		5410814	0					
+ANR	5411316	Identifier	info		5410814	0					
+ANR	5411317	Identifier	max_sg_elements		5410814	1					
+ANR	5411318	CallExpression	cpu_to_le16 ( s -> fw_sge )		5410814	1					
+ANR	5411319	Callee	cpu_to_le16		5410814	0					
+ANR	5411320	Identifier	cpu_to_le16		5410814	0					
+ANR	5411321	ArgumentList	s -> fw_sge		5410814	1					
+ANR	5411322	Argument	s -> fw_sge		5410814	0					
+ANR	5411323	PtrMemberAccess	s -> fw_sge		5410814	0					
+ANR	5411324	Identifier	s		5410814	0					
+ANR	5411325	Identifier	fw_sge		5410814	1					
+ANR	5411326	ExpressionStatement	info . max_request_size = cpu_to_le32 ( MEGASAS_MAX_SECTORS )	143:4:2763:2819	5410814	63	True				
+ANR	5411327	AssignmentExpression	info . max_request_size = cpu_to_le32 ( MEGASAS_MAX_SECTORS )		5410814	0		=			
+ANR	5411328	MemberAccess	info . max_request_size		5410814	0					
+ANR	5411329	Identifier	info		5410814	0					
+ANR	5411330	Identifier	max_request_size		5410814	1					
+ANR	5411331	CallExpression	cpu_to_le32 ( MEGASAS_MAX_SECTORS )		5410814	1					
+ANR	5411332	Callee	cpu_to_le32		5410814	0					
+ANR	5411333	Identifier	cpu_to_le32		5410814	0					
+ANR	5411334	ArgumentList	MEGASAS_MAX_SECTORS		5410814	1					
+ANR	5411335	Argument	MEGASAS_MAX_SECTORS		5410814	0					
+ANR	5411336	Identifier	MEGASAS_MAX_SECTORS		5410814	0					
+ANR	5411337	ExpressionStatement	info . lds_present = cpu_to_le16 ( num_ld_disks )	145:4:2826:2870	5410814	64	True				
+ANR	5411338	AssignmentExpression	info . lds_present = cpu_to_le16 ( num_ld_disks )		5410814	0		=			
+ANR	5411339	MemberAccess	info . lds_present		5410814	0					
+ANR	5411340	Identifier	info		5410814	0					
+ANR	5411341	Identifier	lds_present		5410814	1					
+ANR	5411342	CallExpression	cpu_to_le16 ( num_ld_disks )		5410814	1					
+ANR	5411343	Callee	cpu_to_le16		5410814	0					
+ANR	5411344	Identifier	cpu_to_le16		5410814	0					
+ANR	5411345	ArgumentList	num_ld_disks		5410814	1					
+ANR	5411346	Argument	num_ld_disks		5410814	0					
+ANR	5411347	Identifier	num_ld_disks		5410814	0					
+ANR	5411348	ExpressionStatement	info . pd_present = cpu_to_le16 ( num_ld_disks )	147:4:2877:2920	5410814	65	True				
+ANR	5411349	AssignmentExpression	info . pd_present = cpu_to_le16 ( num_ld_disks )		5410814	0		=			
+ANR	5411350	MemberAccess	info . pd_present		5410814	0					
+ANR	5411351	Identifier	info		5410814	0					
+ANR	5411352	Identifier	pd_present		5410814	1					
+ANR	5411353	CallExpression	cpu_to_le16 ( num_ld_disks )		5410814	1					
+ANR	5411354	Callee	cpu_to_le16		5410814	0					
+ANR	5411355	Identifier	cpu_to_le16		5410814	0					
+ANR	5411356	ArgumentList	num_ld_disks		5410814	1					
+ANR	5411357	Argument	num_ld_disks		5410814	0					
+ANR	5411358	Identifier	num_ld_disks		5410814	0					
+ANR	5411359	ExpressionStatement	info . pd_disks_present = cpu_to_le16 ( num_ld_disks )	149:4:2927:2976	5410814	66	True				
+ANR	5411360	AssignmentExpression	info . pd_disks_present = cpu_to_le16 ( num_ld_disks )		5410814	0		=			
+ANR	5411361	MemberAccess	info . pd_disks_present		5410814	0					
+ANR	5411362	Identifier	info		5410814	0					
+ANR	5411363	Identifier	pd_disks_present		5410814	1					
+ANR	5411364	CallExpression	cpu_to_le16 ( num_ld_disks )		5410814	1					
+ANR	5411365	Callee	cpu_to_le16		5410814	0					
+ANR	5411366	Identifier	cpu_to_le16		5410814	0					
+ANR	5411367	ArgumentList	num_ld_disks		5410814	1					
+ANR	5411368	Argument	num_ld_disks		5410814	0					
+ANR	5411369	Identifier	num_ld_disks		5410814	0					
+ANR	5411370	ExpressionStatement	info . hw_present = cpu_to_le32 ( MFI_INFO_HW_NVRAM | MFI_INFO_HW_MEM | MFI_INFO_HW_FLASH )	151:4:2983:3141	5410814	67	True				
+ANR	5411371	AssignmentExpression	info . hw_present = cpu_to_le32 ( MFI_INFO_HW_NVRAM | MFI_INFO_HW_MEM | MFI_INFO_HW_FLASH )		5410814	0		=			
+ANR	5411372	MemberAccess	info . hw_present		5410814	0					
+ANR	5411373	Identifier	info		5410814	0					
+ANR	5411374	Identifier	hw_present		5410814	1					
+ANR	5411375	CallExpression	cpu_to_le32 ( MFI_INFO_HW_NVRAM | MFI_INFO_HW_MEM | MFI_INFO_HW_FLASH )		5410814	1					
+ANR	5411376	Callee	cpu_to_le32		5410814	0					
+ANR	5411377	Identifier	cpu_to_le32		5410814	0					
+ANR	5411378	ArgumentList	MFI_INFO_HW_NVRAM | MFI_INFO_HW_MEM | MFI_INFO_HW_FLASH		5410814	1					
+ANR	5411379	Argument	MFI_INFO_HW_NVRAM | MFI_INFO_HW_MEM | MFI_INFO_HW_FLASH		5410814	0					
+ANR	5411380	InclusiveOrExpression	MFI_INFO_HW_NVRAM | MFI_INFO_HW_MEM | MFI_INFO_HW_FLASH		5410814	0		|			
+ANR	5411381	Identifier	MFI_INFO_HW_NVRAM		5410814	0					
+ANR	5411382	InclusiveOrExpression	MFI_INFO_HW_MEM | MFI_INFO_HW_FLASH		5410814	1		|			
+ANR	5411383	Identifier	MFI_INFO_HW_MEM		5410814	0					
+ANR	5411384	Identifier	MFI_INFO_HW_FLASH		5410814	1					
+ANR	5411385	ExpressionStatement	info . memory_size = cpu_to_le16 ( 512 )	157:4:3148:3183	5410814	68	True				
+ANR	5411386	AssignmentExpression	info . memory_size = cpu_to_le16 ( 512 )		5410814	0		=			
+ANR	5411387	MemberAccess	info . memory_size		5410814	0					
+ANR	5411388	Identifier	info		5410814	0					
+ANR	5411389	Identifier	memory_size		5410814	1					
+ANR	5411390	CallExpression	cpu_to_le16 ( 512 )		5410814	1					
+ANR	5411391	Callee	cpu_to_le16		5410814	0					
+ANR	5411392	Identifier	cpu_to_le16		5410814	0					
+ANR	5411393	ArgumentList	512		5410814	1					
+ANR	5411394	Argument	512		5410814	0					
+ANR	5411395	PrimaryExpression	512		5410814	0					
+ANR	5411396	ExpressionStatement	info . nvram_size = cpu_to_le16 ( 32 )	159:4:3190:3223	5410814	69	True				
+ANR	5411397	AssignmentExpression	info . nvram_size = cpu_to_le16 ( 32 )		5410814	0		=			
+ANR	5411398	MemberAccess	info . nvram_size		5410814	0					
+ANR	5411399	Identifier	info		5410814	0					
+ANR	5411400	Identifier	nvram_size		5410814	1					
+ANR	5411401	CallExpression	cpu_to_le16 ( 32 )		5410814	1					
+ANR	5411402	Callee	cpu_to_le16		5410814	0					
+ANR	5411403	Identifier	cpu_to_le16		5410814	0					
+ANR	5411404	ArgumentList	32		5410814	1					
+ANR	5411405	Argument	32		5410814	0					
+ANR	5411406	PrimaryExpression	32		5410814	0					
+ANR	5411407	ExpressionStatement	info . flash_size = cpu_to_le16 ( 16 )	161:4:3230:3263	5410814	70	True				
+ANR	5411408	AssignmentExpression	info . flash_size = cpu_to_le16 ( 16 )		5410814	0		=			
+ANR	5411409	MemberAccess	info . flash_size		5410814	0					
+ANR	5411410	Identifier	info		5410814	0					
+ANR	5411411	Identifier	flash_size		5410814	1					
+ANR	5411412	CallExpression	cpu_to_le16 ( 16 )		5410814	1					
+ANR	5411413	Callee	cpu_to_le16		5410814	0					
+ANR	5411414	Identifier	cpu_to_le16		5410814	0					
+ANR	5411415	ArgumentList	16		5410814	1					
+ANR	5411416	Argument	16		5410814	0					
+ANR	5411417	PrimaryExpression	16		5410814	0					
+ANR	5411418	ExpressionStatement	info . raid_levels = cpu_to_le32 ( MFI_INFO_RAID_0 )	163:4:3270:3317	5410814	71	True				
+ANR	5411419	AssignmentExpression	info . raid_levels = cpu_to_le32 ( MFI_INFO_RAID_0 )		5410814	0		=			
+ANR	5411420	MemberAccess	info . raid_levels		5410814	0					
+ANR	5411421	Identifier	info		5410814	0					
+ANR	5411422	Identifier	raid_levels		5410814	1					
+ANR	5411423	CallExpression	cpu_to_le32 ( MFI_INFO_RAID_0 )		5410814	1					
+ANR	5411424	Callee	cpu_to_le32		5410814	0					
+ANR	5411425	Identifier	cpu_to_le32		5410814	0					
+ANR	5411426	ArgumentList	MFI_INFO_RAID_0		5410814	1					
+ANR	5411427	Argument	MFI_INFO_RAID_0		5410814	0					
+ANR	5411428	Identifier	MFI_INFO_RAID_0		5410814	0					
+ANR	5411429	ExpressionStatement	info . adapter_ops = cpu_to_le32 ( MFI_INFO_AOPS_RBLD_RATE | MFI_INFO_AOPS_SELF_DIAGNOSTIC | MFI_INFO_AOPS_MIXED_ARRAY )	165:4:3324:3513	5410814	72	True				
+ANR	5411430	AssignmentExpression	info . adapter_ops = cpu_to_le32 ( MFI_INFO_AOPS_RBLD_RATE | MFI_INFO_AOPS_SELF_DIAGNOSTIC | MFI_INFO_AOPS_MIXED_ARRAY )		5410814	0		=			
+ANR	5411431	MemberAccess	info . adapter_ops		5410814	0					
+ANR	5411432	Identifier	info		5410814	0					
+ANR	5411433	Identifier	adapter_ops		5410814	1					
+ANR	5411434	CallExpression	cpu_to_le32 ( MFI_INFO_AOPS_RBLD_RATE | MFI_INFO_AOPS_SELF_DIAGNOSTIC | MFI_INFO_AOPS_MIXED_ARRAY )		5410814	1					
+ANR	5411435	Callee	cpu_to_le32		5410814	0					
+ANR	5411436	Identifier	cpu_to_le32		5410814	0					
+ANR	5411437	ArgumentList	MFI_INFO_AOPS_RBLD_RATE | MFI_INFO_AOPS_SELF_DIAGNOSTIC | MFI_INFO_AOPS_MIXED_ARRAY		5410814	1					
+ANR	5411438	Argument	MFI_INFO_AOPS_RBLD_RATE | MFI_INFO_AOPS_SELF_DIAGNOSTIC | MFI_INFO_AOPS_MIXED_ARRAY		5410814	0					
+ANR	5411439	InclusiveOrExpression	MFI_INFO_AOPS_RBLD_RATE | MFI_INFO_AOPS_SELF_DIAGNOSTIC | MFI_INFO_AOPS_MIXED_ARRAY		5410814	0		|			
+ANR	5411440	Identifier	MFI_INFO_AOPS_RBLD_RATE		5410814	0					
+ANR	5411441	InclusiveOrExpression	MFI_INFO_AOPS_SELF_DIAGNOSTIC | MFI_INFO_AOPS_MIXED_ARRAY		5410814	1		|			
+ANR	5411442	Identifier	MFI_INFO_AOPS_SELF_DIAGNOSTIC		5410814	0					
+ANR	5411443	Identifier	MFI_INFO_AOPS_MIXED_ARRAY		5410814	1					
+ANR	5411444	ExpressionStatement	info . ld_ops = cpu_to_le32 ( MFI_INFO_LDOPS_DISK_CACHE_POLICY | MFI_INFO_LDOPS_ACCESS_POLICY | MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY )	171:4:3520:3824	5410814	73	True				
+ANR	5411445	AssignmentExpression	info . ld_ops = cpu_to_le32 ( MFI_INFO_LDOPS_DISK_CACHE_POLICY | MFI_INFO_LDOPS_ACCESS_POLICY | MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY )		5410814	0		=			
+ANR	5411446	MemberAccess	info . ld_ops		5410814	0					
+ANR	5411447	Identifier	info		5410814	0					
+ANR	5411448	Identifier	ld_ops		5410814	1					
+ANR	5411449	CallExpression	cpu_to_le32 ( MFI_INFO_LDOPS_DISK_CACHE_POLICY | MFI_INFO_LDOPS_ACCESS_POLICY | MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY )		5410814	1					
+ANR	5411450	Callee	cpu_to_le32		5410814	0					
+ANR	5411451	Identifier	cpu_to_le32		5410814	0					
+ANR	5411452	ArgumentList	MFI_INFO_LDOPS_DISK_CACHE_POLICY | MFI_INFO_LDOPS_ACCESS_POLICY | MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY		5410814	1					
+ANR	5411453	Argument	MFI_INFO_LDOPS_DISK_CACHE_POLICY | MFI_INFO_LDOPS_ACCESS_POLICY | MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY		5410814	0					
+ANR	5411454	InclusiveOrExpression	MFI_INFO_LDOPS_DISK_CACHE_POLICY | MFI_INFO_LDOPS_ACCESS_POLICY | MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY		5410814	0		|			
+ANR	5411455	Identifier	MFI_INFO_LDOPS_DISK_CACHE_POLICY		5410814	0					
+ANR	5411456	InclusiveOrExpression	MFI_INFO_LDOPS_ACCESS_POLICY | MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY		5410814	1		|			
+ANR	5411457	Identifier	MFI_INFO_LDOPS_ACCESS_POLICY		5410814	0					
+ANR	5411458	InclusiveOrExpression	MFI_INFO_LDOPS_IO_POLICY | MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY		5410814	1		|			
+ANR	5411459	Identifier	MFI_INFO_LDOPS_IO_POLICY		5410814	0					
+ANR	5411460	InclusiveOrExpression	MFI_INFO_LDOPS_WRITE_POLICY | MFI_INFO_LDOPS_READ_POLICY		5410814	1		|			
+ANR	5411461	Identifier	MFI_INFO_LDOPS_WRITE_POLICY		5410814	0					
+ANR	5411462	Identifier	MFI_INFO_LDOPS_READ_POLICY		5410814	1					
+ANR	5411463	ExpressionStatement	info . max_strips_per_io = cpu_to_le16 ( s -> fw_sge )	181:4:3831:3878	5410814	74	True				
+ANR	5411464	AssignmentExpression	info . max_strips_per_io = cpu_to_le16 ( s -> fw_sge )		5410814	0		=			
+ANR	5411465	MemberAccess	info . max_strips_per_io		5410814	0					
+ANR	5411466	Identifier	info		5410814	0					
+ANR	5411467	Identifier	max_strips_per_io		5410814	1					
+ANR	5411468	CallExpression	cpu_to_le16 ( s -> fw_sge )		5410814	1					
+ANR	5411469	Callee	cpu_to_le16		5410814	0					
+ANR	5411470	Identifier	cpu_to_le16		5410814	0					
+ANR	5411471	ArgumentList	s -> fw_sge		5410814	1					
+ANR	5411472	Argument	s -> fw_sge		5410814	0					
+ANR	5411473	PtrMemberAccess	s -> fw_sge		5410814	0					
+ANR	5411474	Identifier	s		5410814	0					
+ANR	5411475	Identifier	fw_sge		5410814	1					
+ANR	5411476	ExpressionStatement	info . stripe_sz_ops . min = 3	183:4:3885:3911	5410814	75	True				
+ANR	5411477	AssignmentExpression	info . stripe_sz_ops . min = 3		5410814	0		=			
+ANR	5411478	MemberAccess	info . stripe_sz_ops . min		5410814	0					
+ANR	5411479	MemberAccess	info . stripe_sz_ops		5410814	0					
+ANR	5411480	Identifier	info		5410814	0					
+ANR	5411481	Identifier	stripe_sz_ops		5410814	1					
+ANR	5411482	Identifier	min		5410814	1					
+ANR	5411483	PrimaryExpression	3		5410814	1					
+ANR	5411484	ExpressionStatement	info . stripe_sz_ops . max = ffs ( MEGASAS_MAX_SECTORS + 1 ) - 1	185:4:3918:3975	5410814	76	True				
+ANR	5411485	AssignmentExpression	info . stripe_sz_ops . max = ffs ( MEGASAS_MAX_SECTORS + 1 ) - 1		5410814	0		=			
+ANR	5411486	MemberAccess	info . stripe_sz_ops . max		5410814	0					
+ANR	5411487	MemberAccess	info . stripe_sz_ops		5410814	0					
+ANR	5411488	Identifier	info		5410814	0					
+ANR	5411489	Identifier	stripe_sz_ops		5410814	1					
+ANR	5411490	Identifier	max		5410814	1					
+ANR	5411491	AdditiveExpression	ffs ( MEGASAS_MAX_SECTORS + 1 ) - 1		5410814	1		-			
+ANR	5411492	CallExpression	ffs ( MEGASAS_MAX_SECTORS + 1 )		5410814	0					
+ANR	5411493	Callee	ffs		5410814	0					
+ANR	5411494	Identifier	ffs		5410814	0					
+ANR	5411495	ArgumentList	MEGASAS_MAX_SECTORS + 1		5410814	1					
+ANR	5411496	Argument	MEGASAS_MAX_SECTORS + 1		5410814	0					
+ANR	5411497	AdditiveExpression	MEGASAS_MAX_SECTORS + 1		5410814	0		+			
+ANR	5411498	Identifier	MEGASAS_MAX_SECTORS		5410814	0					
+ANR	5411499	PrimaryExpression	1		5410814	1					
+ANR	5411500	PrimaryExpression	1		5410814	1					
+ANR	5411501	ExpressionStatement	info . properties . pred_fail_poll_interval = cpu_to_le16 ( 300 )	187:4:3982:4040	5410814	77	True				
+ANR	5411502	AssignmentExpression	info . properties . pred_fail_poll_interval = cpu_to_le16 ( 300 )		5410814	0		=			
+ANR	5411503	MemberAccess	info . properties . pred_fail_poll_interval		5410814	0					
+ANR	5411504	MemberAccess	info . properties		5410814	0					
+ANR	5411505	Identifier	info		5410814	0					
+ANR	5411506	Identifier	properties		5410814	1					
+ANR	5411507	Identifier	pred_fail_poll_interval		5410814	1					
+ANR	5411508	CallExpression	cpu_to_le16 ( 300 )		5410814	1					
+ANR	5411509	Callee	cpu_to_le16		5410814	0					
+ANR	5411510	Identifier	cpu_to_le16		5410814	0					
+ANR	5411511	ArgumentList	300		5410814	1					
+ANR	5411512	Argument	300		5410814	0					
+ANR	5411513	PrimaryExpression	300		5410814	0					
+ANR	5411514	ExpressionStatement	info . properties . intr_throttle_cnt = cpu_to_le16 ( 16 )	189:4:4047:4098	5410814	78	True				
+ANR	5411515	AssignmentExpression	info . properties . intr_throttle_cnt = cpu_to_le16 ( 16 )		5410814	0		=			
+ANR	5411516	MemberAccess	info . properties . intr_throttle_cnt		5410814	0					
+ANR	5411517	MemberAccess	info . properties		5410814	0					
+ANR	5411518	Identifier	info		5410814	0					
+ANR	5411519	Identifier	properties		5410814	1					
+ANR	5411520	Identifier	intr_throttle_cnt		5410814	1					
+ANR	5411521	CallExpression	cpu_to_le16 ( 16 )		5410814	1					
+ANR	5411522	Callee	cpu_to_le16		5410814	0					
+ANR	5411523	Identifier	cpu_to_le16		5410814	0					
+ANR	5411524	ArgumentList	16		5410814	1					
+ANR	5411525	Argument	16		5410814	0					
+ANR	5411526	PrimaryExpression	16		5410814	0					
+ANR	5411527	ExpressionStatement	info . properties . intr_throttle_timeout = cpu_to_le16 ( 50 )	191:4:4105:4160	5410814	79	True				
+ANR	5411528	AssignmentExpression	info . properties . intr_throttle_timeout = cpu_to_le16 ( 50 )		5410814	0		=			
+ANR	5411529	MemberAccess	info . properties . intr_throttle_timeout		5410814	0					
+ANR	5411530	MemberAccess	info . properties		5410814	0					
+ANR	5411531	Identifier	info		5410814	0					
+ANR	5411532	Identifier	properties		5410814	1					
+ANR	5411533	Identifier	intr_throttle_timeout		5410814	1					
+ANR	5411534	CallExpression	cpu_to_le16 ( 50 )		5410814	1					
+ANR	5411535	Callee	cpu_to_le16		5410814	0					
+ANR	5411536	Identifier	cpu_to_le16		5410814	0					
+ANR	5411537	ArgumentList	50		5410814	1					
+ANR	5411538	Argument	50		5410814	0					
+ANR	5411539	PrimaryExpression	50		5410814	0					
+ANR	5411540	ExpressionStatement	info . properties . rebuild_rate = 30	193:4:4167:4200	5410814	80	True				
+ANR	5411541	AssignmentExpression	info . properties . rebuild_rate = 30		5410814	0		=			
+ANR	5411542	MemberAccess	info . properties . rebuild_rate		5410814	0					
+ANR	5411543	MemberAccess	info . properties		5410814	0					
+ANR	5411544	Identifier	info		5410814	0					
+ANR	5411545	Identifier	properties		5410814	1					
+ANR	5411546	Identifier	rebuild_rate		5410814	1					
+ANR	5411547	PrimaryExpression	30		5410814	1					
+ANR	5411548	ExpressionStatement	info . properties . patrol_read_rate = 30	195:4:4207:4244	5410814	81	True				
+ANR	5411549	AssignmentExpression	info . properties . patrol_read_rate = 30		5410814	0		=			
+ANR	5411550	MemberAccess	info . properties . patrol_read_rate		5410814	0					
+ANR	5411551	MemberAccess	info . properties		5410814	0					
+ANR	5411552	Identifier	info		5410814	0					
+ANR	5411553	Identifier	properties		5410814	1					
+ANR	5411554	Identifier	patrol_read_rate		5410814	1					
+ANR	5411555	PrimaryExpression	30		5410814	1					
+ANR	5411556	ExpressionStatement	info . properties . bgi_rate = 30	197:4:4251:4280	5410814	82	True				
+ANR	5411557	AssignmentExpression	info . properties . bgi_rate = 30		5410814	0		=			
+ANR	5411558	MemberAccess	info . properties . bgi_rate		5410814	0					
+ANR	5411559	MemberAccess	info . properties		5410814	0					
+ANR	5411560	Identifier	info		5410814	0					
+ANR	5411561	Identifier	properties		5410814	1					
+ANR	5411562	Identifier	bgi_rate		5410814	1					
+ANR	5411563	PrimaryExpression	30		5410814	1					
+ANR	5411564	ExpressionStatement	info . properties . cc_rate = 30	199:4:4287:4315	5410814	83	True				
+ANR	5411565	AssignmentExpression	info . properties . cc_rate = 30		5410814	0		=			
+ANR	5411566	MemberAccess	info . properties . cc_rate		5410814	0					
+ANR	5411567	MemberAccess	info . properties		5410814	0					
+ANR	5411568	Identifier	info		5410814	0					
+ANR	5411569	Identifier	properties		5410814	1					
+ANR	5411570	Identifier	cc_rate		5410814	1					
+ANR	5411571	PrimaryExpression	30		5410814	1					
+ANR	5411572	ExpressionStatement	info . properties . recon_rate = 30	201:4:4322:4353	5410814	84	True				
+ANR	5411573	AssignmentExpression	info . properties . recon_rate = 30		5410814	0		=			
+ANR	5411574	MemberAccess	info . properties . recon_rate		5410814	0					
+ANR	5411575	MemberAccess	info . properties		5410814	0					
+ANR	5411576	Identifier	info		5410814	0					
+ANR	5411577	Identifier	properties		5410814	1					
+ANR	5411578	Identifier	recon_rate		5410814	1					
+ANR	5411579	PrimaryExpression	30		5410814	1					
+ANR	5411580	ExpressionStatement	info . properties . cache_flush_interval = 4	203:4:4360:4400	5410814	85	True				
+ANR	5411581	AssignmentExpression	info . properties . cache_flush_interval = 4		5410814	0		=			
+ANR	5411582	MemberAccess	info . properties . cache_flush_interval		5410814	0					
+ANR	5411583	MemberAccess	info . properties		5410814	0					
+ANR	5411584	Identifier	info		5410814	0					
+ANR	5411585	Identifier	properties		5410814	1					
+ANR	5411586	Identifier	cache_flush_interval		5410814	1					
+ANR	5411587	PrimaryExpression	4		5410814	1					
+ANR	5411588	ExpressionStatement	info . properties . spinup_drv_cnt = 2	205:4:4407:4441	5410814	86	True				
+ANR	5411589	AssignmentExpression	info . properties . spinup_drv_cnt = 2		5410814	0		=			
+ANR	5411590	MemberAccess	info . properties . spinup_drv_cnt		5410814	0					
+ANR	5411591	MemberAccess	info . properties		5410814	0					
+ANR	5411592	Identifier	info		5410814	0					
+ANR	5411593	Identifier	properties		5410814	1					
+ANR	5411594	Identifier	spinup_drv_cnt		5410814	1					
+ANR	5411595	PrimaryExpression	2		5410814	1					
+ANR	5411596	ExpressionStatement	info . properties . spinup_delay = 6	207:4:4448:4480	5410814	87	True				
+ANR	5411597	AssignmentExpression	info . properties . spinup_delay = 6		5410814	0		=			
+ANR	5411598	MemberAccess	info . properties . spinup_delay		5410814	0					
+ANR	5411599	MemberAccess	info . properties		5410814	0					
+ANR	5411600	Identifier	info		5410814	0					
+ANR	5411601	Identifier	properties		5410814	1					
+ANR	5411602	Identifier	spinup_delay		5410814	1					
+ANR	5411603	PrimaryExpression	6		5410814	1					
+ANR	5411604	ExpressionStatement	info . properties . ecc_bucket_size = 15	209:4:4487:4523	5410814	88	True				
+ANR	5411605	AssignmentExpression	info . properties . ecc_bucket_size = 15		5410814	0		=			
+ANR	5411606	MemberAccess	info . properties . ecc_bucket_size		5410814	0					
+ANR	5411607	MemberAccess	info . properties		5410814	0					
+ANR	5411608	Identifier	info		5410814	0					
+ANR	5411609	Identifier	properties		5410814	1					
+ANR	5411610	Identifier	ecc_bucket_size		5410814	1					
+ANR	5411611	PrimaryExpression	15		5410814	1					
+ANR	5411612	ExpressionStatement	info . properties . ecc_bucket_leak_rate = cpu_to_le16 ( 1440 )	211:4:4530:4586	5410814	89	True				
+ANR	5411613	AssignmentExpression	info . properties . ecc_bucket_leak_rate = cpu_to_le16 ( 1440 )		5410814	0		=			
+ANR	5411614	MemberAccess	info . properties . ecc_bucket_leak_rate		5410814	0					
+ANR	5411615	MemberAccess	info . properties		5410814	0					
+ANR	5411616	Identifier	info		5410814	0					
+ANR	5411617	Identifier	properties		5410814	1					
+ANR	5411618	Identifier	ecc_bucket_leak_rate		5410814	1					
+ANR	5411619	CallExpression	cpu_to_le16 ( 1440 )		5410814	1					
+ANR	5411620	Callee	cpu_to_le16		5410814	0					
+ANR	5411621	Identifier	cpu_to_le16		5410814	0					
+ANR	5411622	ArgumentList	1440		5410814	1					
+ANR	5411623	Argument	1440		5410814	0					
+ANR	5411624	PrimaryExpression	1440		5410814	0					
+ANR	5411625	ExpressionStatement	info . properties . expose_encl_devices = 1	213:4:4593:4632	5410814	90	True				
+ANR	5411626	AssignmentExpression	info . properties . expose_encl_devices = 1		5410814	0		=			
+ANR	5411627	MemberAccess	info . properties . expose_encl_devices		5410814	0					
+ANR	5411628	MemberAccess	info . properties		5410814	0					
+ANR	5411629	Identifier	info		5410814	0					
+ANR	5411630	Identifier	properties		5410814	1					
+ANR	5411631	Identifier	expose_encl_devices		5410814	1					
+ANR	5411632	PrimaryExpression	1		5410814	1					
+ANR	5411633	ExpressionStatement	info . properties . OnOffProperties = cpu_to_le32 ( MFI_CTRL_PROP_EnableJBOD )	215:4:4639:4710	5410814	91	True				
+ANR	5411634	AssignmentExpression	info . properties . OnOffProperties = cpu_to_le32 ( MFI_CTRL_PROP_EnableJBOD )		5410814	0		=			
+ANR	5411635	MemberAccess	info . properties . OnOffProperties		5410814	0					
+ANR	5411636	MemberAccess	info . properties		5410814	0					
+ANR	5411637	Identifier	info		5410814	0					
+ANR	5411638	Identifier	properties		5410814	1					
+ANR	5411639	Identifier	OnOffProperties		5410814	1					
+ANR	5411640	CallExpression	cpu_to_le32 ( MFI_CTRL_PROP_EnableJBOD )		5410814	1					
+ANR	5411641	Callee	cpu_to_le32		5410814	0					
+ANR	5411642	Identifier	cpu_to_le32		5410814	0					
+ANR	5411643	ArgumentList	MFI_CTRL_PROP_EnableJBOD		5410814	1					
+ANR	5411644	Argument	MFI_CTRL_PROP_EnableJBOD		5410814	0					
+ANR	5411645	Identifier	MFI_CTRL_PROP_EnableJBOD		5410814	0					
+ANR	5411646	ExpressionStatement	info . pd_ops = cpu_to_le32 ( MFI_INFO_PDOPS_FORCE_ONLINE | MFI_INFO_PDOPS_FORCE_OFFLINE )	217:4:4717:4834	5410814	92	True				
+ANR	5411647	AssignmentExpression	info . pd_ops = cpu_to_le32 ( MFI_INFO_PDOPS_FORCE_ONLINE | MFI_INFO_PDOPS_FORCE_OFFLINE )		5410814	0		=			
+ANR	5411648	MemberAccess	info . pd_ops		5410814	0					
+ANR	5411649	Identifier	info		5410814	0					
+ANR	5411650	Identifier	pd_ops		5410814	1					
+ANR	5411651	CallExpression	cpu_to_le32 ( MFI_INFO_PDOPS_FORCE_ONLINE | MFI_INFO_PDOPS_FORCE_OFFLINE )		5410814	1					
+ANR	5411652	Callee	cpu_to_le32		5410814	0					
+ANR	5411653	Identifier	cpu_to_le32		5410814	0					
+ANR	5411654	ArgumentList	MFI_INFO_PDOPS_FORCE_ONLINE | MFI_INFO_PDOPS_FORCE_OFFLINE		5410814	1					
+ANR	5411655	Argument	MFI_INFO_PDOPS_FORCE_ONLINE | MFI_INFO_PDOPS_FORCE_OFFLINE		5410814	0					
+ANR	5411656	InclusiveOrExpression	MFI_INFO_PDOPS_FORCE_ONLINE | MFI_INFO_PDOPS_FORCE_OFFLINE		5410814	0		|			
+ANR	5411657	Identifier	MFI_INFO_PDOPS_FORCE_ONLINE		5410814	0					
+ANR	5411658	Identifier	MFI_INFO_PDOPS_FORCE_OFFLINE		5410814	1					
+ANR	5411659	ExpressionStatement	info . pd_mix_support = cpu_to_le32 ( MFI_INFO_PDMIX_SAS | MFI_INFO_PDMIX_SATA | MFI_INFO_PDMIX_LD )	221:4:4841:5016	5410814	93	True				
+ANR	5411660	AssignmentExpression	info . pd_mix_support = cpu_to_le32 ( MFI_INFO_PDMIX_SAS | MFI_INFO_PDMIX_SATA | MFI_INFO_PDMIX_LD )		5410814	0		=			
+ANR	5411661	MemberAccess	info . pd_mix_support		5410814	0					
+ANR	5411662	Identifier	info		5410814	0					
+ANR	5411663	Identifier	pd_mix_support		5410814	1					
+ANR	5411664	CallExpression	cpu_to_le32 ( MFI_INFO_PDMIX_SAS | MFI_INFO_PDMIX_SATA | MFI_INFO_PDMIX_LD )		5410814	1					
+ANR	5411665	Callee	cpu_to_le32		5410814	0					
+ANR	5411666	Identifier	cpu_to_le32		5410814	0					
+ANR	5411667	ArgumentList	MFI_INFO_PDMIX_SAS | MFI_INFO_PDMIX_SATA | MFI_INFO_PDMIX_LD		5410814	1					
+ANR	5411668	Argument	MFI_INFO_PDMIX_SAS | MFI_INFO_PDMIX_SATA | MFI_INFO_PDMIX_LD		5410814	0					
+ANR	5411669	InclusiveOrExpression	MFI_INFO_PDMIX_SAS | MFI_INFO_PDMIX_SATA | MFI_INFO_PDMIX_LD		5410814	0		|			
+ANR	5411670	Identifier	MFI_INFO_PDMIX_SAS		5410814	0					
+ANR	5411671	InclusiveOrExpression	MFI_INFO_PDMIX_SATA | MFI_INFO_PDMIX_LD		5410814	1		|			
+ANR	5411672	Identifier	MFI_INFO_PDMIX_SATA		5410814	0					
+ANR	5411673	Identifier	MFI_INFO_PDMIX_LD		5410814	1					
+ANR	5411674	ExpressionStatement	"cmd -> iov_size -= dma_buf_read ( ( uint8_t * ) & info , dcmd_size , & cmd -> qsg )"	229:4:5025:5094	5410814	94	True				
+ANR	5411675	AssignmentExpression	"cmd -> iov_size -= dma_buf_read ( ( uint8_t * ) & info , dcmd_size , & cmd -> qsg )"		5410814	0		-=			
+ANR	5411676	PtrMemberAccess	cmd -> iov_size		5410814	0					
+ANR	5411677	Identifier	cmd		5410814	0					
+ANR	5411678	Identifier	iov_size		5410814	1					
+ANR	5411679	CallExpression	"dma_buf_read ( ( uint8_t * ) & info , dcmd_size , & cmd -> qsg )"		5410814	1					
+ANR	5411680	Callee	dma_buf_read		5410814	0					
+ANR	5411681	Identifier	dma_buf_read		5410814	0					
+ANR	5411682	ArgumentList	( uint8_t * ) & info		5410814	1					
+ANR	5411683	Argument	( uint8_t * ) & info		5410814	0					
+ANR	5411684	CastExpression	( uint8_t * ) & info		5410814	0					
+ANR	5411685	CastTarget	uint8_t *		5410814	0					
+ANR	5411686	UnaryOperationExpression	& info		5410814	1					
+ANR	5411687	UnaryOperator	&		5410814	0					
+ANR	5411688	Identifier	info		5410814	1					
+ANR	5411689	Argument	dcmd_size		5410814	1					
+ANR	5411690	Identifier	dcmd_size		5410814	0					
+ANR	5411691	Argument	& cmd -> qsg		5410814	2					
+ANR	5411692	UnaryOperationExpression	& cmd -> qsg		5410814	0					
+ANR	5411693	UnaryOperator	&		5410814	0					
+ANR	5411694	PtrMemberAccess	cmd -> qsg		5410814	1					
+ANR	5411695	Identifier	cmd		5410814	0					
+ANR	5411696	Identifier	qsg		5410814	1					
+ANR	5411697	ReturnStatement	return MFI_STAT_OK ;	231:4:5101:5119	5410814	95	True				
+ANR	5411698	Identifier	MFI_STAT_OK		5410814	0					
+ANR	5411699	ReturnType	static int		5410814	1					
+ANR	5411700	Identifier	megasas_ctrl_get_info		5410814	2					
+ANR	5411701	ParameterList	"MegasasState * s , MegasasCmd * cmd"		5410814	3					
+ANR	5411702	Parameter	MegasasState * s	1:33:33:47	5410814	0	True				
+ANR	5411703	ParameterType	MegasasState *		5410814	0					
+ANR	5411704	Identifier	s		5410814	1					
+ANR	5411705	Parameter	MegasasCmd * cmd	1:50:50:64	5410814	1	True				
+ANR	5411706	ParameterType	MegasasCmd *		5410814	0					
+ANR	5411707	Identifier	cmd		5410814	1					
+ANR	5411708	CFGEntryNode	ENTRY		5410814		True				
+ANR	5411709	CFGExitNode	EXIT		5410814		True				
+ANR	5411710	Symbol	info . ld_ops		5410814						
+ANR	5411711	Symbol	MFI_INFO_AOPS_SELF_DIAGNOSTIC		5410814						
+ANR	5411712	Symbol	info . pd_disks_present		5410814						
+ANR	5411713	Symbol	info . image_component [ 1 ] . version		5410814						
+ANR	5411714	Symbol	& cmd -> qsg		5410814						
+ANR	5411715	Symbol	MFI_INFO_PDOPS_FORCE_OFFLINE		5410814						
+ANR	5411716	Symbol	info . device . type		5410814						
+ANR	5411717	Symbol	s -> fw_sge		5410814						
+ANR	5411718	Symbol	info . properties . spinup_delay		5410814						
+ANR	5411719	Symbol	* info . image_component		5410814						
+ANR	5411720	Symbol	info . properties . ecc_bucket_leak_rate		5410814						
+ANR	5411721	Symbol	info . properties . bgi_rate		5410814						
+ANR	5411722	Symbol	info . image_component [ 0 ] . build_date		5410814						
+ANR	5411723	Symbol	info . properties . recon_rate		5410814						
+ANR	5411724	Symbol	MEGASAS_MAX_ARRAYS		5410814						
+ANR	5411725	Symbol	* cmd		5410814						
+ANR	5411726	Symbol	info . max_spans		5410814						
+ANR	5411727	Symbol	info . raid_levels		5410814						
+ANR	5411728	Symbol	DO_UPCAST		5410814						
+ANR	5411729	Symbol	s -> fw_luns		5410814						
+ANR	5411730	Symbol	info . image_component [ 0 ] . build_time		5410814						
+ANR	5411731	Symbol	__DATE__		5410814						
+ANR	5411732	Symbol	info . properties . cache_flush_interval		5410814						
+ANR	5411733	Symbol	qdev		5410814						
+ANR	5411734	Symbol	__TIME__		5410814						
+ANR	5411735	Symbol	MFI_INFO_LDOPS_READ_POLICY		5410814						
+ANR	5411736	Symbol	cpu_to_le64		5410814						
+ANR	5411737	Symbol	info . image_component [ 1 ] . name		5410814						
+ANR	5411738	Symbol	info . properties		5410814						
+ANR	5411739	Symbol	MFI_INFO_AOPS_MIXED_ARRAY		5410814						
+ANR	5411740	Symbol	info . pci . subvendor		5410814						
+ANR	5411741	Symbol	info . properties . rebuild_rate		5410814						
+ANR	5411742	Symbol	cmd		5410814						
+ANR	5411743	Symbol	info . max_request_size		5410814						
+ANR	5411744	Symbol	MFI_INFO_PDMIX_SAS		5410814						
+ANR	5411745	Symbol	MFI_INFO_LDOPS_IO_POLICY		5410814						
+ANR	5411746	Symbol	info . stripe_sz_ops		5410814						
+ANR	5411747	Symbol	cmd -> iov_size		5410814						
+ANR	5411748	Symbol	MFI_CTRL_PROP_EnableJBOD		5410814						
+ANR	5411749	Symbol	info . device . port_addr		5410814						
+ANR	5411750	Symbol	info . nvram_size		5410814						
+ANR	5411751	Symbol	info . serial_number		5410814						
+ANR	5411752	Symbol	info . pci . device		5410814						
+ANR	5411753	Symbol	MFI_INFO_HW_NVRAM		5410814						
+ANR	5411754	Symbol	info . properties . cc_rate		5410814						
+ANR	5411755	Symbol	MFI_INFO_PDOPS_FORCE_ONLINE		5410814						
+ANR	5411756	Symbol	* sdev		5410814						
+ANR	5411757	Symbol	info . image_component [ 0 ] . name		5410814						
+ANR	5411758	Symbol	megasas_fw_time		5410814						
+ANR	5411759	Symbol	info . package_version		5410814						
+ANR	5411760	Symbol	memory_region_get_ram_ptr		5410814						
+ANR	5411761	Symbol	PCI_VENDOR_ID_LSI_LOGIC		5410814						
+ANR	5411762	Symbol	MFI_STAT_INVALID_PARAMETER		5410814						
+ANR	5411763	Symbol	sdev_id		5410814						
+ANR	5411764	Symbol	info . host		5410814						
+ANR	5411765	Symbol	* info . device . port_addr		5410814						
+ANR	5411766	Symbol	pci_dev -> has_rom		5410814						
+ANR	5411767	Symbol	info . max_strips_per_io		5410814						
+ANR	5411768	Symbol	s		5410814						
+ANR	5411769	Symbol	sdev -> lun		5410814						
+ANR	5411770	Symbol	MFI_INFO_HW_FLASH		5410814						
+ANR	5411771	Symbol	* info		5410814						
+ANR	5411772	Symbol	PCI_DEVICE		5410814						
+ANR	5411773	Symbol	MFI_INFO_PDMIX_SATA		5410814						
+ANR	5411774	Symbol	info . properties . spinup_drv_cnt		5410814						
+ANR	5411775	Symbol	megasas_get_sata_addr		5410814						
+ANR	5411776	Symbol	PCI_DEVICE_ID_LSI_SAS1078		5410814						
+ANR	5411777	Symbol	info . memory_size		5410814						
+ANR	5411778	Symbol	MFI_INFO_HOST_PCIE		5410814						
+ANR	5411779	Symbol	& pci_dev -> rom		5410814						
+ANR	5411780	Symbol	info . pd_mix_support		5410814						
+ANR	5411781	Symbol	info . image_component_count		5410814						
+ANR	5411782	Symbol	strlen		5410814						
+ANR	5411783	Symbol	MFI_STAT_OK		5410814						
+ANR	5411784	Symbol	info . pd_present		5410814						
+ANR	5411785	Symbol	info . max_lds		5410814						
+ANR	5411786	Symbol	info . properties . patrol_read_rate		5410814						
+ANR	5411787	Symbol	MFI_INFO_PDMIX_LD		5410814						
+ANR	5411788	Symbol	cpu_to_le16		5410814						
+ANR	5411789	Symbol	info . lds_present		5410814						
+ANR	5411790	Symbol	info		5410814						
+ANR	5411791	Symbol	dma_buf_read		5410814						
+ANR	5411792	Symbol	info . product_name		5410814						
+ANR	5411793	Symbol	& info		5410814						
+ANR	5411794	Symbol	MFI_INFO_LDOPS_ACCESS_POLICY		5410814						
+ANR	5411795	Symbol	dcmd_size		5410814						
+ANR	5411796	Symbol	info . adapter_ops		5410814						
+ANR	5411797	Symbol	info . max_sg_elements		5410814						
+ANR	5411798	Symbol	SCSIDevice		5410814						
+ANR	5411799	Symbol	* kid		5410814						
+ANR	5411800	Symbol	MFI_INFO_AOPS_RBLD_RATE		5410814						
+ANR	5411801	Symbol	pci_dev		5410814						
+ANR	5411802	Symbol	info . pci . vendor		5410814						
+ANR	5411803	Symbol	ffs		5410814						
+ANR	5411804	Symbol	info . pci		5410814						
+ANR	5411805	Symbol	info . image_component		5410814						
+ANR	5411806	Symbol	MFI_INFO_RAID_0		5410814						
+ANR	5411807	Symbol	* num_ld_disks		5410814						
+ANR	5411808	Symbol	MFI_INFO_HW_MEM		5410814						
+ANR	5411809	Symbol	* info . device		5410814						
+ANR	5411810	Symbol	info . device . port_count		5410814						
+ANR	5411811	Symbol	s -> fw_cmds		5410814						
+ANR	5411812	Symbol	MFI_INFO_DEV_SAS3G		5410814						
+ANR	5411813	Symbol	MFI_INFO_LDOPS_WRITE_POLICY		5410814						
+ANR	5411814	Symbol	kid		5410814						
+ANR	5411815	Symbol	info . flash_size		5410814						
+ANR	5411816	Symbol	num_ld_disks		5410814						
+ANR	5411817	Symbol	* pci_dev		5410814						
+ANR	5411818	Symbol	QEMU_VERSION		5410814						
+ANR	5411819	Symbol	info . max_arms		5410814						
+ANR	5411820	Symbol	info . properties . intr_throttle_timeout		5410814						
+ANR	5411821	Symbol	info . host . type		5410814						
+ANR	5411822	Symbol	s -> hba_serial		5410814						
+ANR	5411823	Symbol	MEGASAS_MAX_SECTORS		5410814						
+ANR	5411824	Symbol	cpu_to_le32		5410814						
+ANR	5411825	Symbol	info . max_arrays		5410814						
+ANR	5411826	Symbol	info . properties . OnOffProperties		5410814						
+ANR	5411827	Symbol	info . hw_present		5410814						
+ANR	5411828	Symbol	info . current_fw_time		5410814						
+ANR	5411829	Symbol	info . stripe_sz_ops . min		5410814						
+ANR	5411830	Symbol	kid -> child		5410814						
+ANR	5411831	Symbol	info . pd_ops		5410814						
+ANR	5411832	Symbol	info . pci . subdevice		5410814						
+ANR	5411833	Symbol	info . properties . expose_encl_devices		5410814						
+ANR	5411834	Symbol	sdev -> id		5410814						
+ANR	5411835	Symbol	MFI_INFO_LDOPS_DISK_CACHE_POLICY		5410814						
+ANR	5411836	Symbol	ptr		5410814						
+ANR	5411837	Symbol	info . max_cmds		5410814						
+ANR	5411838	Symbol	info . properties . intr_throttle_cnt		5410814						
+ANR	5411839	Symbol	info . stripe_sz_ops . max		5410814						
+ANR	5411840	Symbol	info . properties . ecc_bucket_size		5410814						
+ANR	5411841	Symbol	cmd -> index		5410814						
+ANR	5411842	Symbol	sdev		5410814						
+ANR	5411843	Symbol	biosver		5410814						
+ANR	5411844	Symbol	info . device		5410814						
+ANR	5411845	Symbol	* s		5410814						
+ANR	5411846	Symbol	info . properties . pred_fail_poll_interval		5410814						

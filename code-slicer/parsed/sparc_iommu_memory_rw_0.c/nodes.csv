@@ -1,0 +1,164 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7961944	File	/home/p4ultr4n/workplace/ReVeal/raw_code/sparc_iommu_memory_rw_0.c								
+ANR	7961945	Function	sparc_iommu_memory_rw	1:0:0:845							
+ANR	7961946	FunctionDef	"sparc_iommu_memory_rw (void * opaque , target_phys_addr_t addr , uint8_t * buf , int len , int is_write)"		7961945	0					
+ANR	7961947	CompoundStatement		5:0:132:845	7961945	0					
+ANR	7961948	IdentifierDeclStatement	int l ;	7:4:139:144	7961945	0	True				
+ANR	7961949	IdentifierDecl	l		7961945	0					
+ANR	7961950	IdentifierDeclType	int		7961945	0					
+ANR	7961951	Identifier	l		7961945	1					
+ANR	7961952	IdentifierDeclStatement	uint32_t flags ;	9:4:151:165	7961945	1	True				
+ANR	7961953	IdentifierDecl	flags		7961945	0					
+ANR	7961954	IdentifierDeclType	uint32_t		7961945	0					
+ANR	7961955	Identifier	flags		7961945	1					
+ANR	7961956	IdentifierDeclStatement	"target_phys_addr_t page , phys_addr ;"	11:4:172:206	7961945	2	True				
+ANR	7961957	IdentifierDecl	page		7961945	0					
+ANR	7961958	IdentifierDeclType	target_phys_addr_t		7961945	0					
+ANR	7961959	Identifier	page		7961945	1					
+ANR	7961960	IdentifierDecl	phys_addr		7961945	1					
+ANR	7961961	IdentifierDeclType	target_phys_addr_t		7961945	0					
+ANR	7961962	Identifier	phys_addr		7961945	1					
+ANR	7961963	WhileStatement	while ( len > 0 )		7961945	3					
+ANR	7961964	Condition	len > 0	15:11:222:228	7961945	0	True				
+ANR	7961965	RelationalExpression	len > 0		7961945	0		>			
+ANR	7961966	Identifier	len		7961945	0					
+ANR	7961967	PrimaryExpression	0		7961945	1					
+ANR	7961968	CompoundStatement		11:20:98:98	7961945	1					
+ANR	7961969	ExpressionStatement	page = addr & TARGET_PAGE_MASK	17:8:242:272	7961945	0	True				
+ANR	7961970	AssignmentExpression	page = addr & TARGET_PAGE_MASK		7961945	0		=			
+ANR	7961971	Identifier	page		7961945	0					
+ANR	7961972	BitAndExpression	addr & TARGET_PAGE_MASK		7961945	1		&			
+ANR	7961973	Identifier	addr		7961945	0					
+ANR	7961974	Identifier	TARGET_PAGE_MASK		7961945	1					
+ANR	7961975	ExpressionStatement	l = ( page + TARGET_PAGE_SIZE ) - addr	19:8:283:319	7961945	1	True				
+ANR	7961976	AssignmentExpression	l = ( page + TARGET_PAGE_SIZE ) - addr		7961945	0		=			
+ANR	7961977	Identifier	l		7961945	0					
+ANR	7961978	AdditiveExpression	( page + TARGET_PAGE_SIZE ) - addr		7961945	1		-			
+ANR	7961979	AdditiveExpression	page + TARGET_PAGE_SIZE		7961945	0		+			
+ANR	7961980	Identifier	page		7961945	0					
+ANR	7961981	Identifier	TARGET_PAGE_SIZE		7961945	1					
+ANR	7961982	Identifier	addr		7961945	1					
+ANR	7961983	IfStatement	if ( l > len )		7961945	2					
+ANR	7961984	Condition	l > len	21:12:334:340	7961945	0	True				
+ANR	7961985	RelationalExpression	l > len		7961945	0		>			
+ANR	7961986	Identifier	l		7961945	0					
+ANR	7961987	Identifier	len		7961945	1					
+ANR	7961988	ExpressionStatement	l = len	23:12:356:363	7961945	1	True				
+ANR	7961989	AssignmentExpression	l = len		7961945	0		=			
+ANR	7961990	Identifier	l		7961945	0					
+ANR	7961991	Identifier	len		7961945	1					
+ANR	7961992	ExpressionStatement	"flags = iommu_page_get_flags ( opaque , page )"	25:8:374:416	7961945	3	True				
+ANR	7961993	AssignmentExpression	"flags = iommu_page_get_flags ( opaque , page )"		7961945	0		=			
+ANR	7961994	Identifier	flags		7961945	0					
+ANR	7961995	CallExpression	"iommu_page_get_flags ( opaque , page )"		7961945	1					
+ANR	7961996	Callee	iommu_page_get_flags		7961945	0					
+ANR	7961997	Identifier	iommu_page_get_flags		7961945	0					
+ANR	7961998	ArgumentList	opaque		7961945	1					
+ANR	7961999	Argument	opaque		7961945	0					
+ANR	7962000	Identifier	opaque		7961945	0					
+ANR	7962001	Argument	page		7961945	1					
+ANR	7962002	Identifier	page		7961945	0					
+ANR	7962003	IfStatement	if ( ! ( flags & IOPTE_VALID ) )		7961945	4					
+ANR	7962004	Condition	! ( flags & IOPTE_VALID )	27:12:431:452	7961945	0	True				
+ANR	7962005	UnaryOperationExpression	! ( flags & IOPTE_VALID )		7961945	0					
+ANR	7962006	UnaryOperator	!		7961945	0					
+ANR	7962007	BitAndExpression	flags & IOPTE_VALID		7961945	1		&			
+ANR	7962008	Identifier	flags		7961945	0					
+ANR	7962009	Identifier	IOPTE_VALID		7961945	1					
+ANR	7962010	ReturnStatement	return ;	29:12:468:474	7961945	1	True				
+ANR	7962011	ExpressionStatement	"phys_addr = iommu_translate_pa ( opaque , addr , flags )"	31:8:485:536	7961945	5	True				
+ANR	7962012	AssignmentExpression	"phys_addr = iommu_translate_pa ( opaque , addr , flags )"		7961945	0		=			
+ANR	7962013	Identifier	phys_addr		7961945	0					
+ANR	7962014	CallExpression	"iommu_translate_pa ( opaque , addr , flags )"		7961945	1					
+ANR	7962015	Callee	iommu_translate_pa		7961945	0					
+ANR	7962016	Identifier	iommu_translate_pa		7961945	0					
+ANR	7962017	ArgumentList	opaque		7961945	1					
+ANR	7962018	Argument	opaque		7961945	0					
+ANR	7962019	Identifier	opaque		7961945	0					
+ANR	7962020	Argument	addr		7961945	1					
+ANR	7962021	Identifier	addr		7961945	0					
+ANR	7962022	Argument	flags		7961945	2					
+ANR	7962023	Identifier	flags		7961945	0					
+ANR	7962024	IfStatement	if ( is_write )		7961945	6					
+ANR	7962025	Condition	is_write	33:12:551:558	7961945	0	True				
+ANR	7962026	Identifier	is_write		7961945	0					
+ANR	7962027	CompoundStatement		29:22:428:428	7961945	1					
+ANR	7962028	IfStatement	if ( ! ( flags & IOPTE_WRITE ) )		7961945	0					
+ANR	7962029	Condition	! ( flags & IOPTE_WRITE )	35:16:580:601	7961945	0	True				
+ANR	7962030	UnaryOperationExpression	! ( flags & IOPTE_WRITE )		7961945	0					
+ANR	7962031	UnaryOperator	!		7961945	0					
+ANR	7962032	BitAndExpression	flags & IOPTE_WRITE		7961945	1		&			
+ANR	7962033	Identifier	flags		7961945	0					
+ANR	7962034	Identifier	IOPTE_WRITE		7961945	1					
+ANR	7962035	ReturnStatement	return ;	37:16:621:627	7961945	1	True				
+ANR	7962036	ExpressionStatement	"cpu_physical_memory_write ( phys_addr , buf , len )"	39:12:642:688	7961945	1	True				
+ANR	7962037	CallExpression	"cpu_physical_memory_write ( phys_addr , buf , len )"		7961945	0					
+ANR	7962038	Callee	cpu_physical_memory_write		7961945	0					
+ANR	7962039	Identifier	cpu_physical_memory_write		7961945	0					
+ANR	7962040	ArgumentList	phys_addr		7961945	1					
+ANR	7962041	Argument	phys_addr		7961945	0					
+ANR	7962042	Identifier	phys_addr		7961945	0					
+ANR	7962043	Argument	buf		7961945	1					
+ANR	7962044	Identifier	buf		7961945	0					
+ANR	7962045	Argument	len		7961945	2					
+ANR	7962046	Identifier	len		7961945	0					
+ANR	7962047	ElseStatement	else		7961945	0					
+ANR	7962048	CompoundStatement		37:15:573:573	7961945	0					
+ANR	7962049	ExpressionStatement	"cpu_physical_memory_read ( phys_addr , buf , len )"	43:12:721:766	7961945	0	True				
+ANR	7962050	CallExpression	"cpu_physical_memory_read ( phys_addr , buf , len )"		7961945	0					
+ANR	7962051	Callee	cpu_physical_memory_read		7961945	0					
+ANR	7962052	Identifier	cpu_physical_memory_read		7961945	0					
+ANR	7962053	ArgumentList	phys_addr		7961945	1					
+ANR	7962054	Argument	phys_addr		7961945	0					
+ANR	7962055	Identifier	phys_addr		7961945	0					
+ANR	7962056	Argument	buf		7961945	1					
+ANR	7962057	Identifier	buf		7961945	0					
+ANR	7962058	Argument	len		7961945	2					
+ANR	7962059	Identifier	len		7961945	0					
+ANR	7962060	ExpressionStatement	len -= l	47:8:788:796	7961945	7	True				
+ANR	7962061	AssignmentExpression	len -= l		7961945	0		-=			
+ANR	7962062	Identifier	len		7961945	0					
+ANR	7962063	Identifier	l		7961945	1					
+ANR	7962064	ExpressionStatement	buf += l	49:8:807:815	7961945	8	True				
+ANR	7962065	AssignmentExpression	buf += l		7961945	0		+=			
+ANR	7962066	Identifier	buf		7961945	0					
+ANR	7962067	Identifier	l		7961945	1					
+ANR	7962068	ExpressionStatement	addr += l	51:8:826:835	7961945	9	True				
+ANR	7962069	AssignmentExpression	addr += l		7961945	0		+=			
+ANR	7962070	Identifier	addr		7961945	0					
+ANR	7962071	Identifier	l		7961945	1					
+ANR	7962072	ReturnType	void		7961945	1					
+ANR	7962073	Identifier	sparc_iommu_memory_rw		7961945	2					
+ANR	7962074	ParameterList	"void * opaque , target_phys_addr_t addr , uint8_t * buf , int len , int is_write"		7961945	3					
+ANR	7962075	Parameter	void * opaque	1:27:27:38	7961945	0	True				
+ANR	7962076	ParameterType	void *		7961945	0					
+ANR	7962077	Identifier	opaque		7961945	1					
+ANR	7962078	Parameter	target_phys_addr_t addr	1:41:41:63	7961945	1	True				
+ANR	7962079	ParameterType	target_phys_addr_t		7961945	0					
+ANR	7962080	Identifier	addr		7961945	1					
+ANR	7962081	Parameter	uint8_t * buf	3:27:94:105	7961945	2	True				
+ANR	7962082	ParameterType	uint8_t *		7961945	0					
+ANR	7962083	Identifier	buf		7961945	1					
+ANR	7962084	Parameter	int len	3:41:108:114	7961945	3	True				
+ANR	7962085	ParameterType	int		7961945	0					
+ANR	7962086	Identifier	len		7961945	1					
+ANR	7962087	Parameter	int is_write	3:50:117:128	7961945	4	True				
+ANR	7962088	ParameterType	int		7961945	0					
+ANR	7962089	Identifier	is_write		7961945	1					
+ANR	7962090	CFGEntryNode	ENTRY		7961945		True				
+ANR	7962091	CFGExitNode	EXIT		7961945		True				
+ANR	7962092	Symbol	iommu_translate_pa		7961945						
+ANR	7962093	Symbol	opaque		7961945						
+ANR	7962094	Symbol	flags		7961945						
+ANR	7962095	Symbol	TARGET_PAGE_MASK		7961945						
+ANR	7962096	Symbol	TARGET_PAGE_SIZE		7961945						
+ANR	7962097	Symbol	is_write		7961945						
+ANR	7962098	Symbol	l		7961945						
+ANR	7962099	Symbol	buf		7961945						
+ANR	7962100	Symbol	IOPTE_VALID		7961945						
+ANR	7962101	Symbol	len		7961945						
+ANR	7962102	Symbol	iommu_page_get_flags		7961945						
+ANR	7962103	Symbol	IOPTE_WRITE		7961945						
+ANR	7962104	Symbol	page		7961945						
+ANR	7962105	Symbol	addr		7961945						
+ANR	7962106	Symbol	phys_addr		7961945						

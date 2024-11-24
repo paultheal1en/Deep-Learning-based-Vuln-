@@ -1,0 +1,321 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5917885	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_co_send_request_01_0.c								
+ANR	5917886	Function	nbd_co_send_request	1:0:0:1355							
+ANR	5917887	FunctionDef	"nbd_co_send_request (BlockDriverState * bs , NBDRequest * request , QEMUIOVector * qiov)"		5917886	0					
+ANR	5917888	CompoundStatement		7:0:159:1355	5917886	0					
+ANR	5917889	IdentifierDeclStatement	NBDClientSession * s = nbd_get_client_session ( bs ) ;	9:4:166:214	5917886	0	True				
+ANR	5917890	IdentifierDecl	* s = nbd_get_client_session ( bs )		5917886	0					
+ANR	5917891	IdentifierDeclType	NBDClientSession *		5917886	0					
+ANR	5917892	Identifier	s		5917886	1					
+ANR	5917893	AssignmentExpression	* s = nbd_get_client_session ( bs )		5917886	2		=			
+ANR	5917894	Identifier	s		5917886	0					
+ANR	5917895	CallExpression	nbd_get_client_session ( bs )		5917886	1					
+ANR	5917896	Callee	nbd_get_client_session		5917886	0					
+ANR	5917897	Identifier	nbd_get_client_session		5917886	0					
+ANR	5917898	ArgumentList	bs		5917886	1					
+ANR	5917899	Argument	bs		5917886	0					
+ANR	5917900	Identifier	bs		5917886	0					
+ANR	5917901	IdentifierDeclStatement	"int rc , ret , i ;"	11:4:221:235	5917886	1	True				
+ANR	5917902	IdentifierDecl	rc		5917886	0					
+ANR	5917903	IdentifierDeclType	int		5917886	0					
+ANR	5917904	Identifier	rc		5917886	1					
+ANR	5917905	IdentifierDecl	ret		5917886	1					
+ANR	5917906	IdentifierDeclType	int		5917886	0					
+ANR	5917907	Identifier	ret		5917886	1					
+ANR	5917908	IdentifierDecl	i		5917886	2					
+ANR	5917909	IdentifierDeclType	int		5917886	0					
+ANR	5917910	Identifier	i		5917886	1					
+ANR	5917911	ExpressionStatement	qemu_co_mutex_lock ( & s -> send_mutex )	15:4:244:278	5917886	2	True				
+ANR	5917912	CallExpression	qemu_co_mutex_lock ( & s -> send_mutex )		5917886	0					
+ANR	5917913	Callee	qemu_co_mutex_lock		5917886	0					
+ANR	5917914	Identifier	qemu_co_mutex_lock		5917886	0					
+ANR	5917915	ArgumentList	& s -> send_mutex		5917886	1					
+ANR	5917916	Argument	& s -> send_mutex		5917886	0					
+ANR	5917917	UnaryOperationExpression	& s -> send_mutex		5917886	0					
+ANR	5917918	UnaryOperator	&		5917886	0					
+ANR	5917919	PtrMemberAccess	s -> send_mutex		5917886	1					
+ANR	5917920	Identifier	s		5917886	0					
+ANR	5917921	Identifier	send_mutex		5917886	1					
+ANR	5917922	WhileStatement	while ( s -> in_flight == MAX_NBD_REQUESTS )		5917886	3					
+ANR	5917923	Condition	s -> in_flight == MAX_NBD_REQUESTS	17:11:292:323	5917886	0	True				
+ANR	5917924	EqualityExpression	s -> in_flight == MAX_NBD_REQUESTS		5917886	0		==			
+ANR	5917925	PtrMemberAccess	s -> in_flight		5917886	0					
+ANR	5917926	Identifier	s		5917886	0					
+ANR	5917927	Identifier	in_flight		5917886	1					
+ANR	5917928	Identifier	MAX_NBD_REQUESTS		5917886	1					
+ANR	5917929	CompoundStatement		11:45:166:166	5917886	1					
+ANR	5917930	ExpressionStatement	"qemu_co_queue_wait ( & s -> free_sema , & s -> send_mutex )"	19:8:337:386	5917886	0	True				
+ANR	5917931	CallExpression	"qemu_co_queue_wait ( & s -> free_sema , & s -> send_mutex )"		5917886	0					
+ANR	5917932	Callee	qemu_co_queue_wait		5917886	0					
+ANR	5917933	Identifier	qemu_co_queue_wait		5917886	0					
+ANR	5917934	ArgumentList	& s -> free_sema		5917886	1					
+ANR	5917935	Argument	& s -> free_sema		5917886	0					
+ANR	5917936	UnaryOperationExpression	& s -> free_sema		5917886	0					
+ANR	5917937	UnaryOperator	&		5917886	0					
+ANR	5917938	PtrMemberAccess	s -> free_sema		5917886	1					
+ANR	5917939	Identifier	s		5917886	0					
+ANR	5917940	Identifier	free_sema		5917886	1					
+ANR	5917941	Argument	& s -> send_mutex		5917886	1					
+ANR	5917942	UnaryOperationExpression	& s -> send_mutex		5917886	0					
+ANR	5917943	UnaryOperator	&		5917886	0					
+ANR	5917944	PtrMemberAccess	s -> send_mutex		5917886	1					
+ANR	5917945	Identifier	s		5917886	0					
+ANR	5917946	Identifier	send_mutex		5917886	1					
+ANR	5917947	ExpressionStatement	s -> in_flight ++	23:4:400:414	5917886	4	True				
+ANR	5917948	PostIncDecOperationExpression	s -> in_flight ++		5917886	0					
+ANR	5917949	PtrMemberAccess	s -> in_flight		5917886	0					
+ANR	5917950	Identifier	s		5917886	0					
+ANR	5917951	Identifier	in_flight		5917886	1					
+ANR	5917952	IncDec	++		5917886	1					
+ANR	5917953	ForStatement	for ( i = 0 ; i < MAX_NBD_REQUESTS ; i ++ )		5917886	5					
+ANR	5917954	ForInit	i = 0 ;	27:9:428:433	5917886	0	True				
+ANR	5917955	AssignmentExpression	i = 0		5917886	0		=			
+ANR	5917956	Identifier	i		5917886	0					
+ANR	5917957	PrimaryExpression	0		5917886	1					
+ANR	5917958	Condition	i < MAX_NBD_REQUESTS	27:16:435:454	5917886	1	True				
+ANR	5917959	RelationalExpression	i < MAX_NBD_REQUESTS		5917886	0		<			
+ANR	5917960	Identifier	i		5917886	0					
+ANR	5917961	Identifier	MAX_NBD_REQUESTS		5917886	1					
+ANR	5917962	PostIncDecOperationExpression	i ++	27:38:457:459	5917886	2	True				
+ANR	5917963	Identifier	i		5917886	0					
+ANR	5917964	IncDec	++		5917886	1					
+ANR	5917965	CompoundStatement		21:43:302:302	5917886	3					
+ANR	5917966	IfStatement	if ( s -> recv_coroutine [ i ] == NULL )		5917886	0					
+ANR	5917967	Condition	s -> recv_coroutine [ i ] == NULL	29:12:477:504	5917886	0	True				
+ANR	5917968	EqualityExpression	s -> recv_coroutine [ i ] == NULL		5917886	0		==			
+ANR	5917969	ArrayIndexing	s -> recv_coroutine [ i ]		5917886	0					
+ANR	5917970	PtrMemberAccess	s -> recv_coroutine		5917886	0					
+ANR	5917971	Identifier	s		5917886	0					
+ANR	5917972	Identifier	recv_coroutine		5917886	1					
+ANR	5917973	Identifier	i		5917886	1					
+ANR	5917974	Identifier	NULL		5917886	1					
+ANR	5917975	CompoundStatement		23:42:347:347	5917886	1					
+ANR	5917976	ExpressionStatement	s -> recv_coroutine [ i ] = qemu_coroutine_self ( )	31:12:522:566	5917886	0	True				
+ANR	5917977	AssignmentExpression	s -> recv_coroutine [ i ] = qemu_coroutine_self ( )		5917886	0		=			
+ANR	5917978	ArrayIndexing	s -> recv_coroutine [ i ]		5917886	0					
+ANR	5917979	PtrMemberAccess	s -> recv_coroutine		5917886	0					
+ANR	5917980	Identifier	s		5917886	0					
+ANR	5917981	Identifier	recv_coroutine		5917886	1					
+ANR	5917982	Identifier	i		5917886	1					
+ANR	5917983	CallExpression	qemu_coroutine_self ( )		5917886	1					
+ANR	5917984	Callee	qemu_coroutine_self		5917886	0					
+ANR	5917985	Identifier	qemu_coroutine_self		5917886	0					
+ANR	5917986	ArgumentList			5917886	1					
+ANR	5917987	BreakStatement	break ;	33:12:581:586	5917886	1	True				
+ANR	5917988	ExpressionStatement	g_assert ( qemu_in_coroutine ( ) )	41:4:613:642	5917886	6	True				
+ANR	5917989	CallExpression	g_assert ( qemu_in_coroutine ( ) )		5917886	0					
+ANR	5917990	Callee	g_assert		5917886	0					
+ANR	5917991	Identifier	g_assert		5917886	0					
+ANR	5917992	ArgumentList	qemu_in_coroutine ( )		5917886	1					
+ANR	5917993	Argument	qemu_in_coroutine ( )		5917886	0					
+ANR	5917994	CallExpression	qemu_in_coroutine ( )		5917886	0					
+ANR	5917995	Callee	qemu_in_coroutine		5917886	0					
+ANR	5917996	Identifier	qemu_in_coroutine		5917886	0					
+ANR	5917997	ArgumentList			5917886	1					
+ANR	5917998	ExpressionStatement	assert ( i < MAX_NBD_REQUESTS )	43:4:649:677	5917886	7	True				
+ANR	5917999	CallExpression	assert ( i < MAX_NBD_REQUESTS )		5917886	0					
+ANR	5918000	Callee	assert		5917886	0					
+ANR	5918001	Identifier	assert		5917886	0					
+ANR	5918002	ArgumentList	i < MAX_NBD_REQUESTS		5917886	1					
+ANR	5918003	Argument	i < MAX_NBD_REQUESTS		5917886	0					
+ANR	5918004	RelationalExpression	i < MAX_NBD_REQUESTS		5917886	0		<			
+ANR	5918005	Identifier	i		5917886	0					
+ANR	5918006	Identifier	MAX_NBD_REQUESTS		5917886	1					
+ANR	5918007	ExpressionStatement	"request -> handle = INDEX_TO_HANDLE ( s , i )"	45:4:684:723	5917886	8	True				
+ANR	5918008	AssignmentExpression	"request -> handle = INDEX_TO_HANDLE ( s , i )"		5917886	0		=			
+ANR	5918009	PtrMemberAccess	request -> handle		5917886	0					
+ANR	5918010	Identifier	request		5917886	0					
+ANR	5918011	Identifier	handle		5917886	1					
+ANR	5918012	CallExpression	"INDEX_TO_HANDLE ( s , i )"		5917886	1					
+ANR	5918013	Callee	INDEX_TO_HANDLE		5917886	0					
+ANR	5918014	Identifier	INDEX_TO_HANDLE		5917886	0					
+ANR	5918015	ArgumentList	s		5917886	1					
+ANR	5918016	Argument	s		5917886	0					
+ANR	5918017	Identifier	s		5917886	0					
+ANR	5918018	Argument	i		5917886	1					
+ANR	5918019	Identifier	i		5917886	0					
+ANR	5918020	IfStatement	if ( ! s -> ioc )		5917886	9					
+ANR	5918021	Condition	! s -> ioc	49:8:736:742	5917886	0	True				
+ANR	5918022	UnaryOperationExpression	! s -> ioc		5917886	0					
+ANR	5918023	UnaryOperator	!		5917886	0					
+ANR	5918024	PtrMemberAccess	s -> ioc		5917886	1					
+ANR	5918025	Identifier	s		5917886	0					
+ANR	5918026	Identifier	ioc		5917886	1					
+ANR	5918027	CompoundStatement		43:17:585:585	5917886	1					
+ANR	5918028	ExpressionStatement	qemu_co_mutex_unlock ( & s -> send_mutex )	51:8:756:792	5917886	0	True				
+ANR	5918029	CallExpression	qemu_co_mutex_unlock ( & s -> send_mutex )		5917886	0					
+ANR	5918030	Callee	qemu_co_mutex_unlock		5917886	0					
+ANR	5918031	Identifier	qemu_co_mutex_unlock		5917886	0					
+ANR	5918032	ArgumentList	& s -> send_mutex		5917886	1					
+ANR	5918033	Argument	& s -> send_mutex		5917886	0					
+ANR	5918034	UnaryOperationExpression	& s -> send_mutex		5917886	0					
+ANR	5918035	UnaryOperator	&		5917886	0					
+ANR	5918036	PtrMemberAccess	s -> send_mutex		5917886	1					
+ANR	5918037	Identifier	s		5917886	0					
+ANR	5918038	Identifier	send_mutex		5917886	1					
+ANR	5918039	ReturnStatement	return - EPIPE ;	53:8:803:816	5917886	1	True				
+ANR	5918040	UnaryOperationExpression	- EPIPE		5917886	0					
+ANR	5918041	UnaryOperator	-		5917886	0					
+ANR	5918042	Identifier	EPIPE		5917886	1					
+ANR	5918043	IfStatement	if ( qiov )		5917886	10					
+ANR	5918044	Condition	qiov	59:8:836:839	5917886	0	True				
+ANR	5918045	Identifier	qiov		5917886	0					
+ANR	5918046	CompoundStatement		53:14:682:682	5917886	1					
+ANR	5918047	ExpressionStatement	"qio_channel_set_cork ( s -> ioc , true )"	61:8:853:887	5917886	0	True				
+ANR	5918048	CallExpression	"qio_channel_set_cork ( s -> ioc , true )"		5917886	0					
+ANR	5918049	Callee	qio_channel_set_cork		5917886	0					
+ANR	5918050	Identifier	qio_channel_set_cork		5917886	0					
+ANR	5918051	ArgumentList	s -> ioc		5917886	1					
+ANR	5918052	Argument	s -> ioc		5917886	0					
+ANR	5918053	PtrMemberAccess	s -> ioc		5917886	0					
+ANR	5918054	Identifier	s		5917886	0					
+ANR	5918055	Identifier	ioc		5917886	1					
+ANR	5918056	Argument	true		5917886	1					
+ANR	5918057	Identifier	true		5917886	0					
+ANR	5918058	ExpressionStatement	"rc = nbd_send_request ( s -> ioc , request )"	63:8:898:936	5917886	1	True				
+ANR	5918059	AssignmentExpression	"rc = nbd_send_request ( s -> ioc , request )"		5917886	0		=			
+ANR	5918060	Identifier	rc		5917886	0					
+ANR	5918061	CallExpression	"nbd_send_request ( s -> ioc , request )"		5917886	1					
+ANR	5918062	Callee	nbd_send_request		5917886	0					
+ANR	5918063	Identifier	nbd_send_request		5917886	0					
+ANR	5918064	ArgumentList	s -> ioc		5917886	1					
+ANR	5918065	Argument	s -> ioc		5917886	0					
+ANR	5918066	PtrMemberAccess	s -> ioc		5917886	0					
+ANR	5918067	Identifier	s		5917886	0					
+ANR	5918068	Identifier	ioc		5917886	1					
+ANR	5918069	Argument	request		5917886	1					
+ANR	5918070	Identifier	request		5917886	0					
+ANR	5918071	IfStatement	if ( rc >= 0 )		5917886	2					
+ANR	5918072	Condition	rc >= 0	65:12:951:957	5917886	0	True				
+ANR	5918073	RelationalExpression	rc >= 0		5917886	0		>=			
+ANR	5918074	Identifier	rc		5917886	0					
+ANR	5918075	PrimaryExpression	0		5917886	1					
+ANR	5918076	CompoundStatement		59:21:800:800	5917886	1					
+ANR	5918077	ExpressionStatement	"ret = nbd_wr_syncv ( s -> ioc , qiov -> iov , qiov -> niov , request -> len , false , NULL )"	67:12:975:1083	5917886	0	True				
+ANR	5918078	AssignmentExpression	"ret = nbd_wr_syncv ( s -> ioc , qiov -> iov , qiov -> niov , request -> len , false , NULL )"		5917886	0		=			
+ANR	5918079	Identifier	ret		5917886	0					
+ANR	5918080	CallExpression	"nbd_wr_syncv ( s -> ioc , qiov -> iov , qiov -> niov , request -> len , false , NULL )"		5917886	1					
+ANR	5918081	Callee	nbd_wr_syncv		5917886	0					
+ANR	5918082	Identifier	nbd_wr_syncv		5917886	0					
+ANR	5918083	ArgumentList	s -> ioc		5917886	1					
+ANR	5918084	Argument	s -> ioc		5917886	0					
+ANR	5918085	PtrMemberAccess	s -> ioc		5917886	0					
+ANR	5918086	Identifier	s		5917886	0					
+ANR	5918087	Identifier	ioc		5917886	1					
+ANR	5918088	Argument	qiov -> iov		5917886	1					
+ANR	5918089	PtrMemberAccess	qiov -> iov		5917886	0					
+ANR	5918090	Identifier	qiov		5917886	0					
+ANR	5918091	Identifier	iov		5917886	1					
+ANR	5918092	Argument	qiov -> niov		5917886	2					
+ANR	5918093	PtrMemberAccess	qiov -> niov		5917886	0					
+ANR	5918094	Identifier	qiov		5917886	0					
+ANR	5918095	Identifier	niov		5917886	1					
+ANR	5918096	Argument	request -> len		5917886	3					
+ANR	5918097	PtrMemberAccess	request -> len		5917886	0					
+ANR	5918098	Identifier	request		5917886	0					
+ANR	5918099	Identifier	len		5917886	1					
+ANR	5918100	Argument	false		5917886	4					
+ANR	5918101	Identifier	false		5917886	0					
+ANR	5918102	Argument	NULL		5917886	5					
+ANR	5918103	Identifier	NULL		5917886	0					
+ANR	5918104	IfStatement	if ( ret != request -> len )		5917886	1					
+ANR	5918105	Condition	ret != request -> len	71:16:1102:1120	5917886	0	True				
+ANR	5918106	EqualityExpression	ret != request -> len		5917886	0		!=			
+ANR	5918107	Identifier	ret		5917886	0					
+ANR	5918108	PtrMemberAccess	request -> len		5917886	1					
+ANR	5918109	Identifier	request		5917886	0					
+ANR	5918110	Identifier	len		5917886	1					
+ANR	5918111	CompoundStatement		65:37:963:963	5917886	1					
+ANR	5918112	ExpressionStatement	rc = - EIO	73:16:1142:1151	5917886	0	True				
+ANR	5918113	AssignmentExpression	rc = - EIO		5917886	0		=			
+ANR	5918114	Identifier	rc		5917886	0					
+ANR	5918115	UnaryOperationExpression	- EIO		5917886	1					
+ANR	5918116	UnaryOperator	-		5917886	0					
+ANR	5918117	Identifier	EIO		5917886	1					
+ANR	5918118	ExpressionStatement	"qio_channel_set_cork ( s -> ioc , false )"	79:8:1188:1223	5917886	3	True				
+ANR	5918119	CallExpression	"qio_channel_set_cork ( s -> ioc , false )"		5917886	0					
+ANR	5918120	Callee	qio_channel_set_cork		5917886	0					
+ANR	5918121	Identifier	qio_channel_set_cork		5917886	0					
+ANR	5918122	ArgumentList	s -> ioc		5917886	1					
+ANR	5918123	Argument	s -> ioc		5917886	0					
+ANR	5918124	PtrMemberAccess	s -> ioc		5917886	0					
+ANR	5918125	Identifier	s		5917886	0					
+ANR	5918126	Identifier	ioc		5917886	1					
+ANR	5918127	Argument	false		5917886	1					
+ANR	5918128	Identifier	false		5917886	0					
+ANR	5918129	ElseStatement	else		5917886	0					
+ANR	5918130	CompoundStatement		75:11:1077:1077	5917886	0					
+ANR	5918131	ExpressionStatement	"rc = nbd_send_request ( s -> ioc , request )"	83:8:1248:1286	5917886	0	True				
+ANR	5918132	AssignmentExpression	"rc = nbd_send_request ( s -> ioc , request )"		5917886	0		=			
+ANR	5918133	Identifier	rc		5917886	0					
+ANR	5918134	CallExpression	"nbd_send_request ( s -> ioc , request )"		5917886	1					
+ANR	5918135	Callee	nbd_send_request		5917886	0					
+ANR	5918136	Identifier	nbd_send_request		5917886	0					
+ANR	5918137	ArgumentList	s -> ioc		5917886	1					
+ANR	5918138	Argument	s -> ioc		5917886	0					
+ANR	5918139	PtrMemberAccess	s -> ioc		5917886	0					
+ANR	5918140	Identifier	s		5917886	0					
+ANR	5918141	Identifier	ioc		5917886	1					
+ANR	5918142	Argument	request		5917886	1					
+ANR	5918143	Identifier	request		5917886	0					
+ANR	5918144	ExpressionStatement	qemu_co_mutex_unlock ( & s -> send_mutex )	87:4:1300:1336	5917886	11	True				
+ANR	5918145	CallExpression	qemu_co_mutex_unlock ( & s -> send_mutex )		5917886	0					
+ANR	5918146	Callee	qemu_co_mutex_unlock		5917886	0					
+ANR	5918147	Identifier	qemu_co_mutex_unlock		5917886	0					
+ANR	5918148	ArgumentList	& s -> send_mutex		5917886	1					
+ANR	5918149	Argument	& s -> send_mutex		5917886	0					
+ANR	5918150	UnaryOperationExpression	& s -> send_mutex		5917886	0					
+ANR	5918151	UnaryOperator	&		5917886	0					
+ANR	5918152	PtrMemberAccess	s -> send_mutex		5917886	1					
+ANR	5918153	Identifier	s		5917886	0					
+ANR	5918154	Identifier	send_mutex		5917886	1					
+ANR	5918155	ReturnStatement	return rc ;	89:4:1343:1352	5917886	12	True				
+ANR	5918156	Identifier	rc		5917886	0					
+ANR	5918157	ReturnType	static int		5917886	1					
+ANR	5918158	Identifier	nbd_co_send_request		5917886	2					
+ANR	5918159	ParameterList	"BlockDriverState * bs , NBDRequest * request , QEMUIOVector * qiov"		5917886	3					
+ANR	5918160	Parameter	BlockDriverState * bs	1:31:31:50	5917886	0	True				
+ANR	5918161	ParameterType	BlockDriverState *		5917886	0					
+ANR	5918162	Identifier	bs		5917886	1					
+ANR	5918163	Parameter	NBDRequest * request	3:31:85:103	5917886	1	True				
+ANR	5918164	ParameterType	NBDRequest *		5917886	0					
+ANR	5918165	Identifier	request		5917886	1					
+ANR	5918166	Parameter	QEMUIOVector * qiov	5:31:138:155	5917886	2	True				
+ANR	5918167	ParameterType	QEMUIOVector *		5917886	0					
+ANR	5918168	Identifier	qiov		5917886	1					
+ANR	5918169	CFGEntryNode	ENTRY		5917886		True				
+ANR	5918170	CFGExitNode	EXIT		5917886		True				
+ANR	5918171	Symbol	request		5917886						
+ANR	5918172	Symbol	EPIPE		5917886						
+ANR	5918173	Symbol	s -> recv_coroutine		5917886						
+ANR	5918174	Symbol	qiov		5917886						
+ANR	5918175	Symbol	MAX_NBD_REQUESTS		5917886						
+ANR	5918176	Symbol	bs		5917886						
+ANR	5918177	Symbol	* s -> recv_coroutine		5917886						
+ANR	5918178	Symbol	& s -> send_mutex		5917886						
+ANR	5918179	Symbol	nbd_wr_syncv		5917886						
+ANR	5918180	Symbol	* qiov		5917886						
+ANR	5918181	Symbol	* * s		5917886						
+ANR	5918182	Symbol	nbd_send_request		5917886						
+ANR	5918183	Symbol	qemu_coroutine_self		5917886						
+ANR	5918184	Symbol	nbd_get_client_session		5917886						
+ANR	5918185	Symbol	ret		5917886						
+ANR	5918186	Symbol	qemu_in_coroutine		5917886						
+ANR	5918187	Symbol	NULL		5917886						
+ANR	5918188	Symbol	request -> len		5917886						
+ANR	5918189	Symbol	false		5917886						
+ANR	5918190	Symbol	i		5917886						
+ANR	5918191	Symbol	s -> ioc		5917886						
+ANR	5918192	Symbol	s -> in_flight		5917886						
+ANR	5918193	Symbol	EIO		5917886						
+ANR	5918194	Symbol	qiov -> niov		5917886						
+ANR	5918195	Symbol	rc		5917886						
+ANR	5918196	Symbol	s		5917886						
+ANR	5918197	Symbol	* i		5917886						
+ANR	5918198	Symbol	request -> handle		5917886						
+ANR	5918199	Symbol	INDEX_TO_HANDLE		5917886						
+ANR	5918200	Symbol	qiov -> iov		5917886						
+ANR	5918201	Symbol	* request		5917886						
+ANR	5918202	Symbol	true		5917886						
+ANR	5918203	Symbol	& s -> free_sema		5917886						
+ANR	5918204	Symbol	* s		5917886						

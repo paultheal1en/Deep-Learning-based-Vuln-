@@ -1,0 +1,293 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	975018	File	/home/p4ultr4n/workplace/ReVeal/raw_code/bdrv_exceed_io_limits_0.c								
+ANR	975019	Function	bdrv_exceed_io_limits	1:0:0:1534							
+ANR	975020	FunctionDef	"bdrv_exceed_io_limits (BlockDriverState * bs , int nb_sectors , bool is_write , int64_t * wait)"		975019	0					
+ANR	975021	CompoundStatement		5:0:131:1534	975019	0					
+ANR	975022	IdentifierDeclStatement	"int64_t now , max_wait ;"	7:4:138:160	975019	0	True				
+ANR	975023	IdentifierDecl	now		975019	0					
+ANR	975024	IdentifierDeclType	int64_t		975019	0					
+ANR	975025	Identifier	now		975019	1					
+ANR	975026	IdentifierDecl	max_wait		975019	1					
+ANR	975027	IdentifierDeclType	int64_t		975019	0					
+ANR	975028	Identifier	max_wait		975019	1					
+ANR	975029	IdentifierDeclStatement	"uint64_t bps_wait = 0 , iops_wait = 0 ;"	9:4:167:203	975019	1	True				
+ANR	975030	IdentifierDecl	bps_wait = 0		975019	0					
+ANR	975031	IdentifierDeclType	uint64_t		975019	0					
+ANR	975032	Identifier	bps_wait		975019	1					
+ANR	975033	AssignmentExpression	bps_wait = 0		975019	2		=			
+ANR	975034	Identifier	bps_wait		975019	0					
+ANR	975035	PrimaryExpression	0		975019	1					
+ANR	975036	IdentifierDecl	iops_wait = 0		975019	1					
+ANR	975037	IdentifierDeclType	uint64_t		975019	0					
+ANR	975038	Identifier	iops_wait		975019	1					
+ANR	975039	AssignmentExpression	iops_wait = 0		975019	2		=			
+ANR	975040	Identifier	iops_wait		975019	0					
+ANR	975041	PrimaryExpression	0		975019	1					
+ANR	975042	IdentifierDeclStatement	double elapsed_time ;	11:4:210:231	975019	2	True				
+ANR	975043	IdentifierDecl	elapsed_time		975019	0					
+ANR	975044	IdentifierDeclType	double		975019	0					
+ANR	975045	Identifier	elapsed_time		975019	1					
+ANR	975046	IdentifierDeclStatement	"int bps_ret , iops_ret ;"	13:4:238:264	975019	3	True				
+ANR	975047	IdentifierDecl	bps_ret		975019	0					
+ANR	975048	IdentifierDeclType	int		975019	0					
+ANR	975049	Identifier	bps_ret		975019	1					
+ANR	975050	IdentifierDecl	iops_ret		975019	1					
+ANR	975051	IdentifierDeclType	int		975019	0					
+ANR	975052	Identifier	iops_ret		975019	1					
+ANR	975053	ExpressionStatement	now = qemu_get_clock_ns ( vm_clock )	17:4:273:306	975019	4	True				
+ANR	975054	AssignmentExpression	now = qemu_get_clock_ns ( vm_clock )		975019	0		=			
+ANR	975055	Identifier	now		975019	0					
+ANR	975056	CallExpression	qemu_get_clock_ns ( vm_clock )		975019	1					
+ANR	975057	Callee	qemu_get_clock_ns		975019	0					
+ANR	975058	Identifier	qemu_get_clock_ns		975019	0					
+ANR	975059	ArgumentList	vm_clock		975019	1					
+ANR	975060	Argument	vm_clock		975019	0					
+ANR	975061	Identifier	vm_clock		975019	0					
+ANR	975062	IfStatement	if ( ( bs -> slice_start < now ) && ( bs -> slice_end > now ) )		975019	5					
+ANR	975063	Condition	( bs -> slice_start < now ) && ( bs -> slice_end > now )	19:8:317:373	975019	0	True				
+ANR	975064	AndExpression	( bs -> slice_start < now ) && ( bs -> slice_end > now )		975019	0		&&			
+ANR	975065	RelationalExpression	bs -> slice_start < now		975019	0		<			
+ANR	975066	PtrMemberAccess	bs -> slice_start		975019	0					
+ANR	975067	Identifier	bs		975019	0					
+ANR	975068	Identifier	slice_start		975019	1					
+ANR	975069	Identifier	now		975019	1					
+ANR	975070	RelationalExpression	bs -> slice_end > now		975019	1		>			
+ANR	975071	PtrMemberAccess	bs -> slice_end		975019	0					
+ANR	975072	Identifier	bs		975019	0					
+ANR	975073	Identifier	slice_end		975019	1					
+ANR	975074	Identifier	now		975019	1					
+ANR	975075	CompoundStatement		17:34:244:244	975019	1					
+ANR	975076	ExpressionStatement	bs -> slice_end = now + BLOCK_IO_SLICE_TIME	23:8:387:428	975019	0	True				
+ANR	975077	AssignmentExpression	bs -> slice_end = now + BLOCK_IO_SLICE_TIME		975019	0		=			
+ANR	975078	PtrMemberAccess	bs -> slice_end		975019	0					
+ANR	975079	Identifier	bs		975019	0					
+ANR	975080	Identifier	slice_end		975019	1					
+ANR	975081	AdditiveExpression	now + BLOCK_IO_SLICE_TIME		975019	1		+			
+ANR	975082	Identifier	now		975019	0					
+ANR	975083	Identifier	BLOCK_IO_SLICE_TIME		975019	1					
+ANR	975084	ElseStatement	else		975019	0					
+ANR	975085	CompoundStatement		21:11:310:310	975019	0					
+ANR	975086	ExpressionStatement	bs -> slice_start = now	27:8:453:474	975019	0	True				
+ANR	975087	AssignmentExpression	bs -> slice_start = now		975019	0		=			
+ANR	975088	PtrMemberAccess	bs -> slice_start		975019	0					
+ANR	975089	Identifier	bs		975019	0					
+ANR	975090	Identifier	slice_start		975019	1					
+ANR	975091	Identifier	now		975019	1					
+ANR	975092	ExpressionStatement	bs -> slice_end = now + BLOCK_IO_SLICE_TIME	29:8:485:528	975019	1	True				
+ANR	975093	AssignmentExpression	bs -> slice_end = now + BLOCK_IO_SLICE_TIME		975019	0		=			
+ANR	975094	PtrMemberAccess	bs -> slice_end		975019	0					
+ANR	975095	Identifier	bs		975019	0					
+ANR	975096	Identifier	slice_end		975019	1					
+ANR	975097	AdditiveExpression	now + BLOCK_IO_SLICE_TIME		975019	1		+			
+ANR	975098	Identifier	now		975019	0					
+ANR	975099	Identifier	BLOCK_IO_SLICE_TIME		975019	1					
+ANR	975100	ExpressionStatement	"memset ( & bs -> slice_submitted , 0 , sizeof ( bs -> slice_submitted ) )"	31:8:539:599	975019	2	True				
+ANR	975101	CallExpression	"memset ( & bs -> slice_submitted , 0 , sizeof ( bs -> slice_submitted ) )"		975019	0					
+ANR	975102	Callee	memset		975019	0					
+ANR	975103	Identifier	memset		975019	0					
+ANR	975104	ArgumentList	& bs -> slice_submitted		975019	1					
+ANR	975105	Argument	& bs -> slice_submitted		975019	0					
+ANR	975106	UnaryOperationExpression	& bs -> slice_submitted		975019	0					
+ANR	975107	UnaryOperator	&		975019	0					
+ANR	975108	PtrMemberAccess	bs -> slice_submitted		975019	1					
+ANR	975109	Identifier	bs		975019	0					
+ANR	975110	Identifier	slice_submitted		975019	1					
+ANR	975111	Argument	0		975019	1					
+ANR	975112	PrimaryExpression	0		975019	0					
+ANR	975113	Argument	sizeof ( bs -> slice_submitted )		975019	2					
+ANR	975114	SizeofExpression	sizeof ( bs -> slice_submitted )		975019	0					
+ANR	975115	Sizeof	sizeof		975019	0					
+ANR	975116	PtrMemberAccess	bs -> slice_submitted		975019	1					
+ANR	975117	Identifier	bs		975019	0					
+ANR	975118	Identifier	slice_submitted		975019	1					
+ANR	975119	ExpressionStatement	elapsed_time = now - bs -> slice_start	37:4:615:652	975019	6	True				
+ANR	975120	AssignmentExpression	elapsed_time = now - bs -> slice_start		975019	0		=			
+ANR	975121	Identifier	elapsed_time		975019	0					
+ANR	975122	AdditiveExpression	now - bs -> slice_start		975019	1		-			
+ANR	975123	Identifier	now		975019	0					
+ANR	975124	PtrMemberAccess	bs -> slice_start		975019	1					
+ANR	975125	Identifier	bs		975019	0					
+ANR	975126	Identifier	slice_start		975019	1					
+ANR	975127	ExpressionStatement	elapsed_time /= ( NANOSECONDS_PER_SECOND )	39:4:659:700	975019	7	True				
+ANR	975128	AssignmentExpression	elapsed_time /= ( NANOSECONDS_PER_SECOND )		975019	0		/=			
+ANR	975129	Identifier	elapsed_time		975019	0					
+ANR	975130	Identifier	NANOSECONDS_PER_SECOND		975019	1					
+ANR	975131	ExpressionStatement	"bps_ret = bdrv_exceed_bps_limits ( bs , nb_sectors , is_write , elapsed_time , & bps_wait )"	43:4:709:832	975019	8	True				
+ANR	975132	AssignmentExpression	"bps_ret = bdrv_exceed_bps_limits ( bs , nb_sectors , is_write , elapsed_time , & bps_wait )"		975019	0		=			
+ANR	975133	Identifier	bps_ret		975019	0					
+ANR	975134	CallExpression	"bdrv_exceed_bps_limits ( bs , nb_sectors , is_write , elapsed_time , & bps_wait )"		975019	1					
+ANR	975135	Callee	bdrv_exceed_bps_limits		975019	0					
+ANR	975136	Identifier	bdrv_exceed_bps_limits		975019	0					
+ANR	975137	ArgumentList	bs		975019	1					
+ANR	975138	Argument	bs		975019	0					
+ANR	975139	Identifier	bs		975019	0					
+ANR	975140	Argument	nb_sectors		975019	1					
+ANR	975141	Identifier	nb_sectors		975019	0					
+ANR	975142	Argument	is_write		975019	2					
+ANR	975143	Identifier	is_write		975019	0					
+ANR	975144	Argument	elapsed_time		975019	3					
+ANR	975145	Identifier	elapsed_time		975019	0					
+ANR	975146	Argument	& bps_wait		975019	4					
+ANR	975147	UnaryOperationExpression	& bps_wait		975019	0					
+ANR	975148	UnaryOperator	&		975019	0					
+ANR	975149	Identifier	bps_wait		975019	1					
+ANR	975150	ExpressionStatement	"iops_ret = bdrv_exceed_iops_limits ( bs , is_write , elapsed_time , & iops_wait )"	47:4:839:952	975019	9	True				
+ANR	975151	AssignmentExpression	"iops_ret = bdrv_exceed_iops_limits ( bs , is_write , elapsed_time , & iops_wait )"		975019	0		=			
+ANR	975152	Identifier	iops_ret		975019	0					
+ANR	975153	CallExpression	"bdrv_exceed_iops_limits ( bs , is_write , elapsed_time , & iops_wait )"		975019	1					
+ANR	975154	Callee	bdrv_exceed_iops_limits		975019	0					
+ANR	975155	Identifier	bdrv_exceed_iops_limits		975019	0					
+ANR	975156	ArgumentList	bs		975019	1					
+ANR	975157	Argument	bs		975019	0					
+ANR	975158	Identifier	bs		975019	0					
+ANR	975159	Argument	is_write		975019	1					
+ANR	975160	Identifier	is_write		975019	0					
+ANR	975161	Argument	elapsed_time		975019	2					
+ANR	975162	Identifier	elapsed_time		975019	0					
+ANR	975163	Argument	& iops_wait		975019	3					
+ANR	975164	UnaryOperationExpression	& iops_wait		975019	0					
+ANR	975165	UnaryOperator	&		975019	0					
+ANR	975166	Identifier	iops_wait		975019	1					
+ANR	975167	IfStatement	if ( bps_ret || iops_ret )		975019	10					
+ANR	975168	Condition	bps_ret || iops_ret	51:8:963:981	975019	0	True				
+ANR	975169	OrExpression	bps_ret || iops_ret		975019	0		||			
+ANR	975170	Identifier	bps_ret		975019	0					
+ANR	975171	Identifier	iops_ret		975019	1					
+ANR	975172	CompoundStatement		47:29:852:852	975019	1					
+ANR	975173	ExpressionStatement	max_wait = bps_wait > iops_wait ? bps_wait : iops_wait	53:8:995:1049	975019	0	True				
+ANR	975174	AssignmentExpression	max_wait = bps_wait > iops_wait ? bps_wait : iops_wait		975019	0		=			
+ANR	975175	Identifier	max_wait		975019	0					
+ANR	975176	ConditionalExpression	bps_wait > iops_wait ? bps_wait : iops_wait		975019	1					
+ANR	975177	Condition	bps_wait > iops_wait		975019	0					
+ANR	975178	RelationalExpression	bps_wait > iops_wait		975019	0		>			
+ANR	975179	Identifier	bps_wait		975019	0					
+ANR	975180	Identifier	iops_wait		975019	1					
+ANR	975181	Identifier	bps_wait		975019	1					
+ANR	975182	Identifier	iops_wait		975019	2					
+ANR	975183	IfStatement	if ( wait )		975019	1					
+ANR	975184	Condition	wait	55:12:1064:1067	975019	0	True				
+ANR	975185	Identifier	wait		975019	0					
+ANR	975186	CompoundStatement		51:18:938:938	975019	1					
+ANR	975187	ExpressionStatement	* wait = max_wait	57:12:1085:1101	975019	0	True				
+ANR	975188	AssignmentExpression	* wait = max_wait		975019	0		=			
+ANR	975189	UnaryOperationExpression	* wait		975019	0					
+ANR	975190	UnaryOperator	*		975019	0					
+ANR	975191	Identifier	wait		975019	1					
+ANR	975192	Identifier	max_wait		975019	1					
+ANR	975193	ExpressionStatement	now = qemu_get_clock_ns ( vm_clock )	63:8:1125:1158	975019	2	True				
+ANR	975194	AssignmentExpression	now = qemu_get_clock_ns ( vm_clock )		975019	0		=			
+ANR	975195	Identifier	now		975019	0					
+ANR	975196	CallExpression	qemu_get_clock_ns ( vm_clock )		975019	1					
+ANR	975197	Callee	qemu_get_clock_ns		975019	0					
+ANR	975198	Identifier	qemu_get_clock_ns		975019	0					
+ANR	975199	ArgumentList	vm_clock		975019	1					
+ANR	975200	Argument	vm_clock		975019	0					
+ANR	975201	Identifier	vm_clock		975019	0					
+ANR	975202	IfStatement	if ( bs -> slice_end < now + max_wait )		975019	3					
+ANR	975203	Condition	bs -> slice_end < now + max_wait	65:12:1173:1202	975019	0	True				
+ANR	975204	RelationalExpression	bs -> slice_end < now + max_wait		975019	0		<			
+ANR	975205	PtrMemberAccess	bs -> slice_end		975019	0					
+ANR	975206	Identifier	bs		975019	0					
+ANR	975207	Identifier	slice_end		975019	1					
+ANR	975208	AdditiveExpression	now + max_wait		975019	1		+			
+ANR	975209	Identifier	now		975019	0					
+ANR	975210	Identifier	max_wait		975019	1					
+ANR	975211	CompoundStatement		61:44:1073:1073	975019	1					
+ANR	975212	ExpressionStatement	bs -> slice_end = now + max_wait	67:12:1220:1250	975019	0	True				
+ANR	975213	AssignmentExpression	bs -> slice_end = now + max_wait		975019	0		=			
+ANR	975214	PtrMemberAccess	bs -> slice_end		975019	0					
+ANR	975215	Identifier	bs		975019	0					
+ANR	975216	Identifier	slice_end		975019	1					
+ANR	975217	AdditiveExpression	now + max_wait		975019	1		+			
+ANR	975218	Identifier	now		975019	0					
+ANR	975219	Identifier	max_wait		975019	1					
+ANR	975220	ReturnStatement	return true ;	73:8:1274:1285	975019	4	True				
+ANR	975221	Identifier	true		975019	0					
+ANR	975222	IfStatement	if ( wait )		975019	11					
+ANR	975223	Condition	wait	79:8:1305:1308	975019	0	True				
+ANR	975224	Identifier	wait		975019	0					
+ANR	975225	CompoundStatement		75:14:1179:1179	975019	1					
+ANR	975226	ExpressionStatement	* wait = 0	81:8:1322:1331	975019	0	True				
+ANR	975227	AssignmentExpression	* wait = 0		975019	0		=			
+ANR	975228	UnaryOperationExpression	* wait		975019	0					
+ANR	975229	UnaryOperator	*		975019	0					
+ANR	975230	Identifier	wait		975019	1					
+ANR	975231	PrimaryExpression	0		975019	1					
+ANR	975232	ExpressionStatement	bs -> slice_submitted . bytes [ is_write ] += ( int64_t ) nb_sectors * BDRV_SECTOR_SIZE	87:4:1347:1468	975019	12	True				
+ANR	975233	AssignmentExpression	bs -> slice_submitted . bytes [ is_write ] += ( int64_t ) nb_sectors * BDRV_SECTOR_SIZE		975019	0		+=			
+ANR	975234	ArrayIndexing	bs -> slice_submitted . bytes [ is_write ]		975019	0					
+ANR	975235	MemberAccess	bs -> slice_submitted . bytes		975019	0					
+ANR	975236	PtrMemberAccess	bs -> slice_submitted		975019	0					
+ANR	975237	Identifier	bs		975019	0					
+ANR	975238	Identifier	slice_submitted		975019	1					
+ANR	975239	Identifier	bytes		975019	1					
+ANR	975240	Identifier	is_write		975019	1					
+ANR	975241	MultiplicativeExpression	( int64_t ) nb_sectors * BDRV_SECTOR_SIZE		975019	1		*			
+ANR	975242	CastExpression	( int64_t ) nb_sectors		975019	0					
+ANR	975243	CastTarget	int64_t		975019	0					
+ANR	975244	Identifier	nb_sectors		975019	1					
+ANR	975245	Identifier	BDRV_SECTOR_SIZE		975019	1					
+ANR	975246	ExpressionStatement	bs -> slice_submitted . ios [ is_write ] ++	91:4:1475:1510	975019	13	True				
+ANR	975247	PostIncDecOperationExpression	bs -> slice_submitted . ios [ is_write ] ++		975019	0					
+ANR	975248	ArrayIndexing	bs -> slice_submitted . ios [ is_write ]		975019	0					
+ANR	975249	MemberAccess	bs -> slice_submitted . ios		975019	0					
+ANR	975250	PtrMemberAccess	bs -> slice_submitted		975019	0					
+ANR	975251	Identifier	bs		975019	0					
+ANR	975252	Identifier	slice_submitted		975019	1					
+ANR	975253	Identifier	ios		975019	1					
+ANR	975254	Identifier	is_write		975019	1					
+ANR	975255	IncDec	++		975019	1					
+ANR	975256	ReturnStatement	return false ;	95:4:1519:1531	975019	14	True				
+ANR	975257	Identifier	false		975019	0					
+ANR	975258	ReturnType	static bool		975019	1					
+ANR	975259	Identifier	bdrv_exceed_io_limits		975019	2					
+ANR	975260	ParameterList	"BlockDriverState * bs , int nb_sectors , bool is_write , int64_t * wait"		975019	3					
+ANR	975261	Parameter	BlockDriverState * bs	1:34:34:53	975019	0	True				
+ANR	975262	ParameterType	BlockDriverState *		975019	0					
+ANR	975263	Identifier	bs		975019	1					
+ANR	975264	Parameter	int nb_sectors	1:56:56:69	975019	1	True				
+ANR	975265	ParameterType	int		975019	0					
+ANR	975266	Identifier	nb_sectors		975019	1					
+ANR	975267	Parameter	bool is_write	3:27:100:112	975019	2	True				
+ANR	975268	ParameterType	bool		975019	0					
+ANR	975269	Identifier	is_write		975019	1					
+ANR	975270	Parameter	int64_t * wait	3:42:115:127	975019	3	True				
+ANR	975271	ParameterType	int64_t *		975019	0					
+ANR	975272	Identifier	wait		975019	1					
+ANR	975273	CFGEntryNode	ENTRY		975019		True				
+ANR	975274	CFGExitNode	EXIT		975019		True				
+ANR	975275	Symbol	* is_write		975019						
+ANR	975276	Symbol	nb_sectors		975019						
+ANR	975277	Symbol	wait		975019						
+ANR	975278	Symbol	iops_ret		975019						
+ANR	975279	Symbol	bps_ret		975019						
+ANR	975280	Symbol	NANOSECONDS_PER_SECOND		975019						
+ANR	975281	Symbol	bs -> slice_end		975019						
+ANR	975282	Symbol	* wait		975019						
+ANR	975283	Symbol	bs		975019						
+ANR	975284	Symbol	BLOCK_IO_SLICE_TIME		975019						
+ANR	975285	Symbol	vm_clock		975019						
+ANR	975286	Symbol	bps_wait		975019						
+ANR	975287	Symbol	* bs		975019						
+ANR	975288	Symbol	iops_wait		975019						
+ANR	975289	Symbol	now		975019						
+ANR	975290	Symbol	qemu_get_clock_ns		975019						
+ANR	975291	Symbol	elapsed_time		975019						
+ANR	975292	Symbol	& bps_wait		975019						
+ANR	975293	Symbol	* bs -> slice_submitted		975019						
+ANR	975294	Symbol	bdrv_exceed_iops_limits		975019						
+ANR	975295	Symbol	* bs -> slice_submitted . bytes		975019						
+ANR	975296	Symbol	max_wait		975019						
+ANR	975297	Symbol	bs -> slice_submitted . ios		975019						
+ANR	975298	Symbol	bs -> slice_submitted		975019						
+ANR	975299	Symbol	& bs -> slice_submitted		975019						
+ANR	975300	Symbol	false		975019						
+ANR	975301	Symbol	bdrv_exceed_bps_limits		975019						
+ANR	975302	Symbol	bs -> slice_submitted . bytes		975019						
+ANR	975303	Symbol	is_write		975019						
+ANR	975304	Symbol	& iops_wait		975019						
+ANR	975305	Symbol	BDRV_SECTOR_SIZE		975019						
+ANR	975306	Symbol	bs -> slice_start		975019						
+ANR	975307	Symbol	true		975019						
+ANR	975308	Symbol	* bs -> slice_submitted . ios		975019						
+ANR	975309	Symbol	* * bs		975019						

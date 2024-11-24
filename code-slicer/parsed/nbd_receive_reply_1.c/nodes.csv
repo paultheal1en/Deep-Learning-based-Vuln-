@@ -1,0 +1,169 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5944889	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_receive_reply_1.c								
+ANR	5944890	Function	nbd_receive_reply	1:0:0:903							
+ANR	5944891	FunctionDef	"nbd_receive_reply (int csock , struct nbd_reply * reply)"		5944890	0					
+ANR	5944892	CompoundStatement		3:0:59:903	5944890	0					
+ANR	5944893	IdentifierDeclStatement	uint8_t buf [ NBD_REPLY_SIZE ] ;	5:4:66:93	5944890	0	True				
+ANR	5944894	IdentifierDecl	buf [ NBD_REPLY_SIZE ]		5944890	0					
+ANR	5944895	IdentifierDeclType	uint8_t [ NBD_REPLY_SIZE ]		5944890	0					
+ANR	5944896	Identifier	buf		5944890	1					
+ANR	5944897	Identifier	NBD_REPLY_SIZE		5944890	2					
+ANR	5944898	IdentifierDeclStatement	uint32_t magic ;	7:4:100:114	5944890	1	True				
+ANR	5944899	IdentifierDecl	magic		5944890	0					
+ANR	5944900	IdentifierDeclType	uint32_t		5944890	0					
+ANR	5944901	Identifier	magic		5944890	1					
+ANR	5944902	ExpressionStatement	"memset ( buf , 0xAA , sizeof ( buf ) )"	11:4:123:153	5944890	2	True				
+ANR	5944903	CallExpression	"memset ( buf , 0xAA , sizeof ( buf ) )"		5944890	0					
+ANR	5944904	Callee	memset		5944890	0					
+ANR	5944905	Identifier	memset		5944890	0					
+ANR	5944906	ArgumentList	buf		5944890	1					
+ANR	5944907	Argument	buf		5944890	0					
+ANR	5944908	Identifier	buf		5944890	0					
+ANR	5944909	Argument	0xAA		5944890	1					
+ANR	5944910	PrimaryExpression	0xAA		5944890	0					
+ANR	5944911	Argument	sizeof ( buf )		5944890	2					
+ANR	5944912	SizeofExpression	sizeof ( buf )		5944890	0					
+ANR	5944913	Sizeof	sizeof		5944890	0					
+ANR	5944914	SizeofOperand	buf		5944890	1					
+ANR	5944915	IfStatement	"if ( read_sync ( csock , buf , sizeof ( buf ) ) != sizeof ( buf ) )"		5944890	3					
+ANR	5944916	Condition	"read_sync ( csock , buf , sizeof ( buf ) ) != sizeof ( buf )"	15:8:166:214	5944890	0	True				
+ANR	5944917	EqualityExpression	"read_sync ( csock , buf , sizeof ( buf ) ) != sizeof ( buf )"		5944890	0		!=			
+ANR	5944918	CallExpression	"read_sync ( csock , buf , sizeof ( buf ) )"		5944890	0					
+ANR	5944919	Callee	read_sync		5944890	0					
+ANR	5944920	Identifier	read_sync		5944890	0					
+ANR	5944921	ArgumentList	csock		5944890	1					
+ANR	5944922	Argument	csock		5944890	0					
+ANR	5944923	Identifier	csock		5944890	0					
+ANR	5944924	Argument	buf		5944890	1					
+ANR	5944925	Identifier	buf		5944890	0					
+ANR	5944926	Argument	sizeof ( buf )		5944890	2					
+ANR	5944927	SizeofExpression	sizeof ( buf )		5944890	0					
+ANR	5944928	Sizeof	sizeof		5944890	0					
+ANR	5944929	SizeofOperand	buf		5944890	1					
+ANR	5944930	SizeofExpression	sizeof ( buf )		5944890	1					
+ANR	5944931	Sizeof	sizeof		5944890	0					
+ANR	5944932	SizeofOperand	buf		5944890	1					
+ANR	5944933	CompoundStatement		13:59:157:157	5944890	1					
+ANR	5944934	ExpressionStatement	"LOG ( ""read failed"" )"	17:8:228:246	5944890	0	True				
+ANR	5944935	CallExpression	"LOG ( ""read failed"" )"		5944890	0					
+ANR	5944936	Callee	LOG		5944890	0					
+ANR	5944937	Identifier	LOG		5944890	0					
+ANR	5944938	ArgumentList	"""read failed"""		5944890	1					
+ANR	5944939	Argument	"""read failed"""		5944890	0					
+ANR	5944940	PrimaryExpression	"""read failed"""		5944890	0					
+ANR	5944941	ExpressionStatement	errno = EINVAL	19:8:257:271	5944890	1	True				
+ANR	5944942	AssignmentExpression	errno = EINVAL		5944890	0		=			
+ANR	5944943	Identifier	errno		5944890	0					
+ANR	5944944	Identifier	EINVAL		5944890	1					
+ANR	5944945	ReturnStatement	return - 1 ;	21:8:282:291	5944890	2	True				
+ANR	5944946	UnaryOperationExpression	- 1		5944890	0					
+ANR	5944947	UnaryOperator	-		5944890	0					
+ANR	5944948	PrimaryExpression	1		5944890	1					
+ANR	5944949	ExpressionStatement	magic = be32_to_cpup ( ( uint32_t * ) buf )	39:4:455:491	5944890	4	True				
+ANR	5944950	AssignmentExpression	magic = be32_to_cpup ( ( uint32_t * ) buf )		5944890	0		=			
+ANR	5944951	Identifier	magic		5944890	0					
+ANR	5944952	CallExpression	be32_to_cpup ( ( uint32_t * ) buf )		5944890	1					
+ANR	5944953	Callee	be32_to_cpup		5944890	0					
+ANR	5944954	Identifier	be32_to_cpup		5944890	0					
+ANR	5944955	ArgumentList	( uint32_t * ) buf		5944890	1					
+ANR	5944956	Argument	( uint32_t * ) buf		5944890	0					
+ANR	5944957	CastExpression	( uint32_t * ) buf		5944890	0					
+ANR	5944958	CastTarget	uint32_t *		5944890	0					
+ANR	5944959	Identifier	buf		5944890	1					
+ANR	5944960	ExpressionStatement	reply -> error = be32_to_cpup ( ( uint32_t * ) ( buf + 4 ) )	41:4:498:548	5944890	5	True				
+ANR	5944961	AssignmentExpression	reply -> error = be32_to_cpup ( ( uint32_t * ) ( buf + 4 ) )		5944890	0		=			
+ANR	5944962	PtrMemberAccess	reply -> error		5944890	0					
+ANR	5944963	Identifier	reply		5944890	0					
+ANR	5944964	Identifier	error		5944890	1					
+ANR	5944965	CallExpression	be32_to_cpup ( ( uint32_t * ) ( buf + 4 ) )		5944890	1					
+ANR	5944966	Callee	be32_to_cpup		5944890	0					
+ANR	5944967	Identifier	be32_to_cpup		5944890	0					
+ANR	5944968	ArgumentList	( uint32_t * ) ( buf + 4 )		5944890	1					
+ANR	5944969	Argument	( uint32_t * ) ( buf + 4 )		5944890	0					
+ANR	5944970	CastExpression	( uint32_t * ) ( buf + 4 )		5944890	0					
+ANR	5944971	CastTarget	uint32_t *		5944890	0					
+ANR	5944972	AdditiveExpression	buf + 4		5944890	1		+			
+ANR	5944973	Identifier	buf		5944890	0					
+ANR	5944974	PrimaryExpression	4		5944890	1					
+ANR	5944975	ExpressionStatement	reply -> handle = be64_to_cpup ( ( uint64_t * ) ( buf + 8 ) )	43:4:555:605	5944890	6	True				
+ANR	5944976	AssignmentExpression	reply -> handle = be64_to_cpup ( ( uint64_t * ) ( buf + 8 ) )		5944890	0		=			
+ANR	5944977	PtrMemberAccess	reply -> handle		5944890	0					
+ANR	5944978	Identifier	reply		5944890	0					
+ANR	5944979	Identifier	handle		5944890	1					
+ANR	5944980	CallExpression	be64_to_cpup ( ( uint64_t * ) ( buf + 8 ) )		5944890	1					
+ANR	5944981	Callee	be64_to_cpup		5944890	0					
+ANR	5944982	Identifier	be64_to_cpup		5944890	0					
+ANR	5944983	ArgumentList	( uint64_t * ) ( buf + 8 )		5944890	1					
+ANR	5944984	Argument	( uint64_t * ) ( buf + 8 )		5944890	0					
+ANR	5944985	CastExpression	( uint64_t * ) ( buf + 8 )		5944890	0					
+ANR	5944986	CastTarget	uint64_t *		5944890	0					
+ANR	5944987	AdditiveExpression	buf + 8		5944890	1		+			
+ANR	5944988	Identifier	buf		5944890	0					
+ANR	5944989	PrimaryExpression	8		5944890	1					
+ANR	5944990	Statement	TRACE	47:4:614:618	5944890	7	True				
+ANR	5944991	Statement	(	47:9:619:619	5944890	8	True				
+ANR	5944992	Statement	"""Got reply: """	47:10:620:632	5944890	9	True				
+ANR	5944993	Statement	"""{ magic = 0x%x, .error = %d, handle = %"""	49:10:645:685	5944890	10	True				
+ANR	5944994	Statement	PRIu64	49:52:687:692	5944890	11	True				
+ANR	5944995	Statement	""" }"""	49:58:693:696	5944890	12	True				
+ANR	5944996	Statement	","	49:62:697:697	5944890	13	True				
+ANR	5944997	Statement	magic	51:10:710:714	5944890	14	True				
+ANR	5944998	Statement	","	51:15:715:715	5944890	15	True				
+ANR	5944999	Statement	reply	51:17:717:721	5944890	16	True				
+ANR	5945000	Statement	->	51:22:722:723	5944890	17	True				
+ANR	5945001	Statement	error	51:24:724:728	5944890	18	True				
+ANR	5945002	Statement	","	51:29:729:729	5944890	19	True				
+ANR	5945003	Statement	reply	51:31:731:735	5944890	20	True				
+ANR	5945004	Statement	->	51:36:736:737	5944890	21	True				
+ANR	5945005	Statement	handle	51:38:738:743	5944890	22	True				
+ANR	5945006	Statement	)	51:44:744:744	5944890	23	True				
+ANR	5945007	ExpressionStatement		51:45:745:745	5944890	24	True				
+ANR	5945008	IfStatement	if ( magic != NBD_REPLY_MAGIC )		5944890	25					
+ANR	5945009	Condition	magic != NBD_REPLY_MAGIC	55:8:758:781	5944890	0	True				
+ANR	5945010	EqualityExpression	magic != NBD_REPLY_MAGIC		5944890	0		!=			
+ANR	5945011	Identifier	magic		5944890	0					
+ANR	5945012	Identifier	NBD_REPLY_MAGIC		5944890	1					
+ANR	5945013	CompoundStatement		53:34:724:724	5944890	1					
+ANR	5945014	ExpressionStatement	"LOG ( ""invalid magic (got 0x%x)"" , magic )"	57:8:795:833	5944890	0	True				
+ANR	5945015	CallExpression	"LOG ( ""invalid magic (got 0x%x)"" , magic )"		5944890	0					
+ANR	5945016	Callee	LOG		5944890	0					
+ANR	5945017	Identifier	LOG		5944890	0					
+ANR	5945018	ArgumentList	"""invalid magic (got 0x%x)"""		5944890	1					
+ANR	5945019	Argument	"""invalid magic (got 0x%x)"""		5944890	0					
+ANR	5945020	PrimaryExpression	"""invalid magic (got 0x%x)"""		5944890	0					
+ANR	5945021	Argument	magic		5944890	1					
+ANR	5945022	Identifier	magic		5944890	0					
+ANR	5945023	ExpressionStatement	errno = EINVAL	59:8:844:858	5944890	1	True				
+ANR	5945024	AssignmentExpression	errno = EINVAL		5944890	0		=			
+ANR	5945025	Identifier	errno		5944890	0					
+ANR	5945026	Identifier	EINVAL		5944890	1					
+ANR	5945027	ReturnStatement	return - 1 ;	61:8:869:878	5944890	2	True				
+ANR	5945028	UnaryOperationExpression	- 1		5944890	0					
+ANR	5945029	UnaryOperator	-		5944890	0					
+ANR	5945030	PrimaryExpression	1		5944890	1					
+ANR	5945031	ReturnStatement	return 0 ;	65:4:892:900	5944890	26	True				
+ANR	5945032	PrimaryExpression	0		5944890	0					
+ANR	5945033	ReturnType	int		5944890	1					
+ANR	5945034	Identifier	nbd_receive_reply		5944890	2					
+ANR	5945035	ParameterList	"int csock , struct nbd_reply * reply"		5944890	3					
+ANR	5945036	Parameter	int csock	1:22:22:30	5944890	0	True				
+ANR	5945037	ParameterType	int		5944890	0					
+ANR	5945038	Identifier	csock		5944890	1					
+ANR	5945039	Parameter	struct nbd_reply * reply	1:33:33:55	5944890	1	True				
+ANR	5945040	ParameterType	struct nbd_reply *		5944890	0					
+ANR	5945041	Identifier	reply		5944890	1					
+ANR	5945042	CFGEntryNode	ENTRY		5944890		True				
+ANR	5945043	CFGExitNode	EXIT		5944890		True				
+ANR	5945044	Symbol	magic		5944890						
+ANR	5945045	Symbol	errno		5944890						
+ANR	5945046	Symbol	* reply		5944890						
+ANR	5945047	Symbol	NBD_REPLY_MAGIC		5944890						
+ANR	5945048	Symbol	read_sync		5944890						
+ANR	5945049	Symbol	reply -> error		5944890						
+ANR	5945050	Symbol	csock		5944890						
+ANR	5945051	Symbol	EINVAL		5944890						
+ANR	5945052	Symbol	buf		5944890						
+ANR	5945053	Symbol	be64_to_cpup		5944890						
+ANR	5945054	Symbol	reply -> handle		5944890						
+ANR	5945055	Symbol	reply		5944890						
+ANR	5945056	Symbol	be32_to_cpup		5944890						

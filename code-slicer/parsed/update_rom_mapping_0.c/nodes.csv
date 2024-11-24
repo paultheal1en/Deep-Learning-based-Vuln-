@@ -1,0 +1,370 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	8652750	File	/home/p4ultr4n/workplace/ReVeal/raw_code/update_rom_mapping_0.c								
+ANR	8652751	Function	update_rom_mapping	1:0:0:1913							
+ANR	8652752	FunctionDef	"update_rom_mapping (VAPICROMState * s , CPUX86State * env , target_ulong ip)"		8652751	0					
+ANR	8652753	CompoundStatement		3:0:84:1913	8652751	0					
+ANR	8652754	IdentifierDeclStatement	target_phys_addr_t paddr ;	5:4:91:115	8652751	0	True				
+ANR	8652755	IdentifierDecl	paddr		8652751	0					
+ANR	8652756	IdentifierDeclType	target_phys_addr_t		8652751	0					
+ANR	8652757	Identifier	paddr		8652751	1					
+ANR	8652758	IdentifierDeclStatement	uint32_t rom_state_vaddr ;	7:4:122:146	8652751	1	True				
+ANR	8652759	IdentifierDecl	rom_state_vaddr		8652751	0					
+ANR	8652760	IdentifierDeclType	uint32_t		8652751	0					
+ANR	8652761	Identifier	rom_state_vaddr		8652751	1					
+ANR	8652762	IdentifierDeclStatement	"uint32_t pos , patch , offset ;"	9:4:153:180	8652751	2	True				
+ANR	8652763	IdentifierDecl	pos		8652751	0					
+ANR	8652764	IdentifierDeclType	uint32_t		8652751	0					
+ANR	8652765	Identifier	pos		8652751	1					
+ANR	8652766	IdentifierDecl	patch		8652751	1					
+ANR	8652767	IdentifierDeclType	uint32_t		8652751	0					
+ANR	8652768	Identifier	patch		8652751	1					
+ANR	8652769	IdentifierDecl	offset		8652751	2					
+ANR	8652770	IdentifierDeclType	uint32_t		8652751	0					
+ANR	8652771	Identifier	offset		8652751	1					
+ANR	8652772	IfStatement	if ( s -> state == VAPIC_ACTIVE )		8652751	3					
+ANR	8652773	Condition	s -> state == VAPIC_ACTIVE	15:8:239:262	8652751	0	True				
+ANR	8652774	EqualityExpression	s -> state == VAPIC_ACTIVE		8652751	0		==			
+ANR	8652775	PtrMemberAccess	s -> state		8652751	0					
+ANR	8652776	Identifier	s		8652751	0					
+ANR	8652777	Identifier	state		8652751	1					
+ANR	8652778	Identifier	VAPIC_ACTIVE		8652751	1					
+ANR	8652779	CompoundStatement		13:34:180:180	8652751	1					
+ANR	8652780	ReturnStatement	return 0 ;	17:8:276:284	8652751	0	True				
+ANR	8652781	PrimaryExpression	0		8652751	0					
+ANR	8652782	IfStatement	if ( s -> state == VAPIC_INACTIVE )		8652751	4					
+ANR	8652783	Condition	s -> state == VAPIC_INACTIVE	25:8:373:398	8652751	0	True				
+ANR	8652784	EqualityExpression	s -> state == VAPIC_INACTIVE		8652751	0		==			
+ANR	8652785	PtrMemberAccess	s -> state		8652751	0					
+ANR	8652786	Identifier	s		8652751	0					
+ANR	8652787	Identifier	state		8652751	1					
+ANR	8652788	Identifier	VAPIC_INACTIVE		8652751	1					
+ANR	8652789	CompoundStatement		23:36:316:316	8652751	1					
+ANR	8652790	ReturnStatement	return - 1 ;	27:8:412:421	8652751	0	True				
+ANR	8652791	UnaryOperationExpression	- 1		8652751	0					
+ANR	8652792	UnaryOperator	-		8652751	0					
+ANR	8652793	PrimaryExpression	1		8652751	1					
+ANR	8652794	ExpressionStatement	rom_state_vaddr = s -> rom_state_paddr + ( ip & 0xf0000000 )	35:4:484:540	8652751	5	True				
+ANR	8652795	AssignmentExpression	rom_state_vaddr = s -> rom_state_paddr + ( ip & 0xf0000000 )		8652751	0		=			
+ANR	8652796	Identifier	rom_state_vaddr		8652751	0					
+ANR	8652797	AdditiveExpression	s -> rom_state_paddr + ( ip & 0xf0000000 )		8652751	1		+			
+ANR	8652798	PtrMemberAccess	s -> rom_state_paddr		8652751	0					
+ANR	8652799	Identifier	s		8652751	0					
+ANR	8652800	Identifier	rom_state_paddr		8652751	1					
+ANR	8652801	BitAndExpression	ip & 0xf0000000		8652751	1		&			
+ANR	8652802	Identifier	ip		8652751	0					
+ANR	8652803	PrimaryExpression	0xf0000000		8652751	1					
+ANR	8652804	ExpressionStatement	"paddr = cpu_get_phys_page_debug ( env , rom_state_vaddr )"	37:4:547:600	8652751	6	True				
+ANR	8652805	AssignmentExpression	"paddr = cpu_get_phys_page_debug ( env , rom_state_vaddr )"		8652751	0		=			
+ANR	8652806	Identifier	paddr		8652751	0					
+ANR	8652807	CallExpression	"cpu_get_phys_page_debug ( env , rom_state_vaddr )"		8652751	1					
+ANR	8652808	Callee	cpu_get_phys_page_debug		8652751	0					
+ANR	8652809	Identifier	cpu_get_phys_page_debug		8652751	0					
+ANR	8652810	ArgumentList	env		8652751	1					
+ANR	8652811	Argument	env		8652751	0					
+ANR	8652812	Identifier	env		8652751	0					
+ANR	8652813	Argument	rom_state_vaddr		8652751	1					
+ANR	8652814	Identifier	rom_state_vaddr		8652751	0					
+ANR	8652815	IfStatement	if ( paddr == - 1 )		8652751	7					
+ANR	8652816	Condition	paddr == - 1	39:8:611:621	8652751	0	True				
+ANR	8652817	EqualityExpression	paddr == - 1		8652751	0		==			
+ANR	8652818	Identifier	paddr		8652751	0					
+ANR	8652819	UnaryOperationExpression	- 1		8652751	1					
+ANR	8652820	UnaryOperator	-		8652751	0					
+ANR	8652821	PrimaryExpression	1		8652751	1					
+ANR	8652822	CompoundStatement		37:21:539:539	8652751	1					
+ANR	8652823	ReturnStatement	return - 1 ;	41:8:635:644	8652751	0	True				
+ANR	8652824	UnaryOperationExpression	- 1		8652751	0					
+ANR	8652825	UnaryOperator	-		8652751	0					
+ANR	8652826	PrimaryExpression	1		8652751	1					
+ANR	8652827	ExpressionStatement	paddr += rom_state_vaddr & ~TARGET_PAGE_MASK	45:4:658:702	8652751	8	True				
+ANR	8652828	AssignmentExpression	paddr += rom_state_vaddr & ~TARGET_PAGE_MASK		8652751	0		+=			
+ANR	8652829	Identifier	paddr		8652751	0					
+ANR	8652830	BitAndExpression	rom_state_vaddr & ~TARGET_PAGE_MASK		8652751	1		&			
+ANR	8652831	Identifier	rom_state_vaddr		8652751	0					
+ANR	8652832	Identifier	~TARGET_PAGE_MASK		8652751	1					
+ANR	8652833	IfStatement	if ( paddr != s -> rom_state_paddr )		8652751	9					
+ANR	8652834	Condition	paddr != s -> rom_state_paddr	47:8:713:739	8652751	0	True				
+ANR	8652835	EqualityExpression	paddr != s -> rom_state_paddr		8652751	0		!=			
+ANR	8652836	Identifier	paddr		8652751	0					
+ANR	8652837	PtrMemberAccess	s -> rom_state_paddr		8652751	1					
+ANR	8652838	Identifier	s		8652751	0					
+ANR	8652839	Identifier	rom_state_paddr		8652751	1					
+ANR	8652840	CompoundStatement		45:37:657:657	8652751	1					
+ANR	8652841	ReturnStatement	return - 1 ;	49:8:753:762	8652751	0	True				
+ANR	8652842	UnaryOperationExpression	- 1		8652751	0					
+ANR	8652843	UnaryOperator	-		8652751	0					
+ANR	8652844	PrimaryExpression	1		8652751	1					
+ANR	8652845	ExpressionStatement	read_guest_rom_state ( s )	53:4:776:799	8652751	10	True				
+ANR	8652846	CallExpression	read_guest_rom_state ( s )		8652751	0					
+ANR	8652847	Callee	read_guest_rom_state		8652751	0					
+ANR	8652848	Identifier	read_guest_rom_state		8652751	0					
+ANR	8652849	ArgumentList	s		8652751	1					
+ANR	8652850	Argument	s		8652751	0					
+ANR	8652851	Identifier	s		8652751	0					
+ANR	8652852	IfStatement	"if ( memcmp ( s -> rom_state . signature , ""kvm aPiC"" , 8 ) != 0 )"		8652751	11					
+ANR	8652853	Condition	"memcmp ( s -> rom_state . signature , ""kvm aPiC"" , 8 ) != 0"	55:8:810:859	8652751	0	True				
+ANR	8652854	EqualityExpression	"memcmp ( s -> rom_state . signature , ""kvm aPiC"" , 8 ) != 0"		8652751	0		!=			
+ANR	8652855	CallExpression	"memcmp ( s -> rom_state . signature , ""kvm aPiC"" , 8 )"		8652751	0					
+ANR	8652856	Callee	memcmp		8652751	0					
+ANR	8652857	Identifier	memcmp		8652751	0					
+ANR	8652858	ArgumentList	s -> rom_state . signature		8652751	1					
+ANR	8652859	Argument	s -> rom_state . signature		8652751	0					
+ANR	8652860	MemberAccess	s -> rom_state . signature		8652751	0					
+ANR	8652861	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8652862	Identifier	s		8652751	0					
+ANR	8652863	Identifier	rom_state		8652751	1					
+ANR	8652864	Identifier	signature		8652751	1					
+ANR	8652865	Argument	"""kvm aPiC"""		8652751	1					
+ANR	8652866	PrimaryExpression	"""kvm aPiC"""		8652751	0					
+ANR	8652867	Argument	8		8652751	2					
+ANR	8652868	PrimaryExpression	8		8652751	0					
+ANR	8652869	PrimaryExpression	0		8652751	1					
+ANR	8652870	CompoundStatement		53:60:777:777	8652751	1					
+ANR	8652871	ReturnStatement	return - 1 ;	57:8:873:882	8652751	0	True				
+ANR	8652872	UnaryOperationExpression	- 1		8652751	0					
+ANR	8652873	UnaryOperator	-		8652751	0					
+ANR	8652874	PrimaryExpression	1		8652751	1					
+ANR	8652875	ExpressionStatement	s -> rom_state_vaddr = rom_state_vaddr	61:4:896:932	8652751	12	True				
+ANR	8652876	AssignmentExpression	s -> rom_state_vaddr = rom_state_vaddr		8652751	0		=			
+ANR	8652877	PtrMemberAccess	s -> rom_state_vaddr		8652751	0					
+ANR	8652878	Identifier	s		8652751	0					
+ANR	8652879	Identifier	rom_state_vaddr		8652751	1					
+ANR	8652880	Identifier	rom_state_vaddr		8652751	1					
+ANR	8652881	IfStatement	if ( rom_state_vaddr == le32_to_cpu ( s -> rom_state . vaddr ) )		8652751	13					
+ANR	8652882	Condition	rom_state_vaddr == le32_to_cpu ( s -> rom_state . vaddr )	67:8:989:1038	8652751	0	True				
+ANR	8652883	EqualityExpression	rom_state_vaddr == le32_to_cpu ( s -> rom_state . vaddr )		8652751	0		==			
+ANR	8652884	Identifier	rom_state_vaddr		8652751	0					
+ANR	8652885	CallExpression	le32_to_cpu ( s -> rom_state . vaddr )		8652751	1					
+ANR	8652886	Callee	le32_to_cpu		8652751	0					
+ANR	8652887	Identifier	le32_to_cpu		8652751	0					
+ANR	8652888	ArgumentList	s -> rom_state . vaddr		8652751	1					
+ANR	8652889	Argument	s -> rom_state . vaddr		8652751	0					
+ANR	8652890	MemberAccess	s -> rom_state . vaddr		8652751	0					
+ANR	8652891	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8652892	Identifier	s		8652751	0					
+ANR	8652893	Identifier	rom_state		8652751	1					
+ANR	8652894	Identifier	vaddr		8652751	1					
+ANR	8652895	CompoundStatement		65:60:956:956	8652751	1					
+ANR	8652896	ReturnStatement	return 0 ;	69:8:1052:1060	8652751	0	True				
+ANR	8652897	PrimaryExpression	0		8652751	0					
+ANR	8652898	ForStatement	for ( pos = le32_to_cpu ( s -> rom_state . fixup_start ) ; pos < le32_to_cpu ( s -> rom_state . fixup_end ) ; pos += 4 )		8652751	14					
+ANR	8652899	ForInit	pos = le32_to_cpu ( s -> rom_state . fixup_start ) ;	73:9:1079:1122	8652751	0	True				
+ANR	8652900	AssignmentExpression	pos = le32_to_cpu ( s -> rom_state . fixup_start )		8652751	0		=			
+ANR	8652901	Identifier	pos		8652751	0					
+ANR	8652902	CallExpression	le32_to_cpu ( s -> rom_state . fixup_start )		8652751	1					
+ANR	8652903	Callee	le32_to_cpu		8652751	0					
+ANR	8652904	Identifier	le32_to_cpu		8652751	0					
+ANR	8652905	ArgumentList	s -> rom_state . fixup_start		8652751	1					
+ANR	8652906	Argument	s -> rom_state . fixup_start		8652751	0					
+ANR	8652907	MemberAccess	s -> rom_state . fixup_start		8652751	0					
+ANR	8652908	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8652909	Identifier	s		8652751	0					
+ANR	8652910	Identifier	rom_state		8652751	1					
+ANR	8652911	Identifier	fixup_start		8652751	1					
+ANR	8652912	Condition	pos < le32_to_cpu ( s -> rom_state . fixup_end )	75:9:1134:1174	8652751	1	True				
+ANR	8652913	RelationalExpression	pos < le32_to_cpu ( s -> rom_state . fixup_end )		8652751	0		<			
+ANR	8652914	Identifier	pos		8652751	0					
+ANR	8652915	CallExpression	le32_to_cpu ( s -> rom_state . fixup_end )		8652751	1					
+ANR	8652916	Callee	le32_to_cpu		8652751	0					
+ANR	8652917	Identifier	le32_to_cpu		8652751	0					
+ANR	8652918	ArgumentList	s -> rom_state . fixup_end		8652751	1					
+ANR	8652919	Argument	s -> rom_state . fixup_end		8652751	0					
+ANR	8652920	MemberAccess	s -> rom_state . fixup_end		8652751	0					
+ANR	8652921	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8652922	Identifier	s		8652751	0					
+ANR	8652923	Identifier	rom_state		8652751	1					
+ANR	8652924	Identifier	fixup_end		8652751	1					
+ANR	8652925	AssignmentExpression	pos += 4	77:9:1187:1194	8652751	2	True	+=			
+ANR	8652926	Identifier	pos		8652751	0					
+ANR	8652927	PrimaryExpression	4		8652751	1					
+ANR	8652928	CompoundStatement		75:19:1112:1112	8652751	3					
+ANR	8652929	ExpressionStatement	"cpu_physical_memory_rw ( paddr + pos - s -> rom_state . vaddr , ( void * ) & offset , sizeof ( offset ) , 0 )"	79:8:1208:1332	8652751	0	True				
+ANR	8652930	CallExpression	"cpu_physical_memory_rw ( paddr + pos - s -> rom_state . vaddr , ( void * ) & offset , sizeof ( offset ) , 0 )"		8652751	0					
+ANR	8652931	Callee	cpu_physical_memory_rw		8652751	0					
+ANR	8652932	Identifier	cpu_physical_memory_rw		8652751	0					
+ANR	8652933	ArgumentList	paddr + pos - s -> rom_state . vaddr		8652751	1					
+ANR	8652934	Argument	paddr + pos - s -> rom_state . vaddr		8652751	0					
+ANR	8652935	AdditiveExpression	paddr + pos - s -> rom_state . vaddr		8652751	0		+			
+ANR	8652936	Identifier	paddr		8652751	0					
+ANR	8652937	AdditiveExpression	pos - s -> rom_state . vaddr		8652751	1		-			
+ANR	8652938	Identifier	pos		8652751	0					
+ANR	8652939	MemberAccess	s -> rom_state . vaddr		8652751	1					
+ANR	8652940	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8652941	Identifier	s		8652751	0					
+ANR	8652942	Identifier	rom_state		8652751	1					
+ANR	8652943	Identifier	vaddr		8652751	1					
+ANR	8652944	Argument	( void * ) & offset		8652751	1					
+ANR	8652945	CastExpression	( void * ) & offset		8652751	0					
+ANR	8652946	CastTarget	void *		8652751	0					
+ANR	8652947	UnaryOperationExpression	& offset		8652751	1					
+ANR	8652948	UnaryOperator	&		8652751	0					
+ANR	8652949	Identifier	offset		8652751	1					
+ANR	8652950	Argument	sizeof ( offset )		8652751	2					
+ANR	8652951	SizeofExpression	sizeof ( offset )		8652751	0					
+ANR	8652952	Sizeof	sizeof		8652751	0					
+ANR	8652953	SizeofOperand	offset		8652751	1					
+ANR	8652954	Argument	0		8652751	3					
+ANR	8652955	PrimaryExpression	0		8652751	0					
+ANR	8652956	ExpressionStatement	offset = le32_to_cpu ( offset )	83:8:1343:1371	8652751	1	True				
+ANR	8652957	AssignmentExpression	offset = le32_to_cpu ( offset )		8652751	0		=			
+ANR	8652958	Identifier	offset		8652751	0					
+ANR	8652959	CallExpression	le32_to_cpu ( offset )		8652751	1					
+ANR	8652960	Callee	le32_to_cpu		8652751	0					
+ANR	8652961	Identifier	le32_to_cpu		8652751	0					
+ANR	8652962	ArgumentList	offset		8652751	1					
+ANR	8652963	Argument	offset		8652751	0					
+ANR	8652964	Identifier	offset		8652751	0					
+ANR	8652965	ExpressionStatement	"cpu_physical_memory_rw ( paddr + offset , ( void * ) & patch , sizeof ( patch ) , 0 )"	85:8:1382:1486	8652751	2	True				
+ANR	8652966	CallExpression	"cpu_physical_memory_rw ( paddr + offset , ( void * ) & patch , sizeof ( patch ) , 0 )"		8652751	0					
+ANR	8652967	Callee	cpu_physical_memory_rw		8652751	0					
+ANR	8652968	Identifier	cpu_physical_memory_rw		8652751	0					
+ANR	8652969	ArgumentList	paddr + offset		8652751	1					
+ANR	8652970	Argument	paddr + offset		8652751	0					
+ANR	8652971	AdditiveExpression	paddr + offset		8652751	0		+			
+ANR	8652972	Identifier	paddr		8652751	0					
+ANR	8652973	Identifier	offset		8652751	1					
+ANR	8652974	Argument	( void * ) & patch		8652751	1					
+ANR	8652975	CastExpression	( void * ) & patch		8652751	0					
+ANR	8652976	CastTarget	void *		8652751	0					
+ANR	8652977	UnaryOperationExpression	& patch		8652751	1					
+ANR	8652978	UnaryOperator	&		8652751	0					
+ANR	8652979	Identifier	patch		8652751	1					
+ANR	8652980	Argument	sizeof ( patch )		8652751	2					
+ANR	8652981	SizeofExpression	sizeof ( patch )		8652751	0					
+ANR	8652982	Sizeof	sizeof		8652751	0					
+ANR	8652983	SizeofOperand	patch		8652751	1					
+ANR	8652984	Argument	0		8652751	3					
+ANR	8652985	PrimaryExpression	0		8652751	0					
+ANR	8652986	ExpressionStatement	patch = le32_to_cpu ( patch )	89:8:1497:1523	8652751	3	True				
+ANR	8652987	AssignmentExpression	patch = le32_to_cpu ( patch )		8652751	0		=			
+ANR	8652988	Identifier	patch		8652751	0					
+ANR	8652989	CallExpression	le32_to_cpu ( patch )		8652751	1					
+ANR	8652990	Callee	le32_to_cpu		8652751	0					
+ANR	8652991	Identifier	le32_to_cpu		8652751	0					
+ANR	8652992	ArgumentList	patch		8652751	1					
+ANR	8652993	Argument	patch		8652751	0					
+ANR	8652994	Identifier	patch		8652751	0					
+ANR	8652995	ExpressionStatement	patch += rom_state_vaddr - le32_to_cpu ( s -> rom_state . vaddr )	91:8:1534:1592	8652751	4	True				
+ANR	8652996	AssignmentExpression	patch += rom_state_vaddr - le32_to_cpu ( s -> rom_state . vaddr )		8652751	0		+=			
+ANR	8652997	Identifier	patch		8652751	0					
+ANR	8652998	AdditiveExpression	rom_state_vaddr - le32_to_cpu ( s -> rom_state . vaddr )		8652751	1		-			
+ANR	8652999	Identifier	rom_state_vaddr		8652751	0					
+ANR	8653000	CallExpression	le32_to_cpu ( s -> rom_state . vaddr )		8652751	1					
+ANR	8653001	Callee	le32_to_cpu		8652751	0					
+ANR	8653002	Identifier	le32_to_cpu		8652751	0					
+ANR	8653003	ArgumentList	s -> rom_state . vaddr		8652751	1					
+ANR	8653004	Argument	s -> rom_state . vaddr		8652751	0					
+ANR	8653005	MemberAccess	s -> rom_state . vaddr		8652751	0					
+ANR	8653006	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8653007	Identifier	s		8652751	0					
+ANR	8653008	Identifier	rom_state		8652751	1					
+ANR	8653009	Identifier	vaddr		8652751	1					
+ANR	8653010	ExpressionStatement	patch = cpu_to_le32 ( patch )	93:8:1603:1629	8652751	5	True				
+ANR	8653011	AssignmentExpression	patch = cpu_to_le32 ( patch )		8652751	0		=			
+ANR	8653012	Identifier	patch		8652751	0					
+ANR	8653013	CallExpression	cpu_to_le32 ( patch )		8652751	1					
+ANR	8653014	Callee	cpu_to_le32		8652751	0					
+ANR	8653015	Identifier	cpu_to_le32		8652751	0					
+ANR	8653016	ArgumentList	patch		8652751	1					
+ANR	8653017	Argument	patch		8652751	0					
+ANR	8653018	Identifier	patch		8652751	0					
+ANR	8653019	ExpressionStatement	"cpu_physical_memory_rw ( paddr + offset , ( void * ) & patch , sizeof ( patch ) , 1 )"	95:8:1640:1744	8652751	6	True				
+ANR	8653020	CallExpression	"cpu_physical_memory_rw ( paddr + offset , ( void * ) & patch , sizeof ( patch ) , 1 )"		8652751	0					
+ANR	8653021	Callee	cpu_physical_memory_rw		8652751	0					
+ANR	8653022	Identifier	cpu_physical_memory_rw		8652751	0					
+ANR	8653023	ArgumentList	paddr + offset		8652751	1					
+ANR	8653024	Argument	paddr + offset		8652751	0					
+ANR	8653025	AdditiveExpression	paddr + offset		8652751	0		+			
+ANR	8653026	Identifier	paddr		8652751	0					
+ANR	8653027	Identifier	offset		8652751	1					
+ANR	8653028	Argument	( void * ) & patch		8652751	1					
+ANR	8653029	CastExpression	( void * ) & patch		8652751	0					
+ANR	8653030	CastTarget	void *		8652751	0					
+ANR	8653031	UnaryOperationExpression	& patch		8652751	1					
+ANR	8653032	UnaryOperator	&		8652751	0					
+ANR	8653033	Identifier	patch		8652751	1					
+ANR	8653034	Argument	sizeof ( patch )		8652751	2					
+ANR	8653035	SizeofExpression	sizeof ( patch )		8652751	0					
+ANR	8653036	Sizeof	sizeof		8652751	0					
+ANR	8653037	SizeofOperand	patch		8652751	1					
+ANR	8653038	Argument	1		8652751	3					
+ANR	8653039	PrimaryExpression	1		8652751	0					
+ANR	8653040	ExpressionStatement	read_guest_rom_state ( s )	101:4:1758:1781	8652751	15	True				
+ANR	8653041	CallExpression	read_guest_rom_state ( s )		8652751	0					
+ANR	8653042	Callee	read_guest_rom_state		8652751	0					
+ANR	8653043	Identifier	read_guest_rom_state		8652751	0					
+ANR	8653044	ArgumentList	s		8652751	1					
+ANR	8653045	Argument	s		8652751	0					
+ANR	8653046	Identifier	s		8652751	0					
+ANR	8653047	ExpressionStatement	s -> vapic_paddr = paddr + le32_to_cpu ( s -> rom_state . vapic_vaddr ) - le32_to_cpu ( s -> rom_state . vaddr )	103:4:1788:1893	8652751	16	True				
+ANR	8653048	AssignmentExpression	s -> vapic_paddr = paddr + le32_to_cpu ( s -> rom_state . vapic_vaddr ) - le32_to_cpu ( s -> rom_state . vaddr )		8652751	0		=			
+ANR	8653049	PtrMemberAccess	s -> vapic_paddr		8652751	0					
+ANR	8653050	Identifier	s		8652751	0					
+ANR	8653051	Identifier	vapic_paddr		8652751	1					
+ANR	8653052	AdditiveExpression	paddr + le32_to_cpu ( s -> rom_state . vapic_vaddr ) - le32_to_cpu ( s -> rom_state . vaddr )		8652751	1		+			
+ANR	8653053	Identifier	paddr		8652751	0					
+ANR	8653054	AdditiveExpression	le32_to_cpu ( s -> rom_state . vapic_vaddr ) - le32_to_cpu ( s -> rom_state . vaddr )		8652751	1		-			
+ANR	8653055	CallExpression	le32_to_cpu ( s -> rom_state . vapic_vaddr )		8652751	0					
+ANR	8653056	Callee	le32_to_cpu		8652751	0					
+ANR	8653057	Identifier	le32_to_cpu		8652751	0					
+ANR	8653058	ArgumentList	s -> rom_state . vapic_vaddr		8652751	1					
+ANR	8653059	Argument	s -> rom_state . vapic_vaddr		8652751	0					
+ANR	8653060	MemberAccess	s -> rom_state . vapic_vaddr		8652751	0					
+ANR	8653061	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8653062	Identifier	s		8652751	0					
+ANR	8653063	Identifier	rom_state		8652751	1					
+ANR	8653064	Identifier	vapic_vaddr		8652751	1					
+ANR	8653065	CallExpression	le32_to_cpu ( s -> rom_state . vaddr )		8652751	1					
+ANR	8653066	Callee	le32_to_cpu		8652751	0					
+ANR	8653067	Identifier	le32_to_cpu		8652751	0					
+ANR	8653068	ArgumentList	s -> rom_state . vaddr		8652751	1					
+ANR	8653069	Argument	s -> rom_state . vaddr		8652751	0					
+ANR	8653070	MemberAccess	s -> rom_state . vaddr		8652751	0					
+ANR	8653071	PtrMemberAccess	s -> rom_state		8652751	0					
+ANR	8653072	Identifier	s		8652751	0					
+ANR	8653073	Identifier	rom_state		8652751	1					
+ANR	8653074	Identifier	vaddr		8652751	1					
+ANR	8653075	ReturnStatement	return 0 ;	109:4:1902:1910	8652751	17	True				
+ANR	8653076	PrimaryExpression	0		8652751	0					
+ANR	8653077	ReturnType	static int		8652751	1					
+ANR	8653078	Identifier	update_rom_mapping		8652751	2					
+ANR	8653079	ParameterList	"VAPICROMState * s , CPUX86State * env , target_ulong ip"		8652751	3					
+ANR	8653080	Parameter	VAPICROMState * s	1:30:30:45	8652751	0	True				
+ANR	8653081	ParameterType	VAPICROMState *		8652751	0					
+ANR	8653082	Identifier	s		8652751	1					
+ANR	8653083	Parameter	CPUX86State * env	1:48:48:63	8652751	1	True				
+ANR	8653084	ParameterType	CPUX86State *		8652751	0					
+ANR	8653085	Identifier	env		8652751	1					
+ANR	8653086	Parameter	target_ulong ip	1:66:66:80	8652751	2	True				
+ANR	8653087	ParameterType	target_ulong		8652751	0					
+ANR	8653088	Identifier	ip		8652751	1					
+ANR	8653089	CFGEntryNode	ENTRY		8652751		True				
+ANR	8653090	CFGExitNode	EXIT		8652751		True				
+ANR	8653091	Symbol	s -> rom_state . vaddr		8652751						
+ANR	8653092	Symbol	patch		8652751						
+ANR	8653093	Symbol	& patch		8652751						
+ANR	8653094	Symbol	memcmp		8652751						
+ANR	8653095	Symbol	pos		8652751						
+ANR	8653096	Symbol	cpu_to_le32		8652751						
+ANR	8653097	Symbol	le32_to_cpu		8652751						
+ANR	8653098	Symbol	s -> vapic_paddr		8652751						
+ANR	8653099	Symbol	s -> rom_state		8652751						
+ANR	8653100	Symbol	s -> rom_state . fixup_end		8652751						
+ANR	8653101	Symbol	s -> rom_state_vaddr		8652751						
+ANR	8653102	Symbol	s -> rom_state . fixup_start		8652751						
+ANR	8653103	Symbol	rom_state_vaddr		8652751						
+ANR	8653104	Symbol	offset		8652751						
+ANR	8653105	Symbol	& offset		8652751						
+ANR	8653106	Symbol	ip		8652751						
+ANR	8653107	Symbol	s -> state		8652751						
+ANR	8653108	Symbol	cpu_get_phys_page_debug		8652751						
+ANR	8653109	Symbol	env		8652751						
+ANR	8653110	Symbol	~TARGET_PAGE_MASK		8652751						
+ANR	8653111	Symbol	s -> rom_state . signature		8652751						
+ANR	8653112	Symbol	VAPIC_ACTIVE		8652751						
+ANR	8653113	Symbol	s		8652751						
+ANR	8653114	Symbol	s -> rom_state . vapic_vaddr		8652751						
+ANR	8653115	Symbol	paddr		8652751						
+ANR	8653116	Symbol	VAPIC_INACTIVE		8652751						
+ANR	8653117	Symbol	* s		8652751						
+ANR	8653118	Symbol	s -> rom_state_paddr		8652751						

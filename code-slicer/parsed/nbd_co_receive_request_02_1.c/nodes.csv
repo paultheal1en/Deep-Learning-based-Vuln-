@@ -1,0 +1,227 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5915825	File	/home/p4ultr4n/workplace/ReVeal/raw_code/nbd_co_receive_request_02_1.c								
+ANR	5915826	Function	nbd_co_receive_request	1:0:0:1138							
+ANR	5915827	FunctionDef	"nbd_co_receive_request (NBDRequest * req , struct nbd_request * request)"		5915826	0					
+ANR	5915828	CompoundStatement		3:0:85:1138	5915826	0					
+ANR	5915829	IdentifierDeclStatement	NBDClient * client = req -> client ;	5:4:92:123	5915826	0	True				
+ANR	5915830	IdentifierDecl	* client = req -> client		5915826	0					
+ANR	5915831	IdentifierDeclType	NBDClient *		5915826	0					
+ANR	5915832	Identifier	client		5915826	1					
+ANR	5915833	AssignmentExpression	* client = req -> client		5915826	2		=			
+ANR	5915834	Identifier	client		5915826	0					
+ANR	5915835	PtrMemberAccess	req -> client		5915826	1					
+ANR	5915836	Identifier	req		5915826	0					
+ANR	5915837	Identifier	client		5915826	1					
+ANR	5915838	IdentifierDeclStatement	int csock = client -> sock ;	7:4:130:154	5915826	1	True				
+ANR	5915839	IdentifierDecl	csock = client -> sock		5915826	0					
+ANR	5915840	IdentifierDeclType	int		5915826	0					
+ANR	5915841	Identifier	csock		5915826	1					
+ANR	5915842	AssignmentExpression	csock = client -> sock		5915826	2		=			
+ANR	5915843	Identifier	csock		5915826	0					
+ANR	5915844	PtrMemberAccess	client -> sock		5915826	1					
+ANR	5915845	Identifier	client		5915826	0					
+ANR	5915846	Identifier	sock		5915826	1					
+ANR	5915847	IdentifierDeclStatement	ssize_t rc ;	9:4:161:171	5915826	2	True				
+ANR	5915848	IdentifierDecl	rc		5915826	0					
+ANR	5915849	IdentifierDeclType	ssize_t		5915826	0					
+ANR	5915850	Identifier	rc		5915826	1					
+ANR	5915851	ExpressionStatement	client -> recv_coroutine = qemu_coroutine_self ( )	13:4:180:226	5915826	3	True				
+ANR	5915852	AssignmentExpression	client -> recv_coroutine = qemu_coroutine_self ( )		5915826	0		=			
+ANR	5915853	PtrMemberAccess	client -> recv_coroutine		5915826	0					
+ANR	5915854	Identifier	client		5915826	0					
+ANR	5915855	Identifier	recv_coroutine		5915826	1					
+ANR	5915856	CallExpression	qemu_coroutine_self ( )		5915826	1					
+ANR	5915857	Callee	qemu_coroutine_self		5915826	0					
+ANR	5915858	Identifier	qemu_coroutine_self		5915826	0					
+ANR	5915859	ArgumentList			5915826	1					
+ANR	5915860	IfStatement	"if ( nbd_receive_request ( csock , request ) < 0 )"		5915826	4					
+ANR	5915861	Condition	"nbd_receive_request ( csock , request ) < 0"	15:8:237:275	5915826	0	True				
+ANR	5915862	RelationalExpression	"nbd_receive_request ( csock , request ) < 0"		5915826	0		<			
+ANR	5915863	CallExpression	"nbd_receive_request ( csock , request )"		5915826	0					
+ANR	5915864	Callee	nbd_receive_request		5915826	0					
+ANR	5915865	Identifier	nbd_receive_request		5915826	0					
+ANR	5915866	ArgumentList	csock		5915826	1					
+ANR	5915867	Argument	csock		5915826	0					
+ANR	5915868	Identifier	csock		5915826	0					
+ANR	5915869	Argument	request		5915826	1					
+ANR	5915870	Identifier	request		5915826	0					
+ANR	5915871	PrimaryExpression	0		5915826	1					
+ANR	5915872	CompoundStatement		13:49:192:192	5915826	1					
+ANR	5915873	ExpressionStatement	rc = - EIO	17:8:289:298	5915826	0	True				
+ANR	5915874	AssignmentExpression	rc = - EIO		5915826	0		=			
+ANR	5915875	Identifier	rc		5915826	0					
+ANR	5915876	UnaryOperationExpression	- EIO		5915826	1					
+ANR	5915877	UnaryOperator	-		5915826	0					
+ANR	5915878	Identifier	EIO		5915826	1					
+ANR	5915879	GotoStatement	goto out ;	19:8:309:317	5915826	1	True				
+ANR	5915880	Identifier	out		5915826	0					
+ANR	5915881	IfStatement	if ( request -> len > NBD_BUFFER_SIZE )		5915826	5					
+ANR	5915882	Condition	request -> len > NBD_BUFFER_SIZE	25:8:337:366	5915826	0	True				
+ANR	5915883	RelationalExpression	request -> len > NBD_BUFFER_SIZE		5915826	0		>			
+ANR	5915884	PtrMemberAccess	request -> len		5915826	0					
+ANR	5915885	Identifier	request		5915826	0					
+ANR	5915886	Identifier	len		5915826	1					
+ANR	5915887	Identifier	NBD_BUFFER_SIZE		5915826	1					
+ANR	5915888	CompoundStatement		23:40:283:283	5915826	1					
+ANR	5915889	ExpressionStatement	"LOG ( ""len (%u) is larger than max len (%u)"" , request -> len , NBD_BUFFER_SIZE )"	27:8:380:467	5915826	0	True				
+ANR	5915890	CallExpression	"LOG ( ""len (%u) is larger than max len (%u)"" , request -> len , NBD_BUFFER_SIZE )"		5915826	0					
+ANR	5915891	Callee	LOG		5915826	0					
+ANR	5915892	Identifier	LOG		5915826	0					
+ANR	5915893	ArgumentList	"""len (%u) is larger than max len (%u)"""		5915826	1					
+ANR	5915894	Argument	"""len (%u) is larger than max len (%u)"""		5915826	0					
+ANR	5915895	PrimaryExpression	"""len (%u) is larger than max len (%u)"""		5915826	0					
+ANR	5915896	Argument	request -> len		5915826	1					
+ANR	5915897	PtrMemberAccess	request -> len		5915826	0					
+ANR	5915898	Identifier	request		5915826	0					
+ANR	5915899	Identifier	len		5915826	1					
+ANR	5915900	Argument	NBD_BUFFER_SIZE		5915826	2					
+ANR	5915901	Identifier	NBD_BUFFER_SIZE		5915826	0					
+ANR	5915902	ExpressionStatement	rc = - EINVAL	31:8:478:490	5915826	1	True				
+ANR	5915903	AssignmentExpression	rc = - EINVAL		5915826	0		=			
+ANR	5915904	Identifier	rc		5915826	0					
+ANR	5915905	UnaryOperationExpression	- EINVAL		5915826	1					
+ANR	5915906	UnaryOperator	-		5915826	0					
+ANR	5915907	Identifier	EINVAL		5915826	1					
+ANR	5915908	GotoStatement	goto out ;	33:8:501:509	5915826	2	True				
+ANR	5915909	Identifier	out		5915826	0					
+ANR	5915910	IfStatement	if ( ( request -> from + request -> len ) < request -> from )		5915826	6					
+ANR	5915911	Condition	( request -> from + request -> len ) < request -> from	39:8:529:574	5915826	0	True				
+ANR	5915912	RelationalExpression	( request -> from + request -> len ) < request -> from		5915826	0		<			
+ANR	5915913	AdditiveExpression	request -> from + request -> len		5915826	0		+			
+ANR	5915914	PtrMemberAccess	request -> from		5915826	0					
+ANR	5915915	Identifier	request		5915826	0					
+ANR	5915916	Identifier	from		5915826	1					
+ANR	5915917	PtrMemberAccess	request -> len		5915826	1					
+ANR	5915918	Identifier	request		5915826	0					
+ANR	5915919	Identifier	len		5915826	1					
+ANR	5915920	PtrMemberAccess	request -> from		5915826	1					
+ANR	5915921	Identifier	request		5915826	0					
+ANR	5915922	Identifier	from		5915826	1					
+ANR	5915923	CompoundStatement		37:56:491:491	5915826	1					
+ANR	5915924	Statement	LOG	41:8:588:590	5915826	0	True				
+ANR	5915925	Statement	(	41:11:591:591	5915826	1	True				
+ANR	5915926	Statement	"""integer overflow detected! """	41:12:592:620	5915826	2	True				
+ANR	5915927	Statement	"""you're probably being attacked"""	43:12:635:666	5915826	3	True				
+ANR	5915928	Statement	)	43:44:667:667	5915826	4	True				
+ANR	5915929	ExpressionStatement		43:45:668:668	5915826	5	True				
+ANR	5915930	ExpressionStatement	rc = - EINVAL	45:8:679:691	5915826	6	True				
+ANR	5915931	AssignmentExpression	rc = - EINVAL		5915826	0		=			
+ANR	5915932	Identifier	rc		5915826	0					
+ANR	5915933	UnaryOperationExpression	- EINVAL		5915826	1					
+ANR	5915934	UnaryOperator	-		5915826	0					
+ANR	5915935	Identifier	EINVAL		5915826	1					
+ANR	5915936	GotoStatement	goto out ;	47:8:702:710	5915826	7	True				
+ANR	5915937	Identifier	out		5915826	0					
+ANR	5915938	ExpressionStatement	"TRACE ( ""Decoding type"" )"	53:4:726:748	5915826	7	True				
+ANR	5915939	CallExpression	"TRACE ( ""Decoding type"" )"		5915826	0					
+ANR	5915940	Callee	TRACE		5915826	0					
+ANR	5915941	Identifier	TRACE		5915826	0					
+ANR	5915942	ArgumentList	"""Decoding type"""		5915826	1					
+ANR	5915943	Argument	"""Decoding type"""		5915826	0					
+ANR	5915944	PrimaryExpression	"""Decoding type"""		5915826	0					
+ANR	5915945	IfStatement	if ( ( request -> type & NBD_CMD_MASK_COMMAND ) == NBD_CMD_WRITE )		5915826	8					
+ANR	5915946	Condition	( request -> type & NBD_CMD_MASK_COMMAND ) == NBD_CMD_WRITE	57:8:761:815	5915826	0	True				
+ANR	5915947	EqualityExpression	( request -> type & NBD_CMD_MASK_COMMAND ) == NBD_CMD_WRITE		5915826	0		==			
+ANR	5915948	BitAndExpression	request -> type & NBD_CMD_MASK_COMMAND		5915826	0		&			
+ANR	5915949	PtrMemberAccess	request -> type		5915826	0					
+ANR	5915950	Identifier	request		5915826	0					
+ANR	5915951	Identifier	type		5915826	1					
+ANR	5915952	Identifier	NBD_CMD_MASK_COMMAND		5915826	1					
+ANR	5915953	Identifier	NBD_CMD_WRITE		5915826	1					
+ANR	5915954	CompoundStatement		55:65:732:732	5915826	1					
+ANR	5915955	ExpressionStatement	"TRACE ( ""Reading %u byte(s)"" , request -> len )"	59:8:829:870	5915826	0	True				
+ANR	5915956	CallExpression	"TRACE ( ""Reading %u byte(s)"" , request -> len )"		5915826	0					
+ANR	5915957	Callee	TRACE		5915826	0					
+ANR	5915958	Identifier	TRACE		5915826	0					
+ANR	5915959	ArgumentList	"""Reading %u byte(s)"""		5915826	1					
+ANR	5915960	Argument	"""Reading %u byte(s)"""		5915826	0					
+ANR	5915961	PrimaryExpression	"""Reading %u byte(s)"""		5915826	0					
+ANR	5915962	Argument	request -> len		5915826	1					
+ANR	5915963	PtrMemberAccess	request -> len		5915826	0					
+ANR	5915964	Identifier	request		5915826	0					
+ANR	5915965	Identifier	len		5915826	1					
+ANR	5915966	IfStatement	"if ( qemu_co_recv ( csock , req -> data , request -> len ) != request -> len )"		5915826	1					
+ANR	5915967	Condition	"qemu_co_recv ( csock , req -> data , request -> len ) != request -> len"	63:12:887:946	5915826	0	True				
+ANR	5915968	EqualityExpression	"qemu_co_recv ( csock , req -> data , request -> len ) != request -> len"		5915826	0		!=			
+ANR	5915969	CallExpression	"qemu_co_recv ( csock , req -> data , request -> len )"		5915826	0					
+ANR	5915970	Callee	qemu_co_recv		5915826	0					
+ANR	5915971	Identifier	qemu_co_recv		5915826	0					
+ANR	5915972	ArgumentList	csock		5915826	1					
+ANR	5915973	Argument	csock		5915826	0					
+ANR	5915974	Identifier	csock		5915826	0					
+ANR	5915975	Argument	req -> data		5915826	1					
+ANR	5915976	PtrMemberAccess	req -> data		5915826	0					
+ANR	5915977	Identifier	req		5915826	0					
+ANR	5915978	Identifier	data		5915826	1					
+ANR	5915979	Argument	request -> len		5915826	2					
+ANR	5915980	PtrMemberAccess	request -> len		5915826	0					
+ANR	5915981	Identifier	request		5915826	0					
+ANR	5915982	Identifier	len		5915826	1					
+ANR	5915983	PtrMemberAccess	request -> len		5915826	1					
+ANR	5915984	Identifier	request		5915826	0					
+ANR	5915985	Identifier	len		5915826	1					
+ANR	5915986	CompoundStatement		61:74:863:863	5915826	1					
+ANR	5915987	ExpressionStatement	"LOG ( ""reading from socket failed"" )"	65:12:964:997	5915826	0	True				
+ANR	5915988	CallExpression	"LOG ( ""reading from socket failed"" )"		5915826	0					
+ANR	5915989	Callee	LOG		5915826	0					
+ANR	5915990	Identifier	LOG		5915826	0					
+ANR	5915991	ArgumentList	"""reading from socket failed"""		5915826	1					
+ANR	5915992	Argument	"""reading from socket failed"""		5915826	0					
+ANR	5915993	PrimaryExpression	"""reading from socket failed"""		5915826	0					
+ANR	5915994	ExpressionStatement	rc = - EIO	67:12:1012:1021	5915826	1	True				
+ANR	5915995	AssignmentExpression	rc = - EIO		5915826	0		=			
+ANR	5915996	Identifier	rc		5915826	0					
+ANR	5915997	UnaryOperationExpression	- EIO		5915826	1					
+ANR	5915998	UnaryOperator	-		5915826	0					
+ANR	5915999	Identifier	EIO		5915826	1					
+ANR	5916000	GotoStatement	goto out ;	69:12:1036:1044	5915826	2	True				
+ANR	5916001	Identifier	out		5915826	0					
+ANR	5916002	ExpressionStatement	rc = 0	75:4:1069:1075	5915826	9	True				
+ANR	5916003	AssignmentExpression	rc = 0		5915826	0		=			
+ANR	5916004	Identifier	rc		5915826	0					
+ANR	5916005	PrimaryExpression	0		5915826	1					
+ANR	5916006	Label	out :	79:0:1080:1083	5915826	10	True				
+ANR	5916007	Identifier	out		5915826	0					
+ANR	5916008	ExpressionStatement	client -> recv_coroutine = NULL	81:4:1090:1119	5915826	11	True				
+ANR	5916009	AssignmentExpression	client -> recv_coroutine = NULL		5915826	0		=			
+ANR	5916010	PtrMemberAccess	client -> recv_coroutine		5915826	0					
+ANR	5916011	Identifier	client		5915826	0					
+ANR	5916012	Identifier	recv_coroutine		5915826	1					
+ANR	5916013	Identifier	NULL		5915826	1					
+ANR	5916014	ReturnStatement	return rc ;	83:4:1126:1135	5915826	12	True				
+ANR	5916015	Identifier	rc		5915826	0					
+ANR	5916016	ReturnType	static ssize_t		5915826	1					
+ANR	5916017	Identifier	nbd_co_receive_request		5915826	2					
+ANR	5916018	ParameterList	"NBDRequest * req , struct nbd_request * request"		5915826	3					
+ANR	5916019	Parameter	NBDRequest * req	1:38:38:52	5915826	0	True				
+ANR	5916020	ParameterType	NBDRequest *		5915826	0					
+ANR	5916021	Identifier	req		5915826	1					
+ANR	5916022	Parameter	struct nbd_request * request	1:55:55:81	5915826	1	True				
+ANR	5916023	ParameterType	struct nbd_request *		5915826	0					
+ANR	5916024	Identifier	request		5915826	1					
+ANR	5916025	CFGEntryNode	ENTRY		5915826		True				
+ANR	5916026	CFGExitNode	EXIT		5915826		True				
+ANR	5916027	Symbol	request		5915826						
+ANR	5916028	Symbol	req -> client		5915826						
+ANR	5916029	Symbol	request -> type		5915826						
+ANR	5916030	Symbol	NULL		5915826						
+ANR	5916031	Symbol	request -> len		5915826						
+ANR	5916032	Symbol	* req		5915826						
+ANR	5916033	Symbol	client -> sock		5915826						
+ANR	5916034	Symbol	* client		5915826						
+ANR	5916035	Symbol	EIO		5915826						
+ANR	5916036	Symbol	client -> recv_coroutine		5915826						
+ANR	5916037	Symbol	nbd_receive_request		5915826						
+ANR	5916038	Symbol	csock		5915826						
+ANR	5916039	Symbol	EINVAL		5915826						
+ANR	5916040	Symbol	rc		5915826						
+ANR	5916041	Symbol	NBD_BUFFER_SIZE		5915826						
+ANR	5916042	Symbol	NBD_CMD_MASK_COMMAND		5915826						
+ANR	5916043	Symbol	qemu_co_recv		5915826						
+ANR	5916044	Symbol	req -> data		5915826						
+ANR	5916045	Symbol	* request		5915826						
+ANR	5916046	Symbol	client		5915826						
+ANR	5916047	Symbol	NBD_CMD_WRITE		5915826						
+ANR	5916048	Symbol	qemu_coroutine_self		5915826						
+ANR	5916049	Symbol	request -> from		5915826						
+ANR	5916050	Symbol	req		5915826						

@@ -1,0 +1,219 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5278315	File	/home/p4ultr4n/workplace/ReVeal/raw_code/local_remove_1.c								
+ANR	5278316	Function	local_remove	1:0:0:1543							
+ANR	5278317	FunctionDef	"local_remove (FsContext * ctx , const char * path)"		5278316	0					
+ANR	5278318	CompoundStatement		3:0:59:1543	5278316	0					
+ANR	5278319	IdentifierDeclStatement	int err ;	5:4:66:73	5278316	0	True				
+ANR	5278320	IdentifierDecl	err		5278316	0					
+ANR	5278321	IdentifierDeclType	int		5278316	0					
+ANR	5278322	Identifier	err		5278316	1					
+ANR	5278323	IdentifierDeclStatement	struct stat stbuf ;	7:4:80:97	5278316	1	True				
+ANR	5278324	IdentifierDecl	stbuf		5278316	0					
+ANR	5278325	IdentifierDeclType	struct stat		5278316	0					
+ANR	5278326	Identifier	stbuf		5278316	1					
+ANR	5278327	IdentifierDeclStatement	char * buffer ;	9:4:104:116	5278316	2	True				
+ANR	5278328	IdentifierDecl	* buffer		5278316	0					
+ANR	5278329	IdentifierDeclType	char *		5278316	0					
+ANR	5278330	Identifier	buffer		5278316	1					
+ANR	5278331	IfStatement	if ( ctx -> export_flags & V9FS_SM_MAPPED_FILE )		5278316	3					
+ANR	5278332	Condition	ctx -> export_flags & V9FS_SM_MAPPED_FILE	13:8:129:167	5278316	0	True				
+ANR	5278333	BitAndExpression	ctx -> export_flags & V9FS_SM_MAPPED_FILE		5278316	0		&			
+ANR	5278334	PtrMemberAccess	ctx -> export_flags		5278316	0					
+ANR	5278335	Identifier	ctx		5278316	0					
+ANR	5278336	Identifier	export_flags		5278316	1					
+ANR	5278337	Identifier	V9FS_SM_MAPPED_FILE		5278316	1					
+ANR	5278338	CompoundStatement		11:49:110:110	5278316	1					
+ANR	5278339	ExpressionStatement	"buffer = rpath ( ctx , path )"	15:8:181:206	5278316	0	True				
+ANR	5278340	AssignmentExpression	"buffer = rpath ( ctx , path )"		5278316	0		=			
+ANR	5278341	Identifier	buffer		5278316	0					
+ANR	5278342	CallExpression	"rpath ( ctx , path )"		5278316	1					
+ANR	5278343	Callee	rpath		5278316	0					
+ANR	5278344	Identifier	rpath		5278316	0					
+ANR	5278345	ArgumentList	ctx		5278316	1					
+ANR	5278346	Argument	ctx		5278316	0					
+ANR	5278347	Identifier	ctx		5278316	0					
+ANR	5278348	Argument	path		5278316	1					
+ANR	5278349	Identifier	path		5278316	0					
+ANR	5278350	ExpressionStatement	"err = lstat ( buffer , & stbuf )"	17:8:217:245	5278316	1	True				
+ANR	5278351	AssignmentExpression	"err = lstat ( buffer , & stbuf )"		5278316	0		=			
+ANR	5278352	Identifier	err		5278316	0					
+ANR	5278353	CallExpression	"lstat ( buffer , & stbuf )"		5278316	1					
+ANR	5278354	Callee	lstat		5278316	0					
+ANR	5278355	Identifier	lstat		5278316	0					
+ANR	5278356	ArgumentList	buffer		5278316	1					
+ANR	5278357	Argument	buffer		5278316	0					
+ANR	5278358	Identifier	buffer		5278316	0					
+ANR	5278359	Argument	& stbuf		5278316	1					
+ANR	5278360	UnaryOperationExpression	& stbuf		5278316	0					
+ANR	5278361	UnaryOperator	&		5278316	0					
+ANR	5278362	Identifier	stbuf		5278316	1					
+ANR	5278363	ExpressionStatement	g_free ( buffer )	19:8:256:270	5278316	2	True				
+ANR	5278364	CallExpression	g_free ( buffer )		5278316	0					
+ANR	5278365	Callee	g_free		5278316	0					
+ANR	5278366	Identifier	g_free		5278316	0					
+ANR	5278367	ArgumentList	buffer		5278316	1					
+ANR	5278368	Argument	buffer		5278316	0					
+ANR	5278369	Identifier	buffer		5278316	0					
+ANR	5278370	IfStatement	if ( err )		5278316	3					
+ANR	5278371	Condition	err	21:12:285:287	5278316	0	True				
+ANR	5278372	Identifier	err		5278316	0					
+ANR	5278373	CompoundStatement		19:17:230:230	5278316	1					
+ANR	5278374	GotoStatement	goto err_out ;	23:12:305:317	5278316	0	True				
+ANR	5278375	Identifier	err_out		5278316	0					
+ANR	5278376	IfStatement	if ( S_ISDIR ( stbuf . st_mode ) )		5278316	4					
+ANR	5278377	Condition	S_ISDIR ( stbuf . st_mode )	35:12:456:477	5278316	0	True				
+ANR	5278378	CallExpression	S_ISDIR ( stbuf . st_mode )		5278316	0					
+ANR	5278379	Callee	S_ISDIR		5278316	0					
+ANR	5278380	Identifier	S_ISDIR		5278316	0					
+ANR	5278381	ArgumentList	stbuf . st_mode		5278316	1					
+ANR	5278382	Argument	stbuf . st_mode		5278316	0					
+ANR	5278383	MemberAccess	stbuf . st_mode		5278316	0					
+ANR	5278384	Identifier	stbuf		5278316	0					
+ANR	5278385	Identifier	st_mode		5278316	1					
+ANR	5278386	CompoundStatement		33:36:420:420	5278316	1					
+ANR	5278387	ExpressionStatement	"buffer = g_strdup_printf ( ""%s/%s/%s"" , ctx -> fs_root , path , VIRTFS_META_DIR )"	37:12:495:606	5278316	0	True				
+ANR	5278388	AssignmentExpression	"buffer = g_strdup_printf ( ""%s/%s/%s"" , ctx -> fs_root , path , VIRTFS_META_DIR )"		5278316	0		=			
+ANR	5278389	Identifier	buffer		5278316	0					
+ANR	5278390	CallExpression	"g_strdup_printf ( ""%s/%s/%s"" , ctx -> fs_root , path , VIRTFS_META_DIR )"		5278316	1					
+ANR	5278391	Callee	g_strdup_printf		5278316	0					
+ANR	5278392	Identifier	g_strdup_printf		5278316	0					
+ANR	5278393	ArgumentList	"""%s/%s/%s"""		5278316	1					
+ANR	5278394	Argument	"""%s/%s/%s"""		5278316	0					
+ANR	5278395	PrimaryExpression	"""%s/%s/%s"""		5278316	0					
+ANR	5278396	Argument	ctx -> fs_root		5278316	1					
+ANR	5278397	PtrMemberAccess	ctx -> fs_root		5278316	0					
+ANR	5278398	Identifier	ctx		5278316	0					
+ANR	5278399	Identifier	fs_root		5278316	1					
+ANR	5278400	Argument	path		5278316	2					
+ANR	5278401	Identifier	path		5278316	0					
+ANR	5278402	Argument	VIRTFS_META_DIR		5278316	3					
+ANR	5278403	Identifier	VIRTFS_META_DIR		5278316	0					
+ANR	5278404	ExpressionStatement	err = remove ( buffer )	41:12:621:641	5278316	1	True				
+ANR	5278405	AssignmentExpression	err = remove ( buffer )		5278316	0		=			
+ANR	5278406	Identifier	err		5278316	0					
+ANR	5278407	CallExpression	remove ( buffer )		5278316	1					
+ANR	5278408	Callee	remove		5278316	0					
+ANR	5278409	Identifier	remove		5278316	0					
+ANR	5278410	ArgumentList	buffer		5278316	1					
+ANR	5278411	Argument	buffer		5278316	0					
+ANR	5278412	Identifier	buffer		5278316	0					
+ANR	5278413	ExpressionStatement	g_free ( buffer )	43:12:656:670	5278316	2	True				
+ANR	5278414	CallExpression	g_free ( buffer )		5278316	0					
+ANR	5278415	Callee	g_free		5278316	0					
+ANR	5278416	Identifier	g_free		5278316	0					
+ANR	5278417	ArgumentList	buffer		5278316	1					
+ANR	5278418	Argument	buffer		5278316	0					
+ANR	5278419	Identifier	buffer		5278316	0					
+ANR	5278420	IfStatement	if ( err < 0 && errno != ENOENT )		5278316	3					
+ANR	5278421	Condition	err < 0 && errno != ENOENT	45:16:689:714	5278316	0	True				
+ANR	5278422	AndExpression	err < 0 && errno != ENOENT		5278316	0		&&			
+ANR	5278423	RelationalExpression	err < 0		5278316	0		<			
+ANR	5278424	Identifier	err		5278316	0					
+ANR	5278425	PrimaryExpression	0		5278316	1					
+ANR	5278426	EqualityExpression	errno != ENOENT		5278316	1		!=			
+ANR	5278427	Identifier	errno		5278316	0					
+ANR	5278428	Identifier	ENOENT		5278316	1					
+ANR	5278429	CompoundStatement		43:44:657:657	5278316	1					
+ANR	5278430	GotoStatement	goto err_out ;	55:16:915:927	5278316	0	True				
+ANR	5278431	Identifier	err_out		5278316	0					
+ANR	5278432	ExpressionStatement	"buffer = local_mapped_attr_path ( ctx , path )"	69:8:1082:1124	5278316	5	True				
+ANR	5278433	AssignmentExpression	"buffer = local_mapped_attr_path ( ctx , path )"		5278316	0		=			
+ANR	5278434	Identifier	buffer		5278316	0					
+ANR	5278435	CallExpression	"local_mapped_attr_path ( ctx , path )"		5278316	1					
+ANR	5278436	Callee	local_mapped_attr_path		5278316	0					
+ANR	5278437	Identifier	local_mapped_attr_path		5278316	0					
+ANR	5278438	ArgumentList	ctx		5278316	1					
+ANR	5278439	Argument	ctx		5278316	0					
+ANR	5278440	Identifier	ctx		5278316	0					
+ANR	5278441	Argument	path		5278316	1					
+ANR	5278442	Identifier	path		5278316	0					
+ANR	5278443	ExpressionStatement	err = remove ( buffer )	71:8:1135:1155	5278316	6	True				
+ANR	5278444	AssignmentExpression	err = remove ( buffer )		5278316	0		=			
+ANR	5278445	Identifier	err		5278316	0					
+ANR	5278446	CallExpression	remove ( buffer )		5278316	1					
+ANR	5278447	Callee	remove		5278316	0					
+ANR	5278448	Identifier	remove		5278316	0					
+ANR	5278449	ArgumentList	buffer		5278316	1					
+ANR	5278450	Argument	buffer		5278316	0					
+ANR	5278451	Identifier	buffer		5278316	0					
+ANR	5278452	ExpressionStatement	g_free ( buffer )	73:8:1166:1180	5278316	7	True				
+ANR	5278453	CallExpression	g_free ( buffer )		5278316	0					
+ANR	5278454	Callee	g_free		5278316	0					
+ANR	5278455	Identifier	g_free		5278316	0					
+ANR	5278456	ArgumentList	buffer		5278316	1					
+ANR	5278457	Argument	buffer		5278316	0					
+ANR	5278458	Identifier	buffer		5278316	0					
+ANR	5278459	IfStatement	if ( err < 0 && errno != ENOENT )		5278316	8					
+ANR	5278460	Condition	err < 0 && errno != ENOENT	75:12:1195:1220	5278316	0	True				
+ANR	5278461	AndExpression	err < 0 && errno != ENOENT		5278316	0		&&			
+ANR	5278462	RelationalExpression	err < 0		5278316	0		<			
+ANR	5278463	Identifier	err		5278316	0					
+ANR	5278464	PrimaryExpression	0		5278316	1					
+ANR	5278465	EqualityExpression	errno != ENOENT		5278316	1		!=			
+ANR	5278466	Identifier	errno		5278316	0					
+ANR	5278467	Identifier	ENOENT		5278316	1					
+ANR	5278468	CompoundStatement		73:40:1163:1163	5278316	1					
+ANR	5278469	GotoStatement	goto err_out ;	85:12:1401:1413	5278316	0	True				
+ANR	5278470	Identifier	err_out		5278316	0					
+ANR	5278471	ExpressionStatement	"buffer = rpath ( ctx , path )"	93:4:1440:1465	5278316	4	True				
+ANR	5278472	AssignmentExpression	"buffer = rpath ( ctx , path )"		5278316	0		=			
+ANR	5278473	Identifier	buffer		5278316	0					
+ANR	5278474	CallExpression	"rpath ( ctx , path )"		5278316	1					
+ANR	5278475	Callee	rpath		5278316	0					
+ANR	5278476	Identifier	rpath		5278316	0					
+ANR	5278477	ArgumentList	ctx		5278316	1					
+ANR	5278478	Argument	ctx		5278316	0					
+ANR	5278479	Identifier	ctx		5278316	0					
+ANR	5278480	Argument	path		5278316	1					
+ANR	5278481	Identifier	path		5278316	0					
+ANR	5278482	ExpressionStatement	err = remove ( buffer )	95:4:1472:1492	5278316	5	True				
+ANR	5278483	AssignmentExpression	err = remove ( buffer )		5278316	0		=			
+ANR	5278484	Identifier	err		5278316	0					
+ANR	5278485	CallExpression	remove ( buffer )		5278316	1					
+ANR	5278486	Callee	remove		5278316	0					
+ANR	5278487	Identifier	remove		5278316	0					
+ANR	5278488	ArgumentList	buffer		5278316	1					
+ANR	5278489	Argument	buffer		5278316	0					
+ANR	5278490	Identifier	buffer		5278316	0					
+ANR	5278491	ExpressionStatement	g_free ( buffer )	97:4:1499:1513	5278316	6	True				
+ANR	5278492	CallExpression	g_free ( buffer )		5278316	0					
+ANR	5278493	Callee	g_free		5278316	0					
+ANR	5278494	Identifier	g_free		5278316	0					
+ANR	5278495	ArgumentList	buffer		5278316	1					
+ANR	5278496	Argument	buffer		5278316	0					
+ANR	5278497	Identifier	buffer		5278316	0					
+ANR	5278498	Label	err_out :	99:0:1516:1523	5278316	7	True				
+ANR	5278499	Identifier	err_out		5278316	0					
+ANR	5278500	ReturnStatement	return err ;	101:4:1530:1540	5278316	8	True				
+ANR	5278501	Identifier	err		5278316	0					
+ANR	5278502	ReturnType	static int		5278316	1					
+ANR	5278503	Identifier	local_remove		5278316	2					
+ANR	5278504	ParameterList	"FsContext * ctx , const char * path"		5278316	3					
+ANR	5278505	Parameter	FsContext * ctx	1:24:24:37	5278316	0	True				
+ANR	5278506	ParameterType	FsContext *		5278316	0					
+ANR	5278507	Identifier	ctx		5278316	1					
+ANR	5278508	Parameter	const char * path	1:40:40:55	5278316	1	True				
+ANR	5278509	ParameterType	const char *		5278316	0					
+ANR	5278510	Identifier	path		5278316	1					
+ANR	5278511	CFGEntryNode	ENTRY		5278316		True				
+ANR	5278512	CFGExitNode	EXIT		5278316		True				
+ANR	5278513	Symbol	errno		5278316						
+ANR	5278514	Symbol	err		5278316						
+ANR	5278515	Symbol	VIRTFS_META_DIR		5278316						
+ANR	5278516	Symbol	local_mapped_attr_path		5278316						
+ANR	5278517	Symbol	ctx		5278316						
+ANR	5278518	Symbol	lstat		5278316						
+ANR	5278519	Symbol	& stbuf		5278316						
+ANR	5278520	Symbol	ENOENT		5278316						
+ANR	5278521	Symbol	rpath		5278316						
+ANR	5278522	Symbol	* ctx		5278316						
+ANR	5278523	Symbol	remove		5278316						
+ANR	5278524	Symbol	path		5278316						
+ANR	5278525	Symbol	V9FS_SM_MAPPED_FILE		5278316						
+ANR	5278526	Symbol	ctx -> export_flags		5278316						
+ANR	5278527	Symbol	ctx -> fs_root		5278316						
+ANR	5278528	Symbol	stbuf . st_mode		5278316						
+ANR	5278529	Symbol	stbuf		5278316						
+ANR	5278530	Symbol	S_ISDIR		5278316						
+ANR	5278531	Symbol	buffer		5278316						
+ANR	5278532	Symbol	g_strdup_printf		5278316						

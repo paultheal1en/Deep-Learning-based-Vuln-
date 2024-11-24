@@ -1,0 +1,551 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	9065191	File	/home/p4ultr4n/workplace/ReVeal/raw_code/virtio_blk_handle_scsi_req_0.c								
+ANR	9065192	Function	virtio_blk_handle_scsi_req	1:0:0:3677							
+ANR	9065193	FunctionDef	"virtio_blk_handle_scsi_req (VirtIOBlock * blk , VirtQueueElement * elem)"		9065192	0					
+ANR	9065194	CompoundStatement		5:0:106:3677	9065192	0					
+ANR	9065195	IdentifierDeclStatement	int status = VIRTIO_BLK_S_OK ;	7:4:113:141	9065192	0	True				
+ANR	9065196	IdentifierDecl	status = VIRTIO_BLK_S_OK		9065192	0					
+ANR	9065197	IdentifierDeclType	int		9065192	0					
+ANR	9065198	Identifier	status		9065192	1					
+ANR	9065199	AssignmentExpression	status = VIRTIO_BLK_S_OK		9065192	2		=			
+ANR	9065200	Identifier	VIRTIO_BLK_S_OK		9065192	0					
+ANR	9065201	Identifier	VIRTIO_BLK_S_OK		9065192	1					
+ANR	9065202	IdentifierDeclStatement	struct virtio_scsi_inhdr * scsi = NULL ;	9:4:148:185	9065192	1	True				
+ANR	9065203	IdentifierDecl	* scsi = NULL		9065192	0					
+ANR	9065204	IdentifierDeclType	struct virtio_scsi_inhdr *		9065192	0					
+ANR	9065205	Identifier	scsi		9065192	1					
+ANR	9065206	AssignmentExpression	* scsi = NULL		9065192	2		=			
+ANR	9065207	Identifier	NULL		9065192	0					
+ANR	9065208	Identifier	NULL		9065192	1					
+ANR	9065209	IdentifierDeclStatement	VirtIODevice * vdev = VIRTIO_DEVICE ( blk ) ;	11:4:192:231	9065192	2	True				
+ANR	9065210	IdentifierDecl	* vdev = VIRTIO_DEVICE ( blk )		9065192	0					
+ANR	9065211	IdentifierDeclType	VirtIODevice *		9065192	0					
+ANR	9065212	Identifier	vdev		9065192	1					
+ANR	9065213	AssignmentExpression	* vdev = VIRTIO_DEVICE ( blk )		9065192	2		=			
+ANR	9065214	Identifier	vdev		9065192	0					
+ANR	9065215	CallExpression	VIRTIO_DEVICE ( blk )		9065192	1					
+ANR	9065216	Callee	VIRTIO_DEVICE		9065192	0					
+ANR	9065217	Identifier	VIRTIO_DEVICE		9065192	0					
+ANR	9065218	ArgumentList	blk		9065192	1					
+ANR	9065219	Argument	blk		9065192	0					
+ANR	9065220	Identifier	blk		9065192	0					
+ANR	9065221	IdentifierDeclStatement	int i ;	17:4:258:263	9065192	3	True				
+ANR	9065222	IdentifierDecl	i		9065192	0					
+ANR	9065223	IdentifierDeclType	int		9065192	0					
+ANR	9065224	Identifier	i		9065192	1					
+ANR	9065225	IdentifierDeclStatement	struct sg_io_hdr hdr ;	19:4:270:290	9065192	4	True				
+ANR	9065226	IdentifierDecl	hdr		9065192	0					
+ANR	9065227	IdentifierDeclType	struct sg_io_hdr		9065192	0					
+ANR	9065228	Identifier	hdr		9065192	1					
+ANR	9065229	IfStatement	if ( elem -> out_num < 2 || elem -> in_num < 3 )		9065192	5					
+ANR	9065230	Condition	elem -> out_num < 2 || elem -> in_num < 3	39:8:587:623	9065192	0	True				
+ANR	9065231	OrExpression	elem -> out_num < 2 || elem -> in_num < 3		9065192	0		||			
+ANR	9065232	RelationalExpression	elem -> out_num < 2		9065192	0		<			
+ANR	9065233	PtrMemberAccess	elem -> out_num		9065192	0					
+ANR	9065234	Identifier	elem		9065192	0					
+ANR	9065235	Identifier	out_num		9065192	1					
+ANR	9065236	PrimaryExpression	2		9065192	1					
+ANR	9065237	RelationalExpression	elem -> in_num < 3		9065192	1		<			
+ANR	9065238	PtrMemberAccess	elem -> in_num		9065192	0					
+ANR	9065239	Identifier	elem		9065192	0					
+ANR	9065240	Identifier	in_num		9065192	1					
+ANR	9065241	PrimaryExpression	3		9065192	1					
+ANR	9065242	CompoundStatement		35:47:519:519	9065192	1					
+ANR	9065243	ExpressionStatement	status = VIRTIO_BLK_S_IOERR	41:8:637:664	9065192	0	True				
+ANR	9065244	AssignmentExpression	status = VIRTIO_BLK_S_IOERR		9065192	0		=			
+ANR	9065245	Identifier	status		9065192	0					
+ANR	9065246	Identifier	VIRTIO_BLK_S_IOERR		9065192	1					
+ANR	9065247	GotoStatement	goto fail ;	43:8:675:684	9065192	1	True				
+ANR	9065248	Identifier	fail		9065192	0					
+ANR	9065249	ExpressionStatement	scsi = ( void * ) elem -> in_sg [ elem -> in_num - 2 ] . iov_base	57:4:826:879	9065192	6	True				
+ANR	9065250	AssignmentExpression	scsi = ( void * ) elem -> in_sg [ elem -> in_num - 2 ] . iov_base		9065192	0		=			
+ANR	9065251	Identifier	scsi		9065192	0					
+ANR	9065252	CastExpression	( void * ) elem -> in_sg [ elem -> in_num - 2 ] . iov_base		9065192	1					
+ANR	9065253	CastTarget	void *		9065192	0					
+ANR	9065254	MemberAccess	elem -> in_sg [ elem -> in_num - 2 ] . iov_base		9065192	1					
+ANR	9065255	ArrayIndexing	elem -> in_sg [ elem -> in_num - 2 ]		9065192	0					
+ANR	9065256	PtrMemberAccess	elem -> in_sg		9065192	0					
+ANR	9065257	Identifier	elem		9065192	0					
+ANR	9065258	Identifier	in_sg		9065192	1					
+ANR	9065259	AdditiveExpression	elem -> in_num - 2		9065192	1		-			
+ANR	9065260	PtrMemberAccess	elem -> in_num		9065192	0					
+ANR	9065261	Identifier	elem		9065192	0					
+ANR	9065262	Identifier	in_num		9065192	1					
+ANR	9065263	PrimaryExpression	2		9065192	1					
+ANR	9065264	Identifier	iov_base		9065192	1					
+ANR	9065265	IfStatement	if ( ! blk -> conf . scsi )		9065192	7					
+ANR	9065266	Condition	! blk -> conf . scsi	61:8:892:906	9065192	0	True				
+ANR	9065267	UnaryOperationExpression	! blk -> conf . scsi		9065192	0					
+ANR	9065268	UnaryOperator	!		9065192	0					
+ANR	9065269	MemberAccess	blk -> conf . scsi		9065192	1					
+ANR	9065270	PtrMemberAccess	blk -> conf		9065192	0					
+ANR	9065271	Identifier	blk		9065192	0					
+ANR	9065272	Identifier	conf		9065192	1					
+ANR	9065273	Identifier	scsi		9065192	1					
+ANR	9065274	CompoundStatement		57:25:802:802	9065192	1					
+ANR	9065275	ExpressionStatement	status = VIRTIO_BLK_S_UNSUPP	63:8:920:948	9065192	0	True				
+ANR	9065276	AssignmentExpression	status = VIRTIO_BLK_S_UNSUPP		9065192	0		=			
+ANR	9065277	Identifier	status		9065192	0					
+ANR	9065278	Identifier	VIRTIO_BLK_S_UNSUPP		9065192	1					
+ANR	9065279	GotoStatement	goto fail ;	65:8:959:968	9065192	1	True				
+ANR	9065280	Identifier	fail		9065192	0					
+ANR	9065281	IfStatement	if ( elem -> out_num > 2 && elem -> in_num > 3 )		9065192	8					
+ANR	9065282	Condition	elem -> out_num > 2 && elem -> in_num > 3	77:8:1054:1090	9065192	0	True				
+ANR	9065283	AndExpression	elem -> out_num > 2 && elem -> in_num > 3		9065192	0		&&			
+ANR	9065284	RelationalExpression	elem -> out_num > 2		9065192	0		>			
+ANR	9065285	PtrMemberAccess	elem -> out_num		9065192	0					
+ANR	9065286	Identifier	elem		9065192	0					
+ANR	9065287	Identifier	out_num		9065192	1					
+ANR	9065288	PrimaryExpression	2		9065192	1					
+ANR	9065289	RelationalExpression	elem -> in_num > 3		9065192	1		>			
+ANR	9065290	PtrMemberAccess	elem -> in_num		9065192	0					
+ANR	9065291	Identifier	elem		9065192	0					
+ANR	9065292	Identifier	in_num		9065192	1					
+ANR	9065293	PrimaryExpression	3		9065192	1					
+ANR	9065294	CompoundStatement		73:47:986:986	9065192	1					
+ANR	9065295	ExpressionStatement	status = VIRTIO_BLK_S_UNSUPP	79:8:1104:1132	9065192	0	True				
+ANR	9065296	AssignmentExpression	status = VIRTIO_BLK_S_UNSUPP		9065192	0		=			
+ANR	9065297	Identifier	status		9065192	0					
+ANR	9065298	Identifier	VIRTIO_BLK_S_UNSUPP		9065192	1					
+ANR	9065299	GotoStatement	goto fail ;	81:8:1143:1152	9065192	1	True				
+ANR	9065300	Identifier	fail		9065192	0					
+ANR	9065301	ExpressionStatement	"memset ( & hdr , 0 , sizeof ( struct sg_io_hdr ) )"	89:4:1186:1227	9065192	9	True				
+ANR	9065302	CallExpression	"memset ( & hdr , 0 , sizeof ( struct sg_io_hdr ) )"		9065192	0					
+ANR	9065303	Callee	memset		9065192	0					
+ANR	9065304	Identifier	memset		9065192	0					
+ANR	9065305	ArgumentList	& hdr		9065192	1					
+ANR	9065306	Argument	& hdr		9065192	0					
+ANR	9065307	UnaryOperationExpression	& hdr		9065192	0					
+ANR	9065308	UnaryOperator	&		9065192	0					
+ANR	9065309	Identifier	hdr		9065192	1					
+ANR	9065310	Argument	0		9065192	1					
+ANR	9065311	PrimaryExpression	0		9065192	0					
+ANR	9065312	Argument	sizeof ( struct sg_io_hdr )		9065192	2					
+ANR	9065313	SizeofExpression	sizeof ( struct sg_io_hdr )		9065192	0					
+ANR	9065314	Sizeof	sizeof		9065192	0					
+ANR	9065315	SizeofOperand	struct sg_io_hdr		9065192	1					
+ANR	9065316	ExpressionStatement	hdr . interface_id = 'S'	91:4:1234:1256	9065192	10	True				
+ANR	9065317	AssignmentExpression	hdr . interface_id = 'S'		9065192	0		=			
+ANR	9065318	MemberAccess	hdr . interface_id		9065192	0					
+ANR	9065319	Identifier	hdr		9065192	0					
+ANR	9065320	Identifier	interface_id		9065192	1					
+ANR	9065321	PrimaryExpression	'S'		9065192	1					
+ANR	9065322	ExpressionStatement	hdr . cmd_len = elem -> out_sg [ 1 ] . iov_len	93:4:1263:1300	9065192	11	True				
+ANR	9065323	AssignmentExpression	hdr . cmd_len = elem -> out_sg [ 1 ] . iov_len		9065192	0		=			
+ANR	9065324	MemberAccess	hdr . cmd_len		9065192	0					
+ANR	9065325	Identifier	hdr		9065192	0					
+ANR	9065326	Identifier	cmd_len		9065192	1					
+ANR	9065327	MemberAccess	elem -> out_sg [ 1 ] . iov_len		9065192	1					
+ANR	9065328	ArrayIndexing	elem -> out_sg [ 1 ]		9065192	0					
+ANR	9065329	PtrMemberAccess	elem -> out_sg		9065192	0					
+ANR	9065330	Identifier	elem		9065192	0					
+ANR	9065331	Identifier	out_sg		9065192	1					
+ANR	9065332	PrimaryExpression	1		9065192	1					
+ANR	9065333	Identifier	iov_len		9065192	1					
+ANR	9065334	ExpressionStatement	hdr . cmdp = elem -> out_sg [ 1 ] . iov_base	95:4:1307:1342	9065192	12	True				
+ANR	9065335	AssignmentExpression	hdr . cmdp = elem -> out_sg [ 1 ] . iov_base		9065192	0		=			
+ANR	9065336	MemberAccess	hdr . cmdp		9065192	0					
+ANR	9065337	Identifier	hdr		9065192	0					
+ANR	9065338	Identifier	cmdp		9065192	1					
+ANR	9065339	MemberAccess	elem -> out_sg [ 1 ] . iov_base		9065192	1					
+ANR	9065340	ArrayIndexing	elem -> out_sg [ 1 ]		9065192	0					
+ANR	9065341	PtrMemberAccess	elem -> out_sg		9065192	0					
+ANR	9065342	Identifier	elem		9065192	0					
+ANR	9065343	Identifier	out_sg		9065192	1					
+ANR	9065344	PrimaryExpression	1		9065192	1					
+ANR	9065345	Identifier	iov_base		9065192	1					
+ANR	9065346	ExpressionStatement	hdr . dxfer_len = 0	97:4:1349:1366	9065192	13	True				
+ANR	9065347	AssignmentExpression	hdr . dxfer_len = 0		9065192	0		=			
+ANR	9065348	MemberAccess	hdr . dxfer_len		9065192	0					
+ANR	9065349	Identifier	hdr		9065192	0					
+ANR	9065350	Identifier	dxfer_len		9065192	1					
+ANR	9065351	PrimaryExpression	0		9065192	1					
+ANR	9065352	IfStatement	if ( elem -> out_num > 2 )		9065192	14					
+ANR	9065353	Condition	elem -> out_num > 2	101:8:1379:1395	9065192	0	True				
+ANR	9065354	RelationalExpression	elem -> out_num > 2		9065192	0		>			
+ANR	9065355	PtrMemberAccess	elem -> out_num		9065192	0					
+ANR	9065356	Identifier	elem		9065192	0					
+ANR	9065357	Identifier	out_num		9065192	1					
+ANR	9065358	PrimaryExpression	2		9065192	1					
+ANR	9065359	CompoundStatement		97:27:1291:1291	9065192	1					
+ANR	9065360	ExpressionStatement	hdr . dxfer_direction = SG_DXFER_TO_DEV	111:8:1576:1613	9065192	0	True				
+ANR	9065361	AssignmentExpression	hdr . dxfer_direction = SG_DXFER_TO_DEV		9065192	0		=			
+ANR	9065362	MemberAccess	hdr . dxfer_direction		9065192	0					
+ANR	9065363	Identifier	hdr		9065192	0					
+ANR	9065364	Identifier	dxfer_direction		9065192	1					
+ANR	9065365	Identifier	SG_DXFER_TO_DEV		9065192	1					
+ANR	9065366	ExpressionStatement	hdr . iovec_count = elem -> out_num - 2	113:8:1624:1659	9065192	1	True				
+ANR	9065367	AssignmentExpression	hdr . iovec_count = elem -> out_num - 2		9065192	0		=			
+ANR	9065368	MemberAccess	hdr . iovec_count		9065192	0					
+ANR	9065369	Identifier	hdr		9065192	0					
+ANR	9065370	Identifier	iovec_count		9065192	1					
+ANR	9065371	AdditiveExpression	elem -> out_num - 2		9065192	1		-			
+ANR	9065372	PtrMemberAccess	elem -> out_num		9065192	0					
+ANR	9065373	Identifier	elem		9065192	0					
+ANR	9065374	Identifier	out_num		9065192	1					
+ANR	9065375	PrimaryExpression	2		9065192	1					
+ANR	9065376	ForStatement	for ( i = 0 ; i < hdr . iovec_count ; i ++ )		9065192	2					
+ANR	9065377	ForInit	i = 0 ;	117:13:1677:1682	9065192	0	True				
+ANR	9065378	AssignmentExpression	i = 0		9065192	0		=			
+ANR	9065379	Identifier	i		9065192	0					
+ANR	9065380	PrimaryExpression	0		9065192	1					
+ANR	9065381	Condition	i < hdr . iovec_count	117:20:1684:1702	9065192	1	True				
+ANR	9065382	RelationalExpression	i < hdr . iovec_count		9065192	0		<			
+ANR	9065383	Identifier	i		9065192	0					
+ANR	9065384	MemberAccess	hdr . iovec_count		9065192	1					
+ANR	9065385	Identifier	hdr		9065192	0					
+ANR	9065386	Identifier	iovec_count		9065192	1					
+ANR	9065387	PostIncDecOperationExpression	i ++	117:41:1705:1707	9065192	2	True				
+ANR	9065388	Identifier	i		9065192	0					
+ANR	9065389	IncDec	++		9065192	1					
+ANR	9065390	ExpressionStatement	hdr . dxfer_len += elem -> out_sg [ i + 2 ] . iov_len	119:12:1723:1767	9065192	3	True				
+ANR	9065391	AssignmentExpression	hdr . dxfer_len += elem -> out_sg [ i + 2 ] . iov_len		9065192	0		+=			
+ANR	9065392	MemberAccess	hdr . dxfer_len		9065192	0					
+ANR	9065393	Identifier	hdr		9065192	0					
+ANR	9065394	Identifier	dxfer_len		9065192	1					
+ANR	9065395	MemberAccess	elem -> out_sg [ i + 2 ] . iov_len		9065192	1					
+ANR	9065396	ArrayIndexing	elem -> out_sg [ i + 2 ]		9065192	0					
+ANR	9065397	PtrMemberAccess	elem -> out_sg		9065192	0					
+ANR	9065398	Identifier	elem		9065192	0					
+ANR	9065399	Identifier	out_sg		9065192	1					
+ANR	9065400	AdditiveExpression	i + 2		9065192	1		+			
+ANR	9065401	Identifier	i		9065192	0					
+ANR	9065402	PrimaryExpression	2		9065192	1					
+ANR	9065403	Identifier	iov_len		9065192	1					
+ANR	9065404	ExpressionStatement	hdr . dxferp = elem -> out_sg + 2	123:8:1780:1809	9065192	3	True				
+ANR	9065405	AssignmentExpression	hdr . dxferp = elem -> out_sg + 2		9065192	0		=			
+ANR	9065406	MemberAccess	hdr . dxferp		9065192	0					
+ANR	9065407	Identifier	hdr		9065192	0					
+ANR	9065408	Identifier	dxferp		9065192	1					
+ANR	9065409	AdditiveExpression	elem -> out_sg + 2		9065192	1		+			
+ANR	9065410	PtrMemberAccess	elem -> out_sg		9065192	0					
+ANR	9065411	Identifier	elem		9065192	0					
+ANR	9065412	Identifier	out_sg		9065192	1					
+ANR	9065413	PrimaryExpression	2		9065192	1					
+ANR	9065414	ElseStatement	else		9065192	0					
+ANR	9065415	IfStatement	if ( elem -> in_num > 3 )		9065192	0					
+ANR	9065416	Condition	elem -> in_num > 3	127:15:1829:1844	9065192	0	True				
+ANR	9065417	RelationalExpression	elem -> in_num > 3		9065192	0		>			
+ANR	9065418	PtrMemberAccess	elem -> in_num		9065192	0					
+ANR	9065419	Identifier	elem		9065192	0					
+ANR	9065420	Identifier	in_num		9065192	1					
+ANR	9065421	PrimaryExpression	3		9065192	1					
+ANR	9065422	CompoundStatement		123:33:1740:1740	9065192	1					
+ANR	9065423	ExpressionStatement	hdr . dxfer_direction = SG_DXFER_FROM_DEV	137:8:1984:2023	9065192	0	True				
+ANR	9065424	AssignmentExpression	hdr . dxfer_direction = SG_DXFER_FROM_DEV		9065192	0		=			
+ANR	9065425	MemberAccess	hdr . dxfer_direction		9065192	0					
+ANR	9065426	Identifier	hdr		9065192	0					
+ANR	9065427	Identifier	dxfer_direction		9065192	1					
+ANR	9065428	Identifier	SG_DXFER_FROM_DEV		9065192	1					
+ANR	9065429	ExpressionStatement	hdr . iovec_count = elem -> in_num - 3	139:8:2034:2068	9065192	1	True				
+ANR	9065430	AssignmentExpression	hdr . iovec_count = elem -> in_num - 3		9065192	0		=			
+ANR	9065431	MemberAccess	hdr . iovec_count		9065192	0					
+ANR	9065432	Identifier	hdr		9065192	0					
+ANR	9065433	Identifier	iovec_count		9065192	1					
+ANR	9065434	AdditiveExpression	elem -> in_num - 3		9065192	1		-			
+ANR	9065435	PtrMemberAccess	elem -> in_num		9065192	0					
+ANR	9065436	Identifier	elem		9065192	0					
+ANR	9065437	Identifier	in_num		9065192	1					
+ANR	9065438	PrimaryExpression	3		9065192	1					
+ANR	9065439	ForStatement	for ( i = 0 ; i < hdr . iovec_count ; i ++ )		9065192	2					
+ANR	9065440	ForInit	i = 0 ;	141:13:2084:2089	9065192	0	True				
+ANR	9065441	AssignmentExpression	i = 0		9065192	0		=			
+ANR	9065442	Identifier	i		9065192	0					
+ANR	9065443	PrimaryExpression	0		9065192	1					
+ANR	9065444	Condition	i < hdr . iovec_count	141:20:2091:2109	9065192	1	True				
+ANR	9065445	RelationalExpression	i < hdr . iovec_count		9065192	0		<			
+ANR	9065446	Identifier	i		9065192	0					
+ANR	9065447	MemberAccess	hdr . iovec_count		9065192	1					
+ANR	9065448	Identifier	hdr		9065192	0					
+ANR	9065449	Identifier	iovec_count		9065192	1					
+ANR	9065450	PostIncDecOperationExpression	i ++	141:41:2112:2114	9065192	2	True				
+ANR	9065451	Identifier	i		9065192	0					
+ANR	9065452	IncDec	++		9065192	1					
+ANR	9065453	ExpressionStatement	hdr . dxfer_len += elem -> in_sg [ i ] . iov_len	143:12:2130:2169	9065192	3	True				
+ANR	9065454	AssignmentExpression	hdr . dxfer_len += elem -> in_sg [ i ] . iov_len		9065192	0		+=			
+ANR	9065455	MemberAccess	hdr . dxfer_len		9065192	0					
+ANR	9065456	Identifier	hdr		9065192	0					
+ANR	9065457	Identifier	dxfer_len		9065192	1					
+ANR	9065458	MemberAccess	elem -> in_sg [ i ] . iov_len		9065192	1					
+ANR	9065459	ArrayIndexing	elem -> in_sg [ i ]		9065192	0					
+ANR	9065460	PtrMemberAccess	elem -> in_sg		9065192	0					
+ANR	9065461	Identifier	elem		9065192	0					
+ANR	9065462	Identifier	in_sg		9065192	1					
+ANR	9065463	Identifier	i		9065192	1					
+ANR	9065464	Identifier	iov_len		9065192	1					
+ANR	9065465	ExpressionStatement	hdr . dxferp = elem -> in_sg	147:8:2182:2206	9065192	3	True				
+ANR	9065466	AssignmentExpression	hdr . dxferp = elem -> in_sg		9065192	0		=			
+ANR	9065467	MemberAccess	hdr . dxferp		9065192	0					
+ANR	9065468	Identifier	hdr		9065192	0					
+ANR	9065469	Identifier	dxferp		9065192	1					
+ANR	9065470	PtrMemberAccess	elem -> in_sg		9065192	1					
+ANR	9065471	Identifier	elem		9065192	0					
+ANR	9065472	Identifier	in_sg		9065192	1					
+ANR	9065473	ElseStatement	else		9065192	0					
+ANR	9065474	CompoundStatement		145:11:2113:2113	9065192	0					
+ANR	9065475	ExpressionStatement	hdr . dxfer_direction = SG_DXFER_NONE	157:8:2321:2356	9065192	0	True				
+ANR	9065476	AssignmentExpression	hdr . dxfer_direction = SG_DXFER_NONE		9065192	0		=			
+ANR	9065477	MemberAccess	hdr . dxfer_direction		9065192	0					
+ANR	9065478	Identifier	hdr		9065192	0					
+ANR	9065479	Identifier	dxfer_direction		9065192	1					
+ANR	9065480	Identifier	SG_DXFER_NONE		9065192	1					
+ANR	9065481	ExpressionStatement	hdr . sbp = elem -> in_sg [ elem -> in_num - 3 ] . iov_base	163:4:2372:2420	9065192	15	True				
+ANR	9065482	AssignmentExpression	hdr . sbp = elem -> in_sg [ elem -> in_num - 3 ] . iov_base		9065192	0		=			
+ANR	9065483	MemberAccess	hdr . sbp		9065192	0					
+ANR	9065484	Identifier	hdr		9065192	0					
+ANR	9065485	Identifier	sbp		9065192	1					
+ANR	9065486	MemberAccess	elem -> in_sg [ elem -> in_num - 3 ] . iov_base		9065192	1					
+ANR	9065487	ArrayIndexing	elem -> in_sg [ elem -> in_num - 3 ]		9065192	0					
+ANR	9065488	PtrMemberAccess	elem -> in_sg		9065192	0					
+ANR	9065489	Identifier	elem		9065192	0					
+ANR	9065490	Identifier	in_sg		9065192	1					
+ANR	9065491	AdditiveExpression	elem -> in_num - 3		9065192	1		-			
+ANR	9065492	PtrMemberAccess	elem -> in_num		9065192	0					
+ANR	9065493	Identifier	elem		9065192	0					
+ANR	9065494	Identifier	in_num		9065192	1					
+ANR	9065495	PrimaryExpression	3		9065192	1					
+ANR	9065496	Identifier	iov_base		9065192	1					
+ANR	9065497	ExpressionStatement	hdr . mx_sb_len = elem -> in_sg [ elem -> in_num - 3 ] . iov_len	165:4:2427:2480	9065192	16	True				
+ANR	9065498	AssignmentExpression	hdr . mx_sb_len = elem -> in_sg [ elem -> in_num - 3 ] . iov_len		9065192	0		=			
+ANR	9065499	MemberAccess	hdr . mx_sb_len		9065192	0					
+ANR	9065500	Identifier	hdr		9065192	0					
+ANR	9065501	Identifier	mx_sb_len		9065192	1					
+ANR	9065502	MemberAccess	elem -> in_sg [ elem -> in_num - 3 ] . iov_len		9065192	1					
+ANR	9065503	ArrayIndexing	elem -> in_sg [ elem -> in_num - 3 ]		9065192	0					
+ANR	9065504	PtrMemberAccess	elem -> in_sg		9065192	0					
+ANR	9065505	Identifier	elem		9065192	0					
+ANR	9065506	Identifier	in_sg		9065192	1					
+ANR	9065507	AdditiveExpression	elem -> in_num - 3		9065192	1		-			
+ANR	9065508	PtrMemberAccess	elem -> in_num		9065192	0					
+ANR	9065509	Identifier	elem		9065192	0					
+ANR	9065510	Identifier	in_num		9065192	1					
+ANR	9065511	PrimaryExpression	3		9065192	1					
+ANR	9065512	Identifier	iov_len		9065192	1					
+ANR	9065513	ExpressionStatement	"status = bdrv_ioctl ( blk -> bs , SG_IO , & hdr )"	169:4:2489:2530	9065192	17	True				
+ANR	9065514	AssignmentExpression	"status = bdrv_ioctl ( blk -> bs , SG_IO , & hdr )"		9065192	0		=			
+ANR	9065515	Identifier	status		9065192	0					
+ANR	9065516	CallExpression	"bdrv_ioctl ( blk -> bs , SG_IO , & hdr )"		9065192	1					
+ANR	9065517	Callee	bdrv_ioctl		9065192	0					
+ANR	9065518	Identifier	bdrv_ioctl		9065192	0					
+ANR	9065519	ArgumentList	blk -> bs		9065192	1					
+ANR	9065520	Argument	blk -> bs		9065192	0					
+ANR	9065521	PtrMemberAccess	blk -> bs		9065192	0					
+ANR	9065522	Identifier	blk		9065192	0					
+ANR	9065523	Identifier	bs		9065192	1					
+ANR	9065524	Argument	SG_IO		9065192	1					
+ANR	9065525	Identifier	SG_IO		9065192	0					
+ANR	9065526	Argument	& hdr		9065192	2					
+ANR	9065527	UnaryOperationExpression	& hdr		9065192	0					
+ANR	9065528	UnaryOperator	&		9065192	0					
+ANR	9065529	Identifier	hdr		9065192	1					
+ANR	9065530	IfStatement	if ( status )		9065192	18					
+ANR	9065531	Condition	status	171:8:2541:2546	9065192	0	True				
+ANR	9065532	Identifier	status		9065192	0					
+ANR	9065533	CompoundStatement		167:16:2442:2442	9065192	1					
+ANR	9065534	ExpressionStatement	status = VIRTIO_BLK_S_UNSUPP	173:8:2560:2588	9065192	0	True				
+ANR	9065535	AssignmentExpression	status = VIRTIO_BLK_S_UNSUPP		9065192	0		=			
+ANR	9065536	Identifier	status		9065192	0					
+ANR	9065537	Identifier	VIRTIO_BLK_S_UNSUPP		9065192	1					
+ANR	9065538	GotoStatement	goto fail ;	175:8:2599:2608	9065192	1	True				
+ANR	9065539	Identifier	fail		9065192	0					
+ANR	9065540	IfStatement	if ( hdr . status == 0 && hdr . sb_len_wr > 0 )		9065192	19					
+ANR	9065541	Condition	hdr . status == 0 && hdr . sb_len_wr > 0	195:8:3025:3060	9065192	0	True				
+ANR	9065542	AndExpression	hdr . status == 0 && hdr . sb_len_wr > 0		9065192	0		&&			
+ANR	9065543	EqualityExpression	hdr . status == 0		9065192	0		==			
+ANR	9065544	MemberAccess	hdr . status		9065192	0					
+ANR	9065545	Identifier	hdr		9065192	0					
+ANR	9065546	Identifier	status		9065192	1					
+ANR	9065547	PrimaryExpression	0		9065192	1					
+ANR	9065548	RelationalExpression	hdr . sb_len_wr > 0		9065192	1		>			
+ANR	9065549	MemberAccess	hdr . sb_len_wr		9065192	0					
+ANR	9065550	Identifier	hdr		9065192	0					
+ANR	9065551	Identifier	sb_len_wr		9065192	1					
+ANR	9065552	PrimaryExpression	0		9065192	1					
+ANR	9065553	CompoundStatement		191:46:2956:2956	9065192	1					
+ANR	9065554	ExpressionStatement	hdr . status = CHECK_CONDITION	197:8:3074:3102	9065192	0	True				
+ANR	9065555	AssignmentExpression	hdr . status = CHECK_CONDITION		9065192	0		=			
+ANR	9065556	MemberAccess	hdr . status		9065192	0					
+ANR	9065557	Identifier	hdr		9065192	0					
+ANR	9065558	Identifier	status		9065192	1					
+ANR	9065559	Identifier	CHECK_CONDITION		9065192	1					
+ANR	9065560	ExpressionStatement	"virtio_stl_p ( vdev , & scsi -> errors , hdr . status | ( hdr . msg_status << 8 ) | ( hdr . host_status << 16 ) | ( hdr . driver_status << 24 ) )"	203:4:3118:3277	9065192	20	True				
+ANR	9065561	CallExpression	"virtio_stl_p ( vdev , & scsi -> errors , hdr . status | ( hdr . msg_status << 8 ) | ( hdr . host_status << 16 ) | ( hdr . driver_status << 24 ) )"		9065192	0					
+ANR	9065562	Callee	virtio_stl_p		9065192	0					
+ANR	9065563	Identifier	virtio_stl_p		9065192	0					
+ANR	9065564	ArgumentList	vdev		9065192	1					
+ANR	9065565	Argument	vdev		9065192	0					
+ANR	9065566	Identifier	vdev		9065192	0					
+ANR	9065567	Argument	& scsi -> errors		9065192	1					
+ANR	9065568	UnaryOperationExpression	& scsi -> errors		9065192	0					
+ANR	9065569	UnaryOperator	&		9065192	0					
+ANR	9065570	PtrMemberAccess	scsi -> errors		9065192	1					
+ANR	9065571	Identifier	scsi		9065192	0					
+ANR	9065572	Identifier	errors		9065192	1					
+ANR	9065573	Argument	hdr . status | ( hdr . msg_status << 8 ) | ( hdr . host_status << 16 ) | ( hdr . driver_status << 24 )		9065192	2					
+ANR	9065574	InclusiveOrExpression	hdr . status | ( hdr . msg_status << 8 ) | ( hdr . host_status << 16 ) | ( hdr . driver_status << 24 )		9065192	0		|			
+ANR	9065575	MemberAccess	hdr . status		9065192	0					
+ANR	9065576	Identifier	hdr		9065192	0					
+ANR	9065577	Identifier	status		9065192	1					
+ANR	9065578	InclusiveOrExpression	( hdr . msg_status << 8 ) | ( hdr . host_status << 16 ) | ( hdr . driver_status << 24 )		9065192	1		|			
+ANR	9065579	ShiftExpression	hdr . msg_status << 8		9065192	0		<<			
+ANR	9065580	MemberAccess	hdr . msg_status		9065192	0					
+ANR	9065581	Identifier	hdr		9065192	0					
+ANR	9065582	Identifier	msg_status		9065192	1					
+ANR	9065583	PrimaryExpression	8		9065192	1					
+ANR	9065584	InclusiveOrExpression	( hdr . host_status << 16 ) | ( hdr . driver_status << 24 )		9065192	1		|			
+ANR	9065585	ShiftExpression	hdr . host_status << 16		9065192	0		<<			
+ANR	9065586	MemberAccess	hdr . host_status		9065192	0					
+ANR	9065587	Identifier	hdr		9065192	0					
+ANR	9065588	Identifier	host_status		9065192	1					
+ANR	9065589	PrimaryExpression	16		9065192	1					
+ANR	9065590	ShiftExpression	hdr . driver_status << 24		9065192	1		<<			
+ANR	9065591	MemberAccess	hdr . driver_status		9065192	0					
+ANR	9065592	Identifier	hdr		9065192	0					
+ANR	9065593	Identifier	driver_status		9065192	1					
+ANR	9065594	PrimaryExpression	24		9065192	1					
+ANR	9065595	ExpressionStatement	"virtio_stl_p ( vdev , & scsi -> residual , hdr . resid )"	209:4:3284:3330	9065192	21	True				
+ANR	9065596	CallExpression	"virtio_stl_p ( vdev , & scsi -> residual , hdr . resid )"		9065192	0					
+ANR	9065597	Callee	virtio_stl_p		9065192	0					
+ANR	9065598	Identifier	virtio_stl_p		9065192	0					
+ANR	9065599	ArgumentList	vdev		9065192	1					
+ANR	9065600	Argument	vdev		9065192	0					
+ANR	9065601	Identifier	vdev		9065192	0					
+ANR	9065602	Argument	& scsi -> residual		9065192	1					
+ANR	9065603	UnaryOperationExpression	& scsi -> residual		9065192	0					
+ANR	9065604	UnaryOperator	&		9065192	0					
+ANR	9065605	PtrMemberAccess	scsi -> residual		9065192	1					
+ANR	9065606	Identifier	scsi		9065192	0					
+ANR	9065607	Identifier	residual		9065192	1					
+ANR	9065608	Argument	hdr . resid		9065192	2					
+ANR	9065609	MemberAccess	hdr . resid		9065192	0					
+ANR	9065610	Identifier	hdr		9065192	0					
+ANR	9065611	Identifier	resid		9065192	1					
+ANR	9065612	ExpressionStatement	"virtio_stl_p ( vdev , & scsi -> sense_len , hdr . sb_len_wr )"	211:4:3337:3388	9065192	22	True				
+ANR	9065613	CallExpression	"virtio_stl_p ( vdev , & scsi -> sense_len , hdr . sb_len_wr )"		9065192	0					
+ANR	9065614	Callee	virtio_stl_p		9065192	0					
+ANR	9065615	Identifier	virtio_stl_p		9065192	0					
+ANR	9065616	ArgumentList	vdev		9065192	1					
+ANR	9065617	Argument	vdev		9065192	0					
+ANR	9065618	Identifier	vdev		9065192	0					
+ANR	9065619	Argument	& scsi -> sense_len		9065192	1					
+ANR	9065620	UnaryOperationExpression	& scsi -> sense_len		9065192	0					
+ANR	9065621	UnaryOperator	&		9065192	0					
+ANR	9065622	PtrMemberAccess	scsi -> sense_len		9065192	1					
+ANR	9065623	Identifier	scsi		9065192	0					
+ANR	9065624	Identifier	sense_len		9065192	1					
+ANR	9065625	Argument	hdr . sb_len_wr		9065192	2					
+ANR	9065626	MemberAccess	hdr . sb_len_wr		9065192	0					
+ANR	9065627	Identifier	hdr		9065192	0					
+ANR	9065628	Identifier	sb_len_wr		9065192	1					
+ANR	9065629	ExpressionStatement	"virtio_stl_p ( vdev , & scsi -> data_len , hdr . dxfer_len )"	213:4:3395:3445	9065192	23	True				
+ANR	9065630	CallExpression	"virtio_stl_p ( vdev , & scsi -> data_len , hdr . dxfer_len )"		9065192	0					
+ANR	9065631	Callee	virtio_stl_p		9065192	0					
+ANR	9065632	Identifier	virtio_stl_p		9065192	0					
+ANR	9065633	ArgumentList	vdev		9065192	1					
+ANR	9065634	Argument	vdev		9065192	0					
+ANR	9065635	Identifier	vdev		9065192	0					
+ANR	9065636	Argument	& scsi -> data_len		9065192	1					
+ANR	9065637	UnaryOperationExpression	& scsi -> data_len		9065192	0					
+ANR	9065638	UnaryOperator	&		9065192	0					
+ANR	9065639	PtrMemberAccess	scsi -> data_len		9065192	1					
+ANR	9065640	Identifier	scsi		9065192	0					
+ANR	9065641	Identifier	data_len		9065192	1					
+ANR	9065642	Argument	hdr . dxfer_len		9065192	2					
+ANR	9065643	MemberAccess	hdr . dxfer_len		9065192	0					
+ANR	9065644	Identifier	hdr		9065192	0					
+ANR	9065645	Identifier	dxfer_len		9065192	1					
+ANR	9065646	ReturnStatement	return status ;	217:4:3454:3467	9065192	24	True				
+ANR	9065647	Identifier	status		9065192	0					
+ANR	9065648	Label	fail :	227:0:3501:3505	9065192	25	True				
+ANR	9065649	Identifier	fail		9065192	0					
+ANR	9065650	IfStatement	if ( scsi )		9065192	26					
+ANR	9065651	Condition	scsi	231:8:3592:3595	9065192	0	True				
+ANR	9065652	Identifier	scsi		9065192	0					
+ANR	9065653	CompoundStatement		227:14:3491:3491	9065192	1					
+ANR	9065654	ExpressionStatement	"virtio_stl_p ( vdev , & scsi -> errors , 255 )"	233:8:3609:3647	9065192	0	True				
+ANR	9065655	CallExpression	"virtio_stl_p ( vdev , & scsi -> errors , 255 )"		9065192	0					
+ANR	9065656	Callee	virtio_stl_p		9065192	0					
+ANR	9065657	Identifier	virtio_stl_p		9065192	0					
+ANR	9065658	ArgumentList	vdev		9065192	1					
+ANR	9065659	Argument	vdev		9065192	0					
+ANR	9065660	Identifier	vdev		9065192	0					
+ANR	9065661	Argument	& scsi -> errors		9065192	1					
+ANR	9065662	UnaryOperationExpression	& scsi -> errors		9065192	0					
+ANR	9065663	UnaryOperator	&		9065192	0					
+ANR	9065664	PtrMemberAccess	scsi -> errors		9065192	1					
+ANR	9065665	Identifier	scsi		9065192	0					
+ANR	9065666	Identifier	errors		9065192	1					
+ANR	9065667	Argument	255		9065192	2					
+ANR	9065668	PrimaryExpression	255		9065192	0					
+ANR	9065669	ReturnStatement	return status ;	237:4:3661:3674	9065192	27	True				
+ANR	9065670	Identifier	status		9065192	0					
+ANR	9065671	ReturnType	int		9065192	1					
+ANR	9065672	Identifier	virtio_blk_handle_scsi_req		9065192	2					
+ANR	9065673	ParameterList	"VirtIOBlock * blk , VirtQueueElement * elem"		9065192	3					
+ANR	9065674	Parameter	VirtIOBlock * blk	1:31:31:46	9065192	0	True				
+ANR	9065675	ParameterType	VirtIOBlock *		9065192	0					
+ANR	9065676	Identifier	blk		9065192	1					
+ANR	9065677	Parameter	VirtQueueElement * elem	3:31:81:102	9065192	1	True				
+ANR	9065678	ParameterType	VirtQueueElement *		9065192	0					
+ANR	9065679	Identifier	elem		9065192	1					
+ANR	9065680	CFGEntryNode	ENTRY		9065192		True				
+ANR	9065681	CFGExitNode	EXIT		9065192		True				
+ANR	9065682	Symbol	VIRTIO_BLK_S_UNSUPP		9065192						
+ANR	9065683	Symbol	blk -> conf		9065192						
+ANR	9065684	Symbol	VIRTIO_DEVICE		9065192						
+ANR	9065685	Symbol	hdr . sb_len_wr		9065192						
+ANR	9065686	Symbol	scsi		9065192						
+ANR	9065687	Symbol	hdr . mx_sb_len		9065192						
+ANR	9065688	Symbol	elem -> out_sg [ 1 ] . iov_len		9065192						
+ANR	9065689	Symbol	SG_DXFER_FROM_DEV		9065192						
+ANR	9065690	Symbol	hdr . sbp		9065192						
+ANR	9065691	Symbol	SG_DXFER_TO_DEV		9065192						
+ANR	9065692	Symbol	hdr . cmdp		9065192						
+ANR	9065693	Symbol	hdr . dxferp		9065192						
+ANR	9065694	Symbol	elem		9065192						
+ANR	9065695	Symbol	hdr . host_status		9065192						
+ANR	9065696	Symbol	NULL		9065192						
+ANR	9065697	Symbol	& scsi -> residual		9065192						
+ANR	9065698	Symbol	* elem -> in_num		9065192						
+ANR	9065699	Symbol	* elem -> out_sg		9065192						
+ANR	9065700	Symbol	* elem -> in_sg		9065192						
+ANR	9065701	Symbol	* * elem		9065192						
+ANR	9065702	Symbol	& scsi -> errors		9065192						
+ANR	9065703	Symbol	hdr . interface_id		9065192						
+ANR	9065704	Symbol	* blk		9065192						
+ANR	9065705	Symbol	elem -> out_sg		9065192						
+ANR	9065706	Symbol	hdr . resid		9065192						
+ANR	9065707	Symbol	hdr . cmd_len		9065192						
+ANR	9065708	Symbol	status		9065192						
+ANR	9065709	Symbol	elem -> in_sg [ elem -> in_num - 3 ] . iov_len		9065192						
+ANR	9065710	Symbol	blk -> bs		9065192						
+ANR	9065711	Symbol	hdr . status		9065192						
+ANR	9065712	Symbol	elem -> in_num		9065192						
+ANR	9065713	Symbol	SG_IO		9065192						
+ANR	9065714	Symbol	& scsi -> data_len		9065192						
+ANR	9065715	Symbol	elem -> in_sg [ i ] . iov_len		9065192						
+ANR	9065716	Symbol	hdr . dxfer_direction		9065192						
+ANR	9065717	Symbol	hdr . dxfer_len		9065192						
+ANR	9065718	Symbol	elem -> out_sg [ 1 ] . iov_base		9065192						
+ANR	9065719	Symbol	* elem		9065192						
+ANR	9065720	Symbol	& hdr		9065192						
+ANR	9065721	Symbol	hdr . iovec_count		9065192						
+ANR	9065722	Symbol	VIRTIO_BLK_S_IOERR		9065192						
+ANR	9065723	Symbol	blk		9065192						
+ANR	9065724	Symbol	vdev		9065192						
+ANR	9065725	Symbol	i		9065192						
+ANR	9065726	Symbol	bdrv_ioctl		9065192						
+ANR	9065727	Symbol	VIRTIO_BLK_S_OK		9065192						
+ANR	9065728	Symbol	elem -> in_sg		9065192						
+ANR	9065729	Symbol	elem -> out_num		9065192						
+ANR	9065730	Symbol	elem -> in_sg [ elem -> in_num - 2 ] . iov_base		9065192						
+ANR	9065731	Symbol	elem -> out_sg [ i + 2 ] . iov_len		9065192						
+ANR	9065732	Symbol	SG_DXFER_NONE		9065192						
+ANR	9065733	Symbol	* i		9065192						
+ANR	9065734	Symbol	elem -> in_sg [ elem -> in_num - 3 ] . iov_base		9065192						
+ANR	9065735	Symbol	hdr . msg_status		9065192						
+ANR	9065736	Symbol	hdr		9065192						
+ANR	9065737	Symbol	CHECK_CONDITION		9065192						
+ANR	9065738	Symbol	& scsi -> sense_len		9065192						
+ANR	9065739	Symbol	hdr . driver_status		9065192						
+ANR	9065740	Symbol	blk -> conf . scsi		9065192						

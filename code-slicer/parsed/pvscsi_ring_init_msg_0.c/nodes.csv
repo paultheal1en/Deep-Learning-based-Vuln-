@@ -1,0 +1,176 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6784468	File	/home/p4ultr4n/workplace/ReVeal/raw_code/pvscsi_ring_init_msg_0.c								
+ANR	6784469	Function	pvscsi_ring_init_msg	1:0:0:781							
+ANR	6784470	FunctionDef	"pvscsi_ring_init_msg (PVSCSIRingInfo * m , PVSCSICmdDescSetupMsgRing * ri)"		6784469	0					
+ANR	6784471	CompoundStatement		3:0:72:781	6784469	0					
+ANR	6784472	IdentifierDeclStatement	int i ;	5:4:79:84	6784469	0	True				
+ANR	6784473	IdentifierDecl	i		6784469	0					
+ANR	6784474	IdentifierDeclType	int		6784469	0					
+ANR	6784475	Identifier	i		6784469	1					
+ANR	6784476	IdentifierDeclStatement	uint32_t len_log2 ;	7:4:91:108	6784469	1	True				
+ANR	6784477	IdentifierDecl	len_log2		6784469	0					
+ANR	6784478	IdentifierDeclType	uint32_t		6784469	0					
+ANR	6784479	Identifier	len_log2		6784469	1					
+ANR	6784480	IdentifierDeclStatement	uint32_t ring_size ;	9:4:115:133	6784469	2	True				
+ANR	6784481	IdentifierDecl	ring_size		6784469	0					
+ANR	6784482	IdentifierDeclType	uint32_t		6784469	0					
+ANR	6784483	Identifier	ring_size		6784469	1					
+ANR	6784484	IfStatement	if ( ri -> numPages > PVSCSI_SETUP_MSG_RING_MAX_NUM_PAGES )		6784469	3					
+ANR	6784485	Condition	ri -> numPages > PVSCSI_SETUP_MSG_RING_MAX_NUM_PAGES	13:8:146:195	6784469	0	True				
+ANR	6784486	RelationalExpression	ri -> numPages > PVSCSI_SETUP_MSG_RING_MAX_NUM_PAGES		6784469	0		>			
+ANR	6784487	PtrMemberAccess	ri -> numPages		6784469	0					
+ANR	6784488	Identifier	ri		6784469	0					
+ANR	6784489	Identifier	numPages		6784469	1					
+ANR	6784490	Identifier	PVSCSI_SETUP_MSG_RING_MAX_NUM_PAGES		6784469	1					
+ANR	6784491	CompoundStatement		11:60:125:125	6784469	1					
+ANR	6784492	ReturnStatement	return - 1 ;	15:8:209:218	6784469	0	True				
+ANR	6784493	UnaryOperationExpression	- 1		6784469	0					
+ANR	6784494	UnaryOperator	-		6784469	0					
+ANR	6784495	PrimaryExpression	1		6784469	1					
+ANR	6784496	ExpressionStatement	ring_size = ri -> numPages * PVSCSI_MAX_NUM_MSG_ENTRIES_PER_PAGE	19:4:232:294	6784469	4	True				
+ANR	6784497	AssignmentExpression	ring_size = ri -> numPages * PVSCSI_MAX_NUM_MSG_ENTRIES_PER_PAGE		6784469	0		=			
+ANR	6784498	Identifier	ring_size		6784469	0					
+ANR	6784499	MultiplicativeExpression	ri -> numPages * PVSCSI_MAX_NUM_MSG_ENTRIES_PER_PAGE		6784469	1		*			
+ANR	6784500	PtrMemberAccess	ri -> numPages		6784469	0					
+ANR	6784501	Identifier	ri		6784469	0					
+ANR	6784502	Identifier	numPages		6784469	1					
+ANR	6784503	Identifier	PVSCSI_MAX_NUM_MSG_ENTRIES_PER_PAGE		6784469	1					
+ANR	6784504	ExpressionStatement	len_log2 = pvscsi_log2 ( ring_size - 1 )	21:4:301:338	6784469	5	True				
+ANR	6784505	AssignmentExpression	len_log2 = pvscsi_log2 ( ring_size - 1 )		6784469	0		=			
+ANR	6784506	Identifier	len_log2		6784469	0					
+ANR	6784507	CallExpression	pvscsi_log2 ( ring_size - 1 )		6784469	1					
+ANR	6784508	Callee	pvscsi_log2		6784469	0					
+ANR	6784509	Identifier	pvscsi_log2		6784469	0					
+ANR	6784510	ArgumentList	ring_size - 1		6784469	1					
+ANR	6784511	Argument	ring_size - 1		6784469	0					
+ANR	6784512	AdditiveExpression	ring_size - 1		6784469	0		-			
+ANR	6784513	Identifier	ring_size		6784469	0					
+ANR	6784514	PrimaryExpression	1		6784469	1					
+ANR	6784515	ExpressionStatement	m -> msg_len_mask = MASK ( len_log2 )	25:4:347:379	6784469	6	True				
+ANR	6784516	AssignmentExpression	m -> msg_len_mask = MASK ( len_log2 )		6784469	0		=			
+ANR	6784517	PtrMemberAccess	m -> msg_len_mask		6784469	0					
+ANR	6784518	Identifier	m		6784469	0					
+ANR	6784519	Identifier	msg_len_mask		6784469	1					
+ANR	6784520	CallExpression	MASK ( len_log2 )		6784469	1					
+ANR	6784521	Callee	MASK		6784469	0					
+ANR	6784522	Identifier	MASK		6784469	0					
+ANR	6784523	ArgumentList	len_log2		6784469	1					
+ANR	6784524	Argument	len_log2		6784469	0					
+ANR	6784525	Identifier	len_log2		6784469	0					
+ANR	6784526	ExpressionStatement	m -> filled_msg_ptr = 0	29:4:388:409	6784469	7	True				
+ANR	6784527	AssignmentExpression	m -> filled_msg_ptr = 0		6784469	0		=			
+ANR	6784528	PtrMemberAccess	m -> filled_msg_ptr		6784469	0					
+ANR	6784529	Identifier	m		6784469	0					
+ANR	6784530	Identifier	filled_msg_ptr		6784469	1					
+ANR	6784531	PrimaryExpression	0		6784469	1					
+ANR	6784532	ForStatement	for ( i = 0 ; i < ri -> numPages ; i ++ )		6784469	8					
+ANR	6784533	ForInit	i = 0 ;	33:9:423:428	6784469	0	True				
+ANR	6784534	AssignmentExpression	i = 0		6784469	0		=			
+ANR	6784535	Identifier	i		6784469	0					
+ANR	6784536	PrimaryExpression	0		6784469	1					
+ANR	6784537	Condition	i < ri -> numPages	33:16:430:445	6784469	1	True				
+ANR	6784538	RelationalExpression	i < ri -> numPages		6784469	0		<			
+ANR	6784539	Identifier	i		6784469	0					
+ANR	6784540	PtrMemberAccess	ri -> numPages		6784469	1					
+ANR	6784541	Identifier	ri		6784469	0					
+ANR	6784542	Identifier	numPages		6784469	1					
+ANR	6784543	PostIncDecOperationExpression	i ++	33:34:448:450	6784469	2	True				
+ANR	6784544	Identifier	i		6784469	0					
+ANR	6784545	IncDec	++		6784469	1					
+ANR	6784546	CompoundStatement		31:39:380:380	6784469	3					
+ANR	6784547	ExpressionStatement	m -> msg_ring_pages_pa [ i ] = ri -> ringPPNs [ i ] << VMW_PAGE_SHIFT	35:8:464:523	6784469	0	True				
+ANR	6784548	AssignmentExpression	m -> msg_ring_pages_pa [ i ] = ri -> ringPPNs [ i ] << VMW_PAGE_SHIFT		6784469	0		=			
+ANR	6784549	ArrayIndexing	m -> msg_ring_pages_pa [ i ]		6784469	0					
+ANR	6784550	PtrMemberAccess	m -> msg_ring_pages_pa		6784469	0					
+ANR	6784551	Identifier	m		6784469	0					
+ANR	6784552	Identifier	msg_ring_pages_pa		6784469	1					
+ANR	6784553	Identifier	i		6784469	1					
+ANR	6784554	ShiftExpression	ri -> ringPPNs [ i ] << VMW_PAGE_SHIFT		6784469	1		<<			
+ANR	6784555	ArrayIndexing	ri -> ringPPNs [ i ]		6784469	0					
+ANR	6784556	PtrMemberAccess	ri -> ringPPNs		6784469	0					
+ANR	6784557	Identifier	ri		6784469	0					
+ANR	6784558	Identifier	ringPPNs		6784469	1					
+ANR	6784559	Identifier	i		6784469	1					
+ANR	6784560	Identifier	VMW_PAGE_SHIFT		6784469	1					
+ANR	6784561	ExpressionStatement	"RS_SET_FIELD ( m , msgProdIdx , 0 )"	41:4:539:569	6784469	9	True				
+ANR	6784562	CallExpression	"RS_SET_FIELD ( m , msgProdIdx , 0 )"		6784469	0					
+ANR	6784563	Callee	RS_SET_FIELD		6784469	0					
+ANR	6784564	Identifier	RS_SET_FIELD		6784469	0					
+ANR	6784565	ArgumentList	m		6784469	1					
+ANR	6784566	Argument	m		6784469	0					
+ANR	6784567	Identifier	m		6784469	0					
+ANR	6784568	Argument	msgProdIdx		6784469	1					
+ANR	6784569	Identifier	msgProdIdx		6784469	0					
+ANR	6784570	Argument	0		6784469	2					
+ANR	6784571	PrimaryExpression	0		6784469	0					
+ANR	6784572	ExpressionStatement	"RS_SET_FIELD ( m , msgConsIdx , 0 )"	43:4:576:606	6784469	10	True				
+ANR	6784573	CallExpression	"RS_SET_FIELD ( m , msgConsIdx , 0 )"		6784469	0					
+ANR	6784574	Callee	RS_SET_FIELD		6784469	0					
+ANR	6784575	Identifier	RS_SET_FIELD		6784469	0					
+ANR	6784576	ArgumentList	m		6784469	1					
+ANR	6784577	Argument	m		6784469	0					
+ANR	6784578	Identifier	m		6784469	0					
+ANR	6784579	Argument	msgConsIdx		6784469	1					
+ANR	6784580	Identifier	msgConsIdx		6784469	0					
+ANR	6784581	Argument	0		6784469	2					
+ANR	6784582	PrimaryExpression	0		6784469	0					
+ANR	6784583	ExpressionStatement	"RS_SET_FIELD ( m , msgNumEntriesLog2 , len_log2 )"	45:4:613:657	6784469	11	True				
+ANR	6784584	CallExpression	"RS_SET_FIELD ( m , msgNumEntriesLog2 , len_log2 )"		6784469	0					
+ANR	6784585	Callee	RS_SET_FIELD		6784469	0					
+ANR	6784586	Identifier	RS_SET_FIELD		6784469	0					
+ANR	6784587	ArgumentList	m		6784469	1					
+ANR	6784588	Argument	m		6784469	0					
+ANR	6784589	Identifier	m		6784469	0					
+ANR	6784590	Argument	msgNumEntriesLog2		6784469	1					
+ANR	6784591	Identifier	msgNumEntriesLog2		6784469	0					
+ANR	6784592	Argument	len_log2		6784469	2					
+ANR	6784593	Identifier	len_log2		6784469	0					
+ANR	6784594	ExpressionStatement	trace_pvscsi_ring_init_msg ( len_log2 )	49:4:666:702	6784469	12	True				
+ANR	6784595	CallExpression	trace_pvscsi_ring_init_msg ( len_log2 )		6784469	0					
+ANR	6784596	Callee	trace_pvscsi_ring_init_msg		6784469	0					
+ANR	6784597	Identifier	trace_pvscsi_ring_init_msg		6784469	0					
+ANR	6784598	ArgumentList	len_log2		6784469	1					
+ANR	6784599	Argument	len_log2		6784469	0					
+ANR	6784600	Identifier	len_log2		6784469	0					
+ANR	6784601	ExpressionStatement	smp_wmb ( )	55:4:752:761	6784469	13	True				
+ANR	6784602	CallExpression	smp_wmb ( )		6784469	0					
+ANR	6784603	Callee	smp_wmb		6784469	0					
+ANR	6784604	Identifier	smp_wmb		6784469	0					
+ANR	6784605	ArgumentList			6784469	1					
+ANR	6784606	ReturnStatement	return 0 ;	59:4:770:778	6784469	14	True				
+ANR	6784607	PrimaryExpression	0		6784469	0					
+ANR	6784608	Identifier	pvscsi_ring_init_msg		6784469	1					
+ANR	6784609	ParameterList	"PVSCSIRingInfo * m , PVSCSICmdDescSetupMsgRing * ri"		6784469	2					
+ANR	6784610	Parameter	PVSCSIRingInfo * m	1:21:21:37	6784469	0	True				
+ANR	6784611	ParameterType	PVSCSIRingInfo *		6784469	0					
+ANR	6784612	Identifier	m		6784469	1					
+ANR	6784613	Parameter	PVSCSICmdDescSetupMsgRing * ri	1:40:40:68	6784469	1	True				
+ANR	6784614	ParameterType	PVSCSICmdDescSetupMsgRing *		6784469	0					
+ANR	6784615	Identifier	ri		6784469	1					
+ANR	6784616	CFGEntryNode	ENTRY		6784469		True				
+ANR	6784617	CFGExitNode	EXIT		6784469		True				
+ANR	6784618	Symbol	ri -> ringPPNs		6784469						
+ANR	6784619	Symbol	msgConsIdx		6784469						
+ANR	6784620	Symbol	PVSCSI_MAX_NUM_MSG_ENTRIES_PER_PAGE		6784469						
+ANR	6784621	Symbol	msgProdIdx		6784469						
+ANR	6784622	Symbol	ring_size		6784469						
+ANR	6784623	Symbol	m -> msg_ring_pages_pa		6784469						
+ANR	6784624	Symbol	* m -> msg_ring_pages_pa		6784469						
+ANR	6784625	Symbol	MASK		6784469						
+ANR	6784626	Symbol	ri -> numPages		6784469						
+ANR	6784627	Symbol	VMW_PAGE_SHIFT		6784469						
+ANR	6784628	Symbol	* * m		6784469						
+ANR	6784629	Symbol	pvscsi_log2		6784469						
+ANR	6784630	Symbol	m -> filled_msg_ptr		6784469						
+ANR	6784631	Symbol	* * ri		6784469						
+ANR	6784632	Symbol	* ri -> ringPPNs		6784469						
+ANR	6784633	Symbol	i		6784469						
+ANR	6784634	Symbol	m		6784469						
+ANR	6784635	Symbol	len_log2		6784469						
+ANR	6784636	Symbol	msgNumEntriesLog2		6784469						
+ANR	6784637	Symbol	m -> msg_len_mask		6784469						
+ANR	6784638	Symbol	PVSCSI_SETUP_MSG_RING_MAX_NUM_PAGES		6784469						
+ANR	6784639	Symbol	* i		6784469						
+ANR	6784640	Symbol	ri		6784469						
+ANR	6784641	Symbol	* m		6784469						
+ANR	6784642	Symbol	* ri		6784469						

@@ -1,0 +1,256 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7119769	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qmp_nbd_server_add_1.c								
+ANR	7119770	Function	qmp_nbd_server_add	1:0:0:1141							
+ANR	7119771	FunctionDef	"qmp_nbd_server_add (const char * device , bool has_writable , bool writable , Error * * errp)"		7119770	0					
+ANR	7119772	CompoundStatement		5:0:118:1141	7119770	0					
+ANR	7119773	IdentifierDeclStatement	BlockDriverState * bs ;	7:4:125:145	7119770	0	True				
+ANR	7119774	IdentifierDecl	* bs		7119770	0					
+ANR	7119775	IdentifierDeclType	BlockDriverState *		7119770	0					
+ANR	7119776	Identifier	bs		7119770	1					
+ANR	7119777	IdentifierDeclStatement	NBDExport * exp ;	9:4:152:166	7119770	1	True				
+ANR	7119778	IdentifierDecl	* exp		7119770	0					
+ANR	7119779	IdentifierDeclType	NBDExport *		7119770	0					
+ANR	7119780	Identifier	exp		7119770	1					
+ANR	7119781	IdentifierDeclStatement	NBDCloseNotifier * n ;	11:4:173:192	7119770	2	True				
+ANR	7119782	IdentifierDecl	* n		7119770	0					
+ANR	7119783	IdentifierDeclType	NBDCloseNotifier *		7119770	0					
+ANR	7119784	Identifier	n		7119770	1					
+ANR	7119785	IfStatement	if ( server_fd == - 1 )		7119770	3					
+ANR	7119786	Condition	server_fd == - 1	15:8:205:219	7119770	0	True				
+ANR	7119787	EqualityExpression	server_fd == - 1		7119770	0		==			
+ANR	7119788	Identifier	server_fd		7119770	0					
+ANR	7119789	UnaryOperationExpression	- 1		7119770	1					
+ANR	7119790	UnaryOperator	-		7119770	0					
+ANR	7119791	PrimaryExpression	1		7119770	1					
+ANR	7119792	CompoundStatement		11:25:103:103	7119770	1					
+ANR	7119793	ExpressionStatement	"error_setg ( errp , ""NBD server not running"" )"	17:8:233:275	7119770	0	True				
+ANR	7119794	CallExpression	"error_setg ( errp , ""NBD server not running"" )"		7119770	0					
+ANR	7119795	Callee	error_setg		7119770	0					
+ANR	7119796	Identifier	error_setg		7119770	0					
+ANR	7119797	ArgumentList	errp		7119770	1					
+ANR	7119798	Argument	errp		7119770	0					
+ANR	7119799	Identifier	errp		7119770	0					
+ANR	7119800	Argument	"""NBD server not running"""		7119770	1					
+ANR	7119801	PrimaryExpression	"""NBD server not running"""		7119770	0					
+ANR	7119802	ReturnStatement	return ;	19:8:286:292	7119770	1	True				
+ANR	7119803	IfStatement	if ( nbd_export_find ( device ) )		7119770	4					
+ANR	7119804	Condition	nbd_export_find ( device )	25:8:312:334	7119770	0	True				
+ANR	7119805	CallExpression	nbd_export_find ( device )		7119770	0					
+ANR	7119806	Callee	nbd_export_find		7119770	0					
+ANR	7119807	Identifier	nbd_export_find		7119770	0					
+ANR	7119808	ArgumentList	device		7119770	1					
+ANR	7119809	Argument	device		7119770	0					
+ANR	7119810	Identifier	device		7119770	0					
+ANR	7119811	CompoundStatement		21:33:218:218	7119770	1					
+ANR	7119812	ExpressionStatement	"error_setg ( errp , ""NBD server already exporting device '%s'"" , device )"	27:8:348:416	7119770	0	True				
+ANR	7119813	CallExpression	"error_setg ( errp , ""NBD server already exporting device '%s'"" , device )"		7119770	0					
+ANR	7119814	Callee	error_setg		7119770	0					
+ANR	7119815	Identifier	error_setg		7119770	0					
+ANR	7119816	ArgumentList	errp		7119770	1					
+ANR	7119817	Argument	errp		7119770	0					
+ANR	7119818	Identifier	errp		7119770	0					
+ANR	7119819	Argument	"""NBD server already exporting device '%s'"""		7119770	1					
+ANR	7119820	PrimaryExpression	"""NBD server already exporting device '%s'"""		7119770	0					
+ANR	7119821	Argument	device		7119770	2					
+ANR	7119822	Identifier	device		7119770	0					
+ANR	7119823	ReturnStatement	return ;	29:8:427:433	7119770	1	True				
+ANR	7119824	ExpressionStatement	bs = bdrv_find ( device )	35:4:449:471	7119770	5	True				
+ANR	7119825	AssignmentExpression	bs = bdrv_find ( device )		7119770	0		=			
+ANR	7119826	Identifier	bs		7119770	0					
+ANR	7119827	CallExpression	bdrv_find ( device )		7119770	1					
+ANR	7119828	Callee	bdrv_find		7119770	0					
+ANR	7119829	Identifier	bdrv_find		7119770	0					
+ANR	7119830	ArgumentList	device		7119770	1					
+ANR	7119831	Argument	device		7119770	0					
+ANR	7119832	Identifier	device		7119770	0					
+ANR	7119833	IfStatement	if ( ! bs )		7119770	6					
+ANR	7119834	Condition	! bs	37:8:482:484	7119770	0	True				
+ANR	7119835	UnaryOperationExpression	! bs		7119770	0					
+ANR	7119836	UnaryOperator	!		7119770	0					
+ANR	7119837	Identifier	bs		7119770	1					
+ANR	7119838	CompoundStatement		33:13:368:368	7119770	1					
+ANR	7119839	ExpressionStatement	"error_set ( errp , QERR_DEVICE_NOT_FOUND , device )"	39:8:498:544	7119770	0	True				
+ANR	7119840	CallExpression	"error_set ( errp , QERR_DEVICE_NOT_FOUND , device )"		7119770	0					
+ANR	7119841	Callee	error_set		7119770	0					
+ANR	7119842	Identifier	error_set		7119770	0					
+ANR	7119843	ArgumentList	errp		7119770	1					
+ANR	7119844	Argument	errp		7119770	0					
+ANR	7119845	Identifier	errp		7119770	0					
+ANR	7119846	Argument	QERR_DEVICE_NOT_FOUND		7119770	1					
+ANR	7119847	Identifier	QERR_DEVICE_NOT_FOUND		7119770	0					
+ANR	7119848	Argument	device		7119770	2					
+ANR	7119849	Identifier	device		7119770	0					
+ANR	7119850	ReturnStatement	return ;	41:8:555:561	7119770	1	True				
+ANR	7119851	IfStatement	if ( ! bdrv_is_inserted ( bs ) )		7119770	7					
+ANR	7119852	Condition	! bdrv_is_inserted ( bs )	45:8:579:599	7119770	0	True				
+ANR	7119853	UnaryOperationExpression	! bdrv_is_inserted ( bs )		7119770	0					
+ANR	7119854	UnaryOperator	!		7119770	0					
+ANR	7119855	CallExpression	bdrv_is_inserted ( bs )		7119770	1					
+ANR	7119856	Callee	bdrv_is_inserted		7119770	0					
+ANR	7119857	Identifier	bdrv_is_inserted		7119770	0					
+ANR	7119858	ArgumentList	bs		7119770	1					
+ANR	7119859	Argument	bs		7119770	0					
+ANR	7119860	Identifier	bs		7119770	0					
+ANR	7119861	CompoundStatement		41:31:483:483	7119770	1					
+ANR	7119862	ExpressionStatement	"error_set ( errp , QERR_DEVICE_HAS_NO_MEDIUM , device )"	47:8:613:663	7119770	0	True				
+ANR	7119863	CallExpression	"error_set ( errp , QERR_DEVICE_HAS_NO_MEDIUM , device )"		7119770	0					
+ANR	7119864	Callee	error_set		7119770	0					
+ANR	7119865	Identifier	error_set		7119770	0					
+ANR	7119866	ArgumentList	errp		7119770	1					
+ANR	7119867	Argument	errp		7119770	0					
+ANR	7119868	Identifier	errp		7119770	0					
+ANR	7119869	Argument	QERR_DEVICE_HAS_NO_MEDIUM		7119770	1					
+ANR	7119870	Identifier	QERR_DEVICE_HAS_NO_MEDIUM		7119770	0					
+ANR	7119871	Argument	device		7119770	2					
+ANR	7119872	Identifier	device		7119770	0					
+ANR	7119873	ReturnStatement	return ;	49:8:674:680	7119770	1	True				
+ANR	7119874	IfStatement	if ( ! has_writable )		7119770	8					
+ANR	7119875	Condition	! has_writable	55:8:700:712	7119770	0	True				
+ANR	7119876	UnaryOperationExpression	! has_writable		7119770	0					
+ANR	7119877	UnaryOperator	!		7119770	0					
+ANR	7119878	Identifier	has_writable		7119770	1					
+ANR	7119879	CompoundStatement		51:23:596:596	7119770	1					
+ANR	7119880	ExpressionStatement	writable = false	57:8:726:742	7119770	0	True				
+ANR	7119881	AssignmentExpression	writable = false		7119770	0		=			
+ANR	7119882	Identifier	writable		7119770	0					
+ANR	7119883	Identifier	false		7119770	1					
+ANR	7119884	IfStatement	if ( bdrv_is_read_only ( bs ) )		7119770	9					
+ANR	7119885	Condition	bdrv_is_read_only ( bs )	61:8:760:780	7119770	0	True				
+ANR	7119886	CallExpression	bdrv_is_read_only ( bs )		7119770	0					
+ANR	7119887	Callee	bdrv_is_read_only		7119770	0					
+ANR	7119888	Identifier	bdrv_is_read_only		7119770	0					
+ANR	7119889	ArgumentList	bs		7119770	1					
+ANR	7119890	Argument	bs		7119770	0					
+ANR	7119891	Identifier	bs		7119770	0					
+ANR	7119892	CompoundStatement		57:31:664:664	7119770	1					
+ANR	7119893	ExpressionStatement	writable = false	63:8:794:810	7119770	0	True				
+ANR	7119894	AssignmentExpression	writable = false		7119770	0		=			
+ANR	7119895	Identifier	writable		7119770	0					
+ANR	7119896	Identifier	false		7119770	1					
+ANR	7119897	ExpressionStatement	"exp = nbd_export_new ( bs , 0 , - 1 , writable ? 0 : NBD_FLAG_READ_ONLY , NULL )"	69:4:826:898	7119770	10	True				
+ANR	7119898	AssignmentExpression	"exp = nbd_export_new ( bs , 0 , - 1 , writable ? 0 : NBD_FLAG_READ_ONLY , NULL )"		7119770	0		=			
+ANR	7119899	Identifier	exp		7119770	0					
+ANR	7119900	CallExpression	"nbd_export_new ( bs , 0 , - 1 , writable ? 0 : NBD_FLAG_READ_ONLY , NULL )"		7119770	1					
+ANR	7119901	Callee	nbd_export_new		7119770	0					
+ANR	7119902	Identifier	nbd_export_new		7119770	0					
+ANR	7119903	ArgumentList	bs		7119770	1					
+ANR	7119904	Argument	bs		7119770	0					
+ANR	7119905	Identifier	bs		7119770	0					
+ANR	7119906	Argument	0		7119770	1					
+ANR	7119907	PrimaryExpression	0		7119770	0					
+ANR	7119908	Argument	- 1		7119770	2					
+ANR	7119909	UnaryOperationExpression	- 1		7119770	0					
+ANR	7119910	UnaryOperator	-		7119770	0					
+ANR	7119911	PrimaryExpression	1		7119770	1					
+ANR	7119912	Argument	writable ? 0 : NBD_FLAG_READ_ONLY		7119770	3					
+ANR	7119913	ConditionalExpression	writable ? 0 : NBD_FLAG_READ_ONLY		7119770	0					
+ANR	7119914	Condition	writable		7119770	0					
+ANR	7119915	Identifier	writable		7119770	0					
+ANR	7119916	PrimaryExpression	0		7119770	1					
+ANR	7119917	Identifier	NBD_FLAG_READ_ONLY		7119770	2					
+ANR	7119918	Argument	NULL		7119770	4					
+ANR	7119919	Identifier	NULL		7119770	0					
+ANR	7119920	ExpressionStatement	"nbd_export_set_name ( exp , device )"	73:4:907:939	7119770	11	True				
+ANR	7119921	CallExpression	"nbd_export_set_name ( exp , device )"		7119770	0					
+ANR	7119922	Callee	nbd_export_set_name		7119770	0					
+ANR	7119923	Identifier	nbd_export_set_name		7119770	0					
+ANR	7119924	ArgumentList	exp		7119770	1					
+ANR	7119925	Argument	exp		7119770	0					
+ANR	7119926	Identifier	exp		7119770	0					
+ANR	7119927	Argument	device		7119770	1					
+ANR	7119928	Identifier	device		7119770	0					
+ANR	7119929	ExpressionStatement	n = g_malloc0 ( sizeof ( NBDCloseNotifier ) )	77:4:948:987	7119770	12	True				
+ANR	7119930	AssignmentExpression	n = g_malloc0 ( sizeof ( NBDCloseNotifier ) )		7119770	0		=			
+ANR	7119931	Identifier	n		7119770	0					
+ANR	7119932	CallExpression	g_malloc0 ( sizeof ( NBDCloseNotifier ) )		7119770	1					
+ANR	7119933	Callee	g_malloc0		7119770	0					
+ANR	7119934	Identifier	g_malloc0		7119770	0					
+ANR	7119935	ArgumentList	sizeof ( NBDCloseNotifier )		7119770	1					
+ANR	7119936	Argument	sizeof ( NBDCloseNotifier )		7119770	0					
+ANR	7119937	SizeofExpression	sizeof ( NBDCloseNotifier )		7119770	0					
+ANR	7119938	Sizeof	sizeof		7119770	0					
+ANR	7119939	SizeofOperand	NBDCloseNotifier		7119770	1					
+ANR	7119940	ExpressionStatement	n -> n . notify = nbd_close_notifier	79:4:994:1026	7119770	13	True				
+ANR	7119941	AssignmentExpression	n -> n . notify = nbd_close_notifier		7119770	0		=			
+ANR	7119942	MemberAccess	n -> n . notify		7119770	0					
+ANR	7119943	PtrMemberAccess	n -> n		7119770	0					
+ANR	7119944	Identifier	n		7119770	0					
+ANR	7119945	Identifier	n		7119770	1					
+ANR	7119946	Identifier	notify		7119770	1					
+ANR	7119947	Identifier	nbd_close_notifier		7119770	1					
+ANR	7119948	ExpressionStatement	n -> exp = exp	81:4:1033:1045	7119770	14	True				
+ANR	7119949	AssignmentExpression	n -> exp = exp		7119770	0		=			
+ANR	7119950	PtrMemberAccess	n -> exp		7119770	0					
+ANR	7119951	Identifier	n		7119770	0					
+ANR	7119952	Identifier	exp		7119770	1					
+ANR	7119953	Identifier	exp		7119770	1					
+ANR	7119954	ExpressionStatement	"bdrv_add_close_notifier ( bs , & n -> n )"	83:4:1052:1086	7119770	15	True				
+ANR	7119955	CallExpression	"bdrv_add_close_notifier ( bs , & n -> n )"		7119770	0					
+ANR	7119956	Callee	bdrv_add_close_notifier		7119770	0					
+ANR	7119957	Identifier	bdrv_add_close_notifier		7119770	0					
+ANR	7119958	ArgumentList	bs		7119770	1					
+ANR	7119959	Argument	bs		7119770	0					
+ANR	7119960	Identifier	bs		7119770	0					
+ANR	7119961	Argument	& n -> n		7119770	1					
+ANR	7119962	UnaryOperationExpression	& n -> n		7119770	0					
+ANR	7119963	UnaryOperator	&		7119770	0					
+ANR	7119964	PtrMemberAccess	n -> n		7119770	1					
+ANR	7119965	Identifier	n		7119770	0					
+ANR	7119966	Identifier	n		7119770	1					
+ANR	7119967	ExpressionStatement	"QTAILQ_INSERT_TAIL ( & close_notifiers , n , next )"	85:4:1093:1138	7119770	16	True				
+ANR	7119968	CallExpression	"QTAILQ_INSERT_TAIL ( & close_notifiers , n , next )"		7119770	0					
+ANR	7119969	Callee	QTAILQ_INSERT_TAIL		7119770	0					
+ANR	7119970	Identifier	QTAILQ_INSERT_TAIL		7119770	0					
+ANR	7119971	ArgumentList	& close_notifiers		7119770	1					
+ANR	7119972	Argument	& close_notifiers		7119770	0					
+ANR	7119973	UnaryOperationExpression	& close_notifiers		7119770	0					
+ANR	7119974	UnaryOperator	&		7119770	0					
+ANR	7119975	Identifier	close_notifiers		7119770	1					
+ANR	7119976	Argument	n		7119770	1					
+ANR	7119977	Identifier	n		7119770	0					
+ANR	7119978	Argument	next		7119770	2					
+ANR	7119979	Identifier	next		7119770	0					
+ANR	7119980	ReturnType	void		7119770	1					
+ANR	7119981	Identifier	qmp_nbd_server_add		7119770	2					
+ANR	7119982	ParameterList	"const char * device , bool has_writable , bool writable , Error * * errp"		7119770	3					
+ANR	7119983	Parameter	const char * device	1:24:24:41	7119770	0	True				
+ANR	7119984	ParameterType	const char *		7119770	0					
+ANR	7119985	Identifier	device		7119770	1					
+ANR	7119986	Parameter	bool has_writable	1:44:44:60	7119770	1	True				
+ANR	7119987	ParameterType	bool		7119770	0					
+ANR	7119988	Identifier	has_writable		7119770	1					
+ANR	7119989	Parameter	bool writable	1:63:63:75	7119770	2	True				
+ANR	7119990	ParameterType	bool		7119770	0					
+ANR	7119991	Identifier	writable		7119770	1					
+ANR	7119992	Parameter	Error * * errp	3:24:103:114	7119770	3	True				
+ANR	7119993	ParameterType	Error * *		7119770	0					
+ANR	7119994	Identifier	errp		7119770	1					
+ANR	7119995	CFGEntryNode	ENTRY		7119770		True				
+ANR	7119996	CFGExitNode	EXIT		7119770		True				
+ANR	7119997	Symbol	has_writable		7119770						
+ANR	7119998	Symbol	next		7119770						
+ANR	7119999	Symbol	server_fd		7119770						
+ANR	7120000	Symbol	& close_notifiers		7119770						
+ANR	7120001	Symbol	errp		7119770						
+ANR	7120002	Symbol	QERR_DEVICE_NOT_FOUND		7119770						
+ANR	7120003	Symbol	bdrv_is_inserted		7119770						
+ANR	7120004	Symbol	NBD_FLAG_READ_ONLY		7119770						
+ANR	7120005	Symbol	n -> n . notify		7119770						
+ANR	7120006	Symbol	QERR_DEVICE_HAS_NO_MEDIUM		7119770						
+ANR	7120007	Symbol	writable		7119770						
+ANR	7120008	Symbol	bs		7119770						
+ANR	7120009	Symbol	exp		7119770						
+ANR	7120010	Symbol	NULL		7119770						
+ANR	7120011	Symbol	bdrv_find		7119770						
+ANR	7120012	Symbol	false		7119770						
+ANR	7120013	Symbol	& n -> n		7119770						
+ANR	7120014	Symbol	n -> exp		7119770						
+ANR	7120015	Symbol	n		7119770						
+ANR	7120016	Symbol	nbd_export_new		7119770						
+ANR	7120017	Symbol	nbd_export_find		7119770						
+ANR	7120018	Symbol	bdrv_is_read_only		7119770						
+ANR	7120019	Symbol	nbd_close_notifier		7119770						
+ANR	7120020	Symbol	* n		7119770						
+ANR	7120021	Symbol	g_malloc0		7119770						
+ANR	7120022	Symbol	n -> n		7119770						
+ANR	7120023	Symbol	device		7119770						

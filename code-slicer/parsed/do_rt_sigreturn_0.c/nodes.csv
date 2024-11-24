@@ -1,0 +1,205 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	2618584	File	/home/p4ultr4n/workplace/ReVeal/raw_code/do_rt_sigreturn_0.c								
+ANR	2618585	Function	do_rt_sigreturn	1:0:0:981							
+ANR	2618586	FunctionDef	do_rt_sigreturn (CPUState * env)		2618585	0					
+ANR	2618587	CompoundStatement		3:0:37:981	2618585	0					
+ANR	2618588	IdentifierDeclStatement	struct rt_sigframe * frame ;	5:1:41:66	2618585	0	True				
+ANR	2618589	IdentifierDecl	* frame		2618585	0					
+ANR	2618590	IdentifierDeclType	struct rt_sigframe *		2618585	0					
+ANR	2618591	Identifier	frame		2618585	1					
+ANR	2618592	IdentifierDeclStatement	sigset_t host_set ;	7:8:77:94	2618585	1	True				
+ANR	2618593	IdentifierDecl	host_set		2618585	0					
+ANR	2618594	IdentifierDeclType	sigset_t		2618585	0					
+ANR	2618595	Identifier	host_set		2618585	1					
+ANR	2618596	IfStatement	if ( env -> regs [ 13 ] & 7 )		2618585	2					
+ANR	2618597	Condition	env -> regs [ 13 ] & 7	21:5:274:290	2618585	0	True				
+ANR	2618598	BitAndExpression	env -> regs [ 13 ] & 7		2618585	0		&			
+ANR	2618599	ArrayIndexing	env -> regs [ 13 ]		2618585	0					
+ANR	2618600	PtrMemberAccess	env -> regs		2618585	0					
+ANR	2618601	Identifier	env		2618585	0					
+ANR	2618602	Identifier	regs		2618585	1					
+ANR	2618603	PrimaryExpression	13		2618585	1					
+ANR	2618604	PrimaryExpression	7		2618585	1					
+ANR	2618605	GotoStatement	goto badframe ;	23:2:296:309	2618585	1	True				
+ANR	2618606	Identifier	badframe		2618585	0					
+ANR	2618607	ExpressionStatement	frame = ( struct rt_sigframe * ) env -> regs [ 13 ]	27:1:315:358	2618585	3	True				
+ANR	2618608	AssignmentExpression	frame = ( struct rt_sigframe * ) env -> regs [ 13 ]		2618585	0		=			
+ANR	2618609	Identifier	frame		2618585	0					
+ANR	2618610	CastExpression	( struct rt_sigframe * ) env -> regs [ 13 ]		2618585	1					
+ANR	2618611	CastTarget	struct rt_sigframe *		2618585	0					
+ANR	2618612	ArrayIndexing	env -> regs [ 13 ]		2618585	1					
+ANR	2618613	PtrMemberAccess	env -> regs		2618585	0					
+ANR	2618614	Identifier	env		2618585	0					
+ANR	2618615	Identifier	regs		2618585	1					
+ANR	2618616	PrimaryExpression	13		2618585	1					
+ANR	2618617	IfStatement	"if ( verify_area ( VERIFY_READ , frame , sizeof ( * frame ) ) )"		2618585	4					
+ANR	2618618	Condition	"verify_area ( VERIFY_READ , frame , sizeof ( * frame ) )"	33:5:375:422	2618585	0	True				
+ANR	2618619	CallExpression	"verify_area ( VERIFY_READ , frame , sizeof ( * frame ) )"		2618585	0					
+ANR	2618620	Callee	verify_area		2618585	0					
+ANR	2618621	Identifier	verify_area		2618585	0					
+ANR	2618622	ArgumentList	VERIFY_READ		2618585	1					
+ANR	2618623	Argument	VERIFY_READ		2618585	0					
+ANR	2618624	Identifier	VERIFY_READ		2618585	0					
+ANR	2618625	Argument	frame		2618585	1					
+ANR	2618626	Identifier	frame		2618585	0					
+ANR	2618627	Argument	sizeof ( * frame )		2618585	2					
+ANR	2618628	SizeofExpression	sizeof ( * frame )		2618585	0					
+ANR	2618629	Sizeof	sizeof		2618585	0					
+ANR	2618630	UnaryOperationExpression	* frame		2618585	1					
+ANR	2618631	UnaryOperator	*		2618585	0					
+ANR	2618632	Identifier	frame		2618585	1					
+ANR	2618633	GotoStatement	goto badframe ;	35:2:428:441	2618585	1	True				
+ANR	2618634	Identifier	badframe		2618585	0					
+ANR	2618635	ExpressionStatement	"target_to_host_sigset ( & host_set , & frame -> uc . tuc_sigmask )"	39:8:460:516	2618585	5	True				
+ANR	2618636	CallExpression	"target_to_host_sigset ( & host_set , & frame -> uc . tuc_sigmask )"		2618585	0					
+ANR	2618637	Callee	target_to_host_sigset		2618585	0					
+ANR	2618638	Identifier	target_to_host_sigset		2618585	0					
+ANR	2618639	ArgumentList	& host_set		2618585	1					
+ANR	2618640	Argument	& host_set		2618585	0					
+ANR	2618641	UnaryOperationExpression	& host_set		2618585	0					
+ANR	2618642	UnaryOperator	&		2618585	0					
+ANR	2618643	Identifier	host_set		2618585	1					
+ANR	2618644	Argument	& frame -> uc . tuc_sigmask		2618585	1					
+ANR	2618645	UnaryOperationExpression	& frame -> uc . tuc_sigmask		2618585	0					
+ANR	2618646	UnaryOperator	&		2618585	0					
+ANR	2618647	MemberAccess	frame -> uc . tuc_sigmask		2618585	1					
+ANR	2618648	PtrMemberAccess	frame -> uc		2618585	0					
+ANR	2618649	Identifier	frame		2618585	0					
+ANR	2618650	Identifier	uc		2618585	1					
+ANR	2618651	Identifier	tuc_sigmask		2618585	1					
+ANR	2618652	ExpressionStatement	"sigprocmask ( SIG_SETMASK , & host_set , NULL )"	41:8:527:568	2618585	6	True				
+ANR	2618653	CallExpression	"sigprocmask ( SIG_SETMASK , & host_set , NULL )"		2618585	0					
+ANR	2618654	Callee	sigprocmask		2618585	0					
+ANR	2618655	Identifier	sigprocmask		2618585	0					
+ANR	2618656	ArgumentList	SIG_SETMASK		2618585	1					
+ANR	2618657	Argument	SIG_SETMASK		2618585	0					
+ANR	2618658	Identifier	SIG_SETMASK		2618585	0					
+ANR	2618659	Argument	& host_set		2618585	1					
+ANR	2618660	UnaryOperationExpression	& host_set		2618585	0					
+ANR	2618661	UnaryOperator	&		2618585	0					
+ANR	2618662	Identifier	host_set		2618585	1					
+ANR	2618663	Argument	NULL		2618585	2					
+ANR	2618664	Identifier	NULL		2618585	0					
+ANR	2618665	IfStatement	"if ( restore_sigcontext ( env , & frame -> uc . tuc_mcontext ) )"		2618585	7					
+ANR	2618666	Condition	"restore_sigcontext ( env , & frame -> uc . tuc_mcontext )"	45:5:578:625	2618585	0	True				
+ANR	2618667	CallExpression	"restore_sigcontext ( env , & frame -> uc . tuc_mcontext )"		2618585	0					
+ANR	2618668	Callee	restore_sigcontext		2618585	0					
+ANR	2618669	Identifier	restore_sigcontext		2618585	0					
+ANR	2618670	ArgumentList	env		2618585	1					
+ANR	2618671	Argument	env		2618585	0					
+ANR	2618672	Identifier	env		2618585	0					
+ANR	2618673	Argument	& frame -> uc . tuc_mcontext		2618585	1					
+ANR	2618674	UnaryOperationExpression	& frame -> uc . tuc_mcontext		2618585	0					
+ANR	2618675	UnaryOperator	&		2618585	0					
+ANR	2618676	MemberAccess	frame -> uc . tuc_mcontext		2618585	1					
+ANR	2618677	PtrMemberAccess	frame -> uc		2618585	0					
+ANR	2618678	Identifier	frame		2618585	0					
+ANR	2618679	Identifier	uc		2618585	1					
+ANR	2618680	Identifier	tuc_mcontext		2618585	1					
+ANR	2618681	GotoStatement	goto badframe ;	47:2:631:644	2618585	1	True				
+ANR	2618682	Identifier	badframe		2618585	0					
+ANR	2618683	IfStatement	"if ( do_sigaltstack ( h2g ( & frame -> uc . tuc_stack ) , 0 , get_sp_from_cpustate ( env ) ) == - EFAULT )"		2618585	8					
+ANR	2618684	Condition	"do_sigaltstack ( h2g ( & frame -> uc . tuc_stack ) , 0 , get_sp_from_cpustate ( env ) ) == - EFAULT"	51:5:654:735	2618585	0	True				
+ANR	2618685	EqualityExpression	"do_sigaltstack ( h2g ( & frame -> uc . tuc_stack ) , 0 , get_sp_from_cpustate ( env ) ) == - EFAULT"		2618585	0		==			
+ANR	2618686	CallExpression	"do_sigaltstack ( h2g ( & frame -> uc . tuc_stack ) , 0 , get_sp_from_cpustate ( env ) )"		2618585	0					
+ANR	2618687	Callee	do_sigaltstack		2618585	0					
+ANR	2618688	Identifier	do_sigaltstack		2618585	0					
+ANR	2618689	ArgumentList	h2g ( & frame -> uc . tuc_stack )		2618585	1					
+ANR	2618690	Argument	h2g ( & frame -> uc . tuc_stack )		2618585	0					
+ANR	2618691	CallExpression	h2g ( & frame -> uc . tuc_stack )		2618585	0					
+ANR	2618692	Callee	h2g		2618585	0					
+ANR	2618693	Identifier	h2g		2618585	0					
+ANR	2618694	ArgumentList	& frame -> uc . tuc_stack		2618585	1					
+ANR	2618695	Argument	& frame -> uc . tuc_stack		2618585	0					
+ANR	2618696	UnaryOperationExpression	& frame -> uc . tuc_stack		2618585	0					
+ANR	2618697	UnaryOperator	&		2618585	0					
+ANR	2618698	MemberAccess	frame -> uc . tuc_stack		2618585	1					
+ANR	2618699	PtrMemberAccess	frame -> uc		2618585	0					
+ANR	2618700	Identifier	frame		2618585	0					
+ANR	2618701	Identifier	uc		2618585	1					
+ANR	2618702	Identifier	tuc_stack		2618585	1					
+ANR	2618703	Argument	0		2618585	1					
+ANR	2618704	PrimaryExpression	0		2618585	0					
+ANR	2618705	Argument	get_sp_from_cpustate ( env )		2618585	2					
+ANR	2618706	CallExpression	get_sp_from_cpustate ( env )		2618585	0					
+ANR	2618707	Callee	get_sp_from_cpustate		2618585	0					
+ANR	2618708	Identifier	get_sp_from_cpustate		2618585	0					
+ANR	2618709	ArgumentList	env		2618585	1					
+ANR	2618710	Argument	env		2618585	0					
+ANR	2618711	Identifier	env		2618585	0					
+ANR	2618712	UnaryOperationExpression	- EFAULT		2618585	1					
+ANR	2618713	UnaryOperator	-		2618585	0					
+ANR	2618714	Identifier	EFAULT		2618585	1					
+ANR	2618715	GotoStatement	goto badframe ;	53:2:741:754	2618585	1	True				
+ANR	2618716	Identifier	badframe		2618585	0					
+ANR	2618717	IfStatement	if ( ptrace_cancel_bpt ( current ) )		2618585	9					
+ANR	2618718	Condition	ptrace_cancel_bpt ( current )	61:5:817:842	2618585	0	True				
+ANR	2618719	CallExpression	ptrace_cancel_bpt ( current )		2618585	0					
+ANR	2618720	Callee	ptrace_cancel_bpt		2618585	0					
+ANR	2618721	Identifier	ptrace_cancel_bpt		2618585	0					
+ANR	2618722	ArgumentList	current		2618585	1					
+ANR	2618723	Argument	current		2618585	0					
+ANR	2618724	Identifier	current		2618585	0					
+ANR	2618725	ExpressionStatement	"send_sig ( SIGTRAP , current , 1 )"	63:2:848:877	2618585	1	True				
+ANR	2618726	CallExpression	"send_sig ( SIGTRAP , current , 1 )"		2618585	0					
+ANR	2618727	Callee	send_sig		2618585	0					
+ANR	2618728	Identifier	send_sig		2618585	0					
+ANR	2618729	ArgumentList	SIGTRAP		2618585	1					
+ANR	2618730	Argument	SIGTRAP		2618585	0					
+ANR	2618731	Identifier	SIGTRAP		2618585	0					
+ANR	2618732	Argument	current		2618585	1					
+ANR	2618733	Identifier	current		2618585	0					
+ANR	2618734	Argument	1		2618585	2					
+ANR	2618735	PrimaryExpression	1		2618585	0					
+ANR	2618736	ReturnStatement	return env -> regs [ 0 ] ;	67:1:889:908	2618585	10	True				
+ANR	2618737	ArrayIndexing	env -> regs [ 0 ]		2618585	0					
+ANR	2618738	PtrMemberAccess	env -> regs		2618585	0					
+ANR	2618739	Identifier	env		2618585	0					
+ANR	2618740	Identifier	regs		2618585	1					
+ANR	2618741	PrimaryExpression	0		2618585	1					
+ANR	2618742	Label	badframe :	71:0:913:921	2618585	11	True				
+ANR	2618743	Identifier	badframe		2618585	0					
+ANR	2618744	ExpressionStatement	force_sig ( SIGSEGV )	73:8:932:966	2618585	12	True				
+ANR	2618745	CallExpression	force_sig ( SIGSEGV )		2618585	0					
+ANR	2618746	Callee	force_sig		2618585	0					
+ANR	2618747	Identifier	force_sig		2618585	0					
+ANR	2618748	ArgumentList	SIGSEGV		2618585	1					
+ANR	2618749	Argument	SIGSEGV		2618585	0					
+ANR	2618750	Identifier	SIGSEGV		2618585	0					
+ANR	2618751	ReturnStatement	return 0 ;	75:1:970:978	2618585	13	True				
+ANR	2618752	PrimaryExpression	0		2618585	0					
+ANR	2618753	ReturnType	long		2618585	1					
+ANR	2618754	Identifier	do_rt_sigreturn		2618585	2					
+ANR	2618755	ParameterList	CPUState * env		2618585	3					
+ANR	2618756	Parameter	CPUState * env	1:21:21:33	2618585	0	True				
+ANR	2618757	ParameterType	CPUState *		2618585	0					
+ANR	2618758	Identifier	env		2618585	1					
+ANR	2618759	CFGEntryNode	ENTRY		2618585		True				
+ANR	2618760	CFGExitNode	EXIT		2618585		True				
+ANR	2618761	Symbol	* * env		2618585						
+ANR	2618762	Symbol	frame -> uc		2618585						
+ANR	2618763	Symbol	verify_area		2618585						
+ANR	2618764	Symbol	* frame		2618585						
+ANR	2618765	Symbol	& frame -> uc . tuc_mcontext		2618585						
+ANR	2618766	Symbol	& host_set		2618585						
+ANR	2618767	Symbol	restore_sigcontext		2618585						
+ANR	2618768	Symbol	env -> regs		2618585						
+ANR	2618769	Symbol	host_set		2618585						
+ANR	2618770	Symbol	current		2618585						
+ANR	2618771	Symbol	ptrace_cancel_bpt		2618585						
+ANR	2618772	Symbol	& frame -> uc . tuc_stack		2618585						
+ANR	2618773	Symbol	SIGTRAP		2618585						
+ANR	2618774	Symbol	h2g		2618585						
+ANR	2618775	Symbol	& frame -> uc		2618585						
+ANR	2618776	Symbol	NULL		2618585						
+ANR	2618777	Symbol	* env		2618585						
+ANR	2618778	Symbol	SIG_SETMASK		2618585						
+ANR	2618779	Symbol	VERIFY_READ		2618585						
+ANR	2618780	Symbol	EFAULT		2618585						
+ANR	2618781	Symbol	env		2618585						
+ANR	2618782	Symbol	* env -> regs		2618585						
+ANR	2618783	Symbol	do_sigaltstack		2618585						
+ANR	2618784	Symbol	SIGSEGV		2618585						
+ANR	2618785	Symbol	get_sp_from_cpustate		2618585						
+ANR	2618786	Symbol	& frame -> uc . tuc_sigmask		2618585						
+ANR	2618787	Symbol	frame		2618585						

@@ -1,0 +1,158 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7204879	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qxl_send_events_1.c								
+ANR	7204880	Function	qxl_send_events	1:0:0:600							
+ANR	7204881	FunctionDef	"qxl_send_events (PCIQXLDevice * d , uint32_t events)"		7204880	0					
+ANR	7204882	CompoundStatement		3:0:63:600	7204880	0					
+ANR	7204883	IdentifierDeclStatement	uint32_t old_pending ;	5:4:70:90	7204880	0	True				
+ANR	7204884	IdentifierDecl	old_pending		7204880	0					
+ANR	7204885	IdentifierDeclType	uint32_t		7204880	0					
+ANR	7204886	Identifier	old_pending		7204880	1					
+ANR	7204887	IdentifierDeclStatement	uint32_t le_events = cpu_to_le32 ( events ) ;	7:4:97:137	7204880	1	True				
+ANR	7204888	IdentifierDecl	le_events = cpu_to_le32 ( events )		7204880	0					
+ANR	7204889	IdentifierDeclType	uint32_t		7204880	0					
+ANR	7204890	Identifier	le_events		7204880	1					
+ANR	7204891	AssignmentExpression	le_events = cpu_to_le32 ( events )		7204880	2		=			
+ANR	7204892	Identifier	le_events		7204880	0					
+ANR	7204893	CallExpression	cpu_to_le32 ( events )		7204880	1					
+ANR	7204894	Callee	cpu_to_le32		7204880	0					
+ANR	7204895	Identifier	cpu_to_le32		7204880	0					
+ANR	7204896	ArgumentList	events		7204880	1					
+ANR	7204897	Argument	events		7204880	0					
+ANR	7204898	Identifier	events		7204880	0					
+ANR	7204899	ExpressionStatement	"trace_qxl_send_events ( d -> id , events )"	11:4:146:182	7204880	2	True				
+ANR	7204900	CallExpression	"trace_qxl_send_events ( d -> id , events )"		7204880	0					
+ANR	7204901	Callee	trace_qxl_send_events		7204880	0					
+ANR	7204902	Identifier	trace_qxl_send_events		7204880	0					
+ANR	7204903	ArgumentList	d -> id		7204880	1					
+ANR	7204904	Argument	d -> id		7204880	0					
+ANR	7204905	PtrMemberAccess	d -> id		7204880	0					
+ANR	7204906	Identifier	d		7204880	0					
+ANR	7204907	Identifier	id		7204880	1					
+ANR	7204908	Argument	events		7204880	1					
+ANR	7204909	Identifier	events		7204880	0					
+ANR	7204910	ExpressionStatement	assert ( qemu_spice_display_is_running ( & d -> ssd ) )	13:4:189:235	7204880	3	True				
+ANR	7204911	CallExpression	assert ( qemu_spice_display_is_running ( & d -> ssd ) )		7204880	0					
+ANR	7204912	Callee	assert		7204880	0					
+ANR	7204913	Identifier	assert		7204880	0					
+ANR	7204914	ArgumentList	qemu_spice_display_is_running ( & d -> ssd )		7204880	1					
+ANR	7204915	Argument	qemu_spice_display_is_running ( & d -> ssd )		7204880	0					
+ANR	7204916	CallExpression	qemu_spice_display_is_running ( & d -> ssd )		7204880	0					
+ANR	7204917	Callee	qemu_spice_display_is_running		7204880	0					
+ANR	7204918	Identifier	qemu_spice_display_is_running		7204880	0					
+ANR	7204919	ArgumentList	& d -> ssd		7204880	1					
+ANR	7204920	Argument	& d -> ssd		7204880	0					
+ANR	7204921	UnaryOperationExpression	& d -> ssd		7204880	0					
+ANR	7204922	UnaryOperator	&		7204880	0					
+ANR	7204923	PtrMemberAccess	d -> ssd		7204880	1					
+ANR	7204924	Identifier	d		7204880	0					
+ANR	7204925	Identifier	ssd		7204880	1					
+ANR	7204926	ExpressionStatement	"old_pending = __sync_fetch_and_or ( & d -> ram -> int_pending , le_events )"	15:4:242:308	7204880	4	True				
+ANR	7204927	AssignmentExpression	"old_pending = __sync_fetch_and_or ( & d -> ram -> int_pending , le_events )"		7204880	0		=			
+ANR	7204928	Identifier	old_pending		7204880	0					
+ANR	7204929	CallExpression	"__sync_fetch_and_or ( & d -> ram -> int_pending , le_events )"		7204880	1					
+ANR	7204930	Callee	__sync_fetch_and_or		7204880	0					
+ANR	7204931	Identifier	__sync_fetch_and_or		7204880	0					
+ANR	7204932	ArgumentList	& d -> ram -> int_pending		7204880	1					
+ANR	7204933	Argument	& d -> ram -> int_pending		7204880	0					
+ANR	7204934	UnaryOperationExpression	& d -> ram -> int_pending		7204880	0					
+ANR	7204935	UnaryOperator	&		7204880	0					
+ANR	7204936	PtrMemberAccess	d -> ram -> int_pending		7204880	1					
+ANR	7204937	PtrMemberAccess	d -> ram		7204880	0					
+ANR	7204938	Identifier	d		7204880	0					
+ANR	7204939	Identifier	ram		7204880	1					
+ANR	7204940	Identifier	int_pending		7204880	1					
+ANR	7204941	Argument	le_events		7204880	1					
+ANR	7204942	Identifier	le_events		7204880	0					
+ANR	7204943	IfStatement	if ( ( old_pending & le_events ) == le_events )		7204880	5					
+ANR	7204944	Condition	( old_pending & le_events ) == le_events	17:8:319:356	7204880	0	True				
+ANR	7204945	EqualityExpression	( old_pending & le_events ) == le_events		7204880	0		==			
+ANR	7204946	BitAndExpression	old_pending & le_events		7204880	0		&			
+ANR	7204947	Identifier	old_pending		7204880	0					
+ANR	7204948	Identifier	le_events		7204880	1					
+ANR	7204949	Identifier	le_events		7204880	1					
+ANR	7204950	CompoundStatement		15:48:295:295	7204880	1					
+ANR	7204951	ReturnStatement	return ;	19:8:370:376	7204880	0	True				
+ANR	7204952	IfStatement	if ( qemu_thread_is_self ( & d -> main ) )		7204880	6					
+ANR	7204953	Condition	qemu_thread_is_self ( & d -> main )	23:8:394:422	7204880	0	True				
+ANR	7204954	CallExpression	qemu_thread_is_self ( & d -> main )		7204880	0					
+ANR	7204955	Callee	qemu_thread_is_self		7204880	0					
+ANR	7204956	Identifier	qemu_thread_is_self		7204880	0					
+ANR	7204957	ArgumentList	& d -> main		7204880	1					
+ANR	7204958	Argument	& d -> main		7204880	0					
+ANR	7204959	UnaryOperationExpression	& d -> main		7204880	0					
+ANR	7204960	UnaryOperator	&		7204880	0					
+ANR	7204961	PtrMemberAccess	d -> main		7204880	1					
+ANR	7204962	Identifier	d		7204880	0					
+ANR	7204963	Identifier	main		7204880	1					
+ANR	7204964	CompoundStatement		21:39:361:361	7204880	1					
+ANR	7204965	ExpressionStatement	qxl_update_irq ( d )	25:8:436:453	7204880	0	True				
+ANR	7204966	CallExpression	qxl_update_irq ( d )		7204880	0					
+ANR	7204967	Callee	qxl_update_irq		7204880	0					
+ANR	7204968	Identifier	qxl_update_irq		7204880	0					
+ANR	7204969	ArgumentList	d		7204880	1					
+ANR	7204970	Argument	d		7204880	0					
+ANR	7204971	Identifier	d		7204880	0					
+ANR	7204972	ElseStatement	else		7204880	0					
+ANR	7204973	CompoundStatement		25:11:403:403	7204880	0					
+ANR	7204974	IfStatement	"if ( write ( d -> pipe [ 1 ] , d , 1 ) != 1 )"		7204880	0					
+ANR	7204975	Condition	"write ( d -> pipe [ 1 ] , d , 1 ) != 1"	29:12:482:509	7204880	0	True				
+ANR	7204976	EqualityExpression	"write ( d -> pipe [ 1 ] , d , 1 ) != 1"		7204880	0		!=			
+ANR	7204977	CallExpression	"write ( d -> pipe [ 1 ] , d , 1 )"		7204880	0					
+ANR	7204978	Callee	write		7204880	0					
+ANR	7204979	Identifier	write		7204880	0					
+ANR	7204980	ArgumentList	d -> pipe [ 1 ]		7204880	1					
+ANR	7204981	Argument	d -> pipe [ 1 ]		7204880	0					
+ANR	7204982	ArrayIndexing	d -> pipe [ 1 ]		7204880	0					
+ANR	7204983	PtrMemberAccess	d -> pipe		7204880	0					
+ANR	7204984	Identifier	d		7204880	0					
+ANR	7204985	Identifier	pipe		7204880	1					
+ANR	7204986	PrimaryExpression	1		7204880	1					
+ANR	7204987	Argument	d		7204880	1					
+ANR	7204988	Identifier	d		7204880	0					
+ANR	7204989	Argument	1		7204880	2					
+ANR	7204990	PrimaryExpression	1		7204880	0					
+ANR	7204991	PrimaryExpression	1		7204880	1					
+ANR	7204992	CompoundStatement		27:42:448:448	7204880	1					
+ANR	7204993	ExpressionStatement	"dprint ( d , 1 , ""%s: write to pipe failed\\n"" , __func__ )"	31:12:527:579	7204880	0	True				
+ANR	7204994	CallExpression	"dprint ( d , 1 , ""%s: write to pipe failed\\n"" , __func__ )"		7204880	0					
+ANR	7204995	Callee	dprint		7204880	0					
+ANR	7204996	Identifier	dprint		7204880	0					
+ANR	7204997	ArgumentList	d		7204880	1					
+ANR	7204998	Argument	d		7204880	0					
+ANR	7204999	Identifier	d		7204880	0					
+ANR	7205000	Argument	1		7204880	1					
+ANR	7205001	PrimaryExpression	1		7204880	0					
+ANR	7205002	Argument	"""%s: write to pipe failed\\n"""		7204880	2					
+ANR	7205003	PrimaryExpression	"""%s: write to pipe failed\\n"""		7204880	0					
+ANR	7205004	Argument	__func__		7204880	3					
+ANR	7205005	Identifier	__func__		7204880	0					
+ANR	7205006	ReturnType	static void		7204880	1					
+ANR	7205007	Identifier	qxl_send_events		7204880	2					
+ANR	7205008	ParameterList	"PCIQXLDevice * d , uint32_t events"		7204880	3					
+ANR	7205009	Parameter	PCIQXLDevice * d	1:28:28:42	7204880	0	True				
+ANR	7205010	ParameterType	PCIQXLDevice *		7204880	0					
+ANR	7205011	Identifier	d		7204880	1					
+ANR	7205012	Parameter	uint32_t events	1:45:45:59	7204880	1	True				
+ANR	7205013	ParameterType	uint32_t		7204880	0					
+ANR	7205014	Identifier	events		7204880	1					
+ANR	7205015	CFGEntryNode	ENTRY		7204880		True				
+ANR	7205016	CFGExitNode	EXIT		7204880		True				
+ANR	7205017	Symbol	__sync_fetch_and_or		7204880						
+ANR	7205018	Symbol	d		7204880						
+ANR	7205019	Symbol	* * d		7204880						
+ANR	7205020	Symbol	d -> ram		7204880						
+ANR	7205021	Symbol	* d		7204880						
+ANR	7205022	Symbol	& d -> ram -> int_pending		7204880						
+ANR	7205023	Symbol	& d -> main		7204880						
+ANR	7205024	Symbol	d -> id		7204880						
+ANR	7205025	Symbol	le_events		7204880						
+ANR	7205026	Symbol	qemu_spice_display_is_running		7204880						
+ANR	7205027	Symbol	cpu_to_le32		7204880						
+ANR	7205028	Symbol	__func__		7204880						
+ANR	7205029	Symbol	qemu_thread_is_self		7204880						
+ANR	7205030	Symbol	* d -> pipe		7204880						
+ANR	7205031	Symbol	d -> pipe		7204880						
+ANR	7205032	Symbol	write		7204880						
+ANR	7205033	Symbol	events		7204880						
+ANR	7205034	Symbol	& d -> ssd		7204880						
+ANR	7205035	Symbol	old_pending		7204880						

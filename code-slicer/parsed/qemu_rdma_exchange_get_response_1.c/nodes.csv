@@ -1,0 +1,275 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7028036	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qemu_rdma_exchange_get_response_1.c								
+ANR	7028037	Function	qemu_rdma_exchange_get_response	1:0:0:1476							
+ANR	7028038	FunctionDef	"qemu_rdma_exchange_get_response (RDMAContext * rdma , RDMAControlHeader * head , int expecting , int idx)"		7028037	0					
+ANR	7028039	CompoundStatement		5:0:129:1476	7028037	0					
+ANR	7028040	IdentifierDeclStatement	uint32_t byte_len ;	7:4:136:153	7028037	0	True				
+ANR	7028041	IdentifierDecl	byte_len		7028037	0					
+ANR	7028042	IdentifierDeclType	uint32_t		7028037	0					
+ANR	7028043	Identifier	byte_len		7028037	1					
+ANR	7028044	IdentifierDeclStatement	"int ret = qemu_rdma_block_for_wrid ( rdma , RDMA_WRID_RECV_CONTROL + idx , & byte_len ) ;"	9:4:160:281	7028037	1	True				
+ANR	7028045	IdentifierDecl	"ret = qemu_rdma_block_for_wrid ( rdma , RDMA_WRID_RECV_CONTROL + idx , & byte_len )"		7028037	0					
+ANR	7028046	IdentifierDeclType	int		7028037	0					
+ANR	7028047	Identifier	ret		7028037	1					
+ANR	7028048	AssignmentExpression	"ret = qemu_rdma_block_for_wrid ( rdma , RDMA_WRID_RECV_CONTROL + idx , & byte_len )"		7028037	2		=			
+ANR	7028049	Identifier	ret		7028037	0					
+ANR	7028050	CallExpression	"qemu_rdma_block_for_wrid ( rdma , RDMA_WRID_RECV_CONTROL + idx , & byte_len )"		7028037	1					
+ANR	7028051	Callee	qemu_rdma_block_for_wrid		7028037	0					
+ANR	7028052	Identifier	qemu_rdma_block_for_wrid		7028037	0					
+ANR	7028053	ArgumentList	rdma		7028037	1					
+ANR	7028054	Argument	rdma		7028037	0					
+ANR	7028055	Identifier	rdma		7028037	0					
+ANR	7028056	Argument	RDMA_WRID_RECV_CONTROL + idx		7028037	1					
+ANR	7028057	AdditiveExpression	RDMA_WRID_RECV_CONTROL + idx		7028037	0		+			
+ANR	7028058	Identifier	RDMA_WRID_RECV_CONTROL		7028037	0					
+ANR	7028059	Identifier	idx		7028037	1					
+ANR	7028060	Argument	& byte_len		7028037	2					
+ANR	7028061	UnaryOperationExpression	& byte_len		7028037	0					
+ANR	7028062	UnaryOperator	&		7028037	0					
+ANR	7028063	Identifier	byte_len		7028037	1					
+ANR	7028064	IfStatement	if ( ret < 0 )		7028037	2					
+ANR	7028065	Condition	ret < 0	15:8:294:300	7028037	0	True				
+ANR	7028066	RelationalExpression	ret < 0		7028037	0		<			
+ANR	7028067	Identifier	ret		7028037	0					
+ANR	7028068	PrimaryExpression	0		7028037	1					
+ANR	7028069	CompoundStatement		11:17:173:173	7028037	1					
+ANR	7028070	ExpressionStatement	"fprintf ( stderr , ""rdma migration: recv polling control error!\\n"" )"	17:8:314:378	7028037	0	True				
+ANR	7028071	CallExpression	"fprintf ( stderr , ""rdma migration: recv polling control error!\\n"" )"		7028037	0					
+ANR	7028072	Callee	fprintf		7028037	0					
+ANR	7028073	Identifier	fprintf		7028037	0					
+ANR	7028074	ArgumentList	stderr		7028037	1					
+ANR	7028075	Argument	stderr		7028037	0					
+ANR	7028076	Identifier	stderr		7028037	0					
+ANR	7028077	Argument	"""rdma migration: recv polling control error!\\n"""		7028037	1					
+ANR	7028078	PrimaryExpression	"""rdma migration: recv polling control error!\\n"""		7028037	0					
+ANR	7028079	ReturnStatement	return ret ;	19:8:389:399	7028037	1	True				
+ANR	7028080	Identifier	ret		7028037	0					
+ANR	7028081	ExpressionStatement	network_to_control ( ( void * ) rdma -> wr_data [ idx ] . control )	25:4:415:470	7028037	3	True				
+ANR	7028082	CallExpression	network_to_control ( ( void * ) rdma -> wr_data [ idx ] . control )		7028037	0					
+ANR	7028083	Callee	network_to_control		7028037	0					
+ANR	7028084	Identifier	network_to_control		7028037	0					
+ANR	7028085	ArgumentList	( void * ) rdma -> wr_data [ idx ] . control		7028037	1					
+ANR	7028086	Argument	( void * ) rdma -> wr_data [ idx ] . control		7028037	0					
+ANR	7028087	CastExpression	( void * ) rdma -> wr_data [ idx ] . control		7028037	0					
+ANR	7028088	CastTarget	void *		7028037	0					
+ANR	7028089	MemberAccess	rdma -> wr_data [ idx ] . control		7028037	1					
+ANR	7028090	ArrayIndexing	rdma -> wr_data [ idx ]		7028037	0					
+ANR	7028091	PtrMemberAccess	rdma -> wr_data		7028037	0					
+ANR	7028092	Identifier	rdma		7028037	0					
+ANR	7028093	Identifier	wr_data		7028037	1					
+ANR	7028094	Identifier	idx		7028037	1					
+ANR	7028095	Identifier	control		7028037	1					
+ANR	7028096	ExpressionStatement	"memcpy ( head , rdma -> wr_data [ idx ] . control , sizeof ( RDMAControlHeader ) )"	27:4:477:544	7028037	4	True				
+ANR	7028097	CallExpression	"memcpy ( head , rdma -> wr_data [ idx ] . control , sizeof ( RDMAControlHeader ) )"		7028037	0					
+ANR	7028098	Callee	memcpy		7028037	0					
+ANR	7028099	Identifier	memcpy		7028037	0					
+ANR	7028100	ArgumentList	head		7028037	1					
+ANR	7028101	Argument	head		7028037	0					
+ANR	7028102	Identifier	head		7028037	0					
+ANR	7028103	Argument	rdma -> wr_data [ idx ] . control		7028037	1					
+ANR	7028104	MemberAccess	rdma -> wr_data [ idx ] . control		7028037	0					
+ANR	7028105	ArrayIndexing	rdma -> wr_data [ idx ]		7028037	0					
+ANR	7028106	PtrMemberAccess	rdma -> wr_data		7028037	0					
+ANR	7028107	Identifier	rdma		7028037	0					
+ANR	7028108	Identifier	wr_data		7028037	1					
+ANR	7028109	Identifier	idx		7028037	1					
+ANR	7028110	Identifier	control		7028037	1					
+ANR	7028111	Argument	sizeof ( RDMAControlHeader )		7028037	2					
+ANR	7028112	SizeofExpression	sizeof ( RDMAControlHeader )		7028037	0					
+ANR	7028113	Sizeof	sizeof		7028037	0					
+ANR	7028114	SizeofOperand	RDMAControlHeader		7028037	1					
+ANR	7028115	ExpressionStatement	"DDDPRINTF ( ""CONTROL: %s receiving...\\n"" , control_desc [ expecting ] )"	31:4:553:617	7028037	5	True				
+ANR	7028116	CallExpression	"DDDPRINTF ( ""CONTROL: %s receiving...\\n"" , control_desc [ expecting ] )"		7028037	0					
+ANR	7028117	Callee	DDDPRINTF		7028037	0					
+ANR	7028118	Identifier	DDDPRINTF		7028037	0					
+ANR	7028119	ArgumentList	"""CONTROL: %s receiving...\\n"""		7028037	1					
+ANR	7028120	Argument	"""CONTROL: %s receiving...\\n"""		7028037	0					
+ANR	7028121	PrimaryExpression	"""CONTROL: %s receiving...\\n"""		7028037	0					
+ANR	7028122	Argument	control_desc [ expecting ]		7028037	1					
+ANR	7028123	ArrayIndexing	control_desc [ expecting ]		7028037	0					
+ANR	7028124	Identifier	control_desc		7028037	0					
+ANR	7028125	Identifier	expecting		7028037	1					
+ANR	7028126	IfStatement	if ( expecting == RDMA_CONTROL_NONE )		7028037	6					
+ANR	7028127	Condition	expecting == RDMA_CONTROL_NONE	35:8:630:659	7028037	0	True				
+ANR	7028128	EqualityExpression	expecting == RDMA_CONTROL_NONE		7028037	0		==			
+ANR	7028129	Identifier	expecting		7028037	0					
+ANR	7028130	Identifier	RDMA_CONTROL_NONE		7028037	1					
+ANR	7028131	CompoundStatement		31:40:532:532	7028037	1					
+ANR	7028132	ExpressionStatement	"DDDPRINTF ( ""Surprise: got %s (%d)\\n"" , control_desc [ head -> type ] , head -> type )"	37:8:673:766	7028037	0	True				
+ANR	7028133	CallExpression	"DDDPRINTF ( ""Surprise: got %s (%d)\\n"" , control_desc [ head -> type ] , head -> type )"		7028037	0					
+ANR	7028134	Callee	DDDPRINTF		7028037	0					
+ANR	7028135	Identifier	DDDPRINTF		7028037	0					
+ANR	7028136	ArgumentList	"""Surprise: got %s (%d)\\n"""		7028037	1					
+ANR	7028137	Argument	"""Surprise: got %s (%d)\\n"""		7028037	0					
+ANR	7028138	PrimaryExpression	"""Surprise: got %s (%d)\\n"""		7028037	0					
+ANR	7028139	Argument	control_desc [ head -> type ]		7028037	1					
+ANR	7028140	ArrayIndexing	control_desc [ head -> type ]		7028037	0					
+ANR	7028141	Identifier	control_desc		7028037	0					
+ANR	7028142	PtrMemberAccess	head -> type		7028037	1					
+ANR	7028143	Identifier	head		7028037	0					
+ANR	7028144	Identifier	type		7028037	1					
+ANR	7028145	Argument	head -> type		7028037	2					
+ANR	7028146	PtrMemberAccess	head -> type		7028037	0					
+ANR	7028147	Identifier	head		7028037	0					
+ANR	7028148	Identifier	type		7028037	1					
+ANR	7028149	ElseStatement	else		7028037	0					
+ANR	7028150	IfStatement	if ( head -> type != expecting || head -> type == RDMA_CONTROL_ERROR )		7028037	0					
+ANR	7028151	Condition	head -> type != expecting || head -> type == RDMA_CONTROL_ERROR	41:15:784:842	7028037	0	True				
+ANR	7028152	OrExpression	head -> type != expecting || head -> type == RDMA_CONTROL_ERROR		7028037	0		||			
+ANR	7028153	EqualityExpression	head -> type != expecting		7028037	0		!=			
+ANR	7028154	PtrMemberAccess	head -> type		7028037	0					
+ANR	7028155	Identifier	head		7028037	0					
+ANR	7028156	Identifier	type		7028037	1					
+ANR	7028157	Identifier	expecting		7028037	1					
+ANR	7028158	EqualityExpression	head -> type == RDMA_CONTROL_ERROR		7028037	1		==			
+ANR	7028159	PtrMemberAccess	head -> type		7028037	0					
+ANR	7028160	Identifier	head		7028037	0					
+ANR	7028161	Identifier	type		7028037	1					
+ANR	7028162	Identifier	RDMA_CONTROL_ERROR		7028037	1					
+ANR	7028163	CompoundStatement		37:76:715:715	7028037	1					
+ANR	7028164	Statement	fprintf	43:8:856:862	7028037	0	True				
+ANR	7028165	Statement	(	43:15:863:863	7028037	1	True				
+ANR	7028166	Statement	stderr	43:16:864:869	7028037	2	True				
+ANR	7028167	Statement	","	43:22:870:870	7028037	3	True				
+ANR	7028168	Statement	"""Was expecting a %s (%d) control message"""	43:24:872:912	7028037	4	True				
+ANR	7028169	Statement	""", but got: %s (%d), length: %d\\n"""	45:16:931:964	7028037	5	True				
+ANR	7028170	Statement	","	45:50:965:965	7028037	6	True				
+ANR	7028171	Statement	control_desc	47:16:984:995	7028037	7	True				
+ANR	7028172	Statement	[	47:28:996:996	7028037	8	True				
+ANR	7028173	Statement	expecting	47:29:997:1005	7028037	9	True				
+ANR	7028174	Statement	]	47:38:1006:1006	7028037	10	True				
+ANR	7028175	Statement	","	47:39:1007:1007	7028037	11	True				
+ANR	7028176	Statement	expecting	47:41:1009:1017	7028037	12	True				
+ANR	7028177	Statement	","	47:50:1018:1018	7028037	13	True				
+ANR	7028178	Statement	control_desc	49:16:1037:1048	7028037	14	True				
+ANR	7028179	Statement	[	49:28:1049:1049	7028037	15	True				
+ANR	7028180	Statement	head	49:29:1050:1053	7028037	16	True				
+ANR	7028181	Statement	->	49:33:1054:1055	7028037	17	True				
+ANR	7028182	Statement	type	49:35:1056:1059	7028037	18	True				
+ANR	7028183	Statement	]	49:39:1060:1060	7028037	19	True				
+ANR	7028184	Statement	","	49:40:1061:1061	7028037	20	True				
+ANR	7028185	Statement	head	49:42:1063:1066	7028037	21	True				
+ANR	7028186	Statement	->	49:46:1067:1068	7028037	22	True				
+ANR	7028187	Statement	type	49:48:1069:1072	7028037	23	True				
+ANR	7028188	Statement	","	49:52:1073:1073	7028037	24	True				
+ANR	7028189	Statement	head	49:54:1075:1078	7028037	25	True				
+ANR	7028190	Statement	->	49:58:1079:1080	7028037	26	True				
+ANR	7028191	Statement	len	49:60:1081:1083	7028037	27	True				
+ANR	7028192	Statement	)	49:63:1084:1084	7028037	28	True				
+ANR	7028193	ExpressionStatement		49:64:1085:1085	7028037	29	True				
+ANR	7028194	ReturnStatement	return - EIO ;	51:8:1096:1107	7028037	30	True				
+ANR	7028195	UnaryOperationExpression	- EIO		7028037	0					
+ANR	7028196	UnaryOperator	-		7028037	0					
+ANR	7028197	Identifier	EIO		7028037	1					
+ANR	7028198	IfStatement	if ( head -> len > RDMA_CONTROL_MAX_BUFFER - sizeof ( * head ) )		7028037	7					
+ANR	7028199	Condition	head -> len > RDMA_CONTROL_MAX_BUFFER - sizeof ( * head )	55:8:1125:1175	7028037	0	True				
+ANR	7028200	RelationalExpression	head -> len > RDMA_CONTROL_MAX_BUFFER - sizeof ( * head )		7028037	0		>			
+ANR	7028201	PtrMemberAccess	head -> len		7028037	0					
+ANR	7028202	Identifier	head		7028037	0					
+ANR	7028203	Identifier	len		7028037	1					
+ANR	7028204	AdditiveExpression	RDMA_CONTROL_MAX_BUFFER - sizeof ( * head )		7028037	1		-			
+ANR	7028205	Identifier	RDMA_CONTROL_MAX_BUFFER		7028037	0					
+ANR	7028206	SizeofExpression	sizeof ( * head )		7028037	1					
+ANR	7028207	Sizeof	sizeof		7028037	0					
+ANR	7028208	UnaryOperationExpression	* head		7028037	1					
+ANR	7028209	UnaryOperator	*		7028037	0					
+ANR	7028210	Identifier	head		7028037	1					
+ANR	7028211	CompoundStatement		51:61:1048:1048	7028037	1					
+ANR	7028212	ExpressionStatement	"fprintf ( stderr , ""too long length: %d\\n"" , head -> len )"	57:8:1189:1240	7028037	0	True				
+ANR	7028213	CallExpression	"fprintf ( stderr , ""too long length: %d\\n"" , head -> len )"		7028037	0					
+ANR	7028214	Callee	fprintf		7028037	0					
+ANR	7028215	Identifier	fprintf		7028037	0					
+ANR	7028216	ArgumentList	stderr		7028037	1					
+ANR	7028217	Argument	stderr		7028037	0					
+ANR	7028218	Identifier	stderr		7028037	0					
+ANR	7028219	Argument	"""too long length: %d\\n"""		7028037	1					
+ANR	7028220	PrimaryExpression	"""too long length: %d\\n"""		7028037	0					
+ANR	7028221	Argument	head -> len		7028037	2					
+ANR	7028222	PtrMemberAccess	head -> len		7028037	0					
+ANR	7028223	Identifier	head		7028037	0					
+ANR	7028224	Identifier	len		7028037	1					
+ANR	7028225	ReturnStatement	return - EINVAL ;	59:8:1251:1265	7028037	1	True				
+ANR	7028226	UnaryOperationExpression	- EINVAL		7028037	0					
+ANR	7028227	UnaryOperator	-		7028037	0					
+ANR	7028228	Identifier	EINVAL		7028037	1					
+ANR	7028229	IfStatement	if ( sizeof ( * head ) + head -> len != byte_len )		7028037	8					
+ANR	7028230	Condition	sizeof ( * head ) + head -> len != byte_len	63:8:1283:1319	7028037	0	True				
+ANR	7028231	EqualityExpression	sizeof ( * head ) + head -> len != byte_len		7028037	0		!=			
+ANR	7028232	AdditiveExpression	sizeof ( * head ) + head -> len		7028037	0		+			
+ANR	7028233	SizeofExpression	sizeof ( * head )		7028037	0					
+ANR	7028234	Sizeof	sizeof		7028037	0					
+ANR	7028235	UnaryOperationExpression	* head		7028037	1					
+ANR	7028236	UnaryOperator	*		7028037	0					
+ANR	7028237	Identifier	head		7028037	1					
+ANR	7028238	PtrMemberAccess	head -> len		7028037	1					
+ANR	7028239	Identifier	head		7028037	0					
+ANR	7028240	Identifier	len		7028037	1					
+ANR	7028241	Identifier	byte_len		7028037	1					
+ANR	7028242	CompoundStatement		59:47:1192:1192	7028037	1					
+ANR	7028243	ExpressionStatement	"fprintf ( stderr , ""Malformed length: %d byte_len %d\\n"" , head -> len , byte_len )"	65:8:1333:1424	7028037	0	True				
+ANR	7028244	CallExpression	"fprintf ( stderr , ""Malformed length: %d byte_len %d\\n"" , head -> len , byte_len )"		7028037	0					
+ANR	7028245	Callee	fprintf		7028037	0					
+ANR	7028246	Identifier	fprintf		7028037	0					
+ANR	7028247	ArgumentList	stderr		7028037	1					
+ANR	7028248	Argument	stderr		7028037	0					
+ANR	7028249	Identifier	stderr		7028037	0					
+ANR	7028250	Argument	"""Malformed length: %d byte_len %d\\n"""		7028037	1					
+ANR	7028251	PrimaryExpression	"""Malformed length: %d byte_len %d\\n"""		7028037	0					
+ANR	7028252	Argument	head -> len		7028037	2					
+ANR	7028253	PtrMemberAccess	head -> len		7028037	0					
+ANR	7028254	Identifier	head		7028037	0					
+ANR	7028255	Identifier	len		7028037	1					
+ANR	7028256	Argument	byte_len		7028037	3					
+ANR	7028257	Identifier	byte_len		7028037	0					
+ANR	7028258	ReturnStatement	return - EINVAL ;	69:8:1435:1449	7028037	1	True				
+ANR	7028259	UnaryOperationExpression	- EINVAL		7028037	0					
+ANR	7028260	UnaryOperator	-		7028037	0					
+ANR	7028261	Identifier	EINVAL		7028037	1					
+ANR	7028262	ReturnStatement	return 0 ;	75:4:1465:1473	7028037	9	True				
+ANR	7028263	PrimaryExpression	0		7028037	0					
+ANR	7028264	ReturnType	static int		7028037	1					
+ANR	7028265	Identifier	qemu_rdma_exchange_get_response		7028037	2					
+ANR	7028266	ParameterList	"RDMAContext * rdma , RDMAControlHeader * head , int expecting , int idx"		7028037	3					
+ANR	7028267	Parameter	RDMAContext * rdma	1:43:43:59	7028037	0	True				
+ANR	7028268	ParameterType	RDMAContext *		7028037	0					
+ANR	7028269	Identifier	rdma		7028037	1					
+ANR	7028270	Parameter	RDMAControlHeader * head	3:16:79:101	7028037	1	True				
+ANR	7028271	ParameterType	RDMAControlHeader *		7028037	0					
+ANR	7028272	Identifier	head		7028037	1					
+ANR	7028273	Parameter	int expecting	3:41:104:116	7028037	2	True				
+ANR	7028274	ParameterType	int		7028037	0					
+ANR	7028275	Identifier	expecting		7028037	1					
+ANR	7028276	Parameter	int idx	3:56:119:125	7028037	3	True				
+ANR	7028277	ParameterType	int		7028037	0					
+ANR	7028278	Identifier	idx		7028037	1					
+ANR	7028279	CFGEntryNode	ENTRY		7028037		True				
+ANR	7028280	CFGExitNode	EXIT		7028037		True				
+ANR	7028281	Symbol	* head		7028037						
+ANR	7028282	Symbol	* expecting		7028037						
+ANR	7028283	Symbol	control_desc		7028037						
+ANR	7028284	Symbol	head		7028037						
+ANR	7028285	Symbol	head -> type		7028037						
+ANR	7028286	Symbol	* * head		7028037						
+ANR	7028287	Symbol	* idx		7028037						
+ANR	7028288	Symbol	rdma -> wr_data		7028037						
+ANR	7028289	Symbol	* rdma		7028037						
+ANR	7028290	Symbol	RDMA_CONTROL_ERROR		7028037						
+ANR	7028291	Symbol	expecting		7028037						
+ANR	7028292	Symbol	ret		7028037						
+ANR	7028293	Symbol	* head -> type		7028037						
+ANR	7028294	Symbol	* control_desc		7028037						
+ANR	7028295	Symbol	RDMA_CONTROL_NONE		7028037						
+ANR	7028296	Symbol	EIO		7028037						
+ANR	7028297	Symbol	stderr		7028037						
+ANR	7028298	Symbol	byte_len		7028037						
+ANR	7028299	Symbol	* * rdma		7028037						
+ANR	7028300	Symbol	RDMA_CONTROL_MAX_BUFFER		7028037						
+ANR	7028301	Symbol	& byte_len		7028037						
+ANR	7028302	Symbol	EINVAL		7028037						
+ANR	7028303	Symbol	rdma		7028037						
+ANR	7028304	Symbol	head -> len		7028037						
+ANR	7028305	Symbol	* rdma -> wr_data		7028037						
+ANR	7028306	Symbol	qemu_rdma_block_for_wrid		7028037						
+ANR	7028307	Symbol	idx		7028037						
+ANR	7028308	Symbol	RDMA_WRID_RECV_CONTROL		7028037						
+ANR	7028309	Symbol	rdma -> wr_data [ idx ] . control		7028037						

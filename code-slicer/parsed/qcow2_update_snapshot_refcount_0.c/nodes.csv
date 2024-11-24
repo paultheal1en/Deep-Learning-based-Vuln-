@@ -1,0 +1,977 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6883799	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_update_snapshot_refcount_0.c								
+ANR	6883800	Function	qcow2_update_snapshot_refcount	1:0:0:7161							
+ANR	6883801	FunctionDef	"qcow2_update_snapshot_refcount (BlockDriverState * bs , int64_t l1_table_offset , int l1_size , int addend)"		6883800	0					
+ANR	6883802	CompoundStatement		5:0:113:7161	6883800	0					
+ANR	6883803	IdentifierDeclStatement	BDRVQcow2State * s = bs -> opaque ;	7:4:120:150	6883800	0	True				
+ANR	6883804	IdentifierDecl	* s = bs -> opaque		6883800	0					
+ANR	6883805	IdentifierDeclType	BDRVQcow2State *		6883800	0					
+ANR	6883806	Identifier	s		6883800	1					
+ANR	6883807	AssignmentExpression	* s = bs -> opaque		6883800	2		=			
+ANR	6883808	Identifier	s		6883800	0					
+ANR	6883809	PtrMemberAccess	bs -> opaque		6883800	1					
+ANR	6883810	Identifier	bs		6883800	0					
+ANR	6883811	Identifier	opaque		6883800	1					
+ANR	6883812	IdentifierDeclStatement	"uint64_t * l1_table , * l2_table , l2_offset , offset , l1_size2 , refcount ;"	9:4:157:225	6883800	1	True				
+ANR	6883813	IdentifierDecl	* l1_table		6883800	0					
+ANR	6883814	IdentifierDeclType	uint64_t *		6883800	0					
+ANR	6883815	Identifier	l1_table		6883800	1					
+ANR	6883816	IdentifierDecl	* l2_table		6883800	1					
+ANR	6883817	IdentifierDeclType	uint64_t *		6883800	0					
+ANR	6883818	Identifier	l2_table		6883800	1					
+ANR	6883819	IdentifierDecl	l2_offset		6883800	2					
+ANR	6883820	IdentifierDeclType	uint64_t		6883800	0					
+ANR	6883821	Identifier	l2_offset		6883800	1					
+ANR	6883822	IdentifierDecl	offset		6883800	3					
+ANR	6883823	IdentifierDeclType	uint64_t		6883800	0					
+ANR	6883824	Identifier	offset		6883800	1					
+ANR	6883825	IdentifierDecl	l1_size2		6883800	4					
+ANR	6883826	IdentifierDeclType	uint64_t		6883800	0					
+ANR	6883827	Identifier	l1_size2		6883800	1					
+ANR	6883828	IdentifierDecl	refcount		6883800	5					
+ANR	6883829	IdentifierDeclType	uint64_t		6883800	0					
+ANR	6883830	Identifier	refcount		6883800	1					
+ANR	6883831	IdentifierDeclStatement	bool l1_allocated = false ;	11:4:232:257	6883800	2	True				
+ANR	6883832	IdentifierDecl	l1_allocated = false		6883800	0					
+ANR	6883833	IdentifierDeclType	bool		6883800	0					
+ANR	6883834	Identifier	l1_allocated		6883800	1					
+ANR	6883835	AssignmentExpression	l1_allocated = false		6883800	2		=			
+ANR	6883836	Identifier	false		6883800	0					
+ANR	6883837	Identifier	false		6883800	1					
+ANR	6883838	IdentifierDeclStatement	"int64_t old_offset , old_l2_offset ;"	13:4:264:297	6883800	3	True				
+ANR	6883839	IdentifierDecl	old_offset		6883800	0					
+ANR	6883840	IdentifierDeclType	int64_t		6883800	0					
+ANR	6883841	Identifier	old_offset		6883800	1					
+ANR	6883842	IdentifierDecl	old_l2_offset		6883800	1					
+ANR	6883843	IdentifierDeclType	int64_t		6883800	0					
+ANR	6883844	Identifier	old_l2_offset		6883800	1					
+ANR	6883845	IdentifierDeclStatement	"int i , j , l1_modified = 0 , nb_csectors ;"	15:4:304:342	6883800	4	True				
+ANR	6883846	IdentifierDecl	i		6883800	0					
+ANR	6883847	IdentifierDeclType	int		6883800	0					
+ANR	6883848	Identifier	i		6883800	1					
+ANR	6883849	IdentifierDecl	j		6883800	1					
+ANR	6883850	IdentifierDeclType	int		6883800	0					
+ANR	6883851	Identifier	j		6883800	1					
+ANR	6883852	IdentifierDecl	l1_modified = 0		6883800	2					
+ANR	6883853	IdentifierDeclType	int		6883800	0					
+ANR	6883854	Identifier	l1_modified		6883800	1					
+ANR	6883855	AssignmentExpression	l1_modified = 0		6883800	2		=			
+ANR	6883856	Identifier	l1_modified		6883800	0					
+ANR	6883857	PrimaryExpression	0		6883800	1					
+ANR	6883858	IdentifierDecl	nb_csectors		6883800	3					
+ANR	6883859	IdentifierDeclType	int		6883800	0					
+ANR	6883860	Identifier	nb_csectors		6883800	1					
+ANR	6883861	IdentifierDeclStatement	int ret ;	17:4:349:356	6883800	5	True				
+ANR	6883862	IdentifierDecl	ret		6883800	0					
+ANR	6883863	IdentifierDeclType	int		6883800	0					
+ANR	6883864	Identifier	ret		6883800	1					
+ANR	6883865	ExpressionStatement	assert ( addend >= - 1 && addend <= 1 )	21:4:365:400	6883800	6	True				
+ANR	6883866	CallExpression	assert ( addend >= - 1 && addend <= 1 )		6883800	0					
+ANR	6883867	Callee	assert		6883800	0					
+ANR	6883868	Identifier	assert		6883800	0					
+ANR	6883869	ArgumentList	addend >= - 1 && addend <= 1		6883800	1					
+ANR	6883870	Argument	addend >= - 1 && addend <= 1		6883800	0					
+ANR	6883871	AndExpression	addend >= - 1 && addend <= 1		6883800	0		&&			
+ANR	6883872	RelationalExpression	addend >= - 1		6883800	0		>=			
+ANR	6883873	Identifier	addend		6883800	0					
+ANR	6883874	UnaryOperationExpression	- 1		6883800	1					
+ANR	6883875	UnaryOperator	-		6883800	0					
+ANR	6883876	PrimaryExpression	1		6883800	1					
+ANR	6883877	RelationalExpression	addend <= 1		6883800	1		<=			
+ANR	6883878	Identifier	addend		6883800	0					
+ANR	6883879	PrimaryExpression	1		6883800	1					
+ANR	6883880	ExpressionStatement	l2_table = NULL	25:4:409:424	6883800	7	True				
+ANR	6883881	AssignmentExpression	l2_table = NULL		6883800	0		=			
+ANR	6883882	Identifier	l2_table		6883800	0					
+ANR	6883883	Identifier	NULL		6883800	1					
+ANR	6883884	ExpressionStatement	l1_table = NULL	27:4:431:446	6883800	8	True				
+ANR	6883885	AssignmentExpression	l1_table = NULL		6883800	0		=			
+ANR	6883886	Identifier	l1_table		6883800	0					
+ANR	6883887	Identifier	NULL		6883800	1					
+ANR	6883888	ExpressionStatement	l1_size2 = l1_size * sizeof ( uint64_t )	29:4:453:490	6883800	9	True				
+ANR	6883889	AssignmentExpression	l1_size2 = l1_size * sizeof ( uint64_t )		6883800	0		=			
+ANR	6883890	Identifier	l1_size2		6883800	0					
+ANR	6883891	MultiplicativeExpression	l1_size * sizeof ( uint64_t )		6883800	1		*			
+ANR	6883892	Identifier	l1_size		6883800	0					
+ANR	6883893	SizeofExpression	sizeof ( uint64_t )		6883800	1					
+ANR	6883894	Sizeof	sizeof		6883800	0					
+ANR	6883895	SizeofOperand	uint64_t		6883800	1					
+ANR	6883896	ExpressionStatement	s -> cache_discards = true	33:4:499:523	6883800	10	True				
+ANR	6883897	AssignmentExpression	s -> cache_discards = true		6883800	0		=			
+ANR	6883898	PtrMemberAccess	s -> cache_discards		6883800	0					
+ANR	6883899	Identifier	s		6883800	0					
+ANR	6883900	Identifier	cache_discards		6883800	1					
+ANR	6883901	Identifier	true		6883800	1					
+ANR	6883902	IfStatement	if ( l1_table_offset != s -> l1_table_offset )		6883800	11					
+ANR	6883903	Condition	l1_table_offset != s -> l1_table_offset	43:8:720:756	6883800	0	True				
+ANR	6883904	EqualityExpression	l1_table_offset != s -> l1_table_offset		6883800	0		!=			
+ANR	6883905	Identifier	l1_table_offset		6883800	0					
+ANR	6883906	PtrMemberAccess	s -> l1_table_offset		6883800	1					
+ANR	6883907	Identifier	s		6883800	0					
+ANR	6883908	Identifier	l1_table_offset		6883800	1					
+ANR	6883909	CompoundStatement		39:47:645:645	6883800	1					
+ANR	6883910	ExpressionStatement	"l1_table = g_try_malloc0 ( align_offset ( l1_size2 , 512 ) )"	45:8:770:823	6883800	0	True				
+ANR	6883911	AssignmentExpression	"l1_table = g_try_malloc0 ( align_offset ( l1_size2 , 512 ) )"		6883800	0		=			
+ANR	6883912	Identifier	l1_table		6883800	0					
+ANR	6883913	CallExpression	"g_try_malloc0 ( align_offset ( l1_size2 , 512 ) )"		6883800	1					
+ANR	6883914	Callee	g_try_malloc0		6883800	0					
+ANR	6883915	Identifier	g_try_malloc0		6883800	0					
+ANR	6883916	ArgumentList	"align_offset ( l1_size2 , 512 )"		6883800	1					
+ANR	6883917	Argument	"align_offset ( l1_size2 , 512 )"		6883800	0					
+ANR	6883918	CallExpression	"align_offset ( l1_size2 , 512 )"		6883800	0					
+ANR	6883919	Callee	align_offset		6883800	0					
+ANR	6883920	Identifier	align_offset		6883800	0					
+ANR	6883921	ArgumentList	l1_size2		6883800	1					
+ANR	6883922	Argument	l1_size2		6883800	0					
+ANR	6883923	Identifier	l1_size2		6883800	0					
+ANR	6883924	Argument	512		6883800	1					
+ANR	6883925	PrimaryExpression	512		6883800	0					
+ANR	6883926	IfStatement	if ( l1_size2 && l1_table == NULL )		6883800	1					
+ANR	6883927	Condition	l1_size2 && l1_table == NULL	47:12:838:865	6883800	0	True				
+ANR	6883928	AndExpression	l1_size2 && l1_table == NULL		6883800	0		&&			
+ANR	6883929	Identifier	l1_size2		6883800	0					
+ANR	6883930	EqualityExpression	l1_table == NULL		6883800	1		==			
+ANR	6883931	Identifier	l1_table		6883800	0					
+ANR	6883932	Identifier	NULL		6883800	1					
+ANR	6883933	CompoundStatement		43:42:754:754	6883800	1					
+ANR	6883934	ExpressionStatement	ret = - ENOMEM	49:12:883:896	6883800	0	True				
+ANR	6883935	AssignmentExpression	ret = - ENOMEM		6883800	0		=			
+ANR	6883936	Identifier	ret		6883800	0					
+ANR	6883937	UnaryOperationExpression	- ENOMEM		6883800	1					
+ANR	6883938	UnaryOperator	-		6883800	0					
+ANR	6883939	Identifier	ENOMEM		6883800	1					
+ANR	6883940	GotoStatement	goto fail ;	51:12:911:920	6883800	1	True				
+ANR	6883941	Identifier	fail		6883800	0					
+ANR	6883942	ExpressionStatement	l1_allocated = true	55:8:942:961	6883800	2	True				
+ANR	6883943	AssignmentExpression	l1_allocated = true		6883800	0		=			
+ANR	6883944	Identifier	l1_allocated		6883800	0					
+ANR	6883945	Identifier	true		6883800	1					
+ANR	6883946	ExpressionStatement	"ret = bdrv_pread ( bs -> file , l1_table_offset , l1_table , l1_size2 )"	59:8:974:1037	6883800	3	True				
+ANR	6883947	AssignmentExpression	"ret = bdrv_pread ( bs -> file , l1_table_offset , l1_table , l1_size2 )"		6883800	0		=			
+ANR	6883948	Identifier	ret		6883800	0					
+ANR	6883949	CallExpression	"bdrv_pread ( bs -> file , l1_table_offset , l1_table , l1_size2 )"		6883800	1					
+ANR	6883950	Callee	bdrv_pread		6883800	0					
+ANR	6883951	Identifier	bdrv_pread		6883800	0					
+ANR	6883952	ArgumentList	bs -> file		6883800	1					
+ANR	6883953	Argument	bs -> file		6883800	0					
+ANR	6883954	PtrMemberAccess	bs -> file		6883800	0					
+ANR	6883955	Identifier	bs		6883800	0					
+ANR	6883956	Identifier	file		6883800	1					
+ANR	6883957	Argument	l1_table_offset		6883800	1					
+ANR	6883958	Identifier	l1_table_offset		6883800	0					
+ANR	6883959	Argument	l1_table		6883800	2					
+ANR	6883960	Identifier	l1_table		6883800	0					
+ANR	6883961	Argument	l1_size2		6883800	3					
+ANR	6883962	Identifier	l1_size2		6883800	0					
+ANR	6883963	IfStatement	if ( ret < 0 )		6883800	4					
+ANR	6883964	Condition	ret < 0	61:12:1052:1058	6883800	0	True				
+ANR	6883965	RelationalExpression	ret < 0		6883800	0		<			
+ANR	6883966	Identifier	ret		6883800	0					
+ANR	6883967	PrimaryExpression	0		6883800	1					
+ANR	6883968	CompoundStatement		57:21:947:947	6883800	1					
+ANR	6883969	GotoStatement	goto fail ;	63:12:1076:1085	6883800	0	True				
+ANR	6883970	Identifier	fail		6883800	0					
+ANR	6883971	ForStatement	for ( i = 0 ; i < l1_size ; i ++ )		6883800	5					
+ANR	6883972	ForInit	i = 0 ;	69:12:1113:1118	6883800	0	True				
+ANR	6883973	AssignmentExpression	i = 0		6883800	0		=			
+ANR	6883974	Identifier	i		6883800	0					
+ANR	6883975	PrimaryExpression	0		6883800	1					
+ANR	6883976	Condition	i < l1_size	69:18:1119:1129	6883800	1	True				
+ANR	6883977	RelationalExpression	i < l1_size		6883800	0		<			
+ANR	6883978	Identifier	i		6883800	0					
+ANR	6883979	Identifier	l1_size		6883800	1					
+ANR	6883980	PostIncDecOperationExpression	i ++	69:31:1132:1134	6883800	2	True				
+ANR	6883981	Identifier	i		6883800	0					
+ANR	6883982	IncDec	++		6883800	1					
+ANR	6883983	ExpressionStatement	be64_to_cpus ( & l1_table [ i ] )	71:12:1150:1176	6883800	3	True				
+ANR	6883984	CallExpression	be64_to_cpus ( & l1_table [ i ] )		6883800	0					
+ANR	6883985	Callee	be64_to_cpus		6883800	0					
+ANR	6883986	Identifier	be64_to_cpus		6883800	0					
+ANR	6883987	ArgumentList	& l1_table [ i ]		6883800	1					
+ANR	6883988	Argument	& l1_table [ i ]		6883800	0					
+ANR	6883989	UnaryOperationExpression	& l1_table [ i ]		6883800	0					
+ANR	6883990	UnaryOperator	&		6883800	0					
+ANR	6883991	ArrayIndexing	l1_table [ i ]		6883800	1					
+ANR	6883992	Identifier	l1_table		6883800	0					
+ANR	6883993	Identifier	i		6883800	1					
+ANR	6883994	ElseStatement	else		6883800	0					
+ANR	6883995	CompoundStatement		69:11:1076:1076	6883800	0					
+ANR	6883996	ExpressionStatement	assert ( l1_size == s -> l1_size )	75:8:1201:1230	6883800	0	True				
+ANR	6883997	CallExpression	assert ( l1_size == s -> l1_size )		6883800	0					
+ANR	6883998	Callee	assert		6883800	0					
+ANR	6883999	Identifier	assert		6883800	0					
+ANR	6884000	ArgumentList	l1_size == s -> l1_size		6883800	1					
+ANR	6884001	Argument	l1_size == s -> l1_size		6883800	0					
+ANR	6884002	EqualityExpression	l1_size == s -> l1_size		6883800	0		==			
+ANR	6884003	Identifier	l1_size		6883800	0					
+ANR	6884004	PtrMemberAccess	s -> l1_size		6883800	1					
+ANR	6884005	Identifier	s		6883800	0					
+ANR	6884006	Identifier	l1_size		6883800	1					
+ANR	6884007	ExpressionStatement	l1_table = s -> l1_table	77:8:1241:1263	6883800	1	True				
+ANR	6884008	AssignmentExpression	l1_table = s -> l1_table		6883800	0		=			
+ANR	6884009	Identifier	l1_table		6883800	0					
+ANR	6884010	PtrMemberAccess	s -> l1_table		6883800	1					
+ANR	6884011	Identifier	s		6883800	0					
+ANR	6884012	Identifier	l1_table		6883800	1					
+ANR	6884013	ExpressionStatement	l1_allocated = false	79:8:1274:1294	6883800	2	True				
+ANR	6884014	AssignmentExpression	l1_allocated = false		6883800	0		=			
+ANR	6884015	Identifier	l1_allocated		6883800	0					
+ANR	6884016	Identifier	false		6883800	1					
+ANR	6884017	ForStatement	for ( i = 0 ; i < l1_size ; i ++ )		6883800	12					
+ANR	6884018	ForInit	i = 0 ;	85:8:1314:1319	6883800	0	True				
+ANR	6884019	AssignmentExpression	i = 0		6883800	0		=			
+ANR	6884020	Identifier	i		6883800	0					
+ANR	6884021	PrimaryExpression	0		6883800	1					
+ANR	6884022	Condition	i < l1_size	85:15:1321:1331	6883800	1	True				
+ANR	6884023	RelationalExpression	i < l1_size		6883800	0		<			
+ANR	6884024	Identifier	i		6883800	0					
+ANR	6884025	Identifier	l1_size		6883800	1					
+ANR	6884026	PostIncDecOperationExpression	i ++	85:28:1334:1336	6883800	2	True				
+ANR	6884027	Identifier	i		6883800	0					
+ANR	6884028	IncDec	++		6883800	1					
+ANR	6884029	CompoundStatement		81:33:1225:1225	6883800	3					
+ANR	6884030	ExpressionStatement	l2_offset = l1_table [ i ]	87:8:1350:1373	6883800	0	True				
+ANR	6884031	AssignmentExpression	l2_offset = l1_table [ i ]		6883800	0		=			
+ANR	6884032	Identifier	l2_offset		6883800	0					
+ANR	6884033	ArrayIndexing	l1_table [ i ]		6883800	1					
+ANR	6884034	Identifier	l1_table		6883800	0					
+ANR	6884035	Identifier	i		6883800	1					
+ANR	6884036	IfStatement	if ( l2_offset )		6883800	1					
+ANR	6884037	Condition	l2_offset	89:12:1388:1396	6883800	0	True				
+ANR	6884038	Identifier	l2_offset		6883800	0					
+ANR	6884039	CompoundStatement		85:23:1285:1285	6883800	1					
+ANR	6884040	ExpressionStatement	old_l2_offset = l2_offset	91:12:1414:1439	6883800	0	True				
+ANR	6884041	AssignmentExpression	old_l2_offset = l2_offset		6883800	0		=			
+ANR	6884042	Identifier	old_l2_offset		6883800	0					
+ANR	6884043	Identifier	l2_offset		6883800	1					
+ANR	6884044	ExpressionStatement	l2_offset &= L1E_OFFSET_MASK	93:12:1454:1482	6883800	1	True				
+ANR	6884045	AssignmentExpression	l2_offset &= L1E_OFFSET_MASK		6883800	0		&=			
+ANR	6884046	Identifier	l2_offset		6883800	0					
+ANR	6884047	Identifier	L1E_OFFSET_MASK		6883800	1					
+ANR	6884048	IfStatement	"if ( offset_into_cluster ( s , l2_offset ) )"		6883800	2					
+ANR	6884049	Condition	"offset_into_cluster ( s , l2_offset )"	97:16:1503:1535	6883800	0	True				
+ANR	6884050	CallExpression	"offset_into_cluster ( s , l2_offset )"		6883800	0					
+ANR	6884051	Callee	offset_into_cluster		6883800	0					
+ANR	6884052	Identifier	offset_into_cluster		6883800	0					
+ANR	6884053	ArgumentList	s		6883800	1					
+ANR	6884054	Argument	s		6883800	0					
+ANR	6884055	Identifier	s		6883800	0					
+ANR	6884056	Argument	l2_offset		6883800	1					
+ANR	6884057	Identifier	l2_offset		6883800	0					
+ANR	6884058	CompoundStatement		93:51:1424:1424	6883800	1					
+ANR	6884059	Statement	qcow2_signal_corruption	99:16:1557:1579	6883800	0	True				
+ANR	6884060	Statement	(	99:39:1580:1580	6883800	1	True				
+ANR	6884061	Statement	bs	99:40:1581:1582	6883800	2	True				
+ANR	6884062	Statement	","	99:42:1583:1583	6883800	3	True				
+ANR	6884063	Statement	true	99:44:1585:1588	6883800	4	True				
+ANR	6884064	Statement	","	99:48:1589:1589	6883800	5	True				
+ANR	6884065	Statement	-	99:50:1591:1591	6883800	6	True				
+ANR	6884066	Statement	1	99:51:1592:1592	6883800	7	True				
+ANR	6884067	Statement	","	99:52:1593:1593	6883800	8	True				
+ANR	6884068	Statement	-	99:54:1595:1595	6883800	9	True				
+ANR	6884069	Statement	1	99:55:1596:1596	6883800	10	True				
+ANR	6884070	Statement	","	99:56:1597:1597	6883800	11	True				
+ANR	6884071	Statement	"""L2 table offset %#"""	99:58:1599:1618	6883800	12	True				
+ANR	6884072	Statement	PRIx64	101:40:1661:1666	6883800	13	True				
+ANR	6884073	Statement	""" unaligned (L1 index: %#x)"""	101:47:1668:1695	6883800	14	True				
+ANR	6884074	Statement	","	101:75:1696:1696	6883800	15	True				
+ANR	6884075	Statement	l2_offset	103:40:1739:1747	6883800	16	True				
+ANR	6884076	Statement	","	103:49:1748:1748	6883800	17	True				
+ANR	6884077	Statement	i	103:51:1750:1750	6883800	18	True				
+ANR	6884078	Statement	)	103:52:1751:1751	6883800	19	True				
+ANR	6884079	ExpressionStatement		103:53:1752:1752	6883800	20	True				
+ANR	6884080	ExpressionStatement	ret = - EIO	105:16:1771:1781	6883800	21	True				
+ANR	6884081	AssignmentExpression	ret = - EIO		6883800	0		=			
+ANR	6884082	Identifier	ret		6883800	0					
+ANR	6884083	UnaryOperationExpression	- EIO		6883800	1					
+ANR	6884084	UnaryOperator	-		6883800	0					
+ANR	6884085	Identifier	EIO		6883800	1					
+ANR	6884086	GotoStatement	goto fail ;	107:16:1800:1809	6883800	22	True				
+ANR	6884087	Identifier	fail		6883800	0					
+ANR	6884088	ExpressionStatement	"ret = qcow2_cache_get ( bs , s -> l2_table_cache , l2_offset , ( void * * ) & l2_table )"	113:12:1841:1933	6883800	3	True				
+ANR	6884089	AssignmentExpression	"ret = qcow2_cache_get ( bs , s -> l2_table_cache , l2_offset , ( void * * ) & l2_table )"		6883800	0		=			
+ANR	6884090	Identifier	ret		6883800	0					
+ANR	6884091	CallExpression	"qcow2_cache_get ( bs , s -> l2_table_cache , l2_offset , ( void * * ) & l2_table )"		6883800	1					
+ANR	6884092	Callee	qcow2_cache_get		6883800	0					
+ANR	6884093	Identifier	qcow2_cache_get		6883800	0					
+ANR	6884094	ArgumentList	bs		6883800	1					
+ANR	6884095	Argument	bs		6883800	0					
+ANR	6884096	Identifier	bs		6883800	0					
+ANR	6884097	Argument	s -> l2_table_cache		6883800	1					
+ANR	6884098	PtrMemberAccess	s -> l2_table_cache		6883800	0					
+ANR	6884099	Identifier	s		6883800	0					
+ANR	6884100	Identifier	l2_table_cache		6883800	1					
+ANR	6884101	Argument	l2_offset		6883800	2					
+ANR	6884102	Identifier	l2_offset		6883800	0					
+ANR	6884103	Argument	( void * * ) & l2_table		6883800	3					
+ANR	6884104	CastExpression	( void * * ) & l2_table		6883800	0					
+ANR	6884105	CastTarget	void * *		6883800	0					
+ANR	6884106	UnaryOperationExpression	& l2_table		6883800	1					
+ANR	6884107	UnaryOperator	&		6883800	0					
+ANR	6884108	Identifier	l2_table		6883800	1					
+ANR	6884109	IfStatement	if ( ret < 0 )		6883800	4					
+ANR	6884110	Condition	ret < 0	117:16:1952:1958	6883800	0	True				
+ANR	6884111	RelationalExpression	ret < 0		6883800	0		<			
+ANR	6884112	Identifier	ret		6883800	0					
+ANR	6884113	PrimaryExpression	0		6883800	1					
+ANR	6884114	CompoundStatement		113:25:1847:1847	6883800	1					
+ANR	6884115	GotoStatement	goto fail ;	119:16:1980:1989	6883800	0	True				
+ANR	6884116	Identifier	fail		6883800	0					
+ANR	6884117	ForStatement	for ( j = 0 ; j < s -> l2_size ; j ++ )		6883800	5					
+ANR	6884118	ForInit	j = 0 ;	125:16:2025:2030	6883800	0	True				
+ANR	6884119	AssignmentExpression	j = 0		6883800	0		=			
+ANR	6884120	Identifier	j		6883800	0					
+ANR	6884121	PrimaryExpression	0		6883800	1					
+ANR	6884122	Condition	j < s -> l2_size	125:23:2032:2045	6883800	1	True				
+ANR	6884123	RelationalExpression	j < s -> l2_size		6883800	0		<			
+ANR	6884124	Identifier	j		6883800	0					
+ANR	6884125	PtrMemberAccess	s -> l2_size		6883800	1					
+ANR	6884126	Identifier	s		6883800	0					
+ANR	6884127	Identifier	l2_size		6883800	1					
+ANR	6884128	PostIncDecOperationExpression	j ++	125:39:2048:2050	6883800	2	True				
+ANR	6884129	Identifier	j		6883800	0					
+ANR	6884130	IncDec	++		6883800	1					
+ANR	6884131	CompoundStatement		123:16:1958:1980	6883800	3					
+ANR	6884132	IdentifierDeclStatement	uint64_t cluster_index ;	127:16:2072:2094	6883800	0	True				
+ANR	6884133	IdentifierDecl	cluster_index		6883800	0					
+ANR	6884134	IdentifierDeclType	uint64_t		6883800	0					
+ANR	6884135	Identifier	cluster_index		6883800	1					
+ANR	6884136	ExpressionStatement	offset = be64_to_cpu ( l2_table [ j ] )	131:16:2115:2148	6883800	1	True				
+ANR	6884137	AssignmentExpression	offset = be64_to_cpu ( l2_table [ j ] )		6883800	0		=			
+ANR	6884138	Identifier	offset		6883800	0					
+ANR	6884139	CallExpression	be64_to_cpu ( l2_table [ j ] )		6883800	1					
+ANR	6884140	Callee	be64_to_cpu		6883800	0					
+ANR	6884141	Identifier	be64_to_cpu		6883800	0					
+ANR	6884142	ArgumentList	l2_table [ j ]		6883800	1					
+ANR	6884143	Argument	l2_table [ j ]		6883800	0					
+ANR	6884144	ArrayIndexing	l2_table [ j ]		6883800	0					
+ANR	6884145	Identifier	l2_table		6883800	0					
+ANR	6884146	Identifier	j		6883800	1					
+ANR	6884147	ExpressionStatement	old_offset = offset	133:16:2167:2186	6883800	2	True				
+ANR	6884148	AssignmentExpression	old_offset = offset		6883800	0		=			
+ANR	6884149	Identifier	old_offset		6883800	0					
+ANR	6884150	Identifier	offset		6883800	1					
+ANR	6884151	ExpressionStatement	offset &= ~QCOW_OFLAG_COPIED	135:16:2205:2233	6883800	3	True				
+ANR	6884152	AssignmentExpression	offset &= ~QCOW_OFLAG_COPIED		6883800	0		&=			
+ANR	6884153	Identifier	offset		6883800	0					
+ANR	6884154	Identifier	~QCOW_OFLAG_COPIED		6883800	1					
+ANR	6884155	SwitchStatement	switch ( qcow2_get_cluster_type ( offset ) )		6883800	4					
+ANR	6884156	Condition	qcow2_get_cluster_type ( offset )	139:24:2262:2291	6883800	0	True				
+ANR	6884157	CallExpression	qcow2_get_cluster_type ( offset )		6883800	0					
+ANR	6884158	Callee	qcow2_get_cluster_type		6883800	0					
+ANR	6884159	Identifier	qcow2_get_cluster_type		6883800	0					
+ANR	6884160	ArgumentList	offset		6883800	1					
+ANR	6884161	Argument	offset		6883800	0					
+ANR	6884162	Identifier	offset		6883800	0					
+ANR	6884163	CompoundStatement		135:56:2180:2180	6883800	1					
+ANR	6884164	Label	case QCOW2_CLUSTER_COMPRESSED :	141:20:2317:2346	6883800	0	True				
+ANR	6884165	Identifier	QCOW2_CLUSTER_COMPRESSED		6883800	0					
+ANR	6884166	ExpressionStatement	nb_csectors = ( ( offset >> s -> csize_shift ) & s -> csize_mask ) + 1	143:24:2373:2475	6883800	1	True				
+ANR	6884167	AssignmentExpression	nb_csectors = ( ( offset >> s -> csize_shift ) & s -> csize_mask ) + 1		6883800	0		=			
+ANR	6884168	Identifier	nb_csectors		6883800	0					
+ANR	6884169	AdditiveExpression	( ( offset >> s -> csize_shift ) & s -> csize_mask ) + 1		6883800	1		+			
+ANR	6884170	BitAndExpression	( offset >> s -> csize_shift ) & s -> csize_mask		6883800	0		&			
+ANR	6884171	ShiftExpression	offset >> s -> csize_shift		6883800	0		>>			
+ANR	6884172	Identifier	offset		6883800	0					
+ANR	6884173	PtrMemberAccess	s -> csize_shift		6883800	1					
+ANR	6884174	Identifier	s		6883800	0					
+ANR	6884175	Identifier	csize_shift		6883800	1					
+ANR	6884176	PtrMemberAccess	s -> csize_mask		6883800	1					
+ANR	6884177	Identifier	s		6883800	0					
+ANR	6884178	Identifier	csize_mask		6883800	1					
+ANR	6884179	PrimaryExpression	1		6883800	1					
+ANR	6884180	IfStatement	if ( addend != 0 )		6883800	2					
+ANR	6884181	Condition	addend != 0	147:28:2506:2516	6883800	0	True				
+ANR	6884182	EqualityExpression	addend != 0		6883800	0		!=			
+ANR	6884183	Identifier	addend		6883800	0					
+ANR	6884184	PrimaryExpression	0		6883800	1					
+ANR	6884185	CompoundStatement		143:41:2405:2405	6883800	1					
+ANR	6884186	ExpressionStatement	"ret = update_refcount ( bs , ( offset & s -> cluster_offset_mask ) & ~511 , nb_csectors * 512 , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"	149:28:2550:2784	6883800	0	True				
+ANR	6884187	AssignmentExpression	"ret = update_refcount ( bs , ( offset & s -> cluster_offset_mask ) & ~511 , nb_csectors * 512 , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"		6883800	0		=			
+ANR	6884188	Identifier	ret		6883800	0					
+ANR	6884189	CallExpression	"update_refcount ( bs , ( offset & s -> cluster_offset_mask ) & ~511 , nb_csectors * 512 , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"		6883800	1					
+ANR	6884190	Callee	update_refcount		6883800	0					
+ANR	6884191	Identifier	update_refcount		6883800	0					
+ANR	6884192	ArgumentList	bs		6883800	1					
+ANR	6884193	Argument	bs		6883800	0					
+ANR	6884194	Identifier	bs		6883800	0					
+ANR	6884195	Argument	( offset & s -> cluster_offset_mask ) & ~511		6883800	1					
+ANR	6884196	BitAndExpression	( offset & s -> cluster_offset_mask ) & ~511		6883800	0		&			
+ANR	6884197	BitAndExpression	offset & s -> cluster_offset_mask		6883800	0		&			
+ANR	6884198	Identifier	offset		6883800	0					
+ANR	6884199	PtrMemberAccess	s -> cluster_offset_mask		6883800	1					
+ANR	6884200	Identifier	s		6883800	0					
+ANR	6884201	Identifier	cluster_offset_mask		6883800	1					
+ANR	6884202	Identifier	~511		6883800	1					
+ANR	6884203	Argument	nb_csectors * 512		6883800	2					
+ANR	6884204	MultiplicativeExpression	nb_csectors * 512		6883800	0		*			
+ANR	6884205	Identifier	nb_csectors		6883800	0					
+ANR	6884206	PrimaryExpression	512		6883800	1					
+ANR	6884207	Argument	abs ( addend )		6883800	3					
+ANR	6884208	CallExpression	abs ( addend )		6883800	0					
+ANR	6884209	Callee	abs		6883800	0					
+ANR	6884210	Identifier	abs		6883800	0					
+ANR	6884211	ArgumentList	addend		6883800	1					
+ANR	6884212	Argument	addend		6883800	0					
+ANR	6884213	Identifier	addend		6883800	0					
+ANR	6884214	Argument	addend < 0		6883800	4					
+ANR	6884215	RelationalExpression	addend < 0		6883800	0		<			
+ANR	6884216	Identifier	addend		6883800	0					
+ANR	6884217	PrimaryExpression	0		6883800	1					
+ANR	6884218	Argument	QCOW2_DISCARD_SNAPSHOT		6883800	5					
+ANR	6884219	Identifier	QCOW2_DISCARD_SNAPSHOT		6883800	0					
+ANR	6884220	IfStatement	if ( ret < 0 )		6883800	1					
+ANR	6884221	Condition	ret < 0	157:32:2819:2825	6883800	0	True				
+ANR	6884222	RelationalExpression	ret < 0		6883800	0		<			
+ANR	6884223	Identifier	ret		6883800	0					
+ANR	6884224	PrimaryExpression	0		6883800	1					
+ANR	6884225	CompoundStatement		153:41:2714:2714	6883800	1					
+ANR	6884226	GotoStatement	goto fail ;	159:32:2863:2872	6883800	0	True				
+ANR	6884227	Identifier	fail		6883800	0					
+ANR	6884228	ExpressionStatement	refcount = 2	167:24:3027:3039	6883800	3	True				
+ANR	6884229	AssignmentExpression	refcount = 2		6883800	0		=			
+ANR	6884230	Identifier	refcount		6883800	0					
+ANR	6884231	PrimaryExpression	2		6883800	1					
+ANR	6884232	BreakStatement	break ;	169:24:3066:3071	6883800	4	True				
+ANR	6884233	Label	case QCOW2_CLUSTER_NORMAL :	173:20:3096:3121	6883800	5	True				
+ANR	6884234	Identifier	QCOW2_CLUSTER_NORMAL		6883800	0					
+ANR	6884235	Label	case QCOW2_CLUSTER_ZERO :	175:20:3144:3167	6883800	6	True				
+ANR	6884236	Identifier	QCOW2_CLUSTER_ZERO		6883800	0					
+ANR	6884237	IfStatement	"if ( offset_into_cluster ( s , offset & L2E_OFFSET_MASK ) )"		6883800	7					
+ANR	6884238	Condition	"offset_into_cluster ( s , offset & L2E_OFFSET_MASK )"	177:28:3198:3245	6883800	0	True				
+ANR	6884239	CallExpression	"offset_into_cluster ( s , offset & L2E_OFFSET_MASK )"		6883800	0					
+ANR	6884240	Callee	offset_into_cluster		6883800	0					
+ANR	6884241	Identifier	offset_into_cluster		6883800	0					
+ANR	6884242	ArgumentList	s		6883800	1					
+ANR	6884243	Argument	s		6883800	0					
+ANR	6884244	Identifier	s		6883800	0					
+ANR	6884245	Argument	offset & L2E_OFFSET_MASK		6883800	1					
+ANR	6884246	BitAndExpression	offset & L2E_OFFSET_MASK		6883800	0		&			
+ANR	6884247	Identifier	offset		6883800	0					
+ANR	6884248	Identifier	L2E_OFFSET_MASK		6883800	1					
+ANR	6884249	CompoundStatement		173:78:3134:3134	6883800	1					
+ANR	6884250	Statement	qcow2_signal_corruption	179:28:3279:3301	6883800	0	True				
+ANR	6884251	Statement	(	179:51:3302:3302	6883800	1	True				
+ANR	6884252	Statement	bs	179:52:3303:3304	6883800	2	True				
+ANR	6884253	Statement	","	179:54:3305:3305	6883800	3	True				
+ANR	6884254	Statement	true	179:56:3307:3310	6883800	4	True				
+ANR	6884255	Statement	","	179:60:3311:3311	6883800	5	True				
+ANR	6884256	Statement	-	179:62:3313:3313	6883800	6	True				
+ANR	6884257	Statement	1	179:63:3314:3314	6883800	7	True				
+ANR	6884258	Statement	","	179:64:3315:3315	6883800	8	True				
+ANR	6884259	Statement	-	179:66:3317:3317	6883800	9	True				
+ANR	6884260	Statement	1	179:67:3318:3318	6883800	10	True				
+ANR	6884261	Statement	","	179:68:3319:3319	6883800	11	True				
+ANR	6884262	Statement	"""Data """	179:70:3321:3327	6883800	12	True				
+ANR	6884263	Statement	"""cluster offset %#llx """	181:52:3382:3404	6883800	13	True				
+ANR	6884264	Statement	"""unaligned (L2 offset: %#"""	183:52:3459:3484	6883800	14	True				
+ANR	6884265	Statement	PRIx64	185:52:3539:3544	6883800	15	True				
+ANR	6884266	Statement	""", L2 index: %#x)"""	185:59:3546:3563	6883800	16	True				
+ANR	6884267	Statement	","	185:77:3564:3564	6883800	17	True				
+ANR	6884268	Statement	offset	187:52:3619:3624	6883800	18	True				
+ANR	6884269	Statement	&	187:59:3626:3626	6883800	19	True				
+ANR	6884270	Statement	L2E_OFFSET_MASK	187:61:3628:3642	6883800	20	True				
+ANR	6884271	Statement	","	187:76:3643:3643	6883800	21	True				
+ANR	6884272	Statement	l2_offset	189:52:3698:3706	6883800	22	True				
+ANR	6884273	Statement	","	189:61:3707:3707	6883800	23	True				
+ANR	6884274	Statement	j	189:63:3709:3709	6883800	24	True				
+ANR	6884275	Statement	)	189:64:3710:3710	6883800	25	True				
+ANR	6884276	ExpressionStatement		189:65:3711:3711	6883800	26	True				
+ANR	6884277	ExpressionStatement	ret = - EIO	191:28:3742:3752	6883800	27	True				
+ANR	6884278	AssignmentExpression	ret = - EIO		6883800	0		=			
+ANR	6884279	Identifier	ret		6883800	0					
+ANR	6884280	UnaryOperationExpression	- EIO		6883800	1					
+ANR	6884281	UnaryOperator	-		6883800	0					
+ANR	6884282	Identifier	EIO		6883800	1					
+ANR	6884283	GotoStatement	goto fail ;	193:28:3783:3792	6883800	28	True				
+ANR	6884284	Identifier	fail		6883800	0					
+ANR	6884285	ExpressionStatement	cluster_index = ( offset & L2E_OFFSET_MASK ) >> s -> cluster_bits	199:24:3848:3909	6883800	8	True				
+ANR	6884286	AssignmentExpression	cluster_index = ( offset & L2E_OFFSET_MASK ) >> s -> cluster_bits		6883800	0		=			
+ANR	6884287	Identifier	cluster_index		6883800	0					
+ANR	6884288	ShiftExpression	( offset & L2E_OFFSET_MASK ) >> s -> cluster_bits		6883800	1		>>			
+ANR	6884289	BitAndExpression	offset & L2E_OFFSET_MASK		6883800	0		&			
+ANR	6884290	Identifier	offset		6883800	0					
+ANR	6884291	Identifier	L2E_OFFSET_MASK		6883800	1					
+ANR	6884292	PtrMemberAccess	s -> cluster_bits		6883800	1					
+ANR	6884293	Identifier	s		6883800	0					
+ANR	6884294	Identifier	cluster_bits		6883800	1					
+ANR	6884295	IfStatement	if ( ! cluster_index )		6883800	9					
+ANR	6884296	Condition	! cluster_index	201:28:3940:3953	6883800	0	True				
+ANR	6884297	UnaryOperationExpression	! cluster_index		6883800	0					
+ANR	6884298	UnaryOperator	!		6883800	0					
+ANR	6884299	Identifier	cluster_index		6883800	1					
+ANR	6884300	CompoundStatement		197:44:3842:3842	6883800	1					
+ANR	6884301	ExpressionStatement	refcount = 0	205:28:4034:4046	6883800	0	True				
+ANR	6884302	AssignmentExpression	refcount = 0		6883800	0		=			
+ANR	6884303	Identifier	refcount		6883800	0					
+ANR	6884304	PrimaryExpression	0		6883800	1					
+ANR	6884305	BreakStatement	break ;	207:28:4077:4082	6883800	1	True				
+ANR	6884306	IfStatement	if ( addend != 0 )		6883800	10					
+ANR	6884307	Condition	addend != 0	211:28:4140:4150	6883800	0	True				
+ANR	6884308	EqualityExpression	addend != 0		6883800	0		!=			
+ANR	6884309	Identifier	addend		6883800	0					
+ANR	6884310	PrimaryExpression	0		6883800	1					
+ANR	6884311	CompoundStatement		207:41:4039:4039	6883800	1					
+ANR	6884312	ExpressionStatement	"ret = qcow2_update_cluster_refcount ( bs , cluster_index , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"	213:28:4184:4361	6883800	0	True				
+ANR	6884313	AssignmentExpression	"ret = qcow2_update_cluster_refcount ( bs , cluster_index , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"		6883800	0		=			
+ANR	6884314	Identifier	ret		6883800	0					
+ANR	6884315	CallExpression	"qcow2_update_cluster_refcount ( bs , cluster_index , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"		6883800	1					
+ANR	6884316	Callee	qcow2_update_cluster_refcount		6883800	0					
+ANR	6884317	Identifier	qcow2_update_cluster_refcount		6883800	0					
+ANR	6884318	ArgumentList	bs		6883800	1					
+ANR	6884319	Argument	bs		6883800	0					
+ANR	6884320	Identifier	bs		6883800	0					
+ANR	6884321	Argument	cluster_index		6883800	1					
+ANR	6884322	Identifier	cluster_index		6883800	0					
+ANR	6884323	Argument	abs ( addend )		6883800	2					
+ANR	6884324	CallExpression	abs ( addend )		6883800	0					
+ANR	6884325	Callee	abs		6883800	0					
+ANR	6884326	Identifier	abs		6883800	0					
+ANR	6884327	ArgumentList	addend		6883800	1					
+ANR	6884328	Argument	addend		6883800	0					
+ANR	6884329	Identifier	addend		6883800	0					
+ANR	6884330	Argument	addend < 0		6883800	3					
+ANR	6884331	RelationalExpression	addend < 0		6883800	0		<			
+ANR	6884332	Identifier	addend		6883800	0					
+ANR	6884333	PrimaryExpression	0		6883800	1					
+ANR	6884334	Argument	QCOW2_DISCARD_SNAPSHOT		6883800	4					
+ANR	6884335	Identifier	QCOW2_DISCARD_SNAPSHOT		6883800	0					
+ANR	6884336	IfStatement	if ( ret < 0 )		6883800	1					
+ANR	6884337	Condition	ret < 0	219:32:4396:4402	6883800	0	True				
+ANR	6884338	RelationalExpression	ret < 0		6883800	0		<			
+ANR	6884339	Identifier	ret		6883800	0					
+ANR	6884340	PrimaryExpression	0		6883800	1					
+ANR	6884341	CompoundStatement		215:41:4291:4291	6883800	1					
+ANR	6884342	GotoStatement	goto fail ;	221:32:4440:4449	6883800	0	True				
+ANR	6884343	Identifier	fail		6883800	0					
+ANR	6884344	ExpressionStatement	"ret = qcow2_get_refcount ( bs , cluster_index , & refcount )"	229:24:4536:4590	6883800	11	True				
+ANR	6884345	AssignmentExpression	"ret = qcow2_get_refcount ( bs , cluster_index , & refcount )"		6883800	0		=			
+ANR	6884346	Identifier	ret		6883800	0					
+ANR	6884347	CallExpression	"qcow2_get_refcount ( bs , cluster_index , & refcount )"		6883800	1					
+ANR	6884348	Callee	qcow2_get_refcount		6883800	0					
+ANR	6884349	Identifier	qcow2_get_refcount		6883800	0					
+ANR	6884350	ArgumentList	bs		6883800	1					
+ANR	6884351	Argument	bs		6883800	0					
+ANR	6884352	Identifier	bs		6883800	0					
+ANR	6884353	Argument	cluster_index		6883800	1					
+ANR	6884354	Identifier	cluster_index		6883800	0					
+ANR	6884355	Argument	& refcount		6883800	2					
+ANR	6884356	UnaryOperationExpression	& refcount		6883800	0					
+ANR	6884357	UnaryOperator	&		6883800	0					
+ANR	6884358	Identifier	refcount		6883800	1					
+ANR	6884359	IfStatement	if ( ret < 0 )		6883800	12					
+ANR	6884360	Condition	ret < 0	231:28:4621:4627	6883800	0	True				
+ANR	6884361	RelationalExpression	ret < 0		6883800	0		<			
+ANR	6884362	Identifier	ret		6883800	0					
+ANR	6884363	PrimaryExpression	0		6883800	1					
+ANR	6884364	CompoundStatement		227:37:4516:4516	6883800	1					
+ANR	6884365	GotoStatement	goto fail ;	233:28:4661:4670	6883800	0	True				
+ANR	6884366	Identifier	fail		6883800	0					
+ANR	6884367	BreakStatement	break ;	237:24:4724:4729	6883800	13	True				
+ANR	6884368	Label	case QCOW2_CLUSTER_UNALLOCATED :	241:20:4754:4784	6883800	14	True				
+ANR	6884369	Identifier	QCOW2_CLUSTER_UNALLOCATED		6883800	0					
+ANR	6884370	ExpressionStatement	refcount = 0	243:24:4811:4823	6883800	15	True				
+ANR	6884371	AssignmentExpression	refcount = 0		6883800	0		=			
+ANR	6884372	Identifier	refcount		6883800	0					
+ANR	6884373	PrimaryExpression	0		6883800	1					
+ANR	6884374	BreakStatement	break ;	245:24:4850:4855	6883800	16	True				
+ANR	6884375	Label	default :	249:20:4880:4887	6883800	17	True				
+ANR	6884376	Identifier	default		6883800	0					
+ANR	6884377	ExpressionStatement	abort ( )	251:24:4914:4921	6883800	18	True				
+ANR	6884378	CallExpression	abort ( )		6883800	0					
+ANR	6884379	Callee	abort		6883800	0					
+ANR	6884380	Identifier	abort		6883800	0					
+ANR	6884381	ArgumentList			6883800	1					
+ANR	6884382	IfStatement	if ( refcount == 1 )		6883800	5					
+ANR	6884383	Condition	refcount == 1	257:20:4965:4977	6883800	0	True				
+ANR	6884384	EqualityExpression	refcount == 1		6883800	0		==			
+ANR	6884385	Identifier	refcount		6883800	0					
+ANR	6884386	PrimaryExpression	1		6883800	1					
+ANR	6884387	CompoundStatement		253:35:4866:4866	6883800	1					
+ANR	6884388	ExpressionStatement	offset |= QCOW_OFLAG_COPIED	259:20:5003:5030	6883800	0	True				
+ANR	6884389	AssignmentExpression	offset |= QCOW_OFLAG_COPIED		6883800	0		|=			
+ANR	6884390	Identifier	offset		6883800	0					
+ANR	6884391	Identifier	QCOW_OFLAG_COPIED		6883800	1					
+ANR	6884392	IfStatement	if ( offset != old_offset )		6883800	6					
+ANR	6884393	Condition	offset != old_offset	263:20:5072:5091	6883800	0	True				
+ANR	6884394	EqualityExpression	offset != old_offset		6883800	0		!=			
+ANR	6884395	Identifier	offset		6883800	0					
+ANR	6884396	Identifier	old_offset		6883800	1					
+ANR	6884397	CompoundStatement		259:42:4980:4980	6883800	1					
+ANR	6884398	IfStatement	if ( addend > 0 )		6883800	0					
+ANR	6884399	Condition	addend > 0	265:24:5121:5130	6883800	0	True				
+ANR	6884400	RelationalExpression	addend > 0		6883800	0		>			
+ANR	6884401	Identifier	addend		6883800	0					
+ANR	6884402	PrimaryExpression	0		6883800	1					
+ANR	6884403	CompoundStatement		261:36:5019:5019	6883800	1					
+ANR	6884404	ExpressionStatement	"qcow2_cache_set_dependency ( bs , s -> l2_table_cache , s -> refcount_block_cache )"	267:24:5160:5263	6883800	0	True				
+ANR	6884405	CallExpression	"qcow2_cache_set_dependency ( bs , s -> l2_table_cache , s -> refcount_block_cache )"		6883800	0					
+ANR	6884406	Callee	qcow2_cache_set_dependency		6883800	0					
+ANR	6884407	Identifier	qcow2_cache_set_dependency		6883800	0					
+ANR	6884408	ArgumentList	bs		6883800	1					
+ANR	6884409	Argument	bs		6883800	0					
+ANR	6884410	Identifier	bs		6883800	0					
+ANR	6884411	Argument	s -> l2_table_cache		6883800	1					
+ANR	6884412	PtrMemberAccess	s -> l2_table_cache		6883800	0					
+ANR	6884413	Identifier	s		6883800	0					
+ANR	6884414	Identifier	l2_table_cache		6883800	1					
+ANR	6884415	Argument	s -> refcount_block_cache		6883800	2					
+ANR	6884416	PtrMemberAccess	s -> refcount_block_cache		6883800	0					
+ANR	6884417	Identifier	s		6883800	0					
+ANR	6884418	Identifier	refcount_block_cache		6883800	1					
+ANR	6884419	ExpressionStatement	l2_table [ j ] = cpu_to_be64 ( offset )	273:20:5309:5342	6883800	1	True				
+ANR	6884420	AssignmentExpression	l2_table [ j ] = cpu_to_be64 ( offset )		6883800	0		=			
+ANR	6884421	ArrayIndexing	l2_table [ j ]		6883800	0					
+ANR	6884422	Identifier	l2_table		6883800	0					
+ANR	6884423	Identifier	j		6883800	1					
+ANR	6884424	CallExpression	cpu_to_be64 ( offset )		6883800	1					
+ANR	6884425	Callee	cpu_to_be64		6883800	0					
+ANR	6884426	Identifier	cpu_to_be64		6883800	0					
+ANR	6884427	ArgumentList	offset		6883800	1					
+ANR	6884428	Argument	offset		6883800	0					
+ANR	6884429	Identifier	offset		6883800	0					
+ANR	6884430	ExpressionStatement	"qcow2_cache_entry_mark_dirty ( bs , s -> l2_table_cache , l2_table )"	275:20:5365:5476	6883800	2	True				
+ANR	6884431	CallExpression	"qcow2_cache_entry_mark_dirty ( bs , s -> l2_table_cache , l2_table )"		6883800	0					
+ANR	6884432	Callee	qcow2_cache_entry_mark_dirty		6883800	0					
+ANR	6884433	Identifier	qcow2_cache_entry_mark_dirty		6883800	0					
+ANR	6884434	ArgumentList	bs		6883800	1					
+ANR	6884435	Argument	bs		6883800	0					
+ANR	6884436	Identifier	bs		6883800	0					
+ANR	6884437	Argument	s -> l2_table_cache		6883800	1					
+ANR	6884438	PtrMemberAccess	s -> l2_table_cache		6883800	0					
+ANR	6884439	Identifier	s		6883800	0					
+ANR	6884440	Identifier	l2_table_cache		6883800	1					
+ANR	6884441	Argument	l2_table		6883800	2					
+ANR	6884442	Identifier	l2_table		6883800	0					
+ANR	6884443	ExpressionStatement	"qcow2_cache_put ( bs , s -> l2_table_cache , ( void * * ) & l2_table )"	285:12:5527:5586	6883800	6	True				
+ANR	6884444	CallExpression	"qcow2_cache_put ( bs , s -> l2_table_cache , ( void * * ) & l2_table )"		6883800	0					
+ANR	6884445	Callee	qcow2_cache_put		6883800	0					
+ANR	6884446	Identifier	qcow2_cache_put		6883800	0					
+ANR	6884447	ArgumentList	bs		6883800	1					
+ANR	6884448	Argument	bs		6883800	0					
+ANR	6884449	Identifier	bs		6883800	0					
+ANR	6884450	Argument	s -> l2_table_cache		6883800	1					
+ANR	6884451	PtrMemberAccess	s -> l2_table_cache		6883800	0					
+ANR	6884452	Identifier	s		6883800	0					
+ANR	6884453	Identifier	l2_table_cache		6883800	1					
+ANR	6884454	Argument	( void * * ) & l2_table		6883800	2					
+ANR	6884455	CastExpression	( void * * ) & l2_table		6883800	0					
+ANR	6884456	CastTarget	void * *		6883800	0					
+ANR	6884457	UnaryOperationExpression	& l2_table		6883800	1					
+ANR	6884458	UnaryOperator	&		6883800	0					
+ANR	6884459	Identifier	l2_table		6883800	1					
+ANR	6884460	IfStatement	if ( addend != 0 )		6883800	7					
+ANR	6884461	Condition	addend != 0	289:16:5607:5617	6883800	0	True				
+ANR	6884462	EqualityExpression	addend != 0		6883800	0		!=			
+ANR	6884463	Identifier	addend		6883800	0					
+ANR	6884464	PrimaryExpression	0		6883800	1					
+ANR	6884465	CompoundStatement		285:29:5506:5506	6883800	1					
+ANR	6884466	ExpressionStatement	"ret = qcow2_update_cluster_refcount ( bs , l2_offset >> s -> cluster_bits , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"	291:16:5639:5920	6883800	0	True				
+ANR	6884467	AssignmentExpression	"ret = qcow2_update_cluster_refcount ( bs , l2_offset >> s -> cluster_bits , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"		6883800	0		=			
+ANR	6884468	Identifier	ret		6883800	0					
+ANR	6884469	CallExpression	"qcow2_update_cluster_refcount ( bs , l2_offset >> s -> cluster_bits , abs ( addend ) , addend < 0 , QCOW2_DISCARD_SNAPSHOT )"		6883800	1					
+ANR	6884470	Callee	qcow2_update_cluster_refcount		6883800	0					
+ANR	6884471	Identifier	qcow2_update_cluster_refcount		6883800	0					
+ANR	6884472	ArgumentList	bs		6883800	1					
+ANR	6884473	Argument	bs		6883800	0					
+ANR	6884474	Identifier	bs		6883800	0					
+ANR	6884475	Argument	l2_offset >> s -> cluster_bits		6883800	1					
+ANR	6884476	ShiftExpression	l2_offset >> s -> cluster_bits		6883800	0		>>			
+ANR	6884477	Identifier	l2_offset		6883800	0					
+ANR	6884478	PtrMemberAccess	s -> cluster_bits		6883800	1					
+ANR	6884479	Identifier	s		6883800	0					
+ANR	6884480	Identifier	cluster_bits		6883800	1					
+ANR	6884481	Argument	abs ( addend )		6883800	2					
+ANR	6884482	CallExpression	abs ( addend )		6883800	0					
+ANR	6884483	Callee	abs		6883800	0					
+ANR	6884484	Identifier	abs		6883800	0					
+ANR	6884485	ArgumentList	addend		6883800	1					
+ANR	6884486	Argument	addend		6883800	0					
+ANR	6884487	Identifier	addend		6883800	0					
+ANR	6884488	Argument	addend < 0		6883800	3					
+ANR	6884489	RelationalExpression	addend < 0		6883800	0		<			
+ANR	6884490	Identifier	addend		6883800	0					
+ANR	6884491	PrimaryExpression	0		6883800	1					
+ANR	6884492	Argument	QCOW2_DISCARD_SNAPSHOT		6883800	4					
+ANR	6884493	Identifier	QCOW2_DISCARD_SNAPSHOT		6883800	0					
+ANR	6884494	IfStatement	if ( ret < 0 )		6883800	1					
+ANR	6884495	Condition	ret < 0	299:20:5943:5949	6883800	0	True				
+ANR	6884496	RelationalExpression	ret < 0		6883800	0		<			
+ANR	6884497	Identifier	ret		6883800	0					
+ANR	6884498	PrimaryExpression	0		6883800	1					
+ANR	6884499	CompoundStatement		295:29:5838:5838	6883800	1					
+ANR	6884500	GotoStatement	goto fail ;	301:20:5975:5984	6883800	0	True				
+ANR	6884501	Identifier	fail		6883800	0					
+ANR	6884502	ExpressionStatement	"ret = qcow2_get_refcount ( bs , l2_offset >> s -> cluster_bits , & refcount )"	307:12:6033:6140	6883800	8	True				
+ANR	6884503	AssignmentExpression	"ret = qcow2_get_refcount ( bs , l2_offset >> s -> cluster_bits , & refcount )"		6883800	0		=			
+ANR	6884504	Identifier	ret		6883800	0					
+ANR	6884505	CallExpression	"qcow2_get_refcount ( bs , l2_offset >> s -> cluster_bits , & refcount )"		6883800	1					
+ANR	6884506	Callee	qcow2_get_refcount		6883800	0					
+ANR	6884507	Identifier	qcow2_get_refcount		6883800	0					
+ANR	6884508	ArgumentList	bs		6883800	1					
+ANR	6884509	Argument	bs		6883800	0					
+ANR	6884510	Identifier	bs		6883800	0					
+ANR	6884511	Argument	l2_offset >> s -> cluster_bits		6883800	1					
+ANR	6884512	ShiftExpression	l2_offset >> s -> cluster_bits		6883800	0		>>			
+ANR	6884513	Identifier	l2_offset		6883800	0					
+ANR	6884514	PtrMemberAccess	s -> cluster_bits		6883800	1					
+ANR	6884515	Identifier	s		6883800	0					
+ANR	6884516	Identifier	cluster_bits		6883800	1					
+ANR	6884517	Argument	& refcount		6883800	2					
+ANR	6884518	UnaryOperationExpression	& refcount		6883800	0					
+ANR	6884519	UnaryOperator	&		6883800	0					
+ANR	6884520	Identifier	refcount		6883800	1					
+ANR	6884521	IfStatement	if ( ret < 0 )		6883800	9					
+ANR	6884522	Condition	ret < 0	311:16:6159:6165	6883800	0	True				
+ANR	6884523	RelationalExpression	ret < 0		6883800	0		<			
+ANR	6884524	Identifier	ret		6883800	0					
+ANR	6884525	PrimaryExpression	0		6883800	1					
+ANR	6884526	CompoundStatement		307:25:6054:6054	6883800	1					
+ANR	6884527	GotoStatement	goto fail ;	313:16:6187:6196	6883800	0	True				
+ANR	6884528	Identifier	fail		6883800	0					
+ANR	6884529	ElseStatement	else		6883800	0					
+ANR	6884530	IfStatement	if ( refcount == 1 )		6883800	0					
+ANR	6884531	Condition	refcount == 1	315:23:6222:6234	6883800	0	True				
+ANR	6884532	EqualityExpression	refcount == 1		6883800	0		==			
+ANR	6884533	Identifier	refcount		6883800	0					
+ANR	6884534	PrimaryExpression	1		6883800	1					
+ANR	6884535	CompoundStatement		311:38:6123:6123	6883800	1					
+ANR	6884536	ExpressionStatement	l2_offset |= QCOW_OFLAG_COPIED	317:16:6256:6286	6883800	0	True				
+ANR	6884537	AssignmentExpression	l2_offset |= QCOW_OFLAG_COPIED		6883800	0		|=			
+ANR	6884538	Identifier	l2_offset		6883800	0					
+ANR	6884539	Identifier	QCOW_OFLAG_COPIED		6883800	1					
+ANR	6884540	IfStatement	if ( l2_offset != old_l2_offset )		6883800	10					
+ANR	6884541	Condition	l2_offset != old_l2_offset	321:16:6320:6345	6883800	0	True				
+ANR	6884542	EqualityExpression	l2_offset != old_l2_offset		6883800	0		!=			
+ANR	6884543	Identifier	l2_offset		6883800	0					
+ANR	6884544	Identifier	old_l2_offset		6883800	1					
+ANR	6884545	CompoundStatement		317:44:6234:6234	6883800	1					
+ANR	6884546	ExpressionStatement	l1_table [ i ] = l2_offset	323:16:6367:6390	6883800	0	True				
+ANR	6884547	AssignmentExpression	l1_table [ i ] = l2_offset		6883800	0		=			
+ANR	6884548	ArrayIndexing	l1_table [ i ]		6883800	0					
+ANR	6884549	Identifier	l1_table		6883800	0					
+ANR	6884550	Identifier	i		6883800	1					
+ANR	6884551	Identifier	l2_offset		6883800	1					
+ANR	6884552	ExpressionStatement	l1_modified = 1	325:16:6409:6424	6883800	1	True				
+ANR	6884553	AssignmentExpression	l1_modified = 1		6883800	0		=			
+ANR	6884554	Identifier	l1_modified		6883800	0					
+ANR	6884555	PrimaryExpression	1		6883800	1					
+ANR	6884556	ExpressionStatement	ret = bdrv_flush ( bs )	335:4:6466:6486	6883800	13	True				
+ANR	6884557	AssignmentExpression	ret = bdrv_flush ( bs )		6883800	0		=			
+ANR	6884558	Identifier	ret		6883800	0					
+ANR	6884559	CallExpression	bdrv_flush ( bs )		6883800	1					
+ANR	6884560	Callee	bdrv_flush		6883800	0					
+ANR	6884561	Identifier	bdrv_flush		6883800	0					
+ANR	6884562	ArgumentList	bs		6883800	1					
+ANR	6884563	Argument	bs		6883800	0					
+ANR	6884564	Identifier	bs		6883800	0					
+ANR	6884565	Label	fail :	337:0:6489:6493	6883800	14	True				
+ANR	6884566	Identifier	fail		6883800	0					
+ANR	6884567	IfStatement	if ( l2_table )		6883800	15					
+ANR	6884568	Condition	l2_table	339:8:6504:6511	6883800	0	True				
+ANR	6884569	Identifier	l2_table		6883800	0					
+ANR	6884570	CompoundStatement		335:18:6400:6400	6883800	1					
+ANR	6884571	ExpressionStatement	"qcow2_cache_put ( bs , s -> l2_table_cache , ( void * * ) & l2_table )"	341:8:6525:6583	6883800	0	True				
+ANR	6884572	CallExpression	"qcow2_cache_put ( bs , s -> l2_table_cache , ( void * * ) & l2_table )"		6883800	0					
+ANR	6884573	Callee	qcow2_cache_put		6883800	0					
+ANR	6884574	Identifier	qcow2_cache_put		6883800	0					
+ANR	6884575	ArgumentList	bs		6883800	1					
+ANR	6884576	Argument	bs		6883800	0					
+ANR	6884577	Identifier	bs		6883800	0					
+ANR	6884578	Argument	s -> l2_table_cache		6883800	1					
+ANR	6884579	PtrMemberAccess	s -> l2_table_cache		6883800	0					
+ANR	6884580	Identifier	s		6883800	0					
+ANR	6884581	Identifier	l2_table_cache		6883800	1					
+ANR	6884582	Argument	( void * * ) & l2_table		6883800	2					
+ANR	6884583	CastExpression	( void * * ) & l2_table		6883800	0					
+ANR	6884584	CastTarget	void * *		6883800	0					
+ANR	6884585	UnaryOperationExpression	& l2_table		6883800	1					
+ANR	6884586	UnaryOperator	&		6883800	0					
+ANR	6884587	Identifier	l2_table		6883800	1					
+ANR	6884588	ExpressionStatement	s -> cache_discards = false	347:4:6599:6624	6883800	16	True				
+ANR	6884589	AssignmentExpression	s -> cache_discards = false		6883800	0		=			
+ANR	6884590	PtrMemberAccess	s -> cache_discards		6883800	0					
+ANR	6884591	Identifier	s		6883800	0					
+ANR	6884592	Identifier	cache_discards		6883800	1					
+ANR	6884593	Identifier	false		6883800	1					
+ANR	6884594	ExpressionStatement	"qcow2_process_discards ( bs , ret )"	349:4:6631:6662	6883800	17	True				
+ANR	6884595	CallExpression	"qcow2_process_discards ( bs , ret )"		6883800	0					
+ANR	6884596	Callee	qcow2_process_discards		6883800	0					
+ANR	6884597	Identifier	qcow2_process_discards		6883800	0					
+ANR	6884598	ArgumentList	bs		6883800	1					
+ANR	6884599	Argument	bs		6883800	0					
+ANR	6884600	Identifier	bs		6883800	0					
+ANR	6884601	Argument	ret		6883800	1					
+ANR	6884602	Identifier	ret		6883800	0					
+ANR	6884603	IfStatement	if ( ret == 0 && addend >= 0 && l1_modified )		6883800	18					
+ANR	6884604	Condition	ret == 0 && addend >= 0 && l1_modified	355:8:6742:6779	6883800	0	True				
+ANR	6884605	AndExpression	ret == 0 && addend >= 0 && l1_modified		6883800	0		&&			
+ANR	6884606	EqualityExpression	ret == 0		6883800	0		==			
+ANR	6884607	Identifier	ret		6883800	0					
+ANR	6884608	PrimaryExpression	0		6883800	1					
+ANR	6884609	AndExpression	addend >= 0 && l1_modified		6883800	1		&&			
+ANR	6884610	RelationalExpression	addend >= 0		6883800	0		>=			
+ANR	6884611	Identifier	addend		6883800	0					
+ANR	6884612	PrimaryExpression	0		6883800	1					
+ANR	6884613	Identifier	l1_modified		6883800	1					
+ANR	6884614	CompoundStatement		351:48:6668:6668	6883800	1					
+ANR	6884615	ForStatement	for ( i = 0 ; i < l1_size ; i ++ )		6883800	0					
+ANR	6884616	ForInit	i = 0 ;	357:13:6798:6803	6883800	0	True				
+ANR	6884617	AssignmentExpression	i = 0		6883800	0		=			
+ANR	6884618	Identifier	i		6883800	0					
+ANR	6884619	PrimaryExpression	0		6883800	1					
+ANR	6884620	Condition	i < l1_size	357:20:6805:6815	6883800	1	True				
+ANR	6884621	RelationalExpression	i < l1_size		6883800	0		<			
+ANR	6884622	Identifier	i		6883800	0					
+ANR	6884623	Identifier	l1_size		6883800	1					
+ANR	6884624	PostIncDecOperationExpression	i ++	357:33:6818:6820	6883800	2	True				
+ANR	6884625	Identifier	i		6883800	0					
+ANR	6884626	IncDec	++		6883800	1					
+ANR	6884627	CompoundStatement		353:38:6709:6709	6883800	3					
+ANR	6884628	ExpressionStatement	cpu_to_be64s ( & l1_table [ i ] )	359:12:6838:6864	6883800	0	True				
+ANR	6884629	CallExpression	cpu_to_be64s ( & l1_table [ i ] )		6883800	0					
+ANR	6884630	Callee	cpu_to_be64s		6883800	0					
+ANR	6884631	Identifier	cpu_to_be64s		6883800	0					
+ANR	6884632	ArgumentList	& l1_table [ i ]		6883800	1					
+ANR	6884633	Argument	& l1_table [ i ]		6883800	0					
+ANR	6884634	UnaryOperationExpression	& l1_table [ i ]		6883800	0					
+ANR	6884635	UnaryOperator	&		6883800	0					
+ANR	6884636	ArrayIndexing	l1_table [ i ]		6883800	1					
+ANR	6884637	Identifier	l1_table		6883800	0					
+ANR	6884638	Identifier	i		6883800	1					
+ANR	6884639	ExpressionStatement	"ret = bdrv_pwrite_sync ( bs -> file , l1_table_offset , l1_table , l1_size2 )"	365:8:6888:6989	6883800	1	True				
+ANR	6884640	AssignmentExpression	"ret = bdrv_pwrite_sync ( bs -> file , l1_table_offset , l1_table , l1_size2 )"		6883800	0		=			
+ANR	6884641	Identifier	ret		6883800	0					
+ANR	6884642	CallExpression	"bdrv_pwrite_sync ( bs -> file , l1_table_offset , l1_table , l1_size2 )"		6883800	1					
+ANR	6884643	Callee	bdrv_pwrite_sync		6883800	0					
+ANR	6884644	Identifier	bdrv_pwrite_sync		6883800	0					
+ANR	6884645	ArgumentList	bs -> file		6883800	1					
+ANR	6884646	Argument	bs -> file		6883800	0					
+ANR	6884647	PtrMemberAccess	bs -> file		6883800	0					
+ANR	6884648	Identifier	bs		6883800	0					
+ANR	6884649	Identifier	file		6883800	1					
+ANR	6884650	Argument	l1_table_offset		6883800	1					
+ANR	6884651	Identifier	l1_table_offset		6883800	0					
+ANR	6884652	Argument	l1_table		6883800	2					
+ANR	6884653	Identifier	l1_table		6883800	0					
+ANR	6884654	Argument	l1_size2		6883800	3					
+ANR	6884655	Identifier	l1_size2		6883800	0					
+ANR	6884656	ForStatement	for ( i = 0 ; i < l1_size ; i ++ )		6883800	2					
+ANR	6884657	ForInit	i = 0 ;	371:13:7007:7012	6883800	0	True				
+ANR	6884658	AssignmentExpression	i = 0		6883800	0		=			
+ANR	6884659	Identifier	i		6883800	0					
+ANR	6884660	PrimaryExpression	0		6883800	1					
+ANR	6884661	Condition	i < l1_size	371:20:7014:7024	6883800	1	True				
+ANR	6884662	RelationalExpression	i < l1_size		6883800	0		<			
+ANR	6884663	Identifier	i		6883800	0					
+ANR	6884664	Identifier	l1_size		6883800	1					
+ANR	6884665	PostIncDecOperationExpression	i ++	371:33:7027:7029	6883800	2	True				
+ANR	6884666	Identifier	i		6883800	0					
+ANR	6884667	IncDec	++		6883800	1					
+ANR	6884668	CompoundStatement		367:38:6918:6918	6883800	3					
+ANR	6884669	ExpressionStatement	be64_to_cpus ( & l1_table [ i ] )	373:12:7047:7073	6883800	0	True				
+ANR	6884670	CallExpression	be64_to_cpus ( & l1_table [ i ] )		6883800	0					
+ANR	6884671	Callee	be64_to_cpus		6883800	0					
+ANR	6884672	Identifier	be64_to_cpus		6883800	0					
+ANR	6884673	ArgumentList	& l1_table [ i ]		6883800	1					
+ANR	6884674	Argument	& l1_table [ i ]		6883800	0					
+ANR	6884675	UnaryOperationExpression	& l1_table [ i ]		6883800	0					
+ANR	6884676	UnaryOperator	&		6883800	0					
+ANR	6884677	ArrayIndexing	l1_table [ i ]		6883800	1					
+ANR	6884678	Identifier	l1_table		6883800	0					
+ANR	6884679	Identifier	i		6883800	1					
+ANR	6884680	IfStatement	if ( l1_allocated )		6883800	19					
+ANR	6884681	Condition	l1_allocated	379:8:7102:7113	6883800	0	True				
+ANR	6884682	Identifier	l1_allocated		6883800	0					
+ANR	6884683	ExpressionStatement	g_free ( l1_table )	381:8:7125:7141	6883800	1	True				
+ANR	6884684	CallExpression	g_free ( l1_table )		6883800	0					
+ANR	6884685	Callee	g_free		6883800	0					
+ANR	6884686	Identifier	g_free		6883800	0					
+ANR	6884687	ArgumentList	l1_table		6883800	1					
+ANR	6884688	Argument	l1_table		6883800	0					
+ANR	6884689	Identifier	l1_table		6883800	0					
+ANR	6884690	ReturnStatement	return ret ;	383:4:7148:7158	6883800	20	True				
+ANR	6884691	Identifier	ret		6883800	0					
+ANR	6884692	ReturnType	int		6883800	1					
+ANR	6884693	Identifier	qcow2_update_snapshot_refcount		6883800	2					
+ANR	6884694	ParameterList	"BlockDriverState * bs , int64_t l1_table_offset , int l1_size , int addend"		6883800	3					
+ANR	6884695	Parameter	BlockDriverState * bs	1:35:35:54	6883800	0	True				
+ANR	6884696	ParameterType	BlockDriverState *		6883800	0					
+ANR	6884697	Identifier	bs		6883800	1					
+ANR	6884698	Parameter	int64_t l1_table_offset	3:4:62:84	6883800	1	True				
+ANR	6884699	ParameterType	int64_t		6883800	0					
+ANR	6884700	Identifier	l1_table_offset		6883800	1					
+ANR	6884701	Parameter	int l1_size	3:29:87:97	6883800	2	True				
+ANR	6884702	ParameterType	int		6883800	0					
+ANR	6884703	Identifier	l1_size		6883800	1					
+ANR	6884704	Parameter	int addend	3:42:100:109	6883800	3	True				
+ANR	6884705	ParameterType	int		6883800	0					
+ANR	6884706	Identifier	addend		6883800	1					
+ANR	6884707	CFGEntryNode	ENTRY		6883800		True				
+ANR	6884708	CFGExitNode	EXIT		6883800		True				
+ANR	6884709	Symbol	ENOMEM		6883800						
+ANR	6884710	Symbol	~QCOW_OFLAG_COPIED		6883800						
+ANR	6884711	Symbol	bs -> file		6883800						
+ANR	6884712	Symbol	s -> l2_table_cache		6883800						
+ANR	6884713	Symbol	refcount		6883800						
+ANR	6884714	Symbol	update_refcount		6883800						
+ANR	6884715	Symbol	QCOW_OFLAG_COPIED		6883800						
+ANR	6884716	Symbol	l1_size		6883800						
+ANR	6884717	Symbol	* bs		6883800						
+ANR	6884718	Symbol	l1_table_offset		6883800						
+ANR	6884719	Symbol	s -> cache_discards		6883800						
+ANR	6884720	Symbol	ret		6883800						
+ANR	6884721	Symbol	L1E_OFFSET_MASK		6883800						
+ANR	6884722	Symbol	bdrv_flush		6883800						
+ANR	6884723	Symbol	NULL		6883800						
+ANR	6884724	Symbol	offset		6883800						
+ANR	6884725	Symbol	s -> csize_mask		6883800						
+ANR	6884726	Symbol	EIO		6883800						
+ANR	6884727	Symbol	addend		6883800						
+ANR	6884728	Symbol	l2_offset		6883800						
+ANR	6884729	Symbol	s -> l1_size		6883800						
+ANR	6884730	Symbol	L2E_OFFSET_MASK		6883800						
+ANR	6884731	Symbol	bdrv_pread		6883800						
+ANR	6884732	Symbol	s -> cluster_offset_mask		6883800						
+ANR	6884733	Symbol	l2_table		6883800						
+ANR	6884734	Symbol	true		6883800						
+ANR	6884735	Symbol	l1_modified		6883800						
+ANR	6884736	Symbol	offset_into_cluster		6883800						
+ANR	6884737	Symbol	qcow2_get_cluster_type		6883800						
+ANR	6884738	Symbol	old_l2_offset		6883800						
+ANR	6884739	Symbol	s -> l2_size		6883800						
+ANR	6884740	Symbol	bs		6883800						
+ANR	6884741	Symbol	QCOW2_DISCARD_SNAPSHOT		6883800						
+ANR	6884742	Symbol	& refcount		6883800						
+ANR	6884743	Symbol	align_offset		6883800						
+ANR	6884744	Symbol	s -> refcount_block_cache		6883800						
+ANR	6884745	Symbol	& l2_table		6883800						
+ANR	6884746	Symbol	cluster_index		6883800						
+ANR	6884747	Symbol	qcow2_update_cluster_refcount		6883800						
+ANR	6884748	Symbol	l1_allocated		6883800						
+ANR	6884749	Symbol	* l1_table		6883800						
+ANR	6884750	Symbol	cpu_to_be64		6883800						
+ANR	6884751	Symbol	s -> csize_shift		6883800						
+ANR	6884752	Symbol	bs -> opaque		6883800						
+ANR	6884753	Symbol	l1_size2		6883800						
+ANR	6884754	Symbol	qcow2_cache_get		6883800						
+ANR	6884755	Symbol	l1_table		6883800						
+ANR	6884756	Symbol	false		6883800						
+ANR	6884757	Symbol	i		6883800						
+ANR	6884758	Symbol	j		6883800						
+ANR	6884759	Symbol	~511		6883800						
+ANR	6884760	Symbol	s -> l1_table		6883800						
+ANR	6884761	Symbol	s -> cluster_bits		6883800						
+ANR	6884762	Symbol	s		6883800						
+ANR	6884763	Symbol	* i		6883800						
+ANR	6884764	Symbol	abs		6883800						
+ANR	6884765	Symbol	s -> l1_table_offset		6883800						
+ANR	6884766	Symbol	* j		6883800						
+ANR	6884767	Symbol	* l2_table		6883800						
+ANR	6884768	Symbol	bdrv_pwrite_sync		6883800						
+ANR	6884769	Symbol	old_offset		6883800						
+ANR	6884770	Symbol	qcow2_get_refcount		6883800						
+ANR	6884771	Symbol	* s		6883800						
+ANR	6884772	Symbol	nb_csectors		6883800						
+ANR	6884773	Symbol	g_try_malloc0		6883800						
+ANR	6884774	Symbol	be64_to_cpu		6883800						

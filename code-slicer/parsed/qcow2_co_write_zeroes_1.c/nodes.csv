@@ -1,0 +1,248 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6844526	File	/home/p4ultr4n/workplace/ReVeal/raw_code/qcow2_co_write_zeroes_1.c								
+ANR	6844527	Function	qcow2_co_write_zeroes	1:0:0:1340							
+ANR	6844528	FunctionDef	"qcow2_co_write_zeroes (BlockDriverState * bs , int64_t sector_num , int nb_sectors , BdrvRequestFlags flags)"		6844527	0					
+ANR	6844529	CompoundStatement		5:0:134:1340	6844527	0					
+ANR	6844530	IdentifierDeclStatement	int ret ;	7:4:141:148	6844527	0	True				
+ANR	6844531	IdentifierDecl	ret		6844527	0					
+ANR	6844532	IdentifierDeclType	int		6844527	0					
+ANR	6844533	Identifier	ret		6844527	1					
+ANR	6844534	IdentifierDeclStatement	BDRVQcow2State * s = bs -> opaque ;	9:4:155:185	6844527	1	True				
+ANR	6844535	IdentifierDecl	* s = bs -> opaque		6844527	0					
+ANR	6844536	IdentifierDeclType	BDRVQcow2State *		6844527	0					
+ANR	6844537	Identifier	s		6844527	1					
+ANR	6844538	AssignmentExpression	* s = bs -> opaque		6844527	2		=			
+ANR	6844539	Identifier	s		6844527	0					
+ANR	6844540	PtrMemberAccess	bs -> opaque		6844527	1					
+ANR	6844541	Identifier	bs		6844527	0					
+ANR	6844542	Identifier	opaque		6844527	1					
+ANR	6844543	IdentifierDeclStatement	int head = sector_num % s -> cluster_sectors ;	13:4:194:236	6844527	2	True				
+ANR	6844544	IdentifierDecl	head = sector_num % s -> cluster_sectors		6844527	0					
+ANR	6844545	IdentifierDeclType	int		6844527	0					
+ANR	6844546	Identifier	head		6844527	1					
+ANR	6844547	AssignmentExpression	head = sector_num % s -> cluster_sectors		6844527	2		=			
+ANR	6844548	Identifier	head		6844527	0					
+ANR	6844549	MultiplicativeExpression	sector_num % s -> cluster_sectors		6844527	1		%			
+ANR	6844550	Identifier	sector_num		6844527	0					
+ANR	6844551	PtrMemberAccess	s -> cluster_sectors		6844527	1					
+ANR	6844552	Identifier	s		6844527	0					
+ANR	6844553	Identifier	cluster_sectors		6844527	1					
+ANR	6844554	IdentifierDeclStatement	int tail = ( sector_num + nb_sectors ) % s -> cluster_sectors ;	15:4:243:300	6844527	3	True				
+ANR	6844555	IdentifierDecl	tail = ( sector_num + nb_sectors ) % s -> cluster_sectors		6844527	0					
+ANR	6844556	IdentifierDeclType	int		6844527	0					
+ANR	6844557	Identifier	tail		6844527	1					
+ANR	6844558	AssignmentExpression	tail = ( sector_num + nb_sectors ) % s -> cluster_sectors		6844527	2		=			
+ANR	6844559	Identifier	tail		6844527	0					
+ANR	6844560	MultiplicativeExpression	( sector_num + nb_sectors ) % s -> cluster_sectors		6844527	1		%			
+ANR	6844561	AdditiveExpression	sector_num + nb_sectors		6844527	0		+			
+ANR	6844562	Identifier	sector_num		6844527	0					
+ANR	6844563	Identifier	nb_sectors		6844527	1					
+ANR	6844564	PtrMemberAccess	s -> cluster_sectors		6844527	1					
+ANR	6844565	Identifier	s		6844527	0					
+ANR	6844566	Identifier	cluster_sectors		6844527	1					
+ANR	6844567	ExpressionStatement	"trace_qcow2_write_zeroes_start_req ( qemu_coroutine_self ( ) , sector_num , nb_sectors )"	19:4:309:430	6844527	4	True				
+ANR	6844568	CallExpression	"trace_qcow2_write_zeroes_start_req ( qemu_coroutine_self ( ) , sector_num , nb_sectors )"		6844527	0					
+ANR	6844569	Callee	trace_qcow2_write_zeroes_start_req		6844527	0					
+ANR	6844570	Identifier	trace_qcow2_write_zeroes_start_req		6844527	0					
+ANR	6844571	ArgumentList	qemu_coroutine_self ( )		6844527	1					
+ANR	6844572	Argument	qemu_coroutine_self ( )		6844527	0					
+ANR	6844573	CallExpression	qemu_coroutine_self ( )		6844527	0					
+ANR	6844574	Callee	qemu_coroutine_self		6844527	0					
+ANR	6844575	Identifier	qemu_coroutine_self		6844527	0					
+ANR	6844576	ArgumentList			6844527	1					
+ANR	6844577	Argument	sector_num		6844527	1					
+ANR	6844578	Identifier	sector_num		6844527	0					
+ANR	6844579	Argument	nb_sectors		6844527	2					
+ANR	6844580	Identifier	nb_sectors		6844527	0					
+ANR	6844581	IfStatement	if ( head != 0 || tail != 0 )		6844527	5					
+ANR	6844582	Condition	head != 0 || tail != 0	25:8:443:464	6844527	0	True				
+ANR	6844583	OrExpression	head != 0 || tail != 0		6844527	0		||			
+ANR	6844584	EqualityExpression	head != 0		6844527	0		!=			
+ANR	6844585	Identifier	head		6844527	0					
+ANR	6844586	PrimaryExpression	0		6844527	1					
+ANR	6844587	EqualityExpression	tail != 0		6844527	1		!=			
+ANR	6844588	Identifier	tail		6844527	0					
+ANR	6844589	PrimaryExpression	0		6844527	1					
+ANR	6844590	CompoundStatement		23:8:343:379	6844527	1					
+ANR	6844591	IdentifierDeclStatement	int64_t cl_start = sector_num - head ;	27:8:478:514	6844527	0	True				
+ANR	6844592	IdentifierDecl	cl_start = sector_num - head		6844527	0					
+ANR	6844593	IdentifierDeclType	int64_t		6844527	0					
+ANR	6844594	Identifier	cl_start		6844527	1					
+ANR	6844595	AssignmentExpression	cl_start = sector_num - head		6844527	2		=			
+ANR	6844596	Identifier	cl_start		6844527	0					
+ANR	6844597	AdditiveExpression	sector_num - head		6844527	1		-			
+ANR	6844598	Identifier	sector_num		6844527	0					
+ANR	6844599	Identifier	head		6844527	1					
+ANR	6844600	ExpressionStatement	assert ( cl_start + s -> cluster_sectors >= sector_num + nb_sectors )	31:8:527:591	6844527	1	True				
+ANR	6844601	CallExpression	assert ( cl_start + s -> cluster_sectors >= sector_num + nb_sectors )		6844527	0					
+ANR	6844602	Callee	assert		6844527	0					
+ANR	6844603	Identifier	assert		6844527	0					
+ANR	6844604	ArgumentList	cl_start + s -> cluster_sectors >= sector_num + nb_sectors		6844527	1					
+ANR	6844605	Argument	cl_start + s -> cluster_sectors >= sector_num + nb_sectors		6844527	0					
+ANR	6844606	RelationalExpression	cl_start + s -> cluster_sectors >= sector_num + nb_sectors		6844527	0		>=			
+ANR	6844607	AdditiveExpression	cl_start + s -> cluster_sectors		6844527	0		+			
+ANR	6844608	Identifier	cl_start		6844527	0					
+ANR	6844609	PtrMemberAccess	s -> cluster_sectors		6844527	1					
+ANR	6844610	Identifier	s		6844527	0					
+ANR	6844611	Identifier	cluster_sectors		6844527	1					
+ANR	6844612	AdditiveExpression	sector_num + nb_sectors		6844527	1		+			
+ANR	6844613	Identifier	sector_num		6844527	0					
+ANR	6844614	Identifier	nb_sectors		6844527	1					
+ANR	6844615	ExpressionStatement	sector_num = cl_start	35:8:604:625	6844527	2	True				
+ANR	6844616	AssignmentExpression	sector_num = cl_start		6844527	0		=			
+ANR	6844617	Identifier	sector_num		6844527	0					
+ANR	6844618	Identifier	cl_start		6844527	1					
+ANR	6844619	ExpressionStatement	nb_sectors = s -> cluster_sectors	37:8:636:667	6844527	3	True				
+ANR	6844620	AssignmentExpression	nb_sectors = s -> cluster_sectors		6844527	0		=			
+ANR	6844621	Identifier	nb_sectors		6844527	0					
+ANR	6844622	PtrMemberAccess	s -> cluster_sectors		6844527	1					
+ANR	6844623	Identifier	s		6844527	0					
+ANR	6844624	Identifier	cluster_sectors		6844527	1					
+ANR	6844625	IfStatement	"if ( ! is_zero_cluster ( bs , sector_num ) )"		6844527	4					
+ANR	6844626	Condition	"! is_zero_cluster ( bs , sector_num )"	41:12:684:715	6844527	0	True				
+ANR	6844627	UnaryOperationExpression	"! is_zero_cluster ( bs , sector_num )"		6844527	0					
+ANR	6844628	UnaryOperator	!		6844527	0					
+ANR	6844629	CallExpression	"is_zero_cluster ( bs , sector_num )"		6844527	1					
+ANR	6844630	Callee	is_zero_cluster		6844527	0					
+ANR	6844631	Identifier	is_zero_cluster		6844527	0					
+ANR	6844632	ArgumentList	bs		6844527	1					
+ANR	6844633	Argument	bs		6844527	0					
+ANR	6844634	Identifier	bs		6844527	0					
+ANR	6844635	Argument	sector_num		6844527	1					
+ANR	6844636	Identifier	sector_num		6844527	0					
+ANR	6844637	CompoundStatement		37:46:583:583	6844527	1					
+ANR	6844638	ReturnStatement	return - ENOTSUP ;	43:12:733:748	6844527	0	True				
+ANR	6844639	UnaryOperationExpression	- ENOTSUP		6844527	0					
+ANR	6844640	UnaryOperator	-		6844527	0					
+ANR	6844641	Identifier	ENOTSUP		6844527	1					
+ANR	6844642	ExpressionStatement	qemu_co_mutex_lock ( & s -> lock )	49:8:772:800	6844527	5	True				
+ANR	6844643	CallExpression	qemu_co_mutex_lock ( & s -> lock )		6844527	0					
+ANR	6844644	Callee	qemu_co_mutex_lock		6844527	0					
+ANR	6844645	Identifier	qemu_co_mutex_lock		6844527	0					
+ANR	6844646	ArgumentList	& s -> lock		6844527	1					
+ANR	6844647	Argument	& s -> lock		6844527	0					
+ANR	6844648	UnaryOperationExpression	& s -> lock		6844527	0					
+ANR	6844649	UnaryOperator	&		6844527	0					
+ANR	6844650	PtrMemberAccess	s -> lock		6844527	1					
+ANR	6844651	Identifier	s		6844527	0					
+ANR	6844652	Identifier	lock		6844527	1					
+ANR	6844653	IfStatement	"if ( ! is_zero_cluster_top_locked ( bs , sector_num ) )"		6844527	6					
+ANR	6844654	Condition	"! is_zero_cluster_top_locked ( bs , sector_num )"	53:12:873:915	6844527	0	True				
+ANR	6844655	UnaryOperationExpression	"! is_zero_cluster_top_locked ( bs , sector_num )"		6844527	0					
+ANR	6844656	UnaryOperator	!		6844527	0					
+ANR	6844657	CallExpression	"is_zero_cluster_top_locked ( bs , sector_num )"		6844527	1					
+ANR	6844658	Callee	is_zero_cluster_top_locked		6844527	0					
+ANR	6844659	Identifier	is_zero_cluster_top_locked		6844527	0					
+ANR	6844660	ArgumentList	bs		6844527	1					
+ANR	6844661	Argument	bs		6844527	0					
+ANR	6844662	Identifier	bs		6844527	0					
+ANR	6844663	Argument	sector_num		6844527	1					
+ANR	6844664	Identifier	sector_num		6844527	0					
+ANR	6844665	CompoundStatement		49:57:783:783	6844527	1					
+ANR	6844666	ExpressionStatement	qemu_co_mutex_unlock ( & s -> lock )	55:12:933:963	6844527	0	True				
+ANR	6844667	CallExpression	qemu_co_mutex_unlock ( & s -> lock )		6844527	0					
+ANR	6844668	Callee	qemu_co_mutex_unlock		6844527	0					
+ANR	6844669	Identifier	qemu_co_mutex_unlock		6844527	0					
+ANR	6844670	ArgumentList	& s -> lock		6844527	1					
+ANR	6844671	Argument	& s -> lock		6844527	0					
+ANR	6844672	UnaryOperationExpression	& s -> lock		6844527	0					
+ANR	6844673	UnaryOperator	&		6844527	0					
+ANR	6844674	PtrMemberAccess	s -> lock		6844527	1					
+ANR	6844675	Identifier	s		6844527	0					
+ANR	6844676	Identifier	lock		6844527	1					
+ANR	6844677	ReturnStatement	return - ENOTSUP ;	57:12:978:993	6844527	1	True				
+ANR	6844678	UnaryOperationExpression	- ENOTSUP		6844527	0					
+ANR	6844679	UnaryOperator	-		6844527	0					
+ANR	6844680	Identifier	ENOTSUP		6844527	1					
+ANR	6844681	ElseStatement	else		6844527	0					
+ANR	6844682	CompoundStatement		57:11:883:883	6844527	0					
+ANR	6844683	ExpressionStatement	qemu_co_mutex_lock ( & s -> lock )	63:8:1029:1057	6844527	0	True				
+ANR	6844684	CallExpression	qemu_co_mutex_lock ( & s -> lock )		6844527	0					
+ANR	6844685	Callee	qemu_co_mutex_lock		6844527	0					
+ANR	6844686	Identifier	qemu_co_mutex_lock		6844527	0					
+ANR	6844687	ArgumentList	& s -> lock		6844527	1					
+ANR	6844688	Argument	& s -> lock		6844527	0					
+ANR	6844689	UnaryOperationExpression	& s -> lock		6844527	0					
+ANR	6844690	UnaryOperator	&		6844527	0					
+ANR	6844691	PtrMemberAccess	s -> lock		6844527	1					
+ANR	6844692	Identifier	s		6844527	0					
+ANR	6844693	Identifier	lock		6844527	1					
+ANR	6844694	ExpressionStatement	"trace_qcow2_write_zeroes ( qemu_coroutine_self ( ) , sector_num , nb_sectors )"	69:4:1073:1144	6844527	6	True				
+ANR	6844695	CallExpression	"trace_qcow2_write_zeroes ( qemu_coroutine_self ( ) , sector_num , nb_sectors )"		6844527	0					
+ANR	6844696	Callee	trace_qcow2_write_zeroes		6844527	0					
+ANR	6844697	Identifier	trace_qcow2_write_zeroes		6844527	0					
+ANR	6844698	ArgumentList	qemu_coroutine_self ( )		6844527	1					
+ANR	6844699	Argument	qemu_coroutine_self ( )		6844527	0					
+ANR	6844700	CallExpression	qemu_coroutine_self ( )		6844527	0					
+ANR	6844701	Callee	qemu_coroutine_self		6844527	0					
+ANR	6844702	Identifier	qemu_coroutine_self		6844527	0					
+ANR	6844703	ArgumentList			6844527	1					
+ANR	6844704	Argument	sector_num		6844527	1					
+ANR	6844705	Identifier	sector_num		6844527	0					
+ANR	6844706	Argument	nb_sectors		6844527	2					
+ANR	6844707	Identifier	nb_sectors		6844527	0					
+ANR	6844708	ExpressionStatement	"ret = qcow2_zero_clusters ( bs , sector_num << BDRV_SECTOR_BITS , nb_sectors )"	75:4:1208:1281	6844527	7	True				
+ANR	6844709	AssignmentExpression	"ret = qcow2_zero_clusters ( bs , sector_num << BDRV_SECTOR_BITS , nb_sectors )"		6844527	0		=			
+ANR	6844710	Identifier	ret		6844527	0					
+ANR	6844711	CallExpression	"qcow2_zero_clusters ( bs , sector_num << BDRV_SECTOR_BITS , nb_sectors )"		6844527	1					
+ANR	6844712	Callee	qcow2_zero_clusters		6844527	0					
+ANR	6844713	Identifier	qcow2_zero_clusters		6844527	0					
+ANR	6844714	ArgumentList	bs		6844527	1					
+ANR	6844715	Argument	bs		6844527	0					
+ANR	6844716	Identifier	bs		6844527	0					
+ANR	6844717	Argument	sector_num << BDRV_SECTOR_BITS		6844527	1					
+ANR	6844718	ShiftExpression	sector_num << BDRV_SECTOR_BITS		6844527	0		<<			
+ANR	6844719	Identifier	sector_num		6844527	0					
+ANR	6844720	Identifier	BDRV_SECTOR_BITS		6844527	1					
+ANR	6844721	Argument	nb_sectors		6844527	2					
+ANR	6844722	Identifier	nb_sectors		6844527	0					
+ANR	6844723	ExpressionStatement	qemu_co_mutex_unlock ( & s -> lock )	77:4:1288:1318	6844527	8	True				
+ANR	6844724	CallExpression	qemu_co_mutex_unlock ( & s -> lock )		6844527	0					
+ANR	6844725	Callee	qemu_co_mutex_unlock		6844527	0					
+ANR	6844726	Identifier	qemu_co_mutex_unlock		6844527	0					
+ANR	6844727	ArgumentList	& s -> lock		6844527	1					
+ANR	6844728	Argument	& s -> lock		6844527	0					
+ANR	6844729	UnaryOperationExpression	& s -> lock		6844527	0					
+ANR	6844730	UnaryOperator	&		6844527	0					
+ANR	6844731	PtrMemberAccess	s -> lock		6844527	1					
+ANR	6844732	Identifier	s		6844527	0					
+ANR	6844733	Identifier	lock		6844527	1					
+ANR	6844734	ReturnStatement	return ret ;	81:4:1327:1337	6844527	9	True				
+ANR	6844735	Identifier	ret		6844527	0					
+ANR	6844736	ReturnType	static coroutine_fn int		6844527	1					
+ANR	6844737	Identifier	qcow2_co_write_zeroes		6844527	2					
+ANR	6844738	ParameterList	"BlockDriverState * bs , int64_t sector_num , int nb_sectors , BdrvRequestFlags flags"		6844527	3					
+ANR	6844739	Parameter	BlockDriverState * bs	1:46:46:65	6844527	0	True				
+ANR	6844740	ParameterType	BlockDriverState *		6844527	0					
+ANR	6844741	Identifier	bs		6844527	1					
+ANR	6844742	Parameter	int64_t sector_num	3:4:73:90	6844527	1	True				
+ANR	6844743	ParameterType	int64_t		6844527	0					
+ANR	6844744	Identifier	sector_num		6844527	1					
+ANR	6844745	Parameter	int nb_sectors	3:24:93:106	6844527	2	True				
+ANR	6844746	ParameterType	int		6844527	0					
+ANR	6844747	Identifier	nb_sectors		6844527	1					
+ANR	6844748	Parameter	BdrvRequestFlags flags	3:40:109:130	6844527	3	True				
+ANR	6844749	ParameterType	BdrvRequestFlags		6844527	0					
+ANR	6844750	Identifier	flags		6844527	1					
+ANR	6844751	CFGEntryNode	ENTRY		6844527		True				
+ANR	6844752	CFGExitNode	EXIT		6844527		True				
+ANR	6844753	Symbol	ret		6844527						
+ANR	6844754	Symbol	nb_sectors		6844527						
+ANR	6844755	Symbol	bs -> opaque		6844527						
+ANR	6844756	Symbol	tail		6844527						
+ANR	6844757	Symbol	flags		6844527						
+ANR	6844758	Symbol	ENOTSUP		6844527						
+ANR	6844759	Symbol	qcow2_zero_clusters		6844527						
+ANR	6844760	Symbol	BDRV_SECTOR_BITS		6844527						
+ANR	6844761	Symbol	& s -> lock		6844527						
+ANR	6844762	Symbol	sector_num		6844527						
+ANR	6844763	Symbol	head		6844527						
+ANR	6844764	Symbol	cl_start		6844527						
+ANR	6844765	Symbol	bs		6844527						
+ANR	6844766	Symbol	is_zero_cluster_top_locked		6844527						
+ANR	6844767	Symbol	s		6844527						
+ANR	6844768	Symbol	* bs		6844527						
+ANR	6844769	Symbol	is_zero_cluster		6844527						
+ANR	6844770	Symbol	s -> cluster_sectors		6844527						
+ANR	6844771	Symbol	qemu_coroutine_self		6844527						
+ANR	6844772	Symbol	* s		6844527						

@@ -1,0 +1,385 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	4393822	File	/home/p4ultr4n/workplace/ReVeal/raw_code/get_physical_address_data_01_0.c								
+ANR	4393823	Function	get_physical_address_data	1:0:0:2438							
+ANR	4393824	FunctionDef	"get_physical_address_data (CPUState * env , target_phys_addr_t * physical , int * prot , target_ulong address , int rw , int mmu_idx)"		4393823	0					
+ANR	4393825	CompoundStatement		7:0:213:2438	4393823	0					
+ANR	4393826	IdentifierDeclStatement	unsigned int i ;	9:4:220:234	4393823	0	True				
+ANR	4393827	IdentifierDecl	i		4393823	0					
+ANR	4393828	IdentifierDeclType	unsigned int		4393823	0					
+ANR	4393829	Identifier	i		4393823	1					
+ANR	4393830	IdentifierDeclStatement	uint64_t context ;	11:4:241:257	4393823	1	True				
+ANR	4393831	IdentifierDecl	context		4393823	0					
+ANR	4393832	IdentifierDeclType	uint64_t		4393823	0					
+ANR	4393833	Identifier	context		4393823	1					
+ANR	4393834	IdentifierDeclStatement	int is_user = ( mmu_idx == MMU_USER_IDX || mmu_idx == MMU_USER_SECONDARY_IDX ) ;	15:4:266:362	4393823	2	True				
+ANR	4393835	IdentifierDecl	is_user = ( mmu_idx == MMU_USER_IDX || mmu_idx == MMU_USER_SECONDARY_IDX )		4393823	0					
+ANR	4393836	IdentifierDeclType	int		4393823	0					
+ANR	4393837	Identifier	is_user		4393823	1					
+ANR	4393838	AssignmentExpression	is_user = ( mmu_idx == MMU_USER_IDX || mmu_idx == MMU_USER_SECONDARY_IDX )		4393823	2		=			
+ANR	4393839	Identifier	is_user		4393823	0					
+ANR	4393840	OrExpression	mmu_idx == MMU_USER_IDX || mmu_idx == MMU_USER_SECONDARY_IDX		4393823	1		||			
+ANR	4393841	EqualityExpression	mmu_idx == MMU_USER_IDX		4393823	0		==			
+ANR	4393842	Identifier	mmu_idx		4393823	0					
+ANR	4393843	Identifier	MMU_USER_IDX		4393823	1					
+ANR	4393844	EqualityExpression	mmu_idx == MMU_USER_SECONDARY_IDX		4393823	1		==			
+ANR	4393845	Identifier	mmu_idx		4393823	0					
+ANR	4393846	Identifier	MMU_USER_SECONDARY_IDX		4393823	1					
+ANR	4393847	IfStatement	if ( ( env -> lsu & DMMU_E ) == 0 )		4393823	3					
+ANR	4393848	Condition	( env -> lsu & DMMU_E ) == 0	21:8:375:398	4393823	0	True				
+ANR	4393849	EqualityExpression	( env -> lsu & DMMU_E ) == 0		4393823	0		==			
+ANR	4393850	BitAndExpression	env -> lsu & DMMU_E		4393823	0		&			
+ANR	4393851	PtrMemberAccess	env -> lsu		4393823	0					
+ANR	4393852	Identifier	env		4393823	0					
+ANR	4393853	Identifier	lsu		4393823	1					
+ANR	4393854	Identifier	DMMU_E		4393823	1					
+ANR	4393855	PrimaryExpression	0		4393823	1					
+ANR	4393856	CompoundStatement		15:34:187:187	4393823	1					
+ANR	4393857	ExpressionStatement	* physical = ultrasparc_truncate_physical ( address )	23:8:432:481	4393823	0	True				
+ANR	4393858	AssignmentExpression	* physical = ultrasparc_truncate_physical ( address )		4393823	0		=			
+ANR	4393859	UnaryOperationExpression	* physical		4393823	0					
+ANR	4393860	UnaryOperator	*		4393823	0					
+ANR	4393861	Identifier	physical		4393823	1					
+ANR	4393862	CallExpression	ultrasparc_truncate_physical ( address )		4393823	1					
+ANR	4393863	Callee	ultrasparc_truncate_physical		4393823	0					
+ANR	4393864	Identifier	ultrasparc_truncate_physical		4393823	0					
+ANR	4393865	ArgumentList	address		4393823	1					
+ANR	4393866	Argument	address		4393823	0					
+ANR	4393867	Identifier	address		4393823	0					
+ANR	4393868	ExpressionStatement	* prot = PAGE_READ | PAGE_WRITE	25:8:492:522	4393823	1	True				
+ANR	4393869	AssignmentExpression	* prot = PAGE_READ | PAGE_WRITE		4393823	0		=			
+ANR	4393870	UnaryOperationExpression	* prot		4393823	0					
+ANR	4393871	UnaryOperator	*		4393823	0					
+ANR	4393872	Identifier	prot		4393823	1					
+ANR	4393873	InclusiveOrExpression	PAGE_READ | PAGE_WRITE		4393823	1		|			
+ANR	4393874	Identifier	PAGE_READ		4393823	0					
+ANR	4393875	Identifier	PAGE_WRITE		4393823	1					
+ANR	4393876	ReturnStatement	return 0 ;	27:8:533:541	4393823	2	True				
+ANR	4393877	PrimaryExpression	0		4393823	0					
+ANR	4393878	SwitchStatement	switch ( mmu_idx )		4393823	4					
+ANR	4393879	Condition	mmu_idx	33:11:564:570	4393823	0	True				
+ANR	4393880	Identifier	mmu_idx		4393823	0					
+ANR	4393881	CompoundStatement		27:20:359:359	4393823	1					
+ANR	4393882	Label	case MMU_USER_IDX :	35:4:580:597	4393823	0	True				
+ANR	4393883	Identifier	MMU_USER_IDX		4393823	0					
+ANR	4393884	Label	case MMU_KERNEL_IDX :	37:4:604:623	4393823	1	True				
+ANR	4393885	Identifier	MMU_KERNEL_IDX		4393823	0					
+ANR	4393886	ExpressionStatement	context = env -> dmmu . mmu_primary_context & 0x1fff	39:8:634:682	4393823	2	True				
+ANR	4393887	AssignmentExpression	context = env -> dmmu . mmu_primary_context & 0x1fff		4393823	0		=			
+ANR	4393888	Identifier	context		4393823	0					
+ANR	4393889	BitAndExpression	env -> dmmu . mmu_primary_context & 0x1fff		4393823	1		&			
+ANR	4393890	MemberAccess	env -> dmmu . mmu_primary_context		4393823	0					
+ANR	4393891	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4393892	Identifier	env		4393823	0					
+ANR	4393893	Identifier	dmmu		4393823	1					
+ANR	4393894	Identifier	mmu_primary_context		4393823	1					
+ANR	4393895	PrimaryExpression	0x1fff		4393823	1					
+ANR	4393896	BreakStatement	break ;	41:8:693:698	4393823	3	True				
+ANR	4393897	Label	case MMU_USER_SECONDARY_IDX :	43:4:705:732	4393823	4	True				
+ANR	4393898	Identifier	MMU_USER_SECONDARY_IDX		4393823	0					
+ANR	4393899	Label	case MMU_KERNEL_SECONDARY_IDX :	45:4:739:768	4393823	5	True				
+ANR	4393900	Identifier	MMU_KERNEL_SECONDARY_IDX		4393823	0					
+ANR	4393901	ExpressionStatement	context = env -> dmmu . mmu_secondary_context & 0x1fff	47:8:779:829	4393823	6	True				
+ANR	4393902	AssignmentExpression	context = env -> dmmu . mmu_secondary_context & 0x1fff		4393823	0		=			
+ANR	4393903	Identifier	context		4393823	0					
+ANR	4393904	BitAndExpression	env -> dmmu . mmu_secondary_context & 0x1fff		4393823	1		&			
+ANR	4393905	MemberAccess	env -> dmmu . mmu_secondary_context		4393823	0					
+ANR	4393906	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4393907	Identifier	env		4393823	0					
+ANR	4393908	Identifier	dmmu		4393823	1					
+ANR	4393909	Identifier	mmu_secondary_context		4393823	1					
+ANR	4393910	PrimaryExpression	0x1fff		4393823	1					
+ANR	4393911	BreakStatement	break ;	49:8:840:845	4393823	7	True				
+ANR	4393912	Label	case MMU_NUCLEUS_IDX :	51:4:852:872	4393823	8	True				
+ANR	4393913	Identifier	MMU_NUCLEUS_IDX		4393823	0					
+ANR	4393914	Label	default :	53:4:879:886	4393823	9	True				
+ANR	4393915	Identifier	default		4393823	0					
+ANR	4393916	ExpressionStatement	context = 0	55:8:897:908	4393823	10	True				
+ANR	4393917	AssignmentExpression	context = 0		4393823	0		=			
+ANR	4393918	Identifier	context		4393823	0					
+ANR	4393919	PrimaryExpression	0		4393823	1					
+ANR	4393920	BreakStatement	break ;	57:8:919:924	4393823	11	True				
+ANR	4393921	ForStatement	for ( i = 0 ; i < 64 ; i ++ )		4393823	5					
+ANR	4393922	ForInit	i = 0 ;	63:9:945:950	4393823	0	True				
+ANR	4393923	AssignmentExpression	i = 0		4393823	0		=			
+ANR	4393924	Identifier	i		4393823	0					
+ANR	4393925	PrimaryExpression	0		4393823	1					
+ANR	4393926	Condition	i < 64	63:16:952:957	4393823	1	True				
+ANR	4393927	RelationalExpression	i < 64		4393823	0		<			
+ANR	4393928	Identifier	i		4393823	0					
+ANR	4393929	PrimaryExpression	64		4393823	1					
+ANR	4393930	PostIncDecOperationExpression	i ++	63:24:960:962	4393823	2	True				
+ANR	4393931	Identifier	i		4393823	0					
+ANR	4393932	IncDec	++		4393823	1					
+ANR	4393933	CompoundStatement		57:29:751:751	4393823	3					
+ANR	4393934	IfStatement	"if ( ultrasparc_tag_match ( & env -> dtlb [ i ] , address , context , physical ) )"		4393823	0					
+ANR	4393935	Condition	"ultrasparc_tag_match ( & env -> dtlb [ i ] , address , context , physical )"	67:12:1023:1119	4393823	0	True				
+ANR	4393936	CallExpression	"ultrasparc_tag_match ( & env -> dtlb [ i ] , address , context , physical )"		4393823	0					
+ANR	4393937	Callee	ultrasparc_tag_match		4393823	0					
+ANR	4393938	Identifier	ultrasparc_tag_match		4393823	0					
+ANR	4393939	ArgumentList	& env -> dtlb [ i ]		4393823	1					
+ANR	4393940	Argument	& env -> dtlb [ i ]		4393823	0					
+ANR	4393941	UnaryOperationExpression	& env -> dtlb [ i ]		4393823	0					
+ANR	4393942	UnaryOperator	&		4393823	0					
+ANR	4393943	ArrayIndexing	env -> dtlb [ i ]		4393823	1					
+ANR	4393944	PtrMemberAccess	env -> dtlb		4393823	0					
+ANR	4393945	Identifier	env		4393823	0					
+ANR	4393946	Identifier	dtlb		4393823	1					
+ANR	4393947	Identifier	i		4393823	1					
+ANR	4393948	Argument	address		4393823	1					
+ANR	4393949	Identifier	address		4393823	0					
+ANR	4393950	Argument	context		4393823	2					
+ANR	4393951	Identifier	context		4393823	0					
+ANR	4393952	Argument	physical		4393823	3					
+ANR	4393953	Identifier	physical		4393823	0					
+ANR	4393954	CompoundStatement		63:62:908:908	4393823	1					
+ANR	4393955	IfStatement	if ( ( ( env -> dtlb [ i ] . tte & 0x4 ) && is_user ) || ( ! ( env -> dtlb [ i ] . tte & 0x2 ) && ( rw == 1 ) ) )		4393823	0					
+ANR	4393956	Condition	( ( env -> dtlb [ i ] . tte & 0x4 ) && is_user ) || ( ! ( env -> dtlb [ i ] . tte & 0x2 ) && ( rw == 1 ) )	73:16:1168:1265	4393823	0	True				
+ANR	4393957	OrExpression	( ( env -> dtlb [ i ] . tte & 0x4 ) && is_user ) || ( ! ( env -> dtlb [ i ] . tte & 0x2 ) && ( rw == 1 ) )		4393823	0		||			
+ANR	4393958	AndExpression	( env -> dtlb [ i ] . tte & 0x4 ) && is_user		4393823	0		&&			
+ANR	4393959	BitAndExpression	env -> dtlb [ i ] . tte & 0x4		4393823	0		&			
+ANR	4393960	MemberAccess	env -> dtlb [ i ] . tte		4393823	0					
+ANR	4393961	ArrayIndexing	env -> dtlb [ i ]		4393823	0					
+ANR	4393962	PtrMemberAccess	env -> dtlb		4393823	0					
+ANR	4393963	Identifier	env		4393823	0					
+ANR	4393964	Identifier	dtlb		4393823	1					
+ANR	4393965	Identifier	i		4393823	1					
+ANR	4393966	Identifier	tte		4393823	1					
+ANR	4393967	PrimaryExpression	0x4		4393823	1					
+ANR	4393968	Identifier	is_user		4393823	1					
+ANR	4393969	AndExpression	! ( env -> dtlb [ i ] . tte & 0x2 ) && ( rw == 1 )		4393823	1		&&			
+ANR	4393970	UnaryOperationExpression	! ( env -> dtlb [ i ] . tte & 0x2 )		4393823	0					
+ANR	4393971	UnaryOperator	!		4393823	0					
+ANR	4393972	BitAndExpression	env -> dtlb [ i ] . tte & 0x2		4393823	1		&			
+ANR	4393973	MemberAccess	env -> dtlb [ i ] . tte		4393823	0					
+ANR	4393974	ArrayIndexing	env -> dtlb [ i ]		4393823	0					
+ANR	4393975	PtrMemberAccess	env -> dtlb		4393823	0					
+ANR	4393976	Identifier	env		4393823	0					
+ANR	4393977	Identifier	dtlb		4393823	1					
+ANR	4393978	Identifier	i		4393823	1					
+ANR	4393979	Identifier	tte		4393823	1					
+ANR	4393980	PrimaryExpression	0x2		4393823	1					
+ANR	4393981	EqualityExpression	rw == 1		4393823	1		==			
+ANR	4393982	Identifier	rw		4393823	0					
+ANR	4393983	PrimaryExpression	1		4393823	1					
+ANR	4393984	CompoundStatement		71:16:1073:1095	4393823	1					
+ANR	4393985	IdentifierDeclStatement	uint8_t fault_type = 0 ;	77:16:1287:1309	4393823	0	True				
+ANR	4393986	IdentifierDecl	fault_type = 0		4393823	0					
+ANR	4393987	IdentifierDeclType	uint8_t		4393823	0					
+ANR	4393988	Identifier	fault_type		4393823	1					
+ANR	4393989	AssignmentExpression	fault_type = 0		4393823	2		=			
+ANR	4393990	Identifier	fault_type		4393823	0					
+ANR	4393991	PrimaryExpression	0		4393823	1					
+ANR	4393992	IfStatement	if ( ( env -> dtlb [ i ] . tte & 0x4 ) && is_user )		4393823	1					
+ANR	4393993	Condition	( env -> dtlb [ i ] . tte & 0x4 ) && is_user	81:20:1334:1368	4393823	0	True				
+ANR	4393994	AndExpression	( env -> dtlb [ i ] . tte & 0x4 ) && is_user		4393823	0		&&			
+ANR	4393995	BitAndExpression	env -> dtlb [ i ] . tte & 0x4		4393823	0		&			
+ANR	4393996	MemberAccess	env -> dtlb [ i ] . tte		4393823	0					
+ANR	4393997	ArrayIndexing	env -> dtlb [ i ]		4393823	0					
+ANR	4393998	PtrMemberAccess	env -> dtlb		4393823	0					
+ANR	4393999	Identifier	env		4393823	0					
+ANR	4394000	Identifier	dtlb		4393823	1					
+ANR	4394001	Identifier	i		4393823	1					
+ANR	4394002	Identifier	tte		4393823	1					
+ANR	4394003	PrimaryExpression	0x4		4393823	1					
+ANR	4394004	Identifier	is_user		4393823	1					
+ANR	4394005	CompoundStatement		75:57:1157:1157	4393823	1					
+ANR	4394006	ExpressionStatement	fault_type |= 1	83:20:1394:1409	4393823	0	True				
+ANR	4394007	AssignmentExpression	fault_type |= 1		4393823	0		|=			
+ANR	4394008	Identifier	fault_type		4393823	0					
+ANR	4394009	PrimaryExpression	1		4393823	1					
+ANR	4394010	IfStatement	if ( env -> dmmu . sfsr & 1 )		4393823	2					
+ANR	4394011	Condition	env -> dmmu . sfsr & 1	89:20:1479:1496	4393823	0	True				
+ANR	4394012	BitAndExpression	env -> dmmu . sfsr & 1		4393823	0		&			
+ANR	4394013	MemberAccess	env -> dmmu . sfsr		4393823	0					
+ANR	4394014	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4394015	Identifier	env		4393823	0					
+ANR	4394016	Identifier	dmmu		4393823	1					
+ANR	4394017	Identifier	sfsr		4393823	1					
+ANR	4394018	PrimaryExpression	1		4393823	1					
+ANR	4394019	ExpressionStatement	env -> dmmu . sfsr = 2	91:20:1548:1566	4393823	1	True				
+ANR	4394020	AssignmentExpression	env -> dmmu . sfsr = 2		4393823	0		=			
+ANR	4394021	MemberAccess	env -> dmmu . sfsr		4393823	0					
+ANR	4394022	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4394023	Identifier	env		4393823	0					
+ANR	4394024	Identifier	dmmu		4393823	1					
+ANR	4394025	Identifier	sfsr		4393823	1					
+ANR	4394026	PrimaryExpression	2		4393823	1					
+ANR	4394027	ExpressionStatement	env -> dmmu . sfsr |= ( is_user << 3 ) | ( ( rw == 1 ) << 2 ) | 1	97:16:1680:1735	4393823	3	True				
+ANR	4394028	AssignmentExpression	env -> dmmu . sfsr |= ( is_user << 3 ) | ( ( rw == 1 ) << 2 ) | 1		4393823	0		|=			
+ANR	4394029	MemberAccess	env -> dmmu . sfsr		4393823	0					
+ANR	4394030	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4394031	Identifier	env		4393823	0					
+ANR	4394032	Identifier	dmmu		4393823	1					
+ANR	4394033	Identifier	sfsr		4393823	1					
+ANR	4394034	InclusiveOrExpression	( is_user << 3 ) | ( ( rw == 1 ) << 2 ) | 1		4393823	1		|			
+ANR	4394035	ShiftExpression	is_user << 3		4393823	0		<<			
+ANR	4394036	Identifier	is_user		4393823	0					
+ANR	4394037	PrimaryExpression	3		4393823	1					
+ANR	4394038	InclusiveOrExpression	( ( rw == 1 ) << 2 ) | 1		4393823	1		|			
+ANR	4394039	ShiftExpression	( rw == 1 ) << 2		4393823	0		<<			
+ANR	4394040	EqualityExpression	rw == 1		4393823	0		==			
+ANR	4394041	Identifier	rw		4393823	0					
+ANR	4394042	PrimaryExpression	1		4393823	1					
+ANR	4394043	PrimaryExpression	2		4393823	1					
+ANR	4394044	PrimaryExpression	1		4393823	1					
+ANR	4394045	ExpressionStatement	env -> dmmu . sfsr |= ( fault_type << 7 )	101:16:1756:1791	4393823	4	True				
+ANR	4394046	AssignmentExpression	env -> dmmu . sfsr |= ( fault_type << 7 )		4393823	0		|=			
+ANR	4394047	MemberAccess	env -> dmmu . sfsr		4393823	0					
+ANR	4394048	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4394049	Identifier	env		4393823	0					
+ANR	4394050	Identifier	dmmu		4393823	1					
+ANR	4394051	Identifier	sfsr		4393823	1					
+ANR	4394052	ShiftExpression	fault_type << 7		4393823	1		<<			
+ANR	4394053	Identifier	fault_type		4393823	0					
+ANR	4394054	PrimaryExpression	7		4393823	1					
+ANR	4394055	ExpressionStatement	env -> dmmu . sfar = address	105:16:1812:1836	4393823	5	True				
+ANR	4394056	AssignmentExpression	env -> dmmu . sfar = address		4393823	0		=			
+ANR	4394057	MemberAccess	env -> dmmu . sfar		4393823	0					
+ANR	4394058	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4394059	Identifier	env		4393823	0					
+ANR	4394060	Identifier	dmmu		4393823	1					
+ANR	4394061	Identifier	sfar		4393823	1					
+ANR	4394062	Identifier	address		4393823	1					
+ANR	4394063	ExpressionStatement	env -> exception_index = TT_DFAULT	107:16:1884:1916	4393823	6	True				
+ANR	4394064	AssignmentExpression	env -> exception_index = TT_DFAULT		4393823	0		=			
+ANR	4394065	PtrMemberAccess	env -> exception_index		4393823	0					
+ANR	4394066	Identifier	env		4393823	0					
+ANR	4394067	Identifier	exception_index		4393823	1					
+ANR	4394068	Identifier	TT_DFAULT		4393823	1					
+ANR	4394069	Statement	printf	111:16:1953:1958	4393823	7	True				
+ANR	4394070	Statement	(	111:22:1959:1959	4393823	8	True				
+ANR	4394071	Statement	"""DFAULT at 0x%"""	111:23:1960:1974	4393823	9	True				
+ANR	4394072	Statement	PRIx64	111:39:1976:1981	4393823	10	True				
+ANR	4394073	Statement	"""\\n"""	111:46:1983:1986	4393823	11	True				
+ANR	4394074	Statement	","	111:50:1987:1987	4393823	12	True				
+ANR	4394075	Statement	address	111:52:1989:1995	4393823	13	True				
+ANR	4394076	Statement	)	111:59:1996:1996	4393823	14	True				
+ANR	4394077	ExpressionStatement		111:60:1997:1997	4393823	15	True				
+ANR	4394078	ReturnStatement	return 1 ;	115:16:2024:2032	4393823	16	True				
+ANR	4394079	PrimaryExpression	1		4393823	0					
+ANR	4394080	ExpressionStatement	* prot = PAGE_READ	119:12:2062:2079	4393823	1	True				
+ANR	4394081	AssignmentExpression	* prot = PAGE_READ		4393823	0		=			
+ANR	4394082	UnaryOperationExpression	* prot		4393823	0					
+ANR	4394083	UnaryOperator	*		4393823	0					
+ANR	4394084	Identifier	prot		4393823	1					
+ANR	4394085	Identifier	PAGE_READ		4393823	1					
+ANR	4394086	IfStatement	if ( env -> dtlb [ i ] . tte & 0x2 )		4393823	2					
+ANR	4394087	Condition	env -> dtlb [ i ] . tte & 0x2	121:16:2098:2119	4393823	0	True				
+ANR	4394088	BitAndExpression	env -> dtlb [ i ] . tte & 0x2		4393823	0		&			
+ANR	4394089	MemberAccess	env -> dtlb [ i ] . tte		4393823	0					
+ANR	4394090	ArrayIndexing	env -> dtlb [ i ]		4393823	0					
+ANR	4394091	PtrMemberAccess	env -> dtlb		4393823	0					
+ANR	4394092	Identifier	env		4393823	0					
+ANR	4394093	Identifier	dtlb		4393823	1					
+ANR	4394094	Identifier	i		4393823	1					
+ANR	4394095	Identifier	tte		4393823	1					
+ANR	4394096	PrimaryExpression	0x2		4393823	1					
+ANR	4394097	ExpressionStatement	* prot |= PAGE_WRITE	123:16:2139:2158	4393823	1	True				
+ANR	4394098	AssignmentExpression	* prot |= PAGE_WRITE		4393823	0		|=			
+ANR	4394099	UnaryOperationExpression	* prot		4393823	0					
+ANR	4394100	UnaryOperator	*		4393823	0					
+ANR	4394101	Identifier	prot		4393823	1					
+ANR	4394102	Identifier	PAGE_WRITE		4393823	1					
+ANR	4394103	ExpressionStatement	TTE_SET_USED ( env -> dtlb [ i ] . tte )	125:12:2173:2203	4393823	3	True				
+ANR	4394104	CallExpression	TTE_SET_USED ( env -> dtlb [ i ] . tte )		4393823	0					
+ANR	4394105	Callee	TTE_SET_USED		4393823	0					
+ANR	4394106	Identifier	TTE_SET_USED		4393823	0					
+ANR	4394107	ArgumentList	env -> dtlb [ i ] . tte		4393823	1					
+ANR	4394108	Argument	env -> dtlb [ i ] . tte		4393823	0					
+ANR	4394109	MemberAccess	env -> dtlb [ i ] . tte		4393823	0					
+ANR	4394110	ArrayIndexing	env -> dtlb [ i ]		4393823	0					
+ANR	4394111	PtrMemberAccess	env -> dtlb		4393823	0					
+ANR	4394112	Identifier	env		4393823	0					
+ANR	4394113	Identifier	dtlb		4393823	1					
+ANR	4394114	Identifier	i		4393823	1					
+ANR	4394115	Identifier	tte		4393823	1					
+ANR	4394116	ReturnStatement	return 0 ;	127:12:2218:2226	4393823	4	True				
+ANR	4394117	PrimaryExpression	0		4393823	0					
+ANR	4394118	Statement	printf	135:4:2269:2274	4393823	6	True				
+ANR	4394119	Statement	(	135:10:2275:2275	4393823	7	True				
+ANR	4394120	Statement	"""DMISS at 0x%"""	135:11:2276:2289	4393823	8	True				
+ANR	4394121	Statement	PRIx64	135:26:2291:2296	4393823	9	True				
+ANR	4394122	Statement	"""\\n"""	135:33:2298:2301	4393823	10	True				
+ANR	4394123	Statement	","	135:37:2302:2302	4393823	11	True				
+ANR	4394124	Statement	address	135:39:2304:2310	4393823	12	True				
+ANR	4394125	Statement	)	135:46:2311:2311	4393823	13	True				
+ANR	4394126	ExpressionStatement		135:47:2312:2312	4393823	14	True				
+ANR	4394127	ExpressionStatement	env -> dmmu . tag_access = ( address & ~0x1fffULL ) | context	139:4:2327:2382	4393823	15	True				
+ANR	4394128	AssignmentExpression	env -> dmmu . tag_access = ( address & ~0x1fffULL ) | context		4393823	0		=			
+ANR	4394129	MemberAccess	env -> dmmu . tag_access		4393823	0					
+ANR	4394130	PtrMemberAccess	env -> dmmu		4393823	0					
+ANR	4394131	Identifier	env		4393823	0					
+ANR	4394132	Identifier	dmmu		4393823	1					
+ANR	4394133	Identifier	tag_access		4393823	1					
+ANR	4394134	InclusiveOrExpression	( address & ~0x1fffULL ) | context		4393823	1		|			
+ANR	4394135	BitAndExpression	address & ~0x1fffULL		4393823	0		&			
+ANR	4394136	Identifier	address		4393823	0					
+ANR	4394137	Identifier	~0x1fffULL		4393823	1					
+ANR	4394138	Identifier	context		4393823	1					
+ANR	4394139	ExpressionStatement	env -> exception_index = TT_DMISS	141:4:2389:2420	4393823	16	True				
+ANR	4394140	AssignmentExpression	env -> exception_index = TT_DMISS		4393823	0		=			
+ANR	4394141	PtrMemberAccess	env -> exception_index		4393823	0					
+ANR	4394142	Identifier	env		4393823	0					
+ANR	4394143	Identifier	exception_index		4393823	1					
+ANR	4394144	Identifier	TT_DMISS		4393823	1					
+ANR	4394145	ReturnStatement	return 1 ;	143:4:2427:2435	4393823	17	True				
+ANR	4394146	PrimaryExpression	1		4393823	0					
+ANR	4394147	ReturnType	static int		4393823	1					
+ANR	4394148	Identifier	get_physical_address_data		4393823	2					
+ANR	4394149	ParameterList	"CPUState * env , target_phys_addr_t * physical , int * prot , target_ulong address , int rw , int mmu_idx"		4393823	3					
+ANR	4394150	Parameter	CPUState * env	1:37:37:49	4393823	0	True				
+ANR	4394151	ParameterType	CPUState *		4393823	0					
+ANR	4394152	Identifier	env		4393823	1					
+ANR	4394153	Parameter	target_phys_addr_t * physical	3:37:90:117	4393823	1	True				
+ANR	4394154	ParameterType	target_phys_addr_t *		4393823	0					
+ANR	4394155	Identifier	physical		4393823	1					
+ANR	4394156	Parameter	int * prot	3:67:120:128	4393823	2	True				
+ANR	4394157	ParameterType	int *		4393823	0					
+ANR	4394158	Identifier	prot		4393823	1					
+ANR	4394159	Parameter	target_ulong address	5:37:169:188	4393823	3	True				
+ANR	4394160	ParameterType	target_ulong		4393823	0					
+ANR	4394161	Identifier	address		4393823	1					
+ANR	4394162	Parameter	int rw	5:59:191:196	4393823	4	True				
+ANR	4394163	ParameterType	int		4393823	0					
+ANR	4394164	Identifier	rw		4393823	1					
+ANR	4394165	Parameter	int mmu_idx	5:67:199:209	4393823	5	True				
+ANR	4394166	ParameterType	int		4393823	0					
+ANR	4394167	Identifier	mmu_idx		4393823	1					
+ANR	4394168	CFGEntryNode	ENTRY		4393823		True				
+ANR	4394169	CFGExitNode	EXIT		4393823		True				
+ANR	4394170	Symbol	* * env		4393823						
+ANR	4394171	Symbol	rw		4393823						
+ANR	4394172	Symbol	env -> lsu		4393823						
+ANR	4394173	Symbol	env -> dmmu . mmu_primary_context		4393823						
+ANR	4394174	Symbol	* env -> dtlb		4393823						
+ANR	4394175	Symbol	PAGE_READ		4393823						
+ANR	4394176	Symbol	env -> dtlb		4393823						
+ANR	4394177	Symbol	env -> dtlb [ i ] . tte		4393823						
+ANR	4394178	Symbol	prot		4393823						
+ANR	4394179	Symbol	MMU_USER_SECONDARY_IDX		4393823						
+ANR	4394180	Symbol	TT_DFAULT		4393823						
+ANR	4394181	Symbol	ultrasparc_truncate_physical		4393823						
+ANR	4394182	Symbol	context		4393823						
+ANR	4394183	Symbol	physical		4393823						
+ANR	4394184	Symbol	is_user		4393823						
+ANR	4394185	Symbol	DMMU_E		4393823						
+ANR	4394186	Symbol	env -> dmmu . sfsr		4393823						
+ANR	4394187	Symbol	env -> dmmu . sfar		4393823						
+ANR	4394188	Symbol	address		4393823						
+ANR	4394189	Symbol	ultrasparc_tag_match		4393823						
+ANR	4394190	Symbol	MMU_USER_IDX		4393823						
+ANR	4394191	Symbol	env -> dmmu . tag_access		4393823						
+ANR	4394192	Symbol	* env		4393823						
+ANR	4394193	Symbol	fault_type		4393823						
+ANR	4394194	Symbol	i		4393823						
+ANR	4394195	Symbol	* physical		4393823						
+ANR	4394196	Symbol	env		4393823						
+ANR	4394197	Symbol	TT_DMISS		4393823						
+ANR	4394198	Symbol	PAGE_WRITE		4393823						
+ANR	4394199	Symbol	~0x1fffULL		4393823						
+ANR	4394200	Symbol	* i		4393823						
+ANR	4394201	Symbol	mmu_idx		4393823						
+ANR	4394202	Symbol	env -> dmmu . mmu_secondary_context		4393823						
+ANR	4394203	Symbol	env -> exception_index		4393823						
+ANR	4394204	Symbol	env -> dmmu		4393823						
+ANR	4394205	Symbol	* prot		4393823						

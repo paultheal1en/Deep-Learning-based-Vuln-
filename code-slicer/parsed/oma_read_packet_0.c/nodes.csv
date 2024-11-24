@@ -1,0 +1,141 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	6137477	File	/home/p4ultr4n/workplace/ReVeal/raw_code/oma_read_packet_0.c								
+ANR	6137478	Function	oma_read_packet	1:0:0:558							
+ANR	6137479	FunctionDef	"oma_read_packet (AVFormatContext * s , AVPacket * pkt)"		6137478	0					
+ANR	6137480	CompoundStatement		3:0:63:558	6137478	0					
+ANR	6137481	IdentifierDeclStatement	OMAContext * oc = s -> priv_data ;	5:4:70:99	6137478	0	True				
+ANR	6137482	IdentifierDecl	* oc = s -> priv_data		6137478	0					
+ANR	6137483	IdentifierDeclType	OMAContext *		6137478	0					
+ANR	6137484	Identifier	oc		6137478	1					
+ANR	6137485	AssignmentExpression	* oc = s -> priv_data		6137478	2		=			
+ANR	6137486	Identifier	oc		6137478	0					
+ANR	6137487	PtrMemberAccess	s -> priv_data		6137478	1					
+ANR	6137488	Identifier	s		6137478	0					
+ANR	6137489	Identifier	priv_data		6137478	1					
+ANR	6137490	IdentifierDeclStatement	int packet_size = s -> streams [ 0 ] -> codec -> block_align ;	7:4:106:157	6137478	1	True				
+ANR	6137491	IdentifierDecl	packet_size = s -> streams [ 0 ] -> codec -> block_align		6137478	0					
+ANR	6137492	IdentifierDeclType	int		6137478	0					
+ANR	6137493	Identifier	packet_size		6137478	1					
+ANR	6137494	AssignmentExpression	packet_size = s -> streams [ 0 ] -> codec -> block_align		6137478	2		=			
+ANR	6137495	Identifier	packet_size		6137478	0					
+ANR	6137496	PtrMemberAccess	s -> streams [ 0 ] -> codec -> block_align		6137478	1					
+ANR	6137497	PtrMemberAccess	s -> streams [ 0 ] -> codec		6137478	0					
+ANR	6137498	ArrayIndexing	s -> streams [ 0 ]		6137478	0					
+ANR	6137499	PtrMemberAccess	s -> streams		6137478	0					
+ANR	6137500	Identifier	s		6137478	0					
+ANR	6137501	Identifier	streams		6137478	1					
+ANR	6137502	PrimaryExpression	0		6137478	1					
+ANR	6137503	Identifier	codec		6137478	1					
+ANR	6137504	Identifier	block_align		6137478	1					
+ANR	6137505	IdentifierDeclStatement	"int ret = av_get_packet ( s -> pb , pkt , packet_size ) ;"	9:4:164:212	6137478	2	True				
+ANR	6137506	IdentifierDecl	"ret = av_get_packet ( s -> pb , pkt , packet_size )"		6137478	0					
+ANR	6137507	IdentifierDeclType	int		6137478	0					
+ANR	6137508	Identifier	ret		6137478	1					
+ANR	6137509	AssignmentExpression	"ret = av_get_packet ( s -> pb , pkt , packet_size )"		6137478	2		=			
+ANR	6137510	Identifier	ret		6137478	0					
+ANR	6137511	CallExpression	"av_get_packet ( s -> pb , pkt , packet_size )"		6137478	1					
+ANR	6137512	Callee	av_get_packet		6137478	0					
+ANR	6137513	Identifier	av_get_packet		6137478	0					
+ANR	6137514	ArgumentList	s -> pb		6137478	1					
+ANR	6137515	Argument	s -> pb		6137478	0					
+ANR	6137516	PtrMemberAccess	s -> pb		6137478	0					
+ANR	6137517	Identifier	s		6137478	0					
+ANR	6137518	Identifier	pb		6137478	1					
+ANR	6137519	Argument	pkt		6137478	1					
+ANR	6137520	Identifier	pkt		6137478	0					
+ANR	6137521	Argument	packet_size		6137478	2					
+ANR	6137522	Identifier	packet_size		6137478	0					
+ANR	6137523	IfStatement	if ( ret <= 0 )		6137478	3					
+ANR	6137524	Condition	ret <= 0	13:8:225:232	6137478	0	True				
+ANR	6137525	RelationalExpression	ret <= 0		6137478	0		<=			
+ANR	6137526	Identifier	ret		6137478	0					
+ANR	6137527	PrimaryExpression	0		6137478	1					
+ANR	6137528	ReturnStatement	return AVERROR ( EIO ) ;	15:8:244:263	6137478	1	True				
+ANR	6137529	CallExpression	AVERROR ( EIO )		6137478	0					
+ANR	6137530	Callee	AVERROR		6137478	0					
+ANR	6137531	Identifier	AVERROR		6137478	0					
+ANR	6137532	ArgumentList	EIO		6137478	1					
+ANR	6137533	Argument	EIO		6137478	0					
+ANR	6137534	Identifier	EIO		6137478	0					
+ANR	6137535	ExpressionStatement	pkt -> stream_index = 0	19:4:272:293	6137478	4	True				
+ANR	6137536	AssignmentExpression	pkt -> stream_index = 0		6137478	0		=			
+ANR	6137537	PtrMemberAccess	pkt -> stream_index		6137478	0					
+ANR	6137538	Identifier	pkt		6137478	0					
+ANR	6137539	Identifier	stream_index		6137478	1					
+ANR	6137540	PrimaryExpression	0		6137478	1					
+ANR	6137541	IfStatement	if ( oc -> encrypted )		6137478	5					
+ANR	6137542	Condition	oc -> encrypted	23:8:306:318	6137478	0	True				
+ANR	6137543	PtrMemberAccess	oc -> encrypted		6137478	0					
+ANR	6137544	Identifier	oc		6137478	0					
+ANR	6137545	Identifier	encrypted		6137478	1					
+ANR	6137546	CompoundStatement		21:23:257:257	6137478	1					
+ANR	6137547	ExpressionStatement	"av_des_crypt ( & oc -> av_des , pkt -> data , pkt -> data , ( packet_size >> 3 ) , oc -> iv , 1 )"	29:8:429:529	6137478	0	True				
+ANR	6137548	CallExpression	"av_des_crypt ( & oc -> av_des , pkt -> data , pkt -> data , ( packet_size >> 3 ) , oc -> iv , 1 )"		6137478	0					
+ANR	6137549	Callee	av_des_crypt		6137478	0					
+ANR	6137550	Identifier	av_des_crypt		6137478	0					
+ANR	6137551	ArgumentList	& oc -> av_des		6137478	1					
+ANR	6137552	Argument	& oc -> av_des		6137478	0					
+ANR	6137553	UnaryOperationExpression	& oc -> av_des		6137478	0					
+ANR	6137554	UnaryOperator	&		6137478	0					
+ANR	6137555	PtrMemberAccess	oc -> av_des		6137478	1					
+ANR	6137556	Identifier	oc		6137478	0					
+ANR	6137557	Identifier	av_des		6137478	1					
+ANR	6137558	Argument	pkt -> data		6137478	1					
+ANR	6137559	PtrMemberAccess	pkt -> data		6137478	0					
+ANR	6137560	Identifier	pkt		6137478	0					
+ANR	6137561	Identifier	data		6137478	1					
+ANR	6137562	Argument	pkt -> data		6137478	2					
+ANR	6137563	PtrMemberAccess	pkt -> data		6137478	0					
+ANR	6137564	Identifier	pkt		6137478	0					
+ANR	6137565	Identifier	data		6137478	1					
+ANR	6137566	Argument	packet_size >> 3		6137478	3					
+ANR	6137567	ShiftExpression	packet_size >> 3		6137478	0		>>			
+ANR	6137568	Identifier	packet_size		6137478	0					
+ANR	6137569	PrimaryExpression	3		6137478	1					
+ANR	6137570	Argument	oc -> iv		6137478	4					
+ANR	6137571	PtrMemberAccess	oc -> iv		6137478	0					
+ANR	6137572	Identifier	oc		6137478	0					
+ANR	6137573	Identifier	iv		6137478	1					
+ANR	6137574	Argument	1		6137478	5					
+ANR	6137575	PrimaryExpression	1		6137478	0					
+ANR	6137576	ReturnStatement	return ret ;	37:4:545:555	6137478	6	True				
+ANR	6137577	Identifier	ret		6137478	0					
+ANR	6137578	ReturnType	static int		6137478	1					
+ANR	6137579	Identifier	oma_read_packet		6137478	2					
+ANR	6137580	ParameterList	"AVFormatContext * s , AVPacket * pkt"		6137478	3					
+ANR	6137581	Parameter	AVFormatContext * s	1:27:27:44	6137478	0	True				
+ANR	6137582	ParameterType	AVFormatContext *		6137478	0					
+ANR	6137583	Identifier	s		6137478	1					
+ANR	6137584	Parameter	AVPacket * pkt	1:47:47:59	6137478	1	True				
+ANR	6137585	ParameterType	AVPacket *		6137478	0					
+ANR	6137586	Identifier	pkt		6137478	1					
+ANR	6137587	CFGEntryNode	ENTRY		6137478		True				
+ANR	6137588	CFGExitNode	EXIT		6137478		True				
+ANR	6137589	Symbol	* pkt		6137478						
+ANR	6137590	Symbol	* * * * s		6137478						
+ANR	6137591	Symbol	* * s -> streams		6137478						
+ANR	6137592	Symbol	s -> streams		6137478						
+ANR	6137593	Symbol	s -> pb		6137478						
+ANR	6137594	Symbol	oc		6137478						
+ANR	6137595	Symbol	av_get_packet		6137478						
+ANR	6137596	Symbol	* * * s -> streams		6137478						
+ANR	6137597	Symbol	* s -> streams [ 0 ] -> codec		6137478						
+ANR	6137598	Symbol	pkt		6137478						
+ANR	6137599	Symbol	* * s		6137478						
+ANR	6137600	Symbol	* oc		6137478						
+ANR	6137601	Symbol	* s -> streams		6137478						
+ANR	6137602	Symbol	s -> streams [ 0 ] -> codec		6137478						
+ANR	6137603	Symbol	s -> priv_data		6137478						
+ANR	6137604	Symbol	s -> streams [ 0 ] -> codec -> block_align		6137478						
+ANR	6137605	Symbol	ret		6137478						
+ANR	6137606	Symbol	oc -> encrypted		6137478						
+ANR	6137607	Symbol	EIO		6137478						
+ANR	6137608	Symbol	pkt -> data		6137478						
+ANR	6137609	Symbol	oc -> iv		6137478						
+ANR	6137610	Symbol	* * * s		6137478						
+ANR	6137611	Symbol	pkt -> stream_index		6137478						
+ANR	6137612	Symbol	s		6137478						
+ANR	6137613	Symbol	packet_size		6137478						
+ANR	6137614	Symbol	& oc -> av_des		6137478						
+ANR	6137615	Symbol	AVERROR		6137478						
+ANR	6137616	Symbol	* s		6137478						

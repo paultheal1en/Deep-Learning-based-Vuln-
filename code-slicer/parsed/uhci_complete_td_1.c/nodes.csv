@@ -1,0 +1,451 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	8607787	File	/home/p4ultr4n/workplace/ReVeal/raw_code/uhci_complete_td_1.c								
+ANR	8607788	Function	uhci_complete_td	1:0:0:2663							
+ANR	8607789	FunctionDef	"uhci_complete_td (UHCIState * s , UHCI_TD * td , UHCIAsync * async , uint32_t * int_mask)"		8607788	0					
+ANR	8607790	CompoundStatement		3:0:94:2663	8607788	0					
+ANR	8607791	IdentifierDeclStatement	"int len = 0 , max_len , err , ret ;"	5:4:101:131	8607788	0	True				
+ANR	8607792	IdentifierDecl	len = 0		8607788	0					
+ANR	8607793	IdentifierDeclType	int		8607788	0					
+ANR	8607794	Identifier	len		8607788	1					
+ANR	8607795	AssignmentExpression	len = 0		8607788	2		=			
+ANR	8607796	Identifier	len		8607788	0					
+ANR	8607797	PrimaryExpression	0		8607788	1					
+ANR	8607798	IdentifierDecl	max_len		8607788	1					
+ANR	8607799	IdentifierDeclType	int		8607788	0					
+ANR	8607800	Identifier	max_len		8607788	1					
+ANR	8607801	IdentifierDecl	err		8607788	2					
+ANR	8607802	IdentifierDeclType	int		8607788	0					
+ANR	8607803	Identifier	err		8607788	1					
+ANR	8607804	IdentifierDecl	ret		8607788	3					
+ANR	8607805	IdentifierDeclType	int		8607788	0					
+ANR	8607806	Identifier	ret		8607788	1					
+ANR	8607807	IdentifierDeclStatement	uint8_t pid ;	7:4:138:149	8607788	1	True				
+ANR	8607808	IdentifierDecl	pid		8607788	0					
+ANR	8607809	IdentifierDeclType	uint8_t		8607788	0					
+ANR	8607810	Identifier	pid		8607788	1					
+ANR	8607811	ExpressionStatement	max_len = ( ( td -> token >> 21 ) + 1 ) & 0x7ff	11:4:158:199	8607788	2	True				
+ANR	8607812	AssignmentExpression	max_len = ( ( td -> token >> 21 ) + 1 ) & 0x7ff		8607788	0		=			
+ANR	8607813	Identifier	max_len		8607788	0					
+ANR	8607814	BitAndExpression	( ( td -> token >> 21 ) + 1 ) & 0x7ff		8607788	1		&			
+ANR	8607815	AdditiveExpression	( td -> token >> 21 ) + 1		8607788	0		+			
+ANR	8607816	ShiftExpression	td -> token >> 21		8607788	0		>>			
+ANR	8607817	PtrMemberAccess	td -> token		8607788	0					
+ANR	8607818	Identifier	td		8607788	0					
+ANR	8607819	Identifier	token		8607788	1					
+ANR	8607820	PrimaryExpression	21		8607788	1					
+ANR	8607821	PrimaryExpression	1		8607788	1					
+ANR	8607822	PrimaryExpression	0x7ff		8607788	1					
+ANR	8607823	ExpressionStatement	pid = td -> token & 0xff	13:4:206:228	8607788	3	True				
+ANR	8607824	AssignmentExpression	pid = td -> token & 0xff		8607788	0		=			
+ANR	8607825	Identifier	pid		8607788	0					
+ANR	8607826	BitAndExpression	td -> token & 0xff		8607788	1		&			
+ANR	8607827	PtrMemberAccess	td -> token		8607788	0					
+ANR	8607828	Identifier	td		8607788	0					
+ANR	8607829	Identifier	token		8607788	1					
+ANR	8607830	PrimaryExpression	0xff		8607788	1					
+ANR	8607831	ExpressionStatement	ret = async -> packet . len	17:4:237:260	8607788	4	True				
+ANR	8607832	AssignmentExpression	ret = async -> packet . len		8607788	0		=			
+ANR	8607833	Identifier	ret		8607788	0					
+ANR	8607834	MemberAccess	async -> packet . len		8607788	1					
+ANR	8607835	PtrMemberAccess	async -> packet		8607788	0					
+ANR	8607836	Identifier	async		8607788	0					
+ANR	8607837	Identifier	packet		8607788	1					
+ANR	8607838	Identifier	len		8607788	1					
+ANR	8607839	IfStatement	if ( td -> ctrl & TD_CTRL_IOS )		8607788	5					
+ANR	8607840	Condition	td -> ctrl & TD_CTRL_IOS	21:8:273:294	8607788	0	True				
+ANR	8607841	BitAndExpression	td -> ctrl & TD_CTRL_IOS		8607788	0		&			
+ANR	8607842	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607843	Identifier	td		8607788	0					
+ANR	8607844	Identifier	ctrl		8607788	1					
+ANR	8607845	Identifier	TD_CTRL_IOS		8607788	1					
+ANR	8607846	ExpressionStatement	td -> ctrl &= ~TD_CTRL_ACTIVE	23:8:306:333	8607788	1	True				
+ANR	8607847	AssignmentExpression	td -> ctrl &= ~TD_CTRL_ACTIVE		8607788	0		&=			
+ANR	8607848	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607849	Identifier	td		8607788	0					
+ANR	8607850	Identifier	ctrl		8607788	1					
+ANR	8607851	Identifier	~TD_CTRL_ACTIVE		8607788	1					
+ANR	8607852	IfStatement	if ( ret < 0 )		8607788	6					
+ANR	8607853	Condition	ret < 0	27:8:346:352	8607788	0	True				
+ANR	8607854	RelationalExpression	ret < 0		8607788	0		<			
+ANR	8607855	Identifier	ret		8607788	0					
+ANR	8607856	PrimaryExpression	0		8607788	1					
+ANR	8607857	GotoStatement	goto out ;	29:8:364:372	8607788	1	True				
+ANR	8607858	Identifier	out		8607788	0					
+ANR	8607859	ExpressionStatement	len = async -> packet . len	33:4:381:404	8607788	7	True				
+ANR	8607860	AssignmentExpression	len = async -> packet . len		8607788	0		=			
+ANR	8607861	Identifier	len		8607788	0					
+ANR	8607862	MemberAccess	async -> packet . len		8607788	1					
+ANR	8607863	PtrMemberAccess	async -> packet		8607788	0					
+ANR	8607864	Identifier	async		8607788	0					
+ANR	8607865	Identifier	packet		8607788	1					
+ANR	8607866	Identifier	len		8607788	1					
+ANR	8607867	ExpressionStatement	td -> ctrl = ( td -> ctrl & ~0x7ff ) | ( ( len - 1 ) & 0x7ff )	35:4:411:463	8607788	8	True				
+ANR	8607868	AssignmentExpression	td -> ctrl = ( td -> ctrl & ~0x7ff ) | ( ( len - 1 ) & 0x7ff )		8607788	0		=			
+ANR	8607869	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607870	Identifier	td		8607788	0					
+ANR	8607871	Identifier	ctrl		8607788	1					
+ANR	8607872	InclusiveOrExpression	( td -> ctrl & ~0x7ff ) | ( ( len - 1 ) & 0x7ff )		8607788	1		|			
+ANR	8607873	BitAndExpression	td -> ctrl & ~0x7ff		8607788	0		&			
+ANR	8607874	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607875	Identifier	td		8607788	0					
+ANR	8607876	Identifier	ctrl		8607788	1					
+ANR	8607877	Identifier	~0x7ff		8607788	1					
+ANR	8607878	BitAndExpression	( len - 1 ) & 0x7ff		8607788	1		&			
+ANR	8607879	AdditiveExpression	len - 1		8607788	0		-			
+ANR	8607880	Identifier	len		8607788	0					
+ANR	8607881	PrimaryExpression	1		8607788	1					
+ANR	8607882	PrimaryExpression	0x7ff		8607788	1					
+ANR	8607883	ExpressionStatement	td -> ctrl &= ~ ( TD_CTRL_ACTIVE | TD_CTRL_NAK )	45:4:636:679	8607788	9	True				
+ANR	8607884	AssignmentExpression	td -> ctrl &= ~ ( TD_CTRL_ACTIVE | TD_CTRL_NAK )		8607788	0		&=			
+ANR	8607885	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607886	Identifier	td		8607788	0					
+ANR	8607887	Identifier	ctrl		8607788	1					
+ANR	8607888	UnaryOperationExpression	~ ( TD_CTRL_ACTIVE | TD_CTRL_NAK )		8607788	1					
+ANR	8607889	UnaryOperator	~		8607788	0					
+ANR	8607890	InclusiveOrExpression	TD_CTRL_ACTIVE | TD_CTRL_NAK		8607788	1		|			
+ANR	8607891	Identifier	TD_CTRL_ACTIVE		8607788	0					
+ANR	8607892	Identifier	TD_CTRL_NAK		8607788	1					
+ANR	8607893	IfStatement	if ( td -> ctrl & TD_CTRL_IOC )		8607788	10					
+ANR	8607894	Condition	td -> ctrl & TD_CTRL_IOC	47:8:690:711	8607788	0	True				
+ANR	8607895	BitAndExpression	td -> ctrl & TD_CTRL_IOC		8607788	0		&			
+ANR	8607896	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607897	Identifier	td		8607788	0					
+ANR	8607898	Identifier	ctrl		8607788	1					
+ANR	8607899	Identifier	TD_CTRL_IOC		8607788	1					
+ANR	8607900	ExpressionStatement	* int_mask |= 0x01	49:8:723:740	8607788	1	True				
+ANR	8607901	AssignmentExpression	* int_mask |= 0x01		8607788	0		|=			
+ANR	8607902	UnaryOperationExpression	* int_mask		8607788	0					
+ANR	8607903	UnaryOperator	*		8607788	0					
+ANR	8607904	Identifier	int_mask		8607788	1					
+ANR	8607905	PrimaryExpression	0x01		8607788	1					
+ANR	8607906	IfStatement	if ( pid == USB_TOKEN_IN )		8607788	11					
+ANR	8607907	Condition	pid == USB_TOKEN_IN	53:8:753:771	8607788	0	True				
+ANR	8607908	EqualityExpression	pid == USB_TOKEN_IN		8607788	0		==			
+ANR	8607909	Identifier	pid		8607788	0					
+ANR	8607910	Identifier	USB_TOKEN_IN		8607788	1					
+ANR	8607911	CompoundStatement		51:29:679:679	8607788	1					
+ANR	8607912	IfStatement	if ( len > max_len )		8607788	0					
+ANR	8607913	Condition	len > max_len	55:12:789:801	8607788	0	True				
+ANR	8607914	RelationalExpression	len > max_len		8607788	0		>			
+ANR	8607915	Identifier	len		8607788	0					
+ANR	8607916	Identifier	max_len		8607788	1					
+ANR	8607917	CompoundStatement		53:27:709:709	8607788	1					
+ANR	8607918	ExpressionStatement	ret = USB_RET_BABBLE	57:12:819:839	8607788	0	True				
+ANR	8607919	AssignmentExpression	ret = USB_RET_BABBLE		8607788	0		=			
+ANR	8607920	Identifier	ret		8607788	0					
+ANR	8607921	Identifier	USB_RET_BABBLE		8607788	1					
+ANR	8607922	GotoStatement	goto out ;	59:12:854:862	8607788	1	True				
+ANR	8607923	Identifier	out		8607788	0					
+ANR	8607924	IfStatement	if ( len > 0 )		8607788	1					
+ANR	8607925	Condition	len > 0	65:12:890:896	8607788	0	True				
+ANR	8607926	RelationalExpression	len > 0		8607788	0		>			
+ANR	8607927	Identifier	len		8607788	0					
+ANR	8607928	PrimaryExpression	0		8607788	1					
+ANR	8607929	CompoundStatement		63:21:804:804	8607788	1					
+ANR	8607930	ExpressionStatement	"cpu_physical_memory_write ( td -> buffer , async -> buffer , len )"	69:12:953:1010	8607788	0	True				
+ANR	8607931	CallExpression	"cpu_physical_memory_write ( td -> buffer , async -> buffer , len )"		8607788	0					
+ANR	8607932	Callee	cpu_physical_memory_write		8607788	0					
+ANR	8607933	Identifier	cpu_physical_memory_write		8607788	0					
+ANR	8607934	ArgumentList	td -> buffer		8607788	1					
+ANR	8607935	Argument	td -> buffer		8607788	0					
+ANR	8607936	PtrMemberAccess	td -> buffer		8607788	0					
+ANR	8607937	Identifier	td		8607788	0					
+ANR	8607938	Identifier	buffer		8607788	1					
+ANR	8607939	Argument	async -> buffer		8607788	1					
+ANR	8607940	PtrMemberAccess	async -> buffer		8607788	0					
+ANR	8607941	Identifier	async		8607788	0					
+ANR	8607942	Identifier	buffer		8607788	1					
+ANR	8607943	Argument	len		8607788	2					
+ANR	8607944	Identifier	len		8607788	0					
+ANR	8607945	IfStatement	if ( ( td -> ctrl & TD_CTRL_SPD ) && len < max_len )		8607788	2					
+ANR	8607946	Condition	( td -> ctrl & TD_CTRL_SPD ) && len < max_len	75:12:1038:1078	8607788	0	True				
+ANR	8607947	AndExpression	( td -> ctrl & TD_CTRL_SPD ) && len < max_len		8607788	0		&&			
+ANR	8607948	BitAndExpression	td -> ctrl & TD_CTRL_SPD		8607788	0		&			
+ANR	8607949	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607950	Identifier	td		8607788	0					
+ANR	8607951	Identifier	ctrl		8607788	1					
+ANR	8607952	Identifier	TD_CTRL_SPD		8607788	1					
+ANR	8607953	RelationalExpression	len < max_len		8607788	1		<			
+ANR	8607954	Identifier	len		8607788	0					
+ANR	8607955	Identifier	max_len		8607788	1					
+ANR	8607956	CompoundStatement		73:55:986:986	8607788	1					
+ANR	8607957	ExpressionStatement	* int_mask |= 0x02	77:12:1096:1113	8607788	0	True				
+ANR	8607958	AssignmentExpression	* int_mask |= 0x02		8607788	0		|=			
+ANR	8607959	UnaryOperationExpression	* int_mask		8607788	0					
+ANR	8607960	UnaryOperator	*		8607788	0					
+ANR	8607961	Identifier	int_mask		8607788	1					
+ANR	8607962	PrimaryExpression	0x02		8607788	1					
+ANR	8607963	ExpressionStatement	"DPRINTF ( ""uhci: short packet. td 0x%x token 0x%x\\n"" , async -> td , async -> token )"	81:12:1178:1254	8607788	1	True				
+ANR	8607964	CallExpression	"DPRINTF ( ""uhci: short packet. td 0x%x token 0x%x\\n"" , async -> td , async -> token )"		8607788	0					
+ANR	8607965	Callee	DPRINTF		8607788	0					
+ANR	8607966	Identifier	DPRINTF		8607788	0					
+ANR	8607967	ArgumentList	"""uhci: short packet. td 0x%x token 0x%x\\n"""		8607788	1					
+ANR	8607968	Argument	"""uhci: short packet. td 0x%x token 0x%x\\n"""		8607788	0					
+ANR	8607969	PrimaryExpression	"""uhci: short packet. td 0x%x token 0x%x\\n"""		8607788	0					
+ANR	8607970	Argument	async -> td		8607788	1					
+ANR	8607971	PtrMemberAccess	async -> td		8607788	0					
+ANR	8607972	Identifier	async		8607788	0					
+ANR	8607973	Identifier	td		8607788	1					
+ANR	8607974	Argument	async -> token		8607788	2					
+ANR	8607975	PtrMemberAccess	async -> token		8607788	0					
+ANR	8607976	Identifier	async		8607788	0					
+ANR	8607977	Identifier	token		8607788	1					
+ANR	8607978	ReturnStatement	return 1 ;	83:12:1269:1277	8607788	2	True				
+ANR	8607979	PrimaryExpression	1		8607788	0					
+ANR	8607980	ReturnStatement	return 0 ;	93:4:1323:1331	8607788	12	True				
+ANR	8607981	PrimaryExpression	0		8607788	0					
+ANR	8607982	Label	out :	97:0:1336:1339	8607788	13	True				
+ANR	8607983	Identifier	out		8607788	0					
+ANR	8607984	SwitchStatement	switch ( ret )		8607788	14					
+ANR	8607985	Condition	ret	99:11:1353:1355	8607788	0	True				
+ANR	8607986	Identifier	ret		8607788	0					
+ANR	8607987	CompoundStatement		97:16:1263:1263	8607788	1					
+ANR	8607988	Label	case USB_RET_STALL :	101:4:1365:1383	8607788	0	True				
+ANR	8607989	Identifier	USB_RET_STALL		8607788	0					
+ANR	8607990	ExpressionStatement	td -> ctrl |= TD_CTRL_STALL	103:8:1394:1419	8607788	1	True				
+ANR	8607991	AssignmentExpression	td -> ctrl |= TD_CTRL_STALL		8607788	0		|=			
+ANR	8607992	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607993	Identifier	td		8607788	0					
+ANR	8607994	Identifier	ctrl		8607788	1					
+ANR	8607995	Identifier	TD_CTRL_STALL		8607788	1					
+ANR	8607996	ExpressionStatement	td -> ctrl &= ~TD_CTRL_ACTIVE	105:8:1430:1457	8607788	2	True				
+ANR	8607997	AssignmentExpression	td -> ctrl &= ~TD_CTRL_ACTIVE		8607788	0		&=			
+ANR	8607998	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8607999	Identifier	td		8607788	0					
+ANR	8608000	Identifier	ctrl		8607788	1					
+ANR	8608001	Identifier	~TD_CTRL_ACTIVE		8607788	1					
+ANR	8608002	ExpressionStatement	s -> status |= UHCI_STS_USBERR	107:8:1468:1496	8607788	3	True				
+ANR	8608003	AssignmentExpression	s -> status |= UHCI_STS_USBERR		8607788	0		|=			
+ANR	8608004	PtrMemberAccess	s -> status		8607788	0					
+ANR	8608005	Identifier	s		8607788	0					
+ANR	8608006	Identifier	status		8607788	1					
+ANR	8608007	Identifier	UHCI_STS_USBERR		8607788	1					
+ANR	8608008	IfStatement	if ( td -> ctrl & TD_CTRL_IOC )		8607788	4					
+ANR	8608009	Condition	td -> ctrl & TD_CTRL_IOC	109:12:1511:1532	8607788	0	True				
+ANR	8608010	BitAndExpression	td -> ctrl & TD_CTRL_IOC		8607788	0		&			
+ANR	8608011	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608012	Identifier	td		8607788	0					
+ANR	8608013	Identifier	ctrl		8607788	1					
+ANR	8608014	Identifier	TD_CTRL_IOC		8607788	1					
+ANR	8608015	CompoundStatement		107:36:1440:1440	8607788	1					
+ANR	8608016	ExpressionStatement	* int_mask |= 0x01	111:12:1550:1567	8607788	0	True				
+ANR	8608017	AssignmentExpression	* int_mask |= 0x01		8607788	0		|=			
+ANR	8608018	UnaryOperationExpression	* int_mask		8607788	0					
+ANR	8608019	UnaryOperator	*		8607788	0					
+ANR	8608020	Identifier	int_mask		8607788	1					
+ANR	8608021	PrimaryExpression	0x01		8607788	1					
+ANR	8608022	ExpressionStatement	uhci_update_irq ( s )	115:8:1589:1607	8607788	5	True				
+ANR	8608023	CallExpression	uhci_update_irq ( s )		8607788	0					
+ANR	8608024	Callee	uhci_update_irq		8607788	0					
+ANR	8608025	Identifier	uhci_update_irq		8607788	0					
+ANR	8608026	ArgumentList	s		8607788	1					
+ANR	8608027	Argument	s		8607788	0					
+ANR	8608028	Identifier	s		8607788	0					
+ANR	8608029	ReturnStatement	return 1 ;	117:8:1618:1626	8607788	6	True				
+ANR	8608030	PrimaryExpression	1		8607788	0					
+ANR	8608031	Label	case USB_RET_BABBLE :	121:4:1635:1654	8607788	7	True				
+ANR	8608032	Identifier	USB_RET_BABBLE		8607788	0					
+ANR	8608033	ExpressionStatement	td -> ctrl |= TD_CTRL_BABBLE | TD_CTRL_STALL	123:8:1665:1707	8607788	8	True				
+ANR	8608034	AssignmentExpression	td -> ctrl |= TD_CTRL_BABBLE | TD_CTRL_STALL		8607788	0		|=			
+ANR	8608035	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608036	Identifier	td		8607788	0					
+ANR	8608037	Identifier	ctrl		8607788	1					
+ANR	8608038	InclusiveOrExpression	TD_CTRL_BABBLE | TD_CTRL_STALL		8607788	1		|			
+ANR	8608039	Identifier	TD_CTRL_BABBLE		8607788	0					
+ANR	8608040	Identifier	TD_CTRL_STALL		8607788	1					
+ANR	8608041	ExpressionStatement	td -> ctrl &= ~TD_CTRL_ACTIVE	125:8:1718:1745	8607788	9	True				
+ANR	8608042	AssignmentExpression	td -> ctrl &= ~TD_CTRL_ACTIVE		8607788	0		&=			
+ANR	8608043	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608044	Identifier	td		8607788	0					
+ANR	8608045	Identifier	ctrl		8607788	1					
+ANR	8608046	Identifier	~TD_CTRL_ACTIVE		8607788	1					
+ANR	8608047	ExpressionStatement	s -> status |= UHCI_STS_USBERR	127:8:1756:1784	8607788	10	True				
+ANR	8608048	AssignmentExpression	s -> status |= UHCI_STS_USBERR		8607788	0		|=			
+ANR	8608049	PtrMemberAccess	s -> status		8607788	0					
+ANR	8608050	Identifier	s		8607788	0					
+ANR	8608051	Identifier	status		8607788	1					
+ANR	8608052	Identifier	UHCI_STS_USBERR		8607788	1					
+ANR	8608053	IfStatement	if ( td -> ctrl & TD_CTRL_IOC )		8607788	11					
+ANR	8608054	Condition	td -> ctrl & TD_CTRL_IOC	129:12:1799:1820	8607788	0	True				
+ANR	8608055	BitAndExpression	td -> ctrl & TD_CTRL_IOC		8607788	0		&			
+ANR	8608056	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608057	Identifier	td		8607788	0					
+ANR	8608058	Identifier	ctrl		8607788	1					
+ANR	8608059	Identifier	TD_CTRL_IOC		8607788	1					
+ANR	8608060	CompoundStatement		127:36:1728:1728	8607788	1					
+ANR	8608061	ExpressionStatement	* int_mask |= 0x01	131:12:1838:1855	8607788	0	True				
+ANR	8608062	AssignmentExpression	* int_mask |= 0x01		8607788	0		|=			
+ANR	8608063	UnaryOperationExpression	* int_mask		8607788	0					
+ANR	8608064	UnaryOperator	*		8607788	0					
+ANR	8608065	Identifier	int_mask		8607788	1					
+ANR	8608066	PrimaryExpression	0x01		8607788	1					
+ANR	8608067	ExpressionStatement	uhci_update_irq ( s )	135:8:1877:1895	8607788	12	True				
+ANR	8608068	CallExpression	uhci_update_irq ( s )		8607788	0					
+ANR	8608069	Callee	uhci_update_irq		8607788	0					
+ANR	8608070	Identifier	uhci_update_irq		8607788	0					
+ANR	8608071	ArgumentList	s		8607788	1					
+ANR	8608072	Argument	s		8607788	0					
+ANR	8608073	Identifier	s		8607788	0					
+ANR	8608074	ReturnStatement	return - 1 ;	139:8:1939:1948	8607788	13	True				
+ANR	8608075	UnaryOperationExpression	- 1		8607788	0					
+ANR	8608076	UnaryOperator	-		8607788	0					
+ANR	8608077	PrimaryExpression	1		8607788	1					
+ANR	8608078	Label	case USB_RET_NAK :	143:4:1957:1973	8607788	14	True				
+ANR	8608079	Identifier	USB_RET_NAK		8607788	0					
+ANR	8608080	ExpressionStatement	td -> ctrl |= TD_CTRL_NAK	145:8:1984:2007	8607788	15	True				
+ANR	8608081	AssignmentExpression	td -> ctrl |= TD_CTRL_NAK		8607788	0		|=			
+ANR	8608082	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608083	Identifier	td		8607788	0					
+ANR	8608084	Identifier	ctrl		8607788	1					
+ANR	8608085	Identifier	TD_CTRL_NAK		8607788	1					
+ANR	8608086	IfStatement	if ( pid == USB_TOKEN_SETUP )		8607788	16					
+ANR	8608087	Condition	pid == USB_TOKEN_SETUP	147:12:2022:2043	8607788	0	True				
+ANR	8608088	EqualityExpression	pid == USB_TOKEN_SETUP		8607788	0		==			
+ANR	8608089	Identifier	pid		8607788	0					
+ANR	8608090	Identifier	USB_TOKEN_SETUP		8607788	1					
+ANR	8608091	BreakStatement	break ;	149:12:2059:2064	8607788	1	True				
+ANR	8608092	ReturnStatement	return 1 ;	151:1:2068:2076	8607788	17	True				
+ANR	8608093	PrimaryExpression	1		8607788	0					
+ANR	8608094	Label	case USB_RET_NODEV :	155:4:2085:2103	8607788	18	True				
+ANR	8608095	Identifier	USB_RET_NODEV		8607788	0					
+ANR	8608096	Label	default :	157:4:2110:2117	8607788	19	True				
+ANR	8608097	Identifier	default		8607788	0					
+ANR	8608098	BreakStatement	break ;	159:1:2121:2126	8607788	20	True				
+ANR	8608099	ExpressionStatement	td -> ctrl |= TD_CTRL_TIMEOUT	169:4:2195:2222	8607788	15	True				
+ANR	8608100	AssignmentExpression	td -> ctrl |= TD_CTRL_TIMEOUT		8607788	0		|=			
+ANR	8608101	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608102	Identifier	td		8607788	0					
+ANR	8608103	Identifier	ctrl		8607788	1					
+ANR	8608104	Identifier	TD_CTRL_TIMEOUT		8607788	1					
+ANR	8608105	ExpressionStatement	err = ( td -> ctrl >> TD_CTRL_ERROR_SHIFT ) & 3	171:4:2229:2272	8607788	16	True				
+ANR	8608106	AssignmentExpression	err = ( td -> ctrl >> TD_CTRL_ERROR_SHIFT ) & 3		8607788	0		=			
+ANR	8608107	Identifier	err		8607788	0					
+ANR	8608108	BitAndExpression	( td -> ctrl >> TD_CTRL_ERROR_SHIFT ) & 3		8607788	1		&			
+ANR	8608109	ShiftExpression	td -> ctrl >> TD_CTRL_ERROR_SHIFT		8607788	0		>>			
+ANR	8608110	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608111	Identifier	td		8607788	0					
+ANR	8608112	Identifier	ctrl		8607788	1					
+ANR	8608113	Identifier	TD_CTRL_ERROR_SHIFT		8607788	1					
+ANR	8608114	PrimaryExpression	3		8607788	1					
+ANR	8608115	IfStatement	if ( err != 0 )		8607788	17					
+ANR	8608116	Condition	err != 0	173:8:2283:2290	8607788	0	True				
+ANR	8608117	EqualityExpression	err != 0		8607788	0		!=			
+ANR	8608118	Identifier	err		8607788	0					
+ANR	8608119	PrimaryExpression	0		8607788	1					
+ANR	8608120	CompoundStatement		171:18:2198:2198	8607788	1					
+ANR	8608121	ExpressionStatement	err --	175:8:2304:2309	8607788	0	True				
+ANR	8608122	PostIncDecOperationExpression	err --		8607788	0					
+ANR	8608123	Identifier	err		8607788	0					
+ANR	8608124	IncDec	--		8607788	1					
+ANR	8608125	IfStatement	if ( err == 0 )		8607788	1					
+ANR	8608126	Condition	err == 0	177:12:2324:2331	8607788	0	True				
+ANR	8608127	EqualityExpression	err == 0		8607788	0		==			
+ANR	8608128	Identifier	err		8607788	0					
+ANR	8608129	PrimaryExpression	0		8607788	1					
+ANR	8608130	CompoundStatement		175:22:2239:2239	8607788	1					
+ANR	8608131	ExpressionStatement	td -> ctrl &= ~TD_CTRL_ACTIVE	179:12:2349:2376	8607788	0	True				
+ANR	8608132	AssignmentExpression	td -> ctrl &= ~TD_CTRL_ACTIVE		8607788	0		&=			
+ANR	8608133	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608134	Identifier	td		8607788	0					
+ANR	8608135	Identifier	ctrl		8607788	1					
+ANR	8608136	Identifier	~TD_CTRL_ACTIVE		8607788	1					
+ANR	8608137	ExpressionStatement	s -> status |= UHCI_STS_USBERR	181:12:2391:2419	8607788	1	True				
+ANR	8608138	AssignmentExpression	s -> status |= UHCI_STS_USBERR		8607788	0		|=			
+ANR	8608139	PtrMemberAccess	s -> status		8607788	0					
+ANR	8608140	Identifier	s		8607788	0					
+ANR	8608141	Identifier	status		8607788	1					
+ANR	8608142	Identifier	UHCI_STS_USBERR		8607788	1					
+ANR	8608143	IfStatement	if ( td -> ctrl & TD_CTRL_IOC )		8607788	2					
+ANR	8608144	Condition	td -> ctrl & TD_CTRL_IOC	183:16:2438:2459	8607788	0	True				
+ANR	8608145	BitAndExpression	td -> ctrl & TD_CTRL_IOC		8607788	0		&			
+ANR	8608146	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608147	Identifier	td		8607788	0					
+ANR	8608148	Identifier	ctrl		8607788	1					
+ANR	8608149	Identifier	TD_CTRL_IOC		8607788	1					
+ANR	8608150	ExpressionStatement	* int_mask |= 0x01	185:16:2479:2496	8607788	1	True				
+ANR	8608151	AssignmentExpression	* int_mask |= 0x01		8607788	0		|=			
+ANR	8608152	UnaryOperationExpression	* int_mask		8607788	0					
+ANR	8608153	UnaryOperator	*		8607788	0					
+ANR	8608154	Identifier	int_mask		8607788	1					
+ANR	8608155	PrimaryExpression	0x01		8607788	1					
+ANR	8608156	ExpressionStatement	uhci_update_irq ( s )	187:12:2511:2529	8607788	3	True				
+ANR	8608157	CallExpression	uhci_update_irq ( s )		8607788	0					
+ANR	8608158	Callee	uhci_update_irq		8607788	0					
+ANR	8608159	Identifier	uhci_update_irq		8607788	0					
+ANR	8608160	ArgumentList	s		8607788	1					
+ANR	8608161	Argument	s		8607788	0					
+ANR	8608162	Identifier	s		8607788	0					
+ANR	8608163	ExpressionStatement	td -> ctrl = ( td -> ctrl & ~ ( 3 << TD_CTRL_ERROR_SHIFT ) ) | ( err << TD_CTRL_ERROR_SHIFT )	193:4:2554:2645	8607788	18	True				
+ANR	8608164	AssignmentExpression	td -> ctrl = ( td -> ctrl & ~ ( 3 << TD_CTRL_ERROR_SHIFT ) ) | ( err << TD_CTRL_ERROR_SHIFT )		8607788	0		=			
+ANR	8608165	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608166	Identifier	td		8607788	0					
+ANR	8608167	Identifier	ctrl		8607788	1					
+ANR	8608168	InclusiveOrExpression	( td -> ctrl & ~ ( 3 << TD_CTRL_ERROR_SHIFT ) ) | ( err << TD_CTRL_ERROR_SHIFT )		8607788	1		|			
+ANR	8608169	BitAndExpression	td -> ctrl & ~ ( 3 << TD_CTRL_ERROR_SHIFT )		8607788	0		&			
+ANR	8608170	PtrMemberAccess	td -> ctrl		8607788	0					
+ANR	8608171	Identifier	td		8607788	0					
+ANR	8608172	Identifier	ctrl		8607788	1					
+ANR	8608173	UnaryOperationExpression	~ ( 3 << TD_CTRL_ERROR_SHIFT )		8607788	1					
+ANR	8608174	UnaryOperator	~		8607788	0					
+ANR	8608175	ShiftExpression	3 << TD_CTRL_ERROR_SHIFT		8607788	1		<<			
+ANR	8608176	PrimaryExpression	3		8607788	0					
+ANR	8608177	Identifier	TD_CTRL_ERROR_SHIFT		8607788	1					
+ANR	8608178	ShiftExpression	err << TD_CTRL_ERROR_SHIFT		8607788	1		<<			
+ANR	8608179	Identifier	err		8607788	0					
+ANR	8608180	Identifier	TD_CTRL_ERROR_SHIFT		8607788	1					
+ANR	8608181	ReturnStatement	return 1 ;	197:4:2652:2660	8607788	19	True				
+ANR	8608182	PrimaryExpression	1		8607788	0					
+ANR	8608183	ReturnType	static int		8607788	1					
+ANR	8608184	Identifier	uhci_complete_td		8607788	2					
+ANR	8608185	ParameterList	"UHCIState * s , UHCI_TD * td , UHCIAsync * async , uint32_t * int_mask"		8607788	3					
+ANR	8608186	Parameter	UHCIState * s	1:28:28:39	8607788	0	True				
+ANR	8608187	ParameterType	UHCIState *		8607788	0					
+ANR	8608188	Identifier	s		8607788	1					
+ANR	8608189	Parameter	UHCI_TD * td	1:42:42:52	8607788	1	True				
+ANR	8608190	ParameterType	UHCI_TD *		8607788	0					
+ANR	8608191	Identifier	td		8607788	1					
+ANR	8608192	Parameter	UHCIAsync * async	1:55:55:70	8607788	2	True				
+ANR	8608193	ParameterType	UHCIAsync *		8607788	0					
+ANR	8608194	Identifier	async		8607788	1					
+ANR	8608195	Parameter	uint32_t * int_mask	1:73:73:90	8607788	3	True				
+ANR	8608196	ParameterType	uint32_t *		8607788	0					
+ANR	8608197	Identifier	int_mask		8607788	1					
+ANR	8608198	CFGEntryNode	ENTRY		8607788		True				
+ANR	8608199	CFGExitNode	EXIT		8607788		True				
+ANR	8608200	Symbol	USB_TOKEN_SETUP		8607788						
+ANR	8608201	Symbol	s -> status		8607788						
+ANR	8608202	Symbol	async -> packet . len		8607788						
+ANR	8608203	Symbol	TD_CTRL_BABBLE		8607788						
+ANR	8608204	Symbol	pid		8607788						
+ANR	8608205	Symbol	UHCI_STS_USBERR		8607788						
+ANR	8608206	Symbol	TD_CTRL_IOC		8607788						
+ANR	8608207	Symbol	async -> packet		8607788						
+ANR	8608208	Symbol	td -> token		8607788						
+ANR	8608209	Symbol	TD_CTRL_STALL		8607788						
+ANR	8608210	Symbol	int_mask		8607788						
+ANR	8608211	Symbol	len		8607788						
+ANR	8608212	Symbol	td -> ctrl		8607788						
+ANR	8608213	Symbol	USB_RET_BABBLE		8607788						
+ANR	8608214	Symbol	TD_CTRL_SPD		8607788						
+ANR	8608215	Symbol	USB_TOKEN_IN		8607788						
+ANR	8608216	Symbol	ret		8607788						
+ANR	8608217	Symbol	~TD_CTRL_ACTIVE		8607788						
+ANR	8608218	Symbol	TD_CTRL_ACTIVE		8607788						
+ANR	8608219	Symbol	async -> td		8607788						
+ANR	8608220	Symbol	err		8607788						
+ANR	8608221	Symbol	TD_CTRL_NAK		8607788						
+ANR	8608222	Symbol	td -> buffer		8607788						
+ANR	8608223	Symbol	* async		8607788						
+ANR	8608224	Symbol	TD_CTRL_TIMEOUT		8607788						
+ANR	8608225	Symbol	max_len		8607788						
+ANR	8608226	Symbol	~0x7ff		8607788						
+ANR	8608227	Symbol	td		8607788						
+ANR	8608228	Symbol	async -> token		8607788						
+ANR	8608229	Symbol	async		8607788						
+ANR	8608230	Symbol	* int_mask		8607788						
+ANR	8608231	Symbol	async -> buffer		8607788						
+ANR	8608232	Symbol	s		8607788						
+ANR	8608233	Symbol	* td		8607788						
+ANR	8608234	Symbol	TD_CTRL_IOS		8607788						
+ANR	8608235	Symbol	* s		8607788						
+ANR	8608236	Symbol	TD_CTRL_ERROR_SHIFT		8607788						

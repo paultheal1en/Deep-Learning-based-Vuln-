@@ -1,0 +1,141 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	7839291	File	/home/p4ultr4n/workplace/ReVeal/raw_code/slavio_set_irq_0.c								
+ANR	7839292	Function	slavio_set_irq	1:0:0:539							
+ANR	7839293	FunctionDef	"slavio_set_irq (void * opaque , int irq , int level)"		7839292	0					
+ANR	7839294	CompoundStatement		3:0:62:539	7839292	0					
+ANR	7839295	IdentifierDeclStatement	SLAVIO_INTCTLState * s = opaque ;	5:4:69:99	7839292	0	True				
+ANR	7839296	IdentifierDecl	* s = opaque		7839292	0					
+ANR	7839297	IdentifierDeclType	SLAVIO_INTCTLState *		7839292	0					
+ANR	7839298	Identifier	s		7839292	1					
+ANR	7839299	AssignmentExpression	* s = opaque		7839292	2		=			
+ANR	7839300	Identifier	opaque		7839292	0					
+ANR	7839301	Identifier	opaque		7839292	1					
+ANR	7839302	ExpressionStatement	"DPRINTF ( ""Set cpu %d irq %d level %d\\n"" , s -> target_cpu , irq , level )"	9:4:108:174	7839292	1	True				
+ANR	7839303	CallExpression	"DPRINTF ( ""Set cpu %d irq %d level %d\\n"" , s -> target_cpu , irq , level )"		7839292	0					
+ANR	7839304	Callee	DPRINTF		7839292	0					
+ANR	7839305	Identifier	DPRINTF		7839292	0					
+ANR	7839306	ArgumentList	"""Set cpu %d irq %d level %d\\n"""		7839292	1					
+ANR	7839307	Argument	"""Set cpu %d irq %d level %d\\n"""		7839292	0					
+ANR	7839308	PrimaryExpression	"""Set cpu %d irq %d level %d\\n"""		7839292	0					
+ANR	7839309	Argument	s -> target_cpu		7839292	1					
+ANR	7839310	PtrMemberAccess	s -> target_cpu		7839292	0					
+ANR	7839311	Identifier	s		7839292	0					
+ANR	7839312	Identifier	target_cpu		7839292	1					
+ANR	7839313	Argument	irq		7839292	2					
+ANR	7839314	Identifier	irq		7839292	0					
+ANR	7839315	Argument	level		7839292	3					
+ANR	7839316	Identifier	level		7839292	0					
+ANR	7839317	IfStatement	if ( irq < 32 )		7839292	2					
+ANR	7839318	Condition	irq < 32	11:8:185:192	7839292	0	True				
+ANR	7839319	RelationalExpression	irq < 32		7839292	0		<			
+ANR	7839320	Identifier	irq		7839292	0					
+ANR	7839321	PrimaryExpression	32		7839292	1					
+ANR	7839322	CompoundStatement		13:1:164:202	7839292	1					
+ANR	7839323	IdentifierDeclStatement	uint32_t mask = 1 << irq ;	13:1:199:223	7839292	0	True				
+ANR	7839324	IdentifierDecl	mask = 1 << irq		7839292	0					
+ANR	7839325	IdentifierDeclType	uint32_t		7839292	0					
+ANR	7839326	Identifier	mask		7839292	1					
+ANR	7839327	AssignmentExpression	mask = 1 << irq		7839292	2		=			
+ANR	7839328	Identifier	mask		7839292	0					
+ANR	7839329	ShiftExpression	1 << irq		7839292	1		<<			
+ANR	7839330	PrimaryExpression	1		7839292	0					
+ANR	7839331	Identifier	irq		7839292	1					
+ANR	7839332	IdentifierDeclStatement	uint32_t pil = s -> intbit_to_level [ irq ] ;	15:1:227:265	7839292	1	True				
+ANR	7839333	IdentifierDecl	pil = s -> intbit_to_level [ irq ]		7839292	0					
+ANR	7839334	IdentifierDeclType	uint32_t		7839292	0					
+ANR	7839335	Identifier	pil		7839292	1					
+ANR	7839336	AssignmentExpression	pil = s -> intbit_to_level [ irq ]		7839292	2		=			
+ANR	7839337	Identifier	pil		7839292	0					
+ANR	7839338	ArrayIndexing	s -> intbit_to_level [ irq ]		7839292	1					
+ANR	7839339	PtrMemberAccess	s -> intbit_to_level		7839292	0					
+ANR	7839340	Identifier	s		7839292	0					
+ANR	7839341	Identifier	intbit_to_level		7839292	1					
+ANR	7839342	Identifier	irq		7839292	1					
+ANR	7839343	IfStatement	if ( pil > 0 )		7839292	2					
+ANR	7839344	Condition	pil > 0	17:5:273:279	7839292	0	True				
+ANR	7839345	RelationalExpression	pil > 0		7839292	0		>			
+ANR	7839346	Identifier	pil		7839292	0					
+ANR	7839347	PrimaryExpression	0		7839292	1					
+ANR	7839348	CompoundStatement		15:14:219:219	7839292	1					
+ANR	7839349	IfStatement	if ( level )		7839292	0					
+ANR	7839350	Condition	level	19:9:294:298	7839292	0	True				
+ANR	7839351	Identifier	level		7839292	0					
+ANR	7839352	CompoundStatement		17:16:238:238	7839292	1					
+ANR	7839353	ExpressionStatement	s -> intregm_pending |= mask	21:2:306:332	7839292	0	True				
+ANR	7839354	AssignmentExpression	s -> intregm_pending |= mask		7839292	0		|=			
+ANR	7839355	PtrMemberAccess	s -> intregm_pending		7839292	0					
+ANR	7839356	Identifier	s		7839292	0					
+ANR	7839357	Identifier	intregm_pending		7839292	1					
+ANR	7839358	Identifier	mask		7839292	1					
+ANR	7839359	ExpressionStatement	s -> intreg_pending [ s -> target_cpu ] |= 1 << pil	23:2:337:381	7839292	1	True				
+ANR	7839360	AssignmentExpression	s -> intreg_pending [ s -> target_cpu ] |= 1 << pil		7839292	0		|=			
+ANR	7839361	ArrayIndexing	s -> intreg_pending [ s -> target_cpu ]		7839292	0					
+ANR	7839362	PtrMemberAccess	s -> intreg_pending		7839292	0					
+ANR	7839363	Identifier	s		7839292	0					
+ANR	7839364	Identifier	intreg_pending		7839292	1					
+ANR	7839365	PtrMemberAccess	s -> target_cpu		7839292	1					
+ANR	7839366	Identifier	s		7839292	0					
+ANR	7839367	Identifier	target_cpu		7839292	1					
+ANR	7839368	ShiftExpression	1 << pil		7839292	1		<<			
+ANR	7839369	PrimaryExpression	1		7839292	0					
+ANR	7839370	Identifier	pil		7839292	1					
+ANR	7839371	ExpressionStatement	slavio_check_interrupts ( s )	25:2:386:412	7839292	2	True				
+ANR	7839372	CallExpression	slavio_check_interrupts ( s )		7839292	0					
+ANR	7839373	Callee	slavio_check_interrupts		7839292	0					
+ANR	7839374	Identifier	slavio_check_interrupts		7839292	0					
+ANR	7839375	ArgumentList	s		7839292	1					
+ANR	7839376	Argument	s		7839292	0					
+ANR	7839377	Identifier	s		7839292	0					
+ANR	7839378	ElseStatement	else		7839292	0					
+ANR	7839379	CompoundStatement		27:10:370:370	7839292	0					
+ANR	7839380	ExpressionStatement	s -> intregm_pending &= ~mask	31:2:438:465	7839292	0	True				
+ANR	7839381	AssignmentExpression	s -> intregm_pending &= ~mask		7839292	0		&=			
+ANR	7839382	PtrMemberAccess	s -> intregm_pending		7839292	0					
+ANR	7839383	Identifier	s		7839292	0					
+ANR	7839384	Identifier	intregm_pending		7839292	1					
+ANR	7839385	Identifier	~mask		7839292	1					
+ANR	7839386	ExpressionStatement	s -> intreg_pending [ s -> target_cpu ] &= ~ ( 1 << pil )	33:2:470:517	7839292	1	True				
+ANR	7839387	AssignmentExpression	s -> intreg_pending [ s -> target_cpu ] &= ~ ( 1 << pil )		7839292	0		&=			
+ANR	7839388	ArrayIndexing	s -> intreg_pending [ s -> target_cpu ]		7839292	0					
+ANR	7839389	PtrMemberAccess	s -> intreg_pending		7839292	0					
+ANR	7839390	Identifier	s		7839292	0					
+ANR	7839391	Identifier	intreg_pending		7839292	1					
+ANR	7839392	PtrMemberAccess	s -> target_cpu		7839292	1					
+ANR	7839393	Identifier	s		7839292	0					
+ANR	7839394	Identifier	target_cpu		7839292	1					
+ANR	7839395	UnaryOperationExpression	~ ( 1 << pil )		7839292	1					
+ANR	7839396	UnaryOperator	~		7839292	0					
+ANR	7839397	ShiftExpression	1 << pil		7839292	1		<<			
+ANR	7839398	PrimaryExpression	1		7839292	0					
+ANR	7839399	Identifier	pil		7839292	1					
+ANR	7839400	ReturnType	static void		7839292	1					
+ANR	7839401	Identifier	slavio_set_irq		7839292	2					
+ANR	7839402	ParameterList	"void * opaque , int irq , int level"		7839292	3					
+ANR	7839403	Parameter	void * opaque	1:27:27:38	7839292	0	True				
+ANR	7839404	ParameterType	void *		7839292	0					
+ANR	7839405	Identifier	opaque		7839292	1					
+ANR	7839406	Parameter	int irq	1:41:41:47	7839292	1	True				
+ANR	7839407	ParameterType	int		7839292	0					
+ANR	7839408	Identifier	irq		7839292	1					
+ANR	7839409	Parameter	int level	1:50:50:58	7839292	2	True				
+ANR	7839410	ParameterType	int		7839292	0					
+ANR	7839411	Identifier	level		7839292	1					
+ANR	7839412	CFGEntryNode	ENTRY		7839292		True				
+ANR	7839413	CFGExitNode	EXIT		7839292		True				
+ANR	7839414	Symbol	opaque		7839292						
+ANR	7839415	Symbol	level		7839292						
+ANR	7839416	Symbol	* s -> intbit_to_level		7839292						
+ANR	7839417	Symbol	s -> target_cpu		7839292						
+ANR	7839418	Symbol	* s -> target_cpu		7839292						
+ANR	7839419	Symbol	~mask		7839292						
+ANR	7839420	Symbol	irq		7839292						
+ANR	7839421	Symbol	s -> intregm_pending		7839292						
+ANR	7839422	Symbol	* irq		7839292						
+ANR	7839423	Symbol	pil		7839292						
+ANR	7839424	Symbol	s		7839292						
+ANR	7839425	Symbol	* * s		7839292						
+ANR	7839426	Symbol	* s -> intreg_pending		7839292						
+ANR	7839427	Symbol	s -> intbit_to_level		7839292						
+ANR	7839428	Symbol	* s		7839292						
+ANR	7839429	Symbol	mask		7839292						
+ANR	7839430	Symbol	s -> intreg_pending		7839292						

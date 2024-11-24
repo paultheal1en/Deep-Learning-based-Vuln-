@@ -1,0 +1,147 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	5155334	File	/home/p4ultr4n/workplace/ReVeal/raw_code/kvmppc_hash64_read_pteg_0.c								
+ANR	5155335	Function	kvmppc_hash64_read_pteg	1:0:0:691							
+ANR	5155336	FunctionDef	"kvmppc_hash64_read_pteg (PowerPCCPU * cpu , target_ulong pte_index)"		5155335	0					
+ANR	5155337	CompoundStatement		3:0:75:691	5155335	0					
+ANR	5155338	IdentifierDeclStatement	int htab_fd ;	5:4:82:93	5155335	0	True				
+ANR	5155339	IdentifierDecl	htab_fd		5155335	0					
+ANR	5155340	IdentifierDeclType	int		5155335	0					
+ANR	5155341	Identifier	htab_fd		5155335	1					
+ANR	5155342	IdentifierDeclStatement	struct kvm_get_htab_fd ghf ;	7:4:100:126	5155335	1	True				
+ANR	5155343	IdentifierDecl	ghf		5155335	0					
+ANR	5155344	IdentifierDeclType	struct kvm_get_htab_fd		5155335	0					
+ANR	5155345	Identifier	ghf		5155335	1					
+ANR	5155346	IdentifierDeclStatement	struct kvm_get_htab_buf * hpte_buf ;	9:4:133:167	5155335	2	True				
+ANR	5155347	IdentifierDecl	* hpte_buf		5155335	0					
+ANR	5155348	IdentifierDeclType	struct kvm_get_htab_buf *		5155335	0					
+ANR	5155349	Identifier	hpte_buf		5155335	1					
+ANR	5155350	ExpressionStatement	ghf . flags = 0	13:4:176:189	5155335	3	True				
+ANR	5155351	AssignmentExpression	ghf . flags = 0		5155335	0		=			
+ANR	5155352	MemberAccess	ghf . flags		5155335	0					
+ANR	5155353	Identifier	ghf		5155335	0					
+ANR	5155354	Identifier	flags		5155335	1					
+ANR	5155355	PrimaryExpression	0		5155335	1					
+ANR	5155356	ExpressionStatement	ghf . start_index = pte_index	15:4:196:223	5155335	4	True				
+ANR	5155357	AssignmentExpression	ghf . start_index = pte_index		5155335	0		=			
+ANR	5155358	MemberAccess	ghf . start_index		5155335	0					
+ANR	5155359	Identifier	ghf		5155335	0					
+ANR	5155360	Identifier	start_index		5155335	1					
+ANR	5155361	Identifier	pte_index		5155335	1					
+ANR	5155362	ExpressionStatement	"htab_fd = kvm_vm_ioctl ( kvm_state , KVM_PPC_GET_HTAB_FD , & ghf )"	17:4:230:290	5155335	5	True				
+ANR	5155363	AssignmentExpression	"htab_fd = kvm_vm_ioctl ( kvm_state , KVM_PPC_GET_HTAB_FD , & ghf )"		5155335	0		=			
+ANR	5155364	Identifier	htab_fd		5155335	0					
+ANR	5155365	CallExpression	"kvm_vm_ioctl ( kvm_state , KVM_PPC_GET_HTAB_FD , & ghf )"		5155335	1					
+ANR	5155366	Callee	kvm_vm_ioctl		5155335	0					
+ANR	5155367	Identifier	kvm_vm_ioctl		5155335	0					
+ANR	5155368	ArgumentList	kvm_state		5155335	1					
+ANR	5155369	Argument	kvm_state		5155335	0					
+ANR	5155370	Identifier	kvm_state		5155335	0					
+ANR	5155371	Argument	KVM_PPC_GET_HTAB_FD		5155335	1					
+ANR	5155372	Identifier	KVM_PPC_GET_HTAB_FD		5155335	0					
+ANR	5155373	Argument	& ghf		5155335	2					
+ANR	5155374	UnaryOperationExpression	& ghf		5155335	0					
+ANR	5155375	UnaryOperator	&		5155335	0					
+ANR	5155376	Identifier	ghf		5155335	1					
+ANR	5155377	IfStatement	if ( htab_fd < 0 )		5155335	6					
+ANR	5155378	Condition	htab_fd < 0	19:8:301:311	5155335	0	True				
+ANR	5155379	RelationalExpression	htab_fd < 0		5155335	0		<			
+ANR	5155380	Identifier	htab_fd		5155335	0					
+ANR	5155381	PrimaryExpression	0		5155335	1					
+ANR	5155382	CompoundStatement		17:21:238:238	5155335	1					
+ANR	5155383	GotoStatement	goto error_out ;	21:8:325:339	5155335	0	True				
+ANR	5155384	Identifier	error_out		5155335	0					
+ANR	5155385	ExpressionStatement	hpte_buf = g_malloc0 ( sizeof ( * hpte_buf ) )	27:4:355:394	5155335	7	True				
+ANR	5155386	AssignmentExpression	hpte_buf = g_malloc0 ( sizeof ( * hpte_buf ) )		5155335	0		=			
+ANR	5155387	Identifier	hpte_buf		5155335	0					
+ANR	5155388	CallExpression	g_malloc0 ( sizeof ( * hpte_buf ) )		5155335	1					
+ANR	5155389	Callee	g_malloc0		5155335	0					
+ANR	5155390	Identifier	g_malloc0		5155335	0					
+ANR	5155391	ArgumentList	sizeof ( * hpte_buf )		5155335	1					
+ANR	5155392	Argument	sizeof ( * hpte_buf )		5155335	0					
+ANR	5155393	SizeofExpression	sizeof ( * hpte_buf )		5155335	0					
+ANR	5155394	Sizeof	sizeof		5155335	0					
+ANR	5155395	UnaryOperationExpression	* hpte_buf		5155335	1					
+ANR	5155396	UnaryOperator	*		5155335	0					
+ANR	5155397	Identifier	hpte_buf		5155335	1					
+ANR	5155398	IfStatement	"if ( read ( htab_fd , hpte_buf , sizeof ( * hpte_buf ) ) < 0 )"		5155335	8					
+ANR	5155399	Condition	"read ( htab_fd , hpte_buf , sizeof ( * hpte_buf ) ) < 0"	35:8:450:495	5155335	0	True				
+ANR	5155400	RelationalExpression	"read ( htab_fd , hpte_buf , sizeof ( * hpte_buf ) ) < 0"		5155335	0		<			
+ANR	5155401	CallExpression	"read ( htab_fd , hpte_buf , sizeof ( * hpte_buf ) )"		5155335	0					
+ANR	5155402	Callee	read		5155335	0					
+ANR	5155403	Identifier	read		5155335	0					
+ANR	5155404	ArgumentList	htab_fd		5155335	1					
+ANR	5155405	Argument	htab_fd		5155335	0					
+ANR	5155406	Identifier	htab_fd		5155335	0					
+ANR	5155407	Argument	hpte_buf		5155335	1					
+ANR	5155408	Identifier	hpte_buf		5155335	0					
+ANR	5155409	Argument	sizeof ( * hpte_buf )		5155335	2					
+ANR	5155410	SizeofExpression	sizeof ( * hpte_buf )		5155335	0					
+ANR	5155411	Sizeof	sizeof		5155335	0					
+ANR	5155412	UnaryOperationExpression	* hpte_buf		5155335	1					
+ANR	5155413	UnaryOperator	*		5155335	0					
+ANR	5155414	Identifier	hpte_buf		5155335	1					
+ANR	5155415	PrimaryExpression	0		5155335	1					
+ANR	5155416	CompoundStatement		33:56:422:422	5155335	1					
+ANR	5155417	GotoStatement	goto out_close ;	37:8:509:523	5155335	0	True				
+ANR	5155418	Identifier	out_close		5155335	0					
+ANR	5155419	ExpressionStatement	close ( htab_fd )	43:4:539:553	5155335	9	True				
+ANR	5155420	CallExpression	close ( htab_fd )		5155335	0					
+ANR	5155421	Callee	close		5155335	0					
+ANR	5155422	Identifier	close		5155335	0					
+ANR	5155423	ArgumentList	htab_fd		5155335	1					
+ANR	5155424	Argument	htab_fd		5155335	0					
+ANR	5155425	Identifier	htab_fd		5155335	0					
+ANR	5155426	ReturnStatement	return ( uint64_t ) ( uintptr_t ) hpte_buf -> hpte ;	45:4:560:603	5155335	10	True				
+ANR	5155427	CastExpression	( uint64_t ) ( uintptr_t ) hpte_buf -> hpte		5155335	0					
+ANR	5155428	CastTarget	uint64_t		5155335	0					
+ANR	5155429	CastExpression	( uintptr_t ) hpte_buf -> hpte		5155335	1					
+ANR	5155430	CastTarget	uintptr_t		5155335	0					
+ANR	5155431	PtrMemberAccess	hpte_buf -> hpte		5155335	1					
+ANR	5155432	Identifier	hpte_buf		5155335	0					
+ANR	5155433	Identifier	hpte		5155335	1					
+ANR	5155434	Label	out_close :	49:0:608:617	5155335	11	True				
+ANR	5155435	Identifier	out_close		5155335	0					
+ANR	5155436	ExpressionStatement	g_free ( hpte_buf )	51:4:624:640	5155335	12	True				
+ANR	5155437	CallExpression	g_free ( hpte_buf )		5155335	0					
+ANR	5155438	Callee	g_free		5155335	0					
+ANR	5155439	Identifier	g_free		5155335	0					
+ANR	5155440	ArgumentList	hpte_buf		5155335	1					
+ANR	5155441	Argument	hpte_buf		5155335	0					
+ANR	5155442	Identifier	hpte_buf		5155335	0					
+ANR	5155443	ExpressionStatement	close ( htab_fd )	53:4:647:661	5155335	13	True				
+ANR	5155444	CallExpression	close ( htab_fd )		5155335	0					
+ANR	5155445	Callee	close		5155335	0					
+ANR	5155446	Identifier	close		5155335	0					
+ANR	5155447	ArgumentList	htab_fd		5155335	1					
+ANR	5155448	Argument	htab_fd		5155335	0					
+ANR	5155449	Identifier	htab_fd		5155335	0					
+ANR	5155450	Label	error_out :	55:0:664:673	5155335	14	True				
+ANR	5155451	Identifier	error_out		5155335	0					
+ANR	5155452	ReturnStatement	return 0 ;	57:4:680:688	5155335	15	True				
+ANR	5155453	PrimaryExpression	0		5155335	0					
+ANR	5155454	ReturnType	uint64_t		5155335	1					
+ANR	5155455	Identifier	kvmppc_hash64_read_pteg		5155335	2					
+ANR	5155456	ParameterList	"PowerPCCPU * cpu , target_ulong pte_index"		5155335	3					
+ANR	5155457	Parameter	PowerPCCPU * cpu	1:33:33:47	5155335	0	True				
+ANR	5155458	ParameterType	PowerPCCPU *		5155335	0					
+ANR	5155459	Identifier	cpu		5155335	1					
+ANR	5155460	Parameter	target_ulong pte_index	1:50:50:71	5155335	1	True				
+ANR	5155461	ParameterType	target_ulong		5155335	0					
+ANR	5155462	Identifier	pte_index		5155335	1					
+ANR	5155463	CFGEntryNode	ENTRY		5155335		True				
+ANR	5155464	CFGExitNode	EXIT		5155335		True				
+ANR	5155465	Symbol	read		5155335						
+ANR	5155466	Symbol	ghf		5155335						
+ANR	5155467	Symbol	kvm_state		5155335						
+ANR	5155468	Symbol	hpte_buf -> hpte		5155335						
+ANR	5155469	Symbol	cpu		5155335						
+ANR	5155470	Symbol	ghf . start_index		5155335						
+ANR	5155471	Symbol	KVM_PPC_GET_HTAB_FD		5155335						
+ANR	5155472	Symbol	& ghf		5155335						
+ANR	5155473	Symbol	htab_fd		5155335						
+ANR	5155474	Symbol	hpte_buf		5155335						
+ANR	5155475	Symbol	pte_index		5155335						
+ANR	5155476	Symbol	kvm_vm_ioctl		5155335						
+ANR	5155477	Symbol	ghf . flags		5155335						
+ANR	5155478	Symbol	g_malloc0		5155335						
+ANR	5155479	Symbol	* hpte_buf		5155335						
